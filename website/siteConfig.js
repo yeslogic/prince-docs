@@ -9,6 +9,7 @@
 // site configuration options.
 
 // List of projects/orgs using your project for the users page.
+/*
 const users = [
   {
     caption: 'User1',
@@ -19,19 +20,17 @@ const users = [
     pinned: true,
   },
 ];
+*/
 
 const siteConfig = {
-  title: 'Test Site', // Title for your website.
-  tagline: 'A website for testing',
-  url: 'https://your-docusaurus-test-site.com', // Your website URL
-  baseUrl: '/', // Base URL for your project */
-  // For github.io type URLs, you would set the url and baseUrl like:
-  //   url: 'https://facebook.github.io',
-  //   baseUrl: '/test-site/',
+  title: 'Prince Documentation', // Title for your website.
+  tagline: 'User Guide and Reference Manual',
+  url: 'https://www.princexml.com', // Your website URL
+  baseUrl: '/doc/', // Base URL for your project */
 
   // Used for publishing and more
-  projectName: 'test-site',
-  organizationName: 'facebook',
+  projectName: 'prince-docs',
+  organizationName: 'yeslogic',
   // For top-level user or org sites, the organization is still the same.
   // e.g., for the https://JoelMarcey.github.io site, it would be set like...
   //   organizationName: 'JoelMarcey'
@@ -42,10 +41,12 @@ const siteConfig = {
     {doc: 'doc4', label: 'API'},
     {page: 'help', label: 'Help'},
     {blog: true, label: 'Blog'},
+    {search: true},
+    {href: 'https://www.princexml.com', label: 'Prince'},
   ],
 
   // If you have users set above, you add it here:
-  users,
+  //users,
 
   /* path to images for header/footer */
   headerIcon: 'img/favicon.ico',
@@ -54,7 +55,7 @@ const siteConfig = {
 
   /* Colors for website */
   colors: {
-    primaryColor: '#557b95',
+    primaryColor: '#6e2577',
     secondaryColor: '#3b5668',
   },
 
@@ -73,7 +74,7 @@ const siteConfig = {
   */
 
   // This copyright info is used in /core/Footer.js and blog RSS/Atom feeds.
-  copyright: `Copyright © ${new Date().getFullYear()} Your Name or Your Company Name`,
+  copyright: `Copyright © ${new Date().getFullYear()} YesLogic Pty. Ltd.`,
 
   highlight: {
     // Highlight.js theme to use for syntax highlighting in code blocks.
@@ -87,6 +88,8 @@ const siteConfig = {
   onPageNav: 'separate',
   // No .html extensions for paths.
   cleanUrl: true,
+
+  docsUrl: '',
 
   // Open Graph and Twitter card images.
   ogImage: 'img/undraw_online.svg',
