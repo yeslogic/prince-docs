@@ -1,3 +1,7 @@
+---
+title: Dictionary Page Headers
+---
+
 Dictionary Page Headers
 -----------------------
 

@@ -1,3 +1,7 @@
+---
+title: Server Integration
+---
+
 Server Integration
 ==================
 

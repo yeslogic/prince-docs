@@ -1,3 +1,7 @@
+---
+title: Floats
+---
+
 ### Floats
 
 When printed texts contain images, the text is usually laid out to wrap around those images. To accomplish the same with CSS, the images are floated - either to the left or right of text, or at times even to the top or to the bottom of a column. The `` property does just this - it floats an element, allowing the content of other elements to flow around it.

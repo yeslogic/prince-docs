@@ -1,3 +1,7 @@
+---
+title: PDF Versions and Profiles
+---
+
 PDF Versions and Profiles
 -------------------------
 

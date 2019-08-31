@@ -1,3 +1,7 @@
+---
+title: Page Headers and Footers
+---
+
 Page Headers and Footers
 ------------------------
 

@@ -1,3 +1,7 @@
+---
+title: Command-line Reference
+---
+
 Command-line Reference
 ======================
 

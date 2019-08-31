@@ -1,3 +1,7 @@
+---
+title: Layout
+---
+
 Layout
 ------
 

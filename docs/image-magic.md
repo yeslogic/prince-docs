@@ -1,3 +1,7 @@
+---
+title: Image Magic
+---
+
 Image Magic
 -----------
 

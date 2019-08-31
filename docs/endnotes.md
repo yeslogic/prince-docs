@@ -1,3 +1,7 @@
+---
+title: Endnotes
+---
+
 Endnotes
 --------
 

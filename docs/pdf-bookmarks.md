@@ -1,3 +1,7 @@
+---
+title: PDF Bookmarks
+---
+
 ### PDF Bookmarks
 
 Prince can create PDF bookmarks that link to document content.

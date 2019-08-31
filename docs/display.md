@@ -1,3 +1,7 @@
+---
+title: Display
+---
+
 ### Display
 
 Every HTML element is displayed in a way depending on what type of element it is. Most elements are displayed as either `block` or `inline` elements. The default display value can be changed with the `` property.

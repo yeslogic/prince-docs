@@ -1,3 +1,7 @@
+---
+title: Long Tables
+---
+
 Long Tables
 -----------
 

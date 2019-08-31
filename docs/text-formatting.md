@@ -1,3 +1,7 @@
+---
+title: Text formatting
+---
+
 ### Text formatting
 
 Text can be styled with CSS by defining font styles or text layout styles.

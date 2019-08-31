@@ -1,3 +1,7 @@
+---
+title: Box Model
+---
+
 ### Box Model
 
 All HTML elements follow the CSS box model. Their ``, ``, `` and `` can all be styled.

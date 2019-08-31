@@ -1,3 +1,7 @@
+---
+title: Your First Document
+---
+
 Your First Document
 ===================
 

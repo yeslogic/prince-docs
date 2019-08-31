@@ -1,3 +1,7 @@
+---
+title: The C\# / .Net Wrapper
+---
+
 ### The C\# / .Net Wrapper
 
 Prince can be called from .NET languages using the [Prince C\# / .Net wrapper](wrappers.html#wrapper-csharp).

@@ -1,3 +1,7 @@
+---
+title: Footnotes
+---
+
 ### Footnotes
 
 Prince supports footnotes using the `` property. If an element has the property float: footnote then it will be floated into the footnote area of the page and a reference will be placed in the text.

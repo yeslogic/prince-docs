@@ -1,3 +1,7 @@
+---
+title: Footnotes per Column
+---
+
 Footnotes per Column
 --------------------
 

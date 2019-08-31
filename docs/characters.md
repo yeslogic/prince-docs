@@ -1,3 +1,7 @@
+---
+title: Character Entities
+---
+
 Character Entities
 ==================
 

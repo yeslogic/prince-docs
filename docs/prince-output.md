@@ -1,3 +1,7 @@
+---
+title: Prince Output
+---
+
 Prince Output
 =============
 

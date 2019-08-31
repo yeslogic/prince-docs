@@ -1,3 +1,7 @@
+---
+title: PDF Tags
+---
+
 ### PDF Tags
 
 Tagged PDF files have special handling mechanisms for specific tag types. In Prince, it is possible to assign PDF tag types to elements in the document through the `` property, in order to create XML vocabularies in the PDF.

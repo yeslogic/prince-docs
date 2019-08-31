@@ -1,3 +1,7 @@
+---
+title: Using Prince with ActiveX / COM / Visual Basic
+---
+
 #### Using Prince with ActiveX / COM / Visual Basic
 
 Prince can be called from Visual Basic and other languages on Windows using the ActiveX/COM interface.

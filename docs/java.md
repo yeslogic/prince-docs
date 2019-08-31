@@ -1,3 +1,7 @@
+---
+title: The Java Wrapper
+---
+
 ### The Java Wrapper
 
 Prince can be called from within a Java class for servlets by using [Java interface](wrappers.html#wrapper-java).

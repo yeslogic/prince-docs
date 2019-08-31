@@ -1,3 +1,7 @@
+---
+title: Advanced Command-Line Options
+---
+
 Advanced Command-Line Options
 -----------------------------
 

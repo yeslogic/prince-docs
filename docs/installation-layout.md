@@ -1,3 +1,7 @@
+---
+title: Installation Layout
+---
+
 Installation Layout
 -------------------
 

@@ -1,3 +1,7 @@
+---
+title: The "Two-Pass" Solution
+---
+
 The "Two-Pass" Solution
 -----------------------
 

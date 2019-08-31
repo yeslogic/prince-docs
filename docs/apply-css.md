@@ -1,3 +1,8 @@
+---
+title: Applying Style Sheets in Prince
+---
+
+
 Applying Style Sheets in Prince
 -------------------------------
 

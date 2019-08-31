@@ -1,3 +1,7 @@
+---
+title: Fancy Table Captions
+---
+
 Fancy Table Captions
 --------------------
 

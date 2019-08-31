@@ -1,3 +1,7 @@
+---
+title: Using Prince with ColdFusion
+---
+
 ### Using Prince with ColdFusion
 
 Prince can be called from ColdFusion pages using the Java interface or the ActiveX/COM interface, if on Windows.

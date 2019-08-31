@@ -1,3 +1,7 @@
+---
+title: The ActiveX/COM Wrapper
+---
+
 ### The ActiveX/COM Wrapper
 
 The [ActiveX/COM wrapper](wrappers.html#wrapper-activex) allows Prince to be called from various languages: ASP, ActiveX, COM, Visual Basic and also Coldfusion.

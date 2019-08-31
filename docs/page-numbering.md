@@ -1,3 +1,7 @@
+---
+title: Page Numbering
+---
+
 Page Numbering
 --------------
 

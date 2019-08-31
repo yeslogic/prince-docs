@@ -1,3 +1,7 @@
+---
+title: Third-Party Wrappers
+---
+
 ### Third-Party Wrappers
 
 There are also third-party wrappers available for download on external sites. Please note that YesLogic does not take any responsibilities for third-party wrappers offered for download on these external locations.

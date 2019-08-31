@@ -1,3 +1,7 @@
+---
+title: Applying JavaScript in Prince
+---
+
 Applying JavaScript in Prince
 -----------------------------
 

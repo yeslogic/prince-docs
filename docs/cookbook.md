@@ -1,3 +1,7 @@
+---
+title: Prince Tips and Tricks
+---
+
 Prince Tips and Tricks
 ======================
 

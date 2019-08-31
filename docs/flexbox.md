@@ -1,3 +1,7 @@
+---
+title: Flex Layout
+---
+
 ### Flex Layout
 
 Flex layout is a layout model similar to the block layout. It lacks and but gains powerful possibilities to distribute space and align content in a more flexible way. The content of a flex container can alter its height and width to best fill the available space, it can be easily aligned even if the size is unknown or dynamic, and most importantly it can be laid out in any direction, as opposed to the traditional layout models that would either be vertically-based (block layout) or horizontally-based (inline layout).

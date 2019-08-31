@@ -1,3 +1,7 @@
+---
+title: Generated Content
+---
+
 Generated Content
 -----------------
 

@@ -1,3 +1,7 @@
+---
+title: Thinking in Spreads
+---
+
 Thinking in Spreads
 -------------------
 

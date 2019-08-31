@@ -1,3 +1,7 @@
+---
+title: Tables
+---
+
 ### Tables
 
 #### Automatic table layout

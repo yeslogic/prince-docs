@@ -1,3 +1,7 @@
+---
+title: Documentation in PDF Format
+---
+
 Documentation in PDF Format
 ---------------------------
 

@@ -1,3 +1,7 @@
+---
+title: Paged Media
+---
+
 Paged Media
 -----------
 

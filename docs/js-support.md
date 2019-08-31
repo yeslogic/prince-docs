@@ -1,3 +1,7 @@
+---
+title: JavaScript Support
+---
+
 JavaScript Support
 ==================
 

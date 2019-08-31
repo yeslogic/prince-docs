@@ -1,3 +1,7 @@
+---
+title: Prince for Books
+---
+
 Prince for Books
 ================
 

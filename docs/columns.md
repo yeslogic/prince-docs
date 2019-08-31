@@ -1,3 +1,7 @@
+---
+title: Columns
+---
+
 ### Columns
 
 Reading long lines of text can be difficult - multiple columns have been used in print for a very long time. CSS allows for clean styling in multiple columns with the help of several properties.

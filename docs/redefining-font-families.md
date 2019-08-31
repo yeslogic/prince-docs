@@ -1,3 +1,7 @@
+---
+title: Redefining the generic font families
+---
+
 ### Redefining the generic font families
 
 The CSS generic font families can be redefined to use different fonts by editing the `fonts.css` file in the Prince installation (see ). Each font family is defined using a [`@font-face`](doc-latest/doc-refs.html#at-font-face) rule, which maps a font family to an actual font either by name or by filename. (See ).

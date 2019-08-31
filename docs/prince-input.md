@@ -1,3 +1,7 @@
+---
+title: Prince Input
+---
+
 Prince Input
 ============
 
