@@ -11,8 +11,8 @@ When the *automatic table layout* algorithm is used, all contents of the table w
 The *automatic table layout* algorithm is used in the following situations:
 
 -   by default; or
--   when table `` property is `auto`; or
--   when table `` property is `auto`, regardless of the value of the `` property.
+-   when table `table-layout` property is `auto`; or
+-   when table `width` property is `auto`, regardless of the value of the `table-layout` property.
 
 The basic rules used by Prince can be summarized as follows:
 
@@ -26,8 +26,8 @@ When the *fixed table layout* algorithm is used, the table column widths are det
 
 The *fixed table layout* algorithm is used in the following situations:
 
--   when the table `` property has a value `fixed`, and
--   the value of `` property is not `auto`
+-   when the table `table-layout` property has a value `fixed`, and
+-   the value of `width` property is not `auto`
 
 ``
     table {
@@ -35,7 +35,7 @@ The *fixed table layout* algorithm is used in the following situations:
         width: 90%
     }
 
-Note that if the `` property has value `auto` (which is the default value), the `` property will be ignored and automatic table layout will be used instead.
+Note that if the `width` property has value `auto` (which is the default value), the `table-layout` property will be ignored and automatic table layout will be used instead.
 
 The basic rules used by Prince are as follows:
 
@@ -45,7 +45,7 @@ The basic rules used by Prince are as follows:
 
 #### Separated table borders
 
-When the `` property is set to `separate`, a table can have separate borders around individual cells. The space between table cell borders is determined by the value of its `` property.
+When the `border-collapse` property is set to `separate`, a table can have separate borders around individual cells. The space between table cell borders is determined by the value of its `border-spacing` property.
 
 CSS
 
@@ -67,11 +67,11 @@ Output
 | D   | E   | F   |
 | G   | H   | I   |
 
-Note that by default, the value of `` is `separate`.
+Note that by default, the value of `border-collapse` is `separate`.
 
 #### Collapsing table borders
 
-When the CSS property `` is set to `collapse`, each edge of each cell resolves its final border style and border width based on certain rules.
+When the CSS property `border-collapse` is set to `collapse`, each edge of each cell resolves its final border style and border width based on certain rules.
 
 CSS
 
@@ -92,7 +92,7 @@ Output
 | D   | E   | F   |
 | G   | H   | I   |
 
-Note that the `` property is not used in the collapsing table border model.
+Note that the `border-spacing` property is not used in the collapsing table border model.
 
 The rules used by Prince for choosing the "winner" border are as follows:
 
@@ -104,7 +104,7 @@ The rules used by Prince for choosing the "winner" border are as follows:
 
 #### Cells that span columns
 
-Prince table cells that span multiple columns using the `` CSS property, which takes an integer value and is set to 1 by default.
+Prince table cells that span multiple columns using the `table-column-span` CSS property, which takes an integer value and is set to 1 by default.
 
 CSS
 
@@ -126,7 +126,7 @@ E
 
 #### Cells that span rows
 
-Prince supports table cells that span multiple rows using the `` CSS property, which takes an integer value and is set to 1 by default.
+Prince supports table cells that span multiple rows using the `table-row-span` CSS property, which takes an integer value and is set to 1 by default.
 
 CSS
 
@@ -199,10 +199,11 @@ HTML
 
 Rows inside the `thead` element are used as a running table header. Rows inside the `tfoot` element are used as a running table footer.
 
-See also .
+See also [Long Tables](doc-latest/long-tables.html#long-tables).
 
 #### Table captions
 
-Tables can also be provided with a table caption by using the `caption` HTML element, or by styling an arbitrary element with `: table-caption` to be made to behave like `caption` elements. The caption is positioned above the table by default, but it can be moved to the bottom with the `` property.
+Tables can also be provided with a table caption by using the `caption` HTML element, or by styling an arbitrary element with `display: table-caption` to be made to behave like `caption` elements. The caption is positioned above the table by default, but it can be moved to the bottom with the `caption-side` property.
 
-When a table spans across more than one page, the `` property determines whether table captions will be displayed on the first page of a table, or only on the following pages, or repeated on every page that a table appears on. See also .
+When a table spans across more than one page, the `prince-caption-page` property determines whether table captions will be displayed on the first page of a table, or only on the following pages, or repeated on every page that a table appears on. See also [Fancy Table Captions](doc-latest/fancy-table-captions.html#fancy-table-captions).
+

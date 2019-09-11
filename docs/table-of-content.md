@@ -6,8 +6,14 @@ Table of Contents
 -----------------
 
 You need  
--   `: target-counter()`
--   `: leader()`
+[JavaScript in Printed Media](doc-latest/javascript.html#js-print)
+
+[The "Two-Pass" Solution](doc-latest/two-pass.html#two-pass)
+
+[Generated Content Functions](doc-latest/gen-content.html#gen-content-functions)
+
+-   `content: target-counter()`
+-   `content: leader()`
 
 Prince offers several properties and functions to facilitate the creation of a Table of Contents.
 
@@ -17,7 +23,7 @@ Each list item contains a hyperlink to the heading's `id`. This list functions a
 
 The transformation into a proper table of contents happens with CSS when Prince generates the PDF - the resulting document will be paged, and possibly be intended for printing. It means that the hyperlinks need to be integrated with an indication of the correct page on which the target is located.
 
-This is achieved automatically with the `target-counter()` function in the `` property, using the `page` counter. The URL is being automatically fetched from the `href` attribute of the hyperlink element `<a>`.
+This is achieved automatically with the `target-counter()` function in the `content` property, using the `page` counter. The URL is being automatically fetched from the `href` attribute of the hyperlink element `<a>`.
 
 ``
     #toc a:after {
@@ -38,7 +44,7 @@ Our [example document](http://css4.pub/2018/toc/index.html) generates at Table o
 ``
     $ prince --javascript http://css4.pub/2018/toc -o toc.pdf
 
-A [second example document](http://css4.pub/2017/musick/musick.html) generates at ToC by way of JavaScript and, even more impressively, the script also prints out an index which is added to the end of the document, to be used when running Prince a second time (see ). Notice how subsequent page numbers in the index are folded into a range. To produce this document, try running these commands from a Linux command-line:
+A [second example document](http://css4.pub/2017/musick/musick.html) generates at ToC by way of JavaScript and, even more impressively, the script also prints out an index which is added to the end of the document, to be used when running Prince a second time (see [The "Two-Pass" Solution](doc-latest/two-pass.html#two-pass)). Notice how subsequent page numbers in the index are folded into a range. To produce this document, try running these commands from a Linux command-line:
 
 ``
     $ wget http://css4.pub/2017/musick/musick.html -o foo.html;
@@ -49,7 +55,7 @@ You can view the resulting PDF [here](http://css4.pub/2017/musick/musick.pdf).
 
 ### Multifile Table of Contents
 
-For longer books, it makes sense to split chapters into separate files. Generating a Table of Contents across all files is tricky in JavaScript since scripts only see one file at a time. In Prince, you can work around this limitation with a two-pass solution (see ) where the first pass collects items for the ToC, and the second pass generates the PDF with the ToC.
+For longer books, it makes sense to split chapters into separate files. Generating a Table of Contents across all files is tricky in JavaScript since scripts only see one file at a time. In Prince, you can work around this limitation with a two-pass solution (see [The "Two-Pass" Solution](doc-latest/two-pass.html#two-pass)) where the first pass collects items for the ToC, and the second pass generates the PDF with the ToC.
 
 To try this for yourself, first fetch these five sample files into your own file system, e.g. by running:
 
@@ -67,3 +73,4 @@ Then, run Prince twice:
     $ prince toc.html ch1.html ch2.html -o book.pdf;
 
 You can view the resulting PDF [here](http://css4.pub/2018/multifile-toc/book.pdf).
+

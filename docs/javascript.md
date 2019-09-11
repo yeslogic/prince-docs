@@ -9,25 +9,29 @@ JavaScript can be used to transform documents by generating tables of contents a
 
 Scripts can access and modify the input document using the W3C standard DOM (Document Object Model). Prince also supports some additional properties and methods described below.
 
-Please note that Prince is not running JavaScript by default - it needs to be explicitly enabled. See .
+Prince is not running JavaScript by default - it needs to be explicitly enabled. See [Applying JavaScript in Prince](doc-latest/apply-javascript.html#applying-javascript).
 
 JavaScript in Printed Media
 ---------------------------
 
 Prince is a user agent producing primarily documents meant to be printed, and as such, some limitations are in place that set it apart from most other user agents that support JavaScript.
 
-The most notable difference is the fact that a printed page cannot be interactive, being static in nature: a document cannot be modified after it is deemed to be ready for print. JavaScript can be run twice only: the first time it is run before layout, where it interacts with and modifies the layout (and the DOM structure). Once layout is finished, JavaScript can be run a second time from the `complete` event handler (see ). However, this time it is only allowed to inspect the layout and cannot modify the DOM. See also .
+The most notable difference is the fact that a printed page cannot be interactive, being static in nature: a document cannot be modified after it is deemed to be ready for print. JavaScript can be run twice only: the first time it is run before layout, where it interacts with and modifies the layout (and the DOM structure). Once layout is finished, JavaScript can be run a second time from the `complete` event handler (see [Event Handling](doc-latest/javascript.html#js-event)). However, this time it is only allowed to inspect the layout and cannot modify the DOM. See also [The "Two-Pass" Solution](doc-latest/two-pass.html#two-pass).
 
 A consequence of the non-interactive nature of printed media is that any interactive events, such as e.g. `onClick`, do not make sense, and will never fire.
-
-Prince allows also for scripts to be passed directly to the PDF, to be executed when the PDF file is opened. The `` property is used for this purpose. A common use case is to activate the "Print" dialog automatically. See also .
 
 JavaScript in Prince
 --------------------
 
 Prince supports most of ECMAScript 5th edition (ES5), but not strict mode. Later editions of ECMAScript are not supported.
 
-A full list of all supported JavaScript objects, methods and properties can be found in the [References](doc-latest/doc-refs.html) section in . Here we shall just illustrate a few highlights from Prince's JavaScript support.
+JavaScript is not run by default - it needs to be explicitly enabled. See [Applying JavaScript in Prince](doc-latest/apply-javascript.html#applying-javascript).
+
+In addition to normal JavaScript run in the document, Prince allows also for scripts to be passed directly to the PDF, to be executed when the PDF file is opened (`prince-pdf-script`), or triggered by specific events (`prince-pdf-event-scripts`). See [Script Functions](doc-latest/gen-content.html#scriptfunc) and [PDF Actions](doc-latest/pdf-output.html#pdf-actions) for more details.
+
+These PDF scripts, known as "Document Action" scripts, will always be run. Note, however, that these scripts are dependent on the PDF viewer, and in many cases might only work in Adobe Acrobat products.
+
+A full list of all supported JavaScript objects, methods and properties can be found in the [References](doc-latest/doc-refs.html) section in [JavaScript Support](doc-latest/doc-refs.html#js-support). Here we shall just illustrate a few highlights from Prince's JavaScript support.
 
 ### Logging
 
@@ -54,7 +58,7 @@ When the document has been fully parsed and is ready for processing, Prince will
 
 These load events can be captured by setting the `onload` attribute on the `body` element in HTML documents, or by setting the `window.onload` property or calling `window.addEventListener`.
 
-When document conversion has finished, Prince will fire the `complete` event on the `Prince` object. This event can be captured by calling `Prince.addEventListener`, and is useful for logging document statistics, or for using the output for .
+When document conversion has finished, Prince will fire the `complete` event on the `Prince` object. This event can be captured by calling `Prince.addEventListener`, and is useful for logging document statistics, or for using the output for [The "Two-Pass" Solution](doc-latest/two-pass.html#two-pass).
 
 When multiple documents are processed into one PDF, the `complete` event will only fire once, on the first document.
 
@@ -72,7 +76,7 @@ The [`Prince.pageCount`](doc-latest/doc-refs.html#window.Prince.pageCount) prope
 
     Prince.addEventListener("complete", logPageCount, false);
 
-See also for another use of accessing document properties after the document conversion has finished.
+See also [The "Two-Pass" Solution](doc-latest/two-pass.html#two-pass) for another use of accessing document properties after the document conversion has finished.
 
 ### The Prince Object
 
@@ -84,9 +88,9 @@ The [`Prince`](doc-latest/doc-refs.html#window.Prince) object can be used to con
     Prince.convertToFile(JSON, OutputFileName, ...optional extra job resources)
     Prince.convertToBuffer(JSON, ...optional extra job resources)
 
-The [`Prince.addScriptFunc`](doc-latest/doc-refs.html#window.Prince.addScriptFunc) method takes two arguments: the string name that will be exposed to CSS, and the function itself. See for an example.
+The [`Prince.addScriptFunc`](doc-latest/doc-refs.html#window.Prince.addScriptFunc) method takes two arguments: the string name that will be exposed to CSS, and the function itself. See [Script Functions](doc-latest/gen-content.html#scriptfunc) for an example.
 
-[`Prince.trackBoxes`](doc-latest/doc-refs.html#window.Prince.trackBoxes) is a bool that will enable the box tracking API if set to true, so that it can be used later in the `complete` event. See .
+[`Prince.trackBoxes`](doc-latest/doc-refs.html#window.Prince.trackBoxes) is a bool that will enable the box tracking API if set to true, so that it can be used later in the `complete` event. See [The Box Tracking API](doc-latest/javascript.html#js-box).
 
 The [`Prince.convertToFile`](doc-latest/doc-refs.html#window.Prince.convertToFile) and [`Prince.convertToBuffer`](doc-latest/doc-refs.html#window.Prince.convertToBuffer) methods allow you to start new Prince jobs:
 
@@ -100,7 +104,13 @@ The [`Prince.convertToFile`](doc-latest/doc-refs.html#window.Prince.convertToFil
 
 - returns ArrayBuffer if successful, null if not
 
-Whereby `JSON` is a job description similar to the one specified in the , while the optional extra job resource arguments are ArrayBuffers or strings that can be referenced from the JSON using the `job-resource:` URLs. See .
+Whereby `JSON` is a job description similar to the one specified in the [Prince Control Protocol](doc-latest/cmd-control.html#cmd-control), while the optional extra job resource arguments are ArrayBuffers or strings that can be referenced from the JSON using the `job-resource:` URLs. See [Prince Control Protocol](doc-latest/cmd-control.html#cmd-control).
+
+The property [`Prince.failStatus`](doc-latest/doc-refs.html#window.Prince.failStatus) is a boolean which can be set to trigger an explicit failure status through JavaScript, based on custom criteria. See also [Fail-Safe Options](doc-latest/cmd-control.html#fail-safe-options).
+
+It can be set to true by a script that runs after layout in the `oncomplete` handler (see [Event Handling](doc-latest/javascript.html#js-event)) and checks for complex conditions, like overlapping content (see [The Box Tracking API](doc-latest/javascript.html#js-box) and the [Detecting Overflow](http://www.princexml.com/forum/topic/3603/detecting-overflow) sample) or some other user-defined issue that you want to trigger the fail-safe.
+
+For example, perhaps there should be only one page: you check the page count (see [Document Statistics](doc-latest/javascript.html#js-document-stats)), and if it's greater than one, you log a warning and trigger the fail-safe to ensure that no PDF is generated.
 
 ### The PDF Object
 
@@ -145,7 +155,7 @@ Other PDF properties, which are set by assignment, include:
 
     PDF.lang
 
-There is one more PDF object not mentioned so far: the [`PDF.pages`](doc-latest/doc-refs.html#window.PDF.pages) object is different from all preceding PDF objects - the latter ones are set before document conversion begins, while the former becomes available only *after* the `complete` event (see ) and returns a list of *boxes* - see .
+There is one more PDF object not mentioned so far: the [`PDF.pages`](doc-latest/doc-refs.html#window.PDF.pages) object is different from all preceding PDF objects - the latter ones are set before document conversion begins, while the former becomes available only *after* the `complete` event (see [Event Handling](doc-latest/javascript.html#js-event)) and returns a list of *boxes* - see [The Box Tracking API](doc-latest/javascript.html#js-box).
 
 ### The Box Tracking API
 
@@ -154,7 +164,7 @@ The box tracking API must be enabled with [`Prince.trackBoxes`](doc-latest/doc-r
 ``
     Prince.trackBoxes = true;
 
-It then becomes available in the `complete` event (see ), when you can call the [`getPrinceBoxes()`](doc-latest/doc-refs.html#window.Element.prototype.getPrinceBoxes) method while iterating through the required DOM elements, to return a list of *boxes*.
+It then becomes available in the `complete` event (see [Event Handling](doc-latest/javascript.html#js-event)), when you can call the [`getPrinceBoxes()`](doc-latest/doc-refs.html#window.Element.prototype.getPrinceBoxes) method while iterating through the required DOM elements, to return a list of *boxes*.
 
 ``
     Prince.addEventListener("complete", function() {
@@ -166,7 +176,7 @@ It then becomes available in the `complete` event (see ), when you can call the 
         }
     }, false);
 
-The [`PDF.pages`](doc-latest/doc-refs.html#window.PDF.pages) array mentioned earlier (see ) also is available only after the `complete` event and also returns a list of *boxes* (see ).
+The [`PDF.pages`](doc-latest/doc-refs.html#window.PDF.pages) array mentioned earlier (see [The PDF Object](doc-latest/javascript.html#js-pdf)) also is available only after the `complete` event and also returns a list of *boxes* (see [Page regions](doc-latest/paged.html#page-regions)).
 
 ``
     function printbox(str,box) {
@@ -217,13 +227,13 @@ The [`PDF.pages`](doc-latest/doc-refs.html#window.PDF.pages) array mentioned ear
 
 The `x`, `y`, `w` and `h` measures, defining respectively the x- and y-coordinates and the width and height of the *box*, use the same coordinate system as the PDF, i.e. the box tracking units are measured in points (`pt`) and the origin is the lower left corner of the page.
 
-The box with the value `BODY` represents the *page area* returned by [`PDF.pages`](doc-latest/doc-refs.html#window.PDF.pages) (and thus is not necessarily equivalent with the `body` element); the content of the *page-margin boxes* is not included in the tree (see for the definition of *page area* and *page-margin boxes*).
+The box with the value `BODY` represents the *page area* returned by [`PDF.pages`](doc-latest/doc-refs.html#window.PDF.pages) (and thus is not necessarily equivalent with the `body` element); the content of the *page-margin boxes* is not included in the tree (see [Page regions](doc-latest/paged.html#page-regions) for the definition of *page area* and *page-margin boxes*).
 
 The properties of a *box* can be queried with the [`BoxInfo()`](doc-latest/doc-refs.html#window.BoxInfo) method.
 
-Since the box tracking API is available only *after* the `complete` event, it cannot be used to modify the document (see ).
+Since the box tracking API is available only *after* the `complete` event, it cannot be used to modify the document (see [JavaScript in Printed Media](doc-latest/javascript.html#js-print)).
 
-However, see for making use of its output. Two further sample applications of the box tracking API can be seen in the [Changebars](//www.princexml.com/forum/topic/3516/changebars) example, and in [Detecting Overflow](//www.princexml.com/forum/topic/3603/detecting-overflow).
+However, see [The "Two-Pass" Solution](doc-latest/two-pass.html#two-pass) for making use of its output. Two further sample applications of the box tracking API can be seen in the [Changebars](//www.princexml.com/forum/topic/3516/changebars) example, and in [Detecting Overflow](//www.princexml.com/forum/topic/3603/detecting-overflow).
 
 ### Unsupported DOM Properties
 
@@ -232,5 +242,4 @@ The following DOM properties are not supported in Prince:
 ``
     document.write
     window.setInterval
-
 

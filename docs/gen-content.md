@@ -5,34 +5,34 @@ title: Generated Content
 Generated Content
 -----------------
 
-Generated content is text and other content that is not found in the original input document, but is added to the output from a style sheet using the CSS `` property. Useful applications of this property include , or .
+Generated content is text and other content that is not found in the original input document, but is added to the output from a style sheet using the CSS `content` property. Useful applications of this property include [Page regions](doc-latest/paged.html#page-regions), [List markers](doc-latest/lists.html#content-list-markers) or [Footnotes](doc-latest/footnotes.html#footnotes).
 
 ### Generated Content Functions
 
-Generated content is inserted by means of several functions that typically are used within the `` property. However, please note that these functions are not unique to the `content` property, but can be used for the same purpose in several other ones, namely:
+Generated content is inserted by means of several functions that typically are used within the `content` property. However, please note that these functions are not unique to the `content` property, but can be used for the same purpose in several other ones, namely:
 
--   ``
--   ``
--   ``
--   ``
--   ``
+-   `content`
+-   `prince-bookmark-label`
+-   `prince-pdf-page-label`
+-   `prince-tooltip`
+-   `string-set`
 
-See also the section on for additional details on these functions.
+See also the section on [CSS Functional Expressions](doc-latest/doc-refs.html#css-functions) for additional details on these functions.
 
 The most simple use of generating content in these properties is to insert a literal string. A literal string can also be passed as an argument to the `leader()` function, which expands to fill the available space on the line like justified text, by repeating the string as many times as necessary.
 
 The properties can also insert external content fetched from another resource. This can be done with the following functions:
 
 -   the `url(url)` function, returning the text content at the given URL,
--   the `target-content(url)` function, referencing the text content of the linked element (see ), or
+-   the `target-content(url)` function, referencing the text content of the linked element (see [Using target-content()](doc-latest/gen-content.html#target-content)), or
 -   the `prince-base-url()` function, returning the base URL of the current document.
 
 It can also be done with the `prince-fallback(url)` function, which works just like the `url()` function, but also has the possibility of specifying a fallback `content`, in case the loading of the URL should fail.
 
 The content to be inserted can also be fetched from the attributes of other elements with the `attr(attribute-name)` function, or from other elements with the following mechanisms:
 
--   Any block-level element can be removed from the normal document flow, to be inserted in a page region: it is best removed with the `` property and its `running(name)` function, and inserted with the `element(name)` function. Alternatively, it can be removed with the `` property, to be inserted with the `flow(name)` function. See the documentation for for more details.
--   An element can be referenced with the `string(ident)` function after having been defined in the `` property with the `content()` function. This does not remove the element from the natural document flow, but instead copies it into the page region. See .
+-   Any block-level element can be removed from the normal document flow, to be inserted in a page region: it is best removed with the `position` property and its `running(name)` function, and inserted with the `element(name)` function. Alternatively, it can be removed with the `prince-flow` property, to be inserted with the `flow(name)` function. See the documentation for [Taking elements from the document](doc-latest/paged.html#content-taking-elements) for more details.
+-   An element can be referenced with the `string(ident)` function after having been defined in the `string-set` property with the `content()` function. This does not remove the element from the natural document flow, but instead copies it into the page region. See [Copying content from the document](doc-latest/paged.html#content-copying-text).
 
 The following functions can also be used for different forms of counters:
 
@@ -41,9 +41,9 @@ The following functions can also be used for different forms of counters:
 -   the `target-counter(url, counter)` function retrieves the value of the innermost counter with a given name at the given URL, and
 -   the `target-counters(url, counter, "separator")` function retrieves the value of all counters of a given name from the end of the given URL.
 
-All counter functions can take an optional argument to define the counter style (see ). Prince also offers two mechanisms to create user-defined counter styles: either by means of the `prince-script()` function (see below, and ), or by means of the generated content functions `repeat(string+)`, defining a sequentially repeated pattern for numbering the items, or `symbols(string+)`, defining the symbols used for numbering the items.
+All counter functions can take an optional argument to define the counter style (see [Counter styles](doc-latest/gen-content.html#counter-styles)). Prince also offers two mechanisms to create user-defined counter styles: either by means of the `prince-script()` function (see below, and [User-defined counter styles](doc-latest/gen-content.html#counter-user-styles)), or by means of the generated content functions `repeat(string+)`, defining a sequentially repeated pattern for numbering the items, or `symbols(string+)`, defining the symbols used for numbering the items.
 
-Last but not least, Prince supports arbitrary JavaScript functions to be called from CSS generated content using the `prince-script()` function (see ).
+Last but not least, Prince supports arbitrary JavaScript functions to be called from CSS generated content using the `prince-script()` function (see [Script Functions](doc-latest/gen-content.html#scriptfunc)).
 
 A special function is `prince-glyph-index(int)`, which allows to choose a glyph from a font by the index of that glyph in the font. Note that this is very non-portable, as glyph indices are specific to individual font versions. But it is a possible escape hatch for people who need a specific glyph and don't have any other way of accessing it (by Unicode character or OpenType substitution).
 
@@ -65,11 +65,11 @@ defining the last value the counter was set to on this page, or the same as `sta
 
 The page policy values of the `string()` function are only meaningful for `string()` used in page region content.
 
-For a good example of its use, please see .
+For a good example of its use, please see [Copying content from the document](doc-latest/paged.html#content-copying-text).
 
 ### Before and After pseudo-elements
 
-The `` property can be applied to the `::before` and `::after` pseudo-elements to add generated content before or after an element. For example, adding section numbers in front of headings or including quotation marks around a block of text.
+The `content` property can be applied to the `::before` and `::after` pseudo-elements to add generated content before or after an element. For example, adding section numbers in front of headings or including quotation marks around a block of text.
 
 CSS
 
@@ -84,21 +84,21 @@ Counters are the mechanism provided by CSS to perform numbering. They can be use
 
 #### Initializing and incrementing counters
 
-To use a counter, it first needs to be initialized with the `` property, which can be applied to any element and initializes one or more counters to the specified values, or to zero if no value is specified. The property can be used to reset a counter by re-initializing it.
+To use a counter, it first needs to be initialized with the `counter-reset` property, which can be applied to any element and initializes one or more counters to the specified values, or to zero if no value is specified. The property can be used to reset a counter by re-initializing it.
 
 Unless the resetting of a counter creates a nested counter, the scope of the counter includes the current element and all of its following siblings.
 
-The `` property applies to any element and increments or decrements one or more counters by the specified values, or by one if no value is specified.
+The `counter-increment` property applies to any element and increments or decrements one or more counters by the specified values, or by one if no value is specified.
 
-The `` and `` properties are ignored on elements whose `` property has the value `none`.
+The `counter-increment` and `counter-reset` properties are ignored on elements whose `display` property has the value `none`.
 
 #### Displaying counters
 
-Once initialized, a counter can be displayed with either the `counter()` or `counters()` function in a `` property.
+Once initialized, a counter can be displayed with either the `counter()` or `counters()` function in a `content` property.
 
-The `counter()` function generates a value for the innermost counter, formatted in the optional counter style (decimal by default - see ).
+The `counter()` function generates a value for the innermost counter, formatted in the optional counter style (decimal by default - see [Counter styles](doc-latest/gen-content.html#counter-styles)).
 
-The `counters()` function concatenates counters on different levels, separated with the separator string and formatted in the optional counter style (decimal by default - see ).
+The `counters()` function concatenates counters on different levels, separated with the separator string and formatted in the optional counter style (decimal by default - see [Counter styles](doc-latest/gen-content.html#counter-styles)).
 
 CSS
 
@@ -202,7 +202,7 @@ The following table shows examples of the various counter styles:
 | repeat(x, y, z)          | x, y, z, xx, yy, zz, xxx, yyy, …   |
 | symbols(x, y, z)         | x, y, z, 4, 5, 6, …                |
 
-See also for custom counters.
+See also [User-defined counter styles](doc-latest/gen-content.html#counter-user-styles) for custom counters.
 
 ### Cross-references
 
@@ -210,7 +210,7 @@ Prince supports cross-references using generated content with two special functi
 
 #### Using target-counter()
 
-The `target-counter()` function can be used with the `` property to reference the value of a counter at a linked element.
+The `target-counter()` function can be used with the `content` property to reference the value of a counter at a linked element.
 
 CSS
 
@@ -221,7 +221,7 @@ CSS
 
 This will add a cross-reference after every link with the correct page number determined automatically. For example: \[See page 17\].
 
-The `target-counter()` function can specify any counter, allowing cross-references to refer to list items, chapters or sections as well as pages.
+The `target-counter()` function can specify any counter, allowing cross-references to refer to list items, chapters or sections as well as pages or footnotes.
 
 The `target-counter()` function can also take an optional counter style, similar to the normal counter function.
 
@@ -238,7 +238,7 @@ This will add a cross-reference after every link with the correct chapter number
 
 #### Using target-content()
 
-The `target-content()` function can be used with the `` property to reference the text content of a linked element.
+The `target-content()` function can be used with the `content` property to reference the text content of a linked element.
 
 CSS
 
@@ -251,9 +251,9 @@ This will add a cross-reference after every link that includes the text of the e
 
 ### Script Functions
 
-Prince supports arbitrary JavaScript functions to be called from CSS generated content using the `prince-script()` function (see the `` property). To make the functions available to CSS, the `Prince.addScriptFunc` method is used (see ).
+Prince supports arbitrary JavaScript functions to be called from CSS generated content using the `prince-script()` function (see the `content` property). To make the functions available to CSS, the `Prince.addScriptFunc` method is used (see [The Prince Object](doc-latest/javascript.html#js-prince-obj)).
 
-Please note that Prince is not running JavaScript by default - it needs to be explicitly enabled. See .
+Please note that Prince is not running JavaScript by default - it needs to be explicitly enabled. See [Applying JavaScript in Prince](doc-latest/apply-javascript.html#applying-javascript).
 
 CSS
 
@@ -313,4 +313,5 @@ JavaScript
         else return n;
     });
 
-For another way of creating user-defined counter styles, see .
+For another way of creating user-defined counter styles, see [Generated Content Functions](doc-latest/gen-content.html#gen-content-functions).
+

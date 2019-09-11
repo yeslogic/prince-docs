@@ -8,11 +8,11 @@ A list item has two parts: `marker` and `content`.
 
 The `content` part is rendered inside the list item's border box, and is styled the same way as a normal block, such as `div` or `p` element.
 
-The `marker` positioning is determined by the `` property and is styled using the `::marker` pseudo-element.
+The `marker` positioning is determined by the `list-style-position` property and is styled using the `::marker` pseudo-element.
 
 #### List markers
 
-The `` property can be applied to the `::marker` pseudo-element to specify a custom marker for list items.
+The `content` property can be applied to the `::marker` pseudo-element to specify a custom marker for list items.
 
 CSS
 
@@ -21,7 +21,7 @@ CSS
 
 #### List marker position
 
-List markers are rendered outside the list item in the left margin area by default. If the CSS property `` has value `inside`, the marker is rendered as the first inline box inside the list item.
+List markers are rendered outside the list item in the left margin area by default. If the CSS property `list-style-position` has value `inside`, the marker is rendered as the first inline box inside the list item.
 
 CSS
 
@@ -36,16 +36,16 @@ CSS
 
 Output
 
-1.  This list item sets the `` to `inside`, so the list marker is rendered inside the principal box of `li`.
-2.  This list item sets the `` to `outside`, so the list marker is rendered outside the principal box of `li`.
+1.  This list item sets the `list-style-position` to `inside`, so the list marker is rendered inside the principal box of `li`.
+2.  This list item sets the `list-style-position` to `outside`, so the list marker is rendered outside the principal box of `li`.
 
 When the marker position is `outside`, it is rendered outside the `li` principal box. If you want the marker to appear inside the principal box of `ol`, make sure to give `ol` enough left padding or `li` enough left margin.
 
 #### List marker type
 
-Different list marker types can be chosen by setting the CSS property `` to different values: `disc` | `hyphen` | `decimal` | `lower-alpha` | ...
+Different list marker types can be chosen by setting the CSS property `list-style-type` to different values: `disc` | `hyphen` | `decimal` | `lower-alpha` | ...
 
-The property `` applies to list items and determines the type of marker that they receive. The following table shows examples of some list style types (a table with examples of all supported options for ordered lists, see ).
+The property `list-style-type` applies to list items and determines the type of marker that they receive. The following table shows examples of some list style types (a table with examples of all supported options for ordered lists, see [Counter styles](doc-latest/gen-content.html#counter-styles)).
 
 |                              |                                 |
 |------------------------------|---------------------------------|
@@ -70,9 +70,9 @@ Output
 
 #### List marker style
 
-The list marker can also be replaced by an image by using the `` property.
+The list marker can also be replaced by an image by using the `list-style-image` property.
 
-The shorthand property `` can be used to set the three properties ``, `` and `` together.
+The shorthand property `list-style` can be used to set the three properties `list-style-image`, `list-style-position` and `list-style-type` together.
 
 Alternatively, the `::marker` pseudo-element can be used to style the list item marker, giving full control over its content, width, alignment and so on.
 
@@ -93,3 +93,4 @@ CSS
 Output
 
 ![Marker example](doc-latest/images/marker.png)
+

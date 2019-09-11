@@ -19,4 +19,5 @@ Furthermore the range of pages to rasterize and the resolution of the raster out
 
 If you want to rasterize the HTML to an image format that supports transparency (PNG, not JPEG) and have a transparent background, in order to composite it with something else later, the command-line option [`--raster-background`](doc-latest/doc-refs.html#cl-raster-background) can be used with the value `transparent`.
 
-A full list of rasterization possibilities can be found in the section.
+A full list of rasterization possibilities can be found in the [Raster Output Options](doc-latest/doc-refs.html#cmd-raster) section.
+

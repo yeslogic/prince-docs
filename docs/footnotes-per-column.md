@@ -6,17 +6,22 @@ Footnotes per Column
 --------------------
 
 You need  
--   `: prince-column-footnote`
+[Columns](doc-latest/columns.html#columns)
 
-Prince has a simple way of creating footnotes: the `@footnote` page area, where footnotes can be floated to with the `` property. For details see .
+[Page and column floats](doc-latest/floats.html#float-extension-page-column)
 
-In a multi-column layout (see ), footnotes can be placed at the bottom of the page, spanning all columns. But usually you want to position the footnote at the bottom of the column the footnote call appears in.
+[Footnotes](doc-latest/footnotes.html#footnotes)
 
-To achieve this, the values `prince-column-footnote` or `prince-column-inline-footnote` of the `` property are used.
+-   `float: prince-column-footnote`
+
+Prince has a simple way of creating footnotes: the `@footnote` page area, where footnotes can be floated to with the `float` property. For details see [Footnotes](doc-latest/footnotes.html#footnotes).
+
+In a multi-column layout (see [Columns](doc-latest/columns.html#columns)), footnotes can be placed at the bottom of the page, spanning all columns. But usually you want to position the footnote at the bottom of the column the footnote call appears in.
+
+To achieve this, the values `prince-column-footnote` or `prince-column-inline-footnote` of the `float` property are used.
 
 The value `prince-column-footnote` transforms the element into a column footnote: it creates a footnote call in the place where it appears in its natural flow, and moves the element to the bottom of the column. The footnote marker is placed outside of the block of the footnote. With the value `prince-column-inline-footnote`, the footnote marker is placed inside of the block of the footnote.
 
 ``
     float: prince-column-footnote
-
 

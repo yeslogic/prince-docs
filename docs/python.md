@@ -4,7 +4,7 @@ title: Using Prince with Python
 
 ### Using Prince with Python
 
-Prince can be called from Python using the command-line interface, like this:
+Prince can be called from Python using the [command-line interface](doc-latest/doc-refs.html#command-line), like this:
 
 ``
     import subprocess
@@ -58,5 +58,4 @@ Alternatively, it is possible for the Python script to read the PDF output direc
       pdf = outs
 
     print("PDF is "+str(len(pdf))+" bytes in size")
-
 

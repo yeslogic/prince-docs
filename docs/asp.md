@@ -4,7 +4,7 @@ title: The ActiveX/COM Wrapper
 
 ### The ActiveX/COM Wrapper
 
-The [ActiveX/COM wrapper](wrappers.html#wrapper-activex) allows Prince to be called from various languages: ASP, ActiveX, COM, Visual Basic and also Coldfusion.
+The [ActiveX/COM wrapper](wrappers.html#wrapper-activex) allows Prince to be called from various languages: [ASP](doc-latest/asp.html#asp), [ActiveX, COM, Visual Basic](doc-latest/activex.html#activex) and also [Coldfusion](doc-latest/coldfusion.html#coldfusion).
 
 This package contains two files:
 
@@ -13,7 +13,7 @@ This package contains two files:
 
 #### Using Prince with ASP
 
-Prince can be called from ASP pages using the ActiveX/COM interface.
+Prince can be called from ASP pages using the [ActiveX/COM interface](doc-latest/asp.html#activex-com).
 
 This interface is provided in the form of an ActiveX DLL file that needs to be registered in the Windows registry using REGSVR32.EXE:
 
@@ -44,5 +44,4 @@ The following is some sample code for illustration:
         res = "Unsuccessful"
     End If
     %>
-
 

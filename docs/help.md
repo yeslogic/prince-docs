@@ -7,8 +7,8 @@ Help
 
 The Prince User Guide tries to be exhaustive in explaining how to use the application and its features. However, there might always be something not answered in the documentation, or something not working as expected. There are a couple of ways to get help to solve the problems:
 
--   The section addresses possible common issues after installing and starting to use Prince;
--   The section provides answers to the most frequently asked questions;
+-   The [Troubleshooting](doc-latest/troubleshooting.html#troubleshooting) section addresses possible common issues after installing and starting to use Prince;
+-   The [Frequently Asked Questions](doc-latest/faq.html#faq) section provides answers to the most frequently asked questions;
 -   The [forum](//www.princexml.com/forum/) is an excellent place where to find an answer to an issue, or where to ask for help;
 -   You can [contact us](//www.princexml.com/contact/) for support.
 

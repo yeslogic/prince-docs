@@ -30,7 +30,7 @@ The command-line option [`--ssl-cacert`](doc-latest/doc-refs.html#cl-ssl-cacert)
 
 The command-line option [`--ssl-version`](doc-latest/doc-refs.html#cl-ssl-version) sets the minimum version of SSL to allow. It may be one of: `default`, `tlsv1`, `tlsv1.0`, `tlsv1.1` or `tlsv1.2`. The value `default` lets libcurl choose. The option [`--insecure`](doc-latest/doc-refs.html#cl-insecure) disables SSL verification. Please note that using this option is not recommended!
 
-Prince makes use of the libcurl library to process network locations - see . Please note that command-line options are passed to curl as-is. On some systems curl might use a library other than OpenSSL to handle SSL - in those cases the SSL-related command-line options might behave in a slightly different way. In case of doubt, please check your own curl documentation.
+Prince makes use of the libcurl library to process network locations - see [Acknowledgments](doc-latest/doc-refs.html#acknowledgments). Please note that command-line options are passed to curl as-is. On some systems curl might use a library other than OpenSSL to handle SSL - in those cases the SSL-related command-line options might behave in a slightly different way. In case of doubt, please check your own curl documentation.
 
 ### Client Certificates
 
@@ -48,3 +48,4 @@ If an HTTP proxy server is required, it can be specified with the [`--http-proxy
 The option [`--http-timeout`](doc-latest/doc-refs.html#cl-http-timeout) can be used to define the HTTP timeout in seconds, which can be useful for slow servers.
 
 Prince can also disable downloading multiple HTTP resources at once with the [`--no-parallel-downloads`](doc-latest/doc-refs.html#cl-no-parallel-downloads) command-line option.
+

@@ -9,7 +9,7 @@ Prince for Books is a new venture that allows us to spend more time on features 
 
 The initial focus of work is on the features common to all books: making the pagination and line-breaking choices expected of books, by featuring a few extensions to CSS and fine-tuned algorithms.
 
-For the time being, Prince for Books is only available as a a command-line application named `prince-books`. It is used like the standard Prince - see for available options.
+For the time being, Prince for Books is only available as a a command-line application named `prince-books`. It is used like the standard Prince - see [Command-line Reference](doc-latest/doc-refs.html#command-line) for available options.
 
 `prince-books OPTIONS FILES` \[`-o` <span class="replaceable">PDF</span>\]
 
@@ -18,11 +18,11 @@ To download it, head over to the [Prince for Books download page](books.html). I
 Line breaking
 -------------
 
-Prince for Books introduces a few new CSS properties to try handling line breaks in a more granular way, and additionally, it tries harder to avoid a hyphen at the end of a page and at the end of the last full line, as well as for ragged text (i.e. for left-aligned or centered text). It also tries to avoid a short last line, especially if it is shorter than the value of ``.
+Prince for Books introduces a few new CSS properties to try handling line breaks in a more granular way, and additionally, it tries harder to avoid a hyphen at the end of a page and at the end of the last full line, as well as for ragged text (i.e. for left-aligned or centered text). It also tries to avoid a short last line, especially if it is shorter than the value of `text-indent`.
 
 ### The property `prince-wrap-inside`
 
-The property `` offers a way to instruct Prince how to break text: the keyword `phrase` is for marking up a phrase that one would weakly prefer to keep on a single line. It adds to Prince's perceived cost of breaking within that phrase, but only a small cost, comparable to the cost of hyphenating a compound adjective such as ‘midyear’.
+The property `prince-wrap-inside` offers a way to instruct Prince how to break text: the keyword `phrase` is for marking up a phrase that one would weakly prefer to keep on a single line. It adds to Prince's perceived cost of breaking within that phrase, but only a small cost, comparable to the cost of hyphenating a compound adjective such as ‘midyear’.
 
 The keyword `avoid` is a stronger directive: it avoids breaking the text to which the property is applied even if it causes the affected text to be unusually tight, or the previous line to be unusually loose; but not if either line would become truly exceptionally tightly or loosely spaced.
 
@@ -53,7 +53,7 @@ The fulfilment of the law and of the prophets
 
 ### The property `prince-line-break-choices`
 
-Another property for fine-tuning the line breaking behaviour is ``.
+Another property for fine-tuning the line breaking behaviour is `prince-line-break-choices`.
 
 The keyword `title` is intended for title pages of books or chapters, where phrasing considerations are of prime consideration even at the cost of extremely unbalanced lines.
 
@@ -67,7 +67,7 @@ A disadvantage of lookahead is that any "mistakes" (that is, differences from wh
 
 This means that the non-lookahead versions might be a better choice in jobs where Prince's line breaks will be accepted without human oversight; whereas if a typesetter will look for and correct any problems in the rag of the paragraph, then the lookahead versions will typically give a better starting point.
 
-A typesetter's intervention currently involves modifying the HTML: it is not requireed to assign an `id` to each paragraph, but it is nevertheless common practice to do so for making other changes, such as changing the number of lines in a paragraph for pagination purposes (whether using `` or `` or ``), or assigning a unique value to each chapter in order to change how many lines are on the last page of the chapter (say, by adding `1pt` to the inside margin). See also .
+A typesetter's intervention currently involves modifying the HTML: it is not requireed to assign an `id` to each paragraph, but it is nevertheless common practice to do so for making other changes, such as changing the number of lines in a paragraph for pagination purposes (whether using `prince-n-lines` or `word-spacing` or `letter-spacing`), or assigning a unique value to each chapter in order to change how many lines are on the last page of the chapter (say, by adding `1pt` to the inside margin). See also [Spread Balancing](doc-latest/prince-for-books.html#pfb-spreadbalancing).
 
 To illustrate the difference, one could also say that non-lookahead versions give paragraph shapes reminiscent of those given by word processors and web browsers, while the lookahead versions come slightly closer to what one might find in books.
 
@@ -104,7 +104,7 @@ HTMLBook uses a slightly non-standard representation of subtitles: not using `hg
 
 ### The property `prince-forced-breaks`
 
-The property `` controls whether a line ended by a "preserved newline" (such as introduced by `<br>`) should preferably appear to be a normal full line (as if ended only by normal line wrapping), or whether being shorter than a normal full line is actually preferable, for example to mark a deliberate break.
+The property `prince-forced-breaks` controls whether a line ended by a "preserved newline" (such as introduced by `<br>`) should preferably appear to be a normal full line (as if ended only by normal line wrapping), or whether being shorter than a normal full line is actually preferable, for example to mark a deliberate break.
 
 The `br` element would usually create a visually forced break, treating that line much as if it were the last line of a paragraph. For example, it would continue to do so in any UA not supporting the property `prince-forced-breaks` (thus getting in the way of reading the content in some other UA, or using the same source document for web/epub deployment), or if the stylesheet doesn't load. Tweaking line breaks using `prince-forced-breaks: full` is not intended to be consciously noticeable by readers, so `br` would not be the best approximation in HTML.
 
@@ -114,7 +114,7 @@ CSS
     lb { white-space: pre; }
     lb::before { content: "\A"; prince-forced-breaks: full; }
 
-This example shows the styling for an `<lb />` element, which can be added to force breaks. Of course we first need to instruct Prince to respect "preserved newlines" - we do this with the `` property.
+This example shows the styling for an `<lb />` element, which can be added to force breaks. Of course we first need to instruct Prince to respect "preserved newlines" - we do this with the `white-space` property.
 
 Literally using the element name `lb` in the html namespace would make the document not valid HTML. The element could be either in a non-HTML namespace, or one could use a custom element to be inserted with JavaScript.
 
@@ -139,19 +139,19 @@ The difference is particularly marked in justified text, where lines ended by `p
 Spread Balancing
 ----------------
 
-A prominent new feature is the concept of "spread balancing": Prince for Books can try to ensure that the content on two-page spreads is the same height. Due to the `` and `` properties (see ) it is possible for one page to have fewer lines than the other, and this unevenness looks upsetting.
+A prominent new feature is the concept of "spread balancing": Prince for Books can try to ensure that the content on two-page spreads is the same height. Due to the `widows` and `orphans` properties (see [Widows and orphans](doc-latest/paged.html#widows-and-orphans)) it is possible for one page to have fewer lines than the other, and this unevenness looks upsetting.
 
 Prince for Books also tries to reduce the number of uneven spreads.
 
 ### The property `prince-page-fill`
 
-The property `` is used to turn on the page balancing mechanism. Prince for Books will check how much space is left at the bottom of each page of a two-page spread and compares it with the line-height to determine whether the pages end with different numbers of lines. If one page is longer than the other, Prince will attempt to repack that page one line shorter, so that they match in height. If it is still unbalanced, which might happen due to triggering another widows/orphans constraint, it will revert to the original layout.
+The property `prince-page-fill` is used to turn on the page balancing mechanism. Prince for Books will check how much space is left at the bottom of each page of a two-page spread and compares it with the line-height to determine whether the pages end with different numbers of lines. If one page is longer than the other, Prince will attempt to repack that page one line shorter, so that they match in height. If it is still unbalanced, which might happen due to triggering another widows/orphans constraint, it will revert to the original layout.
 
 Prince also includes the bottom margin in the evaluation for balancing, allowing said margin to be truncated for purposes of deciding whether the two pages can be considered to have the same length.
 
 ### The property `prince-n-lines`
 
-Another way to address page balancing is by using the property ``. It is for use in the pagination phase of typesetting, for ensuring that page ends are even while avoiding widows and other awkward breaks.
+Another way to address page balancing is by using the property `prince-n-lines`. It is for use in the pagination phase of typesetting, for ensuring that page ends are even while avoiding widows and other awkward breaks.
 
 Typically, the best paragraph to apply this property to will be either already long and/or currently has either a very short or almost full last line, so that the paragraph doesn't need to change much in length compared to its existing "length" (as reckoned by its height). That is, the typesetter can choose a good candidate by looking at how much the last line would need to shrink or grow (including a word or two for the next line if growing), and how many times that length would fit in the height of the paragraph, with more being better.
 
@@ -167,11 +167,12 @@ Alternatives to adjusting a paragraph length include adding extra space around a
 
 ### Fractional Widows
 
-Another feature in Prince for Books are the "fractional widows": the `` property is allowed a value expressed as percentage.
+Another feature in Prince for Books are the "fractional widows": the `widows` property is allowed a value expressed as percentage.
 
 ``
     p {
-      : 50%;
+      widows: 50%;
     }
 
 This indicates indicates that one widow line is accepted, as long as the line width is at least the given percentage value of the available page width, to avoid the worst case of having a widow line that is only one or two words long.
+

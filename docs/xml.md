@@ -30,16 +30,16 @@ Prince does not support the `xml:base` attribute, therefore hyperlinks must be a
 Prince provides sensible default styling behavior for several common XML vocabularies:
 
 (X)HTML  
-Prince styles HTML or XHTML documents by applying a default style sheet for formatting headings, paragraphs, tables, lists, inline elements and images. The default style sheet can be overridden or extended by user or author style sheets - see .
+Prince styles HTML or XHTML documents by applying a default style sheet for formatting headings, paragraphs, tables, lists, inline elements and images. The default style sheet can be overridden or extended by user or author style sheets - see [Applying Style Sheets in Prince](doc-latest/apply-css.html#apply-css).
 
 DocBook  
 Prince styles DocBook documents by applying a default style sheet for formatting headings, paragraphs, tables, lists, inline elements and images. The default style sheet can be overridden or extended by user/author style sheets. (Note that Prince does not process DocBook documents expressed in SGML).
 
 SVG  
-Prince supports a rich subset of SVG 1.1, including basic shapes, paths, text and transformations. All `svg` elements are treated as replaced elements, similar to `img` elements in XHTML, and their content is rendered in a rectangular space. No line breaks or page breaks are made within an `svg` element. (See for details of which elements are supported).
+Prince supports a rich subset of SVG 1.1, including basic shapes, paths, text and transformations. All `svg` elements are treated as replaced elements, similar to `img` elements in XHTML, and their content is rendered in a rectangular space. No line breaks or page breaks are made within an `svg` element. (See [Scalable Vector Graphics (SVG)](doc-latest/svg.html#svg) for details of which elements are supported).
 
 Any other XML  
-No default style sheets will be used, so style sheets will need to be specified by the user or referenced from the document in order for Prince to apply style to the document - see .
+No default style sheets will be used, so style sheets will need to be specified by the user or referenced from the document in order for Prince to apply style to the document - see [Applying Style Sheets in Prince](doc-latest/apply-css.html#apply-css).
 
 Prince does not support XSLT. External XSLT processors can be used and the resulting document can be passed to Prince.
 
@@ -90,5 +90,4 @@ It is possible to specify fallback content that should be used if an included fi
     </xi:include>
 
 If the `report.html` file cannot be loaded then the paragraph saying "No report is available" will be included in the document instead.
-
 

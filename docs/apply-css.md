@@ -2,7 +2,6 @@
 title: Applying Style Sheets in Prince
 ---
 
-
 Applying Style Sheets in Prince
 -------------------------------
 
@@ -21,7 +20,7 @@ Default style sheets
 
 ### Importing Style Sheets
 
-Style sheets may import other style sheets using [`@import`](doc-latest/doc-refs.html#at-import) rules. These rules must occur before any other rules or declarations in the style sheet, and have the effect of importing all the rules and declarations from the specified style sheet. See .
+Style sheets may import other style sheets using [`@import`](doc-latest/doc-refs.html#at-import) rules. These rules must occur before any other rules or declarations in the style sheet, and have the effect of importing all the rules and declarations from the specified style sheet. See [CSS At-rules](doc-latest/doc-refs.html#css-atrules).
 
 ``
     @import "base.css";
@@ -73,3 +72,4 @@ If the conflicting declarations have the same origin and importance, the priorit
 If the conflicting declarations have the same specificity, the declaration that occurs *last* in the style sheet has the *highest* priority.
 
 If the declarations are from different style sheets, the declaration that occurs in the *last* style sheet to be specified has the *highest* priority. This is based on the order that style sheets are specified on the command line and also on the order that `xml-stylesheet` processing instructions occur in the document.
+

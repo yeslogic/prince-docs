@@ -12,4 +12,3 @@ Ruby on Rails
 Node.js  
 [Node API for executing XML/HTML to PDF renderer PrinceXML via prince(1) CLI](https://www.npmjs.com/package/prince)
 
-

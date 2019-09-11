@@ -6,15 +6,19 @@ Fancy Table Captions
 --------------------
 
 You need  
--   
+[Tables](doc-latest/tables.html#tables)
 
-HTML tables only have one caption per table. However, in printed form a table might span several pages (see ) and it might be desirable to have separate captions for the first and the following pages - you might want to add "cont." to the caption of the first one, or otherwise differentiate them. Prince offers an extension mechanism to do so.
+-   [Table captions](doc-latest/tables.html#tables-caption)
 
-As mentioned in , when a table spans across more than one page, the `` property determines whether table captions will be displayed on the first page of a table, or only on the following pages, or repeated on every page that a table appears on. This opens up the possibility to have a different caption on the first and on the following pages.
+[Long Tables](doc-latest/long-tables.html#long-tables)
 
-You might define a caption in HTML for the main table caption - to be displayed on the first page. Additionally, you make another element into a table caption with the `` property - and display it only on the following pages!
+HTML tables only have one caption per table. However, in printed form a table might span several pages (see [Long Tables](doc-latest/long-tables.html#long-tables)) and it might be desirable to have separate captions for the first and the following pages - you might want to add "cont." to the caption of the first one, or otherwise differentiate them. Prince offers an extension mechanism to do so.
 
-The paragraph functioning as a table caption can be hidden in browsers by using .
+As mentioned in [Long Tables](doc-latest/long-tables.html#long-tables), when a table spans across more than one page, the `prince-caption-page` property determines whether table captions will be displayed on the first page of a table, or only on the following pages, or repeated on every page that a table appears on. This opens up the possibility to have a different caption on the first and on the following pages.
+
+You might define a caption in HTML for the main table caption - to be displayed on the first page. Additionally, you make another element into a table caption with the `display` property - and display it only on the following pages!
+
+The paragraph functioning as a table caption can be hidden in browsers by using [CSS Media Queries](doc-latest/doc-refs.html#media-queries).
 
 HTML
 
@@ -48,5 +52,4 @@ CSS
         caption-side: bottom;
         prince-caption-page: following;
     }
-
 

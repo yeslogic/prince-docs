@@ -6,12 +6,18 @@ Dictionary Page Headers
 -----------------------
 
 You need  
--   `: string(term, first)`
--   `: string(term, last)`
+[Page regions](doc-latest/paged.html#page-regions)
 
-A peculiar and interesting use of page headers happens in dictionaries: typically, you might want to display page headers like "a-af", where "a" is the first definition on the page and "af" is the last one. This can easily be obtained by adding to the `string()` function.
+[Generated Content](doc-latest/gen-content.html#gen-content)
 
-The `` property is applied to each definition in the dictionary (the **b:first-child** from the following example), and then the `first` and `last` page policy values are use to select the relevant definition to display in the page header.
+[The optional page-policy value](doc-latest/gen-content.html#gen-content-functions-pagepolicy)
+
+-   `content: string(term, first)`
+-   `content: string(term, last)`
+
+A peculiar and interesting use of page headers happens in dictionaries: typically, you might want to display page headers like "a-af", where "a" is the first definition on the page and "af" is the last one. This can easily be obtained by adding [The optional page-policy value](doc-latest/gen-content.html#gen-content-functions-pagepolicy) to the `string()` function.
+
+The `string-set` property is applied to each definition in the dictionary (the **b:first-child** from the following example), and then the `first` and `last` page policy values are use to select the relevant definition to display in the page header.
 
 ``
     @page {
@@ -31,5 +37,4 @@ The dictionary sample is furthermore noticeable for its use of the optional page
     }
 
     .chapter header { string-set: letter content() }
-
 

@@ -6,13 +6,18 @@ Page Numbering
 --------------
 
 You need  
--   
+[Paged Media](doc-latest/paged.html#paged)
 
--   -   `: counter(page)`
+-   [Selecting pages](doc-latest/paged.html#page-rules)
+
+[Generated Content](doc-latest/gen-content.html#gen-content)
+
+-   [Counters and Numbering](doc-latest/gen-content.html#counters)
+    -   `content: counter(page)`
 
 Paged media is organized in pages - and numbering the pages is a common task: generated content does this for you automatically. The easiest way of doing so is numbering them sequentially from the first to the last page.
 
-To use a counter, it usually first needs to be initialized with the `` property, which can be applied to any element and initializes one or more counters to the specified values, or to zero if no value is specified. Once initialized, the counter will be displayed with the `counter()` function in the `` property.
+To use a counter, it usually first needs to be initialized with the `counter-reset` property, which can be applied to any element and initializes one or more counters to the specified values, or to zero if no value is specified. Once initialized, the counter will be displayed with the `counter()` function in the `content` property.
 
 Page counters work a bit more simple and usually don't need to be explicitly initialized or incremented.
 
@@ -23,7 +28,7 @@ Page counters work a bit more simple and usually don't need to be explicitly ini
       }
     }
 
-However, if you want to restart the numbering after the Preface of your book, you need to name the pages (see ) and the counter needs to be re-initialized with the main content. See also the example .
+However, if you want to restart the numbering after the Preface of your book, you need to name the pages (see [Named pages](doc-latest/paged.html#named-pages)) and the counter needs to be re-initialized with the main content. See also the example [Restarting page numbering](doc-latest/paged.html#ex-restart-page-numbers).
 
 ``
     .preface {
@@ -76,5 +81,4 @@ In some documents, particularly those that are unbound such as office documents,
     }
 
 This rule will generate page footers such as "Page 1 of 89".
-
 

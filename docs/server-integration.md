@@ -25,6 +25,7 @@ Prince Wrappers
 
 Since different server configurations make use of different scripting languages, wrappers in those languages are necessary to invoke Prince. Wrappers for several of the most widely used scripting languages are available for download on the [Wrappers Download Page](wrappers.html).
 
-A useful tool for writing custom wrappers in other languages are the .
+A useful tool for writing custom wrappers in other languages are the [Advanced Command-Line Options](doc-latest/cmd-control.html#advanced-cmd).
 
 For details on the usage of each of the wrappers, please consult the following chapters.
+

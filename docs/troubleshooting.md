@@ -11,7 +11,7 @@ We work hard to make Prince work on multiple platforms (Windows, Linux, etc) and
 
 When running into trouble with Prince, the first thing you should do is to check for any errors. These can be found in the Prince output log.
 
-When launching Prince from the command line, Prince will print any error or warning messages directly to the console, prefixed with `error:` or `warning:` messages. The level of verbosity, or a log file where to print all output, can be controlled with a few command-line . A more advanced control of the output is given by the .
+When launching Prince from the command line, Prince will print any error or warning messages directly to the console, prefixed with `error:` or `warning:` messages. The level of verbosity, or a log file where to print all output, can be controlled with a few command-line [Logging Options](doc-latest/doc-refs.html#cmd-logging). A more advanced control of the output is given by the [Structured Log](doc-latest/cmd-control.html#structured-log).
 
 When using the Prince GUI, the output log is printed to the log window on the bottom left of the main GUI window.
 
@@ -22,7 +22,7 @@ Symptom
     prince: ./picture.bmp: warning: Unknown image format
 
 Explanation  
-Prince supports JPEG, PNG, TIFF and GIF images as well as SVG (see ). If you try to format a document that includes images in a format that is not supported by Prince, such as BMP, you may see the above error message from Prince.
+Prince supports JPEG, PNG, TIFF and GIF images as well as SVG (see [Images](doc-latest/images.html#images)). If you try to format a document that includes images in a format that is not supported by Prince, such as BMP, you may see the above error message from Prince.
 
 Solution  
 The solution is to convert the image file into a format that is supported by Prince. We suggest PNG, which is a well-supported general purpose image format with lossless compression.
@@ -36,3 +36,4 @@ Prince offers a convenient capture/replay system with the two command-line optio
 For assisting in tracking down difficult platform bugs, the `princedebug` script is available on Linux and MacOS X platforms. It is located in `/usr/lib/prince/bin` and runs Prince with the specified command-line arguments, dumping a considerable amount of debug information to two files in the `/tmp` directory, namely `prince.debug` and `prince.strace`. These files contain information about the system and environment in which Prince was run, and about the job in question, so we recommend only submitting them by email when requested to do so, instead of posting them on the forum.
 
 This script is not available on Windows.
+

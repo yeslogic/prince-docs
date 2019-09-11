@@ -19,27 +19,21 @@ Examples
 `prince file.xml`
 
 Convert `file.xml` to `file.pdf`.
-
 `prince doc.html` -o `out.pdf`
 
 Convert `doc.html` to `out.pdf`.
-
 `prince http://example.com` -o `out.pdf`
 
 Convert the `http://example.com` webpage to `out.pdf`. Note that it is necessary to specify the output file when the input is a HTTP or HTTPS URL.
-
 `prince         -s style1.css` -s `style2.css` `input.xml` -o `output.pdf`
 
 Convert `input.xml` to `output.pdf`, applying two user style sheets.
-
 `prince         doc1.html` `doc2.html` -o `out.pdf`
 
 Combine `doc1.html` and `doc2.html` into a single PDF file, `out.pdf`.
-
 `prince doc.html` --raster-output=`doc_%d.png`
 
 Process `doc.html` and rasterize the output to the series of files `doc_1.png`, `doc_2.png`, `doc_3.png` etc.
-
 Specifying input and output
 ---------------------------
 
@@ -188,7 +182,7 @@ Specify the SSL private key file type (PEM, DER). The default is PEM. This optio
 Specify passphrase for the private key.
 
 `--ssl-version=VERSION`  
-Set the minimum version of SSL to allow. May be one of: `default` (let libcurl choose), `tlsv1`, `tlsv1.0`, `tlsv1.1` or `tlsv1.2`.
+Set the minimum version of SSL to allow. May be one of: `default` (let [libcurl](doc-latest/doc-refs.html#acknowledgments) choose), `tlsv1`, `tlsv1.0`, `tlsv1.1` or `tlsv1.2`.
 
 `--insecure`  
 Disable SSL verification (not recommended).
@@ -213,7 +207,7 @@ Apply an external style sheet.
 Specify the media type (eg. print, screen).
 
  `--page-size=SIZE`   
-Specify the page size (eg. A4, "155mm 190mm", etc). The syntax is the same as the `` property in [`@page`](doc-latest/doc-refs.html#at-page) rules, which can take two values for horizontal and vertical dimensions. On the command-line it needs to be written between quotes as a single argument. See also and .
+Specify the page size (eg. A4, "155mm 190mm", etc). The syntax is the same as the `size` property in [`@page`](doc-latest/doc-refs.html#at-page) rules, which can take two values for horizontal and vertical dimensions. On the command-line it needs to be written between quotes as a single argument. See also [Page size](doc-latest/paged.html#page-size) and [Page Size Keywords](doc-latest/doc-refs.html#page-size-keywords).
 
  `--page-margin=MARGIN`   
 Specify the page margin (eg. 20mm).
@@ -233,7 +227,7 @@ Specify the output PDF file.
 Specify the PDF document's language.
 
  `--pdf-profile=PROFILE`   
-Specify the PDF profile (see ) to use.
+Specify the PDF profile (see [PDF Versions and Profiles](doc-latest/pdf-profiles.html#pdf-profiles)) to use.
 
  `--pdf-output-intent=ICC`   
 Specify the ICC profile to use.
@@ -351,16 +345,20 @@ Set the background - allowed values are `transparent` or `white`. It can be used
 `--scanfonts FILES...`  
 Scan font files and create a CSS file.
 
-### Advanced Control and Log Options
+### Advanced Options
 
 `--capture DIR`
 `--replay DIR`  
-The capture/replay system saves a copy of all the information in a job to a specified directory, conveniently allowing it to be replayed later for debugging purposes. See also .
+The capture/replay system saves a copy of all the information in a job to a specified directory, conveniently allowing it to be replayed later for debugging purposes. See also [The capture/replay system](doc-latest/troubleshooting.html#capturereplay).
 
 `--control`  
-The Prince Control Protocol is a synchronous bidirectional protocol that consists of a sequence of "chunks" sent via the standard input and output streams. For more details, please check the detailed documentation in the separate chapter.
+The Prince Control Protocol is a synchronous bidirectional protocol that consists of a sequence of "chunks" sent via the standard input and output streams. For more details, please check the detailed documentation in the separate [Prince Control Protocol](doc-latest/cmd-control.html#cmd-control) chapter.
 
 `--structured-log=LEVEL`  
-The Structured Log option is a formatting option for Prince's output to stderr. For more details, please check the detailed documentation in the separate chapter.
+The Structured Log option is a formatting option for Prince's output to stderr. For more details, please check the detailed documentation in the separate [Structured Log](doc-latest/cmd-control.html#structured-log) chapter.
 
+`--fail-dropped-content`
+`--fail-missing-resources`
+`--fail-missing-glyphs`  
+These three Fail-Safe Options abort the creation of a PDF when one of the conditions is met. For more details, please check the detailed documentation in the separate [Fail-Safe Options](doc-latest/cmd-control.html#fail-safe-options) chapter.
 

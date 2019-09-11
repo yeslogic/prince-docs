@@ -82,4 +82,3 @@ Keywords are *not* case sensitive, thus "A4" and "a4" are equivalent.
 | demy-quarto     | 8.75in × 11.25in  |
 | demy-octavo     | 5.625in × 8.75in  |
 
-

@@ -29,10 +29,10 @@ Solution 1
 Install the [msttcorefonts](http://corefonts.sourceforge.net) package (see your operating system's documentation).
 
 Solution 2  
-Redefine the CSS generic font families to use different TrueType fonts by editing the `fonts.css` file in the Prince installation - see , and .
+Redefine the CSS generic font families to use different TrueType fonts by editing the `fonts.css` file in the Prince installation - see [Installation Layout](doc-latest/installation-layout.html#installation-layout), [Fonts](doc-latest/fonts.html#fonts) and [Redefining the generic font families](doc-latest/redefining-font-families.html#redefining-font-families).
 
 Explanation  
-This problem may be a symptom of the .
+This problem may be a symptom of the [Fontconfig](doc-latest/troubleshooting-install.html#fontconfig).
 
 ### Fontconfig
 
@@ -43,13 +43,13 @@ Symptom
 Explanation  
 Prince uses the [Fontconfig](http://www.fontconfig.org) library on Linux systems to search for fonts. Fontconfig is installed as a standard component on most desktop Linux distributions such as Ubuntu and recent versions of Red Hat Linux.
 
-Some older Linux distributions do not come with fontconfig and this may cause the above error. This error will usually be followed by errors relating to that cannot be found due to the absence of Fontconfig.
+Some older Linux distributions do not come with fontconfig and this may cause the above error. This error will usually be followed by errors relating to [Missing glyphs or fonts](doc-latest/troubleshooting-install.html#missing-fonts) that cannot be found due to the absence of Fontconfig.
 
 Solution 1  
 install Fontconfig (see your operating system's documentation).
 
 Solution 2  
-Redefine the CSS generic font families to use TrueType fonts that are specified directly by their filenames, avoiding the need to use Fontconfig at all. In extreme cases it might be advisable to disable system fonts completely with the [`--no-system-fonts`](doc-latest/doc-refs.html#cl-no-system-fonts) command-line option. See and .
+Redefine the CSS generic font families to use TrueType fonts that are specified directly by their filenames, avoiding the need to use Fontconfig at all. In extreme cases it might be advisable to disable system fonts completely with the [`--no-system-fonts`](doc-latest/doc-refs.html#cl-no-system-fonts) command-line option. See [Fonts](doc-latest/fonts.html#fonts) and [Redefining the generic font families](doc-latest/redefining-font-families.html#redefining-font-families).
 
 ### Shared library trouble
 
@@ -64,10 +64,10 @@ Symptom (FreeBSD)
     Shared object "libxml2.so.2" not found, required by "prince"
 
 Explanation  
-Prince uses some third-party shared libraries, these are used for things such as decoding TIFF, PNG or JPEG files and finding and loading fonts. If one or more of these shared libraries cannot be found on your system then Prince will not run. This can occur if Prince was installed from a tarball (see ).
+Prince uses some third-party shared libraries, these are used for things such as decoding TIFF, PNG or JPEG files and finding and loading fonts. If one or more of these shared libraries cannot be found on your system then Prince will not run. This can occur if Prince was installed from a tarball (see [Tarballs - Alpine Linux, FreeBSD and Generic Linux](doc-latest/installing.html#install-generic)).
 
 Solution 1  
-Install the missing library software. provides a list of the libraries that Prince uses. It is recommended to install them through your operating system's package management tool, see your operating system's documentation for more information.
+Install the missing library software. [Acknowledgments](doc-latest/doc-refs.html#acknowledgments) provides a list of the libraries that Prince uses. It is recommended to install them through your operating system's package management tool, see your operating system's documentation for more information.
 
 Solution 2  
 Prince is just using the system shared object loader for most libraries, so the `LD_LIBRARY_PATH` environment variable might need to be edited, if you have installed these libraries in non-standard or different locations.
@@ -88,5 +88,4 @@ Add Prince's `bin/` subdirectory to your `PATH` and ensure that these changes ar
     export PATH=/opt/prince10/bin:$PATH
 
 This should be added to your command interpreter's configuration. For more information see your operating system's documentation.
-
 

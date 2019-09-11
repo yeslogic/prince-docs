@@ -15,7 +15,7 @@ The HTML version of the documentation is served in three distinct files:
 -   the [User Guide](doc-latest/doc-prince.html) for the latest version, and
 -   the [References](doc-latest/doc-refs.html).
 
-Additionally, each file needs a few more files to display correctly - including images, CSS files to style the documents, as well as JavaScript files, necessary not just for browser-only features like scrolling to the right place in certain circumstances, but also for the core of the Prince documentation.
+Additionally, each file needs a few more files to display correctly - including images, CSS files to style the documents, as well as JavaScript files, necessary not just for browser-only features like scrolling to the right place in certain circumstances, but also for the core of the Prince [JavaScript Support](doc-latest/doc-refs.html#js-support) documentation.
 
 To create a PDF version of the documentation we need to run just one simple command line:
 
@@ -27,3 +27,4 @@ This command produces the documentation in PDF format, including a cover page, t
 If you are using the Prince GUI on Windows, you need to paste the three URLs for the cover page, the User Guide and the References by selecting the option "Add URL" three times. Next, you select the checkbox "Merge all documents into a single PDF file" and select a location where to save this file to. Make sure that the checkbox for "Enable Document Scripts" is checked, and click on the "Convert" button to convert the documents into your documentation in PDF format.
 
 The [Installation Guide](doc-latest/doc-install.html) is not included: since Prince is needed to create your documentation PDF, we assume that you have already installed it!
+

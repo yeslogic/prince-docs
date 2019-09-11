@@ -4,7 +4,7 @@ title: Redefining the generic font families
 
 ### Redefining the generic font families
 
-The CSS generic font families can be redefined to use different fonts by editing the `fonts.css` file in the Prince installation (see ). Each font family is defined using a [`@font-face`](doc-latest/doc-refs.html#at-font-face) rule, which maps a font family to an actual font either by name or by filename. (See ).
+The CSS generic font families can be redefined to use different fonts by editing the `fonts.css` file in the Prince installation (see [Installation Layout](doc-latest/installation-layout.html#installation-layout)). Each font family is defined using a [`@font-face`](doc-latest/doc-refs.html#at-font-face) rule, which maps a font family to an actual font either by name or by filename. (See [Generic font families](doc-latest/fonts.html#font-families)).
 
 Here is an example of mapping the generic "sans-serif" font family to the local system font called "Trebuchet MS".
 
@@ -50,3 +50,4 @@ fonts.css
     }
 
 Prince can be instructed not to use system fonts with the [`--no-system-fonts`](doc-latest/doc-refs.html#cl-no-system-fonts) command-line option. Only fonts defined with [`@font-face`](doc-latest/doc-refs.html#at-font-face) rules in CSS will be available.
+

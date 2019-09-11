@@ -9,4 +9,7 @@ Prince is not running JavaScript by default - document scripts can be enabled by
 
 External scripts can be run by specifying one or more [`--script=FILE`](doc-latest/doc-refs.html#cl-script) options on the command-line. These scripts will always be executed, regardless of whether document scripts have been enabled or not.
 
-JavaScript functions can also be called from CSS generated content, by using the `prince-script()` syntax for referencing . Please note that scripts contained `prince-script()` are treated as document scripts, and hence need to be explicitly enabled.
+JavaScript functions can also be called from CSS generated content, by using the `prince-script()` syntax for referencing [Script Functions](doc-latest/gen-content.html#scriptfunc). Please note that scripts contained in the `prince-script()` function are treated as document scripts, and hence need to be explicitly enabled.
+
+Prince also supports PDF scripts, known as "Document Action" scripts - see [PDF Actions](doc-latest/pdf-output.html#pdf-actions). They get included in documents through CSS, too, but will always be run. Note, however, that these scripts are dependent on the PDF viewer, and in many cases might only work in Adobe Acrobat products.
+

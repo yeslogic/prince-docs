@@ -61,4 +61,3 @@ The [OpenSSL](http://www.openssl.org/) and [NSS](https://developer.mozilla.org/e
 zlib  
 The [zlib](http://www.zlib.net/) library is used by Prince to perform compression of PDF files.
 
-

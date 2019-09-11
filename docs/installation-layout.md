@@ -76,4 +76,3 @@ In the resource directory are all resource files:
 | `math`    | MathML resource files                                                                             |
 | `style`   | The default CSS style sheets                                                                      |
 
-

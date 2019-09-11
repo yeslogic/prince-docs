@@ -6,15 +6,24 @@ Thinking in Spreads
 -------------------
 
 You need  
--   -   
+[Paged Media](doc-latest/paged.html#paged)
+
+-   [Selecting pages](doc-latest/paged.html#page-rules)
+-   [Controlling pagination](doc-latest/paged.html#controlling-pagination)
+
+[Box Model](doc-latest/css-box.html#css-box)
+
+[Prince extensions to floats](doc-latest/floats.html#float-extensions)
+
+[Paragraph formatting](doc-latest/text-formatting.html#paragraph-formatting)
 
 Prince produces PDFs - which are a prominent example of paged media. The main difference with conventional CSS design for browsers is to always keep in mind that you are dealing with pagination, i.e. the content is placed on discrete pages.
 
-The basic unit for paged media in print is the page, organized in page spreads: the left page, called *verso* in a left-to-right script (see ), and the right page, called *recto*, are of the same size and typically are symmetrical to each other and are centered on the gutter. Selected and can be placed *recto* or *verso*, and Prince expands several properties and the [`@page`](doc-latest/doc-refs.html#at-page) at-rule pseudo-classes with the values `verso` and `recto`, or `inside` and `outside`, referring to the layout on each page of the spread to facilitate the work with page spreads.
+The basic unit for paged media in print is the page, organized in page spreads: the left page, called *verso* in a left-to-right script (see [Writing Mode](doc-latest/writing-mode.html#writing-mode)), and the right page, called *recto*, are of the same size and typically are symmetrical to each other and are centered on the gutter. [Selected](doc-latest/paged.html#page-rules) and [Named pages](doc-latest/paged.html#named-pages) can be placed *recto* or *verso*, and Prince expands several properties and the [`@page`](doc-latest/doc-refs.html#at-page) at-rule pseudo-classes with the values `verso` and `recto`, or `inside` and `outside`, referring to the layout on each page of the spread to facilitate the work with page spreads.
 
 ### Pagination on a page spread
 
-You have control on wether to place specific selected and named pages right or left, or *recto* or *verso* with the help of `` and ``, each of which takes the values `recto` and `verso` in addition to the traditional values.
+You have control on wether to place specific selected and named pages right or left, or *recto* or *verso* with the help of `break-before` and `break-after`, each of which takes the values `recto` and `verso` in addition to the traditional values.
 
 ``
     h1 {
@@ -42,7 +51,7 @@ Using the values `right` and `left` when placing elements on pages symmetrically
 
 This example creates a bigger margin around the central gutter.
 
-So, when you start thinking about the layout box model, Prince offers the properties `` and `` to help styling.
+So, when you start thinking about the layout box model, Prince offers the properties `margin-inside` and `margin-outside` to help styling.
 
 ``
     p { 
@@ -52,9 +61,9 @@ So, when you start thinking about the layout box model, Prince offers the proper
 
 This example creates a bigger margin around the central gutter, like the previous one - albeit in a shorter way.
 
-Floats are particularly sensitive to the placement on the page with regards to whether it is a left-facing or right-facing page. Prince extends the `` property (and the property ``) with the values `inside` and `outside`. For details please see the chapter .
+Floats are particularly sensitive to the placement on the page with regards to whether it is a left-facing or right-facing page. Prince extends the `float` property (and the property `clear`) with the values `inside` and `outside`. For details please see the chapter [Floats](doc-latest/floats.html#floats).
 
-On a paragraph level, the properties `` and `` similarly take the keywords `inside` and `outside` to help achieving a smooth layout.
+On a paragraph level, the properties `text-align` and `text-align-last` similarly take the keywords `inside` and `outside` to help achieving a smooth layout.
 
 ``
     @page:verso {
@@ -78,5 +87,4 @@ On a paragraph level, the properties `` and `` similarly take the keywords `insi
     }
 
 This style snippet could be part of the stylesheet for a little booklet - it displays the page number in the upper outside corners, the book title in the upper inside of the left, or *verso* page, and the chapter title in the upper inside of the right, or *recto* page. Chapter headings are aligned to the outside of the page spreads, while any image in the book is floated close to the central gutter.
-
 

@@ -5,7 +5,7 @@ title: Filters
 Filters
 -------
 
-The `` property provides graphical effects like blurring, saturating or color shifting an element. Filters can be used alone, or combined in any way. However, the order in which filters are applied matters - applying `grayscale()` after any other filter will result in a gray result.
+The `filter` property provides graphical effects like blurring, saturating or color shifting an element. Filters can be used alone, or combined in any way. However, the order in which filters are applied matters - applying `grayscale()` after any other filter will result in a gray result.
 
 In this section we shall examine the various possibilities offered by this property.
 
@@ -27,7 +27,7 @@ This filter applies a hue rotation to the input. The angle value defines the num
 This filter inverts the samples of the input. The amount value defines the proportion of the conversion.
 
 `filter: opacity([ <number> | <percent> ])`  
-This filter applies transparency to the input. The amount value defines the proportion of the conversion. This function is similar to the `` property.
+This filter applies transparency to the input. The amount value defines the proportion of the conversion. This function is similar to the `opacity` property.
 
 `filter: brightness([ <number> | <percent> ])`  
 This filter makes the input appear more or less bright. The amount value defines the proportion of the conversion. Values over 100% are allowed.
@@ -46,4 +46,5 @@ Alternatively, a filter can be written in SVG and can be referenced by a URL:
 `filter: url(<url>)`  
 This filter takes the URL of an SVG filter. An anchor can be used to reference a specific filter element.
 
-The resolution used when rasterizing to images for applying CSS and SVG filters is controlled through the property. The default value is `96dpi` for compatibility with web browsers.
+The resolution used when rasterizing to images for applying CSS and SVG filters is controlled through the [prince-filter-resolution](doc-latest/doc-refs.html#prop-prince-filter-resolution) property. The default value is `96dpi` for compatibility with web browsers.
+

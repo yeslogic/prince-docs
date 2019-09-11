@@ -9,7 +9,7 @@ Producing accessible documents is very important when documents are to be shared
 
 The relevant criteria for producing accessible PDF can also be found in a separate document, the [PDF Techniques for WCAG 2.0](https://www.w3.org/TR/WCAG20-TECHS/pdf.html).
 
-A first step would be to produce files with one of the PDF profiles addressing accessibility, namely the PDF/UA-1 profile or the combined PDF/A-1a+PDF/UA-1 or PDF/A-3a+PDF/UA-1 profiles, by specifying the [`--pdf-profile`](doc-latest/doc-refs.html#cl-pdf-profile) command line option. See for details.
+A first step would be to produce files with one of the PDF profiles addressing accessibility, namely the PDF/UA-1 profile or the combined PDF/A-1a+PDF/UA-1 or PDF/A-3a+PDF/UA-1 profiles, by specifying the [`--pdf-profile`](doc-latest/doc-refs.html#cl-pdf-profile) command line option. See [PDF Versions and Profiles](doc-latest/pdf-profiles.html#pdf-profiles) for details.
 
 The next step would be to specifically check compliance of the document's content with the requirements. A number of resoures or tools can be helpful in this step:
 
@@ -20,3 +20,4 @@ The next step would be to specifically check compliance of the document's conten
 Prince helps in creating accessible documents. Note, however, that Prince does not create WCAG-compliant documents by itself - care has to be taken, and the HTML source has to be coded in specific ways to address all requirements in order to create WCAG-compliant PDF documents.
 
 Bruce Lawson has written an interesting introduction on how to make [accessible tagged PDFs with Prince](https://medium.com/@bruce_39084/making-accessible-tagged-pdfs-with-prince-ad7fd7a48711) - all you need to know about PDF tags and Prince! Last but not least, there is a nice [Resources](https://taggedpdf.com/resources/) page on tagged and accessible PDFs.
+
