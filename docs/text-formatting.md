@@ -6,7 +6,7 @@ title: Text formatting
 
 Text can be styled with CSS by defining font styles or text layout styles.
 
-After choosing an appropriate typeface for your text with the `font-family` property (see [Fonts](doc-latest/fonts.html#fonts)), you can assign it different sizes with the `font-size` property.
+After choosing an appropriate typeface for your text with the `font-family` property (see [Fonts](fonts.html#fonts)), you can assign it different sizes with the `font-size` property.
 
 Next up you should decide whether to give it some `color`. The default text color for a page is defined in the `body` selector, but each selector can have its own color.
 
@@ -24,7 +24,7 @@ In order to determine how compact the text should be displayed, the `letter-spac
 
 In a similar fashion, the property `word-spacing` can be used to determine the distance between words.
 
-The directionality of the text is controlled through the [Writing Mode](doc-latest/writing-mode.html#writing-mode).
+The directionality of the text is controlled through the [Writing Mode](writing-mode.html#writing-mode).
 
 ### Paragraph formatting
 
@@ -71,7 +71,7 @@ Another important aspect when formatting a paragraph is how compact the text lin
 
 The property `line-stacking-strategy` allows to choose whether individual lines should have their height determined based on their content, or whether all lines in a paragraph should have the same height, or a compromise where their heights are determined by their content and then rounded up to a multiple of the paragraph line height.
 
-In order to lay out text in a well-balanced way, it might at times be necessary to hyphenate some words - to enable hyphenation, the `hyphens` property is used. For details please refer to the section on [Hyphenation](doc-latest/hyphenation.html#hyphenation).
+In order to lay out text in a well-balanced way, it might at times be necessary to hyphenate some words - to enable hyphenation, the `hyphens` property is used. For details please refer to the section on [Hyphenation](hyphenation.html#hyphenation).
 
 Prince also allows for line-breaking in certain situations even in the absence of whitespace - for example, after slashes in long URLs. This behavior can be disabled with the `prince-linebreak-magic` property for situations in which more precise control over line-breaking is preferred.
 

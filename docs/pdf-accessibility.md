@@ -9,7 +9,7 @@ Producing accessible documents is very important when documents are to be shared
 
 The relevant criteria for producing accessible PDF can also be found in a separate document, the [PDF Techniques for WCAG 2.0](https://www.w3.org/TR/WCAG20-TECHS/pdf.html).
 
-A first step would be to produce files with one of the PDF profiles addressing accessibility, namely the PDF/UA-1 profile or the combined PDF/A-1a+PDF/UA-1 or PDF/A-3a+PDF/UA-1 profiles, by specifying the [`--pdf-profile`](doc-latest/doc-refs.html#cl-pdf-profile) command line option. See [PDF Versions and Profiles](doc-latest/pdf-profiles.html#pdf-profiles) for details.
+A first step would be to produce files with one of the PDF profiles addressing accessibility, namely the PDF/UA-1 profile or the combined PDF/A-1a+PDF/UA-1 or PDF/A-3a+PDF/UA-1 profiles, by specifying the [`--pdf-profile`](doc-refs.html#cl-pdf-profile) command line option. See [PDF Versions and Profiles](pdf-profiles.html#pdf-profiles) for details.
 
 The next step would be to specifically check compliance of the document's content with the requirements. A number of resoures or tools can be helpful in this step:
 

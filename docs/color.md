@@ -5,7 +5,7 @@ title: Color
 Color
 -----
 
-Prince supports RGB, RGBA, CMYK, HSL, HSLA and named spot colors. For Prince's color management, please see the [Color Management](doc-latest/color-management.html#color-management) section.
+Prince supports RGB, RGBA, CMYK, HSL, HSLA and named spot colors. For Prince's color management, please see the [Color Management](color-management.html#color-management) section.
 
 Prince understands CSS basic color names as well as the list of extended color keywords from the [CSS Color Module Level 4](https://www.w3.org/TR/css-color-4/#named-colors). It also supports the keywords `transparent` and `currentColor`.
 
@@ -51,7 +51,7 @@ The advantage of HSL over RGB is that it is much more intuitive to use and easie
 
 ### Spot colors
 
-Prince also supports named spot colors that can be defined with the [`@prince-color`](doc-latest/doc-refs.html#at-prince-color) rule. An alternate color must also be specified with the `alternate-color` property, using any of the valid notations for RGB, HSL or CMYK colors. This will be used in situations where the named color is not available, such as when viewing the generated PDF file on a display. Please note that `alternate-color` cannot be RGBA, HSLA or CMYKA.
+Prince also supports named spot colors that can be defined with the [`@prince-color`](doc-refs.html#at-prince-color) rule. An alternate color must also be specified with the `alternate-color` property, using any of the valid notations for RGB, HSL or CMYK colors. This will be used in situations where the named color is not available, such as when viewing the generated PDF file on a display. Please note that `alternate-color` cannot be RGBA, HSLA or CMYKA.
 
 ``
     @prince-color MyColor {

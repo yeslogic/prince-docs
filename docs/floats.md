@@ -30,7 +30,7 @@ When giving the `float` property the value `top` or `bottom`, the element will b
         float: column-top-corner;
     }
 
-A floated element can span several columns with the help of the `column-span` property (see [Columns](doc-latest/columns.html#columns)). The following example instructs Prince to make the image span two columns:
+A floated element can span several columns with the help of the `column-span` property (see [Columns](columns.html#columns)). The following example instructs Prince to make the image span two columns:
 
 ``
     img {
@@ -53,7 +53,7 @@ If the `inside` and `outside` values are used in a multi-column layout, the elem
 
 ##### Page and column footnotes
 
-The value `footnote` transforms the element into a footnote: it creates a footnote call in the place where it appears in its natural flow, and moves the element to the bottom of the page. The footnote marker is placed outside of the block of the footnote. With the value `inline-footnote`, the footnote marker is placed inside of the block of the footnote. Two additional values, namely `prince-column-footnote` and `prince-column-inline-footnote` behave in an analogous way, but move the footnote not to the bottom of the page, but to the bottom of its column instead. See also [Footnotes](doc-latest/footnotes.html#footnotes).
+The value `footnote` transforms the element into a footnote: it creates a footnote call in the place where it appears in its natural flow, and moves the element to the bottom of the page. The footnote marker is placed outside of the block of the footnote. With the value `inline-footnote`, the footnote marker is placed inside of the block of the footnote. Two additional values, namely `prince-column-footnote` and `prince-column-inline-footnote` behave in an analogous way, but move the footnote not to the bottom of the page, but to the bottom of its column instead. See also [Footnotes](footnotes.html#footnotes).
 
 ##### Conditional modifiers
 

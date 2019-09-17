@@ -4,7 +4,7 @@ title: Using Prince with Python
 
 ### Using Prince with Python
 
-Prince can be called from Python using the [command-line interface](doc-latest/doc-refs.html#command-line), like this:
+Prince can be called from Python using the [command-line interface](doc-refs.html#command-line), like this:
 
 ``
     import subprocess

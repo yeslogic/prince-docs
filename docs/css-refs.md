@@ -49,7 +49,7 @@ Prince partially implements `writing-mode`.
 [CSS Namespaces Module Level 3](https://www.w3.org/TR/css-namespaces-3/)
 Prince supports namespaces in CSS.
 [CSS Conditional Rules Module Level 3](https://www.w3.org/TR/css3-conditional/)
-Prince supports the [`@media`](doc-latest/doc-refs.html#at-media) and [`@supports`](doc-latest/doc-refs.html#at-supports) at-rules.
+Prince supports the [`@media`](doc-refs.html#at-media) and [`@supports`](doc-refs.html#at-supports) at-rules.
 [Filter Effects Module Level 1](https://drafts.fxtf.org/filters/)
 Prince supports the `filter` property.
 CSS Level 4
@@ -72,7 +72,7 @@ Prince supports target counters, footnote floats, bookmarks labels, levels and s
 Prince largely supports the float extensions of the spec.
 SVG
 [SVG 1.1](https://www.w3.org/TR/SVG/)
-Prince supports the specification with some exceptions - please see [Scalable Vector Graphics (SVG)](doc-latest/svg.html#svg) for a full list of currently not supported elements.
+Prince supports the specification with some exceptions - please see [Scalable Vector Graphics (SVG)](svg.html#svg) for a full list of currently not supported elements.
 Length Units
 ------------
 

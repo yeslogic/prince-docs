@@ -5,7 +5,7 @@ title: Rotating content
 Rotating content
 ----------------
 
-Sometimes it is necessary to rotate a block element so that it fits on the page. This is common with tables. Two approaches are possible: either the whole page is [printed sideways](doc-latest/rotating.html#wide-content-sideways), or only [the content in a table cell is rotated](doc-latest/rotating.html#rotating-table-cells). We shall see each approach separately.
+Sometimes it is necessary to rotate a block element so that it fits on the page. This is common with tables. Two approaches are possible: either the whole page is [printed sideways](rotating.html#wide-content-sideways), or only [the content in a table cell is rotated](rotating.html#rotating-table-cells). We shall see each approach separately.
 
 ### Printing wide content sideways
 
@@ -14,12 +14,12 @@ You need
 
 `prince-shrink-to-fit`
 
-Figure [Printing a big table sideways](doc-latest/rotating.html#fig-bigtable) shows a table, rotated so that its width fits within the page's length. This can be achieved with the following rules:
+Figure [Printing a big table sideways](rotating.html#fig-bigtable) shows a table, rotated so that its width fits within the page's length. This can be achieved with the following rules:
 
 Printing a big table sideways
 
-![Image of a large table printed sideways so that its width fits along the page's length.](doc-latest/samples/rotate-body-2.bw.png)
-This table is too wide to fit on the paper, so we use `prince-rotate-body` in a *named page* to print it sideways. Download the [PDF](doc-latest/samples/rotate-body.pdf) or the [HTML](doc-latest/samples/rotate-body.html).
+![Image of a large table printed sideways so that its width fits along the page's length.](samples/rotate-body-2.bw.png)
+This table is too wide to fit on the paper, so we use `prince-rotate-body` in a *named page* to print it sideways. Download the [PDF](samples/rotate-body.pdf) or the [HTML](samples/rotate-body.html).
 
 ``
     @page big_table {
@@ -31,11 +31,11 @@ This table is too wide to fit on the paper, so we use `prince-rotate-body` in a 
         page: big_table
     }
 
-The `prince-rotate-body` property works within [`@page`](doc-latest/doc-refs.html#at-page) rules only, so this example uses a named page to place the table on a page of its own. Then the [`@page`](doc-latest/doc-refs.html#at-page) rule for `big_table` pages uses the `prince-rotate-body` property to tell prince that the body of the page, but not the headers and footers, should be rotated. The table in this example is still too wide so we also use the `prince-shrink-to-fit` property to make it a little smaller.
+The `prince-rotate-body` property works within [`@page`](doc-refs.html#at-page) rules only, so this example uses a named page to place the table on a page of its own. Then the [`@page`](doc-refs.html#at-page) rule for `big_table` pages uses the `prince-rotate-body` property to tell prince that the body of the page, but not the headers and footers, should be rotated. The table in this example is still too wide so we also use the `prince-shrink-to-fit` property to make it a little smaller.
 
-If you download the full example ([HTML](doc-latest/samples/rotate-body.html) or [PDF](doc-latest/samples/rotate-body.pdf)) you will see that the paragraphs before and after the table are not placed on the same page. This is because they do not belong to the same named page (see [Named pages](doc-latest/paged.html#named-pages)). However on page four there are two tables, both tables belong to the same named page and therefore Prince will try to place them together on the same page.
+If you download the full example ([HTML](samples/rotate-body.html) or [PDF](samples/rotate-body.pdf)) you will see that the paragraphs before and after the table are not placed on the same page. This is because they do not belong to the same named page (see [Named pages](paged.html#named-pages)). However on page four there are two tables, both tables belong to the same named page and therefore Prince will try to place them together on the same page.
 
-Another way of rotating content is by changing the writing mode with the `writing-mode` property, or by transforming an element with `transform: rotate()` - see [Rotating content in table cells](doc-latest/rotating.html#rotating-table-cells).
+Another way of rotating content is by changing the writing mode with the `writing-mode` property, or by transforming an element with `transform: rotate()` - see [Rotating content in table cells](rotating.html#rotating-table-cells).
 
 ### Rotating content in table cells
 
@@ -90,5 +90,5 @@ A more basic means for rotation, allowing for less fine-tuning, is the use of th
       white-space: nowrap;
     }
 
-For a different approach to rotating content, see the section on [Printing wide content sideways](doc-latest/rotating.html#wide-content-sideways).
+For a different approach to rotating content, see the section on [Printing wide content sideways](rotating.html#wide-content-sideways).
 

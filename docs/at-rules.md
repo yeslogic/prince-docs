@@ -34,17 +34,17 @@ Page pseudo-classes
 `:blank`
 `:nth(N)`
 `@left` | `@left-top` | `@left-middle` | `@left-bottom`
-[Page region](doc-latest/paged.html#page-regions) at-rules
+[Page region](paged.html#page-regions) at-rules
 `@right` | `@right-top` | `@right-middle` | `@right-bottom`
 `@top` | `@top-left-corner` | `@top-left` | `@top-center` | `@top-right` | `@top-right-corner`
 `@bottom` | `@bottom-left-corner` | `@bottom-left` | `@bottom-center` | `@bottom-right` | `@bottom-right-corner`
 `@page-float-top` | `@page-float-bottom` | `@prince-overlay`
 `@footnote`
 The `@page` rule takes the following CSS properties: `background-attachment` | `bleed` | `marks` | `prince-mark-length` | `prince-mark-offset` | `prince-mark-width` | `prince-pdf-page-colorspace` | `prince-pdf-page-label` | `prince-rotate-body` | `prince-shrink-to-fit` | `prince-trim` | `size`
-Additionally, [Prince for Books](doc-latest/prince-for-books.html#pfb) takes the following CSS property: `prince-page-fill`
+Additionally, [Prince for Books](prince-for-books.html#pfb) takes the following CSS property: `prince-page-fill`
 | `@media Media-query-list { Rules }`                                                                                                                                             |
 |---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| The rules will apply if the device meets the criteria of the condition defined in the media query. See [CSS Media Queries](doc-latest/doc-refs.html#media-queries) for details. |
+| The rules will apply if the device meets the criteria of the condition defined in the media query. See [CSS Media Queries](doc-refs.html#media-queries) for details. |
 
 | `@supports Condition { Rules }`                                                                                                        |
 |----------------------------------------------------------------------------------------------------------------------------------------|
@@ -62,7 +62,7 @@ This descriptor defines the set of Unicode codepoints that may be supported by t
 Additionally, `@font-face` takes the CSS descriptors `font-variant`, `font-stretch`, `font-weight` and `font-style`, which take the same values as the CSS properties with the same name.
 `@prince-color Name { alternate-color: ... }`
 Defines a new color name.
-The `@prince-color` rule takes the mandatory `alternate-color` property to specify an alternate color to use if the named spot color is not available. The named color is used in a stylesheet with the `prince-color()` function. (See [Spot colors](doc-latest/color.html#color-spot)).
+The `@prince-color` rule takes the mandatory `alternate-color` property to specify an alternate color to use if the named spot color is not available. The named color is used in a stylesheet with the `prince-color()` function. (See [Spot colors](color.html#color-spot)).
 `@prince-pdf Name { Declarations }`
 Defines properties relating to PDFs.
 The `@prince-pdf` rule takes the following CSS properties: `prince-fallback-cmyk-profile` | `prince-filter-resolution` | `prince-pdf-color-conversion` | `prince-pdf-color-options` | `prince-pdf-display-doc-title` | `prince-pdf-duplex` | `prince-pdf-event-scripts` | `prince-pdf-link-type` | `prince-pdf-open-action` | `prince-pdf-output-intent` | `prince-pdf-page-layout` | `prince-pdf-page-mode` | `prince-pdf-paper-tray` | `prince-pdf-print-scaling` | `prince-pdf-profile` | `prince-pdf-script` | `prince-pdf-xmp`

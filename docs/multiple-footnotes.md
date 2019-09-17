@@ -6,15 +6,15 @@ Multiple Footnotes
 ------------------
 
 You need  
-[Prince extensions to floats](doc-latest/floats.html#float-extensions)
+[Prince extensions to floats](floats.html#float-extensions)
 
-[Footnotes](doc-latest/footnotes.html#footnotes)
+[Footnotes](footnotes.html#footnotes)
 
 -   `float: footnote`
 
-[Generated Content Functions](doc-latest/gen-content.html#gen-content-functions)
+[Generated Content Functions](gen-content.html#gen-content-functions)
 
-[Using target-counter()](doc-latest/gen-content.html#counter-target)
+[Using target-counter()](gen-content.html#counter-target)
 
 In some cases it might happen that you want to point several footnote calls at the same footnote. Prince offers a convenient mechanism to achieve this by combining regular footnotes with the generated content function `target-counter()`.
 

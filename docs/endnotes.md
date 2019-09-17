@@ -6,7 +6,7 @@ Endnotes
 --------
 
 You need  
-[Scripting](doc-latest/javascript.html#javascript)
+[Scripting](javascript.html#javascript)
 
 Endnotes are quite easy as their placement is not relative to the page. There are two ways of creating them.
 

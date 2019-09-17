@@ -28,7 +28,7 @@ Fine-tuning of hyphenation can be done with the `prince-hyphenate-after` and `pr
 
 The `prince-hyphenate-limit-lines` property is used to determine the maximum number of consecutive lines that may end with a hyphenated word.
 
-Prince uses the hyphenation patterns from the CTAN archive - the full archive is accessible [here](http://tug.ctan.org/tex-archive/language/hyph-utf8/tex/generic/hyph-utf8/patterns/txt/). The default hyphenation patterns can be found in the installed `hyph.css` file, located in the default style sheets location (see [Installation Layout](doc-latest/installation-layout.html#installation-layout)).
+Prince uses the hyphenation patterns from the CTAN archive - the full archive is accessible [here](http://tug.ctan.org/tex-archive/language/hyph-utf8/tex/generic/hyph-utf8/patterns/txt/). The default hyphenation patterns can be found in the installed `hyph.css` file, located in the default style sheets location (see [Installation Layout](installation-layout.html#installation-layout)).
 
 Hyphenation patterns for the following languages are provided:
 

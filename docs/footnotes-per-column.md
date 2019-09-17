@@ -6,17 +6,17 @@ Footnotes per Column
 --------------------
 
 You need  
-[Columns](doc-latest/columns.html#columns)
+[Columns](columns.html#columns)
 
-[Page and column floats](doc-latest/floats.html#float-extension-page-column)
+[Page and column floats](floats.html#float-extension-page-column)
 
-[Footnotes](doc-latest/footnotes.html#footnotes)
+[Footnotes](footnotes.html#footnotes)
 
 -   `float: prince-column-footnote`
 
-Prince has a simple way of creating footnotes: the `@footnote` page area, where footnotes can be floated to with the `float` property. For details see [Footnotes](doc-latest/footnotes.html#footnotes).
+Prince has a simple way of creating footnotes: the `@footnote` page area, where footnotes can be floated to with the `float` property. For details see [Footnotes](footnotes.html#footnotes).
 
-In a multi-column layout (see [Columns](doc-latest/columns.html#columns)), footnotes can be placed at the bottom of the page, spanning all columns. But usually you want to position the footnote at the bottom of the column the footnote call appears in.
+In a multi-column layout (see [Columns](columns.html#columns)), footnotes can be placed at the bottom of the page, spanning all columns. But usually you want to position the footnote at the bottom of the column the footnote call appears in.
 
 To achieve this, the values `prince-column-footnote` or `prince-column-inline-footnote` of the `float` property are used.
 

@@ -30,16 +30,16 @@ Prince does not support the `xml:base` attribute, therefore hyperlinks must be a
 Prince provides sensible default styling behavior for several common XML vocabularies:
 
 (X)HTML  
-Prince styles HTML or XHTML documents by applying a default style sheet for formatting headings, paragraphs, tables, lists, inline elements and images. The default style sheet can be overridden or extended by user or author style sheets - see [Applying Style Sheets in Prince](doc-latest/apply-css.html#apply-css).
+Prince styles HTML or XHTML documents by applying a default style sheet for formatting headings, paragraphs, tables, lists, inline elements and images. The default style sheet can be overridden or extended by user or author style sheets - see [Applying Style Sheets in Prince](apply-css.html#apply-css).
 
 DocBook  
 Prince styles DocBook documents by applying a default style sheet for formatting headings, paragraphs, tables, lists, inline elements and images. The default style sheet can be overridden or extended by user/author style sheets. (Note that Prince does not process DocBook documents expressed in SGML).
 
 SVG  
-Prince supports a rich subset of SVG 1.1, including basic shapes, paths, text and transformations. All `svg` elements are treated as replaced elements, similar to `img` elements in XHTML, and their content is rendered in a rectangular space. No line breaks or page breaks are made within an `svg` element. (See [Scalable Vector Graphics (SVG)](doc-latest/svg.html#svg) for details of which elements are supported).
+Prince supports a rich subset of SVG 1.1, including basic shapes, paths, text and transformations. All `svg` elements are treated as replaced elements, similar to `img` elements in XHTML, and their content is rendered in a rectangular space. No line breaks or page breaks are made within an `svg` element. (See [Scalable Vector Graphics (SVG)](svg.html#svg) for details of which elements are supported).
 
 Any other XML  
-No default style sheets will be used, so style sheets will need to be specified by the user or referenced from the document in order for Prince to apply style to the document - see [Applying Style Sheets in Prince](doc-latest/apply-css.html#apply-css).
+No default style sheets will be used, so style sheets will need to be specified by the user or referenced from the document in order for Prince to apply style to the document - see [Applying Style Sheets in Prince](apply-css.html#apply-css).
 
 Prince does not support XSLT. External XSLT processors can be used and the resulting document can be passed to Prince.
 
@@ -49,7 +49,7 @@ XML Inclusions (XInclude) provides a method of including content from other file
 
 The core of XInclude is a single element, `<include href="..."/>`, which specifies the inclusion of the file referenced by the `href` attribute. The element is in the XInclude namespace, `http://www.w3.org/2001/XInclude`, which must be declared either on the element itself or one of its ancestor elements.
 
-Please note that XInclude is disabled by default, and can be enabled with the [`--xinclude`](doc-latest/doc-refs.html#cl-xinclude) command-line option. Also note that XInclude only applies to XML files. To apply it to HTML files, the input format needs to be specified with the [`--input`](doc-latest/doc-refs.html#cl-input) command-line option.
+Please note that XInclude is disabled by default, and can be enabled with the [`--xinclude`](doc-refs.html#cl-xinclude) command-line option. Also note that XInclude only applies to XML files. To apply it to HTML files, the input format needs to be specified with the [`--input`](doc-refs.html#cl-input) command-line option.
 
 #### Including XML files
 

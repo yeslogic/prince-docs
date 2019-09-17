@@ -20,7 +20,7 @@ Represents a URL, i.e. a pointer to a source.
 ``
 `var( custom-property-name [, fallback]? )`
 Retrieves the value of a custom property set elsewhere.
-[Custom properties (CSS variables)](doc-latest/css-vars.html#css-vars)
+[Custom properties (CSS variables)](css-vars.html#css-vars)
 `rgb(R,G,B)`
 Defines red, green and blue values of a color.
 all `color` values
@@ -53,23 +53,23 @@ Defines a region in the form of a rectangle.
 `clip`
 `content()`
 Retrieves the text content of the selected element. It can be used with several different properties.
-`content` - see also [Generated Content Functions](doc-latest/gen-content.html#gen-content-functions)
+`content` - see also [Generated Content Functions](gen-content.html#gen-content-functions)
 `element( name, page-policy? )`
-Places an element (which has been removed from the normal flow with the `running()` function) in a page region. See [Taking elements from the document](doc-latest/paged.html#content-taking-elements).
+Places an element (which has been removed from the normal flow with the `running()` function) in a page region. See [Taking elements from the document](paged.html#content-taking-elements).
 `counter( name, counter-style?, page-policy? )`
 Generates a value for the innermost counter.
 `counters( name, "separator", counter-style?, page-policy? )`
 Concatenates counters on different levels.
 `target-counter( url, counter, counter-style? )`
-Retrieves the value of the innermost counter with a given name at the given URL. See [Using target-counter()](doc-latest/gen-content.html#counter-target).
+Retrieves the value of the innermost counter with a given name at the given URL. See [Using target-counter()](gen-content.html#counter-target).
 `target-counters( url, counter, "separator", counter-style? )`
 Retrieves the value of all counters of a given name from the end of the given URL.
 `target-content( url )`
-References the text content of the linked element. See [Using target-content()](doc-latest/gen-content.html#target-content).
+References the text content of the linked element. See [Using target-content()](gen-content.html#target-content).
 `leader( "..." | dotted | solid | space )`
 Inserts the given string before the element - useful in tables of content.
 `string( ident, page-policy? )`
-Retrieves the value defined with the `string-set` property. See [Copying content from the document](doc-latest/paged.html#content-copying-text).
+Retrieves the value defined with the `string-set` property. See [Copying content from the document](paged.html#content-copying-text).
 `repeat( string+ )`
 Used in counters as a `counter-style`, it defines a sequentially repeated pattern for numbering the items.
 ``
@@ -87,7 +87,7 @@ This counter will yield the sequence "x, y, z, 4, 5, 6" etc.
 `prince-base-url()*`
 Returns the base URL of the current document.
 `flow( name, page-policy? ) | prince-flow( name, page-policy? )*`
-Inserts an element that has previously been removed with the `static()` function. See [Taking elements from the document](doc-latest/paged.html#content-taking-elements).
+Inserts an element that has previously been removed with the `static()` function. See [Taking elements from the document](paged.html#content-taking-elements).
 `prince-script( ident [, content+]? )*`
 Calls arbitrary JavaScript functions in CSS generated content.
 `prince-fallback( uri )*[, content+]?`
@@ -123,10 +123,10 @@ Applies a Gaussian blur to the input image.
 `drop-shadow( length{1..3}, color? )`
 Applies a drop shadow effect to the input image.
 `prince-opentype( [ feature ]+ )*`
-Specifies a comma-separated list of OpenType features to be enabled. For details please see the `font-variant` property and [OpenType Features in Prince](doc-latest/fonts.html#opentype-features).
+Specifies a comma-separated list of OpenType features to be enabled. For details please see the `font-variant` property and [OpenType Features in Prince](fonts.html#opentype-features).
 `font-variant`
 `running( name )`
-Removes an element from the normal document flow, to make it available for use in a page region with the `element()` function. See [Taking elements from the document](doc-latest/paged.html#content-taking-elements).
+Removes an element from the normal document flow, to make it available for use in a page region with the `element()` function. See [Taking elements from the document](paged.html#content-taking-elements).
 `position`
 `recompress-jpeg( quality% )*`
 Recompresses JPEG images by the indicated percentage to save space.
@@ -134,7 +134,7 @@ Recompresses JPEG images by the indicated percentage to save space.
 `convert-to-jpeg( quality% )*`
 Converts non-JPEG images to JPEG.
 `static( name, [ start | current ]? )*`
-Removes an element from the normal document flow, to make it available for use with the `flow()` function. See [Taking elements from the document](doc-latest/paged.html#content-taking-elements).
+Removes an element from the normal document flow, to make it available for use with the `flow()` function. See [Taking elements from the document](paged.html#content-taking-elements).
 `prince-flow`
 `command( ident )*`
 Specifies any arbitrary command to be passed to the PDF viewer when the PDF file is opened. The user can supply values that Prince doesn't know about, but the viewer does.
@@ -151,7 +151,7 @@ Contains a comma-separated list of format strings that denote well-known font fo
 `local()`
 Searches for locally installed system fonts.
 `prince-lookup()*`
-Searches for locally installed system fonts, but will also find fonts defined by other `@font-face` rules. See [Defining a font family](doc-latest/fonts.html#font-family).
+Searches for locally installed system fonts, but will also find fonts defined by other `@font-face` rules. See [Defining a font family](fonts.html#font-family).
 `rotate( angle )`
 Rotates an element around a fixed point on the 2D plane.
 `transform`

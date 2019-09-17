@@ -45,7 +45,7 @@ When the marker position is `outside`, it is rendered outside the `li` principal
 
 Different list marker types can be chosen by setting the CSS property `list-style-type` to different values: `disc` | `hyphen` | `decimal` | `lower-alpha` | ...
 
-The property `list-style-type` applies to list items and determines the type of marker that they receive. The following table shows examples of some list style types (a table with examples of all supported options for ordered lists, see [Counter styles](doc-latest/gen-content.html#counter-styles)).
+The property `list-style-type` applies to list items and determines the type of marker that they receive. The following table shows examples of some list style types (a table with examples of all supported options for ordered lists, see [Counter styles](gen-content.html#counter-styles)).
 
 |                              |                                 |
 |------------------------------|---------------------------------|
@@ -92,5 +92,5 @@ CSS
 
 Output
 
-![Marker example](doc-latest/images/marker.png)
+![Marker example](images/marker.png)
 

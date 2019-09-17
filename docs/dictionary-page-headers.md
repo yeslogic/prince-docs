@@ -6,16 +6,16 @@ Dictionary Page Headers
 -----------------------
 
 You need  
-[Page regions](doc-latest/paged.html#page-regions)
+[Page regions](paged.html#page-regions)
 
-[Generated Content](doc-latest/gen-content.html#gen-content)
+[Generated Content](gen-content.html#gen-content)
 
-[The optional page-policy value](doc-latest/gen-content.html#gen-content-functions-pagepolicy)
+[The optional page-policy value](gen-content.html#gen-content-functions-pagepolicy)
 
 -   `content: string(term, first)`
 -   `content: string(term, last)`
 
-A peculiar and interesting use of page headers happens in dictionaries: typically, you might want to display page headers like "a-af", where "a" is the first definition on the page and "af" is the last one. This can easily be obtained by adding [The optional page-policy value](doc-latest/gen-content.html#gen-content-functions-pagepolicy) to the `string()` function.
+A peculiar and interesting use of page headers happens in dictionaries: typically, you might want to display page headers like "a-af", where "a" is the first definition on the page and "af" is the last one. This can easily be obtained by adding [The optional page-policy value](gen-content.html#gen-content-functions-pagepolicy) to the `string()` function.
 
 The `string-set` property is applied to each definition in the dictionary (the **b:first-child** from the following example), and then the `first` and `last` page policy values are use to select the relevant definition to display in the page header.
 

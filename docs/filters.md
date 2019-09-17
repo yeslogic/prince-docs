@@ -46,5 +46,5 @@ Alternatively, a filter can be written in SVG and can be referenced by a URL:
 `filter: url(<url>)`  
 This filter takes the URL of an SVG filter. An anchor can be used to reference a specific filter element.
 
-The resolution used when rasterizing to images for applying CSS and SVG filters is controlled through the [prince-filter-resolution](doc-latest/doc-refs.html#prop-prince-filter-resolution) property. The default value is `96dpi` for compatibility with web browsers.
+The resolution used when rasterizing to images for applying CSS and SVG filters is controlled through the [prince-filter-resolution](doc-refs.html#prop-prince-filter-resolution) property. The default value is `96dpi` for compatibility with web browsers.
 
