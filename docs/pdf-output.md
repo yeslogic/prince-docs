@@ -117,14 +117,51 @@ Also the default page layout for the PDF file when it is opened can be determine
 
 The values of this property are mapped to PDF page layout options:
 
-| CSS Keyword                      | PDF Page Layout                      | Description                                                                                                                       |
-|----------------------------------|--------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------|
-| `single-page`                    | Single Page View                     | Displays one page at the time                                                                                                     |
-| `one-column`                     | Enable Scrolling                     | Displays pages in one continuous vertical column                                                                                  |
-| `two-column` | `two-column-left` | Two Page Scrolling                   | Displays facing pages side by side in a continuous vertical column - the first (i.e. cover) page is on the left.                  |
-| `two-column-right`               | Two Page Scrolling & Show Cover Page | Displays facing pages side by side in a continuous vertical column - the first (i.e. cover) page is displayed alone on the right. |
-| `two-page` | `two-page-left`     | Two Page View                        | Displays a two-page spread at the time - the first (i.e. the cover) page is on the left.                                          |
-| `two-page-right`                 | Two Page View & Show Cover Page      | Displays a two-page spread at the time - the first (i.e. the cover) page is displayed alone on the right.                         |
+<table class="grid">
+<thead>
+  <tr>
+    <th>CSS Keyword</th>
+    <th>PDF Page Layout</th>
+    <th>Description</th>
+  </tr>
+</thead>
+<tbody>
+  <tr>
+    <td><code>single-page</code></td>
+    <td>Single Page View</td>
+    <td>Displays one page at the time</td>
+  </tr>
+  <tr>
+    <td><code>one-column</code></td>
+    <td>Enable Scrolling</td>
+    <td>Displays pages in one continuous vertical column</td>
+  </tr>
+  <tr>
+    <td><code>two-column</code> | <code>two-column-left</code></td>
+    <td>Two Page Scrolling</td>
+    <td>Displays facing pages side by side in a continuous vertical column - the
+    first (i.e. cover) page is on the left.</td>
+  </tr>
+  <tr>
+    <td><code>two-column-right</code></td>
+    <td>Two Page Scrolling &amp; Show Cover Page</td>
+    <td>Displays facing pages side by side in a continuous vertical column - the
+    first (i.e. cover) page is displayed alone on the right.</td>
+  </tr>
+  <tr>
+    <td><code>two-page</code> | <code>two-page-left</code></td>
+    <td>Two Page View</td>
+    <td>Displays a two-page spread at the time - the first (i.e. the cover) page
+    is on the left.</td>
+  </tr>
+  <tr>
+    <td><code>two-page-right</code></td>
+    <td>Two Page View &amp; Show Cover Page</td>
+    <td>Displays a two-page spread at the time - the first (i.e. the cover) page
+    is displayed alone on the right.</td>
+  </tr>
+</tbody>
+</table>
 
 ### PDF Printing
 

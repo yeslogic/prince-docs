@@ -163,44 +163,152 @@ This rule will generate text such as "Chapter IV" before each chapter, with the 
 
 The following table shows examples of the various counter styles:
 
-|                          |                                    |
-|--------------------------|------------------------------------|
-| decimal                  | 1, 2, 3, … 9, 10, 11, …            |
-| decimal-leading-zero     | 01, 02, 03, … 09, 10, 11, …        |
-| lower-roman              | i, ii, iii, iv, v, vi, …           |
-| upper-roman              | I, II, III, IV, V, VI, …           |
-| lower-alpha, lower-latin | a, b, c, … z, aa, ab, …            |
-| upper-alpha, upper-latin | A, B, C, … Z, AA, AB, …            |
-| asterisks                | \*, \*\*, \*\*\*, \*\*\*\*, …      |
-| lower-hexadecimal        | 1, 2, 3, … 9, a, b, c, …           |
-| upper-hexadecimal        | 1, 2, 3, … 9, A, B, C, …           |
-| octal                    | 1, 2, 3, 4, 5, 6, 7, 10, 11, 12, … |
-| binary                   | 1, 10, 11, 100, 101, 110, 111, …   |
-| arabic-indic             | ١, ٢, ٣, ٤, ٥, ٦, …                |
-| lower-greek              | α, β, γ, …, ι, κ, λ, …             |
-| upper-greek              | Α, Β, Γ, …, Ι, Κ, Λ, …             |
-| persian / urdu           | ۱, ۲, ۳, ۴, ۵, ۶, …                |
-| cjk-decimal              | 一, 二, 三, 四, 五, 六, …          |
-| japanese-informal        | 一, 二, 三, 四, 五, 六, …          |
-| simp-chinese-informal    | 一, 二, 三, 四, 五, 六, …          |
-| trad-chinese-informal    | 一, 二, 三, 四, 五, 六, …          |
-| japanese-formal          | 壱, 弐, 参, 四, 五, 六, …          |
-| simp-chinese-formal      | 壹, 贰, 叁, 肆, 伍, 陆, …          |
-| trad-chinese-formal      | 壹, 貳, 參, 肆, 伍, 陸, …          |
-| lower-norwegian          | a, b, c, … z, æ, ø, å, aa, ab, …   |
-| upper-norwegian          | A, B, C, … Z, Æ, Ø, Å, AA, AB, …   |
-| lower-russian            | а, б, в, г, д, е, ж, …             |
-| upper-russian            | А, Б, В, Г, Д, Е, Ж, …             |
-| lower-ukranian           | а, б, в, г, д, е, є, …             |
-| upper-ukranian           | А, Б, В, Г, Д, Е, Є, …             |
-| lower-belarusian         | а, б, в, г, д, е, ж, …             |
-| upper-belarusian         | А, Б, В, Г, Д, Е, Ж, …             |
-| lower-bulgarian          | а, б, в, г, д, е, ж, …             |
-| upper-bulgarian          | А, Б, В, Г, Д, Е, Ж, …             |
-| lower-serbian            | а, б, в, г, д, ђ, е, …             |
-| upper-serbian            | А, Б, В, Г, Д, Ђ, Е, …             |
-| repeat(x, y, z)          | x, y, z, xx, yy, zz, xxx, yyy, …   |
-| symbols(x, y, z)         | x, y, z, 4, 5, 6, …                |
+<table class="grid">
+<tr>
+<td>decimal</td>
+<td>1, 2, 3, &#x2026; 9, 10, 11, &#x2026;</td>
+</tr>
+<tr>
+<td>decimal-leading-zero</td>
+<td>01, 02, 03, &#x2026; 09, 10, 11, &#x2026;</td>
+</tr>
+<tr>
+<td>lower-roman</td>
+<td>i, ii, iii, iv, v, vi, &#x2026;</td>
+</tr>
+<tr>
+<td>upper-roman</td>
+<td>I, II, III, IV, V, VI, &#x2026;</td>
+</tr>
+<tr>
+<td>lower-alpha, lower-latin</td>
+<td>a, b, c, &#x2026; z, aa, ab, &#x2026;</td>
+</tr>
+<tr>
+<td>upper-alpha, upper-latin</td>
+<td>A, B, C, &#x2026; Z, AA, AB, &#x2026;</td>
+</tr>
+<tr>
+<td>asterisks</td>
+<td>*, **, ***, ****, &#x2026;</td>
+</tr>
+<tr>
+<td>lower-hexadecimal</td>
+<td>1, 2, 3, &#x2026; 9, a, b, c, &#x2026;</td>
+</tr>
+<tr>
+<td>upper-hexadecimal</td>
+<td>1, 2, 3, &#x2026; 9, A, B, C, &#x2026;</td>
+</tr>
+<tr>
+<td>octal</td>
+<td>1, 2, 3, 4, 5, 6, 7, 10, 11, 12, &#x2026;</td>
+</tr>
+<tr>
+<td>binary</td>
+<td>1, 10, 11, 100, 101, 110, 111, &#x2026;</td>
+</tr>
+<tr>
+<td>arabic-indic</td>
+<td>&#x661;, &#x662;, &#x663;, &#x664;, &#x665;, &#x666;, &#x2026;</td>
+</tr>
+<tr>
+<td>lower-greek</td>
+<td>&#945;, &#946;, &#947;, &#x2026;, &#953;, &#954;, &#955;, &#x2026;</td>
+</tr>
+<tr>
+<td>upper-greek</td>
+<td>&#913;, &#914;, &#915;, &#x2026;, &#921;, &#922;, &#923;, &#x2026;</td>
+</tr>
+<tr>
+<td>persian / urdu</td>
+<td>&#x6F1;, &#x6F2;, &#x6F3;, &#x6F4;, &#x6F5;, &#x6F6;, &#x2026;</td>
+</tr>
+<tr>
+<td>cjk-decimal</td>
+<td>&#x4E00;, &#x4E8C;, &#x4E09;, &#x56DB;, &#x4E94;, &#x516D;, &#x2026;</td>
+</tr>
+<tr>
+<td>japanese-informal</td>
+<td>&#x4E00;, &#x4E8C;, &#x4E09;, &#x56DB;, &#x4E94;, &#x516D;, &#x2026;</td>
+</tr>
+<tr>
+<td>simp-chinese-informal</td>
+<td>&#x4E00;, &#x4E8C;, &#x4E09;, &#x56DB;, &#x4E94;, &#x516D;, &#x2026;</td>
+</tr>
+<tr>
+<td>trad-chinese-informal</td>
+<td>&#x4E00;, &#x4E8C;, &#x4E09;, &#x56DB;, &#x4E94;, &#x516D;, &#x2026;</td>
+</tr>
+<tr>
+<td>japanese-formal</td>
+<td>&#x58F1;, &#x5F10;, &#x53C2;, &#x56DB;, &#x4E94;, &#x516D;, &#x2026;</td>
+</tr>
+<tr>
+<td>simp-chinese-formal</td>
+<td>&#x58F9;, &#x8D30;, &#x53C1;, &#x8086;, &#x4F0D;, &#x9646;, &#x2026;</td>
+</tr>
+<tr>
+<td>trad-chinese-formal</td>
+<td>&#x58F9;, &#x8CB3;, &#x53C3;, &#x8086;, &#x4F0D;, &#x9678;, &#x2026;</td>
+</tr>
+<tr>
+<td>lower-norwegian</td>
+<td>a, b, c, &#x2026; z, &#xE6;, &#xF8;, &#xE5;, aa, ab, &#x2026;</td>
+</tr>
+<tr>
+<td>upper-norwegian</td>
+<td>A, B, C, &#x2026; Z, &#xC6;, &#xD8;, &#xC5;, AA, AB, &#x2026;</td>
+</tr>
+<tr>
+<td>lower-russian</td>
+<td>&#x430;, &#x431;, &#x432;, &#x433;, &#x434;, &#x435;, &#x436;, &#x2026;</td>
+</tr>
+<tr>
+<td>upper-russian</td>
+<td>&#x410;, &#x411;, &#x412;, &#x413;, &#x414;, &#x415;, &#x416;, &#x2026;</td>
+</tr>
+<tr>
+<td>lower-ukranian</td>
+<td>&#x430;, &#x431;, &#x432;, &#x433;, &#x434;, &#x435;, &#x454;, &#x2026;</td>
+</tr>
+<tr>
+<td>upper-ukranian</td>
+<td>&#x410;, &#x411;, &#x412;, &#x413;, &#x414;, &#x415;, &#x404;, &#x2026;</td>
+</tr>
+<tr>
+<td>lower-belarusian</td>
+<td>&#x430;, &#x431;, &#x432;, &#x433;, &#x434;, &#x435;, &#x436;, &#x2026;</td>
+</tr>
+<tr>
+<td>upper-belarusian</td>
+<td>&#x410;, &#x411;, &#x412;, &#x413;, &#x414;, &#x415;, &#x416;, &#x2026;</td>
+</tr>
+<tr>
+<td>lower-bulgarian</td>
+<td>&#x430;, &#x431;, &#x432;, &#x433;, &#x434;, &#x435;, &#x436;, &#x2026;</td>
+</tr>
+<tr>
+<td>upper-bulgarian</td>
+<td>&#x410;, &#x411;, &#x412;, &#x413;, &#x414;, &#x415;, &#x416;, &#x2026;</td>
+</tr>
+<tr>
+<td>lower-serbian</td>
+<td>&#x430;, &#x431;, &#x432;, &#x433;, &#x434;, &#x452;, &#x435;, &#x2026;</td>
+</tr>
+<tr>
+<td>upper-serbian</td>
+<td>&#x410;, &#x411;, &#x412;, &#x413;, &#x414;, &#x402;, &#x415;, &#x2026;</td>
+</tr>
+<tr>
+<td>repeat(x, y, z)</td>
+<td>x, y, z, xx, yy, zz, xxx, yyy, &#x2026;</td>
+</tr>
+<tr>
+<td>symbols(x, y, z)</td>
+<td>x, y, z, 4, 5, 6, &#x2026;</td>
+</tr>
+</table>
 
 See also [User-defined counter styles](gen-content.html#counter-user-styles) for custom counters.
 

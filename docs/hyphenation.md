@@ -32,22 +32,64 @@ Prince uses the hyphenation patterns from the CTAN archive - the full archive is
 
 Hyphenation patterns for the following languages are provided:
 
-|       |            |
-|-------|------------|
-| da    | Danish     |
-| de    | German     |
-| en-US | English    |
-| es    | Spanish    |
-| fi    | Finnish    |
-| fr    | French     |
-| is    | Icelandic  |
-| it    | Italian    |
-| lt    | Lithuanian |
-| pl    | Polish     |
-| pt    | Portuguese |
-| ru    | Russian    |
-| sl    | Slovenian  |
-| sv    | Swedish    |
+<table class="grid">
+  <tr>
+    <td>da</td>
+    <td>Danish</td>
+  </tr>
+  <tr>
+    <td>de</td>
+    <td>German</td>
+  </tr>
+  <tr>
+    <td>en-US</td>
+    <td>English</td>
+  </tr>
+  <tr>
+    <td>es</td>
+    <td>Spanish</td>
+  </tr>
+  <tr>
+    <td>fi</td>
+    <td>Finnish</td>
+  </tr>
+  <tr>
+    <td>fr</td>
+    <td>French</td>
+  </tr>
+  <tr>
+    <td>is</td>
+    <td>Icelandic</td>
+  </tr>
+  <tr>
+    <td>it</td>
+    <td>Italian</td>
+  </tr>
+  <tr>
+    <td>lt</td>
+    <td>Lithuanian</td>
+  </tr>
+  <tr>
+    <td>pl</td>
+    <td>Polish</td>
+  </tr>
+  <tr>
+    <td>pt</td>
+    <td>Portuguese</td>
+  </tr>
+  <tr>
+    <td>ru</td>
+    <td>Russian</td>
+  </tr>
+  <tr>
+    <td>sl</td>
+    <td>Slovenian</td>
+  </tr>
+  <tr>
+    <td>sv</td>
+    <td>Swedish</td>
+  </tr>
+</table>
 
 A special case is Thai hyphenation, supported thanks to the [LibThai](http://linux.thai.net/projects/libthai) package.
 

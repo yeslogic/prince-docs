@@ -47,52 +47,89 @@ The basic rules used by Prince are as follows:
 
 When the `border-collapse` property is set to `separate`, a table can have separate borders around individual cells. The space between table cell borders is determined by the value of its `border-spacing` property.
 
-CSS
+<div class="example">
+<p class="label">CSS</p>
+<div class="programlisting">
+<code langauge="CSS"><pre>table {
+    border-collapse: separate;
+    border-spacing: 5px;
+    border: solid 3px black
+}
+td { border: solid 1px red }
+td.dash-blue  { border: 2px dashed blue }
+td.solid-green { border: 2px solid green }</pre></code>
+</div>
 
-``
-    table {
-        border-collapse: separate;
-        border-spacing: 5px;
-        border: solid 3px black
-    }
-    td { border: solid 1px red }
-    td.dash-blue  { border: 2px dashed blue }
-    td.solid-green { border: 2px solid green }
+<p class="label">Output</p>
+<div class="output">
+<table style="border-collapse: separate; border-spacing: 5px; border: solid 3px black;">
+<tr>
+    <td style="border: solid 1px red"> A </td>
+    <td style="border: solid 1px red"> B </td>
+    <td style="border: solid 1px red"> C </td>
+</tr>
+<tr>
+    <td style="border: solid 1px red"> D </td>
+    <td style="border: 2px dashed blue"> E </td>
+    <td style="border: 2px solid green"> F </td>
+</tr>
+<tr>
+    <td style="border: solid 1px red"> G </td>
+    <td style="border: solid 1px red"> H </td>
+    <td style="border: solid 1px red"> I </td>
+</tr>
+</table>
+</div>
 
-Output
+<p class="comment">
+Note that by default,
+the value of <code><a href="doc-latest/doc-refs.html#prop-border-collapse">border-collapse</a></code> is
+<code>separate</code>.
+</p>
+</div>
 
-|     |     |     |
-|-----|-----|-----|
-| A   | B   | C   |
-| D   | E   | F   |
-| G   | H   | I   |
-
-Note that by default, the value of `border-collapse` is `separate`.
 
 #### Collapsing table borders
 
 When the CSS property `border-collapse` is set to `collapse`, each edge of each cell resolves its final border style and border width based on certain rules.
 
-CSS
+<div class="example">
+<p class="label">CSS</p>
+<div class="programlisting">
+<code language="css"><pre>table {
+    border-collapse: collapse;
+    border: solid 3px black
+}
+table td { border: solid 1px red }
+td.dash-blue  { border: 2px dashed blue }
+td.solid-green { border: 2px solid green }</pre></code>
+</div>
+<p class="label">Output</p>
+<div class="output">
+<table style="border-collapse: collapse; border-spacing: 5px; border: solid 3px black;">
+<tr>
+    <td style="border: solid 1px red"> A </td>
+    <td style="border: solid 1px red"> B </td>
+    <td style="border: solid 1px red"> C </td>
+</tr>
+<tr>
+    <td style="border: solid 1px red"> D </td>
+    <td style="border: 2px dashed blue"> E </td>
+    <td style="border: 2px solid green"> F </td>
+</tr>
+<tr>
+    <td style="border: solid 1px red"> G </td>
+    <td style="border: solid 1px red"> H </td>
+    <td style="border: solid 1px red"> I </td>
+</tr>
+</table>
+</div>
+<p class="comment">
+Note that the <code><a href="doc-latest/doc-refs.html#prop-border-spacing">border-spacing</a></code> property is not used
+in the collapsing table border model.
+</p>
+</div>
 
-``
-    table {
-        border-collapse: collapse;
-        border: solid 3px black
-    }
-    table td { border: solid 1px red }
-    td.dash-blue  { border: 2px dashed blue }
-    td.solid-green { border: 2px solid green }
-
-Output
-
-|     |     |     |
-|-----|-----|-----|
-| A   | B   | C   |
-| D   | E   | F   |
-| G   | H   | I   |
-
-Note that the `border-spacing` property is not used in the collapsing table border model.
 
 The rules used by Prince for choosing the "winner" border are as follows:
 
@@ -106,98 +143,119 @@ The rules used by Prince for choosing the "winner" border are as follows:
 
 Prince table cells that span multiple columns using the `table-column-span` CSS property, which takes an integer value and is set to 1 by default.
 
-CSS
+<div class="example">
+<p class="label">CSS</p>
+<div class="programlisting">
+<code language="css"><pre>td.colspan2 { table-column-span: 2 }</pre></code>
+</div>
+<p class="label">XML</p>
+<div class="programlisting">
+<code language="doc"><pre>&lt;td class="colspan2"&gt; B &lt;/td&gt;</pre></code>
+</div>
 
-``
-    td.colspan2 { table-column-span: 2 }
-
-XML
-
-``
-    <td class="colspan2"> B </td>
-
-Output
-
-A
-B
-C
-D
-E
+<p class="label">Output</p>
+<div class="output">
+<table class="colspan">
+<tr>
+<td>A</td> <td class="colspan2" colspan="2">B</td>
+</tr>
+<tr>
+<td>C</td> <td>D</td> <td>E</td>
+</tr>
+</table>
+</div>
+</div>
 
 #### Cells that span rows
 
 Prince supports table cells that span multiple rows using the `table-row-span` CSS property, which takes an integer value and is set to 1 by default.
 
-CSS
-
-``
-    td.rowspan2 { table-row-span: 2 }
-
-XML
-
-``
-    <td class="rowspan2"> A </td>
-
-Output
-
-A
-B
-C
-D
-E
+<div class="example">
+<p class="label">CSS</p>
+<div class="programlisting">
+<code language="css"><pre>td.rowspan2 { table-row-span: 2 }</pre></code>
+</div>
+<p class="label">XML</p>
+<div class="programlisting">
+<code language="doc"><pre>&lt;td class="rowspan2"&gt; A &lt;/td&gt;</pre></code>
+</div>
+<p class="label">Output</p>
+<div class="output">
+<table class="rowspan">
+<tr>
+<td class="rowspan2" rowspan="2" style="vertical-align: middle">A</td> <td>B</td> <td>C</td>
+</tr>
+<tr>
+<td>D</td> <td>E</td>
+</tr>
+</table>
+</div>
+</div>
 
 #### Numbering table rows
 
 If you want to number table rows in a table, but there are just too many rows to number by hand, or if the document is dynamically generated and hand numbering is impossible, CSS counters and generated content can help you out:
 
-CSS
+<div class="example">
+<p class="label">CSS</p>
+<div class="programlisting">
+<code langauge="CSS"><pre>table { counter-reset: row }
+tr { counter-increment: row }
+tr::before {
+    content: counter(row);
+    display: table-cell
+}</pre></code>
+</div>
 
-``
-    table { counter-reset: row }
-    tr { counter-increment: row }
-    tr::before {
-        content: counter(row);
-        display: table-cell
-    }
+<p class="label">HTML</p>
+<div class="programlisting">
+<code><pre>&lt;table&gt;
+&lt;tr&gt;&lt;td&gt;The First Table Row&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;The Second Table Row&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;The Third Table Row&lt;/td&gt;&lt;/tr&gt;
+&lt;/table&gt;</pre></code>
+</div>
 
-HTML
+<div class="output">
+<p class="label">Output</p>
+<table>
+<tr><td class="counter">1</td><td>The First Table Row</td></tr>
+<tr><td class="counter">2</td><td>The Second Table Row</td></tr>
+<tr><td class="counter">3</td><td>The Third Table Row</td></tr>
+</table>
+</div>
 
-``
-    <table>
-    <tr><td>The First Table Row</td></tr>
-    <tr><td>The Second Table Row</td></tr>
-    <tr><td>The Third Table Row</td></tr>
-    </table>
-
-Output
-
-|     |                      |
-|-----|----------------------|
-| 1   | The First Table Row  |
-| 2   | The Second Table Row |
-| 3   | The Third Table Row  |
-
-As pseudo-elements only inherit inheritable properties from the element they are attached, non-inheritable properties, such as display and border properties, need to be explicitly set in the pseudo-elements.
+<p class="comment">
+As pseudo-elements only inherit inheritable properties
+from the element they are attached, non-inheritable properties, such as
+display and border properties, need to be explicitly set in the pseudo-elements.
+</p>
+</div>
 
 #### Running table headers and footers
 
 When a table spans across more than one page, it might be desirable to have a "running" table header and footer so that they can be carried on to all the subsequent pages on which the table appears.
 
-HTML
+<div class="example">
+<p class="label">HTML</p>
+<div class="programlisting">
+<code language="HTML"><pre>&lt;table&gt;
+ &lt;thead&gt;
+  &lt;tr&gt; &lt;td&gt;Name&lt;/td&gt; &lt;td&gt;Mark&lt;/td&gt; &lt;td&gt;Grade&lt;/td&gt; &lt;/tr&gt;
+ &lt;/thead&gt;
+ &lt;tr&gt; &lt;td&gt;Xuehong&lt;/td&gt; &lt;td&gt;95&lt;/td&gt; &lt;td&gt;H1&lt;/td&gt; &lt;/tr&gt;
+ <span class="comment">&lt;!-- other rows for other students --&gt;</span>
+ &lt;tfoot&gt;
+  &lt;tr&gt; &lt;td&gt;Name&lt;/td&gt; &lt;td&gt;Mark&lt;/td&gt; &lt;td&gt;Grade&lt;/td&gt; &lt;/tr&gt;
+ &lt;/tfoot&gt;
+&lt;/table&gt;</pre></code>
 
-``
-    <table>
-     <thead>
-      <tr> <td>Name</td> <td>Mark</td> <td>Grade</td> </tr>
-     </thead>
-     <tr> <td>Xuehong</td> <td>95</td> <td>H1</td> </tr>
-     <!-- other rows for other students -->
-     <tfoot>
-      <tr> <td>Name</td> <td>Mark</td> <td>Grade</td> </tr>
-     </tfoot>
-    </table>
-
-Rows inside the `thead` element are used as a running table header. Rows inside the `tfoot` element are used as a running table footer.
+</div>
+<p class="comment">
+Rows inside the <code>thead</code> element are used as a running table header.
+Rows inside the <code>tfoot</code> element are used as a running table footer.
+</p>
+</div>
 
 See also [Long Tables](long-tables.html#long-tables).
 

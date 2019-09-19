@@ -35,17 +35,42 @@ When a chosen bold and/or italic font is missing, Prince tries to artificially s
 
 Prince supports OpenType features, and enables certain ones by default in specific scripts. The following ones are enabled by default in Prince:
 
-Script
-Enabled features
-Latin, Greek, Cyrillic
-ccmp, liga, dist, kern\*, mark, mkmk, vrt2/vert
-Arabic/Syriac
-ccmp, rlig, calt, liga, mset, isol, medi, fina, kern, curs, mark, mkmk
-Indic
-ccmp, and many other Indic-specific substitutions
-Other scripts
-kern\*, mark, mkmk
-\* Kerning can be disabled with the keyword `prince-no-kerning` of the `font-variant` property.
+<table class="grid">
+<thead>
+<tr>
+<th>Script</th>
+<th>Enabled features</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Latin, Greek, Cyrillic</td>
+<td>ccmp, liga, dist, kern*, mark, mkmk, vrt2/vert</td>
+</tr>
+<tr>
+<td>Arabic/Syriac</td>
+<td>ccmp, rlig, calt, liga, mset, isol, medi, fina, kern, curs, mark, mkmk</td>
+</tr>
+<tr>
+<td>Indic</td>
+<td>ccmp, and many other Indic-specific substitutions</td>
+</tr>
+<tr>
+<td>Other scripts</td>
+<td>kern*, mark, mkmk</td>
+</tr>
+</tbody>
+<tfoot>
+<tr>
+<td colspan="2">
+<p class="note">
+* Kerning can be disabled with the keyword <code>prince-no-kerning</code> of the
+<code><a href="doc-latest/doc-refs.html#prop-font-variant">font-variant</a></code> property.
+</p>
+</td>
+</tr>
+</tfoot>
+</table>
 
 Microsoft has a list of the OpenType feature names [here](https://www.microsoft.com/typography/otspec/featurelist.htm).
 
@@ -59,77 +84,146 @@ Prince maps the CSS generic font families to the Microsoft Core Fonts. The Micro
 
 The following table shows the default fonts for the main languages on Windows, MacOS X and Linux.
 
-Generic family
-Operating system
-Language
-Actual font
-`serif`
-Windows
-Latin
-Times New Roman
-Chinese
-MingLiU, Microsoft YaHei, SimSun
-Japanese
-MS Mincho, Yu Gothic
-Korean
-Batang, Malgun Gothic
-Devanagari / Hindi
-Mangal
-MacOS X
-Latin
-Times New Roman
-Chinese
-LiSong Pro
-Japanese
-Hiragino Mincho ProN
-Korean
-AppleMyungjo
-Devanagari / Hindi
-Devanagari MT
-Linux
-Latin
-Times New Roman, DejaVu Serif, DejaVu LGC Serif, Liberation Serif
-Chinese
-AR PL UMing CN, AR PL SungtiL GB
-Japanese
-Kochi Mincho, IPAMincho
-Korean
-UnBatang, Baekmuk Batang
-Devanagari / Hindi
-Lohit Devanagari
-`sans-serif`
-Windows
-Latin
-Arial
-Chinese
-Japanese
-MS Gothic
-Korean
-Dotum
-MacOS X
-Latin
-Arial
-Chinese
-LiHei Pro
-Japanese
-Hiragino Kaku Gothic ProN
-Korean
-Apple SD Gothic Neo, Apple Gothic
-Linux
-Latin
-Arial, DejaVu Sans, DejaVu LGC Sans, Liberation Sans
-Chinese
-AR PL UKai CN, AR PL KaitiM GB
-Japanese
-Kochi Gothic, IPAGothic
-Korean
-UnDotum, Baekmuk Gulim
-`monospace`
-Windows
-Courier New
-MacOS X
-Linux
-Courier New, DejaVu Sans Mono, DejaVu LGC Sans Mono, Liberation Mono
+<table class="grid">
+<thead>
+<tr>
+<th>Generic family</th>
+<th>Operating system</th>
+<th>Language</th>
+<th>Actual font</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td rowspan="15"><code>serif</code></td>
+<td rowspan="5">Windows</td>
+<td>Latin</td>
+<td>Times New Roman</td>
+</tr>
+<tr>
+<td>Chinese</td>
+<td>MingLiU, Microsoft YaHei, SimSun</td>
+</tr>
+<tr>
+<td>Japanese</td>
+<td>MS Mincho, Yu Gothic</td>
+</tr>
+<tr>
+<td>Korean</td>
+<td>Batang, Malgun Gothic</td>
+</tr>
+<tr>
+<td>Devanagari / Hindi</td>
+<td>Mangal</td>
+</tr>
+<tr>
+<td rowspan="5">MacOS X</td>
+<td>Latin</td>
+<td>Times New Roman</td>
+</tr>
+<tr>
+<td>Chinese</td>
+<td>LiSong Pro</td>
+</tr>
+<tr>
+<td>Japanese</td>
+<td>Hiragino Mincho ProN</td>
+</tr>
+<tr>
+<td>Korean</td>
+<td>AppleMyungjo</td>
+</tr>
+<tr>
+<td>Devanagari / Hindi</td>
+<td>Devanagari MT</td>
+</tr>
+<tr>
+<td rowspan="5">Linux</td>
+<td>Latin</td>
+<td>Times New Roman, DejaVu Serif, DejaVu LGC Serif, Liberation Serif</td>
+</tr>
+<tr>
+<td>Chinese</td>
+<td>AR PL UMing CN, AR PL SungtiL GB</td>
+</tr>
+<tr>
+<td>Japanese</td>
+<td>Kochi Mincho, IPAMincho</td>
+</tr>
+<tr>
+<td>Korean</td>
+<td>UnBatang, Baekmuk Batang</td>
+</tr>
+<tr>
+<td>Devanagari / Hindi</td>
+<td>Lohit Devanagari</td>
+</tr>
+<tr>
+<td rowspan="12"><code>sans-serif</code></td>
+<td rowspan="4">Windows</td>
+<td>Latin</td>
+<td rowspan="2">Arial</td>
+</tr>
+<tr>
+<td>Chinese</td>
+</tr>
+<tr>
+<td>Japanese</td>
+<td>MS Gothic</td>
+</tr>
+<tr>
+<td>Korean</td>
+<td>Dotum</td>
+</tr>
+<tr>
+<td rowspan="4">MacOS X</td>
+<td>Latin</td>
+<td>Arial</td>
+</tr>
+<tr>
+<td>Chinese</td>
+<td>LiHei Pro</td>
+</tr>
+<tr>
+<td>Japanese</td>
+<td>Hiragino Kaku Gothic ProN</td>
+</tr>
+<tr>
+<td>Korean</td>
+<td>Apple SD Gothic Neo, Apple Gothic</td>
+</tr>
+<tr>
+<td rowspan="4">Linux</td>
+<td>Latin</td>
+<td>Arial, DejaVu Sans, DejaVu LGC Sans, Liberation Sans</td>
+</tr>
+<tr>
+<td>Chinese</td>
+<td>AR PL UKai CN, AR PL KaitiM GB</td>
+</tr>
+<tr>
+<td>Japanese</td>
+<td>Kochi Gothic, IPAGothic</td>
+</tr>
+<tr>
+<td>Korean</td>
+<td>UnDotum, Baekmuk Gulim</td>
+</tr>
+<tr>
+<td rowspan="12"><code>monospace</code></td>
+<td>Windows</td>
+<td colspan="2" rowspan="2">Courier New</td>
+</tr>
+<tr>
+<td>MacOS X</td>
+</tr>
+<tr>
+<td>Linux</td>
+<td colspan="2">Courier New, DejaVu Sans Mono, DejaVu LGC Sans Mono, Liberation Mono</td>
+</tr>
+</tbody>
+</table>
+
 The complete list of defaults, including details like e.g. the exact Unicode ranges Prince is using, can be found in the `fonts.css` file located in the installation directory of Prince resources. (See [Installation Layout](installation-layout.html#installation-layout)).
 
 In order to redefine these defaults, see [Redefining the generic font families](redefining-font-families.html#redefining-font-families).

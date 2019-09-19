@@ -13,57 +13,204 @@ Prince accepts `@-prince` as a vendor prefix for Prince-specific at-rules to com
 
 The following at-rules have to appear at the beginning of the CSS document, and exactly in this order:
 
-|                                                                                                             |                                                                                                                                                                                                                                                |
-|-------------------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| `@charset`                                                                                                  | Defines the fallback encoding to use for the stylesheet. Prince supports stylesheets in `UTF-8`, `UTF-16`, `Latin1` and `Windows-1252`.                                                                                                        |
-| `@import [ <url(URL)> | <string> ] supports([ <supports-condition> | <declaration> ])? <media-query-list>?` | Allows authors to import style rules from other style sheets. The `url(URL)` or `<string>` give the URL of the style sheet to be imported, while the optional `supports(...)` expression and `<media-query-list>` state the import conditions. |
-| `@namespace [Prefix]? [ <url(URL)> | <string> ]`                                                            | Defines a namespace prefix or default namespace to be used in the stylesheet.                                                                                                                                                                  |
+<table class="grid">
+<tr>
+<td class="example" id="at-charset"><code>@charset</code></td>
+<td>Defines the fallback encoding to use for the stylesheet. Prince supports stylesheets
+in <code>UTF-8</code>, <code>UTF-16</code>, <code>Latin1</code> and <code>Windows-1252</code>.</td>
+</tr>
+<tr>
+<td class="example" id="at-import"><code>@import [ &lt;url(<i>URL</i>)&gt; | &lt;<i>string</i>&gt; ] supports([ &lt;<i>supports-condition</i>&gt; | &lt;<i>declaration</i>&gt; ])?
+&lt;<i>media-query-list</i>&gt;?</code></td>
+<td>Allows authors to import style rules from other style sheets. The <code>url(<i>URL</i>)</code>
+or <code>&lt;<i>string</i>&gt;</code> give the URL of the style sheet to be imported, while
+the optional <code>supports(...)</code> expression and <code>&lt;<i>media-query-list</i>&gt;</code>
+state the import conditions.</td>
+</tr>
+<tr>
+<td class="example" id="at-namespace"><code>@namespace [<i>Prefix</i>]? [ &lt;url(<i>URL</i>)&gt; | &lt;<i>string</i>&gt; ]</code></td>
+<td>Defines a namespace prefix or default namespace to be used in the stylesheet.</td>
+</tr>
+</table>
 
 ### Nested At-Rules
 
 After the initial at-rules, the following at-rules can appear also in nested form in the CSS document:
 
-`@page [Name] Selectors { Page-declarations }`
-Modifies margins, orphans, widows and page breaks of a document when printing it. The pages are identified either by a name, or by a page pseudo-class and page declarations can either be style declarations or page region at-rules.
-`:left`
-Page pseudo-classes
-`:right`
-`:recto`
-`:verso`
-`:first`
-`:blank`
-`:nth(N)`
-`@left` | `@left-top` | `@left-middle` | `@left-bottom`
-[Page region](paged.html#page-regions) at-rules
-`@right` | `@right-top` | `@right-middle` | `@right-bottom`
-`@top` | `@top-left-corner` | `@top-left` | `@top-center` | `@top-right` | `@top-right-corner`
-`@bottom` | `@bottom-left-corner` | `@bottom-left` | `@bottom-center` | `@bottom-right` | `@bottom-right-corner`
-`@page-float-top` | `@page-float-bottom` | `@prince-overlay`
-`@footnote`
-The `@page` rule takes the following CSS properties: `background-attachment` | `bleed` | `marks` | `prince-mark-length` | `prince-mark-offset` | `prince-mark-width` | `prince-pdf-page-colorspace` | `prince-pdf-page-label` | `prince-rotate-body` | `prince-shrink-to-fit` | `prince-trim` | `size`
-Additionally, [Prince for Books](prince-for-books.html#pfb) takes the following CSS property: `prince-page-fill`
-| `@media Media-query-list { Rules }`                                                                                                                                             |
-|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| The rules will apply if the device meets the criteria of the condition defined in the media query. See [CSS Media Queries](doc-refs.html#media-queries) for details. |
+<table class="grid">
+<tr>
+<th colspan="2" id="at-page"><code>@page [<i>Name</i>] <i>Selectors</i> { <i>Page-declarations</i> }</code></th>
+</tr>
+<tr>
+<td colspan="2">Modifies margins, orphans, widows and page breaks of a document when
+printing it. The pages are identified either by a name, or by a page pseudo-class and
+page declarations can either be style declarations or page region at-rules.</td>
+</tr>
+<tr>
+<td><code>:left</code></td>
+<td rowspan="7">Page pseudo-classes</td>
+</tr>
+<tr>
+<td><code>:right</code></td>
+</tr>
+<tr>
+<td><code>:recto</code></td>
+</tr>
+<tr>
+<td><code>:verso</code></td>
+</tr>
+<tr>
+<td><code>:first</code></td>
+</tr>
+<tr>
+<td><code>:blank</code></td>
+</tr>
+<tr>
+<td><code>:nth(<i>N</i>)</code></td>
+</tr>
+<tr>
+<td><code>@left</code> | <code>@left-top</code> | <code>@left-middle</code> |
+<code>@left-bottom</code></td>
+<td rowspan="6"><a href="doc-latest/paged.html#page-regions">Page region</a> at-rules</td>
+</tr>
+<tr>
+<td><code>@right</code> | <code>@right-top</code> | <code>@right-middle</code> |
+<code>@right-bottom</code></td>
+</tr>
+<tr>
+<td><code>@top</code> | <code>@top-left-corner</code> | <code>@top-left</code> |
+<code>@top-center</code> | <code>@top-right</code> | <code>@top-right-corner</code></td>
+</tr>
+<tr>
+<td><code>@bottom</code> | <code>@bottom-left-corner</code> | <code>@bottom-left</code> |
+<code>@bottom-center</code> | <code>@bottom-right</code> | <code>@bottom-right-corner</code></td>
+</tr>
+<tr>
+<td><code>@page-float-top</code> | <code>@page-float-bottom</code> | <code>@prince-overlay</code></td>
+</tr>
+<tr>
+<td><code>@footnote</code></td>
+</tr>
+<tr>
+<td colspan="2">The <code>@page</code> rule takes the following CSS properties:
+<code><a href="doc-latest/doc-refs.html#prop-background-attachment">background-attachment</a></code> |
+<code><a href="doc-latest/doc-refs.html#prop-bleed">bleed</a></code> |
+<code><a href="doc-latest/doc-refs.html#prop-marks">marks</a></code> |
+<code><a href="doc-latest/doc-refs.html#prop-prince-mark-length">prince-mark-length</a></code> |
+<code><a href="doc-latest/doc-refs.html#prop-prince-mark-offset">prince-mark-offset</a></code> |
+<code><a href="doc-latest/doc-refs.html#prop-prince-mark-width">prince-mark-width</a></code> |
+<code><a href="doc-latest/doc-refs.html#prop-prince-pdf-page-colorspace">prince-pdf-page-colorspace</a></code> |
+<code><a href="doc-latest/doc-refs.html#prop-prince-pdf-page-label">prince-pdf-page-label</a></code> |
+<code><a href="doc-latest/doc-refs.html#prop-prince-rotate-body">prince-rotate-body</a></code> |
+<code><a href="doc-latest/doc-refs.html#prop-prince-shrink-to-fit">prince-shrink-to-fit</a></code> |
+<code><a href="doc-latest/doc-refs.html#prop-prince-trim">prince-trim</a></code> |
+<code><a href="doc-latest/doc-refs.html#prop-size">size</a></code>
+</td>
+</tr>
+<tr>
+<td colspan="2">Additionally, <a href="doc-latest/prince-for-books.html#pfb">Prince for Books</a> takes the following CSS property:
+<code><a href="doc-latest/doc-refs.html#prop-prince-page-fill">prince-page-fill</a></code>
+</td>
+</tr>
+</table>
 
-| `@supports Condition { Rules }`                                                                                                        |
-|----------------------------------------------------------------------------------------------------------------------------------------|
-| Checks whether particular `property:value` combinations are supported. Unlike media queries, this uses the classical two-valued logic. |
+<table class="grid">
+<tr>
+<th id="at-media"><code>@media <i>Media-query-list</i> { <i>Rules</i> }</code></th>
+</tr>
+<tr>
+<td>The rules will apply if the device meets the criteria of the condition defined
+in the media query. See <a href="doc-latest/doc-refs.html#media-queries">CSS Media Queries</a> for details.</td>
+</tr>
+</table>
 
-`@font-face { Font-declarations }`
-Links a font family to an actual font.
-The `@font-face` rule takes the following CSS descriptors:
-`font-family: <family-name>`
-This descriptor defines the font family name that will be used in all CSS font family name matching. It is required for the `@font-face` rule to be valid.
-`src: [ url(<URL>) format(<string>#)? | local(<family-name>) | prince-lookup(<family-name>) ]#`
-This descriptor specifies the resource containing font data. It is required for the `@font-face` rule to be valid. The `local()` function searches for locally installed system fonts, but `prince-lookup()` will also find fonts defined by other `@font-face` rules.
-`unicode-range: <urange>#`
-This descriptor defines the set of Unicode codepoints that may be supported by the font face. The descriptor value is a comma-delimited list of Unicode range values.
-Additionally, `@font-face` takes the CSS descriptors `font-variant`, `font-stretch`, `font-weight` and `font-style`, which take the same values as the CSS properties with the same name.
-`@prince-color Name { alternate-color: ... }`
-Defines a new color name.
-The `@prince-color` rule takes the mandatory `alternate-color` property to specify an alternate color to use if the named spot color is not available. The named color is used in a stylesheet with the `prince-color()` function. (See [Spot colors](color.html#color-spot)).
-`@prince-pdf Name { Declarations }`
-Defines properties relating to PDFs.
-The `@prince-pdf` rule takes the following CSS properties: `prince-fallback-cmyk-profile` | `prince-filter-resolution` | `prince-pdf-color-conversion` | `prince-pdf-color-options` | `prince-pdf-display-doc-title` | `prince-pdf-duplex` | `prince-pdf-event-scripts` | `prince-pdf-link-type` | `prince-pdf-open-action` | `prince-pdf-output-intent` | `prince-pdf-page-layout` | `prince-pdf-page-mode` | `prince-pdf-paper-tray` | `prince-pdf-print-scaling` | `prince-pdf-profile` | `prince-pdf-script` | `prince-pdf-xmp`
+<table class="grid">
+<tr>
+<th id="at-supports"><code>@supports <i>Condition</i> { <i>Rules</i> }</code></th>
+</tr>
+<tr>
+<td>Checks whether particular <code>property:value</code> combinations are supported.
+Unlike media queries, this uses the classical two-valued logic.</td>
+</tr>
+</table>
+
+<table class="grid">
+<tr>
+<th colspan="2" id="at-font-face"><code>@font-face { <i>Font-declarations</i> }</code></th>
+</tr>
+<tr>
+<td colspan="2">Links a font family to an actual font.</td>
+</tr>
+<tr>
+<td colspan="2">The <code>@font-face</code> rule takes the following CSS descriptors:</td>
+</tr>
+<tr>
+<td><code><a href="doc-latest/doc-refs.html#prop-font-family">font-family</a>: &lt;<i>family-name</i>&gt;</code></td>
+<td>This descriptor defines the font family name that will be used in all CSS font
+family name matching. It is required for the <code>@font-face</code> rule to be valid.</td>
+</tr>
+<tr>
+<td><code><a href="doc-latest/doc-refs.html#prop-src">src</a>: [ url(&lt;<i>URL</i>&gt;) format(&lt;<i>string</i>&gt;#)? | local(&lt;<i>family-name</i>&gt;) |
+prince-lookup(&lt;<i>family-name</i>&gt;) ]#</code></td>
+<td>This descriptor specifies the resource containing font data. It is required for
+the <code>@font-face</code> rule to be valid. The <code>local()</code> function searches
+for locally installed system fonts, but <code>prince-lookup()</code> will also find
+fonts defined by other <code>@font-face</code> rules.</td>
+</tr>
+<tr>
+<td><code><a href="doc-latest/doc-refs.html#prop-unicode-range">unicode-range</a>: &lt;<i>urange</i>&gt;#</code></td>
+<td>This descriptor defines the set of Unicode codepoints that may be supported by
+the font face. The descriptor value is a comma-delimited list of Unicode range values.</td>
+</tr>
+<tr>
+<td colspan="2">Additionally, <code>@font-face</code> takes the CSS descriptors
+<code><a href="doc-latest/doc-refs.html#prop-font-variant">font-variant</a></code>, <code><a href="doc-latest/doc-refs.html#prop-font-stretch">font-stretch</a></code>,
+<code><a href="doc-latest/doc-refs.html#prop-font-weight">font-weight</a></code> and <code><a href="doc-latest/doc-refs.html#prop-font-style">font-style</a></code>,
+which take the same values as the CSS properties with the same name.</td>
+</tr>
+</table>
+
+<table class="grid">
+<tr>
+<th colspan="2" id="at-prince-color"><code>@prince-color <i>Name</i> { alternate-color: ... }</code></th>
+</tr>
+<tr>
+<td colspan="2">Defines a new color name.</td>
+</tr>
+<tr>
+<td colspan="2">The <code>@prince-color</code> rule takes the mandatory
+<code><a href="doc-latest/doc-refs.html#prop-alternate-color">alternate-color</a></code> property to specify an alternate
+color to use if the named spot color is not available.  The named color is used in
+a stylesheet with the <code>prince-color()</code> function.  (See <a href="doc-latest/color.html#color-spot">Spot colors</a>).</td>
+</tr>
+</table>
+
+<table class="grid">
+<tr>
+<th colspan="2" id="at-prince-pdf"><code>@prince-pdf <i>Name</i> { <i>Declarations</i> }</code></th>
+</tr>
+<tr>
+<td colspan="2">Defines properties relating to PDFs.</td>
+</tr>
+<tr>
+<td colspan="2">The <code>@prince-pdf</code> rule takes the following CSS properties:
+<code><a href="doc-latest/doc-refs.html#prop-prince-fallback-cmyk-profile">prince-fallback-cmyk-profile</a></code> |
+<code><a href="doc-latest/doc-refs.html#prop-prince-filter-resolution">prince-filter-resolution</a></code> |
+<code><a href="doc-latest/doc-refs.html#prop-prince-pdf-color-conversion">prince-pdf-color-conversion</a></code> |
+<code><a href="doc-latest/doc-refs.html#prop-prince-pdf-color-options">prince-pdf-color-options</a></code> |
+<code><a href="doc-latest/doc-refs.html#prop-prince-pdf-display-doc-title">prince-pdf-display-doc-title</a></code> |
+<code><a href="doc-latest/doc-refs.html#prop-prince-pdf-duplex">prince-pdf-duplex</a></code> |
+<code><a href="doc-latest/doc-refs.html#prop-prince-pdf-event-scripts">prince-pdf-event-scripts</a></code> |
+<code><a href="doc-latest/doc-refs.html#prop-prince-pdf-link-type">prince-pdf-link-type</a></code> |
+<code><a href="doc-latest/doc-refs.html#prop-prince-pdf-open-action">prince-pdf-open-action</a></code> |
+<code><a href="doc-latest/doc-refs.html#prop-prince-pdf-output-intent">prince-pdf-output-intent</a></code> |
+<code><a href="doc-latest/doc-refs.html#prop-prince-pdf-page-layout">prince-pdf-page-layout</a></code> |
+<code><a href="doc-latest/doc-refs.html#prop-prince-pdf-page-mode">prince-pdf-page-mode</a></code> |
+<code><a href="doc-latest/doc-refs.html#prop-prince-pdf-paper-tray">prince-pdf-paper-tray</a></code> |
+<code><a href="doc-latest/doc-refs.html#prop-prince-pdf-print-scaling">prince-pdf-print-scaling</a></code> |
+<code><a href="doc-latest/doc-refs.html#prop-prince-pdf-profile">prince-pdf-profile</a></code> |
+<code><a href="doc-latest/doc-refs.html#prop-prince-pdf-script">prince-pdf-script</a></code> |
+<code><a href="doc-latest/doc-refs.html#prop-prince-pdf-xmp">prince-pdf-xmp</a></code></td>
+</tr>
+</table>
 

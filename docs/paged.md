@@ -32,6 +32,7 @@ In this section we will show most of the properties that can be specified within
 Page size can be specified using the `size` property in *length* units or by a page size keyword (see [Page Size Keywords](doc-refs.html#page-size-keywords) for a list), optionally combined with the `portrait` or `landscape` keyword.
 
 ``
+
     /* Use A4 paper */
     @page { size: A4 }
 
@@ -117,107 +118,167 @@ Several other page regions can also be used. The full list of page regions is sh
 
 Page regions
 
-Name
-Default alignment
-In figure
-`text-align`
-`vertical-align`
-`@top`
-center
-middle
-yellow
-`@bottom`
-center
-middle
-yellow
-`@left`
-center
-middle
-red
-`@right`
-center
-middle
-red
-`@top-left`
-left
-middle
-green
-`@top-center`
-center
-middle
-not shown
-`@top-right`
-right
-middle
-not shown
-`@bottom-left`
-left
-middle
-not shown
-`@bottom-center`
-center
-middle
-not shown
-`@bottom-right`
-right
-middle
-not shown
-`@left-top`
-center
-top
-green
-`@left-middle`
-center
-middle
-not shown
-`@left-bottom`
-center
-bottom
-not shown
-`@right-top`
-center
-top
-not shown
-`@right-middle`
-center
-middle
-not shown
-`@right-bottom`
-center
-bottom
-not shown
-`@top-left-corner`
-right
-middle
-not shown
-`@top-right-corner`
-left
-middle
-blue
-`@bottom-left-corner`
-right
-middle
-not shown
-`@bottom-right-corner`
-left
-middle
-not shown
-`@page-float-top`
-center
-top
-not shown
-`@page-float-bottom`
-center
-bottom
-not shown
-`@prince-overlay`
-center
-middle
-not shown
-`@footnote`
-left
-middle
-not shown
+<table class="grid">
+<thead>
+<tr>
+<th>Name</th>
+<th colspan="2">Default alignment</th>
+<th>In figure</th>
+</tr>
+<tr>
+<th/>
+<th><code><a href="doc-latest/doc-refs.html#prop-text-align">text-align</a></code></th>
+<th><code><a href="doc-latest/doc-refs.html#prop-vertical-align">vertical-align</a></code></th>
+<th/>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>@top</code></td>
+<td>center</td>
+<td>middle</td>
+<td style="background-color: #ff8">yellow</td>
+</tr>
+<tr>
+<td><code>@bottom</code></td>
+<td>center</td>
+<td>middle</td>
+<td style="background-color: #ff8">yellow</td>
+</tr>
+<tr>
+<td><code>@left</code></td>
+<td>center</td>
+<td>middle</td>
+<td style="background-color: #f88">red</td>
+</tr>
+<tr>
+<td><code>@right</code></td>
+<td>center</td>
+<td>middle</td>
+<td style="background-color: #f88">red</td>
+</tr>
+<tr>
+<td><code>@top-left</code></td>
+<td>left</td>
+<td>middle</td>
+<td style="background-color: #8f8">green</td>
+</tr>
+<tr>
+<td><code>@top-center</code></td>
+<td>center</td>
+<td>middle</td>
+<td>not shown</td>
+</tr>
+<tr>
+<td><code>@top-right</code></td>
+<td>right</td>
+<td>middle</td>
+<td>not shown</td>
+</tr>
+<tr>
+<td><code>@bottom-left</code></td>
+<td>left</td>
+<td>middle</td>
+<td>not shown</td>
+</tr>
+<tr>
+<td><code>@bottom-center</code></td>
+<td>center</td>
+<td>middle</td>
+<td>not shown</td>
+</tr>
+<tr>
+<td><code>@bottom-right</code></td>
+<td>right</td>
+<td>middle</td>
+<td>not shown</td>
+</tr>
+<tr>
+<td><code>@left-top</code></td>
+<td>center</td>
+<td>top</td>
+<td style="background-color: #8f8">green</td>
+</tr>
+<tr>
+<td><code>@left-middle</code></td>
+<td>center</td>
+<td>middle</td>
+<td>not shown</td>
+</tr>
+<tr>
+<td><code>@left-bottom</code></td>
+<td>center</td>
+<td>bottom</td>
+<td>not shown</td>
+</tr>
+<tr>
+<td><code>@right-top</code></td>
+<td>center</td>
+<td>top</td>
+<td>not shown</td>
+</tr>
+<tr>
+<td><code>@right-middle</code></td>
+<td>center</td>
+<td>middle</td>
+<td>not shown</td>
+</tr>
+<tr>
+<td><code>@right-bottom</code></td>
+<td>center</td>
+<td>bottom</td>
+<td>not shown</td>
+</tr>
+<tr>
+<td><code>@top-left-corner</code></td>
+<td>right</td>
+<td>middle</td>
+<td>not shown</td>
+</tr>
+<tr>
+<td><code>@top-right-corner</code></td>
+<td>left</td>
+<td>middle</td>
+<td style="background-color: #88f">blue</td>
+</tr>
+<tr>
+<td><code>@bottom-left-corner</code></td>
+<td>right</td>
+<td>middle</td>
+<td>not shown</td>
+</tr>
+<tr>
+<td><code>@bottom-right-corner</code></td>
+<td>left</td>
+<td>middle</td>
+<td>not shown</td>
+</tr>
+<tr>
+<td><code>@page-float-top</code></td>
+<td>center</td>
+<td>top</td>
+<td>not shown</td>
+</tr>
+<tr>
+<td><code>@page-float-bottom</code></td>
+<td>center</td>
+<td>bottom</td>
+<td>not shown</td>
+</tr>
+<tr>
+<td><code>@prince-overlay</code></td>
+<td>center</td>
+<td>middle</td>
+<td>not shown</td>
+</tr>
+<tr>
+<td><code>@footnote</code></td>
+<td>left</td>
+<td>middle</td>
+<td>not shown</td>
+</tr>
+</tbody>
+</table>
 
 Prince will try to create page regions of the correct sizes. If you need to create boxes of specific sizes you may need to use only a single box (eg: `@top`) and use the `content` property to place elements with specific sizes in it.
 
@@ -245,52 +306,53 @@ We have already shown an example of using the `page` counter to print the page n
 
 The `page` counter can be reset using the `counter-reset` property at any block-level element within a non-floating element in the normal flow. This is useful for restarting page numbering at a new section of the document.
 
-Restarting page numbering
+<div id="ex-restart-page-numbers" class="example">
+  <div class="title">Restarting page numbering</div>
+<p class="label">HTML</p>
+<div class="programlisting">
+<code language="HTML"><pre>&lt;body&gt;
+    &lt;div class="front"&gt; cover page, etc, ... &lt;/div&gt;
+    &lt;div class="contents"&gt;
+        table of contents, ...
+    &lt;/div&gt;
+    &lt;div class="body"&gt;
+    &lt;div class="chapter"&gt; chapter 1...&lt;/div&gt;
+    &lt;div class="chapter"&gt; chapter 2...&lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class=appendix"&gt; appendix1 &lt;/div&gt;
+    &lt;div class=appendix"&gt; appendix2, ... &lt;/div&gt;
+&lt;/body&gt;</pre></code>
+</div>
 
-HTML
-
-``
-    <body>
-        <div class="front"> cover page, etc, ... </div>
-        <div class="contents">
-            table of contents, ...
-        </div>
-        <div class="body">
-        <div class="chapter"> chapter 1...</div>
-        <div class="chapter"> chapter 2...</div>
-        </div>
-        <div class=appendix"> appendix1 </div>
-        <div class=appendix"> appendix2, ... </div>
-    </body>
-
-CSS
-
-``
-    .contents {
-        display: block;
-        page: table-of-contents;
-        counter-reset: page 1
+<p class="label">CSS</p>
+<div class="programlisting">
+<code language="CSS"><pre>.contents {
+    <a href="doc-latest/doc-refs.html#prop-display">display</a>: block;
+    <a href="doc-latest/doc-refs.html#prop-page">page</a>: table-of-contents;
+    <a href="doc-latest/doc-refs.html#prop-counter-reset">counter-reset</a>: page 1
+}
+@page table-of-contents {
+    @top { <a href="doc-latest/doc-refs.html#prop-content">content</a>: "Table of Contents" }
+    @bottom {
+        content: counter(page, lower-alpha)
     }
-    @page table-of-contents {
-        @top { content: "Table of Contents" }
-        @bottom {
-            content: counter(page, lower-alpha)
-        }
-    }
+}
 
-    .body {
-        display: block;
-        page: main;
-        counter-reset: page 1
+.body {
+    display: block;
+    page: main;
+    counter-reset: page 1
+}
+@page main {
+    @top { content: string(chapter-title) }
+    @bottom {
+        content: counter(page)
     }
-    @page main {
-        @top { content: string(chapter-title) }
-        @bottom {
-            content: counter(page)
-        }
-    }
+}
 
-    .chapter h1 { string-set: chapter-title content() }
+.chapter h1 { <a href="doc-latest/doc-refs.html#prop-string-set">string-set</a>: chapter-title content() }</pre></code>
+</div>
+</div>
 
 [Restarting page numbering](paged.html#ex-restart-page-numbers) also uses [Named pages](paged.html#named-pages) which we will explain in more detail below. We create three types of pages: table-of-contents pages, main pages, and pages without a name.
 

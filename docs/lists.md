@@ -23,23 +23,40 @@ CSS
 
 List markers are rendered outside the list item in the left margin area by default. If the CSS property `list-style-position` has value `inside`, the marker is rendered as the first inline box inside the list item.
 
-CSS
+<div class="example">
+<p class="label">CSS</p>
+<div class="programlisting">
+<code language="css"><pre>ol {
+    padding-left: 1cm;
+    border: solid 2px darkgreen
+}
+li { border: solid 1px black }
+li.inside { list-style-position: inside }
+li.outside { list-style-position: outside }</pre></code>
+</div>
 
-``
-    ol {
-        padding-left: 1cm;
-        border: solid 2px darkgreen
-    }
-    li { border: solid 1px black }
-    li.inside { list-style-position: inside }
-    li.outside { list-style-position: outside }
-
-Output
-
-1.  This list item sets the `list-style-position` to `inside`, so the list marker is rendered inside the principal box of `li`.
-2.  This list item sets the `list-style-position` to `outside`, so the list marker is rendered outside the principal box of `li`.
-
-When the marker position is `outside`, it is rendered outside the `li` principal box. If you want the marker to appear inside the principal box of `ol`, make sure to give `ol` enough left padding or `li` enough left margin.
+<p class="label">Output</p>
+<div class="output">
+<ol style="border: solid 2px darkgreen">
+<li style="border: solid 1px black; list-style-position: inside">
+    This list item sets the <code><a href="doc-latest/doc-refs.html#prop-list-style-position">list-style-position</a></code> to <code>inside</code>,
+    so the list marker is rendered inside the principal box of <code>li</code>.
+</li>
+<li style="border: solid 1px black; list-style-position: outside">
+    This list item sets the <code><a href="doc-latest/doc-refs.html#prop-list-style-position">list-style-position</a></code> to <code>outside</code>,
+    so the list marker is rendered outside the principal box of <code>li</code>.
+</li>
+</ol>
+</div>
+<p class="comment">
+When the marker position is <code>outside</code>,
+it is rendered outside the <code>li</code> principal box.
+If you want the marker to appear inside the principal box of
+<code>ol</code>,
+make sure to give <code>ol</code> enough left padding
+or <code>li</code> enough left margin.
+</p>
+</div>
 
 #### List marker type
 
@@ -57,16 +74,26 @@ The property `list-style-type` applies to list items and determines the type of 
 | `upper-roman`                | I, II, III, IV, V, VI, ...      |
 | `asterisks`                  | \*, \*\*, \*\*\*, ...           |
 
-CSS
+<div class="example">
+<p class="label">CSS</p>
+<div class="programlisting">
+<code language="css"><pre>li.upper-alpha { list-style-type: upper-alpha }
+li.lower-roman { list-style-type: lower-roman }</pre></code>
+</div>
 
-``
-    li.upper-alpha { list-style-type: upper-alpha }
-    li.lower-roman { list-style-type: lower-roman }
+<p class="label">Output</p>
+<div class="output">
+<ol>
+<li style="list-style-type: upper-alpha">
+    The marker type of this list item is upper-alpha.
+</li>
+<li style="list-style-type: lower-roman">
+    The marker type of this list item is lower-roman.
+</li>
+</ol>
+</div>
 
-Output
-
-1.  The marker type of this list item is upper-alpha.
-2.  The marker type of this list item is lower-roman.
+</div>
 
 #### List marker style
 
@@ -76,21 +103,22 @@ The shorthand property `list-style` can be used to set the three properties `lis
 
 Alternatively, the `::marker` pseudo-element can be used to style the list item marker, giving full control over its content, width, alignment and so on.
 
-CSS
-
-``
-    li::marker { width: 2.4cm }
-    li.left::marker { text-align: left }
-    li.center::marker { text-align: center }
-    li.right::marker { text-align: right }
-    li.text_marker::marker {
-        content: "Number " counter(list-item)
-    }
-    li.image_marker::marker {
-        content: url("../../image/prince.jpg")
-    }
-
-Output
-
-![Marker example](images/marker.png)
+<div class="example">
+<p class="label">CSS</p>
+<div class="programlisting">
+<code language="css"><pre>li::marker { width: 2.4cm }
+li.left::marker { text-align: left }
+li.center::marker { text-align: center }
+li.right::marker { text-align: right }
+li.text_marker::marker {
+    content: "Number " counter(list-item)
+}
+li.image_marker::marker {
+    content: url("../../image/prince.jpg")
+}</pre></code>
+</div>
+<p class="label">Output</p>
+<img src="images/marker.png"
+     alt="Marker example"/>
+</div>
 
