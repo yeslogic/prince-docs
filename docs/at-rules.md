@@ -71,7 +71,7 @@ page declarations can either be style declarations or page region at-rules.</td>
 <tr>
 <td><code>@left</code> | <code>@left-top</code> | <code>@left-middle</code> |
 <code>@left-bottom</code></td>
-<td rowspan="6"><a href="doc-latest/paged.html#page-regions">Page region</a> at-rules</td>
+<td rowspan="6"><a href="paged.html#page-regions">Page region</a> at-rules</td>
 </tr>
 <tr>
 <td><code>@right</code> | <code>@right-top</code> | <code>@right-middle</code> |
@@ -93,23 +93,23 @@ page declarations can either be style declarations or page region at-rules.</td>
 </tr>
 <tr>
 <td colspan="2">The <code>@page</code> rule takes the following CSS properties:
-<code><a href="doc-latest/doc-refs.html#prop-background-attachment">background-attachment</a></code> |
-<code><a href="doc-latest/doc-refs.html#prop-bleed">bleed</a></code> |
-<code><a href="doc-latest/doc-refs.html#prop-marks">marks</a></code> |
-<code><a href="doc-latest/doc-refs.html#prop-prince-mark-length">prince-mark-length</a></code> |
-<code><a href="doc-latest/doc-refs.html#prop-prince-mark-offset">prince-mark-offset</a></code> |
-<code><a href="doc-latest/doc-refs.html#prop-prince-mark-width">prince-mark-width</a></code> |
-<code><a href="doc-latest/doc-refs.html#prop-prince-pdf-page-colorspace">prince-pdf-page-colorspace</a></code> |
-<code><a href="doc-latest/doc-refs.html#prop-prince-pdf-page-label">prince-pdf-page-label</a></code> |
-<code><a href="doc-latest/doc-refs.html#prop-prince-rotate-body">prince-rotate-body</a></code> |
-<code><a href="doc-latest/doc-refs.html#prop-prince-shrink-to-fit">prince-shrink-to-fit</a></code> |
-<code><a href="doc-latest/doc-refs.html#prop-prince-trim">prince-trim</a></code> |
-<code><a href="doc-latest/doc-refs.html#prop-size">size</a></code>
+<code><a href="doc-refs.html#prop-background-attachment">background-attachment</a></code> |
+<code><a href="doc-refs.html#prop-bleed">bleed</a></code> |
+<code><a href="doc-refs.html#prop-marks">marks</a></code> |
+<code><a href="doc-refs.html#prop-prince-mark-length">prince-mark-length</a></code> |
+<code><a href="doc-refs.html#prop-prince-mark-offset">prince-mark-offset</a></code> |
+<code><a href="doc-refs.html#prop-prince-mark-width">prince-mark-width</a></code> |
+<code><a href="doc-refs.html#prop-prince-pdf-page-colorspace">prince-pdf-page-colorspace</a></code> |
+<code><a href="doc-refs.html#prop-prince-pdf-page-label">prince-pdf-page-label</a></code> |
+<code><a href="doc-refs.html#prop-prince-rotate-body">prince-rotate-body</a></code> |
+<code><a href="doc-refs.html#prop-prince-shrink-to-fit">prince-shrink-to-fit</a></code> |
+<code><a href="doc-refs.html#prop-prince-trim">prince-trim</a></code> |
+<code><a href="doc-refs.html#prop-size">size</a></code>
 </td>
 </tr>
 <tr>
-<td colspan="2">Additionally, <a href="doc-latest/prince-for-books.html#pfb">Prince for Books</a> takes the following CSS property:
-<code><a href="doc-latest/doc-refs.html#prop-prince-page-fill">prince-page-fill</a></code>
+<td colspan="2">Additionally, <a href="prince-for-books.html#pfb">Prince for Books</a> takes the following CSS property:
+<code><a href="doc-refs.html#prop-prince-page-fill">prince-page-fill</a></code>
 </td>
 </tr>
 </table>
@@ -120,7 +120,7 @@ page declarations can either be style declarations or page region at-rules.</td>
 </tr>
 <tr>
 <td>The rules will apply if the device meets the criteria of the condition defined
-in the media query. See <a href="doc-latest/doc-refs.html#media-queries">CSS Media Queries</a> for details.</td>
+in the media query. See <a href="doc-refs.html#media-queries">CSS Media Queries</a> for details.</td>
 </tr>
 </table>
 
@@ -145,12 +145,12 @@ Unlike media queries, this uses the classical two-valued logic.</td>
 <td colspan="2">The <code>@font-face</code> rule takes the following CSS descriptors:</td>
 </tr>
 <tr>
-<td><code><a href="doc-latest/doc-refs.html#prop-font-family">font-family</a>: &lt;<i>family-name</i>&gt;</code></td>
+<td><code><a href="doc-refs.html#prop-font-family">font-family</a>: &lt;<i>family-name</i>&gt;</code></td>
 <td>This descriptor defines the font family name that will be used in all CSS font
 family name matching. It is required for the <code>@font-face</code> rule to be valid.</td>
 </tr>
 <tr>
-<td><code><a href="doc-latest/doc-refs.html#prop-src">src</a>: [ url(&lt;<i>URL</i>&gt;) format(&lt;<i>string</i>&gt;#)? | local(&lt;<i>family-name</i>&gt;) |
+<td><code><a href="doc-refs.html#prop-src">src</a>: [ url(&lt;<i>URL</i>&gt;) format(&lt;<i>string</i>&gt;#)? | local(&lt;<i>family-name</i>&gt;) |
 prince-lookup(&lt;<i>family-name</i>&gt;) ]#</code></td>
 <td>This descriptor specifies the resource containing font data. It is required for
 the <code>@font-face</code> rule to be valid. The <code>local()</code> function searches
@@ -158,14 +158,14 @@ for locally installed system fonts, but <code>prince-lookup()</code> will also f
 fonts defined by other <code>@font-face</code> rules.</td>
 </tr>
 <tr>
-<td><code><a href="doc-latest/doc-refs.html#prop-unicode-range">unicode-range</a>: &lt;<i>urange</i>&gt;#</code></td>
+<td><code><a href="doc-refs.html#prop-unicode-range">unicode-range</a>: &lt;<i>urange</i>&gt;#</code></td>
 <td>This descriptor defines the set of Unicode codepoints that may be supported by
 the font face. The descriptor value is a comma-delimited list of Unicode range values.</td>
 </tr>
 <tr>
 <td colspan="2">Additionally, <code>@font-face</code> takes the CSS descriptors
-<code><a href="doc-latest/doc-refs.html#prop-font-variant">font-variant</a></code>, <code><a href="doc-latest/doc-refs.html#prop-font-stretch">font-stretch</a></code>,
-<code><a href="doc-latest/doc-refs.html#prop-font-weight">font-weight</a></code> and <code><a href="doc-latest/doc-refs.html#prop-font-style">font-style</a></code>,
+<code><a href="doc-refs.html#prop-font-variant">font-variant</a></code>, <code><a href="doc-refs.html#prop-font-stretch">font-stretch</a></code>,
+<code><a href="doc-refs.html#prop-font-weight">font-weight</a></code> and <code><a href="doc-refs.html#prop-font-style">font-style</a></code>,
 which take the same values as the CSS properties with the same name.</td>
 </tr>
 </table>
@@ -179,9 +179,9 @@ which take the same values as the CSS properties with the same name.</td>
 </tr>
 <tr>
 <td colspan="2">The <code>@prince-color</code> rule takes the mandatory
-<code><a href="doc-latest/doc-refs.html#prop-alternate-color">alternate-color</a></code> property to specify an alternate
+<code><a href="doc-refs.html#prop-alternate-color">alternate-color</a></code> property to specify an alternate
 color to use if the named spot color is not available.  The named color is used in
-a stylesheet with the <code>prince-color()</code> function.  (See <a href="doc-latest/color.html#color-spot">Spot colors</a>).</td>
+a stylesheet with the <code>prince-color()</code> function.  (See <a href="color.html#color-spot">Spot colors</a>).</td>
 </tr>
 </table>
 
@@ -194,23 +194,23 @@ a stylesheet with the <code>prince-color()</code> function.  (See <a href="doc-l
 </tr>
 <tr>
 <td colspan="2">The <code>@prince-pdf</code> rule takes the following CSS properties:
-<code><a href="doc-latest/doc-refs.html#prop-prince-fallback-cmyk-profile">prince-fallback-cmyk-profile</a></code> |
-<code><a href="doc-latest/doc-refs.html#prop-prince-filter-resolution">prince-filter-resolution</a></code> |
-<code><a href="doc-latest/doc-refs.html#prop-prince-pdf-color-conversion">prince-pdf-color-conversion</a></code> |
-<code><a href="doc-latest/doc-refs.html#prop-prince-pdf-color-options">prince-pdf-color-options</a></code> |
-<code><a href="doc-latest/doc-refs.html#prop-prince-pdf-display-doc-title">prince-pdf-display-doc-title</a></code> |
-<code><a href="doc-latest/doc-refs.html#prop-prince-pdf-duplex">prince-pdf-duplex</a></code> |
-<code><a href="doc-latest/doc-refs.html#prop-prince-pdf-event-scripts">prince-pdf-event-scripts</a></code> |
-<code><a href="doc-latest/doc-refs.html#prop-prince-pdf-link-type">prince-pdf-link-type</a></code> |
-<code><a href="doc-latest/doc-refs.html#prop-prince-pdf-open-action">prince-pdf-open-action</a></code> |
-<code><a href="doc-latest/doc-refs.html#prop-prince-pdf-output-intent">prince-pdf-output-intent</a></code> |
-<code><a href="doc-latest/doc-refs.html#prop-prince-pdf-page-layout">prince-pdf-page-layout</a></code> |
-<code><a href="doc-latest/doc-refs.html#prop-prince-pdf-page-mode">prince-pdf-page-mode</a></code> |
-<code><a href="doc-latest/doc-refs.html#prop-prince-pdf-paper-tray">prince-pdf-paper-tray</a></code> |
-<code><a href="doc-latest/doc-refs.html#prop-prince-pdf-print-scaling">prince-pdf-print-scaling</a></code> |
-<code><a href="doc-latest/doc-refs.html#prop-prince-pdf-profile">prince-pdf-profile</a></code> |
-<code><a href="doc-latest/doc-refs.html#prop-prince-pdf-script">prince-pdf-script</a></code> |
-<code><a href="doc-latest/doc-refs.html#prop-prince-pdf-xmp">prince-pdf-xmp</a></code></td>
+<code><a href="doc-refs.html#prop-prince-fallback-cmyk-profile">prince-fallback-cmyk-profile</a></code> |
+<code><a href="doc-refs.html#prop-prince-filter-resolution">prince-filter-resolution</a></code> |
+<code><a href="doc-refs.html#prop-prince-pdf-color-conversion">prince-pdf-color-conversion</a></code> |
+<code><a href="doc-refs.html#prop-prince-pdf-color-options">prince-pdf-color-options</a></code> |
+<code><a href="doc-refs.html#prop-prince-pdf-display-doc-title">prince-pdf-display-doc-title</a></code> |
+<code><a href="doc-refs.html#prop-prince-pdf-duplex">prince-pdf-duplex</a></code> |
+<code><a href="doc-refs.html#prop-prince-pdf-event-scripts">prince-pdf-event-scripts</a></code> |
+<code><a href="doc-refs.html#prop-prince-pdf-link-type">prince-pdf-link-type</a></code> |
+<code><a href="doc-refs.html#prop-prince-pdf-open-action">prince-pdf-open-action</a></code> |
+<code><a href="doc-refs.html#prop-prince-pdf-output-intent">prince-pdf-output-intent</a></code> |
+<code><a href="doc-refs.html#prop-prince-pdf-page-layout">prince-pdf-page-layout</a></code> |
+<code><a href="doc-refs.html#prop-prince-pdf-page-mode">prince-pdf-page-mode</a></code> |
+<code><a href="doc-refs.html#prop-prince-pdf-paper-tray">prince-pdf-paper-tray</a></code> |
+<code><a href="doc-refs.html#prop-prince-pdf-print-scaling">prince-pdf-print-scaling</a></code> |
+<code><a href="doc-refs.html#prop-prince-pdf-profile">prince-pdf-profile</a></code> |
+<code><a href="doc-refs.html#prop-prince-pdf-script">prince-pdf-script</a></code> |
+<code><a href="doc-refs.html#prop-prince-pdf-xmp">prince-pdf-xmp</a></code></td>
 </tr>
 </table>
 

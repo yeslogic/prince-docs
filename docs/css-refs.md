@@ -113,8 +113,8 @@ does not recognize <code>transform-box</code>. Prince does not allow perspective
 </tr>
 <tr>
 <td><a href="https://www.w3.org/TR/css3-conditional/">CSS Conditional Rules Module Level 3</a></td>
-<td>Prince supports the <a href="doc-latest/doc-refs.html#at-media"><code>@media</code></a>
-and <a href="doc-latest/doc-refs.html#at-supports"><code>@supports</code></a> at-rules.</td>
+<td>Prince supports the <a href="doc-refs.html#at-media"><code>@media</code></a>
+and <a href="doc-refs.html#at-supports"><code>@supports</code></a> at-rules.</td>
 </tr>
 <tr>
 <td><a href="https://drafts.fxtf.org/filters/">Filter Effects Module Level 1</a></td>
@@ -167,7 +167,7 @@ states, the <code>flow</code> property and the <code>string-set</code> property.
 <tr>
 <td><a href="https://www.w3.org/TR/SVG/">SVG 1.1</a></td>
 <td>Prince supports the specification with some exceptions - please see
-<a href="doc-latest/svg.html#svg">Scalable Vector Graphics (SVG)</a> for a full list of currently not supported elements.</td>
+<a href="svg.html#svg">Scalable Vector Graphics (SVG)</a> for a full list of currently not supported elements.</td>
 </tr>
 </table>
 

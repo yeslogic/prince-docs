@@ -31,12 +31,12 @@ In this section you find the documentation for the supported CSS functional expr
 <tr>
 <td><code>var( <i>custom-property-name</i> [, <i>fallback</i>]? )</code></td>
 <td>Retrieves the value of a custom property set elsewhere.</td>
-<td><a href="doc-latest/css-vars.html#css-vars">Custom properties (CSS variables)</a></td>
+<td><a href="css-vars.html#css-vars">Custom properties (CSS variables)</a></td>
 </tr>
 <tr>
 <td><code>rgb(R,G,B)</code></td>
 <td>Defines red, green and blue values of a color.</td>
-<td rowspan="7">all <code><i><a href="doc-latest/color.html#color">color</a></i></code> values</td>
+<td rowspan="7">all <code><i><a href="color.html#color">color</a></i></code> values</td>
 </tr>
 <tr>
 <td><code>rgba(R,G,B,A)</code></td>
@@ -57,7 +57,7 @@ alpha component.</td>
 </tr>
 <tr class="ext">
 <td><code>prince-color( <i>colorname</i>  [, <i>number</i> | <i>percentage</i>]? , overprint? )*</code></td>
-<td>Using a spot color defined in the <code><a href="doc-latest/doc-refs.html#at-prince-color">@prince-color</a></code>
+<td>Using a spot color defined in the <code><a href="doc-refs.html#at-prince-color">@prince-color</a></code>
 at-rule. The number or percentage defines the tint. An optional <code>overprint</code>
 keyword instructs Prince whether to overprint the color.
 <div class="example">
@@ -76,7 +76,7 @@ is given, it defaults to <code>overprint-mode-nonzero</code>.</td>
 <td><code>linear-gradient([ [ &lt;angle&gt; | to &lt;side-or-corner&gt; ] ,]? &lt;color-stop&gt;[, &lt;color-stop&gt;]+)</code></td>
 <td>Creates an image consisting of a progressive transition between two or more
 colors along a straight line.</td>
-<td rowspan="4"><code><a href="doc-latest/doc-refs.html#prop-background-image">background-image</a></code></td>
+<td rowspan="4"><code><a href="doc-refs.html#prop-background-image">background-image</a></code></td>
 </tr>
 <tr>
 <td><code>radial-gradient([ [ &lt;shape&gt; || &lt;size&gt; ] [ at &lt;position&gt; ]?, | at &lt;position&gt;, ]? &lt;color-stop&gt; [, &lt;color-stop&gt; ]+)</code></td>
@@ -94,19 +94,19 @@ colors that radiate from an origin point</td>
 <tr>
 <td><code>rect( <i>offset</i>, <i>offset</i>, <i>offset</i>, <i>offset</i> )</code></td>
 <td>Defines a region in the form of a rectangle.</td>
-<td><code><a href="doc-latest/doc-refs.html#prop-clip">clip</a></code></td>
+<td><code><a href="doc-refs.html#prop-clip">clip</a></code></td>
 </tr>
 <tr>
 <td><code>content()</code></td>
 <td>Retrieves the text content of the selected element.  It can be used with several
 different properties.</td>
-<td rowspan="16"><code><a href="doc-latest/doc-refs.html#prop-content">content</a></code> - see also <a href="doc-latest/gen-content.html#gen-content-functions">Generated Content Functions</a></td>
+<td rowspan="16"><code><a href="doc-refs.html#prop-content">content</a></code> - see also <a href="gen-content.html#gen-content-functions">Generated Content Functions</a></td>
 </tr>
 <tr>
 <td><code>element( <i>name</i>, <i>page-policy</i>? )</code></td>
 <td>Places an element (which has been removed from the normal flow with the
 <code>running()</code> function) in a page region.  See
-<a href="doc-latest/paged.html#content-taking-elements">Taking elements from the document</a>.</td>
+<a href="paged.html#content-taking-elements">Taking elements from the document</a>.</td>
 </tr>
 <tr>
 <td><code>counter( <i>name</i>, <i>counter-style</i>?, <i>page-policy</i>? )</code></td>
@@ -119,7 +119,7 @@ different properties.</td>
 <tr>
 <td><code>target-counter( <i>url</i>, <i>counter</i>, <i>counter-style</i>? )</code></td>
 <td>Retrieves the value of the innermost counter with a given name at the given URL.
-See <a href="doc-latest/gen-content.html#counter-target">Using target-counter()</a>.</td>
+See <a href="gen-content.html#counter-target">Using target-counter()</a>.</td>
 </tr>
 <tr>
 <td><code>target-counters( <i>url</i>, <i>counter</i>, "<i>separator</i>", <i>counter-style</i>? )</code></td>
@@ -128,7 +128,7 @@ URL.</td>
 </tr>
 <tr>
 <td><code>target-content( <i>url</i> )</code></td>
-<td>References the text content of the linked element.  See <a href="doc-latest/gen-content.html#target-content">Using target-content()</a>.</td>
+<td>References the text content of the linked element.  See <a href="gen-content.html#target-content">Using target-content()</a>.</td>
 </tr>
 <tr>
 <td><code>leader( "<i>...</i>" | dotted | solid | space )</code></td>
@@ -136,8 +136,8 @@ URL.</td>
 </tr>
 <tr>
 <td><code>string( <i>ident</i>, <i>page-policy</i>? )</code></td>
-<td>Retrieves the value defined with the <code><a href="doc-latest/doc-refs.html#prop-string-set">string-set</a></code>
-property.  See <a href="doc-latest/paged.html#content-copying-text">Copying content from the document</a>.</td>
+<td>Retrieves the value defined with the <code><a href="doc-refs.html#prop-string-set">string-set</a></code>
+property.  See <a href="paged.html#content-copying-text">Copying content from the document</a>.</td>
 </tr>
 <tr>
 <td><code>repeat( <i>string</i>+ )</code></td>
@@ -174,7 +174,7 @@ This counter will yield the sequence "x, y, z, 4, 5, 6" etc.
 <tr class="ext">
 <td><code>flow( <i>name</i>, <i>page-policy</i>? ) | prince-flow( <i>name</i>, <i>page-policy</i>? )*</code></td>
 <td>Inserts an element that has previously been removed with the <code>static()</code>
-function.  See <a href="doc-latest/paged.html#content-taking-elements">Taking elements from the document</a>.</td>
+function.  See <a href="paged.html#content-taking-elements">Taking elements from the document</a>.</td>
 </tr>
 <tr class="ext">
 <td><code>prince-script( <i>ident</i> [, <i>content</i>+]? )*</code></td>
@@ -201,13 +201,13 @@ font versions. But it is a possible escape hatch for people who need a specific
 glyph and don't have any other way of accessing it (by Unicode character or OpenType
 substitution).</p>
 <p>Usually, authors should prefer to use named OpenType features, using the
-<code>prince-opentype()</code> value of the <code><a href="doc-latest/doc-refs.html#prop-font-variant">font-variant</a></code>
+<code>prince-opentype()</code> value of the <code><a href="doc-refs.html#prop-font-variant">font-variant</a></code>
 property, which is more likely to work when changing font.</p></td>
 </tr>
 <tr>
 <td><code>grayscale( <i>number</i> | <i>percent</i> )</code></td>
 <td>Converts the input image to grayscale.</td>
-<td rowspan="10"><code><a href="doc-latest/doc-refs.html#prop-filter">filter</a></code></td>
+<td rowspan="10"><code><a href="doc-refs.html#prop-filter">filter</a></code></td>
 </tr>
 <tr>
 <td><code>sepia( <i>number</i> | <i>percent</i> )</code></td>
@@ -250,21 +250,21 @@ bright.</td>
 <tr class="ext">
 <td><code>prince-opentype( [ <i>feature</i> ]+ )*</code></td>
 <td>Specifies a comma-separated list of OpenType features to be enabled.  For details
-please see the <code><a href="doc-latest/doc-refs.html#prop-font-variant">font-variant</a></code> property and
-<a href="doc-latest/fonts.html#opentype-features">OpenType Features in Prince</a>.</td>
-<td><code><a href="doc-latest/doc-refs.html#prop-font-variant">font-variant</a></code></td>
+please see the <code><a href="doc-refs.html#prop-font-variant">font-variant</a></code> property and
+<a href="fonts.html#opentype-features">OpenType Features in Prince</a>.</td>
+<td><code><a href="doc-refs.html#prop-font-variant">font-variant</a></code></td>
 </tr>
 <tr>
 <td><code>running( <i>name</i> )</code></td>
 <td>Removes an element from the normal document flow, to make it available for use
 in a page region with the <code>element()</code> function.  See
-<a href="doc-latest/paged.html#content-taking-elements">Taking elements from the document</a>.</td>
-<td><code><a href="doc-latest/doc-refs.html#prop-position">position</a></code></td>
+<a href="paged.html#content-taking-elements">Taking elements from the document</a>.</td>
+<td><code><a href="doc-refs.html#prop-position">position</a></code></td>
 </tr>
 <tr class="ext">
 <td><code>recompress-jpeg( <i>quality%</i> )*</code></td>
 <td>Recompresses JPEG images by the indicated percentage to save space.</td>
-<td rowspan="2"><code><a href="doc-latest/doc-refs.html#prop-prince-image-magic">prince-image-magic</a></code></td>
+<td rowspan="2"><code><a href="doc-refs.html#prop-prince-image-magic">prince-image-magic</a></code></td>
 </tr>
 <tr class="ext">
 <td><code>convert-to-jpeg( <i>quality%</i> )*</code></td>
@@ -273,15 +273,15 @@ in a page region with the <code>element()</code> function.  See
 <tr class="ext">
 <td><code>static( <i>name</i>, [ start | current ]? )*</code></td>
 <td>Removes an element from the normal document flow, to make it available for use
-with the <code>flow()</code> function.  See <a href="doc-latest/paged.html#content-taking-elements">Taking elements from the document</a>.</td>
-<td><code><a href="doc-latest/doc-refs.html#prop-prince-flow">prince-flow</a></code></td>
+with the <code>flow()</code> function.  See <a href="paged.html#content-taking-elements">Taking elements from the document</a>.</td>
+<td><code><a href="doc-refs.html#prop-prince-flow">prince-flow</a></code></td>
 </tr>
 <tr class="ext">
 <td><code>command( <i>ident</i> )*</code></td>
 <td>Specifies any arbitrary command to be passed to the PDF viewer when the PDF file
 is opened.  The user can supply values that Prince doesn't know about, but the viewer
 does.</td>
-<td><code><a href="doc-latest/doc-refs.html#prop-prince-pdf-open-action">prince-pdf-open-action</a></code></td>
+<td><code><a href="doc-refs.html#prop-prince-pdf-open-action">prince-pdf-open-action</a></code></td>
 </tr>
 <tr>
 <td><code>format()</code></td>
@@ -296,7 +296,7 @@ formats.
 </div>
 </div>
 </td>
-<td rowspan="3"><code><a href="doc-latest/doc-refs.html#prop-src">src</a></code></td>
+<td rowspan="3"><code><a href="doc-refs.html#prop-src">src</a></code></td>
 </tr>
 <tr>
 <td><code>local()</code></td>
@@ -305,12 +305,12 @@ formats.
 <tr class="ext">
 <td><code>prince-lookup()*</code></td>
 <td>Searches for locally installed system fonts, but will also find fonts defined
-by other <code>@font-face</code> rules.  See <a href="doc-latest/fonts.html#font-family">Defining a font family</a>.</td>
+by other <code>@font-face</code> rules.  See <a href="fonts.html#font-family">Defining a font family</a>.</td>
 </tr>
 <tr>
 <td><code>rotate( <i>angle</i> )</code></td>
 <td>Rotates an element around a fixed point on the 2D plane.</td>
-<td rowspan="12"><code><a href="doc-latest/doc-refs.html#prop-transform">transform</a></code></td>
+<td rowspan="12"><code><a href="doc-refs.html#prop-transform">transform</a></code></td>
 </tr>
 <tr>
 <td><code>matrix( <i>number</i>[, <i>number</i>]{5,5} )</code></td>
@@ -358,9 +358,9 @@ by other <code>@font-face</code> rules.  See <a href="doc-latest/fonts.html#font
 </tr>
 <tr>
 <td><code>supports([ &lt;<i>supports-condition</i>&gt; | &lt;<i>declaration</i>&gt; ])</code></td>
-<td>Interpreted as a <code><a href="doc-latest/doc-refs.html#at-supports">@supports</a></code>
+<td>Interpreted as a <code><a href="doc-refs.html#at-supports">@supports</a></code>
 condition.</td>
-<td><code><a href="doc-latest/doc-refs.html#at-import">@import</a></code></td>
+<td><code><a href="doc-refs.html#at-import">@import</a></code></td>
 </tr>
 </tbody>
 </table>

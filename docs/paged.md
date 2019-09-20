@@ -127,8 +127,8 @@ Page regions
 </tr>
 <tr>
 <th/>
-<th><code><a href="doc-latest/doc-refs.html#prop-text-align">text-align</a></code></th>
-<th><code><a href="doc-latest/doc-refs.html#prop-vertical-align">vertical-align</a></code></th>
+<th><code><a href="doc-refs.html#prop-text-align">text-align</a></code></th>
+<th><code><a href="doc-refs.html#prop-vertical-align">vertical-align</a></code></th>
 <th/>
 </tr>
 </thead>
@@ -327,12 +327,12 @@ The `page` counter can be reset using the `counter-reset` property at any block-
 <p class="label">CSS</p>
 <div class="programlisting">
 <code language="CSS"><pre>.contents {
-    <a href="doc-latest/doc-refs.html#prop-display">display</a>: block;
-    <a href="doc-latest/doc-refs.html#prop-page">page</a>: table-of-contents;
-    <a href="doc-latest/doc-refs.html#prop-counter-reset">counter-reset</a>: page 1
+    <a href="doc-refs.html#prop-display">display</a>: block;
+    <a href="doc-refs.html#prop-page">page</a>: table-of-contents;
+    <a href="doc-refs.html#prop-counter-reset">counter-reset</a>: page 1
 }
 @page table-of-contents {
-    @top { <a href="doc-latest/doc-refs.html#prop-content">content</a>: "Table of Contents" }
+    @top { <a href="doc-refs.html#prop-content">content</a>: "Table of Contents" }
     @bottom {
         content: counter(page, lower-alpha)
     }
@@ -350,7 +350,7 @@ The `page` counter can be reset using the `counter-reset` property at any block-
     }
 }
 
-.chapter h1 { <a href="doc-latest/doc-refs.html#prop-string-set">string-set</a>: chapter-title content() }</pre></code>
+.chapter h1 { <a href="doc-refs.html#prop-string-set">string-set</a>: chapter-title content() }</pre></code>
 </div>
 </div>
 

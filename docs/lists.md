@@ -39,11 +39,11 @@ li.outside { list-style-position: outside }</pre></code>
 <div class="output">
 <ol style="border: solid 2px darkgreen">
 <li style="border: solid 1px black; list-style-position: inside">
-    This list item sets the <code><a href="doc-latest/doc-refs.html#prop-list-style-position">list-style-position</a></code> to <code>inside</code>,
+    This list item sets the <code><a href="doc-refs.html#prop-list-style-position">list-style-position</a></code> to <code>inside</code>,
     so the list marker is rendered inside the principal box of <code>li</code>.
 </li>
 <li style="border: solid 1px black; list-style-position: outside">
-    This list item sets the <code><a href="doc-latest/doc-refs.html#prop-list-style-position">list-style-position</a></code> to <code>outside</code>,
+    This list item sets the <code><a href="doc-refs.html#prop-list-style-position">list-style-position</a></code> to <code>outside</code>,
     so the list marker is rendered outside the principal box of <code>li</code>.
 </li>
 </ol>

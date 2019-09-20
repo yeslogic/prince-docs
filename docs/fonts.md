@@ -65,7 +65,7 @@ Prince supports OpenType features, and enables certain ones by default in specif
 <td colspan="2">
 <p class="note">
 * Kerning can be disabled with the keyword <code>prince-no-kerning</code> of the
-<code><a href="doc-latest/doc-refs.html#prop-font-variant">font-variant</a></code> property.
+<code><a href="doc-refs.html#prop-font-variant">font-variant</a></code> property.
 </p>
 </td>
 </tr>

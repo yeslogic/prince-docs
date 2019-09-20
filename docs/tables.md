@@ -83,7 +83,7 @@ td.solid-green { border: 2px solid green }</pre></code>
 
 <p class="comment">
 Note that by default,
-the value of <code><a href="doc-latest/doc-refs.html#prop-border-collapse">border-collapse</a></code> is
+the value of <code><a href="doc-refs.html#prop-border-collapse">border-collapse</a></code> is
 <code>separate</code>.
 </p>
 </div>
@@ -125,7 +125,7 @@ td.solid-green { border: 2px solid green }</pre></code>
 </table>
 </div>
 <p class="comment">
-Note that the <code><a href="doc-latest/doc-refs.html#prop-border-spacing">border-spacing</a></code> property is not used
+Note that the <code><a href="doc-refs.html#prop-border-spacing">border-spacing</a></code> property is not used
 in the collapsing table border model.
 </p>
 </div>
