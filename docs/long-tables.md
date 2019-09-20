@@ -19,7 +19,7 @@ Tables can also be provided with a table caption by using the `caption` HTML ele
 
 When a table spans across more than one page, the `prince-caption-page` property determines whether table captions will be displayed on the first page of a table, or only on the following pages, or repeated on every page that a table appears on. See also [Fancy Table Captions](fancy-table-captions.html#fancy-table-captions).
 
-``
+
     table + p {
         display: table-caption;
         caption-side: bottom;

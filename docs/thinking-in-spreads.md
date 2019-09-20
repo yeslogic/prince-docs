@@ -25,7 +25,7 @@ The basic unit for paged media in print is the page, organized in page spreads: 
 
 You have control on wether to place specific selected and named pages right or left, or *recto* or *verso* with the help of `break-before` and `break-after`, each of which takes the values `recto` and `verso` in addition to the traditional values.
 
-``
+
     h1 {
         break-before: recto;
     }
@@ -38,7 +38,7 @@ Pages can also be specifically targeted and styled with the [`@page`](doc-refs.h
 
 Using the values `right` and `left` when placing elements on pages symmetrically arranged around the central gutter is possible, but rather cumbersome, since their placement depends on the placement of the page on a spread. Prince offers the extensions `inside` and `outside` to ease the task.
 
-``
+
     p {
         margin: 2em;
     }
@@ -53,7 +53,7 @@ This example creates a bigger margin around the central gutter.
 
 So, when you start thinking about the layout box model, Prince offers the properties `margin-inside` and `margin-outside` to help styling.
 
-``
+
     p { 
         margin: 2em;
         margin-inside: 3em;
@@ -65,7 +65,7 @@ Floats are particularly sensitive to the placement on the page with regards to w
 
 On a paragraph level, the properties `text-align` and `text-align-last` similarly take the keywords `inside` and `outside` to help achieving a smooth layout.
 
-``
+
     @page:verso {
         @top-left { content: counter(page) }
         @top-right { content: string(book-title) }

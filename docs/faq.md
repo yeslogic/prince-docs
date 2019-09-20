@@ -39,7 +39,7 @@ How can I create tooltips in the PDF file? <a href="#faq-tooltips" class="self-l
 
 PDF tooltips can be enabled with the CSS property `prince-tooltip` like this:
 
-``
+
     *[title] { prince-tooltip: attr(title) }
 
 However, please note that tooltips are not a standard PDF feature, and they may only work in Adobe Reader and Adobe Acrobat and may not be visible in other PDF viewers, such as web browsers.
@@ -58,14 +58,14 @@ You can specify `break-before:left | right` on the root element of the document.
 
 CSS
 
-``
+
     body[start=even] {
       break-before:left;
     }
 
 HTML
 
-``
+
     <body start="even" startpage="28">
 
 Does Prince support JavaScript? <a href="#faq-js" class="self-link"></a>
@@ -84,7 +84,7 @@ To apply it to HTML files, the XML input format needs to be specified with the [
 
 Another option in HTML is to use the `iframe` element:
 
-``
+
     <style>
     @page {
       @bottom {

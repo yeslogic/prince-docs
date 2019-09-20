@@ -10,7 +10,7 @@ After choosing an appropriate typeface for your text with the `font-family` prop
 
 Next up you should decide whether to give it some `color`. The default text color for a page is defined in the `body` selector, but each selector can have its own color.
 
-``
+
     body {
         font-family: Helvetica, Arial, sans-serif;
         color: blue;
@@ -36,7 +36,7 @@ Prince adds the property `prince-text-justify` to define how to treat justified 
 
 The last line of an element can receive its own alignment style with the `text-align-last` property. It takes the same values as `text-align`.
 
-``
+
     p {
         text-align: justify;
         text-indent: 5em;
@@ -44,14 +44,14 @@ The last line of an element can receive its own alignment style with the `text-a
 
 It is also possible to style the first line of a paragraph in a different way - to achieve this, the selector `::first-line` is used.
 
-``
+
     p::first-line {
         text-indent: 8em;
     }
 
 It is not unusual to give the first letter of a paragraph a bigger font size than the rest of the paragraph. The selector `::first-letter` is useful for this purpose.
 
-``
+
     p::first-letter {
         font-size: 2em;
     }
@@ -60,7 +60,7 @@ One of the most common use cases is for so-called drop caps - large capital lett
 
 In the following example we are selecting the first letter of the first paragraph, which gets styled much bigger than the normal text, and gets floated to the left. The normal text is wrapping around this first large letter.
 
-``
+
     p:first-child::first-letter {
         font-size: 5em;
         line-height: 3rem;

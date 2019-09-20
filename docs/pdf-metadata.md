@@ -8,7 +8,7 @@ Prince creates PDF metadata from the content of the XHTML metadata elements. The
 
 XML
 
-``
+
     <html>
     <head>
     <title>Cooking with Cabbage</title>

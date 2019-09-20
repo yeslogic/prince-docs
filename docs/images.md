@@ -21,7 +21,7 @@ The `img` element is used to include images in XHTML documents.
 
 XML
 
-``
+
     <img src="picture.jpg" alt="A Nice Picture"/>
 
 ### Images in DocBook
@@ -30,7 +30,7 @@ The `imagedata` element is used to include images in DocBook documents.
 
 XML
 
-``
+
     <mediaobject>
         <imageobject>
           <imagedata fileref="picture.jpg"/>
@@ -45,24 +45,24 @@ The `content` property can specify the image filename directly, or it can take t
 
 CSS
 
-``
+
     picture { content: url("picture.png") }
 
 XML
 
-``
+
     <para> A nice <picture /> here. </para>
 
 The `content` property directly specifies the filename of the image that will be used as the content of the `picture` element.
 
 CSS
 
-``
+
     picture { content: attr("src", url) }
 
 XML
 
-``
+
     <para> A nice <picture src="picture.tiff" /> here. </para>
 
 The `content` property specifies that the content of the `picture` element will be an image loaded from the filename specified by the `src` attribute of the element.
@@ -87,7 +87,7 @@ The property applies only to content images (e.g. replaced elements and generate
 
 CSS properties also control the size of images in print. Unless an explicit size for an image is specified by using the `width` and `height` properties, Prince will determine the intrinsic size from the image resolution (DPI), which can be overridden using the `prince-image-resolution` property:
 
-``
+
     prince-image-resolution: 300dpi;        /* set an explicit DPI */
     prince-image-resolution: normal;        /* 1 image pixel maps to 1px unit */
     prince-image-resolution: auto, normal;  /* auto-detect, fallback to normal */

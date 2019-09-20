@@ -8,7 +8,7 @@ Reading long lines of text can be difficult - multiple columns have been used in
 
 The `column-count` property specifies the number of columns for the selected element - the column width will be calculated automatically. Alternatively, you can define the (optimal) width of a column with the `column-width` property, and the number of columns will be defined automatically. Note that Prince might make small adjustments to the actual width in order to use the available space at its best. Both values can also be set simultaneously with the shorthand `columns` property.
 
-``
+
     p {
         column-count: 3;
     }
@@ -17,7 +17,7 @@ The height of the columns is balanced by default, and the text is distributed to
 
 With the `column-gap` property the distance between columns can be styled and the `column-rule` property allows the addition of a line between columns - this is similar to using `border-left` or `border-right` properties.
 
-``
+
     p {
         column-gap: 2em;
         column-rule: red dotted thin;
@@ -33,7 +33,7 @@ If an element is to break the flow and span several columns, the property `colum
 
 The following example instructs Prince to make the `h1` heading element span all the columns:
 
-``
+
     body {
         column-count: 3;
     }

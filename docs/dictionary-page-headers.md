@@ -19,7 +19,7 @@ A peculiar and interesting use of page headers happens in dictionaries: typicall
 
 The `string-set` property is applied to each definition in the dictionary (the **b:first-child** from the following example), and then the `first` and `last` page policy values are use to select the relevant definition to display in the page header.
 
-``
+
     @page {
       @top-left { content: string(term, first);}
       @top-right { content: string(term, last);}
@@ -31,7 +31,7 @@ This is the crucial set of rules for the [Dictionary](sample-docs.html#dictionar
 
 The dictionary sample is furthermore noticeable for its use of the optional page policy keyword `first-except`: the current letter of the alphabet is displayed on each page heading, *except* for the page on which the letter appears in the body of the page, starting the new section.
 
-``
+
     @page {
       @top-center { content: string(letter, first-except);}
     }

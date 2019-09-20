@@ -10,7 +10,7 @@ All HTML elements follow the CSS box model. Their `margin`, `border`, `padding` 
 
 At the very outside of the box are the margins. Each margin's size can be set individualy with the properties [margin-top](doc-refs.html#prop-margin-top), [margin-bottom](doc-refs.html#prop-margin-bottom), [margin-left](doc-refs.html#prop-margin-left) and [margin-right](doc-refs.html#prop-margin-right), or you can use the *shorthand property* [margin](doc-refs.html#prop-margin) to specify all four margins together. The syntax of the shorthand property is:
 
-``
+
     margin: top right bottom left
 
 If there are only:
@@ -37,7 +37,7 @@ The `border-clip` property splits the borders into parts along the border edge -
 
 The property `padding` defines the padding inside the box model. Each padding's size can be set individually with the properties [padding-top](doc-refs.html#prop-padding-top), [padding-bottom](doc-refs.html#prop-padding-bottom), [padding-left](doc-refs.html#prop-padding-left) and [padding-right](doc-refs.html#prop-padding-right), or you can use the *shorthand property* [padding](doc-refs.html#prop-padding) to specify all four paddings together. The syntax of the shorthand property is:
 
-``
+
     padding: top right bottom left
 
 If there are only:

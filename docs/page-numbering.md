@@ -21,7 +21,7 @@ To use a counter, it usually first needs to be initialized with the `counter-res
 
 Page counters work a bit more simple and usually don't need to be explicitly initialized or incremented.
 
-``
+
     @page {
       @bottom {
         content: counter(page);
@@ -30,7 +30,7 @@ Page counters work a bit more simple and usually don't need to be explicitly ini
 
 However, if you want to restart the numbering after the Preface of your book, you need to name the pages (see [Named pages](paged.html#named-pages)) and the counter needs to be re-initialized with the main content. See also the example [Restarting page numbering](paged.html#ex-restart-page-numbers).
 
-``
+
     .preface {
       page: preface;
       counter-reset: page 1;
@@ -55,7 +55,7 @@ The page numbers can be referenced with the `target-counter()` function. This pr
 
 CSS
 
-``
+
     a[href]::after {
         content: " [See page " target-counter(attr(href), page) "]";
     }
@@ -66,14 +66,14 @@ If you are referencing the pages in the Preface, marked with lower roman-style n
 
 CSS
 
-``
+
     a[href|="#preface"]::after {
         content: " [See page " target-counter(attr(href), page, lower-roman) "]";
     }
 
 In some documents, particularly those that are unbound such as office documents, it can be useful to show the total number of pages on each page. The total number of pages can be accessed by using the `pages` counter. This is a pre-defined counter that is fixed to the total number of pages in the document.
 
-``
+
     @page {
       @bottom {
         content: "Page " counter(page) " of " counter(pages);

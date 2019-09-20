@@ -6,7 +6,7 @@ title: Floats
 
 When printed texts contain images, the text is usually laid out to wrap around those images. To accomplish the same with CSS, the images are floated - either to the left or right of text, or at times even to the top or to the bottom of a column. The `float` property does just this - it floats an element, allowing the content of other elements to flow around it.
 
-``
+
     img {
         float: right;
     }
@@ -25,14 +25,14 @@ This allows for more flexible layout options that meet the needs of formatting d
 
 When giving the `float` property the value `top` or `bottom`, the element will be floated to, respectively, the top or the bottom of the page. The values `column-top` and `column-bottom` float the element to the top or bottom of the column it appears in, while `column-top-corner` and `column-bottom-corner` float the element to the top or bottom of the last column, rather than its natural column. These can be useful if you wanted to create a magazine-style layout, floating an image to the right-hand corner of the current multi-column layout.
 
-``
+
     img {
         float: column-top-corner;
     }
 
 A floated element can span several columns with the help of the `column-span` property (see [Columns](columns.html#columns)). The following example instructs Prince to make the image span two columns:
 
-``
+
     img {
         float: column-top-corner;
         column-span: 2;
@@ -40,7 +40,7 @@ A floated element can span several columns with the help of the `column-span` pr
 
 The value `prince-snap` instructs Prince to float the image to the nearest "end", i.e. to the top or bottom of the page, or of the column in the case of a multi-column layout.
 
-``
+
     img {
         float: prince-snap;
     }
@@ -59,14 +59,14 @@ The value `footnote` transforms the element into a footnote: it creates a footno
 
 Prince also takes the additional modifier `next`. In a multi-column layout, this defers the float to the next column, otherwise it defers the float to the next page.
 
-``
+
     img {
         float: column-top next;
     }
 
 The optional modifier `unless-fit` is to be used in combination with other float instructions, and expresses a conditional: the element is only floated if it would otherwise cause a page or column break. For example, If you have a large image that happens to occur at the end of the page, it could force a page break and leave a gap at the end of the previous page. So you could float the image `top unless-fit`, which would move it to the top of the next page *unless it fits on the current page without causing a break and leaving a gap*:
 
-``
+
     img {
         float: top unless-fit;
     }

@@ -24,7 +24,7 @@ Two more keywords perform more obscure tasks that might be required in very spec
 
 Several of the values can be combined, to perform more than one magic on images - for details please check the grammar of the `prince-image-magic` property.
 
-``
+
     img {
         prince-image-magic: recompress-jpeg(50%) convert-to-jpeg(50%) snap-to-integer-coords;
     }

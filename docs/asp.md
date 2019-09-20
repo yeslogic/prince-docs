@@ -17,7 +17,7 @@ Prince can be called from ASP pages using the [ActiveX/COM interface](asp.html#a
 
 This interface is provided in the form of an ActiveX DLL file that needs to be registered in the Windows registry using REGSVR32.EXE:
 
-``
+
     regsvr32 C:\Prince\PRINCE.dll
 
 In order to call Prince from an ASP page, we need to create a COM object using the CreateObject server method. Once the COM object is created, you can use the COM interface methods to perform the tasks.
@@ -26,7 +26,7 @@ Please note that document scripts need to first be enabled with `prn.SetJavaScri
 
 The following is some sample code for illustration:
 
-``
+
     <%
     Dim pr
     Dim res

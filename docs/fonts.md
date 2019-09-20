@@ -13,14 +13,14 @@ To define the font, or the fonts to be used in a document, the `font-family` pro
 
 To prevent this font switching mechanism and force Prince to only use the defined font, the special keyword `prince-no-fallback` is available: it triggers a warning if any glyphs are not found in the specified font, instead of switching to another one.
 
-``
+
     h1 { font-family: MyFont, prince-no-fallback; }
 
 The [`@font-face`](doc-refs.html#at-font-face) at-rule can be used to define custom font names. The `font-family` descriptor defines the font family name that will be used in all CSS font family name matching, and the `src` descriptor specifies the resource containing font data. They both are required for the [`@font-face`](doc-refs.html#at-font-face) rule to be valid.
 
 The `src` descriptor can define the resource with a `url()` function - an optional `format()` function defines the format of the remotely fetched font. Alternatively, the `local()` and `prince-lookup()` functions can be used - the former searches for locally installed system fonts, while the latter will also find fonts defined by other [`@font-face`](doc-refs.html#at-font-face) rules. See [CSS Functional Expressions](doc-refs.html#css-functions).
 
-``
+
     @font-face {
       font-family: MyFont;
       src: prince-lookup("MyFont"),

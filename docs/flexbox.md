@@ -14,14 +14,14 @@ In Flex layout some properties apply to the parent element, i.e. to the flex con
 
 To use the flex layout, flex needs to be enabled on the parent element to create the flex container by defining the `flex` value for the `display` property.
 
-``
+
     .flexcontainer {
         display: flex;
     }
 
 Next, the direction of the flex layout can be defined by means of the `flex-direction` property: rightwards, leftwards, downwards, or even upwards! With the `flex-wrap` property the wrapping of the flex container is controlled - the default is to try to arrange all items on one line. The shorthand property `flex-flow` can be used to define `flex-direction` and `flex-wrap` together.
 
-``
+
     .flexcontainer {
         display: flex;
         flex-flow: row wrap;
@@ -33,7 +33,7 @@ The property `justify-content` defines the alignment of the content along the ma
 
 By default, items are placed in the source order inside a flex container, but with the `order` property it can be modified!
 
-``
+
     .flexitem1 {
         order: 2;
     }
@@ -46,7 +46,7 @@ By default, items are placed in the source order inside a flex container, but wi
 
 The `flex-grow` property defines the proportion by which a flex item can grow, if necessary, while `flex-shrink` defines the proportion by which an item can shrink. The `flex-basis` property defines the default size of an element, before the remaining space is distributed. However, it is recommended to use the shorthand property `flex` instead - the value for the `flex-grow` is mandatory, the other properties are automatically set in an intelligent way.
 
-``
+
     .flexitem {
         flex: 2;
     }

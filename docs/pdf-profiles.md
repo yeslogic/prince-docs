@@ -49,7 +49,7 @@ Object streams are enabled by default, therefore Prince produces files with PDF 
 
 Choosing one profile over another can help producing a PDF file which has the right properties for its intended destination. Each PDF profile places restrictions on the features allowed in a PDF file in order to achieve its aims. Please also see the [Color Management](color-management.html#color-management) section for the impact the PDF profiles have on color management. Prince produces error messages when the restrictions are not respected.
 
-``
+
     $ prince foo.html --encrypt --no-embed-fonts --pdf-profile="PDF/A-1b"
     prince: error: PDF/A-1b does not support encryption
     prince: error: PDF/A-1b requires fonts to be embedded

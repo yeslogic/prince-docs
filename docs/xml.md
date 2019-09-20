@@ -55,7 +55,7 @@ Please note that XInclude is disabled by default, and can be enabled with the [`
 
 Here is an example of a book written in XHTML in which each chapter has been placed in a separate XML document for convenient editing and then included in the main document using XInclude:
 
-``
+
     <html xmlns:xi="http://www.w3.org/2001/XInclude">
     <head>
     <title>Book Title</title>
@@ -73,7 +73,7 @@ Here is an example of a book written in XHTML in which each chapter has been pla
 
 XInclude can also be used to include text files into XML documents:
 
-``
+
     <xi:include href="file.txt" parse="text"/>
 
 This is a convenient way of including files containing arbitrary non-XML text, such as emails, database reports or program source code. It also allows the inclusion of external XML content as "unparsed text", as if all the markup had been explicitly escaped with character entities or placed in a CDATA section.
@@ -82,7 +82,7 @@ This is a convenient way of including files containing arbitrary non-XML text, s
 
 It is possible to specify fallback content that should be used if an included file cannot be loaded. The fallback content can be arbitrary XML and may even contain additional inclusions.
 
-``
+
     <xi:include href="report.html">
         <xi:fallback>
         <p>No report is available</p>

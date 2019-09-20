@@ -21,7 +21,7 @@ PDF/A and PDF/X files have an output intent that defines the intended output col
 
 The URL specified with the [`--pdf-output-intent`](doc-refs.html#cl-pdf-output-intent) command-line option or the `prince-pdf-output-intent` property will be resolved relative to the base URL of the style sheet or document in which the rule is, and needs to point to an existing color profile file.
 
-``
+
     @prince-pdf {
         prince-pdf-output-intent: url("ISOcoated_v2_eci.icc")
     }
@@ -58,7 +58,7 @@ CMYK colors specified using the `cmyk()` function syntax, or equivalent `device-
            --pdf-output-intent=sRGB.icc
            --fallback-cmyk-profile=ISOcoated_v2_eci.icc
 
-``
+
     @prince-pdf {
         prince-pdf-output-intent: url("sRGB.icc");
         prince-fallback-cmyk-profile: url("ISOcoated_v2_eci.icc");
@@ -84,7 +84,7 @@ When the value `use-true-black` is used, such an RGB value will be encoded in th
 
 On the other hand, the `use-rich-black` value instructs Prince to keep all RGB colors as RGB in the PDF. A CMYK printer should print RGB colors using a mixture of all four CMYK inks.
 
-``
+
     @prince-pdf {
         prince-pdf-color-options: use-rich-black;
     }

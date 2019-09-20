@@ -22,7 +22,6 @@ Default style sheets
 
 Style sheets may import other style sheets using [`@import`](doc-refs.html#at-import) rules. These rules must occur before any other rules or declarations in the style sheet, and have the effect of importing all the rules and declarations from the specified style sheet. See [CSS At-rules](doc-refs.html#css-atrules).
 
-``
     @import "base.css";
     @import "custom.css";
 
@@ -34,7 +33,7 @@ Multiple style sheets can be applied and in some cases declarations from differe
 
 First style sheet:
 
-``
+
     h1 {
         font-family: "Times New Roman";
         font-size: 24pt;
@@ -42,7 +41,7 @@ First style sheet:
 
 Second style sheet:
 
-``
+
     h1 {
         font-family: "Arial";
         color: red

@@ -65,26 +65,26 @@ To install Prince on MacOS X, please run the `install.sh` shell script contained
 
 1.  Open the Terminal application.
 2.  Change to the download directory and unpack the downloaded file.
-    ``
+    
         $ cd download_directory
         $ tar xvf prince-package-macosx.tar.gz
 
 3.  Change to the extracted directory.
-    ``
+    
         $ cd prince-package-macosx
 
 4.  Run the installation shell script.
-    ``
+    
         $ ./install.sh
 
 5.  Follow the prompts to install Prince. Please note that you will need to be logged in as root if you wish to install Prince into a system directory such as `/usr/local`, which is the default value. This can be accomplished by running the installation script using `sudo`, which will prompt you for your password:
-    ``
+    
         $ sudo ./install.sh
         Password: .....
 
 If you chose a non-standard location you may need to add the `bin/` subdirectory to your `PATH` environment variable. There are many different types of command interpreters (also called shells), we cannot possibly document all of them. However for Bourne-style shells (the most common type) the command might look like this:
 
-``
+
     $ export PATH=/usr/local/prince12/bin:$PATH
 
 You will need to add the appropriate command to your shell's configuration or startup file. See your distribution or shell's documentation for how to do this.
@@ -99,7 +99,7 @@ For information about using Prince from PHP, Java, .NET, and other server framew
 
 Prince is installed using the terminal. The installation package can be downloaded from the [Download Page](download.html). Then open a terminal window and change to the directory that you downloaded or copied the installation package to. The `$` symbol represents the command prompt and the text that follows is the command, you should not type in the `$` symbol.
 
-``
+
     $ cd download_directory
 
 Depending on your distribution and the package that you downloaded you may be able to install Price using the tools provided by your distribution.
@@ -108,7 +108,7 @@ Depending on your distribution and the package that you downloaded you may be ab
 
 On Debian and Ubuntu Linux you can use `gdebi` to install Prince and its dependencies. `gdebi` will automatically download and install any package dependencies, therefore it is often easier to use `gdebi` than `dpkg` which will not automatically install dependencies. If you're not logged in as root (and you shouldn't be), then you can use `sudo` to run the `gdebi` command as root.
 
-``
+
     $ sudo gdebi prince_package_debian_amd64.deb
     Reading package lists... Done
     Building dependency tree
@@ -128,19 +128,19 @@ On Debian and Ubuntu Linux you can use `gdebi` to install Prince and its depende
 
 If `gdebi` is not already installed then you can install it using `aptitude` as follows. `aptitude` cannot be used to install Prince itself as Prince is not available in a Debian repository.
 
-``
+
     $ sudo aptitude install gdebi
 
 #### CentOS and Redhat
 
 On RPM based systems, such as CentOS or Redhat Enterprise Linux, you should use the `yum` tool to install Prince. If you're not logged in as root (and you shouldn't be), then you can use `sudo` to run the `yum` command as root.
 
-``
+
     $ sudo yum install prince-package.centos.x86_64.rpm
 
 We have not shown all of `yum`'s output here as there is a lot of it. The process should prompt you before installation, which will look similar to:
 
-``
+
     ================================================================================
      Package        Arch    Version            Repository                      Size
     ================================================================================
@@ -167,7 +167,7 @@ We have not shown all of `yum`'s output here as there is a lot of it. The proces
 
 The process will then end with messages similar to:
 
-``
+
     Installed:
       prince.x86_64 0:version
 
@@ -197,7 +197,7 @@ The `bin/prince` script in the installation directory (see [Linux and FreeBSD in
 
 To install Prince from a tarball enter these commands.
 
-``
+
     $ tar xzf prince-package-freebsd-amd64.tar.gz 
     $ cd prince-package-freebsd-amd64 
     $ sudo ./install.sh 
@@ -226,7 +226,7 @@ To install Prince from a tarball enter these commands.
 
 If you chose a non-standard location you may need to add the `bin/` subdirectory to your `PATH` environment variable. There are many different types of command interpreters (also called shells), we cannot possibly document all of them. However for borne-style shells (the most common type) the command might look like this:
 
-``
+
     export PATH=/usr/local/prince10/bin:$PATH
 
 You will need to add the appropriate command to your shell's configuration or startup file. See your operating system's or shell's documentation for how to do this.
@@ -266,7 +266,7 @@ On Windows you can install a license by following these steps:
 
 On other systems copy the `license.dat` file into the `lib/prince/license` directory of the Prince installation (see [Installation Layout](installation-layout.html#installation-layout)). For example, if Prince was installed into the default `/usr/local` directory, the license file should be copied to `/usr/local/lib/prince/license/license.dat`
 
-``
+
     $ cp license.dat /usr/local/lib/prince/license/license.dat
     $ prince --version
     Prince 10 rev 3

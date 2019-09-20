@@ -99,21 +99,21 @@ The renaming of the file is not essential - the content, not the extension count
 
 Prince determines which language to use for hyphenation with the help of the `:lang()` CSS selector, which in turn checks the `lang` or `xml:lang` attributes of the document:
 
-``
+
     :lang(en-GB) {
         prince-hyphenate-patterns: url("hyph-en-gb.pat");
     }
 
-``
+
     <span lang="en-GB">supercalifragilisticexpialidocious</span>
 
 Alternatively, link directly to the required remote hyphenation file:
 
-``
+
     :lang(en-GB) {
         prince-hyphenate-patterns: url("http://tug.ctan.org/tex-archive/language/hyph-utf8/tex/generic/hyph-utf8/patterns/txt/hyph-en-gb.pat.txt");
     }
 
-``
+
     <span lang="en-GB">supercalifragilisticexpialidocious</span>
 

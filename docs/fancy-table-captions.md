@@ -22,7 +22,7 @@ The paragraph functioning as a table caption can be hidden in browsers by using 
 
 HTML
 
-``
+
     <table>
       <caption>Demo table</caption>
       <tr>
@@ -42,7 +42,7 @@ HTML
 
 CSS
 
-``
+
     caption {
         caption-side: bottom;
         prince-caption-page: first;

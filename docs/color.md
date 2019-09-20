@@ -13,14 +13,14 @@ Prince understands CSS basic color names as well as the list of extended color k
 
 To use an RGB color in CSS, it can be expressed either as a value in hexadecimal notation, as an `rgb()` function or as a named color. For example, red can be specified in three ways:
 
-``
+
     color: #ff0000
     color: rgb(255, 0, 0)
     color: red
 
 RGBA colors are equivalent to RGB plus an opacity (or alpha) value between 0 and 1. When the opacity is 0 the color is transparent, and when the opacity is 1 the color is identical to the RGB color. RGBA colors are expressed as an `rgba()` function.
 
-``
+
     color: rgba(255, 0, 0, 1)    // red
     color: rgba(255, 0, 0, 0.5)  // translucent red
     color: rgba(255, 0, 0, 0)    // fully transparent
@@ -29,7 +29,7 @@ RGBA colors are equivalent to RGB plus an opacity (or alpha) value between 0 and
 
 CMYK colors can be specified using the `cmyk()` or, alternatively, the equivalent `device-cmyk()` function syntax. An optional fifth value is for the alpha channel, i.e. for opacity.
 
-``
+
     color: cmyk(1, 0, 0, 0)       // cyan
     color: cmyk(0, 1, 1, 0)       // red
     color: cmyk(0, 0, 0, 1)       // black
@@ -53,14 +53,14 @@ The advantage of HSL over RGB is that it is much more intuitive to use and easie
 
 Prince also supports named spot colors that can be defined with the [`@prince-color`](doc-refs.html#at-prince-color) rule. An alternate color must also be specified with the `alternate-color` property, using any of the valid notations for RGB, HSL or CMYK colors. This will be used in situations where the named color is not available, such as when viewing the generated PDF file on a display. Please note that `alternate-color` cannot be RGBA, HSLA or CMYKA.
 
-``
+
     @prince-color MyColor {
         alternate-color: rgb(255,0,0)
     }
 
 Spot colors can be used with the `prince-color()` function with a specified tint value between 0 and 1, which defaults to 1, or alternatively expressed in percentage. They can also enable overprint:
 
-``
+
     color: prince-color(MyColor)                  // tint 1.0
     color: prince-color(MyColor, 0.5)             // tint 0.5
     color: prince-color(MyColor, overprint)       // tint 1.0, overprint
@@ -68,7 +68,7 @@ Spot colors can be used with the `prince-color()` function with a specified tint
 
 Another way to enable overprint is by using the `prince-overprint()` function, which allows to specify a non-transparent color value.
 
-``
+
     color: prince-overprint(red);
     color: prince-overprint(cmyk(0,1,1,0));
 

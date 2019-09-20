@@ -18,7 +18,7 @@ When producing a PDF, it might be desirable to include a watermark, visible on a
 
 In order to repeat it on all pages, the watermark needs to be placed in a [`@page`](doc-refs.html#at-page) at-rule. We shall place it in the page region `@prince-overlay` (see [Page regions](paged.html#page-regions)) and create the watermark with generated content (see [Generated content in page regions](paged.html#page-gen-content)):
 
-``
+
     @page {
        @prince-overlay {
           color: rgba(0,0,0,0.8);
@@ -29,7 +29,7 @@ In order to repeat it on all pages, the watermark needs to be placed in a [`@pag
 
 The overlay can be styled in all possible ways and it can be aligned in other places than middle center:
 
-``
+
     @page {
        @prince-overlay {
           content: "Watermark";
@@ -41,6 +41,6 @@ Currently it is only possible to have one overlay, but you could flow an entire 
 
 The styled watermark can be saved into a `watermark.css` file, which will be called when generating the document:
 
-``
+
     prince --style=watermark.css myfile.html -o myfile_with_watermark.pdf
 

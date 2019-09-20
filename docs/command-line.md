@@ -47,7 +47,7 @@ It is necessary to specify the output file when the input is a HTTP or HTTPS URL
 
 Any of the `--long` command-line options can either be passed as a single command-line argument with an equals sign (=), or as two command-line arguments with space:
 
-``
+
       --output out.pdf
       --output=out.pdf
 
@@ -323,7 +323,7 @@ Enable raster output. The output files will be named based on the template. Prin
 
 For example `--raster-output=page_%02d.png` will cause Prince to generate `page_01.png`, `page_02.png`, …, `page_10.png`, `page_11.png` etc.
 
-Prince also accepts \``-`' meaning the standard output stream.
+Prince also accepts \-`' meaning the standard output stream.
 
  `--raster-format=FORMAT`   
 Set the format for the raster output. Valid formats are: `auto` (guess based on file extension, the default), `png` or `jpeg`. If Prince does not recognize the file extension, or `--raster-output` is '`-`', then it is necessary to provide this option.

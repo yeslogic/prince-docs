@@ -10,7 +10,7 @@ However, in specific cases it is advisable to fine-tune the PDF tags with the `p
 
 CSS
 
-``
+
     ul.toc {
       prince-pdf-tag-type: TOC;
     }
@@ -20,7 +20,7 @@ CSS
 
 HTML
 
-``
+
     <ul class="toc">
       <li>First Chapter</li>
       <li>Second Chapter</li>

@@ -14,7 +14,7 @@ The Prince Control Protocol, accessible through the command-line option `--contr
 
 Each chunk contains a sequence of bytes with a length and a three letter tag. Here is an example "version" chunk to demonstrate the syntax:
 
-``
+
     ver 15
     Prince 20161219
 
@@ -24,7 +24,7 @@ This "version" chunk is emitted by Prince when the control protocol begins and c
 
 If a chunk contains no data then the length is zero and the chunk ends with the newline immediately following the length. In fact the length itself may be omitted, making this a perfectly valid chunk:
 
-``
+
     end
 
 This `end` chunk consists of three letters and a newline character and can be used to terminate the Prince process when there are no further jobs to process.
@@ -44,7 +44,7 @@ And these chunks sent by the caller:
 
 A typical interaction looks like this:
 
-``
+
     Prince: ver
     Caller: job
     Caller: dat
@@ -61,7 +61,7 @@ The number of `dat` chunks is specified by the `job-resource-count` field in the
 
 The JSON job description has several nested objects with fields corresponding to Prince options:
 
-``
+
     {
         "input": { <input options> },
         "pdf": { <pdf options> },
@@ -74,7 +74,7 @@ The `input options` and `job-resource-count` are mandatory, the rest are optiona
 
 The `input options` object includes these fields:
 
-``
+
     {
         "src": <single URL or list of URLs>,
         "type": <string>,
@@ -93,7 +93,7 @@ Only the `src` field is required, the rest can be left as defaults.
 
 Now we can make some simple job descriptions, eg. to convert a single HTML file:
 
-``
+
     {
         "input": {
             "src": "/path/to/input.html"
@@ -105,7 +105,7 @@ This can be sent as a single `job` chunk and Prince will respond with a `pdf` ch
 
 Or you can convert a HTML document without saving it to a temporary file:
 
-``
+
     {
         "input": {
             "src": "job-resource:0"
@@ -117,7 +117,7 @@ This requires the `job` chunk to be followed by a `dat` chunk that contains the 
 
 The `pdf options` object includes these fields:
 
-``
+
     {
         "color-options": "auto" | "use-true-black" | "use-rich-black",
         "embed-fonts": <bool>,
@@ -146,7 +146,7 @@ The `pdf options` object includes these fields:
 
 Each attachment is a &lt;url&gt; (string) or an object:
 
-``
+
     {
         "url": <url>,
         "filename": <string>,
@@ -155,7 +155,7 @@ Each attachment is a &lt;url&gt; (string) or an object:
 
 The `metadata options` object includes these fields:
 
-``
+
     {
         "title": <string>,
         "subject": <string>,
@@ -166,7 +166,7 @@ The `metadata options` object includes these fields:
 
 The `raster options` object includes these fields:
 
-``
+
     {
         "dpi": <integer>,
         "background": "white" | "transparent"
@@ -185,7 +185,7 @@ This option is designed to make it easier to integrate other software with Princ
 
 The default is `--no-structured-log`, in which case error and warning messages will be written to the terminal (stderr stream) as they occur in a human readable format, eg.
 
-``
+
     prince: foo.html: error: can't open input file: No such file or directory
     prince: foo.html: error: could not load input file
     prince: error: failed to load all input documents
@@ -209,7 +209,7 @@ The first field indicates the type of message, which can be:
 
     and always followed by source location and the message itself.
 
-``
+
     msg|err|foo.html|can't open input file: No such file or directory
     msg|err|foo.html|could not load input file
     msg|err||failed to load all input documents
@@ -219,14 +219,14 @@ The last `msg|err` message has an empty source location field.
 
 Specifying `--structured-log=quiet` suppresses *all* log messages, except for the final `fin` message, indicating success or failure:
 
-``
+
     fin|failure
 
 This allows other software to read the stdout stream from Prince containing the PDF file in its entirety, then read the final status from the stderr stream, without worrying about blocking due to deadlocks.
 
 Specifying `--structured-log=progress` prints percentage log messages for use in GUI applications:
 
-``
+
     prg|94
     prg|96
     prg|99

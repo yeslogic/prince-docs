@@ -6,14 +6,14 @@ title: Using Prince with Python
 
 Prince can be called from Python using the [command-line interface](doc-refs.html#command-line), like this:
 
-``
+
     import subprocess
 
     subprocess.call(["prince","foo.xml","bar.pdf"]);
 
 It is possible to write XML to Prince directly from the Python script rather than have Prince read it from an external file:
 
-``
+
     import subprocess
 
     p = Popen(["prince","-","out.pdf"], stdin=subprocess.PIPE, stdout=subprocess.PIPE)
@@ -29,7 +29,7 @@ The first filename argument of "-" instructs Prince to read the XML from its sta
 
 For Python CGI scripts, the PDF output can be written to the standard output stream so that it is returned to the browser:
 
-``
+
     import subprocess
 
     p = Popen(["prince","-"], stdin=subprocess.PIPE, stdout=subprocess.PIPE)
@@ -45,7 +45,7 @@ Because the second filename argument has been omitted and the XML is being read 
 
 Alternatively, it is possible for the Python script to read the PDF output directly rather than have Prince save it to an external file:
 
-``
+
     import subprocess
 
     p = Popen(["prince","-"], stdin=subprocess.PIPE, stdout=subprocess.PIPE)

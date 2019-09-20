@@ -29,7 +29,7 @@ The *fixed table layout* algorithm is used in the following situations:
 -   when the table `table-layout` property has a value `fixed`, and
 -   the value of `width` property is not `auto`
 
-``
+
     table {
         table-layout: fixed;
         width: 90%

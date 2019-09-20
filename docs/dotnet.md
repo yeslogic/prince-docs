@@ -22,7 +22,7 @@ Please note that document scripts need to first be enabled with `prn.SetJavaScri
 
 The following code sample demonstrates how to convert a single HTML document into a PDF file:
 
-``
+
     // instantiate Prince by specifying the full path to the engine executable
     Prince prn = new Prince("C:\\Program Files\\Prince\\Engine\\bin\\prince.exe");
 
@@ -42,7 +42,7 @@ The following code sample demonstrates how to convert a single HTML document int
 
 To combine multiple HTML documents into a single PDF file, call `ConvertMultiple`:
 
-``
+
     String[] doc_array = {"C:\\docs\\test1.html", "C:\\docs\\test2.html"};
 
     prn.ConvertMultiple(doc_array, "C:\\docs\\pdf\\merged.pdf");
@@ -57,7 +57,7 @@ Please note that document scripts need to first be enabled with `prn.SetJavaScri
 
 The following code sample demonstrates how to convert a single HTML document into a PDF file:
 
-``
+
     ' instantiate Prince by specifying the full path to the engine executable
     Dim prn As Prince
 
@@ -79,7 +79,7 @@ The following code sample demonstrates how to convert a single HTML document int
 
 To combine multiple HTML documents into a single PDF file, call `ConvertMultiple`:
 
-``
+
     Dim doc_array() As String
 
     doc_array = {"C:\docs\test1.html", "C:\docs\test2.html"}

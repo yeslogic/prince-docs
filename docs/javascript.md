@@ -37,7 +37,7 @@ A full list of all supported JavaScript objects, methods and properties can be f
 
 The Prince log can be accessed from JavaScript via the [`Log`](doc-refs.html#window.Log) object (also available as [`Prince.Log`](doc-refs.html#window.Prince.Log)), which has the following methods:
 
-``
+
     Log.info("message")
     Log.warning("message")
     Log.error("message")
@@ -47,7 +47,7 @@ The Prince log can be accessed from JavaScript via the [`Log`](doc-refs.html#win
 
 When running Prince from the command-line, the `console` object can be used to write messages directly to the terminal:
 
-``
+
     console.log("Hello, world!")
 
 Console access is only supported when running Prince directly from the command-line, and should not be used when calling Prince through a server wrapper or graphical user interface.
@@ -68,7 +68,7 @@ User interface events such as `onclick` are not supported by Prince.
 
 The [`Prince.pageCount`](doc-refs.html#window.Prince.pageCount) property can be accessed after document conversion has finished, then logged as data for the calling process to access:
 
-``
+
     function logPageCount()
     {
         Log.data("total-page-count", Prince.pageCount);
@@ -82,7 +82,7 @@ See also [The "Two-Pass" Solution](two-pass.html#two-pass) for another use of ac
 
 The [`Prince`](doc-refs.html#window.Prince) object can be used to control various scripting aspects in Prince.
 
-``
+
     Prince.addScriptFunc(name, function)
     Prince.trackBoxes = (boolean)
     Prince.convertToFile(JSON, OutputFileName, ...optional extra job resources)
@@ -94,12 +94,12 @@ The [`Prince.addScriptFunc`](doc-refs.html#window.Prince.addScriptFunc) method t
 
 The [`Prince.convertToFile`](doc-refs.html#window.Prince.convertToFile) and [`Prince.convertToBuffer`](doc-refs.html#window.Prince.convertToBuffer) methods allow you to start new Prince jobs:
 
-``
+
     convertToFile(JSON, OutputFileName, ...optional extra job resources)
 
 - returns bool indicating success
 
-``
+
     convertToBuffer(JSON, ...optional extra job resources)
 
 - returns ArrayBuffer if successful, null if not
@@ -116,14 +116,14 @@ For example, perhaps there should be only one page: you check the page count (se
 
 The [`PDF` object](doc-refs.html#window.PDF) can be used to specify PDF properties and settings, including attaching extra files to the generated PDF, similar to the [`--attach`](doc-refs.html#cl-attach) command-line argument:
 
-``
+
     PDF.attachFile(url, description?)
 
     PDF.attachFile("data.xls", "Latest sales figures.");
 
 Other PDF properties, which are set by assignment, include:
 
-``
+
     PDF.embedFonts = (boolean)
     PDF.subsetFonts = (boolean)
     PDF.artificialFonts = (boolean)
@@ -161,12 +161,12 @@ There is one more PDF object not mentioned so far: the [`PDF.pages`](doc-refs.ht
 
 The box tracking API must be enabled with [`Prince.trackBoxes`](doc-refs.html#window.Prince.trackBoxes) before formatting starts.
 
-``
+
     Prince.trackBoxes = true;
 
 It then becomes available in the `complete` event (see [Event Handling](javascript.html#js-event)), when you can call the [`getPrinceBoxes()`](doc-refs.html#window.Element.prototype.getPrinceBoxes) method while iterating through the required DOM elements, to return a list of *boxes*.
 
-``
+
     Prince.addEventListener("complete", function() {
       var xs = document.getElementsByTagName("ins");
       for (var i = 0; i < xs.length; ++i)
@@ -178,7 +178,7 @@ It then becomes available in the `complete` event (see [Event Handling](javascri
 
 The [`PDF.pages`](doc-refs.html#window.PDF.pages) array mentioned earlier (see [The PDF Object](javascript.html#js-pdf)) also is available only after the `complete` event and also returns a list of *boxes* (see [Page regions](paged.html#page-regions)).
 
-``
+
     function printbox(str,box) {
       console.log("");
       for (var i in box) {
@@ -200,7 +200,7 @@ The [`PDF.pages`](doc-refs.html#window.PDF.pages) array mentioned earlier (see [
 
 *Boxes* are JavaScript objects with some or all of the following properties:
 
-``
+
     type =     "BODY" |
                "COLUMN" |
                "FLEXLINE" |
@@ -239,7 +239,7 @@ However, see [The "Two-Pass" Solution](two-pass.html#two-pass) for making use of
 
 The following DOM properties are not supported in Prince:
 
-``
+
     document.write
     window.setInterval
 

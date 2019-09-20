@@ -20,7 +20,7 @@ Place the `Prince.jar` file in a directory of your choice then start ColdFusion 
 
 If this is done correctly, ColdFusion should know where to find the Prince Java interface class. The following is some sample CFML code showing how to use it:
 
-``
+
     <cfscript>
        pr = CreateObject("java", "com.princexml.Prince");
 
@@ -45,14 +45,14 @@ If you are running ColdFusion on Windows, you can also call Prince using the [Ac
 
 This interface is provided in the form of an ActiveX DLL file that needs to be registered in the Windows registry using REGSVR32.EXE:
 
-``
+
     regsvr32 C:\Prince\PRINCE.dll
 
 In order to call Prince from ColdFusion, we need to create a COM object using the CreateObject function that is available in CFML scripting (you can also use the `<cfobject ...>` tag if you prefer). Once the COM object is created, you can use the COM interface methods to perform the tasks.
 
 The following is some sample code for illustration:
 
-``
+
     <cfscript>
        pr = CreateObject("Com", "PrinceCom.Prince", "local");
 

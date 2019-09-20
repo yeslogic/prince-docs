@@ -27,7 +27,7 @@ We shall see each approach separately.
 
 A straightforward approach for sidenotes is to position the footnote area to the desired place, instead of leaving it in its default position.
 
-``
+
     @page {
         @footnote {
             position: absolute;
@@ -46,7 +46,7 @@ The biggest disadvantage is that the footnotes are not placed to the side of the
 
 The footnote text is floated to the left (or right) and moved out of the way with negative margins.
 
-``
+
     .footnote {
       float: left;
       max-width: 60px;

@@ -11,14 +11,14 @@ Prince supports a wide range of PDF features, including the following:
 
 Prince supports PDF-internal and -external links. HTML hyperlinks are automatically converted. To make an element in XML, or any arbitrary element, a clickable link, the `prince-link` CSS property is required.
 
-``
+
     xref {
         prince-link: attr( linkend )
     }
 
 The property `prince-pdf-link-type` may be used to control the link type and target, i.e. whether relative links should be embedded in the PDF as web (URL) links or file links (by default they will be resolved against the base URL of the input document) and whether to open the links in the same or a new window. Note however that the optional link target keywords `same-window` and `new-window` only affect links to local PDF files.
 
-``
+
     a[href] {
         prince-pdf-link-type: new-window;
     }
@@ -27,7 +27,7 @@ This example is equivalent to `prince-pdf-link-type: auto new-window` and has on
 
 Prince also supports the following PDF-specific fragment identifiers, supported by web browsers, and will use them when generating links to local PDF files.
 
-``
+
     <a href="test.pdf#page=2">...</a>
 
     <a href="test.pdf#nameddest=section1">...</a>
@@ -36,12 +36,12 @@ Named destinations (`nameddest`) in PDF files have a similar function to HTML ID
 
 HTML
 
-``
+
     <div class="section" data-sectionid="section1">
 
 CSS
 
-``
+
     div.section {
         prince-pdf-destination: attr( data-sectionid )
     }
@@ -50,14 +50,14 @@ In order to link to this section, the following syntax is used:
 
 HTML
 
-``
+
     <a href="test.pdf#nameddest=section1">...</a>
 
 ### PDF Actions
 
 Prince supports the `pdf-action:` URL scheme for PDF actions. Typical values are `Print`, `GoBack`, `GoForward`, `NextPage`, `PrevPage`, `FirstPage`, `LastPage`.
 
-``
+
     <a href="pdf-action:Print">Print Document</a>
 
 However, Prince passes the provided values verbatim to the PDF viewer, so the user can supply values that Prince doesn't know about, but the viewer does. Also, these scripts will always be run, unlike JavaScript (see [Applying JavaScript in Prince](apply-javascript.html#applying-javascript)).
@@ -66,28 +66,28 @@ Please be advised that this and the following actions and scripts are dependent 
 
 The property `prince-pdf-open-action` may be used to specify a space-separated list of actions to perform when the PDF file is opened, like eg. popping up the print dialog box automatically, or setting the default zoom level for PDF documents. Any arbitrary identifier can be specified, although these may be PDF viewer specific; Acrobat can take just about any menu item.
 
-``
+
     @prince-pdf {
         prince-pdf-open-action: zoom(fit-page) print;
     }
 
 In a similar fashion, scripts that will be executed when the PDF file is opened may be included with the `prince-pdf-script` property. A common use case is to activate the "Print" dialog automatically. To achieve the equivalent of the previous example, the following code could be used:
 
-``
+
     @prince-pdf {
         prince-pdf-script: "this.zoomType = zoomtype.fitP; this.print();"
     }
 
 The property can also take the `url()` function to reference an external JavaScript file.
 
-``
+
     @prince-pdf {
         prince-pdf-script: url("myscript.js")
     }
 
 Prince offers yet another way to include scripts in a document through a stylesheet: the `prince-pdf-event-scripts` property can be used to include JavaScript code that will be executed in the PDF when printing, saving, and closing the PDF, known as "Document Action" scripts. Just as with the previous property, scripts can either be given inline, or be included from an external file.
 
-``
+
     @prince-pdf {
         prince-pdf-event-scripts: will-close url("onclose.js"), will-print url("onprint.js");
     }
@@ -96,21 +96,21 @@ Prince offers yet another way to include scripts in a document through a stylesh
 
 Prince allows for some degree of control on the pages and the page layout in a PDF file. The CSS property `prince-pdf-page-label` can be used to set the page label that will be displayed in the PDF viewer. It can be used to instruct the PDF viewer to display the page label in the ToC in a particular way.
 
-``
+
     @page {
         prince-pdf-page-label: counter(page, lower-roman);
     }
 
 The property `prince-pdf-page-mode` can be used to set the default page mode for the PDF file when it is opened. For example, whether the bookmarks panel should be displayed, and whether the viewer should be fullscreen.
 
-``
+
     @prince-pdf {
         prince-pdf-page-mode: fullscreen;
     }
 
 Also the default page layout for the PDF file when it is opened can be determined with the `prince-pdf-page-layout` property.
 
-``
+
     @prince-pdf {
         prince-pdf-page-layout: two-column-right;
     }
@@ -169,7 +169,7 @@ Prince also provides two properties to fine-tune the printing of the PDF. The pr
 
 Duplex printing is supported with the CSS property `prince-pdf-duplex`. This property may be used inside the [`@prince-pdf`](doc-refs.html#at-prince-pdf) at-rule to set the `Duplex` property in the `PDFViewerPreferences` dictionary. The values `duplex-flip-short-edge` and `duplex-flip-long-edge` tell about how to flip the paper, while the value `simplex` suppresses duplex printing.
 
-``
+
     @prince-pdf {
         prince-pdf-duplex: duplex-flip-long-edge;
     }

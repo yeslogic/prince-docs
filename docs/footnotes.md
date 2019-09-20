@@ -15,14 +15,14 @@ Footnotes example
 
 CSS
 
-``
+
     .fn {
         float: footnote
     }
 
 HTML
 
-``
+
     <p>
     Footnotes<span class="fn">A footnote is a note placed at
     the bottom of a page of a book or manuscript that comments on or
@@ -35,7 +35,7 @@ HTML
 
 Each footnote implicitly increments the *footnote* counter which is used to number the footnotes. The footnote counter can be reset at each new page, section or chapter as necessary. This example resets the counter on each new page.
 
-``
+
     @page {
         counter-reset: footnote
     }
@@ -44,7 +44,7 @@ Each footnote implicitly increments the *footnote* counter which is used to numb
 
 Footnote calls are the numeric anchors in the text that refer to the footnotes. Prince will generate footnote calls using the `::footnote-call` pseudo-element. This is the default style for footnote calls:
 
-``
+
     *::footnote-call {
         content: counter(footnote);
         font-size: 83%;
@@ -56,7 +56,7 @@ This will display the current value of the footnote counter in a superscript pos
 
 The footnote call style can be customized to use different fonts or colors. It can even be customized to include different content, such as placing the footnote counter in brackets rather than making it superscript.
 
-``
+
     *::footnote-call {
         content: "[" counter(footnote) "]";
         font-size: inherit;
@@ -69,7 +69,7 @@ This rule will generate footnote calls with the number of the footnote in bracke
 
 Prince automatically generates footnote markers, the numeric markers placed in front of the footnote text. Footnote markers are similar to the markers added to list items (see [Lists](lists.html#lists)) in most respects, and can be styled in a similar fashion using the `::footnote-marker` pseudo-element:
 
-``
+
     *::footnote-marker {
         font-weight: bold
     }
@@ -82,7 +82,7 @@ Footnote markers are rendered outside the footnote in the left margin area by de
 
 Footnotes are placed within the `@footnote` area of the page (see [Page regions](paged.html#page-regions)), which can be styled within [`@page`](doc-refs.html#at-page) rules.
 
-``
+
     @page {
         @footnote {
             border-top: solid black thin;
@@ -96,7 +96,7 @@ If there are no footnotes on a page, the footnotes area will not be displayed on
 
 By default, the `@footnote` area is at the bottom of the page. However, Prince allows to position the area in different places, effectively offering a mechanism to create simple sidenotes (see [Sidenotes](sidenotes.html#sidenotes)).
 
-``
+
     @page {
         @footnote {
             position: absolute;
@@ -118,7 +118,7 @@ In a multi-column layout, footnotes can be rendered at the bottom of the page as
 
 In some situations it might happen that footnotes do not fit on the page on which the footnote call was placed. It might be desirable to tie the footnote to the same page as the call - the `prince-footnote-policy` can be of help. The following example instructs Prince to move the line with the footnote call to the next page, in order to keep it on the same page as the footnote itself:
 
-``
+
     p {
       prince-footnote-policy: keep-with-line;
     }

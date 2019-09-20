@@ -11,7 +11,7 @@ The custom properties are set by using the cutom property notation, which requir
 
 Unlike other CSS properties, custom property names are case-sensitive.
 
-``
+
     :root {
       --main-text-color: black;
     }
@@ -21,7 +21,7 @@ Unlike other CSS properties, custom property names are case-sensitive.
 
 When a fallback value needs to be provided, this can be indicated in the `var()` function.
 
-``
+
     p {
       color: var(--main-text-color, brown);
     }

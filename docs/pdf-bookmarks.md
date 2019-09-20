@@ -10,7 +10,7 @@ Prince can create PDF bookmarks that link to document content.
 
 PDF bookmarks have numeric levels that place them in a bookmark hierarchy. For example, a bookmark at level 2 can contain nested bookmarks at level 3, or any higher level. The level of a bookmark is controlled using the `prince-bookmark-level` property, shown here being applied to the XHTML heading elements:
 
-``
+
     h1 { prince-bookmark-level: 1 }
     h2 { prince-bookmark-level: 2 }
     h3 { prince-bookmark-level: 3 }
@@ -28,7 +28,7 @@ PDF bookmarks have textual labels that by default are copied from the text conte
 
 CSS
 
-``
+
     chapter {
         prince-bookmark-level: 1;
         prince-bookmark-label: attr(title)
@@ -42,7 +42,7 @@ PDF bookmarks are links that display a particular part of the document when acti
 
 CSS
 
-``
+
     bookmark { prince-bookmark-target: url(#intro) }
     bookmark { prince-bookmark-target: attr(href) }
 

@@ -18,7 +18,7 @@ When using the Prince GUI, the output log is printed to the log window on the bo
 ### Image formats
 
 Symptom  
-``
+
     prince: ./picture.bmp: warning: Unknown image format
 
 Explanation  

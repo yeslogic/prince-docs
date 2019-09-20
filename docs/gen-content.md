@@ -73,7 +73,7 @@ The `content` property can be applied to the `::before` and `::after` pseudo-ele
 
 CSS
 
-``
+
     h1::before, h1::after { content: "***" }
 
 This will place three asterisks before and after `h1` elements.
@@ -102,7 +102,7 @@ The `counters()` function concatenates counters on different levels, separated w
 
 CSS
 
-``
+
     div.example1 { counter-reset: h3 h4 }
     div.example1 h3 { counter-increment: h3 }
     div.example1 h4 { counter-increment: h4 }
@@ -115,7 +115,7 @@ This creates two counters inside the scope of a `div` element. All `h3` and `h4`
 
 CSS
 
-``
+
     div.example2 { counter-reset: h3 }
     div.example2 h3 {
         counter-increment: h3;
@@ -137,7 +137,7 @@ For example, a nested XHTML list with a `ul` element inside a `li` inside anothe
 
 CSS
 
-``
+
     ol { counter-reset: list-item }
     li { counter-increment: list-item }
     li::marker {
@@ -152,7 +152,7 @@ Counter values are displayed as decimal numbers by default, but they may be disp
 
 CSS
 
-``
+
     chapter { counter-increment: chapter-num }
 
     chapter::before {
@@ -322,7 +322,7 @@ The `target-counter()` function can be used with the `content` property to refer
 
 CSS
 
-``
+
     a[href]::after {
         content: " [See page " target-counter(attr(href), page) "]"
     }
@@ -335,7 +335,7 @@ The `target-counter()` function can also take an optional counter style, similar
 
 CSS
 
-``
+
     a[href]::after {
         content: " [See chapter "
              target-counter(attr(href), chapter, upper-roman)
@@ -350,7 +350,7 @@ The `target-content()` function can be used with the `content` property to refer
 
 CSS
 
-``
+
     a[href]::after {
         content: " [See '" target-content(attr(href)) "']"
     }
@@ -365,14 +365,14 @@ Please note that Prince is not running JavaScript by default - it needs to be ex
 
 CSS
 
-``
+
     p::after {
         content: prince-script(myfunc)
     }
 
 JavaScript
 
-``
+
     function myfunc()
     {
         return "Some generated content text!";
@@ -386,7 +386,7 @@ JavaScript functions have access to the current date and time, which can be adde
 
 CSS
 
-``
+
     @page {
         @top {
         content: prince-script(datestamp)
@@ -395,7 +395,7 @@ CSS
 
 JavaScript
 
-``
+
     Prince.addScriptFunc("datestamp", function() {
         return (new Date()).toString();
     });
@@ -406,14 +406,14 @@ The JavaScript functions used with `prince-script()` can take arguments that are
 
 CSS
 
-``
+
     li::marker {
         content: prince-script(mycounterstyle, counter(list-item))
     }
 
 JavaScript
 
-``
+
     Prince.addScriptFunc("mycounterstyle", function(n) {
         if (n == 1) return "one";
         else if (n == 2) return "two";

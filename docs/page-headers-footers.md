@@ -18,7 +18,7 @@ Each page is structured in [Page regions](paged.html#page-regions) - most page c
 
 A typical case is page numbering, which can easily be obtained with [Generated Content](gen-content.html#gen-content): the current page number can be printed in a page region with the `content` property. (See also [Page Numbering](page-numbering.html#page-numbering)).
 
-``
+
     @page {
         @bottom {
             content: counter(page)
@@ -31,7 +31,7 @@ The title of the book, or the current chapter, can be copyied into the page regi
 
 CSS
 
-``
+
     @page {
         @top { content: string(doctitle) }
     }

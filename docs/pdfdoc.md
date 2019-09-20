@@ -19,7 +19,7 @@ Additionally, each file needs a few more files to display correctly - including 
 
 To create a PDF version of the documentation we need to run just one simple command line:
 
-``
+
     prince --javascript http://www.princexml.com/doc/ http://www.princexml.com/doc-prince/ http://www.princexml.com/doc-refs/ -o prince-documentation.pdf
 
 This command produces the documentation in PDF format, including a cover page, the [User Guide](doc-prince.html) and the [References](doc-refs.html) section.

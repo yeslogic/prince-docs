@@ -25,7 +25,7 @@ Used with generated content after a hyperlink, it will add a cross-reference wit
 
 CSS
 
-``
+
     a[href]::after {
         content: " [See page " target-counter(attr(href), page) "]"
     }
@@ -36,7 +36,7 @@ It can also take an optional counter style, similar to the normal `counter()` fu
 
 CSS
 
-``
+
     a[href]::after {
         content: " [See chapter "
                  target-counter(attr(href), chapter, upper-roman)
@@ -49,7 +49,7 @@ The `target-content()` function can be used to reference the text content of the
 
 CSS
 
-``
+
     a[href]::after {
         content: " [See '" target-content(attr(href)) "']"
     }
@@ -60,7 +60,7 @@ The `attr()` function, used in the previous examples inside the other functions,
 
 CSS
 
-``
+
     a[href]::after {
         content: " [Located at '" attr(href) "']";
     }

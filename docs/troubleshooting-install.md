@@ -10,7 +10,7 @@ We work hard to make Prince work on multiple platforms (Windows, Linux, etc) and
 ### Missing glyphs or fonts
 
 Symptom  
-``
+
     prince: page 1: warning: no font for
           Aegean Numbers character U+10123,
           fallback to '?'
@@ -19,7 +19,7 @@ Explanation
 Prince tries to tell you which page the missing glyph appeared on, what type of character it was (eg. "Latin", "Greek", etc.) and what character it used as a fallback (usually '?').
 
 Symptom  
-``
+
     prince: internal error: no available fonts
 
 Explanation  
@@ -37,7 +37,7 @@ This problem may be a symptom of the [Fontconfig](troubleshooting-install.html#f
 ### Fontconfig
 
 Symptom  
-``
+
     Fontconfig error: Cannot load default config file
 
 Explanation  
@@ -54,13 +54,13 @@ Redefine the CSS generic font families to use TrueType fonts that are specified 
 ### Shared library trouble
 
 Symptom (Linux)  
-``
+
     /usr/local/stow/prince-9/lib/prince/bin/prince: error while loading shared
     libraries: libtiff.so.4: cannot open shared object file: No such file or
     directory
 
 Symptom (FreeBSD)  
-``
+
     Shared object "libxml2.so.2" not found, required by "prince"
 
 Explanation  
@@ -75,7 +75,7 @@ Prince is just using the system shared object loader for most libraries, so the 
 ### `PATH` issues
 
 Symptom  
-``
+
     -bash: prince: command not found
 
 Explanation  
@@ -84,7 +84,7 @@ The command interpreter (`bash`) does not know how to find the `prince` executab
 Solution  
 Add Prince's `bin/` subdirectory to your `PATH` and ensure that these changes are saved for future shell sessions. If Prince is installed in `/opt/prince10`, then add `/opt/prince10/bin` to `PATH`. There are many different types of command interpreters (also called shells) and we cannot possibly document all of them. The appropriate command for borne-style shells (the most common type) is usually:
 
-``
+
     export PATH=/opt/prince10/bin:$PATH
 
 This should be added to your command interpreter's configuration. For more information see your operating system's documentation.

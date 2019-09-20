@@ -10,7 +10,7 @@ Here is an example of mapping the generic "sans-serif" font family to the local 
 
 fonts.css
 
-``
+
     @font-face {
         font-family: sans-serif;
         src: local("Trebuchet MS")
@@ -20,7 +20,7 @@ It is also possible to map the generic font families to local fonts specified by
 
 fonts.css
 
-``
+
     @font-face {
         font-family: sans-serif;
         font-style: normal;

@@ -77,13 +77,13 @@ The following style properties *are* supported on SVG elements:
 
 Style properties can be applied using SVG presentation attributes:
 
-``
+
     <rect fill="yellow" stroke="blue" stroke-width="20"
             width="200" height="100"/>
 
 Or by using CSS properties inside the `style` attribute or element:
 
-``
+
     <rect style="fill:yellow; stroke:blue; stroke-width:20"
             width="200" height="100"/>
 
@@ -91,7 +91,7 @@ Alternatively, style properties can be applied by linking a stylesheet, or an XM
 
 SVG
 
-``
+
     ...
     <?xml-stylesheet type="text/css" href="style.css"?>
     ...
@@ -99,7 +99,7 @@ SVG
 
 CSS
 
-``
+
     svg rect {
         fill: yellow;
         stroke: blue;

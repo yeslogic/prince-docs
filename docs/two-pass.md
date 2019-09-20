@@ -28,7 +28,7 @@ Now the document would be ready for generating the PDF - Prince is run a second 
 
 Here is a minimalistic two-pass solution where the document is adorned with a ToC and index:
 
-``
+
     wget http://www.princexml.com/howcome/2015/index/musick.html -O musick.html;
       prince --javascript musick.html >>musick.html;
       prince --javascript musick.html -o musick.pdf

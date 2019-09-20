@@ -12,7 +12,7 @@ The lab report
 
 The report itself is very basic, the HTML source is shown below. You can save the HTML to a file named lab\_report.html or download it [here](samples/lab_report.html).
 
-``
+
     <!DOCTYPE html>
     <html lang="en">
     <head>
@@ -100,7 +100,7 @@ Unstyled lab report
 ![The unstyled lab report](samples/lab_report-1.bw.png)
 The unstyled lab report. Download the PDF [here](samples/lab_report.pdf).
 
-``
+
     $ prince lab_report.html
 
 This will create a `lab_report.pdf` file in the current directory. If it did not, the [Troubleshooting](troubleshooting.html#troubleshooting) section may be useful. When you open the document in a PDF viewer you should see something like [Unstyled lab report](first-doc.html#fig.lab-report.unstyled). Prince has applied a default stylesheet to the document. A different default stylesheet is used depending upon the document's type (HTML or Docbook XML) see [XML Input](xml.html#xml-input). The default stylesheet may be overridden by other stylesheets, more on that in [Applying Style Sheets in Prince](apply-css.html#apply-css).
@@ -119,7 +119,7 @@ We can now make the report look better by adding our own styles. It is good prac
 
 Let's start by creating and opening a new file named `lab_report.css`, First we can specify a sans-serif font for the document:
 
-``
+
     body {
         font-family: sans-serif;
     }
@@ -133,7 +133,7 @@ Styled lab report
 ![The styled lab report](samples/lab_report-styled-1.colour.png)
 The styled lab report, download the [here](samples/lab_report-styled.pdf).
 
-``
+
     h1, h2.subtitle {
         text-align: center;
     }
@@ -146,7 +146,7 @@ Note that we use the `.class` syntax to style only the subtitle, which is a `h2`
 
 Finally we will make the "Hello World!" paragraph stand out. This paragraph is identified by an `id` attribute so we can use the `#id` syntax in the CSS selector.
 
-``
+
     #hello {
         color: red;
         text-align: center;
@@ -160,7 +160,7 @@ Okay, that's getting unnecessary, however we can see just how easy it is to appl
 There are many ways to apply a stylesheet to a document, for this tutorial we will show only three. For information about the ways that styles can be applied and style precedence see [Applying Style Sheets in Prince](apply-css.html#apply-css).
 
 Using the `-s` command line option:  
-``
+
     $ prince -s lab_report.css lab_report.html
 
 Using the GUI  
@@ -169,7 +169,7 @@ Press the "Add CSS" button on the right of the Prince GUI and choose your CSS fi
 By creating a link from the HTML `link` tag.  
 Place the tag within the `head` tag of the document. For example:
 
-``
+
     <!DOCTYPE html>
     <html>
     <head>

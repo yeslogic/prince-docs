@@ -21,7 +21,7 @@ Printing a big table sideways
 ![Image of a large table printed sideways so that its width fits along the page's length.](samples/rotate-body-2.bw.png)
 This table is too wide to fit on the paper, so we use `prince-rotate-body` in a *named page* to print it sideways. Download the [PDF](samples/rotate-body.pdf) or the [HTML](samples/rotate-body.html).
 
-``
+
     @page big_table {
         prince-rotate-body: landscape;
         prince-shrink-to-fit: auto;
@@ -48,7 +48,7 @@ There are cases, when preparing a table with a large amount of content, that you
 
 The rotation is achieved with `transform: rotate()`. It could be applied directly to the `th` element, but it is impossible to configure the width of the column as we wish it. We shall thus nest a `div` and a `span` element:
 
-``
+
     <th class="rotate">
       <div>
         <span>Column header 1</span>
@@ -57,7 +57,7 @@ The rotation is achieved with `transform: rotate()`. It could be applied directl
 
 The rotation will happen with the following CSS code:
 
-``
+
     th.rotate {
       /* Make sure the th is high enough, */
       height: 150px;
@@ -82,7 +82,7 @@ The rotation will happen with the following CSS code:
 
 A more basic means for rotation, allowing for less fine-tuning, is the use of the `writing-mode` CSS property. This option only allows rotation by 90°. It can be very handy when only some table cells with too much content are rotated, so as not to use too much horizontal space. You cannot rotate the table cell directly, so you have to nest one `span` element inside - and then you style it:
 
-``
+
     td.rotate > span {
       /* Rotate the content */
       writing-mode: vertical-rl;

@@ -13,7 +13,7 @@ Here is an example of including smart quotes in an XML document using character 
 
 XML
 
-``
+
     <p>
     These are &#x201C;smart quotes&#x201D; to be precise.
     </p>
@@ -26,7 +26,7 @@ A typical usecase for character entities in CSS is the `prince-text-replace` pro
 
 CSS
 
-``
+
     body {
       prince-text-replace: "s" "\017F";
     }

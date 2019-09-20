@@ -32,13 +32,13 @@ To make it more likely for Prince for Books to produce this effect, one might pu
 
 HTML
 
-``
+
     <h1>The <span>fulfilment <span>of the law</span></span>
       <span>and <span>of the prophets</span></span></h1>
 
 CSS
 
-``
+
     span {
       prince-wrap-inside: phrase;
     }
@@ -75,7 +75,7 @@ The keyword `fast` can be used for quick web-browers–style line breaking, usef
 
 The base stylesheet that Prince for Books applies to all HTML documents (i.e. the "user-agent style sheet", in CSS terminology) includes the ruleset
 
-``
+
     h1, h2, h3, h4, h5, h6 {
         prince-line-break-choices: heading;
     }
@@ -86,7 +86,7 @@ The below example applies `title-lookahead` line-breaking to the book title, cha
 
 CSS
 
-``
+
     body[data-type="book"] > h1,
     body[data-type="book"] > heading > h1,
     section[data-type="chapter"] > h1,
@@ -110,7 +110,7 @@ The `br` element would usually create a visually forced break, treating that lin
 
 CSS
 
-``
+
     lb { white-space: pre; }
     lb::before { content: "\A"; prince-forced-breaks: full; }
 
@@ -122,14 +122,14 @@ If multiple editions are to produced from a single source document, then a varia
 
 CSS
 
-``
+
     lb[ed ~= "a"]::before { ... }
 
 in the stylesheet for edition A (and similarly for the stylesheets of other editions), and
 
 HTML
 
-``
+
     <lb ed="a c" />
 
 in the document where a line break should be forced only in editions A and C.
@@ -169,7 +169,7 @@ Alternatives to adjusting a paragraph length include adding extra space around a
 
 Another feature in Prince for Books are the "fractional widows": the `widows` property is allowed a value expressed as percentage.
 
-``
+
     p {
       widows: 50%;
     }

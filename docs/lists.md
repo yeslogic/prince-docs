@@ -16,7 +16,7 @@ The `content` property can be applied to the `::marker` pseudo-element to specif
 
 CSS
 
-``
+
     li::marker { content: "No. " counter(list-item) }
 
 #### List marker position

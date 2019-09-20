@@ -13,12 +13,12 @@ How can I run Prince on Windows without showing the UI? <a href="#faq-no-ui" cla
 
 On Linux, you typically run Prince with the following command:
 
-``
+
     prince file.xml -o file.pdf
 
 On Windows, you replace the name of the executable with `Prince\engine\bin\prince.exe` in the installation directory (see [Windows installation layout](installation-layout.html#windows-layout)), which is the command-line program. See also [Command-line Reference](doc-refs.html#command-line).
 
-``
+
     "C:\Program Files (x86)\Prince\engine\bin\prince.exe" file.xml -o file.pdf
 
 Can I install Prince on cloud services or containers (Azure, AWS, Docker)? <a href="#faq-install-cloud" class="self-link"></a>

@@ -22,6 +22,6 @@ To achieve this, the values `prince-column-footnote` or `prince-column-inline-fo
 
 The value `prince-column-footnote` transforms the element into a column footnote: it creates a footnote call in the place where it appears in its natural flow, and moves the element to the bottom of the column. The footnote marker is placed outside of the block of the footnote. With the value `prince-column-inline-footnote`, the footnote marker is placed inside of the block of the footnote.
 
-``
+
     float: prince-column-footnote
 
