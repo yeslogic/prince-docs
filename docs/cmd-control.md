@@ -5,7 +5,7 @@ title: Advanced Command-Line Options
 Advanced Command-Line Options
 -----------------------------
 
-Prince can also be called from the command-line with two special options, useful for understanding the calls Prince can be controlled with, and the output it produces, in order to write your own wrapper: the [Prince Control Protocol](cmd-control.html#cmd-control) and the [Structured Log](cmd-control.html#structured-log).
+Prince can also be called from the command-line with two special options, useful for understanding the calls Prince can be controlled with, and the output it produces, in order to write your own wrapper: the [Prince Control Protocol](cmd-control.md#cmd-control) and the [Structured Log](cmd-control.md#structured-log).
 
 ### Prince Control Protocol
 
@@ -199,7 +199,7 @@ The first field indicates the type of message, which can be:
 -   `fin|` = final outcome, which can be
     -   `fin|success`, or
     -   `fin|failure`;
--   `dat|name|value` = data messages produced by [`Log.data("name", "value")`](doc-refs.html#window.Log.data);
+-   `dat|name|value` = data messages produced by [`Log.data("name", "value")`](doc-refs.md#window.Log.data);
 -   `msg|` = messages, which can be any of the following:
     -   `msg|err` = error message;
     -   `msg|wrn` = warning message;
@@ -237,7 +237,7 @@ Specifying `--structured-log=buffered` is the same as `normal`, but all log mess
 
 The deadlock problem happens when Prince writes log messages to stderr and blocks, waiting for the other software to read them, but the other software is blocked waiting for Prince to write the PDF to stdout, leading to a deadlock where both processes hang indefinitely.
 
-By omitting log messages, or by delaying them until after the PDF is written, this deadlock can be avoided. Another option is to use the [Prince Control Protocol](cmd-control.html#cmd-control), which also avoids this problem.
+By omitting log messages, or by delaying them until after the PDF is written, this deadlock can be avoided. Another option is to use the [Prince Control Protocol](cmd-control.md#cmd-control), which also avoids this problem.
 
 ### Fail-Safe Options
 
@@ -254,5 +254,5 @@ Fail if glyphs cannot be found for any characters.
 
 Usually Prince will try hard to solve any unexpected issues that arise, prioritizing the creation of a PDF - missing glyphs would be represented as a question mark ("?") and resources not loaded would simply be dropped. The fail-safe options are there to prevent the creation of broken PDFs due to temporary network problems or unexpected font issues. If the condition specified with one of the command-line options is triggered, the conversion will return an explicit failure status, and no PDF is created. Appropriate action to identify and fix the problem can be taken before attempting a new conversion.
 
-The JavaScript property [`Prince.failStatus`](doc-refs.html#window.Prince.failStatus) can also be used to trigger an explicit failure status based on custom criteria. See also under [The Prince Object](javascript.html#js-prince-obj).
+The JavaScript property [`Prince.failStatus`](doc-refs.md#window.Prince.failStatus) can also be used to trigger an explicit failure status based on custom criteria. See also under [The Prince Object](javascript.md#js-prince-obj).
 

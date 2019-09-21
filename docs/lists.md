@@ -39,11 +39,11 @@ li.outside { list-style-position: outside }</pre></code>
 <div class="output">
 <ol style="border: solid 2px darkgreen">
 <li style="border: solid 1px black; list-style-position: inside">
-    This list item sets the <code><a href="doc-refs.html#prop-list-style-position">list-style-position</a></code> to <code>inside</code>,
+    This list item sets the <code><a href="doc-refs.md#prop-list-style-position">list-style-position</a></code> to <code>inside</code>,
     so the list marker is rendered inside the principal box of <code>li</code>.
 </li>
 <li style="border: solid 1px black; list-style-position: outside">
-    This list item sets the <code><a href="doc-refs.html#prop-list-style-position">list-style-position</a></code> to <code>outside</code>,
+    This list item sets the <code><a href="doc-refs.md#prop-list-style-position">list-style-position</a></code> to <code>outside</code>,
     so the list marker is rendered outside the principal box of <code>li</code>.
 </li>
 </ol>
@@ -62,7 +62,7 @@ or <code>li</code> enough left margin.
 
 Different list marker types can be chosen by setting the CSS property `list-style-type` to different values: `disc` | `hyphen` | `decimal` | `lower-alpha` | ...
 
-The property `list-style-type` applies to list items and determines the type of marker that they receive. The following table shows examples of some list style types (a table with examples of all supported options for ordered lists, see [Counter styles](gen-content.html#counter-styles)).
+The property `list-style-type` applies to list items and determines the type of marker that they receive. The following table shows examples of some list style types (a table with examples of all supported options for ordered lists, see [Counter styles](gen-content.md#counter-styles)).
 
 |                              |                                 |
 |------------------------------|---------------------------------|

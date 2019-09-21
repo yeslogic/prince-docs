@@ -12,9 +12,9 @@ Prince sets the PDF direction based on the direction and writing mode of the doc
 
 Changing the writing mode of a document, that is, the inline or block direction, not only changes the direction of the script, but also affects several other aspects of the printed document.
 
-The page selector pseudo-classes `:recto` and `:verso` (see [Selecting pages](paged.html#page-rules)) are relative to the direction of the script. In a left-to-right script, `:recto` is the right-hand side of a spread, and `:verso` is the left-hand side, while in a right-to-left script these values are inverted: `:recto` defines the left-hand side of a spread, and `:verso` defines the right-hand side. See also [Selecting pages](paged.html#page-rules).
+The page selector pseudo-classes `:recto` and `:verso` (see [Selecting pages](paged.md#page-rules)) are relative to the direction of the script. In a left-to-right script, `:recto` is the right-hand side of a spread, and `:verso` is the left-hand side, while in a right-to-left script these values are inverted: `:recto` defines the left-hand side of a spread, and `:verso` defines the right-hand side. See also [Selecting pages](paged.md#page-rules).
 
 Columns change their orientation when the writing mode is changed - `writing-mode` `vertical-rl` arranges the columns horizontally, top-to-bottom.
 
-This can be used to rotate content - see [Printing wide content sideways](rotating.html#wide-content-sideways) and [Rotating content in table cells](rotating.html#rotating-table-cells).
+This can be used to rotate content - see [Printing wide content sideways](rotating.md#wide-content-sideways) and [Rotating content in table cells](rotating.md#rotating-table-cells).
 

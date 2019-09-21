@@ -6,18 +6,18 @@ Hyperlinks in Print
 -------------------
 
 You need  
-[Generated Content](gen-content.html#gen-content)
+[Generated Content](gen-content.md#gen-content)
 
-[Generated Content Functions](gen-content.html#gen-content-functions)
+[Generated Content Functions](gen-content.md#gen-content-functions)
 
-[Cross-references](gen-content.html#crossref)
+[Cross-references](gen-content.md#crossref)
 
--   [Using target-counter()](gen-content.html#counter-target)
--   [Using target-content()](gen-content.html#target-content)
+-   [Using target-counter()](gen-content.md#counter-target)
+-   [Using target-content()](gen-content.md#target-content)
 
 Hyperlinks are a direct reference to another location, easy to follow on the interactive web page, or a PDF loaded in a viewer, by clicking on it. On the printed page, this mechanism obviously does not work.
 
-Prince offers some CSS functions to help translating hyperlinks into print-friendly display, useful in different scenarios: `target-counter()`, `target-content()` and `attr()`, to be used with the `content` property. (See also [Generated Content Functions](gen-content.html#gen-content-functions)).
+Prince offers some CSS functions to help translating hyperlinks into print-friendly display, useful in different scenarios: `target-counter()`, `target-content()` and `attr()`, to be used with the `content` property. (See also [Generated Content Functions](gen-content.md#gen-content-functions)).
 
 The `target-counter()` function can be used to reference the value of a counter at a linked element, and it can specify any counter, allowing cross-references to refer to list items, chapters or sections as well as pages.
 

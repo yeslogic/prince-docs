@@ -6,20 +6,20 @@ Thinking in Spreads
 -------------------
 
 You need  
-[Paged Media](paged.html#paged)
+[Paged Media](paged.md#paged)
 
--   [Selecting pages](paged.html#page-rules)
--   [Controlling pagination](paged.html#controlling-pagination)
+-   [Selecting pages](paged.md#page-rules)
+-   [Controlling pagination](paged.md#controlling-pagination)
 
-[Box Model](css-box.html#css-box)
+[Box Model](css-box.md#css-box)
 
-[Prince extensions to floats](floats.html#float-extensions)
+[Prince extensions to floats](floats.md#float-extensions)
 
-[Paragraph formatting](text-formatting.html#paragraph-formatting)
+[Paragraph formatting](text-formatting.md#paragraph-formatting)
 
 Prince produces PDFs - which are a prominent example of paged media. The main difference with conventional CSS design for browsers is to always keep in mind that you are dealing with pagination, i.e. the content is placed on discrete pages.
 
-The basic unit for paged media in print is the page, organized in page spreads: the left page, called *verso* in a left-to-right script (see [Writing Mode](writing-mode.html#writing-mode)), and the right page, called *recto*, are of the same size and typically are symmetrical to each other and are centered on the gutter. [Selected](paged.html#page-rules) and [Named pages](paged.html#named-pages) can be placed *recto* or *verso*, and Prince expands several properties and the [`@page`](doc-refs.html#at-page) at-rule pseudo-classes with the values `verso` and `recto`, or `inside` and `outside`, referring to the layout on each page of the spread to facilitate the work with page spreads.
+The basic unit for paged media in print is the page, organized in page spreads: the left page, called *verso* in a left-to-right script (see [Writing Mode](writing-mode.md#writing-mode)), and the right page, called *recto*, are of the same size and typically are symmetrical to each other and are centered on the gutter. [Selected](paged.md#page-rules) and [Named pages](paged.md#named-pages) can be placed *recto* or *verso*, and Prince expands several properties and the [`@page`](doc-refs.md#at-page) at-rule pseudo-classes with the values `verso` and `recto`, or `inside` and `outside`, referring to the layout on each page of the spread to facilitate the work with page spreads.
 
 ### Pagination on a page spread
 
@@ -32,7 +32,7 @@ You have control on wether to place specific selected and named pages right or l
 
 This rule places an `h1` element always at the beginning of a *recto* page.
 
-Pages can also be specifically targeted and styled with the [`@page`](doc-refs.html#at-page) at-rule pseudo-classes `:right` and `:left`, or `:recto` and `:verso`.
+Pages can also be specifically targeted and styled with the [`@page`](doc-refs.md#at-page) at-rule pseudo-classes `:right` and `:left`, or `:recto` and `:verso`.
 
 ### Layout on a page spread
 
@@ -61,7 +61,7 @@ So, when you start thinking about the layout box model, Prince offers the proper
 
 This example creates a bigger margin around the central gutter, like the previous one - albeit in a shorter way.
 
-Floats are particularly sensitive to the placement on the page with regards to whether it is a left-facing or right-facing page. Prince extends the `float` property (and the property `clear`) with the values `inside` and `outside`. For details please see the chapter [Floats](floats.html#floats).
+Floats are particularly sensitive to the placement on the page with regards to whether it is a left-facing or right-facing page. Prince extends the `float` property (and the property `clear`) with the values `inside` and `outside`. For details please see the chapter [Floats](floats.md#floats).
 
 On a paragraph level, the properties `text-align` and `text-align-last` similarly take the keywords `inside` and `outside` to help achieving a smooth layout.
 

@@ -5,7 +5,7 @@ title: Images
 Images
 ------
 
-Prince supports JPEG, PNG, TIFF and GIF images as well as [Scalable Vector Graphics (SVG)](svg.html#svg).
+Prince supports JPEG, PNG, TIFF and GIF images as well as [Scalable Vector Graphics (SVG)](svg.md#svg).
 
 Images can be included in XHTML and DocBook documents using the appropriate image elements, which are pre-defined in the default style sheets.
 
@@ -13,7 +13,7 @@ Images can also be included in arbitrary XML documents using the CSS `content` p
 
 Furthermore, images are widely used in style sheets for the background. CSS allows also for several mechanisms to manipulate images and background images.
 
-Please note that Prince tries to preserve the ICC color profile embedded in images - for details see the [Color Management](color-management.html#color-management) section.
+Please note that Prince tries to preserve the ICC color profile embedded in images - for details see the [Color Management](color-management.md#color-management) section.
 
 ### Images in XHTML
 
@@ -73,9 +73,9 @@ Images can be added to a document as content or decoration, and can be modified 
 
 #### Background Images
 
-Several properties are available to add background images: `background-image` is used to add an image to a page, while `background-position`, `background-attachment` and `background-repeat` are used to position it precisely, also defining its appearance. See also [Background](css-box.html#background).
+Several properties are available to add background images: `background-image` is used to add an image to a page, while `background-position`, `background-attachment` and `background-repeat` are used to position it precisely, also defining its appearance. See also [Background](css-box.md#background).
 
-Images can also be added to style a list with the property `list-style-image` (see also [List marker style](lists.html#list-marker-style)).
+Images can also be added to style a list with the property `list-style-image` (see also [List marker style](lists.md#list-marker-style)).
 
 #### Image Orientation
 
@@ -99,9 +99,9 @@ The property `prince-background-image-resolution` does the same for background i
 
 The property `object-fit` offers another mechanism to determine how an image should be resized to fit its container. The position of the image in its container can be determined with the `object-position` property.
 
-The `object-fit` and `object-position` properties are not specific to images, but apply to all replaced content, including content inserted as [Generated Content](gen-content.html#gen-content) via the `content` property.
+The `object-fit` and `object-position` properties are not specific to images, but apply to all replaced content, including content inserted as [Generated Content](gen-content.md#gen-content) via the `content` property.
 
 Please note that specifying `prince-image-resolution` and `prince-background-image-resolution`, or `object-fit`, only affects the default DPI of images, ie. it makes them physically bigger or smaller on the page, and - it does not affect the number of pixels in the image, and thus the PDF file size will be the same.
 
-To reduce the PDF file size, JPEG images can be recompressed at a lower quality level, or PNG images be converted to JPEG, with the `prince-image-magic` property. See also [Image Magic](image-magic.html#image-magic).
+To reduce the PDF file size, JPEG images can be recompressed at a lower quality level, or PNG images be converted to JPEG, with the `prince-image-magic` property. See also [Image Magic](image-magic.md#image-magic).
 

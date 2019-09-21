@@ -8,7 +8,7 @@ All HTML elements follow the CSS box model. Their `margin`, `border`, `padding` 
 
 #### Margin
 
-At the very outside of the box are the margins. Each margin's size can be set individualy with the properties [margin-top](doc-refs.html#prop-margin-top), [margin-bottom](doc-refs.html#prop-margin-bottom), [margin-left](doc-refs.html#prop-margin-left) and [margin-right](doc-refs.html#prop-margin-right), or you can use the *shorthand property* [margin](doc-refs.html#prop-margin) to specify all four margins together. The syntax of the shorthand property is:
+At the very outside of the box are the margins. Each margin's size can be set individualy with the properties [margin-top](doc-refs.md#prop-margin-top), [margin-bottom](doc-refs.md#prop-margin-bottom), [margin-left](doc-refs.md#prop-margin-left) and [margin-right](doc-refs.md#prop-margin-right), or you can use the *shorthand property* [margin](doc-refs.md#prop-margin) to specify all four margins together. The syntax of the shorthand property is:
 
 
     margin: top right bottom left
@@ -21,7 +21,7 @@ If there are only:
 
 Prince expands the margin properties with `margin-inside` and `margin-outside`, defining the margin respectively on the inside or outside of a spread: inside is on the right when used on a left-facing page, and on left on a right-facing page; outside is on the left when used on a left-facing page, and on the right on a right-facing page.
 
-Always keep in mind that `margin-top` and `margin-bottom` of blocks are combined (i.e. "collapsed") into a single margin according to a possibly rather complex behavior known as *margin collapsing*. The notable exception is the behavior of margins in [Flex Layout](flexbox.html#flexbox).
+Always keep in mind that `margin-top` and `margin-bottom` of blocks are combined (i.e. "collapsed") into a single margin according to a possibly rather complex behavior known as *margin collapsing*. The notable exception is the behavior of margins in [Flex Layout](flexbox.md#flexbox).
 
 #### Border
 
@@ -35,7 +35,7 @@ The `border-clip` property splits the borders into parts along the border edge -
 
 #### Padding
 
-The property `padding` defines the padding inside the box model. Each padding's size can be set individually with the properties [padding-top](doc-refs.html#prop-padding-top), [padding-bottom](doc-refs.html#prop-padding-bottom), [padding-left](doc-refs.html#prop-padding-left) and [padding-right](doc-refs.html#prop-padding-right), or you can use the *shorthand property* [padding](doc-refs.html#prop-padding) to specify all four paddings together. The syntax of the shorthand property is:
+The property `padding` defines the padding inside the box model. Each padding's size can be set individually with the properties [padding-top](doc-refs.md#prop-padding-top), [padding-bottom](doc-refs.md#prop-padding-bottom), [padding-left](doc-refs.md#prop-padding-left) and [padding-right](doc-refs.md#prop-padding-right), or you can use the *shorthand property* [padding](doc-refs.md#prop-padding) to specify all four paddings together. The syntax of the shorthand property is:
 
 
     padding: top right bottom left
@@ -48,7 +48,7 @@ If there are only:
 
 #### Background
 
-The background of an element can be styled with the `background-color` and the `background-image` properties, or with the shorthand property `background`. See also [Background Images](images.html#images-background).
+The background of an element can be styled with the `background-color` and the `background-image` properties, or with the shorthand property `background`. See also [Background Images](images.md#images-background).
 
-Various standard properties are available to position the background, to clip it or to determine whether, and how it should be repeated. Prince extends control on the background with the `prince-background-image-resolution` property, used to control image size in print (see [Image Size](images.html#images-size)), and with the `bleed` modifier of the `background-attachment` property, which, when used together with `background-size: cover`, allows a background image to cover the entire page bleed area (see [Trimming marks](paged.html#page-marks)).
+Various standard properties are available to position the background, to clip it or to determine whether, and how it should be repeated. Prince extends control on the background with the `prince-background-image-resolution` property, used to control image size in print (see [Image Size](images.md#images-size)), and with the `bleed` modifier of the `background-attachment` property, which, when used together with `background-size: cover`, allows a background image to cover the entire page bleed area (see [Trimming marks](paged.md#page-marks)).
 

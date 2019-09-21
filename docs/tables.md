@@ -257,11 +257,11 @@ Rows inside the <code>tfoot</code> element are used as a running table footer.
 </p>
 </div>
 
-See also [Long Tables](long-tables.html#long-tables).
+See also [Long Tables](long-tables.md#long-tables).
 
 #### Table captions
 
 Tables can also be provided with a table caption by using the `caption` HTML element, or by styling an arbitrary element with `display: table-caption` to be made to behave like `caption` elements. The caption is positioned above the table by default, but it can be moved to the bottom with the `caption-side` property.
 
-When a table spans across more than one page, the `prince-caption-page` property determines whether table captions will be displayed on the first page of a table, or only on the following pages, or repeated on every page that a table appears on. See also [Fancy Table Captions](fancy-table-captions.html#fancy-table-captions).
+When a table spans across more than one page, the `prince-caption-page` property determines whether table captions will be displayed on the first page of a table, or only on the following pages, or repeated on every page that a table appears on. See also [Fancy Table Captions](fancy-table-captions.md#fancy-table-captions).
 

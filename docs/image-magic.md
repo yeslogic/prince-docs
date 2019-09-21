@@ -6,9 +6,9 @@ Image Magic
 -----------
 
 You need  
-[Images](images.html#images)
+[Images](images.md#images)
 
-[CSS and Images](images.html#images-css)
+[CSS and Images](images.md#images-css)
 
 -   `prince-image-magic`
 

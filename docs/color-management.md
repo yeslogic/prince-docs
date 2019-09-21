@@ -15,11 +15,11 @@ The aim of Prince, within a color-managed workflow, is to preserve color informa
 
 ### Color Management and PDF Profiles
 
-As described in the [PDF Versions and Profiles](pdf-profiles.html#pdf-profiles) section, both PDF/A and PDF/X profiles impose restrictions on the features that may be used in a PDF file, including restrictions on color.
+As described in the [PDF Versions and Profiles](pdf-profiles.md#pdf-profiles) section, both PDF/A and PDF/X profiles impose restrictions on the features that may be used in a PDF file, including restrictions on color.
 
-PDF/A and PDF/X files have an output intent that defines the intended output color space of the PDF file. In Prince, the output intent color profile is selected using the [`--pdf-output-intent`](doc-refs.html#cl-pdf-output-intent) command-line option, or using the `prince-pdf-output-intent` property inside a [`@prince-pdf`](doc-refs.html#at-prince-pdf) at-rule. Both take a filename or URL to an ICC profile as its value.
+PDF/A and PDF/X files have an output intent that defines the intended output color space of the PDF file. In Prince, the output intent color profile is selected using the [`--pdf-output-intent`](doc-refs.md#cl-pdf-output-intent) command-line option, or using the `prince-pdf-output-intent` property inside a [`@prince-pdf`](doc-refs.md#at-prince-pdf) at-rule. Both take a filename or URL to an ICC profile as its value.
 
-The URL specified with the [`--pdf-output-intent`](doc-refs.html#cl-pdf-output-intent) command-line option or the `prince-pdf-output-intent` property will be resolved relative to the base URL of the style sheet or document in which the rule is, and needs to point to an existing color profile file.
+The URL specified with the [`--pdf-output-intent`](doc-refs.md#cl-pdf-output-intent) command-line option or the `prince-pdf-output-intent` property will be resolved relative to the base URL of the style sheet or document in which the rule is, and needs to point to an existing color profile file.
 
 
     @prince-pdf {
@@ -47,11 +47,11 @@ PDF/A requires that all colors to be device-independent, or else characterized b
 
 ### Color Management in Prince
 
-Prince supports RGB, RGBA, HSL, HSLA, CMYK, and named spot colors. For Prince's color handling, please see the [Color](color.html#color) section.
+Prince supports RGB, RGBA, HSL, HSLA, CMYK, and named spot colors. For Prince's color handling, please see the [Color](color.md#color) section.
 
-As CSS defines RGB colors in the sRGB color space, Prince tags those colors with an sRGB ICC profile in the PDF output. See also the section on [Rich black and true black](color-management.html#rich-true-black) below.
+As CSS defines RGB colors in the sRGB color space, Prince tags those colors with an sRGB ICC profile in the PDF output. See also the section on [Rich black and true black](color-management.md#rich-true-black) below.
 
-CMYK colors specified using the `cmyk()` function syntax, or equivalent `device-cmyk()` syntax, represent device-dependent colors, so they will be left as such in the PDF when possible. Device-dependent color is not allowed in PDF/A or PDF/X, so those CMYK colors will be assumed to be either in the output intent color space (if it is CMYK), or else the color space of the fallback CMYK profile. See the command-line option [`--fallback-cmyk-profile`](doc-refs.html#cl-fallback-cmyk-profile) in the [PDF Output Options](doc-refs.html#cmd-pdf) section, or the `prince-fallback-cmyk-profile` property.
+CMYK colors specified using the `cmyk()` function syntax, or equivalent `device-cmyk()` syntax, represent device-dependent colors, so they will be left as such in the PDF when possible. Device-dependent color is not allowed in PDF/A or PDF/X, so those CMYK colors will be assumed to be either in the output intent color space (if it is CMYK), or else the color space of the fallback CMYK profile. See the command-line option [`--fallback-cmyk-profile`](doc-refs.md#cl-fallback-cmyk-profile) in the [PDF Output Options](doc-refs.md#cmd-pdf) section, or the `prince-fallback-cmyk-profile` property.
 
     prince input.html
            --pdf-profile=PDF/A-1b
@@ -68,11 +68,11 @@ Prince preserves the ICC profiles embedded in bitmap images, unless directed not
 
 ### Color conversion
 
-Prince will convert all the colors in a document to a single color space if the [`--convert-colors`](doc-refs.html#cl-convert-colors) command-line option or the `prince-pdf-color-conversion` descriptor in the [`@prince-pdf`](doc-refs.html#at-prince-pdf) at-rule is used. The destination color space is specified with the [`--pdf-output-intent`](doc-refs.html#cl-pdf-output-intent) option (or the `prince-pdf-output-intent` property), even when not producing PDF/A or PDF/X files.
+Prince will convert all the colors in a document to a single color space if the [`--convert-colors`](doc-refs.md#cl-convert-colors) command-line option or the `prince-pdf-color-conversion` descriptor in the [`@prince-pdf`](doc-refs.md#at-prince-pdf) at-rule is used. The destination color space is specified with the [`--pdf-output-intent`](doc-refs.md#cl-pdf-output-intent) option (or the `prince-pdf-output-intent` property), even when not producing PDF/A or PDF/X files.
 
-Prince automatically converts colors to the output intent color space only when producing PDF/X-1a files. Files in any of the other profiles need also the [`--convert-colors`](doc-refs.html#cl-convert-colors) command-line option or the `prince-pdf-color-conversion` property if colors are to be converted.
+Prince automatically converts colors to the output intent color space only when producing PDF/X-1a files. Files in any of the other profiles need also the [`--convert-colors`](doc-refs.md#cl-convert-colors) command-line option or the `prince-pdf-color-conversion` property if colors are to be converted.
 
-Prince allows also to use `prince-pdf-color-conversion` as a property, applied to individual elements. The value `auto` is the default and will enable color conversion for this element, if color conversion is enabled at the top level in the [`@prince-pdf`](doc-refs.html#at-prince-pdf) at-rule or with the command-line argument, and the value `none` allows color conversion to be disabled for that element and its descendants.
+Prince allows also to use `prince-pdf-color-conversion` as a property, applied to individual elements. The value `auto` is the default and will enable color conversion for this element, if color conversion is enabled at the top level in the [`@prince-pdf`](doc-refs.md#at-prince-pdf) at-rule or with the command-line argument, and the value `none` allows color conversion to be disabled for that element and its descendants.
 
 ### Rich black and true black
 

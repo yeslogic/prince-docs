@@ -34,7 +34,7 @@ CSS
         prince-bookmark-label: attr(title)
     }
 
-This property can take any content value, including literal text strings and counters. See [Generated Content Functions](gen-content.html#gen-content-functions).
+This property can take any content value, including literal text strings and counters. See [Generated Content Functions](gen-content.md#gen-content-functions).
 
 #### Bookmark targets
 

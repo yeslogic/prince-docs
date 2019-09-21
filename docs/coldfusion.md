@@ -4,11 +4,11 @@ title: Using Prince with ColdFusion
 
 ### Using Prince with ColdFusion
 
-Prince can be called from ColdFusion pages using the Java interface or the [ActiveX/COM interface](asp.html#activex-com), if on Windows.
+Prince can be called from ColdFusion pages using the Java interface or the [ActiveX/COM interface](asp.md#activex-com), if on Windows.
 
 #### Using Java
 
-Start by downloading the [Java interface](java.html#java) for Prince. This package contains:
+Start by downloading the [Java interface](java.md#java) for Prince. This package contains:
 
 -   A single JAR file (`prince.jar`),
 -   the [API documentation](wrappers/java/doc/index.html) and
@@ -41,7 +41,7 @@ If on Linux, substitute the paths with the appropriate UNIX style paths.
 
 #### Using ActiveX/COM
 
-If you are running ColdFusion on Windows, you can also call Prince using the [ActiveX/COM interface](asp.html#activex-com).
+If you are running ColdFusion on Windows, you can also call Prince using the [ActiveX/COM interface](asp.md#activex-com).
 
 This interface is provided in the form of an ActiveX DLL file that needs to be registered in the Windows registry using REGSVR32.EXE:
 

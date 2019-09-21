@@ -29,7 +29,7 @@ When content is laid out in multiple columns, Prince can determine where column 
 
 Prince also supports the properties `column-break-before` and `column-break-after`. However, you are encouraged to use the newer properties `break-before`, `break-after` with the keyword `column` from the CSS Fragmentation Module Level 3.
 
-If an element is to break the flow and span several columns, the property `column-span` helps to achieve this. For floated elements (see [Floats](floats.html#floats)) a numeric value tells Prince how many columns the element should span. For non-floated elements that are part of the regular flow of the document, only the keyword `all` can be used.
+If an element is to break the flow and span several columns, the property `column-span` helps to achieve this. For floated elements (see [Floats](floats.md#floats)) a numeric value tells Prince how many columns the element should span. For non-floated elements that are part of the regular flow of the document, only the keyword `all` can be used.
 
 The following example instructs Prince to make the `h1` heading element span all the columns:
 
@@ -41,5 +41,5 @@ The following example instructs Prince to make the `h1` heading element span all
         column-span: all;
     }
 
-Prince features also several column-specific extensions to the `float` property, namely [Page and column floats](floats.html#float-extension-page-column) and [Page and column footnotes](floats.html#float-extension-footnotes).
+Prince features also several column-specific extensions to the `float` property, namely [Page and column floats](floats.md#float-extension-page-column) and [Page and column footnotes](floats.md#float-extension-footnotes).
 

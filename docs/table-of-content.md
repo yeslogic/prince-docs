@@ -6,11 +6,11 @@ Table of Contents
 -----------------
 
 You need  
-[JavaScript in Printed Media](javascript.html#js-print)
+[JavaScript in Printed Media](javascript.md#js-print)
 
-[The "Two-Pass" Solution](two-pass.html#two-pass)
+[The "Two-Pass" Solution](two-pass.md#two-pass)
 
-[Generated Content Functions](gen-content.html#gen-content-functions)
+[Generated Content Functions](gen-content.md#gen-content-functions)
 
 -   `content: target-counter()`
 -   `content: leader()`
@@ -44,7 +44,7 @@ Our [example document](http://css4.pub/2018/toc/index.html) generates at Table o
 
     $ prince --javascript http://css4.pub/2018/toc -o toc.pdf
 
-A [second example document](http://css4.pub/2017/musick/musick.html) generates at ToC by way of JavaScript and, even more impressively, the script also prints out an index which is added to the end of the document, to be used when running Prince a second time (see [The "Two-Pass" Solution](two-pass.html#two-pass)). Notice how subsequent page numbers in the index are folded into a range. To produce this document, try running these commands from a Linux command-line:
+A [second example document](http://css4.pub/2017/musick/musick.html) generates at ToC by way of JavaScript and, even more impressively, the script also prints out an index which is added to the end of the document, to be used when running Prince a second time (see [The "Two-Pass" Solution](two-pass.md#two-pass)). Notice how subsequent page numbers in the index are folded into a range. To produce this document, try running these commands from a Linux command-line:
 
 
     $ wget http://css4.pub/2017/musick/musick.html -o foo.html;
@@ -55,7 +55,7 @@ You can view the resulting PDF [here](http://css4.pub/2017/musick/musick.pdf).
 
 ### Multifile Table of Contents
 
-For longer books, it makes sense to split chapters into separate files. Generating a Table of Contents across all files is tricky in JavaScript since scripts only see one file at a time. In Prince, you can work around this limitation with a two-pass solution (see [The "Two-Pass" Solution](two-pass.html#two-pass)) where the first pass collects items for the ToC, and the second pass generates the PDF with the ToC.
+For longer books, it makes sense to split chapters into separate files. Generating a Table of Contents across all files is tricky in JavaScript since scripts only see one file at a time. In Prince, you can work around this limitation with a two-pass solution (see [The "Two-Pass" Solution](two-pass.md#two-pass)) where the first pass collects items for the ToC, and the second pass generates the PDF with the ToC.
 
 To try this for yourself, first fetch these five sample files into your own file system, e.g. by running:
 

@@ -4,7 +4,7 @@ title: Using Prince with Perl
 
 ### Using Prince with Perl
 
-Prince can be called from Perl using the [command-line interface](doc-refs.html#command-line), like this:
+Prince can be called from Perl using the [command-line interface](doc-refs.md#command-line), like this:
 
 
     system("prince foo.xml bar.pdf");

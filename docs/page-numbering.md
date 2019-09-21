@@ -6,13 +6,13 @@ Page Numbering
 --------------
 
 You need  
-[Paged Media](paged.html#paged)
+[Paged Media](paged.md#paged)
 
--   [Selecting pages](paged.html#page-rules)
+-   [Selecting pages](paged.md#page-rules)
 
-[Generated Content](gen-content.html#gen-content)
+[Generated Content](gen-content.md#gen-content)
 
--   [Counters and Numbering](gen-content.html#counters)
+-   [Counters and Numbering](gen-content.md#counters)
     -   `content: counter(page)`
 
 Paged media is organized in pages - and numbering the pages is a common task: generated content does this for you automatically. The easiest way of doing so is numbering them sequentially from the first to the last page.
@@ -28,7 +28,7 @@ Page counters work a bit more simple and usually don't need to be explicitly ini
       }
     }
 
-However, if you want to restart the numbering after the Preface of your book, you need to name the pages (see [Named pages](paged.html#named-pages)) and the counter needs to be re-initialized with the main content. See also the example [Restarting page numbering](paged.html#ex-restart-page-numbers).
+However, if you want to restart the numbering after the Preface of your book, you need to name the pages (see [Named pages](paged.md#named-pages)) and the counter needs to be re-initialized with the main content. See also the example [Restarting page numbering](paged.md#ex-restart-page-numbers).
 
 
     .preface {

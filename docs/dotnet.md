@@ -4,7 +4,7 @@ title: The C\# / .Net Wrapper
 
 ### The C\# / .Net Wrapper
 
-Prince can be called from .NET languages using the [Prince C\# / .Net wrapper](wrappers.html#wrapper-csharp).
+Prince can be called from .NET languages using the [Prince C\# / .Net wrapper](wrappers.md#wrapper-csharp).
 
 The wrapper package contains:
 
@@ -49,7 +49,7 @@ To combine multiple HTML documents into a single PDF file, call `ConvertMultiple
 
 #### Using Prince with VB.NET
 
-To use the Prince [The C\# / .Net Wrapper](dotnet.html#csharp) in VB.NET, add a reference to the DLL to your Visual Studio project. Alternatively, you can include the Prince.vb source file directly if you prefer.
+To use the Prince [The C\# / .Net Wrapper](dotnet.md#csharp) in VB.NET, add a reference to the DLL to your Visual Studio project. Alternatively, you can include the Prince.vb source file directly if you prefer.
 
 To convert HTML or XML files into PDF, instantiate a Prince object with the full path to the Prince engine executable file. Once this is done, you can apply style sheets and scripts, or configure other properties by calling the appropriate subroutines. Finally, you can call one of the Convert functions to generate a PDF file.
 

@@ -9,7 +9,7 @@ Prince for Books is a new venture that allows us to spend more time on features 
 
 The initial focus of work is on the features common to all books: making the pagination and line-breaking choices expected of books, by featuring a few extensions to CSS and fine-tuned algorithms.
 
-For the time being, Prince for Books is only available as a a command-line application named `prince-books`. It is used like the standard Prince - see [Command-line Reference](doc-refs.html#command-line) for available options.
+For the time being, Prince for Books is only available as a a command-line application named `prince-books`. It is used like the standard Prince - see [Command-line Reference](doc-refs.md#command-line) for available options.
 
 `prince-books OPTIONS FILES` \[`-o` <span class="replaceable">PDF</span>\]
 
@@ -67,7 +67,7 @@ A disadvantage of lookahead is that any "mistakes" (that is, differences from wh
 
 This means that the non-lookahead versions might be a better choice in jobs where Prince's line breaks will be accepted without human oversight; whereas if a typesetter will look for and correct any problems in the rag of the paragraph, then the lookahead versions will typically give a better starting point.
 
-A typesetter's intervention currently involves modifying the HTML: it is not requireed to assign an `id` to each paragraph, but it is nevertheless common practice to do so for making other changes, such as changing the number of lines in a paragraph for pagination purposes (whether using `prince-n-lines` or `word-spacing` or `letter-spacing`), or assigning a unique value to each chapter in order to change how many lines are on the last page of the chapter (say, by adding `1pt` to the inside margin). See also [Spread Balancing](prince-for-books.html#pfb-spreadbalancing).
+A typesetter's intervention currently involves modifying the HTML: it is not requireed to assign an `id` to each paragraph, but it is nevertheless common practice to do so for making other changes, such as changing the number of lines in a paragraph for pagination purposes (whether using `prince-n-lines` or `word-spacing` or `letter-spacing`), or assigning a unique value to each chapter in order to change how many lines are on the last page of the chapter (say, by adding `1pt` to the inside margin). See also [Spread Balancing](prince-for-books.md#pfb-spreadbalancing).
 
 To illustrate the difference, one could also say that non-lookahead versions give paragraph shapes reminiscent of those given by word processors and web browsers, while the lookahead versions come slightly closer to what one might find in books.
 
@@ -139,7 +139,7 @@ The difference is particularly marked in justified text, where lines ended by `p
 Spread Balancing
 ----------------
 
-A prominent new feature is the concept of "spread balancing": Prince for Books can try to ensure that the content on two-page spreads is the same height. Due to the `widows` and `orphans` properties (see [Widows and orphans](paged.html#widows-and-orphans)) it is possible for one page to have fewer lines than the other, and this unevenness looks upsetting.
+A prominent new feature is the concept of "spread balancing": Prince for Books can try to ensure that the content on two-page spreads is the same height. Due to the `widows` and `orphans` properties (see [Widows and orphans](paged.md#widows-and-orphans)) it is possible for one page to have fewer lines than the other, and this unevenness looks upsetting.
 
 Prince for Books also tries to reduce the number of uneven spreads.
 
