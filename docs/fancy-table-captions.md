@@ -18,7 +18,7 @@ As mentioned in [Long Tables](long-tables.md#long-tables), when a table spans ac
 
 You might define a caption in HTML for the main table caption - to be displayed on the first page. Additionally, you make another element into a table caption with the `display` property - and display it only on the following pages!
 
-The paragraph functioning as a table caption can be hidden in browsers by using [CSS Media Queries](doc-refs.md#media-queries).
+The paragraph functioning as a table caption can be hidden in browsers by using [CSS Media Queries](media-queries.md#media-queries).
 
 HTML
 

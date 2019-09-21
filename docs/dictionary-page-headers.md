@@ -27,7 +27,7 @@ The `string-set` property is applied to each definition in the dictionary (the *
 
     .chapter p b:first-child { string-set: term content() }  /* pick up term to be used in running header */
 
-This is the crucial set of rules for the [Dictionary](sample-docs.md#dictionary) sample.
+This is the crucial set of rules for the [Dictionary](sample-docs#dictionary) sample.
 
 The dictionary sample is furthermore noticeable for its use of the optional page policy keyword `first-except`: the current letter of the alphabet is displayed on each page heading, *except* for the page on which the letter appears in the body of the page, starting the new section.
 

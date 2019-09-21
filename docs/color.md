@@ -51,7 +51,7 @@ The advantage of HSL over RGB is that it is much more intuitive to use and easie
 
 ### Spot colors
 
-Prince also supports named spot colors that can be defined with the [`@prince-color`](doc-refs.md#at-prince-color) rule. An alternate color must also be specified with the `alternate-color` property, using any of the valid notations for RGB, HSL or CMYK colors. This will be used in situations where the named color is not available, such as when viewing the generated PDF file on a display. Please note that `alternate-color` cannot be RGBA, HSLA or CMYKA.
+Prince also supports named spot colors that can be defined with the [`@prince-color`](at-rules.md#at-prince-color) rule. An alternate color must also be specified with the `alternate-color` property, using any of the valid notations for RGB, HSL or CMYK colors. This will be used in situations where the named color is not available, such as when viewing the generated PDF file on a display. Please note that `alternate-color` cannot be RGBA, HSLA or CMYKA.
 
 
     @prince-color MyColor {

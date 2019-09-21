@@ -9,7 +9,7 @@ Prince for Books is a new venture that allows us to spend more time on features 
 
 The initial focus of work is on the features common to all books: making the pagination and line-breaking choices expected of books, by featuring a few extensions to CSS and fine-tuned algorithms.
 
-For the time being, Prince for Books is only available as a a command-line application named `prince-books`. It is used like the standard Prince - see [Command-line Reference](doc-refs.md#command-line) for available options.
+For the time being, Prince for Books is only available as a a command-line application named `prince-books`. It is used like the standard Prince - see [Command-line Reference](command-line.md#command-line) for available options.
 
 `prince-books OPTIONS FILES` \[`-o` <span class="replaceable">PDF</span>\]
 

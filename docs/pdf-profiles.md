@@ -7,7 +7,7 @@ PDF Versions and Profiles
 
 The PDF files produced by Prince conform to several different PDF versions, up to PDF 1.7, depending on the chosen PDF Profile and the enabled PDF features.
 
-Prince supports tagged PDF files and optional PDF profiles, which can be selected using the [`--pdf-profile`](doc-refs.md#cl-pdf-profile) option on the [command-line interface](doc-refs.md#command-line), or the `setProfile` method if using a [server wrapper](server-integration.md#wrappers), or the [`PDF.profile`](doc-refs.md#window.PDF.profile) function in JavaScript.
+Prince supports tagged PDF files and optional PDF profiles, which can be selected using the [`--pdf-profile`](command-line.md#cl-pdf-profile) option on the [command-line interface](command-line.md#command-line), or the `setProfile` method if using a [server wrapper](server-integration.md#wrappers), or the [`PDF.profile`](js-support.md#window.PDF.profile) function in JavaScript.
 
 The available profiles, and the PDF version they are based on, are:
 
@@ -41,9 +41,9 @@ PDF 1.7
 -   if the `prince-pdf-paper-tray` property is set, or
 -   if the `prince-pdf-duplex` property is set.
 
-To enable tagged PDF without using one of the profiles that already imply it, the command-line option [`--tagged-pdf`](doc-refs.md#cl-tagged-pdf) can be used.
+To enable tagged PDF without using one of the profiles that already imply it, the command-line option [`--tagged-pdf`](command-line.md#cl-tagged-pdf) can be used.
 
-Prince supports PDF object streams to reduce the size of tagged PDFs. This can be disabled by the command-line argument [`--no-object-streams`](doc-refs.md#cl-no-object-streams) or from JavaScript via the [`PDF.objectStreams`](doc-refs.md#window.PDF.objectStreams) boolean property.
+Prince supports PDF object streams to reduce the size of tagged PDFs. This can be disabled by the command-line argument [`--no-object-streams`](command-line.md#cl-no-object-streams) or from JavaScript via the [`PDF.objectStreams`](js-support.md#window.PDF.objectStreams) boolean property.
 
 Object streams are enabled by default, therefore Prince produces files with PDF version 1.5 - unless a profile that requires older PDF versions will automatically disable object streams.
 
@@ -79,7 +79,7 @@ Generally speaking, PDF/A profiles were created with the goal of long-term prese
 -   PDF/X is intended to support "blind exchange", i.e. no exchange of technical information is needed to render the printed page as intended
 -   Audio and video content is forbidden
 -   All fonts are embedded
--   Colorspaces must be specified in a device-independent manner - an output intent is required (see the [`--pdf-output-intent`](doc-refs.md#cl-pdf-output-intent) command-line option in the [PDF Output Options](doc-refs.md#cmd-pdf) section)
+-   Colorspaces must be specified in a device-independent manner - an output intent is required (see the [`--pdf-output-intent`](command-line.md#cl-pdf-output-intent) command-line option in the [PDF Output Options](command-line.md#cmd-pdf) section)
 -   See the [Color Management and PDF Profiles](color-management.md#pdf-colman) section for the color profiles available in each PDF/X version. Transparency is not allowed, with the exception of PDF/X-4
 -   Encryption is forbidden
 

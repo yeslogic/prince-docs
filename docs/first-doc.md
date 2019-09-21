@@ -10,7 +10,7 @@ In this section we will process a very simple document. We've chosen a document 
 The lab report
 --------------
 
-The report itself is very basic, the HTML source is shown below. You can save the HTML to a file named lab\_report.html or download it [here](samples/lab_report.md).
+The report itself is very basic, the HTML source is shown below. You can save the HTML to a file named lab\_report.html or download it [here](samples/lab_report.html).
 
 
     <!DOCTYPE html>
@@ -142,7 +142,7 @@ The styled lab report, download the [here](samples/lab_report-styled.pdf).
         font-size: 14pt;
     }
 
-Note that we use the `.class` syntax to style only the subtitle, which is a `h2` with the subtitle class, without affecting the other `h2` elements in the document. See the section on [CSS Selectors](doc-refs.md#selectors) for more information. Information about alignment (such as centered text) can be found in the [Paragraph formatting](text-formatting.md#paragraph-formatting) section.
+Note that we use the `.class` syntax to style only the subtitle, which is a `h2` with the subtitle class, without affecting the other `h2` elements in the document. See the section on [CSS Selectors](selectors.md#selectors) for more information. Information about alignment (such as centered text) can be found in the [Paragraph formatting](text-formatting.md#paragraph-formatting) section.
 
 Finally we will make the "Hello World!" paragraph stand out. This paragraph is identified by an `id` attribute so we can use the `#id` syntax in the CSS selector.
 
@@ -185,5 +185,5 @@ After applying the style as above, Prince should generate something similar to [
 
 This sample document and many others are available in our [samples repository](https://github.com/yeslogic/prince-samples). You are encouraged to use samples from the repository and contribute your own.
 
-You are now ready to proceed to the [User Guide](doc-prince.md) to learn about all the features - and to make the best out of Prince!
+You are now ready to proceed to the [User Guide](intro-userguide.md) to learn about all the features - and to make the best out of Prince!
 

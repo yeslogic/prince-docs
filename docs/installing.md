@@ -9,18 +9,18 @@ Let's get started with Prince. We will download and install the software and use
 
 Readers should already be familiar with HTML and CSS - many good tutorials are available on the topic. Familiarity with your computer's command line interface is desirable but not essential. Because the chapter is aimed at getting started as quickly as possible we may skip some explanations, don't worry as these will be covered later in the manual.
 
-If Prince is already installed, you can directly skip to the [User Guide](doc-prince.md).
+If Prince is already installed, you can directly skip to the [User Guide](doc-prince.html).
 
 Installing Prince
 -----------------
 
-Prince is available for Windows, MacOS X, Linux (multiple distributions) and FreeBSD. You can download the relevant file from our [downloads page](download.md). For Linux and FreeBSD you may need to choose based on your distribution type, version and processor type (32/64 bits).
+Prince is available for Windows, MacOS X, Linux (multiple distributions) and FreeBSD. You can download the relevant file from our [downloads page](download.html). For Linux and FreeBSD you may need to choose based on your distribution type, version and processor type (32/64 bits).
 
-Prince is provided under the terms of the [Prince End-User License Agreement](eula.md).
+Prince is provided under the terms of the [Prince End-User License Agreement](eula.html).
 
 ### Installing Prince on Windows
 
-1.  Downlad your installation package from the [Download Page](download.md).
+1.  Downlad your installation package from the [Download Page](download.html).
 2.  After downloading and attempting to run the installer you might see a confirmation screen like this. Click "run". Note that the filename for the installer may be different than the one shown in the picture.
 
     Run installer confirmation
@@ -33,7 +33,7 @@ Prince is provided under the terms of the [Prince End-User License Agreement](eu
 
     ![The installer welcome screen](images/install_02.png)
 
-4.  Next you will need to accept the license agreement. The text of the license agreement is also available [here](eula.md). Accept the agreement and click Next.
+4.  Next you will need to accept the license agreement. The text of the license agreement is also available [here](eula.html). Accept the agreement and click Next.
 
     Installer license agreement screen
 
@@ -53,15 +53,15 @@ Prince is provided under the terms of the [Prince End-User License Agreement](eu
 
     ![The installer's completion screen](images/install_05.png)
 
-To run Prince on Windows, you typically double-click on the Prince icon created during installation. You can also run only the binary, without the GUI, like on all other systems - for details please see the [Command-line Reference](doc-refs.md#command-line).
+To run Prince on Windows, you typically double-click on the Prince icon created during installation. You can also run only the binary, without the GUI, like on all other systems - for details please see the [Command-line Reference](command-line.md#command-line).
 
 For the layout of a Prince installation on Windows, see the [Windows installation layout](installation-layout.md#windows-layout) section.
 
-For information about using Prince from PHP, Java, .NET, and other server frameworks you will need to install one or more [Prince wrappers](wrappers.md). See [Server Integration](server-integration.md#server-integration) for installation and usage information.
+For information about using Prince from PHP, Java, .NET, and other server frameworks you will need to install one or more [Prince wrappers](wrappers.html). See [Server Integration](server-integration.md#server-integration) for installation and usage information.
 
 ### Installing Prince on MacOS X
 
-To install Prince on MacOS X, please run the `install.sh` shell script contained in the package downloaded to your computer from the [download page](download.md). This will involve the following procedure:
+To install Prince on MacOS X, please run the `install.sh` shell script contained in the package downloaded to your computer from the [download page](download.html). This will involve the following procedure:
 
 1.  Open the Terminal application.
 2.  Change to the download directory and unpack the downloaded file.
@@ -89,15 +89,15 @@ If you chose a non-standard location you may need to add the `bin/` subdirectory
 
 You will need to add the appropriate command to your shell's configuration or startup file. See your distribution or shell's documentation for how to do this.
 
-Prince is now ready to use - to run Prince on MacOS X, enter the `prince` command on the command line - for details please see the [Command-line Reference](doc-refs.md#command-line). [Your First Document](first-doc.md#first-doc) will walk you through generating your first PDF document.
+Prince is now ready to use - to run Prince on MacOS X, enter the `prince` command on the command line - for details please see the [Command-line Reference](command-line.md#command-line). [Your First Document](first-doc.md#first-doc) will walk you through generating your first PDF document.
 
 For the layout of a Prince installation on MacOS X, see the [MacOS X installation layout](installation-layout.md#macosx-layout) section.
 
-For information about using Prince from PHP, Java, .NET, and other server frameworks you will need to install one or more [Prince wrappers](wrappers.md). See [Server Integration](server-integration.md#server-integration) for installation and usage information.
+For information about using Prince from PHP, Java, .NET, and other server frameworks you will need to install one or more [Prince wrappers](wrappers.html). See [Server Integration](server-integration.md#server-integration) for installation and usage information.
 
 ### Installing Prince on Linux/FreeBSD
 
-Prince is installed using the terminal. The installation package can be downloaded from the [Download Page](download.md). Then open a terminal window and change to the directory that you downloaded or copied the installation package to. The `$` symbol represents the command prompt and the text that follows is the command, you should not type in the `$` symbol.
+Prince is installed using the terminal. The installation package can be downloaded from the [Download Page](download.html). Then open a terminal window and change to the directory that you downloaded or copied the installation package to. The `$` symbol represents the command prompt and the text that follows is the command, you should not type in the `$` symbol.
 
 
     $ cd download_directory
@@ -181,7 +181,7 @@ The process will then end with messages similar to:
 
 Prince is now ready to use. [Your First Document](first-doc.md#first-doc) will walk you through generating your first PDF document.
 
-For information about using Prince from PHP, Java, .NET, and other server frameworks you will need to install one or more [Prince wrappers](wrappers.md). See [Server Integration](server-integration.md#server-integration) for installation and usage information.
+For information about using Prince from PHP, Java, .NET, and other server frameworks you will need to install one or more [Prince wrappers](wrappers.html). See [Server Integration](server-integration.md#server-integration) for installation and usage information.
 
 #### Tarballs - Alpine Linux, FreeBSD and Generic Linux
 
@@ -233,7 +233,7 @@ You will need to add the appropriate command to your shell's configuration or st
 
 Prince is now ready to use. [Your First Document](first-doc.md#first-doc) will walk you through generating your first PDF document.
 
-For information about using Prince from PHP, Java, .NET, and other server frameworks you will need to install one or more [Prince wrappers](wrappers.md). See [Server Integration](server-integration.md#server-integration) for installation and usage information.
+For information about using Prince from PHP, Java, .NET, and other server frameworks you will need to install one or more [Prince wrappers](wrappers.html). See [Server Integration](server-integration.md#server-integration) for installation and usage information.
 
 Installing a license file
 -------------------------

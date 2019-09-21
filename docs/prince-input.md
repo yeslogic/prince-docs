@@ -11,7 +11,7 @@ See the sections [Applying Style Sheets in Prince](apply-css.md#apply-css), [App
 
 The input files can be provided in several ways:
 
--   the command line (see [Command-line Reference](doc-refs.md#command-line)),
+-   the command line (see [Command-line Reference](command-line.md#command-line)),
 -   the GUI, or
 -   through wrapper scripts (see [Server Integration](server-integration.md#server-integration)).
 

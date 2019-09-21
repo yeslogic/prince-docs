@@ -16,7 +16,7 @@ You need
 
 When producing a PDF, it might be desirable to include a watermark, visible on all pages. In Prince it is easy to do so with CSS.
 
-In order to repeat it on all pages, the watermark needs to be placed in a [`@page`](doc-refs.md#at-page) at-rule. We shall place it in the page region `@prince-overlay` (see [Page regions](paged.md#page-regions)) and create the watermark with generated content (see [Generated content in page regions](paged.md#page-gen-content)):
+In order to repeat it on all pages, the watermark needs to be placed in a [`@page`](at-rules.md#at-page) at-rule. We shall place it in the page region `@prince-overlay` (see [Page regions](paged.md#page-regions)) and create the watermark with generated content (see [Generated content in page regions](paged.md#page-gen-content)):
 
 
     @page {

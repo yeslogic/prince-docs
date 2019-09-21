@@ -11,14 +11,14 @@ Pagination
 The major difference between formatting for the web and for PDF/Print is that PDF is paginated, i.e. the content is placed on discrete pages. Pages have a defined [size](paged.md#page-size) and content can be laid out in a specific pattern making use of predefined [page regions](paged.md#page-regions). Elements can not only be floated right and left, but they can also be floated to the top and bottom of the page, or of a column, or the float even can be deferred to the next page (see [Prince extensions to floats](floats.md#float-extensions)). Pages can be [selected](paged.md#page-rules) and [named](paged.md#named-pages), which allows for specific treatment of certain pages. Also, it is important to have an understanding of [pagination](paged.md#controlling-pagination): content might not fit on a page and might spill over into the next page, or it might be necessary to move it to the next page in order to avoid creating gaps (see also [Conditional modifiers](floats.md#float-extension-conditionals)).
 
 Page spreads  
-A basic unit for paged media in print is the page spread: the left page, called *verso* in a left-to-right script (see [Writing Mode](writing-mode.md#writing-mode)), and the right page, called *recto*, are of the same size and typically are symmetrical to each other and are centered on the gutter. Selected and named pages can be placed *recto* or *verso*, and Prince expands several properties and the [`@page`](doc-refs.md#at-page) at-rule pseudo-classes with the values `verso` and `recto`, or `inside` and `outside`, referring to the layout on each page of the spread.
+A basic unit for paged media in print is the page spread: the left page, called *verso* in a left-to-right script (see [Writing Mode](writing-mode.md#writing-mode)), and the right page, called *recto*, are of the same size and typically are symmetrical to each other and are centered on the gutter. Selected and named pages can be placed *recto* or *verso*, and Prince expands several properties and the [`@page`](at-rules.md#at-page) at-rule pseudo-classes with the values `verso` and `recto`, or `inside` and `outside`, referring to the layout on each page of the spread.
 
 Non-interactive  
 Last but not least, paged media intended for print is non-interactive by nature. All CSS properties referring to user interaction make no sense, scripting cannot be interactive and scripts need to run before layout is finished. But for these details and scripting after layout please check the section on [JavaScript in Printed Media](javascript.md#js-print).
 
 Prince allows you to control a number of options that affect how to format pages, from straight-forward options such as [page size](paged.md#page-size), to [page style](paged.md#page-style), [page regions](paged.md#page-regions) like headers and footers, [pagination control](paged.md#controlling-pagination) and [page numbering](gen-content.md#counters).
 
-CSS properties that affect pages are specified within page *at-rules* (see [CSS At-rules](doc-refs.md#css-atrules)). For example, we can use the [size](doc-refs.md#prop-size) property within the [`@page`](doc-refs.md#at-page) rule to specify the page size (see [Page size](paged.md#page-size)).
+CSS properties that affect pages are specified within page *at-rules* (see [CSS At-rules](at-rules.md#css-atrules)). For example, we can use the [size](doc-refs.md#prop-size) property within the [`@page`](at-rules.md#at-page) rule to specify the page size (see [Page size](paged.md#page-size)).
 
 
     @page {
@@ -29,7 +29,7 @@ In this section we will show most of the properties that can be specified within
 
 ### Page size
 
-Page size can be specified using the `size` property in *length* units or by a page size keyword (see [Page Size Keywords](doc-refs.md#page-size-keywords) for a list), optionally combined with the `portrait` or `landscape` keyword.
+Page size can be specified using the `size` property in *length* units or by a page size keyword (see [Page Size Keywords](page-size-keywords.md#page-size-keywords) for a list), optionally combined with the `portrait` or `landscape` keyword.
 
 
 
@@ -55,9 +55,9 @@ Sometimes it can be useful to specify the page dimensions in pixels, for example
 
 ### Page style
 
-Pages, like other block level elements, follow the CSS box model introduced in [Box Model](css-box.md#css-box). Their `margin`, `border`, `padding` and `background` can be styled within [`@page`](doc-refs.md#at-page) rules.
+Pages, like other block level elements, follow the CSS box model introduced in [Box Model](css-box.md#css-box). Their `margin`, `border`, `padding` and `background` can be styled within [`@page`](at-rules.md#at-page) rules.
 
-The [`@page`](doc-refs.md#at-page) rules can only style the page and its margin boxes - it cannot contain style rules to target specific elements, but it can contain at-rules to target the page regions (for a complete list of possible at-rules, see [Page regions](paged.md#page-regions)).
+The [`@page`](at-rules.md#at-page) rules can only style the page and its margin boxes - it cannot contain style rules to target specific elements, but it can contain at-rules to target the page regions (for a complete list of possible at-rules, see [Page regions](paged.md#page-regions)).
 
 
     @page {
@@ -85,7 +85,7 @@ Most content appears inside the *page area* of one or more pages. Surrounding th
 
 This figure shows the positions of some page regions placed in the page margin, called the *page-margin boxes*. Some of them can be used for creating running page headers and footers.
 
-The [`@page`](doc-refs.md#at-page) background is <span class="fig-marginboxes-lightgrey">grey</span> and the body's, i.e. the page area's background is <span class="fig-marginboxes-white">white</span>.
+The [`@page`](at-rules.md#at-page) background is <span class="fig-marginboxes-lightgrey">grey</span> and the body's, i.e. the page area's background is <span class="fig-marginboxes-white">white</span>.
 
 The first four page-margin boxes, namely
 
@@ -356,9 +356,9 @@ The `page` counter can be reset using the `counter-reset` property at any block-
 
 [Restarting page numbering](paged.md#ex-restart-page-numbers) also uses [Named pages](paged.md#named-pages) which we will explain in more detail below. We create three types of pages: table-of-contents pages, main pages, and pages without a name.
 
-The .contents rule names the pages that it appears on as table-of-contents and resets the page counter to 1 at the start of the contents div. Then the [`@page`](doc-refs.md#at-page) rule for those pages generates a page footer that contains the current page number in `lower-alpha` style. This rule also sets the page header to the string "Table of Contents".
+The .contents rule names the pages that it appears on as table-of-contents and resets the page counter to 1 at the start of the contents div. Then the [`@page`](at-rules.md#at-page) rule for those pages generates a page footer that contains the current page number in `lower-alpha` style. This rule also sets the page header to the string "Table of Contents".
 
-The `.body` rule names the pages that it appears on as main and resets the page counter to 1 at the start of main div. Then the [`@page`](doc-refs.md#at-page) rule for the main pages generates a page footer that contains the current page number in the default decimal style. This rule, together with the .chapter h1 rule, sets the page header to the title of the chapter.
+The `.body` rule names the pages that it appears on as main and resets the page counter to 1 at the start of main div. Then the [`@page`](at-rules.md#at-page) rule for the main pages generates a page footer that contains the current page number in the default decimal style. This rule, together with the .chapter h1 rule, sets the page header to the title of the chapter.
 
 Pages that don't match either of these names have the default style, which does not include a page number in the footer.
 
@@ -553,7 +553,7 @@ The `element()` and `flow()` functions replace the entire margin box, and cannot
 
 It is often necessary to apply styles to some pages, but not others. Either applying them to only some pages, or on every page *except* selected pages. CSS and Prince provide a number of *page selectors* for choosing which pages a rule applies to.
 
-In a novel it is useful to print a page number at the bottom of every page, *except* for some pages such as the title page. In this example the [`@page`](doc-refs.md#at-page) rule is applied to all pages. Then the `@page:first` rule, which is more specific, removes the footer from the first page. See [Page regions](paged.md#page-regions) and [Generated Content](gen-content.md#gen-content).
+In a novel it is useful to print a page number at the bottom of every page, *except* for some pages such as the title page. In this example the [`@page`](at-rules.md#at-page) rule is applied to all pages. Then the `@page:first` rule, which is more specific, removes the footer from the first page. See [Page regions](paged.md#page-regions) and [Generated Content](gen-content.md#gen-content).
 
 Novel title page example
 
@@ -594,7 +594,7 @@ A title page example showing use of `@page:first`. Download the [PDF](samples/ti
     </body>
     </html>
 
-In this example the [`@page`](doc-refs.md#at-page) rule specifies styles that apply to all pages: Then the `@page:first` rule overrides this for the first page only. It resets the `content` property for the footer and increases the top margin, printing the title of the novel in a reasonable place on the page (see [Page style](paged.md#page-style)). This example also uses the `break-before` property to force a page break (see [Page breaks](paged.md#page-breaks)).
+In this example the [`@page`](at-rules.md#at-page) rule specifies styles that apply to all pages: Then the `@page:first` rule overrides this for the first page only. It resets the `content` property for the footer and increases the top margin, printing the title of the novel in a reasonable place on the page (see [Page style](paged.md#page-style)). This example also uses the `break-before` property to force a page break (see [Page breaks](paged.md#page-breaks)).
 
 When using the `:first` page selector to choose the first page in each chapter (such as in [Fancy headers](paged.md#fig-fancyheader)) it may be necessary to add `prince-page-group: start` to the first element in each chapter (such as `h1`). See [Page groups](paged.md#page-groups).
 
@@ -649,7 +649,7 @@ The element containing the table of contents has a `page` property applied, spec
         page: table-of-contents;
     }
 
-Then using this page name to apply a different [`@page`](doc-refs.md#at-page) rule to the table-of-contents pages:
+Then using this page name to apply a different [`@page`](at-rules.md#at-page) rule to the table-of-contents pages:
 
 
     @page table-of-contents {
@@ -702,7 +702,7 @@ The property `prince-page-group: start` instructs Prince to start a new page gro
 
 A special case are blank pages.
 
-As we discussed in the previous section, `break-before: right` can be used to place the first page of a chapter on the right page in a spread. If the previous page is a right page, two page breaks are inserted, leaving a blank left page. However, this page will have normal [`@page`](doc-refs.md#at-page) styles applied to it, which is usually not what people want. The `:blank` page selector can be used to change the style of blank pages, pages skipped such as a left page before a `break-before: right`, including removing any content.
+As we discussed in the previous section, `break-before: right` can be used to place the first page of a chapter on the right page in a spread. If the previous page is a right page, two page breaks are inserted, leaving a blank left page. However, this page will have normal [`@page`](at-rules.md#at-page) styles applied to it, which is usually not what people want. The `:blank` page selector can be used to change the style of blank pages, pages skipped such as a left page before a `break-before: right`, including removing any content.
 
 
     @page:left {

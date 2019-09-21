@@ -21,9 +21,9 @@ XML
 
 #### XMP Metadata
 
-Additionally, XMP metadata can be added to a PDF file from an XMP file. This file needs to be passed to Prince either via the [`--pdf-xmp`](doc-refs.md#cl-pdf-xmp) command-line option, the [prince-pdf-xmp](doc-refs.md#prop-prince-pdf-xmp) CSS property, or it can be specified in JavaScript with the [`PDF.xmp()`](doc-refs.md#window.PDF.xmp) function.
+Additionally, XMP metadata can be added to a PDF file from an XMP file. This file needs to be passed to Prince either via the [`--pdf-xmp`](command-line.md#cl-pdf-xmp) command-line option, the [prince-pdf-xmp](doc-refs.md#prop-prince-pdf-xmp) CSS property, or it can be specified in JavaScript with the [`PDF.xmp()`](js-support.md#window.PDF.xmp) function.
 
-The [`PDF.xmp()`](doc-refs.md#window.PDF.xmp) JavaScript function, the [prince-pdf-xmp](doc-refs.md#prop-prince-pdf-xmp) CSS property and the [`--pdf-xmp`](doc-refs.md#cl-pdf-xmp) command-line option require either a URL pointing to an XMP file, or an encoded `data:` URL.
+The [`PDF.xmp()`](js-support.md#window.PDF.xmp) JavaScript function, the [prince-pdf-xmp](doc-refs.md#prop-prince-pdf-xmp) CSS property and the [`--pdf-xmp`](command-line.md#cl-pdf-xmp) command-line option require either a URL pointing to an XMP file, or an encoded `data:` URL.
 
 Prince includes data from the `<x:xmpmeta>` element and its contents. The `xpacket` processing instructions are ignored, as Prince generates those itself when it produces the PDF file.
 

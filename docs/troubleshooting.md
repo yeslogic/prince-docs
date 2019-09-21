@@ -11,7 +11,7 @@ We work hard to make Prince work on multiple platforms (Windows, Linux, etc) and
 
 When running into trouble with Prince, the first thing you should do is to check for any errors. These can be found in the Prince output log.
 
-When launching Prince from the command line, Prince will print any error or warning messages directly to the console, prefixed with `error:` or `warning:` messages. The level of verbosity, or a log file where to print all output, can be controlled with a few command-line [Logging Options](doc-refs..md#cmd-logging). A more advanced control of the output is given by the [Structured Log](cmd-control..md#structured-log).
+When launching Prince from the command line, Prince will print any error or warning messages directly to the console, prefixed with `error:` or `warning:` messages. The level of verbosity, or a log file where to print all output, can be controlled with a few command-line [Logging Options](command-line.md#cmd-logging). A more advanced control of the output is given by the [Structured Log](cmd-control.md#structured-log).
 
 When using the Prince GUI, the output log is printed to the log window on the bottom left of the main GUI window.
 
@@ -22,14 +22,14 @@ Symptom
     prince: ./picture.bmp: warning: Unknown image format
 
 Explanation  
-Prince supports JPEG, PNG, TIFF and GIF images as well as SVG (see [Images](images..md#images)). If you try to format a document that includes images in a format that is not supported by Prince, such as BMP, you may see the above error message from Prince.
+Prince supports JPEG, PNG, TIFF and GIF images as well as SVG (see [Images](images.md#images)). If you try to format a document that includes images in a format that is not supported by Prince, such as BMP, you may see the above error message from Prince.
 
 Solution  
 The solution is to convert the image file into a format that is supported by Prince. We suggest PNG, which is a well-supported general purpose image format with lossless compression.
 
 ### The capture/replay system
 
-Prince offers a convenient capture/replay system with the two command-line options [--capture](doc-refs..md#cl-capture) and [--replay](doc-refs..md#cl-replay) - the former saving a copy of all the information in a job to a specified directory, including the input document(s) and all of the resources referenced by them and on the command line (including remote HTTP resources), such as style sheets, images, JavaScript files, fonts, etc., conveniently allowing it to be replayed later for debugging purposes with the latter command-line option. The directory might contain sensitive information (as far as included in the PDF job), so we recommend only submitting them by email when requested to do so, instead of posting them on the forum.
+Prince offers a convenient capture/replay system with the two command-line options [--capture](command-line.md#cl-capture) and [--replay](command-line.md#cl-replay) - the former saving a copy of all the information in a job to a specified directory, including the input document(s) and all of the resources referenced by them and on the command line (including remote HTTP resources), such as style sheets, images, JavaScript files, fonts, etc., conveniently allowing it to be replayed later for debugging purposes with the latter command-line option. The directory might contain sensitive information (as far as included in the PDF job), so we recommend only submitting them by email when requested to do so, instead of posting them on the forum.
 
 ### Running the debug script
 

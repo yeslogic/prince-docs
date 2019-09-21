@@ -4,7 +4,7 @@ title: The ActiveX/COM Wrapper
 
 ### The ActiveX/COM Wrapper
 
-The [ActiveX/COM wrapper](wrappers.md#wrapper-activex) allows Prince to be called from various languages: [ASP](asp.md#asp), [ActiveX, COM, Visual Basic](activex.md#activex) and also [Coldfusion](coldfusion.md#coldfusion).
+The [ActiveX/COM wrapper](wrappers.html#wrapper-activex) allows Prince to be called from various languages: [ASP](asp.md#asp), [ActiveX, COM, Visual Basic](activex.md#activex) and also [Coldfusion](coldfusion.md#coldfusion).
 
 This package contains two files:
 

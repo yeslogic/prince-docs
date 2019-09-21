@@ -16,7 +16,7 @@ On Linux, you typically run Prince with the following command:
 
     prince file.xml -o file.pdf
 
-On Windows, you replace the name of the executable with `Prince\engine\bin\prince.exe` in the installation directory (see [Windows installation layout](installation-layout.md#windows-layout)), which is the command-line program. See also [Command-line Reference](doc-refs.md#command-line).
+On Windows, you replace the name of the executable with `Prince\engine\bin\prince.exe` in the installation directory (see [Windows installation layout](installation-layout.md#windows-layout)), which is the command-line program. See also [Command-line Reference](command-line.md#command-line).
 
 
     "C:\Program Files (x86)\Prince\engine\bin\prince.exe" file.xml -o file.pdf

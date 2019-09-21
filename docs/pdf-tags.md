@@ -4,7 +4,7 @@ title: PDF Tags
 
 ### PDF Tags
 
-Tagged PDF files have special handling mechanisms for specific tag types. When enabling tagged PDF files with the command line option [`--tagged-pdf`](doc-refs.md#cl-tagged-pdf) Prince automatically assigns default values to certain HTML elements, which can be seen in the default `html.css` style sheet (see [Installation Layout](installation-layout.md#installation-layout)).
+Tagged PDF files have special handling mechanisms for specific tag types. When enabling tagged PDF files with the command line option [`--tagged-pdf`](command-line.md#cl-tagged-pdf) Prince automatically assigns default values to certain HTML elements, which can be seen in the default `html.css` style sheet (see [Installation Layout](installation-layout.md#installation-layout)).
 
 However, in specific cases it is advisable to fine-tune the PDF tags with the `prince-pdf-tag-type` property. In Prince, it is possible to assign PDF tag types to elements in the document through the `prince-pdf-tag-type` property, in order to create XML vocabularies in the PDF.
 

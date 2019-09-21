@@ -199,7 +199,7 @@ The first field indicates the type of message, which can be:
 -   `fin|` = final outcome, which can be
     -   `fin|success`, or
     -   `fin|failure`;
--   `dat|name|value` = data messages produced by [`Log.data("name", "value")`](doc-refs.md#window.Log.data);
+-   `dat|name|value` = data messages produced by [`Log.data("name", "value")`](js-support.md#window.Log.data);
 -   `msg|` = messages, which can be any of the following:
     -   `msg|err` = error message;
     -   `msg|wrn` = warning message;
@@ -254,5 +254,5 @@ Fail if glyphs cannot be found for any characters.
 
 Usually Prince will try hard to solve any unexpected issues that arise, prioritizing the creation of a PDF - missing glyphs would be represented as a question mark ("?") and resources not loaded would simply be dropped. The fail-safe options are there to prevent the creation of broken PDFs due to temporary network problems or unexpected font issues. If the condition specified with one of the command-line options is triggered, the conversion will return an explicit failure status, and no PDF is created. Appropriate action to identify and fix the problem can be taken before attempting a new conversion.
 
-The JavaScript property [`Prince.failStatus`](doc-refs.md#window.Prince.failStatus) can also be used to trigger an explicit failure status based on custom criteria. See also under [The Prince Object](javascript.md#js-prince-obj).
+The JavaScript property [`Prince.failStatus`](js-support.md#window.Prince.failStatus) can also be used to trigger an explicit failure status based on custom criteria. See also under [The Prince Object](javascript.md#js-prince-obj).
 

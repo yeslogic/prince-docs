@@ -16,9 +16,9 @@ To prevent this font switching mechanism and force Prince to only use the define
 
     h1 { font-family: MyFont, prince-no-fallback; }
 
-The [`@font-face`](doc-refs.md#at-font-face) at-rule can be used to define custom font names. The `font-family` descriptor defines the font family name that will be used in all CSS font family name matching, and the `src` descriptor specifies the resource containing font data. They both are required for the [`@font-face`](doc-refs.md#at-font-face) rule to be valid.
+The [`@font-face`](at-rules.md#at-font-face) at-rule can be used to define custom font names. The `font-family` descriptor defines the font family name that will be used in all CSS font family name matching, and the `src` descriptor specifies the resource containing font data. They both are required for the [`@font-face`](at-rules.md#at-font-face) rule to be valid.
 
-The `src` descriptor can define the resource with a `url()` function - an optional `format()` function defines the format of the remotely fetched font. Alternatively, the `local()` and `prince-lookup()` functions can be used - the former searches for locally installed system fonts, while the latter will also find fonts defined by other [`@font-face`](doc-refs.md#at-font-face) rules. See [CSS Functional Expressions](doc-refs.md#css-functions).
+The `src` descriptor can define the resource with a `url()` function - an optional `format()` function defines the format of the remotely fetched font. Alternatively, the `local()` and `prince-lookup()` functions can be used - the former searches for locally installed system fonts, while the latter will also find fonts defined by other [`@font-face`](at-rules.md#at-font-face) rules. See [CSS Functional Expressions](at-rules.md#css-functions).
 
 
     @font-face {
@@ -29,7 +29,7 @@ The `src` descriptor can define the resource with a `url()` function - an option
 
 In this example we are defining a new font face, called `MyFont`. We instruct Prince to check if the MyFont truetype font is installed locally or already defined by another @font-face rule, and, all failing, to download it from a remote location.
 
-When a chosen bold and/or italic font is missing, Prince tries to artificially synthesize the missing font - i.e. to embolden or italicize the original font. However, it might lead to undesired results. This feature can be disabled with the [`--no-artificial-fonts`](doc-refs.md#cl-no-artificial-fonts) command-line option.
+When a chosen bold and/or italic font is missing, Prince tries to artificially synthesize the missing font - i.e. to embolden or italicize the original font. However, it might lead to undesired results. This feature can be disabled with the [`--no-artificial-fonts`](command-line.md#cl-no-artificial-fonts) command-line option.
 
 ### OpenType Features in Prince
 
@@ -74,7 +74,7 @@ Prince supports OpenType features, and enables certain ones by default in specif
 
 Microsoft has a list of the OpenType feature names [here](https://www.microsoft.com/typography/otspec/featurelist.htm).
 
-It is possible to enable other OpenType features by using the `font-variant` CSS property with the `prince-opentype()` function (see [CSS Functional Expressions](doc-refs.md#css-functions)).
+It is possible to enable other OpenType features by using the `font-variant` CSS property with the `prince-opentype()` function (see [CSS Functional Expressions](functions.md#css-functions)).
 
 Care must be taken in which order the features are enabled! And please note that enabling one feature will disable all the default features.
 

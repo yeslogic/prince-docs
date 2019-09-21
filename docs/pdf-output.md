@@ -167,7 +167,7 @@ The values of this property are mapped to PDF page layout options:
 
 Prince also provides two properties to fine-tune the printing of the PDF. The property `prince-pdf-print-scaling` can be used to disable print scaling for the PDF file when it is printed and the property `prince-pdf-paper-tray` controls the PickTrayByPDFSize flag in generated PDF files, which specifies whether the PDF page size is used to select the input paper tray.
 
-Duplex printing is supported with the CSS property `prince-pdf-duplex`. This property may be used inside the [`@prince-pdf`](doc-refs.md#at-prince-pdf) at-rule to set the `Duplex` property in the `PDFViewerPreferences` dictionary. The values `duplex-flip-short-edge` and `duplex-flip-long-edge` tell about how to flip the paper, while the value `simplex` suppresses duplex printing.
+Duplex printing is supported with the CSS property `prince-pdf-duplex`. This property may be used inside the [`@prince-pdf`](at-rules.md#at-prince-pdf) at-rule to set the `Duplex` property in the `PDFViewerPreferences` dictionary. The values `duplex-flip-short-edge` and `duplex-flip-long-edge` tell about how to flip the paper, while the value `simplex` suppresses duplex printing.
 
 
     @prince-pdf {
@@ -178,29 +178,29 @@ Duplex printing is supported with the CSS property `prince-pdf-duplex`. This pro
 
 Prince compresses its PDF output to reduce the size of the documents that it produces, but does not create linearized PDF files, as this would increase formatting time and memory requirements. An external program such as Adobe Acrobat or Ghostscript may be used for this purpose if necessary.
 
-Compression may be disabled with the command-line option [`--no-compress`](doc-refs.md#cl-no-compress).
+Compression may be disabled with the command-line option [`--no-compress`](command-line.md#cl-no-compress).
 
 ### PDF Encryption and Document Security
 
-Prince can encrypt the produced PDF files with the [`--encrypt`](doc-refs.md#cl-encrypt) command-line option. The default key size is 128 bits. With the option [`--key-bits`](doc-refs.md#cl-key-bits) a different key size can be chosen. Also the JavaScript methods [`PDF.encrypt`](doc-refs.md#window.PDF.encrypt) and [`PDF.keyBits`](doc-refs.md#window.PDF.keyBits) can be used for the same purpose.
+Prince can encrypt the produced PDF files with the [`--encrypt`](command-line.md#cl-encrypt) command-line option. The default key size is 128 bits. With the option [`--key-bits`](command-line.md#cl-key-bits) a different key size can be chosen. Also the JavaScript methods [`PDF.encrypt`](js-support.md#window.PDF.encrypt) and [`PDF.keyBits`](js-support.md#window.PDF.keyBits) can be used for the same purpose.
 
-The command-line options [`--user-password`](doc-refs.md#cl-user-password) and [`--owner-password`](doc-refs.md#cl-owner-password) set respectively the PDF user password and the PDF owner password.
+The command-line options [`--user-password`](command-line.md#cl-user-password) and [`--owner-password`](command-line.md#cl-owner-password) set respectively the PDF user password and the PDF owner password.
 
-Prince also offers a range of command-line options to disallow printing, copying, annotating and modifying the PDF output: [`--disallow-print`](doc-refs.md#cl-disallow-print), [`--disallow-copy`](doc-refs.md#cl-disallow-copy), [`--disallow-annotate`](doc-refs.md#cl-disallow-annotate) and [`--disallow-modify`](doc-refs.md#cl-disallow-modify).
+Prince also offers a range of command-line options to disallow printing, copying, annotating and modifying the PDF output: [`--disallow-print`](command-line.md#cl-disallow-print), [`--disallow-copy`](command-line.md#cl-disallow-copy), [`--disallow-annotate`](command-line.md#cl-disallow-annotate) and [`--disallow-modify`](command-line.md#cl-disallow-modify).
 
 ### PDF Font Embedding and Subsetting
 
 Prince embeds fonts in its PDF output to ensure accurate viewing and printing on any system. Typically, only the necessary parts of a font will be embedded - font subsetting is enabled by default.
 
-Font subsetting can be disabled with the command-line option [`--no-subset-fonts`](doc-refs.md#cl-no-subset-fonts) or with the JavaScript function [`PDF.subsetFonts`](doc-refs.md#window.PDF.subsetFonts): in that case, Prince will embed the entire font in the PDF file, which is convenient if people are planning on editing the PDF file later, and may need to add glyphs that were not present in the original PDF.
+Font subsetting can be disabled with the command-line option [`--no-subset-fonts`](command-line.md#cl-no-subset-fonts) or with the JavaScript function [`PDF.subsetFonts`](js-support.md#window.PDF.subsetFonts): in that case, Prince will embed the entire font in the PDF file, which is convenient if people are planning on editing the PDF file later, and may need to add glyphs that were not present in the original PDF.
 
 Font subsetting is not yet supported for OpenType fonts with CFF outlines (".otf" fonts).
 
 Font subsetting is disabled automatically for individual fonts that do not grant permission to subset, or if Prince cannot subset them for some other reason.
 
-Font embedding can be disabled if necessary, for example if Prince is being used to create PDF files in a controlled environment with known fonts where space is at a premium. The command-line option [`--no-embed-fonts`](doc-refs.md#cl-no-embed-fonts) is used for this purpose.
+Font embedding can be disabled if necessary, for example if Prince is being used to create PDF files in a controlled environment with known fonts where space is at a premium. The command-line option [`--no-embed-fonts`](command-line.md#cl-no-embed-fonts) is used for this purpose.
 
 ### PDF Attachments
 
-Prince supports adding files to PDF documents as attachments. The main mechanisms for doing so are the JavaScript function [`PDF.attachFile`](doc-refs.md#window.PDF.attachFile) and the command-line option [`--attach`](doc-refs.md#cl-attach). Additionally, the job description JSON format, used by the [Prince Control Protocol](cmd-control.md#cmd-control), can be used to provid an attachment "inline" through the Java/C\# APIs (see [Prince Wrappers](server-integration.md#wrappers)) instead of as a separate file on the filesystem. See [Prince Control Protocol](cmd-control.md#cmd-control) for details on the job description JSON format.
+Prince supports adding files to PDF documents as attachments. The main mechanisms for doing so are the JavaScript function [`PDF.attachFile`](js-support.md#window.PDF.attachFile) and the command-line option [`--attach`](command-line.md#cl-attach). Additionally, the job description JSON format, used by the [Prince Control Protocol](cmd-control.md#cmd-control), can be used to provid an attachment "inline" through the Java/C\# APIs (see [Prince Wrappers](server-integration.md#wrappers)) instead of as a separate file on the filesystem. See [Prince Control Protocol](cmd-control.md#cmd-control) for details on the job description JSON format.
 

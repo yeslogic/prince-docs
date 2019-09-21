@@ -182,7 +182,7 @@ Specify the SSL private key file type (PEM, DER). The default is PEM. This optio
 Specify passphrase for the private key.
 
 `--ssl-version=VERSION`  
-Set the minimum version of SSL to allow. May be one of: `default` (let [libcurl](doc-refs.md#acknowledgments) choose), `tlsv1`, `tlsv1.0`, `tlsv1.1` or `tlsv1.2`.
+Set the minimum version of SSL to allow. May be one of: `default` (let [libcurl](acknowledgements.md#acknowledgments) choose), `tlsv1`, `tlsv1.0`, `tlsv1.1` or `tlsv1.2`.
 
 `--insecure`  
 Disable SSL verification (not recommended).
@@ -207,7 +207,7 @@ Apply an external style sheet.
 Specify the media type (eg. print, screen).
 
  `--page-size=SIZE`   
-Specify the page size (eg. A4, "155mm 190mm", etc). The syntax is the same as the `size` property in [`@page`](doc-refs.md#at-page) rules, which can take two values for horizontal and vertical dimensions. On the command-line it needs to be written between quotes as a single argument. See also [Page size](paged.md#page-size) and [Page Size Keywords](doc-refs.md#page-size-keywords).
+Specify the page size (eg. A4, "155mm 190mm", etc). The syntax is the same as the `size` property in [`@page`](at-rules.md#at-page) rules, which can take two values for horizontal and vertical dimensions. On the command-line it needs to be written between quotes as a single argument. See also [Page size](paged.md#page-size) and [Page Size Keywords](page-size-keywords.md#page-size-keywords).
 
  `--page-margin=MARGIN`   
 Specify the page margin (eg. 20mm).
@@ -245,7 +245,7 @@ Disable font embedding in PDF output.
 Disable font subsetting in PDF output.
 
 `--no-system-fonts`  
-Disable system fonts in PDF output. Only fonts defined with [`@font-face`](doc-refs.md#at-font-face) rules in CSS will be available.
+Disable system fonts in PDF output. Only fonts defined with [`@font-face`](at-rules.md#at-font-face) rules in CSS will be available.
 
 `--force-identity-encoding`  
 Ensure that all fonts are encoded in the PDF using their identity encoding (directly mapping to glyph indices), even if they could have used MacRoman or some other encoding.

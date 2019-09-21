@@ -80,7 +80,7 @@ Footnote markers are rendered outside the footnote in the left margin area by de
 
 #### Styling and behavior of footnotes
 
-Footnotes are placed within the `@footnote` area of the page (see [Page regions](paged.md#page-regions)), which can be styled within [`@page`](doc-refs.md#at-page) rules.
+Footnotes are placed within the `@footnote` area of the page (see [Page regions](paged.md#page-regions)), which can be styled within [`@page`](at-rules.md#at-page) rules.
 
 
     @page {

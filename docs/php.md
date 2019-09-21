@@ -4,7 +4,7 @@ title: The PHP5 Wrapper
 
 ### The PHP5 Wrapper
 
-Prince can be called from PHP using the [PHP interface](wrappers.md#wrapper-php5).
+Prince can be called from PHP using the [PHP interface](wrappers.html#wrapper-php5).
 
 This package contains two files:
 
