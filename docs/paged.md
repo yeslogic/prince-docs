@@ -78,7 +78,7 @@ This is used in [Fancy headers](paged.md#fig-fancyheader).
 
 Page regions
 
-![A page with content in some of its page regions.](samples/marginboxes-1.colour.png)
+![A page with content in some of its page regions.](assets/samples/marginboxes-1.colour.png)
 A page with content in some of its page regions.
 
 Most content appears inside the *page area* of one or more pages. Surrounding the page area, but within the margin area, are the *page-margin boxes*. Other special areas are overlaying the whole page or are placed at the bottom of the *page area*. Collectively, they are known as the *page regions*.
@@ -375,8 +375,8 @@ This rule will generate page footers such as "Page 1 of 89".
 
 Fancy header example
 
-![Image of a page of a textbook or thesis with a header.](samples/fancyheader-2.bw.png)
-This example shows a header as might be found in a textbook. The [HTML](samples/fancyheader.md) and [PDF](samples/fancyheader.pdf) are both available. This is a small part of a [larger example](https://github.com/yeslogic/prince-samples/tree/master/thesis) in our [Prince samples repository](https://github.com/yeslogic/prince-samples).
+![Image of a page of a textbook or thesis with a header.](assets/samples/fancyheader-2.bw.png)
+This example shows a header as might be found in a textbook. The [HTML](assets/samples/fancyheader.md) and [PDF](assets/samples/fancyheader.pdf) are both available. This is a small part of a [larger example](https://github.com/yeslogic/prince-samples/tree/master/thesis) in our [Prince samples repository](https://github.com/yeslogic/prince-samples).
 
 Fancy headers
 
@@ -799,8 +799,8 @@ Presentation slides
 
 Presentation slides example
 
-![A title page slide for a presentation, with a title and subtitle.](samples/slide-1.colour.png) ![An example of an overhead slide for a presentation. It has a title and a single paragraph.](samples/slide-2.colour.png)
-Two overhead slides for a presentation. The slides use white on black for better contrast on most projectors, and a 4x3 aspect ratio. Download the [PDF](samples/slide.pdf) or the [HTML](samples/slide.md) and [CSS](samples/slide.css).
+![A title page slide for a presentation, with a title and subtitle.](assets/samples/slide-1.colour.png) ![An example of an overhead slide for a presentation. It has a title and a single paragraph.](assets/samples/slide-2.colour.png)
+Two overhead slides for a presentation. The slides use white on black for better contrast on most projectors, and a 4x3 aspect ratio. Download the [PDF](assets/samples/slide.pdf) or the [HTML](assets/samples/slide.md) and [CSS](assets/samples/slide.css).
 
 It is necessary to force a page break when creating overhead slides. This can be done by placing the content for each slide in a `<div class="slide">` and using `break-before: page` as shown below. This example shows other styling that may be required to create presentation slides.
 
@@ -898,8 +898,8 @@ When a page (or column) break occurs within a box (such as a div) its bottom and
 
 Box decoration break sample
 
-![The box on the left is completely enclosed by its border (clone); while the box on the right has no border at the bottom where it wraps onto the next page (slice).](samples/box-decoration-break-1.bw.png)
-This figure shows the result of using the `box-decoration-break` property. On the left the `clone` value is used while on the right `slice` is used. The [PDF](samples/box-decoration-break.pdf) and [HTML](samples/box-decoration-break.md) are available for download.
+![The box on the left is completely enclosed by its border (clone); while the box on the right has no border at the bottom where it wraps onto the next page (slice).](assets/samples/box-decoration-break-1.bw.png)
+This figure shows the result of using the `box-decoration-break` property. On the left the `clone` value is used while on the right `slice` is used. The [PDF](assets/samples/box-decoration-break.pdf) and [HTML](assets/samples/box-decoration-break.md) are available for download.
 
 
     div.box1 {
@@ -937,8 +937,8 @@ When typesetting a magazine or flier it can be useful to print right to the edge
 
 Furniture catalogue example
 
-![Furniture catalogue with bleed and trim areas for printing and cropping. The background image is larger than the page (but not the paper), by cutting where the crop marks indicate the background image extends right to the edge of the page.](samples/croparea-1.colour.png)
-The furniture catalogue with bleed and trim areas for printing and cropping. Download the [PDF](samples/croparea.pdf) or the [HTML](samples/croparea.md) and [CSS](samples/croparea.css).
+![Furniture catalogue with bleed and trim areas for printing and cropping. The background image is larger than the page (but not the paper), by cutting where the crop marks indicate the background image extends right to the edge of the page.](assets/samples/croparea-1.colour.png)
+The furniture catalogue with bleed and trim areas for printing and cropping. Download the [PDF](assets/samples/croparea.pdf) or the [HTML](assets/samples/croparea.md) and [CSS](assets/samples/croparea.css).
 
 
     @page{

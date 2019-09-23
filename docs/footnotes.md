@@ -10,7 +10,7 @@ This example shows some simple footnotes, the fn class is used to create footnot
 
 Footnotes example
 
-<img src="images/footnotes.png" alt="Footnotes example" width="428" height="157" />
+<img src="assets/images/footnotes.png" alt="Footnotes example" width="428" height="157" />
 Footnotes example
 
 CSS

@@ -118,7 +118,7 @@ li.image_marker::marker {
 }</pre></code>
 </div>
 <p class="label">Output</p>
-<img src="images/marker.png"
+<img src="assets/images/marker.png"
      alt="Marker example"/>
 </div>
 

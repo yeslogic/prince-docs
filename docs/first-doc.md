@@ -97,8 +97,8 @@ Process the document using the command line `prince` command:
 
 Unstyled lab report
 
-![The unstyled lab report](samples/lab_report-1.bw.png)
-The unstyled lab report. Download the PDF [here](samples/lab_report.pdf).
+![The unstyled lab report](assets/samples/lab_report-1.bw.png)
+The unstyled lab report. Download the PDF [here](assets/samples/lab_report.pdf).
 
 
     $ prince lab_report.html
@@ -107,7 +107,7 @@ This will create a `lab_report.pdf` file in the current directory. If it did not
 
 Prince GUI
 
-<img src="images/gui_02.png" alt="The Prince GUI" style="width:50.0%" />
+<img src="assets/images/gui_02.png" alt="The Prince GUI" style="width:50.0%" />
 The Prince GUI. Note that in this image both a HTML and a CSS file had been selected.
 
 Prince's command line interface supports many options (see [Command-line Reference](doc-refs.md#command-line)) and can be called from scripts and other software. However some users may not be comfortable with the command line interface. On Windows, Prince provides a more familiar GUI interface, which can be started by choosing Prince from the start menu. [Prince GUI](first-doc.md#fig.gui01) shows the Prince GUI, click "Add File(s)" to choose your HTML file (`lab_report.html`) then click the large "Convert" button to convert it. Prince will generate a PDF file and place it in the directory with your HTML file.
@@ -130,8 +130,8 @@ Next, let's center the title and subtitle and decrease the font size of the subt
 
 Styled lab report
 
-![The styled lab report](samples/lab_report-styled-1.colour.png)
-The styled lab report, download the [here](samples/lab_report-styled.pdf).
+![The styled lab report](assets/samples/lab_report-styled-1.colour.png)
+The styled lab report, download the [here](assets/samples/lab_report-styled.pdf).
 
 
     h1, h2.subtitle {
@@ -181,7 +181,7 @@ Place the tag within the `head` tag of the document. For example:
 
 You will need to re-run Prince for these changes to take effect.
 
-After applying the style as above, Prince should generate something similar to [Styled lab report](first-doc.md#fig.lab-report-styled). You can download the generated PDF file here: [`lab_report-styled.pdf`](samples/lab_report-styled.pdf).
+After applying the style as above, Prince should generate something similar to [Styled lab report](first-doc.md#fig.lab-report-styled). You can download the generated PDF file here: [`lab_report-styled.pdf`](assets/samples/lab_report-styled.pdf).
 
 This sample document and many others are available in our [samples repository](https://github.com/yeslogic/prince-samples). You are encouraged to use samples from the repository and contribute your own.
 

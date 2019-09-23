@@ -18,8 +18,8 @@ Figure [Printing a big table sideways](rotating.md#fig-bigtable) shows a table, 
 
 Printing a big table sideways
 
-![Image of a large table printed sideways so that its width fits along the page's length.](samples/rotate-body-2.bw.png)
-This table is too wide to fit on the paper, so we use `prince-rotate-body` in a *named page* to print it sideways. Download the [PDF](samples/rotate-body.pdf) or the [HTML](samples/rotate-body.html).
+![Image of a large table printed sideways so that its width fits along the page's length.](assets/samples/rotate-body-2.bw.png)
+This table is too wide to fit on the paper, so we use `prince-rotate-body` in a *named page* to print it sideways. Download the [PDF](assets/samples/rotate-body.pdf) or the [HTML](assets/samples/rotate-body.html).
 
 
     @page big_table {
@@ -33,7 +33,7 @@ This table is too wide to fit on the paper, so we use `prince-rotate-body` in a 
 
 The `prince-rotate-body` property works within [`@page`](at-rules.md#at-page) rules only, so this example uses a named page to place the table on a page of its own. Then the [`@page`](at-rules.md#at-page) rule for `big_table` pages uses the `prince-rotate-body` property to tell prince that the body of the page, but not the headers and footers, should be rotated. The table in this example is still too wide so we also use the `prince-shrink-to-fit` property to make it a little smaller.
 
-If you download the full example ([HTML](samples/rotate-body.html) or [PDF](samples/rotate-body.pdf)) you will see that the paragraphs before and after the table are not placed on the same page. This is because they do not belong to the same named page (see [Named pages](paged.md#named-pages)). However on page four there are two tables, both tables belong to the same named page and therefore Prince will try to place them together on the same page.
+If you download the full example ([HTML](assets/samples/rotate-body.html) or [PDF](assets/samples/rotate-body.pdf)) you will see that the paragraphs before and after the table are not placed on the same page. This is because they do not belong to the same named page (see [Named pages](paged.md#named-pages)). However on page four there are two tables, both tables belong to the same named page and therefore Prince will try to place them together on the same page.
 
 Another way of rotating content is by changing the writing mode with the `writing-mode` property, or by transforming an element with `transform: rotate()` - see [Rotating content in table cells](rotating.md#rotating-table-cells).
 
