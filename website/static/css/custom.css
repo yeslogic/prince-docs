@@ -1,5 +1,131 @@
 /* your custom css */
 
+#prop-list summary, #js-support-table summary {
+  font-weight: bold;
+  padding: 0.7em;
+  display: block;
+}
+#prop-list summary .self-link, #js-support-table summary .self-link {
+  opacity: 0.2;
+}
+#prop-list summary:hover .self-link, #js-support-table summary:hover .self-link {
+  visibility: visible;
+}
+#prop-list details, #js-support-table details {
+  border: 1px solid lightgrey;
+  border-radius: 10px;
+  background-color: #e5f6ee;
+  display: block;
+}
+#prop-list summary:focus, #js-support-table summary:focus {
+  outline: none;
+}
+#prop-list summary + div, #prop-list summary + div + div, #js-support-table summary + div, #js-support-table summary + div + div {
+  margin-top: 0em;
+  margin-left: 0em;
+  padding: 0.7em 2em;
+}
+#prop-list summary.ext, #prop-list summary.ext + div, #prop-list summary.ext + div + div, #js-support-table summary.ext, #js-support-table summary.ext + div, #js-support-table summary.ext + div + div {
+  background-color: #dcede6 !important;
+  border-color: #22b573;
+  border-radius: 10px;
+}
+#prop-list details[open] summary.ext, #js-support-table details[open] summary.ext {
+  border-radius: 10px 10px 0px 0px;
+}
+#prop-list details[open] summary.ext + div, #prop-list details[open] summary.ext + div + div, #js-support-table details[open] summary.ext + div, #js-support-table details[open] summary.ext + div + div {
+  border-radius: 0px 0px 10px 10px;
+}
+#prop-list details, #js-support-table details {
+  margin: 1em 0em;
+}
+#prop-list details details, #js-support-table details details {
+  margin: 1em;
+}
+#prop-list details:hover, #js-support-table details:hover {
+  border-color: grey !important;
+}
+#js-support-table details.object {
+  background-color: #f2f2f2;
+}
+#js-support-table {
+  padding: 10px;
+  margin-bottom: 1em;
+}
+#js-support-table .type {
+  font-style: italic;
+  display: inline;
+}
+#js-support-table .type::after {
+  content: " – ";
+}
+#js-support-table .returns {
+  font-style: italic;
+}
+#js-support-table .returns::before {
+  content: "Returns: ";
+}
+#js-support-table .desc {
+  display: inline;
+  min-width: 40%;
+}
+#js-support-table li.argument {
+  display: block;
+}
+#js-support-table ul, #js-support-table li {
+  margin: 0;
+  padding: 0;
+}
+#js-support-table .name {
+  font-weight: bold;
+  display: inline;
+}
+#js-support-table .name.level {
+  margin-right: 0.5em;
+}
+#js-support-table pre {
+  background-color: #fff;
+}
+#js-support-table .example-return {
+  display: block;
+}
+#js-support-table .example-return::before {
+  content: " // returns: ";
+}
+#js-support-table .argslist::before {
+  content: "(";
+  font-style: normal;
+}
+#js-support-table .argslist::after {
+  content: ")";
+  font-style: normal;
+}
+#js-support-table div.ext .argslist::after {
+  content: ")*";
+  font-style: normal;
+}
+#js-support-table .argslist {
+  font-style: italic;
+}
+#js-support-table .ext {
+  background-color: #dcede6 !important;
+  border-color: #22b573;
+}
+#js-support-table .ext .level {
+  background-color: inherit;
+}
+#js-support-table .ext .example {
+  background-color: #f2f2f2;
+}
+#js-support-table .ext .ext {
+  padding-top: 0px;
+  padding-right: 0px;
+}
+#js-support-table .url-property::before {
+  content: "See the property ";
+}
+
+
 @media only screen and (min-device-width: 360px) and (max-device-width: 736px) {
 }
 
