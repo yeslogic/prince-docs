@@ -303,53 +303,55 @@ We have already shown an example of using the `page` counter to print the page n
 
 The `page` counter can be reset using the `counter-reset` property at any block-level element within a non-floating element in the normal flow. This is useful for restarting page numbering at a new section of the document.
 
-<div id="ex-restart-page-numbers" class="example">
-  <div class="title">Restarting page numbering</div>
-<p class="label">HTML</p>
-<div class="programlisting">
-<code language="HTML"><pre>&lt;body&gt;
-    &lt;div class="front"&gt; cover page, etc, ... &lt;/div&gt;
-    &lt;div class="contents"&gt;
-        table of contents, ...
-    &lt;/div&gt;
-    &lt;div class="body"&gt;
-    &lt;div class="chapter"&gt; chapter 1...&lt;/div&gt;
-    &lt;div class="chapter"&gt; chapter 2...&lt;/div&gt;
-    &lt;/div&gt;
-    &lt;div class=appendix"&gt; appendix1 &lt;/div&gt;
-    &lt;div class=appendix"&gt; appendix2, ... &lt;/div&gt;
-&lt;/body&gt;</pre></code>
-</div>
+Restarting page numbering
 
-<p class="label">CSS</p>
-<div class="programlisting">
-<code language="CSS"><pre>.contents {
-    <a href="doc-refs.html#prop-display">display</a>: block;
-    <a href="doc-refs.html#prop-page">page</a>: table-of-contents;
-    <a href="doc-refs.html#prop-counter-reset">counter-reset</a>: page 1
-}
-@page table-of-contents {
-    @top { <a href="doc-refs.html#prop-content">content</a>: "Table of Contents" }
-    @bottom {
-        content: counter(page, lower-alpha)
+HTML
+
+    <body>
+        <div class="front"> cover page, etc, ... </div>
+        <div class="contents">
+            table of contents, ...
+        </div>
+        <div class="body">
+        <div class="chapter"> chapter 1...</div>
+        <div class="chapter"> chapter 2...</div>
+        </div>
+        <div class=appendix"> appendix1 </div>
+        <div class=appendix"> appendix2, ... </div>
+    </body>
+
+CSS
+
+    .contents {
+        display: block;
+        page: table-of-contents;
+        counter-reset: page 1
     }
-}
-
-.body {
-    display: block;
-    page: main;
-    counter-reset: page 1
-}
-@page main {
-    @top { content: string(chapter-title) }
-    @bottom {
-        content: counter(page)
+    @page table-of-contents {
+        @top {
+            content: "Table of Contents"
+        }
+        @bottom {
+            content: counter(page, lower-alpha)
+        }
     }
-}
+    .body {
+        display: block;
+        page: main;
+        counter-reset: page 1
+    }
+    @page main {
+        @top {
+            content: string(chapter-title)
+        }
+        @bottom {
+            content: counter(page)
+        }
+    }
+    .chapter h1 {
+        string-set: chapter-title content()
+    }
 
-.chapter h1 { <a href="doc-refs.html#prop-string-set">string-set</a>: chapter-title content() }</pre></code>
-</div>
-</div>
 
 [Restarting page numbering](paged.md#ex-restart-page-numbers) also uses [Named pages](paged.md#named-pages) which we will explain in more detail below. We create three types of pages: table-of-contents pages, main pages, and pages without a name.
 

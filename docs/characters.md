@@ -17,7 +17,7 @@ XML
 
 Output
 
-These are “smart quotes” to be precise.
+    These are “smart quotes” to be precise.
 
 A typical usecase for character entities in CSS is the `prince-text-replace` property, which replaces a certain character string with another one. In the sample ["Reconstructed Essay"](sample-docs.html#essay) ([HTML](http://www.princexml.com/howcome/2016/samples/malthus/essay.html) - [PDF](http://www.princexml.com/howcome/2016/samples//malthus/essay.pdf)), the property is used to replace occurrences of "s" with the "long s" to recreate the original printed book.
 

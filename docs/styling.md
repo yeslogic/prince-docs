@@ -515,20 +515,18 @@ CSS
 
 List markers are rendered outside the list item in the left margin area by default. If the CSS property `list-style-position` has value `inside`, the marker is rendered as the first inline box inside the list item.
 
-<div class="example">
-<p class="label">CSS</p>
-<div class="programlisting">
-<code language="css"><pre>ol {
-    padding-left: 1cm;
-    border: solid 2px darkgreen
-}
-li { border: solid 1px black }
-li.inside { list-style-position: inside }
-li.outside { list-style-position: outside }</pre></code>
-</div>
+CSS
 
-<p class="label">Output</p>
-<div class="output">
+    ol {
+        padding-left: 1cm;
+        border: solid 2px darkgreen
+    }
+    li { border: solid 1px black }
+    li.inside { list-style-position: inside }
+    li.outside { list-style-position: outside }
+
+Output
+
 <ol style="border: solid 2px darkgreen">
 <li style="border: solid 1px black; list-style-position: inside">
     This list item sets the <code><a href="doc-refs.md#prop-list-style-position">list-style-position</a></code> to <code>inside</code>,
@@ -539,16 +537,14 @@ li.outside { list-style-position: outside }</pre></code>
     so the list marker is rendered outside the principal box of <code>li</code>.
 </li>
 </ol>
-</div>
-<p class="comment">
+
 When the marker position is <code>outside</code>,
 it is rendered outside the <code>li</code> principal box.
 If you want the marker to appear inside the principal box of
 <code>ol</code>,
 make sure to give <code>ol</code> enough left padding
 or <code>li</code> enough left margin.
-</p>
-</div>
+
 
 #### List marker type
 
@@ -566,15 +562,13 @@ The property `list-style-type` applies to list items and determines the type of 
 | `upper-roman`                | I, II, III, IV, V, VI, ...      |
 | `asterisks`                  | \*, \*\*, \*\*\*, ...           |
 
-<div class="example">
-<p class="label">CSS</p>
-<div class="programlisting">
-<code language="css"><pre>li.upper-alpha { list-style-type: upper-alpha }
-li.lower-roman { list-style-type: lower-roman }</pre></code>
-</div>
+CSS
 
-<p class="label">Output</p>
-<div class="output">
+    li.upper-alpha { list-style-type: upper-alpha }
+    li.lower-roman { list-style-type: lower-roman }
+
+Output
+
 <ol>
 <li style="list-style-type: upper-alpha">
     The marker type of this list item is upper-alpha.
@@ -583,9 +577,7 @@ li.lower-roman { list-style-type: lower-roman }</pre></code>
     The marker type of this list item is lower-roman.
 </li>
 </ol>
-</div>
 
-</div>
 
 #### List marker style
 
@@ -595,24 +587,23 @@ The shorthand property `list-style` can be used to set the three properties `lis
 
 Alternatively, the `::marker` pseudo-element can be used to style the list item marker, giving full control over its content, width, alignment and so on.
 
-<div class="example">
-<p class="label">CSS</p>
-<div class="programlisting">
-<code language="css"><pre>li::marker { width: 2.4cm }
-li.left::marker { text-align: left }
-li.center::marker { text-align: center }
-li.right::marker { text-align: right }
-li.text_marker::marker {
-    content: "Number " counter(list-item)
-}
-li.image_marker::marker {
-    content: url("../../image/prince.jpg")
-}</pre></code>
-</div>
-<p class="label">Output</p>
+CSS
+
+    li::marker { width: 2.4cm }
+    li.left::marker { text-align: left }
+    li.center::marker { text-align: center }
+    li.right::marker { text-align: right }
+    li.text_marker::marker {
+        content: "Number " counter(list-item)
+    }
+    li.image_marker::marker {
+        content: url("../../image/prince.jpg")
+    }
+
+Output
 <img src="assets/images/marker.png"
      alt="Marker example"/>
-</div>
+
 
 
 ### Tables
@@ -660,21 +651,19 @@ The basic rules used by Prince are as follows:
 
 When the `border-collapse` property is set to `separate`, a table can have separate borders around individual cells. The space between table cell borders is determined by the value of its `border-spacing` property.
 
-<div class="example">
-<p class="label">CSS</p>
-<div class="programlisting">
-<code langauge="CSS"><pre>table {
-    border-collapse: separate;
-    border-spacing: 5px;
-    border: solid 3px black
-}
-td { border: solid 1px red }
-td.dash-blue  { border: 2px dashed blue }
-td.solid-green { border: 2px solid green }</pre></code>
-</div>
+CSS
 
-<p class="label">Output</p>
-<div class="output">
+    table {
+        border-collapse: separate;
+        border-spacing: 5px;
+        border: solid 3px black
+    }
+    td { border: solid 1px red }
+    td.dash-blue  { border: 2px dashed blue }
+    td.solid-green { border: 2px solid green }
+
+Output
+
 <table style="border-collapse: separate; border-spacing: 5px; border: solid 3px black;">
 <tr>
     <td style="border: solid 1px red"> A </td>
@@ -692,33 +681,29 @@ td.solid-green { border: 2px solid green }</pre></code>
     <td style="border: solid 1px red"> I </td>
 </tr>
 </table>
-</div>
 
-<p class="comment">
 Note that by default,
 the value of <code><a href="doc-refs.html#prop-border-collapse">border-collapse</a></code> is
 <code>separate</code>.
-</p>
-</div>
+
 
 
 #### Collapsing table borders
 
 When the CSS property `border-collapse` is set to `collapse`, each edge of each cell resolves its final border style and border width based on certain rules.
 
-<div class="example">
-<p class="label">CSS</p>
-<div class="programlisting">
-<code language="css"><pre>table {
-    border-collapse: collapse;
-    border: solid 3px black
-}
-table td { border: solid 1px red }
-td.dash-blue  { border: 2px dashed blue }
-td.solid-green { border: 2px solid green }</pre></code>
-</div>
-<p class="label">Output</p>
-<div class="output">
+CSS
+
+    table {
+        border-collapse: collapse;
+        border: solid 3px black
+    }
+    table td { border: solid 1px red }
+    td.dash-blue  { border: 2px dashed blue }
+    td.solid-green { border: 2px solid green }
+
+Output
+
 <table style="border-collapse: collapse; border-spacing: 5px; border: solid 3px black;">
 <tr>
     <td style="border: solid 1px red"> A </td>
@@ -736,12 +721,10 @@ td.solid-green { border: 2px solid green }</pre></code>
     <td style="border: solid 1px red"> I </td>
 </tr>
 </table>
-</div>
-<p class="comment">
+
 Note that the <code><a href="doc-refs.html#prop-border-spacing">border-spacing</a></code> property is not used
 in the collapsing table border model.
-</p>
-</div>
+
 
 
 The rules used by Prince for choosing the "winner" border are as follows:
@@ -756,18 +739,16 @@ The rules used by Prince for choosing the "winner" border are as follows:
 
 Prince table cells that span multiple columns using the `table-column-span` CSS property, which takes an integer value and is set to 1 by default.
 
-<div class="example">
-<p class="label">CSS</p>
-<div class="programlisting">
-<code language="css"><pre>td.colspan2 { table-column-span: 2 }</pre></code>
-</div>
-<p class="label">XML</p>
-<div class="programlisting">
-<code language="doc"><pre>&lt;td class="colspan2"&gt; B &lt;/td&gt;</pre></code>
-</div>
+CSS
 
-<p class="label">Output</p>
-<div class="output">
+    td.colspan2 { table-column-span: 2 }
+
+XML
+
+    <td class="colspan2"> B </td>
+
+Output
+
 <table class="colspan">
 <tr>
 <td>A</td> <td class="colspan2" colspan="2">B</td>
@@ -776,24 +757,22 @@ Prince table cells that span multiple columns using the `table-column-span` CSS 
 <td>C</td> <td>D</td> <td>E</td>
 </tr>
 </table>
-</div>
-</div>
+
 
 #### Cells that span rows
 
 Prince supports table cells that span multiple rows using the `table-row-span` CSS property, which takes an integer value and is set to 1 by default.
 
-<div class="example">
-<p class="label">CSS</p>
-<div class="programlisting">
-<code language="css"><pre>td.rowspan2 { table-row-span: 2 }</pre></code>
-</div>
-<p class="label">XML</p>
-<div class="programlisting">
-<code language="doc"><pre>&lt;td class="rowspan2"&gt; A &lt;/td&gt;</pre></code>
-</div>
-<p class="label">Output</p>
-<div class="output">
+CSS
+
+    td.rowspan2 { table-row-span: 2 }
+
+XML
+
+    <td class="rowspan2"> A </td>
+
+Output
+
 <table class="rowspan">
 <tr>
 <td class="rowspan2" rowspan="2" style="vertical-align: middle">A</td> <td>B</td> <td>C</td>
@@ -802,73 +781,63 @@ Prince supports table cells that span multiple rows using the `table-row-span` C
 <td>D</td> <td>E</td>
 </tr>
 </table>
-</div>
-</div>
+
 
 #### Numbering table rows
 
 If you want to number table rows in a table, but there are just too many rows to number by hand, or if the document is dynamically generated and hand numbering is impossible, CSS counters and generated content can help you out:
 
-<div class="example">
-<p class="label">CSS</p>
-<div class="programlisting">
-<code langauge="CSS"><pre>table { counter-reset: row }
-tr { counter-increment: row }
-tr::before {
-    content: counter(row);
-    display: table-cell
-}</pre></code>
-</div>
+CSS
 
-<p class="label">HTML</p>
-<div class="programlisting">
-<code><pre>&lt;table&gt;
-&lt;tr&gt;&lt;td&gt;The First Table Row&lt;/td&gt;&lt;/tr&gt;
-&lt;tr&gt;&lt;td&gt;The Second Table Row&lt;/td&gt;&lt;/tr&gt;
-&lt;tr&gt;&lt;td&gt;The Third Table Row&lt;/td&gt;&lt;/tr&gt;
-&lt;/table&gt;</pre></code>
-</div>
+    table { counter-reset: row }
+    tr { counter-increment: row }
+    tr::before {
+        content: counter(row);
+        display: table-cell
+    }
 
-<div class="output">
-<p class="label">Output</p>
+HTML
+
+    <table>
+    <tr><td>The First Table Row</td></tr>
+    <tr><td>The Second Table Row</td></tr>
+    <tr><td>The Third Table Row</td></tr>
+    </table>
+
+Output
+
 <table>
 <tr><td class="counter">1</td><td>The First Table Row</td></tr>
 <tr><td class="counter">2</td><td>The Second Table Row</td></tr>
 <tr><td class="counter">3</td><td>The Third Table Row</td></tr>
 </table>
-</div>
 
-<p class="comment">
+
 As pseudo-elements only inherit inheritable properties
 from the element they are attached, non-inheritable properties, such as
 display and border properties, need to be explicitly set in the pseudo-elements.
-</p>
-</div>
+
 
 #### Running table headers and footers
 
 When a table spans across more than one page, it might be desirable to have a "running" table header and footer so that they can be carried on to all the subsequent pages on which the table appears.
 
-<div class="example">
-<p class="label">HTML</p>
-<div class="programlisting">
-<code language="HTML"><pre>&lt;table&gt;
- &lt;thead&gt;
-  &lt;tr&gt; &lt;td&gt;Name&lt;/td&gt; &lt;td&gt;Mark&lt;/td&gt; &lt;td&gt;Grade&lt;/td&gt; &lt;/tr&gt;
- &lt;/thead&gt;
- &lt;tr&gt; &lt;td&gt;Xuehong&lt;/td&gt; &lt;td&gt;95&lt;/td&gt; &lt;td&gt;H1&lt;/td&gt; &lt;/tr&gt;
- <span class="comment">&lt;!-- other rows for other students --&gt;</span>
- &lt;tfoot&gt;
-  &lt;tr&gt; &lt;td&gt;Name&lt;/td&gt; &lt;td&gt;Mark&lt;/td&gt; &lt;td&gt;Grade&lt;/td&gt; &lt;/tr&gt;
- &lt;/tfoot&gt;
-&lt;/table&gt;</pre></code>
+HTML
 
-</div>
-<p class="comment">
+    <table>
+      <thead>
+        <tr> <td>Name</td> <td>Mark</td> <td>Grade</td> </tr>
+      </thead>
+      <tr> <td>Xuehong</td> <td>95</td> <td>H1</td> </tr>
+      <!-- other rows for other students -->
+      <tfoot>
+        <tr> <td>Name</td> <td>Mark</td> <td>Grade</td> </tr>
+      </tfoot>
+    </table>
+
 Rows inside the <code>thead</code> element are used as a running table header.
 Rows inside the <code>tfoot</code> element are used as a running table footer.
-</p>
-</div>
+
 
 See also [Long Tables](long-tables.md#long-tables).
 

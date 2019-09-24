@@ -13,24 +13,32 @@ Please note that on Windows, Prince can be called from the command-line by runni
 Examples
 --------
 
-`prince file.xml`
-
+    prince file.xml
 Convert `file.xml` to `file.pdf`.
-`prince doc.html` -o `out.pdf`
 
+    prince doc.html -o out.pdf
 Convert `doc.html` to `out.pdf`.
-`prince http://example.com` -o `out.pdf`
 
+    prince http://example.com -o out.pdf
 Convert the `http://example.com` webpage to `out.pdf`. Note that it is necessary to specify the output file when the input is a HTTP or HTTPS URL.
-`prince         -s style1.css` -s `style2.css` `input.xml` -o `output.pdf`
 
+    prince
+        -s style1.css
+        -s style2.css
+        input.xml
+        -o output.pdf
 Convert `input.xml` to `output.pdf`, applying two user style sheets.
-`prince         doc1.html` `doc2.html` -o `out.pdf`
 
+    prince
+        doc1.html
+        doc2.html
+        -o out.pdf
 Combine `doc1.html` and `doc2.html` into a single PDF file, `out.pdf`.
-`prince doc.html` --raster-output=`doc_%d.png`
 
+    prince doc.html --raster-output=doc_%d.png
 Process `doc.html` and rasterize the output to the series of files `doc_1.png`, `doc_2.png`, `doc_3.png` etc.
+
+
 Specifying input and output
 ---------------------------
 
