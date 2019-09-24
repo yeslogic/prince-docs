@@ -556,8 +556,8 @@ In a novel it is useful to print a page number at the bottom of every page, *exc
 
 Novel title page example
 
-![Novel title page example image.](samples/titlepage-1.bw.png)
-A title page example showing use of `@page:first`. Download the [PDF](samples/titlepage.pdf) or the [HTML](samples/titlepage.md).
+![Novel title page example image.](assets/samples/titlepage-1.bw.png)
+A title page example showing use of `@page:first`. Download the [PDF](assets/samples/titlepage.pdf) or the [HTML](assets/samples/titlepage.md).
 
 
     <html>
@@ -603,8 +603,8 @@ Alternatively, the `:recto` and `:verso` selectors can be used, with the advanta
 
 Textbook page numbers example
 
-![Textbook page numbers example image.](samples/textbook-1.bw.png)
-A text book example showing use of `@page:left` and `@page:right`. Download the [PDF](samples/textbook.pdf) or the [HTML](samples/textbook.md).
+![Textbook page numbers example image.](assets/samples/textbook-1.bw.png)
+A text book example showing use of `@page:left` and `@page:right`. Download the [PDF](assets/samples/textbook.pdf) or the [HTML](assets/samples/textbook.md).
 
 
     @page:left {
