@@ -23,7 +23,7 @@
     "Reference": [
         "command-line",
         "css-refs",
-        "properties-latest/output/properties",
+        "css-props",
         "js-support",
         "page-size-keywords",
         "characters",
