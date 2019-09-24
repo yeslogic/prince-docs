@@ -1,5 +1,7 @@
 /* your custom css */
 
+dd { padding-left: 2em; padding-bottom: 1em;}
+
 #prop-list summary, #js-support-table summary {
   font-weight: bold;
   padding: 0.7em;

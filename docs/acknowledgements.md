@@ -4,57 +4,118 @@ title: Acknowledgments
 
 Prince uses the following open source projects:
 
-Boehm GC  
-The [Boehm GC](http://www.hboehm.info/gc/) library is used by the Mercury runtime for garbage collection.
+<dl>
 
-Cairo and Pixman  
-The [Cairo](http://www.cairographics.org/) and [Pixman](http://www.pixman.org/) libraries are used by Prince for rasterization.
+<dt id="boehmgc">Boehm GC</dt>
+<dd>
+The <a href="http://www.hboehm.info/gc/">Boehm GC</a>
+library is used by the Mercury runtime for garbage collection.
+</dd>
 
-CTAN hyphenation files  
-Prince uses the hyphenation pattern files from the [CTAN archive](http://tug.ctan.org/tex-archive/language/hyph-utf8/tex/generic/hyph-utf8/patterns/txt/).
+<dt id="cairo-pixman">Cairo and Pixman</dt>
+<dd>
+The <a href="http://www.cairographics.org/">Cairo</a>
+and <a href="http://www.pixman.org/">Pixman</a>
+libraries are used by Prince for rasterization.
+</dd>
 
-datrie  
-The [datrie](http://linux.thai.net/projects/datrie) library is used by Prince to load the Thai dictionary.
+<dt id="ctan-hyph">CTAN hyphenation files</dt>
+<dd>
+Prince uses the
+hyphenation pattern files from the
+<a href="http://tug.ctan.org/tex-archive/language/hyph-utf8/tex/generic/hyph-utf8/patterns/txt/">CTAN archive</a>.
+</dd>
 
-Fontconfig  
-The [Fontconfig](http://www.fontconfig.org/) library is used by Prince on Linux to scan for installed system fonts.
+<dt id="datrie">datrie</dt>
+<dd>
+The <a href="http://linux.thai.net/projects/datrie">datrie</a>
+library is used by Prince to load the Thai dictionary.
+</dd>
 
-FreeType  
-The [FreeType](http://freetype.org/) library is used by Prince to load and process TrueType font files.
+<dt id="fontconfig">Fontconfig</dt>
+<dd>
+The <a href="http://www.fontconfig.org/">Fontconfig</a>
+library is used by Prince on Linux to scan for installed system fonts.
+</dd>
 
-GIFLIB  
-The [GIFLIB](http://giflib.sourceforge.net/) library is used by Prince to load GIF image files.
+<dt id="freetype">FreeType</dt>
+<dd>
+The <a href="http://freetype.org/">FreeType</a>
+library is used by Prince to load and process TrueType font files.
+</dd>
 
-libjpeg*-turbo*  
-The [libjpeg*-turbo*](https://libjpeg-turbo.org/) library is used by Prince to load JPEG image files.
+<dt id="giflib">GIFLIB</dt>
+<dd>
+The <a href="http://giflib.sourceforge.net/">GIFLIB</a>
+library is used by Prince to load GIF image files.
+</dd>
 
-libcurl  
-The [libcurl](http://curl.haxx.se/) library is used by Prince to load resources from HTTP URLs.
+<dt id="jpeglib">libjpeg<i>-turbo</i></dt>
+<dd>
+The <a href="https://libjpeg-turbo.org/">libjpeg<i>-turbo</i></a>
+library is used by Prince to load JPEG image files.
+</dd>
 
-GNU libgomp  
-The [GNU libgomp](https://gcc.gnu.org/onlinedocs/libgomp/) library is used by Prince for OpenMP support.
+<dt id="libcurl">libcurl</dt>
+<dd>
+The <a href="http://curl.haxx.se/">libcurl</a>
+library is used by Prince to load resources from HTTP URLs.
+</dd>
 
-libpng  
-The [libpng](http://libpng.org/pub/png/libpng.html) library is used by Prince to load PNG image files.
+<dt id="libgomp">GNU libgomp</dt>
+<dd>
+The <a href="https://gcc.gnu.org/onlinedocs/libgomp/">GNU libgomp</a>
+library is used by Prince for OpenMP support.
+</dd>
 
-libthai  
-The [libthai](http://linux.thai.net/projects/libthai) library is used by Prince to handle word breaking in the Thai language.
+<dt id="libpng">libpng</dt>
+<dd>
+The <a href="http://libpng.org/pub/png/libpng.html">libpng</a>
+library is used by Prince to load PNG image files.
+</dd>
 
-libtiff  
-The [libtiff](http://www.libtiff.org/) library is used by Prince to load TIFF image files.
+<dt id="libthai">libthai</dt>
+<dd>
+The <a href="http://linux.thai.net/projects/libthai">libthai</a>
+library is used by Prince to handle word breaking in the Thai language.
+</dd>
 
-libxml2  
-The [libxml2](http://xmlsoft.org/) library is used by Prince to load XML and HTML documents.
+<dt id="libtiff">libtiff</dt>
+<dd>
+The <a href="http://www.libtiff.org/">libtiff</a>
+library is used by Prince to load TIFF image files.
+</dd>
 
-Little CMS  
-[Little CMS](http://www.littlecms.com/) (lcms2) library is used by Prince for color management.
+<dt id="libxml2">libxml2</dt>
+<dd>
+The <a href="http://xmlsoft.org/">libxml2</a>
+library is used by Prince to load XML and HTML documents.
+</dd>
 
-Mercury  
-Prince is written in the [Mercury](http://mercurylang.org) programming language.
+<dt id="littlecms">Little CMS</dt>
+<dd>
+<a href="http://www.littlecms.com/">Little CMS</a> (lcms2)
+library is used by Prince for color management.
+</dd>
 
-OpenSSL and NSS  
-The [OpenSSL](http://www.openssl.org/) and [NSS](https://developer.mozilla.org/en-US/docs/Mozilla/Projects/NSS) libraries are used by Prince to load resources from secure HTTPS URLs.
+<dt id="mercury">Mercury</dt>
+<dd>
+Prince is written in the
+<a href="http://mercurylang.org">Mercury</a>
+programming language.
+</dd>
 
-zlib  
-The [zlib](http://www.zlib.net/) library is used by Prince to perform compression of PDF files.
+<dt id="openssl-nss">OpenSSL and NSS</dt>
+<dd>
+The <a href="http://www.openssl.org/">OpenSSL</a> and
+<a href="https://developer.mozilla.org/en-US/docs/Mozilla/Projects/NSS">NSS</a>
+libraries are used by Prince to load resources from secure HTTPS URLs.
+</dd>
 
+<dt id="zlib">zlib</dt>
+<dd>
+The <a href="http://www.zlib.net/">zlib</a>
+library is used by Prince to perform compression of PDF files.
+</dd>
+
+</dl>

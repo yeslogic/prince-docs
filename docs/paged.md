@@ -4,14 +4,40 @@ title: Paged Media
 
 Prince produces PDFs - which are a prominent example of paged media. There are a few differences that are crucial to keep in mind when preparing a document for paged media intended for print:
 
-Pagination  
-The major difference between formatting for the web and for PDF/Print is that PDF is paginated, i.e. the content is placed on discrete pages. Pages have a defined [size](paged.md#page-size) and content can be laid out in a specific pattern making use of predefined [page regions](paged.md#page-regions). Elements can not only be floated right and left, but they can also be floated to the top and bottom of the page, or of a column, or the float even can be deferred to the next page (see [Prince extensions to floats](floats.md#float-extensions)). Pages can be [selected](paged.md#page-rules) and [named](paged.md#named-pages), which allows for specific treatment of certain pages. Also, it is important to have an understanding of [pagination](paged.md#controlling-pagination): content might not fit on a page and might spill over into the next page, or it might be necessary to move it to the next page in order to avoid creating gaps (see also [Conditional modifiers](floats.md#float-extension-conditionals)).
+<dl>
+  <dt>Pagination</dt>
+  <dd><p>The major difference between formatting for the web and for PDF/Print is that
+  PDF is paginated, i.e. the content is placed on discrete pages.  Pages have a defined
+  <xref linkend="page-size">size</xref> and content can be laid out in a specific
+  pattern making use of predefined <xref linkend="page-regions">page regions</xref>.
+  Elements can not only be floated right and left, but they can also be floated to
+  the top and bottom of the page, or of a column, or the float even can be
+  deferred to the next page (see <xref linkend="float-extensions"/>).  Pages can be
+  <xref linkend="page-rules">selected</xref> and
+  <xref linkend="named-pages">named</xref>, which allows for specific treatment of
+  certain pages.  Also, it is important to have an understanding of
+  <xref linkend="controlling-pagination">pagination</xref>: content might not fit
+  on a page and might spill over into the next page, or it might be necessary
+  to move it to the next page in order to avoid creating gaps (see
+  also <xref linkend="float-extension-conditionals"/>).</p></dd>
 
-Page spreads  
-A basic unit for paged media in print is the page spread: the left page, called *verso* in a left-to-right script (see [Writing Mode](writing-mode.md#writing-mode)), and the right page, called *recto*, are of the same size and typically are symmetrical to each other and are centered on the gutter. Selected and named pages can be placed *recto* or *verso*, and Prince expands several properties and the [`@page`](at-rules.md#at-page) at-rule pseudo-classes with the values `verso` and `recto`, or `inside` and `outside`, referring to the layout on each page of the spread.
+  <dt>Page spreads</dt>
+  <dd><p>A basic unit for paged media in print is the page spread: the left page, called
+  <i>verso</i> in a left-to-right script (see <xref linkend="writing-mode"/>), and
+  the right page, called <i>recto</i>, are of the same size and typically are
+  symmetrical to each other and are centered on the gutter.  Selected and named
+  pages can be placed <i>recto</i> or <i>verso</i>, and Prince expands several
+  properties and the <a href="doc-latest/doc-refs.html#at-page"><code>@page</code></a>
+  at-rule pseudo-classes with the values <code>verso</code> and <code>recto</code>, or
+  <code>inside</code> and <code>outside</code>, referring to the layout on each
+  page of the spread.</p></dd>
 
-Non-interactive  
-Last but not least, paged media intended for print is non-interactive by nature. All CSS properties referring to user interaction make no sense, scripting cannot be interactive and scripts need to run before layout is finished. But for these details and scripting after layout please check the section on [JavaScript in Printed Media](javascript.md#js-print).
+  <dt>Non-interactive</dt>
+  <dd><p>Last but not least, paged media intended for print is non-interactive by nature.
+  All CSS properties referring to user interaction make no sense, scripting cannot
+  be interactive and scripts need to run before layout is finished.  But for these
+  details and scripting after layout please check the section on <xref linkend="js-print"/>.</p></dd>
+</dl>
 
 Prince allows you to control a number of options that affect how to format pages, from straight-forward options such as [page size](paged.md#page-size), to [page style](paged.md#page-style), [page regions](paged.md#page-regions) like headers and footers, [pagination control](paged.md#controlling-pagination) and [page numbering](gen-content.md#counters).
 
