@@ -19,7 +19,7 @@ For the values, the grammar draws on the [CSS Values and Units Module Level 3](h
 -   A hash mark (**\#**) indicates that the preceding item occurs one or more times, separated by comma tokens.
 -   A pair of numbers in curly braces, separated by two dots (**{*A*..*B*}**) indicates that the preceding item occurs at least *A* and at most *B* times.
 
-<a href="#" id="toggle-css">Toggle (open/close) all properties</a>
+<a href="#" id="toggle-css" onclick="javascript:toggleAllDetails('css'); return false;">Toggle (open/close) all properties</a>
 
 <div id="prop-list">
 
@@ -3847,3 +3847,34 @@ supplier, item { overflow-wrap: normal; }
                   no
                 </td></tr></table></div></div></div><div /><div><div id="prop-z-index-spec">Specification</div><ul><li><a href="https://www.w3.org/TR/CSS2/visuren.html#z-index">CSS 2.1</a></li></ul></div></div></details></div>
 
+<script>
+function toggleDetails() { if ((location.hash.indexOf('window.') == 1) || (location.hash.indexOf('prop-') == 1)) {
+var prop = document.getElementById(location.hash.substr(1));
+var att = document.createAttribute('open');
+var parentDetails = $(prop).parents('details');
+for (i = 0; i < parentDetails.length; i++) {
+  parentDetails[i].setAttribute('open','')
+}
+prop.scrollIntoView();
+}};
+function toggleAllDetails(t) {
+if (t == 'js') { var type = 'js-support-table' } else if (t == 'css') { var type = 'prop-list' };
+var g = document.getElementById(type);
+var d = g.getElementsByTagName('details');
+var id = 'toggle-' + t;
+var a = document.getElementById(id);
+if ( a.hasAttribute('open') == false ) {
+for (i=0; i < d.length; i++) {
+  d[i].setAttribute('open','');
+  a.setAttribute('open','');
+}}
+else if ( a.hasAttribute('open') == true ) {
+for (i=0; i < d.length; i++) {
+  d[i].removeAttribute('open');
+  a.removeAttribute('open');
+}}
+if ( t == 'js' ) { document.getElementById('.window').parentElement.setAttribute('open','') }
+}
+window.addEventListener("load",  function() { toggleDetails();});
+window.addEventListener("hashchange", function() { toggleDetails();});
+</script>

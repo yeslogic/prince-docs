@@ -8,7 +8,7 @@ The following table shows supported JavaScript objects, methods and properties. 
 
 \* objects, methods and properties marked with an asterisk are Prince extensions.
 
-<a href="#" id="toggle-js">Toggle (open/close) all properties</a>
+<a href="#" id="toggle-js" onclick="javascript:toggleAllDetails('js'); return false;">Toggle (open/close) all properties</a>
 
 <div class="js-overview level" id="js-support-table"></div>
 
