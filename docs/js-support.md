@@ -97,7 +97,7 @@ function add(parent, thing, annotations, type, hasChildren, length, parentDescs)
             div.className = 'url-property';
             property = thing.replace(/([A-Z])/g, '-$1').toLowerCase();
             url = div.appendChild(document.createElement('a'));
-            url.setAttribute("href", "#prop-" + property);
+            url.setAttribute("href", "css-props#prop-" + property);
             url.appendChild(document.createTextNode(property));
         }
         if(annotations && annotations.desc) {
