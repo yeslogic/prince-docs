@@ -2,9 +2,6 @@
 title: Scripting
 ---
 
-Scripting
-=========
-
 JavaScript can be used to transform documents by generating tables of contents and indices, sorting tables, rendering charts and graphs, and other tasks that go beyond the scope of CSS.
 
 Scripts can access and modify the input document using the W3C standard DOM (Document Object Model). Prince also supports some additional properties and methods described below.

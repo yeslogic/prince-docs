@@ -2,9 +2,6 @@
 title: Page Size Keywords
 ---
 
-Page Size Keywords
-==================
-
 Prince supports the following page size keywords.
 
 Keywords are *not* case sensitive, thus "A4" and "a4" are equivalent.

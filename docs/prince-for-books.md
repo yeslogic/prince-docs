@@ -2,9 +2,6 @@
 title: Prince for Books
 ---
 
-Prince for Books
-================
-
 Prince for Books is a new venture that allows us to spend more time on features particularly sought by publishers.
 
 The initial focus of work is on the features common to all books: making the pagination and line-breaking choices expected of books, by featuring a few extensions to CSS and fine-tuned algorithms.

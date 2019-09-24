@@ -2,13 +2,131 @@
 title: Help
 ---
 
-Help
-====
-
 The Prince Installation Guide tries to be exhaustive in explaining how to install the application. However, there might always be something not answered in the documentation, or something not working as expected. There are a couple of ways to get help to solve the problems:
 
--   The [Troubleshooting](troubleshooting-install.md#troubleshooting-install) section addresses possible common issues after installing and starting to use Prince;
--   The [Frequently Asked Questions](faq-install.md#faq-install) section provides answers to the most frequently asked questions about installation;
+-   The [Troubleshooting](#troubleshooting) section addresses possible common issues after installing and starting to use Prince;
+-   The [Frequently Asked Questions](#frequently-asked-questions) section provides answers to the most frequently asked questions about installation;
 -   The [forum](//www.princexml.com/forum/) is an excellent place where to find an answer to an issue, or where to ask for help;
 -   You can [contact us](//www.princexml.com/contact/) for support.
+
+Troubleshooting
+---------------
+
+We work hard to make Prince work on multiple platforms (Windows, Linux, etc) and with multiple configurations. However things don't always work correctly the first time. You're very welcome to [contact us](contact.html) for support or visit our [forum](forum/forum.html). However if you are facing a common problem, you may be able to find an explanation and solution below.
+
+### Missing glyphs or fonts
+
+Symptom  
+
+    prince: page 1: warning: no font for
+          Aegean Numbers character U+10123,
+          fallback to '?'
+
+Explanation  
+Prince tries to tell you which page the missing glyph appeared on, what type of character it was (eg. "Latin", "Greek", etc.) and what character it used as a fallback (usually '?').
+
+Symptom  
+
+    prince: internal error: no available fonts
+
+Explanation  
+However, if there are no available fonts on the system at all then it won't even be able to find the question mark glyph, and you get an internal error message.
+
+Solution 1  
+Install the [msttcorefonts](http://corefonts.sourceforge.net) package (see your operating system's documentation).
+
+Solution 2  
+Redefine the CSS generic font families to use different TrueType fonts by editing the `fonts.css` file in the Prince installation - see [Installation Layout](installation-layout.md#installation-layout), [Fonts](fonts.md#fonts) and [Redefining the generic font families](redefining-font-families.md#redefining-font-families).
+
+Explanation  
+This problem may be a symptom of the [Fontconfig](troubleshooting-install.md#fontconfig).
+
+### Fontconfig
+
+Symptom  
+
+    Fontconfig error: Cannot load default config file
+
+Explanation  
+Prince uses the [Fontconfig](http://www.fontconfig.org) library on Linux systems to search for fonts. Fontconfig is installed as a standard component on most desktop Linux distributions such as Ubuntu and recent versions of Red Hat Linux.
+
+Some older Linux distributions do not come with fontconfig and this may cause the above error. This error will usually be followed by errors relating to [Missing glyphs or fonts](troubleshooting-install.md#missing-fonts) that cannot be found due to the absence of Fontconfig.
+
+Solution 1  
+install Fontconfig (see your operating system's documentation).
+
+Solution 2  
+Redefine the CSS generic font families to use TrueType fonts that are specified directly by their filenames, avoiding the need to use Fontconfig at all. In extreme cases it might be advisable to disable system fonts completely with the [`--no-system-fonts`](command-line.md#cl-no-system-fonts) command-line option. See [Fonts](fonts.md#fonts) and [Redefining the generic font families](redefining-font-families.md#redefining-font-families).
+
+### Shared library trouble
+
+Symptom (Linux)  
+
+    /usr/local/stow/prince-9/lib/prince/bin/prince: error while loading shared
+    libraries: libtiff.so.4: cannot open shared object file: No such file or
+    directory
+
+Symptom (FreeBSD)  
+
+    Shared object "libxml2.so.2" not found, required by "prince"
+
+Explanation  
+Prince uses some third-party shared libraries, these are used for things such as decoding TIFF, PNG or JPEG files and finding and loading fonts. If one or more of these shared libraries cannot be found on your system then Prince will not run. This can occur if Prince was installed from a tarball (see [Tarballs - Alpine Linux, FreeBSD and Generic Linux](installing.md#install-generic)).
+
+Solution 1  
+Install the missing library software. [Acknowledgments](acknowledgements.md#acknowledgments) provides a list of the libraries that Prince uses. It is recommended to install them through your operating system's package management tool, see your operating system's documentation for more information.
+
+Solution 2  
+Prince is just using the system shared object loader for most libraries, so the `LD_LIBRARY_PATH` environment variable might need to be edited, if you have installed these libraries in non-standard or different locations.
+
+### `PATH` issues
+
+Symptom  
+
+    -bash: prince: command not found
+
+Explanation  
+The command interpreter (`bash`) does not know how to find the `prince` executable. It was not found in any of the locations specified by the `PATH` environment variable.
+
+Solution  
+Add Prince's `bin/` subdirectory to your `PATH` and ensure that these changes are saved for future shell sessions. If Prince is installed in `/opt/prince10`, then add `/opt/prince10/bin` to `PATH`. There are many different types of command interpreters (also called shells) and we cannot possibly document all of them. The appropriate command for borne-style shells (the most common type) is usually:
+
+
+    export PATH=/opt/prince10/bin:$PATH
+
+This should be added to your command interpreter's configuration. For more information see your operating system's documentation.
+
+
+Frequently Asked Questions
+--------------------------
+
+Why does Prince on 64-bit Windows install into the 32-bit compatibility directory `%ProgramFiles(x86)%`? <a href="#faq-install-dir" class="self-link"></a>
+
+The Prince GUI is still a 32-bit program, but the formatting engine is 64-bit.
+
+How can I run Prince on Windows without showing the UI? <a href="#faq-no-ui" class="self-link"></a>
+
+On Linux, you typically run Prince with the following command:
+
+
+    prince file.xml -o file.pdf
+
+On Windows, you replace the name of the executable with `Prince\engine\bin\prince.exe` in the installation directory (see [Windows installation layout](installation-layout.md#windows-layout)), which is the command-line program. See also [Command-line Reference](command-line.md#command-line).
+
+
+    "C:\Program Files (x86)\Prince\engine\bin\prince.exe" file.xml -o file.pdf
+
+Can I install Prince on cloud services or containers (Azure, AWS, Docker)? <a href="#faq-install-cloud" class="self-link"></a>
+
+Prince can be installed on the [supported operating systems](installing.md#installing) - also when they are running in cloud or container services. On Linux, some environments might not provide for all dependencies - you can address this by either trying to install the Generic Linux Prince package (see [Tarballs - Alpine Linux, FreeBSD and Generic Linux](installing.md#install-generic)), or by trying to install the missing dependencies.
+
+See [this forum post](https://www.princexml.com/forum/topic/2094/silent-installation-on-windows#20332) for a description of an installation on Azure.
+
+How do I install Prince for Books? <a href="#faq-install-books" class="self-link"></a>
+
+[Prince for Books](prince-for-books.md#pfb) is available in package bundles only - to install it, the files need to be copied into place (Windows), or an installation script needs to be run (on Linux and MacOS X). It can be installed without problem alongside a normal Prince installation - the executable to run is called `prince-books`.
+
+How do I install the Prince wrappers? <a href="#faq-install-wrappers" class="self-link"></a>
+
+The [Prince Wrappers](server-integration.md#wrappers) come in different languages, and each one has a different installation procedure. Mostly they are explained in the documentation for each of the [Prince Wrappers](server-integration.md#wrappers). The short principle is that the wrapper files need to be placed in a location from which they can run - this may slightly vary depending on the hosting Operating System.
 

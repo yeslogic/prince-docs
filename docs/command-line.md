@@ -2,9 +2,6 @@
 title: Command-line Reference
 ---
 
-Command-line Reference
-======================
-
 Prince may be called from the command-line with the following arguments:
 
 `prince OPTIONS     FILES` \[`-o` <span class="replaceable">PDF</span>\]

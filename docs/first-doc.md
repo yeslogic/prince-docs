@@ -2,9 +2,6 @@
 title: Your First Document
 ---
 
-Your First Document
-===================
-
 In this section we will process a very simple document. We've chosen a document that fits HTML's heading and paragraph structure naturally: a lab report. The lab report will have a title, an author and date, several headings (Aim, Hypothesis, Method, Results and Conclusion). It does not include a table of results, graphics or diagrams: it is a very simple lab report.
 
 The lab report

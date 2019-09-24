@@ -2,9 +2,6 @@
 title: Acknowledgments
 ---
 
-Acknowledgments
-===============
-
 Prince uses the following open source projects:
 
 Boehm GC  

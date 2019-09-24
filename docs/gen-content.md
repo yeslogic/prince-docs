@@ -2,12 +2,9 @@
 title: Generated Content
 ---
 
-Generated Content
------------------
-
 Generated content is text and other content that is not found in the original input document, but is added to the output from a style sheet using the CSS `content` property. Useful applications of this property include [Page regions](paged.md#page-regions), [List markers](lists.md#content-list-markers) or [Footnotes](footnotes.md#footnotes).
 
-### Generated Content Functions
+## Generated Content Functions
 
 Generated content is inserted by means of several functions that typically are used within the `content` property. However, please note that these functions are not unique to the `content` property, but can be used for the same purpose in several other ones, namely:
 
@@ -47,7 +44,7 @@ Last but not least, Prince supports arbitrary JavaScript functions to be called 
 
 A special function is `prince-glyph-index(int)`, which allows to choose a glyph from a font by the index of that glyph in the font. Note that this is very non-portable, as glyph indices are specific to individual font versions. But it is a possible escape hatch for people who need a specific glyph and don't have any other way of accessing it (by Unicode character or OpenType substitution).
 
-#### The optional `page-policy` value
+### The optional `page-policy` value
 
 The generated content functions `element()`, `counter()`, `counters()`, `string()` and `flow()`, have a second, optional argument, namely `page-policy`, which can be one of the following:
 
@@ -67,7 +64,7 @@ The page policy values of the `string()` function are only meaningful for `strin
 
 For a good example of its use, please see [Copying content from the document](paged.md#content-copying-text).
 
-### Before and After pseudo-elements
+## Before and After pseudo-elements
 
 The `content` property can be applied to the `::before` and `::after` pseudo-elements to add generated content before or after an element. For example, adding section numbers in front of headings or including quotation marks around a block of text.
 

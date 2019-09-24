@@ -2,9 +2,6 @@
 title: Paged Media
 ---
 
-Paged Media
------------
-
 Prince produces PDFs - which are a prominent example of paged media. There are a few differences that are crucial to keep in mind when preparing a document for paged media intended for print:
 
 Pagination  
@@ -27,7 +24,7 @@ CSS properties that affect pages are specified within page *at-rules* (see [CSS 
 
 In this section we will show most of the properties that can be specified within a page rule, then we will show how pagination can be controlled and how page styles can be applied to selected pages.
 
-### Page size
+## Page size
 
 Page size can be specified using the `size` property in *length* units or by a page size keyword (see [Page Size Keywords](page-size-keywords.md#page-size-keywords) for a list), optionally combined with the `portrait` or `landscape` keyword.
 
@@ -53,7 +50,7 @@ Sometimes it can be useful to specify the page dimensions in pixels, for example
         size: 1280px 960px;
     }
 
-### Page style
+## Page style
 
 Pages, like other block level elements, follow the CSS box model introduced in [Box Model](css-box.md#css-box). Their `margin`, `border`, `padding` and `background` can be styled within [`@page`](at-rules.md#at-page) rules.
 
@@ -74,7 +71,7 @@ Prince also supports the `margin-outside` and `margin-inside` properties. These 
 
 This is used in [Fancy headers](paged.md#fig-fancyheader).
 
-### Page regions
+## Page regions
 
 Page regions
 
@@ -300,7 +297,7 @@ Many CSS properties can be applied to page regions:
 
 The `@footnote` area can be positioned other than its default position (see [Styling and behavior of footnotes](footnotes.md#footnotes-styling) and [Sidenotes](sidenotes.md#sidenotes)). All other page regions cannot be moved - their position is defined by the page margins.
 
-#### Generated content in page regions
+### Generated content in page regions
 
 We have already shown an example of using the `page` counter to print the page number at the bottom of each page, this is one example of generated content. The `page` counter is predefined and starts at 1; it increments automatically for each new page. (Note that the page counter cannot be incremented manually using the `counter-increment` property.)
 
@@ -460,7 +457,7 @@ This example demonstrates a more complete headers style. It uses generated conte
 
 The main content area is 2.5cm from the page's edge on all sides. On the left and right this is a margin of 2.5cm and on the top and bottom it's 2cm of margin and 0.5cm of padding. This places the bottom border of the `@top` page region 0.5cm from the main content area, enough to avoid making it look crowded. The header text has the vertical-align: bottom property to ensure that it appears immediately above the border — the border is made to look like an underline. This example uses many properties and page selectors discussed later in this section. This is a small part of a [larger example](https://github.com/yeslogic/prince-samples/tree/master/thesis) in our [Prince samples repository](https://github.com/yeslogic/prince-samples).
 
-#### Copying content from the document
+### Copying content from the document
 
 Generated content in page regions may contain text content copied from the document using the `string-set` property:
 
@@ -498,7 +495,7 @@ This can be very useful as a means to repeating the title of a chapter as a page
 
 You can see these examples in full action in the [Dictionary](sample-docs.md#dictionary) sample ([HTML](http://css4.pub/2015/icelandic/dictionary.md) - [PDF](http://css4.pub/2015/icelandic/dictionary.pdf)).
 
-#### Taking elements from the document
+### Taking elements from the document
 
 Page region content may also be taken from the document itself. Any block-level element can be removed from the normal flow and placed in a page region. It will normally inherit from its original position in the document, but does not display there. Please also note the following:
 
@@ -549,7 +546,7 @@ It can be achieved by using JavaScript to move the element, but the simple `star
 
 The `element()` and `flow()` functions replace the entire margin box, and cannot be combined with other content. If you just want to capture some text from the document, use named strings instead (see [Copying content from the document](paged.md#content-copying-text)) - they can be combined with other content.
 
-### Selecting pages
+## Selecting pages
 
 It is often necessary to apply styles to some pages, but not others. Either applying them to only some pages, or on every page *except* selected pages. CSS and Prince provide a number of *page selectors* for choosing which pages a rule applies to.
 
@@ -637,7 +634,7 @@ Sometimes it can be useful to select the *N*th page in a document. The `:nth(N)`
         ...
     }
 
-#### Named pages
+### Named pages
 
 Sometimes it is necessary to style pages depending on their content; named pages allow us to select pages that contain particular elements. We used this in [Restarting page numbering](paged.md#ex-restart-page-numbers), to apply a style to the table of contents pages to print their page numbers using roman numerals.
 
@@ -698,7 +695,7 @@ This example only works when a page name is used only once within a document, su
 
 The property `prince-page-group: start` instructs Prince to start a new page group. This is necessary for the `div.chapter:first` selector to match the first page of each chapter, instead of only the first page in the first chapter. See [Page groups](paged.md#page-groups).
 
-#### Blank pages
+### Blank pages
 
 A special case are blank pages.
 
@@ -744,7 +741,7 @@ If chapter 1 also resets page numbering, then the page numbers will be reset on 
 
 It is not always desirable to have no content on blank pages. Sometimes otherwise blank pages are required have some content, such as a notice saying "This page intentionally left blank". For example, in legal documents, this prevents people from mistaking a dangerous printing error for an intentionally blank page.
 
-#### Page groups
+### Page groups
 
 When consecutive elements belong to the same named page but logically separate structures (such as individual chapters) Prince combines them into one *page group*. This causes it to apply the `:first` page selector to the first page of the whole page group only (the first page of chapter 1). Instead we usually want `:first` applied to the first page of each chapter.
 
@@ -764,11 +761,11 @@ Prince provides the `prince-page-group` property that can be used to start a new
 
 `prince-page-group` also forces a page break, overriding any properties that attempt to avoid page breaks. The more specific `left` and `right` page take precedence over `prince-page-group`.
 
-### Controlling pagination
+## Controlling pagination
 
 Prince will create page breaks automatically when new content will not fit on a page. Sometimes it is useful or necessary to control where page breaks should and should not be used. There are two ways to do this, and both are useful in different circumstances: page breaks can be added or prohibited with the [Page breaks](paged.md#page-breaks) properties, and you can control where, within a paragraph, a page break may occur with the [Widows and orphans](paged.md#widows-and-orphans) properties.
 
-#### Page breaks
+### Page breaks
 
 The simplest case is when you want to explicitly create a page break. This is typically used at the beginning of a chapter, to start the new chapter on a new page.
 
@@ -892,7 +889,7 @@ Prince also supports the properties `page-break-before`, `page-break-after` and 
 
 Page breaks have similarities with column breaks, see [Columns](columns.md#columns).
 
-##### Page breaks and decoration
+#### Page breaks and decoration
 
 When a page (or column) break occurs within a box (such as a div) its bottom and top borders are *cloned* so that they also appear at the bottom of the first section and the top of the second section of the box. This is shown in the left of [Box decoration break sample](paged.md#fig-boxdecorationbreak). This is the default but may be set with the `box-decoration-break` property, setting its value to `clone`.
 
@@ -913,7 +910,7 @@ If instead you wish the borders to remain open, as if the box were simply *slice
         box-decoration-break: slice
     }
 
-#### Widows and orphans
+### Widows and orphans
 
 Just as breaking a page between a heading and the first paragraph below the heading can look bad, breaking the page after only one or two lines of a paragraph also looks bad. These stray lines are called *orphans*. The minimum number of orphans to allow can be specified with the `orphans` property (the default is 1).
 
@@ -931,7 +928,7 @@ Likewise the minimum number of lines to move to a new page (*widows*) can be spe
 
 It can be easy to confuse widows and orphans. However a mnemonic device can help: "An orphan is alone from the beginning \[of the paragraph\]; a widow is alone at the end \[of the paragraph\]". (Source [Widows and orphans — Wikipedia](https://en.wikipedia.org/wiki/Widows_and_orphans)).
 
-### Trimming marks
+## Trimming marks
 
 When typesetting a magazine or flier it can be useful to print right to the edge of the paper. However most printers will refuse do do this. It is better to print on larger stock and then crop the paper to the correct size. If you use the `marks` property, Prince will create *bleed* and *trim* areas around your content (and the declared page size). This can be seen in the catalog example, adapted from the [Catalog sample](https://github.com/yeslogic/prince-samples/tree/master/website_samples/catalogue) in the [Prince samples repository](https://github.com/yeslogic/prince-samples).
 
