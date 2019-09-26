@@ -26,9 +26,9 @@ When using the Prince GUI, the output log is printed to the log window on the bo
 ### Image formats
 
 Symptom  
-
+```bash
     prince: ./picture.bmp: warning: Unknown image format
-
+```
 Explanation  
 Prince supports JPEG, PNG, TIFF and GIF images as well as SVG (see [Images](images.md#images)). If you try to format a document that includes images in a format that is not supported by Prince, such as BMP, you may see the above error message from Prince.
 
@@ -83,9 +83,9 @@ How can I create tooltips in the PDF file? <a href="#faq-tooltips" class="self-l
 
 PDF tooltips can be enabled with the CSS property `prince-tooltip` like this:
 
-
+```css
     *[title] { prince-tooltip: attr(title) }
-
+```
 However, please note that tooltips are not a standard PDF feature, and they may only work in Adobe Reader and Adobe Acrobat and may not be visible in other PDF viewers, such as web browsers.
 
 How can I make an element, such as an image or some text, appear on each page of the PDF document? <a href="#faq-everypage" class="self-link"></a>
@@ -102,16 +102,16 @@ You can specify `break-before:left | right` on the root element of the document.
 
 CSS
 
-
+```
     body[start=even] {
       break-before:left;
     }
-
+```
 HTML
 
-
+```html
     <body start="even" startpage="28">
-
+```
 Does Prince support JavaScript? <a href="#faq-js" class="self-link"></a>
 
 Yes, Prince supports JavaScript - remember to enable it with the [`--javascript`](command-line.md#cl-javascript) command-line option (see [Applying JavaScript in Prince](apply-javascript.md#applying-javascript)). However, there are some limitations: Prince produces printed documents, and interactive events make no sense in this context. Also, modifications of the document after layout has finished are not possible. See: [Scripting](javascript.md#javascript).
@@ -128,7 +128,7 @@ To apply it to HTML files, the XML input format needs to be specified with the [
 
 Another option in HTML is to use the `iframe` element:
 
-
+```html
     <style>
     @page {
       @bottom {
@@ -142,7 +142,7 @@ Another option in HTML is to use the `iframe` element:
     </style>
     <iframe class="footer" src="http://www.google.com"></iframe>
     <p>Normal content</p>
-
+```
 However there may be some subtleties required to get the correct size and styling of content within iframe elements.
 
 Yet another option would be to use JavaScript to issue an XMLHttpRequest, parse the text of the response with DOMParser, then extract the elements and copy them into the main document. However, it will be tricky to support nested styles this way.

@@ -29,24 +29,27 @@ To make it more likely for Prince for Books to produce this effect, one might pu
 
 HTML
 
-
+```html
     <h1>The <span>fulfilment <span>of the law</span></span>
       <span>and <span>of the prophets</span></span></h1>
-
+```
 CSS
 
-
+```css
     span {
       prince-wrap-inside: phrase;
     }
-
+```
 The example would produce a title line like this:
 
-The fulfilment of the law and of the prophets
+<p style="text-align: center">The fulfilment of the law<br/>
+and of the prophets</p>
 
 If however the final available space were narrower than the required space, Prince might instead format as:
 
-The fulfilment of the law and of the prophets
+<p style="text-align: center">The fulfilment<br/>
+of the law and<br/>
+of the prophets</p>
 
 ### The property `prince-line-break-choices`
 
@@ -72,18 +75,18 @@ The keyword `fast` can be used for quick web-browers–style line breaking, usef
 
 The base stylesheet that Prince for Books applies to all HTML documents (i.e. the "user-agent style sheet", in CSS terminology) includes the ruleset
 
-
+```
     h1, h2, h3, h4, h5, h6 {
         prince-line-break-choices: heading;
     }
-
+```
 but HTML semantics alone do not distinguish content where the more extreme `prince-line-break-choices: title` could be appropriate. Doing so requires additional conventions, such as those given in the [HTMLBook](https://oreillymedia.github.io/HTMLBook/) specification.
 
 The below example applies `title-lookahead` line-breaking to the book title, chapter titles and part titles, while applying `heading-lookahead` line-breaking to subtitles.
 
 CSS
 
-
+```
     body[data-type="book"] > h1,
     body[data-type="book"] > heading > h1,
     section[data-type="chapter"] > h1,
@@ -96,7 +99,7 @@ CSS
     heading > * {
         prince-line-break-choices: heading-lookahead;
     }
-
+```
 HTMLBook uses a slightly non-standard representation of subtitles: not using `hgroup`, and using `p` elements rather than the heading elements `h1` to `h6`.
 
 ### The property `prince-forced-breaks`
@@ -107,10 +110,10 @@ The `br` element would usually create a visually forced break, treating that lin
 
 CSS
 
-
+```
     lb { white-space: pre; }
     lb::before { content: "\A"; prince-forced-breaks: full; }
-
+```
 This example shows the styling for an `<lb />` element, which can be added to force breaks. Of course we first need to instruct Prince to respect "preserved newlines" - we do this with the `white-space` property.
 
 Literally using the element name `lb` in the html namespace would make the document not valid HTML. The element could be either in a non-HTML namespace, or one could use a custom element to be inserted with JavaScript.
@@ -119,16 +122,16 @@ If multiple editions are to produced from a single source document, then a varia
 
 CSS
 
-
+```
     lb[ed ~= "a"]::before { ... }
-
+```
 in the stylesheet for edition A (and similarly for the stylesheets of other editions), and
 
 HTML
 
-
+```html
     <lb ed="a c" />
-
+```
 in the document where a line break should be forced only in editions A and C.
 
 The difference is particularly marked in justified text, where lines ended by `prince-forced-breaks: full` are subject to justification like most other lines.
@@ -166,10 +169,10 @@ Alternatives to adjusting a paragraph length include adding extra space around a
 
 Another feature in Prince for Books are the "fractional widows": the `widows` property is allowed a value expressed as percentage.
 
-
+```
     p {
       widows: 50%;
     }
-
+```
 This indicates indicates that one widow line is accepted, as long as the line width is at least the given percentage value of the available page width, to avoid the worst case of having a widow line that is only one or two words long.
 

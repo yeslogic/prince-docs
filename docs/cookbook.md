@@ -28,32 +28,32 @@ The transformation into a proper table of contents happens with CSS when Prince 
 
 This is achieved automatically with the `target-counter()` function in the `content` property, using the `page` counter. The URL is being automatically fetched from the `href` attribute of the hyperlink element `<a>`.
 
-
+```
     #toc a:after {
       content: target-counter(attr(href), page);
     }
-
+```
 The page numbers are best styled right-aligned, while the link texts are left-aligned. An easy way to achieve this is with the `leader()` function: it defines a literal string, which expands to fill the available space on the line like justified text, by repeating the string as many times as necessary. The complete CSS entry for a simple table of contents entry thus looks like this:
 
-
+```
     #toc a:after {
       content: leader('.') target-counter(attr(href), page);
     }
-
+```
 ### Simple Table of Contents
 
 Our [example document](http://css4.pub/2018/toc/index.html) generates at Table of Contents (TOC) by way of JavaScript. You can easily test it by running Prince from the command line:
 
-
+```bash
     $ prince --javascript http://css4.pub/2018/toc -o toc.pdf
-
+```
 A [second example document](http://css4.pub/2017/musick/musick.html) generates at ToC by way of JavaScript and, even more impressively, the script also prints out an index which is added to the end of the document, to be used when running Prince a second time (see [The "Two-Pass" Solution](two-pass.md#two-pass)). Notice how subsequent page numbers in the index are folded into a range. To produce this document, try running these commands from a Linux command-line:
 
-
+```bash
     $ wget http://css4.pub/2017/musick/musick.html -o foo.html;
     $ prince --javascript foo.html >>foo.html;
     $ prince --javascript foo.html -o musick.pdf;
-
+```
 You can view the resulting PDF [here](http://css4.pub/2017/musick/musick.pdf).
 
 ### Multifile Table of Contents
@@ -62,19 +62,19 @@ For longer books, it makes sense to split chapters into separate files. Generati
 
 To try this for yourself, first fetch these five sample files into your own file system, e.g. by running:
 
-
+```bash
     $ wget http://css4.pub/2018/multifile-toc/toc.js;
     $ wget http://css4.pub/2018/multifile-toc/toc.html;
     $ wget http://css4.pub/2018/multifile-toc/ch1.html;
     $ wget http://css4.pub/2018/multifile-toc/ch2.html;
     $ wget http://css4.pub/2018/multifile-toc/style.css;
-
+```
 Then, run Prince twice:
 
-
+```bash
     $ prince --javascript --script=toc.js ch1.html ch2.html -o book.pdf >> toc.html;
     $ prince toc.html ch1.html ch2.html -o book.pdf;
-
+```
 You can view the resulting PDF [here](http://css4.pub/2018/multifile-toc/book.pdf).
 
 
@@ -101,11 +101,11 @@ The basic unit for paged media in print is the page, organized in page spreads: 
 
 You have control on wether to place specific selected and named pages right or left, or *recto* or *verso* with the help of `break-before` and `break-after`, each of which takes the values `recto` and `verso` in addition to the traditional values.
 
-
+```
     h1 {
         break-before: recto;
     }
-
+```
 This rule places an `h1` element always at the beginning of a *recto* page.
 
 Pages can also be specifically targeted and styled with the [`@page`](at-rules.md#at-page) at-rule pseudo-classes `:right` and `:left`, or `:recto` and `:verso`.
@@ -114,7 +114,7 @@ Pages can also be specifically targeted and styled with the [`@page`](at-rules.m
 
 Using the values `right` and `left` when placing elements on pages symmetrically arranged around the central gutter is possible, but rather cumbersome, since their placement depends on the placement of the page on a spread. Prince offers the extensions `inside` and `outside` to ease the task.
 
-
+```
     p {
         margin: 2em;
     }
@@ -124,24 +124,24 @@ Using the values `right` and `left` when placing elements on pages symmetrically
     @page:right {
         margin-left: 3em;
     }
-
+```
 This example creates a bigger margin around the central gutter.
 
 So, when you start thinking about the layout box model, Prince offers the properties `margin-inside` and `margin-outside` to help styling.
 
-
+```
     p { 
         margin: 2em;
         margin-inside: 3em;
     }
-
+```
 This example creates a bigger margin around the central gutter, like the previous one - albeit in a shorter way.
 
 Floats are particularly sensitive to the placement on the page with regards to whether it is a left-facing or right-facing page. Prince extends the `float` property (and the property `clear`) with the values `inside` and `outside`. For details please see the chapter [Floats](floats.md#floats).
 
 On a paragraph level, the properties `text-align` and `text-align-last` similarly take the keywords `inside` and `outside` to help achieving a smooth layout.
 
-
+```
     @page:verso {
         @top-left { content: counter(page) }
         @top-right { content: string(book-title) }
@@ -161,7 +161,7 @@ On a paragraph level, the properties `text-align` and `text-align-last` similarl
     img {
         float: inside;
     }
-
+```
 This style snippet could be part of the stylesheet for a little booklet - it displays the page number in the upper outside corners, the book title in the upper inside of the left, or *verso* page, and the chapter title in the upper inside of the right, or *recto* page. Chapter headings are aligned to the outside of the page spreads, while any image in the book is floated close to the central gutter.
 
 
@@ -182,13 +182,13 @@ Tables can also be provided with a table caption by using the `caption` HTML ele
 
 When a table spans across more than one page, the `prince-caption-page` property determines whether table captions will be displayed on the first page of a table, or only on the following pages, or repeated on every page that a table appears on. See also [Fancy Table Captions](fancy-table-captions.md#fancy-table-captions).
 
-
+```
     table + p {
         display: table-caption;
         caption-side: bottom;
         prince-caption-page: following;
     }
-
+```
 
 Fancy Table Captions
 --------------------
@@ -210,7 +210,7 @@ The paragraph functioning as a table caption can be hidden in browsers by using 
 
 HTML
 
-
+```html
     <table>
       <caption>Demo table</caption>
       <tr>
@@ -227,10 +227,10 @@ HTML
       </tr>
     </table>
     <p>Demo table (cont.)</p>
-
+```
 CSS
 
-
+```
     caption {
         caption-side: bottom;
         prince-caption-page: first;
@@ -240,7 +240,7 @@ CSS
         caption-side: bottom;
         prince-caption-page: following;
     }
-
+```
 
 Page Headers and Footers
 ------------------------
@@ -258,26 +258,26 @@ Each page is structured in [Page regions](paged.md#page-regions) - most page con
 
 A typical case is page numbering, which can easily be obtained with [Generated Content](gen-content.md#gen-content): the current page number can be printed in a page region with the `content` property. (See also [Page Numbering](page-numbering.md#page-numbering)).
 
-
+```
     @page {
         @bottom {
             content: counter(page)
         }
     }
-
+```
 By using [Named pages](paged.md#named-pages), you can style the page numbering of the Preface with roman numbers and the main pages with arabic numbers - see the example [Restarting page numbering](paged.md#ex-restart-page-numbers).
 
 The title of the book, or the current chapter, can be copyied into the page regions by using the [string-set](doc-refs.md#prop-string-set) property. For details, please see the [Copying content from the document](paged.md#content-copying-text) chapter.
 
 CSS
 
-
+```
     @page {
         @top { content: string(doctitle) }
     }
 
     h1 { string-set: doctitle content() }
-
+```
 The @page rule specifies that the top-center page region will contain the text content of the document title copied from the text content of the `h1` element in the document.
 
 If some special formatting of the text in the margin box is required, copying the text will not suffice - you need to remove an element from the natural page flow to place it in the margin box. See [Taking elements from the document](paged.md#content-taking-elements) for details.
@@ -300,25 +300,23 @@ A peculiar and interesting use of page headers happens in dictionaries: typicall
 
 The `string-set` property is applied to each definition in the dictionary (the **b:first-child** from the following example), and then the `first` and `last` page policy values are use to select the relevant definition to display in the page header.
 
-
+```
     @page {
       @top-left { content: string(term, first);}
       @top-right { content: string(term, last);}
     }
-
     .chapter p b:first-child { string-set: term content() }  /* pick up term to be used in running header */
-
+```
 This is the crucial set of rules for the [Dictionary](sample-docs#dictionary) sample.
 
 The dictionary sample is furthermore noticeable for its use of the optional page policy keyword `first-except`: the current letter of the alphabet is displayed on each page heading, *except* for the page on which the letter appears in the body of the page, starting the new section.
 
-
+```
     @page {
       @top-center { content: string(letter, first-except);}
     }
-
     .chapter header { string-set: letter content() }
-
+```
 
 Page Numbering
 --------------
@@ -339,16 +337,16 @@ To use a counter, it usually first needs to be initialized with the `counter-res
 
 Page counters work a bit more simple and usually don't need to be explicitly initialized or incremented.
 
-
+```
     @page {
       @bottom {
         content: counter(page);
       }
     }
-
+```
 However, if you want to restart the numbering after the Preface of your book, you need to name the pages (see [Named pages](paged.md#named-pages)) and the counter needs to be re-initialized with the main content. See also the example [Restarting page numbering](paged.md#ex-restart-page-numbers).
 
-
+```css
     .preface {
       page: preface;
       counter-reset: page 1;
@@ -358,7 +356,6 @@ However, if you want to restart the numbering after the Preface of your book, yo
         content: counter(page, lower-roman);
       }
     }
-
     .main {
       page: main;
       counter-reset: page 1;
@@ -368,36 +365,36 @@ However, if you want to restart the numbering after the Preface of your book, yo
         content: counter(page);
       }
     }
-
+```
 The page numbers can be referenced with the `target-counter()` function. This provides a convenient mechanism when you want to print out a page reference that on an interactive medium, such as can be seen in a web browser, might be expressed with a hyperlink.
 
 CSS
 
-
+```
     a[href]::after {
         content: " [See page " target-counter(attr(href), page) "]";
     }
-
+```
 This will add a cross-reference after every link with the correct page number determined automatically. For example: \[See page 17\].
 
 If you are referencing the pages in the Preface, marked with lower roman-style numbers, you need to re-specify the counter style for the target counter - the style is not automatically taken over.
 
 CSS
 
-
+```
     a[href|="#preface"]::after {
         content: " [See page " target-counter(attr(href), page, lower-roman) "]";
     }
-
+```
 In some documents, particularly those that are unbound such as office documents, it can be useful to show the total number of pages on each page. The total number of pages can be accessed by using the `pages` counter. This is a pre-defined counter that is fixed to the total number of pages in the document.
 
-
+```
     @page {
       @bottom {
         content: "Page " counter(page) " of " counter(pages);
       }
     }
-
+```
 This rule will generate page footers such as "Page 1 of 89".
 
 
@@ -421,9 +418,9 @@ To achieve this, the values `prince-column-footnote` or `prince-column-inline-fo
 
 The value `prince-column-footnote` transforms the element into a column footnote: it creates a footnote call in the place where it appears in its natural flow, and moves the element to the bottom of the column. The footnote marker is placed outside of the block of the footnote. With the value `prince-column-inline-footnote`, the footnote marker is placed inside of the block of the footnote.
 
-
+```
     float: prince-column-footnote
-
+```
 
 Multiple Footnotes
 ------------------
@@ -443,26 +440,26 @@ In some cases it might happen that you want to point several footnote calls at t
 
 First we create our regular footnotes - the only extra step we need to do, is to provide each footnote with a unique ID.
 
-
+```html
     <p>
     This paragraph has a footnote.<span class="fn" id="fn1">First footnote.</span>
     </p>
-
+```
 When another foonote call needs to be pointing at this, already existing footnote, we have to create it manually by adding a link to this footnote's ID.
 
-
+```html
     <p>
     This paragraph refers to the first footnote.<a class="rfn" href="#fn1"></a>
     </p>
-
+```
 This footnote call will be created by using the generated content function `target-counter()` referencing the footnote counter.
 
-
+```
     content: target-counter(attr(href), footnote);
-
+```
 When creating regular footnotes, Prince automatically takes care of the styling of the footnote calls, but the manually created ones need to be explicitly styled. The following are the default rules that style a footnote call - here shown with all the rules necessary for creating all the footnote calls:
 
-
+```
     .fn {
         float: footnote;
     }
@@ -475,7 +472,7 @@ When creating regular footnotes, Prince automatically takes care of the styling 
         line-height: none;
         font-size: 83%;
     }
-
+```
 
 Sidenotes
 ---------
@@ -502,7 +499,7 @@ We shall see each approach separately.
 
 A straightforward approach for sidenotes is to position the footnote area to the desired place, instead of leaving it in its default position.
 
-
+```
     @page {
         @footnote {
             position: absolute;
@@ -510,7 +507,7 @@ A straightforward approach for sidenotes is to position the footnote area to the
             width: 60px;
         }
     }
-
+```
 This rule moves the footnotes area to the left side of a page.
 
 The advantage of this approach is that footnote calls and markers are created automatically (see [Footnote calls](footnotes.md#footnote-calls) and [Footnote markers](footnotes.md#footnote-markers)).
@@ -521,13 +518,13 @@ The biggest disadvantage is that the footnotes are not placed to the side of the
 
 The footnote text is floated to the left (or right) and moved out of the way with negative margins.
 
-
+```
     .footnote {
       float: left;
       max-width: 60px;
       margin-left: -90px;
     }
-
+```
 This rule floats the footnotes to the left side of a page.
 
 The advantage is to position the footnotes vertically aligned with the footnote calls.
@@ -582,46 +579,46 @@ Used with generated content after a hyperlink, it will add a cross-reference wit
 
 CSS
 
-
+```
     a[href]::after {
         content: " [See page " target-counter(attr(href), page) "]"
     }
-
+```
 This adds something like "\[See page 17\]" after each link. Note the use of the function `attr()` inside the `target-counter()` function.
 
 It can also take an optional counter style, similar to the normal `counter()` function.
 
 CSS
 
-
+```
     a[href]::after {
         content: " [See chapter "
                  target-counter(attr(href), chapter, upper-roman)
                  "]"
     }
-
+```
 This will add a cross-reference after every link with the correct chapter number determined automatically and displayed using roman numerals. For example: "\[See chapter IV\]".
 
 The `target-content()` function can be used to reference the text content of the linked element.
 
 CSS
 
-
+```
     a[href]::after {
         content: " [See '" target-content(attr(href)) "']"
     }
-
+```
 This will add a cross-reference after every link that includes the text of the element being linked to, such as a chapter title. For example: "\[See 'Introduction'\]".
 
 The `attr()` function, used in the previous examples inside the other functions, can also be used on its own to insert the URL of a remote resource.
 
 CSS
 
-
+```
     a[href]::after {
         content: " [Located at '" attr(href) "']";
     }
-
+```
 This will add the URL after every link. For example: "\[Located at 'http://www.princexml.com/'\]".
 
 
@@ -647,11 +644,11 @@ Two more keywords perform more obscure tasks that might be required in very spec
 
 Several of the values can be combined, to perform more than one magic on images - for details please check the grammar of the `prince-image-magic` property.
 
-
+```
     img {
         prince-image-magic: recompress-jpeg(50%) convert-to-jpeg(50%) snap-to-integer-coords;
     }
-
+```
 This example recompresses all JPEG images to 50%, converts any non-JPEG images to JPEG with the same quality, and snaps them all to integer coordinates to avoid blurring in some PDF viewers.
 
 
@@ -752,24 +749,24 @@ The renaming of the file is not essential - the content, not the extension count
 
 Prince determines which language to use for hyphenation with the help of the `:lang()` CSS selector, which in turn checks the `lang` or `xml:lang` attributes of the document:
 
-
+```
     :lang(en-GB) {
         prince-hyphenate-patterns: url("hyph-en-gb.pat");
     }
-
-
+```
+```html
     <span lang="en-GB">supercalifragilisticexpialidocious</span>
-
+```
 Alternatively, link directly to the required remote hyphenation file:
 
-
+```
     :lang(en-GB) {
         prince-hyphenate-patterns: url("http://tug.ctan.org/tex-archive/language/hyph-utf8/tex/generic/hyph-utf8/patterns/txt/hyph-en-gb.pat.txt");
     }
-
-
+```
+```html
     <span lang="en-GB">supercalifragilisticexpialidocious</span>
-
+```
 
 Typographic Ligatures
 ---------------------
@@ -789,11 +786,11 @@ Prince automatically enables ligatures declared by the OpenType fonts with the `
 
 Other special ligatures need to be explicitly enabled in Prince to take effect. This is achieved by using the `font-variant` CSS property with the `prince-opentype()` function (see [CSS Functional Expressions](functions.md#css-functions)). Care must be taken in which order the features are enabled! And please note that enabling one feature will disable all the default features. To see which OpenType features are enabled by default, see the [OpenType Features in Prince](fonts.md#opentype-features) section.
 
-
+```
     @page {
         font-variant: prince-opentype(dlig, liga);
     }
-
+```
 Unlike other ligature features, the `clig` feature specifies the context in which the ligature is recommended. "Contextual ligatures" are important in some script designs.
 
 The `dlig` feature covers the "discretionary ligatures" which may be used for special effects.
@@ -821,7 +818,7 @@ When producing a PDF, it might be desirable to include a watermark, visible on a
 
 In order to repeat it on all pages, the watermark needs to be placed in a [`@page`](at-rules.md#at-page) at-rule. We shall place it in the page region `@prince-overlay` (see [Page regions](paged.md#page-regions)) and create the watermark with generated content (see [Generated content in page regions](paged.md#page-gen-content)):
 
-
+```
     @page {
        @prince-overlay {
           color: rgba(0,0,0,0.8);
@@ -829,24 +826,24 @@ In order to repeat it on all pages, the watermark needs to be placed in a [`@pag
           font-size: 20pt;
        }
     }
-
+```
 The overlay can be styled in all possible ways and it can be aligned in other places than middle center:
 
-
+```
     @page {
        @prince-overlay {
           content: "Watermark";
           vertical-align: top;
        }
     }
-
+```
 Currently it is only possible to have one overlay, but you could flow an entire element having multiple individually positioned contents (see [Taking elements from the document](paged.md#content-taking-elements)).
 
 The styled watermark can be saved into a `watermark.css` file, which will be called when generating the document:
 
-
+```bash
     prince --style=watermark.css myfile.md -o myfile_with_watermark.pdf
-
+```
 
 Rotating content
 ----------------
@@ -867,7 +864,7 @@ Printing a big table sideways
 ![Image of a large table printed sideways so that its width fits along the page's length.](assets/samples/rotate-body-2.bw.png)
 This table is too wide to fit on the paper, so we use `prince-rotate-body` in a *named page* to print it sideways. Download the [PDF](assets/samples/rotate-body.pdf) or the [HTML](assets/samples/rotate-body.html).
 
-
+```
     @page big_table {
         prince-rotate-body: landscape;
         prince-shrink-to-fit: auto;
@@ -876,7 +873,7 @@ This table is too wide to fit on the paper, so we use `prince-rotate-body` in a 
     table.big {
         page: big_table
     }
-
+```
 The `prince-rotate-body` property works within [`@page`](at-rules.md#at-page) rules only, so this example uses a named page to place the table on a page of its own. Then the [`@page`](at-rules.md#at-page) rule for `big_table` pages uses the `prince-rotate-body` property to tell prince that the body of the page, but not the headers and footers, should be rotated. The table in this example is still too wide so we also use the `prince-shrink-to-fit` property to make it a little smaller.
 
 If you download the full example ([HTML](assets/samples/rotate-body.html) or [PDF](assets/samples/rotate-body.pdf)) you will see that the paragraphs before and after the table are not placed on the same page. This is because they do not belong to the same named page (see [Named pages](paged.md#named-pages)). However on page four there are two tables, both tables belong to the same named page and therefore Prince will try to place them together on the same page.
@@ -894,16 +891,16 @@ There are cases, when preparing a table with a large amount of content, that you
 
 The rotation is achieved with `transform: rotate()`. It could be applied directly to the `th` element, but it is impossible to configure the width of the column as we wish it. We shall thus nest a `div` and a `span` element:
 
-
+```html
     <th class="rotate">
       <div>
         <span>Column header 1</span>
       </div>
     </th>
-
+```
 The rotation will happen with the following CSS code:
 
-
+```
     th.rotate {
       /* Make sure the th is high enough, */
       height: 150px;
@@ -925,17 +922,17 @@ The rotation will happen with the following CSS code:
       border-bottom: 1px solid #ccc;
       padding: 5px 10px;
     }
-
+```
 A more basic means for rotation, allowing for less fine-tuning, is the use of the `writing-mode` CSS property. This option only allows rotation by 90°. It can be very handy when only some table cells with too much content are rotated, so as not to use too much horizontal space. You cannot rotate the table cell directly, so you have to nest one `span` element inside - and then you style it:
 
-
+```
     td.rotate > span {
       /* Rotate the content */
       writing-mode: vertical-rl;
       /* Optionally, you can force the table cell's content not to wrap */
       white-space: nowrap;
     }
-
+```
 For a different approach to rotating content, see the section on [Printing wide content sideways](rotating.md#wide-content-sideways).
 
 
@@ -965,11 +962,11 @@ Now the document would be ready for generating the PDF - Prince is run a second 
 
 Here is a minimalistic two-pass solution where the document is adorned with a ToC and index:
 
-
+```bash
     wget http://www.princexml.com/howcome/2015/index/musick.html -O musick.html;
       prince --javascript musick.html >>musick.html;
       prince --javascript musick.html -o musick.pdf
-
+```
 Another use of the two-pass solution is to create changebars - see the description [here](http://www.princexml.com/forum/topic/3516/changebars).
 
 
@@ -990,9 +987,9 @@ Additionally, each file needs a few more files to display correctly - including 
 
 To create a PDF version of the documentation we need to run just one simple command line:
 
-
+```shell
     prince --javascript http://www.princexml.com/doc/ http://www.princexml.com/doc-prince/ http://www.princexml.com/doc-refs/ -o prince-documentation.pdf
-
+```
 This command produces the documentation in PDF format, including a cover page, the [User Guide](doc-prince.html) and the [References](doc-refs.html) section.
 
 If you are using the Prince GUI on Windows, you need to paste the three URLs for the cover page, the User Guide and the References by selecting the option "Add URL" three times. Next, you select the checkbox "Merge all documents into a single PDF file" and select a location where to save this file to. Make sure that the checkbox for "Enable Document Scripts" is checked, and click on the "Convert" button to convert the documents into your documentation in PDF format.

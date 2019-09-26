@@ -4,12 +4,19 @@ title: Command-line Reference
 
 Prince may be called from the command-line with the following arguments:
 
-`prince OPTIONS     FILES` \[`-o` <span class="replaceable">PDF</span>\]
+```bash
+    $ prince OPTIONS
+        FILES
+        [-o PDF]
+```
 
 Please note that on Windows, Prince can be called from the command-line by running the `prince.exe` file found in the `Prince\engine\bin` folder of the Prince installation:
 
-`"C:\Program Files (x86)\Prince\engine\bin\prince.exe" OPTIONS     FILES` \[`-o` <span class="replaceable">PDF</span>\]
-
+```powershell
+    "C:\Program Files (x86)\Prince\engine\bin\prince.exe" OPTIONS
+        FILES
+        [-o PDF]
+```
 Examples
 --------
 

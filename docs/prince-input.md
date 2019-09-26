@@ -35,32 +35,32 @@ Default style sheets
 
 Style sheets may import other style sheets using [`@import`](at-rules.md#at-import) rules. These rules must occur before any other rules or declarations in the style sheet, and have the effect of importing all the rules and declarations from the specified style sheet. See [CSS At-rules](at-rules.md#css-atrules).
 
-
+```
     @import "base.css";
     @import "custom.css";
 
     /* more declarations */
-
+```
 ### Conflicting Declarations
 
 Multiple style sheets can be applied and in some cases declarations from different style sheets may conflict. For example, one style sheet might specify that heading elements should use the Times New Roman font, while a different style sheet might specify that heading elements should use the Arial font:
 
 First style sheet:
 
-
+```
     h1 {
         font-family: "Times New Roman";
         font-size: 24pt;
     }
-
+```
 Second style sheet:
 
-
+```
     h1 {
         font-family: "Arial";
         color: red
     }
-
+```
 In the above example, the `font-family` declarations conflict, and only one can possibly be applied. However, the `font-size` and `color` declarations do not conflict, and thus both will be applied to the `h1` element.
 
 ### Priority Determination
@@ -152,7 +152,7 @@ Please note that XInclude is disabled by default, and can be enabled with the [`
 
 Here is an example of a book written in XHTML in which each chapter has been placed in a separate XML document for convenient editing and then included in the main document using XInclude:
 
-
+```html
     <html xmlns:xi="http://www.w3.org/2001/XInclude">
     <head>
     <title>Book Title</title>
@@ -163,28 +163,28 @@ Here is an example of a book written in XHTML in which each chapter has been pla
     <xi:include href="chap3.xml"/>
     </body>
     </html>
-
+```
 (Note that the XInclude namespace was defined on the root element and bound to the `xi` prefix to save space by avoiding the need to declare the namespace on every inclusion).
 
 #### Including text files
 
 XInclude can also be used to include text files into XML documents:
 
-
+```xml
     <xi:include href="file.txt" parse="text"/>
-
+```
 This is a convenient way of including files containing arbitrary non-XML text, such as emails, database reports or program source code. It also allows the inclusion of external XML content as "unparsed text", as if all the markup had been explicitly escaped with character entities or placed in a CDATA section.
 
 #### Fallback
 
 It is possible to specify fallback content that should be used if an included file cannot be loaded. The fallback content can be arbitrary XML and may even contain additional inclusions.
 
-
+```xml
     <xi:include href="report.md">
         <xi:fallback>
         <p>No report is available</p>
         </xi:fallback>
     </xi:include>
-
+```
 If the `report.md` file cannot be loaded then the paragraph saying "No report is available" will be included in the document instead.
 

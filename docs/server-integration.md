@@ -60,7 +60,7 @@ Please note that document scripts need to first be enabled with `prn.SetJavaScri
 
 The following code sample demonstrates how to convert a single HTML document into a PDF file:
 
-
+```cs
     // instantiate Prince by specifying the full path to the engine executable
     Prince prn = new Prince("C:\\Program Files\\Prince\\Engine\\bin\\prince.exe");
 
@@ -77,14 +77,14 @@ The following code sample demonstrates how to convert a single HTML document int
 
     // convert a HTML document into a PDF file
     prn.Convert("C:\\docs\\test1.html", "C:\\docs\\pdf\\test1.pdf");
-
+```
 To combine multiple HTML documents into a single PDF file, call `ConvertMultiple`:
 
-
+```cs
     String[] doc_array = {"C:\\docs\\test1.html", "C:\\docs\\test2.html"};
 
     prn.ConvertMultiple(doc_array, "C:\\docs\\pdf\\merged.pdf");
-
+```
 #### Using Prince with VB.NET
 
 To use the Prince [The C\# / .Net Wrapper](dotnet.md#csharp) in VB.NET, add a reference to the DLL to your Visual Studio project. Alternatively, you can include the Prince.vb source file directly if you prefer.
@@ -95,7 +95,7 @@ Please note that document scripts need to first be enabled with `prn.SetJavaScri
 
 The following code sample demonstrates how to convert a single HTML document into a PDF file:
 
-
+```vbnet
     ' instantiate Prince by specifying the full path to the engine executable
     Dim prn As Prince
 
@@ -114,16 +114,16 @@ The following code sample demonstrates how to convert a single HTML document int
 
     ' convert a HTML document into a PDF file
     prn.Convert("C:\docs\test1.html", "C:\docs\pdf\test1.pdf")
-
+```
 To combine multiple HTML documents into a single PDF file, call `ConvertMultiple`:
 
-
+```vbnet
     Dim doc_array() As String
 
     doc_array = {"C:\docs\test1.html", "C:\docs\test2.html"}
 
     prn.ConvertMultiple(doc_array, "C:\docs\pdf\merged.pdf")
-
+```
 
 ### The PHP5 Wrapper
 
@@ -152,16 +152,16 @@ Prince can be called from ASP pages using the [ActiveX/COM interface](asp.md#act
 
 This interface is provided in the form of an ActiveX DLL file that needs to be registered in the Windows registry using REGSVR32.EXE:
 
-
+```powershell
     regsvr32 C:\Prince\PRINCE.dll
-
+```
 In order to call Prince from an ASP page, we need to create a COM object using the CreateObject server method. Once the COM object is created, you can use the COM interface methods to perform the tasks.
 
 Please note that document scripts need to first be enabled with `prn.SetJavaScript(true)` - external scripts added with `AddScript` will always be run.
 
 The following is some sample code for illustration:
 
-
+```
     <%
     Dim pr
     Dim res
@@ -179,7 +179,7 @@ The following is some sample code for illustration:
         res = "Unsuccessful"
     End If
     %>
-
+```
 
 #### Using Prince with ActiveX / COM / Visual Basic
 
@@ -210,7 +210,7 @@ Place the `Prince.jar` file in a directory of your choice then start ColdFusion 
 
 If this is done correctly, ColdFusion should know where to find the Prince Java interface class. The following is some sample CFML code showing how to use it:
 
-
+```
     <cfscript>
        pr = CreateObject("java", "com.princexml.Prince");
 
@@ -226,7 +226,7 @@ If this is done correctly, ColdFusion should know where to find the Prince Java 
        else
           WriteOutput("Unsuccessful");
     </cfscript>
-
+```
 If on Linux, substitute the paths with the appropriate UNIX style paths.
 
 #### Using ActiveX/COM
@@ -235,14 +235,14 @@ If you are running ColdFusion on Windows, you can also call Prince using the [Ac
 
 This interface is provided in the form of an ActiveX DLL file that needs to be registered in the Windows registry using REGSVR32.EXE:
 
-
+```powershell
     regsvr32 C:\Prince\PRINCE.dll
-
+```
 In order to call Prince from ColdFusion, we need to create a COM object using the CreateObject function that is available in CFML scripting (you can also use the `<cfobject ...>` tag if you prefer). Once the COM object is created, you can use the COM interface methods to perform the tasks.
 
 The following is some sample code for illustration:
 
-
+```
     <cfscript>
        pr = CreateObject("Com", "PrinceCom.Prince", "local");
 
@@ -260,7 +260,7 @@ The following is some sample code for illustration:
 
        ReleaseComObject(pr);
     </cfscript>
-
+```
 Please read the README.TXT file that comes with the ActiveX DLL file for more details of the COM interface methods.
 
 
@@ -268,14 +268,14 @@ Please read the README.TXT file that comes with the ActiveX DLL file for more de
 
 Prince can be called from Python using the [command-line interface](command-line.md#command-line), like this:
 
-
+```python
     import subprocess
 
     subprocess.call(["prince","foo.xml","bar.pdf"]);
-
+```
 It is possible to write XML to Prince directly from the Python script rather than have Prince read it from an external file:
 
-
+```python
     import subprocess
 
     p = Popen(["prince","-","out.pdf"], stdin=subprocess.PIPE, stdout=subprocess.PIPE)
@@ -286,12 +286,12 @@ It is possible to write XML to Prince directly from the Python script rather tha
       # Ugh.
     else :
       pdf = outs
-
+```
 The first filename argument of "-" instructs Prince to read the XML from its standard input stream rather than from a file.
 
 For Python CGI scripts, the PDF output can be written to the standard output stream so that it is returned to the browser:
 
-
+```python
     import subprocess
 
     p = Popen(["prince","-"], stdin=subprocess.PIPE, stdout=subprocess.PIPE)
@@ -302,12 +302,12 @@ For Python CGI scripts, the PDF output can be written to the standard output str
       # Ugh.
     else :
       pdf = outs
-
+```
 Because the second filename argument has been omitted and the XML is being read from standard input, the PDF will be written to standard output. Be careful to redirect the output of this script if you try running it from the terminal.
 
 Alternatively, it is possible for the Python script to read the PDF output directly rather than have Prince save it to an external file:
 
-
+```python
     import subprocess
 
     p = Popen(["prince","-"], stdin=subprocess.PIPE, stdout=subprocess.PIPE)
@@ -320,41 +320,41 @@ Alternatively, it is possible for the Python script to read the PDF output direc
       pdf = outs
 
     print("PDF is "+str(len(pdf))+" bytes in size")
-
+```
 
 ### Using Prince with Perl
 
 Prince can be called from Perl using the [command-line interface](command-line.md#command-line), like this:
 
-
+```perl
     system("prince foo.xml bar.pdf");
-
+```
 It is possible to write XML to Prince directly from the Perl script rather than have Prince read it from an external file:
 
-
+```perl
     open(PRINCE, "| prince - out.pdf");
     print PRINCE "<html><body><h1>Hello, world!</h1></body></html>";
     close(PRINCE);
-
+```
 The first filename argument of "-" instructs Prince to read the XML from its standard input stream rather than from a file.
 
 For Perl CGI scripts, the PDF output can be written to the standard output stream so that it is returned to the browser:
 
-
+```perl
     print "Content-Type: application/pdf\n\n";
     open(PRINCE, "| prince -");
     print PRINCE "<html><body><h1>Hello, world!</h1></body></html>";
     close(PRINCE);
-
+```
 Because the second filename argument has been omitted and the XML is being read from standard input, the PDF will be written to standard output. Be careful to redirect the output of this script if you try running it from the terminal.
 
 Alternatively, it is possible for the Perl script to read the PDF output directly rather than have Prince save it to an external file:
 
-
+```perl
     open(PRINCE, "prince foo.xml - |");
     # ... read PDF output from PRINCE file handle
     close(PRINCE);
-
+```
 
 ### Third-Party Wrappers
 
@@ -426,7 +426,7 @@ The number of `dat` chunks is specified by the `job-resource-count` field in the
 
 The JSON job description has several nested objects with fields corresponding to Prince options:
 
-
+```json
     {
         "input": { <input options> },
         "pdf": { <pdf options> },
@@ -434,12 +434,12 @@ The JSON job description has several nested objects with fields corresponding to
         "raster": { <raster options> },
         "job-resource-count": <int>
     }
-
+```
 The `input options` and `job-resource-count` are mandatory, the rest are optional and will default to the normal values.
 
 The `input options` object includes these fields:
 
-
+```json
     {
         "src": <single URL or list of URLs>,
         "type": <string>,
@@ -453,36 +453,36 @@ The `input options` object includes these fields:
         "xinclude": <bool>,
         "xml-external-entities": <bool>
     }
-
+```
 Only the `src` field is required, the rest can be left as defaults.
 
 Now we can make some simple job descriptions, eg. to convert a single HTML file:
 
-
+```json
     {
         "input": {
             "src": "/path/to/input.html"
         },
         "job-resource-count": 0
     }
-
+```
 This can be sent as a single `job` chunk and Prince will respond with a `pdf` chunk if the conversion succeeded and a `log` chunk.
 
 Or you can convert a HTML document without saving it to a temporary file:
 
-
+```json
     {
         "input": {
             "src": "job-resource:0"
         },
         "job-resource-count": 1
     }
-
+```
 This requires the `job` chunk to be followed by a `dat` chunk that contains the HTML and then Prince will respond as before.
 
 The `pdf options` object includes these fields:
 
-
+```json
     {
         "color-options": "auto" | "use-true-black" | "use-rich-black",
         "embed-fonts": <bool>,
@@ -508,19 +508,19 @@ The `pdf options` object includes these fields:
         "tagged-pdf": "auto" | <bool>,
         "attach": [ <list of attachments> ]
     }
-
+```
 Each attachment is a &lt;url&gt; (string) or an object:
 
-
+```json
     {
         "url": <url>,
         "filename": <string>,
         "description": <string>
     }
-
+```
 The `metadata options` object includes these fields:
 
-
+```json
     {
         "title": <string>,
         "subject": <string>,
@@ -528,15 +528,15 @@ The `metadata options` object includes these fields:
         "keywords": <string>,
         "creator": <string>,
     }
-
+```
 The `raster options` object includes these fields:
 
-
+```json
     {
         "dpi": <integer>,
         "background": "white" | "transparent"
     }
-
+```
 ### Structured Log
 
 `--structured-log=LEVEL`  

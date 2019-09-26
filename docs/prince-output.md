@@ -54,11 +54,11 @@ Object streams are enabled by default, therefore Prince produces files with PDF 
 
 Choosing one profile over another can help producing a PDF file which has the right properties for its intended destination. Each PDF profile places restrictions on the features allowed in a PDF file in order to achieve its aims. Please also see the [Color Management](color-management.md#color-management) section for the impact the PDF profiles have on color management. Prince produces error messages when the restrictions are not respected.
 
-
+```bash
     $ prince foo.md --encrypt --no-embed-fonts --pdf-profile="PDF/A-1b"
     prince: error: PDF/A-1b does not support encryption
     prince: error: PDF/A-1b requires fonts to be embedded
-
+```
 Generally speaking, PDF/A profiles were created with the goal of long-term preservation of the documents (**PDF** for **A**rchiving), while PDF/X profiles were created to address publisher's needs in the graphic arts industry (**PDF** for e**X**change). The PDF/UA profile is a standard for producing accessible electronic documents (**PDF** for **U**niversal **A**ccessibility).
 
 ### PDF/A
@@ -118,110 +118,111 @@ Prince supports a wide range of PDF features, including the following:
 
 Prince supports PDF-internal and -external links. HTML hyperlinks are automatically converted. To make an element in XML, or any arbitrary element, a clickable link, the `prince-link` CSS property is required.
 
-
+```
     xref {
         prince-link: attr( linkend )
     }
-
+```
 The property `prince-pdf-link-type` may be used to control the link type and target, i.e. whether relative links should be embedded in the PDF as web (URL) links or file links (by default they will be resolved against the base URL of the input document) and whether to open the links in the same or a new window. Note however that the optional link target keywords `same-window` and `new-window` only affect links to local PDF files.
 
-
+```
     a[href] {
         prince-pdf-link-type: new-window;
     }
-
+```
 This example is equivalent to `prince-pdf-link-type: auto new-window` and has only effect for links to local files.
 
 Prince also supports the following PDF-specific fragment identifiers, supported by web browsers, and will use them when generating links to local PDF files.
 
-
+```html
     <a href="test.pdf#page=2">...</a>
 
     <a href="test.pdf#nameddest=section1">...</a>
-
+```
 Named destinations (`nameddest`) in PDF files have a similar function to HTML IDs: they can be the target anchors for links from other documents. The property `prince-pdf-destination` is used for creating them.
 
 HTML
 
-
+```html
     <div class="section" data-sectionid="section1">
-
+```
 CSS
 
-
+```css
     div.section {
         prince-pdf-destination: attr( data-sectionid )
     }
-
+```
 In order to link to this section, the following syntax is used:
 
 HTML
 
-
+```html
     <a href="test.pdf#nameddest=section1">...</a>
-
+```
 ### PDF Actions
 
 Prince supports the `pdf-action:` URL scheme for PDF actions. Typical values are `Print`, `GoBack`, `GoForward`, `NextPage`, `PrevPage`, `FirstPage`, `LastPage`.
 
-
+```html
     <a href="pdf-action:Print">Print Document</a>
-
+```
 However, Prince passes the provided values verbatim to the PDF viewer, so the user can supply values that Prince doesn't know about, but the viewer does. Also, these scripts will always be run, unlike JavaScript (see [Applying JavaScript in Prince](apply-javascript.md#applying-javascript)).
 
 Please be advised that this and the following actions and scripts are dependent on the PDF viewer, and in many cases might only work in Adobe Acrobat products.
 
 The property `prince-pdf-open-action` may be used to specify a space-separated list of actions to perform when the PDF file is opened, like eg. popping up the print dialog box automatically, or setting the default zoom level for PDF documents. Any arbitrary identifier can be specified, although these may be PDF viewer specific; Acrobat can take just about any menu item.
 
-
+```css
     @prince-pdf {
         prince-pdf-open-action: zoom(fit-page) print;
     }
-
+```
 In a similar fashion, scripts that will be executed when the PDF file is opened may be included with the `prince-pdf-script` property. A common use case is to activate the "Print" dialog automatically. To achieve the equivalent of the previous example, the following code could be used:
 
-
+```css
     @prince-pdf {
         prince-pdf-script: "this.zoomType = zoomtype.fitP; this.print();"
     }
-
+```
 The property can also take the `url()` function to reference an external JavaScript file.
 
-
+```css
     @prince-pdf {
         prince-pdf-script: url("myscript.js")
     }
-
+```
 Prince offers yet another way to include scripts in a document through a stylesheet: the `prince-pdf-event-scripts` property can be used to include JavaScript code that will be executed in the PDF when printing, saving, and closing the PDF, known as "Document Action" scripts. Just as with the previous property, scripts can either be given inline, or be included from an external file.
 
-
+```css
     @prince-pdf {
         prince-pdf-event-scripts: will-close url("onclose.js"), will-print url("onprint.js");
     }
-
+```
 ### PDF Pages
 
 Prince allows for some degree of control on the pages and the page layout in a PDF file. The CSS property `prince-pdf-page-label` can be used to set the page label that will be displayed in the PDF viewer. It can be used to instruct the PDF viewer to display the page label in the ToC in a particular way.
 
-
+```css
     @page {
         prince-pdf-page-label: counter(page, lower-roman);
     }
+```
 
 The property `prince-pdf-page-mode` can be used to set the default page mode for the PDF file when it is opened. For example, whether the bookmarks panel should be displayed, and whether the viewer should be fullscreen.
 
-
+```css
     @prince-pdf {
         prince-pdf-page-mode: fullscreen;
     }
-
+```
 Also the default page layout for the PDF file when it is opened can be determined with the `prince-pdf-page-layout` property.
 
-
+```css
     @prince-pdf {
         prince-pdf-page-layout: two-column-right;
     }
-
+```
 The values of this property are mapped to PDF page layout options:
 
 <table class="grid">
@@ -276,11 +277,11 @@ Prince also provides two properties to fine-tune the printing of the PDF. The pr
 
 Duplex printing is supported with the CSS property `prince-pdf-duplex`. This property may be used inside the [`@prince-pdf`](at-rules.md#at-prince-pdf) at-rule to set the `Duplex` property in the `PDFViewerPreferences` dictionary. The values `duplex-flip-short-edge` and `duplex-flip-long-edge` tell about how to flip the paper, while the value `simplex` suppresses duplex printing.
 
-
+```css
     @prince-pdf {
         prince-pdf-duplex: duplex-flip-long-edge;
     }
-
+```
 ### PDF Compression
 
 Prince compresses its PDF output to reduce the size of the documents that it produces, but does not create linearized PDF files, as this would increase formatting time and memory requirements. An external program such as Adobe Acrobat or Ghostscript may be used for this purpose if necessary.
@@ -320,14 +321,14 @@ Prince can create PDF bookmarks that link to document content.
 
 PDF bookmarks have numeric levels that place them in a bookmark hierarchy. For example, a bookmark at level 2 can contain nested bookmarks at level 3, or any higher level. The level of a bookmark is controlled using the `prince-bookmark-level` property, shown here being applied to the XHTML heading elements:
 
-
+```
     h1 { prince-bookmark-level: 1 }
     h2 { prince-bookmark-level: 2 }
     h3 { prince-bookmark-level: 3 }
     h4 { prince-bookmark-level: 4 }
     h5 { prince-bookmark-level: 5 }
     h6 { prince-bookmark-level: 6 }
-
+```
 The default value for this property is `none`, which inhibits the creation of a bookmark for the element.
 
 It is possible to control the state of the bookmark, i.e. whether the bookmark is in an `open` or `closed` state, with the `prince-bookmark-state` property. In this way you can close each chapter and hide the subsections for documents that are very long, or you can choose to have a deep bookmark tree.
@@ -338,12 +339,12 @@ PDF bookmarks have textual labels that by default are copied from the text conte
 
 CSS
 
-
+```
     chapter {
         prince-bookmark-level: 1;
         prince-bookmark-label: attr(title)
     }
-
+```
 This property can take any content value, including literal text strings and counters. See [Generated Content Functions](gen-content.md#gen-content-functions).
 
 #### Bookmark targets
@@ -352,10 +353,10 @@ PDF bookmarks are links that display a particular part of the document when acti
 
 CSS
 
-
+```
     bookmark { prince-bookmark-target: url(#intro) }
     bookmark { prince-bookmark-target: attr(href) }
-
+```
 The default value for this property is `self`, referring to the element that generated the bookmark.
 
 
@@ -367,22 +368,22 @@ However, in specific cases it is advisable to fine-tune the PDF tags with the `p
 
 CSS
 
-
+```
     ul.toc {
       prince-pdf-tag-type: TOC;
     }
     .toc li {
       prince-pdf-tag-type: TOCI;
     }
-
+```
 HTML
 
-
+```html
     <ul class="toc">
       <li>First Chapter</li>
       <li>Second Chapter</li>
     </ul>
-
+```
 The possible values are the following PDF tag types:
 
 -   Part
@@ -427,7 +428,7 @@ Prince creates PDF metadata from the content of the XHTML metadata elements. The
 
 XML
 
-
+```xml
     <html>
     <head>
     <title>Cooking with Cabbage</title>
@@ -437,7 +438,7 @@ XML
     <meta name="date" content="2009-04-01"/>
     <meta name="generator" content="MyReportingApp"/>
     </head>
-
+```
 #### XMP Metadata
 
 Additionally, XMP metadata can be added to a PDF file from an XMP file. This file needs to be passed to Prince either via the [`--pdf-xmp`](command-line.md#cl-pdf-xmp) command-line option, the [prince-pdf-xmp](doc-refs.md#prop-prince-pdf-xmp) CSS property, or it can be specified in JavaScript with the [`PDF.xmp()`](js-support.md#window.PDF.xmp) function.

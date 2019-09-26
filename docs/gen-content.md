@@ -70,9 +70,9 @@ The `content` property can be applied to the `::before` and `::after` pseudo-ele
 
 CSS
 
-
+```
     h1::before, h1::after { content: "***" }
-
+```
 This will place three asterisks before and after `h1` elements.
 
 ### Counters and Numbering
@@ -99,7 +99,7 @@ The `counters()` function concatenates counters on different levels, separated w
 
 CSS
 
-
+```
     div.example1 { counter-reset: h3 h4 }
     div.example1 h3 { counter-increment: h3 }
     div.example1 h4 { counter-increment: h4 }
@@ -107,12 +107,12 @@ CSS
     div.example1 h4::before {
         content: counter(h4, lower-alpha)
     }
-
+```
 This creates two counters inside the scope of a `div` element. All `h3` and `h4` heading elements will be numbered starting from 1 and the counter number will be placed before the heading text.
 
 CSS
 
-
+```
     div.example2 { counter-reset: h3 }
     div.example2 h3 {
         counter-increment: h3;
@@ -123,7 +123,7 @@ CSS
     div.example2 h4::before {
         counter(h4, lower-alpha)
     }
-
+```
 In this example the `h4` counter will be reset at each `h3` element, to produce sub-section numbering that restarts at each new section.
 
 #### Nested counters
@@ -134,7 +134,7 @@ For example, a nested XHTML list with a `ul` element inside a `li` inside anothe
 
 CSS
 
-
+```
     ol { counter-reset: list-item }
     li { counter-increment: list-item }
     li::marker {
@@ -142,20 +142,20 @@ CSS
         color: brown;
         font-weight: bold
     }
-
+```
 #### Counter styles
 
 Counter values are displayed as decimal numbers by default, but they may be displayed using other styles such as roman numerals or consecutive letters of the alphabet.
 
 CSS
 
-
+```
     chapter { counter-increment: chapter-num }
 
     chapter::before {
         content: "Chapter " counter(chapter-num, upper-roman)
     }
-
+```
 This rule will generate text such as "Chapter IV" before each chapter, with the appropriate chapter number displayed in uppercase roman numerals.
 
 The following table shows examples of the various counter styles:
@@ -319,11 +319,11 @@ The `target-counter()` function can be used with the `content` property to refer
 
 CSS
 
-
+```
     a[href]::after {
         content: " [See page " target-counter(attr(href), page) "]"
     }
-
+```
 This will add a cross-reference after every link with the correct page number determined automatically. For example: \[See page 17\].
 
 The `target-counter()` function can specify any counter, allowing cross-references to refer to list items, chapters or sections as well as pages or footnotes.
@@ -332,13 +332,13 @@ The `target-counter()` function can also take an optional counter style, similar
 
 CSS
 
-
+```
     a[href]::after {
         content: " [See chapter "
              target-counter(attr(href), chapter, upper-roman)
              "]"
     }
-
+```
 This will add a cross-reference after every link with the correct chapter number determined automatically and displayed using roman numerals. For example: \[See chapter IV\].
 
 #### Using target-content()
@@ -347,11 +347,11 @@ The `target-content()` function can be used with the `content` property to refer
 
 CSS
 
-
+```
     a[href]::after {
         content: " [See '" target-content(attr(href)) "']"
     }
-
+```
 This will add a cross-reference after every link that includes the text of the element being linked to, such as a chapter title. For example: \[See 'Introduction'\].
 
 ### Script Functions
@@ -362,61 +362,61 @@ Please note that Prince is not running JavaScript by default - it needs to be ex
 
 CSS
 
-
+```
     p::after {
         content: prince-script(myfunc)
     }
-
+```
 JavaScript
 
-
+```javascript
     function myfunc()
     {
         return "Some generated content text!";
     }
 
     Prince.addScriptFunc("myfunc", myfunc);
-
+```
 #### Accessing the current date and time
 
 JavaScript functions have access to the current date and time, which can be added to the document using `prince-script()` in generated content.
 
 CSS
 
-
+```
     @page {
         @top {
         content: prince-script(datestamp)
         }
     }
-
+```
 JavaScript
 
-
+```javascript
     Prince.addScriptFunc("datestamp", function() {
         return (new Date()).toString();
     });
-
+```
 #### User-defined counter styles
 
 The JavaScript functions used with `prince-script()` can take arguments that are themselves generated content. This allows functions to operate on counter values and implement new counter styles.
 
 CSS
 
-
+```
     li::marker {
         content: prince-script(mycounterstyle, counter(list-item))
     }
-
+```
 JavaScript
 
-
+```javascript
     Prince.addScriptFunc("mycounterstyle", function(n) {
         if (n == 1) return "one";
         else if (n == 2) return "two";
         else if (n == 3) return "three";
         else return n;
     });
-
+```
 For another way of creating user-defined counter styles, see [Generated Content Functions](gen-content.md#gen-content-functions).
 

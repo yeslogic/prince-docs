@@ -10,11 +10,11 @@ Here is an example of including smart quotes in an XML document using character 
 
 XML
 
-
+```xml
     <p>
     These are &#x201C;smart quotes&#x201D; to be precise.
     </p>
-
+```
 Output
 
     These are “smart quotes” to be precise.
@@ -23,11 +23,11 @@ A typical usecase for character entities in CSS is the `prince-text-replace` pro
 
 CSS
 
-
+```
     body {
       prince-text-replace: "s" "\017F";
     }
-
+```
 The tables below are a quick reference for some commonly requested UNICODE characters, expressed in XML and CSS notation; for everything else please consult the [UNICODE code charts](http://www.unicode.org/charts/).
 
 Accented Letters

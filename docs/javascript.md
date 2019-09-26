@@ -34,19 +34,19 @@ A full list of all supported JavaScript objects, methods and properties can be f
 
 The Prince log can be accessed from JavaScript via the [`Log`](js-support.md#window.Log) object (also available as [`Prince.Log`](js-support.md#window.Prince.Log)), which has the following methods:
 
-
+```javascript
     Log.info("message")
     Log.warning("message")
     Log.error("message")
     Log.data("name", "value")
-
+```
 ### Console Access
 
 When running Prince from the command-line, the `console` object can be used to write messages directly to the terminal:
 
-
+```javascript
     console.log("Hello, world!")
-
+```
 Console access is only supported when running Prince directly from the command-line, and should not be used when calling Prince through a server wrapper or graphical user interface.
 
 ### Event Handling
@@ -65,40 +65,40 @@ User interface events such as `onclick` are not supported by Prince.
 
 The [`Prince.pageCount`](js-support.md#window.Prince.pageCount) property can be accessed after document conversion has finished, then logged as data for the calling process to access:
 
-
+```javascript
     function logPageCount()
     {
         Log.data("total-page-count", Prince.pageCount);
     }
 
     Prince.addEventListener("complete", logPageCount, false);
-
+```
 See also [The "Two-Pass" Solution](two-pass.md#two-pass) for another use of accessing document properties after the document conversion has finished.
 
 ### The Prince Object
 
 The [`Prince`](js-support.md#window.Prince) object can be used to control various scripting aspects in Prince.
 
-
+```javascript
     Prince.addScriptFunc(name, function)
     Prince.trackBoxes = (boolean)
     Prince.convertToFile(JSON, OutputFileName, ...optional extra job resources)
     Prince.convertToBuffer(JSON, ...optional extra job resources)
-
+```
 The [`Prince.addScriptFunc`](js-support.md#window.Prince.addScriptFunc) method takes two arguments: the string name that will be exposed to CSS, and the function itself. See [Script Functions](gen-content.md#scriptfunc) for an example.
 
 [`Prince.trackBoxes`](js-support.md#window.Prince.trackBoxes) is a bool that will enable the box tracking API if set to true, so that it can be used later in the `complete` event. See [The Box Tracking API](javascript.md#js-box).
 
 The [`Prince.convertToFile`](js-support.md#window.Prince.convertToFile) and [`Prince.convertToBuffer`](js-support.md#window.Prince.convertToBuffer) methods allow you to start new Prince jobs:
 
-
+```javascript
     convertToFile(JSON, OutputFileName, ...optional extra job resources)
-
+```
 - returns bool indicating success
 
-
+```javascript
     convertToBuffer(JSON, ...optional extra job resources)
-
+```
 - returns ArrayBuffer if successful, null if not
 
 Whereby `JSON` is a job description similar to the one specified in the [Prince Control Protocol](cmd-control.md#cmd-control), while the optional extra job resource arguments are ArrayBuffers or strings that can be referenced from the JSON using the `job-resource:` URLs. See [Prince Control Protocol](cmd-control.md#cmd-control).
@@ -113,14 +113,14 @@ For example, perhaps there should be only one page: you check the page count (se
 
 The [`PDF` object](js-support.md#window.PDF) can be used to specify PDF properties and settings, including attaching extra files to the generated PDF, similar to the [`--attach`](command-line.md#cl-attach) command-line argument:
 
-
+```javascript
     PDF.attachFile(url, description?)
 
     PDF.attachFile("data.xls", "Latest sales figures.");
-
+```
 Other PDF properties, which are set by assignment, include:
 
-
+```javascript
     PDF.embedFonts = (boolean)
     PDF.subsetFonts = (boolean)
     PDF.artificialFonts = (boolean)
@@ -151,19 +151,19 @@ Other PDF properties, which are set by assignment, include:
     PDF.creator
 
     PDF.lang
-
+```
 There is one more PDF object not mentioned so far: the [`PDF.pages`](js-support.md#window.PDF.pages) object is different from all preceding PDF objects - the latter ones are set before document conversion begins, while the former becomes available only *after* the `complete` event (see [Event Handling](javascript.md#js-event)) and returns a list of *boxes* - see [The Box Tracking API](javascript.md#js-box).
 
 ### The Box Tracking API
 
 The box tracking API must be enabled with [`Prince.trackBoxes`](js-support.md#window.Prince.trackBoxes) before formatting starts.
 
-
+```javascript
     Prince.trackBoxes = true;
-
+```
 It then becomes available in the `complete` event (see [Event Handling](javascript.md#js-event)), when you can call the [`getPrinceBoxes()`](js-support.md#window.Element.prototype.getPrinceBoxes) method while iterating through the required DOM elements, to return a list of *boxes*.
 
-
+```javascript
     Prince.addEventListener("complete", function() {
       var xs = document.getElementsByTagName("ins");
       for (var i = 0; i < xs.length; ++i)
@@ -172,10 +172,10 @@ It then becomes available in the `complete` event (see [Event Handling](javascri
           var boxes = ins.getPrinceBoxes();
         }
     }, false);
-
+```
 The [`PDF.pages`](js-support.md#window.PDF.pages) array mentioned earlier (see [The PDF Object](javascript.md#js-pdf)) also is available only after the `complete` event and also returns a list of *boxes* (see [Page regions](paged.md#page-regions)).
 
-
+```javascript
     function printbox(str,box) {
       console.log("");
       for (var i in box) {
@@ -194,7 +194,7 @@ The [`PDF.pages`](js-support.md#window.PDF.pages) array mentioned earlier (see [
           printbox("  ",pages[i]);
         }
     }, false);
-
+```
 *Boxes* are JavaScript objects with some or all of the following properties:
 
 
@@ -236,7 +236,7 @@ However, see [The "Two-Pass" Solution](two-pass.md#two-pass) for making use of i
 
 The following DOM properties are not supported in Prince:
 
-
+```javascript
     document.write
     window.setInterval
-
+```
