@@ -6,14 +6,14 @@ JavaScript can be used to transform documents by generating tables of contents a
 
 Scripts can access and modify the input document using the W3C standard DOM (Document Object Model). Prince also supports some additional properties and methods described below.
 
-Prince is not running JavaScript by default - it needs to be explicitly enabled. See [Applying JavaScript in Prince](apply-javascript.md#applying-javascript).
+Prince is not running JavaScript by default - it needs to be explicitly enabled. See [Applying JavaScript in Prince](prince-input.md#applying-javascript-in-prince).
 
 JavaScript in Printed Media
 ---------------------------
 
 Prince is a user agent producing primarily documents meant to be printed, and as such, some limitations are in place that set it apart from most other user agents that support JavaScript.
 
-The most notable difference is the fact that a printed page cannot be interactive, being static in nature: a document cannot be modified after it is deemed to be ready for print. JavaScript can be run twice only: the first time it is run before layout, where it interacts with and modifies the layout (and the DOM structure). Once layout is finished, JavaScript can be run a second time from the `complete` event handler (see [Event Handling](javascript.md#js-event)). However, this time it is only allowed to inspect the layout and cannot modify the DOM. See also [The "Two-Pass" Solution](two-pass.md#two-pass).
+The most notable difference is the fact that a printed page cannot be interactive, being static in nature: a document cannot be modified after it is deemed to be ready for print. JavaScript can be run twice only: the first time it is run before layout, where it interacts with and modifies the layout (and the DOM structure). Once layout is finished, JavaScript can be run a second time from the `complete` event handler (see [Event Handling](javascript.md#js-event)). However, this time it is only allowed to inspect the layout and cannot modify the DOM. See also [The "Two-Pass" Solution](cookbook.md#the-two-pass-solution).
 
 A consequence of the non-interactive nature of printed media is that any interactive events, such as e.g. `onClick`, do not make sense, and will never fire.
 
@@ -22,9 +22,9 @@ JavaScript in Prince
 
 Prince supports most of ECMAScript 5th edition (ES5), but not strict mode. Later editions of ECMAScript are not supported.
 
-JavaScript is not run by default - it needs to be explicitly enabled. See [Applying JavaScript in Prince](apply-javascript.md#applying-javascript).
+JavaScript is not run by default - it needs to be explicitly enabled. See [Applying JavaScript in Prince](prince-input.md#applying-javascript-in-prince).
 
-In addition to normal JavaScript run in the document, Prince allows also for scripts to be passed directly to the PDF, to be executed when the PDF file is opened (`prince-pdf-script`), or triggered by specific events (`prince-pdf-event-scripts`). See [Script Functions](gen-content.md#scriptfunc) and [PDF Actions](pdf-output.md#pdf-actions) for more details.
+In addition to normal JavaScript run in the document, Prince allows also for scripts to be passed directly to the PDF, to be executed when the PDF file is opened (`prince-pdf-script`), or triggered by specific events (`prince-pdf-event-scripts`). See [Script Functions](gen-content.md#scriptfunc) and [PDF Actions](prince-output.md#pdf-actions) for more details.
 
 These PDF scripts, known as "Document Action" scripts, will always be run. Note, however, that these scripts are dependent on the PDF viewer, and in many cases might only work in Adobe Acrobat products.
 
@@ -55,7 +55,7 @@ When the document has been fully parsed and is ready for processing, Prince will
 
 These load events can be captured by setting the `onload` attribute on the `body` element in HTML documents, or by setting the `window.onload` property or calling `window.addEventListener`.
 
-When document conversion has finished, Prince will fire the `complete` event on the `Prince` object. This event can be captured by calling `Prince.addEventListener`, and is useful for logging document statistics, or for using the output for [The "Two-Pass" Solution](two-pass.md#two-pass).
+When document conversion has finished, Prince will fire the `complete` event on the `Prince` object. This event can be captured by calling `Prince.addEventListener`, and is useful for logging document statistics, or for using the output for [The "Two-Pass" Solution](cookbook.md#the-two-pass-solution).
 
 When multiple documents are processed into one PDF, the `complete` event will only fire once, on the first document.
 
@@ -73,7 +73,7 @@ The [`Prince.pageCount`](js-support.md#window.Prince.pageCount) property can be 
 
     Prince.addEventListener("complete", logPageCount, false);
 ```
-See also [The "Two-Pass" Solution](two-pass.md#two-pass) for another use of accessing document properties after the document conversion has finished.
+See also [The "Two-Pass" Solution](cookbook.md#the-two-pass-solution) for another use of accessing document properties after the document conversion has finished.
 
 ### The Prince Object
 
@@ -101,9 +101,9 @@ The [`Prince.convertToFile`](js-support.md#window.Prince.convertToFile) and [`Pr
 ```
 - returns ArrayBuffer if successful, null if not
 
-Whereby `JSON` is a job description similar to the one specified in the [Prince Control Protocol](cmd-control.md#cmd-control), while the optional extra job resource arguments are ArrayBuffers or strings that can be referenced from the JSON using the `job-resource:` URLs. See [Prince Control Protocol](cmd-control.md#cmd-control).
+Whereby `JSON` is a job description similar to the one specified in the [Prince Control Protocol](server-integration.md#prince-control-protocol), while the optional extra job resource arguments are ArrayBuffers or strings that can be referenced from the JSON using the `job-resource:` URLs. See [Prince Control Protocol](server-integration.md#prince-control-protocol).
 
-The property [`Prince.failStatus`](js-support.md#window.Prince.failStatus) is a boolean which can be set to trigger an explicit failure status through JavaScript, based on custom criteria. See also [Fail-Safe Options](cmd-control.md#fail-safe-options).
+The property [`Prince.failStatus`](js-support.md#window.Prince.failStatus) is a boolean which can be set to trigger an explicit failure status through JavaScript, based on custom criteria. See also [Fail-Safe Options](server-integration.md#fail-safe-options).
 
 It can be set to true by a script that runs after layout in the `oncomplete` handler (see [Event Handling](javascript.md#js-event)) and checks for complex conditions, like overlapping content (see [The Box Tracking API](javascript.md#js-box) and the [Detecting Overflow](http://www.princexml.com/forum/topic/3603/detecting-overflow) sample) or some other user-defined issue that you want to trigger the fail-safe.
 
@@ -230,7 +230,7 @@ The properties of a *box* can be queried with the [`BoxInfo()`](js-support.md#wi
 
 Since the box tracking API is available only *after* the `complete` event, it cannot be used to modify the document (see [JavaScript in Printed Media](javascript.md#js-print)).
 
-However, see [The "Two-Pass" Solution](two-pass.md#two-pass) for making use of its output. Two further sample applications of the box tracking API can be seen in the [Changebars](//www.princexml.com/forum/topic/3516/changebars) example, and in [Detecting Overflow](//www.princexml.com/forum/topic/3603/detecting-overflow).
+However, see [The "Two-Pass" Solution](cookbook.md#the-two-pass-solution) for making use of its output. Two further sample applications of the box tracking API can be seen in the [Changebars](//www.princexml.com/forum/topic/3516/changebars) example, and in [Detecting Overflow](//www.princexml.com/forum/topic/3603/detecting-overflow).
 
 ### Unsupported DOM Properties
 

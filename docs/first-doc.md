@@ -100,14 +100,14 @@ The unstyled lab report. Download the PDF [here](assets/samples/lab_report.pdf).
 
     $ prince lab_report.html
 
-This will create a `lab_report.pdf` file in the current directory. If it did not, the [Troubleshooting](troubleshooting.md#troubleshooting) section may be useful. When you open the document in a PDF viewer you should see something like [Unstyled lab report](first-doc.md#fig.lab-report.unstyled). Prince has applied a default stylesheet to the document. A different default stylesheet is used depending upon the document's type (HTML or Docbook XML) see [XML Input](xml.md#xml-input). The default stylesheet may be overridden by other stylesheets, more on that in [Applying Style Sheets in Prince](apply-css.md#apply-css).
+This will create a `lab_report.pdf` file in the current directory. If it did not, the [Troubleshooting](help-install.md#troubleshooting) section may be useful. When you open the document in a PDF viewer you should see something like [Unstyled lab report](first-doc.md#fig.lab-report.unstyled). Prince has applied a default stylesheet to the document. A different default stylesheet is used depending upon the document's type (HTML or Docbook XML) see [XML Input](prince-input.md#xml-input). The default stylesheet may be overridden by other stylesheets, more on that in [Applying Style Sheets in Prince](prince-input.md#applying-style-sheets-in-prince).
 
 Prince GUI
 
 <img src="assets/images/gui_02.png" alt="The Prince GUI" style="width:50.0%" />
 The Prince GUI. Note that in this image both a HTML and a CSS file had been selected.
 
-Prince's command line interface supports many options (see [Command-line Reference](doc-refs.md#command-line)) and can be called from scripts and other software. However some users may not be comfortable with the command line interface. On Windows, Prince provides a more familiar GUI interface, which can be started by choosing Prince from the start menu. [Prince GUI](first-doc.md#fig.gui01) shows the Prince GUI, click "Add File(s)" to choose your HTML file (`lab_report.html`) then click the large "Convert" button to convert it. Prince will generate a PDF file and place it in the directory with your HTML file.
+Prince's command line interface supports many options (see [Command-line Reference](command-line.md)) and can be called from scripts and other software. However some users may not be comfortable with the command line interface. On Windows, Prince provides a more familiar GUI interface, which can be started by choosing Prince from the start menu. [Prince GUI](first-doc.md#fig.gui01) shows the Prince GUI, click "Add File(s)" to choose your HTML file (`lab_report.html`) then click the large "Convert" button to convert it. Prince will generate a PDF file and place it in the directory with your HTML file.
 
 Styling the document
 --------------------
@@ -121,7 +121,7 @@ Let's start by creating and opening a new file named `lab_report.css`, First we 
         font-family: sans-serif;
     }
 ```
-The default is a font with serifs, a sans-serif font is easier to read on a computer screen while a serif font is easier to read when printed out. See [Text formatting](text-formatting.md#text-formatting) and the `font-family` property.
+The default is a font with serifs, a sans-serif font is easier to read on a computer screen while a serif font is easier to read when printed out. See [Text formatting](styling.md#text-formatting) and the `font-family` property.
 
 Next, let's center the title and subtitle and decrease the font size of the subtitle:
 
@@ -139,7 +139,7 @@ The styled lab report, download the [here](assets/samples/lab_report-styled.pdf)
         font-size: 14pt;
     }
 ```
-Note that we use the `.class` syntax to style only the subtitle, which is a `h2` with the subtitle class, without affecting the other `h2` elements in the document. See the section on [CSS Selectors](selectors.md#selectors) for more information. Information about alignment (such as centered text) can be found in the [Paragraph formatting](text-formatting.md#paragraph-formatting) section.
+Note that we use the `.class` syntax to style only the subtitle, which is a `h2` with the subtitle class, without affecting the other `h2` elements in the document. See the section on [CSS Selectors](css-refs.md#css-selectors) for more information. Information about alignment (such as centered text) can be found in the [Paragraph formatting](styling.md#paragraph-formatting) section.
 
 Finally we will make the "Hello World!" paragraph stand out. This paragraph is identified by an `id` attribute so we can use the `#id` syntax in the CSS selector.
 
@@ -154,7 +154,7 @@ Finally we will make the "Hello World!" paragraph stand out. This paragraph is i
 ```
 Okay, that's getting unnecessary, however we can see just how easy it is to apply styles to our document. You can download the complete CSS file here: [`lab_report.css`](samples/lab_report.css).
 
-There are many ways to apply a stylesheet to a document, for this tutorial we will show only three. For information about the ways that styles can be applied and style precedence see [Applying Style Sheets in Prince](apply-css.md#apply-css).
+There are many ways to apply a stylesheet to a document, for this tutorial we will show only three. For information about the ways that styles can be applied and style precedence see [Applying Style Sheets in Prince](prince-input.md#applying-style-sheets-in-prince).
 
 Using the `-s` command line option:  
 

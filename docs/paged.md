@@ -41,7 +41,7 @@ Prince produces PDFs - which are a prominent example of paged media. There are a
 
 Prince allows you to control a number of options that affect how to format pages, from straight-forward options such as [page size](paged.md#page-size), to [page style](paged.md#page-style), [page regions](paged.md#page-regions) like headers and footers, [pagination control](paged.md#controlling-pagination) and [page numbering](gen-content.md#counters).
 
-CSS properties that affect pages are specified within page *at-rules* (see [CSS At-rules](at-rules.md#css-atrules)). For example, we can use the [size](doc-refs.md#prop-size) property within the [`@page`](at-rules.md#at-page) rule to specify the page size (see [Page size](paged.md#page-size)).
+CSS properties that affect pages are specified within page *at-rules* (see [CSS At-rules](css-refs.md#css-atrules)). For example, we can use the [size](css-props.md#prop-size) property within the [`@page`](css-refs.md#at-page) rule to specify the page size (see [Page size](paged.md#page-size)).
 
 ```
     @page {
@@ -78,9 +78,9 @@ Sometimes it can be useful to specify the page dimensions in pixels, for example
 ```
 ## Page style
 
-Pages, like other block level elements, follow the CSS box model introduced in [Box Model](css-box.md#css-box). Their `margin`, `border`, `padding` and `background` can be styled within [`@page`](at-rules.md#at-page) rules.
+Pages, like other block level elements, follow the CSS box model introduced in [Box Model](styling.md#css-box). Their `margin`, `border`, `padding` and `background` can be styled within [`@page`](css-refs.md#at-page) rules.
 
-The [`@page`](at-rules.md#at-page) rules can only style the page and its margin boxes - it cannot contain style rules to target specific elements, but it can contain at-rules to target the page regions (for a complete list of possible at-rules, see [Page regions](paged.md#page-regions)).
+The [`@page`](css-refs.md#at-page) rules can only style the page and its margin boxes - it cannot contain style rules to target specific elements, but it can contain at-rules to target the page regions (for a complete list of possible at-rules, see [Page regions](paged.md#page-regions)).
 
 ```
     @page {
@@ -108,7 +108,7 @@ Most content appears inside the *page area* of one or more pages. Surrounding th
 
 This figure shows the positions of some page regions placed in the page margin, called the *page-margin boxes*. Some of them can be used for creating running page headers and footers.
 
-The [`@page`](at-rules.md#at-page) background is <span class="fig-marginboxes-lightgrey">grey</span> and the body's, i.e. the page area's background is <span class="fig-marginboxes-white">white</span>.
+The [`@page`](css-refs.md#at-page) background is <span class="fig-marginboxes-lightgrey">grey</span> and the body's, i.e. the page area's background is <span class="fig-marginboxes-white">white</span>.
 
 The first four page-margin boxes, namely
 
@@ -307,11 +307,11 @@ Prince will try to create page regions of the correct sizes. If you need to crea
 
 Note that in the above [Page regions](paged.md#fig-marginboxes) figure, Prince leaves space for `@top-right` and `@left-bottom` boxes because their counterparts (`@top-left` and `@left-top` respectively) have been defined. This keeps the `@top` and `@left` centered along the top and side of the page respectively.
 
-The page-margin boxes `@top`, `@top-left` or `@top-right` can be used to create running page headers, and the page-margin boxes `@bottom`, `@bottom-left` or `@bottom-right` are useful for page footers (see [Page Headers and Footers](page-headers-footers.md#page-headers-footers)).
+The page-margin boxes `@top`, `@top-left` or `@top-right` can be used to create running page headers, and the page-margin boxes `@bottom`, `@bottom-left` or `@bottom-right` are useful for page footers (see [Page Headers and Footers](cookbook.md#page-headers-and-footers)).
 
-The page region `@prince-overlay` is a special region, overlaying all of the page area. A typical use is for creating watermarks on all pages of the document (see [Watermarks](watermarks.md#watermarks)).
+The page region `@prince-overlay` is a special region, overlaying all of the page area. A typical use is for creating watermarks on all pages of the document (see [Watermarks](cookbook.md#watermarks)).
 
-The page region `@footnote` is placed by default at the foot of the page area and contains the footnotes (see [Footnotes](footnotes.md#footnotes)). Note that if there are no footnotes on a page, the footnote area will not be displayed on that page at all.
+The page region `@footnote` is placed by default at the foot of the page area and contains the footnotes (see [Footnotes](styling.md#footnotes)). Note that if there are no footnotes on a page, the footnote area will not be displayed on that page at all.
 
 Many CSS properties can be applied to page regions:
 
@@ -321,7 +321,7 @@ Many CSS properties can be applied to page regions:
 
 -   When a page region contains generated content, many inline style properties such as `color` and `font` can be applied to style the generated content.
 
-The `@footnote` area can be positioned other than its default position (see [Styling and behavior of footnotes](footnotes.md#footnotes-styling) and [Sidenotes](sidenotes.md#sidenotes)). All other page regions cannot be moved - their position is defined by the page margins.
+The `@footnote` area can be positioned other than its default position (see [Styling and behavior of footnotes](styling#styling-and-behavior-of-footnotes) and [Sidenotes](cookbook.md#sidenotes)). All other page regions cannot be moved - their position is defined by the page margins.
 
 ### Generated content in page regions
 
@@ -381,9 +381,9 @@ CSS
 
 [Restarting page numbering](paged.md#ex-restart-page-numbers) also uses [Named pages](paged.md#named-pages) which we will explain in more detail below. We create three types of pages: table-of-contents pages, main pages, and pages without a name.
 
-The .contents rule names the pages that it appears on as table-of-contents and resets the page counter to 1 at the start of the contents div. Then the [`@page`](at-rules.md#at-page) rule for those pages generates a page footer that contains the current page number in `lower-alpha` style. This rule also sets the page header to the string "Table of Contents".
+The .contents rule names the pages that it appears on as table-of-contents and resets the page counter to 1 at the start of the contents div. Then the [`@page`](css-refs.md#at-page) rule for those pages generates a page footer that contains the current page number in `lower-alpha` style. This rule also sets the page header to the string "Table of Contents".
 
-The `.body` rule names the pages that it appears on as main and resets the page counter to 1 at the start of main div. Then the [`@page`](at-rules.md#at-page) rule for the main pages generates a page footer that contains the current page number in the default decimal style. This rule, together with the .chapter h1 rule, sets the page header to the title of the chapter.
+The `.body` rule names the pages that it appears on as main and resets the page counter to 1 at the start of main div. Then the [`@page`](css-refs.md#at-page) rule for the main pages generates a page footer that contains the current page number in the default decimal style. This rule, together with the .chapter h1 rule, sets the page header to the title of the chapter.
 
 Pages that don't match either of these names have the default style, which does not include a page number in the footer.
 
@@ -401,7 +401,7 @@ This rule will generate page footers such as "Page 1 of 89".
 Fancy header example
 
 ![Image of a page of a textbook or thesis with a header.](assets/samples/fancyheader-2.bw.png)
-This example shows a header as might be found in a textbook. The [HTML](assets/samples/fancyheader.md) and [PDF](assets/samples/fancyheader.pdf) are both available. This is a small part of a [larger example](https://github.com/yeslogic/prince-samples/tree/master/thesis) in our [Prince samples repository](https://github.com/yeslogic/prince-samples).
+This example shows a header as might be found in a textbook. The [HTML](assets/samples/fancyheader.html) and [PDF](assets/samples/fancyheader.pdf) are both available. This is a small part of a [larger example](https://github.com/yeslogic/prince-samples/tree/master/thesis) in our [Prince samples repository](https://github.com/yeslogic/prince-samples).
 
 Fancy headers
 
@@ -521,7 +521,7 @@ This can be very useful as a means to repeating the title of a chapter as a page
       @top-center { content: string(letter, first-except);}
     }
 ```
-You can see these examples in full action in the [Dictionary](sample-docs.md#dictionary) sample ([HTML](http://css4.pub/2015/icelandic/dictionary.md) - [PDF](http://css4.pub/2015/icelandic/dictionary.pdf)).
+You can see these examples in full action in the [Dictionary](sample-docs.html#dictionary) sample ([HTML](http://css4.pub/2015/icelandic/dictionary.html) - [PDF](http://css4.pub/2015/icelandic/dictionary.pdf)).
 
 ### Taking elements from the document
 
@@ -578,12 +578,12 @@ The `element()` and `flow()` functions replace the entire margin box, and cannot
 
 It is often necessary to apply styles to some pages, but not others. Either applying them to only some pages, or on every page *except* selected pages. CSS and Prince provide a number of *page selectors* for choosing which pages a rule applies to.
 
-In a novel it is useful to print a page number at the bottom of every page, *except* for some pages such as the title page. In this example the [`@page`](at-rules.md#at-page) rule is applied to all pages. Then the `@page:first` rule, which is more specific, removes the footer from the first page. See [Page regions](paged.md#page-regions) and [Generated Content](gen-content.md#gen-content).
+In a novel it is useful to print a page number at the bottom of every page, *except* for some pages such as the title page. In this example the [`@page`](css-refs.md#at-page) rule is applied to all pages. Then the `@page:first` rule, which is more specific, removes the footer from the first page. See [Page regions](paged.md#page-regions) and [Generated Content](gen-content.md#gen-content).
 
 Novel title page example
 
 ![Novel title page example image.](assets/samples/titlepage-1.bw.png)
-A title page example showing use of `@page:first`. Download the [PDF](assets/samples/titlepage.pdf) or the [HTML](assets/samples/titlepage.md).
+A title page example showing use of `@page:first`. Download the [PDF](assets/samples/titlepage.pdf) or the [HTML](assets/samples/titlepage.html).
 
 ```html
     <html>
@@ -619,18 +619,18 @@ A title page example showing use of `@page:first`. Download the [PDF](assets/sam
     </body>
     </html>
 ```
-In this example the [`@page`](at-rules.md#at-page) rule specifies styles that apply to all pages: Then the `@page:first` rule overrides this for the first page only. It resets the `content` property for the footer and increases the top margin, printing the title of the novel in a reasonable place on the page (see [Page style](paged.md#page-style)). This example also uses the `break-before` property to force a page break (see [Page breaks](paged.md#page-breaks)).
+In this example the [`@page`](css-refs.md#at-page) rule specifies styles that apply to all pages: Then the `@page:first` rule overrides this for the first page only. It resets the `content` property for the footer and increases the top margin, printing the title of the novel in a reasonable place on the page (see [Page style](paged.md#page-style)). This example also uses the `break-before` property to force a page break (see [Page breaks](paged.md#page-breaks)).
 
 When using the `:first` page selector to choose the first page in each chapter (such as in [Fancy headers](paged.md#fig-fancyheader)) it may be necessary to add `prince-page-group: start` to the first element in each chapter (such as `h1`). See [Page groups](paged.md#page-groups).
 
 The `:left` and `:right` page selectors can be used to style left and right pages in a bound book differently. This is often used in text books to place the page number on the outside top corners of pages.
 
-Alternatively, the `:recto` and `:verso` selectors can be used, with the advantage of being independent of directionality of the script: in a left-to-right script, `:recto` is the right-hand side of a spread, and `:verso` is the left-hand side, while in a right-to-left script these values are inverted: `:recto` defines the left-hand side of a spread, and `:verso` defines the right-hand side. See also [Writing Mode](writing-mode.md#writing-mode).
+Alternatively, the `:recto` and `:verso` selectors can be used, with the advantage of being independent of directionality of the script: in a left-to-right script, `:recto` is the right-hand side of a spread, and `:verso` is the left-hand side, while in a right-to-left script these values are inverted: `:recto` defines the left-hand side of a spread, and `:verso` defines the right-hand side. See also [Writing Mode](styling.md#writing-mode).
 
 Textbook page numbers example
 
 ![Textbook page numbers example image.](assets/samples/textbook-1.bw.png)
-A text book example showing use of `@page:left` and `@page:right`. Download the [PDF](assets/samples/textbook.pdf) or the [HTML](assets/samples/textbook.md).
+A text book example showing use of `@page:left` and `@page:right`. Download the [PDF](assets/samples/textbook.pdf) or the [HTML](assets/samples/textbook.html).
 
 ```css
     @page:left {
@@ -674,7 +674,7 @@ The element containing the table of contents has a `page` property applied, spec
         page: table-of-contents;
     }
 ```
-Then using this page name to apply a different [`@page`](at-rules.md#at-page) rule to the table-of-contents pages:
+Then using this page name to apply a different [`@page`](css-refs.md#at-page) rule to the table-of-contents pages:
 
 ```css
     @page table-of-contents {
@@ -727,7 +727,7 @@ The property `prince-page-group: start` instructs Prince to start a new page gro
 
 A special case are blank pages.
 
-As we discussed in the previous section, `break-before: right` can be used to place the first page of a chapter on the right page in a spread. If the previous page is a right page, two page breaks are inserted, leaving a blank left page. However, this page will have normal [`@page`](at-rules.md#at-page) styles applied to it, which is usually not what people want. The `:blank` page selector can be used to change the style of blank pages, pages skipped such as a left page before a `break-before: right`, including removing any content.
+As we discussed in the previous section, `break-before: right` can be used to place the first page of a chapter on the right page in a spread. If the previous page is a right page, two page breaks are inserted, leaving a blank left page. However, this page will have normal [`@page`](css-refs.md#at-page) styles applied to it, which is usually not what people want. The `:blank` page selector can be used to change the style of blank pages, pages skipped such as a left page before a `break-before: right`, including removing any content.
 
 ```css
     @page:left {
@@ -825,7 +825,7 @@ Presentation slides
 Presentation slides example
 
 ![A title page slide for a presentation, with a title and subtitle.](assets/samples/slide-1.colour.png) ![An example of an overhead slide for a presentation. It has a title and a single paragraph.](assets/samples/slide-2.colour.png)
-Two overhead slides for a presentation. The slides use white on black for better contrast on most projectors, and a 4x3 aspect ratio. Download the [PDF](assets/samples/slide.pdf) or the [HTML](assets/samples/slide.md) and [CSS](assets/samples/slide.css).
+Two overhead slides for a presentation. The slides use white on black for better contrast on most projectors, and a 4x3 aspect ratio. Download the [PDF](assets/samples/slide.pdf) or the [HTML](assets/samples/slide.html) and [CSS](assets/samples/slide.css).
 
 It is necessary to force a page break when creating overhead slides. This can be done by placing the content for each slide in a `<div class="slide">` and using `break-before: page` as shown below. This example shows other styling that may be required to create presentation slides.
 
@@ -915,7 +915,7 @@ These three properties can be applied to block-level elements, table rows and ta
 
 Prince also supports the properties `page-break-before`, `page-break-after` and `page-break-inside` from the CSS 2.1 specification. However, you are encouraged to use the newer properties `break-before`, `break-after` and `break-inside` from the CSS Fragmentation Module Level 3.
 
-Page breaks have similarities with column breaks, see [Columns](columns.md#columns).
+Page breaks have similarities with column breaks, see [Columns](styling.md#columns).
 
 #### Page breaks and decoration
 
@@ -924,7 +924,7 @@ When a page (or column) break occurs within a box (such as a div) its bottom and
 Box decoration break sample
 
 ![The box on the left is completely enclosed by its border (clone); while the box on the right has no border at the bottom where it wraps onto the next page (slice).](assets/samples/box-decoration-break-1.bw.png)
-This figure shows the result of using the `box-decoration-break` property. On the left the `clone` value is used while on the right `slice` is used. The [PDF](assets/samples/box-decoration-break.pdf) and [HTML](assets/samples/box-decoration-break.md) are available for download.
+This figure shows the result of using the `box-decoration-break` property. On the left the `clone` value is used while on the right `slice` is used. The [PDF](assets/samples/box-decoration-break.pdf) and [HTML](assets/samples/box-decoration-break.html) are available for download.
 
 ```
     div.box1 {
@@ -963,7 +963,7 @@ When typesetting a magazine or flier it can be useful to print right to the edge
 Furniture catalogue example
 
 ![Furniture catalogue with bleed and trim areas for printing and cropping. The background image is larger than the page (but not the paper), by cutting where the crop marks indicate the background image extends right to the edge of the page.](assets/samples/croparea-1.colour.png)
-The furniture catalogue with bleed and trim areas for printing and cropping. Download the [PDF](assets/samples/croparea.pdf) or the [HTML](assets/samples/croparea.md) and [CSS](assets/samples/croparea.css).
+The furniture catalogue with bleed and trim areas for printing and cropping. Download the [PDF](assets/samples/croparea.pdf) or the [HTML](assets/samples/croparea.html) and [CSS](assets/samples/croparea.css).
 
 ```
     @page{

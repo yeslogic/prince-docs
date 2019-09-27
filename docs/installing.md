@@ -52,7 +52,7 @@ Prince is provided under the terms of the [Prince End-User License Agreement](eu
 
 To run Prince on Windows, you typically double-click on the Prince icon created during installation. You can also run only the binary, without the GUI, like on all other systems - for details please see the [Command-line Reference](command-line.md#command-line).
 
-For the layout of a Prince installation on Windows, see the [Windows installation layout](installation-layout.md#windows-layout) section.
+For the layout of a Prince installation on Windows, see the [Windows installation layout](#windows-installation-layout) section.
 
 For information about using Prince from PHP, Java, .NET, and other server frameworks you will need to install one or more [Prince wrappers](wrappers.html). See [Server Integration](server-integration.md#server-integration) for installation and usage information.
 
@@ -88,7 +88,7 @@ You will need to add the appropriate command to your shell's configuration or st
 
 Prince is now ready to use - to run Prince on MacOS X, enter the `prince` command on the command line - for details please see the [Command-line Reference](command-line.md#command-line). [Your First Document](first-doc.md#first-doc) will walk you through generating your first PDF document.
 
-For the layout of a Prince installation on MacOS X, see the [MacOS X installation layout](installation-layout.md#macosx-layout) section.
+For the layout of a Prince installation on MacOS X, see the [MacOS X installation layout](#macos-x-installation-layout) section.
 
 For information about using Prince from PHP, Java, .NET, and other server frameworks you will need to install one or more [Prince wrappers](wrappers.html). See [Server Integration](server-integration.md#server-integration) for installation and usage information.
 
@@ -190,7 +190,7 @@ The Generic Linux package should be able to run on a wider range of Linux versio
 
 These packages rely on some shared libraries installed on your system. Prince is just using the system shared object loader for most libraries, so the `LD_LIBRARY_PATH` environment variable might need to be edited, if you have installed these libraries in different locations.
 
-The `bin/prince` script in the installation directory (see [Linux and FreeBSD installation layout](installation-layout.md#linux-layout)) is a wrapper script that calls the executable, and should be a suitable place to set or modify the `LD_LIBRARY_PATH` variable in order to configure where the loader should look for shared libraries.
+The `bin/prince` script in the installation directory (see [Linux and FreeBSD installation layout](#linux-and-freebsd-installation-layout)) is a wrapper script that calls the executable, and should be a suitable place to set or modify the `LD_LIBRARY_PATH` variable in order to configure where the loader should look for shared libraries.
 
 To install Prince from a tarball enter these commands.
 
@@ -261,7 +261,7 @@ On Windows you can install a license by following these steps:
 
 ### Installing a license file on other systems
 
-On other systems copy the `license.dat` file into the `lib/prince/license` directory of the Prince installation (see [Installation Layout](installation-layout.md#installation-layout)). For example, if Prince was installed into the default `/usr/local` directory, the license file should be copied to `/usr/local/lib/prince/license/license.dat`
+On other systems copy the `license.dat` file into the `lib/prince/license` directory of the Prince installation (see [Installation Layout](#installation-layout)). For example, if Prince was installed into the default `/usr/local` directory, the license file should be copied to `/usr/local/lib/prince/license/license.dat`
 
 
     $ cp license.dat /usr/local/lib/prince/license/license.dat

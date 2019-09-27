@@ -10,7 +10,7 @@ The major difference between formatting for the web and PDF/Print is that PDF is
 
 Prince allows you to control a number of options that affect how PDF formats pages, from straight-forward options such as page size, to decorations, headers and footers, numbering and page breaking options. See detailed information in the [Paged Media](paged.md#paged) section.
 
-Prince applies default styles to all (X)HTML documents - these style rules can be found in the `html.css` style sheet, located in the `style` folder inside the installation directory (see [Installation Layout](installation-layout.md#installation-layout)).
+Prince applies default styles to all (X)HTML documents - these style rules can be found in the `html.css` style sheet, located in the `style` folder inside the installation directory (see [Installation Layout](installing.md#installation-layout)).
 
 
 Fonts
@@ -20,7 +20,7 @@ Prince supports WOFF (Web Open Font Format), TrueType and OpenType (TTF and CFF)
 
 ### Defining a font family
 
-To define the font, or the fonts to be used in a document, the `font-family` property is used. Prince will try to use the specified font, and should glyphs be missing, it will silently fall back to the next font in the cascade - typically a [generic font family](fonts.md#font-families).
+To define the font, or the fonts to be used in a document, the `font-family` property is used. Prince will try to use the specified font, and should glyphs be missing, it will silently fall back to the next font in the cascade - typically a [generic font family](#generic-font-families).
 
 To prevent this font switching mechanism and force Prince to only use the defined font, the special keyword `prince-no-fallback` is available: it triggers a warning if any glyphs are not found in the specified font, instead of switching to another one.
 
@@ -28,9 +28,9 @@ To prevent this font switching mechanism and force Prince to only use the define
     h1 { font-family: MyFont, prince-no-fallback; }
 ```
 
-The [`@font-face`](at-rules.md#at-font-face) at-rule can be used to define custom font names. The `font-family` descriptor defines the font family name that will be used in all CSS font family name matching, and the `src` descriptor specifies the resource containing font data. They both are required for the [`@font-face`](at-rules.md#at-font-face) rule to be valid.
+The [`@font-face`](css-refs.md#at-font-face) at-rule can be used to define custom font names. The `font-family` descriptor defines the font family name that will be used in all CSS font family name matching, and the `src` descriptor specifies the resource containing font data. They both are required for the [`@font-face`](css-refs.md#at-font-face) rule to be valid.
 
-The `src` descriptor can define the resource with a `url()` function - an optional `format()` function defines the format of the remotely fetched font. Alternatively, the `local()` and `prince-lookup()` functions can be used - the former searches for locally installed system fonts, while the latter will also find fonts defined by other [`@font-face`](at-rules.md#at-font-face) rules. See [CSS Functional Expressions](at-rules.md#css-functions).
+The `src` descriptor can define the resource with a `url()` function - an optional `format()` function defines the format of the remotely fetched font. Alternatively, the `local()` and `prince-lookup()` functions can be used - the former searches for locally installed system fonts, while the latter will also find fonts defined by other [`@font-face`](css-refs.md#at-font-face) rules. See [CSS Functional Expressions](css-refs.md#css-functional-expressions).
 
 ```
     @font-face {
@@ -86,7 +86,7 @@ Prince supports OpenType features, and enables certain ones by default in specif
 
 Microsoft has a list of the OpenType feature names [here](https://www.microsoft.com/typography/otspec/featurelist.htm).
 
-It is possible to enable other OpenType features by using the `font-variant` CSS property with the `prince-opentype()` function (see [CSS Functional Expressions](functions.md#css-functions)).
+It is possible to enable other OpenType features by using the `font-variant` CSS property with the `prince-opentype()` function (see [CSS Functional Expressions](css-refs.md#css-functional-expressions)).
 
 Care must be taken in which order the features are enabled! And please note that enabling one feature will disable all the default features.
 
@@ -236,14 +236,14 @@ The following table shows the default fonts for the main languages on Windows, M
 </tbody>
 </table>
 
-The complete list of defaults, including details like e.g. the exact Unicode ranges Prince is using, can be found in the `fonts.css` file located in the installation directory of Prince resources. (See [Installation Layout](installation-layout.md#installation-layout)).
+The complete list of defaults, including details like e.g. the exact Unicode ranges Prince is using, can be found in the `fonts.css` file located in the installation directory of Prince resources. (See [Installation Layout](installing.md#installation-layout)).
 
-In order to redefine these defaults, see [Redefining the generic font families](redefining-font-families.md#redefining-font-families).
+In order to redefine these defaults, see [Redefining the generic font families](#redefining-the-generic-font-families).
 
 
 ### Redefining the generic font families
 
-The CSS generic font families can be redefined to use different fonts by editing the `fonts.css` file in the Prince installation (see [Installation Layout](installation-layout.md#installation-layout)). Each font family is defined using a [`@font-face`](at-rules.md#at-font-face) rule, which maps a font family to an actual font either by name or by filename. (See [Generic font families](fonts.md#font-families)).
+The CSS generic font families can be redefined to use different fonts by editing the `fonts.css` file in the Prince installation (see [Installation Layout](installing.md#installation-layout)). Each font family is defined using a [`@font-face`](css-refs.md#at-font-face) rule, which maps a font family to an actual font either by name or by filename. (See [Generic font families](#generic-font-families)).
 
 Here is an example of mapping the generic "sans-serif" font family to the local system font called "Trebuchet MS".
 
@@ -255,7 +255,7 @@ fonts.css
         src: local("Trebuchet MS")
     }
 ```
-It is also possible to map the generic font families to local fonts specified by the filename of the TrueType font file. This will usually require using multiple [`@font-face`](at-rules.md#at-font-face) rules, one for each TrueType font file in the font family, which usually includes four files (normal, bold, italic and bold-italic). Here is an example of mapping the generic "sans-serif" font family to the "Trebuchet MS" font using filenames, assuming that the font is installed in the usual system directory on Linux.
+It is also possible to map the generic font families to local fonts specified by the filename of the TrueType font file. This will usually require using multiple [`@font-face`](css-refs.md#at-font-face) rules, one for each TrueType font file in the font family, which usually includes four files (normal, bold, italic and bold-italic). Here is an example of mapping the generic "sans-serif" font family to the "Trebuchet MS" font using filenames, assuming that the font is installed in the usual system directory on Linux.
 
 fonts.css
 
@@ -288,7 +288,7 @@ fonts.css
         src: url("/usr/share/fonts/truetype/msttcorefonts/trebucbi.ttf")
     }
 ```
-Prince can be instructed not to use system fonts with the [`--no-system-fonts`](command-line.md#cl-no-system-fonts) command-line option. Only fonts defined with [`@font-face`](at-rules.md#at-font-face) rules in CSS will be available.
+Prince can be instructed not to use system fonts with the [`--no-system-fonts`](command-line.md#cl-no-system-fonts) command-line option. Only fonts defined with [`@font-face`](css-refs.md#at-font-face) rules in CSS will be available.
 
 
 Layout
@@ -296,7 +296,7 @@ Layout
 
 Layout is the way in which text and pictures are set out on a page. It defines the final look of a document. Prince understands layout by means of CSS, cascading style sheets.
 
-In the following chapters we shall go through the main points when preparing the layout of a page. It mainly follows the general steps of layout for web pages: starting from [Text formatting](text-formatting.md#text-formatting) and [Paragraph formatting](text-formatting.md#paragraph-formatting), via the [Box Model](css-box.md#css-box), until [Tables](tables.md#tables), [Lists](lists.md#lists), [Columns](columns.md#columns), [Floats](floats.md#floats), [Flex Layout](flexbox.md#flexbox), and [Footnotes](footnotes.md#footnotes).
+In the following chapters we shall go through the main points when preparing the layout of a page. It mainly follows the general steps of layout for web pages: starting from [Text formatting](#text-formatting) and [Paragraph formatting](#paragraph-formatting), via the [Box Model](#box-model), until [Tables](#tables), [Lists](#lists), [Columns](#columns), [Floats](#floats), [Flex Layout](#flex-layout), and [Footnotes](#footnotes).
 
 A separate chapter, [Paged Media](paged.md#paged), will analyze in-depth the major difference between formatting for the web and PDF/Print, namely that PDF is paginated, content is placed on discrete pages.
 
@@ -305,7 +305,7 @@ A separate chapter, [Paged Media](paged.md#paged), will analyze in-depth the maj
 
 Text can be styled with CSS by defining font styles or text layout styles.
 
-After choosing an appropriate typeface for your text with the `font-family` property (see [Fonts](fonts.md#fonts)), you can assign it different sizes with the `font-size` property.
+After choosing an appropriate typeface for your text with the `font-family` property (see [Fonts](#fonts)), you can assign it different sizes with the `font-size` property.
 
 Next up you should decide whether to give it some `color`. The default text color for a page is defined in the `body` selector, but each selector can have its own color.
 
@@ -323,7 +323,7 @@ In order to determine how compact the text should be displayed, the `letter-spac
 
 In a similar fashion, the property `word-spacing` can be used to determine the distance between words.
 
-The directionality of the text is controlled through the [Writing Mode](writing-mode.md#writing-mode).
+The directionality of the text is controlled through the [Writing Mode](#writing-mode).
 
 ### Paragraph formatting
 
@@ -370,7 +370,7 @@ Another important aspect when formatting a paragraph is how compact the text lin
 
 The property `line-stacking-strategy` allows to choose whether individual lines should have their height determined based on their content, or whether all lines in a paragraph should have the same height, or a compromise where their heights are determined by their content and then rounded up to a multiple of the paragraph line height.
 
-In order to lay out text in a well-balanced way, it might at times be necessary to hyphenate some words - to enable hyphenation, the `hyphens` property is used. For details please refer to the section on [Hyphenation](hyphenation.md#hyphenation).
+In order to lay out text in a well-balanced way, it might at times be necessary to hyphenate some words - to enable hyphenation, the `hyphens` property is used. For details please refer to the section on [Hyphenation](cookbook.md#hyphenation).
 
 Prince also allows for line-breaking in certain situations even in the absence of whitespace - for example, after slashes in long URLs. This behavior can be disabled with the `prince-linebreak-magic` property for situations in which more precise control over line-breaking is preferred.
 
@@ -393,7 +393,7 @@ The page selector pseudo-classes `:recto` and `:verso` (see [Selecting pages](pa
 
 Columns change their orientation when the writing mode is changed - `writing-mode` `vertical-rl` arranges the columns horizontally, top-to-bottom.
 
-This can be used to rotate content - see [Printing wide content sideways](rotating.md#wide-content-sideways) and [Rotating content in table cells](rotating.md#rotating-table-cells).
+This can be used to rotate content - see [Printing wide content sideways](cookbook.md#printing-wide-content-sideways) and [Rotating content in table cells](cookbook.md#rotating-content-in-table-cells).
 
 
 ### Box Model
@@ -402,7 +402,7 @@ All HTML elements follow the CSS box model. Their `margin`, `border`, `padding` 
 
 #### Margin
 
-At the very outside of the box are the margins. Each margin's size can be set individualy with the properties [margin-top](doc-refs.md#prop-margin-top), [margin-bottom](doc-refs.md#prop-margin-bottom), [margin-left](doc-refs.md#prop-margin-left) and [margin-right](doc-refs.md#prop-margin-right), or you can use the *shorthand property* [margin](doc-refs.md#prop-margin) to specify all four margins together. The syntax of the shorthand property is:
+At the very outside of the box are the margins. Each margin's size can be set individualy with the properties [margin-top](css-props.md#prop-margin-top), [margin-bottom](css-props.md#prop-margin-bottom), [margin-left](css-props.md#prop-margin-left) and [margin-right](css-props.md#prop-margin-right), or you can use the *shorthand property* [margin](css-props.md#prop-margin) to specify all four margins together. The syntax of the shorthand property is:
 
 ```
     margin: top right bottom left
@@ -415,7 +415,7 @@ If there are only:
 
 Prince expands the margin properties with `margin-inside` and `margin-outside`, defining the margin respectively on the inside or outside of a spread: inside is on the right when used on a left-facing page, and on left on a right-facing page; outside is on the left when used on a left-facing page, and on the right on a right-facing page.
 
-Always keep in mind that `margin-top` and `margin-bottom` of blocks are combined (i.e. "collapsed") into a single margin according to a possibly rather complex behavior known as *margin collapsing*. The notable exception is the behavior of margins in [Flex Layout](flexbox.md#flexbox).
+Always keep in mind that `margin-top` and `margin-bottom` of blocks are combined (i.e. "collapsed") into a single margin according to a possibly rather complex behavior known as *margin collapsing*. The notable exception is the behavior of margins in [Flex Layout](#flex-layout).
 
 #### Border
 
@@ -429,7 +429,7 @@ The `border-clip` property splits the borders into parts along the border edge -
 
 #### Padding
 
-The property `padding` defines the padding inside the box model. Each padding's size can be set individually with the properties [padding-top](doc-refs.md#prop-padding-top), [padding-bottom](doc-refs.md#prop-padding-bottom), [padding-left](doc-refs.md#prop-padding-left) and [padding-right](doc-refs.md#prop-padding-right), or you can use the *shorthand property* [padding](doc-refs.md#prop-padding) to specify all four paddings together. The syntax of the shorthand property is:
+The property `padding` defines the padding inside the box model. Each padding's size can be set individually with the properties [padding-top](css-props.md#prop-padding-top), [padding-bottom](css-props.md#prop-padding-bottom), [padding-left](css-props.md#prop-padding-left) and [padding-right](css-props.md#prop-padding-right), or you can use the *shorthand property* [padding](css-props.md#prop-padding) to specify all four paddings together. The syntax of the shorthand property is:
 
 ```
     padding: top right bottom left
@@ -442,9 +442,9 @@ If there are only:
 
 #### Background
 
-The background of an element can be styled with the `background-color` and the `background-image` properties, or with the shorthand property `background`. See also [Background Images](images.md#images-background).
+The background of an element can be styled with the `background-color` and the `background-image` properties, or with the shorthand property `background`. See also [Background Images](graphics.md#background-images).
 
-Various standard properties are available to position the background, to clip it or to determine whether, and how it should be repeated. Prince extends control on the background with the `prince-background-image-resolution` property, used to control image size in print (see [Image Size](images.md#images-size)), and with the `bleed` modifier of the `background-attachment` property, which, when used together with `background-size: cover`, allows a background image to cover the entire page bleed area (see [Trimming marks](paged.md#page-marks)).
+Various standard properties are available to position the background, to clip it or to determine whether, and how it should be repeated. Prince extends control on the background with the `prince-background-image-resolution` property, used to control image size in print (see [Image Size](graphics.md#image-size)), and with the `bleed` modifier of the `background-attachment` property, which, when used together with `background-size: cover`, allows a background image to cover the entire page bleed area (see [Trimming marks](paged.md#page-marks)).
 
 
 ### Display
@@ -463,11 +463,11 @@ Care needs to be taken with `inline-block` elements, because Prince [cannot spli
 
 The value `run-in` displays a block element as if it were an inline element at the beginning of the following block element.
 
-With the value `list-item`, the element is effectively transformed into a list item - for more on lists, please see the chapter [Lists](lists.md#lists).
+With the value `list-item`, the element is effectively transformed into a list item - for more on lists, please see the chapter [Lists](#lists).
 
-The value `flex` enables [Flex Layout](flexbox.md#flexbox), while `inline-flex` makes an element behave like an inline element and lays out its content according to the flex layout model.
+The value `flex` enables [Flex Layout](#flex-layout), while `inline-flex` makes an element behave like an inline element and lays out its content according to the flex layout model.
 
-Several values refer to [Tables](tables.md#tables), making elements behave as if they were table elements. However, the value `inline-table` has no direct equivalent in HTML - it behaves like a `table` HTML element, but as an inline element, rather than a block element. Inside the table box is a block context.
+Several values refer to [Tables](#tables), making elements behave as if they were table elements. However, the value `inline-table` has no direct equivalent in HTML - it behaves like a `table` HTML element, but as an inline element, rather than a block element. Inside the table box is a block context.
 
 The special value `none`, which removes the content from the document, is very useful when hiding certain elements in the printed layout.
 
@@ -530,11 +530,11 @@ Output
 
 <ol style="border: solid 2px darkgreen">
 <li style="border: solid 1px black; list-style-position: inside">
-    This list item sets the <code><a href="doc-refs.md#prop-list-style-position">list-style-position</a></code> to <code>inside</code>,
+    This list item sets the <code><a href="css-props.md#prop-list-style-position">list-style-position</a></code> to <code>inside</code>,
     so the list marker is rendered inside the principal box of <code>li</code>.
 </li>
 <li style="border: solid 1px black; list-style-position: outside">
-    This list item sets the <code><a href="doc-refs.md#prop-list-style-position">list-style-position</a></code> to <code>outside</code>,
+    This list item sets the <code><a href="css-props.md#prop-list-style-position">list-style-position</a></code> to <code>outside</code>,
     so the list marker is rendered outside the principal box of <code>li</code>.
 </li>
 </ol>
@@ -840,13 +840,13 @@ Rows inside the <code>thead</code> element are used as a running table header.
 Rows inside the <code>tfoot</code> element are used as a running table footer.
 
 
-See also [Long Tables](long-tables.md#long-tables).
+See also [Long Tables](cookbook.md#long-tables).
 
 #### Table captions
 
 Tables can also be provided with a table caption by using the `caption` HTML element, or by styling an arbitrary element with `display: table-caption` to be made to behave like `caption` elements. The caption is positioned above the table by default, but it can be moved to the bottom with the `caption-side` property.
 
-When a table spans across more than one page, the `prince-caption-page` property determines whether table captions will be displayed on the first page of a table, or only on the following pages, or repeated on every page that a table appears on. See also [Fancy Table Captions](fancy-table-captions.md#fancy-table-captions).
+When a table spans across more than one page, the `prince-caption-page` property determines whether table captions will be displayed on the first page of a table, or only on the following pages, or repeated on every page that a table appears on. See also [Fancy Table Captions](cookbook.md#fancy-table-captions).
 
 
 ### Columns
@@ -876,7 +876,7 @@ When content is laid out in multiple columns, Prince can determine where column 
 
 Prince also supports the properties `column-break-before` and `column-break-after`. However, you are encouraged to use the newer properties `break-before`, `break-after` with the keyword `column` from the CSS Fragmentation Module Level 3.
 
-If an element is to break the flow and span several columns, the property `column-span` helps to achieve this. For floated elements (see [Floats](floats.md#floats)) a numeric value tells Prince how many columns the element should span. For non-floated elements that are part of the regular flow of the document, only the keyword `all` can be used.
+If an element is to break the flow and span several columns, the property `column-span` helps to achieve this. For floated elements (see [Floats](#floats)) a numeric value tells Prince how many columns the element should span. For non-floated elements that are part of the regular flow of the document, only the keyword `all` can be used.
 
 The following example instructs Prince to make the `h1` heading element span all the columns:
 
@@ -888,7 +888,7 @@ The following example instructs Prince to make the `h1` heading element span all
         column-span: all;
     }
 ```
-Prince features also several column-specific extensions to the `float` property, namely [Page and column floats](floats.md#float-extension-page-column) and [Page and column footnotes](floats.md#float-extension-footnotes).
+Prince features also several column-specific extensions to the `float` property, namely [Page and column floats](#page-and-column-floats) and [Page and column footnotes](#page-and-column-footnotes).
 
 ### Floats
 
@@ -918,7 +918,7 @@ When giving the `float` property the value `top` or `bottom`, the element will b
         float: column-top-corner;
     }
 ```
-A floated element can span several columns with the help of the `column-span` property (see [Columns](columns.md#columns)). The following example instructs Prince to make the image span two columns:
+A floated element can span several columns with the help of the `column-span` property (see [Columns](#columns)). The following example instructs Prince to make the image span two columns:
 
 ```
     img {
@@ -941,7 +941,7 @@ If the `inside` and `outside` values are used in a multi-column layout, the elem
 
 ##### Page and column footnotes
 
-The value `footnote` transforms the element into a footnote: it creates a footnote call in the place where it appears in its natural flow, and moves the element to the bottom of the page. The footnote marker is placed outside of the block of the footnote. With the value `inline-footnote`, the footnote marker is placed inside of the block of the footnote. Two additional values, namely `prince-column-footnote` and `prince-column-inline-footnote` behave in an analogous way, but move the footnote not to the bottom of the page, but to the bottom of its column instead. See also [Footnotes](footnotes.md#footnotes).
+The value `footnote` transforms the element into a footnote: it creates a footnote call in the place where it appears in its natural flow, and moves the element to the bottom of the page. The footnote marker is placed outside of the block of the footnote. With the value `inline-footnote`, the footnote marker is placed inside of the block of the footnote. Two additional values, namely `prince-column-footnote` and `prince-column-inline-footnote` behave in an analogous way, but move the footnote not to the bottom of the page, but to the bottom of its column instead. See also [Footnotes](#footnotes).
 
 ##### Conditional modifiers
 
@@ -1025,7 +1025,7 @@ This rule will generate footnote calls with the number of the footnote in bracke
 
 #### Footnote markers
 
-Prince automatically generates footnote markers, the numeric markers placed in front of the footnote text. Footnote markers are similar to the markers added to list items (see [Lists](lists.md#lists)) in most respects, and can be styled in a similar fashion using the `::footnote-marker` pseudo-element:
+Prince automatically generates footnote markers, the numeric markers placed in front of the footnote text. Footnote markers are similar to the markers added to list items (see [Lists](#lists)) in most respects, and can be styled in a similar fashion using the `::footnote-marker` pseudo-element:
 
 ```
     *::footnote-marker {
@@ -1034,11 +1034,11 @@ Prince automatically generates footnote markers, the numeric markers placed in f
 ```
 This rule will generate footnote markers with a bold font.
 
-Footnote markers are rendered outside the footnote in the left margin area by default. If the CSS property `footnote-style-position` has value `inside`, the marker is rendered as the first inline box inside the footnote. This property is similar to the `list-style-position` property that applies to list markers (see [Lists](lists.md#lists)).
+Footnote markers are rendered outside the footnote in the left margin area by default. If the CSS property `footnote-style-position` has value `inside`, the marker is rendered as the first inline box inside the footnote. This property is similar to the `list-style-position` property that applies to list markers (see [Lists](#lists)).
 
 #### Styling and behavior of footnotes
 
-Footnotes are placed within the `@footnote` area of the page (see [Page regions](paged.md#page-regions)), which can be styled within [`@page`](at-rules.md#at-page) rules.
+Footnotes are placed within the `@footnote` area of the page (see [Page regions](paged.md#page-regions)), which can be styled within [`@page`](css-refs.md#at-page) rules.
 
 ```
     @page {
@@ -1052,7 +1052,7 @@ This rule adds a border and some padding to the top of the footnotes area.
 
 If there are no footnotes on a page, the footnotes area will not be displayed on that page at all.
 
-By default, the `@footnote` area is at the bottom of the page. However, Prince allows to position the area in different places, effectively offering a mechanism to create simple sidenotes (see [Sidenotes](sidenotes.md#sidenotes)).
+By default, the `@footnote` area is at the bottom of the page. However, Prince allows to position the area in different places, effectively offering a mechanism to create simple sidenotes (see [Sidenotes](cookbook.md#sidenotes)).
 
 ```
     @page {
@@ -1064,7 +1064,7 @@ By default, the `@footnote` area is at the bottom of the page. However, Prince a
 ```
 This rule moves the footnotes area to the left side of a page.
 
-Footnotes are created with the `float` property (see also [Floats](floats.md#floats)): an element can be removed from the normal flow of the document by styling it with the `footnote` value. This creates a footnote call in the place where the element would be in its natural flow, and moves the element's content to the bottom of the page. The footnote marker is rendered outside the footnote in the left margin area, and the footnote is displayed as a block element.
+Footnotes are created with the `float` property (see also [Floats](#floats)): an element can be removed from the normal flow of the document by styling it with the `footnote` value. This creates a footnote call in the place where the element would be in its natural flow, and moves the element's content to the bottom of the page. The footnote marker is rendered outside the footnote in the left margin area, and the footnote is displayed as a block element.
 
 The property `footnote-display` can be used to change the default display of footnotes: besides the default `block` display, they can be also treated as `inline` elements. The value `compact` leaves it up to Prince to determine whether to display the footnote as a block or inline element: if two or more footnotes fit on one line, they will be treated as inline elements to take up less space.
 
@@ -1072,7 +1072,7 @@ Making a footnote into an inline element moves the footnote marker into the foot
 
 The `float` property offers also the value `inline-footnote`, which is another mechanism to transform the footnote into an inline element.
 
-In a multi-column layout, footnotes can be rendered at the bottom of the page as normal footnotes, or alternatively at the bottom of each column by using the values `prince-column-footnote` or `prince-column-inline-footnote` for the `float` property. See also [Prince extensions to floats](floats.md#float-extensions).
+In a multi-column layout, footnotes can be rendered at the bottom of the page as normal footnotes, or alternatively at the bottom of each column by using the values `prince-column-footnote` or `prince-column-inline-footnote` for the `float` property. See also [Prince extensions to floats](#prince-extensions-to-floats).
 
 In some situations it might happen that footnotes do not fit on the page on which the footnote call was placed. It might be desirable to tie the footnote to the same page as the call - the `prince-footnote-policy` can be of help. The following example instructs Prince to move the line with the footnote call to the next page, in order to keep it on the same page as the footnote itself:
 
@@ -1088,7 +1088,7 @@ This property must be applied to the paragraph in which the footnote occurs, not
 
 ### Flex Layout
 
-Flex layout is a layout model similar to the block layout. It lacks [Columns](columns.md#columns) and [Floats](floats.md#floats) but gains powerful possibilities to distribute space and align content in a more flexible way. The content of a flex container can alter its height and width to best fill the available space, it can be easily aligned even if the size is unknown or dynamic, and most importantly it can be laid out in any direction, as opposed to the traditional layout models that would either be vertically-based (block layout) or horizontally-based (inline layout).
+Flex layout is a layout model similar to the block layout. It lacks [Columns](#columns) and [Floats](#floats) but gains powerful possibilities to distribute space and align content in a more flexible way. The content of a flex container can alter its height and width to best fill the available space, it can be easily aligned even if the size is unknown or dynamic, and most importantly it can be laid out in any direction, as opposed to the traditional layout models that would either be vertically-based (block layout) or horizontally-based (inline layout).
 
 Prince supports the Flex specification fully, with some limitation regarding page-breaking multiple row/column flex containers.
 
@@ -1146,7 +1146,7 @@ Please notice that percentage values of margins and paddings of flex items are r
 
 Complex designs often have very large amounts of CSS with a lot of repeated values. The same color might for example be used in hundreds of different places, requiring a global search-and-replace if that color needs to be changed. Prince supports custom properties, which allow a value to be stored in one place, then be referenced in all other places.
 
-The custom properties are set by using the cutom property notation, which requires the use of two dashes (`--`) before the custom property name - a good approach is to set this property on the `:root` pseudo-class (see [Tree-Structural pseudo-classes](selectors.md#sel-structural)). It is then accessed in other places by using the `var()` function (see [CSS Functional Expressions](functions.md#css-functions)).
+The custom properties are set by using the cutom property notation, which requires the use of two dashes (`--`) before the custom property name - a good approach is to set this property on the `:root` pseudo-class (see [Tree-Structural pseudo-classes](css-refs#tree-structural-pseudo-classes)). It is then accessed in other places by using the `var()` function (see [CSS Functional Expressions](css-refs.md#css-functional-expressions)).
 
 Unlike other CSS properties, custom property names are case-sensitive.
 

@@ -7,7 +7,7 @@ Prince supports a wide range of graphic features, treated in more detail in the 
 Color
 -----
 
-Prince supports RGB, RGBA, CMYK, HSL, HSLA and named spot colors. For Prince's color management, please see the [Color Management](color-management.md#color-management) section.
+Prince supports RGB, RGBA, CMYK, HSL, HSLA and named spot colors. For Prince's color management, please see the [Color Management](#color-management) section.
 
 Prince understands CSS basic color names as well as the list of extended color keywords from the [CSS Color Module Level 4](https://www.w3.org/TR/css-color-4/#named-colors). It also supports the keywords `transparent` and `currentColor`.
 
@@ -53,7 +53,7 @@ The advantage of HSL over RGB is that it is much more intuitive to use and easie
 
 ### Spot colors
 
-Prince also supports named spot colors that can be defined with the [`@prince-color`](at-rules.md#at-prince-color) rule. An alternate color must also be specified with the `alternate-color` property, using any of the valid notations for RGB, HSL or CMYK colors. This will be used in situations where the named color is not available, such as when viewing the generated PDF file on a display. Please note that `alternate-color` cannot be RGBA, HSLA or CMYKA.
+Prince also supports named spot colors that can be defined with the [`@prince-color`](css-refs.md#at-prince-color) rule. An alternate color must also be specified with the `alternate-color` property, using any of the valid notations for RGB, HSL or CMYK colors. This will be used in situations where the named color is not available, such as when viewing the generated PDF file on a display. Please note that `alternate-color` cannot be RGBA, HSLA or CMYKA.
 
 ```css
     @prince-color MyColor {
@@ -88,9 +88,9 @@ The aim of Prince, within a color-managed workflow, is to preserve color informa
 
 ### Color Management and PDF Profiles
 
-As described in the [PDF Versions and Profiles](pdf-profiles.md#pdf-profiles) section, both PDF/A and PDF/X profiles impose restrictions on the features that may be used in a PDF file, including restrictions on color.
+As described in the [PDF Versions and Profiles](prince-output.md#pdf-versions-and-profiles) section, both PDF/A and PDF/X profiles impose restrictions on the features that may be used in a PDF file, including restrictions on color.
 
-PDF/A and PDF/X files have an output intent that defines the intended output color space of the PDF file. In Prince, the output intent color profile is selected using the [`--pdf-output-intent`](command-line.md#cl-pdf-output-intent) command-line option, or using the `prince-pdf-output-intent` property inside a [`@prince-pdf`](at-rules.md#at-prince-pdf) at-rule. Both take a filename or URL to an ICC profile as its value.
+PDF/A and PDF/X files have an output intent that defines the intended output color space of the PDF file. In Prince, the output intent color profile is selected using the [`--pdf-output-intent`](command-line.md#cl-pdf-output-intent) command-line option, or using the `prince-pdf-output-intent` property inside a [`@prince-pdf`](css-refs.md#at-prince-pdf) at-rule. Both take a filename or URL to an ICC profile as its value.
 
 The URL specified with the [`--pdf-output-intent`](command-line.md#cl-pdf-output-intent) command-line option or the `prince-pdf-output-intent` property will be resolved relative to the base URL of the style sheet or document in which the rule is, and needs to point to an existing color profile file.
 
@@ -120,9 +120,9 @@ PDF/A requires that all colors to be device-independent, or else characterized b
 
 ### Color Management in Prince
 
-Prince supports RGB, RGBA, HSL, HSLA, CMYK, and named spot colors. For Prince's color handling, please see the [Color](color.md#color) section.
+Prince supports RGB, RGBA, HSL, HSLA, CMYK, and named spot colors. For Prince's color handling, please see the [Color](#color) section.
 
-As CSS defines RGB colors in the sRGB color space, Prince tags those colors with an sRGB ICC profile in the PDF output. See also the section on [Rich black and true black](color-management.md#rich-true-black) below.
+As CSS defines RGB colors in the sRGB color space, Prince tags those colors with an sRGB ICC profile in the PDF output. See also the section on [Rich black and true black](#rich-black-and-true-black) below.
 
 CMYK colors specified using the `cmyk()` function syntax, or equivalent `device-cmyk()` syntax, represent device-dependent colors, so they will be left as such in the PDF when possible. Device-dependent color is not allowed in PDF/A or PDF/X, so those CMYK colors will be assumed to be either in the output intent color space (if it is CMYK), or else the color space of the fallback CMYK profile. See the command-line option [`--fallback-cmyk-profile`](command-line.md#cl-fallback-cmyk-profile) in the [PDF Output Options](command-line.md#cmd-pdf) section, or the `prince-fallback-cmyk-profile` property.
 ```bash
@@ -141,11 +141,11 @@ Prince preserves the ICC profiles embedded in bitmap images, unless directed not
 
 ### Color conversion
 
-Prince will convert all the colors in a document to a single color space if the [`--convert-colors`](command-line.md#cl-convert-colors) command-line option or the `prince-pdf-color-conversion` descriptor in the [`@prince-pdf`](at-rules.md#at-prince-pdf) at-rule is used. The destination color space is specified with the [`--pdf-output-intent`](command-line.md#cl-pdf-output-intent) option (or the `prince-pdf-output-intent` property), even when not producing PDF/A or PDF/X files.
+Prince will convert all the colors in a document to a single color space if the [`--convert-colors`](command-line.md#cl-convert-colors) command-line option or the `prince-pdf-color-conversion` descriptor in the [`@prince-pdf`](css-refs.md#at-prince-pdf) at-rule is used. The destination color space is specified with the [`--pdf-output-intent`](command-line.md#cl-pdf-output-intent) option (or the `prince-pdf-output-intent` property), even when not producing PDF/A or PDF/X files.
 
 Prince automatically converts colors to the output intent color space only when producing PDF/X-1a files. Files in any of the other profiles need also the [`--convert-colors`](command-line.md#cl-convert-colors) command-line option or the `prince-pdf-color-conversion` property if colors are to be converted.
 
-Prince allows also to use `prince-pdf-color-conversion` as a property, applied to individual elements. The value `auto` is the default and will enable color conversion for this element, if color conversion is enabled at the top level in the [`@prince-pdf`](at-rules.md#at-prince-pdf) at-rule or with the command-line argument, and the value `none` allows color conversion to be disabled for that element and its descendants.
+Prince allows also to use `prince-pdf-color-conversion` as a property, applied to individual elements. The value `auto` is the default and will enable color conversion for this element, if color conversion is enabled at the top level in the [`@prince-pdf`](css-refs.md#at-prince-pdf) at-rule or with the command-line argument, and the value `none` allows color conversion to be disabled for that element and its descendants.
 
 ### Rich black and true black
 
@@ -213,13 +213,13 @@ Alternatively, a filter can be written in SVG and can be referenced by a URL:
 `filter: url(<url>)`  
 This filter takes the URL of an SVG filter. An anchor can be used to reference a specific filter element.
 
-The resolution used when rasterizing to images for applying CSS and SVG filters is controlled through the [prince-filter-resolution](doc-refs.md#prop-prince-filter-resolution) property. The default value is `96dpi` for compatibility with web browsers.
+The resolution used when rasterizing to images for applying CSS and SVG filters is controlled through the [prince-filter-resolution](css-props.md#prop-prince-filter-resolution) property. The default value is `96dpi` for compatibility with web browsers.
 
 
 Images
 ------
 
-Prince supports JPEG, PNG, TIFF and GIF images as well as [Scalable Vector Graphics (SVG)](svg.md#svg).
+Prince supports JPEG, PNG, TIFF and GIF images as well as [Scalable Vector Graphics (SVG)](#scalable-vector-graphics-svg).
 
 Images can be included in XHTML and DocBook documents using the appropriate image elements, which are pre-defined in the default style sheets.
 
@@ -227,7 +227,7 @@ Images can also be included in arbitrary XML documents using the CSS `content` p
 
 Furthermore, images are widely used in style sheets for the background. CSS allows also for several mechanisms to manipulate images and background images.
 
-Please note that Prince tries to preserve the ICC color profile embedded in images - for details see the [Color Management](color-management.md#color-management) section.
+Please note that Prince tries to preserve the ICC color profile embedded in images - for details see the [Color Management](#color-management) section.
 
 ### Images in XHTML
 
@@ -287,9 +287,9 @@ Images can be added to a document as content or decoration, and can be modified 
 
 #### Background Images
 
-Several properties are available to add background images: `background-image` is used to add an image to a page, while `background-position`, `background-attachment` and `background-repeat` are used to position it precisely, also defining its appearance. See also [Background](css-box.md#background).
+Several properties are available to add background images: `background-image` is used to add an image to a page, while `background-position`, `background-attachment` and `background-repeat` are used to position it precisely, also defining its appearance. See also [Background](styling.md#background).
 
-Images can also be added to style a list with the property `list-style-image` (see also [List marker style](lists.md#list-marker-style)).
+Images can also be added to style a list with the property `list-style-image` (see also [List marker style](styling.md#list-marker-style)).
 
 #### Image Orientation
 
@@ -317,7 +317,7 @@ The `object-fit` and `object-position` properties are not specific to images, bu
 
 Please note that specifying `prince-image-resolution` and `prince-background-image-resolution`, or `object-fit`, only affects the default DPI of images, ie. it makes them physically bigger or smaller on the page, and - it does not affect the number of pixels in the image, and thus the PDF file size will be the same.
 
-To reduce the PDF file size, JPEG images can be recompressed at a lower quality level, or PNG images be converted to JPEG, with the `prince-image-magic` property. See also [Image Magic](image-magic.md#image-magic).
+To reduce the PDF file size, JPEG images can be recompressed at a lower quality level, or PNG images be converted to JPEG, with the `prince-image-magic` property. See also [Image Magic](cookbook#image-magic).
 
 
 Scalable Vector Graphics (SVG)

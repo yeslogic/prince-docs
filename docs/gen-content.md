@@ -2,7 +2,7 @@
 title: Generated Content
 ---
 
-Generated content is text and other content that is not found in the original input document, but is added to the output from a style sheet using the CSS `content` property. Useful applications of this property include [Page regions](paged.md#page-regions), [List markers](lists.md#content-list-markers) or [Footnotes](footnotes.md#footnotes).
+Generated content is text and other content that is not found in the original input document, but is added to the output from a style sheet using the CSS `content` property. Useful applications of this property include [Page regions](paged.md#page-regions), [List markers](styling#list-markers) or [Footnotes](styling#footnotes).
 
 ## Generated Content Functions
 
@@ -14,7 +14,7 @@ Generated content is inserted by means of several functions that typically are u
 -   `prince-tooltip`
 -   `string-set`
 
-See also the section on [CSS Functional Expressions](functions.md#css-functions) for additional details on these functions.
+See also the section on [CSS Functional Expressions](css-refs#css-functional-expressions) for additional details on these functions.
 
 The most simple use of generating content in these properties is to insert a literal string. A literal string can also be passed as an argument to the `leader()` function, which expands to fill the available space on the line like justified text, by repeating the string as many times as necessary.
 
@@ -358,7 +358,7 @@ This will add a cross-reference after every link that includes the text of the e
 
 Prince supports arbitrary JavaScript functions to be called from CSS generated content using the `prince-script()` function (see the `content` property). To make the functions available to CSS, the `Prince.addScriptFunc` method is used (see [The Prince Object](javascript.md#js-prince-obj)).
 
-Please note that Prince is not running JavaScript by default - it needs to be explicitly enabled. See [Applying JavaScript in Prince](apply-javascript.md#applying-javascript).
+Please note that Prince is not running JavaScript by default - it needs to be explicitly enabled. See [Applying JavaScript in Prince](prince-input#applying-javascript-in-prince).
 
 CSS
 

@@ -22,7 +22,7 @@ Prince Wrappers
 
 Since different server configurations make use of different scripting languages, wrappers in those languages are necessary to invoke Prince. Wrappers for several of the most widely used scripting languages are available for download on the [Wrappers Download Page](wrappers.html).
 
-A useful tool for writing custom wrappers in other languages are the [Advanced Command-Line Options](cmd-control.md#advanced-cmd).
+A useful tool for writing custom wrappers in other languages are the [Advanced Command-Line Options](#advanced-command-line-options).
 
 For details on the usage of each of the wrappers, please consult the following chapters.
 
@@ -87,7 +87,7 @@ To combine multiple HTML documents into a single PDF file, call `ConvertMultiple
 ```
 #### Using Prince with VB.NET
 
-To use the Prince [The C\# / .Net Wrapper](dotnet.md#csharp) in VB.NET, add a reference to the DLL to your Visual Studio project. Alternatively, you can include the Prince.vb source file directly if you prefer.
+To use the Prince [The C\# / .Net Wrapper](#the-c-net-wrapper-) in VB.NET, add a reference to the DLL to your Visual Studio project. Alternatively, you can include the Prince.vb source file directly if you prefer.
 
 To convert HTML or XML files into PDF, instantiate a Prince object with the full path to the Prince engine executable file. Once this is done, you can apply style sheets and scripts, or configure other properties by calling the appropriate subroutines. Finally, you can call one of the Convert functions to generate a PDF file.
 
@@ -139,7 +139,7 @@ The `prince.php` file contains the PHP class that provides the interface to Prin
 
 ### The ActiveX/COM Wrapper
 
-The [ActiveX/COM wrapper](wrappers.html#wrapper-activex) allows Prince to be called from various languages: [ASP](asp.md#asp), [ActiveX, COM, Visual Basic](activex.md#activex) and also [Coldfusion](coldfusion.md#coldfusion).
+The [ActiveX/COM wrapper](wrappers.html#wrapper-activex) allows Prince to be called from various languages: [ASP](#using-prince-with-asp), [ActiveX, COM, Visual Basic](#using-prince-with-activex-com-visual-basic) and also [Coldfusion](#using-prince-with-coldfusion).
 
 This package contains two files:
 
@@ -148,7 +148,7 @@ This package contains two files:
 
 #### Using Prince with ASP
 
-Prince can be called from ASP pages using the [ActiveX/COM interface](asp.md#activex-com).
+Prince can be called from ASP pages using the [ActiveX/COM interface](#the-activex-com-wrapper).
 
 This interface is provided in the form of an ActiveX DLL file that needs to be registered in the Windows registry using REGSVR32.EXE:
 
@@ -183,7 +183,7 @@ The following is some sample code for illustration:
 
 #### Using Prince with ActiveX / COM / Visual Basic
 
-Prince can be called from Visual Basic and other languages on Windows using the [ActiveX/COM interface](asp.md#activex-com).
+Prince can be called from Visual Basic and other languages on Windows using the [ActiveX/COM interface](#the-activex-com-wrapper).
 
 This interface is provided in the form of an ActiveX DLL file that needs to be registered in the Windows registry using REGSVR32.EXE:
 
@@ -194,11 +194,11 @@ Please read the README.TXT file that comes with the ActiveX DLL file for more de
 
 ### Using Prince with ColdFusion
 
-Prince can be called from ColdFusion pages using the Java interface or the [ActiveX/COM interface](asp.md#activex-com), if on Windows.
+Prince can be called from ColdFusion pages using the Java interface or the [ActiveX/COM interface](#the-activex-com-wrapper), if on Windows.
 
 #### Using Java
 
-Start by downloading the [Java interface](java.md#java) for Prince. This package contains:
+Start by downloading the [Java interface](#the-java-wrapper) for Prince. This package contains:
 
 -   A single JAR file (`prince.jar`),
 -   the [API documentation](wrappers/java/doc/index.html) and
@@ -231,7 +231,7 @@ If on Linux, substitute the paths with the appropriate UNIX style paths.
 
 #### Using ActiveX/COM
 
-If you are running ColdFusion on Windows, you can also call Prince using the [ActiveX/COM interface](asp.md#activex-com).
+If you are running ColdFusion on Windows, you can also call Prince using the [ActiveX/COM interface](#the-activex-com-wrapper).
 
 This interface is provided in the form of an ActiveX DLL file that needs to be registered in the Windows registry using REGSVR32.EXE:
 
@@ -370,7 +370,7 @@ Node.js
 Advanced Command-Line Options
 -----------------------------
 
-Prince can also be called from the command-line with two special options, useful for understanding the calls Prince can be controlled with, and the output it produces, in order to write your own wrapper: the [Prince Control Protocol](cmd-control.md#cmd-control) and the [Structured Log](cmd-control.md#structured-log).
+Prince can also be called from the command-line with two special options, useful for understanding the calls Prince can be controlled with, and the output it produces, in order to write your own wrapper: the [Prince Control Protocol](#prince-control-protocol) and the [Structured Log](#structured-log).
 
 ### Prince Control Protocol
 
@@ -602,7 +602,7 @@ Specifying `--structured-log=buffered` is the same as `normal`, but all log mess
 
 The deadlock problem happens when Prince writes log messages to stderr and blocks, waiting for the other software to read them, but the other software is blocked waiting for Prince to write the PDF to stdout, leading to a deadlock where both processes hang indefinitely.
 
-By omitting log messages, or by delaying them until after the PDF is written, this deadlock can be avoided. Another option is to use the [Prince Control Protocol](cmd-control.md#cmd-control), which also avoids this problem.
+By omitting log messages, or by delaying them until after the PDF is written, this deadlock can be avoided. Another option is to use the [Prince Control Protocol](#prince-control-protocol), which also avoids this problem.
 
 ### Fail-Safe Options
 

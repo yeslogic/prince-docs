@@ -4,7 +4,7 @@ title: Prince Input
 
 Prince takes HTML or XML files as input, and converts them to PDF files. Additionally, CSS style sheets can be provided for styling the documents, and JavaScript files can be used for additional manipulation of the input.
 
-See the sections [Applying Style Sheets in Prince](apply-css.md#apply-css), [Applying JavaScript in Prince](apply-javascript.md#applying-javascript) and [XML Input](xml.md#xml-input) for details.
+See the sections [Applying Style Sheets in Prince](#applying-style-sheets-in-prince), [Applying JavaScript in Prince](#applying-javascript-in-prince) and [XML Input](#xml-input) for details.
 
 The input files can be provided in several ways:
 
@@ -33,7 +33,7 @@ Default style sheets
 
 ### Importing Style Sheets
 
-Style sheets may import other style sheets using [`@import`](at-rules.md#at-import) rules. These rules must occur before any other rules or declarations in the style sheet, and have the effect of importing all the rules and declarations from the specified style sheet. See [CSS At-rules](at-rules.md#css-atrules).
+Style sheets may import other style sheets using [`@import`](css-refs.md#at-import) rules. These rules must occur before any other rules or declarations in the style sheet, and have the effect of importing all the rules and declarations from the specified style sheet. See [CSS At-rules](css-refs.md#css-at-rules).
 
 ```
     @import "base.css";
@@ -96,7 +96,7 @@ External scripts can be run by specifying one or more [`--script=FILE`](command-
 
 JavaScript functions can also be called from CSS generated content, by using the `prince-script()` syntax for referencing [Script Functions](gen-content.md#scriptfunc). Please note that scripts contained in the `prince-script()` function are treated as document scripts, and hence need to be explicitly enabled.
 
-Prince also supports PDF scripts, known as "Document Action" scripts - see [PDF Actions](pdf-output.md#pdf-actions). They get included in documents through CSS, too, but will always be run. Note, however, that these scripts are dependent on the PDF viewer, and in many cases might only work in Adobe Acrobat products.
+Prince also supports PDF scripts, known as "Document Action" scripts - see [PDF Actions](prince-output.md#pdf-actions). They get included in documents through CSS, too, but will always be run. Note, however, that these scripts are dependent on the PDF viewer, and in many cases might only work in Adobe Acrobat products.
 
 
 XML Input
@@ -127,16 +127,16 @@ Prince does not support the `xml:base` attribute, therefore hyperlinks must be a
 Prince provides sensible default styling behavior for several common XML vocabularies:
 
 (X)HTML  
-Prince styles HTML or XHTML documents by applying a default style sheet for formatting headings, paragraphs, tables, lists, inline elements and images. The default style sheet can be overridden or extended by user or author style sheets - see [Applying Style Sheets in Prince](apply-css.md#apply-css).
+Prince styles HTML or XHTML documents by applying a default style sheet for formatting headings, paragraphs, tables, lists, inline elements and images. The default style sheet can be overridden or extended by user or author style sheets - see [Applying Style Sheets in Prince](#applying-style-sheets-in-prince).
 
 DocBook  
 Prince styles DocBook documents by applying a default style sheet for formatting headings, paragraphs, tables, lists, inline elements and images. The default style sheet can be overridden or extended by user/author style sheets. (Note that Prince does not process DocBook documents expressed in SGML).
 
 SVG  
-Prince supports a rich subset of SVG 1.1, including basic shapes, paths, text and transformations. All `svg` elements are treated as replaced elements, similar to `img` elements in XHTML, and their content is rendered in a rectangular space. No line breaks or page breaks are made within an `svg` element. (See [Scalable Vector Graphics (SVG)](svg.md#svg) for details of which elements are supported).
+Prince supports a rich subset of SVG 1.1, including basic shapes, paths, text and transformations. All `svg` elements are treated as replaced elements, similar to `img` elements in XHTML, and their content is rendered in a rectangular space. No line breaks or page breaks are made within an `svg` element. (See [Scalable Vector Graphics (SVG)](graphics.md#scalable-vector-graphics-svg) for details of which elements are supported).
 
 Any other XML  
-No default style sheets will be used, so style sheets will need to be specified by the user or referenced from the document in order for Prince to apply style to the document - see [Applying Style Sheets in Prince](apply-css.md#apply-css).
+No default style sheets will be used, so style sheets will need to be specified by the user or referenced from the document in order for Prince to apply style to the document - see [Applying Style Sheets in Prince](#applying-style-sheets-in-prince).
 
 Prince does not support XSLT. External XSLT processors can be used and the resulting document can be passed to Prince.
 

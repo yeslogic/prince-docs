@@ -19,7 +19,7 @@ We work hard to make Prince work on multiple platforms (Windows, Linux, etc) and
 
 When running into trouble with Prince, the first thing you should do is to check for any errors. These can be found in the Prince output log.
 
-When launching Prince from the command line, Prince will print any error or warning messages directly to the console, prefixed with `error:` or `warning:` messages. The level of verbosity, or a log file where to print all output, can be controlled with a few command-line [Logging Options](command-line.md#cmd-logging). A more advanced control of the output is given by the [Structured Log](cmd-control.md#structured-log).
+When launching Prince from the command line, Prince will print any error or warning messages directly to the console, prefixed with `error:` or `warning:` messages. The level of verbosity, or a log file where to print all output, can be controlled with a few command-line [Logging Options](command-line.md#cmd-logging). A more advanced control of the output is given by the [Structured Log](server-integration.md#structured-log).
 
 When using the Prince GUI, the output log is printed to the log window on the bottom left of the main GUI window.
 
@@ -30,7 +30,7 @@ Symptom
     prince: ./picture.bmp: warning: Unknown image format
 ```
 Explanation  
-Prince supports JPEG, PNG, TIFF and GIF images as well as SVG (see [Images](images.md#images)). If you try to format a document that includes images in a format that is not supported by Prince, such as BMP, you may see the above error message from Prince.
+Prince supports JPEG, PNG, TIFF and GIF images as well as SVG (see [Images](graphics.md#images)). If you try to format a document that includes images in a format that is not supported by Prince, such as BMP, you may see the above error message from Prince.
 
 Solution  
 The solution is to convert the image file into a format that is supported by Prince. We suggest PNG, which is a well-supported general purpose image format with lossless compression.
@@ -51,11 +51,11 @@ Frequently Asked Questions
 
 Why do I see garbled characters on my page? <a href="#faq-garbled-chars" class="self-link"></a>
 
-This usually happens when Prince is not able to find a suitable font, or might be using the wrong font. Try installing a font that supports your script, or try using a different font in your stylesheet. See also: [Fonts](fonts.md#fonts) and [Redefining the generic font families](redefining-font-families.md#redefining-font-families).
+This usually happens when Prince is not able to find a suitable font, or might be using the wrong font. Try installing a font that supports your script, or try using a different font in your stylesheet. See also: [Fonts](styling.md#fonts) and [Redefining the generic font families](styling.md#redefining-the-generic-font-families).
 
 Why do I get strangely misspelled words when I copy text from the PDF? <a href="#faq-misspelled-words" class="self-link"></a>
 
-Prince creates artificial bold text by double printing with an offset when it does not find a bold font. To solve the issue, install the bold font, or try running Prince with the command-line option [`--no-artificial-fonts`](command-line.md#cl-css-dpi). See also [Defining a font family](fonts.md#font-family).
+Prince creates artificial bold text by double printing with an offset when it does not find a bold font. To solve the issue, install the bold font, or try running Prince with the command-line option [`--no-artificial-fonts`](command-line.md#cl-css-dpi). See also [Defining a font family](styling.md#defining-a-font-family).
 
 Why is all the content displayed on one page, while I was expecting it to take several pages? <a href="#faq-one-page" class="self-link"></a>
 
@@ -71,13 +71,13 @@ which Prince cannot split over several pages. It can happen to the whole content
 
 How can I resize my web page to fit it on the printed page? <a href="#faq-resize-page" class="self-link"></a>
 
-Prince usually takes care of reformatting a document to fit on a printed page. However, there are cases where it doesn't work as expected. Wide content can be made fit by [Rotating content](rotating.md#rotating), or by applying the CSS property `prince-shrink-to-fit`, which scales down all content equally. Alternatively, the command-line option [--css-dpi](command-line.md#cl-css-dpi) changes the DPI of the "px" units in CSS, which defaults to 96dpi.
+Prince usually takes care of reformatting a document to fit on a printed page. However, there are cases where it doesn't work as expected. Wide content can be made fit by [Rotating content](cookbook.md#rotating-content), or by applying the CSS property `prince-shrink-to-fit`, which scales down all content equally. Alternatively, the command-line option [--css-dpi](command-line.md#cl-css-dpi) changes the DPI of the "px" units in CSS, which defaults to 96dpi.
 
 We do not recommend people making a habit of using this, and instead advise to design a layout specifically appropriate for the paper being used. Or at least using relative size units.
 
 Why does my PDF file not show the transparent background? <a href="#faq-no-trans" class="self-link"></a>
 
-Different PDF profiles have different requirements - you might be generating a PDF with a version or profile which does not support transparency. The only PDF profile to support transparency is the PDF/X-4 profile. See also: [PDF Versions and Profiles](pdf-profiles.md#pdf-profiles) and [Color Management and PDF Profiles](color-management.md#pdf-colman).
+Different PDF profiles have different requirements - you might be generating a PDF with a version or profile which does not support transparency. The only PDF profile to support transparency is the PDF/X-4 profile. See also: [PDF Versions and Profiles](prince-output.md#pdf-versions-and-profiles) and [Color Management and PDF Profiles](graphics.md#color-management-and-pdf-profiles).
 
 How can I create tooltips in the PDF file? <a href="#faq-tooltips" class="self-link"></a>
 
@@ -90,11 +90,11 @@ However, please note that tooltips are not a standard PDF feature, and they may 
 
 How can I make an element, such as an image or some text, appear on each page of the PDF document? <a href="#faq-everypage" class="self-link"></a>
 
-For this purpose you can use the [`@page`](at-rules.md#at-page) page regions. See: [Page regions](paged.md#page-regions) and [Watermarks](watermarks.md#watermarks).
+For this purpose you can use the [`@page`](css-refs.md#at-page) page regions. See: [Page regions](paged.md#page-regions) and [Watermarks](cookbook.md#watermarks).
 
 How can I apply CSS styles in page regions? <a href="#faq-page-regions" class="self-link"></a>
 
-You cannot add style to generated content in the page regions, except for some inline style properties, such as [color](doc-refs.md#prop-color) and [font](doc-refs.md#prop-font). A possibility for using more complex styling is to use the `element()` or `flow()` CSS functions. See [Generated content in page regions](paged.md#page-gen-content), [Copying content from the document](paged.md#content-copying-text) and [Taking elements from the document](paged.md#content-taking-elements) - however, this latter approach will remove the element from the document itself.
+You cannot add style to generated content in the page regions, except for some inline style properties, such as [color](css-props.md#prop-color) and [font](css-props.md#prop-font). A possibility for using more complex styling is to use the `element()` or `flow()` CSS functions. See [Generated content in page regions](paged.md#page-gen-content), [Copying content from the document](paged.md#content-copying-text) and [Taking elements from the document](paged.md#content-taking-elements) - however, this latter approach will remove the element from the document itself.
 
 How can I start counting pages on a left page and display a right page as second page? <a href="#faq-counting-pages" class="self-link"></a>
 
@@ -114,15 +114,15 @@ HTML
 ```
 Does Prince support JavaScript? <a href="#faq-js" class="self-link"></a>
 
-Yes, Prince supports JavaScript - remember to enable it with the [`--javascript`](command-line.md#cl-javascript) command-line option (see [Applying JavaScript in Prince](apply-javascript.md#applying-javascript)). However, there are some limitations: Prince produces printed documents, and interactive events make no sense in this context. Also, modifications of the document after layout has finished are not possible. See: [Scripting](javascript.md#javascript).
+Yes, Prince supports JavaScript - remember to enable it with the [`--javascript`](command-line.md#cl-javascript) command-line option (see [Applying JavaScript in Prince](prince-input.md#applying-javascript-in-prince)). However, there are some limitations: Prince produces printed documents, and interactive events make no sense in this context. Also, modifications of the document after layout has finished are not possible. See: [Scripting](javascript.md#javascript).
 
 Can I modify the document after layout has finished? <a href="#faq-jsafterkayout" class="self-link"></a>
 
-No, unfortunately this is part of the inherent limitations of printed media - see [JavaScript in Printed Media](javascript.md#js-print). However, JavaScript can run after layout is done, and the output can be used for a second run of Prince - see [The "Two-Pass" Solution](two-pass.md#two-pass).
+No, unfortunately this is part of the inherent limitations of printed media - see [JavaScript in Printed Media](javascript.md#js-print). However, JavaScript can run after layout is done, and the output can be used for a second run of Prince - see [The "Two-Pass" Solution](cookbook.md#the-two-pass-solution).
 
 Can I include content of external files in my document? <a href="#faq-xinclude" class="self-link"></a>
 
-Yes. In XML, this is done by means of [XML Inclusions (XInclude)](xml.md#xinclude). Note that XInclude is disabled by default, and can be enabled with the [`--xinclude`](command-line.md#cl-xinclude) command-line option. Also note that XInclude only applies to XML files.
+Yes. In XML, this is done by means of [XML Inclusions (XInclude)](prince-input.md#xml-inclusions-xinclude). Note that XInclude is disabled by default, and can be enabled with the [`--xinclude`](command-line.md#cl-xinclude) command-line option. Also note that XInclude only applies to XML files.
 
 To apply it to HTML files, the XML input format needs to be specified with the [`--input`](command-line.md#cl-input) command-line option.
 

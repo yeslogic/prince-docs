@@ -4,7 +4,7 @@ title: Prince Output
 
 Prince produces PDF files that are compatible with Adobe Acrobat and other PDF viewers. The output can be controlled in several different ways, addressing different aspects of the resulting files.
 
-For the error and warning output log, please see [Output log](troubleshooting.md#output-log).
+For the error and warning output log, please see [Output log](help.md#output-log).
 
 
 PDF Versions and Profiles
@@ -52,7 +52,7 @@ Prince supports PDF object streams to reduce the size of tagged PDFs. This can b
 
 Object streams are enabled by default, therefore Prince produces files with PDF version 1.5 - unless a profile that requires older PDF versions will automatically disable object streams.
 
-Choosing one profile over another can help producing a PDF file which has the right properties for its intended destination. Each PDF profile places restrictions on the features allowed in a PDF file in order to achieve its aims. Please also see the [Color Management](color-management.md#color-management) section for the impact the PDF profiles have on color management. Prince produces error messages when the restrictions are not respected.
+Choosing one profile over another can help producing a PDF file which has the right properties for its intended destination. Each PDF profile places restrictions on the features allowed in a PDF file in order to achieve its aims. Please also see the [Color Management](graphics.md#color-management) section for the impact the PDF profiles have on color management. Prince produces error messages when the restrictions are not respected.
 
 ```bash
     $ prince foo.md --encrypt --no-embed-fonts --pdf-profile="PDF/A-1b"
@@ -66,7 +66,7 @@ Generally speaking, PDF/A profiles were created with the goal of long-term prese
 -   PDF/A tries to maximize device independence
 -   Audio and video content is forbidden
 -   All fonts are embedded
--   Colorspaces should be specified in a device-independent manner: all color data must be Grayscale, CMYK or named Spot Colors and there must be an output intent. Transparency is not allowed. See also [Color Management and PDF Profiles](color-management.md#pdf-colman)
+-   Colorspaces should be specified in a device-independent manner: all color data must be Grayscale, CMYK or named Spot Colors and there must be an output intent. Transparency is not allowed. See also [Color Management and PDF Profiles](graphics.md#color-management-and-pdf-profiles)
 -   Encryption is forbidden
 
 ### PDF/UA
@@ -85,7 +85,7 @@ Generally speaking, PDF/A profiles were created with the goal of long-term prese
 -   Audio and video content is forbidden
 -   All fonts are embedded
 -   Colorspaces must be specified in a device-independent manner - an output intent is required (see the [`--pdf-output-intent`](command-line.md#cl-pdf-output-intent) command-line option in the [PDF Output Options](command-line.md#cmd-pdf) section)
--   See the [Color Management and PDF Profiles](color-management.md#pdf-colman) section for the color profiles available in each PDF/X version. Transparency is not allowed, with the exception of PDF/X-4
+-   See the [Color Management and PDF Profiles](graphics.md#color-management-and-pdf-profiles) section for the color profiles available in each PDF/X version. Transparency is not allowed, with the exception of PDF/X-4
 -   Encryption is forbidden
 
 
@@ -96,7 +96,7 @@ Producing accessible documents is very important when documents are to be shared
 
 The relevant criteria for producing accessible PDF can also be found in a separate document, the [PDF Techniques for WCAG 2.0](https://www.w3.org/TR/WCAG20-TECHS/pdf.html).
 
-A first step would be to produce files with one of the PDF profiles addressing accessibility, namely the PDF/UA-1 profile or the combined PDF/A-1a+PDF/UA-1 or PDF/A-3a+PDF/UA-1 profiles, by specifying the [`--pdf-profile`](doc-refs.html#cl-pdf-profile) command line option. See [PDF Versions and Profiles](pdf-profiles.md#pdf-profiles) for details.
+A first step would be to produce files with one of the PDF profiles addressing accessibility, namely the PDF/UA-1 profile or the combined PDF/A-1a+PDF/UA-1 or PDF/A-3a+PDF/UA-1 profiles, by specifying the [`--pdf-profile`](doc-refs.html#cl-pdf-profile) command line option. See [PDF Versions and Profiles](#pdf-versions-and-profiles) for details.
 
 The next step would be to specifically check compliance of the document's content with the requirements. A number of resoures or tools can be helpful in this step:
 
@@ -167,7 +167,7 @@ Prince supports the `pdf-action:` URL scheme for PDF actions. Typical values are
 ```html
     <a href="pdf-action:Print">Print Document</a>
 ```
-However, Prince passes the provided values verbatim to the PDF viewer, so the user can supply values that Prince doesn't know about, but the viewer does. Also, these scripts will always be run, unlike JavaScript (see [Applying JavaScript in Prince](apply-javascript.md#applying-javascript)).
+However, Prince passes the provided values verbatim to the PDF viewer, so the user can supply values that Prince doesn't know about, but the viewer does. Also, these scripts will always be run, unlike JavaScript (see [Applying JavaScript in Prince](prince-input.md#applying-javascript-in-prince)).
 
 Please be advised that this and the following actions and scripts are dependent on the PDF viewer, and in many cases might only work in Adobe Acrobat products.
 
@@ -275,7 +275,7 @@ The values of this property are mapped to PDF page layout options:
 
 Prince also provides two properties to fine-tune the printing of the PDF. The property `prince-pdf-print-scaling` can be used to disable print scaling for the PDF file when it is printed and the property `prince-pdf-paper-tray` controls the PickTrayByPDFSize flag in generated PDF files, which specifies whether the PDF page size is used to select the input paper tray.
 
-Duplex printing is supported with the CSS property `prince-pdf-duplex`. This property may be used inside the [`@prince-pdf`](at-rules.md#at-prince-pdf) at-rule to set the `Duplex` property in the `PDFViewerPreferences` dictionary. The values `duplex-flip-short-edge` and `duplex-flip-long-edge` tell about how to flip the paper, while the value `simplex` suppresses duplex printing.
+Duplex printing is supported with the CSS property `prince-pdf-duplex`. This property may be used inside the [`@prince-pdf`](css-refs.mn#at-prince-pdf) at-rule to set the `Duplex` property in the `PDFViewerPreferences` dictionary. The values `duplex-flip-short-edge` and `duplex-flip-long-edge` tell about how to flip the paper, while the value `simplex` suppresses duplex printing.
 
 ```css
     @prince-pdf {
@@ -310,7 +310,7 @@ Font embedding can be disabled if necessary, for example if Prince is being used
 
 ### PDF Attachments
 
-Prince supports adding files to PDF documents as attachments. The main mechanisms for doing so are the JavaScript function [`PDF.attachFile`](js-support.md#window.PDF.attachFile) and the command-line option [`--attach`](command-line.md#cl-attach). Additionally, the job description JSON format, used by the [Prince Control Protocol](cmd-control.md#cmd-control), can be used to provid an attachment "inline" through the Java/C\# APIs (see [Prince Wrappers](server-integration.md#wrappers)) instead of as a separate file on the filesystem. See [Prince Control Protocol](cmd-control.md#cmd-control) for details on the job description JSON format.
+Prince supports adding files to PDF documents as attachments. The main mechanisms for doing so are the JavaScript function [`PDF.attachFile`](js-support.md#window.PDF.attachFile) and the command-line option [`--attach`](command-line.md#cl-attach). Additionally, the job description JSON format, used by the [Prince Control Protocol](server-integration.md#prince-control-protocol), can be used to provid an attachment "inline" through the Java/C\# APIs (see [Prince Wrappers](server-integration.md#wrappers)) instead of as a separate file on the filesystem. See [Prince Control Protocol](server-integration.md#prince-control-protocol) for details on the job description JSON format.
 
 
 ### PDF Bookmarks
@@ -362,7 +362,7 @@ The default value for this property is `self`, referring to the element that gen
 
 ### PDF Tags
 
-Tagged PDF files have special handling mechanisms for specific tag types. When enabling tagged PDF files with the command line option [`--tagged-pdf`](command-line.md#cl-tagged-pdf) Prince automatically assigns default values to certain HTML elements, which can be seen in the default `html.css` style sheet (see [Installation Layout](installation-layout.md#installation-layout)).
+Tagged PDF files have special handling mechanisms for specific tag types. When enabling tagged PDF files with the command line option [`--tagged-pdf`](command-line.md#cl-tagged-pdf) Prince automatically assigns default values to certain HTML elements, which can be seen in the default `html.css` style sheet (see [Installation Layout](installing.md#installation-layout)).
 
 However, in specific cases it is advisable to fine-tune the PDF tags with the `prince-pdf-tag-type` property. In Prince, it is possible to assign PDF tag types to elements in the document through the `prince-pdf-tag-type` property, in order to create XML vocabularies in the PDF.
 
@@ -441,9 +441,9 @@ XML
 ```
 #### XMP Metadata
 
-Additionally, XMP metadata can be added to a PDF file from an XMP file. This file needs to be passed to Prince either via the [`--pdf-xmp`](command-line.md#cl-pdf-xmp) command-line option, the [prince-pdf-xmp](doc-refs.md#prop-prince-pdf-xmp) CSS property, or it can be specified in JavaScript with the [`PDF.xmp()`](js-support.md#window.PDF.xmp) function.
+Additionally, XMP metadata can be added to a PDF file from an XMP file. This file needs to be passed to Prince either via the [`--pdf-xmp`](command-line.md#cl-pdf-xmp) command-line option, the [prince-pdf-xmp](css-props.md#prop-prince-pdf-xmp) CSS property, or it can be specified in JavaScript with the [`PDF.xmp()`](js-support.md#window.PDF.xmp) function.
 
-The [`PDF.xmp()`](js-support.md#window.PDF.xmp) JavaScript function, the [prince-pdf-xmp](doc-refs.md#prop-prince-pdf-xmp) CSS property and the [`--pdf-xmp`](command-line.md#cl-pdf-xmp) command-line option require either a URL pointing to an XMP file, or an encoded `data:` URL.
+The [`PDF.xmp()`](js-support.md#window.PDF.xmp) JavaScript function, the [prince-pdf-xmp](css-props.md#prop-prince-pdf-xmp) CSS property and the [`--pdf-xmp`](command-line.md#cl-pdf-xmp) command-line option require either a URL pointing to an XMP file, or an encoded `data:` URL.
 
 Prince includes data from the `<x:xmpmeta>` element and its contents. The `xpacket` processing instructions are ignored, as Prince generates those itself when it produces the PDF file.
 

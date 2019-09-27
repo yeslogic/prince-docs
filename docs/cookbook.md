@@ -11,7 +11,7 @@ Table of Contents
 You need  
 [JavaScript in Printed Media](javascript.md#js-print)
 
-[The "Two-Pass" Solution](two-pass.md#two-pass)
+[The "Two-Pass" Solution](#the-two-pass-solution)
 
 [Generated Content Functions](gen-content.md#gen-content-functions)
 
@@ -47,7 +47,7 @@ Our [example document](http://css4.pub/2018/toc/index.html) generates at Table o
 ```bash
     $ prince --javascript http://css4.pub/2018/toc -o toc.pdf
 ```
-A [second example document](http://css4.pub/2017/musick/musick.html) generates at ToC by way of JavaScript and, even more impressively, the script also prints out an index which is added to the end of the document, to be used when running Prince a second time (see [The "Two-Pass" Solution](two-pass.md#two-pass)). Notice how subsequent page numbers in the index are folded into a range. To produce this document, try running these commands from a Linux command-line:
+A [second example document](http://css4.pub/2017/musick/musick.html) generates at ToC by way of JavaScript and, even more impressively, the script also prints out an index which is added to the end of the document, to be used when running Prince a second time (see [The "Two-Pass" Solution](#the-two-pass-solution)). Notice how subsequent page numbers in the index are folded into a range. To produce this document, try running these commands from a Linux command-line:
 
 ```bash
     $ wget http://css4.pub/2017/musick/musick.html -o foo.html;
@@ -58,7 +58,7 @@ You can view the resulting PDF [here](http://css4.pub/2017/musick/musick.pdf).
 
 ### Multifile Table of Contents
 
-For longer books, it makes sense to split chapters into separate files. Generating a Table of Contents across all files is tricky in JavaScript since scripts only see one file at a time. In Prince, you can work around this limitation with a two-pass solution (see [The "Two-Pass" Solution](two-pass.md#two-pass)) where the first pass collects items for the ToC, and the second pass generates the PDF with the ToC.
+For longer books, it makes sense to split chapters into separate files. Generating a Table of Contents across all files is tricky in JavaScript since scripts only see one file at a time. In Prince, you can work around this limitation with a two-pass solution (see [The "Two-Pass" Solution](#the-two-pass-solution)) where the first pass collects items for the ToC, and the second pass generates the PDF with the ToC.
 
 To try this for yourself, first fetch these five sample files into your own file system, e.g. by running:
 
@@ -87,15 +87,15 @@ You need
 -   [Selecting pages](paged.md#page-rules)
 -   [Controlling pagination](paged.md#controlling-pagination)
 
-[Box Model](css-box.md#css-box)
+[Box Model](styling.md#box-model)
 
-[Prince extensions to floats](floats.md#float-extensions)
+[Prince extensions to floats](styling#prince-extensions-to-floats)
 
-[Paragraph formatting](text-formatting.md#paragraph-formatting)
+[Paragraph formatting](styling#paragraph-formatting)
 
 Prince produces PDFs - which are a prominent example of paged media. The main difference with conventional CSS design for browsers is to always keep in mind that you are dealing with pagination, i.e. the content is placed on discrete pages.
 
-The basic unit for paged media in print is the page, organized in page spreads: the left page, called *verso* in a left-to-right script (see [Writing Mode](writing-mode.md#writing-mode)), and the right page, called *recto*, are of the same size and typically are symmetrical to each other and are centered on the gutter. [Selected](paged.md#page-rules) and [Named pages](paged.md#named-pages) can be placed *recto* or *verso*, and Prince expands several properties and the [`@page`](at-rules.md#at-page) at-rule pseudo-classes with the values `verso` and `recto`, or `inside` and `outside`, referring to the layout on each page of the spread to facilitate the work with page spreads.
+The basic unit for paged media in print is the page, organized in page spreads: the left page, called *verso* in a left-to-right script (see [Writing Mode](styling#writing-mode)), and the right page, called *recto*, are of the same size and typically are symmetrical to each other and are centered on the gutter. [Selected](paged.md#page-rules) and [Named pages](paged.md#named-pages) can be placed *recto* or *verso*, and Prince expands several properties and the [`@page`](css-refs.md#at-page) at-rule pseudo-classes with the values `verso` and `recto`, or `inside` and `outside`, referring to the layout on each page of the spread to facilitate the work with page spreads.
 
 ### Pagination on a page spread
 
@@ -108,7 +108,7 @@ You have control on wether to place specific selected and named pages right or l
 ```
 This rule places an `h1` element always at the beginning of a *recto* page.
 
-Pages can also be specifically targeted and styled with the [`@page`](at-rules.md#at-page) at-rule pseudo-classes `:right` and `:left`, or `:recto` and `:verso`.
+Pages can also be specifically targeted and styled with the [`@page`](css-refs.md#at-page) at-rule pseudo-classes `:right` and `:left`, or `:recto` and `:verso`.
 
 ### Layout on a page spread
 
@@ -137,7 +137,7 @@ So, when you start thinking about the layout box model, Prince offers the proper
 ```
 This example creates a bigger margin around the central gutter, like the previous one - albeit in a shorter way.
 
-Floats are particularly sensitive to the placement on the page with regards to whether it is a left-facing or right-facing page. Prince extends the `float` property (and the property `clear`) with the values `inside` and `outside`. For details please see the chapter [Floats](floats.md#floats).
+Floats are particularly sensitive to the placement on the page with regards to whether it is a left-facing or right-facing page. Prince extends the `float` property (and the property `clear`) with the values `inside` and `outside`. For details please see the chapter [Floats](styling#floats).
 
 On a paragraph level, the properties `text-align` and `text-align-last` similarly take the keywords `inside` and `outside` to help achieving a smooth layout.
 
@@ -169,10 +169,10 @@ Long Tables
 -----------
 
 You need  
-[Tables](tables.md#tables)
+[Tables](styling#tables)
 
--   [Running table headers and footers](tables.md#tables-running-headers-footers)
--   [Table captions](tables.md#tables-caption)
+-   [Running table headers and footers](styling#running-table-headers-and-footers)
+-   [Table captions](styling#table-captions)
 
 One of the main differences when designing for paged media is that you need to think about concrete pages, as opposed to a continuous flow of the page designed for the web and for web browsers. A problem may arise when elements such as tables are longer than the page they need to be displayed on.
 
@@ -180,7 +180,7 @@ The table itself is naturally split over several pages - but if you want table h
 
 Tables can also be provided with a table caption by using the `caption` HTML element, or by styling an arbitrary element with `display: table-caption` to be made to behave like `caption` elements. The caption is positioned above the table by default, but it can be moved to the bottom with the `caption-side` property.
 
-When a table spans across more than one page, the `prince-caption-page` property determines whether table captions will be displayed on the first page of a table, or only on the following pages, or repeated on every page that a table appears on. See also [Fancy Table Captions](fancy-table-captions.md#fancy-table-captions).
+When a table spans across more than one page, the `prince-caption-page` property determines whether table captions will be displayed on the first page of a table, or only on the following pages, or repeated on every page that a table appears on. See also [Fancy Table Captions](#fancy-table-captions).
 
 ```
     table + p {
@@ -194,19 +194,19 @@ Fancy Table Captions
 --------------------
 
 You need  
-[Tables](tables.md#tables)
+[Tables](styling#tables)
 
--   [Table captions](tables.md#tables-caption)
+-   [Table captions](styling#table-captions)
 
-[Long Tables](long-tables.md#long-tables)
+[Long Tables](#long-tables)
 
-HTML tables only have one caption per table. However, in printed form a table might span several pages (see [Long Tables](long-tables.md#long-tables)) and it might be desirable to have separate captions for the first and the following pages - you might want to add "cont." to the caption of the first one, or otherwise differentiate them. Prince offers an extension mechanism to do so.
+HTML tables only have one caption per table. However, in printed form a table might span several pages (see [Long Tables](#long-tables)) and it might be desirable to have separate captions for the first and the following pages - you might want to add "cont." to the caption of the first one, or otherwise differentiate them. Prince offers an extension mechanism to do so.
 
-As mentioned in [Long Tables](long-tables.md#long-tables), when a table spans across more than one page, the `prince-caption-page` property determines whether table captions will be displayed on the first page of a table, or only on the following pages, or repeated on every page that a table appears on. This opens up the possibility to have a different caption on the first and on the following pages.
+As mentioned in [Long Tables](#long-tables), when a table spans across more than one page, the `prince-caption-page` property determines whether table captions will be displayed on the first page of a table, or only on the following pages, or repeated on every page that a table appears on. This opens up the possibility to have a different caption on the first and on the following pages.
 
 You might define a caption in HTML for the main table caption - to be displayed on the first page. Additionally, you make another element into a table caption with the `display` property - and display it only on the following pages!
 
-The paragraph functioning as a table caption can be hidden in browsers by using [CSS Media Queries](media-queries.md#media-queries).
+The paragraph functioning as a table caption can be hidden in browsers by using [CSS Media Queries](css-refs.md#media-queries).
 
 HTML
 
@@ -254,9 +254,9 @@ When preparing a document for print, "running" headers and footers repeating on 
 
 Prince uses CSS for these headers and footers and for styling them.
 
-Each page is structured in [Page regions](paged.md#page-regions) - most page content is located inside the *page area*, including the [Footnotes](footnotes.md#footnotes), but the *page-margin boxes* contain most of the content repeating in slightly varied way across the whole book - the running headers and footers.
+Each page is structured in [Page regions](paged.md#page-regions) - most page content is located inside the *page area*, including the [Footnotes](styling.md#footnotes), but the *page-margin boxes* contain most of the content repeating in slightly varied way across the whole book - the running headers and footers.
 
-A typical case is page numbering, which can easily be obtained with [Generated Content](gen-content.md#gen-content): the current page number can be printed in a page region with the `content` property. (See also [Page Numbering](page-numbering.md#page-numbering)).
+A typical case is page numbering, which can easily be obtained with [Generated Content](gen-content.md#gen-content): the current page number can be printed in a page region with the `content` property. (See also [Page Numbering](#page-numbering)).
 
 ```
     @page {
@@ -267,7 +267,7 @@ A typical case is page numbering, which can easily be obtained with [Generated C
 ```
 By using [Named pages](paged.md#named-pages), you can style the page numbering of the Preface with roman numbers and the main pages with arabic numbers - see the example [Restarting page numbering](paged.md#ex-restart-page-numbers).
 
-The title of the book, or the current chapter, can be copyied into the page regions by using the [string-set](doc-refs.md#prop-string-set) property. For details, please see the [Copying content from the document](paged.md#content-copying-text) chapter.
+The title of the book, or the current chapter, can be copyied into the page regions by using the [string-set](css-props.md#prop-string-set) property. For details, please see the [Copying content from the document](paged.md#content-copying-text) chapter.
 
 CSS
 
@@ -402,17 +402,17 @@ Footnotes per Column
 --------------------
 
 You need  
-[Columns](columns.md#columns)
+[Columns](styling.md#columns)
 
-[Page and column floats](floats.md#float-extension-page-column)
+[Page and column floats](styling#page-and-column-floats)
 
-[Footnotes](footnotes.md#footnotes)
+[Footnotes](styling.md#footnotes)
 
 -   `float: prince-column-footnote`
 
-Prince has a simple way of creating footnotes: the `@footnote` page area, where footnotes can be floated to with the `float` property. For details see [Footnotes](footnotes.md#footnotes).
+Prince has a simple way of creating footnotes: the `@footnote` page area, where footnotes can be floated to with the `float` property. For details see [Footnotes](styling.md#footnotes).
 
-In a multi-column layout (see [Columns](columns.md#columns)), footnotes can be placed at the bottom of the page, spanning all columns. But usually you want to position the footnote at the bottom of the column the footnote call appears in.
+In a multi-column layout (see [Columns](styling.md#columns)), footnotes can be placed at the bottom of the page, spanning all columns. But usually you want to position the footnote at the bottom of the column the footnote call appears in.
 
 To achieve this, the values `prince-column-footnote` or `prince-column-inline-footnote` of the `float` property are used.
 
@@ -426,9 +426,9 @@ Multiple Footnotes
 ------------------
 
 You need  
-[Prince extensions to floats](floats.md#float-extensions)
+[Prince extensions to floats](styling#prince-extensions-to-floats)
 
-[Footnotes](footnotes.md#footnotes)
+[Footnotes](styling.md#footnotes)
 
 -   `float: footnote`
 
@@ -478,19 +478,19 @@ Sidenotes
 ---------
 
 You need  
-[Prince extensions to floats](floats.md#float-extensions)
+[Prince extensions to floats](styling#prince-extensions-to-floats)
 
-[Footnotes](footnotes.md#footnotes)
+[Footnotes](styling.md#footnotes)
 
 -   `float: footnote`
 
-[Styling and behavior of footnotes](footnotes.md#footnotes-styling)
+[Styling and behavior of footnotes](styling.md#styling-and-behavior-of-footnotes)
 
-Prince has a simple way of creating footnotes: the `@footnote` page area, where footnotes can be floated to with the `float` property. For details see [Footnotes](footnotes.md#footnotes).
+Prince has a simple way of creating footnotes: the `@footnote` page area, where footnotes can be floated to with the `float` property. For details see [Footnotes](styling.md#footnotes).
 
 It gets slightly more complicated when you want to position the footnotes not under the text, in their default position, but at the side of the pages as sidenotes. Two approaches are possible, each with its advantages and drawbacks. Either
 
--   the footnote area is positioned to the side of the page (see also [Styling and behavior of footnotes](footnotes.md#footnotes-styling)), or
+-   the footnote area is positioned to the side of the page (see also [Styling and behavior of footnotes](styling.md#styling-and-behavior-of-footnotes)), or
 -   the sidenotes are floated not to the footnote area, but simply to the left or right side of the page.
 
 We shall see each approach separately.
@@ -510,7 +510,7 @@ A straightforward approach for sidenotes is to position the footnote area to the
 ```
 This rule moves the footnotes area to the left side of a page.
 
-The advantage of this approach is that footnote calls and markers are created automatically (see [Footnote calls](footnotes.md#footnote-calls) and [Footnote markers](footnotes.md#footnote-markers)).
+The advantage of this approach is that footnote calls and markers are created automatically (see [Footnote calls](styling.md#footnote-calls) and [Footnote markers](styling.md#footnote-markers)).
 
 The biggest disadvantage is that the footnotes are not placed to the side of the location of the footnote calls, but are inserted into the footnote page area filling the space from the top of the page. Should this be of importance, use the second approach instead.
 
@@ -626,9 +626,9 @@ Image Magic
 -----------
 
 You need  
-[Images](images.md#images)
+[Images](graphics.md#images)
 
-[CSS and Images](images.md#images-css)
+[CSS and Images](graphics.md#css-and-images)
 
 -   `prince-image-magic`
 
@@ -678,7 +678,7 @@ Fine-tuning of hyphenation can be done with the `prince-hyphenate-after` and `pr
 
 The `prince-hyphenate-limit-lines` property is used to determine the maximum number of consecutive lines that may end with a hyphenated word.
 
-Prince uses the hyphenation patterns from the CTAN archive - the full archive is accessible [here](http://tug.ctan.org/tex-archive/language/hyph-utf8/tex/generic/hyph-utf8/patterns/txt/). The default hyphenation patterns can be found in the installed `hyph.css` file, located in the default style sheets location (see [Installation Layout](installation-layout.md#installation-layout)).
+Prince uses the hyphenation patterns from the CTAN archive - the full archive is accessible [here](http://tug.ctan.org/tex-archive/language/hyph-utf8/tex/generic/hyph-utf8/patterns/txt/). The default hyphenation patterns can be found in the installed `hyph.css` file, located in the default style sheets location (see [Installation Layout](installing.md#installation-layout)).
 
 Hyphenation patterns for the following languages are provided:
 
@@ -772,7 +772,7 @@ Typographic Ligatures
 ---------------------
 
 You need  
-[OpenType Features in Prince](fonts.md#opentype-features)
+[OpenType Features in Prince](styling.md#opentype-features-in-prince)
 
 `font-variant: prince-opentype()`
 
@@ -782,9 +782,9 @@ Prince supports typographic ligatures found in OpenType fonts, i.e. Prince will 
 
 A prominent example of a typographic ligature is **ﬁ**, which replaces the two characters **<span>f</span><span>i</span>** with a single glyph.
 
-Prince automatically enables ligatures declared by the OpenType fonts with the `liga` feature (see [OpenType Features in Prince](fonts.md#opentype-features)). This feature covers the "standard ligatures" which the font manufacturer thinks should be used in normal conditions. Microsoft has a list of the OpenType feature names [here](https://www.microsoft.com/typography/otspec/featurelist.htm).
+Prince automatically enables ligatures declared by the OpenType fonts with the `liga` feature (see [OpenType Features in Prince](styling.md#opentype-features-in-prince)). This feature covers the "standard ligatures" which the font manufacturer thinks should be used in normal conditions. Microsoft has a list of the OpenType feature names [here](https://www.microsoft.com/typography/otspec/featurelist.htm).
 
-Other special ligatures need to be explicitly enabled in Prince to take effect. This is achieved by using the `font-variant` CSS property with the `prince-opentype()` function (see [CSS Functional Expressions](functions.md#css-functions)). Care must be taken in which order the features are enabled! And please note that enabling one feature will disable all the default features. To see which OpenType features are enabled by default, see the [OpenType Features in Prince](fonts.md#opentype-features) section.
+Other special ligatures need to be explicitly enabled in Prince to take effect. This is achieved by using the `font-variant` CSS property with the `prince-opentype()` function (see [CSS Functional Expressions](css-refs.md#css-functional-expressions)). Care must be taken in which order the features are enabled! And please note that enabling one feature will disable all the default features. To see which OpenType features are enabled by default, see the [OpenType Features in Prince](styling.md#opentype-features-in-prince) section.
 
 ```
     @page {
@@ -816,7 +816,7 @@ You need
 
 When producing a PDF, it might be desirable to include a watermark, visible on all pages. In Prince it is easy to do so with CSS.
 
-In order to repeat it on all pages, the watermark needs to be placed in a [`@page`](at-rules.md#at-page) at-rule. We shall place it in the page region `@prince-overlay` (see [Page regions](paged.md#page-regions)) and create the watermark with generated content (see [Generated content in page regions](paged.md#page-gen-content)):
+In order to repeat it on all pages, the watermark needs to be placed in a [`@page`](css-refs.md#at-page) at-rule. We shall place it in the page region `@prince-overlay` (see [Page regions](paged.md#page-regions)) and create the watermark with generated content (see [Generated content in page regions](paged.md#page-gen-content)):
 
 ```
     @page {
@@ -848,7 +848,7 @@ The styled watermark can be saved into a `watermark.css` file, which will be cal
 Rotating content
 ----------------
 
-Sometimes it is necessary to rotate a block element so that it fits on the page. This is common with tables. Two approaches are possible: either the whole page is [printed sideways](rotating.md#wide-content-sideways), or only [the content in a table cell is rotated](rotating.md#rotating-table-cells). We shall see each approach separately.
+Sometimes it is necessary to rotate a block element so that it fits on the page. This is common with tables. Two approaches are possible: either the whole page is [printed sideways](#printing-wide-content-sideways), or only [the content in a table cell is rotated](#rotating-content-in-table-cells). We shall see each approach separately.
 
 ### Printing wide content sideways
 
@@ -857,7 +857,7 @@ You need
 
 `prince-shrink-to-fit`
 
-Figure [Printing a big table sideways](rotating.md#fig-bigtable) shows a table, rotated so that its width fits within the page's length. This can be achieved with the following rules:
+Figure [Printing a big table sideways](#printing-wide-content-sideways) shows a table, rotated so that its width fits within the page's length. This can be achieved with the following rules:
 
 Printing a big table sideways
 
@@ -874,11 +874,11 @@ This table is too wide to fit on the paper, so we use `prince-rotate-body` in a 
         page: big_table
     }
 ```
-The `prince-rotate-body` property works within [`@page`](at-rules.md#at-page) rules only, so this example uses a named page to place the table on a page of its own. Then the [`@page`](at-rules.md#at-page) rule for `big_table` pages uses the `prince-rotate-body` property to tell prince that the body of the page, but not the headers and footers, should be rotated. The table in this example is still too wide so we also use the `prince-shrink-to-fit` property to make it a little smaller.
+The `prince-rotate-body` property works within [`@page`](css-refs.md#at-page) rules only, so this example uses a named page to place the table on a page of its own. Then the [`@page`](css-refs.md#at-page) rule for `big_table` pages uses the `prince-rotate-body` property to tell prince that the body of the page, but not the headers and footers, should be rotated. The table in this example is still too wide so we also use the `prince-shrink-to-fit` property to make it a little smaller.
 
 If you download the full example ([HTML](assets/samples/rotate-body.html) or [PDF](assets/samples/rotate-body.pdf)) you will see that the paragraphs before and after the table are not placed on the same page. This is because they do not belong to the same named page (see [Named pages](paged.md#named-pages)). However on page four there are two tables, both tables belong to the same named page and therefore Prince will try to place them together on the same page.
 
-Another way of rotating content is by changing the writing mode with the `writing-mode` property, or by transforming an element with `transform: rotate()` - see [Rotating content in table cells](rotating.md#rotating-table-cells).
+Another way of rotating content is by changing the writing mode with the `writing-mode` property, or by transforming an element with `transform: rotate()` - see [Rotating content in table cells](#rotating-content-in-table-cells).
 
 ### Rotating content in table cells
 
@@ -933,7 +933,7 @@ A more basic means for rotation, allowing for less fine-tuning, is the use of th
       white-space: nowrap;
     }
 ```
-For a different approach to rotating content, see the section on [Printing wide content sideways](rotating.md#wide-content-sideways).
+For a different approach to rotating content, see the section on [Printing wide content sideways](#printing-wide-content-sideways).
 
 
 The "Two-Pass" Solution

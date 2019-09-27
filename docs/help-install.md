@@ -36,10 +36,10 @@ Solution 1
 Install the [msttcorefonts](http://corefonts.sourceforge.net) package (see your operating system's documentation).
 
 Solution 2  
-Redefine the CSS generic font families to use different TrueType fonts by editing the `fonts.css` file in the Prince installation - see [Installation Layout](installation-layout.md#installation-layout), [Fonts](fonts.md#fonts) and [Redefining the generic font families](redefining-font-families.md#redefining-font-families).
+Redefine the CSS generic font families to use different TrueType fonts by editing the `fonts.css` file in the Prince installation - see [Installation Layout](installing.md#installation-layout), [Fonts](styling.md#fonts) and [Redefining the generic font families](styling.md#redefining-the-generic-font-families).
 
 Explanation  
-This problem may be a symptom of the [Fontconfig](troubleshooting-install.md#fontconfig).
+This problem may be a symptom of the [Fontconfig](#fontconfig).
 
 ### Fontconfig
 
@@ -50,13 +50,13 @@ Symptom
 Explanation  
 Prince uses the [Fontconfig](http://www.fontconfig.org) library on Linux systems to search for fonts. Fontconfig is installed as a standard component on most desktop Linux distributions such as Ubuntu and recent versions of Red Hat Linux.
 
-Some older Linux distributions do not come with fontconfig and this may cause the above error. This error will usually be followed by errors relating to [Missing glyphs or fonts](troubleshooting-install.md#missing-fonts) that cannot be found due to the absence of Fontconfig.
+Some older Linux distributions do not come with fontconfig and this may cause the above error. This error will usually be followed by errors relating to [Missing glyphs or fonts](#missing-glyphs-or-fonts) that cannot be found due to the absence of Fontconfig.
 
 Solution 1  
 install Fontconfig (see your operating system's documentation).
 
 Solution 2  
-Redefine the CSS generic font families to use TrueType fonts that are specified directly by their filenames, avoiding the need to use Fontconfig at all. In extreme cases it might be advisable to disable system fonts completely with the [`--no-system-fonts`](command-line.md#cl-no-system-fonts) command-line option. See [Fonts](fonts.md#fonts) and [Redefining the generic font families](redefining-font-families.md#redefining-font-families).
+Redefine the CSS generic font families to use TrueType fonts that are specified directly by their filenames, avoiding the need to use Fontconfig at all. In extreme cases it might be advisable to disable system fonts completely with the [`--no-system-fonts`](command-line.md#cl-no-system-fonts) command-line option. See [Fonts](styling.md#fonts) and [Redefining the generic font families](styling.md#redefining-the-generic-font-families).
 
 ### Shared library trouble
 
@@ -111,7 +111,7 @@ On Linux, you typically run Prince with the following command:
 
     prince file.xml -o file.pdf
 
-On Windows, you replace the name of the executable with `Prince\engine\bin\prince.exe` in the installation directory (see [Windows installation layout](installation-layout.md#windows-layout)), which is the command-line program. See also [Command-line Reference](command-line.md#command-line).
+On Windows, you replace the name of the executable with `Prince\engine\bin\prince.exe` in the installation directory (see [Windows installation layout](installing.md#windows-installation-layout)), which is the command-line program. See also [Command-line Reference](command-line.md#command-line).
 
 
     "C:\Program Files (x86)\Prince\engine\bin\prince.exe" file.xml -o file.pdf
