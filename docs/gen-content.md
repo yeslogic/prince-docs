@@ -75,11 +75,11 @@ CSS
 ```
 This will place three asterisks before and after `h1` elements.
 
-### Counters and Numbering
+## Counters and Numbering
 
 Counters are the mechanism provided by CSS to perform numbering. They can be used to number list items, pages, footnotes, sections and any other document content that needs to be numbered.
 
-#### Initializing and incrementing counters
+### Initializing and incrementing counters
 
 To use a counter, it first needs to be initialized with the `counter-reset` property, which can be applied to any element and initializes one or more counters to the specified values, or to zero if no value is specified. The property can be used to reset a counter by re-initializing it.
 
@@ -89,7 +89,7 @@ The `counter-increment` property applies to any element and increments or decrem
 
 The `counter-increment` and `counter-reset` properties are ignored on elements whose `display` property has the value `none`.
 
-#### Displaying counters
+### Displaying counters
 
 Once initialized, a counter can be displayed with either the `counter()` or `counters()` function in a `content` property.
 
@@ -126,7 +126,7 @@ CSS
 ```
 In this example the `h4` counter will be reset at each `h3` element, to produce sub-section numbering that restarts at each new section.
 
-#### Nested counters
+### Nested counters
 
 If a counter is reset on an element and the same counter has also been reset on an ancestor of that element, a nested counter will be created. The scope of the nested counter is the current element only and its final value will not be carried onto its following siblings.
 
@@ -143,7 +143,7 @@ CSS
         font-weight: bold
     }
 ```
-#### Counter styles
+### Counter styles
 
 Counter values are displayed as decimal numbers by default, but they may be displayed using other styles such as roman numerals or consecutive letters of the alphabet.
 
@@ -309,11 +309,11 @@ The following table shows examples of the various counter styles:
 
 See also [User-defined counter styles](gen-content.md#counter-user-styles) for custom counters.
 
-### Cross-references
+## Cross-references
 
 Prince supports cross-references using generated content with two special functions: `target-counter()` and `target-content()`.
 
-#### Using target-counter()
+### Using target-counter()
 
 The `target-counter()` function can be used with the `content` property to reference the value of a counter at a linked element.
 
@@ -341,7 +341,7 @@ CSS
 ```
 This will add a cross-reference after every link with the correct chapter number determined automatically and displayed using roman numerals. For example: \[See chapter IV\].
 
-#### Using target-content()
+### Using target-content()
 
 The `target-content()` function can be used with the `content` property to reference the text content of a linked element.
 
@@ -354,7 +354,7 @@ CSS
 ```
 This will add a cross-reference after every link that includes the text of the element being linked to, such as a chapter title. For example: \[See 'Introduction'\].
 
-### Script Functions
+## Script Functions
 
 Prince supports arbitrary JavaScript functions to be called from CSS generated content using the `prince-script()` function (see the `content` property). To make the functions available to CSS, the `Prince.addScriptFunc` method is used (see [The Prince Object](javascript.md#js-prince-obj)).
 
@@ -377,7 +377,7 @@ JavaScript
 
     Prince.addScriptFunc("myfunc", myfunc);
 ```
-#### Accessing the current date and time
+### Accessing the current date and time
 
 JavaScript functions have access to the current date and time, which can be added to the document using `prince-script()` in generated content.
 
@@ -397,7 +397,7 @@ JavaScript
         return (new Date()).toString();
     });
 ```
-#### User-defined counter styles
+### User-defined counter styles
 
 The JavaScript functions used with `prince-script()` can take arguments that are themselves generated content. This allows functions to operate on counter values and implement new counter styles.
 
