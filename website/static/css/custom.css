@@ -148,6 +148,9 @@ table.property-table td {
 #js-support-table .url-property::before {
   content: "See the property ";
 }
+a[href*='//']:not([href*='princexml.com'])::after {
+  content: " \21D7";
+  color: lightgrey; }
 
 
 @media only screen and (min-device-width: 360px) and (max-device-width: 736px) {
