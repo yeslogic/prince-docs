@@ -159,10 +159,13 @@ buildSubTree(std, stdAnnotated, root, window, ['window']);
 </script>
 
 <script>
+function shiftWindow() { if ((location.hash.indexOf('window.') == 1) || (location.hash.indexOf('prop-') == 1) || (location.hash.indexOf('cl-') == 1) || (location.hash.indexOf('fig.') == 1) || (location.hash.indexOf('at-') == 1) || (location.hash.indexOf('note-') == 1)) { scrollBy(0, -60);
+}};
 function toggleDetails() { if ((location.hash.indexOf('window.') == 1) || (location.hash.indexOf('prop-') == 1)) {
 var prop = document.getElementById(location.hash.substr(1));
-var att = document.createAttribute('open');
-var parentDetails = $(prop).parents('details');
+var parentDetails = [];
+var parent = prop.parentNode;
+while (parent) { if (parent.tagName === 'DETAILS') parentDetails.push(parent); parent = parent.parentNode; }
 for (i = 0; i < parentDetails.length; i++) {
   parentDetails[i].setAttribute('open','')
 }
@@ -186,6 +189,6 @@ for (i=0; i < d.length; i++) {
 }}
 if ( t == 'js' ) { document.getElementById('.window').parentElement.setAttribute('open','') }
 }
-window.addEventListener("load",  function() { toggleDetails();});
-window.addEventListener("hashchange", function() { toggleDetails();});
+window.addEventListener("load",  function() { toggleDetails(); shiftWindow(); });
+window.addEventListener("hashchange", function() { toggleDetails(); shiftWindow(); });
 </script>
