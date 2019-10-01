@@ -37,7 +37,7 @@ const siteConfig = {
 
   // For no header links in the top nav bar -> headerLinks: [],
   headerLinks: [
-    {doc: 'first-doc', label: 'Docs'},
+    {doc: 'intro-userguide', label: 'Docs'},
     {page: 'help', label: 'Help'},
     {search: true},
     {href: 'https://www.princexml.com', label: 'Prince'},
