@@ -21,6 +21,12 @@ table.property-table td {
 .syntax-block {
   margin-bottom: 1em;
 }
+.self-link {
+  visibility: hidden;
+}
+.self-link:after {
+  content: " \B6 ";
+}
 #prop-list summary, #js-support-table summary {
   font-weight: bold;
   padding: 0.7em;
@@ -68,6 +74,9 @@ table.property-table td {
 }
 #prop-list details:hover, #js-support-table details:hover {
   border-color: grey !important;
+}
+#prop-list details .hash-link {
+    margin-left: 0px;
 }
 #js-support-table details.object {
   background-color: #f2f2f2;
