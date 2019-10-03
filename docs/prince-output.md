@@ -302,8 +302,6 @@ Prince embeds fonts in its PDF output to ensure accurate viewing and printing on
 
 Font subsetting can be disabled with the command-line option [`--no-subset-fonts`](command-line.md#cl-no-subset-fonts) or with the JavaScript function [`PDF.subsetFonts`](js-support.md#window.PDF.subsetFonts): in that case, Prince will embed the entire font in the PDF file, which is convenient if people are planning on editing the PDF file later, and may need to add glyphs that were not present in the original PDF.
 
-Font subsetting is not yet supported for OpenType fonts with CFF outlines (".otf" fonts).
-
 Font subsetting is disabled automatically for individual fonts that do not grant permission to subset, or if Prince cannot subset them for some other reason.
 
 Font embedding can be disabled if necessary, for example if Prince is being used to create PDF files in a controlled environment with known fonts where space is at a premium. The command-line option [`--no-embed-fonts`](command-line.md#cl-no-embed-fonts) is used for this purpose.
