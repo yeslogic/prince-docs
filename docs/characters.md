@@ -143,6 +143,7 @@ Accents
 
 | XML       | CSS     | Character | Name         |
 |-----------|---------|-----------|--------------|
+| &\#x60;   | \\x60   | `         | grave        |
 | &\#xB4;   | \\xB4   | ´         | acute        |
 | &\#x02D8; | \\x02D8 | ˘         | breve        |
 | &\#x02C7; | \\x02C7 | ˇ         | caron        |
