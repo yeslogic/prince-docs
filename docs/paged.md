@@ -577,7 +577,7 @@ It is often necessary to apply styles to some pages, but not others. Either appl
 
 In a novel it is useful to print a page number at the bottom of every page, *except* for some pages such as the title page. In this example the [`@page`](css-refs.md#at-page) rule is applied to all pages. Then the `@page:first` rule, which is more specific, removes the footer from the first page. See [Page regions](paged.md#page-regions) and [Generated Content](gen-content.md#gen-content).
 
-Novel title page example
+<p id="fig-titlepage">Novel title page example</p>
 
 ![Novel title page example image.](assets/samples/titlepage-1.bw.png)
 A title page example showing use of `@page:first`. Download the [PDF](assets/samples/titlepage.pdf) or the [HTML](assets/samples/titlepage.html).
@@ -624,7 +624,7 @@ The `:left` and `:right` page selectors can be used to style left and right page
 
 Alternatively, the `:recto` and `:verso` selectors can be used, with the advantage of being independent of directionality of the script: in a left-to-right script, `:recto` is the right-hand side of a spread, and `:verso` is the left-hand side, while in a right-to-left script these values are inverted: `:recto` defines the left-hand side of a spread, and `:verso` defines the right-hand side. See also [Writing Mode](styling.md#writing-mode).
 
-Textbook page numbers example
+<p id="fig-textbook">Textbook page numbers example</p>
 
 ![Textbook page numbers example image.](assets/samples/textbook-1.bw.png)
 A text book example showing use of `@page:left` and `@page:right`. Download the [PDF](assets/samples/textbook.pdf) or the [HTML](assets/samples/textbook.html).
@@ -979,3 +979,9 @@ This example uses some of the properties that we introduced above, plus three ne
 
 Prince also allows the placement, length and width of the crop marks to be specified respectively with the `prince-mark-offset`, `prince-mark-length` and `prince-mark-width` properties.
 
+<script>
+function shiftWindow() { if (location.hash.indexOf('fig-') == 1) { scrollBy(0, -60);
+}};
+window.addEventListener("load",  function() { shiftWindow(); });
+window.addEventListener("hashchange", function() { shiftWindow(); });
+</script>
