@@ -99,10 +99,7 @@ This is used in [Fancy headers](paged.md#fig-fancyheader).
 
 ## Page regions
 
-Page regions
-
 ![A page with content in some of its page regions.](assets/samples/marginboxes-1.colour.png)
-A page with content in some of its page regions.
 
 Most content appears inside the *page area* of one or more pages. Surrounding the page area, but within the margin area, are the *page-margin boxes*. Other special areas are overlaying the whole page or are placed at the bottom of the *page area*. Collectively, they are known as the *page regions*.
 
