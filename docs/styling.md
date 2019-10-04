@@ -6,9 +6,9 @@ When preparing a document with HTML and CSS, you need to first create the conten
 
 In the following sections you can find detailed information on how to achieve this with Prince.
 
-The major difference between formatting for the web and PDF/Print is that PDF is [paginated](paged.md#paged), which means that content is placed on discrete pages, as opposed to one continuous flow, typical for web pages.
+The major difference between formatting for the web and PDF/Print is that PDF is [paginated](paged.md), which means that content is placed on discrete pages, as opposed to one continuous flow, typical for web pages.
 
-Prince allows you to control a number of options that affect how PDF formats pages, from straight-forward options such as page size, to decorations, headers and footers, numbering and page breaking options. See detailed information in the [Paged Media](paged.md#paged) section.
+Prince allows you to control a number of options that affect how PDF formats pages, from straight-forward options such as page size, to decorations, headers and footers, numbering and page breaking options. See detailed information in the [Paged Media](paged.md) section.
 
 Prince applies default styles to all (X)HTML documents - these style rules can be found in the `html.css` style sheet, located in the `style` folder inside the installation directory (see [Installation Layout](installing.md#installation-layout)).
 
@@ -77,7 +77,7 @@ Prince supports OpenType features, and enables certain ones by default in specif
 <td colspan="2">
 <p class="note">
 * Kerning can be disabled with the keyword <code>prince-no-kerning</code> of the
-<code><a href="css-props.md#prop-font-variant">font-variant</a></code> property.
+<code><a href="css-props#prop-font-variant">font-variant</a></code> property.
 </p>
 </td>
 </tr>
@@ -389,7 +389,7 @@ Prince sets the PDF direction based on the direction and writing mode of the doc
 
 Changing the writing mode of a document, that is, the inline or block direction, not only changes the direction of the script, but also affects several other aspects of the printed document.
 
-The page selector pseudo-classes `:recto` and `:verso` (see [Selecting pages](paged.md#page-rules)) are relative to the direction of the script. In a left-to-right script, `:recto` is the right-hand side of a spread, and `:verso` is the left-hand side, while in a right-to-left script these values are inverted: `:recto` defines the left-hand side of a spread, and `:verso` defines the right-hand side. See also [Selecting pages](paged.md#page-rules).
+The page selector pseudo-classes `:recto` and `:verso` (see [Selecting pages](paged.md#selecting-pages)) are relative to the direction of the script. In a left-to-right script, `:recto` is the right-hand side of a spread, and `:verso` is the left-hand side, while in a right-to-left script these values are inverted: `:recto` defines the left-hand side of a spread, and `:verso` defines the right-hand side. See also [Selecting pages](paged.md#selecting-pages).
 
 Columns change their orientation when the writing mode is changed - `writing-mode` `vertical-rl` arranges the columns horizontally, top-to-bottom.
 
@@ -444,7 +444,7 @@ If there are only:
 
 The background of an element can be styled with the `background-color` and the `background-image` properties, or with the shorthand property `background`. See also [Background Images](graphics.md#background-images).
 
-Various standard properties are available to position the background, to clip it or to determine whether, and how it should be repeated. Prince extends control on the background with the `prince-background-image-resolution` property, used to control image size in print (see [Image Size](graphics.md#image-size)), and with the `bleed` modifier of the `background-attachment` property, which, when used together with `background-size: cover`, allows a background image to cover the entire page bleed area (see [Trimming marks](paged.md#page-marks)).
+Various standard properties are available to position the background, to clip it or to determine whether, and how it should be repeated. Prince extends control on the background with the `prince-background-image-resolution` property, used to control image size in print (see [Image Size](graphics.md#image-size)), and with the `bleed` modifier of the `background-attachment` property, which, when used together with `background-size: cover`, allows a background image to cover the entire page bleed area (see [Trimming marks](paged.md#trimming-marks)).
 
 
 ### Display
@@ -459,7 +459,7 @@ An `inline` element, on the other hand, does not start on a new line, and only t
 
 A hybrid type, namely the `inline-block` element, is like `inline` elements, but it can have a width and a height - which can be very useful when you want to create a grid of CSS boxes that fills all the width and wraps nicely. The inside of an `inline-block` element is formatted like a block box.
 
-Care needs to be taken with `inline-block` elements, because Prince [cannot split them over several pages](#faq-one-page).
+Care needs to be taken with `inline-block` elements, because Prince [cannot split them over several pages](help#faq-one-page).
 
 The value `run-in` displays a block element as if it were an inline element at the beginning of the following block element.
 
