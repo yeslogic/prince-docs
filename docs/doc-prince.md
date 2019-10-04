@@ -261,6 +261,9 @@ function redirects() {
     else if (location.hash.indexOf('pfb') == 1) {
         window.location.href = '/doc/prince-for-books'
     }
+    else {
+        window.location.href = '/doc/styling'
+    }
 }
 window.addEventListener("load",  function() { redirects(); });
 </script>

@@ -36,6 +36,9 @@ function redirects() {
     else if (location.hash.indexOf('acknowledgments') == 1) {
         window.location.href = '/doc/acknowledgements'
     }
+    else {
+        window.location.href = '/doc/command-line'
+    }
 }
 window.addEventListener("load",  function() { redirects(); });
 </script>

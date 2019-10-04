@@ -45,6 +45,9 @@ function redirects() {
     else if (location.hash.indexOf('faq-install') == 1) {
         window.location.href = '/doc/help-install#frequently-asked-questions'
     }
+    else {
+        window.location.href = '/doc/installing'
+    }
 }
 window.addEventListener("load",  function() { redirects(); });
 </script>
