@@ -8,15 +8,17 @@ title: Prince Tips and Tricks
 Table of Contents
 -----------------
 
-You need  
-[JavaScript in Printed Media](javascript.md#js-print)
-
-[The "Two-Pass" Solution](#the-two-pass-solution)
-
-[Generated Content Functions](gen-content.md#gen-content-functions)
-
--   `content: target-counter()`
--   `content: leader()`
+<dl class="ingredients">
+  <dt>You need</dt>
+  <dd><a href="javascript#javascript-in-printed-media">JavaScript in Printed Media</a></dd>
+  <dd><a href="#the-two-pass-solution">The "Two-Pass" Solution</a></dd>
+  <dd><a href="gen-content#generated-content-functions">Generated Content Functions</a>
+    <ul>
+      <li><code>content: target-counter()</code></li>
+      <li><code>content: leader()</code></li>
+    </ul>
+  </dd>
+</dl>
 
 Prince offers several properties and functions to facilitate the creation of a Table of Contents.
 
@@ -42,7 +44,7 @@ The page numbers are best styled right-aligned, while the link texts are left-al
 ```
 ### Simple Table of Contents
 
-Our [example document](http://css4.pub/2018/toc/index.html) generates at Table of Contents (TOC) by way of JavaScript. You can easily test it by running Prince from the command line:
+Our [example document](http://css4.pub/2018/toc/index.html) generates at Table of Contents (ToC) by way of JavaScript. You can easily test it by running Prince from the command line:
 
 ```bash
     $ prince --javascript http://css4.pub/2018/toc -o toc.pdf
@@ -81,17 +83,18 @@ You can view the resulting PDF [here](http://css4.pub/2018/multifile-toc/book.pd
 Thinking in Spreads
 -------------------
 
-You need  
-[Paged Media](paged.md#paged)
-
--   [Selecting pages](paged.md#page-rules)
--   [Controlling pagination](paged.md#controlling-pagination)
-
-[Box Model](styling.md#box-model)
-
-[Prince extensions to floats](styling#prince-extensions-to-floats)
-
-[Paragraph formatting](styling#paragraph-formatting)
+<dl class="ingredients">
+  <dt>You need</dt>
+  <dd><a href="paged">Paged Media</a>
+    <ul>
+      <li><a href="paged#selecting-pages">Selecting pages</a></li>
+      <li><a href="paged#controlling-pagination">Controlling pagination</a></li>
+    </ul>
+  </dd>
+  <dd><a href="styling#box-model">Box Model</a></dd>
+  <dd><a href="styling#prince-extensions-to-floats">Prince extensions to floats</a></dd>
+  <dd><a href="styling#paragraph-formatting">Paragraph formatting</a></dd>
+</dl>
 
 Prince produces PDFs - which are a prominent example of paged media. The main difference with conventional CSS design for browsers is to always keep in mind that you are dealing with pagination, i.e. the content is placed on discrete pages.
 

@@ -39,9 +39,9 @@ Prince produces PDFs - which are a prominent example of paged media. There are a
   details and scripting after layout please check the section on <xref linkend="js-print"/>.</p></dd>
 </dl>
 
-Prince allows you to control a number of options that affect how to format pages, from straight-forward options such as [page size](paged.md#page-size), to [page style](paged.md#page-style), [page regions](paged.md#page-regions) like headers and footers, [pagination control](paged.md#controlling-pagination) and [page numbering](gen-content.md#counters).
+Prince allows you to control a number of options that affect how to format pages, from straight-forward options such as [page size](#page-size), to [page style](#page-style), [page regions](#page-regions) like headers and footers, [pagination control](#controlling-pagination) and [page numbering](gen-content.md#counters).
 
-CSS properties that affect pages are specified within page *at-rules* (see [CSS At-rules](css-refs.md#css-atrules)). For example, we can use the [size](css-props.md#prop-size) property within the [`@page`](css-refs.md#at-page) rule to specify the page size (see [Page size](paged.md#page-size)).
+CSS properties that affect pages are specified within page *at-rules* (see [CSS At-rules](css-refs.md#css-atrules)). For example, we can use the [size](css-props.md#prop-size) property within the [`@page`](css-refs.md#at-page) rule to specify the page size (see [Page size](#page-size)).
 
 ```
     @page {
@@ -69,7 +69,7 @@ Page size can be specified using the `size` property in *length* units or by a p
     /* Use square paper, this sets width and height */
     @page { size: 30cm }
 ```
-Sometimes it can be useful to specify the page dimensions in pixels, for example when creating presentation slides (see [Presentation slides](paged.md#presentation-slides)).
+Sometimes it can be useful to specify the page dimensions in pixels, for example when creating presentation slides (see [Presentation slides](#presentation-slides)).
 
 ```
     @page {
@@ -80,7 +80,7 @@ Sometimes it can be useful to specify the page dimensions in pixels, for example
 
 Pages, like other block level elements, follow the CSS box model introduced in [Box Model](styling.md#css-box). Their `margin`, `border`, `padding` and `background` can be styled within [`@page`](css-refs.md#at-page) rules.
 
-The [`@page`](css-refs.md#at-page) rules can only style the page and its margin boxes - it cannot contain style rules to target specific elements, but it can contain at-rules to target the page regions (for a complete list of possible at-rules, see [Page regions](paged.md#page-regions)).
+The [`@page`](css-refs.md#at-page) rules can only style the page and its margin boxes - it cannot contain style rules to target specific elements, but it can contain at-rules to target the page regions (for a complete list of possible at-rules, see [Page regions](#page-regions)).
 
 ```
     @page {
@@ -95,7 +95,7 @@ Prince also supports the `margin-outside` and `margin-inside` properties. These 
         margin-inside: 3cm;
     }
 ```
-This is used in [Fancy headers](paged.md#fig-fancyheader).
+This is used in [Fancy headers](#fig-fancyheader).
 
 ## Page regions
 
@@ -120,7 +120,7 @@ Each of these page-margin boxes has a synonym ending in `-center` or `-middle` -
 
 You can place content in a page-margin box with the `content` property.
 
-For example, you can print the current page number at the bottom of each page (see [Generated Content](gen-content.md#gen-content)):
+For example, you can print the current page number at the bottom of each page (see [Generated Content](gen-content.md)):
 
 ```
     @page {
@@ -129,14 +129,14 @@ For example, you can print the current page number at the bottom of each page (s
         }
     }
 ```
-Two examples in [the next chapter](paged.md#page-rules) show examples of page headers and footers:
+Two examples in [the next chapter](#selecting-pages) show examples of page headers and footers:
 
--   the [Novel title page example](paged.md#fig-titlepage) creates a footer to display the page number, but suppresses it for the title page; and
--   the [Textbook page numbers example](paged.md#fig-textbook) displays a more complex use of headers by placing the book title in the header of left pages, and the current chapter's title in the header of right-facing pages, in addition to the page number.
+-   the [Novel title page example](#fig-titlepage) creates a footer to display the page number, but suppresses it for the title page; and
+-   the [Textbook page numbers example](#fig-textbook) displays a more complex use of headers by placing the book title in the header of left pages, and the current chapter's title in the header of right-facing pages, in addition to the page number.
 
-Several other page regions can also be used. The full list of page regions is shown in the [Page regions](paged.md#tab-marginboxes) table.
+Several other page regions can also be used. The full list of page regions is shown in the [Page regions](#tab-marginboxes) table.
 
-Page regions
+<p id="tab-marginboxes">Page regions</p>
 
 <table class="grid">
 <thead>
@@ -302,7 +302,7 @@ Page regions
 
 Prince will try to create page regions of the correct sizes. If you need to create boxes of specific sizes you may need to use only a single box (eg: `@top`) and use the `content` property to place elements with specific sizes in it.
 
-Note that in the above [Page regions](paged.md#fig-marginboxes) figure, Prince leaves space for `@top-right` and `@left-bottom` boxes because their counterparts (`@top-left` and `@left-top` respectively) have been defined. This keeps the `@top` and `@left` centered along the top and side of the page respectively.
+Note that in the above [Page regions](#fig-marginboxes) figure, Prince leaves space for `@top-right` and `@left-bottom` boxes because their counterparts (`@top-left` and `@left-top` respectively) have been defined. This keeps the `@top` and `@left` centered along the top and side of the page respectively.
 
 The page-margin boxes `@top`, `@top-left` or `@top-right` can be used to create running page headers, and the page-margin boxes `@bottom`, `@bottom-left` or `@bottom-right` are useful for page footers (see [Page Headers and Footers](cookbook.md#page-headers-and-footers)).
 
@@ -326,7 +326,7 @@ We have already shown an example of using the `page` counter to print the page n
 
 The `page` counter can be reset using the `counter-reset` property at any block-level element within a non-floating element in the normal flow. This is useful for restarting page numbering at a new section of the document.
 
-Restarting page numbering
+<p id="fig-restart-page-numbers">Restarting page numbering</p>
 
 HTML
 ```html
@@ -376,7 +376,7 @@ CSS
     }
 ```
 
-[Restarting page numbering](paged.md#ex-restart-page-numbers) also uses [Named pages](paged.md#named-pages) which we will explain in more detail below. We create three types of pages: table-of-contents pages, main pages, and pages without a name.
+This example also uses [Named pages](#named-pages) which we will explain in more detail below. We create three types of pages: table-of-contents pages, main pages, and pages without a name.
 
 The .contents rule names the pages that it appears on as table-of-contents and resets the page counter to 1 at the start of the contents div. Then the [`@page`](css-refs.md#at-page) rule for those pages generates a page footer that contains the current page number in `lower-alpha` style. This rule also sets the page header to the string "Table of Contents".
 
@@ -395,7 +395,7 @@ In some documents, particularly those that are unbound such as office documents,
 ```
 This rule will generate page footers such as "Page 1 of 89".
 
-Fancy header example
+<p id="fig-fancyheader">Fancy header example</p>
 
 ![Image of a page of a textbook or thesis with a header.](assets/samples/fancyheader-2.bw.png)
 This example shows a header as might be found in a textbook. The [HTML](assets/samples/fancyheader.html) and [PDF](assets/samples/fancyheader.pdf) are both available. This is a small part of a [larger example](https://github.com/yeslogic/prince-samples/tree/master/thesis) in our [Prince samples repository](https://github.com/yeslogic/prince-samples).
@@ -497,9 +497,9 @@ CSS
 
     h1 { string-set: doctitle content() }
 ```
-The @page rule specifies that the top-center page region will contain the text content of the document title copied from the text content of the `h1` element in the document.
+The `@page` rule specifies that the top-center page region will contain the text content of the document title copied from the text content of the `h1` element in the document.
 
-The second argument to the `string()` function is a `page-policy` (see [The optional page-policy value](gen-content.md#gen-content-functions-pagepolicy)).
+The second argument to the `string()` function is a `page-policy` (see [The optional `page-policy` value](gen-content.md#the-optional-page-policy-value)).
 
 For a dictionary, you might want to have a page header that says "a-af", where "a" is the first definition on the page and "af" is the last, so you apply `string-set` for each definition, and then you can select the `first` and `last` one with a page policy in the page header.
 
@@ -537,7 +537,7 @@ CSS
     }
     h1 { position: running(header) }
 ```
-The @page rule specifies that the top page region is a new running header named "header".
+The `@page` rule specifies that the top page region is a new running header named "header".
 
 The rule for the `h1` element moves it to the "header" running element, removing it from the default normal flow.
 
@@ -562,20 +562,20 @@ Many HTML documents designed for browsers have the following structure:
 ```
 Unfortunately, if you want to place the footer element in the page footer, it will only appear on the last page - because it is at the end of the document! To solve this, the document must be modified to look like this:
 
-```ht,ö
+```html
     <header>
     <footer>
     main content
 ```
 It can be achieved by using JavaScript to move the element, but the simple `start` keyword on the `prince-flow` property instructs Prince to pretend that the element was seen at the beginning of the document.
 
-The `element()` and `flow()` functions replace the entire margin box, and cannot be combined with other content. If you just want to capture some text from the document, use named strings instead (see [Copying content from the document](paged.md#content-copying-text)) - they can be combined with other content.
+The `element()` and `flow()` functions replace the entire margin box, and cannot be combined with other content. If you just want to capture some text from the document, use named strings instead (see [Copying content from the document](#copying-content-from-the-document)) - they can be combined with other content.
 
 ## Selecting pages
 
 It is often necessary to apply styles to some pages, but not others. Either applying them to only some pages, or on every page *except* selected pages. CSS and Prince provide a number of *page selectors* for choosing which pages a rule applies to.
 
-In a novel it is useful to print a page number at the bottom of every page, *except* for some pages such as the title page. In this example the [`@page`](css-refs.md#at-page) rule is applied to all pages. Then the `@page:first` rule, which is more specific, removes the footer from the first page. See [Page regions](paged.md#page-regions) and [Generated Content](gen-content.md#gen-content).
+In a novel it is useful to print a page number at the bottom of every page, *except* for some pages such as the title page. In this example the [`@page`](css-refs.md#at-page) rule is applied to all pages. Then the `@page:first` rule, which is more specific, removes the footer from the first page. See [Page regions](#page-regions) and [Generated Content](gen-content.md).
 
 <p id="fig-titlepage">Novel title page example</p>
 
@@ -616,9 +616,9 @@ A title page example showing use of `@page:first`. Download the [PDF](assets/sam
     </body>
     </html>
 ```
-In this example the [`@page`](css-refs.md#at-page) rule specifies styles that apply to all pages: Then the `@page:first` rule overrides this for the first page only. It resets the `content` property for the footer and increases the top margin, printing the title of the novel in a reasonable place on the page (see [Page style](paged.md#page-style)). This example also uses the `break-before` property to force a page break (see [Page breaks](paged.md#page-breaks)).
+In this example the [`@page`](css-refs.md#at-page) rule specifies styles that apply to all pages: Then the `@page:first` rule overrides this for the first page only. It resets the `content` property for the footer and increases the top margin, printing the title of the novel in a reasonable place on the page (see [Page style](#page-style)). This example also uses the `break-before` property to force a page break (see [Page breaks](#page-breaks)).
 
-When using the `:first` page selector to choose the first page in each chapter (such as in [Fancy headers](paged.md#fig-fancyheader)) it may be necessary to add `prince-page-group: start` to the first element in each chapter (such as `h1`). See [Page groups](paged.md#page-groups).
+When using the `:first` page selector to choose the first page in each chapter (such as in [Fancy headers](#fig-fancyheader)) it may be necessary to add `prince-page-group: start` to the first element in each chapter (such as `h1`). See [Page groups](#page-groups).
 
 The `:left` and `:right` page selectors can be used to style left and right pages in a bound book differently. This is often used in text books to place the page number on the outside top corners of pages.
 
@@ -646,7 +646,7 @@ A text book example showing use of `@page:left` and `@page:right`. Download the 
     h1 { string-set: book-title content() }
     h2 { string-set: chapter-title content() }
 ```
-These rules also place the book title in the header of left pages, and the current chapter's title in the header of right-facing pages. The book title is copied from the text content of the `h1` element while the chapter title is copied from the text content of the `h2` elements (see [Generated Content](gen-content.md#gen-content)). They also specify wider margins in the *gutter* of the page spread; binders may need this extra width for a book's binding.
+These rules also place the book title in the header of left pages, and the current chapter's title in the header of right-facing pages. The book title is copied from the text content of the `h1` element while the chapter title is copied from the text content of the `h2` elements (see [Generated Content](gen-content.md)). They also specify wider margins in the *gutter* of the page spread; binders may need this extra width for a book's binding.
 
 The first page in a document using the default left-to-right reading order is a right page. Imagine the cover or a title page of a book which appear on a right page. The first page of a right-to-left document is a left page.
 
@@ -661,7 +661,7 @@ Sometimes it can be useful to select the *N*th page in a document. The `:nth(N)`
 ```
 ### Named pages
 
-Sometimes it is necessary to style pages depending on their content; named pages allow us to select pages that contain particular elements. We used this in [Restarting page numbering](paged.md#ex-restart-page-numbers), to apply a style to the table of contents pages to print their page numbers using roman numerals.
+Sometimes it is necessary to style pages depending on their content; named pages allow us to select pages that contain particular elements. We used this in [Restarting page numbering](#fig-restart-page-numbers), to apply a style to the table of contents pages to print their page numbers using roman numerals.
 
 The element containing the table of contents has a `page` property applied, specifying that this element's pages are table-of-contents pages. The `page` property may be applied to any block-level element within a non-floating environment in the normal flow.
 
@@ -683,7 +683,7 @@ Then using this page name to apply a different [`@page`](css-refs.md#at-page) ru
 ```
 More than one element can *belong* to the same name, in other words, page names behave like CSS classes.
 
-Prince will create a page break between elements belonging to different named pages, including elements without a named page. So in [Restarting page numbering](paged.md#ex-restart-page-numbers), a page break will be inserted after the the table of contents, because the next element has the page name main rather than table-of-contents.
+Prince will create a page break between elements belonging to different named pages, including elements without a named page. So in [Restarting page numbering](#fig-restart-page-numbers), a page break will be inserted after the the table of contents, because the next element has the page name main rather than table-of-contents.
 
 Selectors such as `:first`, `:Nth`, `:left` and `:right` also work with named pages. For example:
 
@@ -718,7 +718,7 @@ This example only works when a page name is used only once within a document, su
         }
     }
 ```
-The property `prince-page-group: start` instructs Prince to start a new page group. This is necessary for the `div.chapter:first` selector to match the first page of each chapter, instead of only the first page in the first chapter. See [Page groups](paged.md#page-groups).
+The property `prince-page-group: start` instructs Prince to start a new page group. This is necessary for the `div.chapter:first` selector to match the first page of each chapter, instead of only the first page in the first chapter. See [Page groups](#page-groups).
 
 ### Blank pages
 
@@ -772,10 +772,10 @@ When consecutive elements belong to the same named page but logically separate s
 
 This can happen either:
 
--   when chapters are separated by an element, such as `h1` which may have `break-before: right` applied (this can be seen in [Fancy headers](paged.md#fig-fancyheader));
+-   when chapters are separated by an element, such as `h1` which may have `break-before: right` applied (this can be seen in [Fancy headers](#fig-fancyheader));
 -   or when each chapter is a block element such as a `div`.
 
-Prince provides the `prince-page-group` property that can be used to start a new page group. It can be seen in [Fancy headers](paged.md#fig-fancyheader) applied to h1 elements in the body of the document.
+Prince provides the `prince-page-group` property that can be used to start a new page group. It can be seen in [Fancy headers](#fig-fancyheader) applied to h1 elements in the body of the document.
 
 ```
     div.body h1 {
@@ -788,7 +788,7 @@ Prince provides the `prince-page-group` property that can be used to start a new
 
 ## Controlling pagination
 
-Prince will create page breaks automatically when new content will not fit on a page. Sometimes it is useful or necessary to control where page breaks should and should not be used. There are two ways to do this, and both are useful in different circumstances: page breaks can be added or prohibited with the [Page breaks](paged.md#page-breaks) properties, and you can control where, within a paragraph, a page break may occur with the [Widows and orphans](paged.md#widows-and-orphans) properties.
+Prince will create page breaks automatically when new content will not fit on a page. Sometimes it is useful or necessary to control where page breaks should and should not be used. There are two ways to do this, and both are useful in different circumstances: page breaks can be added or prohibited with the [Page breaks](#page-breaks) properties, and you can control where, within a paragraph, a page break may occur with the [Widows and orphans](#widows-and-orphans) properties.
 
 ### Page breaks
 
@@ -799,7 +799,7 @@ The simplest case is when you want to explicitly create a page break. This is ty
         break-before: page;
     }
 ```
-`break-before` is used to force a page break immediately before an `h1` element, New chapters are often started on the *recto* pages in text books, this is usually the right page:
+The property `break-before` is used to force a page break immediately before an `h1` element. New chapters are often started on the *recto* pages in text books, this is usually the right page:
 
 ```
     h1 {
@@ -817,9 +817,7 @@ The previous example could therefore also have been written in the following, mo
 ```
 The property `break-after` may also be used to force a page break after an element.
 
-Presentation slides
-
-Presentation slides example
+<p id="fig-slides">Presentation slides example</p>
 
 ![A title page slide for a presentation, with a title and subtitle.](assets/samples/slide-1.colour.png) ![An example of an overhead slide for a presentation. It has a title and a single paragraph.](assets/samples/slide-2.colour.png)
 Two overhead slides for a presentation. The slides use white on black for better contrast on most projectors, and a 4x3 aspect ratio. Download the [PDF](assets/samples/slide.pdf) or the [HTML](assets/samples/slide.html) and [CSS](assets/samples/slide.css).
@@ -886,7 +884,7 @@ HTML
 ```
 The `font-family` and `color` properties are specified both in the `@page` and `body` rules, even though they're the same. This is required because the page regions are outside of the `body` and must be styled separately, likewise the content within `body` cannot be styled by the `@page` rule.
 
-A rendered slide for this example is shown in [Presentation slides example](paged.md#fig-slides). The example has been adapted from [slides (HTML+CSS)](https://github.com/yeslogic/prince-samples/tree/master/mfug_talk) for a presentation about the [Mercury programming language](http://mercurylang.org). This is part of our [samples repository](https://github.com/yeslogic/prince-samples). You are encouraged to use samples from the repository and contribute your own.
+A rendered slide for this example is shown in [Presentation slides example](#fig-slides). The example has been adapted from [slides (HTML+CSS)](https://github.com/yeslogic/prince-samples/tree/master/mfug_talk) for a presentation about the [Mercury programming language](http://mercurylang.org). This is part of our [samples repository](https://github.com/yeslogic/prince-samples). You are encouraged to use samples from the repository and contribute your own.
 
 So far we have discussed forcing a page break, however suppressing page breaks is also important. For example, it is poor style to have a page break between a header and the first paragraph of a section. Therefore, the default Prince stylesheet will use the `break-after` property to suppress page breaks immediately after headers:
 
@@ -916,9 +914,9 @@ Page breaks have similarities with column breaks, see [Columns](styling.md#colum
 
 #### Page breaks and decoration
 
-When a page (or column) break occurs within a box (such as a div) its bottom and top borders are *cloned* so that they also appear at the bottom of the first section and the top of the second section of the box. This is shown in the left of [Box decoration break sample](paged.md#fig-boxdecorationbreak). This is the default but may be set with the `box-decoration-break` property, setting its value to `clone`.
+When a page (or column) break occurs within a box (such as a div) its bottom and top borders are *cloned* so that they also appear at the bottom of the first section and the top of the second section of the box. This is shown in the left of [Box decoration break sample](#fig-boxdecorationbreak). This is the default but may be set with the `box-decoration-break` property, setting its value to `clone`.
 
-Box decoration break sample
+<p id="fig-boxdecorationbreak">Box decoration break sample</p>
 
 ![The box on the left is completely enclosed by its border (clone); while the box on the right has no border at the bottom where it wraps onto the next page (slice).](assets/samples/box-decoration-break-1.bw.png)
 This figure shows the result of using the `box-decoration-break` property. On the left the `clone` value is used while on the right `slice` is used. The [PDF](assets/samples/box-decoration-break.pdf) and [HTML](assets/samples/box-decoration-break.html) are available for download.
@@ -928,7 +926,7 @@ This figure shows the result of using the `box-decoration-break` property. On th
         box-decoration-break: clone
     }
 ```
-If instead you wish the borders to remain open, as if the box were simply *sliced* in half, as in the right of [Box decoration break sample](paged.md#fig-boxdecorationbreak), then you can set this property to `slice`.
+If instead you wish the borders to remain open, as if the box were simply *sliced* in half, as in the right of [Box decoration break sample](#fig-boxdecorationbreak), then you can set this property to `slice`.
 
 ```
     div.box2 {
@@ -980,7 +978,7 @@ This example uses some of the properties that we introduced above, plus three ne
 Prince also allows the placement, length and width of the crop marks to be specified respectively with the `prince-mark-offset`, `prince-mark-length` and `prince-mark-width` properties.
 
 <script>
-function shiftWindow() { if (location.hash.indexOf('fig-') == 1) { scrollBy(0, -60);
+function shiftWindow() { if ((location.hash.indexOf('fig-') == 1) || (location.hash.indexOf('tab-') == 1)) { scrollBy(0, -60);
 }};
 window.addEventListener("load",  function() { shiftWindow(); });
 window.addEventListener("hashchange", function() { shiftWindow(); });

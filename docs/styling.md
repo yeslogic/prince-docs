@@ -530,11 +530,11 @@ Output
 
 <ol style="border: solid 2px darkgreen">
 <li style="border: solid 1px black; list-style-position: inside">
-    This list item sets the <code><a href="css-props.md#prop-list-style-position">list-style-position</a></code> to <code>inside</code>,
+    This list item sets the <code><a href="css-props#prop-list-style-position">list-style-position</a></code> to <code>inside</code>,
     so the list marker is rendered inside the principal box of <code>li</code>.
 </li>
 <li style="border: solid 1px black; list-style-position: outside">
-    This list item sets the <code><a href="css-props.md#prop-list-style-position">list-style-position</a></code> to <code>outside</code>,
+    This list item sets the <code><a href="css-props#prop-list-style-position">list-style-position</a></code> to <code>outside</code>,
     so the list marker is rendered outside the principal box of <code>li</code>.
 </li>
 </ol>
@@ -684,7 +684,7 @@ Output
 </table>
 
 Note that by default,
-the value of <code><a href="css-props.md#prop-border-collapse">border-collapse</a></code> is
+the value of <code><a href="css-props#prop-border-collapse">border-collapse</a></code> is
 <code>separate</code>.
 
 
@@ -723,7 +723,7 @@ Output
 </tr>
 </table>
 
-Note that the <code><a href="css-props.md#prop-border-spacing">border-spacing</a></code> property is not used
+Note that the <code><a href="css-props#prop-border-spacing">border-spacing</a></code> property is not used
 in the collapsing table border model.
 
 

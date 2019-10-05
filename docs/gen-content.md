@@ -21,15 +21,15 @@ The most simple use of generating content in these properties is to insert a lit
 The properties can also insert external content fetched from another resource. This can be done with the following functions:
 
 -   the `url(url)` function, returning the text content at the given URL,
--   the `target-content(url)` function, referencing the text content of the linked element (see [Using target-content()](gen-content.md#target-content)), or
+-   the `target-content(url)` function, referencing the text content of the linked element (see [Using target-content()](#using-target-content)), or
 -   the `prince-base-url()` function, returning the base URL of the current document.
 
 It can also be done with the `prince-fallback(url)` function, which works just like the `url()` function, but also has the possibility of specifying a fallback `content`, in case the loading of the URL should fail.
 
 The content to be inserted can also be fetched from the attributes of other elements with the `attr(attribute-name)` function, or from other elements with the following mechanisms:
 
--   Any block-level element can be removed from the normal document flow, to be inserted in a page region: it is best removed with the `position` property and its `running(name)` function, and inserted with the `element(name)` function. Alternatively, it can be removed with the `prince-flow` property, to be inserted with the `flow(name)` function. See the documentation for [Taking elements from the document](paged.md#content-taking-elements) for more details.
--   An element can be referenced with the `string(ident)` function after having been defined in the `string-set` property with the `content()` function. This does not remove the element from the natural document flow, but instead copies it into the page region. See [Copying content from the document](paged.md#content-copying-text).
+-   Any block-level element can be removed from the normal document flow, to be inserted in a page region: it is best removed with the `position` property and its `running(name)` function, and inserted with the `element(name)` function. Alternatively, it can be removed with the `prince-flow` property, to be inserted with the `flow(name)` function. See the documentation for [Taking elements from the document](paged.md#taking-elements-from-the-document) for more details.
+-   An element can be referenced with the `string(ident)` function after having been defined in the `string-set` property with the `content()` function. This does not remove the element from the natural document flow, but instead copies it into the page region. See [Copying content from the document](paged.md#copying-content-from-the-document).
 
 The following functions can also be used for different forms of counters:
 
@@ -38,9 +38,9 @@ The following functions can also be used for different forms of counters:
 -   the `target-counter(url, counter)` function retrieves the value of the innermost counter with a given name at the given URL, and
 -   the `target-counters(url, counter, "separator")` function retrieves the value of all counters of a given name from the end of the given URL.
 
-All counter functions can take an optional argument to define the counter style (see [Counter styles](gen-content.md#counter-styles)). Prince also offers two mechanisms to create user-defined counter styles: either by means of the `prince-script()` function (see below, and [User-defined counter styles](gen-content.md#counter-user-styles)), or by means of the generated content functions `repeat(string+)`, defining a sequentially repeated pattern for numbering the items, or `symbols(string+)`, defining the symbols used for numbering the items.
+All counter functions can take an optional argument to define the counter style (see [Counter styles](#counter-styles)). Prince also offers two mechanisms to create user-defined counter styles: either by means of the `prince-script()` function (see below, and [User-defined counter styles](#user-defined-counter-styles)), or by means of the generated content functions `repeat(string+)`, defining a sequentially repeated pattern for numbering the items, or `symbols(string+)`, defining the symbols used for numbering the items.
 
-Last but not least, Prince supports arbitrary JavaScript functions to be called from CSS generated content using the `prince-script()` function (see [Script Functions](gen-content.md#scriptfunc)).
+Last but not least, Prince supports arbitrary JavaScript functions to be called from CSS generated content using the `prince-script()` function (see [Script Functions](#script-functions)).
 
 A special function is `prince-glyph-index(int)`, which allows to choose a glyph from a font by the index of that glyph in the font. Note that this is very non-portable, as glyph indices are specific to individual font versions. But it is a possible escape hatch for people who need a specific glyph and don't have any other way of accessing it (by Unicode character or OpenType substitution).
 
@@ -62,7 +62,7 @@ defining the last value the counter was set to on this page, or the same as `sta
 
 The page policy values of the `string()` function are only meaningful for `string()` used in page region content.
 
-For a good example of its use, please see [Copying content from the document](paged.md#content-copying-text).
+For a good example of its use, please see [Copying content from the document](paged.md#copying-content-from-the-document).
 
 ## Before and After pseudo-elements
 
@@ -93,9 +93,9 @@ The `counter-increment` and `counter-reset` properties are ignored on elements w
 
 Once initialized, a counter can be displayed with either the `counter()` or `counters()` function in a `content` property.
 
-The `counter()` function generates a value for the innermost counter, formatted in the optional counter style (decimal by default - see [Counter styles](gen-content.md#counter-styles)).
+The `counter()` function generates a value for the innermost counter, formatted in the optional counter style (decimal by default - see [Counter styles](#counter-styles)).
 
-The `counters()` function concatenates counters on different levels, separated with the separator string and formatted in the optional counter style (decimal by default - see [Counter styles](gen-content.md#counter-styles)).
+The `counters()` function concatenates counters on different levels, separated with the separator string and formatted in the optional counter style (decimal by default - see [Counter styles](#counter-styles)).
 
 CSS
 
@@ -307,7 +307,7 @@ The following table shows examples of the various counter styles:
 </tr>
 </table>
 
-See also [User-defined counter styles](gen-content.md#counter-user-styles) for custom counters.
+See also [User-defined counter styles](#user-defined-counter-styles) for custom counters.
 
 ## Cross-references
 
@@ -356,7 +356,7 @@ This will add a cross-reference after every link that includes the text of the e
 
 ## Script Functions
 
-Prince supports arbitrary JavaScript functions to be called from CSS generated content using the `prince-script()` function (see the `content` property). To make the functions available to CSS, the `Prince.addScriptFunc` method is used (see [The Prince Object](javascript.md#js-prince-obj)).
+Prince supports arbitrary JavaScript functions to be called from CSS generated content using the `prince-script()` function (see the `content` property). To make the functions available to CSS, the `Prince.addScriptFunc` method is used (see [The Prince Object](javascript.md#the-prince-object)).
 
 Please note that Prince is not running JavaScript by default - it needs to be explicitly enabled. See [Applying JavaScript in Prince](prince-input#applying-javascript-in-prince).
 
@@ -418,5 +418,5 @@ JavaScript
         else return n;
     });
 ```
-For another way of creating user-defined counter styles, see [Generated Content Functions](gen-content.md#gen-content-functions).
+For another way of creating user-defined counter styles, see [Generated Content Functions](#generated-content-functions).
 

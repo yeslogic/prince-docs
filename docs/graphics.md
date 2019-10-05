@@ -124,14 +124,14 @@ Prince supports RGB, RGBA, HSL, HSLA, CMYK, and named spot colors. For Prince's 
 
 As CSS defines RGB colors in the sRGB color space, Prince tags those colors with an sRGB ICC profile in the PDF output. See also the section on [Rich black and true black](#rich-black-and-true-black) below.
 
-CMYK colors specified using the `cmyk()` function syntax, or equivalent `device-cmyk()` syntax, represent device-dependent colors, so they will be left as such in the PDF when possible. Device-dependent color is not allowed in PDF/A or PDF/X, so those CMYK colors will be assumed to be either in the output intent color space (if it is CMYK), or else the color space of the fallback CMYK profile. See the command-line option [`--fallback-cmyk-profile`](command-line.md#cl-fallback-cmyk-profile) in the [PDF Output Options](command-line.md#cmd-pdf) section, or the `prince-fallback-cmyk-profile` property.
+CMYK colors specified using the `cmyk()` function syntax, or equivalent `device-cmyk()` syntax, represent device-dependent colors, so they will be left as such in the PDF when possible. Device-dependent color is not allowed in PDF/A or PDF/X, so those CMYK colors will be assumed to be either in the output intent color space (if it is CMYK), or else the color space of the fallback CMYK profile. See the command-line option [`--fallback-cmyk-profile`](command-line.md#cl-fallback-cmyk-profile) in the [PDF Output Options](command-line.md#pdf-output-options) section, or the `prince-fallback-cmyk-profile` property.
 ```bash
     prince input.html
            --pdf-profile=PDF/A-1b
            --pdf-output-intent=sRGB.icc
            --fallback-cmyk-profile=ISOcoated_v2_eci.icc
 ```
-```
+```css
     @prince-pdf {
         prince-pdf-output-intent: url("sRGB.icc");
         prince-fallback-cmyk-profile: url("ISOcoated_v2_eci.icc");
@@ -313,7 +313,7 @@ The property `prince-background-image-resolution` does the same for background i
 
 The property `object-fit` offers another mechanism to determine how an image should be resized to fit its container. The position of the image in its container can be determined with the `object-position` property.
 
-The `object-fit` and `object-position` properties are not specific to images, but apply to all replaced content, including content inserted as [Generated Content](gen-content.md#gen-content) via the `content` property.
+The `object-fit` and `object-position` properties are not specific to images, but apply to all replaced content, including content inserted as [Generated Content](gen-content.md) via the `content` property.
 
 Please note that specifying `prince-image-resolution` and `prince-background-image-resolution`, or `object-fit`, only affects the default DPI of images, ie. it makes them physically bigger or smaller on the page, and - it does not affect the number of pixels in the image, and thus the PDF file size will be the same.
 
@@ -442,5 +442,5 @@ Furthermore the range of pages to rasterize and the resolution of the raster out
 ```
 If you want to rasterize the HTML to an image format that supports transparency (PNG, not JPEG) and have a transparent background, in order to composite it with something else later, the command-line option [`--raster-background`](command-line.md#cl-raster-background) can be used with the value `transparent`.
 
-A full list of rasterization possibilities can be found in the [Raster Output Options](command-line.md#cmd-raster) section.
+A full list of rasterization possibilities can be found in the [Raster Output Options](command-line.md#raster-output-options) section.
 
