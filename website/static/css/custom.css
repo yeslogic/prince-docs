@@ -37,7 +37,7 @@ table.property-table td {
 #prop-list summary .self-link, #js-support-table summary .self-link {
   opacity: 0.2;
 }
-#prop-list summary:hover .self-link, #js-support-table summary:hover .self-link {
+p:hover .self-link, #prop-list summary:hover .self-link, #js-support-table summary:hover .self-link {
   visibility: visible;
 }
 #prop-list details, #js-support-table details {
@@ -158,6 +158,9 @@ table.property-table td {
 }
 #js-support-table .url-property::before {
   content: "See the property ";
+}
+dl.faq dt p {
+    font-weight: bold;
 }
 a[href*='//']:not([href*='princexml.com'])::after {
   content: " \21D7";
