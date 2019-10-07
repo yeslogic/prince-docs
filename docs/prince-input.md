@@ -8,9 +8,9 @@ See the sections [Applying Style Sheets in Prince](#applying-style-sheets-in-pri
 
 The input files can be provided in several ways:
 
--   the command line (see [Command-line Reference](command-line.md#command-line)),
+-   the command line (see [Command-line Reference](command-line.md)),
 -   the GUI, or
--   through wrapper scripts (see [Server Integration](server-integration.md#server-integration)).
+-   through wrapper scripts (see [Server Integration](server-integration.md)).
 
 Input files can either be local files, or remote files that will be fetched over HTTP or HTTPS, in which case the URL to the file, or to the site, needs to be provided. Prince will automatically create the PDF output once the input pages and files have finished loading.
 
@@ -94,7 +94,7 @@ Prince is not running JavaScript by default - document scripts can be enabled by
 
 External scripts can be run by specifying one or more [`--script=FILE`](command-line.md#cl-script) options on the command-line. These scripts will always be executed, regardless of whether document scripts have been enabled or not.
 
-JavaScript functions can also be called from CSS generated content, by using the `prince-script()` syntax for referencing [Script Functions](gen-content.md#scriptfunc). Please note that scripts contained in the `prince-script()` function are treated as document scripts, and hence need to be explicitly enabled.
+JavaScript functions can also be called from CSS generated content, by using the `prince-script()` syntax for referencing [Script Functions](gen-content.md#script-functions). Please note that scripts contained in the `prince-script()` function are treated as document scripts, and hence need to be explicitly enabled.
 
 Prince also supports PDF scripts, known as "Document Action" scripts - see [PDF Actions](prince-output.md#pdf-actions). They get included in documents through CSS, too, but will always be run. Note, however, that these scripts are dependent on the PDF viewer, and in many cases might only work in Adobe Acrobat products.
 

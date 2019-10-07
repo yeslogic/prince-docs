@@ -12,7 +12,7 @@ PDF Versions and Profiles
 
 The PDF files produced by Prince conform to several different PDF versions, up to PDF 1.7, depending on the chosen PDF Profile and the enabled PDF features.
 
-Prince supports tagged PDF files and optional PDF profiles, which can be selected using the [`--pdf-profile`](command-line.md#cl-pdf-profile) option on the [command-line interface](command-line.md#command-line), or the `setProfile` method if using a [server wrapper](server-integration.md#wrappers), or the [`PDF.profile`](js-support.md#window.PDF.profile) function in JavaScript.
+Prince supports tagged PDF files and optional PDF profiles, which can be selected using the [`--pdf-profile`](command-line.md#cl-pdf-profile) option on the [command-line interface](command-line.md), or the `setProfile` method if using a [server wrapper](server-integration.md#wrappers), or the [`PDF.profile`](js-support.md#window.PDF.profile) function in JavaScript.
 
 The available profiles, and the PDF version they are based on, are:
 
@@ -343,7 +343,7 @@ CSS
         prince-bookmark-label: attr(title)
     }
 ```
-This property can take any content value, including literal text strings and counters. See [Generated Content Functions](gen-content.md#gen-content-functions).
+This property can take any content value, including literal text strings and counters. See [Generated Content Functions](gen-content.md#generated-content-functions).
 
 #### Bookmark targets
 

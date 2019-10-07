@@ -20,7 +20,7 @@ When running multiple instances of Prince, it might be advisable to disable para
 Prince Wrappers
 ---------------
 
-Since different server configurations make use of different scripting languages, wrappers in those languages are necessary to invoke Prince. Wrappers for several of the most widely used scripting languages are available for download on the [Wrappers Download Page](wrappers.html).
+Since different server configurations make use of different scripting languages, wrappers in those languages are necessary to invoke Prince. Wrappers for several of the most widely used scripting languages are available for download on the [Wrappers Download Page](/wrappers.html).
 
 A useful tool for writing custom wrappers in other languages are the [Advanced Command-Line Options](#advanced-command-line-options).
 
@@ -34,7 +34,7 @@ Prince can be called from within a Java class for servlets by using [Java interf
 This package contains:
 
 -   A single JAR file (`prince.jar`),
--   the [API documentation](wrappers/java/doc/index.html) and
+-   the [API documentation](assets/wrappers/java/doc/index.html) and
 -   the Java source code for reference.
 
 The `Prince.jar` file contains the class file that provides the Java interface to Prince (`com.princexml.Prince`). The documentation lists the Java class methods and explains how to use them.
@@ -47,7 +47,7 @@ Prince can be called from .NET languages using the [Prince C\# / .Net wrapper](w
 The wrapper package contains:
 
 -   the DLL file,
--   the [API documentation](wrappers/csharp/readme.html) and
+-   the [API documentation](assets/wrappers/csharp/readme.html) and
 -   the source code.
 
 #### Using Prince with C\#
@@ -132,7 +132,7 @@ Prince can be called from PHP using the [PHP interface](wrappers.html#wrapper-ph
 This package contains two files:
 
 -   The `prince.php` script and
--   the [API documentation](wrappers/php5/readme.html).
+-   the [API documentation](assets/wrappers/php5/readme.html).
 
 The `prince.php` file contains the PHP class that provides the interface to Prince. The `readme.html` file lists the PHP class methods and explains how to use them.
 
@@ -144,7 +144,7 @@ The [ActiveX/COM wrapper](wrappers.html#wrapper-activex) allows Prince to be cal
 This package contains two files:
 
 -   The `PRINCE.dll` file and
--   the [API documentation](wrappers/activex/readme.html).
+-   the [API documentation](assets/wrappers/activex/readme.html).
 
 #### Using Prince with ASP
 
@@ -201,7 +201,7 @@ Prince can be called from ColdFusion pages using the Java interface or the [Acti
 Start by downloading the [Java interface](#the-java-wrapper) for Prince. This package contains:
 
 -   A single JAR file (`prince.jar`),
--   the [API documentation](wrappers/java/doc/index.html) and
+-   the [API documentation](assets/wrappers/java/doc/index.html) and
 -   the Java source code for reference.
 
 The `Prince.jar` file contains the class file that provides the Java interface to Prince (`com.princexml.Prince`). The documentation lists the Java class methods and explains how to use them.
@@ -266,7 +266,7 @@ Please read the README.TXT file that comes with the ActiveX DLL file for more de
 
 ### Using Prince with Python
 
-Prince can be called from Python using the [command-line interface](command-line.md#command-line), like this:
+Prince can be called from Python using the [command-line interface](command-line.md), like this:
 
 ```python
     import subprocess
@@ -324,7 +324,7 @@ Alternatively, it is possible for the Python script to read the PDF output direc
 
 ### Using Prince with Perl
 
-Prince can be called from Perl using the [command-line interface](command-line.md#command-line), like this:
+Prince can be called from Perl using the [command-line interface](command-line.md), like this:
 
 ```perl
     system("prince foo.xml bar.pdf");
