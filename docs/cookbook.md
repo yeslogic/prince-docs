@@ -171,11 +171,16 @@ This style snippet could be part of the stylesheet for a little booklet - it dis
 Long Tables
 -----------
 
-You need  
-[Tables](styling#tables)
-
--   [Running table headers and footers](styling#running-table-headers-and-footers)
--   [Table captions](styling#table-captions)
+<dl class="ingredients">
+  <dt>You need</dt>
+  <dd>
+<a href="styling#tables">Tables</a>
+    <ul>
+      <li><a href="styling#running-table-headers-and-footers">Running table headers and footers</a></li>
+      <li><a href="styling#table-captions">Table captions</a></li>
+    </ul>
+  </dd>
+</dl>
 
 One of the main differences when designing for paged media is that you need to think about concrete pages, as opposed to a continuous flow of the page designed for the web and for web browsers. A problem may arise when elements such as tables are longer than the page they need to be displayed on.
 
@@ -196,12 +201,16 @@ When a table spans across more than one page, the `prince-caption-page` property
 Fancy Table Captions
 --------------------
 
-You need  
-[Tables](styling#tables)
-
--   [Table captions](styling#table-captions)
-
-[Long Tables](#long-tables)
+<dl class="ingredients">
+  <dt>You need</dt>
+  <dd>
+<a href="styling#tables">Tables</a>
+    <ul>
+      <li><a href="styling#table-captions">Table captions</a></li>
+    </ul>
+  </dd>
+  <dd><a href="#long-tables">Long Tables</a></dd>
+</dl>
 
 HTML tables only have one caption per table. However, in printed form a table might span several pages (see [Long Tables](#long-tables)) and it might be desirable to have separate captions for the first and the following pages - you might want to add "cont." to the caption of the first one, or otherwise differentiate them. Prince offers an extension mechanism to do so.
 
@@ -248,10 +257,11 @@ CSS
 Page Headers and Footers
 ------------------------
 
-You need  
-[Page regions](paged.md#page-regions)
-
-[Generated Content](gen-content.md#gen-content)
+<dl class="ingredients">
+  <dt>You need</dt>
+  <dd><a href="paged#page-regions">Page regions</a></dd>
+  <dd><a href="#gen-content">Generated Content</a></dd>
+</dl>
 
 When preparing a document for print, "running" headers and footers repeating on every page, such as page numbering and titles of the book and of the current chapter, are a common need.
 
@@ -289,15 +299,18 @@ If some special formatting of the text in the margin box is required, copying th
 Dictionary Page Headers
 -----------------------
 
-You need  
-[Page regions](paged.md#page-regions)
-
-[Generated Content](gen-content.md#gen-content)
-
-[The optional page-policy value](gen-content.md#gen-content-functions-pagepolicy)
-
--   `content: string(term, first)`
--   `content: string(term, last)`
+<dl class="ingredients">
+  <dt>You need</dt>
+  <dd><a href="paged#page-regions">Page regions</a></dd>
+  <dd><a href="#gen-content">Generated Content</a></dd>
+  <dd>
+<a href="gen-content#the-optional-page-policy-value">The optional page-policy value</a>
+    <ul>
+      <li><code>content: string(term, <b>first</b>)</code></li>
+      <li><code>content: string(term, <b>last</b>)</code></li>
+    </ul>
+  </dd>
+</dl>
 
 A peculiar and interesting use of page headers happens in dictionaries: typically, you might want to display page headers like "a-af", where "a" is the first definition on the page and "af" is the last one. This can easily be obtained by adding [The optional page-policy value](gen-content.md#gen-content-functions-pagepolicy) to the `string()` function.
 
@@ -324,15 +337,26 @@ The dictionary sample is furthermore noticeable for its use of the optional page
 Page Numbering
 --------------
 
-You need  
-[Paged Media](paged.md#paged)
-
--   [Selecting pages](paged.md#page-rules)
-
-[Generated Content](gen-content.md#gen-content)
-
--   [Counters and Numbering](gen-content.md#counters)
-    -   `content: counter(page)`
+<dl class="ingredients">
+  <dt>You need</dt>
+  <dd>
+<a href="paged">Paged Media</a>
+    <ul>
+      <li><a href="paged#selecting-pages">Selecting pages</a></li>
+    </ul>
+  </dd>
+  <dd>
+<a href="gen-content">Generated Content</a>
+    <ul>
+      <li>
+<a href="gen-content#counters-and-numbering">Counters and Numbering</a>
+        <ul>
+          <li><code>content: counter(page)</code></li>
+        </ul>
+      </li>
+    </ul>
+  </dd>
+</dl>
 
 Paged media is organized in pages - and numbering the pages is a common task: generated content does this for you automatically. The easiest way of doing so is numbering them sequentially from the first to the last page.
 
@@ -404,14 +428,17 @@ This rule will generate page footers such as "Page 1 of 89".
 Footnotes per Column
 --------------------
 
-You need  
-[Columns](styling.md#columns)
-
-[Page and column floats](styling#page-and-column-floats)
-
-[Footnotes](styling.md#footnotes)
-
--   `float: prince-column-footnote`
+<dl class="ingredients">
+  <dt>You need</dt>
+  <dd><a href="styling#columns">Columns</a></dd>
+  <dd><a href="styling#page-and-column-floats">Page and column floats</a></dd>
+  <dd>
+<a href="styling#footnotes">Footnotes</a>
+    <ul>
+      <li><code>float: prince-column-footnote</code></li>
+    </ul>
+  </dd>
+</dl>
 
 Prince has a simple way of creating footnotes: the `@footnote` page area, where footnotes can be floated to with the `float` property. For details see [Footnotes](styling.md#footnotes).
 
@@ -428,16 +455,18 @@ The value `prince-column-footnote` transforms the element into a column footnote
 Multiple Footnotes
 ------------------
 
-You need  
-[Prince extensions to floats](styling#prince-extensions-to-floats)
-
-[Footnotes](styling.md#footnotes)
-
--   `float: footnote`
-
-[Generated Content Functions](gen-content.md#gen-content-functions)
-
-[Using target-counter()](gen-content.md#counter-target)
+<dl class="ingredients">
+  <dt>You need</dt>
+  <dd><a href="styling#prince-extensions-to-floats">Prince extensions to floats</a></dd>
+  <dd>
+<a href="styling#footnotes">Footnotes</a>
+    <ul>
+      <li><code>float: footnote</code></li>
+    </ul>
+  </dd>
+  <dd><a href="gen-content#generated-content-functions">Generated Content Functions</a></dd>
+  <dd><a href="gen-content#using-target-counter">Using <code>target-counter()</code></a></dd>
+</dl>
 
 In some cases it might happen that you want to point several footnote calls at the same footnote. Prince offers a convenient mechanism to achieve this by combining regular footnotes with the generated content function `target-counter()`.
 
@@ -480,14 +509,17 @@ When creating regular footnotes, Prince automatically takes care of the styling 
 Sidenotes
 ---------
 
-You need  
-[Prince extensions to floats](styling#prince-extensions-to-floats)
-
-[Footnotes](styling.md#footnotes)
-
--   `float: footnote`
-
-[Styling and behavior of footnotes](styling.md#styling-and-behavior-of-footnotes)
+<dl class="ingredients">
+  <dt>You need</dt>
+  <dd><a href="styling#prince-extensions-to-floats">Prince extensions to floats</a></dd>
+  <dd>
+<a href="styling#footnotes">Footnotes</a>
+    <ul>
+      <li><code>float: footnote</code></li>
+    </ul>
+  </dd>
+  <dd><a href="styling#styling-and-behavior-of-footnotes">Styling and behavior of footnotes</a></dd>
+</dl>
 
 Prince has a simple way of creating footnotes: the `@footnote` page area, where footnotes can be floated to with the `float` property. For details see [Footnotes](styling.md#footnotes).
 
@@ -540,8 +572,10 @@ A variant of this approach, useful when creating floating sidenotes in a multico
 Endnotes
 --------
 
-You need  
-[Scripting](javascript.md#javascript)
+<dl class="ingredients">
+  <dt>You need</dt>
+  <dd><a href="javascript">Scripting</a></dd>
+</dl>
 
 Endnotes are quite easy as their placement is not relative to the page. There are two ways of creating them.
 
@@ -562,15 +596,18 @@ The table in the above document sample also has inline notes that are moved to t
 Hyperlinks in Print
 -------------------
 
-You need  
-[Generated Content](gen-content.md#gen-content)
-
-[Generated Content Functions](gen-content.md#gen-content-functions)
-
-[Cross-references](gen-content.md#crossref)
-
--   [Using target-counter()](gen-content.md#counter-target)
--   [Using target-content()](gen-content.md#target-content)
+<dl class="ingredients">
+  <dt>You need</dt>
+  <dd><a href="gen-content">Generated Content</a></dd>
+  <dd><a href="gen-content#generated-content-functions">Generated Content Functions</a></dd>
+  <dd>
+<a href="gen-content#cross-references">Cross-references</a>
+    <ul>
+      <li><a href="gen-content#using-target-counter">Using <code>target-counter()</code></a></li>
+      <li><a href="gen-content#using-target-content">Using <code>target-content()</code></a></li>
+    </ul>
+  </dd>
+</dl>
 
 Hyperlinks are a direct reference to another location, easy to follow on the interactive web page, or a PDF loaded in a viewer, by clicking on it. On the printed page, this mechanism obviously does not work.
 
@@ -628,12 +665,16 @@ This will add the URL after every link. For example: "\[Located at 'http://www.p
 Image Magic
 -----------
 
-You need  
-[Images](graphics.md#images)
-
-[CSS and Images](graphics.md#css-and-images)
-
--   `prince-image-magic`
+<dl class="ingredients">
+  <dt>You need</dt>
+  <dd><a href="graphics#images">Images</a></dd>
+  <dd>
+<a href="graphics#css-and-images">CSS and Images</a>
+    <ul>
+      <li><code>prince-image-magic</code></li>
+    </ul>
+  </dd>
+</dl>
 
 The `prince-image-magic` property performs various image-related, Prince-specific tasks that do not fit into other existing CSS properties. It applies magic to images!
 
@@ -658,14 +699,19 @@ This example recompresses all JPEG images to 50%, converts any non-JPEG images t
 Hyphenation
 -----------
 
-You need  
-`hyphens`
-
--   `prince-hyphenate-character`
--   `prince-hyphenate-before`
--   `prince-hyphenate-after`
--   `prince-hyphenate-limit-lines`
--   `prince-hyphenate-patterns`
+<dl class="ingredients">
+  <dt>You need</dt>
+    <dd>
+<code><a href="css-props#prop-hyphens">hyphens</a></code>
+      <ul>
+        <li><code><a href="css-props#prop-prince-hyphenate-character">prince-hyphenate-character</a></code></li>
+        <li><code><a href="css-props#prop-prince-hyphenate-before">prince-hyphenate-before</a></code></li>
+        <li><code><a href="css-props#prop-prince-hyphenate-after">prince-hyphenate-after</a></code></li>
+        <li><code><a href="css-props#prop-prince-hyphenate-limit-lines">prince-hyphenate-limit-lines</a></code></li>
+        <li><code><a href="css-props#prop-prince-hyphenate-patterns">prince-hyphenate-patterns</a></code></li>
+      </ul>
+    </dd>
+</dl>
 
 The property `hyphens` controls whether hyphenation is allowed to create opportunities to wrap within a line of text.
 
@@ -774,12 +820,12 @@ Alternatively, link directly to the required remote hyphenation file:
 Typographic Ligatures
 ---------------------
 
-You need  
-[OpenType Features in Prince](styling.md#opentype-features-in-prince)
-
-`font-variant: prince-opentype()`
-
-`prince-text-replace`
+<dl class="ingredients">
+  <dt>You need</dt>
+    <dd><a href="styling#opentype-features-in-prince">OpenType Features in Prince</a></dd>
+    <dd><code><a href="css-props#prop-font-variant">font-variant</a>: prince-opentype()</code></dd>
+    <dd><code><a href="css-props#prop-prince-text-replace">prince-text-replace</a></code></dd>
+</dl>
 
 Prince supports typographic ligatures found in OpenType fonts, i.e. Prince will replace certain characters that appear next to each other with other special glyphs that join those two characters together into one single glyph.
 
@@ -808,14 +854,17 @@ Another mechanism for replacing characters is given with the `prince-text-replac
 Watermarks
 ----------
 
-You need  
-[Page regions](paged.md#page-regions)
-
--   `@prince-overlay`
-
-[Generated content in page regions](paged.md#page-gen-content)
-
-[Taking elements from the document](paged.md#content-taking-elements)
+<dl class="ingredients">
+  <dt>You need</dt>
+    <dd>
+<a href="paged#page-regions">Page regions</a>
+      <ul>
+        <li><code>@prince-overlay</code></li>
+      </ul>
+    </dd>
+    <dd><a href="paged#generated-content-in-page-regions">Generated content in page regions</a></dd>
+    <dd><a href="paged#taking-elements-from-the-document">Taking elements from the document</a></dd>
+</dl>
 
 When producing a PDF, it might be desirable to include a watermark, visible on all pages. In Prince it is easy to do so with CSS.
 
@@ -855,10 +904,11 @@ Sometimes it is necessary to rotate a block element so that it fits on the page.
 
 ### Printing wide content sideways
 
-You need  
-`prince-rotate-body`
-
-`prince-shrink-to-fit`
+<dl class="ingredients">
+  <dt>You need</dt>
+    <dd><code><a href="css-props#prop-prince-rotate-body">prince-rotate-body</a></code></dd>
+    <dd><code><a href="css-props#prop-prince-shrink-to-fit">prince-shrink-to-fit</a></code></dd>
+</dl>
 
 Figure [Printing a big table sideways](#printing-wide-content-sideways) shows a table, rotated so that its width fits within the page's length. This can be achieved with the following rules:
 
@@ -885,10 +935,11 @@ Another way of rotating content is by changing the writing mode with the `writin
 
 ### Rotating content in table cells
 
-You need  
-`transform: rotate()`
-
-`writing-mode`
+<dl class="ingredients">
+  <dt>You need</dt>
+    <dd><code><a href="css-props#prop-transform">transform</a>: rotate()</code></dd>
+    <dd><code><a href="css-props#prop-writing-mode">writing-mode</a></code></dd>
+</dl>
 
 There are cases, when preparing a table with a large amount of content, that you would like to configure your layout to be most efficient - a useful trick is to rotate the content in some table cells, or in the table headers. Rotating by 90° might be a way to achieve this, but readability suffers. A reasonable compromise is to rotate 45° only - the space it needs is not more than with a 90° rotation, and your readers don't have to tilt their heads repeatedly. In the following example we shall rotate table headers by 45°.
 
@@ -942,14 +993,17 @@ For a different approach to rotating content, see the section on [Printing wide 
 The "Two-Pass" Solution
 -----------------------
 
-You need  
-[JavaScript in Printed Media](javascript.md#js-print)
-
-[Event Handling](javascript.md#js-event)
-
-[Console Access](javascript.md#js-console)
-
--   `console.log()`
+<dl class="ingredients">
+  <dt>You need</dt>
+    <dd><a href="javascript#javascript-in-printed-media">JavaScript in Printed Media</a></dd>
+    <dd><a href="javascript#event-handling">Event Handling</a></dd>
+    <dd>
+<a href="javascript#console-access">Console Access</a>
+      <ul>
+        <li><code>console.log()</code></li>
+      </ul>
+    </dd>
+</dl>
 
 One limitation of producing a document intended for print is its non-interactive, static nature: a document cannot be modified after it is deemed to be ready for print. See [JavaScript in Printed Media](javascript.md#js-print).
 
@@ -973,7 +1027,7 @@ Here is a minimalistic two-pass solution where the document is adorned with a To
 Another use of the two-pass solution is to create changebars - see the description [here](http://www.princexml.com/forum/topic/3516/changebars).
 
 
-Documentation in PDF Format
+<!--Documentation in PDF Format
 ---------------------------
 
 Documentation for Prince can easily be viewed online in the browser. But there might be circumstances when it is convenient to have the documentation in one file, stored locally - and which format would be most suitable, if not PDF?
@@ -998,4 +1052,4 @@ This command produces the documentation in PDF format, including a cover page, t
 If you are using the Prince GUI on Windows, you need to paste the three URLs for the cover page, the User Guide and the References by selecting the option "Add URL" three times. Next, you select the checkbox "Merge all documents into a single PDF file" and select a location where to save this file to. Make sure that the checkbox for "Enable Document Scripts" is checked, and click on the "Convert" button to convert the documents into your documentation in PDF format.
 
 The [Installation Guide](doc-install.html) is not included: since Prince is needed to create your documentation PDF, we assume that you have already installed it!
-
+-->
