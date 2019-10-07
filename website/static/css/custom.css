@@ -165,7 +165,9 @@ dl.faq dt p {
 a[href*='//']:not([href*='princexml.com'])::after {
   content: " \21D7";
   color: lightgrey; }
-
+footer a[href*='//']:not([href*='princexml.com'])::after {
+    content: "";
+}
 
 @media only screen and (min-device-width: 360px) and (max-device-width: 736px) {
 }
