@@ -47,8 +47,8 @@ const siteConfig = {
   //users,
 
   /* path to images for header/footer */
-  headerIcon: 'img/favicon.ico',
-  footerIcon: 'img/favicon.ico',
+  headerIcon: 'img/Prince-logo.png',
+  //footerIcon: 'img/Prince-logo.png',
   favicon: 'img/favicon.ico',
 
   /* Colors for website */
