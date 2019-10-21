@@ -74,7 +74,8 @@ var std = {
             includes: {},
             every: {},
             some: {},
-            reduce: {}
+            reduce: {},
+            fill: {}
         }
     },
     String: {

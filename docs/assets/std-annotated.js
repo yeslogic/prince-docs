@@ -183,7 +183,8 @@ var stdAnnotated = {
             includes: {},
             every: {},
             some: {},
-            reduce: {}
+            reduce: {},
+            fill: {}
         }
     },
     String: {
