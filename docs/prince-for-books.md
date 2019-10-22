@@ -8,7 +8,9 @@ The initial focus of work is on the features common to all books: making the pag
 
 For the time being, Prince for Books is only available as a a command-line application named `prince-books`. It is used like the standard Prince - see [Command-line Reference](command-line.md) for available options.
 
-`prince-books OPTIONS FILES` \[`-o` <span class="replaceable">PDF</span>\]
+```
+prince-books OPTIONS FILES [-o PDF]
+```
 
 To download it, head over to the [Prince for Books download page](books.html). It is available in package bundles only - to install it, the files need to be copied into place (Windows), or an installation script needs to be run (on Linux and MacOS X). It can be installed without problem alongside a normal Prince installation - the executable to run is called `prince-books`.
 
