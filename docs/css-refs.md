@@ -1150,8 +1150,8 @@ URL.</td>
 <td>References the text content of the linked element.  See <a href="gen-content#using-target-content">Using target-content()</a>.</td>
 </tr>
 <tr>
-<td><code>leader( "<i>...</i>" | dotted | solid | space )</code></td>
-<td>Inserts the given string before the element - useful in tables of content.</td>
+<td><code>leader( ("<i>...</i>" | dotted | solid | space), <i>length</i>? )</code></td>
+<td>Inserts the given string before the element - useful in tables of content. The optional second argument can be used to specify a minimum width.</td>
 </tr>
 <tr>
 <td><code>string( <i>ident</i>, <i>page-policy</i>? )</code></td>
