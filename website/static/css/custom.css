@@ -171,6 +171,12 @@ a[href*='//']:not([href*='princexml.com'])::after {
 footer a[href*='//']:not([href*='princexml.com'])::after {
     content: "";
 }
+footer a[href] {
+    color: rgba(255, 255, 255, 0.4);
+}
+footer a[href]:hover {
+    text-decoration: underline;
+}
 
 @media only screen and (min-device-width: 360px) and (max-device-width: 736px) {
 }
