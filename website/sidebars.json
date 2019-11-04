@@ -1,6 +1,6 @@
 {
   "docs": {
-    "Installing": [
+    "Installation Guide": [
         "installing",
         "first-doc",
         "help-install"
@@ -20,7 +20,7 @@
         "server-integration",
         "prince-for-books"
     ],
-    "Reference": [
+    "Reference Guide": [
         "command-line",
         "css-refs",
         "css-props",
