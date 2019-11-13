@@ -3,7 +3,7 @@ title: Convert HTML to PDF
 ---
 
 It’s quick and simple to convert HTML to PDF with Prince. HTML is
-seamlesslytransformed into documents you can print, download and archive.
+seamlessly transformed into documents you can print, download and archive.
 Prince enables you to typeset, format and print HTML content so you can be
 your own publisher.
 
