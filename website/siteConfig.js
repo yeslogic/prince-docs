@@ -39,8 +39,9 @@ const siteConfig = {
   headerLinks: [
     {doc: 'intro-userguide', label: 'Docs'},
     {page: 'help', label: 'Help'},
+    {page: 'release', label: 'Release Notes'},
+    {page: 'roadmap', label: 'Roadmap'},
     {search: true},
-    {href: 'https://www.princexml.com', label: 'Prince'},
   ],
 
   // If you have users set above, you add it here:
