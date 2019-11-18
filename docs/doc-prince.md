@@ -262,7 +262,7 @@ function redirects() {
         window.location.href = '/doc/prince-for-books'
     }
     else {
-        window.location.href = '/doc/styling'
+        window.location.href = '/doc/intro-userguide'
     }
 }
 window.addEventListener("load",  function() { redirects(); });
