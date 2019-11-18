@@ -39,8 +39,8 @@ const siteConfig = {
   headerLinks: [
     {doc: 'intro-userguide', label: 'Docs'},
     {page: 'help', label: 'Help'},
-    {page: 'release', label: 'Release Notes'},
-    {page: 'roadmap', label: 'Roadmap'},
+    {page: 'releases', label: 'Release Notes'},
+//    {page: 'roadmap', label: 'Roadmap'},
     {search: true},
   ],
 
