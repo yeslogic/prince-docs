@@ -184,7 +184,8 @@ var stdAnnotated = {
             every: {},
             some: {},
             reduce: {},
-            fill: {}
+            fill: {},
+            reduceRight: {}
         }
     },
     String: {
