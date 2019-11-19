@@ -13,7 +13,7 @@ Installing Prince
 
 Prince is available for Windows, MacOS X, Linux (multiple distributions) and FreeBSD. You can download the relevant file from our [downloads page](download.html). For Linux and FreeBSD you may need to choose based on your distribution type, version and processor type (32/64 bits).
 
-Prince is provided under the terms of the [Prince End-User License Agreement](eula.html).
+Prince is provided under the terms of the [Prince End-User License Agreement](/license/).
 
 ### Installing Prince on Windows
 
@@ -30,7 +30,7 @@ Prince is provided under the terms of the [Prince End-User License Agreement](eu
 
     ![The installer welcome screen](assets/images/install_02.png)
 
-4.  Next you will need to accept the license agreement. The text of the license agreement is also available [here](eula.html). Accept the agreement and click Next.
+4.  Next you will need to accept the license agreement. The text of the license agreement is also available [here](/license/). Accept the agreement and click Next.
 
     Installer license agreement screen
 
