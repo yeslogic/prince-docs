@@ -6,7 +6,7 @@ Let's get started with Prince. We will download and install the software and use
 
 Readers should already be familiar with HTML and CSS - many good tutorials are available on the topic. Familiarity with your computer's command line interface is desirable but not essential. Because the chapter is aimed at getting started as quickly as possible we may skip some explanations, don't worry as these will be covered later in the manual.
 
-If Prince is already installed, you can directly skip to the [User Guide](doc-prince.html).
+If Prince is already installed, you can directly skip to the [User Guide](intro-userguide).
 
 Installing Prince
 -----------------
@@ -245,19 +245,19 @@ On Windows you can install a license by following these steps:
 
     Click the license button
 
-    <img src="assets/images/gui_03.png" alt="Image showing the license button in the main Prince GUI." width="616" />
+    ![Image showing the license button in the main Prince GUI.](assets/images/gui_03.png)
 
 2.  Click the open button and choose your license file.
 
     License window
 
-    <img src="assets/images/gui_04.png" alt="Image showing the license window with the open button" width="330" />
+    ![Image showing the license window with the open button.](assets/images/gui_04.png)
 
 3.  The license should be displayed in the lower part of the window, click the accept button to install it then click Ok.
 
     License window with license
 
-    <img src="assets/images/gui_05.png" alt="Image showing the license window with a license selected but not yet installed" width="331" />
+    ![Image showing the license window with a license selected but not yet installed.](assets/images/gui_05.png)
 
 ### Installing a license file on other systems
 

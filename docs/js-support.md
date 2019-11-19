@@ -12,8 +12,8 @@ The following table shows supported JavaScript objects, methods and properties. 
 
 <div class="js-overview level" id="js-support-table"></div>
 
-<script src="assets/std.js"></script>
-<script src="assets/std-annotated.js"></script>
+<script src="/doc/assets/std.js"></script>
+<script src="/doc/assets/std-annotated.js"></script>
 
 <script>
 var blacklistFullDesc = ['document.write', 'document.writeln'];
