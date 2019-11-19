@@ -74,8 +74,10 @@ The command-line may include the options described below:
 
 ### General Options
 
-<dl>
-    <dt id="cl-help"><code>-h</code>, <code>--help</code></dt>
+dl>
+    <dt id="cl-help">
+<code>-h</code>, <code>--help</code>
+</dt>
     <dd>
         Display usage and options.
     </dd>
@@ -92,7 +94,9 @@ The command-line may include the options described below:
 ### Logging Options
 
 <dl>
-    <dt id="cl-verbose"><code>-v</code>, <code>--verbose</code></dt>
+    <dt id="cl-verbose">
+<code>-v</code>, <code>--verbose</code>
+</dt>
     <dd>
     Log informative messages.
     </dd>
@@ -304,7 +308,7 @@ The command-line may include the options described below:
   <dd>
   Set the minimum version of SSL to allow.
   May be one of: <code>default</code> (let
-  <xref linkend="acknowledgments">libcurl</xref>
+  <a href="/doc/acknowledgements/">libcurl</a>
   choose), <code>tlsv1</code>,
   <code>tlsv1.0</code>, <code>tlsv1.1</code> or <code>tlsv1.2</code>.
   </dd>
@@ -352,10 +356,10 @@ The command-line may include the options described below:
   </dt>
   <dd>
     Specify the page size (eg. A4, "155mm 190mm", etc).  The syntax is the same as
-    the <code><property name="size"/></code> property in <a href="doc-latest/doc-refs.html#at-page"><code>@page</code></a>
+    the <code><a href="/doc/css-props/#prop-size">size</a></code> property in <a href="/doc/12/doc-refs/#at-page"><code>@page</code></a>
     rules, which can take two values for horizontal and vertical dimensions. On the
     command-line it needs to be written between quotes as a single argument.  See
-    also <xref linkend="page-size"/> and <xref linkend="page-size-keywords"/>.
+    also <a href="/doc/paged/#page-size">Page size</a> and <a href="/doc/page-size-keywords/">Page Size Keywords</a>.
   </dd>
   <dt id="cl-page-margin">
     <code>--page-margin=<span class="replaceable">MARGIN</span></code>
@@ -393,7 +397,7 @@ The command-line may include the options described below:
     <code>--pdf-profile=<span class="replaceable">PROFILE</span></code>
   </dt>
   <dd>
-    Specify the PDF profile (see <xref linkend="pdf-profiles"/>) to use.
+    Specify the PDF profile (see <a href="/doc/prince-output/#pdf-versions-and-profiles">PDF Versions and Profiles</a>) to use.
   </dd>
   <dt id="cl-pdf-output-intent">
     <code>--pdf-output-intent=<span class="replaceable">ICC</span></code>
@@ -422,7 +426,7 @@ The command-line may include the options described below:
   <dt id="cl-no-system-fonts"><code>--no-system-fonts</code></dt>
   <dd>
     Disable system fonts in PDF output.  Only fonts defined with
-    <a href="doc-latest/doc-refs.html#at-font-face"><code>@font-face</code></a>
+    <a href="/doc/css-refs/#at-font-face"><code>@font-face</code></a>
     rules in CSS will be available.
   </dd>
   <dt id="cl-force-identity-encoding"><code>--force-identity-encoding</code></dt>
@@ -542,7 +546,7 @@ Rasterization is enabled with the `--raster-output` option below. When this is u
     For example <code>--raster-output=page_%02d.png</code> will cause
     Prince to generate
     <code class="filename">page_01.png</code>,
-    <code class="filename">page_02.png</code>, &#8230;,
+    <code class="filename">page_02.png</code>, …,
     <code class="filename">page_10.png</code>,
     <code class="filename">page_11.png</code> etc.
     </p>
@@ -615,19 +619,19 @@ Rasterization is enabled with the `--raster-output` option below. When this is u
   <dd>
     <p>The capture/replay system saves a copy of all the information in a job to
     a specified directory, conveniently allowing it to be replayed later for
-    debugging purposes. See also <xref linkend="capturereplay"/>.</p>
+    debugging purposes. See also <a href="/doc/help/#the-capture-replay-system">The capture/replay system</a>.</p>
   </dd>
   <dt id="cl-control"><code>--control</code></dt>
   <dd>
     <p>The Prince Control Protocol is a synchronous bidirectional protocol that
     consists of a sequence of "chunks" sent via the standard input and output streams.
-    For more details, please check the detailed documentation in the separate <xref linkend="cmd-control"/>
+    For more details, please check the detailed documentation in the separate <a href="/doc/server-integration/#prince-control-protocol">Prince Control Protocol</a>
     chapter.</p>
   </dd>
   <dt id="cl-structured-log"><code>--structured-log=<span class="replaceable">LEVEL</span></code></dt>
   <dd>
     <p>The Structured Log option is a formatting option for Prince's output to stderr.
-    For more details, please check the detailed documentation in the separate <xref linkend="structured-log"/>
+    For more details, please check the detailed documentation in the separate <a href="/doc/server-integration/#structured-log">Structured Log</a>
     chapter.</p>
   </dd>
   <dt id="cl-fail-dropped-content"><code>--fail-dropped-content</code></dt>
@@ -636,7 +640,7 @@ Rasterization is enabled with the `--raster-output` option below. When this is u
   <dd>
     <p>These three Fail-Safe Options abort the creation of a PDF when one of
     the conditions is met.  For more details, please check the detailed
-    documentation in the separate <xref linkend="fail-safe-options"/> chapter.</p>
+    documentation in the separate <a href="/doc/server-integration/#fail-safe-options">Fail-Safe Options</a> chapter.</p>
   </dd>
 </dl>
 

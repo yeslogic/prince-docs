@@ -27,7 +27,7 @@ Prince produces PDFs - which are a prominent example of paged media. There are a
   the right page, called <i>recto</i>, are of the same size and typically are
   symmetrical to each other and are centered on the gutter.  Selected and named
   pages can be placed <i>recto</i> or <i>verso</i>, and Prince expands several
-  properties and the <a href="css-refs#at-page"><code>@page</code></a>
+  properties and the <a href="/doc/css-refs#at-page"><code>@page</code></a>
   at-rule pseudo-classes with the values <code>verso</code> and <code>recto</code>, or
   <code>inside</code> and <code>outside</code>, referring to the layout on each
   page of the spread.</p></dd>
@@ -147,8 +147,8 @@ Several other page regions can also be used. The full list of page regions is sh
 </tr>
 <tr>
 <th/>
-<th><code><a href="css-props#prop-text-align">text-align</a></code></th>
-<th><code><a href="css-props#prop-vertical-align">vertical-align</a></code></th>
+<th><code><a href="/doc/css-props#prop-text-align">text-align</a></code></th>
+<th><code><a href="/doc/css-props#prop-vertical-align">vertical-align</a></code></th>
 <th/>
 </tr>
 </thead>

@@ -54,16 +54,16 @@ Frequently Asked Questions
   <a class="self-link" href="#faq-garbled-chars"></a></p></dt>
   <dd><p>This usually happens when Prince is not able to find a suitable font, or
   might be using the wrong font.  Try installing a font that supports your script,
-  or try using a different font in your stylesheet.  See also: <a href="styling#fonts">Fonts</a>
-  and <a href="styling#redefining-the-generic-font-families">Redefining the generic font families</a>.</p></dd>
+  or try using a different font in your stylesheet.  See also: <a href="/doc/styling#fonts">Fonts</a>
+  and <a href="/doc/styling#redefining-the-generic-font-families">Redefining the generic font families</a>.</p></dd>
 
   <dt><p id="faq-misspelled-words">Why do I get strangely misspelled words when I copy text from the PDF?
   <a class="self-link" href="#faq-misspelled-words"></a></p></dt>
   <dd><p>Prince creates artificial bold text by double printing with an offset
   when it does not find a bold font.  To solve the issue, install the bold font,
   or try running Prince with the command-line option
-  <a href="command-line#cl-no-artificial-fonts"><code>--no-artificial-fonts</code></a>.
-  See also <a href="styling#defining-a-font-family">Defining a font family</a>.</p></dd>
+  <a href="/doc/command-line#cl-no-artificial-fonts"><code>--no-artificial-fonts</code></a>.
+  See also <a href="/doc/styling#defining-a-font-family">Defining a font family</a>.</p></dd>
 
   <dt><p id="faq-one-page">Why is all the content displayed on one page, while
   I was expecting it to take several pages?
@@ -79,16 +79,16 @@ Frequently Asked Questions
   </ul>
   <p>which Prince cannot split over several pages.  It can happen to the whole
   content in a document, or to just a section of it.  This issue does not affect
-  browsers, because they don't paginate.  See also: <a href="paged">Paged Media</a>.</p></dd>
+  browsers, because they don't paginate.  See also: <a href="/doc/paged">Paged Media</a>.</p></dd>
 
   <dt><p id="faq-resize-page">How can I resize my web page to fit it on the printed page?
   <a class="self-link" href="#faq-resize-page"></a></p></dt>
   <dd><p>Prince usually takes care of reformatting a document to fit on a printed
   page.  However, there are cases where it doesn't work as expected.  Wide content
-  can be made fit by <a href="cookbook#rotating-content">Rotating content</a>, or by applying the CSS property
+  can be made fit by <a href="/doc/cookbook#rotating-content">Rotating content</a>, or by applying the CSS property
   <code>prince-shrink-to-fit</code>, which scales down all content
   equally.  Alternatively, the command-line option
-  <a href="command-line#cl-css-dpi">--css-dpi</a> changes the DPI of
+  <a href="/doc/command-line#cl-css-dpi">--css-dpi</a> changes the DPI of
   the "px" units in CSS, which defaults to 96dpi.</p>
   <p class="note">We do not recommend people making a habit of using this, and
   instead advise to design a layout specifically appropriate for the paper being
@@ -99,8 +99,8 @@ Frequently Asked Questions
   <dd><p>Different PDF profiles have different requirements - you might be
   generating a PDF with a version or profile which does not support transparency.
   The only PDF profile to support transparency is the PDF/X-4 profile.  See also:
-  <a href="prince-output#pdf-versions-and-profiles">PDF Versions and Profiles</a>
-  and <a href="graphics#color-management-and-pdf-profiles">Color Management and
+  <a href="/doc/prince-output#pdf-versions-and-profiles">PDF Versions and Profiles</a>
+  and <a href="/doc/graphics#color-management-and-pdf-profiles">Color Management and
   PDF Profiles</a>.</p></dd>
 
   <dt><p id="faq-tooltips">How can I create tooltips in the PDF file?
@@ -115,8 +115,8 @@ Frequently Asked Questions
   <dt><p id="faq-everypage">How can I make an element, such as an image or some
   text, appear on each page of the PDF document?
   <a class="self-link" href="#faq-everypage"></a></p></dt>
-  <dd><p>For this purpose you can use the <a href="css-refs#at-page"><code>@page</code></a></a>
-  page regions.  See: <a href="paged#page-regions">Page regions</a> and <a href="cookbook#watermarks">Watermarks</a>.</p></dd>
+  <dd><p>For this purpose you can use the <a href="/doc/css-refs#at-page"><code>@page</code></a></a>
+  page regions.  See: <a href="/doc/paged#page-regions">Page regions</a> and <a href="/doc/cookbook#watermarks">Watermarks</a>.</p></dd>
 
   <dt><p id="faq-page-regions">How can I apply CSS styles in page regions?
   <a class="self-link" href="#faq-page-regions"></a></p></dt>
@@ -124,9 +124,9 @@ Frequently Asked Questions
   some inline style properties, such as <code>color</code> and
   <code>font</code>.  A possibility for using more complex styling is to use
   the <code>element()</code> or <code>flow()</code> CSS functions.  See
-  <a href="paged#page-gen-content">Generated content in page regions</a>,
-  <a href="paged#content-copying-text">Copying content from the document</a> and
-  <a href="paged#content-taking-elements">Taking elements from the document</a> -
+  <a href="/doc/paged#page-gen-content">Generated content in page regions</a>,
+  <a href="/doc/paged#content-copying-text">Copying content from the document</a> and
+  <a href="/doc/paged#content-taking-elements">Taking elements from the document</a> -
   however, this latter approach will remove the element from the document itself.</p></dd>
 
   <dt><p id="faq-counting-pages">How can I start counting pages on a left page and display a right page
@@ -146,26 +146,26 @@ Frequently Asked Questions
   <dt><p id="faq-js">Does Prince support JavaScript?
   <a class="self-link" href="#faq-js"></a></p></dt>
   <dd><p>Yes, Prince supports JavaScript - remember to enable it with the
-  <a href="command-line#cl-javascript"><code>--javascript</code></a>
-  command-line option (see <a href="prince-input#applying-javascript-in-prince">Applying JavaScript in Prince</a>).  However,
+  <a href="/doc/command-line#cl-javascript"><code>--javascript</code></a>
+  command-line option (see <a href="/doc/prince-input#applying-javascript-in-prince">Applying JavaScript in Prince</a>).  However,
   there are some limitations: Prince produces printed documents, and interactive
   events make no sense in this context.  Also, modifications of the document
-  after layout has finished are not possible.  See: <a href="javascript#javascript">Scripting</a>.</p></dd>
+  after layout has finished are not possible.  See: <a href="/doc/javascript#javascript">Scripting</a>.</p></dd>
 
   <dt><p id="faq-jsafterkayout">Can I modify the document after layout has
   finished? <a class="self-link" href="#faq-jsafterkayout"></a></p></dt>
   <dd><p>No, unfortunately this is part of the inherent limitations of printed media -
-  see <a href="javascript#javascript-in-printed-media">JavaScript in Printed Media</a>.  However, JavaScript can run after layout is done,
-  and the output can be used for a second run of Prince - see <a href="cookbook#the-two-pass-solution">The "Two-Pass" Solution</a>.</p></dd>
+  see <a href="/doc/javascript#javascript-in-printed-media">JavaScript in Printed Media</a>.  However, JavaScript can run after layout is done,
+  and the output can be used for a second run of Prince - see <a href="/doc/cookbook#the-two-pass-solution">The "Two-Pass" Solution</a>.</p></dd>
 
   <dt><p id="faq-xinclude">Can I include content of external files in my document?
   <a class="self-link" href="#faq-xinclude"></a></p></dt>
-  <dd><p>Yes.  In XML, this is done by means of <a href="prince-input#xml-inclusions-xinclude">XML Inclusions (XInclude)</a>.  Note
+  <dd><p>Yes.  In XML, this is done by means of <a href="/doc/prince-input#xml-inclusions-xinclude">XML Inclusions (XInclude)</a>.  Note
   that XInclude is disabled by default, and can be enabled with the
-  <a href="command-line#cl-xinclude"><code>--xinclude</code></a>
+  <a href="/doc/command-line#cl-xinclude"><code>--xinclude</code></a>
   command-line option.  Also note that XInclude only applies to XML files.</p>
   <p>To apply it to HTML files, the XML input format needs to be specified with
-  the <a href="command-line#cl-input"><code>--input</code></a>
+  the <a href="/doc/command-line#cl-input"><code>--input</code></a>
   command-line option.</p>
   <p>Another option in HTML is to use the <code>iframe</code> element:</p>
   <pre><code class="hljs css language-html">    <span class="hljs-tag">&lt;<span class="hljs-name">style</span>&gt;</span>

@@ -164,7 +164,7 @@ states, the <code>flow</code> property and the <code>string-set</code> property.
 <tr>
 <td><a href="https://www.w3.org/TR/SVG/">SVG 1.1</a></td>
 <td>Prince supports the specification with some exceptions - please see
-<a href="graphics#scalable-vector-graphics-svg">Scalable Vector Graphics (SVG)</a> for a full list of currently not supported elements.</td>
+<a href="/doc/graphics#scalable-vector-graphics-svg">Scalable Vector Graphics (SVG)</a> for a full list of currently not supported elements.</td>
 </tr>
 </table>
 
@@ -1050,12 +1050,12 @@ In this section you find the documentation for the supported CSS functional expr
 <tr>
 <td><code>var( <i>custom-property-name</i> [, <i>fallback</i>]? )</code></td>
 <td>Retrieves the value of a custom property set elsewhere.</td>
-<td><a href="styling#custom-properties-css-variables">Custom properties (CSS variables)</a></td>
+<td><a href="/doc/styling#custom-properties-css-variables">Custom properties (CSS variables)</a></td>
 </tr>
 <tr>
 <td><code>rgb(R,G,B)</code></td>
 <td>Defines red, green and blue values of a color.</td>
-<td rowspan="7">all <code><i><a href="graphics#color">color</a></i></code> values</td>
+<td rowspan="7">all <code><i><a href="/doc/graphics#color">color</a></i></code> values</td>
 </tr>
 <tr>
 <td><code>rgba(R,G,B,A)</code></td>
@@ -1095,7 +1095,7 @@ is given, it defaults to <code>overprint-mode-nonzero</code>.</td>
 <td><code>linear-gradient([ [ &lt;angle&gt; | to &lt;side-or-corner&gt; ] ,]? &lt;color-stop&gt;[, &lt;color-stop&gt;]+)</code></td>
 <td>Creates an image consisting of a progressive transition between two or more
 colors along a straight line.</td>
-<td rowspan="4"><code><a href="css-props#prop-background-image">background-image</a></code></td>
+<td rowspan="4"><code><a href="/doc/css-props#prop-background-image">background-image</a></code></td>
 </tr>
 <tr>
 <td><code>radial-gradient([ [ &lt;shape&gt; || &lt;size&gt; ] [ at &lt;position&gt; ]?, | at &lt;position&gt;, ]? &lt;color-stop&gt; [, &lt;color-stop&gt; ]+)</code></td>
@@ -1113,19 +1113,19 @@ colors that radiate from an origin point</td>
 <tr>
 <td><code>rect( <i>offset</i>, <i>offset</i>, <i>offset</i>, <i>offset</i> )</code></td>
 <td>Defines a region in the form of a rectangle.</td>
-<td><code><a href="css-props#prop-clip">clip</a></code></td>
+<td><code><a href="/doc/css-props#prop-clip">clip</a></code></td>
 </tr>
 <tr>
 <td><code>content()</code></td>
 <td>Retrieves the text content of the selected element.  It can be used with several
 different properties.</td>
-<td rowspan="16"><code><a href="css-props#prop-content">content</a></code> - see also <a href="gen-content#generated-content-functions">Generated Content Functions</a></td>
+<td rowspan="16"><code><a href="/doc/css-props#prop-content">content</a></code> - see also <a href="/doc/gen-content#generated-content-functions">Generated Content Functions</a></td>
 </tr>
 <tr>
 <td><code>element( <i>name</i>, <i>page-policy</i>? )</code></td>
 <td>Places an element (which has been removed from the normal flow with the
 <code>running()</code> function) in a page region.  See
-<a href="paged#taking-elements-from-the-document">Taking elements from the document</a>.</td>
+<a href="/doc/paged#taking-elements-from-the-document">Taking elements from the document</a>.</td>
 </tr>
 <tr>
 <td><code>counter( <i>name</i>, <i>counter-style</i>?, <i>page-policy</i>? )</code></td>
@@ -1138,7 +1138,7 @@ different properties.</td>
 <tr>
 <td><code>target-counter( <i>url</i>, <i>counter</i>, <i>counter-style</i>? )</code></td>
 <td>Retrieves the value of the innermost counter with a given name at the given URL.
-See <a href="gen-content#using-target-counter">Using target-counter()</a>.</td>
+See <a href="/doc/gen-content#using-target-counter">Using target-counter()</a>.</td>
 </tr>
 <tr>
 <td><code>target-counters( <i>url</i>, <i>counter</i>, "<i>separator</i>", <i>counter-style</i>? )</code></td>
@@ -1147,7 +1147,7 @@ URL.</td>
 </tr>
 <tr>
 <td><code>target-content( <i>url</i> )</code></td>
-<td>References the text content of the linked element.  See <a href="gen-content#using-target-content">Using target-content()</a>.</td>
+<td>References the text content of the linked element.  See <a href="/doc/gen-content#using-target-content">Using target-content()</a>.</td>
 </tr>
 <tr>
 <td><code>leader( ("<i>...</i>" | dotted | solid | space), <i>length</i>? )</code></td>
@@ -1155,8 +1155,8 @@ URL.</td>
 </tr>
 <tr>
 <td><code>string( <i>ident</i>, <i>page-policy</i>? )</code></td>
-<td>Retrieves the value defined with the <code><a href="css-props#prop-string-set">string-set</a></code>
-property.  See <a href="paged#copying-content-from-the-document">Copying content from the document</a>.</td>
+<td>Retrieves the value defined with the <code><a href="/doc/css-props#prop-string-set">string-set</a></code>
+property.  See <a href="/doc/paged#copying-content-from-the-document">Copying content from the document</a>.</td>
 </tr>
 <tr>
 <td><code>repeat( <i>string</i>+ )</code></td>
@@ -1193,7 +1193,7 @@ This counter will yield the sequence "x, y, z, 4, 5, 6" etc.
 <tr class="ext">
 <td><code>flow( <i>name</i>, <i>page-policy</i>? ) | prince-flow( <i>name</i>, <i>page-policy</i>? )*</code></td>
 <td>Inserts an element that has previously been removed with the <code>static()</code>
-function.  See <a href="paged#taking-elements-from-the-document">Taking elements from the document</a>.</td>
+function.  See <a href="/doc/paged#taking-elements-from-the-document">Taking elements from the document</a>.</td>
 </tr>
 <tr class="ext">
 <td><code>prince-script( <i>ident</i> [, <i>content</i>+]? )*</code></td>
@@ -1220,13 +1220,13 @@ font versions. But it is a possible escape hatch for people who need a specific
 glyph and don't have any other way of accessing it (by Unicode character or OpenType
 substitution).</p>
 <p>Usually, authors should prefer to use named OpenType features, using the
-<code>prince-opentype()</code> value of the <code><a href="css-props#prop-font-variant">font-variant</a></code>
+<code>prince-opentype()</code> value of the <code><a href="/doc/css-props#prop-font-variant">font-variant</a></code>
 property, which is more likely to work when changing font.</p></td>
 </tr>
 <tr>
 <td><code>grayscale( <i>number</i> | <i>percent</i> )</code></td>
 <td>Converts the input image to grayscale.</td>
-<td rowspan="10"><code><a href="css-props#prop-filter">filter</a></code></td>
+<td rowspan="10"><code><a href="/doc/css-props#prop-filter">filter</a></code></td>
 </tr>
 <tr>
 <td><code>sepia( <i>number</i> | <i>percent</i> )</code></td>
@@ -1269,21 +1269,21 @@ bright.</td>
 <tr class="ext">
 <td><code>prince-opentype( [ <i>feature</i> ]+ )*</code></td>
 <td>Specifies a comma-separated list of OpenType features to be enabled.  For details
-please see the <code><a href="css-props#prop-font-variant">font-variant</a></code> property and
-<a href="styling#opentype-features-in-prince">OpenType Features in Prince</a>.</td>
-<td><code><a href="css-props#prop-font-variant">font-variant</a></code></td>
+please see the <code><a href="/doc/css-props#prop-font-variant">font-variant</a></code> property and
+<a href="/doc/styling#opentype-features-in-prince">OpenType Features in Prince</a>.</td>
+<td><code><a href="/doc/css-props#prop-font-variant">font-variant</a></code></td>
 </tr>
 <tr>
 <td><code>running( <i>name</i> )</code></td>
 <td>Removes an element from the normal document flow, to make it available for use
 in a page region with the <code>element()</code> function.  See
-<a href="paged#taking-elements-from-the-document">Taking elements from the document</a>.</td>
-<td><code><a href="css-props#prop-position">position</a></code></td>
+<a href="/doc/paged#taking-elements-from-the-document">Taking elements from the document</a>.</td>
+<td><code><a href="/doc/css-props#prop-position">position</a></code></td>
 </tr>
 <tr class="ext">
 <td><code>recompress-jpeg( <i>quality%</i> )*</code></td>
 <td>Recompresses JPEG images by the indicated percentage to save space.</td>
-<td rowspan="2"><code><a href="css-props#prop-prince-image-magic">prince-image-magic</a></code></td>
+<td rowspan="2"><code><a href="/doc/css-props#prop-prince-image-magic">prince-image-magic</a></code></td>
 </tr>
 <tr class="ext">
 <td><code>convert-to-jpeg( <i>quality%</i> )*</code></td>
@@ -1292,15 +1292,15 @@ in a page region with the <code>element()</code> function.  See
 <tr class="ext">
 <td><code>static( <i>name</i>, [ start | current ]? )*</code></td>
 <td>Removes an element from the normal document flow, to make it available for use
-with the <code>flow()</code> function.  See <a href="paged#taking-elements-from-the-document">Taking elements from the document</a>.</td>
-<td><code><a href="css-props#prop-prince-flow">prince-flow</a></code></td>
+with the <code>flow()</code> function.  See <a href="/doc/paged#taking-elements-from-the-document">Taking elements from the document</a>.</td>
+<td><code><a href="/doc/css-props#prop-prince-flow">prince-flow</a></code></td>
 </tr>
 <tr class="ext">
 <td><code>command( <i>ident</i> )*</code></td>
 <td>Specifies any arbitrary command to be passed to the PDF viewer when the PDF file
 is opened.  The user can supply values that Prince doesn't know about, but the viewer
 does.</td>
-<td><code><a href="css-props#prop-prince-pdf-open-action">prince-pdf-open-action</a></code></td>
+<td><code><a href="/doc/css-props#prop-prince-pdf-open-action">prince-pdf-open-action</a></code></td>
 </tr>
 <tr>
 <td><code>format()</code></td>
@@ -1315,7 +1315,7 @@ formats.
 </div>
 </div>
 </td>
-<td rowspan="3"><code><a href="css-props#prop-src">src</a></code></td>
+<td rowspan="3"><code><a href="/doc/css-props#prop-src">src</a></code></td>
 </tr>
 <tr>
 <td><code>local()</code></td>
@@ -1324,12 +1324,12 @@ formats.
 <tr class="ext">
 <td><code>prince-lookup()*</code></td>
 <td>Searches for locally installed system fonts, but will also find fonts defined
-by other <code>@font-face</code> rules.  See <a href="styling#defining-a-font-family">Defining a font family</a>.</td>
+by other <code>@font-face</code> rules.  See <a href="/doc/styling#defining-a-font-family">Defining a font family</a>.</td>
 </tr>
 <tr>
 <td><code>rotate( <i>angle</i> )</code></td>
 <td>Rotates an element around a fixed point on the 2D plane.</td>
-<td rowspan="12"><code><a href="css-props#prop-transform">transform</a></code></td>
+<td rowspan="12"><code><a href="/doc/css-props#prop-transform">transform</a></code></td>
 </tr>
 <tr>
 <td><code>matrix( <i>number</i>[, <i>number</i>]{5,5} )</code></td>
@@ -1454,7 +1454,7 @@ page declarations can either be style declarations or page region at-rules.</td>
 <tr>
 <td><code>@left</code> | <code>@left-top</code> | <code>@left-middle</code> |
 <code>@left-bottom</code></td>
-<td rowspan="6"><a href="paged#page-regions">Page region</a> at-rules</td>
+<td rowspan="6"><a href="/doc/paged#page-regions">Page region</a> at-rules</td>
 </tr>
 <tr>
 <td><code>@right</code> | <code>@right-top</code> | <code>@right-middle</code> |
@@ -1476,23 +1476,23 @@ page declarations can either be style declarations or page region at-rules.</td>
 </tr>
 <tr>
 <td colspan="2">The <code>@page</code> rule takes the following CSS properties:
-<code><a href="css-props#prop-background-attachment">background-attachment</a></code> |
-<code><a href="css-props#prop-bleed">bleed</a></code> |
-<code><a href="css-props#prop-marks">marks</a></code> |
-<code><a href="css-props#prop-prince-mark-length">prince-mark-length</a></code> |
-<code><a href="css-props#prop-prince-mark-offset">prince-mark-offset</a></code> |
-<code><a href="css-props#prop-prince-mark-width">prince-mark-width</a></code> |
-<code><a href="css-props#prop-prince-pdf-page-colorspace">prince-pdf-page-colorspace</a></code> |
-<code><a href="css-props#prop-prince-pdf-page-label">prince-pdf-page-label</a></code> |
-<code><a href="css-props#prop-prince-rotate-body">prince-rotate-body</a></code> |
-<code><a href="css-props#prop-prince-shrink-to-fit">prince-shrink-to-fit</a></code> |
-<code><a href="css-props#prop-prince-trim">prince-trim</a></code> |
-<code><a href="css-props#prop-size">size</a></code>
+<code><a href="/doc/css-props#prop-background-attachment">background-attachment</a></code> |
+<code><a href="/doc/css-props#prop-bleed">bleed</a></code> |
+<code><a href="/doc/css-props#prop-marks">marks</a></code> |
+<code><a href="/doc/css-props#prop-prince-mark-length">prince-mark-length</a></code> |
+<code><a href="/doc/css-props#prop-prince-mark-offset">prince-mark-offset</a></code> |
+<code><a href="/doc/css-props#prop-prince-mark-width">prince-mark-width</a></code> |
+<code><a href="/doc/css-props#prop-prince-pdf-page-colorspace">prince-pdf-page-colorspace</a></code> |
+<code><a href="/doc/css-props#prop-prince-pdf-page-label">prince-pdf-page-label</a></code> |
+<code><a href="/doc/css-props#prop-prince-rotate-body">prince-rotate-body</a></code> |
+<code><a href="/doc/css-props#prop-prince-shrink-to-fit">prince-shrink-to-fit</a></code> |
+<code><a href="/doc/css-props#prop-prince-trim">prince-trim</a></code> |
+<code><a href="/doc/css-props#prop-size">size</a></code>
 </td>
 </tr>
 <tr>
-<td colspan="2">Additionally, <a href="prince-for-books">Prince for Books</a> takes the following CSS property:
-<code><a href="css-props#prop-prince-page-fill">prince-page-fill</a></code>
+<td colspan="2">Additionally, <a href="/doc/prince-for-books">Prince for Books</a> takes the following CSS property:
+<code><a href="/doc/css-props#prop-prince-page-fill">prince-page-fill</a></code>
 </td>
 </tr>
 </table>
@@ -1528,12 +1528,12 @@ Unlike media queries, this uses the classical two-valued logic.</td>
 <td colspan="2">The <code>@font-face</code> rule takes the following CSS descriptors:</td>
 </tr>
 <tr>
-<td><code><a href="css-props#prop-font-family">font-family</a>: &lt;<i>family-name</i>&gt;</code></td>
+<td><code><a href="/doc/css-props#prop-font-family">font-family</a>: &lt;<i>family-name</i>&gt;</code></td>
 <td>This descriptor defines the font family name that will be used in all CSS font
 family name matching. It is required for the <code>@font-face</code> rule to be valid.</td>
 </tr>
 <tr>
-<td><code><a href="css-props#prop-src">src</a>: [ url(&lt;<i>URL</i>&gt;) format(&lt;<i>string</i>&gt;#)? | local(&lt;<i>family-name</i>&gt;) |
+<td><code><a href="/doc/css-props#prop-src">src</a>: [ url(&lt;<i>URL</i>&gt;) format(&lt;<i>string</i>&gt;#)? | local(&lt;<i>family-name</i>&gt;) |
 prince-lookup(&lt;<i>family-name</i>&gt;) ]#</code></td>
 <td>This descriptor specifies the resource containing font data. It is required for
 the <code>@font-face</code> rule to be valid. The <code>local()</code> function searches
@@ -1541,14 +1541,14 @@ for locally installed system fonts, but <code>prince-lookup()</code> will also f
 fonts defined by other <code>@font-face</code> rules.</td>
 </tr>
 <tr>
-<td><code><a href="css-props#prop-unicode-range">unicode-range</a>: &lt;<i>urange</i>&gt;#</code></td>
+<td><code><a href="/doc/css-props#prop-unicode-range">unicode-range</a>: &lt;<i>urange</i>&gt;#</code></td>
 <td>This descriptor defines the set of Unicode codepoints that may be supported by
 the font face. The descriptor value is a comma-delimited list of Unicode range values.</td>
 </tr>
 <tr>
 <td colspan="2">Additionally, <code>@font-face</code> takes the CSS descriptors
-<code><a href="css-props#prop-font-variant">font-variant</a></code>, <code><a href="css-props#prop-font-stretch">font-stretch</a></code>,
-<code><a href="css-props#prop-font-weight">font-weight</a></code> and <code><a href="css-props#prop-font-style">font-style</a></code>,
+<code><a href="/doc/css-props#prop-font-variant">font-variant</a></code>, <code><a href="/doc/css-props#prop-font-stretch">font-stretch</a></code>,
+<code><a href="/doc/css-props#prop-font-weight">font-weight</a></code> and <code><a href="/doc/css-props#prop-font-style">font-style</a></code>,
 which take the same values as the CSS properties with the same name.</td>
 </tr>
 </table>
@@ -1562,9 +1562,9 @@ which take the same values as the CSS properties with the same name.</td>
 </tr>
 <tr>
 <td colspan="2">The <code>@prince-color</code> rule takes the mandatory
-<code><a href="css-props#prop-alternate-color">alternate-color</a></code> property to specify an alternate
+<code><a href="/doc/css-props#prop-alternate-color">alternate-color</a></code> property to specify an alternate
 color to use if the named spot color is not available.  The named color is used in
-a stylesheet with the <code>prince-color()</code> function.  (See <a href="graphics#spot-colors">Spot colors</a>).</td>
+a stylesheet with the <code>prince-color()</code> function.  (See <a href="/doc/graphics#spot-colors">Spot colors</a>).</td>
 </tr>
 </table>
 
@@ -1577,23 +1577,23 @@ a stylesheet with the <code>prince-color()</code> function.  (See <a href="graph
 </tr>
 <tr>
 <td colspan="2">The <code>@prince-pdf</code> rule takes the following CSS properties:
-<code><a href="css-props#prop-prince-fallback-cmyk-profile">prince-fallback-cmyk-profile</a></code> |
-<code><a href="css-props#prop-prince-filter-resolution">prince-filter-resolution</a></code> |
-<code><a href="css-props#prop-prince-pdf-color-conversion">prince-pdf-color-conversion</a></code> |
-<code><a href="css-props#prop-prince-pdf-color-options">prince-pdf-color-options</a></code> |
-<code><a href="css-props#prop-prince-pdf-display-doc-title">prince-pdf-display-doc-title</a></code> |
-<code><a href="css-props#prop-prince-pdf-duplex">prince-pdf-duplex</a></code> |
-<code><a href="css-props#prop-prince-pdf-event-scripts">prince-pdf-event-scripts</a></code> |
-<code><a href="css-props#prop-prince-pdf-link-type">prince-pdf-link-type</a></code> |
-<code><a href="css-props#prop-prince-pdf-open-action">prince-pdf-open-action</a></code> |
-<code><a href="css-props#prop-prince-pdf-output-intent">prince-pdf-output-intent</a></code> |
-<code><a href="css-props#prop-prince-pdf-page-layout">prince-pdf-page-layout</a></code> |
-<code><a href="css-props#prop-prince-pdf-page-mode">prince-pdf-page-mode</a></code> |
-<code><a href="css-props#prop-prince-pdf-paper-tray">prince-pdf-paper-tray</a></code> |
-<code><a href="css-props#prop-prince-pdf-print-scaling">prince-pdf-print-scaling</a></code> |
-<code><a href="css-props#prop-prince-pdf-profile">prince-pdf-profile</a></code> |
-<code><a href="css-props#prop-prince-pdf-script">prince-pdf-script</a></code> |
-<code><a href="css-props#prop-prince-pdf-xmp">prince-pdf-xmp</a></code></td>
+<code><a href="/doc/css-props#prop-prince-fallback-cmyk-profile">prince-fallback-cmyk-profile</a></code> |
+<code><a href="/doc/css-props#prop-prince-filter-resolution">prince-filter-resolution</a></code> |
+<code><a href="/doc/css-props#prop-prince-pdf-color-conversion">prince-pdf-color-conversion</a></code> |
+<code><a href="/doc/css-props#prop-prince-pdf-color-options">prince-pdf-color-options</a></code> |
+<code><a href="/doc/css-props#prop-prince-pdf-display-doc-title">prince-pdf-display-doc-title</a></code> |
+<code><a href="/doc/css-props#prop-prince-pdf-duplex">prince-pdf-duplex</a></code> |
+<code><a href="/doc/css-props#prop-prince-pdf-event-scripts">prince-pdf-event-scripts</a></code> |
+<code><a href="/doc/css-props#prop-prince-pdf-link-type">prince-pdf-link-type</a></code> |
+<code><a href="/doc/css-props#prop-prince-pdf-open-action">prince-pdf-open-action</a></code> |
+<code><a href="/doc/css-props#prop-prince-pdf-output-intent">prince-pdf-output-intent</a></code> |
+<code><a href="/doc/css-props#prop-prince-pdf-page-layout">prince-pdf-page-layout</a></code> |
+<code><a href="/doc/css-props#prop-prince-pdf-page-mode">prince-pdf-page-mode</a></code> |
+<code><a href="/doc/css-props#prop-prince-pdf-paper-tray">prince-pdf-paper-tray</a></code> |
+<code><a href="/doc/css-props#prop-prince-pdf-print-scaling">prince-pdf-print-scaling</a></code> |
+<code><a href="/doc/css-props#prop-prince-pdf-profile">prince-pdf-profile</a></code> |
+<code><a href="/doc/css-props#prop-prince-pdf-script">prince-pdf-script</a></code> |
+<code><a href="/doc/css-props#prop-prince-pdf-xmp">prince-pdf-xmp</a></code></td>
 </tr>
 </table>
 
