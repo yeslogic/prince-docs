@@ -34,7 +34,7 @@ For the values, the grammar draws on the [CSS Values and Units Module Level 3](h
                 </td></tr></table></div></div></div><div><div id="prop---custom-property-name-comments">Comments</div><p>This property family, called custom properties, is defined as any valid
     identifier that starts with two dashes. Custom properties are solely for
     use by authors and users; CSS will never give them a meaning beyond what
-    is presented here.</p><p class="note">Unlike other CSS properties, custom property names are case-sensitive.</p></div><div><div id="prop---custom-property-name-seealso">See Also</div><ul><li><a href="styling#custom-properties-css-variables">Custom properties (CSS variables)</a></li></ul></div><div><div id="prop---custom-property-name-spec">Specification</div><ul><li><a href="https://www.w3.org/TR/css-variables-1/#defining-variables">CSS Custom Properties for Cascading Variables Module Level 1</a></li></ul></div></div></details>
+    is presented here.</p><p class="note">Unlike other CSS properties, custom property names are case-sensitive.</p></div><div><div id="prop---custom-property-name-seealso">See Also</div><ul><li><a href="/doc/styling#custom-properties-css-variables">Custom properties (CSS variables)</a></li></ul></div><div><div id="prop---custom-property-name-spec">Specification</div><ul><li><a href="https://www.w3.org/TR/css-variables-1/#defining-variables">CSS Custom Properties for Cascading Variables Module Level 1</a></li></ul></div></div></details>
 
 <details><summary id="prop-align-content">align-content <a class="self-link" href="#prop-align-content"></a></summary><div><div><div id="prop-align-content-syntax">Syntax</div><div class="example"><div class="syntax-block"><pre><code>align-content: flex-start |&#160;flex-end |&#160;center |&#160;space-between |&#160;space-around |&#160;stretch</code></pre></div></div></div><div><div class="example"><div class="syntax-block"><table class="property-table"><tr><th scope="row">
           Initial value
@@ -77,7 +77,7 @@ For the values, the grammar draws on the [CSS Values and Units Module Level 3](h
                 </td></tr></table></div></div></div><div><div id="prop-alternate-color-examples">Examples</div><div class="example"><div class="programlisting"><pre><code>@prince-color  TestColor { alternate-color: cmyk(1, 0, 0, 0) }
 	color: prince-color(TestColor)</code></pre></div></div></div><div><div id="prop-alternate-color-comments">Comments</div><p>This property takes an RGB or CMYK color in any of the valid notations for
     RGB and CMYK colors, that will be used to display the color being defined, when
-    the named color is not available.  Please note that it cannot be RGBA or CMYKA.</p><p>A color value must be specified for the rule to be valid.</p></div><div><div id="prop-alternate-color-seealso">See Also</div><ul><li><a href="graphics#spot-colors">Spot colors</a></li></ul></div></div></details>
+    the named color is not available.  Please note that it cannot be RGBA or CMYKA.</p><p>A color value must be specified for the rule to be valid.</p></div><div><div id="prop-alternate-color-seealso">See Also</div><ul><li><a href="/doc/graphics#spot-colors">Spot colors</a></li></ul></div></div></details>
 
 <details><summary id="prop-background">background <a class="self-link" href="#prop-background"></a></summary><div><div><div id="prop-background-syntax">Syntax</div><div class="example"><div class="syntax-block"><pre><code>background: <br />&#160;&#160;&#160;[ <i><a href="#prop-background-image">background-image</a></i>
 &#160;&#160;&#160;&#160;&#160;||&#160;<i><a href="#prop-background-position">background-position</a></i> [ / <i><a href="#prop-background-size">background-size</a></i> ]?
@@ -124,7 +124,7 @@ For the values, the grammar draws on the [CSS Values and Units Module Level 3](h
 	the origin of the coordinate system used to position the image; the
 	background image will still only be shown within the padding area of
 	the current element.
-	</p></div><div><div id="prop-background-attachment-seealso">See Also</div><ul><li><a href="styling#background">Background</a></li></ul></div><div><div id="prop-background-attachment-spec">Specification</div><ul><li><a href="https://www.w3.org/TR/css-backgrounds-3/#the-background-attachment">CSS Backgrounds and Borders Module Level 3</a></li></ul></div></div></details>
+	</p></div><div><div id="prop-background-attachment-seealso">See Also</div><ul><li><a href="/doc/styling#background">Background</a></li></ul></div><div><div id="prop-background-attachment-spec">Specification</div><ul><li><a href="https://www.w3.org/TR/css-backgrounds-3/#the-background-attachment">CSS Backgrounds and Borders Module Level 3</a></li></ul></div></div></details>
 
 <details><summary id="prop-background-color">background-color <a class="self-link" href="#prop-background-color"></a></summary><div><div><div id="prop-background-color-syntax">Syntax</div><div class="example"><div class="syntax-block"><pre><code>background-color: <i>color</i></code></pre></div></div></div><div><div class="example"><div class="syntax-block"><table class="property-table"><tr><th scope="row">
           Initial value
@@ -134,7 +134,7 @@ For the values, the grammar draws on the [CSS Values and Units Module Level 3](h
           Inherited
         </th><td>
                   no
-                </td></tr></table></div></div></div><div /><div><div id="prop-background-color-seealso">See Also</div><ul><li><a href="graphics#color">Color</a></li></ul></div><div><div id="prop-background-color-spec">Specification</div><ul><li><a href="https://www.w3.org/TR/css-backgrounds-3/#the-background-color">CSS Backgrounds and Borders Module Level 3</a></li></ul></div></div></details>
+                </td></tr></table></div></div></div><div /><div><div id="prop-background-color-seealso">See Also</div><ul><li><a href="/doc/graphics#color">Color</a></li></ul></div><div><div id="prop-background-color-spec">Specification</div><ul><li><a href="https://www.w3.org/TR/css-backgrounds-3/#the-background-color">CSS Backgrounds and Borders Module Level 3</a></li></ul></div></div></details>
 
 <details><summary id="prop-background-clip">background-clip <a class="self-link" href="#prop-background-clip"></a></summary><div><div><div id="prop-background-clip-syntax">Syntax</div><div class="example"><div class="syntax-block"><pre><code>background-clip: content-box |&#160;padding-box |&#160;border-box</code></pre></div></div></div><div><div class="example"><div class="syntax-block"><table class="property-table"><tr><th scope="row">
           Initial value
@@ -174,7 +174,7 @@ For the values, the grammar draws on the [CSS Values and Units Module Level 3](h
     resolution information.
     </p><p class="note">
         The property <a href="#prop-prince-background-image-resolution"><code>prince-background-image-resolution</code></a> can be used as an alias.
-        </p></div><div><div id="prop-background-image-resolution-seealso">See Also</div><ul><li><a href="graphics#image-size">Image Size</a></li></ul></div></div></details>
+        </p></div><div><div id="prop-background-image-resolution-seealso">See Also</div><ul><li><a href="/doc/graphics#image-size">Image Size</a></li></ul></div></div></details>
 
 <details><summary id="prop-background-origin">background-origin <a class="self-link" href="#prop-background-origin"></a></summary><div><div><div id="prop-background-origin-syntax">Syntax</div><div class="example"><div class="syntax-block"><pre><code>background-origin: content-box |&#160;padding-box |&#160;border-box</code></pre></div></div></div><div><div class="example"><div class="syntax-block"><table class="property-table"><tr><th scope="row">
           Initial value
@@ -254,7 +254,7 @@ For the values, the grammar draws on the [CSS Values and Units Module Level 3](h
         </th><td /></tr></table></div></div></div><div><div id="prop-bleed-examples">Examples</div><div class="example"><div class="programlisting"><pre><code>@page { bleed: 10mm }</code></pre></div></div></div><div><div id="prop-bleed-comments">Comments</div><p>
 	This CSS at-rule descriptor can be used to specify the size of the bleed area of the
 	page when crop marks are enabled.
-	</p></div><div><div id="prop-bleed-seealso">See Also</div><ul><li><a href="paged#page-style">Page style</a></li><li><code><a href="#prop-prince-trim">prince-trim</a></code></li></ul></div><div><div id="prop-bleed-spec">Specification</div><ul><li><a href="https://www.w3.org/TR/css-page-3/#bleed">CSS Paged Media Module Level 3</a></li></ul></div></div></details>
+	</p></div><div><div id="prop-bleed-seealso">See Also</div><ul><li><a href="/doc/paged#page-style">Page style</a></li><li><code><a href="#prop-prince-trim">prince-trim</a></code></li></ul></div><div><div id="prop-bleed-spec">Specification</div><ul><li><a href="https://www.w3.org/TR/css-page-3/#bleed">CSS Paged Media Module Level 3</a></li></ul></div></div></details>
 
 <details><summary class="ext" id="prop-bookmark-label">bookmark-label*  <a class="self-link" href="#prop-bookmark-label"></a></summary><div><div><div id="prop-bookmark-label-syntax">Syntax</div><div class="example"><div class="syntax-block"><pre><code>bookmark-label: none |&#160;<i>content</i></code></pre></div></div></div><div><div class="example"><div class="syntax-block"><table class="property-table"><tr><th scope="row">
           Initial value
@@ -269,7 +269,7 @@ For the values, the grammar draws on the [CSS Values and Units Module Level 3](h
 	bookmark generated by the current element.
 	</p><p>
     Several ways of creating content are here defined by means of functions - the
-    detailed explanation can be found in the <a href="gen-content#generated-content-functions">Generated Content Functions</a>
+    detailed explanation can be found in the <a href="/doc/gen-content#generated-content-functions">Generated Content Functions</a>
     section.
     </p><p class="note">
 	Even though the initial value for this property is
@@ -277,10 +277,10 @@ For the values, the grammar draws on the [CSS Values and Units Module Level 3](h
 	as the initial value for the <code><a href="#prop-prince-bookmark-level">prince-bookmark-level</a></code>
 	property is <code>none</code>.
     </p><p>
-	See the documentation for <a href="prince-output#pdf-bookmarks">PDF Bookmarks</a> for more details.
+	See the documentation for <a href="/doc/prince-output#pdf-bookmarks">PDF Bookmarks</a> for more details.
 	</p><p class="note">
         The property <a href="#prop-prince-bookmark-label"><code>prince-bookmark-label</code></a> can be used as an alias.
-        </p></div><div><div id="prop-bookmark-label-seealso">See Also</div><ul><li><a href="gen-content#generated-content-functions">Generated Content Functions</a></li><li><a href="prince-output#bookmark-labels">Bookmark labels</a></li><li><code><a href="#prop-content">content</a></code></li></ul></div><div><div id="prop-bookmark-label-spec">Specification</div><ul><li><a href="https://books.spec.whatwg.org/#'bookmark-label'">CSS Books</a></li></ul></div></div></details>
+        </p></div><div><div id="prop-bookmark-label-seealso">See Also</div><ul><li><a href="/doc/gen-content#generated-content-functions">Generated Content Functions</a></li><li><a href="/doc/prince-output#bookmark-labels">Bookmark labels</a></li><li><code><a href="#prop-content">content</a></code></li></ul></div><div><div id="prop-bookmark-label-spec">Specification</div><ul><li><a href="https://books.spec.whatwg.org/#'bookmark-label'">CSS Books</a></li></ul></div></div></details>
 
 <details><summary class="ext" id="prop-bookmark-level">bookmark-level*  <a class="self-link" href="#prop-bookmark-level"></a></summary><div><div><div id="prop-bookmark-level-syntax">Syntax</div><div class="example"><div class="syntax-block"><pre><code>bookmark-level: none |&#160;<i>integer</i></code></pre></div></div></div><div><div class="example"><div class="syntax-block"><table class="property-table"><tr><th scope="row">
           Initial value
@@ -293,10 +293,10 @@ For the values, the grammar draws on the [CSS Values and Units Module Level 3](h
                 </td></tr></table></div></div></div><div><div id="prop-bookmark-level-comments">Comments</div><p>
 	This property is used to determine the numeric level in the bookmark
 	hierarchy of the PDF bookmark generated by the current element.
-	See the documentation for <a href="prince-output#pdf-bookmarks">PDF Bookmarks</a> for more details.
+	See the documentation for <a href="/doc/prince-output#pdf-bookmarks">PDF Bookmarks</a> for more details.
 	</p><p class="note">
         The property <a href="#prop-prince-bookmark-level"><code>prince-bookmark-level</code></a> can be used as an alias.
-        </p></div><div><div id="prop-bookmark-level-seealso">See Also</div><ul><li><a href="prince-output#bookmark-levels">Bookmark levels</a></li></ul></div><div><div id="prop-bookmark-level-spec">Specification</div><ul><li><a href="https://books.spec.whatwg.org/#'bookmark-level'">CSS Books</a></li></ul></div></div></details>
+        </p></div><div><div id="prop-bookmark-level-seealso">See Also</div><ul><li><a href="/doc/prince-output#bookmark-levels">Bookmark levels</a></li></ul></div><div><div id="prop-bookmark-level-spec">Specification</div><ul><li><a href="https://books.spec.whatwg.org/#'bookmark-level'">CSS Books</a></li></ul></div></div></details>
 
 <details><summary class="ext" id="prop-bookmark-state">bookmark-state*  <a class="self-link" href="#prop-bookmark-state"></a></summary><div><div><div id="prop-bookmark-state-syntax">Syntax</div><div class="example"><div class="syntax-block"><pre><code>bookmark-state: open |&#160;closed</code></pre></div></div></div><div><div class="example"><div class="syntax-block"><table class="property-table"><tr><th scope="row">
           Initial value
@@ -313,7 +313,7 @@ For the values, the grammar draws on the [CSS Values and Units Module Level 3](h
     deep bookmark tree.
     </p><p class="note">
         The property <a href="#prop-prince-bookmark-state"><code>prince-bookmark-state</code></a> can be used as an alias.
-        </p></div><div><div id="prop-bookmark-state-seealso">See Also</div><ul><li><a href="prince-output#bookmark-levels">Bookmark levels</a></li></ul></div><div><div id="prop-bookmark-state-spec">Specification</div><ul><li><a href="https://books.spec.whatwg.org/#'bookmark-state'">CSS Books</a></li></ul></div></div></details>
+        </p></div><div><div id="prop-bookmark-state-seealso">See Also</div><ul><li><a href="/doc/prince-output#bookmark-levels">Bookmark levels</a></li></ul></div><div><div id="prop-bookmark-state-spec">Specification</div><ul><li><a href="https://books.spec.whatwg.org/#'bookmark-state'">CSS Books</a></li></ul></div></div></details>
 
 <details><summary class="ext" id="prop-bookmark-target">bookmark-target*  <a class="self-link" href="#prop-bookmark-target"></a></summary><div><div><div id="prop-bookmark-target-syntax">Syntax</div><div class="example"><div class="syntax-block"><pre><code>bookmark-target: self |&#160;url(&#160;<i>target-url</i>&#160;) |&#160;attr(&#160;<i>target-attr</i>&#160;)</code></pre></div></div></div><div><div class="example"><div class="syntax-block"><table class="property-table"><tr><th scope="row">
           Initial value
@@ -326,10 +326,10 @@ For the values, the grammar draws on the [CSS Values and Units Module Level 3](h
                 </td></tr></table></div></div></div><div><div id="prop-bookmark-target-comments">Comments</div><p>
 	This property is used to determine the link target for the
 	PDF bookmark generated by the current element.
-	See the documentation for <a href="prince-output#pdf-bookmarks">PDF Bookmarks</a> for more details.
+	See the documentation for <a href="/doc/prince-output#pdf-bookmarks">PDF Bookmarks</a> for more details.
 	</p><p class="note">
         The property <a href="#prop-prince-bookmark-target"><code>prince-bookmark-target</code></a> can be used as an alias.
-        </p></div><div><div id="prop-bookmark-target-seealso">See Also</div><ul><li><a href="prince-output#bookmark-targets">Bookmark targets</a></li></ul></div></div></details>
+        </p></div><div><div id="prop-bookmark-target-seealso">See Also</div><ul><li><a href="/doc/prince-output#bookmark-targets">Bookmark targets</a></li></ul></div></div></details>
 
 <details><summary id="prop-border">border <a class="self-link" href="#prop-border"></a></summary><div><div><div id="prop-border-syntax">Syntax</div><div class="example"><div class="syntax-block"><pre><code>border: <i>color</i> ||&#160;<i>border-style</i> ||&#160;<i>border-width</i></code></pre></div></div></div><div><div class="example"><div class="syntax-block"><table class="property-table"><tr><th scope="row">
           Initial value
@@ -365,7 +365,7 @@ For the values, the grammar draws on the [CSS Values and Units Module Level 3](h
           Inherited
         </th><td>
                   no
-                </td></tr></table></div></div></div><div /><div><div id="prop-border-bottom-color-seealso">See Also</div><ul><li><a href="graphics#color">Color</a></li></ul></div><div><div id="prop-border-bottom-color-spec">Specification</div><ul><li><a href="https://www.w3.org/TR/css-backgrounds-3/#the-border-color">CSS Backgrounds and Borders Module Level 3</a></li></ul></div></div></details>
+                </td></tr></table></div></div></div><div /><div><div id="prop-border-bottom-color-seealso">See Also</div><ul><li><a href="/doc/graphics#color">Color</a></li></ul></div><div><div id="prop-border-bottom-color-spec">Specification</div><ul><li><a href="https://www.w3.org/TR/css-backgrounds-3/#the-border-color">CSS Backgrounds and Borders Module Level 3</a></li></ul></div></div></details>
 
 <details><summary id="prop-border-bottom-style">border-bottom-style <a class="self-link" href="#prop-border-bottom-style"></a></summary><div><div><div id="prop-border-bottom-style-syntax">Syntax</div><div class="example"><div class="syntax-block"><pre><code>border-bottom-style: none |&#160;hidden |&#160;solid |&#160;dashed |&#160;dotted |&#160;double |&#160;groove |&#160;ridge |&#160;inset |&#160;outset</code></pre></div></div></div><div><div class="example"><div class="syntax-block"><table class="property-table"><tr><th scope="row">
           Initial value
@@ -413,7 +413,7 @@ For the values, the grammar draws on the [CSS Values and Units Module Level 3](h
                 </td></tr></table></div></div></div><div><div id="prop-border-collapse-comments">Comments</div><p>
 	This property determines whether tables use separate table and cell
 	borders or collapse the table and cell borders together. See the
-	<a href="styling#tables">Tables</a> documentation for more details.
+	<a href="/doc/styling#tables">Tables</a> documentation for more details.
 	</p></div><div><div id="prop-border-collapse-spec">Specification</div><ul><li><a href="https://www.w3.org/TR/CSS2/tables.html#borders">CSS 2.1</a></li></ul></div></div></details>
 
 <details><summary id="prop-border-color">border-color <a class="self-link" href="#prop-border-color"></a></summary><div><div><div id="prop-border-color-syntax">Syntax</div><div class="example"><div class="syntax-block"><pre><code>border-color: <i>color</i>{1..4}</code></pre></div></div></div><div><div class="example"><div class="syntax-block"><table class="property-table"><tr><th scope="row">
@@ -427,7 +427,7 @@ For the values, the grammar draws on the [CSS Values and Units Module Level 3](h
                 </td></tr></table></div></div></div><div><div id="prop-border-color-comments">Comments</div><p>
         The <code>border-color</code> property is a shorthand for
         setting the following CSS properties:
-    </p><ul><li><code><a href="#prop-border-bottom-color">border-bottom-color</a></code></li><li><code><a href="#prop-border-left-color">border-left-color</a></code></li><li><code><a href="#prop-border-right-color">border-right-color</a></code></li><li><code><a href="#prop-border-top-color">border-top-color</a></code></li></ul></div><div><div id="prop-border-color-seealso">See Also</div><ul><li><a href="graphics#color">Color</a></li></ul></div><div><div id="prop-border-color-spec">Specification</div><ul><li><a href="https://www.w3.org/TR/css-backgrounds-3/#the-border-color">CSS Backgrounds and Borders Module Level 3</a></li></ul></div></div></details>
+    </p><ul><li><code><a href="#prop-border-bottom-color">border-bottom-color</a></code></li><li><code><a href="#prop-border-left-color">border-left-color</a></code></li><li><code><a href="#prop-border-right-color">border-right-color</a></code></li><li><code><a href="#prop-border-top-color">border-top-color</a></code></li></ul></div><div><div id="prop-border-color-seealso">See Also</div><ul><li><a href="/doc/graphics#color">Color</a></li></ul></div><div><div id="prop-border-color-spec">Specification</div><ul><li><a href="https://www.w3.org/TR/css-backgrounds-3/#the-border-color">CSS Backgrounds and Borders Module Level 3</a></li></ul></div></div></details>
 
 <details><summary id="prop-border-left">border-left <a class="self-link" href="#prop-border-left"></a></summary><div><div><div id="prop-border-left-syntax">Syntax</div><div class="example"><div class="syntax-block"><pre><code>border-left: <i>color</i> ||&#160;<i>border-style</i> ||&#160;<i>border-width</i></code></pre></div></div></div><div><div class="example"><div class="syntax-block"><table class="property-table"><tr><th scope="row">
           Initial value
@@ -450,7 +450,7 @@ For the values, the grammar draws on the [CSS Values and Units Module Level 3](h
           Inherited
         </th><td>
                   no
-                </td></tr></table></div></div></div><div /><div><div id="prop-border-left-color-seealso">See Also</div><ul><li><a href="graphics#color">Color</a></li></ul></div><div><div id="prop-border-left-color-spec">Specification</div><ul><li><a href="https://www.w3.org/TR/css-backgrounds-3/#the-border-color">CSS Backgrounds and Borders Module Level 3</a></li></ul></div></div></details>
+                </td></tr></table></div></div></div><div /><div><div id="prop-border-left-color-seealso">See Also</div><ul><li><a href="/doc/graphics#color">Color</a></li></ul></div><div><div id="prop-border-left-color-spec">Specification</div><ul><li><a href="https://www.w3.org/TR/css-backgrounds-3/#the-border-color">CSS Backgrounds and Borders Module Level 3</a></li></ul></div></div></details>
 
 <details><summary id="prop-border-left-style">border-left-style <a class="self-link" href="#prop-border-left-style"></a></summary><div><div><div id="prop-border-left-style-syntax">Syntax</div><div class="example"><div class="syntax-block"><pre><code>border-left-style: none |&#160;hidden |&#160;solid |&#160;dashed |&#160;dotted |&#160;double |&#160;groove |&#160;ridge |&#160;inset |&#160;outset</code></pre></div></div></div><div><div class="example"><div class="syntax-block"><table class="property-table"><tr><th scope="row">
           Initial value
@@ -548,7 +548,7 @@ For the values, the grammar draws on the [CSS Values and Units Module Level 3](h
           Inherited
         </th><td>
                   no
-                </td></tr></table></div></div></div><div /><div><div id="prop-border-right-color-seealso">See Also</div><ul><li><a href="graphics#color">Color</a></li></ul></div><div><div id="prop-border-right-color-spec">Specification</div><ul><li><a href="https://www.w3.org/TR/css-backgrounds-3/#the-border-color">CSS Backgrounds and Borders Module Level 3</a></li></ul></div></div></details>
+                </td></tr></table></div></div></div><div /><div><div id="prop-border-right-color-seealso">See Also</div><ul><li><a href="/doc/graphics#color">Color</a></li></ul></div><div><div id="prop-border-right-color-spec">Specification</div><ul><li><a href="https://www.w3.org/TR/css-backgrounds-3/#the-border-color">CSS Backgrounds and Borders Module Level 3</a></li></ul></div></div></details>
 
 <details><summary id="prop-border-right-style">border-right-style <a class="self-link" href="#prop-border-right-style"></a></summary><div><div><div id="prop-border-right-style-syntax">Syntax</div><div class="example"><div class="syntax-block"><pre><code>border-right-style: none |&#160;hidden |&#160;solid |&#160;dashed |&#160;dotted |&#160;double |&#160;groove |&#160;ridge |&#160;inset |&#160;outset</code></pre></div></div></div><div><div class="example"><div class="syntax-block"><table class="property-table"><tr><th scope="row">
           Initial value
@@ -586,7 +586,7 @@ For the values, the grammar draws on the [CSS Values and Units Module Level 3](h
                 </td></tr></table></div></div></div><div><div id="prop-border-spacing-comments">Comments</div><p>
 	This property determines the spacing between table cell borders for
 	tables that use the separated table border model. See the
-	<a href="styling#tables">Tables</a> documentation for more details.
+	<a href="/doc/styling#tables">Tables</a> documentation for more details.
 	</p></div><div><div id="prop-border-spacing-spec">Specification</div><ul><li><a href="https://www.w3.org/TR/CSS2/tables.html#separated-borders">CSS 2.1</a></li></ul></div></div></details>
 
 <details><summary id="prop-border-style">border-style <a class="self-link" href="#prop-border-style"></a></summary><div><div><div id="prop-border-style-syntax">Syntax</div><div class="example"><div class="syntax-block"><pre><code>border-style: <i>border-style</i>{1..4}</code></pre></div></div></div><div><div class="example"><div class="syntax-block"><table class="property-table"><tr><th scope="row">
@@ -623,7 +623,7 @@ For the values, the grammar draws on the [CSS Values and Units Module Level 3](h
           Inherited
         </th><td>
                   no
-                </td></tr></table></div></div></div><div /><div><div id="prop-border-top-color-seealso">See Also</div><ul><li><a href="graphics#color">Color</a></li></ul></div><div><div id="prop-border-top-color-spec">Specification</div><ul><li><a href="https://www.w3.org/TR/css-backgrounds-3/#the-border-color">CSS Backgrounds and Borders Module Level 3</a></li></ul></div></div></details>
+                </td></tr></table></div></div></div><div /><div><div id="prop-border-top-color-seealso">See Also</div><ul><li><a href="/doc/graphics#color">Color</a></li></ul></div><div><div id="prop-border-top-color-spec">Specification</div><ul><li><a href="https://www.w3.org/TR/css-backgrounds-3/#the-border-color">CSS Backgrounds and Borders Module Level 3</a></li></ul></div></div></details>
 
 <details><summary id="prop-border-top-style">border-top-style <a class="self-link" href="#prop-border-top-style"></a></summary><div><div><div id="prop-border-top-style-syntax">Syntax</div><div class="example"><div class="syntax-block"><pre><code>border-top-style: none |&#160;hidden |&#160;solid |&#160;dashed |&#160;dotted |&#160;double |&#160;groove |&#160;ridge |&#160;inset |&#160;outset</code></pre></div></div></div><div><div class="example"><div class="syntax-block"><table class="property-table"><tr><th scope="row">
           Initial value
@@ -727,7 +727,7 @@ For the values, the grammar draws on the [CSS Values and Units Module Level 3](h
     as simply <code>avoid</code>: it is not possible to avoid page breaks without
     also avoiding column breaks.
     </p><p>
-    See the documentation for <a href="paged#page-breaks">Page breaks</a> for more details.
+    See the documentation for <a href="/doc/paged#page-breaks">Page breaks</a> for more details.
     </p></div><div><div id="prop-break-after-spec">Specification</div><ul><li><a href="https://www.w3.org/TR/css-break-3/#breaking-controls">CSS Fragmentation Module Level 3</a></li></ul></div></div></details>
 
 <details><summary id="prop-break-before">break-before <a class="self-link" href="#prop-break-before"></a></summary><div><div><div id="prop-break-before-syntax">Syntax</div><div class="example"><div class="syntax-block"><pre><code>break-before: auto |&#160;avoid |&#160;avoid-page |&#160;avoid-column |&#160;page |&#160;left |&#160;right |&#160;recto |&#160;verso |&#160;column</code></pre></div></div></div><div><div class="example"><div class="syntax-block"><table class="property-table"><tr><th scope="row">
@@ -746,7 +746,7 @@ For the values, the grammar draws on the [CSS Values and Units Module Level 3](h
     as simply <code>avoid</code>: it is not possible to avoid page breaks without
     also avoiding column breaks.
     </p><p>
-    See the documentation for <a href="paged#page-breaks">Page breaks</a> for more details.
+    See the documentation for <a href="/doc/paged#page-breaks">Page breaks</a> for more details.
     </p></div><div><div id="prop-break-before-spec">Specification</div><ul><li><a href="https://www.w3.org/TR/css-break-3/#breaking-controls">CSS Fragmentation Module Level 3</a></li></ul></div></div></details>
 
 <details><summary id="prop-break-inside">break-inside <a class="self-link" href="#prop-break-inside"></a></summary><div><div><div id="prop-break-inside-syntax">Syntax</div><div class="example"><div class="syntax-block"><pre><code>break-inside: auto |&#160;avoid |&#160;avoid-page |&#160;avoid-column</code></pre></div></div></div><div><div class="example"><div class="syntax-block"><table class="property-table"><tr><th scope="row">
@@ -759,7 +759,7 @@ For the values, the grammar draws on the [CSS Values and Units Module Level 3](h
                   no
                 </td></tr></table></div></div></div><div><div id="prop-break-inside-comments">Comments</div><p>
     This property can be used to suppress page breaks inside an
-    element. See the documentation for <a href="paged#page-breaks">Page breaks</a>
+    element. See the documentation for <a href="/doc/paged#page-breaks">Page breaks</a>
     for more details.
     </p></div><div><div id="prop-break-inside-spec">Specification</div><ul><li><a href="https://www.w3.org/TR/css-break-3/#breaking-controls">CSS Fragmentation Module Level 3</a></li></ul></div></div></details>
 
@@ -777,7 +777,7 @@ For the values, the grammar draws on the [CSS Values and Units Module Level 3](h
 	every page that a table appears on.
 	</p><p class="note">
         The property <a href="#prop-prince-caption-page"><code>prince-caption-page</code></a> can be used as an alias.
-        </p></div><div><div id="prop-caption-page-seealso">See Also</div><ul><li><a href="styling#table-captions">Table captions</a></li></ul></div></div></details>
+        </p></div><div><div id="prop-caption-page-seealso">See Also</div><ul><li><a href="/doc/styling#table-captions">Table captions</a></li></ul></div></div></details>
 
 <details><summary id="prop-caption-side">caption-side <a class="self-link" href="#prop-caption-side"></a></summary><div><div><div id="prop-caption-side-syntax">Syntax</div><div class="example"><div class="syntax-block"><pre><code>caption-side: top |&#160;bottom</code></pre></div></div></div><div><div class="example"><div class="syntax-block"><table class="property-table"><tr><th scope="row">
           Initial value
@@ -790,7 +790,7 @@ For the values, the grammar draws on the [CSS Values and Units Module Level 3](h
                 </td></tr></table></div></div></div><div><div id="prop-caption-side-comments">Comments</div><p>
 	This property determines whether table captions will be displayed at
 	the top or bottom of the table.
-	</p></div><div><div id="prop-caption-side-seealso">See Also</div><ul><li><a href="styling#table-captions">Table captions</a></li></ul></div><div><div id="prop-caption-side-spec">Specification</div><ul><li><a href="https://www.w3.org/TR/CSS2/tables.html#caption-position">CSS 2.1</a></li></ul></div></div></details>
+	</p></div><div><div id="prop-caption-side-seealso">See Also</div><ul><li><a href="/doc/styling#table-captions">Table captions</a></li></ul></div><div><div id="prop-caption-side-spec">Specification</div><ul><li><a href="https://www.w3.org/TR/CSS2/tables.html#caption-position">CSS 2.1</a></li></ul></div></div></details>
 
 <details><summary id="prop-clear">clear <a class="self-link" href="#prop-clear"></a></summary><div><div><div id="prop-clear-syntax">Syntax</div><div class="example"><div class="syntax-block"><pre><code>clear: none |&#160;left |&#160;right |&#160;<span class="ext">inside</span> |&#160;<span class="ext">outside</span> |&#160;both</code></pre></div></div></div><div><div class="example"><div class="syntax-block"><table class="property-table"><tr><th scope="row">
           Initial value
@@ -857,8 +857,8 @@ For the values, the grammar draws on the [CSS Values and Units Module Level 3](h
         </th><td>
                   yes
                 </td></tr></table></div></div></div><div><div id="prop-color-comments">Comments</div><p>
-	See the <a href="graphics#color">Color</a> section for supported color values.
-	</p></div><div><div id="prop-color-seealso">See Also</div><ul><li><a href="graphics#color">Color</a></li></ul></div><div><div id="prop-color-spec">Specification</div><ul><li><a href="https://www.w3.org/TR/css3-color/#foreground">CSS Color Module Level 3</a></li></ul></div></div></details>
+	See the <a href="/doc/graphics#color">Color</a> section for supported color values.
+	</p></div><div><div id="prop-color-seealso">See Also</div><ul><li><a href="/doc/graphics#color">Color</a></li></ul></div><div><div id="prop-color-spec">Specification</div><ul><li><a href="https://www.w3.org/TR/css3-color/#foreground">CSS Color Module Level 3</a></li></ul></div></div></details>
 
 <details><summary id="prop-column-break-after">column-break-after <a class="self-link" href="#prop-column-break-after"></a></summary><div><div><div id="prop-column-break-after-syntax">Syntax</div><div class="example"><div class="syntax-block"><pre><code>column-break-after: auto |&#160;always</code></pre></div></div></div><div><div class="example"><div class="syntax-block"><table class="property-table"><tr><th scope="row">
           Initial value
@@ -870,7 +870,7 @@ For the values, the grammar draws on the [CSS Values and Units Module Level 3](h
                   no
                 </td></tr></table></div></div></div><div><div id="prop-column-break-after-comments">Comments</div><p class="note">
     This property is deprecated.  Use <code><a href="#prop-break-after">break-after</a>:column</code>
-    instead.  See the documentation for <a href="styling#columns">Columns</a> for more details.
+    instead.  See the documentation for <a href="/doc/styling#columns">Columns</a> for more details.
     </p></div><div><div id="prop-column-break-after-seealso">See Also</div><ul><li><code><a href="#prop-break-after">break-after</a></code></li></ul></div></div></details>
 
 <details><summary id="prop-column-break-before">column-break-before <a class="self-link" href="#prop-column-break-before"></a></summary><div><div><div id="prop-column-break-before-syntax">Syntax</div><div class="example"><div class="syntax-block"><pre><code>column-break-before: auto |&#160;always</code></pre></div></div></div><div><div class="example"><div class="syntax-block"><table class="property-table"><tr><th scope="row">
@@ -883,7 +883,7 @@ For the values, the grammar draws on the [CSS Values and Units Module Level 3](h
                   no
                 </td></tr></table></div></div></div><div><div id="prop-column-break-before-comments">Comments</div><p class="note">
     This property is deprecated.  Use <code><a href="#prop-break-before">break-before</a>:column</code>
-    instead.  See the documentation for <a href="styling#columns">Columns</a> for more details.
+    instead.  See the documentation for <a href="/doc/styling#columns">Columns</a> for more details.
     </p></div><div><div id="prop-column-break-before-seealso">See Also</div><ul><li><code><a href="#prop-break-before">break-before</a></code></li></ul></div></div></details>
 
 <details><summary id="prop-column-count">column-count <a class="self-link" href="#prop-column-count"></a></summary><div><div><div id="prop-column-count-syntax">Syntax</div><div class="example"><div class="syntax-block"><pre><code>column-count: auto |&#160;<i>number</i></code></pre></div></div></div><div><div class="example"><div class="syntax-block"><table class="property-table"><tr><th scope="row">
@@ -894,7 +894,7 @@ For the values, the grammar draws on the [CSS Values and Units Module Level 3](h
           Inherited
         </th><td>
                   no
-                </td></tr></table></div></div></div><div /><div><div id="prop-column-count-seealso">See Also</div><ul><li><a href="styling#columns">Columns</a></li></ul></div><div><div id="prop-column-count-spec">Specification</div><ul><li><a href="https://www.w3.org/TR/css3-multicol/#cc">CSS Multi-column Layout Module</a></li></ul></div></div></details>
+                </td></tr></table></div></div></div><div /><div><div id="prop-column-count-seealso">See Also</div><ul><li><a href="/doc/styling#columns">Columns</a></li></ul></div><div><div id="prop-column-count-spec">Specification</div><ul><li><a href="https://www.w3.org/TR/css3-multicol/#cc">CSS Multi-column Layout Module</a></li></ul></div></div></details>
 
 <details><summary id="prop-column-fill">column-fill <a class="self-link" href="#prop-column-fill"></a></summary><div><div><div id="prop-column-fill-syntax">Syntax</div><div class="example"><div class="syntax-block"><pre><code>column-fill: auto |&#160;balance</code></pre></div></div></div><div><div class="example"><div class="syntax-block"><table class="property-table"><tr><th scope="row">
           Initial value
@@ -904,7 +904,7 @@ For the values, the grammar draws on the [CSS Values and Units Module Level 3](h
           Inherited
         </th><td>
                   no
-                </td></tr></table></div></div></div><div /><div><div id="prop-column-fill-seealso">See Also</div><ul><li><a href="styling#columns">Columns</a></li></ul></div><div><div id="prop-column-fill-spec">Specification</div><ul><li><a href="https://www.w3.org/TR/css3-multicol/#cf">CSS Multi-column Layout Module</a></li></ul></div></div></details>
+                </td></tr></table></div></div></div><div /><div><div id="prop-column-fill-seealso">See Also</div><ul><li><a href="/doc/styling#columns">Columns</a></li></ul></div><div><div id="prop-column-fill-spec">Specification</div><ul><li><a href="https://www.w3.org/TR/css3-multicol/#cf">CSS Multi-column Layout Module</a></li></ul></div></div></details>
 
 <details><summary id="prop-column-gap">column-gap <a class="self-link" href="#prop-column-gap"></a></summary><div><div><div id="prop-column-gap-syntax">Syntax</div><div class="example"><div class="syntax-block"><pre><code>column-gap: <i>length</i> |&#160;<i>percent</i> |&#160;normal</code></pre></div></div></div><div><div class="example"><div class="syntax-block"><table class="property-table"><tr><th scope="row">
           Initial value
@@ -914,7 +914,7 @@ For the values, the grammar draws on the [CSS Values and Units Module Level 3](h
           Inherited
         </th><td>
                   no
-                </td></tr></table></div></div></div><div /><div><div id="prop-column-gap-seealso">See Also</div><ul><li><a href="styling#columns">Columns</a></li></ul></div><div><div id="prop-column-gap-spec">Specification</div><ul><li><a href="https://www.w3.org/TR/css3-multicol/#column-gap">CSS Multi-column Layout Module</a></li></ul></div></div></details>
+                </td></tr></table></div></div></div><div /><div><div id="prop-column-gap-seealso">See Also</div><ul><li><a href="/doc/styling#columns">Columns</a></li></ul></div><div><div id="prop-column-gap-spec">Specification</div><ul><li><a href="https://www.w3.org/TR/css3-multicol/#column-gap">CSS Multi-column Layout Module</a></li></ul></div></div></details>
 
 <details><summary id="prop-column-rule">column-rule <a class="self-link" href="#prop-column-rule"></a></summary><div><div><div id="prop-column-rule-syntax">Syntax</div><div class="example"><div class="syntax-block"><pre><code>column-rule: <i><a href="#prop-column-rule-color">column-rule-color</a></i> ||&#160;<i><a href="#prop-column-rule-style">column-rule-style</a></i> ||&#160;<i><a href="#prop-column-rule-width">column-rule-width</a></i></code></pre></div></div></div><div><div class="example"><div class="syntax-block"><table class="property-table"><tr><th scope="row">
           Initial value
@@ -927,7 +927,7 @@ For the values, the grammar draws on the [CSS Values and Units Module Level 3](h
                 </td></tr></table></div></div></div><div><div id="prop-column-rule-comments">Comments</div><p>
         The <code>column-rule</code> property is a shorthand for
         setting the following CSS properties:
-    </p><ul><li><code><a href="#prop-column-rule-color">column-rule-color</a></code></li><li><code><a href="#prop-column-rule-style">column-rule-style</a></code></li><li><code><a href="#prop-column-rule-width">column-rule-width</a></code></li></ul></div><div><div id="prop-column-rule-seealso">See Also</div><ul><li><a href="styling#columns">Columns</a></li></ul></div><div><div id="prop-column-rule-spec">Specification</div><ul><li><a href="https://www.w3.org/TR/css3-multicol/#column-rule">CSS Multi-column Layout Module</a></li></ul></div></div></details>
+    </p><ul><li><code><a href="#prop-column-rule-color">column-rule-color</a></code></li><li><code><a href="#prop-column-rule-style">column-rule-style</a></code></li><li><code><a href="#prop-column-rule-width">column-rule-width</a></code></li></ul></div><div><div id="prop-column-rule-seealso">See Also</div><ul><li><a href="/doc/styling#columns">Columns</a></li></ul></div><div><div id="prop-column-rule-spec">Specification</div><ul><li><a href="https://www.w3.org/TR/css3-multicol/#column-rule">CSS Multi-column Layout Module</a></li></ul></div></div></details>
 
 <details><summary id="prop-column-rule-color">column-rule-color <a class="self-link" href="#prop-column-rule-color"></a></summary><div><div><div id="prop-column-rule-color-syntax">Syntax</div><div class="example"><div class="syntax-block"><pre><code>column-rule-color: <i>color</i></code></pre></div></div></div><div><div class="example"><div class="syntax-block"><table class="property-table"><tr><th scope="row">
           Initial value
@@ -937,7 +937,7 @@ For the values, the grammar draws on the [CSS Values and Units Module Level 3](h
           Inherited
         </th><td>
                   no
-                </td></tr></table></div></div></div><div /><div><div id="prop-column-rule-color-seealso">See Also</div><ul><li><a href="styling#columns">Columns</a></li><li><a href="graphics#color">Color</a></li></ul></div><div><div id="prop-column-rule-color-spec">Specification</div><ul><li><a href="https://www.w3.org/TR/css3-multicol/#crc">CSS Multi-column Layout Module</a></li></ul></div></div></details>
+                </td></tr></table></div></div></div><div /><div><div id="prop-column-rule-color-seealso">See Also</div><ul><li><a href="/doc/styling#columns">Columns</a></li><li><a href="/doc/graphics#color">Color</a></li></ul></div><div><div id="prop-column-rule-color-spec">Specification</div><ul><li><a href="https://www.w3.org/TR/css3-multicol/#crc">CSS Multi-column Layout Module</a></li></ul></div></div></details>
 
 <details><summary id="prop-column-rule-style">column-rule-style <a class="self-link" href="#prop-column-rule-style"></a></summary><div><div><div id="prop-column-rule-style-syntax">Syntax</div><div class="example"><div class="syntax-block"><pre><code>column-rule-style: none |&#160;solid |&#160;dashed |&#160;dotted |&#160;double |&#160;groove |&#160;ridge |&#160;inset |&#160;outset</code></pre></div></div></div><div><div class="example"><div class="syntax-block"><table class="property-table"><tr><th scope="row">
           Initial value
@@ -947,7 +947,7 @@ For the values, the grammar draws on the [CSS Values and Units Module Level 3](h
           Inherited
         </th><td>
                   no
-                </td></tr></table></div></div></div><div /><div><div id="prop-column-rule-style-seealso">See Also</div><ul><li><a href="styling#columns">Columns</a></li></ul></div><div><div id="prop-column-rule-style-spec">Specification</div><ul><li><a href="https://www.w3.org/TR/css3-multicol/#crs">CSS Multi-column Layout Module</a></li></ul></div></div></details>
+                </td></tr></table></div></div></div><div /><div><div id="prop-column-rule-style-seealso">See Also</div><ul><li><a href="/doc/styling#columns">Columns</a></li></ul></div><div><div id="prop-column-rule-style-spec">Specification</div><ul><li><a href="https://www.w3.org/TR/css3-multicol/#crs">CSS Multi-column Layout Module</a></li></ul></div></div></details>
 
 <details><summary id="prop-column-rule-width">column-rule-width <a class="self-link" href="#prop-column-rule-width"></a></summary><div><div><div id="prop-column-rule-width-syntax">Syntax</div><div class="example"><div class="syntax-block"><pre><code>column-rule-width: thin |&#160;medium |&#160;thick |&#160;<i>length</i></code></pre></div></div></div><div><div class="example"><div class="syntax-block"><table class="property-table"><tr><th scope="row">
           Initial value
@@ -962,7 +962,7 @@ For the values, the grammar draws on the [CSS Values and Units Module Level 3](h
 	<code>medium</code>, no column rule will be shown by default as
 	the initial value for <code><a href="#prop-column-rule-style">column-rule-style</a></code>
 	is <code>none</code>.
-	</p></div><div><div id="prop-column-rule-width-seealso">See Also</div><ul><li><a href="styling#columns">Columns</a></li></ul></div><div><div id="prop-column-rule-width-spec">Specification</div><ul><li><a href="https://www.w3.org/TR/css3-multicol/#crw">CSS Multi-column Layout Module</a></li></ul></div></div></details>
+	</p></div><div><div id="prop-column-rule-width-seealso">See Also</div><ul><li><a href="/doc/styling#columns">Columns</a></li></ul></div><div><div id="prop-column-rule-width-spec">Specification</div><ul><li><a href="https://www.w3.org/TR/css3-multicol/#crw">CSS Multi-column Layout Module</a></li></ul></div></div></details>
 
 <details><summary id="prop-column-span">column-span <a class="self-link" href="#prop-column-span"></a></summary><div><div><div id="prop-column-span-syntax">Syntax</div><div class="example"><div class="syntax-block"><pre><code>column-span: <i>number</i> |&#160;all</code></pre></div></div></div><div><div class="example"><div class="syntax-block"><table class="property-table"><tr><th scope="row">
           Initial value
@@ -974,7 +974,7 @@ For the values, the grammar draws on the [CSS Values and Units Module Level 3](h
                   no
                 </td></tr></table></div></div></div><div><div id="prop-column-span-comments">Comments</div><p class="note">
 	A numeric <code>column-span</code> will only affect column floats.
-	</p></div><div><div id="prop-column-span-seealso">See Also</div><ul><li><a href="styling#columns">Columns</a></li></ul></div><div><div id="prop-column-span-spec">Specification</div><ul><li><a href="https://www.w3.org/TR/css3-multicol/#column-span">CSS Multi-column Layout Module</a></li></ul></div></div></details>
+	</p></div><div><div id="prop-column-span-seealso">See Also</div><ul><li><a href="/doc/styling#columns">Columns</a></li></ul></div><div><div id="prop-column-span-spec">Specification</div><ul><li><a href="https://www.w3.org/TR/css3-multicol/#column-span">CSS Multi-column Layout Module</a></li></ul></div></div></details>
 
 <details><summary id="prop-column-width">column-width <a class="self-link" href="#prop-column-width"></a></summary><div><div><div id="prop-column-width-syntax">Syntax</div><div class="example"><div class="syntax-block"><pre><code>column-width: auto |&#160;<i>width</i></code></pre></div></div></div><div><div class="example"><div class="syntax-block"><table class="property-table"><tr><th scope="row">
           Initial value
@@ -984,7 +984,7 @@ For the values, the grammar draws on the [CSS Values and Units Module Level 3](h
           Inherited
         </th><td>
                   no
-                </td></tr></table></div></div></div><div /><div><div id="prop-column-width-seealso">See Also</div><ul><li><a href="styling#columns">Columns</a></li></ul></div><div><div id="prop-column-width-spec">Specification</div><ul><li><a href="https://www.w3.org/TR/css3-multicol/#cw">CSS Multi-column Layout Module</a></li></ul></div></div></details>
+                </td></tr></table></div></div></div><div /><div><div id="prop-column-width-seealso">See Also</div><ul><li><a href="/doc/styling#columns">Columns</a></li></ul></div><div><div id="prop-column-width-spec">Specification</div><ul><li><a href="https://www.w3.org/TR/css3-multicol/#cw">CSS Multi-column Layout Module</a></li></ul></div></div></details>
 
 <details><summary id="prop-columns">columns <a class="self-link" href="#prop-columns"></a></summary><div><div><div id="prop-columns-syntax">Syntax</div><div class="example"><div class="syntax-block"><pre><code>columns: <i><a href="#prop-column-count">column-count</a></i> |&#160;<i><a href="#prop-column-width">column-width</a></i></code></pre></div></div></div><div><div class="example"><div class="syntax-block"><table class="property-table"><tr><th scope="row">
           Initial value
@@ -997,7 +997,7 @@ For the values, the grammar draws on the [CSS Values and Units Module Level 3](h
                 </td></tr></table></div></div></div><div><div id="prop-columns-comments">Comments</div><p>
         The <code>columns</code> property is a shorthand for
         setting the following CSS properties:
-    </p><ul><li><code><a href="#prop-column-count">column-count</a></code></li><li><code><a href="#prop-column-width">column-width</a></code></li></ul></div><div><div id="prop-columns-seealso">See Also</div><ul><li><a href="styling#columns">Columns</a></li></ul></div><div><div id="prop-columns-spec">Specification</div><ul><li><a href="https://www.w3.org/TR/css3-multicol/#columns">CSS Multi-column Layout Module</a></li></ul></div></div></details>
+    </p><ul><li><code><a href="#prop-column-count">column-count</a></code></li><li><code><a href="#prop-column-width">column-width</a></code></li></ul></div><div><div id="prop-columns-seealso">See Also</div><ul><li><a href="/doc/styling#columns">Columns</a></li></ul></div><div><div id="prop-columns-spec">Specification</div><ul><li><a href="https://www.w3.org/TR/css3-multicol/#columns">CSS Multi-column Layout Module</a></li></ul></div></div></details>
 
 <details><summary id="prop-content">content <a class="self-link" href="#prop-content"></a></summary><div><div><div id="prop-content-syntax">Syntax</div><div class="example"><div class="syntax-block"><pre><code>content: normal |&#160;<span class="ext">flow(&#160;<i>name</i>, <i>page-policy</i>?&#160;)</span> |&#160;[ "string" |&#160;url(&#160;<i>filename</i>&#160;) |&#160;counter(&#160;<i>name</i>, <i>counter-style</i>?, <i>page-policy</i>?&#160;) |&#160;counters(&#160;<i>name</i>, "separator", <i>counter-style</i>?, <i>page-policy</i>?&#160;) |&#160;target-counter(&#160;<i>url</i>, <i>counter</i>, <i>counter-style</i>?&#160;) |&#160;target-counters(&#160;<i>url</i>, <i>counter</i>, "separator", <i>counter-style</i>?&#160;) |&#160;target-content(&#160;<i>url</i>&#160;) |&#160;<span class="ext">leader(&#160;["..." |&#160;dotted |&#160;solid |&#160;space], <i>length</i>?&#160;)</span> |&#160;string(&#160;<i>ident</i>, <i>page-policy</i>?&#160;) |&#160;content(&#160;&#160;) |&#160;<span class="ext">prince-base-url(&#160;&#160;)</span> |&#160;<span class="ext">prince-script(&#160;<i>ident</i>, <i>content</i>?&#160;)</span> |&#160;<span class="ext">prince-glyph-index(&#160;<i>number</i>&#160;)</span> |&#160;<span class="ext">prince-fallback(&#160;<i>url</i>&#160;)</span> [ , <i>content</i>+ ]? |&#160;element(&#160;<i>name</i>&#160;) ]+</code></pre></div></div></div><div><div class="example"><div class="syntax-block"><table class="property-table"><tr><th scope="row">
           Initial value
@@ -1010,12 +1010,12 @@ For the values, the grammar draws on the [CSS Values and Units Module Level 3](h
                 </td></tr></table></div></div></div><div><div id="prop-content-comments">Comments</div><p>
     The <code>content</code> property can be used to insert text and other content
     into the original document.  The uses are very wide-ranging and are treated in
-    more depth in the <a href="gen-content">Generated Content</a> section.
+    more depth in the <a href="/doc/gen-content">Generated Content</a> section.
     </p><p>
     Several ways of creating content are here defined by means of functions - the
-    detailed explanation can be found in the <a href="gen-content#generated-content-functions">Generated Content Functions</a>
+    detailed explanation can be found in the <a href="/doc/gen-content#generated-content-functions">Generated Content Functions</a>
     section.
-    </p></div><div><div id="prop-content-seealso">See Also</div><ul><li><a href="gen-content#generated-content-functions">Generated Content Functions</a></li><li><a href="gen-content">Generated Content</a></li><li><a href="gen-content#generated-content-in-page-regions">Generated content in page regions</a></li><li><a href="paged#copying-content-from-the-document">Copying content from the document</a></li><li><a href="paged#taking-elements-from-the-document">Taking elements from the document</a></li><li><a href="gen-content#counters-and-numbering">Counters and Numbering</a></li><li><a href="gen-content#cross-references">Cross-references</a></li></ul></div><div><div id="prop-content-spec">Specification</div><ul><li><a href="https://www.w3.org/TR/css-content-3/#content-property">CSS Generated Content Module Level 3</a></li><li><a href="https://www.w3.org/TR/css-gcpm-3/#running-elements">CSS Generated Content for Paged Media Module</a></li><li><a href="https://books.spec.whatwg.org/#the-''target-counter''-and-''target-counters''-values">CSS Books</a></li></ul></div></div></details>
+    </p></div><div><div id="prop-content-seealso">See Also</div><ul><li><a href="/doc/gen-content#generated-content-functions">Generated Content Functions</a></li><li><a href="/doc/gen-content">Generated Content</a></li><li><a href="/doc/gen-content#generated-content-in-page-regions">Generated content in page regions</a></li><li><a href="/doc/paged#copying-content-from-the-document">Copying content from the document</a></li><li><a href="/doc/paged#taking-elements-from-the-document">Taking elements from the document</a></li><li><a href="/doc/gen-content#counters-and-numbering">Counters and Numbering</a></li><li><a href="/doc/gen-content#cross-references">Cross-references</a></li></ul></div><div><div id="prop-content-spec">Specification</div><ul><li><a href="https://www.w3.org/TR/css-content-3/#content-property">CSS Generated Content Module Level 3</a></li><li><a href="https://www.w3.org/TR/css-gcpm-3/#running-elements">CSS Generated Content for Paged Media Module</a></li><li><a href="https://books.spec.whatwg.org/#the-''target-counter''-and-''target-counters''-values">CSS Books</a></li></ul></div></div></details>
 
 <details><summary id="prop-counter-increment">counter-increment <a class="self-link" href="#prop-counter-increment"></a></summary><div><div><div id="prop-counter-increment-syntax">Syntax</div><div class="example"><div class="syntax-block"><pre><code>counter-increment: none |&#160;[ <i>name</i> <i>number</i>? ]+</code></pre></div></div></div><div><div class="example"><div class="syntax-block"><table class="property-table"><tr><th scope="row">
           Initial value
@@ -1027,7 +1027,7 @@ For the values, the grammar draws on the [CSS Values and Units Module Level 3](h
                   no
                 </td></tr></table></div></div></div><div><div id="prop-counter-increment-comments">Comments</div><p>
 	For information about the use of the <code>counter-increment</code>
-	property see the documentation for <a href="gen-content#counters-and-numbering">Counters and Numbering</a>.
+	property see the documentation for <a href="/doc/gen-content#counters-and-numbering">Counters and Numbering</a>.
 	</p></div><div><div id="prop-counter-increment-spec">Specification</div><ul><li><a href="https://www.w3.org/TR/CSS2/generate.html#propdef-counter-increment">CSS 2.1</a></li></ul></div></div></details>
 
 <details><summary id="prop-counter-reset">counter-reset <a class="self-link" href="#prop-counter-reset"></a></summary><div><div><div id="prop-counter-reset-syntax">Syntax</div><div class="example"><div class="syntax-block"><pre><code>counter-reset: none |&#160;[ <i>name</i> <i>number</i>? ]+</code></pre></div></div></div><div><div class="example"><div class="syntax-block"><table class="property-table"><tr><th scope="row">
@@ -1040,7 +1040,7 @@ For the values, the grammar draws on the [CSS Values and Units Module Level 3](h
                   no
                 </td></tr></table></div></div></div><div><div id="prop-counter-reset-comments">Comments</div><p>
 	For information about the use of the <code>counter-reset</code>
-	property see the documentation for <a href="gen-content#counters-and-numbering">Counters and Numbering</a>.
+	property see the documentation for <a href="/doc/gen-content#counters-and-numbering">Counters and Numbering</a>.
 	</p></div><div><div id="prop-counter-reset-spec">Specification</div><ul><li><a href="https://www.w3.org/TR/CSS2/generate.html#propdef-counter-reset">CSS 2.1</a></li></ul></div></div></details>
 
 <details><summary id="prop-direction">direction <a class="self-link" href="#prop-direction"></a></summary><div><div><div id="prop-direction-syntax">Syntax</div><div class="example"><div class="syntax-block"><pre><code>direction: ltr |&#160;rtl</code></pre></div></div></div><div><div class="example"><div class="syntax-block"><table class="property-table"><tr><th scope="row">
@@ -1061,7 +1061,7 @@ For the values, the grammar draws on the [CSS Values and Units Module Level 3](h
           Inherited
         </th><td>
                   no
-                </td></tr></table></div></div></div><div /><div><div id="prop-display-seealso">See Also</div><ul><li><a href="styling#display">Display</a></li></ul></div><div><div id="prop-display-spec">Specification</div><ul><li><a href="https://www.w3.org/TR/CSS2/visuren.html#display-prop">CSS 2.1</a></li><li><a href="https://www.w3.org/TR/css-flexbox-1/#flex-containers">CSS Flexible Box Layout Module Level 1</a></li></ul></div></div></details>
+                </td></tr></table></div></div></div><div /><div><div id="prop-display-seealso">See Also</div><ul><li><a href="/doc/styling#display">Display</a></li></ul></div><div><div id="prop-display-spec">Specification</div><ul><li><a href="https://www.w3.org/TR/CSS2/visuren.html#display-prop">CSS 2.1</a></li><li><a href="https://www.w3.org/TR/css-flexbox-1/#flex-containers">CSS Flexible Box Layout Module Level 1</a></li></ul></div></div></details>
 
 <details><summary id="prop-dominant-baseline">dominant-baseline <a class="self-link" href="#prop-dominant-baseline"></a></summary><div><div><div id="prop-dominant-baseline-syntax">Syntax</div><div class="example"><div class="syntax-block"><pre><code>dominant-baseline: auto |&#160;use-script |&#160;no-change |&#160;reset-size |&#160;ideographic |&#160;alphabetic |&#160;hanging |&#160;mathematical |&#160;central |&#160;middle |&#160;text-after-edge |&#160;text-before-edge</code></pre></div></div></div><div><div class="example"><div class="syntax-block"><table class="property-table"><tr><th scope="row">
           Initial value
@@ -1131,8 +1131,8 @@ For the values, the grammar draws on the [CSS Values and Units Module Level 3](h
                   no
                 </td></tr></table></div></div></div><div><div id="prop-filter-comments">Comments</div><p>The <code>filter</code> property provides graphical effects like blurring,
 	saturating or color shifting an element.  For more details see the
-    <a href="graphics#filters">Filters</a> section.
-	</p></div><div><div id="prop-filter-seealso">See Also</div><ul><li><a href="graphics#filters">Filters</a></li></ul></div><div><div id="prop-filter-spec">Specification</div><ul><li><a href="https://drafts.fxtf.org/filters/#FilterProperty">Filter Effects Module Level 1</a></li></ul></div></div></details>
+    <a href="/doc/graphics#filters">Filters</a> section.
+	</p></div><div><div id="prop-filter-seealso">See Also</div><ul><li><a href="/doc/graphics#filters">Filters</a></li></ul></div><div><div id="prop-filter-spec">Specification</div><ul><li><a href="https://drafts.fxtf.org/filters/#FilterProperty">Filter Effects Module Level 1</a></li></ul></div></div></details>
 
 <details><summary id="prop-flex">flex <a class="self-link" href="#prop-flex"></a></summary><div><div><div id="prop-flex-syntax">Syntax</div><div class="example"><div class="syntax-block"><pre><code>flex: none |&#160;[ <i><a href="#prop-flex-grow">flex-grow</a></i> <i><a href="#prop-flex-shrink">flex-shrink</a></i>? ||&#160;<i><a href="#prop-flex-basis">flex-basis</a></i> ]</code></pre></div></div></div><div><div class="example"><div class="syntax-block"><table class="property-table"><tr><th scope="row">
           Initial value
@@ -1267,7 +1267,7 @@ For the values, the grammar draws on the [CSS Values and Units Module Level 3](h
     </p><p>
     The modifier <code>unless-fit</code> expresses a conditional: the element is only
     floated if it would otherwise cause a page or column break.
-    </p></div><div><div id="prop-float-seealso">See Also</div><ul><li><a href="styling#floats">Floats</a></li></ul></div><div><div id="prop-float-spec">Specification</div><ul><li><a href="https://www.w3.org/TR/CSS2/visuren.html#float-position">CSS 2.1</a></li><li><a href="https://www.w3.org/TR/css-gcpm-3/#footnotes">CSS Generated Content for Paged Media Module</a></li><li><a href="https://figures.spec.whatwg.org/">CSS Figures</a></li><li><a href="https://books.spec.whatwg.org/#footnotes">CSS Books</a></li></ul></div></div></details>
+    </p></div><div><div id="prop-float-seealso">See Also</div><ul><li><a href="/doc/styling#floats">Floats</a></li></ul></div><div><div id="prop-float-spec">Specification</div><ul><li><a href="https://www.w3.org/TR/CSS2/visuren.html#float-position">CSS 2.1</a></li><li><a href="https://www.w3.org/TR/css-gcpm-3/#footnotes">CSS Generated Content for Paged Media Module</a></li><li><a href="https://figures.spec.whatwg.org/">CSS Figures</a></li><li><a href="https://books.spec.whatwg.org/#footnotes">CSS Books</a></li></ul></div></div></details>
 
 <details><summary class="ext" id="prop-flow">flow*  <a class="self-link" href="#prop-flow"></a></summary><div><div><div id="prop-flow-syntax">Syntax</div><div class="example"><div class="syntax-block"><pre><code>flow: normal |&#160;static(&#160;<i>name</i>, [ start |&#160;current ]?&#160;)</code></pre></div></div></div><div><div class="example"><div class="syntax-block"><table class="property-table"><tr><th scope="row">
           Initial value
@@ -1286,10 +1286,10 @@ For the values, the grammar draws on the [CSS Values and Units Module Level 3](h
     makes the fetched content available, as if it were fetched from the start
     of the document.
     </p><p>
-    See the documentation for <a href="gen-content#taking-elements-from-the-document">Taking elements from the document</a> for more details.
+    See the documentation for <a href="/doc/gen-content#taking-elements-from-the-document">Taking elements from the document</a> for more details.
     </p><p class="note">
         The property <a href="#prop-prince-flow"><code>prince-flow</code></a> can be used as an alias.
-        </p></div><div><div id="prop-flow-seealso">See Also</div><ul><li><a href="paged#page-regions">Page regions</a></li><li><a href="gen-content#taking-elements-from-the-document">Taking elements from the document</a></li><li><code><a href="#prop-content">content</a></code></li></ul></div><div><div id="prop-flow-spec">Specification</div><ul><li><a href="https://books.spec.whatwg.org/#flowing-content-to-a-named-area:-'flow'">CSS Books</a></li></ul></div></div></details>
+        </p></div><div><div id="prop-flow-seealso">See Also</div><ul><li><a href="/doc/paged#page-regions">Page regions</a></li><li><a href="/doc/gen-content#taking-elements-from-the-document">Taking elements from the document</a></li><li><code><a href="#prop-content">content</a></code></li></ul></div><div><div id="prop-flow-spec">Specification</div><ul><li><a href="https://books.spec.whatwg.org/#flowing-content-to-a-named-area:-'flow'">CSS Books</a></li></ul></div></div></details>
 
 <details><summary id="prop-font">font <a class="self-link" href="#prop-font"></a></summary><div><div><div id="prop-font-syntax">Syntax</div><div class="example"><div class="syntax-block"><pre><code>font: <i><a href="#prop-font-style">font-style</a></i>? <i><a href="#prop-font-variant">font-variant</a></i>? <i><a href="#prop-font-weight">font-weight</a></i>? <i><a href="#prop-font-size">font-size</a></i> [  /  <i><a href="#prop-line-height">line-height</a></i> ]? <i><a href="#prop-font-family">font-family</a></i></code></pre></div></div></div><div><div class="example"><div class="syntax-block"><table class="property-table"><tr><th scope="row">
           Initial value
@@ -1302,7 +1302,7 @@ For the values, the grammar draws on the [CSS Values and Units Module Level 3](h
                 </td></tr></table></div></div></div><div><div id="prop-font-examples">Examples</div><div class="example"><div class="programlisting"><pre><code>font: bold 14pt/16pt Georgia, "Times New Roman", serif</code></pre></div></div></div><div><div id="prop-font-comments">Comments</div><p>
         The <code>font</code> property is a shorthand for
         setting the following CSS properties:
-    </p><ul><li><code><a href="#prop-font-family">font-family</a></code></li><li><code><a href="#prop-font-size">font-size</a></code></li><li><code><a href="#prop-font-stretch">font-stretch</a></code></li><li><code><a href="#prop-font-style">font-style</a></code></li><li><code><a href="#prop-font-variant">font-variant</a></code></li><li><code><a href="#prop-font-weight">font-weight</a></code></li><li><code><a href="#prop-line-height">line-height</a></code></li></ul></div><div><div id="prop-font-seealso">See Also</div><ul><li><a href="styling#text-formatting">Text formatting</a></li></ul></div><div><div id="prop-font-spec">Specification</div><ul><li><a href="https://www.w3.org/TR/CSS2/fonts.html#font-shorthand">CSS 2.1</a></li></ul></div></div></details>
+    </p><ul><li><code><a href="#prop-font-family">font-family</a></code></li><li><code><a href="#prop-font-size">font-size</a></code></li><li><code><a href="#prop-font-stretch">font-stretch</a></code></li><li><code><a href="#prop-font-style">font-style</a></code></li><li><code><a href="#prop-font-variant">font-variant</a></code></li><li><code><a href="#prop-font-weight">font-weight</a></code></li><li><code><a href="#prop-line-height">line-height</a></code></li></ul></div><div><div id="prop-font-seealso">See Also</div><ul><li><a href="/doc/styling#text-formatting">Text formatting</a></li></ul></div><div><div id="prop-font-spec">Specification</div><ul><li><a href="https://www.w3.org/TR/CSS2/fonts.html#font-shorthand">CSS 2.1</a></li></ul></div></div></details>
 
 <details><summary id="prop-font-family">font-family <a class="self-link" href="#prop-font-family"></a></summary><div><div><div id="prop-font-family-syntax">Syntax</div><div class="example"><div class="syntax-block"><pre><code>font-family: [ serif |&#160;sans-serif |&#160;monospace |&#160;<i>name</i> |&#160;"name" ]# <span class="ext">prince-no-fallback</span>?</code></pre></div></div></div><div><div class="example"><div class="syntax-block"><table class="property-table"><tr><th scope="row">
           Initial value
@@ -1318,11 +1318,11 @@ For the values, the grammar draws on the [CSS Values and Units Module Level 3](h
     would silently fallback to serif.
 	</p><p>
     When used as a descriptor for the
-    <a href="css-refs#at-font-face"><code>@font-face</code></a> at-rule,
+    <a href="/doc/css-refs#at-font-face"><code>@font-face</code></a> at-rule,
     <code>font-family</code> defines the font family name that will be used in
     all CSS font family name matching.  It is required for the <code>@font-face</code>
     rule to be valid.
-    </p></div><div><div id="prop-font-family-seealso">See Also</div><ul><li><a href="styling#fonts">Fonts</a></li><li><a href="styling#redefining-the-generic-font-families">Redefining the generic font families</a></li><li><a href="styling#text-formatting">Text formatting</a></li></ul></div><div><div id="prop-font-family-spec">Specification</div><ul><li><a href="https://www.w3.org/TR/CSS2/fonts.html#propdef-font-family">CSS 2.1</a></li></ul></div></div></details>
+    </p></div><div><div id="prop-font-family-seealso">See Also</div><ul><li><a href="/doc/styling#fonts">Fonts</a></li><li><a href="/doc/styling#redefining-the-generic-font-families">Redefining the generic font families</a></li><li><a href="/doc/styling#text-formatting">Text formatting</a></li></ul></div><div><div id="prop-font-family-spec">Specification</div><ul><li><a href="https://www.w3.org/TR/CSS2/fonts.html#propdef-font-family">CSS 2.1</a></li></ul></div></div></details>
 
 <details><summary id="prop-font-size">font-size <a class="self-link" href="#prop-font-size"></a></summary><div><div><div id="prop-font-size-syntax">Syntax</div><div class="example"><div class="syntax-block"><pre><code>font-size: <i>length</i> |&#160;<i>percent</i> |&#160;smaller |&#160;larger |&#160;xx-small |&#160;x-small |&#160;small |&#160;medium |&#160;large |&#160;x-large |&#160;xx-large</code></pre></div></div></div><div><div class="example"><div class="syntax-block"><table class="property-table"><tr><th scope="row">
           Initial value
@@ -1332,7 +1332,7 @@ For the values, the grammar draws on the [CSS Values and Units Module Level 3](h
           Inherited
         </th><td>
                   yes
-                </td></tr></table></div></div></div><div /><div><div id="prop-font-size-seealso">See Also</div><ul><li><a href="styling#text-formatting">Text formatting</a></li></ul></div><div><div id="prop-font-size-spec">Specification</div><ul><li><a href="https://www.w3.org/TR/CSS2/fonts.html#propdef-font-size">CSS 2.1</a></li></ul></div></div></details>
+                </td></tr></table></div></div></div><div /><div><div id="prop-font-size-seealso">See Also</div><ul><li><a href="/doc/styling#text-formatting">Text formatting</a></li></ul></div><div><div id="prop-font-size-spec">Specification</div><ul><li><a href="https://www.w3.org/TR/CSS2/fonts.html#propdef-font-size">CSS 2.1</a></li></ul></div></div></details>
 
 <details><summary id="prop-font-stretch">font-stretch <a class="self-link" href="#prop-font-stretch"></a></summary><div><div><div id="prop-font-stretch-syntax">Syntax</div><div class="example"><div class="syntax-block"><pre><code>font-stretch: ultra-condensed |&#160;extra-condensed |&#160;condensed |&#160;semi-condensed |&#160;normal |&#160;semi-expanded |&#160;expanded |&#160;extra-expanded |&#160;ultra-expanded |&#160;wider |&#160;narrower</code></pre></div></div></div><div><div class="example"><div class="syntax-block"><table class="property-table"><tr><th scope="row">
           Initial value
@@ -1345,7 +1345,7 @@ For the values, the grammar draws on the [CSS Values and Units Module Level 3](h
                 </td></tr></table></div></div></div><div><div id="prop-font-stretch-comments">Comments</div><p>
 	The <code>font-stretch</code> property is not supported for system
 	fonts on Windows.
-	</p></div><div><div id="prop-font-stretch-seealso">See Also</div><ul><li><a href="styling#text-formatting">Text formatting</a></li></ul></div><div><div id="prop-font-stretch-spec">Specification</div><ul><li><a href="https://www.w3.org/TR/css-fonts-3/#font-stretch-prop">CSS Fonts Module Level 3</a></li></ul></div></div></details>
+	</p></div><div><div id="prop-font-stretch-seealso">See Also</div><ul><li><a href="/doc/styling#text-formatting">Text formatting</a></li></ul></div><div><div id="prop-font-stretch-spec">Specification</div><ul><li><a href="https://www.w3.org/TR/css-fonts-3/#font-stretch-prop">CSS Fonts Module Level 3</a></li></ul></div></div></details>
 
 <details><summary id="prop-font-style">font-style <a class="self-link" href="#prop-font-style"></a></summary><div><div><div id="prop-font-style-syntax">Syntax</div><div class="example"><div class="syntax-block"><pre><code>font-style: normal |&#160;italic</code></pre></div></div></div><div><div class="example"><div class="syntax-block"><table class="property-table"><tr><th scope="row">
           Initial value
@@ -1355,7 +1355,7 @@ For the values, the grammar draws on the [CSS Values and Units Module Level 3](h
           Inherited
         </th><td>
                   yes
-                </td></tr></table></div></div></div><div /><div><div id="prop-font-style-seealso">See Also</div><ul><li><a href="styling#text-formatting">Text formatting</a></li></ul></div><div><div id="prop-font-style-spec">Specification</div><ul><li><a href="https://www.w3.org/TR/CSS2/fonts.html#propdef-font-style">CSS 2.1</a></li></ul></div></div></details>
+                </td></tr></table></div></div></div><div /><div><div id="prop-font-style-seealso">See Also</div><ul><li><a href="/doc/styling#text-formatting">Text formatting</a></li></ul></div><div><div id="prop-font-style-spec">Specification</div><ul><li><a href="https://www.w3.org/TR/CSS2/fonts.html#propdef-font-style">CSS 2.1</a></li></ul></div></div></details>
 
 <details><summary id="prop-font-variant">font-variant <a class="self-link" href="#prop-font-variant"></a></summary><div><div><div id="prop-font-variant-syntax">Syntax</div><div class="example"><div class="syntax-block"><pre><code>font-variant: normal |&#160;small-caps |&#160;<span class="ext">prince-no-kerning</span> |&#160;<span class="ext">prince-opentype(&#160;[ <i>feature</i> ]+&#160;)</span></code></pre></div></div></div><div><div class="example"><div class="syntax-block"><table class="property-table"><tr><th scope="row">
           Initial value
@@ -1373,7 +1373,7 @@ For the values, the grammar draws on the [CSS Values and Units Module Level 3](h
     parameter is how you do this, however it requires intimate details of exactly
     which font is being used and what glyphs it provides.</p><p>The <code>feature</code> can be written either in function form (<code>feature(N)</code>)
     or in concatenated form (<code>featureN</code>).</p><p>The keyword <code>prince-no-kerning</code> disables the <code>kern</code>
-    OpenType feature, which defines font kerning.</p></div><div><div id="prop-font-variant-seealso">See Also</div><ul><li><a href="cookbook#typographic-ligatures">Typographic Ligatures</a></li><li><a href="styling#opentype-features-in-prince">OpenType Features in Prince</a></li></ul></div><div><div id="prop-font-variant-spec">Specification</div><ul><li><a href="https://www.w3.org/TR/CSS2/fonts.html#propdef-font-variant">CSS 2.1</a></li></ul></div></div></details>
+    OpenType feature, which defines font kerning.</p></div><div><div id="prop-font-variant-seealso">See Also</div><ul><li><a href="/doc/cookbook#typographic-ligatures">Typographic Ligatures</a></li><li><a href="/doc/styling#opentype-features-in-prince">OpenType Features in Prince</a></li></ul></div><div><div id="prop-font-variant-spec">Specification</div><ul><li><a href="https://www.w3.org/TR/CSS2/fonts.html#propdef-font-variant">CSS 2.1</a></li></ul></div></div></details>
 
 <details><summary id="prop-font-weight">font-weight <a class="self-link" href="#prop-font-weight"></a></summary><div><div><div id="prop-font-weight-syntax">Syntax</div><div class="example"><div class="syntax-block"><pre><code>font-weight: normal |&#160;bold |&#160;bolder |&#160;lighter |&#160;100 |&#160;200 |&#160;300 |&#160;400 |&#160;500 |&#160;600 |&#160;700 |&#160;800 |&#160;900</code></pre></div></div></div><div><div class="example"><div class="syntax-block"><table class="property-table"><tr><th scope="row">
           Initial value
@@ -1383,7 +1383,7 @@ For the values, the grammar draws on the [CSS Values and Units Module Level 3](h
           Inherited
         </th><td>
                   yes
-                </td></tr></table></div></div></div><div /><div><div id="prop-font-weight-seealso">See Also</div><ul><li><a href="styling#text-formatting">Text formatting</a></li></ul></div><div><div id="prop-font-weight-spec">Specification</div><ul><li><a href="https://www.w3.org/TR/CSS2/fonts.html#propdef-font-weight">CSS 2.1</a></li></ul></div></div></details>
+                </td></tr></table></div></div></div><div /><div><div id="prop-font-weight-seealso">See Also</div><ul><li><a href="/doc/styling#text-formatting">Text formatting</a></li></ul></div><div><div id="prop-font-weight-spec">Specification</div><ul><li><a href="https://www.w3.org/TR/CSS2/fonts.html#propdef-font-weight">CSS 2.1</a></li></ul></div></div></details>
 
 <details><summary id="prop-footnote-display">footnote-display <a class="self-link" href="#prop-footnote-display"></a></summary><div><div><div id="prop-footnote-display-syntax">Syntax</div><div class="example"><div class="syntax-block"><pre><code>footnote-display: block |&#160;inline |&#160;compact</code></pre></div></div></div><div><div class="example"><div class="syntax-block"><table class="property-table"><tr><th scope="row">
           Initial value
@@ -1412,7 +1412,7 @@ For the values, the grammar draws on the [CSS Values and Units Module Level 3](h
                   yes
                 </td></tr></table></div></div></div><div><div id="prop-footnote-style-position-comments">Comments</div><p>
 	For information about the use of the <code>footnote-style-position</code>
-	property see the documentation for <a href="styling#footnotes">Footnotes</a>.
+	property see the documentation for <a href="/doc/styling#footnotes">Footnotes</a>.
 	</p></div></div></details>
 
 <details><summary id="prop-height">height <a class="self-link" href="#prop-height"></a></summary><div><div><div id="prop-height-syntax">Syntax</div><div class="example"><div class="syntax-block"><pre><code>height: auto |&#160;<i>length</i> |&#160;<i>percent</i> |&#160;min-content |&#160;max-content</code></pre></div></div></div><div><div class="example"><div class="syntax-block"><table class="property-table"><tr><th scope="row">
@@ -1439,7 +1439,7 @@ For the values, the grammar draws on the [CSS Values and Units Module Level 3](h
                 </td></tr></table></div></div></div><div><div id="prop-hyphens-comments">Comments</div><p>
     This property defines if hyphenation is allowed to create more wrapping points
     in a line of text.
-    </p></div><div><div id="prop-hyphens-seealso">See Also</div><ul><li><a href="cookbook#hyphenation">Hyphenation</a></li></ul></div><div><div id="prop-hyphens-spec">Specification</div><ul><li><a href="https://www.w3.org/TR/css-text-3/#hyphens-property">CSS Text Module Level 3</a></li></ul></div></div></details>
+    </p></div><div><div id="prop-hyphens-seealso">See Also</div><ul><li><a href="/doc/cookbook#hyphenation">Hyphenation</a></li></ul></div><div><div id="prop-hyphens-spec">Specification</div><ul><li><a href="https://www.w3.org/TR/css-text-3/#hyphens-property">CSS Text Module Level 3</a></li></ul></div></div></details>
 
 <details><summary class="ext" id="prop-hyphenate-patterns">hyphenate-patterns*  <a class="self-link" href="#prop-hyphenate-patterns"></a></summary><div><div><div id="prop-hyphenate-patterns-syntax">Syntax</div><div class="example"><div class="syntax-block"><pre><code>hyphenate-patterns: none |&#160;url(&#160;<i>patterns-url</i>&#160;)</code></pre></div></div></div><div><div class="example"><div class="syntax-block"><table class="property-table"><tr><th scope="row">
           Initial value
@@ -1456,7 +1456,7 @@ For the values, the grammar draws on the [CSS Values and Units Module Level 3](h
     The <code>url()</code> argument can take local paths or remote HTTP URLs as argument.
     </p><p class="note">
         The property <a href="#prop-prince-hyphenate-patterns"><code>prince-hyphenate-patterns</code></a> can be used as an alias.
-        </p></div><div><div id="prop-hyphenate-patterns-seealso">See Also</div><ul><li><a href="cookbook#hyphenation">Hyphenation</a></li></ul></div></div></details>
+        </p></div><div><div id="prop-hyphenate-patterns-seealso">See Also</div><ul><li><a href="/doc/cookbook#hyphenation">Hyphenation</a></li></ul></div></div></details>
 
 <details><summary class="ext" id="prop-hyphenate-after">hyphenate-after*  <a class="self-link" href="#prop-hyphenate-after"></a></summary><div><div><div id="prop-hyphenate-after-syntax">Syntax</div><div class="example"><div class="syntax-block"><pre><code>hyphenate-after: <i>integer</i></code></pre></div></div></div><div><div class="example"><div class="syntax-block"><table class="property-table"><tr><th scope="row">
           Initial value
@@ -1471,7 +1471,7 @@ For the values, the grammar draws on the [CSS Values and Units Module Level 3](h
 	may be moved to the next line when the word is hyphenated.
 	</p><p class="note">
         The property <a href="#prop-prince-hyphenate-after"><code>prince-hyphenate-after</code></a> can be used as an alias.
-        </p></div><div><div id="prop-hyphenate-after-seealso">See Also</div><ul><li><a href="cookbook#hyphenation">Hyphenation</a></li></ul></div></div></details>
+        </p></div><div><div id="prop-hyphenate-after-seealso">See Also</div><ul><li><a href="/doc/cookbook#hyphenation">Hyphenation</a></li></ul></div></div></details>
 
 <details><summary class="ext" id="prop-hyphenate-before">hyphenate-before*  <a class="self-link" href="#prop-hyphenate-before"></a></summary><div><div><div id="prop-hyphenate-before-syntax">Syntax</div><div class="example"><div class="syntax-block"><pre><code>hyphenate-before: <i>integer</i></code></pre></div></div></div><div><div class="example"><div class="syntax-block"><table class="property-table"><tr><th scope="row">
           Initial value
@@ -1486,7 +1486,7 @@ For the values, the grammar draws on the [CSS Values and Units Module Level 3](h
 	may be left at the end of a line when the word is hyphenated.
 	</p><p class="note">
         The property <a href="#prop-prince-hyphenate-before"><code>prince-hyphenate-before</code></a> can be used as an alias.
-        </p></div><div><div id="prop-hyphenate-before-seealso">See Also</div><ul><li><a href="cookbook#hyphenation">Hyphenation</a></li></ul></div></div></details>
+        </p></div><div><div id="prop-hyphenate-before-seealso">See Also</div><ul><li><a href="/doc/cookbook#hyphenation">Hyphenation</a></li></ul></div></div></details>
 
 <details><summary class="ext" id="prop-hyphenate-character">hyphenate-character*  <a class="self-link" href="#prop-hyphenate-character"></a></summary><div><div><div id="prop-hyphenate-character-syntax">Syntax</div><div class="example"><div class="syntax-block"><pre><code>hyphenate-character: auto |&#160;"string"</code></pre></div></div></div><div><div class="example"><div class="syntax-block"><table class="property-table"><tr><th scope="row">
           Initial value
@@ -1501,7 +1501,7 @@ For the values, the grammar draws on the [CSS Values and Units Module Level 3](h
 	when the word is hyphenated.
 	</p><p class="note">
         The property <a href="#prop-prince-hyphenate-character"><code>prince-hyphenate-character</code></a> can be used as an alias.
-        </p></div><div><div id="prop-hyphenate-character-seealso">See Also</div><ul><li><a href="cookbook#hyphenation">Hyphenation</a></li></ul></div></div></details>
+        </p></div><div><div id="prop-hyphenate-character-seealso">See Also</div><ul><li><a href="/doc/cookbook#hyphenation">Hyphenation</a></li></ul></div></div></details>
 
 <details><summary class="ext" id="prop-hyphenate-lines">hyphenate-lines*  <a class="self-link" href="#prop-hyphenate-lines"></a></summary><div><div><div id="prop-hyphenate-lines-syntax">Syntax</div><div class="example"><div class="syntax-block"><pre><code>hyphenate-lines: no-limit |&#160;<i>integer</i></code></pre></div></div></div><div><div class="example"><div class="syntax-block"><table class="property-table"><tr><th scope="row">
           Initial value
@@ -1516,7 +1516,7 @@ For the values, the grammar draws on the [CSS Values and Units Module Level 3](h
 	may end with a hyphenated word.
 	</p><p class="note">
         The property <a href="#prop-prince-hyphenate-limit-lines"><code>prince-hyphenate-limit-lines</code></a> can be used as an alias.
-        </p></div><div><div id="prop-hyphenate-lines-seealso">See Also</div><ul><li><a href="cookbook#hyphenation">Hyphenation</a></li></ul></div><div><div id="prop-hyphenate-lines-spec">Specification</div><ul><li><a href="https://www.w3.org/TR/css-text-4/#hyphenate-line-limits">CSS Text Module Level 4</a></li></ul></div></div></details>
+        </p></div><div><div id="prop-hyphenate-lines-seealso">See Also</div><ul><li><a href="/doc/cookbook#hyphenation">Hyphenation</a></li></ul></div><div><div id="prop-hyphenate-lines-spec">Specification</div><ul><li><a href="https://www.w3.org/TR/css-text-4/#hyphenate-line-limits">CSS Text Module Level 4</a></li></ul></div></div></details>
 
 <details><summary class="ext" id="prop-image-resolution">image-resolution*  <a class="self-link" href="#prop-image-resolution"></a></summary><div><div><div id="prop-image-resolution-syntax">Syntax</div><div class="example"><div class="syntax-block"><pre><code>image-resolution: <i>dpi</i> |&#160;normal |&#160;auto [ , normal |&#160;<i>dpi</i> ]?</code></pre></div></div></div><div><div class="example"><div class="syntax-block"><table class="property-table"><tr><th scope="row">
           Initial value
@@ -1536,7 +1536,7 @@ For the values, the grammar draws on the [CSS Values and Units Module Level 3](h
     resolution information.
     </p><p class="note">
         The property <a href="#prop-prince-image-resolution"><code>prince-image-resolution</code></a> can be used as an alias.
-        </p></div><div><div id="prop-image-resolution-seealso">See Also</div><ul><li><a href="graphics#image-size">Image Size</a></li></ul></div></div></details>
+        </p></div><div><div id="prop-image-resolution-seealso">See Also</div><ul><li><a href="/doc/graphics#image-size">Image Size</a></li></ul></div></div></details>
 
 <details><summary id="prop-image-orientation">image-orientation <a class="self-link" href="#prop-image-orientation"></a></summary><div><div><div id="prop-image-orientation-syntax">Syntax</div><div class="example"><div class="syntax-block"><pre><code>image-orientation: none |&#160;from-image</code></pre></div></div></div><div><div class="example"><div class="syntax-block"><table class="property-table"><tr><th scope="row">
           Initial value
@@ -1617,7 +1617,7 @@ For the values, the grammar draws on the [CSS Values and Units Module Level 3](h
     Finally, the <code>max-height</code> value works like <code>inline-line-height</code>,
     but it ignores the <code><a href="#prop-line-height">line-height</a></code> property value
     for inline elements.
-    </p></div><div><div id="prop-line-stacking-strategy-seealso">See Also</div><ul><li><a href="styling#paragraph-formatting">Paragraph formatting</a></li><li><code><a href="#prop-line-height">line-height</a></code></li></ul></div><div><div id="prop-line-stacking-strategy-spec">Specification</div><ul><li><a href="https://www.w3.org/TR/2002/WD-css3-linebox-20020515/#line-stacking-strategy">CSS3 module: line (WD 15 May 2002)</a></li></ul></div></div></details>
+    </p></div><div><div id="prop-line-stacking-strategy-seealso">See Also</div><ul><li><a href="/doc/styling#paragraph-formatting">Paragraph formatting</a></li><li><code><a href="#prop-line-height">line-height</a></code></li></ul></div><div><div id="prop-line-stacking-strategy-spec">Specification</div><ul><li><a href="https://www.w3.org/TR/2002/WD-css3-linebox-20020515/#line-stacking-strategy">CSS3 module: line (WD 15 May 2002)</a></li></ul></div></div></details>
 
 <details><summary id="prop-line-height">line-height <a class="self-link" href="#prop-line-height"></a></summary><div><div><div id="prop-line-height-syntax">Syntax</div><div class="example"><div class="syntax-block"><pre><code>line-height: normal |&#160;none |&#160;<i>number</i> |&#160;<i>length</i> |&#160;<i>percent</i></code></pre></div></div></div><div><div class="example"><div class="syntax-block"><table class="property-table"><tr><th scope="row">
           Initial value
@@ -1627,7 +1627,7 @@ For the values, the grammar draws on the [CSS Values and Units Module Level 3](h
           Inherited
         </th><td>
                   yes
-                </td></tr></table></div></div></div><div /><div><div id="prop-line-height-seealso">See Also</div><ul><li><a href="styling#paragraph-formatting">Paragraph formatting</a></li></ul></div><div><div id="prop-line-height-spec">Specification</div><ul><li><a href="https://www.w3.org/TR/CSS2/visudet.html#propdef-line-height">CSS 2.1</a></li></ul></div></div></details>
+                </td></tr></table></div></div></div><div /><div><div id="prop-line-height-seealso">See Also</div><ul><li><a href="/doc/styling#paragraph-formatting">Paragraph formatting</a></li></ul></div><div><div id="prop-line-height-spec">Specification</div><ul><li><a href="https://www.w3.org/TR/CSS2/visudet.html#propdef-line-height">CSS 2.1</a></li></ul></div></div></details>
 
 <details><summary class="ext" id="prop-link">link*  <a class="self-link" href="#prop-link"></a></summary><div><div><div id="prop-link-syntax">Syntax</div><div class="example"><div class="syntax-block"><pre><code>link: none |&#160;url(&#160;<i>target-url</i>&#160;) |&#160;attr(&#160;<i>target-attr</i>&#160;)</code></pre></div></div></div><div><div class="example"><div class="syntax-block"><table class="property-table"><tr><th scope="row">
           Initial value
@@ -1641,7 +1641,7 @@ For the values, the grammar draws on the [CSS Values and Units Module Level 3](h
     This property makes an element into a link to the specified URL.
     </p><p class="note">
         The property <a href="#prop-prince-link"><code>prince-link</code></a> can be used as an alias.
-        </p></div><div><div id="prop-link-seealso">See Also</div><ul><li><a href="prince-output#pdf-links">PDF Links</a></li></ul></div></div></details>
+        </p></div><div><div id="prop-link-seealso">See Also</div><ul><li><a href="/doc/prince-output#pdf-links">PDF Links</a></li></ul></div></div></details>
 
 <details><summary id="prop-list-style">list-style <a class="self-link" href="#prop-list-style"></a></summary><div><div><div id="prop-list-style-syntax">Syntax</div><div class="example"><div class="syntax-block"><pre><code>list-style: <i><a href="#prop-list-style-image">list-style-image</a></i> ||&#160;<i><a href="#prop-list-style-position">list-style-position</a></i> ||&#160;<i><a href="#prop-list-style-type">list-style-type</a></i></code></pre></div></div></div><div><div class="example"><div class="syntax-block"><table class="property-table"><tr><th scope="row">
           Initial value
@@ -1654,7 +1654,7 @@ For the values, the grammar draws on the [CSS Values and Units Module Level 3](h
                 </td></tr></table></div></div></div><div><div id="prop-list-style-comments">Comments</div><p>
         The <code>list-style</code> property is a shorthand for
         setting the following CSS properties:
-    </p><ul><li><code><a href="#prop-list-style-image">list-style-image</a></code></li><li><code><a href="#prop-list-style-position">list-style-position</a></code></li><li><code><a href="#prop-list-style-type">list-style-type</a></code></li></ul></div><div><div id="prop-list-style-seealso">See Also</div><ul><li><a href="styling#lists">Lists</a></li></ul></div><div><div id="prop-list-style-spec">Specification</div><ul><li><a href="https://www.w3.org/TR/CSS2/generate.html#propdef-list-style">CSS 2.1</a></li></ul></div></div></details>
+    </p><ul><li><code><a href="#prop-list-style-image">list-style-image</a></code></li><li><code><a href="#prop-list-style-position">list-style-position</a></code></li><li><code><a href="#prop-list-style-type">list-style-type</a></code></li></ul></div><div><div id="prop-list-style-seealso">See Also</div><ul><li><a href="/doc/styling#lists">Lists</a></li></ul></div><div><div id="prop-list-style-spec">Specification</div><ul><li><a href="https://www.w3.org/TR/CSS2/generate.html#propdef-list-style">CSS 2.1</a></li></ul></div></div></details>
 
 <details><summary id="prop-list-style-image">list-style-image <a class="self-link" href="#prop-list-style-image"></a></summary><div><div><div id="prop-list-style-image-syntax">Syntax</div><div class="example"><div class="syntax-block"><pre><code>list-style-image: none |&#160;url(&#160;<i>image-url</i>&#160;)</code></pre></div></div></div><div><div class="example"><div class="syntax-block"><table class="property-table"><tr><th scope="row">
           Initial value
@@ -1664,7 +1664,7 @@ For the values, the grammar draws on the [CSS Values and Units Module Level 3](h
           Inherited
         </th><td>
                   yes
-                </td></tr></table></div></div></div><div /><div><div id="prop-list-style-image-seealso">See Also</div><ul><li><a href="styling#lists">Lists</a></li></ul></div><div><div id="prop-list-style-image-spec">Specification</div><ul><li><a href="https://www.w3.org/TR/CSS2/generate.html#propdef-list-style-image">CSS 2.1</a></li></ul></div></div></details>
+                </td></tr></table></div></div></div><div /><div><div id="prop-list-style-image-seealso">See Also</div><ul><li><a href="/doc/styling#lists">Lists</a></li></ul></div><div><div id="prop-list-style-image-spec">Specification</div><ul><li><a href="https://www.w3.org/TR/CSS2/generate.html#propdef-list-style-image">CSS 2.1</a></li></ul></div></div></details>
 
 <details><summary id="prop-list-style-position">list-style-position <a class="self-link" href="#prop-list-style-position"></a></summary><div><div><div id="prop-list-style-position-syntax">Syntax</div><div class="example"><div class="syntax-block"><pre><code>list-style-position: outside |&#160;inside</code></pre></div></div></div><div><div class="example"><div class="syntax-block"><table class="property-table"><tr><th scope="row">
           Initial value
@@ -1674,7 +1674,7 @@ For the values, the grammar draws on the [CSS Values and Units Module Level 3](h
           Inherited
         </th><td>
                   yes
-                </td></tr></table></div></div></div><div /><div><div id="prop-list-style-position-seealso">See Also</div><ul><li><a href="styling#lists">Lists</a></li></ul></div><div><div id="prop-list-style-position-spec">Specification</div><ul><li><a href="https://www.w3.org/TR/CSS2/generate.html#propdef-list-style-position">CSS 2.1</a></li></ul></div></div></details>
+                </td></tr></table></div></div></div><div /><div><div id="prop-list-style-position-seealso">See Also</div><ul><li><a href="/doc/styling#lists">Lists</a></li></ul></div><div><div id="prop-list-style-position-spec">Specification</div><ul><li><a href="https://www.w3.org/TR/CSS2/generate.html#propdef-list-style-position">CSS 2.1</a></li></ul></div></div></details>
 
 <details><summary id="prop-list-style-type">list-style-type <a class="self-link" href="#prop-list-style-type"></a></summary><div><div><div id="prop-list-style-type-syntax">Syntax</div><div class="example"><div class="syntax-block"><pre><code>list-style-type: box |&#160;check |&#160;circle |&#160;diamond |&#160;disc |&#160;hyphen |&#160;square |&#160;decimal |&#160;decimal-leading-zero |&#160;lower-roman |&#160;upper-roman |&#160;lower-alpha |&#160;lower-latin |&#160;upper-alpha |&#160;upper-latin |&#160;lower-hexadecimal |&#160;upper-hexadecimal |&#160;binary |&#160;octal |&#160;asterisks |&#160;arabic-indic |&#160;lower-greek |&#160;upper-greek |&#160;lower-norwegian |&#160;upper-norwegian |&#160;lower-russian |&#160;upper-russian |&#160;lower-ukrainian |&#160;upper-ukrainian |&#160;lower-belarusian |&#160;upper-belarusian |&#160;lower-bulgarian |&#160;upper-bulgarian |&#160;lower-serbian |&#160;upper-serbian |&#160;persian |&#160;urdu |&#160;japanese-informal |&#160;japanese-formal |&#160;cjk-decimal |&#160;simp-chinese-informal |&#160;simp-chinese-formal |&#160;trad-chinese-informal |&#160;trad-chinese-formal</code></pre></div></div></div><div><div class="example"><div class="syntax-block"><table class="property-table"><tr><th scope="row">
           Initial value
@@ -1684,7 +1684,7 @@ For the values, the grammar draws on the [CSS Values and Units Module Level 3](h
           Inherited
         </th><td>
                   yes
-                </td></tr></table></div></div></div><div /><div><div id="prop-list-style-type-seealso">See Also</div><ul><li><a href="styling#lists">Lists</a></li><li><a href="gen-content#counters-and-numbering">Counters and Numbering</a></li></ul></div><div><div id="prop-list-style-type-spec">Specification</div><ul><li><a href="https://www.w3.org/TR/CSS2/generate.html#propdef-list-style-type">CSS 2.1</a></li></ul></div></div></details>
+                </td></tr></table></div></div></div><div /><div><div id="prop-list-style-type-seealso">See Also</div><ul><li><a href="/doc/styling#lists">Lists</a></li><li><a href="gen-content#counters-and-numbering">Counters and Numbering</a></li></ul></div><div><div id="prop-list-style-type-spec">Specification</div><ul><li><a href="https://www.w3.org/TR/CSS2/generate.html#propdef-list-style-type">CSS 2.1</a></li></ul></div></div></details>
 
 <details><summary id="prop-margin">margin <a class="self-link" href="#prop-margin"></a></summary><div><div><div id="prop-margin-syntax">Syntax</div><div class="example"><div class="syntax-block"><pre><code>margin: [ auto |&#160;<i>length</i> |&#160;<i>percent</i> ]{1..4}</code></pre></div></div></div><div><div class="example"><div class="syntax-block"><table class="property-table"><tr><th scope="row">
           Initial value
@@ -1697,7 +1697,7 @@ For the values, the grammar draws on the [CSS Values and Units Module Level 3](h
                 </td></tr></table></div></div></div><div><div id="prop-margin-comments">Comments</div><p>
         The <code>margin</code> property is a shorthand for
         setting the following CSS properties:
-    </p><ul><li><code><a href="#prop-margin-bottom">margin-bottom</a></code></li><li><code><a href="#prop-margin-inside">margin-inside</a></code></li><li><code><a href="#prop-margin-left">margin-left</a></code></li><li><code><a href="#prop-margin-outside">margin-outside</a></code></li><li><code><a href="#prop-margin-right">margin-right</a></code></li><li><code><a href="#prop-margin-top">margin-top</a></code></li></ul></div><div><div id="prop-margin-seealso">See Also</div><ul><li><a href="styling#margin">Margin</a></li></ul></div><div><div id="prop-margin-spec">Specification</div><ul><li><a href="https://www.w3.org/TR/CSS2/box.html#margin-properties">CSS 2.1</a></li></ul></div></div></details>
+    </p><ul><li><code><a href="#prop-margin-bottom">margin-bottom</a></code></li><li><code><a href="#prop-margin-inside">margin-inside</a></code></li><li><code><a href="#prop-margin-left">margin-left</a></code></li><li><code><a href="#prop-margin-outside">margin-outside</a></code></li><li><code><a href="#prop-margin-right">margin-right</a></code></li><li><code><a href="#prop-margin-top">margin-top</a></code></li></ul></div><div><div id="prop-margin-seealso">See Also</div><ul><li><a href="/doc/styling#margin">Margin</a></li></ul></div><div><div id="prop-margin-spec">Specification</div><ul><li><a href="https://www.w3.org/TR/CSS2/box.html#margin-properties">CSS 2.1</a></li></ul></div></div></details>
 
 <details><summary id="prop-margin-bottom">margin-bottom <a class="self-link" href="#prop-margin-bottom"></a></summary><div><div><div id="prop-margin-bottom-syntax">Syntax</div><div class="example"><div class="syntax-block"><pre><code>margin-bottom: auto |&#160;<i>length</i> |&#160;<i>percent</i></code></pre></div></div></div><div><div class="example"><div class="syntax-block"><table class="property-table"><tr><th scope="row">
           Initial value
@@ -1707,7 +1707,7 @@ For the values, the grammar draws on the [CSS Values and Units Module Level 3](h
           Inherited
         </th><td>
                   no
-                </td></tr></table></div></div></div><div /><div><div id="prop-margin-bottom-seealso">See Also</div><ul><li><a href="styling#margin">Margin</a></li></ul></div><div><div id="prop-margin-bottom-spec">Specification</div><ul><li><a href="https://www.w3.org/TR/CSS2/box.html#margin-properties">CSS 2.1</a></li></ul></div></div></details>
+                </td></tr></table></div></div></div><div /><div><div id="prop-margin-bottom-seealso">See Also</div><ul><li><a href="/doc/styling#margin">Margin</a></li></ul></div><div><div id="prop-margin-bottom-spec">Specification</div><ul><li><a href="https://www.w3.org/TR/CSS2/box.html#margin-properties">CSS 2.1</a></li></ul></div></div></details>
 
 <details><summary class="ext" id="prop-margin-inside">margin-inside*  <a class="self-link" href="#prop-margin-inside"></a></summary><div><div><div id="prop-margin-inside-syntax">Syntax</div><div class="example"><div class="syntax-block"><pre><code>margin-inside: auto |&#160;<i>length</i> |&#160;<i>percent</i></code></pre></div></div></div><div><div class="example"><div class="syntax-block"><table class="property-table"><tr><th scope="row">
           Initial value
@@ -1724,7 +1724,7 @@ For the values, the grammar draws on the [CSS Values and Units Module Level 3](h
 	if the element is on a right-facing page. The result is a horizontal
 	margin on the side of the element that is on the "inside" of the
 	two-page spread.
-	</p></div><div><div id="prop-margin-inside-seealso">See Also</div><ul><li><a href="styling#margin">Margin</a></li></ul></div></div></details>
+	</p></div><div><div id="prop-margin-inside-seealso">See Also</div><ul><li><a href="/doc/styling#margin">Margin</a></li></ul></div></div></details>
 
 <details><summary id="prop-margin-left">margin-left <a class="self-link" href="#prop-margin-left"></a></summary><div><div><div id="prop-margin-left-syntax">Syntax</div><div class="example"><div class="syntax-block"><pre><code>margin-left: auto |&#160;<i>length</i> |&#160;<i>percent</i></code></pre></div></div></div><div><div class="example"><div class="syntax-block"><table class="property-table"><tr><th scope="row">
           Initial value
@@ -1734,7 +1734,7 @@ For the values, the grammar draws on the [CSS Values and Units Module Level 3](h
           Inherited
         </th><td>
                   no
-                </td></tr></table></div></div></div><div /><div><div id="prop-margin-left-seealso">See Also</div><ul><li><a href="styling#margin">Margin</a></li></ul></div><div><div id="prop-margin-left-spec">Specification</div><ul><li><a href="https://www.w3.org/TR/CSS2/box.html#margin-properties">CSS 2.1</a></li></ul></div></div></details>
+                </td></tr></table></div></div></div><div /><div><div id="prop-margin-left-seealso">See Also</div><ul><li><a href="/doc/styling#margin">Margin</a></li></ul></div><div><div id="prop-margin-left-spec">Specification</div><ul><li><a href="https://www.w3.org/TR/CSS2/box.html#margin-properties">CSS 2.1</a></li></ul></div></div></details>
 
 <details><summary class="ext" id="prop-margin-outside">margin-outside*  <a class="self-link" href="#prop-margin-outside"></a></summary><div><div><div id="prop-margin-outside-syntax">Syntax</div><div class="example"><div class="syntax-block"><pre><code>margin-outside: auto |&#160;<i>length</i> |&#160;<i>percent</i></code></pre></div></div></div><div><div class="example"><div class="syntax-block"><table class="property-table"><tr><th scope="row">
           Initial value
@@ -1751,7 +1751,7 @@ For the values, the grammar draws on the [CSS Values and Units Module Level 3](h
 	if the element is on a right-facing page. The result is a horizontal
 	margin on the side of the element that is on the "outside" of the
 	two-page spread.
-	</p></div><div><div id="prop-margin-outside-seealso">See Also</div><ul><li><a href="styling#margin">Margin</a></li></ul></div></div></details>
+	</p></div><div><div id="prop-margin-outside-seealso">See Also</div><ul><li><a href="/doc/styling#margin">Margin</a></li></ul></div></div></details>
 
 <details><summary id="prop-margin-right">margin-right <a class="self-link" href="#prop-margin-right"></a></summary><div><div><div id="prop-margin-right-syntax">Syntax</div><div class="example"><div class="syntax-block"><pre><code>margin-right: auto |&#160;<i>length</i> |&#160;<i>percent</i></code></pre></div></div></div><div><div class="example"><div class="syntax-block"><table class="property-table"><tr><th scope="row">
           Initial value
@@ -1761,7 +1761,7 @@ For the values, the grammar draws on the [CSS Values and Units Module Level 3](h
           Inherited
         </th><td>
                   no
-                </td></tr></table></div></div></div><div /><div><div id="prop-margin-right-seealso">See Also</div><ul><li><a href="styling#margin">Margin</a></li></ul></div><div><div id="prop-margin-right-spec">Specification</div><ul><li><a href="https://www.w3.org/TR/CSS2/box.html#margin-properties">CSS 2.1</a></li></ul></div></div></details>
+                </td></tr></table></div></div></div><div /><div><div id="prop-margin-right-seealso">See Also</div><ul><li><a href="/doc/styling#margin">Margin</a></li></ul></div><div><div id="prop-margin-right-spec">Specification</div><ul><li><a href="https://www.w3.org/TR/CSS2/box.html#margin-properties">CSS 2.1</a></li></ul></div></div></details>
 
 <details><summary id="prop-margin-top">margin-top <a class="self-link" href="#prop-margin-top"></a></summary><div><div><div id="prop-margin-top-syntax">Syntax</div><div class="example"><div class="syntax-block"><pre><code>margin-top: auto |&#160;<i>length</i> |&#160;<i>percent</i></code></pre></div></div></div><div><div class="example"><div class="syntax-block"><table class="property-table"><tr><th scope="row">
           Initial value
@@ -1771,7 +1771,7 @@ For the values, the grammar draws on the [CSS Values and Units Module Level 3](h
           Inherited
         </th><td>
                   no
-                </td></tr></table></div></div></div><div /><div><div id="prop-margin-top-seealso">See Also</div><ul><li><a href="styling#margin">Margin</a></li></ul></div><div><div id="prop-margin-top-spec">Specification</div><ul><li><a href="https://www.w3.org/TR/CSS2/box.html#margin-properties">CSS 2.1</a></li></ul></div></div></details>
+                </td></tr></table></div></div></div><div /><div><div id="prop-margin-top-seealso">See Also</div><ul><li><a href="/doc/styling#margin">Margin</a></li></ul></div><div><div id="prop-margin-top-spec">Specification</div><ul><li><a href="https://www.w3.org/TR/CSS2/box.html#margin-properties">CSS 2.1</a></li></ul></div></div></details>
 
 <details><summary id="prop-marker-start">marker-start <a class="self-link" href="#prop-marker-start"></a></summary><div><div><div id="prop-marker-start-syntax">Syntax</div><div class="example"><div class="syntax-block"><pre><code>marker-start: none |&#160;url(&#160;<i>marker-url</i>&#160;)</code></pre></div></div></div><div><div class="example"><div class="syntax-block"><table class="property-table"><tr><th scope="row">
           Initial value
@@ -1811,7 +1811,7 @@ For the values, the grammar draws on the [CSS Values and Units Module Level 3](h
           Inherited
         </th><td /></tr></table></div></div></div><div><div id="prop-marks-examples">Examples</div><div class="example"><div class="programlisting"><pre><code>@page { marks: crop }</code></pre></div><div class="programlisting"><pre><code>@page { marks: crop cross }</code></pre></div></div></div><div><div id="prop-marks-comments">Comments</div><p>
     This CSS at-rule descriptor, used with the
-    <a href="css-refs#at-page"><code>@page</code></a> at-rule, adds
+    <a href="/doc/css-refs#at-page"><code>@page</code></a> at-rule, adds
     crop and/or cross marks to the page.
     </p><p>
 	Specifying <code>crop</code> and/or <code>cross</code> for
@@ -1934,7 +1934,7 @@ For the values, the grammar draws on the [CSS Values and Units Module Level 3](h
 	If a paragraph is split over two pages or columns, this property
 	determines the minimum number of lines that must be left at the bottom
 	of the first page or column.
-	</p></div><div><div id="prop-orphans-seealso">See Also</div><ul><li><a href="paged#widows-and-orphans">Widows and orphans</a></li><li><code><a href="#prop-widows">widows</a></code></li></ul></div><div><div id="prop-orphans-spec">Specification</div><ul><li><a href="https://www.w3.org/TR/CSS2/page.html#break-inside">CSS 2.1</a></li><li><a href="https://www.w3.org/TR/css-break-3/#widows-orphans">CSS Fragmentation Module Level 3</a></li></ul></div></div></details>
+	</p></div><div><div id="prop-orphans-seealso">See Also</div><ul><li><a href="/doc/paged#widows-and-orphans">Widows and orphans</a></li><li><code><a href="#prop-widows">widows</a></code></li></ul></div><div><div id="prop-orphans-spec">Specification</div><ul><li><a href="https://www.w3.org/TR/CSS2/page.html#break-inside">CSS 2.1</a></li><li><a href="https://www.w3.org/TR/css-break-3/#widows-orphans">CSS Fragmentation Module Level 3</a></li></ul></div></div></details>
 
 <details><summary id="prop-overflow">overflow <a class="self-link" href="#prop-overflow"></a></summary><div><div><div id="prop-overflow-syntax">Syntax</div><div class="example"><div class="syntax-block"><pre><code>overflow: visible |&#160;hidden</code></pre></div></div></div><div><div class="example"><div class="syntax-block"><table class="property-table"><tr><th scope="row">
           Initial value
@@ -1985,7 +1985,7 @@ supplier, item { overflow-wrap: normal; }
 	by styling each component with <code>overflow-wrap:normal</code>
 	even if two components are directly adjacent to each other, as
     seen in the above example.
-	</p></div><div><div id="prop-overflow-wrap-seealso">See Also</div><ul><li><a href="styling#paragraph-formatting">Paragraph formatting</a></li><li><code><a href="#prop-word-break">word-break</a></code></li><li><code><a href="#prop-prince-wrap-inside">prince-wrap-inside</a></code></li><li><code><a href="#prop-white-space">white-space</a></code></li></ul></div><div><div id="prop-overflow-wrap-spec">Specification</div><ul><li><a href="https://www.w3.org/TR/css-text-3/#overflow-wrap-property">CSS Text Module Level 3</a></li></ul></div></div></details>
+	</p></div><div><div id="prop-overflow-wrap-seealso">See Also</div><ul><li><a href="/doc/styling#paragraph-formatting">Paragraph formatting</a></li><li><code><a href="#prop-word-break">word-break</a></code></li><li><code><a href="#prop-prince-wrap-inside">prince-wrap-inside</a></code></li><li><code><a href="#prop-white-space">white-space</a></code></li></ul></div><div><div id="prop-overflow-wrap-spec">Specification</div><ul><li><a href="https://www.w3.org/TR/css-text-3/#overflow-wrap-property">CSS Text Module Level 3</a></li></ul></div></div></details>
 
 <details><summary id="prop-padding">padding <a class="self-link" href="#prop-padding"></a></summary><div><div><div id="prop-padding-syntax">Syntax</div><div class="example"><div class="syntax-block"><pre><code>padding: [ <i>length</i> |&#160;<i>percent</i> ]{1..4}</code></pre></div></div></div><div><div class="example"><div class="syntax-block"><table class="property-table"><tr><th scope="row">
           Initial value
@@ -1998,7 +1998,7 @@ supplier, item { overflow-wrap: normal; }
                 </td></tr></table></div></div></div><div><div id="prop-padding-comments">Comments</div><p>
         The <code>padding</code> property is a shorthand for
         setting the following CSS properties:
-    </p><ul><li><code><a href="#prop-padding-bottom">padding-bottom</a></code></li><li><code><a href="#prop-padding-left">padding-left</a></code></li><li><code><a href="#prop-padding-right">padding-right</a></code></li><li><code><a href="#prop-padding-top">padding-top</a></code></li></ul></div><div><div id="prop-padding-seealso">See Also</div><ul><li><a href="styling#padding">Padding</a></li></ul></div><div><div id="prop-padding-spec">Specification</div><ul><li><a href="https://www.w3.org/TR/CSS2/box.html#padding-properties">CSS 2.1</a></li></ul></div></div></details>
+    </p><ul><li><code><a href="#prop-padding-bottom">padding-bottom</a></code></li><li><code><a href="#prop-padding-left">padding-left</a></code></li><li><code><a href="#prop-padding-right">padding-right</a></code></li><li><code><a href="#prop-padding-top">padding-top</a></code></li></ul></div><div><div id="prop-padding-seealso">See Also</div><ul><li><a href="/doc/styling#padding">Padding</a></li></ul></div><div><div id="prop-padding-spec">Specification</div><ul><li><a href="https://www.w3.org/TR/CSS2/box.html#padding-properties">CSS 2.1</a></li></ul></div></div></details>
 
 <details><summary id="prop-padding-bottom">padding-bottom <a class="self-link" href="#prop-padding-bottom"></a></summary><div><div><div id="prop-padding-bottom-syntax">Syntax</div><div class="example"><div class="syntax-block"><pre><code>padding-bottom: <i>length</i> |&#160;<i>percent</i></code></pre></div></div></div><div><div class="example"><div class="syntax-block"><table class="property-table"><tr><th scope="row">
           Initial value
@@ -2008,7 +2008,7 @@ supplier, item { overflow-wrap: normal; }
           Inherited
         </th><td>
                   no
-                </td></tr></table></div></div></div><div /><div><div id="prop-padding-bottom-seealso">See Also</div><ul><li><a href="styling#padding">Padding</a></li></ul></div><div><div id="prop-padding-bottom-spec">Specification</div><ul><li><a href="https://www.w3.org/TR/CSS2/box.html#padding-properties">CSS 2.1</a></li></ul></div></div></details>
+                </td></tr></table></div></div></div><div /><div><div id="prop-padding-bottom-seealso">See Also</div><ul><li><a href="/doc/styling#padding">Padding</a></li></ul></div><div><div id="prop-padding-bottom-spec">Specification</div><ul><li><a href="https://www.w3.org/TR/CSS2/box.html#padding-properties">CSS 2.1</a></li></ul></div></div></details>
 
 <details><summary id="prop-padding-left">padding-left <a class="self-link" href="#prop-padding-left"></a></summary><div><div><div id="prop-padding-left-syntax">Syntax</div><div class="example"><div class="syntax-block"><pre><code>padding-left: <i>length</i> |&#160;<i>percent</i></code></pre></div></div></div><div><div class="example"><div class="syntax-block"><table class="property-table"><tr><th scope="row">
           Initial value
@@ -2018,7 +2018,7 @@ supplier, item { overflow-wrap: normal; }
           Inherited
         </th><td>
                   no
-                </td></tr></table></div></div></div><div /><div><div id="prop-padding-left-seealso">See Also</div><ul><li><a href="styling#padding">Padding</a></li></ul></div><div><div id="prop-padding-left-spec">Specification</div><ul><li><a href="https://www.w3.org/TR/CSS2/box.html#padding-properties">CSS 2.1</a></li></ul></div></div></details>
+                </td></tr></table></div></div></div><div /><div><div id="prop-padding-left-seealso">See Also</div><ul><li><a href="/doc/styling#padding">Padding</a></li></ul></div><div><div id="prop-padding-left-spec">Specification</div><ul><li><a href="https://www.w3.org/TR/CSS2/box.html#padding-properties">CSS 2.1</a></li></ul></div></div></details>
 
 <details><summary id="prop-padding-right">padding-right <a class="self-link" href="#prop-padding-right"></a></summary><div><div><div id="prop-padding-right-syntax">Syntax</div><div class="example"><div class="syntax-block"><pre><code>padding-right: <i>length</i> |&#160;<i>percent</i></code></pre></div></div></div><div><div class="example"><div class="syntax-block"><table class="property-table"><tr><th scope="row">
           Initial value
@@ -2028,7 +2028,7 @@ supplier, item { overflow-wrap: normal; }
           Inherited
         </th><td>
                   no
-                </td></tr></table></div></div></div><div /><div><div id="prop-padding-right-seealso">See Also</div><ul><li><a href="styling#padding">Padding</a></li></ul></div><div><div id="prop-padding-right-spec">Specification</div><ul><li><a href="https://www.w3.org/TR/CSS2/box.html#padding-properties">CSS 2.1</a></li></ul></div></div></details>
+                </td></tr></table></div></div></div><div /><div><div id="prop-padding-right-seealso">See Also</div><ul><li><a href="/doc/styling#padding">Padding</a></li></ul></div><div><div id="prop-padding-right-spec">Specification</div><ul><li><a href="https://www.w3.org/TR/CSS2/box.html#padding-properties">CSS 2.1</a></li></ul></div></div></details>
 
 <details><summary id="prop-padding-top">padding-top <a class="self-link" href="#prop-padding-top"></a></summary><div><div><div id="prop-padding-top-syntax">Syntax</div><div class="example"><div class="syntax-block"><pre><code>padding-top: <i>length</i> |&#160;<i>percent</i></code></pre></div></div></div><div><div class="example"><div class="syntax-block"><table class="property-table"><tr><th scope="row">
           Initial value
@@ -2038,7 +2038,7 @@ supplier, item { overflow-wrap: normal; }
           Inherited
         </th><td>
                   no
-                </td></tr></table></div></div></div><div /><div><div id="prop-padding-top-seealso">See Also</div><ul><li><a href="styling#padding">Padding</a></li></ul></div><div><div id="prop-padding-top-spec">Specification</div><ul><li><a href="https://www.w3.org/TR/CSS2/box.html#padding-properties">CSS 2.1</a></li></ul></div></div></details>
+                </td></tr></table></div></div></div><div /><div><div id="prop-padding-top-seealso">See Also</div><ul><li><a href="/doc/styling#padding">Padding</a></li></ul></div><div><div id="prop-padding-top-spec">Specification</div><ul><li><a href="https://www.w3.org/TR/CSS2/box.html#padding-properties">CSS 2.1</a></li></ul></div></div></details>
 
 <details><summary id="prop-page">page <a class="self-link" href="#prop-page"></a></summary><div><div><div id="prop-page-syntax">Syntax</div><div class="example"><div class="syntax-block"><pre><code>page: auto |&#160;<i>name</i></code></pre></div></div></div><div><div class="example"><div class="syntax-block"><table class="property-table"><tr><th scope="row">
           Initial value
@@ -2050,7 +2050,7 @@ supplier, item { overflow-wrap: normal; }
                   yes
                 </td></tr></table></div></div></div><div><div id="prop-page-comments">Comments</div><p>
 	This property determines which named page, if any, the current element
-	should be placed on. See the documentation for <a href="paged#selecting-pages">Selecting pages</a>
+	should be placed on. See the documentation for <a href="/doc/paged#selecting-pages">Selecting pages</a>
 	for more details.
 	</p></div><div><div id="prop-page-spec">Specification</div><ul><li><a href="https://www.w3.org/TR/css3-page/#using-named-pages">CSS Paged Media Module Level 3</a></li></ul></div></div></details>
 
@@ -2068,7 +2068,7 @@ supplier, item { overflow-wrap: normal; }
     <code>recto</code>.
     </p><p class="note">
     This property is deprecated.  Use the property <code><a href="#prop-break-after">break-after</a></code>
-    instead.  See the documentation for <a href="paged#page-breaks">Page breaks</a> for more details.
+    instead.  See the documentation for <a href="/doc/paged#page-breaks">Page breaks</a> for more details.
     </p></div><div><div id="prop-page-break-after-seealso">See Also</div><ul><li><code><a href="#prop-break-after">break-after</a></code></li></ul></div><div><div id="prop-page-break-after-spec">Specification</div><ul><li><a href="https://www.w3.org/TR/CSS2/page.html#propdef-page-break-after">CSS 2.1</a></li></ul></div></div></details>
 
 <details><summary id="prop-page-break-before">page-break-before <a class="self-link" href="#prop-page-break-before"></a></summary><div><div><div id="prop-page-break-before-syntax">Syntax</div><div class="example"><div class="syntax-block"><pre><code>page-break-before: auto |&#160;always |&#160;avoid |&#160;left |&#160;right |&#160;verso |&#160;recto</code></pre></div></div></div><div><div class="example"><div class="syntax-block"><table class="property-table"><tr><th scope="row">
@@ -2085,7 +2085,7 @@ supplier, item { overflow-wrap: normal; }
     <code>recto</code>.
     </p><p class="note">
     This property is deprecated.  Use the property <code><a href="#prop-break-before">break-before</a></code>
-    instead.  See the documentation for <a href="paged#page-breaks">Page breaks</a> for more details.
+    instead.  See the documentation for <a href="/doc/paged#page-breaks">Page breaks</a> for more details.
     </p></div><div><div id="prop-page-break-before-seealso">See Also</div><ul><li><code><a href="#prop-break-before">break-before</a></code></li></ul></div><div><div id="prop-page-break-before-spec">Specification</div><ul><li><a href="https://www.w3.org/TR/CSS2/page.html#propdef-page-break-before">CSS 2.1</a></li></ul></div></div></details>
 
 <details><summary id="prop-page-break-inside">page-break-inside <a class="self-link" href="#prop-page-break-inside"></a></summary><div><div><div id="prop-page-break-inside-syntax">Syntax</div><div class="example"><div class="syntax-block"><pre><code>page-break-inside: auto |&#160;avoid</code></pre></div></div></div><div><div class="example"><div class="syntax-block"><table class="property-table"><tr><th scope="row">
@@ -2101,7 +2101,7 @@ supplier, item { overflow-wrap: normal; }
     element.
     </p><p class="note">
     This property is deprecated.  Use the property <code><a href="#prop-break-inside">break-inside</a></code>
-    instead.  See the documentation for <a href="paged#page-breaks">Page breaks</a> for more details.
+    instead.  See the documentation for <a href="/doc/paged#page-breaks">Page breaks</a> for more details.
     </p></div><div><div id="prop-page-break-inside-seealso">See Also</div><ul><li><code><a href="#prop-break-inside">break-inside</a></code></li></ul></div><div><div id="prop-page-break-inside-spec">Specification</div><ul><li><a href="https://www.w3.org/TR/CSS2/page.html#propdef-page-break-before">CSS 2.1</a></li></ul></div></div></details>
 
 <details><summary class="ext" id="prop-page-group">page-group*  <a class="self-link" href="#prop-page-group"></a></summary><div><div><div id="prop-page-group-syntax">Syntax</div><div class="example"><div class="syntax-block"><pre><code>page-group: start |&#160;auto</code></pre></div></div></div><div><div class="example"><div class="syntax-block"><table class="property-table"><tr><th scope="row">
@@ -2117,7 +2117,7 @@ supplier, item { overflow-wrap: normal; }
 	matches the :first page class selector.
 	</p><p class="note">
         The property <a href="#prop-prince-page-group"><code>prince-page-group</code></a> can be used as an alias.
-        </p></div><div><div id="prop-page-group-seealso">See Also</div><ul><li><a href="paged#page-groups">Page groups</a></li></ul></div></div></details>
+        </p></div><div><div id="prop-page-group-seealso">See Also</div><ul><li><a href="/doc/paged#page-groups">Page groups</a></li></ul></div></div></details>
 
 <details><summary id="prop-position">position <a class="self-link" href="#prop-position"></a></summary><div><div><div id="prop-position-syntax">Syntax</div><div class="example"><div class="syntax-block"><pre><code>position: static |&#160;relative |&#160;absolute |&#160;fixed |&#160;running(&#160;<i>name</i>&#160;)</code></pre></div></div></div><div><div class="example"><div class="syntax-block"><table class="property-table"><tr><th scope="row">
           Initial value
@@ -2131,8 +2131,8 @@ supplier, item { overflow-wrap: normal; }
 	The <code>running()</code> function removes the element from the normal document
     flow and makes it available to be placed in a page region with the
     <code>element()</code> function of the <code><a href="#prop-content">content</a></code>
-    property.  See also <a href="gen-content#taking-elements-from-the-document">Taking elements from the document</a>.
-	</p></div><div><div id="prop-position-seealso">See Also</div><ul><li><a href="paged#page-regions">Page regions</a></li><li><a href="gen-content#taking-elements-from-the-document">Taking elements from the document</a></li><li><code><a href="#prop-content">content</a></code></li></ul></div><div><div id="prop-position-spec">Specification</div><ul><li><a href="https://www.w3.org/TR/CSS2/visuren.html#propdef-position">CSS 2.1</a></li><li><a href="https://www.w3.org/TR/css-gcpm-3/#running-syntax">CSS Generated Content for Paged Media Module</a></li></ul></div></div></details>
+    property.  See also <a href="/doc/gen-content#taking-elements-from-the-document">Taking elements from the document</a>.
+	</p></div><div><div id="prop-position-seealso">See Also</div><ul><li><a href="/doc/paged#page-regions">Page regions</a></li><li><a href="/doc/gen-content#taking-elements-from-the-document">Taking elements from the document</a></li><li><code><a href="#prop-content">content</a></code></li></ul></div><div><div id="prop-position-spec">Specification</div><ul><li><a href="https://www.w3.org/TR/CSS2/visuren.html#propdef-position">CSS 2.1</a></li><li><a href="https://www.w3.org/TR/css-gcpm-3/#running-syntax">CSS Generated Content for Paged Media Module</a></li></ul></div></div></details>
 
 <details><summary class="ext" id="prop-prince-alt-text">prince-alt-text*  <a class="self-link" href="#prop-prince-alt-text"></a></summary><div><div><div id="prop-prince-alt-text-syntax">Syntax</div><div class="example"><div class="syntax-block"><pre><code>prince-alt-text: auto |&#160;none |&#160;"string"</code></pre></div></div></div><div><div class="example"><div class="syntax-block"><table class="property-table"><tr><th scope="row">
           Initial value
@@ -2166,7 +2166,7 @@ supplier, item { overflow-wrap: normal; }
     resolution information.
     </p><p class="note">
         The property <a href="#prop-background-image-resolution"><code>background-image-resolution</code></a> can be used as an alias.
-        </p></div><div><div id="prop-prince-background-image-resolution-seealso">See Also</div><ul><li><a href="graphics#image-size">Image Size</a></li></ul></div></div></details>
+        </p></div><div><div id="prop-prince-background-image-resolution-seealso">See Also</div><ul><li><a href="/doc/graphics#image-size">Image Size</a></li></ul></div></div></details>
 
 <details><summary class="ext" id="prop-prince-bookmark-label">prince-bookmark-label*  <a class="self-link" href="#prop-prince-bookmark-label"></a></summary><div><div><div id="prop-prince-bookmark-label-syntax">Syntax</div><div class="example"><div class="syntax-block"><pre><code>prince-bookmark-label: none |&#160;<i>content</i></code></pre></div></div></div><div><div class="example"><div class="syntax-block"><table class="property-table"><tr><th scope="row">
           Initial value
@@ -2181,7 +2181,7 @@ supplier, item { overflow-wrap: normal; }
 	bookmark generated by the current element.
 	</p><p>
     Several ways of creating content are here defined by means of functions - the
-    detailed explanation can be found in the <a href="gen-content#generated-content-functions">Generated Content Functions</a>
+    detailed explanation can be found in the <a href="/doc/gen-content#generated-content-functions">Generated Content Functions</a>
     section.
     </p><p class="note">
 	Even though the initial value for this property is
@@ -2189,10 +2189,10 @@ supplier, item { overflow-wrap: normal; }
 	as the initial value for the <code><a href="#prop-prince-bookmark-level">prince-bookmark-level</a></code>
 	property is <code>none</code>.
     </p><p>
-	See the documentation for <a href="prince-output#pdf-bookmarks">PDF Bookmarks</a> for more details.
+	See the documentation for <a href="/doc/prince-output#pdf-bookmarks">PDF Bookmarks</a> for more details.
 	</p><p class="note">
         The property <a href="#prop-bookmark-label"><code>bookmark-label</code></a> can be used as an alias.
-        </p></div><div><div id="prop-prince-bookmark-label-seealso">See Also</div><ul><li><a href="gen-content#generated-content-functions">Generated Content Functions</a></li><li><a href="prince-output#bookmark-labels">Bookmark labels</a></li><li><code><a href="#prop-content">content</a></code></li></ul></div><div><div id="prop-prince-bookmark-label-spec">Specification</div><ul><li><a href="https://books.spec.whatwg.org/#'bookmark-label'">CSS Books</a></li></ul></div></div></details>
+        </p></div><div><div id="prop-prince-bookmark-label-seealso">See Also</div><ul><li><a href="/doc/gen-content#generated-content-functions">Generated Content Functions</a></li><li><a href="/doc/prince-output#bookmark-labels">Bookmark labels</a></li><li><code><a href="#prop-content">content</a></code></li></ul></div><div><div id="prop-prince-bookmark-label-spec">Specification</div><ul><li><a href="https://books.spec.whatwg.org/#'bookmark-label'">CSS Books</a></li></ul></div></div></details>
 
 <details><summary class="ext" id="prop-prince-bookmark-level">prince-bookmark-level*  <a class="self-link" href="#prop-prince-bookmark-level"></a></summary><div><div><div id="prop-prince-bookmark-level-syntax">Syntax</div><div class="example"><div class="syntax-block"><pre><code>prince-bookmark-level: none |&#160;<i>integer</i></code></pre></div></div></div><div><div class="example"><div class="syntax-block"><table class="property-table"><tr><th scope="row">
           Initial value
@@ -2205,10 +2205,10 @@ supplier, item { overflow-wrap: normal; }
                 </td></tr></table></div></div></div><div><div id="prop-prince-bookmark-level-comments">Comments</div><p>
 	This property is used to determine the numeric level in the bookmark
 	hierarchy of the PDF bookmark generated by the current element.
-	See the documentation for <a href="prince-output#pdf-bookmarks">PDF Bookmarks</a> for more details.
+	See the documentation for <a href="/doc/prince-output#pdf-bookmarks">PDF Bookmarks</a> for more details.
 	</p><p class="note">
         The property <a href="#prop-bookmark-level"><code>bookmark-level</code></a> can be used as an alias.
-        </p></div><div><div id="prop-prince-bookmark-level-seealso">See Also</div><ul><li><a href="prince-output#bookmark-levels">Bookmark levels</a></li></ul></div><div><div id="prop-prince-bookmark-level-spec">Specification</div><ul><li><a href="https://books.spec.whatwg.org/#'bookmark-level'">CSS Books</a></li></ul></div></div></details>
+        </p></div><div><div id="prop-prince-bookmark-level-seealso">See Also</div><ul><li><a href="/doc/prince-output#bookmark-levels">Bookmark levels</a></li></ul></div><div><div id="prop-prince-bookmark-level-spec">Specification</div><ul><li><a href="https://books.spec.whatwg.org/#'bookmark-level'">CSS Books</a></li></ul></div></div></details>
 
 <details><summary class="ext" id="prop-prince-bookmark-state">prince-bookmark-state*  <a class="self-link" href="#prop-prince-bookmark-state"></a></summary><div><div><div id="prop-prince-bookmark-state-syntax">Syntax</div><div class="example"><div class="syntax-block"><pre><code>prince-bookmark-state: open |&#160;closed</code></pre></div></div></div><div><div class="example"><div class="syntax-block"><table class="property-table"><tr><th scope="row">
           Initial value
@@ -2225,7 +2225,7 @@ supplier, item { overflow-wrap: normal; }
     deep bookmark tree.
     </p><p class="note">
         The property <a href="#prop-bookmark-state"><code>bookmark-state</code></a> can be used as an alias.
-        </p></div><div><div id="prop-prince-bookmark-state-seealso">See Also</div><ul><li><a href="prince-output#bookmark-levels">Bookmark levels</a></li></ul></div><div><div id="prop-prince-bookmark-state-spec">Specification</div><ul><li><a href="https://books.spec.whatwg.org/#'bookmark-state'">CSS Books</a></li></ul></div></div></details>
+        </p></div><div><div id="prop-prince-bookmark-state-seealso">See Also</div><ul><li><a href="/doc/prince-output#bookmark-levels">Bookmark levels</a></li></ul></div><div><div id="prop-prince-bookmark-state-spec">Specification</div><ul><li><a href="https://books.spec.whatwg.org/#'bookmark-state'">CSS Books</a></li></ul></div></div></details>
 
 <details><summary class="ext" id="prop-prince-bookmark-target">prince-bookmark-target*  <a class="self-link" href="#prop-prince-bookmark-target"></a></summary><div><div><div id="prop-prince-bookmark-target-syntax">Syntax</div><div class="example"><div class="syntax-block"><pre><code>prince-bookmark-target: self |&#160;url(&#160;<i>target-url</i>&#160;) |&#160;attr(&#160;<i>target-attr</i>&#160;)</code></pre></div></div></div><div><div class="example"><div class="syntax-block"><table class="property-table"><tr><th scope="row">
           Initial value
@@ -2238,10 +2238,10 @@ supplier, item { overflow-wrap: normal; }
                 </td></tr></table></div></div></div><div><div id="prop-prince-bookmark-target-comments">Comments</div><p>
 	This property is used to determine the link target for the
 	PDF bookmark generated by the current element.
-	See the documentation for <a href="prince-output#pdf-bookmarks">PDF Bookmarks</a> for more details.
+	See the documentation for <a href="/doc/prince-output#pdf-bookmarks">PDF Bookmarks</a> for more details.
 	</p><p class="note">
         The property <a href="#prop-bookmark-target"><code>bookmark-target</code></a> can be used as an alias.
-        </p></div><div><div id="prop-prince-bookmark-target-seealso">See Also</div><ul><li><a href="prince-output#bookmark-targets">Bookmark targets</a></li></ul></div></div></details>
+        </p></div><div><div id="prop-prince-bookmark-target-seealso">See Also</div><ul><li><a href="/doc/prince-output#bookmark-targets">Bookmark targets</a></li></ul></div></div></details>
 
 <details><summary class="ext" id="prop-prince-caption-page">prince-caption-page*  <a class="self-link" href="#prop-prince-caption-page"></a></summary><div><div><div id="prop-prince-caption-page-syntax">Syntax</div><div class="example"><div class="syntax-block"><pre><code>prince-caption-page: first |&#160;following |&#160;all</code></pre></div></div></div><div><div class="example"><div class="syntax-block"><table class="property-table"><tr><th scope="row">
           Initial value
@@ -2257,7 +2257,7 @@ supplier, item { overflow-wrap: normal; }
 	every page that a table appears on.
 	</p><p class="note">
         The property <a href="#prop-caption-page"><code>caption-page</code></a> can be used as an alias.
-        </p></div><div><div id="prop-prince-caption-page-seealso">See Also</div><ul><li><a href="styling#table-captions">Table captions</a></li></ul></div></div></details>
+        </p></div><div><div id="prop-prince-caption-page-seealso">See Also</div><ul><li><a href="/doc/styling#table-captions">Table captions</a></li></ul></div></div></details>
 
 <details><summary class="ext" id="prop-prince-expansion-text">prince-expansion-text*  <a class="self-link" href="#prop-prince-expansion-text"></a></summary><div><div><div id="prop-prince-expansion-text-syntax">Syntax</div><div class="example"><div class="syntax-block"><pre><code>prince-expansion-text: auto |&#160;none |&#160;"string"</code></pre></div></div></div><div><div class="example"><div class="syntax-block"><table class="property-table"><tr><th scope="row">
           Initial value
@@ -2285,7 +2285,7 @@ supplier, item { overflow-wrap: normal; }
 	prince-fallback-cmyk-profile: url("ISOcoated_v2_eci.icc");
 }</code></pre></div></div></div><div><div id="prop-prince-fallback-cmyk-profile-comments">Comments</div><p>
 	This property is used inside a
-    <a href="css-refs#at-prince-pdf"><code>@prince-pdf</code></a>
+    <a href="/doc/css-refs#at-prince-pdf"><code>@prince-pdf</code></a>
     at-rule to determine a fallback CMYK profile to be used for uncalibrated
     (untagged) CMYK colors or images, if it is not possible to use the output
     intent ICC profile (see <code><a href="#prop-prince-pdf-output-intent">prince-pdf-output-intent</a></code>).
@@ -2294,7 +2294,7 @@ supplier, item { overflow-wrap: normal; }
 	of a device dependent CMYK color, or when a PDF Profile requires that only device
 	independent color is present, in which case both untagged CMYK images and device
 	dependent CMYK colors are treated as uncalibrated CMYK colors.
-	</p></div><div><div id="prop-prince-fallback-cmyk-profile-seealso">See Also</div><ul><li><code><a href="#prop-prince-pdf-output-intent">prince-pdf-output-intent</a></code></li><li><a href="graphics#color-management">Color Management</a></li></ul></div></div></details>
+	</p></div><div><div id="prop-prince-fallback-cmyk-profile-seealso">See Also</div><ul><li><code><a href="#prop-prince-pdf-output-intent">prince-pdf-output-intent</a></code></li><li><a href="/doc/graphics#color-management">Color Management</a></li></ul></div></div></details>
 
 <details><summary class="ext" id="prop-prince-filter-resolution">prince-filter-resolution*  <a class="self-link" href="#prop-prince-filter-resolution"></a></summary><div><div><div id="prop-prince-filter-resolution-syntax">Syntax</div><div class="example"><div class="syntax-block"><pre><code>prince-filter-resolution: <i>dpi</i></code></pre></div></div></div><div><div class="example"><div class="syntax-block"><table class="property-table"><tr><th scope="row">
           Initial value
@@ -2306,9 +2306,9 @@ supplier, item { overflow-wrap: normal; }
     This property is used to specify the resolution used when
     rasterizing to images for applying CSS and SVG filters.  It can be
     used for individual elements, or inside a
-    <a href="css-refs#at-prince-pdf"><code>@prince-pdf</code></a>
+    <a href="/doc/css-refs#at-prince-pdf"><code>@prince-pdf</code></a>
     at-rule.  In this latter case, it affects all filters in the document.
-    </p></div><div><div id="prop-prince-filter-resolution-seealso">See Also</div><ul><li><a href="graphics#filters">Filters</a></li></ul></div></div></details>
+    </p></div><div><div id="prop-prince-filter-resolution-seealso">See Also</div><ul><li><a href="/doc/graphics#filters">Filters</a></li></ul></div></div></details>
 
 <details><summary class="ext" id="prop-prince-flow">prince-flow*  <a class="self-link" href="#prop-prince-flow"></a></summary><div><div><div id="prop-prince-flow-syntax">Syntax</div><div class="example"><div class="syntax-block"><pre><code>prince-flow: normal |&#160;static(&#160;<i>name</i>, [ start |&#160;current ]?&#160;)</code></pre></div></div></div><div><div class="example"><div class="syntax-block"><table class="property-table"><tr><th scope="row">
           Initial value
@@ -2327,10 +2327,10 @@ supplier, item { overflow-wrap: normal; }
     makes the fetched content available, as if it were fetched from the start
     of the document.
     </p><p>
-    See the documentation for <a href="gen-content#taking-elements-from-the-document">Taking elements from the document</a> for more details.
+    See the documentation for <a href="/doc/gen-content#taking-elements-from-the-document">Taking elements from the document</a> for more details.
     </p><p class="note">
         The property <a href="#prop-flow"><code>flow</code></a> can be used as an alias.
-        </p></div><div><div id="prop-prince-flow-seealso">See Also</div><ul><li><a href="paged#page-regions">Page regions</a></li><li><a href="gen-content#taking-elements-from-the-document">Taking elements from the document</a></li><li><code><a href="#prop-content">content</a></code></li></ul></div><div><div id="prop-prince-flow-spec">Specification</div><ul><li><a href="https://books.spec.whatwg.org/#flowing-content-to-a-named-area:-'flow'">CSS Books</a></li></ul></div></div></details>
+        </p></div><div><div id="prop-prince-flow-seealso">See Also</div><ul><li><a href="/doc/paged#page-regions">Page regions</a></li><li><a href="/doc/gen-content#taking-elements-from-the-document">Taking elements from the document</a></li><li><code><a href="#prop-content">content</a></code></li></ul></div><div><div id="prop-prince-flow-spec">Specification</div><ul><li><a href="https://books.spec.whatwg.org/#flowing-content-to-a-named-area:-'flow'">CSS Books</a></li></ul></div></div></details>
 
 <details><summary class="ext" id="prop-prince-footnote-policy">prince-footnote-policy*  <a class="self-link" href="#prop-prince-footnote-policy"></a></summary><div><div><div id="prop-prince-footnote-policy-syntax">Syntax</div><div class="example"><div class="syntax-block"><pre><code>prince-footnote-policy: auto |&#160;keep-with-line |&#160;keep-with-block</code></pre></div></div></div><div><div class="example"><div class="syntax-block"><table class="property-table"><tr><th scope="row">
           Initial value
@@ -2349,7 +2349,7 @@ supplier, item { overflow-wrap: normal; }
     </p><p class="note">
     The property must be applied to the paragraph in which the footnote	occurs, not
     to the footnote element itself.
-	</p></div><div><div id="prop-prince-footnote-policy-seealso">See Also</div><ul><li><a href="styling#footnotes">Footnotes</a></li></ul></div></div></details>
+	</p></div><div><div id="prop-prince-footnote-policy-seealso">See Also</div><ul><li><a href="/doc/styling#footnotes">Footnotes</a></li></ul></div></div></details>
 
 <details><summary class="ext" id="prop-prince-forced-breaks">prince-forced-breaks*  <a class="self-link" href="#prop-prince-forced-breaks"></a></summary><div><div><div id="prop-prince-forced-breaks-syntax">Syntax</div><div class="example"><div class="syntax-block"><pre><code>prince-forced-breaks: short |&#160;full</code></pre></div></div></div><div><div class="example"><div class="syntax-block"><table class="property-table"><tr><th scope="row">
           Initial value
@@ -2365,7 +2365,7 @@ supplier, item { overflow-wrap: normal; }
 	or whether being shorter than a normal full line is actually preferable,
 	for example to mark a deliberate break.</p><p>The difference is particularly marked in justified text,
 	where lines ended by <code>prince-forced-breaks:full</code> are subject to
-	justification like most other lines.</p><p>(Limitation: At the time of writing, this property only affects justified text.)</p><p>This property only applies to <a href="prince-for-books">Prince for Books</a>.</p></div><div><div id="prop-prince-forced-breaks-seealso">See Also</div><ul><li><a href="prince-for-books#line-breaking">Line breaking</a></li><li><a href="prince-for-books#the-property-prince-forced-breaks">The property prince-forced-breaks</a></li><li><code><a href="#prop-text-align-last">text-align-last</a></code></li><li><code><a href="#prop-white-space">white-space</a></code></li><li><code><a href="#prop-prince-wrap-inside">prince-wrap-inside</a></code></li></ul></div></div></details>
+	justification like most other lines.</p><p>(Limitation: At the time of writing, this property only affects justified text.)</p><p>This property only applies to <a href="/doc/prince-for-books">Prince for Books</a>.</p></div><div><div id="prop-prince-forced-breaks-seealso">See Also</div><ul><li><a href="/doc/prince-for-books#line-breaking">Line breaking</a></li><li><a href="/doc/prince-for-books#the-property-prince-forced-breaks">The property prince-forced-breaks</a></li><li><code><a href="#prop-text-align-last">text-align-last</a></code></li><li><code><a href="#prop-white-space">white-space</a></code></li><li><code><a href="#prop-prince-wrap-inside">prince-wrap-inside</a></code></li></ul></div></div></details>
 
 <details><summary class="ext" id="prop-prince-hyphenate-patterns">prince-hyphenate-patterns*  <a class="self-link" href="#prop-prince-hyphenate-patterns"></a></summary><div><div><div id="prop-prince-hyphenate-patterns-syntax">Syntax</div><div class="example"><div class="syntax-block"><pre><code>prince-hyphenate-patterns: none |&#160;url(&#160;<i>patterns-url</i>&#160;)</code></pre></div></div></div><div><div class="example"><div class="syntax-block"><table class="property-table"><tr><th scope="row">
           Initial value
@@ -2382,7 +2382,7 @@ supplier, item { overflow-wrap: normal; }
     The <code>url()</code> argument can take local paths or remote HTTP URLs as argument.
     </p><p class="note">
         The property <a href="#prop-hyphenate-patterns"><code>hyphenate-patterns</code></a> can be used as an alias.
-        </p></div><div><div id="prop-prince-hyphenate-patterns-seealso">See Also</div><ul><li><a href="cookbook#hyphenation">Hyphenation</a></li></ul></div></div></details>
+        </p></div><div><div id="prop-prince-hyphenate-patterns-seealso">See Also</div><ul><li><a href="/doc/cookbook#hyphenation">Hyphenation</a></li></ul></div></div></details>
 
 <details><summary class="ext" id="prop-prince-hyphenate-after">prince-hyphenate-after*  <a class="self-link" href="#prop-prince-hyphenate-after"></a></summary><div><div><div id="prop-prince-hyphenate-after-syntax">Syntax</div><div class="example"><div class="syntax-block"><pre><code>prince-hyphenate-after: <i>integer</i></code></pre></div></div></div><div><div class="example"><div class="syntax-block"><table class="property-table"><tr><th scope="row">
           Initial value
@@ -2397,7 +2397,7 @@ supplier, item { overflow-wrap: normal; }
 	may be moved to the next line when the word is hyphenated.
 	</p><p class="note">
         The property <a href="#prop-hyphenate-after"><code>hyphenate-after</code></a> can be used as an alias.
-        </p></div><div><div id="prop-prince-hyphenate-after-seealso">See Also</div><ul><li><a href="cookbook#hyphenation">Hyphenation</a></li></ul></div></div></details>
+        </p></div><div><div id="prop-prince-hyphenate-after-seealso">See Also</div><ul><li><a href="/doc/cookbook#hyphenation">Hyphenation</a></li></ul></div></div></details>
 
 <details><summary class="ext" id="prop-prince-hyphenate-before">prince-hyphenate-before*  <a class="self-link" href="#prop-prince-hyphenate-before"></a></summary><div><div><div id="prop-prince-hyphenate-before-syntax">Syntax</div><div class="example"><div class="syntax-block"><pre><code>prince-hyphenate-before: <i>integer</i></code></pre></div></div></div><div><div class="example"><div class="syntax-block"><table class="property-table"><tr><th scope="row">
           Initial value
@@ -2412,7 +2412,7 @@ supplier, item { overflow-wrap: normal; }
 	may be left at the end of a line when the word is hyphenated.
 	</p><p class="note">
         The property <a href="#prop-hyphenate-before"><code>hyphenate-before</code></a> can be used as an alias.
-        </p></div><div><div id="prop-prince-hyphenate-before-seealso">See Also</div><ul><li><a href="cookbook#hyphenation">Hyphenation</a></li></ul></div></div></details>
+        </p></div><div><div id="prop-prince-hyphenate-before-seealso">See Also</div><ul><li><a href="/doc/cookbook#hyphenation">Hyphenation</a></li></ul></div></div></details>
 
 <details><summary class="ext" id="prop-prince-hyphenate-character">prince-hyphenate-character*  <a class="self-link" href="#prop-prince-hyphenate-character"></a></summary><div><div><div id="prop-prince-hyphenate-character-syntax">Syntax</div><div class="example"><div class="syntax-block"><pre><code>prince-hyphenate-character: auto |&#160;"string"</code></pre></div></div></div><div><div class="example"><div class="syntax-block"><table class="property-table"><tr><th scope="row">
           Initial value
@@ -2427,7 +2427,7 @@ supplier, item { overflow-wrap: normal; }
 	when the word is hyphenated.
 	</p><p class="note">
         The property <a href="#prop-hyphenate-character"><code>hyphenate-character</code></a> can be used as an alias.
-        </p></div><div><div id="prop-prince-hyphenate-character-seealso">See Also</div><ul><li><a href="cookbook#hyphenation">Hyphenation</a></li></ul></div></div></details>
+        </p></div><div><div id="prop-prince-hyphenate-character-seealso">See Also</div><ul><li><a href="/doc/cookbook#hyphenation">Hyphenation</a></li></ul></div></div></details>
 
 <details><summary class="ext" id="prop-prince-hyphenate-limit-lines">prince-hyphenate-limit-lines*  <a class="self-link" href="#prop-prince-hyphenate-limit-lines"></a></summary><div><div><div id="prop-prince-hyphenate-limit-lines-syntax">Syntax</div><div class="example"><div class="syntax-block"><pre><code>prince-hyphenate-limit-lines: no-limit |&#160;<i>integer</i></code></pre></div></div></div><div><div class="example"><div class="syntax-block"><table class="property-table"><tr><th scope="row">
           Initial value
@@ -2442,7 +2442,7 @@ supplier, item { overflow-wrap: normal; }
 	may end with a hyphenated word.
 	</p><p class="note">
         The property <a href="#prop-hyphenate-lines"><code>hyphenate-lines</code></a> can be used as an alias.
-        </p></div><div><div id="prop-prince-hyphenate-limit-lines-seealso">See Also</div><ul><li><a href="cookbook#hyphenation">Hyphenation</a></li></ul></div><div><div id="prop-prince-hyphenate-limit-lines-spec">Specification</div><ul><li><a href="https://www.w3.org/TR/css-text-4/#hyphenate-line-limits">CSS Text Module Level 4</a></li></ul></div></div></details>
+        </p></div><div><div id="prop-prince-hyphenate-limit-lines-seealso">See Also</div><ul><li><a href="/doc/cookbook#hyphenation">Hyphenation</a></li></ul></div><div><div id="prop-prince-hyphenate-limit-lines-spec">Specification</div><ul><li><a href="https://www.w3.org/TR/css-text-4/#hyphenate-line-limits">CSS Text Module Level 4</a></li></ul></div></div></details>
 
 <details><summary class="ext" id="prop-prince-hyphenate-lines">prince-hyphenate-lines*  <a class="self-link" href="#prop-prince-hyphenate-lines"></a></summary><div><div><div id="prop-prince-hyphenate-lines-syntax">Syntax</div><div class="example"><div class="syntax-block"><pre><code>prince-hyphenate-lines: no-limit |&#160;<i>integer</i></code></pre></div></div></div><div><div class="example"><div class="syntax-block"><table class="property-table"><tr><th scope="row">
           Initial value
@@ -2457,7 +2457,7 @@ supplier, item { overflow-wrap: normal; }
 	may end with a hyphenated word.
 	</p><p class="note">
         The property <a href="#prop-prince-hyphenate-limit-lines"><code>prince-hyphenate-limit-lines</code></a> can be used as an alias.
-        </p></div><div><div id="prop-prince-hyphenate-lines-seealso">See Also</div><ul><li><a href="cookbook#hyphenation">Hyphenation</a></li></ul></div><div><div id="prop-prince-hyphenate-lines-spec">Specification</div><ul><li><a href="https://www.w3.org/TR/css-text-4/#hyphenate-line-limits">CSS Text Module Level 4</a></li></ul></div></div></details>
+        </p></div><div><div id="prop-prince-hyphenate-lines-seealso">See Also</div><ul><li><a href="/doc/cookbook#hyphenation">Hyphenation</a></li></ul></div><div><div id="prop-prince-hyphenate-lines-spec">Specification</div><ul><li><a href="https://www.w3.org/TR/css-text-4/#hyphenate-line-limits">CSS Text Module Level 4</a></li></ul></div></div></details>
 
 <details><summary class="ext" id="prop-prince-image-magic">prince-image-magic*  <a class="self-link" href="#prop-prince-image-magic"></a></summary><div><div><div id="prop-prince-image-magic-syntax">Syntax</div><div class="example"><div class="syntax-block"><pre><code>prince-image-magic: none |&#160;[ snap-to-integer-coords ||&#160;ignore-icc-profile ||&#160;[ jpeg-verbatim |&#160;recompress-jpeg(&#160;<i>percent</i>&#160;) ] ||&#160;[ convert-to-jpeg |&#160;convert-to-jpeg(&#160;<i>percent</i>&#160;) ] ]</code></pre></div></div></div><div><div class="example"><div class="syntax-block"><table class="property-table"><tr><th scope="row">
           Initial value
@@ -2490,7 +2490,7 @@ supplier, item { overflow-wrap: normal; }
     </p><p class="note">
     Several of the values can be combined, to perform more than one
     magic on images.
-    </p></div><div><div id="prop-prince-image-magic-seealso">See Also</div><ul><li><a href="graphics#image-size">Image Size</a></li><li><a href="cookbook#image-magic">Image Magic</a></li></ul></div></div></details>
+    </p></div><div><div id="prop-prince-image-magic-seealso">See Also</div><ul><li><a href="/doc/graphics#image-size">Image Size</a></li><li><a href="/doc/cookbook#image-magic">Image Magic</a></li></ul></div></div></details>
 
 <details><summary class="ext" id="prop-prince-image-resolution">prince-image-resolution*  <a class="self-link" href="#prop-prince-image-resolution"></a></summary><div><div><div id="prop-prince-image-resolution-syntax">Syntax</div><div class="example"><div class="syntax-block"><pre><code>prince-image-resolution: <i>dpi</i> |&#160;normal |&#160;auto [ , normal |&#160;<i>dpi</i> ]?</code></pre></div></div></div><div><div class="example"><div class="syntax-block"><table class="property-table"><tr><th scope="row">
           Initial value
@@ -2510,7 +2510,7 @@ supplier, item { overflow-wrap: normal; }
     resolution information.
     </p><p class="note">
         The property <a href="#prop-image-resolution"><code>image-resolution</code></a> can be used as an alias.
-        </p></div><div><div id="prop-prince-image-resolution-seealso">See Also</div><ul><li><a href="graphics#image-size">Image Size</a></li></ul></div></div></details>
+        </p></div><div><div id="prop-prince-image-resolution-seealso">See Also</div><ul><li><a href="/doc/graphics#image-size">Image Size</a></li></ul></div></div></details>
 
 <details><summary class="ext" id="prop-prince-linebreak-magic">prince-linebreak-magic*  <a class="self-link" href="#prop-prince-linebreak-magic"></a></summary><div><div><div id="prop-prince-linebreak-magic-syntax">Syntax</div><div class="example"><div class="syntax-block"><pre><code>prince-linebreak-magic: none |&#160;auto</code></pre></div></div></div><div><div class="example"><div class="syntax-block"><table class="property-table"><tr><th scope="row">
           Initial value
@@ -2525,7 +2525,7 @@ supplier, item { overflow-wrap: normal; }
 	absence of whitespace. For example, after slashes in long URLs. It can
 	be disabled for situations in which more precise control over
 	line-breaking behavior is preferred.
-	</p></div><div><div id="prop-prince-linebreak-magic-seealso">See Also</div><ul><li><a href="styling#paragraph-formatting">Paragraph formatting</a></li></ul></div></div></details>
+	</p></div><div><div id="prop-prince-linebreak-magic-seealso">See Also</div><ul><li><a href="/doc/styling#paragraph-formatting">Paragraph formatting</a></li></ul></div></div></details>
 
 <details><summary class="ext" id="prop-prince-line-break-choices">prince-line-break-choices*  <a class="self-link" href="#prop-prince-line-break-choices"></a></summary><div><div><div id="prop-prince-line-break-choices-syntax">Syntax</div><div class="example"><div class="syntax-block"><pre><code>prince-line-break-choices: body |&#160;heading |&#160;title |&#160;body-lookahead |&#160;heading-lookahead |&#160;title-lookahead |&#160;fast</code></pre></div></div></div><div><div class="example"><div class="syntax-block"><table class="property-table"><tr><th scope="row">
           Initial value
@@ -2556,12 +2556,12 @@ supplier, item { overflow-wrap: normal; }
     breaking, useful for testing the effect of styling changes that don't depend
     on good line breaking.
     </p><p>
-    For more details, please see <a href="prince-for-books#line-breaking">Line breaking</a>.
+    For more details, please see <a href="/doc/prince-for-books#line-breaking">Line breaking</a>.
     </p><p>
-    This property only applies to <a href="prince-for-books">Prince for Books</a>.
+    This property only applies to <a href="/doc/prince-for-books">Prince for Books</a>.
     </p><p class="note">
         The property <a href="#prop-prince-text-wrap"><code>prince-text-wrap</code></a> can be used as an alias.
-        </p></div><div><div id="prop-prince-line-break-choices-seealso">See Also</div><ul><li><a href="prince-for-books#line-breaking">Line breaking</a></li><li><a href="prince-for-books#the-property-prince-line-break-choices">The property prince-line-break-choices</a></li></ul></div></div></details>
+        </p></div><div><div id="prop-prince-line-break-choices-seealso">See Also</div><ul><li><a href="/doc/prince-for-books#line-breaking">Line breaking</a></li><li><a href="/doc/prince-for-books#the-property-prince-line-break-choices">The property prince-line-break-choices</a></li></ul></div></div></details>
 
 <details><summary class="ext" id="prop-prince-link">prince-link*  <a class="self-link" href="#prop-prince-link"></a></summary><div><div><div id="prop-prince-link-syntax">Syntax</div><div class="example"><div class="syntax-block"><pre><code>prince-link: none |&#160;url(&#160;<i>target-url</i>&#160;) |&#160;attr(&#160;<i>target-attr</i>&#160;)</code></pre></div></div></div><div><div class="example"><div class="syntax-block"><table class="property-table"><tr><th scope="row">
           Initial value
@@ -2575,7 +2575,7 @@ supplier, item { overflow-wrap: normal; }
     This property makes an element into a link to the specified URL.
     </p><p class="note">
         The property <a href="#prop-link"><code>link</code></a> can be used as an alias.
-        </p></div><div><div id="prop-prince-link-seealso">See Also</div><ul><li><a href="prince-output#pdf-links">PDF Links</a></li></ul></div></div></details>
+        </p></div><div><div id="prop-prince-link-seealso">See Also</div><ul><li><a href="/doc/prince-output#pdf-links">PDF Links</a></li></ul></div></div></details>
 
 <details><summary class="ext" id="prop-prince-mark-length">prince-mark-length*  <a class="self-link" href="#prop-prince-mark-length"></a></summary><div><div><div id="prop-prince-mark-length-syntax">Syntax</div><div class="example"><div class="syntax-block"><pre><code>prince-mark-length: <i>length</i></code></pre></div></div></div><div><div class="example"><div class="syntax-block"><table class="property-table"><tr><th scope="row">
           Initial value
@@ -2650,7 +2650,7 @@ supplier, item { overflow-wrap: normal; }
     content to change in size, affecting what is the last line before the
     break, and if this in turn affects line-breaking decisions made to avoid
     having a hyphenation at the end of a page.
-    </p><p>This property only applies to <a href="prince-for-books">Prince for Books</a>.</p></div><div><div id="prop-prince-n-lines-seealso">See Also</div><ul><li><a href="prince-for-books#spread-balancing">Spread Balancing</a></li><li><a href="prince-for-books#the-property-prince-n-lines">The property prince-n-lines</a></li></ul></div></div></details>
+    </p><p>This property only applies to <a href="/doc/prince-for-books">Prince for Books</a>.</p></div><div><div id="prop-prince-n-lines-seealso">See Also</div><ul><li><a href="/doc/prince-for-books#spread-balancing">Spread Balancing</a></li><li><a href="/doc/prince-for-books#the-property-prince-n-lines">The property prince-n-lines</a></li></ul></div></div></details>
 
 <details><summary class="ext" id="prop-prince-page-fill">prince-page-fill*  <a class="self-link" href="#prop-prince-page-fill"></a></summary><div><div><div id="prop-prince-page-fill-syntax">Syntax</div><div class="example"><div class="syntax-block"><pre><code>prince-page-fill: prefer-balance |&#160;prefer-fill</code></pre></div></div></div><div><div class="example"><div class="syntax-block"><table class="property-table"><tr><th scope="row">
           Initial value
@@ -2663,7 +2663,7 @@ supplier, item { overflow-wrap: normal; }
                 </td></tr></table></div></div></div><div><div id="prop-prince-page-fill-comments">Comments</div><p>
 	This property determines whether Prince should balance text layout on page
     spreads.
-	</p><p>This property only applies to <a href="prince-for-books">Prince for Books</a>.</p></div><div><div id="prop-prince-page-fill-seealso">See Also</div><ul><li><a href="prince-for-books#spread-balancing">Spread Balancing</a></li><li><a href="prince-for-books#the-property-prince-n-lines">The property prince-n-lines</a></li></ul></div></div></details>
+	</p><p>This property only applies to <a href="/doc/prince-for-books">Prince for Books</a>.</p></div><div><div id="prop-prince-page-fill-seealso">See Also</div><ul><li><a href="/doc/prince-for-books#spread-balancing">Spread Balancing</a></li><li><a href="/doc/prince-for-books#the-property-prince-n-lines">The property prince-n-lines</a></li></ul></div></div></details>
 
 <details><summary class="ext" id="prop-prince-page-group">prince-page-group*  <a class="self-link" href="#prop-prince-page-group"></a></summary><div><div><div id="prop-prince-page-group-syntax">Syntax</div><div class="example"><div class="syntax-block"><pre><code>prince-page-group: start |&#160;auto</code></pre></div></div></div><div><div class="example"><div class="syntax-block"><table class="property-table"><tr><th scope="row">
           Initial value
@@ -2678,7 +2678,7 @@ supplier, item { overflow-wrap: normal; }
 	matches the :first page class selector.
 	</p><p class="note">
         The property <a href="#prop-page-group"><code>page-group</code></a> can be used as an alias.
-        </p></div><div><div id="prop-prince-page-group-seealso">See Also</div><ul><li><a href="paged#page-groups">Page groups</a></li></ul></div></div></details>
+        </p></div><div><div id="prop-prince-page-group-seealso">See Also</div><ul><li><a href="/doc/paged#page-groups">Page groups</a></li></ul></div></div></details>
 
 <details><summary class="ext" id="prop-prince-pdf-color-conversion">prince-pdf-color-conversion*  <a class="self-link" href="#prop-prince-pdf-color-conversion"></a></summary><div><div><div id="prop-prince-pdf-color-conversion-syntax">Syntax</div><div class="example"><div class="syntax-block"><pre><code>prince-pdf-color-conversion: auto |&#160;none</code></pre></div></div></div><div><div class="example"><div class="syntax-block"><table class="property-table"><tr><th scope="row">
           Initial value
@@ -2707,14 +2707,14 @@ supplier, item { overflow-wrap: normal; }
               no
             </td></tr></table></div></div></div><div><div id="prop-prince-pdf-color-conversion-comments2">Comments</div><p>
     As a descriptor inside the
-    <a href="css-refs#at-prince-pdf"><code>@prince-pdf</code></a>
+    <a href="/doc/css-refs#at-prince-pdf"><code>@prince-pdf</code></a>
     at-rule, <code><a href="#prop-prince-pdf-color-conversion">prince-pdf-color-conversion</a></code> is used
     to convert the colors of the PDF to the output intent color space, or to a
     color profile of choice.
     </p><p>
     When used with the default value <code>output-intent</code>, it functions
     like the
-    <a href="command-line#cl-convert-colors"><code>--convert-colors</code></a>
+    <a href="/doc/command-line#cl-convert-colors"><code>--convert-colors</code></a>
     command-line option - the colors are converted to the output intent color profile.
 	</p><p class="note">
     The value <code>full</code> is a deprecated synonym for <code>output-intent</code>.
@@ -2724,7 +2724,7 @@ supplier, item { overflow-wrap: normal; }
     </p><p class="note">
     When the descriptor is used as a property, applied to single elements, it
     has a different syntax - see above.
-    </p></div><div><div id="prop-prince-pdf-color-conversion-seealso2">See Also</div><ul><li><a href="graphics#color-conversion">Color conversion</a></li></ul></div></div></details>
+    </p></div><div><div id="prop-prince-pdf-color-conversion-seealso2">See Also</div><ul><li><a href="/doc/graphics#color-conversion">Color conversion</a></li></ul></div></div></details>
 
 <details><summary class="ext" id="prop-prince-pdf-color-options">prince-pdf-color-options*  <a class="self-link" href="#prop-prince-pdf-color-options"></a></summary><div><div><div id="prop-prince-pdf-color-options-syntax">Syntax</div><div class="example"><div class="syntax-block"><pre><code>prince-pdf-color-options: auto |&#160;use-true-black |&#160;use-rich-black</code></pre></div></div></div><div><div class="example"><div class="syntax-block"><table class="property-table"><tr><th scope="row">
           Initial value
@@ -2740,7 +2740,7 @@ supplier, item { overflow-wrap: normal; }
 		when <code>use-true-black</code> is used, they are encoded in the /DeviceGray colorspace
 		in the PDF, instead of /DeviceRGB, whereas <code>use-rich-black</code> disables this behavior
 		and keeps all the colors in RGB. Currently, auto is equivalent to <code>use-true-black</code>.
-		</p></div><div><div id="prop-prince-pdf-color-options-seealso">See Also</div><ul><li><a href="graphics#rich-black-and-true-black">Rich black and true black</a></li></ul></div></div></details>
+		</p></div><div><div id="prop-prince-pdf-color-options-seealso">See Also</div><ul><li><a href="/doc/graphics#rich-black-and-true-black">Rich black and true black</a></li></ul></div></div></details>
 
 <details><summary class="ext" id="prop-prince-pdf-destination">prince-pdf-destination*  <a class="self-link" href="#prop-prince-pdf-destination"></a></summary><div><div><div id="prop-prince-pdf-destination-syntax">Syntax</div><div class="example"><div class="syntax-block"><pre><code>prince-pdf-destination: none |&#160;"name" |&#160;attr(&#160;<i>attr</i>&#160;)</code></pre></div></div></div><div><div class="example"><div class="syntax-block"><table class="property-table"><tr><th scope="row">
           Initial value
@@ -2753,7 +2753,7 @@ supplier, item { overflow-wrap: normal; }
                 </td></tr></table></div></div></div><div><div id="prop-prince-pdf-destination-comments">Comments</div><p>
     This property may be used to create "named destinations" (<code>nameddest</code>)
     in generated PDF files which can be linked to from other documents.
-    </p></div><div><div id="prop-prince-pdf-destination-seealso">See Also</div><ul><li><a href="prince-output#pdf-links">PDF Links</a></li></ul></div></div></details>
+    </p></div><div><div id="prop-prince-pdf-destination-seealso">See Also</div><ul><li><a href="/doc/prince-output#pdf-links">PDF Links</a></li></ul></div></div></details>
 
 <details><summary class="ext" id="prop-prince-pdf-display-doc-title">prince-pdf-display-doc-title*  <a class="self-link" href="#prop-prince-pdf-display-doc-title"></a></summary><div><div><div id="prop-prince-pdf-display-doc-title-syntax">Syntax</div><div class="example"><div class="syntax-block"><pre><code>prince-pdf-display-doc-title: true |&#160;false</code></pre></div></div></div><div><div class="example"><div class="syntax-block"><table class="property-table"><tr><th scope="row">
           Initial value
@@ -2783,7 +2783,7 @@ supplier, item { overflow-wrap: normal; }
                   no
                 </td></tr></table></div></div></div><div><div id="prop-prince-pdf-duplex-comments">Comments</div><p>
 	This property may be used inside the
-    <a href="css-refs#at-prince-pdf"><code>@prince-pdf</code></a>
+    <a href="/doc/css-refs#at-prince-pdf"><code>@prince-pdf</code></a>
     at-rule to set the <code>Duplex</code> property in the
     <code>PDFViewerPreferences</code> dictionary.
 	</p></div></div></details>
@@ -2804,7 +2804,7 @@ supplier, item { overflow-wrap: normal; }
 	</p><p class="note">
     Please be advised that these scripts are dependent on the PDF viewer, and
     in many cases might only work in Adobe Acrobat products.
-    </p></div><div><div id="prop-prince-pdf-event-scripts-seealso">See Also</div><ul><li><a href="prince-output#pdf-actions">PDF Actions</a></li></ul></div></div></details>
+    </p></div><div><div id="prop-prince-pdf-event-scripts-seealso">See Also</div><ul><li><a href="/doc/prince-output#pdf-actions">PDF Actions</a></li></ul></div></div></details>
 
 <details><summary class="ext" id="prop-prince-pdf-link-type">prince-pdf-link-type*  <a class="self-link" href="#prop-prince-pdf-link-type"></a></summary><div><div><div id="prop-prince-pdf-link-type-syntax">Syntax</div><div class="example"><div class="syntax-block"><pre><code>prince-pdf-link-type: [ auto |&#160;file ]? [ same-window |&#160;new-window ]? |&#160;web</code></pre></div></div></div><div><div class="example"><div class="syntax-block"><table class="property-table"><tr><th scope="row">
           Initial value
@@ -2822,7 +2822,7 @@ supplier, item { overflow-wrap: normal; }
 	</p><p>
     Note however that the optional link target keywords <code>same-window</code>
     and <code>new-window</code> only affect links to local PDF files.
-    </p></div><div><div id="prop-prince-pdf-link-type-seealso">See Also</div><ul><li><a href="prince-output#pdf-links">PDF Links</a></li></ul></div></div></details>
+    </p></div><div><div id="prop-prince-pdf-link-type-seealso">See Also</div><ul><li><a href="/doc/prince-output#pdf-links">PDF Links</a></li></ul></div></div></details>
 
 <details><summary class="ext" id="prop-prince-pdf-open-action">prince-pdf-open-action*  <a class="self-link" href="#prop-prince-pdf-open-action"></a></summary><div><div><div id="prop-prince-pdf-open-action-syntax">Syntax</div><div class="example"><div class="syntax-block"><pre><code>prince-pdf-open-action: none |&#160;[ print |&#160;command(&#160;<i>ident</i>&#160;) |&#160;zoom(&#160;fit-page |&#160;fit-width |&#160;fit-height |&#160;<i>percent</i>&#160;) ]+</code></pre></div></div></div><div><div class="example"><div class="syntax-block"><table class="property-table"><tr><th scope="row">
           Initial value
@@ -2838,7 +2838,7 @@ supplier, item { overflow-wrap: normal; }
     automatically, or setting the default zoom level for PDF documents.  Any
     arbitrary identifier can be specified, although these may be PDF viewer
     specific; Acrobat can take just about any menu item.
-	</p></div><div><div id="prop-prince-pdf-open-action-seealso">See Also</div><ul><li><a href="prince-output#pdf-actions">PDF Actions</a></li></ul></div></div></details>
+	</p></div><div><div id="prop-prince-pdf-open-action-seealso">See Also</div><ul><li><a href="/doc/prince-output#pdf-actions">PDF Actions</a></li></ul></div></div></details>
 
 <details><summary class="ext" id="prop-prince-pdf-output-intent">prince-pdf-output-intent*  <a class="self-link" href="#prop-prince-pdf-output-intent"></a></summary><div><div><div id="prop-prince-pdf-output-intent-syntax">Syntax</div><div class="example"><div class="syntax-block"><pre><code>prince-pdf-output-intent: auto |&#160;url(&#160;<i>filename</i>&#160;)</code></pre></div></div></div><div><div class="example"><div class="syntax-block"><table class="property-table"><tr><th scope="row">
           Initial value
@@ -2849,9 +2849,9 @@ supplier, item { overflow-wrap: normal; }
         </th><td /></tr></table></div></div></div><div><div id="prop-prince-pdf-output-intent-examples">Examples</div><div class="example"><div class="programlisting"><pre><code>@prince-pdf {
     prince-pdf-output-intent: url("ISOcoated_v2_eci.icc")
 }</code></pre></div></div></div><div><div id="prop-prince-pdf-output-intent-comments">Comments</div><p>
-    This property is used inside a <a href="css-refs#at-prince-pdf"><code>@prince-pdf</code></a>
+    This property is used inside a <a href="/doc/css-refs#at-prince-pdf"><code>@prince-pdf</code></a>
     at-rule to select the intended output color space of the generated PDF file.
-    </p></div><div><div id="prop-prince-pdf-output-intent-seealso">See Also</div><ul><li><code><a href="#prop-prince-fallback-cmyk-profile">prince-fallback-cmyk-profile</a></code></li><li><a href="graphics#color-management">Color Management</a></li></ul></div></div></details>
+    </p></div><div><div id="prop-prince-pdf-output-intent-seealso">See Also</div><ul><li><code><a href="#prop-prince-fallback-cmyk-profile">prince-fallback-cmyk-profile</a></code></li><li><a href="/doc/graphics#color-management">Color Management</a></li></ul></div></div></details>
 
 <details><summary class="ext" id="prop-prince-pdf-page-colorspace">prince-pdf-page-colorspace*  <a class="self-link" href="#prop-prince-pdf-page-colorspace"></a></summary><div><div><div id="prop-prince-pdf-page-colorspace-syntax">Syntax</div><div class="example"><div class="syntax-block"><pre><code>prince-pdf-page-colorspace: auto |&#160;none |&#160;rgb |&#160;cmyk |&#160;gray</code></pre></div></div></div><div><div class="example"><div class="syntax-block"><table class="property-table"><tr><th scope="row">
           Initial value
@@ -2869,7 +2869,7 @@ supplier, item { overflow-wrap: normal; }
 	<code>auto</code> uses the output intent color space or the destination
 	color space when color conversion is enabled, or falls back to
 	<code>rgb</code> in the absence of a specified output intent.
-	</p></div><div><div id="prop-prince-pdf-page-colorspace-seealso">See Also</div><ul><li><a href="graphics#page-color-space">Page color space</a></li></ul></div></div></details>
+	</p></div><div><div id="prop-prince-pdf-page-colorspace-seealso">See Also</div><ul><li><a href="/doc/graphics#page-color-space">Page color space</a></li></ul></div></div></details>
 
 <details><summary class="ext" id="prop-prince-pdf-page-label">prince-pdf-page-label*  <a class="self-link" href="#prop-prince-pdf-page-label"></a></summary><div><div><div id="prop-prince-pdf-page-label-syntax">Syntax</div><div class="example"><div class="syntax-block"><pre><code>prince-pdf-page-label: auto |&#160;<i>content</i></code></pre></div></div></div><div><div class="example"><div class="syntax-block"><table class="property-table"><tr><th scope="row">
           Initial value
@@ -2884,9 +2884,9 @@ supplier, item { overflow-wrap: normal; }
 	in the PDF viewer.
     </p><p>
     Several ways of creating content are here defined by means of functions - the
-    detailed explanation can be found in the <a href="gen-content#generated-content-functions">Generated Content Functions</a>
+    detailed explanation can be found in the <a href="/doc/gen-content#generated-content-functions">Generated Content Functions</a>
     section.
-    </p></div><div><div id="prop-prince-pdf-page-label-seealso">See Also</div><ul><li><a href="gen-content#generated-content-functions">Generated Content Functions</a></li><li><a href="prince-output#pdf-pages">PDF Pages</a></li><li><code><a href="#prop-content">content</a></code></li></ul></div></div></details>
+    </p></div><div><div id="prop-prince-pdf-page-label-seealso">See Also</div><ul><li><a href="/doc/gen-content#generated-content-functions">Generated Content Functions</a></li><li><a href="/doc/prince-output#pdf-pages">PDF Pages</a></li><li><code><a href="#prop-content">content</a></code></li></ul></div></div></details>
 
 <details><summary class="ext" id="prop-prince-pdf-page-layout">prince-pdf-page-layout*  <a class="self-link" href="#prop-prince-pdf-page-layout"></a></summary><div><div><div id="prop-prince-pdf-page-layout-syntax">Syntax</div><div class="example"><div class="syntax-block"><pre><code>prince-pdf-page-layout: auto |&#160;single-page |&#160;two-page |&#160;two-page-left |&#160;two-page-right |&#160;one-column |&#160;two-column |&#160;two-column-left |&#160;two-column-right</code></pre></div></div></div><div><div class="example"><div class="syntax-block"><table class="property-table"><tr><th scope="row">
           Initial value
@@ -2900,7 +2900,7 @@ supplier, item { overflow-wrap: normal; }
 	This property can be used to set the default page layout for the PDF
 	file when it is opened. For example, whether the PDF pages should be
 	displayed in one or two columns.
-	</p></div><div><div id="prop-prince-pdf-page-layout-seealso">See Also</div><ul><li><a href="prince-output#pdf-pages">PDF Pages</a></li></ul></div></div></details>
+	</p></div><div><div id="prop-prince-pdf-page-layout-seealso">See Also</div><ul><li><a href="/doc/prince-output#pdf-pages">PDF Pages</a></li></ul></div></div></details>
 
 <details><summary class="ext" id="prop-prince-pdf-page-mode">prince-pdf-page-mode*  <a class="self-link" href="#prop-prince-pdf-page-mode"></a></summary><div><div><div id="prop-prince-pdf-page-mode-syntax">Syntax</div><div class="example"><div class="syntax-block"><pre><code>prince-pdf-page-mode: auto |&#160;show-attachments |&#160;show-bookmarks |&#160;fullscreen</code></pre></div></div></div><div><div class="example"><div class="syntax-block"><table class="property-table"><tr><th scope="row">
           Initial value
@@ -2914,7 +2914,7 @@ supplier, item { overflow-wrap: normal; }
 	This property can be used to set the default page mode for the PDF
 	file when it is opened. For example, whether the bookmarks panel should
 	be displayed, and whether the viewer should be fullscreen.
-	</p></div><div><div id="prop-prince-pdf-page-mode-seealso">See Also</div><ul><li><a href="prince-output#pdf-pages">PDF Pages</a></li></ul></div></div></details>
+	</p></div><div><div id="prop-prince-pdf-page-mode-seealso">See Also</div><ul><li><a href="/doc/prince-output#pdf-pages">PDF Pages</a></li></ul></div></div></details>
 
 <details><summary class="ext" id="prop-prince-pdf-paper-tray">prince-pdf-paper-tray*  <a class="self-link" href="#prop-prince-pdf-paper-tray"></a></summary><div><div><div id="prop-prince-pdf-paper-tray-syntax">Syntax</div><div class="example"><div class="syntax-block"><pre><code>prince-pdf-paper-tray: auto |&#160;pick-tray-by-pdf-size</code></pre></div></div></div><div><div class="example"><div class="syntax-block"><table class="property-table"><tr><th scope="row">
           Initial value
@@ -2928,7 +2928,7 @@ supplier, item { overflow-wrap: normal; }
 	This property controls the PickTrayByPDFSize flag in generated PDF
 	files, which specifies whether the PDF page size is used to select
     the input paper tray. (See the checkbox in the Acrobat print dialog).
-	</p></div><div><div id="prop-prince-pdf-paper-tray-seealso">See Also</div><ul><li><a href="prince-output#pdf-printing">PDF Printing</a></li></ul></div></div></details>
+	</p></div><div><div id="prop-prince-pdf-paper-tray-seealso">See Also</div><ul><li><a href="/doc/prince-output#pdf-printing">PDF Printing</a></li></ul></div></div></details>
 
 <details><summary class="ext" id="prop-prince-pdf-print-scaling">prince-pdf-print-scaling*  <a class="self-link" href="#prop-prince-pdf-print-scaling"></a></summary><div><div><div id="prop-prince-pdf-print-scaling-syntax">Syntax</div><div class="example"><div class="syntax-block"><pre><code>prince-pdf-print-scaling: auto |&#160;none</code></pre></div></div></div><div><div class="example"><div class="syntax-block"><table class="property-table"><tr><th scope="row">
           Initial value
@@ -2941,7 +2941,7 @@ supplier, item { overflow-wrap: normal; }
 }</code></pre></div></div></div><div><div id="prop-prince-pdf-print-scaling-comments">Comments</div><p>
 	This property can be used to disable print scaling for the PDF file when
     it is printed.
-	</p></div><div><div id="prop-prince-pdf-print-scaling-seealso">See Also</div><ul><li><a href="prince-output#pdf-printing">PDF Printing</a></li></ul></div></div></details>
+	</p></div><div><div id="prop-prince-pdf-print-scaling-seealso">See Also</div><ul><li><a href="/doc/prince-output#pdf-printing">PDF Printing</a></li></ul></div></div></details>
 
 <details><summary class="ext" id="prop-prince-pdf-profile">prince-pdf-profile*  <a class="self-link" href="#prop-prince-pdf-profile"></a></summary><div><div><div id="prop-prince-pdf-profile-syntax">Syntax</div><div class="example"><div class="syntax-block"><pre><code>prince-pdf-profile: none |&#160;"Profile"</code></pre></div></div></div><div><div class="example"><div class="syntax-block"><table class="property-table"><tr><th scope="row">
           Initial value
@@ -2953,8 +2953,8 @@ supplier, item { overflow-wrap: normal; }
     prince-pdf-profile: "PDF/X-3:2003"
 }</code></pre></div></div></div><div><div id="prop-prince-pdf-profile-comments">Comments</div><p>
     PDF Profiles are used to optimize the PDF file for its specific use - for
-    more details and the supported PDF profiles, see <a href="prince-output#pdf-versions-and-profiles">PDF Versions and Profiles</a>.
-    </p></div><div><div id="prop-prince-pdf-profile-seealso">See Also</div><ul><li><a href="prince-output#pdf-versions-and-profiles">PDF Versions and Profiles</a></li></ul></div></div></details>
+    more details and the supported PDF profiles, see <a href="/doc/prince-output#pdf-versions-and-profiles">PDF Versions and Profiles</a>.
+    </p></div><div><div id="prop-prince-pdf-profile-seealso">See Also</div><ul><li><a href="/doc/prince-output#pdf-versions-and-profiles">PDF Versions and Profiles</a></li></ul></div></div></details>
 
 <details><summary class="ext" id="prop-prince-pdf-script">prince-pdf-script*  <a class="self-link" href="#prop-prince-pdf-script"></a></summary><div><div><div id="prop-prince-pdf-script-syntax">Syntax</div><div class="example"><div class="syntax-block"><pre><code>prince-pdf-script: "JavaScript" |&#160;<i>url</i></code></pre></div></div></div><div><div class="example"><div class="syntax-block"><table class="property-table"><tr><th scope="row">
           Initial value
@@ -2972,7 +2972,7 @@ supplier, item { overflow-wrap: normal; }
     </p><p class="note">
     Please be advised that these scripts are dependent on the PDF viewer, and
     in many cases might only work in Adobe Acrobat products.
-    </p></div><div><div id="prop-prince-pdf-script-seealso">See Also</div><ul><li><a href="prince-output#pdf-actions">PDF Actions</a></li></ul></div></div></details>
+    </p></div><div><div id="prop-prince-pdf-script-seealso">See Also</div><ul><li><a href="/doc/prince-output#pdf-actions">PDF Actions</a></li></ul></div></div></details>
 
 <details><summary class="ext" id="prop-prince-pdf-tag-type">prince-pdf-tag-type*  <a class="self-link" href="#prop-prince-pdf-tag-type"></a></summary><div><div><div id="prop-prince-pdf-tag-type-syntax">Syntax</div><div class="example"><div class="syntax-block"><pre><code>prince-pdf-tag-type: auto |&#160;Part |&#160;Art |&#160;Sect |&#160;Div |&#160;Index |&#160;BlockQuote |&#160;Caption |&#160;TOC |&#160;TOCI |&#160;P |&#160;H1 |&#160;H2 |&#160;H3 |&#160;H4 |&#160;H5 |&#160;H6 |&#160;OL |&#160;UL |&#160;LI |&#160;Lbl |&#160;DL |&#160;DL-Div |&#160;DT |&#160;DD |&#160;Span |&#160;Quote |&#160;BibEntry |&#160;Code |&#160;Figure |&#160;Formula</code></pre></div></div></div><div><div class="example"><div class="syntax-block"><table class="property-table"><tr><th scope="row">
           Initial value
@@ -2988,7 +2988,7 @@ supplier, item { overflow-wrap: normal; }
 }</code></pre></div></div></div><div><div id="prop-prince-pdf-tag-type-comments">Comments</div><p>
     This property is used to influence tagged PDF for XML vocabularies or when
     using custom HTML classes.  The possible values are PDF tag types.
-    </p></div><div><div id="prop-prince-pdf-tag-type-seealso">See Also</div><ul><li><a href="prince-output#pdf-tags">PDF Tags</a></li></ul></div></div></details>
+    </p></div><div><div id="prop-prince-pdf-tag-type-seealso">See Also</div><ul><li><a href="/doc/prince-output#pdf-tags">PDF Tags</a></li></ul></div></div></details>
 
 <details><summary class="ext" id="prop-prince-pdf-xmp">prince-pdf-xmp*  <a class="self-link" href="#prop-prince-pdf-xmp"></a></summary><div><div><div id="prop-prince-pdf-xmp-syntax">Syntax</div><div class="example"><div class="syntax-block"><pre><code>prince-pdf-xmp: url(&#160;<i>filename</i>&#160;)</code></pre></div></div></div><div><div class="example"><div class="syntax-block"><table class="property-table"><tr><th scope="row">
           Initial value
@@ -2999,7 +2999,7 @@ supplier, item { overflow-wrap: normal; }
         </th><td /></tr></table></div></div></div><div><div id="prop-prince-pdf-xmp-examples">Examples</div><div class="example"><div class="programlisting"><pre><code>@prince-pdf {
     prince-pdf-xmp: url("xmp-file.xmp");
 }</code></pre></div></div></div><div><div id="prop-prince-pdf-xmp-comments">Comments</div><p>
-    This property can be used inside a <a href="css-refs#at-prince-pdf"><code>@prince-pdf</code></a>
+    This property can be used inside a <a href="/doc/css-refs#at-prince-pdf"><code>@prince-pdf</code></a>
     rule to add XMP metadata to a PDF file.  Currently it takes an XMP
     file as input and includes data from the &lt;x:xmpmeta&gt; element
     and its contents (the xpacket processing instructions are ignored, as
@@ -3024,7 +3024,7 @@ supplier, item { overflow-wrap: normal; }
 	</p><p>
     Please see the <code><a href="#prop-size">size</a></code> property for determining
     the default orientation of the page.
-    </p></div><div><div id="prop-prince-rotate-body-seealso">See Also</div><ul><li><a href="cookbook#printing-wide-content-sideways">Printing wide content sideways</a></li></ul></div></div></details>
+    </p></div><div><div id="prop-prince-rotate-body-seealso">See Also</div><ul><li><a href="/doc/cookbook#printing-wide-content-sideways">Printing wide content sideways</a></li></ul></div></div></details>
 
 <details><summary class="ext" id="prop-prince-shrink-to-fit">prince-shrink-to-fit*  <a class="self-link" href="#prop-prince-shrink-to-fit"></a></summary><div><div><div id="prop-prince-shrink-to-fit-syntax">Syntax</div><div class="example"><div class="syntax-block"><pre><code>prince-shrink-to-fit: none |&#160;auto</code></pre></div></div></div><div><div class="example"><div class="syntax-block"><table class="property-table"><tr><th scope="row">
           Initial value
@@ -3037,7 +3037,7 @@ supplier, item { overflow-wrap: normal; }
 }</code></pre></div></div></div><div><div id="prop-prince-shrink-to-fit-comments">Comments</div><p>
 	Specifying a value of <code>auto</code> will result in wide web pages being scaled
 	down in size to fit the paper width.
-	</p></div><div><div id="prop-prince-shrink-to-fit-seealso">See Also</div><ul><li><a href="cookbook#printing-wide-content-sideways">Printing wide content sideways</a></li></ul></div></div></details>
+	</p></div><div><div id="prop-prince-shrink-to-fit-seealso">See Also</div><ul><li><a href="/doc/cookbook#printing-wide-content-sideways">Printing wide content sideways</a></li></ul></div></div></details>
 
 <details><summary class="ext" id="prop-prince-table-column-span">prince-table-column-span*  <a class="self-link" href="#prop-prince-table-column-span"></a></summary><div><div><div id="prop-prince-table-column-span-syntax">Syntax</div><div class="example"><div class="syntax-block"><pre><code>prince-table-column-span: <i>number</i> |&#160;attr(&#160;<i>colspan</i>&#160;)</code></pre></div></div></div><div><div class="example"><div class="syntax-block"><table class="property-table"><tr><th scope="row">
           Initial value
@@ -3049,7 +3049,7 @@ supplier, item { overflow-wrap: normal; }
                   no
                 </td></tr></table></div></div></div><div><div id="prop-prince-table-column-span-comments">Comments</div><p>
 	This property applies to table cells and determines the number of
-	table columns spanned by the table cell. See the <a href="styling#tables">Tables</a>
+	table columns spanned by the table cell. See the <a href="/doc/styling#tables">Tables</a>
     documentation for more details.
 	</p><p class="note">
         The property <a href="#prop-table-column-span"><code>table-column-span</code></a> can be used as an alias.
@@ -3065,7 +3065,7 @@ supplier, item { overflow-wrap: normal; }
                   no
                 </td></tr></table></div></div></div><div><div id="prop-prince-table-row-span-comments">Comments</div><p>
 	This property applies to table cells and determines the number of
-	table rows spanned by the table cell. See the <a href="styling#tables">Tables</a>
+	table rows spanned by the table cell. See the <a href="/doc/styling#tables">Tables</a>
     documentation for more details.
 	</p><p class="note">
         The property <a href="#prop-table-row-span"><code>table-row-span</code></a> can be used as an alias.
@@ -3083,7 +3083,7 @@ supplier, item { overflow-wrap: normal; }
 	This property defines how to treat justified text.  The value <code>prince-cjk</code>
     allows space to be inserted between CJK characters when justifying even if there
     aren't any space characters.
-	</p></div><div><div id="prop-prince-text-justify-seealso">See Also</div><ul><li><a href="styling#paragraph-formatting">Paragraph formatting</a></li></ul></div></div></details>
+	</p></div><div><div id="prop-prince-text-justify-seealso">See Also</div><ul><li><a href="/doc/styling#paragraph-formatting">Paragraph formatting</a></li></ul></div></div></details>
 
 <details><summary class="ext" id="prop-prince-text-replace">prince-text-replace*  <a class="self-link" href="#prop-prince-text-replace"></a></summary><div><div><div id="prop-prince-text-replace-syntax">Syntax</div><div class="example"><div class="syntax-block"><pre><code>prince-text-replace: none |&#160;[ "search" "replace" ]+</code></pre></div></div></div><div><div class="example"><div class="syntax-block"><table class="property-table"><tr><th scope="row">
           Initial value
@@ -3100,7 +3100,7 @@ supplier, item { overflow-wrap: normal; }
     This property can be used to replace a character string with another one.  In
     the above example, all occurrences of "s" are replaced with the "long s", except
     if in the end of a word, where the replacement is reversed.
-	</p></div><div><div id="prop-prince-text-replace-seealso">See Also</div><ul><li><a href="characters">Character Entities</a></li></ul></div></div></details>
+	</p></div><div><div id="prop-prince-text-replace-seealso">See Also</div><ul><li><a href="/doc/characters">Character Entities</a></li></ul></div></div></details>
 
 <details><summary class="ext" id="prop-prince-text-wrap">prince-text-wrap*  <a class="self-link" href="#prop-prince-text-wrap"></a></summary><div><div><div id="prop-prince-text-wrap-syntax">Syntax</div><div class="example"><div class="syntax-block"><pre><code>prince-text-wrap: body |&#160;heading |&#160;title |&#160;body-lookahead |&#160;heading-lookahead |&#160;title-lookahead |&#160;fast</code></pre></div></div></div><div><div class="example"><div class="syntax-block"><table class="property-table"><tr><th scope="row">
           Initial value
@@ -3131,12 +3131,12 @@ supplier, item { overflow-wrap: normal; }
     breaking, useful for testing the effect of styling changes that don't depend
     on good line breaking.
     </p><p>
-    For more details, please see <a href="prince-for-books#line-breaking">Line breaking</a>.
+    For more details, please see <a href="/doc/prince-for-books#line-breaking">Line breaking</a>.
     </p><p>
-    This property only applies to <a href="prince-for-books">Prince for Books</a>.
+    This property only applies to <a href="/doc/prince-for-books">Prince for Books</a>.
     </p><p class="note">
         The property <a href="#prop-prince-line-break-choices"><code>prince-line-break-choices</code></a> can be used as an alias.
-        </p></div><div><div id="prop-prince-text-wrap-seealso">See Also</div><ul><li><a href="prince-for-books#line-breaking">Line breaking</a></li><li><a href="prince-for-books#the-property-prince-line-break-choices">The property prince-line-break-choices</a></li></ul></div></div></details>
+        </p></div><div><div id="prop-prince-text-wrap-seealso">See Also</div><ul><li><a href="/doc/prince-for-books#line-breaking">Line breaking</a></li><li><a href="/doc/prince-for-books#the-property-prince-line-break-choices">The property prince-line-break-choices</a></li></ul></div></div></details>
 
 <details><summary class="ext" id="prop-prince-tooltip">prince-tooltip*  <a class="self-link" href="#prop-prince-tooltip"></a></summary><div><div><div id="prop-prince-tooltip-syntax">Syntax</div><div class="example"><div class="syntax-block"><pre><code>prince-tooltip: transparent |&#160;none |&#160;normal |&#160;<i>content</i></code></pre></div></div></div><div><div class="example"><div class="syntax-block"><table class="property-table"><tr><th scope="row">
           Initial value
@@ -3157,13 +3157,13 @@ supplier, item { overflow-wrap: normal; }
     equivalent to <code>none</code>, rather than showing an empty tooltip.
     </p><p>
     Several ways of creating content are here defined by means of functions - the
-    detailed explanation can be found in the <a href="gen-content#generated-content-functions">Generated Content Functions</a>
+    detailed explanation can be found in the <a href="/doc/gen-content#generated-content-functions">Generated Content Functions</a>
     section.
     </p><p class="note">
 	Tooltips are not a standard PDF feature, and they may
 	only work in Adobe Reader and Adobe Acrobat and may not be visible in other
 	PDF viewers, such as web browsers.
-	</p></div><div><div id="prop-prince-tooltip-seealso">See Also</div><ul><li><a href="gen-content#generated-content-functions">Generated Content Functions</a></li><li><a href="gen-content">Generated Content</a></li><li><code><a href="#prop-content">content</a></code></li></ul></div></div></details>
+	</p></div><div><div id="prop-prince-tooltip-seealso">See Also</div><ul><li><a href="/doc/gen-content#generated-content-functions">Generated Content Functions</a></li><li><a href="/doc/gen-content">Generated Content</a></li><li><code><a href="#prop-content">content</a></code></li></ul></div></div></details>
 
 <details><summary class="ext" id="prop-prince-trim">prince-trim*  <a class="self-link" href="#prop-prince-trim"></a></summary><div><div><div id="prop-prince-trim-syntax">Syntax</div><div class="example"><div class="syntax-block"><pre><code>prince-trim: auto |&#160;[ <i>length</i> ]{1..4}</code></pre></div></div></div><div><div class="example"><div class="syntax-block"><table class="property-table"><tr><th scope="row">
           Initial value
@@ -3176,7 +3176,7 @@ supplier, item { overflow-wrap: normal; }
 }</code></pre></div></div></div><div><div id="prop-prince-trim-comments">Comments</div><p>
 	This CSS at-rule descriptor can be used to specify the size of the trim area of the
 	page when crop marks are enabled.
-	</p></div><div><div id="prop-prince-trim-seealso">See Also</div><ul><li><a href="paged#page-style">Page style</a></li><li><code><a href="#prop-bleed">bleed</a></code></li></ul></div></div></details>
+	</p></div><div><div id="prop-prince-trim-seealso">See Also</div><ul><li><a href="/doc/paged#page-style">Page style</a></li><li><code><a href="#prop-bleed">bleed</a></code></li></ul></div></div></details>
 
 <details><summary class="ext" id="prop-prince-wrap-inside">prince-wrap-inside*  <a class="self-link" href="#prop-prince-wrap-inside"></a></summary><div><div><div id="prop-prince-wrap-inside-syntax">Syntax</div><div class="example"><div class="syntax-block"><pre><code>prince-wrap-inside: auto |&#160;phrase |&#160;avoid</code></pre></div></div></div><div><div class="example"><div class="syntax-block"><table class="property-table"><tr><th scope="row">
           Initial value
@@ -3194,7 +3194,7 @@ supplier, item { overflow-wrap: normal; }
 	it causes the affected text to be <em>unusually</em> tight, or the previous
 	line to be unusually loose;
 	but <em>not</em> if either line would become <em>truly exceptionally</em> tightly
-	or loosely spaced.</p><p>(Limitation: At the time of writing, <code>prince-wrap-inside</code> only affects justified text.)</p><p>This property only applies to <a href="prince-for-books">Prince for Books</a>.</p></div><div><div id="prop-prince-wrap-inside-seealso">See Also</div><ul><li><a href="prince-for-books#line-breaking">Line breaking</a></li><li><a href="prince-for-books#the-property-prince-wrap-inside">The property prince-wrap-inside</a></li><li><code><a href="#prop-prince-forced-breaks">prince-forced-breaks</a></code></li><li><code><a href="#prop-white-space">white-space</a></code></li></ul></div></div></details>
+	or loosely spaced.</p><p>(Limitation: At the time of writing, <code>prince-wrap-inside</code> only affects justified text.)</p><p>This property only applies to <a href="/doc/prince-for-books">Prince for Books</a>.</p></div><div><div id="prop-prince-wrap-inside-seealso">See Also</div><ul><li><a href="/doc/prince-for-books#line-breaking">Line breaking</a></li><li><a href="/doc/prince-for-books#the-property-prince-wrap-inside">The property prince-wrap-inside</a></li><li><code><a href="#prop-prince-forced-breaks">prince-forced-breaks</a></code></li><li><code><a href="#prop-white-space">white-space</a></code></li></ul></div></div></details>
 
 <details><summary id="prop-right">right <a class="self-link" href="#prop-right"></a></summary><div><div><div id="prop-right-syntax">Syntax</div><div class="example"><div class="syntax-block"><pre><code>right: auto |&#160;<i>length</i> |&#160;<i>percent</i></code></pre></div></div></div><div><div class="example"><div class="syntax-block"><table class="property-table"><tr><th scope="row">
           Initial value
@@ -3219,11 +3219,11 @@ supplier, item { overflow-wrap: normal; }
           Inherited
         </th><td /></tr></table></div></div></div><div><div id="prop-size-examples">Examples</div><div class="example"><div class="programlisting"><pre><code>@page { size: A4 }</code></pre></div><div class="programlisting"><pre><code>@page { size: A4 landscape }</code></pre></div><div class="programlisting"><pre><code>@page { size: Letter }</code></pre></div><div class="programlisting"><pre><code>@page { size: 10cm 5cm }</code></pre></div></div></div><div><div id="prop-size-comments">Comments</div><p>
     This CSS at-rule descriptor, used with the
-    <a href="css-refs#at-page"><code>@page</code></a> at-rule, defines
+    <a href="/doc/css-refs#at-page"><code>@page</code></a> at-rule, defines
     the size and orientation of the page.  Please see also the
     <code><a href="#prop-prince-rotate-body">prince-rotate-body</a></code> property to control the
     orientation of selected pages.
-    </p></div><div><div id="prop-size-seealso">See Also</div><ul><li><a href="paged#page-size">Page size</a></li><li><a href="page-size-keywords">Page Size Keywords</a></li><li><code><a href="#prop-prince-rotate-body">prince-rotate-body</a></code></li></ul></div><div><div id="prop-size-spec">Specification</div><ul><li><a href="https://www.w3.org/TR/css3-page/#page-size-prop">CSS Paged Media Module Level 3</a></li></ul></div></div></details>
+    </p></div><div><div id="prop-size-seealso">See Also</div><ul><li><a href="/doc/paged#page-size">Page size</a></li><li><a href="/doc/page-size-keywords">Page Size Keywords</a></li><li><code><a href="#prop-prince-rotate-body">prince-rotate-body</a></code></li></ul></div><div><div id="prop-size-spec">Specification</div><ul><li><a href="https://www.w3.org/TR/css3-page/#page-size-prop">CSS Paged Media Module Level 3</a></li></ul></div></div></details>
 
 <details><summary id="prop-src">src <a class="self-link" href="#prop-src"></a></summary><div><div><div id="prop-src-syntax">Syntax</div><div class="example"><div class="syntax-block"><pre><code>src: [ url(&#160;<i>filename</i>&#160;) [ format(&#160;[ "format" ]+&#160;) ]? |&#160;local(&#160;<i>name</i>&#160;) |&#160;<span class="ext">prince-lookup(&#160;<i>name</i>&#160;)</span> ]+</code></pre></div></div></div><div><div class="example"><div class="syntax-block"><table class="property-table"><tr><th scope="row">
           Initial value
@@ -3241,7 +3241,7 @@ supplier, item { overflow-wrap: normal; }
 }
     </code></pre></div></div></div><div><div id="prop-src-comments">Comments</div><p>
     This CSS at-rule descriptor, used with the
-    <a href="css-refs#at-font-face"><code>@font-face</code></a> at-rule,
+    <a href="/doc/css-refs#at-font-face"><code>@font-face</code></a> at-rule,
     specifies the resource containing font data. It is required for the <code>@font-face</code>
     rule to be valid.
     </p><p>
@@ -3253,7 +3253,7 @@ supplier, item { overflow-wrap: normal; }
     The <code>local()</code> function searches for locally installed system
     fonts, while <code>prince-lookup()</code> will also find fonts defined by
     other <code>@font-face</code> rules.
-    </p></div><div><div id="prop-src-seealso">See Also</div><ul><li><a href="styling#fonts">Fonts</a></li></ul></div><div><div id="prop-src-spec">Specification</div><ul><li><a href="https://www.w3.org/TR/css-fonts-3/#src-desc">CSS Fonts Module Level 3</a></li></ul></div></div></details>
+    </p></div><div><div id="prop-src-seealso">See Also</div><ul><li><a href="/doc/styling#fonts">Fonts</a></li></ul></div><div><div id="prop-src-spec">Specification</div><ul><li><a href="https://www.w3.org/TR/css-fonts-3/#src-desc">CSS Fonts Module Level 3</a></li></ul></div></div></details>
 
 <details><summary id="prop-stop-color">stop-color <a class="self-link" href="#prop-stop-color"></a></summary><div><div><div id="prop-stop-color-syntax">Syntax</div><div class="example"><div class="syntax-block"><pre><code>stop-color: color</code></pre></div></div></div><div><div class="example"><div class="syntax-block"><table class="property-table"><tr><th scope="row">
           Initial value
@@ -3265,7 +3265,7 @@ supplier, item { overflow-wrap: normal; }
                   no
                 </td></tr></table></div></div></div><div><div id="prop-stop-color-comments">Comments</div><p>
 	The <code>stop-color</code> property only applies to SVG elements.
-	</p></div><div><div id="prop-stop-color-seealso">See Also</div><ul><li><a href="graphics#color">Color</a></li></ul></div><div><div id="prop-stop-color-spec">Specification</div><ul><li><a href="https://www.w3.org/TR/SVG11/pservers.html#StopColorProperty">SVG 1.1</a></li></ul></div></div></details>
+	</p></div><div><div id="prop-stop-color-seealso">See Also</div><ul><li><a href="/doc/graphics#color">Color</a></li></ul></div><div><div id="prop-stop-color-spec">Specification</div><ul><li><a href="https://www.w3.org/TR/SVG11/pservers.html#StopColorProperty">SVG 1.1</a></li></ul></div></div></details>
 
 <details><summary id="prop-stop-opacity">stop-opacity <a class="self-link" href="#prop-stop-opacity"></a></summary><div><div><div id="prop-stop-opacity-syntax">Syntax</div><div class="example"><div class="syntax-block"><pre><code>stop-opacity: <i>number</i></code></pre></div></div></div><div><div class="example"><div class="syntax-block"><table class="property-table"><tr><th scope="row">
           Initial value
@@ -3294,9 +3294,9 @@ supplier, item { overflow-wrap: normal; }
     which retrieves the text of the selected element.
     </p><p>
     But any other means of generating content, as described in the
-    <a href="gen-content#generated-content-functions">Generated Content Functions</a> section, are available.  See also
-    <a href="paged#page-regions">Page regions</a> for more details.
-	</p></div><div><div id="prop-string-set-seealso">See Also</div><ul><li><a href="gen-content#generated-content-functions">Generated Content Functions</a></li><li><code><a href="#prop-content">content</a></code></li></ul></div><div><div id="prop-string-set-spec">Specification</div><ul><li><a href="https://www.w3.org/TR/css-gcpm-3/#setting-named-strings-the-string-set-pro">CSS Generated Content for Paged Media Module</a></li><li><a href="https://books.spec.whatwg.org/#named-strings">CSS Books</a></li></ul></div></div></details>
+    <a href="/doc/gen-content#generated-content-functions">Generated Content Functions</a> section, are available.  See also
+    <a href="/doc/paged#page-regions">Page regions</a> for more details.
+	</p></div><div><div id="prop-string-set-seealso">See Also</div><ul><li><a href="/doc/gen-content#generated-content-functions">Generated Content Functions</a></li><li><code><a href="#prop-content">content</a></code></li></ul></div><div><div id="prop-string-set-spec">Specification</div><ul><li><a href="https://www.w3.org/TR/css-gcpm-3/#setting-named-strings-the-string-set-pro">CSS Generated Content for Paged Media Module</a></li><li><a href="https://books.spec.whatwg.org/#named-strings">CSS Books</a></li></ul></div></div></details>
 
 <details><summary id="prop-stroke">stroke <a class="self-link" href="#prop-stroke"></a></summary><div><div><div id="prop-stroke-syntax">Syntax</div><div class="example"><div class="syntax-block"><pre><code>stroke: none |&#160;<i>color</i> |&#160;url(&#160;<i>paint-server</i>&#160;)</code></pre></div></div></div><div><div class="example"><div class="syntax-block"><table class="property-table"><tr><th scope="row">
           Initial value
@@ -3416,7 +3416,7 @@ supplier, item { overflow-wrap: normal; }
                   no
                 </td></tr></table></div></div></div><div><div id="prop-table-column-span-comments">Comments</div><p>
 	This property applies to table cells and determines the number of
-	table columns spanned by the table cell. See the <a href="styling#tables">Tables</a>
+	table columns spanned by the table cell. See the <a href="/doc/styling#tables">Tables</a>
     documentation for more details.
 	</p><p class="note">
         The property <a href="#prop-prince-table-column-span"><code>prince-table-column-span</code></a> can be used as an alias.
@@ -3432,7 +3432,7 @@ supplier, item { overflow-wrap: normal; }
                   no
                 </td></tr></table></div></div></div><div><div id="prop-table-layout-comments">Comments</div><p>
 	This property determines whether a table uses automatic table
-	layout or fixed table layout. See the <a href="styling#tables">Tables</a>
+	layout or fixed table layout. See the <a href="/doc/styling#tables">Tables</a>
     documentation for more details.
 	</p></div><div><div id="prop-table-layout-spec">Specification</div><ul><li><a href="https://www.w3.org/TR/CSS2/tables.html#width-layout">CSS 2.1</a></li></ul></div></div></details>
 
@@ -3446,7 +3446,7 @@ supplier, item { overflow-wrap: normal; }
                   no
                 </td></tr></table></div></div></div><div><div id="prop-table-row-span-comments">Comments</div><p>
 	This property applies to table cells and determines the number of
-	table rows spanned by the table cell. See the <a href="styling#tables">Tables</a>
+	table rows spanned by the table cell. See the <a href="/doc/styling#tables">Tables</a>
     documentation for more details.
 	</p><p class="note">
         The property <a href="#prop-prince-table-row-span"><code>prince-table-row-span</code></a> can be used as an alias.
@@ -3512,7 +3512,7 @@ supplier, item { overflow-wrap: normal; }
                 </td></tr></table></div></div></div><div><div id="prop-text-decoration-comments">Comments</div><p>
         The <code>text-decoration</code> property is a shorthand for
         setting the following CSS properties:
-    </p><ul><li><code><a href="#prop-text-line-through-color">text-line-through-color</a></code></li><li><code><a href="#prop-text-line-through-style">text-line-through-style</a></code></li><li><code><a href="#prop-text-overline-color">text-overline-color</a></code></li><li><code><a href="#prop-text-overline-style">text-overline-style</a></code></li><li><code><a href="#prop-text-underline-color">text-underline-color</a></code></li><li><code><a href="#prop-text-underline-style">text-underline-style</a></code></li></ul></div><div><div id="prop-text-decoration-seealso">See Also</div><ul><li><a href="styling#text-formatting">Text formatting</a></li></ul></div><div><div id="prop-text-decoration-spec">Specification</div><ul><li><a href="https://www.w3.org/TR/CSS2/text.html#lining-striking-props">CSS 2.1</a></li></ul></div></div></details>
+    </p><ul><li><code><a href="#prop-text-line-through-color">text-line-through-color</a></code></li><li><code><a href="#prop-text-line-through-style">text-line-through-style</a></code></li><li><code><a href="#prop-text-overline-color">text-overline-color</a></code></li><li><code><a href="#prop-text-overline-style">text-overline-style</a></code></li><li><code><a href="#prop-text-underline-color">text-underline-color</a></code></li><li><code><a href="#prop-text-underline-style">text-underline-style</a></code></li></ul></div><div><div id="prop-text-decoration-seealso">See Also</div><ul><li><a href="/doc/styling#text-formatting">Text formatting</a></li></ul></div><div><div id="prop-text-decoration-spec">Specification</div><ul><li><a href="https://www.w3.org/TR/CSS2/text.html#lining-striking-props">CSS 2.1</a></li></ul></div></div></details>
 
 <details><summary id="prop-text-indent">text-indent <a class="self-link" href="#prop-text-indent"></a></summary><div><div><div id="prop-text-indent-syntax">Syntax</div><div class="example"><div class="syntax-block"><pre><code>text-indent: <i>length</i> |&#160;<i>percent</i> hanging?</code></pre></div></div></div><div><div class="example"><div class="syntax-block"><table class="property-table"><tr><th scope="row">
           Initial value
@@ -3550,7 +3550,7 @@ supplier, item { overflow-wrap: normal; }
           Inherited
         </th><td>
                   no
-                </td></tr></table></div></div></div><div /><div><div id="prop-text-line-through-color-seealso">See Also</div><ul><li><a href="graphics#color">Color</a></li></ul></div></div></details>
+                </td></tr></table></div></div></div><div /><div><div id="prop-text-line-through-color-seealso">See Also</div><ul><li><a href="/doc/graphics#color">Color</a></li></ul></div></div></details>
 
 <details><summary id="prop-text-line-through-style">text-line-through-style <a class="self-link" href="#prop-text-line-through-style"></a></summary><div><div><div id="prop-text-line-through-style-syntax">Syntax</div><div class="example"><div class="syntax-block"><pre><code>text-line-through-style: none |&#160;solid |&#160;dashed |&#160;dotted</code></pre></div></div></div><div><div class="example"><div class="syntax-block"><table class="property-table"><tr><th scope="row">
           Initial value
@@ -3593,7 +3593,7 @@ supplier, item { overflow-wrap: normal; }
           Inherited
         </th><td>
                   no
-                </td></tr></table></div></div></div><div /><div><div id="prop-text-overline-color-seealso">See Also</div><ul><li><a href="graphics#color">Color</a></li></ul></div></div></details>
+                </td></tr></table></div></div></div><div /><div><div id="prop-text-overline-color-seealso">See Also</div><ul><li><a href="/doc/graphics#color">Color</a></li></ul></div></div></details>
 
 <details><summary id="prop-text-overline-style">text-overline-style <a class="self-link" href="#prop-text-overline-style"></a></summary><div><div><div id="prop-text-overline-style-syntax">Syntax</div><div class="example"><div class="syntax-block"><pre><code>text-overline-style: none |&#160;solid |&#160;dashed |&#160;dotted</code></pre></div></div></div><div><div class="example"><div class="syntax-block"><table class="property-table"><tr><th scope="row">
           Initial value
@@ -3613,7 +3613,7 @@ supplier, item { overflow-wrap: normal; }
           Inherited
         </th><td>
                   yes
-                </td></tr></table></div></div></div><div /><div><div id="prop-text-shadow-seealso">See Also</div><ul><li><a href="styling#text-formatting">Text formatting</a></li></ul></div><div><div id="prop-text-shadow-spec">Specification</div><ul><li><a href="https://www.w3.org/TR/css-text-decor-3/#text-shadow-property">CSS Text Decoration Module Level 3</a></li></ul></div></div></details>
+                </td></tr></table></div></div></div><div /><div><div id="prop-text-shadow-seealso">See Also</div><ul><li><a href="/doc/styling#text-formatting">Text formatting</a></li></ul></div><div><div id="prop-text-shadow-spec">Specification</div><ul><li><a href="https://www.w3.org/TR/css-text-decor-3/#text-shadow-property">CSS Text Decoration Module Level 3</a></li></ul></div></div></details>
 
 <details><summary id="prop-text-transform">text-transform <a class="self-link" href="#prop-text-transform"></a></summary><div><div><div id="prop-text-transform-syntax">Syntax</div><div class="example"><div class="syntax-block"><pre><code>text-transform: none |&#160;lowercase |&#160;uppercase |&#160;capitalize</code></pre></div></div></div><div><div class="example"><div class="syntax-block"><table class="property-table"><tr><th scope="row">
           Initial value
@@ -3623,7 +3623,7 @@ supplier, item { overflow-wrap: normal; }
           Inherited
         </th><td>
                   yes
-                </td></tr></table></div></div></div><div /><div><div id="prop-text-transform-seealso">See Also</div><ul><li><a href="styling#text-formatting">Text formatting</a></li></ul></div><div><div id="prop-text-transform-spec">Specification</div><ul><li><a href="https://www.w3.org/TR/CSS2/text.html#caps-prop">CSS 2.1</a></li></ul></div></div></details>
+                </td></tr></table></div></div></div><div /><div><div id="prop-text-transform-seealso">See Also</div><ul><li><a href="/doc/styling#text-formatting">Text formatting</a></li></ul></div><div><div id="prop-text-transform-spec">Specification</div><ul><li><a href="https://www.w3.org/TR/CSS2/text.html#caps-prop">CSS 2.1</a></li></ul></div></div></details>
 
 <details><summary id="prop-text-underline">text-underline <a class="self-link" href="#prop-text-underline"></a></summary><div><div><div id="prop-text-underline-syntax">Syntax</div><div class="example"><div class="syntax-block"><pre><code>text-underline: <i>color</i> ||&#160;<i><a href="#prop-text-underline-style">text-underline-style</a></i></code></pre></div></div></div><div><div class="example"><div class="syntax-block"><table class="property-table"><tr><th scope="row">
           Initial value
@@ -3646,7 +3646,7 @@ supplier, item { overflow-wrap: normal; }
           Inherited
         </th><td>
                   no
-                </td></tr></table></div></div></div><div /><div><div id="prop-text-underline-color-seealso">See Also</div><ul><li><a href="graphics#color">Color</a></li></ul></div></div></details>
+                </td></tr></table></div></div></div><div /><div><div id="prop-text-underline-color-seealso">See Also</div><ul><li><a href="/doc/graphics#color">Color</a></li></ul></div></div></details>
 
 <details><summary id="prop-text-underline-style">text-underline-style <a class="self-link" href="#prop-text-underline-style"></a></summary><div><div><div id="prop-text-underline-style-syntax">Syntax</div><div class="example"><div class="syntax-block"><pre><code>text-underline-style: none |&#160;solid |&#160;dashed |&#160;dotted</code></pre></div></div></div><div><div class="example"><div class="syntax-block"><table class="property-table"><tr><th scope="row">
           Initial value
@@ -3725,7 +3725,7 @@ supplier, item { overflow-wrap: normal; }
     unicode-range: U+0025-00FF;
 }</code></pre></div></div></div><div><div id="prop-unicode-range-comments">Comments</div><p>
     This CSS at-rule descriptor, used with the
-    <a href="css-refs#at-font-face"><code>@font-face</code></a> at-rule,
+    <a href="/doc/css-refs#at-font-face"><code>@font-face</code></a> at-rule,
     defines the set of Unicode codepoints that may be supported by the font face
     for which it is declared.  The descriptor value is a comma-delimited list of
     Unicode range (&lt;urange&gt;) values.  The union of these ranges defines the
@@ -3783,12 +3783,12 @@ supplier, item { overflow-wrap: normal; }
 	determines the minimum number of lines that must be left at the top of
 	the second page or column.
 	</p><p>
-    The percentage value only applies to <a href="prince-for-books">Prince for Books</a>, and indicates
+    The percentage value only applies to <a href="/doc/prince-for-books">Prince for Books</a>, and indicates
     that one widow line is accepted, as long as the line width is at least the
     given percentage value of the available page width, to avoid the worst case
     of having a widow line that is only one or two words long.  For more details
-    see <a href="prince-for-books#fractional-widows">Fractional Widows</a>.
-    </p></div><div><div id="prop-widows-seealso">See Also</div><ul><li><a href="paged#widows-and-orphans">Widows and orphans</a></li><li><a href="prince-for-books">Prince for Books</a></li><li><a href="prince-for-books#fractional-widows">Fractional Widows</a></li><li><code><a href="#prop-orphans">orphans</a></code></li></ul></div><div><div id="prop-widows-spec">Specification</div><ul><li><a href="https://www.w3.org/TR/CSS2/page.html#break-inside">CSS 2.1</a></li><li><a href="https://www.w3.org/TR/css-break-3/#widows-orphans">CSS Fragmentation Module Level 3</a></li></ul></div></div></details>
+    see <a href="/doc/prince-for-books#fractional-widows">Fractional Widows</a>.
+    </p></div><div><div id="prop-widows-seealso">See Also</div><ul><li><a href="/doc/paged#widows-and-orphans">Widows and orphans</a></li><li><a href="/doc/prince-for-books">Prince for Books</a></li><li><a href="/doc/prince-for-books#fractional-widows">Fractional Widows</a></li><li><code><a href="#prop-orphans">orphans</a></code></li></ul></div><div><div id="prop-widows-spec">Specification</div><ul><li><a href="https://www.w3.org/TR/CSS2/page.html#break-inside">CSS 2.1</a></li><li><a href="https://www.w3.org/TR/css-break-3/#widows-orphans">CSS Fragmentation Module Level 3</a></li></ul></div></div></details>
 
 <details><summary id="prop-width">width <a class="self-link" href="#prop-width"></a></summary><div><div><div id="prop-width-syntax">Syntax</div><div class="example"><div class="syntax-block"><pre><code>width: auto |&#160;<i>length</i> |&#160;<i>percent</i> |&#160;min-content |&#160;max-content</code></pre></div></div></div><div><div class="example"><div class="syntax-block"><table class="property-table"><tr><th scope="row">
           Initial value
@@ -3815,7 +3815,7 @@ supplier, item { overflow-wrap: normal; }
     Prince does not support the value <code>break-word</code>.  Use
     the value <code>break-all</code> or the property <code><a href="#prop-overflow-wrap">overflow-wrap</a></code>
     with the value <code>break-word</code> instead.
-    </p></div><div><div id="prop-word-break-seealso">See Also</div><ul><li><a href="styling#paragraph-formatting">Paragraph formatting</a></li><li><code><a href="#prop-overflow-wrap">overflow-wrap</a></code></li></ul></div><div><div id="prop-word-break-spec">Specification</div><ul><li><a href="https://www.w3.org/TR/css-text-3/#word-break-property">CSS Text Module Level 3</a></li></ul></div></div></details>
+    </p></div><div><div id="prop-word-break-seealso">See Also</div><ul><li><a href="/doc/styling#paragraph-formatting">Paragraph formatting</a></li><li><code><a href="#prop-overflow-wrap">overflow-wrap</a></code></li></ul></div><div><div id="prop-word-break-spec">Specification</div><ul><li><a href="https://www.w3.org/TR/css-text-3/#word-break-property">CSS Text Module Level 3</a></li></ul></div></div></details>
 
 <details><summary id="prop-word-spacing">word-spacing <a class="self-link" href="#prop-word-spacing"></a></summary><div><div><div id="prop-word-spacing-syntax">Syntax</div><div class="example"><div class="syntax-block"><pre><code>word-spacing: normal |&#160;<i>length</i> |&#160;<i>percent</i></code></pre></div></div></div><div><div class="example"><div class="syntax-block"><table class="property-table"><tr><th scope="row">
           Initial value
