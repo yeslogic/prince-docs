@@ -20,7 +20,7 @@ When running multiple instances of Prince, it might be advisable to disable para
 Prince Wrappers
 ---------------
 
-Since different server configurations make use of different scripting languages, wrappers in those languages are necessary to invoke Prince. Wrappers for several of the most widely used scripting languages are available for download on the [Wrappers Download Page](/wrappers.html).
+Since different server configurations make use of different scripting languages, wrappers in those languages are necessary to invoke Prince. Wrappers for several of the most widely used scripting languages are available for download on the [Wrappers Download Page](/download/wrappers/).
 
 A useful tool for writing custom wrappers in other languages are the [Advanced Command-Line Options](#advanced-command-line-options).
 
@@ -29,7 +29,7 @@ For details on the usage of each of the wrappers, please consult the following c
 
 ### The Java Wrapper
 
-Prince can be called from within a Java class for servlets by using [Java interface](wrappers.html#wrapper-java).
+Prince can be called from within a Java class for servlets by using [Java interface](/download/wrappers/#wrapper-java).
 
 This package contains:
 
@@ -42,7 +42,7 @@ The `Prince.jar` file contains the class file that provides the Java interface t
 
 ### The C\# / .Net Wrapper
 
-Prince can be called from .NET languages using the [Prince C\# / .Net wrapper](wrappers.html#wrapper-csharp).
+Prince can be called from .NET languages using the [Prince C\# / .Net wrapper](/download/wrappers/#wrapper-csharp).
 
 The wrapper package contains:
 
@@ -127,7 +127,7 @@ To combine multiple HTML documents into a single PDF file, call `ConvertMultiple
 
 ### The PHP5 Wrapper
 
-Prince can be called from PHP using the [PHP interface](wrappers.html#wrapper-php5).
+Prince can be called from PHP using the [PHP interface](/download/wrappers/#wrapper-php5).
 
 This package contains two files:
 
@@ -139,7 +139,7 @@ The `prince.php` file contains the PHP class that provides the interface to Prin
 
 ### The ActiveX/COM Wrapper
 
-The [ActiveX/COM wrapper](wrappers.html#wrapper-activex) allows Prince to be called from various languages: [ASP](#using-prince-with-asp), [ActiveX, COM, Visual Basic](#using-prince-with-activex-com-visual-basic) and also [Coldfusion](#using-prince-with-coldfusion).
+The [ActiveX/COM wrapper](/download/wrappers/#wrapper-activex) allows Prince to be called from various languages: [ASP](#using-prince-with-asp), [ActiveX, COM, Visual Basic](#using-prince-with-activex-com-visual-basic) and also [Coldfusion](#using-prince-with-coldfusion).
 
 This package contains two files:
 
