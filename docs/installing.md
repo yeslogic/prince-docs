@@ -11,13 +11,13 @@ If Prince is already installed, you can directly skip to the [User Guide](doc-pr
 Installing Prince
 -----------------
 
-Prince is available for Windows, MacOS X, Linux (multiple distributions) and FreeBSD. You can download the relevant file from our [downloads page](download.html). For Linux and FreeBSD you may need to choose based on your distribution type, version and processor type (32/64 bits).
+Prince is available for Windows, MacOS X, Linux (multiple distributions) and FreeBSD. You can download the relevant file from our [downloads page](/download/). For Linux and FreeBSD you may need to choose based on your distribution type, version and processor type (32/64 bits).
 
 Prince is provided under the terms of the [Prince End-User License Agreement](/license/).
 
 ### Installing Prince on Windows
 
-1.  Downlad your installation package from the [Download Page](download.html).
+1.  Downlad your installation package from the [Download Page](/download/).
 2.  After downloading and attempting to run the installer you might see a confirmation screen like this. Click "run". Note that the filename for the installer may be different than the one shown in the picture.
 
     Run installer confirmation
@@ -58,7 +58,7 @@ For information about using Prince from PHP, Java, .NET, and other server framew
 
 ### Installing Prince on MacOS X
 
-To install Prince on MacOS X, please run the `install.sh` shell script contained in the package downloaded to your computer from the [download page](download.html). This will involve the following procedure:
+To install Prince on MacOS X, please run the `install.sh` shell script contained in the package downloaded to your computer from the [download page](/download/). This will involve the following procedure:
 
 1.  Open the Terminal application.
 2.  Change to the download directory and unpack the downloaded file.
@@ -94,7 +94,7 @@ For information about using Prince from PHP, Java, .NET, and other server framew
 
 ### Installing Prince on Linux/FreeBSD
 
-Prince is installed using the terminal. The installation package can be downloaded from the [Download Page](download.html). Then open a terminal window and change to the directory that you downloaded or copied the installation package to. The `$` symbol represents the command prompt and the text that follows is the command, you should not type in the `$` symbol.
+Prince is installed using the terminal. The installation package can be downloaded from the [Download Page](/download/). Then open a terminal window and change to the directory that you downloaded or copied the installation package to. The `$` symbol represents the command prompt and the text that follows is the command, you should not type in the `$` symbol.
 
 
     $ cd download_directory
