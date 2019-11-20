@@ -21,6 +21,12 @@ function redirects() {
     else if (location.hash.indexOf('layout') == 1) {
         window.location.href = '/doc/styling#layout'
     }
+    else if (location.hash.indexOf('content-taking-elements') == 1) {
+        window.location.href = '/doc/paged/#taking-elements-from-the-document'
+    }
+    else if (location.hash.indexOf('content-copying-text') == 1) {
+        window.location.href = '/doc/paged/#copying-content-from-the-document'
+    }
     else if (location.hash.indexOf('text-formatting') == 1) {
         window.location.href = '/doc/styling#text-formatting'
     }
