@@ -26,7 +26,7 @@ const siteConfig = {
   title: 'Prince Documentation', // Title for your website.
   tagline: 'User Guide and Reference Manual',
   url: 'https://www.princexml.com', // Your website URL
-  baseUrl: '/doc/', // Base URL for your project */
+  baseUrl: '/', // Base URL for your project */
 
   // Used for publishing and more
   projectName: 'prince-docs',
@@ -37,9 +37,9 @@ const siteConfig = {
 
   // For no header links in the top nav bar -> headerLinks: [],
   headerLinks: [
-    {doc: 'intro-userguide', label: 'Docs'},
-    {page: 'help', label: 'Help'},
-    {page: 'releases', label: 'Release Notes'},
+    {page: 'doc/', label: 'Documentation'},
+    {page: 'doc/help', label: 'Help'},
+    {page: 'doc/releases', label: 'Release Notes'},
 //    {page: 'roadmap', label: 'Roadmap'},
     {search: true},
   ],
@@ -88,8 +88,8 @@ const siteConfig = {
   onPageNav: 'separate',
   // No .html extensions for paths.
   cleanUrl: true,
-
-  docsUrl: '',
+  docsUrl: 'doc',
+  disableHeaderTitle: true,
 
   // Open Graph and Twitter card images.
   //ogImage: 'img/undraw_online.svg',
