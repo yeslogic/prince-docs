@@ -44,6 +44,12 @@ const siteConfig = {
     {search: true},
   ],
 
+  // The Search
+  algolia: {
+    apiKey: '63dda203371e77ee63a05de413c3d741',
+    indexName: 'princexml',
+    algoliaOptions: { 'facetFilters': ["language:en"] }
+  },
   // If you have users set above, you add it here:
   //users,
 
