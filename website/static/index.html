@@ -12,6 +12,7 @@
   <meta name="twitter:card" content="summary"/>
   <meta name="twitter:image" content="https://www.princexml.com/img/undraw_tweetstorm.svg"/>
   <link rel="shortcut icon" href="/img/favicon.ico"/>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.css" />
   <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css"/>
   <script src="/js/scrollSpy.js"></script>
   <link rel="stylesheet" href="/css/main.css"/>
@@ -19,7 +20,7 @@
 </head>
 <body class="sideNavVisible separateOnPageNav">
 
-<div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="/"><img class="logo" src="/img/Prince-logo.png" alt="Prince - Convert HTML to PDF with CSS"/></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"><li class="siteNavGroupActive"><a href="/doc/" target="_self">Documentation</a></li><li class=""><a href="/doc/help" target="_self">Help</a></li><li class=""><a target="_self"></a></li><li class=""><a href="/doc/releases" target="_self">Release Notes</a></li></ul></nav></div></header></div></div>
+<div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="/"><img class="logo" src="/img/Prince-logo.png" alt="Prince - Convert HTML to PDF with CSS"/></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"><li class="siteNavGroupActive"><a href="/doc/" target="_self">Documentation</a></li><li class=""><a href="/doc/help" target="_self">Help</a></li><li class=""><a target="_self"></a></li><li class=""><a href="/doc/releases" target="_self">Release Notes</a></li><li class="navSearchWrapper reactNavSearchWrapper"><input type="text" id="search_input_react" placeholder="Search" title="Search"/></li></ul></nav></div></header></div></div>
 <div class="wrapper" style="padding-top: 60px">
 <h1 class="title" id="idx">Prince Documentation</h1>
 <p class="copyright">Copyright © 2002-2019 YesLogic Pty Ltd</p>
@@ -47,5 +48,25 @@
 
 <footer class="nav-footer" id="footer" style="position: absolute; bottom: 0px; width: 100%"><section class="copyright"><div class="about-contact"><a href="/company/">About us</a> | <a href="/contact/">Contact</a></div><div class="copyright">Copyright © 2019 YesLogic Pty. Ltd.</div></section></footer>
 
+<script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.js"></script>
+<script>
+    document.addEventListener('keyup', function(e) {
+      if (e.target !== document.body) {
+        return;
+      }
+      // keyCode for '/' (slash)
+      if (e.keyCode === 191) {
+        const search = document.getElementById('search_input_react');
+        search && search.focus();
+      }
+    });
+  </script><script>
+  var search = docsearch({
+    apiKey: '63dda203371e77ee63a05de413c3d741',
+    indexName: 'princexml',
+    inputSelector: '#search_input_react',
+    algoliaOptions: {"facetFilters":["language:en"]}
+  });
+</script>
   </body>
 </html>
