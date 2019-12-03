@@ -602,8 +602,9 @@ CSS
     }
 ```
 Output
-<img src="assets/images/marker.png"
-     alt="Marker example"/>
+![Marker example](assets/images/marker.png)
+<img src=""
+     alt=""/>
 
 
 
