@@ -603,9 +603,6 @@ CSS
 ```
 Output
 ![Marker example](assets/images/marker.png)
-<img src=""
-     alt=""/>
-
 
 
 ### Tables
