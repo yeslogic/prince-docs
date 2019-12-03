@@ -104,7 +104,7 @@ This will create a `lab_report.pdf` file in the current directory. If it did not
 
 Prince GUI
 
-<img src="assets/images/gui_02.png" alt="The Prince GUI" style="width:50.0%" />
+![The Prince GUI](assets/images/gui_02.png)
 The Prince GUI. Note that in this image both a HTML and a CSS file had been selected.
 
 Prince's command line interface supports many options (see [Command-line Reference](command-line.md)) and can be called from scripts and other software. However some users may not be comfortable with the command line interface. On Windows, Prince provides a more familiar GUI interface, which can be started by choosing Prince from the start menu. [Prince GUI](first-doc.md#fig.gui01) shows the Prince GUI, click "Add File(s)" to choose your HTML file (`lab_report.html`) then click the large "Convert" button to convert it. Prince will generate a PDF file and place it in the directory with your HTML file.
