@@ -410,10 +410,12 @@ The possible values are the following PDF tag types:
 -   DD
 -   Span
 -   Quote
+-   Table
 -   BibEntry
 -   Code
 -   Figure
 -   Formula
+-   Artifact
 
 The default value `auto` leaves the tag assignment to Prince.
 
