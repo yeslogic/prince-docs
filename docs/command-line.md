@@ -343,7 +343,9 @@ dl>
     <code>--style=<span class="replaceable">FILE</span></code>
   </dt>
   <dd>
-    Apply an external style sheet.
+    Apply an external style sheet. Note that repeating the option multiple times
+    allows for applying multiple style sheets.  They are applied in the order
+    they are provided - and hence the last one will overwrite previous ones.
   </dd>
   <dt id="cl-media">
     <code>--media=<span class="replaceable">MEDIA</span></code>
