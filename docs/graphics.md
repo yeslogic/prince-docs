@@ -147,6 +147,8 @@ Prince automatically converts colors to the output intent color space only when 
 
 Prince allows also to use `prince-pdf-color-conversion` as a property, applied to individual elements. The value `auto` is the default and will enable color conversion for this element, if color conversion is enabled at the top level in the [`@prince-pdf`](css-refs.md#at-prince-pdf) at-rule or with the command-line argument, and the value `none` allows color conversion to be disabled for that element and its descendants.
 
+Note that all color conversion done by Prince currently uses relative colorimetric rendering intent with black point compensation.
+
 ### Rich black and true black
 
 In printing, "rich black" is a mixture of CMYK ink colors to produce a darker tone than using the black ink alone ("true black").
