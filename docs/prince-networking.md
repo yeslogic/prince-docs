@@ -42,6 +42,8 @@ Miscellaneous
 
 If an HTTP proxy server is required, it can be specified with the [`--http-proxy`](command-line.md#cl-http-proxy) command-line option.
 
+Please note that since Prince uses curl for loading resources from HTTP URLs, it is possible to use curl-supported environment variables (such as e.g. `http_proxy` and `no_proxy`) to fine-tune the proxy rules.  In this case it is not necessary to specify the command-line option - the proxy rules are provided through the environment variables.  See [this forum post](///www.princexml.com/forum/topic/4291/proxy-by-pass-options) for more details.
+
 The option [`--http-timeout`](command-line.md#cl-http-timeout) can be used to define the HTTP timeout in seconds, which can be useful for slow servers.
 
 Prince can also disable downloading multiple HTTP resources at once with the [`--no-parallel-downloads`](command-line.md#cl-no-parallel-downloads) command-line option.
