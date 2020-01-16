@@ -8,22 +8,22 @@ Prince produces PDFs - which are a prominent example of paged media. There are a
   <dt>Pagination</dt>
   <dd><p>The major difference between formatting for the web and for PDF/Print is that
   PDF is paginated, i.e. the content is placed on discrete pages.  Pages have a defined
-  <xref linkend="page-size">size</xref> and content can be laid out in a specific
-  pattern making use of predefined <xref linkend="page-regions">page regions</xref>.
+  <a href="/doc/paged#page-size">size</a> and content can be laid out in a specific
+  pattern making use of predefined <a href="/doc/paged#page-regions">page regions</a>.
   Elements can not only be floated right and left, but they can also be floated to
   the top and bottom of the page, or of a column, or the float even can be
-  deferred to the next page (see <xref linkend="float-extensions"/>).  Pages can be
-  <xref linkend="page-rules">selected</xref> and
-  <xref linkend="named-pages">named</xref>, which allows for specific treatment of
+  deferred to the next page (see <a href="/doc/styling#prince-extensions-to-floats">Prince extensions to floats</a>).
+  Pages can be <a href="/doc/paged#selecting-pages">selected</a> and
+  <a href="/doc/paged#named-pages">named</a>, which allows for specific treatment of
   certain pages.  Also, it is important to have an understanding of
-  <xref linkend="controlling-pagination">pagination</xref>: content might not fit
+  <a href="/doc/paged#controlling-pagination">pagination</a>: content might not fit
   on a page and might spill over into the next page, or it might be necessary
   to move it to the next page in order to avoid creating gaps (see
-  also <xref linkend="float-extension-conditionals"/>).</p></dd>
+  also <a href="/doc/styling#conditional-modifiers">Conditional modifiers</a>).</p></dd>
 
   <dt>Page spreads</dt>
   <dd><p>A basic unit for paged media in print is the page spread: the left page, called
-  <i>verso</i> in a left-to-right script (see <xref linkend="writing-mode"/>), and
+  <i>verso</i> in a left-to-right script (see <a href="/doc/styling#writing-mode">Writing Mode</a>), and
   the right page, called <i>recto</i>, are of the same size and typically are
   symmetrical to each other and are centered on the gutter.  Selected and named
   pages can be placed <i>recto</i> or <i>verso</i>, and Prince expands several
@@ -36,7 +36,7 @@ Prince produces PDFs - which are a prominent example of paged media. There are a
   <dd><p>Last but not least, paged media intended for print is non-interactive by nature.
   All CSS properties referring to user interaction make no sense, scripting cannot
   be interactive and scripts need to run before layout is finished.  But for these
-  details and scripting after layout please check the section on <xref linkend="js-print"/>.</p></dd>
+  details and scripting after layout please check the section on <a href="/doc/javascript#javascript-in-printed-media">JavaScript in Printed Media</a>.</p></dd>
 </dl>
 
 Prince allows you to control a number of options that affect how to format pages, from straight-forward options such as [page size](#page-size), to [page style](#page-style), [page regions](#page-regions) like headers and footers, [pagination control](#controlling-pagination) and [page numbering](gen-content.md#counters).
