@@ -1427,7 +1427,9 @@ After the initial at-rules, the following at-rules can appear also in nested for
 <tr>
 <td colspan="2">Modifies margins, orphans, widows and page breaks of a document when
 printing it. The pages are identified either by a name, or by a page pseudo-class and
-page declarations can either be style declarations or page region at-rules.</td>
+page declarations can either be style declarations or page region at-rules.
+The initial values for <code>@page</code> styles are documented in the
+<a href="/doc/paged">Paged Media</a> chapter.</td>
 </tr>
 <tr>
 <td><code>:left</code></td>

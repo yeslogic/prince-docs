@@ -10,7 +10,7 @@ The major difference between formatting for the web and PDF/Print is that PDF is
 
 Prince allows you to control a number of options that affect how PDF formats pages, from straight-forward options such as page size, to decorations, headers and footers, numbering and page breaking options. See detailed information in the [Paged Media](paged.md) section.
 
-Prince applies default styles to all (X)HTML documents - these style rules can be found in the `html.css` style sheet, located in the `style` folder inside the installation directory (see [Installation Layout](installing.md#installation-layout)).
+Prince applies default styles to all (X)HTML documents - these style rules can be found in the `html.css` style sheet, located in the `style` folder inside the installation directory (see [Installation Layout](installing.md#installation-layout)). The initial values for CSS properties are defined internally - the initial `@page` styles are documented in the [Paged Media](paged.md) chapter.
 
 
 Fonts

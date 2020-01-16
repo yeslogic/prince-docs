@@ -50,6 +50,26 @@ CSS properties that affect pages are specified within page *at-rules* (see [CSS 
 ```
 In this section we will show most of the properties that can be specified within a page rule, then we will show how pagination can be controlled and how page styles can be applied to selected pages.
 
+The initial values for CSS properties are defined internally - these are the initial `@page` styles:
+
+```
+    @page {
+        margin: 54pt;
+        prince-bleed: auto /* '6pt' if marks present */ ;
+        prince-trim: auto /* '57pt 48pt' if marks present */ ;
+        marks: none;
+        mark-length: 24pt;
+        mark-width: 0.1pt;
+        mark-offset: auto /* equal to prince-bleed */ ;
+        size: Letter;
+        prince-pdf-page-colorspace: auto;
+        prince-pdf-page-label: auto;
+        prince-rotate-body: 0deg;
+        prince-shrink-to-fit: none;
+    }
+```
+
+
 ## Page size
 
 Page size can be specified using the `size` property in *length* units or by a page size keyword (see [Page Size Keywords](page-size-keywords.md#page-size-keywords) for a list), optionally combined with the `portrait` or `landscape` keyword.
