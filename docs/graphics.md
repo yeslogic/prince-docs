@@ -145,9 +145,9 @@ Prince will convert all the colors in a document to a single color space if the 
 
 Prince automatically converts colors to the output intent color space only when producing PDF/X-1a files. Files in any of the other profiles need also the [`--convert-colors`](command-line.md#cl-convert-colors) command-line option or the `prince-pdf-color-conversion` property if colors are to be converted.
 
-Prince allows also to use `prince-pdf-color-conversion` as a property, applied to individual elements. The value `auto` is the default and will enable color conversion for this element, if color conversion is enabled at the top level in the [`@prince-pdf`](css-refs.md#at-prince-pdf) at-rule or with the command-line argument, and the value `none` allows color conversion to be disabled for that element and its descendants.
+Prince allows also to use `prince-pdf-color-conversion` as a property, applied to individual elements.  In this case, the value `auto` is the default and will enable color conversion for this element, if color conversion is enabled at the top level in the [`@prince-pdf`](css-refs.md#at-prince-pdf) at-rule or with the command-line argument.  The value `none` allows color conversion to be disabled for that element and its descendants.
 
-Note that all color conversion done by Prince currently uses relative colorimetric rendering intent with black point compensation.
+When used as a descriptor in a [`@prince-pdf`](css-refs.md#at-prince-pdf) at-rule, the descriptor `prince-pdf-color-conversion` also takes an optional second argument to define the rendering intent.  For details, please see the entry for [the `prince-pdf-color-conversion` descriptor](css-props.md#prop-prince-pdf-color-conversion-syntax2).
 
 ### Rich black and true black
 

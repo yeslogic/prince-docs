@@ -2689,15 +2689,15 @@ supplier, item { overflow-wrap: normal; }
         </th><td>
                   yes
                 </td></tr></table></div></div></div><div><div id="prop-prince-pdf-color-conversion-comments">Comments</div><p>
-    As a property, <code><a href="#prop-prince-pdf-color-conversion">prince-pdf-color-conversion</a></code>
+    As a property, <code>prince-pdf-color-conversion</code>
     is applied to elements in order to convert the colors of the elements to
     the output intent color space, if provided.  The value <code>none</code>
     can be used to prevent color conversion for individual elements if the
     document itself is converted.
     </p><p class="note">
     The same property, used as a descriptor in the <code>@prince-pdf</code>
-    at-rule, has a different syntax - see below.
-	</p></div></div><div><div><div id="prop-prince-pdf-color-conversion-syntax2">Syntax</div><div class="example"><div class="syntax-block"><pre><code>prince-pdf-color-conversion: none |&#160;output-intent |&#160;url(&#160;<i>color-profile</i>&#160;) |&#160;full</code></pre></div></div></div><div><div class="example"><div class="syntax-block"><table class="property-table"><tr><th scope="row">
+    at-rule, has a different syntax - see <a href="#prop-prince-pdf-color-conversion-syntax2">below</a>.
+	</p></div></div><div><div><div id="prop-prince-pdf-color-conversion-syntax2">Syntax</div><div class="example"><div class="syntax-block"><pre><code>prince-pdf-color-conversion: none |&#160;[output-intent |&#160;full |&#160;url(&#160;<i>color-profile</i>&#160;)] [absolute-colorimetric |&#160;relative-colorimetric |&#160;relative-colorimetric-bpc |&#160;perceptual |&#160;perceptual-bpc |&#160;saturation |&#160;saturation-bpc]?</code></pre></div></div></div><div><div class="example"><div class="syntax-block"><table class="property-table"><tr><th scope="row">
           Initial value
         </th><td><code>output-intent</code></td></tr><tr><th scope="row">
           Applies to
@@ -2708,7 +2708,7 @@ supplier, item { overflow-wrap: normal; }
             </td></tr></table></div></div></div><div><div id="prop-prince-pdf-color-conversion-comments2">Comments</div><p>
     As a descriptor inside the
     <a href="/doc/css-refs#at-prince-pdf"><code>@prince-pdf</code></a>
-    at-rule, <code><a href="#prop-prince-pdf-color-conversion">prince-pdf-color-conversion</a></code> is used
+    at-rule, <code>prince-pdf-color-conversion</code> is used
     to convert the colors of the PDF to the output intent color space, or to a
     color profile of choice.
     </p><p>
@@ -2721,9 +2721,11 @@ supplier, item { overflow-wrap: normal; }
     </p><p>
     The <code>url()</code> function allows for an ICC color profile to convert
     to, different from the output-intent.
+    </p><p>
+    The optional second argument is the rendering intent.  Black point compensation ("BPC") will most commonly be used with a relative-colorimetric rendering intent.  Prince however also accepts black point compensation with perceptual and saturation rendering intents because "there are atypical profiles [...] in which BPC may actually be beneficial for Perceptual or Saturation processing" (quoted from the in-depth analysis <a href="http://www.color.org/WP40-Black_Point_Compensation_2010-07-27.pdf">Black-point compensation: theory and application</a>).
     </p><p class="note">
     When the descriptor is used as a property, applied to single elements, it
-    has a different syntax - see above.
+    has a different syntax - see <a href="#prop-prince-pdf-color-conversion">above</a>.
     </p></div><div><div id="prop-prince-pdf-color-conversion-seealso2">See Also</div><ul><li><a href="/doc/graphics#color-conversion">Color conversion</a></li></ul></div></div></details>
 
 <details><summary class="ext" id="prop-prince-pdf-color-options">prince-pdf-color-options*  <a class="self-link" href="#prop-prince-pdf-color-options"></a></summary><div><div><div id="prop-prince-pdf-color-options-syntax">Syntax</div><div class="example"><div class="syntax-block"><pre><code>prince-pdf-color-options: auto |&#160;use-true-black |&#160;use-rich-black</code></pre></div></div></div><div><div class="example"><div class="syntax-block"><table class="property-table"><tr><th scope="row">
