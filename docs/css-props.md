@@ -964,7 +964,7 @@ For the values, the grammar draws on the [CSS Values and Units Module Level 3](h
 	is <code>none</code>.
 	</p></div><div><div id="prop-column-rule-width-seealso">See Also</div><ul><li><a href="/doc/styling#columns">Columns</a></li></ul></div><div><div id="prop-column-rule-width-spec">Specification</div><ul><li><a href="https://www.w3.org/TR/css3-multicol/#crw">CSS Multi-column Layout Module</a></li></ul></div></div></details>
 
-<details><summary id="prop-column-span">column-span <a class="self-link" href="#prop-column-span"></a></summary><div><div><div id="prop-column-span-syntax">Syntax</div><div class="example"><div class="syntax-block"><pre><code>column-span: <i>number</i> |&#160;all</code></pre></div></div></div><div><div class="example"><div class="syntax-block"><table class="property-table"><tr><th scope="row">
+<details><summary id="prop-column-span">column-span <a class="self-link" href="#prop-column-span"></a></summary><div><div><div id="prop-column-span-syntax">Syntax</div><div class="example"><div class="syntax-block"><pre><code>column-span: <i>number</i> |&#160;none |&#160;all</code></pre></div></div></div><div><div class="example"><div class="syntax-block"><table class="property-table"><tr><th scope="row">
           Initial value
         </th><td><code>1</code></td></tr><tr><th scope="row">
           Applies to
@@ -972,8 +972,10 @@ For the values, the grammar draws on the [CSS Values and Units Module Level 3](h
           Inherited
         </th><td>
                   no
-                </td></tr></table></div></div></div><div><div id="prop-column-span-comments">Comments</div><p class="note">
-	A numeric <code>column-span</code> will only affect column floats.
+                </td></tr></table></div></div></div><div><div id="prop-column-span-comments">Comments</div>
+                <p class="note">
+	A numeric <code>column-span</code> value other than <code>1</code> will only affect column floats.
+    The keyword <code>none</code> is treated as equivalent to the numeric value <code>1</code>.
 	</p></div><div><div id="prop-column-span-seealso">See Also</div><ul><li><a href="/doc/styling#columns">Columns</a></li></ul></div><div><div id="prop-column-span-spec">Specification</div><ul><li><a href="https://www.w3.org/TR/css3-multicol/#column-span">CSS Multi-column Layout Module</a></li></ul></div></div></details>
 
 <details><summary id="prop-column-width">column-width <a class="self-link" href="#prop-column-width"></a></summary><div><div><div id="prop-column-width-syntax">Syntax</div><div class="example"><div class="syntax-block"><pre><code>column-width: auto |&#160;<i>width</i></code></pre></div></div></div><div><div class="example"><div class="syntax-block"><table class="property-table"><tr><th scope="row">
