@@ -20,7 +20,7 @@ Prince supports Web Open Font Format (WOFF/WOFF2), TrueType and OpenType (TTF an
 
 ### Defining a font family
 
-To define the font, or the fonts to be used in a document, the `font-family` property is used. Prince will try to use the specified font, and should glyphs be missing, it will silently fall back to the next font in the cascade - typically a [generic font family](#generic-font-families).
+To define the font, or the fonts to be used in a document, the [`font-family`](css-props#prop-font-family) property is used. Prince will try to use the specified font, and should glyphs be missing, it will silently fall back to the next font in the cascade - typically a [generic font family](#generic-font-families).
 
 To prevent this font switching mechanism and force Prince to only use the defined font, the special keyword `prince-no-fallback` is available: it triggers a warning if any glyphs are not found in the specified font, instead of switching to another one.
 
@@ -86,7 +86,7 @@ Prince supports OpenType features, and enables certain ones by default in specif
 
 Microsoft has a list of the OpenType feature names [here](https://www.microsoft.com/typography/otspec/featurelist.htm).
 
-It is possible to enable other OpenType features by using the `font-variant` CSS property with the `prince-opentype()` function (see [CSS Functional Expressions](css-refs.md#css-functional-expressions)).
+It is possible to enable other OpenType features by using the [`font-variant`](css-props#prop-font-variant) CSS property with the `prince-opentype()` function (see [CSS Functional Expressions](css-refs.md#css-functional-expressions)).
 
 Care must be taken in which order the features are enabled! And please note that enabling one feature will disable all the default features.
 
@@ -305,7 +305,7 @@ A separate chapter, [Paged Media](paged.md#paged), will analyze in-depth the maj
 
 Text can be styled with CSS by defining font styles or text layout styles.
 
-After choosing an appropriate typeface for your text with the `font-family` property (see [Fonts](#fonts)), you can assign it different sizes with the `font-size` property.
+After choosing an appropriate typeface for your text with the [`font-family`](css-props#prop-font-family) property (see [Fonts](#fonts)), you can assign it different sizes with the [`font-size`](css-props#prop-font-size) property.
 
 Next up you should decide whether to give it some `color`. The default text color for a page is defined in the `body` selector, but each selector can have its own color.
 
@@ -315,25 +315,25 @@ Next up you should decide whether to give it some `color`. The default text colo
         color: blue;
     }
 ```
-Special formatting can be achieved through the `font-style`, `font-weight` or `font-variant` properties - all of which can also be set with the shorthand property `font`. For special effects one can use the properties `text-transform`, `text-decoration` - or even `text-shadow`.
+Special formatting can be achieved through the `font-style`, `font-weight` or `font-variant` properties - all of which can also be set with the shorthand property [`font`](css-props#prop-font). For special effects one can use the properties [`text-transform`](css-props#prop-text-transform), [`text-decoration`](css-props#prop-text-decoration) - or even [`text-shadow`](css-props#prop-text-shadow).
 
-It is also possible to style the vertical alignment of text in an inline box with the `vertical-align` property. The value `baseline` is the default, `sub` and `super` align the baseline of the element with the subscript-baseline or superscript-baseline of its parent respectively. The `text-top` and `text-bottom` values align the top of the element with the top or bottom of the parent's font, while `middle` aligns the middle of the element with the baseline plus half the x-height of the parent.
+It is also possible to style the vertical alignment of text in an inline box with the [`vertical-align`](css-props#prop-vertical-align) property. The value `baseline` is the default, `sub` and `super` align the baseline of the element with the subscript-baseline or superscript-baseline of its parent respectively. The `text-top` and `text-bottom` values align the top of the element with the top or bottom of the parent's font, while `middle` aligns the middle of the element with the baseline plus half the x-height of the parent.
 
-In order to determine how compact the text should be displayed, the `letter-spacing` can be used. Alternatively, the property `font-stretch` might be used, but note that it does not change the geometry of any arbitrary font by stretching or shrinking it - instead, it merely instructs Prince to choose the most appropriate face of the font, if the selected font offers several ones. Also note that this property is not supported for system fonts on Windows.
+In order to determine how compact the text should be displayed, the `letter-spacing` can be used. Alternatively, the property [`font-stretch`](css-props#prop-font-stretch) might be used, but note that it does not change the geometry of any arbitrary font by stretching or shrinking it - instead, it merely instructs Prince to choose the most appropriate face of the font, if the selected font offers several ones. Also note that this property is not supported for system fonts on Windows.
 
-In a similar fashion, the property `word-spacing` can be used to determine the distance between words.
+In a similar fashion, the property [`word-spacing`](css-props#prop-word-spacing) can be used to determine the distance between words.
 
 The directionality of the text is controlled through the [Writing Mode](#writing-mode).
 
 ### Paragraph formatting
 
-Now that you have decided on the basic properties of the text, you can turn your attention to styling the paragraphs. The `text-align` property is used to control how text is aligned within its containing box, while the `text-indent` property determines the indentation of the first line of text in the element.
+Now that you have decided on the basic properties of the text, you can turn your attention to styling the paragraphs. The [`text-align`](css-props#prop-text-align) property is used to control how text is aligned within its containing box, while the [`text-indent`](css-props#prop-text-indent) property determines the indentation of the first line of text in the element.
 
-If the `text-align` property has a value of `left`, `right` or `center`, the text will be aligned to the left, right or center respectively. The `justify` value instructs Prince to justify text. It is not uncommon, in printed texts, to align text based on whether the text appears on a left or right page. To support this, two new keywords are added to the `text-align` property: `inside` is the same as 'left' on right pages and 'right' on left pages, and `outside` is the same as 'right' on left pages and 'left' on right pages.
+If the [`text-align`](css-props#prop-text-align) property has a value of `left`, `right` or `center`, the text will be aligned to the left, right or center respectively. The `justify` value instructs Prince to justify text. It is not uncommon, in printed texts, to align text based on whether the text appears on a left or right page. To support this, two new keywords are added to the [`text-align`](css-props#prop-text-align) property: `inside` is the same as 'left' on right pages and 'right' on left pages, and `outside` is the same as 'right' on left pages and 'left' on right pages.
 
-Prince adds the property `prince-text-justify` to define how to treat justified text for CJK languages. The value `prince-cjk` allows space to be inserted between CJK characters when justifying even if there aren't any space characters.
+Prince adds the property [`prince-text-justify`](css-props#prop-prince-text-justify) to define how to treat justified text for CJK languages. The value `prince-cjk` allows space to be inserted between CJK characters when justifying even if there aren't any space characters.
 
-The last line of an element can receive its own alignment style with the `text-align-last` property. It takes the same values as `text-align`.
+The last line of an element can receive its own alignment style with the [`text-align-last`](css-props#prop-text-align-last) property. It takes the same values as [`text-align`](css-props#prop-text-align).
 
 ```
     p {
@@ -366,24 +366,24 @@ In the following example we are selecting the first letter of the first paragrap
         float: left;
     }
 ```
-Another important aspect when formatting a paragraph is how compact the text lines should appear on the printed page. The property `line-height` can be used to determine the height of text lines.
+Another important aspect when formatting a paragraph is how compact the text lines should appear on the printed page. The property [`line-height`](css-props#prop-line-height) can be used to determine the height of text lines.
 
-The property `line-stacking-strategy` allows to choose whether individual lines should have their height determined based on their content, or whether all lines in a paragraph should have the same height, or a compromise where their heights are determined by their content and then rounded up to a multiple of the paragraph line height.
+The property [`line-stacking-strategy`](css-props#prop-line-stacking-strategy) allows to choose whether individual lines should have their height determined based on their content, or whether all lines in a paragraph should have the same height, or a compromise where their heights are determined by their content and then rounded up to a multiple of the paragraph line height.
 
-In order to lay out text in a well-balanced way, it might at times be necessary to hyphenate some words - to enable hyphenation, the `hyphens` property is used. For details please refer to the section on [Hyphenation](cookbook.md#hyphenation).
+In order to lay out text in a well-balanced way, it might at times be necessary to hyphenate some words - to enable hyphenation, the [`hyphens`](css-props#prop-hyphens) property is used. For details please refer to the section on [Hyphenation](cookbook.md#hyphenation).
 
-Prince also allows for line-breaking in certain situations even in the absence of whitespace - for example, after slashes in long URLs. This behavior can be disabled with the `prince-linebreak-magic` property for situations in which more precise control over line-breaking is preferred.
+Prince also allows for line-breaking in certain situations even in the absence of whitespace - for example, after slashes in long URLs. This behavior can be disabled with the [`prince-linebreak-magic`](css-props#prop-prince-linebreak-magic) property for situations in which more precise control over line-breaking is preferred.
 
-The property `overflow-wrap` controls wrapping behavior *of last resort*: whether it is better for a word to overflow its container, or to be broken at an arbitrary point (subject to `white-space`, and not splitting within a grapheme cluster), without adding a hyphen.
+The property [`overflow-wrap`](css-props#prop-overflow-wrap) controls wrapping behavior *of last resort*: whether it is better for a word to overflow its container, or to be broken at an arbitrary point (subject to [`white-space`](css-props#prop-white-space), and not splitting within a grapheme cluster), without adding a hyphen.
 
-Prince does not support the value `break-word` of the property `word-break` to achieve a similar effect. Use the value `break-all` of `word-break`, or the property `overflow-wrap` with the value `break-word` instead.
+Prince does not support the value `break-word` of the property [`word-break`](css-props#prop-word-break) to achieve a similar effect. Use the value `break-all` of [`word-break`](css-props#prop-word-break), or the property [`overflow-wrap`](css-props#prop-overflow-wrap) with the value `break-word` instead.
 
 
 ### Writing Mode
 
-A writing mode describes the directionality of a script, i.e. it describes the direction the script is to be read. In (X)HTML, the language of a document is defined by the `lang` or `xml:lang` attributes. To control the rendering of the text, a couple of CSS properties can be used: the `direction` property defines the inline direction of the script, that is left-to-right (like e.g. Latin or Indic scripts) or right-to-left (like e.g. Arabic and Hebrew scripts).
+A writing mode describes the directionality of a script, i.e. it describes the direction the script is to be read. In (X)HTML, the language of a document is defined by the `lang` or `xml:lang` attributes. To control the rendering of the text, a couple of CSS properties can be used: the [`direction`](css-props#prop-direction) property defines the inline direction of the script, that is left-to-right (like e.g. Latin or Indic scripts) or right-to-left (like e.g. Arabic and Hebrew scripts).
 
-The `writing-mode` property, on the other hand, describes the block direction of the script, namely whether the text should be laid out horizontally, top-to-bottom (like e.g. Latin or Arabic scripts), or vertically, right-to-left (like e.g. Chinese scripts). The default value is `horizontal-tb`, which means horizontal, top-to-bottom.
+The [`writing-mode`](css-props#prop-writing-mode) property, on the other hand, describes the block direction of the script, namely whether the text should be laid out horizontally, top-to-bottom (like e.g. Latin or Arabic scripts), or vertically, right-to-left (like e.g. Chinese scripts). The default value is `horizontal-tb`, which means horizontal, top-to-bottom.
 
 Prince sets the PDF direction based on the direction and writing mode of the document root element to support right-to-left books.
 
@@ -398,7 +398,7 @@ This can be used to rotate content - see [Printing wide content sideways](cookbo
 
 ### Box Model
 
-All HTML elements follow the CSS box model. Their `margin`, `border`, `padding` and `background` can all be styled - and they can even cast a shadow with the property `box-shadow`.
+All HTML elements follow the CSS box model. Their `margin`, `border`, `padding` and `background` can all be styled - and they can even cast a shadow with the property [`box-shadow`](css-props#prop-box-shadow).
 
 #### Margin
 
@@ -413,23 +413,23 @@ If there are only:
 -   two values: then the left margin is set equal to the right margin, and the bottom margin is set equal to the top margin;
 -   one value: then all margins are made equal.
 
-Prince expands the margin properties with `margin-inside` and `margin-outside`, defining the margin respectively on the inside or outside of a spread: inside is on the right when used on a left-facing page, and on left on a right-facing page; outside is on the left when used on a left-facing page, and on the right on a right-facing page.
+Prince expands the margin properties with [`margin-inside`](css-props#prop-margin-inside) and [`margin-outside`](css-props#prop-margin-outside), defining the margin respectively on the inside or outside of a spread: inside is on the right when used on a left-facing page, and on left on a right-facing page; outside is on the left when used on a left-facing page, and on the right on a right-facing page.
 
 Always keep in mind that `margin-top` and `margin-bottom` of blocks are combined (i.e. "collapsed") into a single margin according to a possibly rather complex behavior known as *margin collapsing*. The notable exception is the behavior of margins in [Flex Layout](#flex-layout).
 
 #### Border
 
-The border of a box can be styled with several border properties. The borders can either be individually styled with `border-top`, `border-right`, `border-bottom` and `border-left`, or the shorthand property `border` can be used to style all four borders of the box in the same way.
+The border of a box can be styled with several border properties. The borders can either be individually styled with [`border-top`](css-props#prop-border-top), [`border-right`](css-props#prop-border-right), [`border-bottom`](css-props#prop-border-bottom) and [`border-left`](css-props#prop-border-left), or the shorthand property [`border`](css-props#prop-border) can be used to style all four borders of the box in the same way.
 
-To style the borders, the `border-color`, `border-style` and `border-width` properties can be used. For each of them, also `top`, `right`, `bottom` and `left` variants are available to style each border separately.
+To style the borders, the [`border-color`](css-props#prop-border-color), [`border-style`](css-props#prop-border-style) and [`border-width`](css-props#prop-border-width) properties can be used. For each of them, also `top`, `right`, `bottom` and `left` variants are available to style each border separately.
 
-The property `border-radius` property can be used for styling rounded corners.
+The [`border-radius`](css-props#prop-border-radius) property can be used for styling rounded corners.
 
-The `border-clip` property splits the borders into parts along the border edge - the first part is visible, the second one is invisible, the third part is visible, etc.
+The [`border-clip`](css-props#prop-border-clip) property splits the borders into parts along the border edge - the first part is visible, the second one is invisible, the third part is visible, etc.
 
 #### Padding
 
-The property `padding` defines the padding inside the box model. Each padding's size can be set individually with the properties [padding-top](css-props.md#prop-padding-top), [padding-bottom](css-props.md#prop-padding-bottom), [padding-left](css-props.md#prop-padding-left) and [padding-right](css-props.md#prop-padding-right), or you can use the *shorthand property* [padding](css-props.md#prop-padding) to specify all four paddings together. The syntax of the shorthand property is:
+The property [`padding`](css-props#prop-padding) defines the padding inside the box model. Each padding's size can be set individually with the properties [padding-top](css-props.md#prop-padding-top), [padding-bottom](css-props.md#prop-padding-bottom), [padding-left](css-props.md#prop-padding-left) and [padding-right](css-props.md#prop-padding-right), or you can use the *shorthand property* [padding](css-props.md#prop-padding) to specify all four paddings together. The syntax of the shorthand property is:
 
 ```
     padding: top right bottom left
@@ -442,14 +442,14 @@ If there are only:
 
 #### Background
 
-The background of an element can be styled with the `background-color` and the `background-image` properties, or with the shorthand property `background`. See also [Background Images](graphics.md#background-images).
+The background of an element can be styled with the [`background-color`](css-props#prop-background-color) and the [`background-image`](css-props#prop-background-image) properties, or with the shorthand property [`background`](css-props#prop-background). See also [Background Images](graphics.md#background-images).
 
-Various standard properties are available to position the background, to clip it or to determine whether, and how it should be repeated. Prince extends control on the background with the `prince-background-image-resolution` property, used to control image size in print (see [Image Size](graphics.md#image-size)), and with the `bleed` modifier of the `background-attachment` property, which, when used together with `background-size: cover`, allows a background image to cover the entire page bleed area (see [Trimming marks](paged.md#trimming-marks)).
+Various standard properties are available to position the background, to clip it or to determine whether, and how it should be repeated. Prince extends control on the background with the [`prince-background-image-resolution`](css-props#prop-prince-background-image-resolution) property, used to control image size in print (see [Image Size](graphics.md#image-size)), and with the `bleed` modifier of the [`background-attachment`](css-props#prop-background-attachment) property, which, when used together with `background-size: cover`, allows a background image to cover the entire page bleed area (see [Trimming marks](paged.md#trimming-marks)).
 
 
 ### Display
 
-Every HTML element is displayed in a way depending on what type of element it is. Most elements are displayed as either `block` or `inline` elements. The default display value can be changed with the `display` property.
+Every HTML element is displayed in a way depending on what type of element it is. Most elements are displayed as either `block` or `inline` elements. The default display value can be changed with the [`display`](css-props#prop-display) property.
 
 A `block` element always starts on a new line and takes up all the available width.
 
@@ -474,21 +474,21 @@ The special value `none`, which removes the content from the document, is very u
 
 ### Transformations
 
-Prince supports CSS transformations of Level 1, with some limitations: it recognizes `transform` and `transform-origin`, but does not recognize `transform-box`. Furthermore, Prince does not allow perspective transforms.
+Prince supports CSS transformations of Level 1, with some limitations: it recognizes [`transform`](css-props#prop-transform) and [`transform-origin`](css-props#prop-transform-origin), but does not recognize `transform-box`. Furthermore, Prince does not allow perspective transforms.
 
-The `transform` property can be used to rotate, translate, scale or skew an element.
+The [`transform`](css-props#prop-transform) property can be used to rotate, translate, scale or skew an element.
 
-The `transform` property currently does not affect SVG elements - they need to use their own `transform` attribute instead.
+The [`transform`](css-props#prop-transform) property currently does not affect SVG elements - they need to use their own `transform` attribute instead.
 
-The `transform` property function `rotate()` rotates the element clockwise from its current position. Negative values rotate conter-clockwise.
+The [`transform`](css-props#prop-transform) property function `rotate()` rotates the element clockwise from its current position. Negative values rotate conter-clockwise.
 
 The function `translate()` moves an element along a vertical and/or horizontal axis. The functions `translatex()` and `translatey()` move the element along one of those axis only. The function `translate3d()` is supported if the Z (third) coordinate is zero, thus making it equivalent to the 2D `translate()`.
 
-The function `scale()` affects the size of the element - note that this also alters other properties of an element, such as its `font-size`, `padding`, `height` and `width`. The functions `scalex()` and `scaley()` transform the element in one dimension only.
+The function `scale()` affects the size of the element - note that this also alters other properties of an element, such as its [`font-size`](css-props#prop-font-size), [`padding`](css-props#prop-padding), [`height`](css-props#prop-height) and [`width`](css-props#prop-width). The functions `scalex()` and `scaley()` transform the element in one dimension only.
 
 The functions `skewx()` and `skewy()` tilt an element to the left or right. There is no shorthand form.
 
-The origin for the transformations, i.e. the point around which a transformation is applied, can be set with the `transform-origin` property.
+The origin for the transformations, i.e. the point around which a transformation is applied, can be set with the [`transform-origin`](css-props#prop-transform-origin) property.
 
 If only one term is given, then the second component is assumed to be `center`. In particular, if only a percentage or length is given, then it is assumed to be the horizontal coordinate.
 
@@ -501,11 +501,11 @@ A list item has two parts: `marker` and `content`.
 
 The `content` part is rendered inside the list item's border box, and is styled the same way as a normal block, such as `div` or `p` element.
 
-The `marker` positioning is determined by the `list-style-position` property and is styled using the `::marker` pseudo-element.
+The `marker` positioning is determined by the [`list-style-position`](css-props#prop-list-style-position) property and is styled using the `::marker` pseudo-element.
 
 #### List markers
 
-The `content` property can be applied to the `::marker` pseudo-element to specify a custom marker for list items.
+The [`content`](css-props#prop-content) property can be applied to the `::marker` pseudo-element to specify a custom marker for list items.
 
 CSS
 
@@ -514,7 +514,7 @@ CSS
 ```
 #### List marker position
 
-List markers are rendered outside the list item in the left margin area by default. If the CSS property `list-style-position` has value `inside`, the marker is rendered as the first inline box inside the list item.
+List markers are rendered outside the list item in the left margin area by default. If the CSS property [`list-style-position`](css-props#prop-list-style-position) has value `inside`, the marker is rendered as the first inline box inside the list item.
 
 CSS
 ```
@@ -549,9 +549,9 @@ or <code>li</code> enough left margin.
 
 #### List marker type
 
-Different list marker types can be chosen by setting the CSS property `list-style-type` to different values: `disc` | `hyphen` | `decimal` | `lower-alpha` | ...
+Different list marker types can be chosen by setting the CSS property [`list-style-type`](css-props#prop-list-style-type) to different values: `disc` | `hyphen` | `decimal` | `lower-alpha` | ...
 
-The property `list-style-type` applies to list items and determines the type of marker that they receive. The following table shows examples of some list style types (a table with examples of all supported options for ordered lists, see [Counter styles](gen-content.md#counter-styles)).
+The property [`list-style-type`](css-props#prop-list-style-type) applies to list items and determines the type of marker that they receive. The following table shows examples of some list style types (a table with examples of all supported options for ordered lists, see [Counter styles](gen-content.md#counter-styles)).
 
 |                              |                                 |
 |------------------------------|---------------------------------|
@@ -582,9 +582,9 @@ Output
 
 #### List marker style
 
-The list marker can also be replaced by an image by using the `list-style-image` property.
+The list marker can also be replaced by an image by using the [`list-style-image`](css-props#prop-list-style-image) property.
 
-The shorthand property `list-style` can be used to set the three properties `list-style-image`, `list-style-position` and `list-style-type` together.
+The shorthand property [`list-style`](css-props#prop-list-style) can be used to set the three properties [`list-style-image`](css-props#prop-list-style-image), [`list-style-position`](css-props#prop-list-style-position) and [`list-style-type`](css-props#prop-list-style-type) together.
 
 Alternatively, the `::marker` pseudo-element can be used to style the list item marker, giving full control over its content, width, alignment and so on.
 
@@ -614,8 +614,8 @@ When the *automatic table layout* algorithm is used, all contents of the table w
 The *automatic table layout* algorithm is used in the following situations:
 
 -   by default; or
--   when table `table-layout` property is `auto`; or
--   when table `width` property is `auto`, regardless of the value of the `table-layout` property.
+-   when table [`table-layout`](css-props#prop-table-layout) property is `auto`; or
+-   when table [`width`](css-props#prop-width) property is `auto`, regardless of the value of the [`table-layout`](css-props#prop-table-layout) property.
 
 The basic rules used by Prince can be summarized as follows:
 
@@ -629,8 +629,8 @@ When the *fixed table layout* algorithm is used, the table column widths are det
 
 The *fixed table layout* algorithm is used in the following situations:
 
--   when the table `table-layout` property has a value `fixed`, and
--   the value of `width` property is not `auto`
+-   when the table [`table-layout`](css-props#prop-table-layout) property has a value `fixed`, and
+-   the value of [`width`](css-props#prop-width) property is not `auto`
 
 ```
     table {
@@ -638,7 +638,7 @@ The *fixed table layout* algorithm is used in the following situations:
         width: 90%
     }
 ```
-Note that if the `width` property has value `auto` (which is the default value), the `table-layout` property will be ignored and automatic table layout will be used instead.
+Note that if the [`width`](css-props#prop-width) property has value `auto` (which is the default value), the [`table-layout`](css-props#prop-table-layout) property will be ignored and automatic table layout will be used instead.
 
 The basic rules used by Prince are as follows:
 
@@ -648,7 +648,7 @@ The basic rules used by Prince are as follows:
 
 #### Separated table borders
 
-When the `border-collapse` property is set to `separate`, a table can have separate borders around individual cells. The space between table cell borders is determined by the value of its `border-spacing` property.
+When the [`border-collapse`](css-props#prop-border-collapse) property is set to `separate`, a table can have separate borders around individual cells. The space between table cell borders is determined by the value of its [`border-spacing`](css-props#prop-border-spacing) property.
 
 CSS
 ```
@@ -689,7 +689,7 @@ the value of <code><a href="/doc/css-props#prop-border-collapse">border-collapse
 
 #### Collapsing table borders
 
-When the CSS property `border-collapse` is set to `collapse`, each edge of each cell resolves its final border style and border width based on certain rules.
+When the CSS property [`border-collapse`](css-props#prop-border-collapse) is set to `collapse`, each edge of each cell resolves its final border style and border width based on certain rules.
 
 CSS
 ```
@@ -721,7 +721,7 @@ Output
 </tr>
 </table>
 
-Note that the <code><a href="/doc/css-props#prop-border-spacing">border-spacing</a></code> property is not used
+Note that the [`border-spacing`](css-props#prop-border-spacing) property is not used
 in the collapsing table border model.
 
 
@@ -736,7 +736,7 @@ The rules used by Prince for choosing the "winner" border are as follows:
 
 #### Cells that span columns
 
-Prince table cells that span multiple columns using the `table-column-span` CSS property, which takes an integer value and is set to 1 by default.
+Prince table cells that span multiple columns using the [`table-column-span`](css-props#prop-table-column-span) CSS property, which takes an integer value and is set to 1 by default.
 
 CSS
 ```
@@ -760,7 +760,7 @@ Output
 
 #### Cells that span rows
 
-Prince supports table cells that span multiple rows using the `table-row-span` CSS property, which takes an integer value and is set to 1 by default.
+Prince supports table cells that span multiple rows using the [`table-row-span`](css-props#prop-table-row-span) CSS property, which takes an integer value and is set to 1 by default.
 
 CSS
 ```
@@ -842,25 +842,25 @@ See also [Long Tables](cookbook.md#long-tables).
 
 #### Table captions
 
-Tables can also be provided with a table caption by using the `caption` HTML element, or by styling an arbitrary element with `display: table-caption` to be made to behave like `caption` elements. The caption is positioned above the table by default, but it can be moved to the bottom with the `caption-side` property.
+Tables can also be provided with a table caption by using the `caption` HTML element, or by styling an arbitrary element with `display: table-caption` to be made to behave like `caption` elements. The caption is positioned above the table by default, but it can be moved to the bottom with the [`caption-side`](css-props#prop-caption-side) property.
 
-When a table spans across more than one page, the `prince-caption-page` property determines whether table captions will be displayed on the first page of a table, or only on the following pages, or repeated on every page that a table appears on. See also [Fancy Table Captions](cookbook.md#fancy-table-captions).
+When a table spans across more than one page, the [`prince-caption-page`](css-props#prop-prince-caption-page) property determines whether table captions will be displayed on the first page of a table, or only on the following pages, or repeated on every page that a table appears on. See also [Fancy Table Captions](cookbook.md#fancy-table-captions).
 
 
 ### Columns
 
 Reading long lines of text can be difficult - multiple columns have been used in print for a very long time. CSS allows for clean styling in multiple columns with the help of several properties.
 
-The `column-count` property specifies the number of columns for the selected element - the column width will be calculated automatically. Alternatively, you can define the (optimal) width of a column with the `column-width` property, and the number of columns will be defined automatically. Note that Prince might make small adjustments to the actual width in order to use the available space at its best. Both values can also be set simultaneously with the shorthand `columns` property.
+The [`column-count`](css-props#prop-column-count) property specifies the number of columns for the selected element - the column width will be calculated automatically. Alternatively, you can define the (optimal) width of a column with the [`column-width`](css-props#prop-column-width) property, and the number of columns will be defined automatically. Note that Prince might make small adjustments to the actual width in order to use the available space at its best. Both values can also be set simultaneously with the shorthand [`columns`](css-props#prop-columns) property.
 
 ```
     p {
         column-count: 3;
     }
 ```
-The height of the columns is balanced by default, and the text is distributed to the available columns so that the height of the content in each column is approximately equal. In some situations it might be desirable to explicitly determine the height of the columns, creating as many columns as necessary. This is achieved by setting the `height` or `max-height` properties on a multi-column block.
+The height of the columns is balanced by default, and the text is distributed to the available columns so that the height of the content in each column is approximately equal. In some situations it might be desirable to explicitly determine the height of the columns, creating as many columns as necessary. This is achieved by setting the [`height`](css-props#prop-height) or [`max-height`](css-props#prop-max-height) properties on a multi-column block.
 
-With the `column-gap` property the distance between columns can be styled and the `column-rule` property allows the addition of a line between columns - this is similar to using `border-left` or `border-right` properties.
+With the [`column-gap`](css-props#prop-column-gap) property the distance between columns can be styled and the [`column-rule`](css-props#prop-column-rule) property allows the addition of a line between columns - this is similar to using [`border-left`](css-props#prop-border-left) or [`border-right`](css-props#prop-border-right) properties.
 
 ```
     p {
@@ -868,13 +868,13 @@ With the `column-gap` property the distance between columns can be styled and th
         column-rule: red dotted thin;
     }
 ```
-The `column-fill` property determines how the content is distributed to fill various columns: the property can be set to `auto`, filling the columns sequentially, or `balance`, dividing the content in equal ways between the columns.
+The [`column-fill`](css-props#prop-column-fill) property determines how the content is distributed to fill various columns: the property can be set to `auto`, filling the columns sequentially, or `balance`, dividing the content in equal ways between the columns.
 
-When content is laid out in multiple columns, Prince can determine where column breaks are placed in a similar way to breaking content into pages. Use the properties `break-before` and `break-after` with the value `column` to fine tune this behavior.
+When content is laid out in multiple columns, Prince can determine where column breaks are placed in a similar way to breaking content into pages. Use the properties [`break-before`](css-props#prop-break-before) and [`break-after`](css-props#prop-break-after) with the value `column` to fine tune this behavior.
 
-Prince also supports the properties `column-break-before` and `column-break-after`. However, you are encouraged to use the newer properties `break-before`, `break-after` with the keyword `column` from the CSS Fragmentation Module Level 3.
+Prince also supports the properties [`column-break-before`](css-props#prop-column-break-before) and [`column-break-after`](css-props#prop-column-break-after). However, you are encouraged to use the newer properties [`break-before`](css-props#prop-break-before), [`break-after`](css-props#prop-break-after) with the keyword `column` from the CSS Fragmentation Module Level 3.
 
-If an element is to break the flow and span several columns, the property `column-span` helps to achieve this. For floated elements (see [Floats](#floats)) a numeric value tells Prince how many columns the element should span. For non-floated elements that are part of the regular flow of the document, only the keyword `all` can be used.
+If an element is to break the flow and span several columns, the property [`column-span`](css-props#prop-column-span) helps to achieve this. For floated elements (see [Floats](#floats)) a numeric value tells Prince how many columns the element should span. For non-floated elements that are part of the regular flow of the document, only the keyword `all` can be used.
 
 The following example instructs Prince to make the `h1` heading element span all the columns:
 
@@ -886,18 +886,18 @@ The following example instructs Prince to make the `h1` heading element span all
         column-span: all;
     }
 ```
-Prince features also several column-specific extensions to the `float` property, namely [Page and column floats](#page-and-column-floats) and [Page and column footnotes](#page-and-column-footnotes).
+Prince features also several column-specific extensions to the [`float`](css-props#prop-float) property, namely [Page and column floats](#page-and-column-floats) and [Page and column footnotes](#page-and-column-footnotes).
 
 ### Floats
 
-When printed texts contain images, the text is usually laid out to wrap around those images. To accomplish the same with CSS, the images are floated - either to the left or right of text, or at times even to the top or to the bottom of a column. The `float` property does just this - it floats an element, allowing the content of other elements to flow around it.
+When printed texts contain images, the text is usually laid out to wrap around those images. To accomplish the same with CSS, the images are floated - either to the left or right of text, or at times even to the top or to the bottom of a column. The [`float`](css-props#prop-float) property does just this - it floats an element, allowing the content of other elements to flow around it.
 
 ```
     img {
         float: right;
     }
 ```
-The property `clear` can be considered the float's sister property: an element that has the `clear` property set on it will not move up, next to the floated element, like the float is asking for. Instead, it will move down after the float.
+The property [`clear`](css-props#prop-clear) can be considered the float's sister property: an element that has the [`clear`](css-props#prop-clear) property set on it will not move up, next to the floated element, like the float is asking for. Instead, it will move down after the float.
 
 Prince extends the traditional behavior of floats with a few features that have been ubiquitous in printing for a long time.
 
@@ -909,14 +909,14 @@ This allows for more flexible layout options that meet the needs of formatting d
 
 ##### Page and column floats
 
-When giving the `float` property the value `top` or `bottom`, the element will be floated to, respectively, the top or the bottom of the page. The values `column-top` and `column-bottom` float the element to the top or bottom of the column it appears in, while `column-top-corner` and `column-bottom-corner` float the element to the top or bottom of the last column, rather than its natural column. These can be useful if you wanted to create a magazine-style layout, floating an image to the right-hand corner of the current multi-column layout.
+When giving the [`float`](css-props#prop-float) property the value `top` or `bottom`, the element will be floated to, respectively, the top or the bottom of the page. The values `column-top` and `column-bottom` float the element to the top or bottom of the column it appears in, while `column-top-corner` and `column-bottom-corner` float the element to the top or bottom of the last column, rather than its natural column. These can be useful if you wanted to create a magazine-style layout, floating an image to the right-hand corner of the current multi-column layout.
 
 ```
     img {
         float: column-top-corner;
     }
 ```
-A floated element can span several columns with the help of the `column-span` property (see [Columns](#columns)). The following example instructs Prince to make the image span two columns:
+A floated element can span several columns with the help of the [`column-span`](css-props#prop-column-span) property (see [Columns](#columns)). The following example instructs Prince to make the image span two columns:
 
 ```
     img {
@@ -933,7 +933,7 @@ The value `prince-snap` instructs Prince to float the image to the nearest "end"
 ```
 ##### Spread floats
 
-In print one typically has to deal with left facing and right facing pages, together forming a spread. To take this into account when placing an element, Prince extends the `float` property with the values `inside` and `outside`, moving the element respectively to the inside or outside of a spread.
+In print one typically has to deal with left facing and right facing pages, together forming a spread. To take this into account when placing an element, Prince extends the [`float`](css-props#prop-float) property with the values `inside` and `outside`, moving the element respectively to the inside or outside of a spread.
 
 If the `inside` and `outside` values are used in a multi-column layout, the element is floated to the inside or outside of the column it appears in its natural flow.
 
@@ -960,7 +960,7 @@ The optional modifier `unless-fit` is to be used in combination with other float
 
 ### Footnotes
 
-Prince supports footnotes using the `float` property. If an element has the property float: footnote then it will be floated into the footnote area of the page and a reference will be placed in the text.
+Prince supports footnotes using the [`float`](css-props#prop-float) property. If an element has the property `float: footnote` then it will be floated into the footnote area of the page and a reference will be placed in the text.
 
 This example shows some simple footnotes, the fn class is used to create footnotes:
 
@@ -1032,7 +1032,7 @@ Prince automatically generates footnote markers, the numeric markers placed in f
 ```
 This rule will generate footnote markers with a bold font.
 
-Footnote markers are rendered outside the footnote in the left margin area by default. If the CSS property `footnote-style-position` has value `inside`, the marker is rendered as the first inline box inside the footnote. This property is similar to the `list-style-position` property that applies to list markers (see [Lists](#lists)).
+Footnote markers are rendered outside the footnote in the left margin area by default. If the CSS property [`footnote-style-position`](css-props#prop-footnote-style-position) has value `inside`, the marker is rendered as the first inline box inside the footnote. This property is similar to the [`list-style-position`](css-props#prop-list-style-position) property that applies to list markers (see [Lists](#lists)).
 
 #### Styling and behavior of footnotes
 
@@ -1062,17 +1062,17 @@ By default, the `@footnote` area is at the bottom of the page. However, Prince a
 ```
 This rule moves the footnotes area to the left side of a page.
 
-Footnotes are created with the `float` property (see also [Floats](#floats)): an element can be removed from the normal flow of the document by styling it with the `footnote` value. This creates a footnote call in the place where the element would be in its natural flow, and moves the element's content to the bottom of the page. The footnote marker is rendered outside the footnote in the left margin area, and the footnote is displayed as a block element.
+Footnotes are created with the [`float`](css-props#prop-float) property (see also [Floats](#floats)): an element can be removed from the normal flow of the document by styling it with the `footnote` value. This creates a footnote call in the place where the element would be in its natural flow, and moves the element's content to the bottom of the page. The footnote marker is rendered outside the footnote in the left margin area, and the footnote is displayed as a block element.
 
-The property `footnote-display` can be used to change the default display of footnotes: besides the default `block` display, they can be also treated as `inline` elements. The value `compact` leaves it up to Prince to determine whether to display the footnote as a block or inline element: if two or more footnotes fit on one line, they will be treated as inline elements to take up less space.
+The property [`footnote-display`](css-props#prop-footnote-display) can be used to change the default display of footnotes: besides the default `block` display, they can be also treated as `inline` elements. The value `compact` leaves it up to Prince to determine whether to display the footnote as a block or inline element: if two or more footnotes fit on one line, they will be treated as inline elements to take up less space.
 
 Making a footnote into an inline element moves the footnote marker into the footnote box as the first inline box inside the footnote.
 
-The `float` property offers also the value `inline-footnote`, which is another mechanism to transform the footnote into an inline element.
+The [`float`](css-props#prop-float) property offers also the value `inline-footnote`, which is another mechanism to transform the footnote into an inline element.
 
-In a multi-column layout, footnotes can be rendered at the bottom of the page as normal footnotes, or alternatively at the bottom of each column by using the values `prince-column-footnote` or `prince-column-inline-footnote` for the `float` property. See also [Prince extensions to floats](#prince-extensions-to-floats).
+In a multi-column layout, footnotes can be rendered at the bottom of the page as normal footnotes, or alternatively at the bottom of each column by using the values `prince-column-footnote` or `prince-column-inline-footnote` for the [`float`](css-props#prop-float) property. See also [Prince extensions to floats](#prince-extensions-to-floats).
 
-In some situations it might happen that footnotes do not fit on the page on which the footnote call was placed. It might be desirable to tie the footnote to the same page as the call - the `prince-footnote-policy` can be of help. The following example instructs Prince to move the line with the footnote call to the next page, in order to keep it on the same page as the footnote itself:
+In some situations it might happen that footnotes do not fit on the page on which the footnote call was placed. It might be desirable to tie the footnote to the same page as the call - the property [`prince-footnote-policy`](css-props#prop-prince-footnote-policy) can be of help. The following example instructs Prince to move the line with the footnote call to the next page, in order to keep it on the same page as the footnote itself:
 
 ```
     p {
@@ -1094,14 +1094,14 @@ In Flex layout some properties apply to the parent element, i.e. to the flex con
 
 #### Flex Containers
 
-To use the flex layout, flex needs to be enabled on the parent element to create the flex container by defining the `flex` value for the `display` property.
+To use the flex layout, flex needs to be enabled on the parent element to create the flex container by defining the `flex` value for the [`display`](css-props#prop-display) property.
 
 ```
     .flexcontainer {
         display: flex;
     }
 ```
-Next, the direction of the flex layout can be defined by means of the `flex-direction` property: rightwards, leftwards, downwards, or even upwards! With the `flex-wrap` property the wrapping of the flex container is controlled - the default is to try to arrange all items on one line. The shorthand property `flex-flow` can be used to define `flex-direction` and `flex-wrap` together.
+Next, the direction of the flex layout can be defined by means of the [`flex-direction`](css-props#prop-flex-direction) property: rightwards, leftwards, downwards, or even upwards! With the [`flex-wrap`](css-props#prop-flex-wrap) property the wrapping of the flex container is controlled - the default is to try to arrange all items on one line. The shorthand property [`flex-flow`](css-props#prop-flex-flow) can be used to define [`flex-direction`](css-props#prop-flex-direction) and [`flex-wrap`](css-props#prop-flex-wrap) together.
 
 ```
     .flexcontainer {
@@ -1109,11 +1109,11 @@ Next, the direction of the flex layout can be defined by means of the `flex-dire
         flex-flow: row wrap;
     }
 ```
-The property `justify-content` defines the alignment of the content along the main axis - extra free space can be distributed in various ways after or before the content, or in specific ways between the flex items. The alignment along the cross axis is controlled with the `align-items` property. In case there are multiple item lines in a flex container, the alignment of the lines can be controlled with the `align-content` property. If there is only one line, the property has no effect.
+The property [`justify-content`](css-props#prop-justify-content) defines the alignment of the content along the main axis - extra free space can be distributed in various ways after or before the content, or in specific ways between the flex items. The alignment along the cross axis is controlled with the [`align-items`](css-props#prop-align-items) property. In case there are multiple item lines in a flex container, the alignment of the lines can be controlled with the [`align-content`](css-props#prop-align-content) property. If there is only one line, the property has no effect.
 
 #### Flex Items
 
-By default, items are placed in the source order inside a flex container, but with the `order` property it can be modified!
+By default, items are placed in the source order inside a flex container, but with the [`order`](css-props#prop-order) property it can be modified!
 
 ```
     .flexitem1 {
@@ -1126,14 +1126,14 @@ By default, items are placed in the source order inside a flex container, but wi
         order: 3;
     }
 ```
-The `flex-grow` property defines the proportion by which a flex item can grow, if necessary, while `flex-shrink` defines the proportion by which an item can shrink. The `flex-basis` property defines the default size of an element, before the remaining space is distributed. However, it is recommended to use the shorthand property `flex` instead - the value for the `flex-grow` is mandatory, the other properties are automatically set in an intelligent way.
+The [`flex-grow`](css-props#prop-flex-grow) property defines the proportion by which a flex item can grow, if necessary, while [`flex-shrink`](css-props#prop-flex-shrink) defines the proportion by which an item can shrink. The [`flex-basis`](css-props#prop-flex-basis) property defines the default size of an element, before the remaining space is distributed. However, it is recommended to use the shorthand property [`flex`](css-props#prop-flex) instead - the value for the [`flex-grow`](css-props#prop-flex-grow) is mandatory, the other properties are automatically set in an intelligent way.
 
 ```
     .flexitem {
         flex: 2;
     }
 ```
-Finally, the property `align-self` allows the default alignment specified with the `align-items` property to be overridden for individual flex items.
+Finally, the property [`align-self`](css-props#prop-align-self) allows the default alignment specified with the [`align-items`](css-props#prop-align-items) property to be overridden for individual flex items.
 
 It is important to know that margins of flex items behave in a slightly special way: margins of adjacent flex items do not collapse, and using the keyword `auto` for the margins of a flex item will automatically distribute the available space equally around the item - and it will be centered in both axis!
 
@@ -1144,7 +1144,7 @@ Please notice that percentage values of margins and paddings of flex items are r
 
 Complex designs often have very large amounts of CSS with a lot of repeated values. The same color might for example be used in hundreds of different places, requiring a global search-and-replace if that color needs to be changed. Prince supports custom properties, which allow a value to be stored in one place, then be referenced in all other places.
 
-The custom properties are set by using the cutom property notation, which requires the use of two dashes (`--`) before the custom property name - a good approach is to set this property on the `:root` pseudo-class (see [Tree-Structural pseudo-classes](css-refs#tree-structural-pseudo-classes)). It is then accessed in other places by using the `var()` function (see [CSS Functional Expressions](css-refs.md#css-functional-expressions)).
+The custom properties are set by using the cutom property notation, which requires the use of two dashes ([`--`](css-props#prop---custom-property-name)) before the custom property name - a good approach is to set this property on the `:root` pseudo-class (see [Tree-Structural pseudo-classes](css-refs#tree-structural-pseudo-classes)). It is then accessed in other places by using the `var()` function (see [CSS Functional Expressions](css-refs.md#css-functional-expressions)).
 
 Unlike other CSS properties, custom property names are case-sensitive.
 

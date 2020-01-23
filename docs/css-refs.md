@@ -209,7 +209,7 @@ The absolute length units correspond to exact distances in the PDF file.
 
 ### Font Length Units
 
-The font length units are relative to the `font-size` property.
+The font length units are relative to the [`font-size`](css-props#prop-font-size) property.
 
 <table class="grid">
 <tr>

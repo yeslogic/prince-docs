@@ -28,7 +28,7 @@ Each list item contains a hyperlink to the heading's `id`. This list functions a
 
 The transformation into a proper table of contents happens with CSS when Prince generates the PDF - the resulting document will be paged, and possibly be intended for printing. It means that the hyperlinks need to be integrated with an indication of the correct page on which the target is located.
 
-This is achieved automatically with the `target-counter()` function in the `content` property, using the `page` counter. The URL is being automatically fetched from the `href` attribute of the hyperlink element `<a>`.
+This is achieved automatically with the `target-counter()` function in the [`content`](css-props#prop-content) property, using the `page` counter. The URL is being automatically fetched from the `href` attribute of the hyperlink element `<a>`.
 
 ```
     #toc a:after {
@@ -140,9 +140,9 @@ So, when you start thinking about the layout box model, Prince offers the proper
 ```
 This example creates a bigger margin around the central gutter, like the previous one - albeit in a shorter way.
 
-Floats are particularly sensitive to the placement on the page with regards to whether it is a left-facing or right-facing page. Prince extends the `float` property (and the property `clear`) with the values `inside` and `outside`. For details please see the chapter [Floats](styling#floats).
+Floats are particularly sensitive to the placement on the page with regards to whether it is a left-facing or right-facing page. Prince extends the [`float`](css-props#prop-float) property (and the property [`clear`](css-props#prop-clear)) with the values `inside` and `outside`. For details please see the chapter [Floats](styling#floats).
 
-On a paragraph level, the properties `text-align` and `text-align-last` similarly take the keywords `inside` and `outside` to help achieving a smooth layout.
+On a paragraph level, the properties [`text-align`](css-props#prop-text-align) and [`text-align-last`](css-props#prop-text-align-last) similarly take the keywords `inside` and `outside` to help achieving a smooth layout.
 
 ```
     @page:verso {
@@ -186,9 +186,9 @@ One of the main differences when designing for paged media is that you need to t
 
 The table itself is naturally split over several pages - but if you want table headers and footers repeated on each page, you need to code them in the HTML of the document by using the elements `thead` and/or `tfoot`. The content of these elements will be carried on to all the subsequent pages on which the table appears.
 
-Tables can also be provided with a table caption by using the `caption` HTML element, or by styling an arbitrary element with `display: table-caption` to be made to behave like `caption` elements. The caption is positioned above the table by default, but it can be moved to the bottom with the `caption-side` property.
+Tables can also be provided with a table caption by using the `caption` HTML element, or by styling an arbitrary element with `display: table-caption` to be made to behave like `caption` elements. The caption is positioned above the table by default, but it can be moved to the bottom with the [`caption-side`](css-props#prop-caption-side) property.
 
-When a table spans across more than one page, the `prince-caption-page` property determines whether table captions will be displayed on the first page of a table, or only on the following pages, or repeated on every page that a table appears on. See also [Fancy Table Captions](#fancy-table-captions).
+When a table spans across more than one page, the [`prince-caption-page`](css-props#prop-prince-caption-page) property determines whether table captions will be displayed on the first page of a table, or only on the following pages, or repeated on every page that a table appears on. See also [Fancy Table Captions](#fancy-table-captions).
 
 ```
     table + p {
@@ -214,9 +214,9 @@ Fancy Table Captions
 
 HTML tables only have one caption per table. However, in printed form a table might span several pages (see [Long Tables](#long-tables)) and it might be desirable to have separate captions for the first and the following pages - you might want to add "cont." to the caption of the first one, or otherwise differentiate them. Prince offers an extension mechanism to do so.
 
-As mentioned in [Long Tables](#long-tables), when a table spans across more than one page, the `prince-caption-page` property determines whether table captions will be displayed on the first page of a table, or only on the following pages, or repeated on every page that a table appears on. This opens up the possibility to have a different caption on the first and on the following pages.
+As mentioned in [Long Tables](#long-tables), when a table spans across more than one page, the [`prince-caption-page`](css-props#prop-prince-caption-page) property determines whether table captions will be displayed on the first page of a table, or only on the following pages, or repeated on every page that a table appears on. This opens up the possibility to have a different caption on the first and on the following pages.
 
-You might define a caption in HTML for the main table caption - to be displayed on the first page. Additionally, you make another element into a table caption with the `display` property - and display it only on the following pages!
+You might define a caption in HTML for the main table caption - to be displayed on the first page. Additionally, you make another element into a table caption with the [`display`](css-props#prop-display) property - and display it only on the following pages!
 
 The paragraph functioning as a table caption can be hidden in browsers by using [CSS Media Queries](css-refs.md#media-queries).
 
@@ -269,7 +269,7 @@ Prince uses CSS for these headers and footers and for styling them.
 
 Each page is structured in [Page regions](paged.md#page-regions) - most page content is located inside the *page area*, including the [Footnotes](styling.md#footnotes), but the *page-margin boxes* contain most of the content repeating in slightly varied way across the whole book - the running headers and footers.
 
-A typical case is page numbering, which can easily be obtained with [Generated Content](gen-content.md#gen-content): the current page number can be printed in a page region with the `content` property. (See also [Page Numbering](#page-numbering)).
+A typical case is page numbering, which can easily be obtained with [Generated Content](gen-content.md#gen-content): the current page number can be printed in a page region with the [`content`](css-props#prop-content) property. (See also [Page Numbering](#page-numbering)).
 
 ```
     @page {
@@ -314,7 +314,7 @@ Dictionary Page Headers
 
 A peculiar and interesting use of page headers happens in dictionaries: typically, you might want to display page headers like "a-af", where "a" is the first definition on the page and "af" is the last one. This can easily be obtained by adding [The optional page-policy value](gen-content.md#gen-content-functions-pagepolicy) to the `string()` function.
 
-The `string-set` property is applied to each definition in the dictionary (the **b:first-child** from the following example), and then the `first` and `last` page policy values are use to select the relevant definition to display in the page header.
+The [`string-set`](css-props#prop-string-set) property is applied to each definition in the dictionary (the **b:first-child** from the following example), and then the `first` and `last` page policy values are use to select the relevant definition to display in the page header.
 
 ```
     @page {
@@ -360,7 +360,7 @@ Page Numbering
 
 Paged media is organized in pages - and numbering the pages is a common task: generated content does this for you automatically. The easiest way of doing so is numbering them sequentially from the first to the last page.
 
-To use a counter, it usually first needs to be initialized with the `counter-reset` property, which can be applied to any element and initializes one or more counters to the specified values, or to zero if no value is specified. Once initialized, the counter will be displayed with the `counter()` function in the `content` property.
+To use a counter, it usually first needs to be initialized with the [`counter-reset`](css-props#prop-counter-reset) property, which can be applied to any element and initializes one or more counters to the specified values, or to zero if no value is specified. Once initialized, the counter will be displayed with the `counter()` function in the [`content`](css-props#prop-content) property.
 
 Page counters work a bit more simple and usually don't need to be explicitly initialized or incremented.
 
@@ -440,11 +440,11 @@ Footnotes per Column
   </dd>
 </dl>
 
-Prince has a simple way of creating footnotes: the `@footnote` page area, where footnotes can be floated to with the `float` property. For details see [Footnotes](styling.md#footnotes).
+Prince has a simple way of creating footnotes: the `@footnote` page area, where footnotes can be floated to with the [`float`](css-props#prop-float) property. For details see [Footnotes](styling.md#footnotes).
 
 In a multi-column layout (see [Columns](styling.md#columns)), footnotes can be placed at the bottom of the page, spanning all columns. But usually you want to position the footnote at the bottom of the column the footnote call appears in.
 
-To achieve this, the values `prince-column-footnote` or `prince-column-inline-footnote` of the `float` property are used.
+To achieve this, the values `prince-column-footnote` or `prince-column-inline-footnote` of the [`float`](css-props#prop-float) property are used.
 
 The value `prince-column-footnote` transforms the element into a column footnote: it creates a footnote call in the place where it appears in its natural flow, and moves the element to the bottom of the column. The footnote marker is placed outside of the block of the footnote. With the value `prince-column-inline-footnote`, the footnote marker is placed inside of the block of the footnote.
 
@@ -521,7 +521,7 @@ Sidenotes
   <dd><a href="/doc/styling#styling-and-behavior-of-footnotes">Styling and behavior of footnotes</a></dd>
 </dl>
 
-Prince has a simple way of creating footnotes: the `@footnote` page area, where footnotes can be floated to with the `float` property. For details see [Footnotes](styling.md#footnotes).
+Prince has a simple way of creating footnotes: the `@footnote` page area, where footnotes can be floated to with the [`float`](css-props#prop-float) property. For details see [Footnotes](styling.md#footnotes).
 
 It gets slightly more complicated when you want to position the footnotes not under the text, in their default position, but at the side of the pages as sidenotes. Two approaches are possible, each with its advantages and drawbacks. Either
 
@@ -611,7 +611,7 @@ Hyperlinks in Print
 
 Hyperlinks are a direct reference to another location, easy to follow on the interactive web page, or a PDF loaded in a viewer, by clicking on it. On the printed page, this mechanism obviously does not work.
 
-Prince offers some CSS functions to help translating hyperlinks into print-friendly display, useful in different scenarios: `target-counter()`, `target-content()` and `attr()`, to be used with the `content` property. (See also [Generated Content Functions](gen-content.md#gen-content-functions)).
+Prince offers some CSS functions to help translating hyperlinks into print-friendly display, useful in different scenarios: `target-counter()`, `target-content()` and `attr()`, to be used with the [`content`](css-props#prop-content) property. (See also [Generated Content Functions](gen-content.md#gen-content-functions)).
 
 The `target-counter()` function can be used to reference the value of a counter at a linked element, and it can specify any counter, allowing cross-references to refer to list items, chapters or sections as well as pages.
 
@@ -676,7 +676,7 @@ Image Magic
   </dd>
 </dl>
 
-The `prince-image-magic` property performs various image-related, Prince-specific tasks that do not fit into other existing CSS properties. It applies magic to images!
+The [`prince-image-magic`](css-props#prop-prince-image-magic) property performs various image-related, Prince-specific tasks that do not fit into other existing CSS properties. It applies magic to images!
 
 To reduce the PDF file size, JPEG images can be recompressed at a lower quality level by using the function `recompress-jpeg(quality%)` with the required quality percentage as argument.
 
@@ -686,7 +686,7 @@ Prince usually strips unnecessary metadata from JPEG images to help contain size
 
 Two more keywords perform more obscure tasks that might be required in very specific circumstances: the keyword `ignore-icc-profile` causes Prince to ignore any ICC color profile embedded in the image, useful e.g. in those cases when the embedded ICC profile is broken; and `snap-to-integer-coords` can be used to avoid blurring of images in some PDF viewers.
 
-Several of the values can be combined, to perform more than one magic on images - for details please check the grammar of the `prince-image-magic` property.
+Several of the values can be combined, to perform more than one magic on images - for details please check the grammar of the [`prince-image-magic`](css-props#prop-prince-image-magic) property.
 
 ```
     img {
@@ -713,19 +713,19 @@ Hyphenation
     </dd>
 </dl>
 
-The property `hyphens` controls whether hyphenation is allowed to create opportunities to wrap within a line of text.
+The property [`hyphens`](css-props#prop-hyphens) controls whether hyphenation is allowed to create opportunities to wrap within a line of text.
 
-The default value of the `hyphens` property is `manual` - to enable automatic hyphenation in a body of text, the value `auto` has to be declared.
+The default value of the [`hyphens`](css-props#prop-hyphens) property is `manual` - to enable automatic hyphenation in a body of text, the value `auto` has to be declared.
 
 The value `none` instructs never to hyphenate, while the default value `manual` tells Prince to only hyphenate when there are characters inside the word that explicitly suggest hyphenation opportunities, such as e.g. "soft hyphens" (represented either by the Unicode character `U+00AD` or the HTML entity `&shy;`). With the value `auto`, words may be broken at appropriate hyphenation points as determined automatically by the language-appropriate hyphenation resources, or by hyphenation characters in a word.
 
 In order to make automatic hyphenation work as intended, it is important to communicate to Prince the natural language the text is in, so that the language-specific hyphenation rules can be applied - this is done by means to the `lang` or `xml:lang` attributes.
 
-The character shown at the end of a line when the word is hyphenated can be specified with the `prince-hyphenate-character` property.
+The character shown at the end of a line when the word is hyphenated can be specified with the [`prince-hyphenate-character`](css-props#prop-prince-hyphenate-character) property.
 
 Fine-tuning of hyphenation can be done with the `prince-hyphenate-after` and `prince-hyphenate-before` properties to determine the minimum number of letters in a word that may be moved to the next line or that may be left at the end of a line when the word is hyphenated.
 
-The `prince-hyphenate-limit-lines` property is used to determine the maximum number of consecutive lines that may end with a hyphenated word.
+The [`prince-hyphenate-limit-lines`](css-props#prop-prince-hyphenate-limit-lines) property is used to determine the maximum number of consecutive lines that may end with a hyphenated word.
 
 Prince uses the hyphenation patterns from the CTAN archive - the full archive is accessible [here](http://tug.ctan.org/tex-archive/language/hyph-utf8/tex/generic/hyph-utf8/patterns/txt/). The default hyphenation patterns can be found in the installed `hyph.css` file, located in the default style sheets location (see [Installation Layout](installing.md#installation-layout)).
 
@@ -792,7 +792,7 @@ Hyphenation patterns for the following languages are provided:
 
 A special case is Thai hyphenation, supported thanks to the [LibThai](http://linux.thai.net/projects/libthai) package.
 
-To add hyphenation patterns for other languages, download them from the [CTAN archive](http://tug.ctan.org/tex-archive/language/hyph-utf8/tex/generic/hyph-utf8/patterns/txt/). Save the files for the chosen language without the `.txt` extension, and link to the pattern file (with the `.pat` extension) with the `prince-hyphenate-patterns` CSS property.
+To add hyphenation patterns for other languages, download them from the [CTAN archive](http://tug.ctan.org/tex-archive/language/hyph-utf8/tex/generic/hyph-utf8/patterns/txt/). Save the files for the chosen language without the `.txt` extension, and link to the pattern file (with the `.pat` extension) with the [`prince-hyphenate-patterns`](css-props#prop-prince-hyphenate-patterns) CSS property.
 
 The renaming of the file is not essential - the content, not the extension counts.
 
@@ -833,7 +833,7 @@ A prominent example of a typographic ligature is **ﬁ**, which replaces the two
 
 Prince automatically enables ligatures declared by the OpenType fonts with the `liga` feature (see [OpenType Features in Prince](styling.md#opentype-features-in-prince)). This feature covers the "standard ligatures" which the font manufacturer thinks should be used in normal conditions. Microsoft has a list of the OpenType feature names [here](https://www.microsoft.com/typography/otspec/featurelist.htm).
 
-Other special ligatures need to be explicitly enabled in Prince to take effect. This is achieved by using the `font-variant` CSS property with the `prince-opentype()` function (see [CSS Functional Expressions](css-refs.md#css-functional-expressions)). Care must be taken in which order the features are enabled! And please note that enabling one feature will disable all the default features. To see which OpenType features are enabled by default, see the [OpenType Features in Prince](styling.md#opentype-features-in-prince) section.
+Other special ligatures need to be explicitly enabled in Prince to take effect. This is achieved by using the [`font-variant`](css-props#prop-font-variant) CSS property with the `prince-opentype()` function (see [CSS Functional Expressions](css-refs.md#css-functional-expressions)). Care must be taken in which order the features are enabled! And please note that enabling one feature will disable all the default features. To see which OpenType features are enabled by default, see the [OpenType Features in Prince](styling.md#opentype-features-in-prince) section.
 
 ```
     @page {
@@ -848,7 +848,7 @@ Some ligatures were in common use in the past, such as ligatures with the so-cal
 
 Some scripts, most notably Arabic and Syriac scripts, require certain ligatures to be used in normal conditions. These "required ligatures" are covered by the `rlig` feature. Prince enables this feature by default in Arabic script.
 
-Another mechanism for replacing characters is given with the `prince-text-replace` property. For an example use, please see the section on [Character Entities](characters.md#characters).
+Another mechanism for replacing characters is given with the [`prince-text-replace`](css-props#prop-prince-text-replace) property. For an example use, please see the section on [Character Entities](characters.md#characters).
 
 
 Watermarks
@@ -927,11 +927,11 @@ This table is too wide to fit on the paper, so we use `prince-rotate-body` in a 
         page: big_table
     }
 ```
-The `prince-rotate-body` property works within [`@page`](css-refs.md#at-page) rules only, so this example uses a named page to place the table on a page of its own. Then the [`@page`](css-refs.md#at-page) rule for `big_table` pages uses the `prince-rotate-body` property to tell prince that the body of the page, but not the headers and footers, should be rotated. The table in this example is still too wide so we also use the `prince-shrink-to-fit` property to make it a little smaller.
+The [`prince-rotate-body`](css-props#prop-prince-rotate-body) property works within [`@page`](css-refs.md#at-page) rules only, so this example uses a named page to place the table on a page of its own. Then the [`@page`](css-refs.md#at-page) rule for `big_table` pages uses the [`prince-rotate-body`](css-props#prop-prince-rotate-body) property to tell prince that the body of the page, but not the headers and footers, should be rotated. The table in this example is still too wide so we also use the [`prince-shrink-to-fit`](css-props#prop-prince-shrink-to-fit) property to make it a little smaller.
 
 If you download the full example ([HTML](assets/samples/rotate-body.html) or [PDF](assets/samples/rotate-body.pdf)) you will see that the paragraphs before and after the table are not placed on the same page. This is because they do not belong to the same named page (see [Named pages](paged.md#named-pages)). However on page four there are two tables, both tables belong to the same named page and therefore Prince will try to place them together on the same page.
 
-Another way of rotating content is by changing the writing mode with the `writing-mode` property, or by transforming an element with `transform: rotate()` - see [Rotating content in table cells](#rotating-content-in-table-cells).
+Another way of rotating content is by changing the writing mode with the [`writing-mode`](css-props#prop-writing-mode) property, or by transforming an element with `transform: rotate()` - see [Rotating content in table cells](#rotating-content-in-table-cells).
 
 ### Rotating content in table cells
 
@@ -977,7 +977,7 @@ The rotation will happen with the following CSS code:
       padding: 5px 10px;
     }
 ```
-A more basic means for rotation, allowing for less fine-tuning, is the use of the `writing-mode` CSS property. This option only allows rotation by 90°. It can be very handy when only some table cells with too much content are rotated, so as not to use too much horizontal space. You cannot rotate the table cell directly, so you have to nest one `span` element inside - and then you style it:
+A more basic means for rotation, allowing for less fine-tuning, is the use of the [`writing-mode`](css-props#prop-writing-mode) CSS property. This option only allows rotation by 90°. It can be very handy when only some table cells with too much content are rotated, so as not to use too much horizontal space. You cannot rotate the table cell directly, so you have to nest one `span` element inside - and then you style it:
 
 ```
     td.rotate > span {

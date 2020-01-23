@@ -41,7 +41,7 @@ Prince produces PDFs - which are a prominent example of paged media. There are a
 
 Prince allows you to control a number of options that affect how to format pages, from straight-forward options such as [page size](#page-size), to [page style](#page-style), [page regions](#page-regions) like headers and footers, [pagination control](#controlling-pagination) and [page numbering](gen-content.md#counters).
 
-CSS properties that affect pages are specified within page *at-rules* (see [CSS At-rules](css-refs.md#css-atrules)). For example, we can use the [size](css-props.md#prop-size) property within the [`@page`](css-refs.md#at-page) rule to specify the page size (see [Page size](#page-size)).
+CSS properties that affect pages are specified within page *at-rules* (see [CSS At-rules](css-refs.md#css-atrules)). For example, we can use the [`size`](css-props.md#prop-size) property within the [`@page`](css-refs.md#at-page) rule to specify the page size (see [Page size](#page-size)).
 
 ```
     @page {
@@ -72,7 +72,7 @@ The initial values for CSS properties are defined internally - these are the ini
 
 ## Page size
 
-Page size can be specified using the `size` property in *length* units or by a page size keyword (see [Page Size Keywords](page-size-keywords.md#page-size-keywords) for a list), optionally combined with the `portrait` or `landscape` keyword.
+Page size can be specified using the [`size`](css-props#prop-size) property in *length* units or by a page size keyword (see [Page Size Keywords](page-size-keywords.md#page-size-keywords) for a list), optionally combined with the `portrait` or `landscape` keyword.
 
 
 ```
@@ -138,7 +138,7 @@ are easy to understand and are shown in <span class="fig-marginboxes-yellow">yel
 
 Each of these page-margin boxes has a synonym ending in `-center` or `-middle` - for instance `@top-center` is the same as `@top`, while `@left-middle` is the same as `@left`.
 
-You can place content in a page-margin box with the `content` property.
+You can place content in a page-margin box with the [`content`](css-props#prop-content) property.
 
 For example, you can print the current page number at the bottom of each page (see [Generated Content](gen-content.md)):
 
@@ -320,7 +320,7 @@ Several other page regions can also be used. The full list of page regions is sh
 </tbody>
 </table>
 
-Prince will try to create page regions of the correct sizes. If you need to create boxes of specific sizes you may need to use only a single box (eg: `@top`) and use the `content` property to place elements with specific sizes in it.
+Prince will try to create page regions of the correct sizes. If you need to create boxes of specific sizes you may need to use only a single box (eg: `@top`) and use the [`content`](css-props#prop-content) property to place elements with specific sizes in it.
 
 Note that in the above [Page regions](#fig-marginboxes) figure, Prince leaves space for `@top-right` and `@left-bottom` boxes because their counterparts (`@top-left` and `@left-top` respectively) have been defined. This keeps the `@top` and `@left` centered along the top and side of the page respectively.
 
@@ -332,19 +332,19 @@ The page region `@footnote` is placed by default at the foot of the page area an
 
 Many CSS properties can be applied to page regions:
 
--   All of the `margin`, `border`, `padding` and `background` properties can be used to style page regions.
+-   All of the [`margin`](css-props#prop-margin), [`border`](css-props#prop-border), [`padding`](css-props#prop-padding) and [`background`](css-props#prop-background) properties can be used to style page regions.
 
--   The `vertical-align` property can be applied to any page region to vertically align its content.
+-   The [`vertical-align`](css-props#prop-vertical-align) property can be applied to any page region to vertically align its content.
 
--   When a page region contains generated content, many inline style properties such as `color` and `font` can be applied to style the generated content.
+-   When a page region contains generated content, many inline style properties such as [`color`](css-props#prop-color) and [`font`](css-props#prop-font) can be applied to style the generated content.
 
 The `@footnote` area can be positioned other than its default position (see [Styling and behavior of footnotes](styling#styling-and-behavior-of-footnotes) and [Sidenotes](cookbook.md#sidenotes)). All other page regions cannot be moved - their position is defined by the page margins.
 
 ### Generated content in page regions
 
-We have already shown an example of using the `page` counter to print the page number at the bottom of each page, this is one example of generated content. The `page` counter is predefined and starts at 1; it increments automatically for each new page. (Note that the page counter cannot be incremented manually using the `counter-increment` property.)
+We have already shown an example of using the `page` counter to print the page number at the bottom of each page, this is one example of generated content. The `page` counter is predefined and starts at 1; it increments automatically for each new page. (Note that the page counter cannot be incremented manually using the [`counter-increment`](css-props#prop-counter-increment) property.)
 
-The `page` counter can be reset using the `counter-reset` property at any block-level element within a non-floating element in the normal flow. This is useful for restarting page numbering at a new section of the document.
+The `page` counter can be reset using the [`counter-reset`](css-props#prop-counter-reset) property at any block-level element within a non-floating element in the normal flow. This is useful for restarting page numbering at a new section of the document.
 
 <p id="fig-restart-page-numbers">Restarting page numbering</p>
 
@@ -500,11 +500,11 @@ This example demonstrates a more complete headers style. It uses generated conte
         content: counter(chapter) "." counter(section) " ";
     }
 ```
-The main content area is 2.5cm from the page's edge on all sides. On the left and right this is a margin of 2.5cm and on the top and bottom it's 2cm of margin and 0.5cm of padding. This places the bottom border of the `@top` page region 0.5cm from the main content area, enough to avoid making it look crowded. The header text has the vertical-align: bottom property to ensure that it appears immediately above the border — the border is made to look like an underline. This example uses many properties and page selectors discussed later in this section. This is a small part of a [larger example](https://github.com/yeslogic/prince-samples/tree/master/thesis) in our [Prince samples repository](https://github.com/yeslogic/prince-samples).
+The main content area is 2.5cm from the page's edge on all sides. On the left and right this is a margin of 2.5cm and on the top and bottom it's 2cm of margin and 0.5cm of padding. This places the bottom border of the `@top` page region 0.5cm from the main content area, enough to avoid making it look crowded. The header text has the `vertical-align: bottom` property to ensure that it appears immediately above the border — the border is made to look like an underline. This example uses many properties and page selectors discussed later in this section. This is a small part of a [larger example](https://github.com/yeslogic/prince-samples/tree/master/thesis) in our [Prince samples repository](https://github.com/yeslogic/prince-samples).
 
 ### Copying content from the document
 
-Generated content in page regions may contain text content copied from the document using the `string-set` property:
+Generated content in page regions may contain text content copied from the document using the [`string-set`](css-props#prop-string-set) property:
 
 CSS
 
@@ -547,7 +547,7 @@ Page region content may also be taken from the document itself. Any block-level 
 -   All `margin` properties of an element not in the natural document flow will be ignored.
 -   The first running element that appears on a page will be used on the current page and carried onto following pages, until a new running element is encountered.
 
-To move the content into a page region, the element needs to be removed from the normal document flow position with the `running()` function of the `position` property, and inserted into the specified region with the `element()` function of the `content` property.
+To move the content into a page region, the element needs to be removed from the normal document flow position with the `running()` function of the [`position`](css-props#prop-position) property, and inserted into the specified region with the `element()` function of the [`content`](css-props#prop-content) property.
 
 CSS
 
@@ -587,7 +587,7 @@ Unfortunately, if you want to place the footer element in the page footer, it wi
     <footer>
     main content
 ```
-It can be achieved by using JavaScript to move the element, but the simple `start` keyword on the `prince-flow` property instructs Prince to pretend that the element was seen at the beginning of the document.
+It can be achieved by using JavaScript to move the element, but the simple `start` keyword on the [`prince-flow`](css-props#prop-prince-flow) property instructs Prince to pretend that the element was seen at the beginning of the document.
 
 The `element()` and `flow()` functions replace the entire margin box, and cannot be combined with other content. If you just want to capture some text from the document, use named strings instead (see [Copying content from the document](#copying-content-from-the-document)) - they can be combined with other content.
 
@@ -636,7 +636,7 @@ A title page example showing use of `@page:first`. Download the [PDF](assets/sam
     </body>
     </html>
 ```
-In this example the [`@page`](css-refs.md#at-page) rule specifies styles that apply to all pages: Then the `@page:first` rule overrides this for the first page only. It resets the `content` property for the footer and increases the top margin, printing the title of the novel in a reasonable place on the page (see [Page style](#page-style)). This example also uses the `break-before` property to force a page break (see [Page breaks](#page-breaks)).
+In this example the [`@page`](css-refs.md#at-page) rule specifies styles that apply to all pages: Then the `@page:first` rule overrides this for the first page only. It resets the [`content`](css-props#prop-content) property for the footer and increases the top margin, printing the title of the novel in a reasonable place on the page (see [Page style](#page-style)). This example also uses the [`break-before`](css-props#prop-break-before) property to force a page break (see [Page breaks](#page-breaks)).
 
 When using the `:first` page selector to choose the first page in each chapter (such as in [Fancy headers](#fig-fancyheader)) it may be necessary to add `prince-page-group: start` to the first element in each chapter (such as `h1`). See [Page groups](#page-groups).
 
@@ -683,7 +683,7 @@ Sometimes it can be useful to select the *N*th page in a document. The `:nth(N)`
 
 Sometimes it is necessary to style pages depending on their content; named pages allow us to select pages that contain particular elements. We used this in [Restarting page numbering](#fig-restart-page-numbers), to apply a style to the table of contents pages to print their page numbers using roman numerals.
 
-The element containing the table of contents has a `page` property applied, specifying that this element's pages are table-of-contents pages. The `page` property may be applied to any block-level element within a non-floating environment in the normal flow.
+The element containing the table of contents has a [`page`](css-props#prop-page) property applied, specifying that this element's pages are table-of-contents pages. The [`page`](css-props#prop-page) property may be applied to any block-level element within a non-floating environment in the normal flow.
 
 ```css
     .contents {
@@ -719,7 +719,7 @@ Selectors such as `:first`, `:Nth`, `:left` and `:right` also work with named pa
         }
     }
 ```
-This example only works when a page name is used only once within a document, such as for the preface of a document (documents only have one preface). If you wish to apply a style to the first page of every chapter then you must use the `prince-page-group` property to create *page groups*:
+This example only works when a page name is used only once within a document, such as for the preface of a document (documents only have one preface). If you wish to apply a style to the first page of every chapter then you must use the [`prince-page-group`](css-props#prop-prince-page-group) property to create *page groups*:
 
 ```
     div.chapter {
@@ -795,7 +795,7 @@ This can happen either:
 -   when chapters are separated by an element, such as `h1` which may have `break-before: right` applied (this can be seen in [Fancy headers](#fig-fancyheader));
 -   or when each chapter is a block element such as a `div`.
 
-Prince provides the `prince-page-group` property that can be used to start a new page group. It can be seen in [Fancy headers](#fig-fancyheader) applied to h1 elements in the body of the document.
+Prince provides the [`prince-page-group`](css-props#prop-prince-page-group) property that can be used to start a new page group. It can be seen in [Fancy headers](#fig-fancyheader) applied to h1 elements in the body of the document.
 
 ```
     div.body h1 {
@@ -819,7 +819,7 @@ The simplest case is when you want to explicitly create a page break. This is ty
         break-before: page;
     }
 ```
-The property `break-before` is used to force a page break immediately before an `h1` element. New chapters are often started on the *recto* pages in text books, this is usually the right page:
+The property [`break-before`](css-props#prop-break-before) is used to force a page break immediately before an `h1` element. New chapters are often started on the *recto* pages in text books, this is usually the right page:
 
 ```
     h1 {
@@ -835,7 +835,7 @@ The previous example could therefore also have been written in the following, mo
         break-before: recto
     }
 ```
-The property `break-after` may also be used to force a page break after an element.
+The property [`break-after`](css-props#prop-break-after) may also be used to force a page break after an element.
 
 <p id="fig-slides">Presentation slides example</p>
 
@@ -906,7 +906,7 @@ The `font-family` and `color` properties are specified both in the `@page` and `
 
 A rendered slide for this example is shown in [Presentation slides example](#fig-slides). The example has been adapted from [slides (HTML+CSS)](https://github.com/yeslogic/prince-samples/tree/master/mfug_talk) for a presentation about the [Mercury programming language](http://mercurylang.org). This is part of our [samples repository](https://github.com/yeslogic/prince-samples). You are encouraged to use samples from the repository and contribute your own.
 
-So far we have discussed forcing a page break, however suppressing page breaks is also important. For example, it is poor style to have a page break between a header and the first paragraph of a section. Therefore, the default Prince stylesheet will use the `break-after` property to suppress page breaks immediately after headers:
+So far we have discussed forcing a page break, however suppressing page breaks is also important. For example, it is poor style to have a page break between a header and the first paragraph of a section. Therefore, the default Prince stylesheet will use the [`break-after`](css-props#prop-break-after) property to suppress page breaks immediately after headers:
 
 ```
     h1, h2, h3, h4, h5, h6 {
@@ -915,7 +915,7 @@ So far we have discussed forcing a page break, however suppressing page breaks i
 ```
 If a heading occurs at the bottom of a page, it may be moved to the next page to keep it with the content that follows it, usually a paragraph.
 
-Avoiding page breaks within an element is also important. For example, it is best to avoid breaks within a figure or table. This can be done with the `break-inside` property:
+Avoiding page breaks within an element is also important. For example, it is best to avoid breaks within a figure or table. This can be done with the [`break-inside`](css-props#prop-break-inside) property:
 
 ```
     .figure, table {
@@ -924,22 +924,22 @@ Avoiding page breaks within an element is also important. For example, it is bes
 ```
 If the figure or table would have been split across two pages, it may be moved to the next page to keep it in one piece. An element longer than one page will still need to be split across multiple pages.
 
-The `break-inside` property cannot be used to create forced page breaks; its only valid values are `auto` and `avoid`.
+The [`break-inside`](css-props#prop-break-inside) property cannot be used to create forced page breaks; its only valid values are `auto` and `avoid`.
 
 These three properties can be applied to block-level elements, table rows and table row groups that occur within an in-flow element (ie. inside the normal flow of the document, not inside a float or an absolutely positioned block). Therefore the figure and table example only make sense when the figure or table is not floated.
 
-Prince also supports the properties `page-break-before`, `page-break-after` and `page-break-inside` from the CSS 2.1 specification. However, you are encouraged to use the newer properties `break-before`, `break-after` and `break-inside` from the CSS Fragmentation Module Level 3.
+Prince also supports the properties [`page-break-before`](css-props#prop-page-break-before), [`page-break-after`](css-props#prop-page-break-after) and [`page-break-inside`](css-props#prop-page-break-inside) from the CSS 2.1 specification. However, you are encouraged to use the newer properties [`break-before`](css-props#prop-break-before), [`break-after`](css-props#prop-break-after) and [`break-inside`](css-props#prop-break-inside) from the CSS Fragmentation Module Level 3.
 
 Page breaks have similarities with column breaks, see [Columns](styling.md#columns).
 
 #### Page breaks and decoration
 
-When a page (or column) break occurs within a box (such as a div) its bottom and top borders are *cloned* so that they also appear at the bottom of the first section and the top of the second section of the box. This is shown in the left of [Box decoration break sample](#fig-boxdecorationbreak). This is the default but may be set with the `box-decoration-break` property, setting its value to `clone`.
+When a page (or column) break occurs within a box (such as a div) its bottom and top borders are *cloned* so that they also appear at the bottom of the first section and the top of the second section of the box. This is shown in the left of [Box decoration break sample](#fig-boxdecorationbreak). This is the default but may be set with the [`box-decoration-break`](css-props#prop-box-decoration-break) property, setting its value to `clone`.
 
 <p id="fig-boxdecorationbreak">Box decoration break sample</p>
 
 ![The box on the left is completely enclosed by its border (clone); while the box on the right has no border at the bottom where it wraps onto the next page (slice).](assets/samples/box-decoration-break-1.bw.png)
-This figure shows the result of using the `box-decoration-break` property. On the left the `clone` value is used while on the right `slice` is used. The [PDF](assets/samples/box-decoration-break.pdf) and [HTML](assets/samples/box-decoration-break.html) are available for download.
+This figure shows the result of using the [`box-decoration-break`](css-props#prop-box-decoration-break) property. On the left the `clone` value is used while on the right `slice` is used. The [PDF](assets/samples/box-decoration-break.pdf) and [HTML](assets/samples/box-decoration-break.html) are available for download.
 
 ```
     div.box1 {
@@ -955,14 +955,14 @@ If instead you wish the borders to remain open, as if the box were simply *slice
 ```
 ### Widows and orphans
 
-Just as breaking a page between a heading and the first paragraph below the heading can look bad, breaking the page after only one or two lines of a paragraph also looks bad. These stray lines are called *orphans*. The minimum number of orphans to allow can be specified with the `orphans` property (the default is 1).
+Just as breaking a page between a heading and the first paragraph below the heading can look bad, breaking the page after only one or two lines of a paragraph also looks bad. These stray lines are called *orphans*. The minimum number of orphans to allow can be specified with the [`orphans`](css-props#prop-orphans) property (the default is 1).
 
 ```
     p {
         orphans: 2
     }
 ```
-Likewise the minimum number of lines to move to a new page (*widows*) can be specified with the `widows` property (the default is 1).
+Likewise the minimum number of lines to move to a new page (*widows*) can be specified with the [`widows`](css-props#prop-widows) property (the default is 1).
 
 ```
     p {
@@ -973,7 +973,7 @@ It can be easy to confuse widows and orphans. However a mnemonic device can help
 
 ## Trimming marks
 
-When typesetting a magazine or flier it can be useful to print right to the edge of the paper. However most printers will refuse do do this. It is better to print on larger stock and then crop the paper to the correct size. If you use the `marks` property, Prince will create *bleed* and *trim* areas around your content (and the declared page size). This can be seen in the catalog example, adapted from the [Catalog sample](https://github.com/yeslogic/prince-samples/tree/master/website_samples/catalogue) in the [Prince samples repository](https://github.com/yeslogic/prince-samples).
+When typesetting a magazine or flier it can be useful to print right to the edge of the paper. However most printers will refuse do do this. It is better to print on larger stock and then crop the paper to the correct size. If you use the [`marks`](css-props#prop-marks) property, Prince will create *bleed* and *trim* areas around your content (and the declared page size). This can be seen in the catalog example, adapted from the [Catalog sample](https://github.com/yeslogic/prince-samples/tree/master/website_samples/catalogue) in the [Prince samples repository](https://github.com/yeslogic/prince-samples).
 
 Furniture catalogue example
 
@@ -993,9 +993,9 @@ The furniture catalogue with bleed and trim areas for printing and cropping. Dow
         prince-trim: 0.25in;
     }
 ```
-This example uses some of the properties that we introduced above, plus three new ones: `marks`, `bleed` and `prince-trim`. These options enable crop and cross marks and specify bleed and trim areas. Note that size of the content does not change when we add these options, the *page* is still 8.5in by 10.5in as specified by the `size` property. Instead 0.25in of bleed area and 0.25in of trim area has been added to each edge (1in total). Therefore we will need to print on 9.5in by 11.5in paper. Prince will print solid background colors and repeating pictures into the bleed area - we set the background size to 104% so that it would print into the bleed area.
+This example uses some of the properties that we introduced above, plus three new ones: [`marks`](css-props#prop-marks), [`bleed`](css-props#prop-bleed) and [`prince-trim`](css-props#prop-prince-trim). These options enable crop and cross marks and specify bleed and trim areas. Note that size of the content does not change when we add these options, the *page* is still 8.5in by 10.5in as specified by the [`size`](css-props#prop-size) property. Instead 0.25in of bleed area and 0.25in of trim area has been added to each edge (1in total). Therefore we will need to print on 9.5in by 11.5in paper. Prince will print solid background colors and repeating pictures into the bleed area - we set the background size to 104% so that it would print into the bleed area.
 
-Prince also allows the placement, length and width of the crop marks to be specified respectively with the `prince-mark-offset`, `prince-mark-length` and `prince-mark-width` properties.
+Prince also allows the placement, length and width of the crop marks to be specified respectively with the [`prince-mark-offset`](css-props#prop-prince-mark-offset), [`prince-mark-length`](css-props#prop-prince-mark-length) and [`prince-mark-width`](css-props#prop-prince-mark-width) properties.
 
 <script>
 function shiftWindow() { if ((location.hash.indexOf('fig-') == 1) || (location.hash.indexOf('tab-') == 1)) { scrollBy(0, -60);
