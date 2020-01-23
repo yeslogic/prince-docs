@@ -92,7 +92,7 @@ Processing the document
 
 Process the document using the command line `prince` command:
 
-Unstyled lab report
+<p id="fig.lab-report.unstyled">Unstyled lab report</p>
 
 ![The unstyled lab report](assets/samples/lab_report-1.bw.png)
 The unstyled lab report. Download the PDF [here](assets/samples/lab_report.pdf).
@@ -100,14 +100,14 @@ The unstyled lab report. Download the PDF [here](assets/samples/lab_report.pdf).
 
     $ prince lab_report.html
 
-This will create a `lab_report.pdf` file in the current directory. If it did not, the [Troubleshooting](help-install.md#troubleshooting) section may be useful. When you open the document in a PDF viewer you should see something like [Unstyled lab report](first-doc.md#fig.lab-report.unstyled). Prince has applied a default stylesheet to the document. A different default stylesheet is used depending upon the document's type (HTML or Docbook XML) see [XML Input](prince-input.md#xml-input). The default stylesheet may be overridden by other stylesheets, more on that in [Applying Style Sheets in Prince](prince-input.md#applying-style-sheets-in-prince).
+This will create a `lab_report.pdf` file in the current directory. If it did not, the [Troubleshooting](help-install.md#troubleshooting) section may be useful. When you open the document in a PDF viewer you should see something like [Unstyled lab report](#fig.lab-report.unstyled). Prince has applied a default stylesheet to the document. A different default stylesheet is used depending upon the document's type (HTML or Docbook XML) see [XML Input](prince-input.md#xml-input). The default stylesheet may be overridden by other stylesheets, more on that in [Applying Style Sheets in Prince](prince-input.md#applying-style-sheets-in-prince).
 
-Prince GUI
+<p id="fig.gui01">Prince GUI</p>
 
 ![The Prince GUI](assets/images/gui_02.png)
 The Prince GUI. Note that in this image both a HTML and a CSS file had been selected.
 
-Prince's command line interface supports many options (see [Command-line Reference](command-line.md)) and can be called from scripts and other software. However some users may not be comfortable with the command line interface. On Windows, Prince provides a more familiar GUI interface, which can be started by choosing Prince from the start menu. [Prince GUI](first-doc.md#fig.gui01) shows the Prince GUI, click "Add File(s)" to choose your HTML file (`lab_report.html`) then click the large "Convert" button to convert it. Prince will generate a PDF file and place it in the directory with your HTML file.
+Prince's command line interface supports many options (see [Command-line Reference](command-line.md)) and can be called from scripts and other software. However some users may not be comfortable with the command line interface. On Windows, Prince provides a more familiar GUI interface, which can be started by choosing Prince from the start menu. [Prince GUI](#fig.gui01) shows the Prince GUI, click "Add File(s)" to choose your HTML file (`lab_report.html`) then click the large "Convert" button to convert it. Prince will generate a PDF file and place it in the directory with your HTML file.
 
 Styling the document
 --------------------
@@ -125,7 +125,7 @@ The default is a font with serifs, a sans-serif font is easier to read on a comp
 
 Next, let's center the title and subtitle and decrease the font size of the subtitle:
 
-Styled lab report
+<p id="fig.lab-report-styled">Styled lab report</p>
 
 ![The styled lab report](assets/samples/lab_report-styled-1.colour.png)
 The styled lab report, download the [here](assets/samples/lab_report-styled.pdf).
@@ -161,7 +161,7 @@ Using the `-s` command line option:
     $ prince -s lab_report.css lab_report.html
 
 Using the GUI  
-Press the "Add CSS" button on the right of the Prince GUI and choose your CSS file ([Prince GUI](first-doc.md#fig.gui01)). You will need to click "Convert" again for these changes to take effect.
+Press the "Add CSS" button on the right of the Prince GUI and choose your CSS file ([Prince GUI](#fig.gui01)). You will need to click "Convert" again for these changes to take effect.
 
 By creating a link from the HTML `link` tag.  
 Place the tag within the `head` tag of the document. For example:
@@ -178,7 +178,7 @@ Place the tag within the `head` tag of the document. For example:
 ```
 You will need to re-run Prince for these changes to take effect.
 
-After applying the style as above, Prince should generate something similar to [Styled lab report](first-doc.md#fig.lab-report-styled). You can download the generated PDF file here: [`lab_report-styled.pdf`](assets/samples/lab_report-styled.pdf).
+After applying the style as above, Prince should generate something similar to [Styled lab report](#fig.lab-report-styled). You can download the generated PDF file here: [`lab_report-styled.pdf`](assets/samples/lab_report-styled.pdf).
 
 This sample document and many others are available in our [samples repository](https://github.com/yeslogic/prince-samples). You are encouraged to use samples from the repository and contribute your own.
 
