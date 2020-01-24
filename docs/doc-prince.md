@@ -259,7 +259,7 @@ function redirects() {
         window.location.href = '/doc/server-integration#security-and-performance'
     }
     else if (location.hash.indexOf('wrappers') == 1) {
-        window.location.href = '/server-integration#prince-wrappers'
+        window.location.href = '/doc/server-integration#prince-wrappers'
     }
     else if (location.hash.indexOf('advanced-cmd') == 1) {
         window.location.href = '/doc/server-integration#advanced-command-line-options'
