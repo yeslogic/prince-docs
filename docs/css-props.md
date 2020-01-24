@@ -4,9 +4,7 @@ title: CSS Properties
 
 Below are all of the CSS properties supported by Prince. For their precise definitions please refer to the CSS specifications.
 
-\* properties marked with an asterisk and a darker background color shade are Prince extensions, while the extension values of a standard property are highlighted with a <span class="ext">light grey background</span>.
-
-Prince accepts `-prince-` as a vendor prefix for Prince-specific CSS properties to comply with validators.
+\* properties marked with an asterisk and a darker background color shade are Prince extensions, while the extension values of a standard property are highlighted with a <span class="ext">light grey background</span>.  Besides the `prince-` prefix, Prince accepts `-prince-` as a vendor prefix for Prince-specific CSS properties to comply with validators.
 
 For the values, the grammar draws on the [CSS Values and Units Module Level 3](https://www.w3.org/TR/css3-values/) specification - with the notable exception of the meaning of an asterisk (\*), as explained above. A short explanation of the signs:
 
