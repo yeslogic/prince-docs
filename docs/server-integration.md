@@ -367,6 +367,28 @@ Node.js
 [Node API for executing XML/HTML to PDF renderer PrinceXML via prince(1) CLI](https://www.npmjs.com/package/prince)
 
 
+Prince Docker Image
+---------------
+
+Prince can easily be deployed in Docker images.  On the Docker Hub you can find [the Prince Dockerfiles](https://hub.docker.com/r/yeslogic/prince).  To pull the images, run the Docker Pull Command
+
+```
+docker pull yeslogic/prince
+```
+
+The Prince images can be run with the following command:
+
+```
+docker run --rm -it yeslogic/prince:13.1
+```
+
+They can be run with a `license.dat` file in the following way:
+
+```
+docker run --rm -it -v /path/on/host/licence.dat:/usr/lib/prince/licence/licence.dat yeslogic/prince:13.1
+```
+
+
 Advanced Command-Line Options
 -----------------------------
 
