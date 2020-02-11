@@ -373,19 +373,19 @@ Prince Docker Image
 Prince can easily be deployed in Docker images.  On the Docker Hub you can find [the Prince Dockerfiles](https://hub.docker.com/r/yeslogic/prince).  To pull the images, run the Docker Pull Command
 
 ```
-docker pull yeslogic/prince:13.1
+docker pull yeslogic/prince:13.2
 ```
 
 The Prince images can be run with the following command:
 
 ```
-docker run --rm -it yeslogic/prince:13.1
+docker run --rm -it yeslogic/prince:13.2
 ```
 
 They can be run with a `license.dat` file in the following way:
 
 ```
-docker run --rm -it -v /path/on/host/licence.dat:/usr/lib/prince/licence/licence.dat yeslogic/prince:13.1
+docker run --rm -it -v /path/on/host/licence.dat:/usr/lib/prince/licence/licence.dat yeslogic/prince:13.2
 ```
 
 
