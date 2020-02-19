@@ -191,8 +191,7 @@ Frequently Asked Questions
 </dl>
 
 <script>
-function shiftWindow() { if (location.hash.indexOf('faq-') == 1) { scrollBy(0, -60);
-}};
+function shiftWindow() { if (location.hash.indexOf('faq-') == 1) if (window.innerWidth < "1024") {scrollBy(0, -158)} else {scrollBy(0, -60)};};
 window.addEventListener("load",  function() { shiftWindow(); });
 window.addEventListener("hashchange", function() { shiftWindow(); });
 </script>

@@ -647,8 +647,8 @@ Rasterization is enabled with the `--raster-output` option below. When this is u
 </dl>
 
 <script>
-function shiftWindow() { if (location.hash.indexOf('cl-') == 1) { scrollBy(0, -60);
-}};
+function shiftWindow() { if (location.hash.indexOf('cl-') == 1) if (window.innerWidth < "1024") {scrollBy(0, -158)} else {scrollBy(0, -60)};
+};
 window.addEventListener("load",  function() { shiftWindow(); });
 window.addEventListener("hashchange", function() { shiftWindow(); });
 </script>

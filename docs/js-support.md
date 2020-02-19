@@ -159,8 +159,8 @@ buildSubTree(std, stdAnnotated, root, window, ['window']);
 </script>
 
 <script>
-function shiftWindow() { if ((location.hash.indexOf('window.') == 1) || (location.hash.indexOf('prop-') == 1) || (location.hash.indexOf('cl-') == 1) || (location.hash.indexOf('fig.') == 1) || (location.hash.indexOf('at-') == 1) || (location.hash.indexOf('note-') == 1)) { scrollBy(0, -60);
-}};
+function shiftWindow() { if (location.hash.indexOf('window.') == 1) if (window.innerWidth < "1024") {scrollBy(0, -158)} else {scrollBy(0, -60)};
+};
 function toggleDetails() { if ((location.hash.indexOf('window.') == 1) || (location.hash.indexOf('prop-') == 1)) {
 var prop = document.getElementById(location.hash.substr(1));
 var parentDetails = [];

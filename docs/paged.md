@@ -998,8 +998,7 @@ This example uses some of the properties that we introduced above, plus three ne
 Prince also allows the placement, length and width of the crop marks to be specified respectively with the [`prince-mark-offset`](css-props#prop-prince-mark-offset), [`prince-mark-length`](css-props#prop-prince-mark-length) and [`prince-mark-width`](css-props#prop-prince-mark-width) properties.
 
 <script>
-function shiftWindow() { if ((location.hash.indexOf('fig-') == 1) || (location.hash.indexOf('tab-') == 1)) { scrollBy(0, -60);
-}};
+function shiftWindow() { if ((location.hash.indexOf('fig-') == 1) || (location.hash.indexOf('tab-') == 1)) if (window.innerWidth < "1024") {scrollBy(0, -158)} else {scrollBy(0, -60)};};
 window.addEventListener("load",  function() { shiftWindow(); });
 window.addEventListener("hashchange", function() { shiftWindow(); });
 </script>

@@ -1600,7 +1600,7 @@ a stylesheet with the <code>prince-color()</code> function.  (See <a href="/doc/
 </table>
 
 <script>
-function shiftWindow() { if (location.hash.indexOf('at-') == 1) { scrollBy(0, -60);}};
+function shiftWindow() { if (location.hash.indexOf('at-') == 1) if (window.innerWidth < "1024") {scrollBy(0, -158)} else {scrollBy(0, -60)};};
 window.addEventListener("load",  function() { shiftWindow(); });
 window.addEventListener("hashchange", function() { shiftWindow(); });
 </script>
