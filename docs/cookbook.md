@@ -836,7 +836,7 @@ Prince automatically enables ligatures declared by the OpenType fonts with the `
 Other special ligatures need to be explicitly enabled in Prince to take effect. This is achieved by using the [`font-variant`](css-props#prop-font-variant) CSS property with the `prince-opentype()` function (see [CSS Functional Expressions](css-refs.md#css-functional-expressions)). Care must be taken in which order the features are enabled! And please note that enabling one feature will disable all the default features. To see which OpenType features are enabled by default, see the [OpenType Features in Prince](styling.md#opentype-features-in-prince) section.
 
 ```
-    @page {
+    body {
         font-variant: prince-opentype(dlig, liga);
     }
 ```
