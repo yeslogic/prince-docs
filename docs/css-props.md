@@ -1936,7 +1936,7 @@ For the values, the grammar draws on the [CSS Values and Units Module Level 3](h
 	of the first page or column.
 	</p></div><div><div id="prop-orphans-seealso">See Also</div><ul><li><a href="/doc/paged#widows-and-orphans">Widows and orphans</a></li><li><code><a href="#prop-widows">widows</a></code></li></ul></div><div><div id="prop-orphans-spec">Specification</div><ul><li><a href="https://www.w3.org/TR/CSS2/page.html#break-inside">CSS 2.1</a></li><li><a href="https://www.w3.org/TR/css-break-3/#widows-orphans">CSS Fragmentation Module Level 3</a></li></ul></div></div></details>
 
-<details><summary id="prop-overflow">overflow <a class="self-link" href="#prop-overflow"></a></summary><div><div><div id="prop-overflow-syntax">Syntax</div><div class="example"><div class="syntax-block"><pre><code>overflow: visible |&#160;hidden</code></pre></div></div></div><div><div class="example"><div class="syntax-block"><table class="property-table"><tr><th scope="row">
+<details><summary id="prop-overflow">overflow <a class="self-link" href="#prop-overflow"></a></summary><div><div><div id="prop-overflow-syntax">Syntax</div><div class="example"><div class="syntax-block"><pre><code>overflow: visible |&#160;hidden |&#160;clip |&#160;scroll |&#160;auto</code></pre></div></div></div><div><div class="example"><div class="syntax-block"><table class="property-table"><tr><th scope="row">
           Initial value
         </th><td><code>visible</code></td></tr><tr><th scope="row">
           Applies to
@@ -1947,7 +1947,12 @@ For the values, the grammar draws on the [CSS Values and Units Module Level 3](h
                 </td></tr></table></div></div></div><div><div id="prop-overflow-comments">Comments</div><p>
 	This property determines the visibility of content that overflows
 	outside the boundaries of an element.
-	</p></div><div><div id="prop-overflow-spec">Specification</div><ul><li><a href="https://www.w3.org/TR/CSS2/visufx.html#overflow">CSS 2.1</a></li></ul></div></div></details>
+	</p>
+    <p>
+    Please note that the value <code>scroll</code> does not actually scroll, but
+    establishes a new block formatting context instead - other than that, it is
+    treated the same as <code>visible</code>.
+    </p></div><div><div id="prop-overflow-spec">Specification</div><ul><li><a href="https://www.w3.org/TR/CSS2/visufx.html#overflow">CSS 2.1</a></li><li><a href="https://drafts.csswg.org/css-overflow-3/#propdef-overflow">CSS Overflow Module Level 3 Draft</a></li></ul></div></div></details>
 
 <details><summary id="prop-overflow-wrap">overflow-wrap <a class="self-link" href="#prop-overflow-wrap"></a></summary><div><div><div id="prop-overflow-wrap-syntax">Syntax</div><div class="example"><div class="syntax-block"><pre><code>overflow-wrap: normal |&#160;break-word</code></pre></div></div></div><div><div class="example"><div class="syntax-block"><table class="property-table"><tr><th scope="row">
           Initial value

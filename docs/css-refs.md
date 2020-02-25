@@ -78,8 +78,7 @@ well as the properties <code>object-fit</code> and <code>object-position</code>.
 </tr>
 <tr>
 <td><a href="https://www.w3.org/TR/css-overflow-3/">CSS Overflow Module Level 3</a></td>
-<td>Prince only recognizes the <code>overflow</code> property from CSS 2.1. However,
-it supports its behaviour as described in the Level 3 module.</td>
+<td>Prince supports the <code>overflow</code> property's behaviour as described in the Level 3 module, but does not support the 2-value syntax.</td>
 </tr>
 <tr>
 <td><a href="https://www.w3.org/TR/css3-page/">CSS Paged Media Module Level 3</a></td>
