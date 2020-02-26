@@ -442,6 +442,9 @@ Furthermore the range of pages to rasterize and the resolution of the raster out
 ```bash
       prince doc.html --raster-output=title-thumbnail.jpg --raster-pages=first --raster-dpi=24
 ```
+Please note that when creating a JPEG image output, the quality parameter given
+to libjpeg is `92`.  There is no option to control it at the moment.
+
 If you want to rasterize the HTML to an image format that supports transparency (PNG, not JPEG) and have a transparent background, in order to composite it with something else later, the command-line option [`--raster-background`](command-line.md#cl-raster-background) can be used with the value `transparent`.
 
 A full list of rasterization possibilities can be found in the [Raster Output Options](command-line.md#raster-output-options) section.
