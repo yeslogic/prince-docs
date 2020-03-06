@@ -214,6 +214,9 @@ The [`PDF.pages`](js-support.md#window.PDF.pages) array mentioned earlier (see [
     y =        y-coordinate, in pt (set to zero on some boxes)
     w =        width, in pt
     h =        height, in pt (set to zero on some boxes)
+    baseline = the y-coordinate of the baseline of the box,
+               ie. the line that the text rests on, in pt -
+               applies only to inline boxes
     children = array of child boxes
     parent =   parent box
     element =  DOM element for box (may be null)
@@ -222,7 +225,7 @@ The [`PDF.pages`](js-support.md#window.PDF.pages) array mentioned earlier (see [
     src =      URL string for images
     style =    CSS style object for box
 
-The `x`, `y`, `w` and `h` measures, defining respectively the x- and y-coordinates and the width and height of the *box*, use the same coordinate system as the PDF, i.e. the box tracking units are measured in points (`pt`) and the origin is the lower left corner of the page.
+The `x`, `y`, `w`, `h` and `baseline` measures, defining respectively the x- and y-coordinates and the width and height of the *box*, use the same coordinate system as the PDF, i.e. the box tracking units are measured in points (`pt`) and the origin is the lower left corner of the page.
 
 The box with the value `BODY` represents the *page area* returned by [`PDF.pages`](js-support.md#window.PDF.pages) (and thus is not necessarily equivalent with the `body` element); the content of the *page-margin boxes* is not included in the tree (see [Page regions](paged.md#page-regions) for the definition of *page area* and *page-margin boxes*).
 
