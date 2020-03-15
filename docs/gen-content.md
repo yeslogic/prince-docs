@@ -358,7 +358,7 @@ This will add a cross-reference after every link that includes the text of the e
 
 Prince supports arbitrary JavaScript functions to be called from CSS generated content using the `prince-script()` function (see the [`content`](css-props.md#prop-content) property). To make the functions available to CSS, the `Prince.addScriptFunc` method is used (see [The Prince Object](javascript.md#the-prince-object)).
 
-Please note that Prince is not running JavaScript by default - it needs to be explicitly enabled. See [Applying JavaScript in Prince](prince-input#applying-javascript-in-prince).
+Please note that Prince is not running JavaScript by default - it needs to be explicitly enabled. See [Applying JavaScript in Prince](prince-input.md#applying-javascript-in-prince).
 
 CSS
 

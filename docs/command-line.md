@@ -358,7 +358,7 @@ dl>
   </dt>
   <dd>
     Specify the page size (eg. A4, "155mm 190mm", etc).  The syntax is the same as
-    the <code><a href="/doc/css-props/#prop-size">size</a></code> property in <a href="/doc/12/doc-refs/#at-page"><code>@page</code></a>
+    the <code><a href="/doc/css-props/#prop-size">size</a></code> property in <a href="/doc/css-refs/#at-page"><code>@page</code></a>
     rules, which can take two values for horizontal and vertical dimensions. On the
     command-line it needs to be written between quotes as a single argument.  See
     also <a href="/doc/paged/#page-size">Page size</a> and <a href="/doc/page-size-keywords/">Page Size Keywords</a>.

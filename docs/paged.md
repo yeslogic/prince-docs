@@ -338,7 +338,7 @@ Many CSS properties can be applied to page regions:
 
 -   When a page region contains generated content, many inline style properties such as [`color`](css-props.md#prop-color) and [`font`](css-props.md#prop-font) can be applied to style the generated content.
 
-The `@footnote` area can be positioned other than its default position (see [Styling and behavior of footnotes](styling#styling-and-behavior-of-footnotes) and [Sidenotes](cookbook.md#sidenotes)). All other page regions cannot be moved - their position is defined by the page margins.
+The `@footnote` area can be positioned other than its default position (see [Styling and behavior of footnotes](styling.md#styling-and-behavior-of-footnotes) and [Sidenotes](cookbook.md#sidenotes)). All other page regions cannot be moved - their position is defined by the page margins.
 
 ### Generated content in page regions
 
@@ -538,7 +538,7 @@ This can be very useful as a means to repeating the title of a chapter as a page
       @top-center { content: string(letter, first-except);}
     }
 ```
-You can see these examples in full action in the [Dictionary](sample-docs.html#dictionary) sample ([HTML](http://css4.pub/2015/icelandic/dictionary.html) - [PDF](http://css4.pub/2015/icelandic/dictionary.pdf)).
+You can see these examples in full action in the [Dictionary](/samples/#dictionary) sample ([HTML](http://css4.pub/2015/icelandic/dictionary.html) - [PDF](http://css4.pub/2015/icelandic/dictionary.pdf)).
 
 ### Taking elements from the document
 
