@@ -2,11 +2,11 @@
 title: Generated Content
 ---
 
-Generated content is text and other content that is not found in the original input document, but is added to the output from a style sheet using the CSS [`content`](css-props#prop-content) property. Useful applications of this property include [Page regions](paged.md#page-regions), [List markers](styling#list-markers) or [Footnotes](styling#footnotes).
+Generated content is text and other content that is not found in the original input document, but is added to the output from a style sheet using the CSS [`content`](css-props.md#prop-content) property. Useful applications of this property include [Page regions](paged.md#page-regions), [List markers](styling#list-markers) or [Footnotes](styling#footnotes).
 
 ## Generated Content Functions
 
-Generated content is inserted by means of several functions that typically are used within the [`content`](css-props#prop-content) property. However, please note that these functions are not unique to the [`content`](css-props#prop-content) property, but can be used for the same purpose in several other ones, namely:
+Generated content is inserted by means of several functions that typically are used within the [`content`](css-props.md#prop-content) property. However, please note that these functions are not unique to the [`content`](css-props.md#prop-content) property, but can be used for the same purpose in several other ones, namely:
 
 -   `content`
 -   `prince-bookmark-label`
@@ -28,8 +28,8 @@ It can also be done with the `prince-fallback(url)` function, which works just l
 
 The content to be inserted can also be fetched from the attributes of other elements with the `attr(attribute-name)` function, or from other elements with the following mechanisms:
 
--   Any block-level element can be removed from the normal document flow, to be inserted in a page region: it is best removed with the [`position`](css-props#prop-position) property and its `running(name)` function, and inserted with the `element(name)` function. Alternatively, it can be removed with the [`prince-flow`](css-props#prop-prince-flow) property, to be inserted with the `flow(name)` function. See the documentation for [Taking elements from the document](paged.md#taking-elements-from-the-document) for more details.
--   An element can be referenced with the `string(ident)` function after having been defined in the [`string-set`](css-props#prop-string-set) property with the `content()` function. This does not remove the element from the natural document flow, but instead copies it into the page region. See [Copying content from the document](paged.md#copying-content-from-the-document).
+-   Any block-level element can be removed from the normal document flow, to be inserted in a page region: it is best removed with the [`position`](css-props.md#prop-position) property and its `running(name)` function, and inserted with the `element(name)` function. Alternatively, it can be removed with the [`prince-flow`](css-props.md#prop-prince-flow) property, to be inserted with the `flow(name)` function. See the documentation for [Taking elements from the document](paged.md#taking-elements-from-the-document) for more details.
+-   An element can be referenced with the `string(ident)` function after having been defined in the [`string-set`](css-props.md#prop-string-set) property with the `content()` function. This does not remove the element from the natural document flow, but instead copies it into the page region. See [Copying content from the document](paged.md#copying-content-from-the-document).
 
 The following functions can also be used for different forms of counters:
 
@@ -66,7 +66,7 @@ For a good example of its use, please see [Copying content from the document](pa
 
 ## Before and After pseudo-elements
 
-The [`content`](css-props#prop-content) property can be applied to the `::before` and `::after` pseudo-elements to add generated content before or after an element. For example, adding section numbers in front of headings or including quotation marks around a block of text.
+The [`content`](css-props.md#prop-content) property can be applied to the `::before` and `::after` pseudo-elements to add generated content before or after an element. For example, adding section numbers in front of headings or including quotation marks around a block of text.
 
 CSS
 
@@ -81,17 +81,17 @@ Counters are the mechanism provided by CSS to perform numbering. They can be use
 
 ### Initializing and incrementing counters
 
-To use a counter, it first needs to be initialized with the [`counter-reset`](css-props#prop-counter-reset) property, which can be applied to any element and initializes one or more counters to the specified values, or to zero if no value is specified. The property can be used to reset a counter by re-initializing it.
+To use a counter, it first needs to be initialized with the [`counter-reset`](css-props.md#prop-counter-reset) property, which can be applied to any element and initializes one or more counters to the specified values, or to zero if no value is specified. The property can be used to reset a counter by re-initializing it.
 
 Unless the resetting of a counter creates a nested counter, the scope of the counter includes the current element and all of its following siblings.
 
-The [`counter-increment`](css-props#prop-counter-increment) property applies to any element and increments or decrements one or more counters by the specified values, or by one if no value is specified.
+The [`counter-increment`](css-props.md#prop-counter-increment) property applies to any element and increments or decrements one or more counters by the specified values, or by one if no value is specified.
 
-The [`counter-increment`](css-props#prop-counter-increment) and [`counter-reset`](css-props#prop-counter-reset) properties are ignored on elements whose [`display`](css-props#prop-display) property has the value `none`.
+The [`counter-increment`](css-props.md#prop-counter-increment) and [`counter-reset`](css-props.md#prop-counter-reset) properties are ignored on elements whose [`display`](css-props.md#prop-display) property has the value `none`.
 
 ### Displaying counters
 
-Once initialized, a counter can be displayed with either the `counter()` or `counters()` function in a [`content`](css-props#prop-content) property.
+Once initialized, a counter can be displayed with either the `counter()` or `counters()` function in a [`content`](css-props.md#prop-content) property.
 
 The `counter()` function generates a value for the innermost counter, formatted in the optional counter style (decimal by default - see [Counter styles](#counter-styles)).
 
@@ -315,7 +315,7 @@ Prince supports cross-references using generated content with two special functi
 
 ### Using target-counter()
 
-The `target-counter()` function can be used with the [`content`](css-props#prop-content) property to reference the value of a counter at a linked element.
+The `target-counter()` function can be used with the [`content`](css-props.md#prop-content) property to reference the value of a counter at a linked element.
 
 CSS
 
@@ -343,7 +343,7 @@ This will add a cross-reference after every link with the correct chapter number
 
 ### Using target-content()
 
-The `target-content()` function can be used with the [`content`](css-props#prop-content) property to reference the text content of a linked element.
+The `target-content()` function can be used with the [`content`](css-props.md#prop-content) property to reference the text content of a linked element.
 
 CSS
 
@@ -356,7 +356,7 @@ This will add a cross-reference after every link that includes the text of the e
 
 ## Script Functions
 
-Prince supports arbitrary JavaScript functions to be called from CSS generated content using the `prince-script()` function (see the [`content`](css-props#prop-content) property). To make the functions available to CSS, the `Prince.addScriptFunc` method is used (see [The Prince Object](javascript.md#the-prince-object)).
+Prince supports arbitrary JavaScript functions to be called from CSS generated content using the `prince-script()` function (see the [`content`](css-props.md#prop-content) property). To make the functions available to CSS, the `Prince.addScriptFunc` method is used (see [The Prince Object](javascript.md#the-prince-object)).
 
 Please note that Prince is not running JavaScript by default - it needs to be explicitly enabled. See [Applying JavaScript in Prince](prince-input#applying-javascript-in-prince).
 

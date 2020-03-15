@@ -121,7 +121,7 @@ Let's start by creating and opening a new file named `lab_report.css`, First we 
         font-family: sans-serif;
     }
 ```
-The default is a font with serifs, a sans-serif font is easier to read on a computer screen while a serif font is easier to read when printed out. See [Text formatting](styling.md#text-formatting) and the [`font-family`](css-props#prop-font-family) property.
+The default is a font with serifs, a sans-serif font is easier to read on a computer screen while a serif font is easier to read when printed out. See [Text formatting](styling.md#text-formatting) and the [`font-family`](css-props.md#prop-font-family) property.
 
 Next, let's center the title and subtitle and decrease the font size of the subtitle:
 
