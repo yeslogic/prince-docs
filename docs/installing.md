@@ -17,7 +17,7 @@ Prince is provided under the terms of the [Prince End-User License Agreement](/l
 
 ### Installing Prince on Windows
 
-1.  Downlad your installation package from the [Download Page](/download/).
+1.  Download your installation package from the [Download Page](/download/).
 2.  After downloading and attempting to run the installer you might see a confirmation screen like this. Click "run". Note that the filename for the installer may be different than the one shown in the picture.
 
     Run installer confirmation
