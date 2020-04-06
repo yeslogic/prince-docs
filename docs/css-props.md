@@ -1375,7 +1375,17 @@ For the values, the grammar draws on the [CSS Values and Units Module Level 3](h
     parameter is how you do this, however it requires intimate details of exactly
     which font is being used and what glyphs it provides.</p><p>The <code>feature</code> can be written either in function form (<code>feature(N)</code>)
     or in concatenated form (<code>featureN</code>).</p><p>The keyword <code>prince-no-kerning</code> disables the <code>kern</code>
-    OpenType feature, which defines font kerning.</p></div><div><div id="prop-font-variant-seealso">See Also</div><ul><li><a href="/doc/cookbook#typographic-ligatures">Typographic Ligatures</a></li><li><a href="/doc/styling#opentype-features-in-prince">OpenType Features in Prince</a></li></ul></div><div><div id="prop-font-variant-spec">Specification</div><ul><li><a href="https://www.w3.org/TR/CSS2/fonts.html#propdef-font-variant">CSS 2.1</a></li></ul></div></div></details>
+    OpenType feature, which defines font kerning.</p><p>Please note that the value <code>small-caps</code> makes this property to a shorthand of <a href="#prop-font-variant-caps">font-variant-caps</a>.</p></div><div><div id="prop-font-variant-seealso">See Also</div><ul><li><a href="/doc/cookbook#typographic-ligatures">Typographic Ligatures</a></li><li><a href="/doc/styling#opentype-features-in-prince">OpenType Features in Prince</a></li></ul></div><div><div id="prop-font-variant-spec">Specification</div><ul><li><a href="https://www.w3.org/TR/CSS2/fonts.html#propdef-font-variant">CSS 2.1</a></li></ul></div></div></details>
+
+<details><summary id="prop-font-variant-caps">font-variant-caps <a class="self-link" href="#prop-font-variant-caps"></a></summary><div><div><div id="prop-font-variant-caps-syntax">Syntax</div><div class="example"><div class="syntax-block"><pre><code>font-variant-caps: small-caps</code></pre></div></div></div><div><div class="example"><div class="syntax-block"><table class="property-table"><tr><th scope="row">
+          Initial value
+        </th><td><code>small-caps</code></td></tr><tr><th scope="row">
+          Applies to
+        </th><td>all elements</td></tr><tr><th scope="row">
+          Inherited
+        </th><td>
+                  yes
+                </td></tr></table></div></div></div><div><div id="prop-font-variant-caps-comments">Comments</div><p>This property currently only allows for the value <code>small-caps</code>.</p><p>The property <a href="#prop-font-variant">font-variant</a> can be used as a shorthand.</p></div><div><div id="prop-font-variant-seealso">See Also</div><ul><li><a href="/doc/styling#opentype-features-in-prince">OpenType Features in Prince</a></li></ul></div><div><div id="prop-font-variant-caps-spec">Specification</div><ul><li><a href="https://www.w3.org/TR/css-fonts-3/#font-variant-caps-prop">CSS Fonts Module Level 3</a></li></ul></div></div></details>
 
 <details><summary id="prop-font-weight">font-weight <a class="self-link" href="#prop-font-weight"></a></summary><div><div><div id="prop-font-weight-syntax">Syntax</div><div class="example"><div class="syntax-block"><pre><code>font-weight: normal |&#160;bold |&#160;bolder |&#160;lighter |&#160;100 |&#160;200 |&#160;300 |&#160;400 |&#160;500 |&#160;600 |&#160;700 |&#160;800 |&#160;900</code></pre></div></div></div><div><div class="example"><div class="syntax-block"><table class="property-table"><tr><th scope="row">
           Initial value

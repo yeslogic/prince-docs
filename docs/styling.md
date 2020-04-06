@@ -88,6 +88,8 @@ Microsoft has a list of the OpenType feature names [here](https://www.microsoft.
 
 It is possible to enable other OpenType features by using the [`font-variant`](css-props.md#prop-font-variant) CSS property with the `prince-opentype()` function (see [CSS Functional Expressions](css-refs.md#css-functional-expressions)).
 
+The property [`font-variant-caps`](css-props.md#prop-font-variant-caps) enables the display of small capitals (OpenType feature: `smcp`).
+
 Care must be taken in which order the features are enabled! And please note that enabling one feature will disable all the default features.
 
 ### Generic font families
