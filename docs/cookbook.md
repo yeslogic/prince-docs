@@ -823,6 +823,7 @@ Typographic Ligatures
 <dl class="ingredients">
   <dt>You need</dt>
     <dd><a href="/doc/styling#opentype-features-in-prince">OpenType Features in Prince</a></dd>
+    <dd><code><a href="/doc/css-props#prop-font-variant-ligatures">font-variant-ligatures</a></code></dd>
     <dd><code><a href="/doc/css-props#prop-font-variant">font-variant</a>: prince-opentype()</code></dd>
     <dd><code><a href="/doc/css-props#prop-prince-text-replace">prince-text-replace</a></code></dd>
 </dl>
@@ -833,20 +834,23 @@ A prominent example of a typographic ligature is **ﬁ**, which replaces the two
 
 Prince automatically enables ligatures declared by the OpenType fonts with the `liga` feature (see [OpenType Features in Prince](styling.md#opentype-features-in-prince)). This feature covers the "standard ligatures" which the font manufacturer thinks should be used in normal conditions. Microsoft has a list of the OpenType feature names [here](https://www.microsoft.com/typography/otspec/featurelist.htm).
 
-Other special ligatures need to be explicitly enabled in Prince to take effect. This is achieved by using the [`font-variant`](css-props.md#prop-font-variant) CSS property with the `prince-opentype()` function (see [CSS Functional Expressions](css-refs.md#css-functional-expressions)). Care must be taken in which order the features are enabled! And please note that enabling one feature will disable all the default features. To see which OpenType features are enabled by default, see the [OpenType Features in Prince](styling.md#opentype-features-in-prince) section.
+Other special ligatures need to be explicitly enabled in Prince to take effect. This is achieved by using the [`font-variant-ligatures`](css-props.md#prop-font-variant-ligatures) CSS property.
+
+Another means to enable ligatures is through the [`font-variant`](css-props.md#prop-font-variant) CSS property with the `prince-opentype()` function (see [CSS Functional Expressions](css-refs.md#css-functional-expressions)).  However, care must be taken in which order the features are enabled!  Also, enabling one feature will disable all the default features. To see which OpenType features are enabled by default, see the [OpenType Features in Prince](styling.md#opentype-features-in-prince) section.
 
 ```
     body {
-        font-variant: prince-opentype(dlig, liga);
+        font-variant-ligatures: historical-ligatures;
     }
 ```
-Unlike other ligature features, the `clig` feature specifies the context in which the ligature is recommended. "Contextual ligatures" are important in some script designs.
 
-The `dlig` feature covers the "discretionary ligatures" which may be used for special effects.
+The most commn type of ligatures, the OpenType feature `liga`, is enabled by default.  Unlike other ligature features, the `clig` feature specifies the context in which the ligature is recommended. "Contextual ligatures" are important in some script designs.  Both these ligatures are enabled with the value `common-ligatures`.
 
-Some ligatures were in common use in the past, such as ligatures with the so-called "long s" - but they appear anachronistic today. Some fonts include the historical forms as alternates, so the "historical ligatures", covered by the `hlig` feature, can be used for a 'period' effect. This feature replaces the default (current) forms with the historical alternates.
+The `dlig` feature covers the "discretionary ligatures" which may be used for special effects. To enable them, use the value `discretionary-ligatures`.
 
-Some scripts, most notably Arabic and Syriac scripts, require certain ligatures to be used in normal conditions. These "required ligatures" are covered by the `rlig` feature. Prince enables this feature by default in Arabic script.
+Some ligatures were in common use in the past, such as ligatures with the so-called "long s" - but they appear anachronistic today. Some fonts include the historical forms as alternates, so the "historical ligatures", covered by the `hlig` feature, can be used for a 'period' effect. This feature replaces the default (current) forms with the historical alternates. To enable these ligatures, use the value `historical-ligatures`.
+
+Some scripts, most notably Arabic and Syriac scripts, require certain ligatures to be used in normal conditions. These "required ligatures" are covered by the `rlig` feature. Prince enables this feature by default in Arabic script. The only way to manually enable this feature is through the `prince-opentype()` function of the [`font-variant`](css-props.md#prop-font-variant) CSS property.
 
 Another mechanism for replacing characters is given with the [`prince-text-replace`](css-props.md#prop-prince-text-replace) property. For an example use, please see the section on [Character Entities](characters.md#characters).
 
