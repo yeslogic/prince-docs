@@ -88,9 +88,9 @@ Microsoft has a list of the OpenType feature names [here](https://www.microsoft.
 
 It is possible to enable other OpenType features by using the [`font-variant`](css-props.md#prop-font-variant) CSS property with the `prince-opentype()` function (see [CSS Functional Expressions](css-refs.md#css-functional-expressions)).
 
-The property [`font-variant-caps`](css-props.md#prop-font-variant-caps) enables the display of small capitals (OpenType feature: `smcp`).
+The property [`font-variant-caps`](css-props.md#prop-font-variant-caps) enables the display of small capitals (the OpenType features `smcp` and `c2pc`).
 
-The property [`font-variant-ligatures`](css-props.md#prop-font-variant-ligatures) allows for fine-tuning of various ligature types.
+The property [`font-variant-ligatures`](css-props.md#prop-font-variant-ligatures) allows for fine-tuning of various ligature types.  (See also [Typographic Ligatures](cookbook.md#typographic-ligatures)).
 
 Care must be taken in which order the features are enabled! And please note that enabling one feature will disable all the default features.
 
