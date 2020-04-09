@@ -1326,6 +1326,16 @@ For the values, the grammar draws on the [CSS Values and Units Module Level 3](h
     rule to be valid.
     </p></div><div><div id="prop-font-family-seealso">See Also</div><ul><li><a href="/doc/styling#fonts">Fonts</a></li><li><a href="/doc/styling#redefining-the-generic-font-families">Redefining the generic font families</a></li><li><a href="/doc/styling#text-formatting">Text formatting</a></li></ul></div><div><div id="prop-font-family-spec">Specification</div><ul><li><a href="https://www.w3.org/TR/CSS2/fonts.html#propdef-font-family">CSS 2.1</a></li></ul></div></div></details>
 
+<details><summary id="prop-font-kerning">font-kerning <a class="self-link" href="#prop-font-kerning"></a></summary><div><div><div id="prop-font-kerning-syntax">Syntax</div><div class="example"><div class="syntax-block"><pre><code>font-kerning: auto |&#160;normal |&#160;none</code></pre></div></div></div><div><div class="example"><div class="syntax-block"><table class="property-table"><tr><th scope="row">
+          Initial value
+        </th><td><code>auto</code></td></tr><tr><th scope="row">
+          Applies to
+        </th><td>all elements</td></tr><tr><th scope="row">
+          Inherited
+        </th><td>
+                  yes
+                </td></tr></table></div></div></div><div><div id="prop-font-kerning-comments">Comments</div><p>The value <code>none</code> disables font kerning.  <a href="#prop-font-variant">font-variant: prince-no-kerning</a> accomplishes the same.</p></div><div><div id="prop-font-kerning-seealso">See Also</div><ul><li><a href="/doc/styling#opentype-features-in-prince">OpenType Features in Prince</a></li></ul></div><div><div id="prop-font-kerning-spec">Specification</div><ul><li><a href="https://www.w3.org/TR/css-fonts-3/#font-kerning-prop">CSS Fonts Module Level 3</a></li></ul></div></div></details>
+
 <details><summary id="prop-font-size">font-size <a class="self-link" href="#prop-font-size"></a></summary><div><div><div id="prop-font-size-syntax">Syntax</div><div class="example"><div class="syntax-block"><pre><code>font-size: <i>length</i> |&#160;<i>percent</i> |&#160;smaller |&#160;larger |&#160;xx-small |&#160;x-small |&#160;small |&#160;medium |&#160;large |&#160;x-large |&#160;xx-large</code></pre></div></div></div><div><div class="example"><div class="syntax-block"><table class="property-table"><tr><th scope="row">
           Initial value
         </th><td><code>12pt</code></td></tr><tr><th scope="row">
@@ -1375,7 +1385,7 @@ For the values, the grammar draws on the [CSS Values and Units Module Level 3](h
     parameter is how you do this, however it requires intimate details of exactly
     which font is being used and what glyphs it provides.</p><p>The <code>feature</code> can be written either in function form (<code>feature(N)</code>)
     or in concatenated form (<code>featureN</code>).</p><p>The keyword <code>prince-no-kerning</code> disables the <code>kern</code>
-    OpenType feature, which defines font kerning.</p><p>Please note that the value <code>small-caps</code> makes this property to a shorthand of <a href="#prop-font-variant-caps">font-variant-caps</a>.</p></div><div><div id="prop-font-variant-seealso">See Also</div><ul><li><a href="/doc/cookbook#typographic-ligatures">Typographic Ligatures</a></li><li><a href="/doc/styling#opentype-features-in-prince">OpenType Features in Prince</a></li></ul></div><div><div id="prop-font-variant-spec">Specification</div><ul><li><a href="https://www.w3.org/TR/CSS2/fonts.html#propdef-font-variant">CSS 2.1</a></li></ul></div></div></details>
+    OpenType feature, which defines font kerning.  The property <a href="#prop-font-kerning">font-kerning</a> is the better way of achieving the same.</p><p>Please note that the value <code>small-caps</code> makes this property to a shorthand of <a href="#prop-font-variant-caps">font-variant-caps</a>.</p></div><div><div id="prop-font-variant-seealso">See Also</div><ul><li><a href="/doc/cookbook#typographic-ligatures">Typographic Ligatures</a></li><li><a href="/doc/styling#opentype-features-in-prince">OpenType Features in Prince</a></li></ul></div><div><div id="prop-font-variant-spec">Specification</div><ul><li><a href="https://www.w3.org/TR/CSS2/fonts.html#propdef-font-variant">CSS 2.1</a></li></ul></div></div></details>
 
 <details><summary id="prop-font-variant-caps">font-variant-caps <a class="self-link" href="#prop-font-variant-caps"></a></summary><div><div><div id="prop-font-variant-caps-syntax">Syntax</div><div class="example"><div class="syntax-block"><pre><code>font-variant-caps: normal |&#160;small-caps |&#160;all-small-caps</code></pre></div></div></div><div><div class="example"><div class="syntax-block"><table class="property-table"><tr><th scope="row">
           Initial value
