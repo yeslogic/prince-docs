@@ -57,11 +57,11 @@ Prince supports OpenType features, and enables certain ones by default in specif
 <tbody>
 <tr>
 <td>Latin, Greek, Cyrillic</td>
-<td>ccmp, liga, dist, kern*, mark, mkmk, vrt2/vert</td>
+<td>ccmp, rlig, clig, liga, calt, dist, kern*, mark, mkmk, vrt2</td>
 </tr>
 <tr>
 <td>Arabic/Syriac</td>
-<td>ccmp, rlig, calt, liga, mset, isol, medi, fina, kern, curs, mark, mkmk</td>
+<td>ccmp, rlig, calt, liga, mset, isol, medi, init, fina, kern, curs, mark, mkmk</td>
 </tr>
 <tr>
 <td>Indic</td>
