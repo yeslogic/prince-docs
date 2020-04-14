@@ -52,9 +52,12 @@ content types.</td>
 </tr>
 <tr>
 <td><a href="https://www.w3.org/TR/css-fonts-3/">CSS Fonts Module Level 3</a></td>
-<td>Beyond the definitions in CSS 2.1, only <code>font-stretch</code> is recognized.
-However, Prince provides a different interface to the functionality of the <code>font-variant-*</code>
-and <code>font-feature-settings</code> properties.</td>
+<td>Beyond the definitions in CSS 2.1, Prince supports <code>font-stretch</code>,
+<code>font-kerning</code>, <code>font-variant-caps</code> and <code>font-variant-ligatures</code>.
+Prince also provides a different interface to the functionality of the
+<code>font-feature-settings</code> property through the
+<code><a href="/doc/css-props#prop-font-variant">font-variant: prince-opentype()</a></code>
+function.</td>
 </tr>
 <tr>
 <td><a href="https://www.w3.org/TR/css-gcpm-3/">CSS Generated Content for Paged Media Module</a></td>
