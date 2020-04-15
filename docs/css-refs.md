@@ -34,9 +34,8 @@ properties.</td>
 </tr>
 <tr>
 <td><a href="https://www.w3.org/TR/css-break-3/">CSS Fragmentation Module Level 3</a></td>
-<td>Prince does not support <code>break-{before,after,inside}</code>. However, Prince
-supports also the Prince-specific properties <code>column-break-{before,after}</code>.
-The initial value of <code>widows</code> and <code>orphans</code> has been changed from
+<td>Prince largely supports this module.  Please note that the initial value of
+<code>widows</code> and <code>orphans</code> has been changed from
 <code>2</code> to <code>1</code>.</td>
 </tr>
 <tr>
