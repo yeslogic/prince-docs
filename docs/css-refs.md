@@ -124,8 +124,8 @@ and <a href="#at-supports"><code>@supports</code></a> at-rules.</td>
 <tr>
 <td><a href="https://www.w3.org/TR/css-flexbox-1/">CSS Flexible Box Layout Module Level 1</a></td>
 <td>Prince supports this module as of Prince 12, with the exception of
-  page breaking/fragmentation, break-before/-after,
-  visibility:collapse and vertical writing.</td>
+  page breaking/fragmentation, <code>break-before</code>/<code>-after</code>,
+  <code>visibility: collapse</code> and vertical writing.</td>
 </tr>
 <tr>
 <td><a href="https://www.w3.org/TR/selectors4/">Selectors Level 4</a></td>
