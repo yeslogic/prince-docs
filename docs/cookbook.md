@@ -659,7 +659,7 @@ CSS
         content: " [Located at '" attr(href) "']";
     }
 ```
-This will add the URL after every link. For example: "\[Located at 'http://www.princexml.com/'\]".
+This will add the URL after every link. For example: "\[Located at 'http://www.princexml.com/&#8203;'\]".
 
 
 Image Magic
