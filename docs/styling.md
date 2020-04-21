@@ -394,7 +394,7 @@ Changing the writing mode of a document, that is, the inline or block direction,
 
 The page selector pseudo-classes `:recto` and `:verso` (see [Selecting pages](paged.md#selecting-pages)) are relative to the direction of the script. In a left-to-right script, `:recto` is the right-hand side of a spread, and `:verso` is the left-hand side, while in a right-to-left script these values are inverted: `:recto` defines the left-hand side of a spread, and `:verso` defines the right-hand side. See also [Selecting pages](paged.md#selecting-pages).
 
-Columns change their orientation when the writing mode is changed - `writing-mode` `vertical-rl` arranges the columns horizontally, top-to-bottom.
+Columns (see the chapter on [Columns](#columns)) change their orientation when the writing mode is changed - the [`writing-mode`](css-props.md#prop-writing-mode) value `vertical-rl` arranges the columns horizontally, top-to-bottom.
 
 This can be used to rotate content - see [Printing wide content sideways](cookbook.md#printing-wide-content-sideways) and [Rotating content in table cells](cookbook.md#rotating-content-in-table-cells).
 
