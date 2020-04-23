@@ -141,7 +141,7 @@ Prince preserves the ICC profiles embedded in bitmap images, unless directed not
 
 ### Color conversion
 
-Prince will convert all the colors in a document to a single color space if the [`--convert-colors`](command-line.md#cl-convert-colors) command-line option or the `prince-pdf-color-conversion`](css-props.md#prop-prince-pdf-color-conversion-syntax2) descriptor in the [`@prince-pdf`](css-refs.md#at-prince-pdf) at-rule is used. The destination color space is specified with the [`--pdf-output-intent`](command-line.md#cl-pdf-output-intent) option (or the [`prince-pdf-output-intent`](css-props.md#prop-prince-pdf-output-intent) property), even when not producing PDF/A or PDF/X files.
+Prince will convert all the colors in a document to a single color space if the [`--convert-colors`](command-line.md#cl-convert-colors) command-line option or the [`prince-pdf-color-conversion`](css-props.md#prop-prince-pdf-color-conversion-syntax2) descriptor in the [`@prince-pdf`](css-refs.md#at-prince-pdf) at-rule is used. The destination color space is specified with the [`--pdf-output-intent`](command-line.md#cl-pdf-output-intent) option (or the [`prince-pdf-output-intent`](css-props.md#prop-prince-pdf-output-intent) property), even when not producing PDF/A or PDF/X files.
 
 Prince automatically converts colors to the output intent color space only when producing PDF/X-1a files. Files in any of the other profiles need also the [`--convert-colors`](command-line.md#cl-convert-colors) command-line option or the [`prince-pdf-color-conversion`](css-props.md#prop-prince-pdf-color-conversion) property if colors are to be converted.
 
