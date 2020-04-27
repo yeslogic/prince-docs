@@ -42,7 +42,8 @@ properties.</td>
 <td><a href="https://www.w3.org/TR/css3-color/">CSS Color Module Level 3</a></td>
 <td>Prince supports <code>opacity</code>. It supports some of the extensions of the
 <code>color</code> property. <code>rgba()</code> is supported in builds after
-Prince 11.</td>
+Prince 11, <code>hsl()</code> and <code>hsla()</code> are supported as
+of Prince 12.1 .</td>
 </tr>
 <tr>
 <td><a href="https://www.w3.org/TR/css-content-3/">CSS Generated Content Module Level 3</a></td>
