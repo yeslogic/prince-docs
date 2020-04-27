@@ -1966,7 +1966,9 @@ For the values, the grammar draws on the [CSS Values and Units Module Level 3](h
 	If a paragraph is split over two pages or columns, this property
 	determines the minimum number of lines that must be left at the bottom
 	of the first page or column.
-	</p></div><div><div id="prop-orphans-seealso">See Also</div><ul><li><a href="/doc/paged#widows-and-orphans">Widows and orphans</a></li><li><code><a href="#prop-widows">widows</a></code></li></ul></div><div><div id="prop-orphans-spec">Specification</div><ul><li><a href="https://www.w3.org/TR/CSS2/page.html#break-inside">CSS 2.1</a></li><li><a href="https://www.w3.org/TR/css-break-3/#widows-orphans">CSS Fragmentation Module Level 3</a></li></ul></div></div></details>
+	</p><p>
+    Please note that the initial value has been changed from <code>2</code> to <code>1</code>.
+    </p></div><div><div id="prop-orphans-seealso">See Also</div><ul><li><a href="/doc/paged#widows-and-orphans">Widows and orphans</a></li><li><code><a href="#prop-widows">widows</a></code></li></ul></div><div><div id="prop-orphans-spec">Specification</div><ul><li><a href="https://www.w3.org/TR/CSS2/page.html#break-inside">CSS 2.1</a></li><li><a href="https://www.w3.org/TR/css-break-3/#widows-orphans">CSS Fragmentation Module Level 3</a></li></ul></div></div></details>
 
 <details><summary id="prop-overflow">overflow <a class="self-link" href="#prop-overflow"></a></summary><div><div><div id="prop-overflow-syntax">Syntax</div><div class="example"><div class="syntax-block"><pre><code>overflow: visible |&#160;hidden |&#160;clip |&#160;scroll |&#160;auto</code></pre></div></div></div><div><div class="example"><div class="syntax-block"><table class="property-table"><tr><th scope="row">
           Initial value
@@ -3831,6 +3833,8 @@ supplier, item { overflow-wrap: normal; }
     given percentage value of the available page width, to avoid the worst case
     of having a widow line that is only one or two words long.  For more details
     see <a href="/doc/prince-for-books#fractional-widows">Fractional Widows</a>.
+    </p><p>
+    Please note that the initial value has been changed from <code>2</code> to <code>1</code>.
     </p></div><div><div id="prop-widows-seealso">See Also</div><ul><li><a href="/doc/paged#widows-and-orphans">Widows and orphans</a></li><li><a href="/doc/prince-for-books">Prince for Books</a></li><li><a href="/doc/prince-for-books#fractional-widows">Fractional Widows</a></li><li><code><a href="#prop-orphans">orphans</a></code></li></ul></div><div><div id="prop-widows-spec">Specification</div><ul><li><a href="https://www.w3.org/TR/CSS2/page.html#break-inside">CSS 2.1</a></li><li><a href="https://www.w3.org/TR/css-break-3/#widows-orphans">CSS Fragmentation Module Level 3</a></li></ul></div></div></details>
 
 <details><summary id="prop-width">width <a class="self-link" href="#prop-width"></a></summary><div><div><div id="prop-width-syntax">Syntax</div><div class="example"><div class="syntax-block"><pre><code>width: auto |&#160;<i>length</i> |&#160;<i>percent</i> |&#160;min-content |&#160;max-content</code></pre></div></div></div><div><div class="example"><div class="syntax-block"><table class="property-table"><tr><th scope="row">
