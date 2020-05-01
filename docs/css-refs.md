@@ -1040,7 +1040,7 @@ In this section you find the documentation for the supported CSS functional expr
 </thead>
 <tbody>
 <tr>
-<td><code>attr( <i>attribute-name</i> <i>type-or-unit</i>? [, <i>fallback</i>]? )</code></td>
+<td><code>attr( <i>attribute-name</i> <i>type-or-unit</i>? [,&#160;<i>fallback</i>]? )</code></td>
 <td>Retrieves the value of an attribute of the selected element.</td>
 <td><code></code></td>
 </tr>
@@ -1050,7 +1050,7 @@ In this section you find the documentation for the supported CSS functional expr
 <td><code></code></td>
 </tr>
 <tr>
-<td><code>var( <i>custom-property-name</i> [, <i>fallback</i>]? )</code></td>
+<td><code>var( <i>custom-property-name</i> [,&#160;<i>fallback</i>]? )</code></td>
 <td>Retrieves the value of a custom property set elsewhere.</td>
 <td><a href="/doc/styling#custom-properties-css-variables">Custom properties (CSS variables)</a></td>
 </tr>
@@ -1064,7 +1064,7 @@ In this section you find the documentation for the supported CSS functional expr
 <td>Defines red, green and blue values and the alpha component of a color.</td>
 </tr>
 <tr>
-<td><code>cmyk(C,M,Y,K[,A])</code> | <code>device-cmyk(C,M,Y,K[,A])</code></td>
+<td><code>cmyk(C,M,Y,K[,A])</code> |&#160;<code>device-cmyk(C,M,Y,K[,A])</code></td>
 <td>Defines cyan, magenta, yellow and black values of a color, as well as the optional
 alpha component.</td>
 </tr>
@@ -1077,7 +1077,7 @@ alpha component.</td>
 <td>Defines hue, saturation and lightness values and the alpha component of a color.</td>
 </tr>
 <tr class="ext">
-<td><code>prince-color( <i>colorname</i>  [, <i>number</i> | <i>percentage</i>]? , overprint? )*</code></td>
+<td><code>prince-color( <i>colorname</i>  [,&#160;<i>number</i> |&#160;<i>percentage</i>]? , overprint? )*</code></td>
 <td>Using a spot color defined in the <code><a href="#at-prince-color">@prince-color</a></code>
 at-rule. The number or percentage defines the tint. An optional <code>overprint</code>
 keyword instructs Prince whether to overprint the color.
@@ -1094,22 +1094,22 @@ keyword instructs Prince whether to overprint the color.
 is given, it defaults to <code>overprint-mode-nonzero</code>.</td>
 </tr>
 <tr>
-<td><code>linear-gradient([ [ &lt;angle&gt; | to &lt;side-or-corner&gt; ] ,]? &lt;color-stop&gt;[, &lt;color-stop&gt;]+)</code></td>
+<td><code>linear-gradient([ [ <i>angle</i> | to <i>side-or-corner</i> ] ,]? <i>color-stop</i> [,&#160;<i>color-stop</i>]+)</code></td>
 <td>Creates an image consisting of a progressive transition between two or more
 colors along a straight line.</td>
 <td rowspan="4"><code><a href="/doc/css-props#prop-background-image">background-image</a></code></td>
 </tr>
 <tr>
-<td><code>radial-gradient([ [ &lt;shape&gt; || &lt;size&gt; ] [ at &lt;position&gt; ]?, | at &lt;position&gt;, ]? &lt;color-stop&gt; [, &lt;color-stop&gt; ]+)</code></td>
+<td><code>radial-gradient([ [ <i>shape</i> || <i>size</i> ] [ at <i>position</i> ]?, | at <i>position</i>, ]? <i>color-stop</i> [,&#160;<i>color-stop</i> ]+)</code></td>
 <td>Creates an image consisting of a progressive transition between two or more
 colors that radiate from an origin point</td>
 </tr>
 <tr>
-<td><code>repeating-linear-gradient([ [ &lt;angle&gt; | to &lt;side-or-corner&gt; ] ,]? &lt;color-stop&gt; [, &lt;color-stop&gt;]+)</code></td>
+<td><code>repeating-linear-gradient([ [ <i>angle</i> | to <i>side-or-corner</i> ] ,]? <i>color-stop</i> [,&#160;<i>color-stop</i>]+)</code></td>
 <td>Creates an image consisting of repeating linear gradients.</td>
 </tr>
 <tr>
-<td><code>repeating-radial-gradient([ [ &lt;shape&gt; || &lt;size&gt; ] [ at &lt;position&gt; ]?, | at &lt;position&gt;, ]? &lt;color-stop&gt; [, &lt;color-stop&gt; ]+)</code></td>
+<td><code>repeating-radial-gradient([ [ <i>shape</i> || <i>size</i> ] [ at <i>position</i> ]?, | at <i>position</i>, ]? <i>color-stop</i> [,&#160;<i>color-stop</i> ]+)</code></td>
 <td>Creates an image consisting of repeating radial gradients.</td>
 </tr>
 <tr>
