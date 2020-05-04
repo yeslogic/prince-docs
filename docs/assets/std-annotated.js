@@ -130,6 +130,7 @@ var stdAnnotated = {
         getOwnPropertyDescriptor: {},
         getOwnPropertyNames: {},
         getPrototypeOf: {},
+        setPrototypeOf: {},
         prototype: {
             constructor: {},
             toString: {},
