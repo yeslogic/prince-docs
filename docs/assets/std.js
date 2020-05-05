@@ -1181,6 +1181,7 @@ var std = {
     },
     // Prince APIs
     Prince: {
+        registerPostLayoutFunc: {},
         addScriptFunc: {},
         trackBoxes: {},
         convertToFile: {},

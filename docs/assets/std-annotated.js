@@ -1332,6 +1332,13 @@ var stdAnnotated = {
     Prince: {
         type: "object",
         ext: "ext",
+        registerPostLayoutFunc: {
+            type: "function",
+            arguments: [
+                {name: "function", type: "string"}
+            ],
+            example: "something"
+        },
         addScriptFunc: {
             type: "function",
             arguments: [
