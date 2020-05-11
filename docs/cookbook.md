@@ -1010,17 +1010,23 @@ The "Two-Pass" Solution
     </dd>
 </dl>
 
-One limitation of producing a document intended for print is its non-interactive, static nature: a document cannot be modified after it is deemed to be ready for print. See [JavaScript in Printed Media](javascript.md#js-print).
+One limitation of producing a document intended for print is its non-interactive, static nature: in principle a document cannot be modified after it is deemed to be ready for print. See [JavaScript in Printed Media](javascript.md#js-print).
 
-JavaScript can be run twice only: the first time it is run before layout, where it interacts with and modifies the layout (and the DOM structure). Once layout is finished, JavaScript can be run a second time from the `complete` event handler - see [Event Handling](javascript.md#js-event). However, this time it is only allowed to inspect the layout and cannot modify the DOM.
+JavaScript can basically be run twice: the first time it is run before layout, where it interacts with and modifies the layout (and the DOM structure). Once layout is finished, JavaScript can be run a second time from the `complete` event handler (see [Event Handling](javascript.md#event-handling)) to inspect the layout, without modifying the DOM - the results might be printed to console for monitoring the document for mistakes.
 
 A problematic situation arises when you want to modify your document after layout has finished - a typical scenario would be when you want an index to be created with correct page numbers. The content depends on the layout of the document itself.
 
 (Please note that this only affects the creation of an index - a simple table of contents or a reference to a place on another page can easily be achieved with [target-counter links](gen-content.md#counter-target).)
 
-Typically Prince is run a first time to prepare the layout of the document and run JavaScript after layout has finished, collecting the output of the script to append it to the document with the help of the `console.log()` - see [Console Access](javascript.md#js-console).
+To address this problem, Prince offers the possibility to delay the generation of a PDF and to register the function [`Prince.registerPostLayoutFunc(func)`](js-support.md#window.Prince.registerPostLayoutFunc), which is called after layout finished, similar to the current `oncomplete` event. If this function modifies the DOM, Prince will perform layout again on the updated document, once the function returns and before generating the PDF.
 
-Now the document would be ready for generating the PDF - Prince is run a second time, producing the desired document.
+The post layout function can register itself, or another post layout function, in order to repeat this process multiple times. By default the number of passes is limited to two, but this can be increased by using the [`--max-passes=N`](command-line.md#cl-max-passes) command-line option.
+
+The old, "clumsy" way of manually running Prince twice is also still working:
+
+Prince would be run a first time to prepare the layout of the document and run JavaScript after layout has finished, collecting the output of the script to append it to the document with the help of the `console.log()` - see [Console Access](javascript.md#js-console).
+
+Now the document would be ready for generating the PDF - Prince would be run a second time, producing the desired document.
 
 Here is a minimalistic two-pass solution where the document is adorned with a ToC and index:
 

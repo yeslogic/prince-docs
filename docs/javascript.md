@@ -13,9 +13,11 @@ JavaScript in Printed Media
 
 Prince is a user agent producing primarily documents meant to be printed, and as such, some limitations are in place that set it apart from most other user agents that support JavaScript.
 
-The most notable difference is the fact that a printed page cannot be interactive, being static in nature: a document cannot be modified after it is deemed to be ready for print. JavaScript can be run twice only: the first time it is run before layout, where it interacts with and modifies the layout (and the DOM structure). Once layout is finished, JavaScript can be run a second time from the `complete` event handler (see [Event Handling](javascript.md#event-handling)). However, this time it is only allowed to inspect the layout and cannot modify the DOM. See also [The "Two-Pass" Solution](cookbook.md#the-two-pass-solution).
+The most notable difference is the fact that a printed page cannot be interactive, being static in nature: in principle a document cannot be modified after it is deemed to be ready for print. JavaScript can basically be run twice: the first time it is run before layout, where it interacts with and modifies the layout (and the DOM structure). Once layout is finished, JavaScript can be run a second time from the `complete` event handler (see [Event Handling](javascript.md#event-handling)) to inspect the layout, without modifying the DOM.
 
-A consequence of the non-interactive nature of printed media is that any interactive events, such as e.g. `onClick`, do not make sense, and will never fire.
+However, Prince also offers to register the function [`Prince.registerPostLayoutFunc(func)`](js-support.md#window.Prince.registerPostLayoutFunc), which is called after layout finished, similar to the current `oncomplete` event. If this function modifies the DOM, Prince will perform layout again on the updated document. For more details see [The Prince Object](#the-prince-object) and [The "Two-Pass" Solution](cookbook.md#the-two-pass-solution).
+
+Please also note that a consequence of the non-interactive nature of printed media is that any interactive events, such as e.g. `onClick`, do not make sense, and will never fire.
 
 JavaScript in Prince
 --------------------
@@ -55,7 +57,9 @@ When the document has been fully parsed and is ready for processing, Prince will
 
 These load events can be captured by setting the `onload` attribute on the `body` element in HTML documents, or by setting the `window.onload` property or calling [`window.addEventListener`](js-support.md#windowaddEventListener.).
 
-When document conversion has finished, Prince will fire the `complete` event on the `Prince` object. This event can be captured by calling `Prince.addEventListener`, and is useful for logging document statistics, or for using the output for [The "Two-Pass" Solution](cookbook.md#the-two-pass-solution).
+When document conversion has finished, Prince will fire the `complete` event on the `Prince` object. This event can be captured by calling `Prince.addEventListener`, and is useful for logging document statistics.
+
+Prince also offers the possibility to register the function [`Prince.registerPostLayoutFunc(func)`](js-support.md#window.Prince.registerPostLayoutFunc) after layout has finished for possibly triggering a new layout - see [The Prince Object](#the-prince-object) for more details.
 
 When multiple documents are processed into one PDF, the `complete` event will only fire once, on the first document.
 
@@ -108,6 +112,11 @@ The property [`Prince.failStatus`](js-support.md#window.Prince.failStatus) is a 
 It can be set to true by a script that runs after layout in the `oncomplete` handler (see [Event Handling](javascript.md#event-handling)) and checks for complex conditions, like overlapping content (see [The Box Tracking API](javascript.md#the-box-tracking-api) and the [Detecting Overflow](http://www.princexml.com/forum/topic/3603/detecting-overflow) sample) or some other user-defined issue that you want to trigger the fail-safe.
 
 For example, perhaps there should be only one page: you check the page count (see [Document Statistics](javascript.md#document-statistics)), and if it's greater than one, you log a warning and trigger the fail-safe to ensure that no PDF is generated.
+
+Prince also offers the possibility to register the function [`Prince.registerPostLayoutFunc(func)`](js-support.md#window.Prince.registerPostLayoutFunc), which is called after layout finished, similar to the current `oncomplete` event. If this function modifies the DOM, Prince will perform layout again on the updated document, once the function returns and before generating the PDF.
+
+A post layout function can register itself, or another post layout function, in order to repeat this process multiple times. By default the number of passes is limited to two, but this can be increased by using the [`--max-passes=N`](command-line.md#cl-max-passes) command-line option. For more details see [The "Two-Pass" Solution](cookbook.md#the-two-pass-solution).
+
 
 ### The PDF Object
 
