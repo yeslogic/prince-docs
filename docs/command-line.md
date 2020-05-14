@@ -333,6 +333,10 @@ dl>
   <dd>
     Run an external script.
   </dd>
+  <dt id="cl-max-passes"><code>--max-passes=<span class="replaceable">NUMBER</span></code></dt>
+  <dd>
+    Defines the maximal number of consequent layout passes.  The default value is 2.
+  </dd>
 </dl>
 
 ### CSS Options
@@ -462,10 +466,6 @@ dl>
     Changes the DPI of the "px" units in CSS, which defaults to 96dpi.  It can be
     useful if you have a layout designed in pixels and you need to scale it down
     for print.
-  </dd>
-  <dt id="cl-max-passes"><code>--max-passes=<span class="replaceable">NUMBER</span></code></dt>
-  <dd>
-    Defines the maximal number of consequent layout passes.  The default value is 2.
   </dd>
 </dl>
 
