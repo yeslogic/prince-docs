@@ -335,7 +335,7 @@ dl>
   </dd>
   <dt id="cl-max-passes"><code>--max-passes=<span class="replaceable">NUMBER</span></code></dt>
   <dd>
-    Defines the maximal number of consequent layout passes.  The default value is 2.
+    Defines the maximal number of consequent layout passes - see <a href="cookbook#the-two-pass-solution">The "Two-Pass" Solution</a>.  The default value is 2.
   </dd>
 </dl>
 
