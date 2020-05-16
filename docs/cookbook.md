@@ -1002,12 +1002,7 @@ The "Two-Pass" Solution
   <dt>You need</dt>
     <dd><a href="/doc/javascript#javascript-in-printed-media">JavaScript in Printed Media</a></dd>
     <dd><a href="/doc/javascript#event-handling">Event Handling</a></dd>
-    <dd>
-<a href="/doc/javascript#console-access">Console Access</a>
-      <ul>
-        <li><code>console.log()</code></li>
-      </ul>
-    </dd>
+    <dd><a href="/doc/javascript#the-prince-object">The Prince Object</a></dd>
 </dl>
 
 One limitation of producing a document intended for print is its non-interactive, static nature: in principle a document cannot be modified after it is deemed to be ready for print. See [JavaScript in Printed Media](javascript.md#js-print).
@@ -1016,25 +1011,18 @@ JavaScript can basically be run twice: the first time it is run before layout, w
 
 A problematic situation arises when you want to modify your document after layout has finished - a typical scenario would be when you want an index to be created with correct page numbers. The content depends on the layout of the document itself.
 
-(Please note that this only affects the creation of an index - a simple table of contents or a reference to a place on another page can easily be achieved with [target-counter links](gen-content.md#counter-target).)
+(Please note that this recipe only addresses the creation of an index - a simple table of contents or a reference to a place on another page can easily be achieved with [target-counter links](gen-content.md#counter-target).)
 
 To address this problem, Prince offers the possibility to delay the generation of a PDF and to register the function [`Prince.registerPostLayoutFunc(func)`](js-support.md#window.Prince.registerPostLayoutFunc), which is called after layout finished, similar to the current `oncomplete` event. If this function modifies the DOM, Prince will perform layout again on the updated document, once the function returns and before generating the PDF.
 
 The post layout function can register itself, or another post layout function, in order to repeat this process multiple times. By default the number of passes is limited to two, but this can be increased by using the [`--max-passes=N`](command-line.md#cl-max-passes) command-line option.
 
-The old, "clumsy" way of manually running Prince twice is also still working:
-
-Prince would be run a first time to prepare the layout of the document and run JavaScript after layout has finished, collecting the output of the script to append it to the document with the help of the `console.log()` - see [Console Access](javascript.md#js-console).
-
-Now the document would be ready for generating the PDF - Prince would be run a second time, producing the desired document.
-
-Here is a minimalistic two-pass solution where the document is adorned with a ToC and index:
+Here is a minimalistic "two-pass" solution where the document is adorned with a ToC and index:
 
 ```bash
-    wget http://www.princexml.com/howcome/2015/index/musick.html -O musick.html;
-      prince --javascript musick.html >>musick.html;
+    wget https://css4.pub/2020/musick/musick.html -O musick.html;
       prince --javascript musick.html -o musick.pdf
 ```
-Another use of the two-pass solution is to create changebars - see the description [here](http://www.princexml.com/forum/topic/3516/changebars).
+Another use of the "two-pass" solution is to create changebars - see the description [here](http://www.princexml.com/forum/topic/3516/changebars).
 
 
