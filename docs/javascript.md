@@ -115,7 +115,7 @@ For example, perhaps there should be only one page: you check the page count (se
 
 Prince also offers the possibility to register the function [`Prince.registerPostLayoutFunc(func)`](js-support.md#window.Prince.registerPostLayoutFunc), which is called after layout finished, similar to the current `oncomplete` event. If this function modifies the DOM, Prince will perform layout again on the updated document, once the function returns and before generating the PDF.
 
-A post layout function can register itself, or another post layout function, in order to repeat this process multiple times. By default the number of passes is limited to two, but this can be increased by using the [`--max-passes=N`](command-line.md#cl-max-passes) command-line option. For more details see [The "Two-Pass" Solution](cookbook.md#the-two-pass-solution).
+A post layout function can register itself, or another post layout function, in order to repeat this process multiple times. By default the number of passes is limited to two, but this can be increased by using the [`--max-passes=N`](command-line.md#cl-max-passes) command-line option. For more details see [The "Multi-Pass" Solution](cookbook.md#the-multi-pass-solution).
 
 
 ### The PDF Object
@@ -242,7 +242,7 @@ The properties of a *box* can be queried with the [`BoxInfo()`](js-support.md#wi
 
 Since the box tracking API is available only *after* the `complete` event, it cannot be used to modify the document (see [JavaScript in Printed Media](javascript.md#javascript-in-printed-media)).
 
-However, see [The "Two-Pass" Solution](cookbook.md#the-two-pass-solution) for making use of its output. Two further sample applications of the box tracking API can be seen in the [Changebars](//www.princexml.com/forum/topic/3516/changebars) example, and in [Detecting Overflow](//www.princexml.com/forum/topic/3603/detecting-overflow).
+However, see [The "Multi-Pass" Solution](cookbook.md#the-multi-pass-solution) for making use of its output. Two further sample applications of the box tracking API can be seen in the [Changebars](//www.princexml.com/forum/topic/3516/changebars) example, and in [Detecting Overflow](//www.princexml.com/forum/topic/3603/detecting-overflow).
 
 ### Unsupported DOM Properties
 

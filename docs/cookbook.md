@@ -49,14 +49,13 @@ Our [example document](http://css4.pub/2018/toc/index.html) generates at Table o
 ```bash
     $ prince --javascript http://css4.pub/2018/toc -o toc.pdf
 ```
-A [second example document](http://css4.pub/2017/musick/musick.html) generates at ToC by way of JavaScript and, even more impressively, the script also prints out an index which is added to the end of the document, to be used when running Prince a second time (see [The "Multi-Pass" Solution](#the-multi-pass-solution)). Notice how subsequent page numbers in the index are folded into a range. To produce this document, try running these commands from a Linux command-line:
+A [second example document](https://css4.pub/2020/musick/musick.html) generates at ToC by way of JavaScript and, even more impressively, the script also generates an index which is added to the end of the document when Prince runs JavaScript a second time, after layout (see [The "Multi-Pass" Solution](#the-multi-pass-solution)). Notice how subsequent page numbers in the index are folded into a range. To produce this document, try running these commands from a Linux command-line:
 
 ```bash
-    $ wget http://css4.pub/2017/musick/musick.html -o foo.html;
-    $ prince --javascript foo.html >>foo.html;
-    $ prince --javascript foo.html -o musick.pdf;
+    $ wget https://css4.pub/2020/musick/musick.html -O musick.html;
+    $ prince --javascript musick.html -o musick.pdf
 ```
-You can view the resulting PDF [here](http://css4.pub/2017/musick/musick.pdf).
+You can view the resulting PDF [here](https://css4.pub/2020/musick/musick.pdf).
 
 ### Multifile Table of Contents
 
