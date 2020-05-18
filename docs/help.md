@@ -156,7 +156,7 @@ Frequently Asked Questions
   finished? <a class="self-link" href="#faq-jsafterkayout"></a></p></dt>
   <dd><p>No, unfortunately this is part of the inherent limitations of printed media -
   see <a href="/doc/javascript#javascript-in-printed-media">JavaScript in Printed Media</a>.  However, JavaScript can run after layout is done,
-  and the output can be used for a second run of Prince - see <a href="/doc/cookbook#the-two-pass-solution">The "Two-Pass" Solution</a>.</p></dd>
+  and the output can be used for a second run of Prince - see <a href="/doc/cookbook#the-multi-pass-solution">The "Multi-Pass" Solution</a>.</p></dd>
 
   <dt><p id="faq-xinclude">Can I include content of external files in my document?
   <a class="self-link" href="#faq-xinclude"></a></p></dt>

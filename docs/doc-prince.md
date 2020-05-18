@@ -199,7 +199,7 @@ function redirects() {
         window.location.href = '/doc/cookbook#rotating-content'
     }
     else if (location.hash.indexOf('two-pass') == 1) {
-        window.location.href = '/doc/cookbook#the-two-pass-solution'
+        window.location.href = '/doc/cookbook#the-multi-pass-solution'
     }
     else if (location.hash.indexOf('pdf-doc') == 1) {
         window.location.href = '/doc/cookbook#documentation-in-pdf-format'

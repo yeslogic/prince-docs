@@ -11,7 +11,7 @@ Table of Contents
 <dl class="ingredients">
   <dt>You need</dt>
   <dd><a href="/doc/javascript#javascript-in-printed-media">JavaScript in Printed Media</a></dd>
-  <dd><a href="#the-two-pass-solution">The "Two-Pass" Solution</a></dd>
+  <dd><a href="#the-multi-pass-solution">The "Multi-Pass" Solution</a></dd>
   <dd><a href="/doc/gen-content#generated-content-functions">Generated Content Functions</a>
     <ul>
       <li><code>content: target-counter()</code></li>
@@ -49,7 +49,7 @@ Our [example document](http://css4.pub/2018/toc/index.html) generates at Table o
 ```bash
     $ prince --javascript http://css4.pub/2018/toc -o toc.pdf
 ```
-A [second example document](http://css4.pub/2017/musick/musick.html) generates at ToC by way of JavaScript and, even more impressively, the script also prints out an index which is added to the end of the document, to be used when running Prince a second time (see [The "Two-Pass" Solution](#the-two-pass-solution)). Notice how subsequent page numbers in the index are folded into a range. To produce this document, try running these commands from a Linux command-line:
+A [second example document](http://css4.pub/2017/musick/musick.html) generates at ToC by way of JavaScript and, even more impressively, the script also prints out an index which is added to the end of the document, to be used when running Prince a second time (see [The "Multi-Pass" Solution](#the-multi-pass-solution)). Notice how subsequent page numbers in the index are folded into a range. To produce this document, try running these commands from a Linux command-line:
 
 ```bash
     $ wget http://css4.pub/2017/musick/musick.html -o foo.html;
@@ -60,7 +60,7 @@ You can view the resulting PDF [here](http://css4.pub/2017/musick/musick.pdf).
 
 ### Multifile Table of Contents
 
-For longer books, it makes sense to split chapters into separate files. Generating a Table of Contents across all files is tricky in JavaScript since scripts only see one file at a time. In Prince, you can work around this limitation with a two-pass solution (see [The "Two-Pass" Solution](#the-two-pass-solution)) where the first pass collects items for the ToC, and the second pass generates the PDF with the ToC.
+For longer books, it makes sense to split chapters into separate files. Generating a Table of Contents across all files is tricky in JavaScript since scripts only see one file at a time. In Prince, you can work around this limitation with a multi-pass solution (see [The "Multi-Pass" Solution](#the-multi-pass-solution)) where the first pass collects items for the ToC, and the second pass generates the PDF with the ToC.
 
 To try this for yourself, first fetch these five sample files into your own file system, e.g. by running:
 
@@ -995,7 +995,7 @@ A more basic means for rotation, allowing for less fine-tuning, is the use of th
 For a different approach to rotating content, see the section on [Printing wide content sideways](#printing-wide-content-sideways).
 
 
-The "Two-Pass" Solution
+The "Multi-Pass" Solution
 -----------------------
 
 <dl class="ingredients">
@@ -1017,12 +1017,12 @@ To address this problem, Prince offers the possibility to delay the generation o
 
 The post layout function can register itself, or another post layout function, in order to repeat this process multiple times. By default the number of passes is limited to two, but this can be increased by using the [`--max-passes=N`](command-line.md#cl-max-passes) command-line option.
 
-Here is a minimalistic "two-pass" solution where the document is adorned with a ToC and index:
+Here is a minimalistic "multi-pass" solution where the document is adorned with a ToC and index:
 
 ```bash
     wget https://css4.pub/2020/musick/musick.html -O musick.html;
       prince --javascript musick.html -o musick.pdf
 ```
-Another use of the "two-pass" solution is to create changebars - see the description [here](http://www.princexml.com/forum/topic/3516/changebars).
+Another use of the "multi-pass" solution is to create changebars - see the description [here](http://www.princexml.com/forum/topic/3516/changebars).
 
 
