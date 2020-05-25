@@ -325,7 +325,10 @@ dl>
 ### JavaScript Options
 
 <dl>
-  <dt id="cl-javascript"><code>--javascript</code></dt>
+  <dt id="cl-javascript">
+    <code>-j</code>,
+    <code>--javascript</code>
+  </dt>
   <dd>
     Enable JavaScript in HTML documents.
   </dd>
