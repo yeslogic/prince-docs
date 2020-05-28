@@ -113,9 +113,9 @@ It can be set to true by a script that runs after layout in the `oncomplete` han
 
 For example, perhaps there should be only one page: you check the page count (see [Document Statistics](javascript.md#document-statistics)), and if it's greater than one, you log a warning and trigger the fail-safe to ensure that no PDF is generated.
 
-Prince also offers the possibility to register the function [`Prince.registerPostLayoutFunc(func)`](js-support.md#window.Prince.registerPostLayoutFunc), which is called after layout finished, similar to the current `oncomplete` event. If this function modifies the DOM, Prince will perform layout again on the updated document, once the function returns and before generating the PDF.
+Prince also offers the possibility to register the function [`Prince.registerPostLayoutFunc(func)`](js-support.md#window.Prince.registerPostLayoutFunc), which is called after layout finished, similar to the current `oncomplete` event. If this function modifies the DOM, Prince will perform layout again on the updated document once the function returns, and before generating the PDF.
 
-A post layout function can register itself, or another post layout function, in order to repeat this process multiple times. By default the number of passes is limited to two, but this can be increased by using the [`--max-passes=N`](command-line.md#cl-max-passes) command-line option. For more details see [The "Multi-Pass" Solution](cookbook.md#the-multi-pass-solution).
+A post layout function may register itself, or another post layout function, in order to repeat this process multiple times! By default the number of passes is limited to two, but this can be increased by using the [`--max-passes=N`](command-line.md#cl-max-passes) command-line option. For more details see [The "Multi-Pass" Solution](cookbook.md#the-multi-pass-solution).
 
 
 ### The PDF Object
