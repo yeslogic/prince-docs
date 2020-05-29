@@ -826,6 +826,8 @@ The property [`break-before`](css-props.md#prop-break-before) is used to force a
         break-before: right
     }
 ```
+Please note that by putting `break-before: left` or `right` at the very beginning of the document, it will not leave a blank page, but instead will change whether the document begins on a left or right facing page.
+
 Other values are `auto`, `avoid`, `avoid-page`, `avoid-column`, `left`, as well as `recto`, `verso` and `column`.
 
 The previous example could therefore also have been written in the following, more semantic (and possibly more flexible) way:
