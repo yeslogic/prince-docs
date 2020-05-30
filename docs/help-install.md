@@ -96,6 +96,28 @@ Add Prince's `bin/` subdirectory to your `PATH` and ensure that these changes ar
 
 This should be added to your command interpreter's configuration. For more information see your operating system's documentation.
 
+### Prince cannot be run on MacOS Catalina.
+
+Symptom
+
+    > # "prince" cannot be opened because the developer cannot be verified.
+    > macOS cannot verify that this app is free from malware.
+
+Explanation
+Gatekeeper triggers a system alert when trying to run the Prince executable.
+
+Solution
+In order to run the command line utility, you need to open the Security and Privacy preference pane in System Preferences, select the General tab, and click "Allow Anyway".
+
+Alternatively, you can run the following commands from Terminal to first remove any quarantine attribute applied by Safari when downloading `prince`, and then manually add a SecAssessment system policy label to the executable:
+
+```
+$ xattr -d -r com.apple.quarantine /usr/local/bin/prince
+$ spctl --add --label "Approved" /usr/local/bin/prince
+```
+
+Doing this will change the system alert to a system prompt to confirm running the executable.  For more information and possible further workarounds see also [this forum thread](https://www.princexml.com/forum/topic/4255/macos-catalina-prince-cannot-be-opened-because-the-developer).
+
 
 Frequently Asked Questions
 --------------------------
