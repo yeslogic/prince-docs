@@ -100,33 +100,49 @@ This should be added to your command interpreter's configuration. For more infor
 Frequently Asked Questions
 --------------------------
 
-Why does Prince on 64-bit Windows install into the 32-bit compatibility directory `%ProgramFiles(x86)%`? <a href="#faq-install-dir" class="self-link"></a>
+<dl class="faq">
+  <dt id="faq-win64"><p>Why does Prince on 64-bit Windows install
+  into the 32-bit compatibility directory `%ProgramFiles(x86)%`?
+  <a href="#faq-install-dir" class="self-link"></a></p></dt>
+  <dd><p>The Prince GUI is still a 32-bit program, but the formatting engine
+  is 64-bit.</p></dd>
 
-The Prince GUI is still a 32-bit program, but the formatting engine is 64-bit.
+  <dt id="faq-win-no-ui"><p>How can I run Prince on Windows without showing the UI?
+  <a href="#faq-no-ui" class="self-link"></a></p></dt>
+  <dd><p>On Linux, you typically run Prince with the following command:</p>
+  <pre><code class="hljs">    prince file.xml -o file.pdf</code></pre>
+  <p>On Windows, you replace the name of the executable with
+  <code>Prince\engine\bin\prince.exe</code> in the installation directory
+  (see <a href="installing#windows-installation-layout">Windows installation layout</a>,
+  which is the command-line program. See also <a href="command-line#command-line">Command-line Reference</a>.</p>
+  <pre><code class="hljs">    "C:\Program Files (x86)\Prince\engine\bin\prince.exe" file.xml -o file.pdf</code></pre></dd>
 
-How can I run Prince on Windows without showing the UI? <a href="#faq-no-ui" class="self-link"></a>
+  <dt id="faq-containers"><p>Can I install Prince on cloud services or
+  containers (Azure, AWS, Docker)? <a href="#faq-install-cloud" class="self-link"></a></p></dt>
+  <dd><p>Prince can be installed on the <a href="installing#installing">supported operating systems</a> -
+  also when they are running in cloud or container services. On Linux, some
+  environments might not provide for all dependencies - you can address this
+  by either trying to install the Generic Linux Prince package (see
+  <a href="installing#install-generic">Tarballs - Alpine Linux, FreeBSD and Generic Linux</a>),
+  or by trying to install the missing dependencies.</p>
+  <p>See <a href="https://www.princexml.com/forum/topic/2094/silent-installation-on-windows#20332">this forum post</a>
+  for a description of an installation on Azure.</p></dd>
 
-On Linux, you typically run Prince with the following command:
+  <dt id="faq-prince-for-books"><p>How do I install Prince for Books?
+  <a href="#faq-install-books" class="self-link"></a></p></dt>
+  <dd><p><a href="prince-for-books#pfb">Prince for Books</a> is available
+  in package bundles only - to install it, the files need to be copied into
+  place (Windows), or an installation script needs to be run (on Linux and MacOS X).
+  It can be installed without problem alongside a normal Prince installation -
+  the executable to run is called <code>prince-books</code>.</p></dd>
 
-
-    prince file.xml -o file.pdf
-
-On Windows, you replace the name of the executable with `Prince\engine\bin\prince.exe` in the installation directory (see [Windows installation layout](installing.md#windows-installation-layout)), which is the command-line program. See also [Command-line Reference](command-line.md#command-line).
-
-
-    "C:\Program Files (x86)\Prince\engine\bin\prince.exe" file.xml -o file.pdf
-
-Can I install Prince on cloud services or containers (Azure, AWS, Docker)? <a href="#faq-install-cloud" class="self-link"></a>
-
-Prince can be installed on the [supported operating systems](installing.md#installing) - also when they are running in cloud or container services. On Linux, some environments might not provide for all dependencies - you can address this by either trying to install the Generic Linux Prince package (see [Tarballs - Alpine Linux, FreeBSD and Generic Linux](installing.md#install-generic)), or by trying to install the missing dependencies.
-
-See [this forum post](https://www.princexml.com/forum/topic/2094/silent-installation-on-windows#20332) for a description of an installation on Azure.
-
-How do I install Prince for Books? <a href="#faq-install-books" class="self-link"></a>
-
-[Prince for Books](prince-for-books.md#pfb) is available in package bundles only - to install it, the files need to be copied into place (Windows), or an installation script needs to be run (on Linux and MacOS X). It can be installed without problem alongside a normal Prince installation - the executable to run is called `prince-books`.
-
-How do I install the Prince wrappers? <a href="#faq-install-wrappers" class="self-link"></a>
-
-The [Prince Wrappers](server-integration.md#wrappers) come in different languages, and each one has a different installation procedure. Mostly they are explained in the documentation for each of the [Prince Wrappers](server-integration.md#wrappers). The short principle is that the wrapper files need to be placed in a location from which they can run - this may slightly vary depending on the hosting Operating System.
+  <dt id="faq-prince-wrappers"><p>How do I install the Prince wrappers?
+  <a href="#faq-install-wrappers" class="self-link"></a></p></dt>
+  <dd><p>The <a href="server-integration#wrappers">Prince Wrappers</a> come in
+  different languages, and each one has a different installation procedure.
+  Mostly they are explained in the documentation for each of the
+  <a href="server-integration#wrappers">Prince Wrappers</a>. The short principle
+  is that the wrapper files need to be placed in a location from which they can
+  run - this may slightly vary depending on the hosting Operating System.</p></dd>
+</dl>
 
