@@ -98,15 +98,15 @@ This should be added to your command interpreter's configuration. For more infor
 
 ### Prince cannot be run on MacOS Catalina.
 
-Symptom
+Symptom  
 
     > # "prince" cannot be opened because the developer cannot be verified.
     > macOS cannot verify that this app is free from malware.
 
-Explanation
+Explanation  
 Gatekeeper triggers a system alert when trying to run the Prince executable.
 
-Solution
+Solution  
 In order to run the command line utility, you need to open the Security and Privacy preference pane in System Preferences, select the General tab, and click "Allow Anyway".
 
 Alternatively, you can run the following commands from Terminal to first remove any quarantine attribute applied by Safari when downloading `prince`, and then manually add a SecAssessment system policy label to the executable:
