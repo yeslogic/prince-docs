@@ -623,7 +623,7 @@ var stdAnnotated = {
             hasAttribute: {},
             hasAttributeNS: {},
             getPrinceBoxes: {
-                returns: "A list of JavaScript objects called boxes",
+                returns: "A list of JavaScript objects called <a href='/doc/javascript#the-box-tracking-api'>boxes</a>",
                 ext: "ext"
             }
         }
@@ -1272,7 +1272,7 @@ var stdAnnotated = {
     BoxInfo: {
         ext: "ext",
         type: "function",
-        returns: "The properties of a box, can be accessed after document conversion has finished",
+        returns: "The properties of a box, can be accessed after document conversion has finished - see <a href='/doc/javascript#the-box-tracking-api'>The Box Tracking API</a>",
         prototype: {
             type: {
                 type: "function",
