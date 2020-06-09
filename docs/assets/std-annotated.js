@@ -1332,6 +1332,7 @@ var stdAnnotated = {
     Prince: {
         type: "object",
         ext: "ext",
+        desc: "See <a href='/doc/javascript#the-prince-object'>The Prince Object</a>",
         registerPostLayoutFunc: {
             type: "function",
             arguments: [
@@ -1406,6 +1407,7 @@ var stdAnnotated = {
     PDF: {
         type: "object",
         ext: "ext",
+        desc: "See <a href='/doc/javascript#the-pdf-object'>The PDF Object</a>",
         attachFile: {
             type: "function",
             arguments: [
