@@ -103,7 +103,7 @@ function add(parent, thing, annotations, type, hasChildren, length, parentDescs)
         if(annotations && annotations.desc) {
             div = theDetailsDiv.appendChild(document.createElement('div'));
             div.className = 'desc';
-            div.appendChild(document.createTextNode(annotations.desc));
+            div.innerHTML = annotations.desc;
         }
         if(annotations && annotations.arguments && annotations.arguments.length) {
             var ul = theDetailsDiv.appendChild(document.createElement('ul'));
