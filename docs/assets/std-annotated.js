@@ -1338,7 +1338,8 @@ var stdAnnotated = {
             arguments: [
                 {name: "function", type: "string"}
             ],
-            example: "<script> \nPrince.registerPostLayoutFunc(function() {\n    var str = '@prince-color Color1 { alternate-color: cmyk(1,0,0,0) }';\n    var add = document.getElementById('add');\n    add.appendChild(document.createTextNode(str));\n});\n</script>\n<style id='add'></style>\n<p style='color: prince-color(Color1)'>This was black, becomes cyan</p>"
+            example: "<script> \nPrince.registerPostLayoutFunc(function() {\n    var str = '@prince-color Color1 { alternate-color: cmyk(1,0,0,0) }';\n    var add = document.getElementById('add');\n    add.appendChild(document.createTextNode(str));\n});\n</script>\n<style id='add'></style>\n<p style='color: prince-color(Color1)'>This was black, becomes cyan</p>",
+            desc: "See <a href='/doc/cookbook#the-multi-pass-solution'>The \"Multi-Pass\" Solution</a>"
         },
         addScriptFunc: {
             type: "function",
