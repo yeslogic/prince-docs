@@ -91,7 +91,7 @@ p:hover .self-link, #prop-list summary:hover .self-link, #js-support-table summa
   background-color: #f2f2f2;
 }
 #js-support-table {
-  padding: 10px;
+  padding: 0px;
   margin-bottom: 1em;
 }
 #js-support-table .type {
@@ -127,6 +127,12 @@ p:hover .self-link, #prop-list summary:hover .self-link, #js-support-table summa
 }
 #js-support-table pre {
   background-color: #fff;
+}
+#js-support-table .example {
+  padding: 5px;
+}
+#js-support-table .example pre {
+  white-space: pre-wrap;
 }
 #js-support-table .example-return {
   display: block;
