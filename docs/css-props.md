@@ -3523,7 +3523,10 @@ supplier, item { overflow-wrap: normal; }
 	This property determines the tab-size for preserved tab characters (U+0009).
     An integer defines number of spaces in a tab, a length represents the width
     of a tab.
-	</p></div><div><div id="prop-tab-size-spec">Specification</div><ul><li><a href="https://www.w3.org/TR/css-text-3/#tab-size-property">CSS Text Module Level 3</a></li></ul></div></div></details>
+	</p><p>
+    Please note that Prince replaces preserved tab characters with the specified
+    number of spaces, but does not create actual "tab stops" aligned to the left
+    edge of the block.</p></div><div><div id="prop-tab-size-spec">Specification</div><ul><li><a href="https://www.w3.org/TR/css-text-3/#tab-size-property">CSS Text Module Level 3</a></li></ul></div></div></details>
 
 <details><summary id="prop-text-align">text-align <a class="self-link" href="#prop-text-align"></a></summary><div><div><div id="prop-text-align-syntax">Syntax</div><div class="example"><div class="syntax-block"><pre><code>text-align: left |&#160;right |&#160;inside |&#160;outside |&#160;center |&#160;justify</code></pre></div></div></div><div><div class="example"><div class="syntax-block"><table class="property-table"><tr><th scope="row">
           Initial value
