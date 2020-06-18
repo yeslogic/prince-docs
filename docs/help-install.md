@@ -125,12 +125,12 @@ Frequently Asked Questions
 <dl class="faq">
   <dt id="faq-win64"><p>Why does Prince on 64-bit Windows install
   into the 32-bit compatibility directory `%ProgramFiles(x86)%`?
-  <a href="#faq-install-dir" class="self-link"></a></p></dt>
+  <a href="#faq-win64" class="self-link"></a></p></dt>
   <dd><p>The Prince GUI is still a 32-bit program, but the formatting engine
   is 64-bit.</p></dd>
 
   <dt id="faq-win-no-ui"><p>How can I run Prince on Windows without showing the UI?
-  <a href="#faq-no-ui" class="self-link"></a></p></dt>
+  <a href="#faq-win-no-ui" class="self-link"></a></p></dt>
   <dd><p>On Linux, you typically run Prince with the following command:</p>
   <pre><code class="hljs">    prince file.xml -o file.pdf</code></pre>
   <p>On Windows, you replace the name of the executable with
@@ -139,7 +139,7 @@ Frequently Asked Questions
   which is the command-line program. See also <a href="command-line#command-line">Command-line Reference</a>.</p>
   <pre><code class="hljs">    "C:\Program Files (x86)\Prince\engine\bin\prince.exe" file.xml -o file.pdf</code></pre></dd>
 
-  <dt id="faq-containers"><p>Can I install Prince on cloud services or
+  <dt id="faq-install-cloud"><p>Can I install Prince on cloud services or
   containers (Azure, AWS, Docker)? <a href="#faq-install-cloud" class="self-link"></a></p></dt>
   <dd><p>Prince can be installed on the <a href="installing#installing">supported operating systems</a> -
   also when they are running in cloud or container services. On Linux, some
@@ -154,7 +154,7 @@ Frequently Asked Questions
   <p>See also <a href="https://www.princexml.com/forum/topic/2094/silent-installation-on-windows#20332">this forum post</a>
   for a description of an installation on Azure.</p></dd>
 
-  <dt id="faq-prince-for-books"><p>How do I install Prince for Books?
+  <dt id="faq-install-books"><p>How do I install Prince for Books?
   <a href="#faq-install-books" class="self-link"></a></p></dt>
   <dd><p><a href="prince-for-books#pfb">Prince for Books</a> is available
   in package bundles only - to install it, the files need to be copied into
@@ -162,7 +162,7 @@ Frequently Asked Questions
   It can be installed without problem alongside a normal Prince installation -
   the executable to run is called <code>prince-books</code>.</p></dd>
 
-  <dt id="faq-prince-wrappers"><p>How do I install the Prince wrappers?
+  <dt id="faq-install-wrappers"><p>How do I install the Prince wrappers?
   <a href="#faq-install-wrappers" class="self-link"></a></p></dt>
   <dd><p>The <a href="server-integration#wrappers">Prince Wrappers</a> come in
   different languages, and each one has a different installation procedure.
