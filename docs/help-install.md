@@ -147,7 +147,11 @@ Frequently Asked Questions
   by either trying to install the Generic Linux Prince package (see
   <a href="installing#install-generic">Tarballs - Alpine Linux, FreeBSD and Generic Linux</a>),
   or by trying to install the missing dependencies.</p>
-  <p>See <a href="https://www.princexml.com/forum/topic/2094/silent-installation-on-windows#20332">this forum post</a>
+  <p>Our chapter on <a href="server-integration#prince-in-cloud-computing">Prince In Cloud Computing</a>
+  details installation instructions for Prince on <a href="server-integration#prince-docker-image">Docker</a>,
+  <a href="server-integration#prince-on-aws-lambda">AWS Lambda</a> and
+  <a href="server-integration#prince-on-ec2">AWS EC2</a>.</p>
+  <p>See also <a href="https://www.princexml.com/forum/topic/2094/silent-installation-on-windows#20332">this forum post</a>
   for a description of an installation on Azure.</p></dd>
 
   <dt id="faq-prince-for-books"><p>How do I install Prince for Books?

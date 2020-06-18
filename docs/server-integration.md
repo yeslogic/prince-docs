@@ -367,8 +367,13 @@ Node.js
 [Node API for executing XML/HTML to PDF renderer PrinceXML via prince(1) CLI](https://www.npmjs.com/package/prince)
 
 
-Prince Docker Image
----------------
+Prince In Cloud Computing
+--------------------------
+
+Prince can easily be deployed on many different cloud computing platforms and solutions.  As example deployments,
+we detail here installation procedures for Prince on Docker, AWS Lambda and AWS EC2.
+
+### Prince Docker Image
 
 Prince can easily be deployed in Docker images.  On the Docker Hub you can find [the Prince Dockerfiles](https://hub.docker.com/r/yeslogic/prince).  To pull the images, run the Docker Pull Command
 
@@ -394,6 +399,13 @@ If, however, you want to run a specific Prince version, rather than the latest, 
 docker run --rm -it yeslogic/prince:13.1
 ```
 
+### Prince on AWS Lambda
+
+Setting up Prince on AWS Lambda is not much more difficult than setting it up for Docker.  Bruce Lawson has written a detailed article on how to [set up Prince on AWS Lambda](https://medium.com/@bruce_39084/setting-up-prince-on-aws-lambda-and-api-gateway-4d524dcb035b) using Node.js, with all the required steps.
+
+### Prince on EC2
+
+Prince can easily be installed also on Amazon's EC2 platform - Bruce Lawson provides an in-depth article on how to [set up Prince on EC2](https://medium.com/@bruce_39084/setting-up-prince-on-ec2-with-php-f1604db5d754) with PHP.
 
 
 
