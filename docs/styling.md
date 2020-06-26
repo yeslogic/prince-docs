@@ -85,11 +85,7 @@ Prince supports OpenType features, and enables certain ones by default in specif
 
 Microsoft has a list of the OpenType feature names [here](https://www.microsoft.com/typography/otspec/featurelist.htm).
 
-It is possible to enable other OpenType features by using the [`font-variant`](css-props.md#prop-font-variant) CSS property with the `prince-opentype()` function (see [CSS Functional Expressions](css-refs.md#css-functional-expressions)).
-
-Care must be taken in which order the features are enabled! And please note that enabling one feature will disable all the default features.
-
-As a more user-friendly interface for enabling specific font variants, the following properties can be used:
+In order to enable specific OpenType features, or specific font variants, the following properties can be used:
 
 * The property [`font-variant-caps`](css-props.md#prop-font-variant-caps) enables the display of small capitals (the OpenType features `smcp` and `c2pc`).
 * The property [`font-variant-ligatures`](css-props.md#prop-font-variant-ligatures) allows for fine-tuning of various ligature types.  (See also [Typographic Ligatures](cookbook.md#typographic-ligatures)).
@@ -100,6 +96,11 @@ Note that the [`font-variant`](css-props.md#prop-font-variant) CSS property can 
 ```
     font-variant: historical-ligatures all-small-caps oldstyle-nums;
 ```
+
+It is possible to also enable other OpenType features, not covered by the previous properties, by using the [`font-variant`](css-props.md#prop-font-variant) CSS property with the `prince-opentype()` function (see [CSS Functional Expressions](css-refs.md#css-functional-expressions)).
+
+It is a very powerful tool, but care must be taken in which order the features are enabled!  All required features need to be explicitly enabled: please note that enabling one feature will disable all the default features.
+
 
 ### Generic font families
 
