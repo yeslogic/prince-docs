@@ -68,12 +68,12 @@ For the values, the grammar draws on the [CSS Values and Units Module Level 3](h
           Initial value
         </th><td><code /></td></tr><tr><th scope="row">
           Applies to
-        </th><td>all elements</td></tr><tr><th scope="row">
+        </th><td>@prince-color at-rule</td></tr><tr><th scope="row">
           Inherited
         </th><td>
                   no
                 </td></tr></table></div></div></div><div><div id="prop-alternate-color-examples">Examples</div><div class="example"><div class="programlisting"><pre><code>@prince-color  TestColor { alternate-color: cmyk(1, 0, 0, 0) }
-	color: prince-color(TestColor)</code></pre></div></div></div><div><div id="prop-alternate-color-comments">Comments</div><p>This property takes an RGB or CMYK color in any of the valid notations for
+	color: prince-color(TestColor)</code></pre></div></div></div><div><div id="prop-alternate-color-comments">Comments</div><p>This <code>@prince-color</code> at-rule descriptor takes an RGB or CMYK color in any of the valid notations for
     RGB and CMYK colors, that will be used to display the color being defined, when
     the named color is not available.  Please note that it cannot be RGBA or CMYKA.</p><p>A color value must be specified for the rule to be valid.</p></div><div><div id="prop-alternate-color-seealso">See Also</div><ul><li><a href="/doc/graphics#spot-colors">Spot colors</a></li></ul></div></div></details>
 
