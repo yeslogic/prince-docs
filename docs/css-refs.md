@@ -1563,7 +1563,7 @@ which take the same values as the CSS properties with the same name.</td>
 </tr>
 <tr>
 <td colspan="2">The <code>@prince-color</code> rule takes the mandatory
-<code><a href="/doc/css-props#prop-alternate-color">alternate-color</a></code> property to specify an alternate
+<code><a href="/doc/css-props#prop-alternate-color">alternate-color</a></code> descriptor to specify an alternate
 color to use if the named spot color is not available.  The named color is used in
 a stylesheet with the <code>prince-color()</code> function.  (See <a href="/doc/graphics#spot-colors">Spot colors</a>).</td>
 </tr>
