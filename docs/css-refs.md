@@ -1081,11 +1081,9 @@ alpha component.</td>
 <td>Using a spot color defined in the <code><a href="#at-prince-color">@prince-color</a></code>
 at-rule. The number or percentage defines the tint. An optional <code>overprint</code>
 keyword instructs Prince whether to overprint the color.
-<div class="example">
-<div class="programlisting">
-<code language="CSS"><pre>color: prince-color(MyColor, 50%, overprint)</pre></code>
-</div>
-</div>
+<pre>
+<code class="hljs"><span class="hljs-attribute">color</span>: <span class="hljs-built_in">prince-color</span>(MyColor, 50%, overprint)</code>
+</pre>
 </td>
 </tr>
 <tr class="ext">
@@ -1164,9 +1162,9 @@ property.  See <a href="/doc/paged#copying-content-from-the-document">Copying co
 <td><code>repeat( <i>string</i>+ )</code></td>
 <td>Used in counters as a <code>counter-style</code>, it defines a sequentially
 repeated pattern for numbering the items.
-<div class="example">
-<div class="programlisting">
-<code language="CSS"><pre>h4::before { counter(h4, repeat("x", "y", "z")) }</pre></code>
+<pre>
+<code class="hljs"><span class="hljs-selector-tag">h4</span><span class="hljs-selector-pseudo">::before</span> { <span class="hljs-attribute">content</span>: <span class="hljs-built_in">counter</span>(h4, <span class="hljs-built_in">repeat</span>("x", "y", "z")) }</code>
+</pre>
 </div>
 <p class="comment">
 This counter will yield the sequence "x, y, z, xx, yy, zz" etc.
@@ -1178,10 +1176,9 @@ This counter will yield the sequence "x, y, z, xx, yy, zz" etc.
 <td><code>symbols( <i>string</i>+ )</code></td>
 <td>Used in counters as a <code>counter-style</code>, it defines the symbols used
 for numbering the items.
-<div class="example">
-<div class="programlisting">
-<code language="CSS"><pre>h4::before { counter(h4, symbols("x", "y", "z")) }</pre></code>
-</div>
+<pre>
+<code class="hljs"><span class="hljs-selector-tag">h4</span><span class="hljs-selector-pseudo">::before</span> { <span class="hljs-attribute">content</span>: <span class="hljs-built_in">counter</span>(h4, <span class="hljs-built_in">symbols</span>("x", "y", "z")) }</code>
+</pre>
 <p class="comment">
 This counter will yield the sequence "x, y, z, 4, 5, 6" etc.
 </p>
@@ -1207,11 +1204,9 @@ function.  See <a href="/doc/paged#taking-elements-from-the-document">Taking ele
 but also has the possibility of specifying a fallback content, in case the loading of the
 URL should fail.  If no comma and <i>content</i> items are provided, the fallback is as
 if <code>content: normal</code> were specified.
-<div class="example">
-<div class="programlisting">
-<code language="CSS"><pre>img { content: prince-fallback(attr(src, url)), attr(data-altsrc, url) }</pre></code>
-</div>
-</div>
+<pre>
+<code class="hljs"><span class="hljs-selector-tag">img</span> { <span class="hljs-attribute">content</span>: <span class="hljs-built_in">prince-fallback</span>(<span class="hljs-built_in">attr</span>(src, url)), <span class="hljs-built_in">attr</span>(data-altsrc, url) }</code>
+</pre>
 </td>
 </tr>
 <tr class="ext">
@@ -1308,14 +1303,12 @@ does.</td>
 <td><code>format()</code></td>
 <td>Contains a comma-separated list of format strings that denote well-known font
 formats.
-<div class="example">
-<div class="programlisting">
-<code language="CSS"><pre>@font-face {
-  font-family: bodytext;
-  src: url(sans-serif-font.ttf) format("opentype");
-}</pre></code>
-</div>
-</div>
+<pre>
+<code class="hljs"><span class="hljs-keyword">@font-face</span> {
+  <span class="hljs-attribute">font-family</span>: bodytext;
+  <span class="hljs-attribute">src</span>: <span class="hljs-built_in">url</span>(sans-serif-font.ttf) <span class="hljs-built_in">format</span>("opentype");
+}</code>
+</pre>
 </td>
 <td rowspan="3"><code><a href="/doc/css-props#prop-src">src</a></code></td>
 </tr>
