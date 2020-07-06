@@ -1042,12 +1042,17 @@ In this section you find the documentation for the supported CSS functional expr
 <tr>
 <td><code>attr( <i>attribute-name</i> <i>type-or-unit</i>? [,&#160;<i>fallback</i>]? )</code></td>
 <td>Retrieves the value of an attribute of the selected element.</td>
-<td><code></code></td>
+<td></td>
 </tr>
 <tr>
 <td><code>url( <i>url</i> )</code></td>
 <td>Represents a URL, i.e. a pointer to a source.</td>
-<td><code></code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>calc( <i>expression</i> )</code></td>
+<td>Calculates the expression's result, to be used as the value.</td>
+<td><code><a href="/doc/css-props#prop-height">height</a></code> and <code><a href="/doc/css-props#prop-width">width</a></code></td>
 </tr>
 <tr>
 <td><code>var( <i>custom-property-name</i> [,&#160;<i>fallback</i>]? )</code></td>
