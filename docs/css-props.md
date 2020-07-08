@@ -1878,7 +1878,7 @@ For the values, the grammar draws on the [CSS Values and Units Module Level 3](h
     by masking it with a provided image.
 	</p></div><div><div id="prop-mask-spec">Specification</div><ul><li><a href="https://www.w3.org/TR/SVG/">SVG 1.1</a></li></ul></div></div></details>
 
-<details><summary id="prop-max-height">max-height <a class="self-link" href="#prop-max-height"></a></summary><div><div><div id="prop-max-height-syntax">Syntax</div><div class="example"><div class="syntax-block"><pre><code>max-height: none |&#160;<i>length</i> |&#160;<i>percent</i></code></pre></div></div></div><div><div class="example"><div class="syntax-block"><table class="property-table"><tr><th scope="row">
+<details><summary id="prop-max-height">max-height <a class="self-link" href="#prop-max-height"></a></summary><div><div><div id="prop-max-height-syntax">Syntax</div><div class="example"><div class="syntax-block"><pre><code>max-height: none |&#160;<i>length</i> |&#160;<i>percent</i> |&#160;calc()</code></pre></div></div></div><div><div class="example"><div class="syntax-block"><table class="property-table"><tr><th scope="row">
           Initial value
         </th><td><code>none</code></td></tr><tr><th scope="row">
           Applies to
@@ -1888,7 +1888,7 @@ For the values, the grammar draws on the [CSS Values and Units Module Level 3](h
                   no
                 </td></tr></table></div></div></div><div /><div><div id="prop-max-height-spec">Specification</div><ul><li><a href="https://www.w3.org/TR/CSS2/visudet.html#min-max-heights">CSS 2.1</a></li></ul></div></div></details>
 
-<details><summary id="prop-max-width">max-width <a class="self-link" href="#prop-max-width"></a></summary><div><div><div id="prop-max-width-syntax">Syntax</div><div class="example"><div class="syntax-block"><pre><code>max-width: none |&#160;<i>length</i> |&#160;<i>percent</i></code></pre></div></div></div><div><div class="example"><div class="syntax-block"><table class="property-table"><tr><th scope="row">
+<details><summary id="prop-max-width">max-width <a class="self-link" href="#prop-max-width"></a></summary><div><div><div id="prop-max-width-syntax">Syntax</div><div class="example"><div class="syntax-block"><pre><code>max-width: none |&#160;<i>length</i> |&#160;<i>percent</i> |&#160;calc()</code></pre></div></div></div><div><div class="example"><div class="syntax-block"><table class="property-table"><tr><th scope="row">
           Initial value
         </th><td><code>none</code></td></tr><tr><th scope="row">
           Applies to
@@ -1898,7 +1898,7 @@ For the values, the grammar draws on the [CSS Values and Units Module Level 3](h
                   no
                 </td></tr></table></div></div></div><div /><div><div id="prop-max-width-spec">Specification</div><ul><li><a href="https://www.w3.org/TR/CSS2/visudet.html#min-max-widths">CSS 2.1</a></li></ul></div></div></details>
 
-<details><summary id="prop-min-height">min-height <a class="self-link" href="#prop-min-height"></a></summary><div><div><div id="prop-min-height-syntax">Syntax</div><div class="example"><div class="syntax-block"><pre><code>min-height: auto |&#160;<i>length</i> |&#160;<i>percent</i></code></pre></div></div></div><div><div class="example"><div class="syntax-block"><table class="property-table"><tr><th scope="row">
+<details><summary id="prop-min-height">min-height <a class="self-link" href="#prop-min-height"></a></summary><div><div><div id="prop-min-height-syntax">Syntax</div><div class="example"><div class="syntax-block"><pre><code>min-height: auto |&#160;<i>length</i> |&#160;<i>percent</i> |&#160;calc()</code></pre></div></div></div><div><div class="example"><div class="syntax-block"><table class="property-table"><tr><th scope="row">
           Initial value
         </th><td><code>0</code></td></tr><tr><th scope="row">
           Applies to
@@ -1908,7 +1908,7 @@ For the values, the grammar draws on the [CSS Values and Units Module Level 3](h
                   no
                 </td></tr></table></div></div></div><div /><div><div id="prop-min-height-spec">Specification</div><ul><li><a href="https://www.w3.org/TR/CSS2/visudet.html#min-max-heights">CSS 2.1</a></li><li><a href="https://www.w3.org/TR/css-flexbox-1/#min-size-auto">CSS Flexible Box Layout Module Level 1</a></li></ul></div></div></details>
 
-<details><summary id="prop-min-width">min-width <a class="self-link" href="#prop-min-width"></a></summary><div><div><div id="prop-min-width-syntax">Syntax</div><div class="example"><div class="syntax-block"><pre><code>min-width: auto |&#160;<i>length</i> |&#160;<i>percent</i></code></pre></div></div></div><div><div class="example"><div class="syntax-block"><table class="property-table"><tr><th scope="row">
+<details><summary id="prop-min-width">min-width <a class="self-link" href="#prop-min-width"></a></summary><div><div><div id="prop-min-width-syntax">Syntax</div><div class="example"><div class="syntax-block"><pre><code>min-width: auto |&#160;<i>length</i> |&#160;<i>percent</i> |&#160;calc()</code></pre></div></div></div><div><div class="example"><div class="syntax-block"><table class="property-table"><tr><th scope="row">
           Initial value
         </th><td><code>0</code></td></tr><tr><th scope="row">
           Applies to
