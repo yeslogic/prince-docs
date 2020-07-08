@@ -329,11 +329,12 @@ SVG can be included in any XML document simply by adding a `svg` element.
 
 The `display`, `float`, and `flow` properties and all `margin`, `padding`, `border`, and `background` properties can be applied to the top-level `svg` element but not to child elements within it.
 
+Fonts defined inside an embedded SVG image file with CSS `@font-face` rules control the display of fonts.
+
 Prince supports SVG 1.1, with some exceptions - the following elements are currently *not* supported:
 
 -   `scripting`
 -   `animation`
--   SVG fonts
 -   `clip` (deprecated)
 -   `color-interpolation`
 -   `color-profile` & `icc-color`
