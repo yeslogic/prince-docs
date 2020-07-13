@@ -64,7 +64,7 @@ function.</td>
 <td>Prince recognizes <code>footnote-display</code> and <code>string-set</code> as
 well as the mechanism for running elements.  It does not recognize the
 <code>running</code> or <code>footnote-policy</code> properties, but Prince provides
-a different interface to the functionality of footnotes.</td>
+a different interface to the functionality of footnotes (see <a href="/doc/styling#footnotes">Footnotes</a>).</td>
 </tr>
 <tr>
 <td><a href="https://www.w3.org/TR/css3-images/">CSS Image Values and Replaced Content Module Level 3</a></td>
