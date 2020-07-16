@@ -357,7 +357,6 @@ Prince supports SVG 1.1, with some exceptions - the following elements are curre
 -   `externalResourcesRequired`
 -   `zoomAndPan`
 -   `filterRes`
--   `textLength`
 -   `lengthAdjust`
 -   vertical text
 -   `foreignObject`
