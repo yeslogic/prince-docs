@@ -16,9 +16,7 @@ Prince applies default styles to all (X)HTML documents - these style rules can b
 Fonts
 -----
 
-Prince supports the Web Open Font (WOFF/WOFF2), TrueType and OpenType (TTF and CFF, as well as CBLC/CBDT color Emoji*) font formats.
-
-\* Note that currently color Emoji fonts are limited to 256 emoji per font.
+Prince supports the Web Open Font (WOFF/WOFF2), TrueType and OpenType (TTF and CFF, as well as CBLC/CBDT color Emoji) font formats.
 
 ### Defining a font family
 
