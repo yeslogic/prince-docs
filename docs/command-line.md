@@ -400,7 +400,7 @@ dl>
     <code>--pdf-lang=<span class="replaceable">LANG</span></code>
   </dt>
   <dd>
-    Specify the PDF document's language.
+    Specify the PDF document's Lang entry in the document catalog - what is known as the Reading Options' Language.
   </dd>
   <dt id="cl-pdf-profile">
     <code>--pdf-profile=<span class="replaceable">PROFILE</span></code>
