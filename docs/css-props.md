@@ -394,11 +394,11 @@ For the values, the grammar draws on the [CSS Values and Units Module Level 3](h
           Initial value
         </th><td><code>normal</code></td></tr><tr><th scope="row">
           Applies to
-        </th><td>all elements</td></tr><tr><th scope="row">
+        </th><td>footnotes</td></tr><tr><th scope="row">
           Inherited
         </th><td>
                   no
-                </td></tr></table></div></div></div><div /><div><div id="prop-border-clip-spec">Specification</div><ul><li><a href="https://drafts.csswg.org/css-backgrounds-4/#propdef-border-clip">CSS Backgrounds and Borders Module Level 4</a></li></ul></div></div></details>
+                </td></tr></table></div></div></div><div /></div></details>
 
 <details><summary id="prop-border-collapse">border-collapse <a class="self-link" href="#prop-border-collapse"></a></summary><div><div><div id="prop-border-collapse-syntax">Syntax</div><div class="example"><div class="syntax-block"><pre><code>border-collapse: separate |&#160;collapse</code></pre></div></div></div><div><div class="example"><div class="syntax-block"><table class="property-table"><tr><th scope="row">
           Initial value
