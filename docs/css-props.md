@@ -2150,7 +2150,8 @@ supplier, item { overflow-wrap: normal; }
                 </td></tr></table></div></div></div><div><div id="prop-prince-alt-text-examples">Examples</div><div class="example"><div class="programlisting"><pre><code>span {
     prince-alt-text: attr(aria-label);
 }</code></pre></div></div></div><div><div id="prop-prince-alt-text-comments">Comments</div><p>
-	This property can be used to tell Prince what to show as an alternate text.
+	This property can be used to tell Prince what to show as an alternate text, which is crucial
+    when producing tagged PDF files.
 	</p></div></div></details>
 
 <details><summary class="ext" id="prop-prince-background-image-resolution">prince-background-image-resolution*  <a class="self-link" href="#prop-prince-background-image-resolution"></a></summary><div><div><div id="prop-prince-background-image-resolution-syntax">Syntax</div><div class="example"><div class="syntax-block"><pre><code>prince-background-image-resolution: <i>dpi</i> |&#160;normal |&#160;auto [ , normal |&#160;<i>dpi</i> ]?</code></pre></div></div></div><div><div class="example"><div class="syntax-block"><table class="property-table"><tr><th scope="row">
@@ -2276,7 +2277,8 @@ supplier, item { overflow-wrap: normal; }
     prince-expansion-text: attr(title);
 }</code></pre></div></div></div><div><div id="prop-prince-expansion-text-comments">Comments</div><p>
 	This property can be used for the <code>abbr</code> and <code>acronym</code>
-    elements to tell Prince what to show as an expansion text.
+    elements to tell Prince what to show as an expansion text, which is crucial
+    when producing tagged PDF files.
 	</p></div></div></details>
 
 <details><summary class="ext" id="prop-prince-fallback-cmyk-profile">prince-fallback-cmyk-profile*  <a class="self-link" href="#prop-prince-fallback-cmyk-profile"></a></summary><div><div><div id="prop-prince-fallback-cmyk-profile-syntax">Syntax</div><div class="example"><div class="syntax-block"><pre><code>prince-fallback-cmyk-profile: url(&#160;<i>filename</i>&#160;)</code></pre></div></div></div><div><div class="example"><div class="syntax-block"><table class="property-table"><tr><th scope="row">
