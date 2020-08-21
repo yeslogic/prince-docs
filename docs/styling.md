@@ -16,7 +16,7 @@ Prince applies default styles to all (X)HTML documents - these style rules can b
 Fonts
 -----
 
-Prince supports the Web Open Font (WOFF/WOFF2), TrueType and OpenType (TTF and CFF, as well as CBLC/CBDT color Emoji) font formats.
+Prince supports the Web Open Font (WOFF/WOFF2), TrueType and OpenType (with TTF or CFF outlines, as well as CBLC/CBDT or sbix colour bitmaps for Emoji) font formats.
 
 ### Defining a font family
 
