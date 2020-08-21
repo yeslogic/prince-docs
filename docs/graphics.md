@@ -430,7 +430,7 @@ CSS
 Rasterization
 -------------
 
-Prince allows for the output of a rasterized image rather than, or in addition to a PDF output. This produces a JPEG or PNG image of the content, which can be convenient when e.g. planning to use it as a quick preview or thumbnail of the PDF content to display on a website, as can e.g. be seen in the [Sample Documents](sample-docs.html) section on this website.
+Prince allows for the output of a rasterized image rather than, or in addition to a PDF output. This produces a JPEG or PNG image of the content, which can be convenient when e.g. planning to use it as a quick preview or thumbnail of the PDF content to display on a website, as can e.g. be seen in the [Sample Documents](/samples/) section on this website.
 
 Rasterization is enabled with the [`--raster-output`](command-line.md#cl-raster-output) command-line option, which also defines the template of the file naming. The output format can be chosen either based on the extension of the file name, or by explicitly indicating it.
 
