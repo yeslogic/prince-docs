@@ -1270,6 +1270,21 @@ For the values, the grammar draws on the [CSS Values and Units Module Level 3](h
     The modifier <code>unless-fit</code> expresses a conditional: the element is only
     floated if it would otherwise cause a page or column break.
     </p></div><div><div id="prop-float-seealso">See Also</div><ul><li><a href="/doc/styling#floats">Floats</a></li></ul></div><div><div id="prop-float-spec">Specification</div><ul><li><a href="https://www.w3.org/TR/CSS2/visuren.html#float-position">CSS 2.1</a></li><li><a href="https://www.w3.org/TR/css-gcpm-3/#footnotes">CSS Generated Content for Paged Media Module</a></li><li><a href="https://figures.spec.whatwg.org/">CSS Figures</a></li><li><a href="https://books.spec.whatwg.org/#footnotes">CSS Books</a></li></ul></div></div></details>
+<details><summary id="prop-float-reference">float-reference <a class="self-link" href="#prop-float-reference"></a></summary><div><div><div id="prop-float-reference-syntax">Syntax</div><div class="example"><div class="syntax-block"><pre><code>float-reference: column |&#160;page</code></pre></div></div></div><div><div class="example"><div class="syntax-block"><table class="property-table"><tr><th scope="row">
+          Initial value
+        </th><td><code>page</code></td></tr><tr><th scope="row">
+          Applies to
+        </th><td>all floated elements</td></tr><tr><th scope="row">
+          Inherited
+        </th><td>
+                  yes
+                </td></tr></table></div></div></div><div><div id="prop-float-reference-examples">Examples</div><div class="example"><div class="programlisting"><pre><code>figure {
+&nbsp;&nbsp;float: top;
+&nbsp;&nbsp;float-reference: page;
+}</code></pre></div></div></div><div><div id="prop-float-reference-comments">Comments</div><p>
+        The <code>float-reference</code> property defines the reference context for
+        the float, i.e. whether the element should be floated to e.g. the top of the
+        column, or of the page.</p></div><div><div id="prop-float-reference-seealso">See Also</div><ul><li><a href="/doc/styling#floats">Floats</a></li></ul></div><div><div id="prop-float-reference-spec">Specification</div><ul><li><a href="https://figures.spec.whatwg.org/">CSS Figures</a></li><li><a href="https://drafts.csswg.org/css-page-floats/">CSS Page Floats</a></li></ul></div></div></details>
 
 <details><summary class="ext" id="prop-flow">flow*  <a class="self-link" href="#prop-flow"></a></summary><div><div><div id="prop-flow-syntax">Syntax</div><div class="example"><div class="syntax-block"><pre><code>flow: normal |&#160;static(&#160;<i>name</i>, [ start |&#160;current ]?&#160;)</code></pre></div></div></div><div><div class="example"><div class="syntax-block"><table class="property-table"><tr><th scope="row">
           Initial value
