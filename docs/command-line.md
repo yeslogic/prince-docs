@@ -575,6 +575,13 @@ Rasterization is enabled with the `--raster-output` option below. When this is u
     <code>--raster-output</code> is '<code>-</code>',
     then it is necessary to provide this option.
   </dd>
+  <dt id="cl-raster-jpeg-quality">
+    <code>--raster-jpeg-quality=<span class="replaceable">QUALITY</span></code>
+  </dt>
+  <dd>
+    Set the level of JPEG compression when generating raster output in JPEG
+    format.  It takes a number between 0 and 100, default is 92.
+  </dd>
   <dt id="cl-raster-pages">
     <code>--raster-pages=<span class="replaceable">PAGE</span></code>
   </dt>
