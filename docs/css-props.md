@@ -1255,7 +1255,7 @@ For the values, the grammar draws on the [CSS Values and Units Module Level 3](h
 
 <details><summary id="prop-float-reference">float-reference <a class="self-link" href="#prop-float-reference"></a></summary><div><div><div id="prop-float-reference-syntax">Syntax</div><div class="example"><div class="syntax-block"><pre><code>float-reference: column |&#160;page</code></pre></div></div></div><div><div class="example"><div class="syntax-block"><table class="property-table"><tr><th scope="row">
           Initial value
-        </th><td><code>page</code></td></tr><tr><th scope="row">
+        </th><td><code>column</code></td></tr><tr><th scope="row">
           Applies to
         </th><td>all floated elements</td></tr><tr><th scope="row">
           Inherited
@@ -1266,8 +1266,11 @@ For the values, the grammar draws on the [CSS Values and Units Module Level 3](h
 &nbsp;&nbsp;float-reference: page;
 }</code></pre></div></div></div><div><div id="prop-float-reference-comments">Comments</div><p>
         The <code>float-reference</code> property defines the reference context for
-        the float, i.e. whether the element should be floated to e.g. the top of the
-        column, or of the page.</p></div><div><div id="prop-float-reference-seealso">See Also</div><ul><li><a href="/doc/styling#floats">Floats</a></li></ul></div><div><div id="prop-float-reference-spec">Specification</div><ul><li><a href="https://figures.spec.whatwg.org/">CSS Figures</a></li><li><a href="https://drafts.csswg.org/css-page-floats/">CSS Page Floats</a></li></ul></div></div></details>
+        the float, i.e. whether the element should be floated to the top of the
+        column, or of the page.</p><p>
+        Please note that the initial value is <code>column</code> - the style rule
+        <code>float: top</code> will create a column float in a multicol context,
+        rather than a page float.</p></div><div><div id="prop-float-reference-seealso">See Also</div><ul><li><a href="/doc/styling#floats">Floats</a></li></ul></div><div><div id="prop-float-reference-spec">Specification</div><ul><li><a href="https://figures.spec.whatwg.org/#setting-the-page-float-reference:-float-reference">CSS Figures</a></li><li><a href="https://drafts.csswg.org/css-page-floats/#float-reference-property">CSS Page Floats</a></li></ul></div></div></details>
 
 <details><summary class="ext" id="prop-flow">flow*  <a class="self-link" href="#prop-flow"></a></summary><div><div><div id="prop-flow-syntax">Syntax</div><div class="example"><div class="syntax-block"><pre><code>flow: normal |&#160;static(&#160;<i>name</i>, [ start |&#160;current ]?&#160;)</code></pre></div></div></div><div><div class="example"><div class="syntax-block"><table class="property-table"><tr><th scope="row">
           Initial value
