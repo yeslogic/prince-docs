@@ -1214,12 +1214,8 @@ For the values, the grammar draws on the [CSS Values and Units Module Level 3](h
 
 <details><summary id="prop-float">float <a class="self-link" href="#prop-float"></a></summary><div><div><div id="prop-float-syntax">Syntax</div><div class="example"><div class="syntax-block"><pre><code>float: <br />&#160;&#160;&#160;none |&#160;left |&#160;right |&#160;<span class="ext">inside</span> |&#160;<span class="ext">outside</span>
 &#160;&#160;&#160;|&#160;footnote |&#160;<span class="ext">inline-footnote</span>
-&#160;&#160;&#160;|&#160;<span class="ext">prince-column-footnote</span>
-&#160;&#160;&#160;|&#160;<span class="ext">prince-column-inline-footnote</span>
 &#160;&#160;&#160;|&#160;<span class="ext">prince-snap</span>
-&#160;&#160;&#160;|&#160;[ [ top |&#160;bottom |&#160;<span class="ext">column-top</span> |&#160;<span class="ext">column-bottom</span>
-&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;|&#160;<span class="ext">column-top-corner</span> |&#160;<span class="ext">column-bottom-corner</span> ]
-&#160;&#160;&#160;&#160;&#160;&#160;&#160;&amp;&amp;&#160;[ <span class="ext">next</span> |&#160;<span class="ext">unless-fit</span> ]? ]</code></pre></div></div></div><div><div class="example"><div class="syntax-block"><table class="property-table"><tr><th scope="row">
+&#160;&#160;&#160;|&#160;[ <span class="ext">top</span> |&#160;<span class="ext">bottom</span> |&#160;<span class="ext">top-bottom</span> ] &amp;&amp;&#160;<span class="ext">unless-fit</span> ?</code></pre></div></div></div><div><div class="example"><div class="syntax-block"><table class="property-table"><tr><th scope="row">
           Initial value
         </th><td><code>none</code></td></tr><tr><th scope="row">
           Applies to
@@ -1234,14 +1230,9 @@ For the values, the grammar draws on the [CSS Values and Units Module Level 3](h
     of the column.
 	</p><p>
     The values <code>top</code> or <code>bottom</code> float the element to, respectively,
-    the top or the bottom of the page.
-    </p><p>
-    The values <code>column-top</code> and <code>column-bottom</code> float the element
-    to the top or bottom of the column it appears in.
-    </p><p>
-    The values <code>column-top-corner</code> and <code>column-bottom-corner</code>
-    float the element to the top or bottom of the last column, rather than its natural
-    column.
+    the top or the bottom of the float reference (a page, or a column), while
+    <code>top-bottom</code> tries to float it to the top, and if that should not be possible,
+    it is floated to the bottom.
     </p><p>
     The value <code>prince-snap</code> floats the element to the nearest "end", i.e.
     to the top or bottom of the page, or of the column in the case of a multi-column
@@ -1251,25 +1242,17 @@ For the values, the grammar draws on the [CSS Values and Units Module Level 3](h
     to the inside or outside of a spread: <code>inside</code> moves the element to
     the right when used on a left-facing page, and to the left on a right-facing page;
     <code>outside</code> moves the element to the left when used on a left-facing
-    page, and to the right on a right-facing page.  When these values are used in
-    a multi-column layout, the element is floated to the inside or outside of the
-    column it appears in its natural flow.
+    page, and to the right on a right-facing page.
     </p><p>
     The value <code>footnote</code> transforms the element into a footnote - the footnote
     marker is placed outside of the block of the footnote.  The value <code>inline-footnote</code>
     transforms the element into a footnote and places the footnote marker inside of
     the block of the footnote.
     </p><p>
-    The values <code>prince-column-footnote</code> and <code>prince-column-inline-footnote</code>
-    behave in an analogous way, but move the footnote not to the bottom of the page,
-    but to the bottom of its column instead.
-    </p><p>
-    The additional modifier <code>next</code> defers the float to the next column in
-    a multi-column layout, otherwise it defers the float to the next page.
-    </p><p>
     The modifier <code>unless-fit</code> expresses a conditional: the element is only
     floated if it would otherwise cause a page or column break.
-    </p></div><div><div id="prop-float-seealso">See Also</div><ul><li><a href="/doc/styling#floats">Floats</a></li></ul></div><div><div id="prop-float-spec">Specification</div><ul><li><a href="https://www.w3.org/TR/CSS2/visuren.html#float-position">CSS 2.1</a></li><li><a href="https://www.w3.org/TR/css-gcpm-3/#footnotes">CSS Generated Content for Paged Media Module</a></li><li><a href="https://figures.spec.whatwg.org/">CSS Figures</a></li><li><a href="https://books.spec.whatwg.org/#footnotes">CSS Books</a></li></ul></div></div></details>
+    </p></div><div><div id="prop-float-seealso">See Also</div><ul><li><a href="/doc/styling#floats">Floats</a></li></ul></div><div><div id="prop-float-spec">Specification</div><ul><li><a href="https://www.w3.org/TR/CSS2/visuren.html#float-position">CSS 2.1</a></li><li><a href="https://www.w3.org/TR/css-gcpm-3/#footnotes">CSS Generated Content for Paged Media Module</a></li><li><a href="https://figures.spec.whatwg.org/">CSS Figures</a></li><li><a href="https://books.spec.whatwg.org/#footnotes">CSS Books</a></li><li><a href="https://drafts.csswg.org/css-page-floats/">CSS Page Floats</a></li></ul></div></div></details>
+
 <details><summary id="prop-float-reference">float-reference <a class="self-link" href="#prop-float-reference"></a></summary><div><div><div id="prop-float-reference-syntax">Syntax</div><div class="example"><div class="syntax-block"><pre><code>float-reference: column |&#160;page</code></pre></div></div></div><div><div class="example"><div class="syntax-block"><table class="property-table"><tr><th scope="row">
           Initial value
         </th><td><code>page</code></td></tr><tr><th scope="row">
