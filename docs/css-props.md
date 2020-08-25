@@ -1253,6 +1253,23 @@ For the values, the grammar draws on the [CSS Values and Units Module Level 3](h
     floated if it would otherwise cause a page or column break.
     </p></div><div><div id="prop-float-seealso">See Also</div><ul><li><a href="/doc/styling#floats">Floats</a></li></ul></div><div><div id="prop-float-spec">Specification</div><ul><li><a href="https://www.w3.org/TR/CSS2/visuren.html#float-position">CSS 2.1</a></li><li><a href="https://www.w3.org/TR/css-gcpm-3/#footnotes">CSS Generated Content for Paged Media Module</a></li><li><a href="https://figures.spec.whatwg.org/">CSS Figures</a></li><li><a href="https://books.spec.whatwg.org/#footnotes">CSS Books</a></li><li><a href="https://drafts.csswg.org/css-page-floats/">CSS Page Floats</a></li></ul></div></div></details>
 
+<details><summary id="prop-float-policy">float-policy <a class="self-link" href="#prop-float-policy"></a></summary><div><div><div id="prop-float-policy-syntax">Syntax</div><div class="example"><div class="syntax-block"><pre><code>float-policy: normal |&#160;in-order</code></pre></div></div></div><div><div class="example"><div class="syntax-block"><table class="property-table"><tr><th scope="row">
+          Initial value
+        </th><td><code>normal</code></td></tr><tr><th scope="row">
+          Applies to
+        </th><td>all floated elements</td></tr><tr><th scope="row">
+          Inherited
+        </th><td>
+                  yes
+                </td></tr></table></div></div></div><div><div id="prop-float-policy-examples">Examples</div><div class="example"><div class="programlisting"><pre><code>figure {
+&nbsp;&nbsp;float: bottom;
+&nbsp;&nbsp;float-policy: in-order;
+}</code></pre></div></div></div><div><div id="prop-float-policy-comments">Comments</div><p>
+        The <code>float-policy</code> property defines the policy adopted when
+        floating an element.  The value <code>in-order</code> imposes that page
+        floats must be shown in source order - <code>normal</code> adds no extra
+        constraints to the float.</p></div><div><div id="prop-float-policy-seealso">See Also</div><ul><li><a href="/doc/styling#floats">Floats</a></li></ul></div><div><div id="prop-float-policy-spec">Specification</div><ul><li><a href="https://figures.spec.whatwg.org/#page-float-preferences:-float-policy">CSS Figures</a></li></ul></div></div></details>
+
 <details><summary id="prop-float-reference">float-reference <a class="self-link" href="#prop-float-reference"></a></summary><div><div><div id="prop-float-reference-syntax">Syntax</div><div class="example"><div class="syntax-block"><pre><code>float-reference: column |&#160;page</code></pre></div></div></div><div><div class="example"><div class="syntax-block"><table class="property-table"><tr><th scope="row">
           Initial value
         </th><td><code>column</code></td></tr><tr><th scope="row">
