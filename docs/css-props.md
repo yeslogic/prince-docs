@@ -1253,6 +1253,34 @@ For the values, the grammar draws on the [CSS Values and Units Module Level 3](h
     floated if it would otherwise cause a page or column break.
     </p></div><div><div id="prop-float-seealso">See Also</div><ul><li><a href="/doc/styling#floats">Floats</a></li></ul></div><div><div id="prop-float-spec">Specification</div><ul><li><a href="https://www.w3.org/TR/CSS2/visuren.html#float-position">CSS 2.1</a></li><li><a href="https://www.w3.org/TR/css-gcpm-3/#footnotes">CSS Generated Content for Paged Media Module</a></li><li><a href="https://figures.spec.whatwg.org/">CSS Figures</a></li><li><a href="https://books.spec.whatwg.org/#footnotes">CSS Books</a></li><li><a href="https://drafts.csswg.org/css-page-floats/">CSS Page Floats</a></li></ul></div></div></details>
 
+<details><summary id="prop-float-defer-column">float-defer-column <a class="self-link" href="#prop-float-defer-column"></a></summary><div><div><div id="prop-float-defer-column-syntax">Syntax</div><div class="example"><div class="syntax-block"><pre><code>float-defer-column: none |&#160;inside |&#160;outside |&#160;last |&#160;<i>integer</i></code></pre></div></div></div><div><div class="example"><div class="syntax-block"><table class="property-table"><tr><th scope="row">
+          Initial value
+        </th><td><code>none</code></td></tr><tr><th scope="row">
+          Applies to
+        </th><td>all floated elements</td></tr><tr><th scope="row">
+          Inherited
+        </th><td>
+                  yes
+                </td></tr></table></div></div></div><div><div id="prop-float-defer-column-examples">Examples</div><div class="example"><div class="programlisting"><pre><code>figure {
+&nbsp;&nbsp;float: top;
+&nbsp;&nbsp;float-defer-column: 1;
+}</code></pre></div></div></div><div><div id="prop-float-defer-column-comments">Comments</div><p>
+        The <code>float-defer-column</code> property defines the number of columns that the float should be deferred.</p></div><div><div id="prop-float-defer-column-seealso">See Also</div><ul><li><a href="/doc/styling#floats">Floats</a></li></ul></div><div><div id="prop-float-defer-column-spec">Specification</div><ul><li><a href="https://figures.spec.whatwg.org/#float-defer-column">CSS Figures</a></li></ul></div></div></details>
+
+<details><summary id="prop-float-defer-page">float-defer-page <a class="self-link" href="#prop-float-defer-page"></a></summary><div><div><div id="prop-float-defer-page-syntax">Syntax</div><div class="example"><div class="syntax-block"><pre><code>float-defer-page: none |&#160;[ <i>integer</i> ||&#160;[ left |&#160;right ]]</code></pre></div></div></div><div><div class="example"><div class="syntax-block"><table class="property-table"><tr><th scope="row">
+          Initial value
+        </th><td><code>none</code></td></tr><tr><th scope="row">
+          Applies to
+        </th><td>all floated elements</td></tr><tr><th scope="row">
+          Inherited
+        </th><td>
+                  yes
+                </td></tr></table></div></div></div><div><div id="prop-float-defer-page-examples">Examples</div><div class="example"><div class="programlisting"><pre><code>figure {
+&nbsp;&nbsp;float: top;
+&nbsp;&nbsp;float-defer-page: right;
+}</code></pre></div></div></div><div><div id="prop-float-defer-page-comments">Comments</div><p>
+        The <code>float-defer-page</code> property specifies whether the float is placed after previous page floats have been placed, or in another float reference container.</p></div><div><div id="prop-float-defer-page-seealso">See Also</div><ul><li><a href="/doc/styling#floats">Floats</a></li></ul></div><div><div id="prop-float-defer-page-spec">Specification</div><ul><li><a href="https://figures.spec.whatwg.org/#page-float-preferences:-float-policy">CSS Figures</a></li><li><a href="https://drafts.csswg.org/css-page-floats/#float-defer-property">CSS Page Floats</a></li></ul></div></div></details>
+
 <details><summary id="prop-float-policy">float-policy <a class="self-link" href="#prop-float-policy"></a></summary><div><div><div id="prop-float-policy-syntax">Syntax</div><div class="example"><div class="syntax-block"><pre><code>float-policy: normal |&#160;in-order</code></pre></div></div></div><div><div class="example"><div class="syntax-block"><table class="property-table"><tr><th scope="row">
           Initial value
         </th><td><code>normal</code></td></tr><tr><th scope="row">
