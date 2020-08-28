@@ -164,10 +164,10 @@ Frequently Asked Questions
 
   <dt id="faq-install-wrappers"><p>How do I install the Prince wrappers?
   <a href="#faq-install-wrappers" class="self-link"></a></p></dt>
-  <dd><p>The <a href="server-integration#wrappers">Prince Wrappers</a> come in
+  <dd><p>The <a href="/doc/server-integration/#prince-wrappers">Prince Wrappers</a> come in
   different languages, and each one has a different installation procedure.
   Mostly they are explained in the documentation for each of the
-  <a href="server-integration#wrappers">Prince Wrappers</a>. The short principle
+  <a href="/doc/server-integration/#prince-wrappers">Prince Wrappers</a>. The short principle
   is that the wrapper files need to be placed in a location from which they can
   run - this may slightly vary depending on the hosting Operating System.</p></dd>
 </dl>
