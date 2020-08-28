@@ -914,7 +914,7 @@ The following example instructs Prince to make the `h1` heading element span all
         column-span: all;
     }
 ```
-Prince features also several column-specific extensions to the [`float`](css-props.md#prop-float) property, namely [Page and column floats](#page-and-column-floats) and [Page and column footnotes](#page-and-column-footnotes).
+
 
 ### Floats
 
@@ -931,27 +931,42 @@ Prince extends the traditional behavior of floats with a few features that have 
 
 #### Prince extensions to floats
 
-Traditionally, floats move in the inline direction, left or right. Prince extends this behavior with page floats that move in the block direction, specifying that an element should be floated to the top or to the bottom of a page, and with column floats that move the float to the nearest edge of the column in a multi-column layout, with optional column spanning of the float.
+Traditionally, floats move in the inline direction, left or right. Prince extends this behavior with page and column floats that move in the block direction, specifying that an element should be floated to the top or to the bottom of a page, or to the nearest edge of the column in a multi-column layout, with optional column spanning of the float.
 
 This allows for more flexible layout options that meet the needs of formatting documents for print.
 
 ##### Page and column floats
 
-When giving the [`float`](css-props.md#prop-float) property the value `top` or `bottom`, the element will be floated to, respectively, the top or the bottom of the page. The values `column-top` and `column-bottom` float the element to the top or bottom of the column it appears in, while `column-top-corner` and `column-bottom-corner` float the element to the top or bottom of the last column, rather than its natural column. These can be useful if you wanted to create a magazine-style layout, floating an image to the right-hand corner of the current multi-column layout.
+When giving the [`float`](css-props.md#prop-float) property the value `top` or `bottom`, the element will be floated to, respectively, the top or the bottom of the column or page - the correct reference context for the float is defined through the [`float-reference`](css-props.md#prop-float-reference) property.
 
 ```
     img {
-        float: column-top-corner;
+        float: top;
+        float-reference: page;
     }
 ```
-A floated element can span several columns with the help of the [`column-span`](css-props.md#prop-column-span) property (see [Columns](#columns)). The following example instructs Prince to make the image span two columns:
+
+Note that by default, the element will be floated to the top or bottom of the column it appears in.  This should mostly work as intended, since a normal page is a layout with one column.  However, earlier implementations of page floats with the [`float`](css-props.md#prop-float) property would float to the top of a page also in a multi-column layout.  If the previous behaviour is the desired one, the following style rule needs to be added to your stylesheet:
+
+```
+    * { float-reference: page; }
+```
+
+The value `top-bottom` tries to float the element to the top of the reference context (i.e. a column or a page), and if that should not be possible, it is floated to the bottom.
+
+Floats can be deferred, to be laid out at a later position.  The properties [`float-defer-column`](css-props.md#prop-float-defer-column) and [`float-defer-page`](css-props.md#prop-float-defer-page) are used to defer the float to, respectively, some other column or page.
+
+A floated element in a multi-column context can span several columns with the help of the [`column-span`](css-props.md#prop-column-span) property (see [Columns](#columns)). The following example instructs Prince to make the image span two columns:
 
 ```
     img {
-        float: column-top-corner;
+        float: top;
+        float-reference: column;
+        float-defer-column: last;
         column-span: 2;
     }
 ```
+
 The value `prince-snap` instructs Prince to float the image to the nearest "end", i.e. to the top or bottom of the page, or of the column in the case of a multi-column layout.
 
 ```
@@ -959,6 +974,7 @@ The value `prince-snap` instructs Prince to float the image to the nearest "end"
         float: prince-snap;
     }
 ```
+
 ##### Spread floats
 
 In print one typically has to deal with left facing and right facing pages, together forming a spread. To take this into account when placing an element, Prince extends the [`float`](css-props.md#prop-float) property with the values `inside` and `outside`, moving the element respectively to the inside or outside of a spread.
@@ -967,17 +983,10 @@ If the `inside` and `outside` values are used in a multi-column layout, the elem
 
 ##### Page and column footnotes
 
-The value `footnote` transforms the element into a footnote: it creates a footnote call in the place where it appears in its natural flow, and moves the element to the bottom of the page. The footnote marker is placed outside of the block of the footnote. With the value `inline-footnote`, the footnote marker is placed inside of the block of the footnote. Two additional values, namely `prince-column-footnote` and `prince-column-inline-footnote` behave in an analogous way, but move the footnote not to the bottom of the page, but to the bottom of its column instead. See also [Footnotes](#footnotes).
+The value `footnote` transforms the element into a footnote: it creates a footnote call in the place where it appears in its natural flow, and moves the element to the bottom of the column - please note that a normal page is considered to be a single column layout. The footnote marker is placed outside of the block of the footnote. With the value `inline-footnote`, the footnote marker is placed inside of the block of the footnote. To move the footnote to the bottom of a page in a multi-column layout, instead of to the bottom of its column, the correct float reference needs to be defined with the [`float-reference`](css-props.md#prop-float-reference) property.  See also [Footnotes](#footnotes).
 
 ##### Conditional modifiers
 
-Prince also takes the additional modifier `next`. In a multi-column layout, this defers the float to the next column, otherwise it defers the float to the next page.
-
-```
-    img {
-        float: column-top next;
-    }
-```
 The optional modifier `unless-fit` is to be used in combination with other float instructions, and expresses a conditional: the element is only floated if it would otherwise cause a page or column break. For example, If you have a large image that happens to occur at the end of the page, it could force a page break and leave a gap at the end of the previous page. So you could float the image `top unless-fit`, which would move it to the top of the next page *unless it fits on the current page without causing a break and leaving a gap*:
 
 ```
@@ -1098,7 +1107,7 @@ Making a footnote into an inline element moves the footnote marker into the foot
 
 The [`float`](css-props.md#prop-float) property offers also the value `inline-footnote`, which is another mechanism to transform the footnote into an inline element.
 
-In a multi-column layout, footnotes can be rendered at the bottom of the page as normal footnotes, or alternatively at the bottom of each column by using the values `prince-column-footnote` or `prince-column-inline-footnote` for the [`float`](css-props.md#prop-float) property. See also [Prince extensions to floats](#prince-extensions-to-floats).
+In a multi-column layout, footnotes can be rendered at the bottom of the page as normal footnotes, instead of at the bottom of each column, by specifying the correct float context with the [`float-reference`](css-props.md#prop-float-reference) property.  See also [Prince extensions to floats](#prince-extensions-to-floats).
 
 In some situations it might happen that footnotes do not fit on the page on which the footnote call was placed. It might be desirable to tie the footnote to the same page as the call - the property [`prince-footnote-policy`](css-props.md#prop-prince-footnote-policy) can be of help. The following example instructs Prince to move the line with the footnote call to the next page, in order to keep it on the same page as the footnote itself:
 
