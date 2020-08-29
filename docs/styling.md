@@ -935,6 +935,8 @@ Traditionally, floats move in the inline direction, left or right. Prince extend
 
 This allows for more flexible layout options that meet the needs of formatting documents for print.
 
+Prince also extends the [`clear`](css-props.md#prop-clear) property with the new keyword `end` to clear column or page ends.
+
 ##### Page and column floats
 
 When giving the [`float`](css-props.md#prop-float) property the value `top` or `bottom`, the element will be floated to, respectively, the top or the bottom of the column or page - the correct reference context for the float is defined through the [`float-reference`](css-props.md#prop-float-reference) property.
@@ -994,6 +996,7 @@ The optional modifier `unless-fit` is to be used in combination with other float
         float: top unless-fit;
     }
 ```
+
 
 ### Footnotes
 
