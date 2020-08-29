@@ -71,6 +71,10 @@ well as the mechanism for running elements.  It does not recognize the
 a different interface to the functionality of footnotes (see <a href="/doc/styling#footnotes">Footnotes</a>).</td>
 </tr>
 <tr>
+<td><a href="https://drafts.csswg.org/css-page-floats/">CSS Page Floats - Editor's Draft</a></td>
+<td>Prince recognizes the properties <code>float-reference</code> and <code>float-defer</code>, but takes a different syntax.</td>
+</tr>
+<tr>
 <td><a href="https://www.w3.org/TR/css3-images/">CSS Image Values and Replaced Content Module Level 3</a></td>
 <td>Prince recognizes <code>image-resolution</code>, but takes a different syntax.</td>
 </tr>
