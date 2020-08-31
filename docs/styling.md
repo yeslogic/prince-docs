@@ -425,7 +425,7 @@ To style the borders, the [`border-color`](css-props.md#prop-border-color), [`bo
 
 The [`border-radius`](css-props.md#prop-border-radius) property can be used for styling rounded corners.
 
-The [`border-clip`](css-props.md#prop-border-clip) property splits the borders into parts along the border edge - the first part is visible, the second one is invisible, the third part is visible, etc.  Please note that currently this property only applies to footnotes.
+The [`border-clip`](css-props.md#prop-border-clip) property splits the borders into parts along the border edge.  Please note that currently this property only applies to footnotes.
 
 #### Padding
 

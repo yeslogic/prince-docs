@@ -139,7 +139,7 @@ and <a href="#at-supports"><code>@supports</code></a> at-rules.</td>
 </tr>
 <tr>
 <td><a href="https://drafts.csswg.org/css-backgrounds-4/">CSS Backgrounds and Borders Module Level 4</a></td>
-<td>Prince supports the <code>border-clip</code> property.</td>
+<td>Prince recognizes the <code>border-clip</code> property, but takes a different syntax.</td>
 </tr>
 <tr>
 <td><a href="https://www.w3.org/TR/css-variables-1/">CSS Custom Properties for Cascading Variables Module Level 1</a></td>

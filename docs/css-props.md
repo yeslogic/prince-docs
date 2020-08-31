@@ -398,7 +398,9 @@ For the values, the grammar draws on the [CSS Values and Units Module Level 3](h
           Inherited
         </th><td>
                   no
-                </td></tr></table></div></div></div><div /></div></details>
+                </td></tr></table></div></div></div><div><div id="prop-border-clip-comments">Comments</div><p>
+	Please note that currently this property only applies to footnotes.
+	</p></div></div></details>
 
 <details><summary id="prop-border-collapse">border-collapse <a class="self-link" href="#prop-border-collapse"></a></summary><div><div><div id="prop-border-collapse-syntax">Syntax</div><div class="example"><div class="syntax-block"><pre><code>border-collapse: separate |&#160;collapse</code></pre></div></div></div><div><div class="example"><div class="syntax-block"><table class="property-table"><tr><th scope="row">
           Initial value
