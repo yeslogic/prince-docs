@@ -935,7 +935,7 @@ Traditionally, floats move in the inline direction, left or right. Prince extend
 
 This allows for more flexible layout options that meet the needs of formatting documents for print.
 
-Prince also extends the [`clear`](css-props.md#prop-clear) property with the new keyword `end` to clear column or page ends.
+Prince also extends the [`clear`](css-props.md#prop-clear) property with the new keywords `column` and `end` to clear column or page ends.
 
 ##### Page and column floats
 

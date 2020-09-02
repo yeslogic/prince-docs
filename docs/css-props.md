@@ -792,7 +792,7 @@ For the values, the grammar draws on the [CSS Values and Units Module Level 3](h
 	the top or bottom of the table.
 	</p></div><div><div id="prop-caption-side-seealso">See Also</div><ul><li><a href="/doc/styling#table-captions">Table captions</a></li></ul></div><div><div id="prop-caption-side-spec">Specification</div><ul><li><a href="https://www.w3.org/TR/CSS2/tables.html#caption-position">CSS 2.1</a></li></ul></div></div></details>
 
-<details><summary id="prop-clear">clear <a class="self-link" href="#prop-clear"></a></summary><div><div><div id="prop-clear-syntax">Syntax</div><div class="example"><div class="syntax-block"><pre><code>clear: none |&#160;left |&#160;right |&#160;<span class="ext">inside</span> |&#160;<span class="ext">outside</span> |&#160;<span class="ext">end</span> |&#160;both</code></pre></div></div></div><div><div class="example"><div class="syntax-block"><table class="property-table"><tr><th scope="row">
+<details><summary id="prop-clear">clear <a class="self-link" href="#prop-clear"></a></summary><div><div><div id="prop-clear-syntax">Syntax</div><div class="example"><div class="syntax-block"><pre><code>clear: none |&#160;left |&#160;right |&#160;<span class="ext">inside</span> |&#160;<span class="ext">outside</span> |&#160;<span class="ext">column</span> |&#160;<span class="ext">end</span> |&#160;both</code></pre></div></div></div><div><div class="example"><div class="syntax-block"><table class="property-table"><tr><th scope="row">
           Initial value
         </th><td><code>none</code></td></tr><tr><th scope="row">
           Applies to
@@ -807,8 +807,8 @@ For the values, the grammar draws on the [CSS Values and Units Module Level 3](h
 	<code>inside</code> and <code>outside</code>
 	values correspond to values given to the <code><a href="#prop-float">float</a></code>
 	property, while <code>both</code> will clear floats on either side.
-    The keyword <code>end</code> clears column and page ends.
-	</p></div><div><div id="prop-clear-spec">Specification</div><ul><li><a href="https://www.w3.org/TR/CSS2/visuren.html#flow-control">CSS 2.1</a></li><li><a href="https://figures.spec.whatwg.org/#floating-inside-and-outside-pages">CSS Figures - Floating Inside and Outside Pages</a></li><li><a href="https://figures.idea.whatwg.org/#page-floats">CSS Figures - Page Floats</a></li></ul></div></div></details>
+    The keyword <code>end</code> clears column and page ends, while <code>column</code> clears only column ends.
+	</p></div><div><div id="prop-float-seealso">See Also</div><ul><li><a href="/doc/styling#floats">Floats</a></li><li><code><a href="#prop-float">float</a></code></li></ul></div><div><div id="prop-clear-spec">Specification</div><ul><li><a href="https://www.w3.org/TR/CSS2/visuren.html#flow-control">CSS 2.1</a></li><li><a href="https://figures.spec.whatwg.org/#floating-inside-and-outside-pages">CSS Figures - Floating Inside and Outside Pages</a></li><li><a href="https://figures.idea.whatwg.org/#page-floats">CSS Figures - Page Floats</a></li></ul></div></div></details>
 
 <details><summary id="prop-clip">clip <a class="self-link" href="#prop-clip"></a></summary><div><div><div id="prop-clip-syntax">Syntax</div><div class="example"><div class="syntax-block"><pre><code>clip: auto |&#160;rect(&#160;<i>offset</i>, <i>offset</i>, <i>offset</i>, <i>offset</i>&#160;)</code></pre></div></div></div><div><div class="example"><div class="syntax-block"><table class="property-table"><tr><th scope="row">
           Initial value
