@@ -948,7 +948,7 @@ When giving the [`float`](css-props.md#prop-float) property the value `top` or `
     }
 ```
 
-Note that by default, the element will be floated to the top or bottom of the column it appears in.  This should mostly work as intended, since a normal page is a layout with one column.  However, earlier implementations of page floats with the [`float`](css-props.md#prop-float) property would float to the top of a page also in a multi-column layout.  If the previous behaviour is the desired one, the following style rule needs to be added to your stylesheet:
+Note that by default, the element will be floated to the top or bottom of the *column* it appears in.  This should mostly work as intended, since a normal page can be considered simply as a layout with one column!  However, earlier implementations of page floats with the [`float`](css-props.md#prop-float) property would float to the top of a *page* also in a multi-column layout.  If the previous behaviour is the desired one, the following style rule needs to be added to your stylesheet:
 
 ```
     * { float-reference: page; }
