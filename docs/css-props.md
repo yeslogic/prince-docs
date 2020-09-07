@@ -2317,16 +2317,15 @@ supplier, item { overflow-wrap: normal; }
           Initial value
         </th><td><code>auto</code></td></tr><tr><th scope="row">
           Applies to
-        </th><td>abbr and acronym elements</td></tr><tr><th scope="row">
+        </th><td>inline elements</td></tr><tr><th scope="row">
           Inherited
         </th><td>
                   no
                 </td></tr></table></div></div></div><div><div id="prop-prince-expansion-text-examples">Examples</div><div class="example"><div class="programlisting"><pre><code>abbr {
-    prince-expansion-text: attr(title);
+&nbsp;&nbsp;prince-expansion-text: attr(title);
 }</code></pre></div></div></div><div><div id="prop-prince-expansion-text-comments">Comments</div><p>
-	This property can be used for the <code>abbr</code> and <code>acronym</code>
-    elements to tell Prince what to show as an expansion text, which is crucial
-    when producing tagged PDF files.
+	This property can be used for specific elements, such as e.g. <code>abbr</code> and <code>acronym</code>,
+    to tell Prince what to show as an expansion text, which is crucial when producing tagged PDF files.
 	</p></div></div></details>
 
 <details><summary class="ext" id="prop-prince-fallback-cmyk-profile">prince-fallback-cmyk-profile*  <a class="self-link" href="#prop-prince-fallback-cmyk-profile"></a></summary><div><div><div id="prop-prince-fallback-cmyk-profile-syntax">Syntax</div><div class="example"><div class="syntax-block"><pre><code>prince-fallback-cmyk-profile: url(&#160;<i>filename</i>&#160;)</code></pre></div></div></div><div><div class="example"><div class="syntax-block"><table class="property-table"><tr><th scope="row">
