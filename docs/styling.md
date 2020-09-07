@@ -97,11 +97,16 @@ Note that the [`font-variant`](css-props.md#prop-font-variant) CSS property can 
     font-variant: historical-ligatures all-small-caps oldstyle-nums;
 ```
 
-Prince also supports language-specific OpenType shaping with the `locl` feature, which is automatically enabled with the use of XML/HTML `lang` attribute.
+Prince also supports language-specific OpenType shaping with the `locl` feature, which is automatically enabled with the use of the XML/HTML `lang` attribute.  As an example, the Arno Pro font has small-caps that are language sensitive, since Turkish has unique case rules for dotted and dotless letter "i".
 
-```xml
-    <para xml:lang="de">Dies ist auf Deutsch.</para>
+```html
+    <p><span xml:lang="en">IJK</span> (English)</p>
+    <p><span xml:lang="tr">IJK</span> (Turkish)</p>
 ```
+
+If this example is rendered with small-caps in the Arno Pro font, the two lines will look like this:
+
+![Language-specific OpenType shaping](assets/images/opentype-shaping.png)
 
 It is possible to also enable other OpenType features, not covered by the previous properties, by using the [`font-variant`](css-props.md#prop-font-variant) CSS property with the `prince-opentype()` function (see [CSS Functional Expressions](css-refs.md#css-functional-expressions)).
 
