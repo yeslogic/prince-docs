@@ -97,6 +97,12 @@ Note that the [`font-variant`](css-props.md#prop-font-variant) CSS property can 
     font-variant: historical-ligatures all-small-caps oldstyle-nums;
 ```
 
+Prince also supports language-specific OpenType shaping with the `locl` feature, which is automatically enabled with the use of XML/HTML `lang` attribute.
+
+```xml
+    <para xml:lang="de">Dies ist auf Deutsch.</para>
+```
+
 It is possible to also enable other OpenType features, not covered by the previous properties, by using the [`font-variant`](css-props.md#prop-font-variant) CSS property with the `prince-opentype()` function (see [CSS Functional Expressions](css-refs.md#css-functional-expressions)).
 
 It is a very powerful tool, but care must be taken in which order the features are enabled!  All required features need to be explicitly enabled: please note that enabling one feature will disable all the default features.
