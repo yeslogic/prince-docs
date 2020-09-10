@@ -1052,7 +1052,7 @@ In this section you find the documentation for the supported CSS functional expr
 <tr>
 <td><code>calc( <i>expression</i> )</code></td>
 <td>Calculates the expression's result, to be used as the value.</td>
-<td><i>length</i> and <i>color</i> values</td>
+<td></td>
 </tr>
 <tr>
 <td><code>var( <i>custom-property-name</i> [,&#160;<i>fallback</i>]? )</code></td>
