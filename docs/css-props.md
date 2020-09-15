@@ -2581,7 +2581,7 @@ supplier, item { overflow-wrap: normal; }
 	line-breaking behavior is preferred.
 	</p></div><div><div id="prop-prince-linebreak-magic-seealso">See Also</div><ul><li><a href="/doc/styling#paragraph-formatting">Paragraph formatting</a></li></ul></div></div></details>
 
-<details><summary class="ext" id="prop-prince-line-break-choices">prince-line-break-choices*  <a class="self-link" href="#prop-prince-line-break-choices"></a></summary><div><div><div id="prop-prince-line-break-choices-syntax">Syntax</div><div class="example"><div class="syntax-block"><pre><code>prince-line-break-choices: body |&#160;heading |&#160;title |&#160;body-lookahead |&#160;heading-lookahead |&#160;title-lookahead |&#160;fast</code></pre></div></div></div><div><div class="example"><div class="syntax-block"><table class="property-table"><tr><th scope="row">
+<details><summary class="ext" id="prop-prince-line-break-choices">prince-line-break-choices*  <a class="self-link" href="#prop-prince-line-break-choices"></a></summary><div><div><div id="prop-prince-line-break-choices-syntax">Syntax</div><div class="example"><div class="syntax-block"><pre><code>prince-line-break-choices: body |&#160;heading |&#160;title |&#160;body-gready |&#160;body-lookahead |&#160;heading-gready |&#160;heading-lookahead |&#160;title-gready |&#160;title-lookahead |&#160;fast</code></pre></div></div></div><div><div class="example"><div class="syntax-block"><table class="property-table"><tr><th scope="row">
           Initial value
         </th><td><code>body</code></td></tr><tr><th scope="row">
           Applies to
@@ -2601,10 +2601,13 @@ supplier, item { overflow-wrap: normal; }
     and is more willing to make the first line(s) a little shorter if doing so
     avoids a short last line.
     </p><p>
-    The <code>*-lookahead</code> keywords enable paragraph-at-a-time line-breaking
-    for the paragraph in a non-justified paragraph: choosing where to end the line
-    not just based on what seems best for the current line, but also considering
-    the effect on future lines.
+    The <code>\*-greedy</code> keywords decide on line breaks solely based on the
+    current line and on the length of the next word, never going back to change a
+    decision on a line in the light of line-breaknig issues encountered later.
+    </p><p>
+    The <code>\*-lookahead</code> keywords, on the other hand, enable paragraph-at-a-time
+    line-breaking not just based on what seems best for the current line, but also
+    considering the effect on future lines.
     </p><p>
     The keyword <code>fast</code> can be used for quick web-browers&#8211;style line
     breaking, useful for testing the effect of styling changes that don't depend
@@ -3160,7 +3163,7 @@ supplier, item { overflow-wrap: normal; }
     if in the end of a word, where the replacement is reversed.
 	</p></div><div><div id="prop-prince-text-replace-seealso">See Also</div><ul><li><a href="/doc/characters">Character Entities</a></li></ul></div></div></details>
 
-<details><summary class="ext" id="prop-prince-text-wrap">prince-text-wrap*  <a class="self-link" href="#prop-prince-text-wrap"></a></summary><div><div><div id="prop-prince-text-wrap-syntax">Syntax</div><div class="example"><div class="syntax-block"><pre><code>prince-text-wrap: body |&#160;heading |&#160;title |&#160;body-lookahead |&#160;heading-lookahead |&#160;title-lookahead |&#160;fast</code></pre></div></div></div><div><div class="example"><div class="syntax-block"><table class="property-table"><tr><th scope="row">
+<details><summary class="ext" id="prop-prince-text-wrap">prince-text-wrap*  <a class="self-link" href="#prop-prince-text-wrap"></a></summary><div><div><div id="prop-prince-text-wrap-syntax">Syntax</div><div class="example"><div class="syntax-block"><pre><code>prince-text-wrap: body |&#160;heading |&#160;title |&#160;body-gready |&#160;body-lookahead |&#160;heading-gready |&#160;heading-lookahead |&#160;title-gready |&#160;title-lookahead |&#160;fast</code></pre></div></div></div><div><div class="example"><div class="syntax-block"><table class="property-table"><tr><th scope="row">
           Initial value
         </th><td><code>body</code></td></tr><tr><th scope="row">
           Applies to
@@ -3180,10 +3183,13 @@ supplier, item { overflow-wrap: normal; }
     and is more willing to make the first line(s) a little shorter if doing so
     avoids a short last line.
     </p><p>
-    The <code>*-lookahead</code> keywords enable paragraph-at-a-time line-breaking
-    for the paragraph in a non-justified paragraph: choosing where to end the line
-    not just based on what seems best for the current line, but also considering
-    the effect on future lines.
+    The <code>\*-greedy</code> keywords decide on line breaks solely based on the
+    current line and on the length of the next word, never going back to change a
+    decision on a line in the light of line-breaknig issues encountered later.
+    </p><p>
+    The <code>\*-lookahead</code> keywords, on the other hand, enable paragraph-at-a-time
+    line-breaking not just based on what seems best for the current line, but also
+    considering the effect on future lines.
     </p><p>
     The keyword <code>fast</code> can be used for quick web-browers&#8211;style line
     breaking, useful for testing the effect of styling changes that don't depend
