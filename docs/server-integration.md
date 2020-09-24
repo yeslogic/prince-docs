@@ -399,9 +399,13 @@ If, however, you want to run a specific Prince version, rather than the latest, 
 docker run --rm -it yeslogic/prince:13.1
 ```
 
+### Prince on Microsoft Azure
+
+Running Prince on Microsoft Azure is quite straightforward: we have a tutorial and a package for [deploying Prince on Azure](https://github.com/yeslogic/azure-prince-example/).  This is a Visual Studio 2019 project that demonstrates generating a PDF with Prince in C#/ASP.NET Core. It uses the [Prince C#/.Net Wrapper](#the-c--net-wrapper) and has been confirmed to work when deployed as an App Service on Microsoft Azure.
+
 ### Prince on AWS Lambda
 
-Setting up Prince on AWS Lambda is not much more difficult than setting it up for Docker.  Bruce Lawson has written a detailed article on how to [set up Prince on AWS Lambda](https://medium.com/@bruce_39084/setting-up-prince-on-aws-lambda-and-api-gateway-4d524dcb035b) using Node.js, with all the required steps.
+Setting up Prince on AWS Lambda is not much more difficult than setting it up for Docker or Azure.  Bruce Lawson has written a detailed article on how to [set up Prince on AWS Lambda](https://medium.com/@bruce_39084/setting-up-prince-on-aws-lambda-and-api-gateway-4d524dcb035b) using Node.js, with all the required steps.
 
 ### Prince on EC2
 

@@ -149,6 +149,7 @@ Frequently Asked Questions
   or by trying to install the missing dependencies.</p>
   <p>Our chapter on <a href="server-integration#prince-in-cloud-computing">Prince In Cloud Computing</a>
   details installation instructions for Prince on <a href="server-integration#prince-docker-image">Docker</a>,
+  <a href="server-integration#prince-on-microsoft-azure">Microsoft Azure</a>,
   <a href="server-integration#prince-on-aws-lambda">AWS Lambda</a> and
   <a href="server-integration#prince-on-ec2">AWS EC2</a>.</p>
   <p>See also <a href="https://www.princexml.com/forum/topic/2094/silent-installation-on-windows#20332">this forum post</a>
