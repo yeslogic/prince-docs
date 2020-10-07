@@ -2832,7 +2832,7 @@ supplier, item { overflow-wrap: normal; }
     and also for PDF/A-1a and PDF/A-3a which technically do not require it but
     users may still expect it - or they will see a warning if they run the
     Adobe accessibility checker on their PDFs.
-    </p></div></div></details>
+    </p></div><div><div id="prop-prince-pdf-display-doc-title-seealso">See Also</div><ul><li><a href="/doc/prince-output#pdf-pages">PDF Pages</a></li></ul></div></div></details>
 
 <details><summary class="ext" id="prop-prince-pdf-duplex">prince-pdf-duplex*  <a class="self-link" href="#prop-prince-pdf-duplex"></a></summary><div><div><div id="prop-prince-pdf-duplex-syntax">Syntax</div><div class="example"><div class="syntax-block"><pre><code>prince-pdf-duplex: auto |&#160;simplex |&#160;duplex-flip-short-edge |&#160;duplex-flip-long-edge</code></pre></div></div></div><div><div class="example"><div class="syntax-block"><table class="property-table"><tr><th scope="row">
           Initial value
