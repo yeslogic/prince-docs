@@ -2847,7 +2847,7 @@ supplier, item { overflow-wrap: normal; }
     <a href="/doc/css-refs#at-prince-pdf"><code>@prince-pdf</code></a>
     at-rule to set the <code>Duplex</code> property in the
     <code>PDFViewerPreferences</code> dictionary.
-	</p></div></div></details>
+	</p></div><div><div id="prop-prince-pdf-duplex-seealso">See Also</div><ul><li><a href="/doc/prince-output#pdf-printing">PDF Printing</a></li></ul></div></div></details>
 
 <details><summary class="ext" id="prop-prince-pdf-event-scripts">prince-pdf-event-scripts*  <a class="self-link" href="#prop-prince-pdf-event-scripts"></a></summary><div><div><div id="prop-prince-pdf-event-scripts-syntax">Syntax</div><div class="example"><div class="syntax-block"><pre><code>prince-pdf-event-scripts: <br />&#160;&#160;&#160;none
 &#160;&#160;&#160;|&#160;[ [ will-close |&#160;will-save |&#160;did-save |&#160;will-print |&#160;did-print ] [ "JavaScript" |&#160;<i>url</i> ] ]#</code></pre></div></div></div><div><div class="example"><div class="syntax-block"><table class="property-table"><tr><th scope="row">
@@ -3068,7 +3068,7 @@ supplier, item { overflow-wrap: normal; }
     </p><p class="note">
     This property requires either a URL pointing to an XMP
     file, or an encoded <code>data:</code> URL.
-    </p></div></div></details>
+    </p></div><div><div id="prop-prince-pdf-xmp-seealso">See Also</div><ul><li><a href="/doc/prince-output#xmp-metadata">XMP Metadata</a></li></ul></div></div></details>
 
 <details><summary class="ext" id="prop-prince-rotate-body">prince-rotate-body*  <a class="self-link" href="#prop-prince-rotate-body"></a></summary><div><div><div id="prop-prince-rotate-body-syntax">Syntax</div><div class="example"><div class="syntax-block"><pre><code>prince-rotate-body: portrait |&#160;landscape |&#160;<i>angle</i></code></pre></div></div></div><div><div class="example"><div class="syntax-block"><table class="property-table"><tr><th scope="row">
           Initial value
@@ -3114,7 +3114,7 @@ supplier, item { overflow-wrap: normal; }
     documentation for more details.
 	</p><p class="note">
         The property <a href="#prop-table-column-span"><code>table-column-span</code></a> can be used as an alias.
-        </p></div></div></details>
+        </p></div><div><div id="prop-prince-table-column-span-seealso">See Also</div><ul><li><a href="/doc/styling#tables">Tables</a></li></ul></div></div></details>
 
 <details><summary class="ext" id="prop-prince-table-row-span">prince-table-row-span*  <a class="self-link" href="#prop-prince-table-row-span"></a></summary><div><div><div id="prop-prince-table-row-span-syntax">Syntax</div><div class="example"><div class="syntax-block"><pre><code>prince-table-row-span: <i>number</i> |&#160;attr(&#160;<i>rowspan</i>&#160;)</code></pre></div></div></div><div><div class="example"><div class="syntax-block"><table class="property-table"><tr><th scope="row">
           Initial value
@@ -3130,7 +3130,7 @@ supplier, item { overflow-wrap: normal; }
     documentation for more details.
 	</p><p class="note">
         The property <a href="#prop-table-row-span"><code>table-row-span</code></a> can be used as an alias.
-        </p></div></div></details>
+        </p></div><div><div id="prop-prince-table-row-span-seealso">See Also</div><ul><li><a href="/doc/styling#tables">Tables</a></li></ul></div></div></details>
 
 <details><summary class="ext" id="prop-prince-text-justify">prince-text-justify*  <a class="self-link" href="#prop-prince-text-justify"></a></summary><div><div><div id="prop-prince-text-justify-syntax">Syntax</div><div class="example"><div class="syntax-block"><pre><code>prince-text-justify: auto |&#160;prince-cjk</code></pre></div></div></div><div><div class="example"><div class="syntax-block"><table class="property-table"><tr><th scope="row">
           Initial value
