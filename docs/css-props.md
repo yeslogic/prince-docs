@@ -3035,7 +3035,7 @@ supplier, item { overflow-wrap: normal; }
     in many cases might only work in Adobe Acrobat products.
     </p></div><div><div id="prop-prince-pdf-script-seealso">See Also</div><ul><li><a href="/doc/prince-output#pdf-actions">PDF Actions</a></li></ul></div></div></details>
 
-<details><summary class="ext" id="prop-prince-pdf-tag-type">prince-pdf-tag-type*  <a class="self-link" href="#prop-prince-pdf-tag-type"></a></summary><div><div><div id="prop-prince-pdf-tag-type-syntax">Syntax</div><div class="example"><div class="syntax-block"><pre><code>prince-pdf-tag-type: auto |&#160;Part |&#160;Art |&#160;Sect |&#160;Div |&#160;Index |&#160;BlockQuote |&#160;Caption |&#160;TOC |&#160;TOCI |&#160;P |&#160;H1 |&#160;H2 |&#160;H3 |&#160;H4 |&#160;H5 |&#160;H6 |&#160;OL |&#160;UL |&#160;LI |&#160;Lbl |&#160;DL |&#160;DL-Div |&#160;DT |&#160;DD |&#160;Span |&#160;Quote |&#160;Table |&#160;BibEntry |&#160;Code |&#160;Figure |&#160;Formula |&#160;Artifact</code></pre></div></div></div><div><div class="example"><div class="syntax-block"><table class="property-table"><tr><th scope="row">
+<details><summary class="ext" id="prop-prince-pdf-tag-type">prince-pdf-tag-type*  <a class="self-link" href="#prop-prince-pdf-tag-type"></a></summary><div><div><div id="prop-prince-pdf-tag-type-syntax">Syntax</div><div class="example"><div class="syntax-block"><pre><code>prince-pdf-tag-type: auto |&#160;Part |&#160;Art |&#160;Sect |&#160;Div |&#160;Index |&#160;BlockQuote |&#160;Caption |&#160;TOC |&#160;TOCI |&#160;P |&#160;H1 |&#160;H2 |&#160;H3 |&#160;H4 |&#160;H5 |&#160;H6 |&#160;OL |&#160;UL |&#160;LI |&#160;Lbl |&#160;DL |&#160;DL-Div |&#160;DT |&#160;DD |&#160;Span |&#160;Quote |&#160;Table |&#160;BibEntry |&#160;Code |&#160;Figure |&#160;Formula |&#160;Artifact |&#160;none</code></pre></div></div></div><div><div class="example"><div class="syntax-block"><table class="property-table"><tr><th scope="row">
           Initial value
         </th><td><code>auto</code></td></tr><tr><th scope="row">
           Applies to
@@ -3049,6 +3049,9 @@ supplier, item { overflow-wrap: normal; }
 }</code></pre></div></div></div><div><div id="prop-prince-pdf-tag-type-comments">Comments</div><p>
     This property is used to influence tagged PDF for XML vocabularies or when
     using custom HTML classes.  The possible values are PDF tag types.
+    </p>
+    <p>
+    The special value <code>none</code> can be used to make specific elements (such as e.g. wrapper span or block elements) transparent in a tagged PDF structure tree.
     </p></div><div><div id="prop-prince-pdf-tag-type-seealso">See Also</div><ul><li><a href="/doc/prince-output#pdf-tags">PDF Tags</a></li></ul></div></div></details>
 
 <details><summary class="ext" id="prop-prince-pdf-xmp">prince-pdf-xmp*  <a class="self-link" href="#prop-prince-pdf-xmp"></a></summary><div><div><div id="prop-prince-pdf-xmp-syntax">Syntax</div><div class="example"><div class="syntax-block"><pre><code>prince-pdf-xmp: url(&#160;<i>filename</i>&#160;)</code></pre></div></div></div><div><div class="example"><div class="syntax-block"><table class="property-table"><tr><th scope="row">

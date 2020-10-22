@@ -422,6 +422,8 @@ The possible values are the following PDF tag types:
 
 The default value `auto` leaves the tag assignment to Prince.
 
+The special value `none` can be used to make specific elements (such as e.g. wrapper span or block elements) transparent in a tagged PDF structure tree.
+
 Bruce Lawson has written an interesting introduction on how to make [accessible tagged PDFs with Prince](https://medium.com/@bruce_39084/making-accessible-tagged-pdfs-with-prince-ad7fd7a48711) - all you need to know about PDF tags and Prince!
 
 
