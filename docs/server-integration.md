@@ -125,17 +125,32 @@ To combine multiple HTML documents into a single PDF file, call `ConvertMultiple
     prn.ConvertMultiple(doc_array, "C:\docs\pdf\merged.pdf")
 ```
 
-### The PHP5 Wrapper
+### The PHP Wrapper
 
-Prince can be called from PHP using the [PHP interface](/download/wrappers/#wrapper-php5).
+Prince can be called from PHP using the [PHP interface](/download/wrappers/#wrapper-php).
 
-This package contains two files:
+Note that the Prince class requires PHP 5.3.0 or later.
+
+The package contains two files:
 
 -   The `prince.php` script and
 -   the [API documentation](https://github.com/yeslogic/prince-php-wrapper).
 
+The PHP wrapper is also [hosted on Packagist](https://packagist.org/packages/yeslogic/prince-php-wrapper), so that it can be used from Composer.  It can now be installed with the command-line:
+
+```bash
+    $ composer require yeslogic/prince-php-wrapper
+```
+
 The `prince.php` file contains the PHP class that provides the interface to Prince. The `readme.html` file lists the PHP class methods and explains how to use them.
 
+When instantiating the `Prince` class, pass in the full path of the Prince executable to the constructor as a string argument.
+
+```php
+    use Prince\Prince;
+
+    $prince = new Prince('/usr/bin/prince');
+```
 
 ### The ActiveX/COM Wrapper
 
