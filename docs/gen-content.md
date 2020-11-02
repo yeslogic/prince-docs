@@ -31,6 +31,16 @@ The content to be inserted can also be fetched from the attributes of other elem
 -   Any block-level element can be removed from the normal document flow, to be inserted in a page region: it is best removed with the [`position`](css-props.md#prop-position) property and its <code>running(<i>name</i>)</code> function, and inserted with the <code>element(<i>name</i>)</code> function. Alternatively, it can be removed with the [`prince-flow`](css-props.md#prop-prince-flow) property, to be inserted with the <code>flow(<i>name</i>)</code> function. See the documentation for [Taking elements from the document](paged.md#taking-elements-from-the-document) for more details.
 -   An element can be referenced with the <code>string(<i>ident</i>)</code> function after having been defined in the [`string-set`](css-props.md#prop-string-set) property with the `content()` function. This does not remove the element from the natural document flow, but instead copies it into the page region. See [Copying content from the document](paged.md#copying-content-from-the-document).
 
+The function <code>prince-expansion-text(<i>expansion</i>, <i>abbreviation</i>)</code> is useful with tagged PDF files by resolving abbreviations in the targeted element or psedudo-element.
+
+```css
+    p::after {
+      content: "see " prince-expansion-text("page ", "p. ") target-counter(attr(href), page);
+    }
+```
+
+This example might show the text "see p. 17" and the tagged PDF structure tree will treat the "p." as an abbreviation with the full expanded text being "see page 17".  The CSS property [prince-expansion-text](css-props.md#prop-prince-expansion-text) works in a similar fashion.
+
 The following functions can also be used for different forms of counters:
 
 -   the <code>counter(<i>name</i>)</code> function generates a value for the innermost counter,

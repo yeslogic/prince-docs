@@ -1133,6 +1133,10 @@ different properties.</td>
 <a href="/doc/paged#taking-elements-from-the-document">Taking elements from the document</a>.</td>
 </tr>
 <tr>
+<td><code>prince-expansion-text( <i>expansion</i>, <i>abbreviation</i> )</code></td>
+<td>Resolves abbreviations in the targeted element or psedudo-element.</td>
+</tr>
+<tr>
 <td><code>counter( <i>name</i>, <i>counter-style</i>?, <i>page-policy</i>? )</code></td>
 <td>Generates a value for the innermost counter.</td>
 </tr>
