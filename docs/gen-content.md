@@ -21,10 +21,16 @@ The most simple use of generating content in these properties is to insert a lit
 The properties can also insert external content fetched from another resource. This can be done with the following functions:
 
 -   the <code>url(<i>url</i>)</code> function, returning the text content at the given URL,
--   the <code>target-content(<i>url</i>)</code> function, referencing the text content of the linked element (see [Using target-content()](#using-target-content)), or
+-   the <code>target-content(<i>url</i>)</code> function, referencing the text content of the linked element (see [Using target-content()](#using-target-content) for an example), or
 -   the `prince-base-url()` function, returning the base URL of the current document.
 
 It can also be done with the <code>prince-fallback(<i>url</i>)</code> function, which works just like the `url()` function, but also has the possibility of specifying a fallback `content`, in case the loading of the URL should fail.
+
+```css
+    img {
+      content: prince-fallback(attr(src, url)), attr(data-altsrc, url);
+    }
+```
 
 The content to be inserted can also be fetched from the attributes of other elements with the <code>attr(<i>attribute-name</i>)</code> function, or from other elements with the following mechanisms:
 
@@ -48,9 +54,27 @@ The following functions can also be used for different forms of counters:
 -   the <code>target-counter(<i>url</i>, <i>counter</i>)</code> function retrieves the value of the innermost counter with a given name at the given URL, and
 -   the <code>target-counters(<i>url</i>, <i>counter</i>, "separator")</code> function retrieves the value of all counters of a given name from the end of the given URL.
 
+For a detailed survey on counters, please see the chapter [Counters and Numbering](#counters-and-numbering).
+
 All counter functions can take an optional argument to define the counter style (see [Counter styles](#counter-styles)). Prince also offers two mechanisms to create user-defined counter styles: either by means of the `prince-script()` function (see below, and [User-defined counter styles](#user-defined-counter-styles)), or by means of the generated content functions <code>repeat(<i>string</i>+)</code>, defining a sequentially repeated pattern for numbering the items, or <code>symbols(<i>string</i>+)</code>, defining the symbols used for numbering the items.
 
-Last but not least, Prince supports arbitrary JavaScript functions to be called from CSS generated content using the `prince-script()` function (see [Script Functions](#script-functions)).
+```css
+    h4::before {
+      content: counter(h4, repeat("x", "y", "z"))
+    }
+```
+
+The `repeat()` function defines a sequentially repeated pattern for numbering the items - here it will yield the sequence "x, y, z, xx, yy, zz" etc.
+
+```css
+    h4::before {
+      content: counter(h4, symbols("x", "y", "z"))
+    }
+```
+
+The `symbols()` function defines the symbols used for numbering the items - in this case it will yield the sequence "x, y, z, 4, 5, 6" etc.
+
+Last but not least, Prince supports arbitrary JavaScript functions to be called from CSS generated content using the `prince-script()` function (see [Script Functions](#script-functions) for details and examples).
 
 A special function is <code>prince-glyph-index(<i>int</i>)</code>, which allows to choose a glyph from a font by the index of that glyph in the font. Note that this is very non-portable, as glyph indices are specific to individual font versions. But it is a possible escape hatch for people who need a specific glyph and don't have any other way of accessing it (by Unicode character or OpenType substitution).
 
