@@ -18,6 +18,24 @@ See also the section on [CSS Functional Expressions](css-refs#css-functional-exp
 
 The most simple use of generating content in these properties is to insert a literal string. A literal string can also be passed as an argument to the `leader()` function, which expands to fill the available space on the line like justified text, by repeating the string as many times as necessary. An optional second argument can be used to specify a minimum width.
 
+HTML
+
+```html
+<ul id="index">
+  <li><a href="#chapter1">Chapter 1</a></li>
+  <li><a href="#chapter2">Chapter 2</a></li>
+</ul>
+```
+
+CSS
+
+```css
+    #index a:after {
+      content: leader('.') "p. " target-counter(attr(href), page);
+    }
+```
+The above example will generate something looking like "Chapter 1..................p. 5", assuming that chapter 1 indeed starts on page 5!  See below for the two other functions appearing in this example, namely `target-counter()` and `attr()`.
+
 The properties can also insert external content fetched from another resource. This can be done with the following functions:
 
 -   the <code>url(<i>url</i>)</code> function, returning the text content at the given URL,
@@ -46,6 +64,8 @@ The function <code>prince-expansion-text(<i>expansion</i>, <i>abbreviation</i>)<
 ```
 
 This example might show the text "see p. 17" and the tagged PDF structure tree will treat the "p." as an abbreviation with the full expanded text being "see page 17".  The CSS property [prince-expansion-text](css-props.md#prop-prince-expansion-text) works in a similar fashion.
+
+Please note that the <code>prince-expansion-text()</code> function <em>only</em> works in the [content](css-props.md#prop-content) property, and not in the other properties for whom generated content functions work.
 
 The following functions can also be used for different forms of counters:
 
