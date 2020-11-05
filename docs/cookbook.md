@@ -1014,7 +1014,7 @@ A problematic situation arises when you want to modify your document after layou
 
 To address this problem, Prince offers the possibility to delay the generation of a PDF and to register the function [`Prince.registerPostLayoutFunc(func)`](js-support.md#window.Prince.registerPostLayoutFunc), which is called after layout finished, similar to the current `oncomplete` event. If this function modifies the DOM, Prince will perform layout again on the updated document once the function returns, and before generating the PDF.
 
-The post layout function can register itself, or another post layout function, in order to repeat this process multiple times! By default the number of passes is limited to two, but this can be increased by using the [`--max-passes=N`](command-line.md#cl-max-passes) command-line option.
+The post layout function can register itself, or another post layout function, in order to repeat this process multiple times! By default the number of passes is not limited, but in order to prevent endless layout loops you can set a limit by using the [`--max-passes=N`](command-line.md#cl-max-passes) command-line option.
 
 Here is a minimalistic "multi-pass" solution where the document is adorned with a ToC and index:
 
