@@ -572,9 +572,7 @@ or <code>li</code> enough left margin.
 
 #### List marker type
 
-Different list marker types can be chosen by setting the CSS property [`list-style-type`](css-props.md#prop-list-style-type) to different values: `disc` | `hyphen` | `decimal` | `lower-alpha` | ...
-
-The property [`list-style-type`](css-props.md#prop-list-style-type) applies to list items and determines the type of marker that they receive. The following table shows examples of some list style types (for a table with examples of supported options for ordered lists, see [Counter styles](gen-content.md#counter-styles)).
+Different list marker types can be chosen by setting the CSS property [`list-style-type`](css-props.md#prop-list-style-type) to different values. This property applies to list items and determines the type of marker that they receive. The following table shows examples of some list style types (for a table with examples of supported options for ordered lists, see [Counter styles](gen-content.md#counter-styles)).
 
 |                              |                                 |
 |------------------------------|---------------------------------|
