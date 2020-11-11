@@ -60,6 +60,10 @@ Prince also provides a different interface to the functionality of the
 function.</td>
 </tr>
 <tr>
+<td><a href="https://www.w3.org/TR/css-lists-3/">CSS Lists Module Level 3</a></td>
+<td>Prince does not support the <code>marker-side</code> and <code>counter-set</code> properties.</td>
+</tr>
+<tr>
 <td><a href="https://www.w3.org/TR/css-gcpm-3/">CSS Generated Content for Paged Media Module</a></td>
 <td>Prince recognizes <code>footnote-display</code> and <code>string-set</code> as
 well as the mechanism for running elements.  It does not recognize the

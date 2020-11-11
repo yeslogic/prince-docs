@@ -1730,7 +1730,7 @@ For the values, the grammar draws on the [CSS Values and Units Module Level 3](h
           Inherited
         </th><td>
                   yes
-                </td></tr></table></div></div></div><div /><div><div id="prop-list-style-type-seealso">See Also</div><ul><li><a href="/doc/styling#lists">Lists</a></li><li><a href="gen-content#counters-and-numbering">Counters and Numbering</a></li></ul></div><div><div id="prop-list-style-type-spec">Specification</div><ul><li><a href="https://www.w3.org/TR/CSS2/generate.html#propdef-list-style-type">CSS 2.1</a></li></ul></div></div></details>
+                </td></tr></table></div></div></div><div /><div><div id="prop-list-style-type-seealso">See Also</div><ul><li><a href="/doc/styling#lists">Lists</a></li><li><a href="gen-content#counters-and-numbering">Counters and Numbering</a></li></ul></div><div><div id="prop-list-style-type-spec">Specification</div><ul><li><a href="https://www.w3.org/TR/CSS2/generate.html#propdef-list-style-type">CSS 2.1</a></li><li><a href="https://www.w3.org/TR/2002/WD-css3-lists-20021107/#ltglyphgt">CSS3 module: Lists (W3C Working Draft 7 November 2002)</a></li><li><a href="https://www.w3.org/TR/css-lists-3/">CSS Lists Module Level 3</a></li></ul></div></div></details>
 
 <details><summary id="prop-margin">margin <a class="self-link" href="#prop-margin"></a></summary><div><div><div id="prop-margin-syntax">Syntax</div><div class="example"><div class="syntax-block"><pre><code>margin: [ auto |&#160;<i>length</i> |&#160;<i>percent</i> ]{1..4}</code></pre></div></div></div><div><div class="example"><div class="syntax-block"><table class="property-table"><tr><th scope="row">
           Initial value
