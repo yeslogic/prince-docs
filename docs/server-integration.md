@@ -4,19 +4,6 @@ title: Server Integration
 
 Prince can be used server-side to produce PDFs, invoked by a wrapper script. Some care needs to be used in the configuration to make it reliable and secure.
 
-Security and performance
-------------------------
-
-When you control the input, Prince produces the expected output. But when you have no control on the input, as happens when running Prince on a server, it might be important to harden the installation in order to reduce a possible surface of vulnerability. Prince offers some options to aid the configuration, while other possibilities depend on the environment configuration on the server.
-
-It might be a good precaution to run Prince with the command-line option [`--no-local-files`](command-line.md#cl-no-local-files) in order to exclude any unwanted access to the local file system. It is also a good idea *not* to enable [`--xml-external-entities`](command-line.md#cl-xxe) or [`--xinclude`](command-line.md#cl-xinclude) (they are not enabled by default).
-
-A more comprehensive hardening practice is to run Prince in a chroot/jail/vms/container. Prince needs access to several libraries it depends on, as well as fonts and SSL certificates. To check direct dependencies, run the following command:
-
-`ldd /usr/lib/prince/bin/prince`
-
-When running multiple instances of Prince, it might be advisable to disable parallel rasterization with the command-line option [`--raster-threads=1`](command-line.md#cl-raster-threads) to improve throughput. Setting `GC_MARKERS=1` in the environment will do the same for garbage collection threads.
-
 Prince Wrappers
 ---------------
 
@@ -681,4 +668,26 @@ Fail if glyphs cannot be found for any characters.
 Usually Prince will try hard to solve any unexpected issues that arise, prioritizing the creation of a PDF - missing glyphs would be represented as a question mark ("?") and resources not loaded would simply be dropped. The fail-safe options are there to prevent the creation of broken PDFs due to temporary network problems or unexpected font issues. If the condition specified with one of the command-line options is triggered, the conversion will return an explicit failure status, and no PDF is created. Appropriate action to identify and fix the problem can be taken before attempting a new conversion.
 
 The JavaScript property [`Prince.failStatus`](js-support.md#window.Prince.failStatus) can also be used to trigger an explicit failure status based on custom criteria. See also under [The Prince Object](javascript.md#js-prince-obj).
+
+
+Security
+--------
+
+When you control the input, Prince produces the expected output - you are dealing with trusted input with no (intentional) malicious code.
+
+But when you have no control on the input - as happens when running Prince on a server, where all content is contributed by other users and thus must be considered untrusted - it might be important to harden the installation in order to reduce a possible surface of vulnerability. Installing Prince in a chroot, a jail, a vms or a container is the a good measure to be taken. See also [Prince In Cloud Computing](#prince-in-cloud-computing). As a general rule, consider that, in order to function best, Prince will need to have access not only to several shared libraries, but also to fonts, and possibly SSL certificates.
+
+Prince also offers some options to aid the configuration:
+* run Prince with the command-line option [`--no-local-files`](command-line.md#cl-no-local-files) in order to exclude any unwanted access to the local file system
+* do *not* enable [`--xml-external-entities`](command-line.md#cl-xxe) or [`--xinclude`](command-line.md#cl-xinclude) (they are not enabled by default).
+
+A more comprehensive hardening practice is to run Prince in a chroot/jail/vms/container. Prince needs access to several libraries it depends on, as well as fonts and SSL certificates. To check direct dependencies, run the following command:
+
+`ldd /usr/lib/prince/bin/prince`
+
+
+Performance
+-----------
+
+When running multiple instances of Prince, it might be advisable to disable parallel rasterization with the command-line option [`--raster-threads=1`](command-line.md#cl-raster-threads) to improve throughput. Setting `GC_MARKERS=1` in the environment will do the same for garbage collection threads.
 
