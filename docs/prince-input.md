@@ -14,6 +14,8 @@ The input files can be provided in several ways:
 
 Input files can either be local files, or remote files that will be fetched over HTTP or HTTPS, in which case the URL to the file, or to the site, needs to be provided. Prince will automatically create the PDF output once the input pages and files have finished loading.
 
+Last but not least, it is good practice familiarizing yourself with the security implications of HTML, CSS or JavaScript files provided by users we do not have total control over - please see the chapter on [Security](server-integration.md#security).
+
 
 Applying Style Sheets in Prince
 -------------------------------
