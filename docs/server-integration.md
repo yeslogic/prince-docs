@@ -373,7 +373,7 @@ Prince In Cloud Computing
 --------------------------
 
 Prince can easily be deployed on many different cloud computing platforms and solutions.  As example deployments,
-we detail here installation procedures for Prince on Docker, AWS Lambda and AWS EC2.
+we detail here installation procedures for Prince on Docker, Azure, AWS Lambda and AWS EC2.
 
 ### Prince Docker Image
 
