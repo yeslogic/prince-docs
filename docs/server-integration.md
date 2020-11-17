@@ -673,17 +673,49 @@ The JavaScript property [`Prince.failStatus`](js-support.md#window.Prince.failSt
 Security
 --------
 
-When you control the input, Prince produces the expected output - you are dealing with trusted input with no (intentional) malicious code.
+When you control the input, Prince produces the expected output - you are dealing with trusted input with no (intentionally) malicious code.
 
-But when you have no control on the input - as happens when running Prince on a server, where all content is contributed by other users and thus must be considered untrusted - it might be important to harden the installation in order to reduce a possible surface of vulnerability. Installing Prince in a chroot, a jail, a vms or a container is the a good measure to be taken. See also [Prince In Cloud Computing](#prince-in-cloud-computing). As a general rule, consider that, in order to function best, Prince will need to have access not only to several shared libraries, but also to fonts, and possibly SSL certificates.
+But when you have no control over the input - as happens when running Prince on a server, where all content is contributed by other users, and thus must be considered untrusted - it is important to take some precautions to avoid any unexpected, or even harmful things happening.
 
-Prince also offers some options to aid the configuration:
-* run Prince with the command-line option [`--no-local-files`](command-line.md#cl-no-local-files) in order to exclude any unwanted access to the local file system
-* do *not* enable [`--xml-external-entities`](command-line.md#cl-xxe) or [`--xinclude`](command-line.md#cl-xinclude) (they are not enabled by default).
+### Untrusted Input
 
-A more comprehensive hardening practice is to run Prince in a chroot/jail/vms/container. Prince needs access to several libraries it depends on, as well as fonts and SSL certificates. To check direct dependencies, run the following command:
+A first step is to thoroughly filter and escape all untrusted content - this includes all text, HTML, XML, SVG, CSS and JavaScript fed to Prince.  All untrusted HTML tags and attributes need to be sanitised with standard HTML sanitising procedures (whitelisting is always your safer option) before reaching Prince.
 
-`ldd /usr/lib/prince/bin/prince`
+This procedure is the same standard safety precaution taken when passing untrusted data to web applications and web forms.
+
+### XML External Entities and XInclude
+
+XML offers various ways of including external content in the parsing, namely external entities, and XInclude.
+
+The XML standard defines entities as storage units. External entities can access local or remote content through a declared system identifier. This system identifier is assumed to be a URI that is being accessed by the XML processor when processing this entity: the XML processor replaces all occurences of the named external entity with the contents dereferenced by the system identifier. This can lead to accessing and disclosing information normally not accessible by the XML file.
+
+XInclude is a generic mechanism for including XML or non-XML data in XML files - see [XML Inclusions (XInclude)](prince-input.md#xml-inclusions-xinclude) for more details.
+
+It is highly recommended to never enable XML external entities ([`--xml-external-entities`](command-line.md#cl-xxe)) or XInclude ([`--xinclude`](command-line.md#cl-xinclude)) when dealing with untrusted data! These options are not enabled by default.
+
+### Local Files
+
+However, XML external entities and XInclude are not the only way for accessing local files!  Any image, CSS or JavaScript file in an HTML file can point to a local resource!  This can potentially lead to exposing resources that need to be kept confidential.
+
+By default, Prince has access to local files!
+
+It is good and safe practice to run Prince with the command-line option [`--no-local-files`](command-line.md#cl-no-local-files) in order to exclude any unwanted access to the local file system when dealing with untrusted content.
+
+### Network Resources
+
+Similarly, it might be desirable to prevent a document fed to Prince to access other external resources over the network, which might possibly circumvent the filtering and escaping mechanisms you might have put in place.
+
+Run Prince with the [`--no-network`](command-line.md#cl-no-network) command-line option to prevent all HTTP downloads.
+
+### Running Prince in a Container
+
+A more comprehensive hardening practice is to run Prince in a chroot, a jail, a VM or a container.
+
+As a general rule, consider that, in order to function best, Prince will need to have access not only to several shared libraries, but also to fonts, and possibly SSL certificates.
+
+For ease of use, Prince offers its own, maintained [Docker Images](https://hub.docker.com/r/yeslogic/prince).  See also [Prince In Cloud Computing](#prince-in-cloud-computing) for more installation guides in cloud containers.
+
+
 
 
 Performance
