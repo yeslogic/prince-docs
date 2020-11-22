@@ -681,13 +681,15 @@ But when you have no control over the input - as happens when running Prince on 
 
 A first step is to thoroughly filter and escape all untrusted content - this includes all text, HTML, XML, SVG, CSS and JavaScript fed to Prince.  All untrusted HTML tags and attributes need to be sanitised with standard HTML sanitising procedures (whitelisting is always your safer option) before reaching Prince.
 
-This procedure is the same standard safety precaution taken when passing untrusted data to web applications and web forms.
+This procedure is the same standard safety precaution taken when passing untrusted data to web applications and web forms.  As a starting point, the OWASP Cross Site Scripting Prevention Cheat Sheet has some nice suggestions, summed up in a series of [XSS Prevention Rules](https://cheatsheetseries.owasp.org/cheatsheets/Cross_Site_Scripting_Prevention_Cheat_Sheet.html#xss-prevention-rules).
+
+There are also some ready-made [libraries](https://lib.rs/crates/sanitize_html) to help you [sanitize](https://github.com/rgrove/sanitize) your HTML and CSS.
 
 ### XML External Entities and XInclude
 
 XML offers various ways of including external content in the parsing, namely external entities, and XInclude.
 
-The XML standard defines entities as storage units. External entities can access local or remote content through a declared system identifier. This system identifier is assumed to be a URI that is being accessed by the XML processor when processing this entity: the XML processor replaces all occurences of the named external entity with the contents dereferenced by the system identifier. To make use of external entities, they have to explicitly be enabled with the command-line option [`--xml-external-entities`](command-line.md#cl-xxe). However, be aware that this can lead to accessing and disclosing information normally not accessible by the XML file.
+The XML standard allows for external entities, which can access local or remote content through a declared system identifier by replacing the entity with the contents dereferenced by the system identifier. This may lead to the [disclosure of confidential data](https://cheatsheetseries.owasp.org/cheatsheets/XML_External_Entity_Prevention_Cheat_Sheet.html) and other nasty things. To make use of external entities, they have to explicitly be enabled with the command-line option [`--xml-external-entities`](command-line.md#cl-xxe).
 
 XInclude is a generic mechanism for including XML or non-XML data in XML files. It needs to be enabled with the command-line option [`--xinclude`](command-line.md#cl-xinclude) - see [XML Inclusions (XInclude)](prince-input.md#xml-inclusions-xinclude) for more details.
 
