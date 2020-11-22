@@ -683,7 +683,7 @@ A first step is to thoroughly filter and escape all untrusted content - this inc
 
 This procedure is the same standard safety precaution taken when passing untrusted data to web applications and web forms.  As a starting point, the OWASP Cross Site Scripting Prevention Cheat Sheet has some nice suggestions, summed up in a series of [XSS Prevention Rules](https://cheatsheetseries.owasp.org/cheatsheets/Cross_Site_Scripting_Prevention_Cheat_Sheet.html#xss-prevention-rules).
 
-There are also some ready-made [libraries](https://lib.rs/crates/sanitize_html) to help you [sanitize](https://github.com/rgrove/sanitize) your HTML and CSS.
+There are also some [ready-made libraries](https://lib.rs/crates/sanitize_html) to help you [sanitize](https://github.com/rgrove/sanitize) your HTML and CSS.
 
 ### XML External Entities and XInclude
 
@@ -697,11 +697,11 @@ It is highly recommended to *never* enable XML external entities or XInclude whe
 
 ### Local Files
 
-However, XML external entities and XInclude are not the only way for accessing local files!  Any image, CSS or JavaScript file in an HTML file can point to a local resource!  This can potentially lead to exposing resources that need to be kept confidential.
+However, XML external entities and XInclude are not the only way for accessing local files.  Any image, CSS or JavaScript file in an HTML file can point to a local resource!  This can potentially lead to exposing resources that need to be kept confidential.
 
-It is important to know that by default, Prince *does* have access to local files!
+It is important to know that by default, Prince *does* have access to local files.
 
-It is good and safe practice to always run Prince with the command-line option [`--no-local-files`](command-line.md#cl-no-local-files) in order to exclude any unwanted access to the local file system when dealing with untrusted content.
+Therefore, it is good and safe practice to always run Prince with the command-line option [`--no-local-files`](command-line.md#cl-no-local-files) in order to exclude any unwanted access to the local file system when dealing with untrusted content.
 
 ### Network Resources
 
