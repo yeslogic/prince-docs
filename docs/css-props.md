@@ -1584,9 +1584,9 @@ For the values, the grammar draws on the [CSS Values and Units Module Level 3](h
         The property <a href="#prop-prince-image-resolution"><code>prince-image-resolution</code></a> can be used as an alias.
         </p></div><div><div id="prop-image-resolution-seealso">See Also</div><ul><li><a href="/doc/graphics#image-size">Image Size</a></li></ul></div></div></details>
 
-<details><summary id="prop-image-orientation">image-orientation <a class="self-link" href="#prop-image-orientation"></a></summary><div><div><div id="prop-image-orientation-syntax">Syntax</div><div class="example"><div class="syntax-block"><pre><code>image-orientation: none |&#160;from-image</code></pre></div></div></div><div><div class="example"><div class="syntax-block"><table class="property-table"><tr><th scope="row">
+<details><summary id="prop-image-orientation">image-orientation <a class="self-link" href="#prop-image-orientation"></a></summary><div><div><div id="prop-image-orientation-syntax">Syntax</div><div class="example"><div class="syntax-block"><pre><code>image-orientation: from-image |&#160;none</code></pre></div></div></div><div><div class="example"><div class="syntax-block"><table class="property-table"><tr><th scope="row">
           Initial value
-        </th><td><code>none</code></td></tr><tr><th scope="row">
+        </th><td><code>from-image</code></td></tr><tr><th scope="row">
           Applies to
         </th><td>all elements</td></tr><tr><th scope="row">
           Inherited

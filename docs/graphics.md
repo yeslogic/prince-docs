@@ -295,9 +295,9 @@ Images can also be added to style a list with the property [`list-style-image`](
 
 #### Image Orientation
 
-Usually images have the correct orientation when included in a document. However, it can be important to honor the orientation field in the EXIF data of JPEG and TIFF images, which can be done with the [`image-orientation`](css-props.md#prop-image-orientation) property.
+Usually images have the correct orientation when included in a document. If the image has an orientation specified in the EXIF metadata of JPEG and TIFF images, this is honored.  However, there are cases when the image needs to be oriented as encoded, without any additional rotation applied - the default behaviour can be overridden with the [`image-orientation`](css-props.md#prop-image-orientation) property.
 
-The property applies only to content images (e.g. replaced elements and generated content), not decorative images (such as [`background-image`](css-props.md#prop-background-image)).
+This property applies only to content images (e.g. replaced elements and generated content), not decorative images (such as [`background-image`](css-props.md#prop-background-image)).
 
 #### Image Size
 
