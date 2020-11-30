@@ -148,7 +148,7 @@ XML Inclusions (XInclude) provides a method of including content from other file
 
 The core of XInclude is a single element, `<include href="..."/>`, which specifies the inclusion of the file referenced by the `href` attribute. The element is in the XInclude namespace, `http://www.w3.org/2001/XInclude`, which must be declared either on the element itself or one of its ancestor elements.
 
-Please note that XInclude is disabled by default, and can be enabled with the [`--xinclude`](command-line.md#cl-xinclude) command-line option - but consider all security-related considerations this might imply (see also [XML External Entities and XInclude](server-integration.md#xml-external-entities-and-xinclude)).
+Please note that XInclude is disabled by default, and can be enabled with the [`--xinclude`](command-line.md#cl-xinclude) command-line option - but consider all security-related considerations this might imply (see also [XML External Entities and XInclude](server-integration.md#xml-external-entities-and-xinclude)). Please also note that, even when enabled, XIncludes are never processed anywhere but in the main document.
 
 Also note that XInclude only applies to XML files. To apply it to HTML files, the input format needs to be specified with the [`--input`](command-line.md#cl-input) command-line option.
 

@@ -695,6 +695,8 @@ XInclude is a generic mechanism for including XML or non-XML data in XML files. 
 
 It is highly recommended to *never* enable XML external entities or XInclude when dealing with untrusted data! These options are not enabled by default.
 
+Please also note that, even when enabled, external entities and XIncludes are never processed anywhere but in the main document.  This means that they would not be processed in SVG images included in a document (but they would be processed, if eneabled, if the main document were an SVG image).
+
 ### Local Files
 
 However, XML external entities and XInclude are not the only way for accessing local files.  Any image, CSS or JavaScript file in an HTML file can point to a local resource!  This can potentially lead to exposing resources that need to be kept confidential.
