@@ -725,5 +725,13 @@ For ease of use, Prince offers its own, maintained [Docker Images](https://hub.d
 Performance
 -----------
 
-When running multiple instances of Prince, it might be advisable to disable parallel rasterization with the command-line option [`--raster-threads=1`](command-line.md#cl-raster-threads) to improve throughput. Setting `GC_MARKERS=1` in the environment will do the same for garbage collection threads.
+When preparing PDFs for printing, high performance is at times not as important as proper balancing of content on a page spread.
+
+Indeed, Prince for Books, a Prince version specifically addressed at publishers, spends more time on several calculations of line breaking and spread balancing than the standard version. For more details, please consult the [Prince for Books](prince-for-books.md) chapters.
+
+But even for normal PDF creation there are times when performance tweaks are called for - as for example in heavy throughput scenarios. Generally speaking, Prince's performance scales linearly, since it is a standalone application - the more computing power you offer, the faster it will perform.
+
+When running multiple instances of Prince, it might be advisable to disable parallel rasterization with the command-line option [`--raster-threads=1`](command-line.md#cl-raster-threads) to improve throughput.
+
+Setting `GC_MARKERS=1` in the environment will do the same for garbage collection threads.
 
