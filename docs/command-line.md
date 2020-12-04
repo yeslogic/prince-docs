@@ -310,7 +310,7 @@ dl>
   May be one of: <code>default</code> (let
   <a href="/doc/acknowledgements/">libcurl</a>
   choose), <code>tlsv1</code>,
-  <code>tlsv1.0</code>, <code>tlsv1.1</code> or <code>tlsv1.2</code>.
+  <code>tlsv1.0</code>, <code>tlsv1.1</code>, <code>tlsv1.2</code> or <code>tlsv1.3</code>.
   </dd>
   <dt id="cl-insecure"><code>--insecure</code></dt>
   <dd>
