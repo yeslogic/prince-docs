@@ -107,7 +107,9 @@ Explanation
 Gatekeeper triggers a system alert when trying to run the Prince executable.
 
 Solution  
-In order to run the command line utility, you need to open the Security and Privacy preference pane in System Preferences, select the General tab, and click "Allow Anyway".
+In order to run Prince in a version lower than 13.6, you need to open the Security and Privacy preference pane in System Preferences, select the General tab, and click "Allow Anyway".
+
+Starting with Prince 13.6, the Prince binaries are signed and do not trigger warnings.
 
 Alternatively, you can run the following commands from Terminal to first remove any quarantine attribute applied by Safari when downloading `prince`, and then manually add a SecAssessment system policy label to the executable:
 
