@@ -521,6 +521,10 @@ dl>
   <dd>
     Disallow copying from PDF output.
   </dd>
+  <dt id="cl-allow-copy-for-accessibility"><code>--allow-copy-for-accessibility</code></dt>
+  <dd>
+    Used together with <code>--disallow-copy</code>, for which it creates an exception by enabling text access for screen reader devices for the visually impaired.
+  </dd>
   <dt id="cl-disallow-annotate"><code>--disallow-annotate</code></dt>
   <dd>
     Disallow annotation of PDF output.
@@ -528,6 +532,10 @@ dl>
   <dt id="cl-disallow-modify"><code>--disallow-modify</code></dt>
   <dd>
     Disallow modification of PDF output.
+  </dd>
+  <dt id="cl-allow-assembly"><code>--allow-assembly</code></dt>
+  <dd>
+    Used together with <code>--disallow-modify</code>, for which it creates an exception.  It allows the document to be inserted into another document or other pages to be added, but the content of the document cannot be modified.
   </dd>
 </dl>
 

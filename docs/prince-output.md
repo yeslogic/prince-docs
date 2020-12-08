@@ -299,6 +299,10 @@ The command-line options [`--user-password`](command-line.md#cl-user-password) a
 
 Prince also offers a range of command-line options to disallow printing, copying, annotating and modifying the PDF output: [`--disallow-print`](command-line.md#cl-disallow-print), [`--disallow-copy`](command-line.md#cl-disallow-copy), [`--disallow-annotate`](command-line.md#cl-disallow-annotate) and [`--disallow-modify`](command-line.md#cl-disallow-modify).
 
+However, the strict setting to prevent copying also impacts accessibility by screan readers.  Prince offers a command-line option to enable text access for screen reader devices ([`--allow-copy-for-accessibility`](command-line.md#cl-allow-copy-for-accessibility)) for the visually impaired, to be used as an exception for `--disallow-copy`.
+
+The command-line option [`--allow-assembly`](command-line.md#cl-allow-assembly) can be used together with `--disallow-modify` - while preventing modification of the document itself, it allows for the document to be inserted into another document or other pages to be added.
+
 ### PDF Font Embedding and Subsetting
 
 Prince embeds fonts in its PDF output to ensure accurate viewing and printing on any system. Typically, only the necessary parts of a font will be embedded - font subsetting is enabled by default.
