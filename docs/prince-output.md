@@ -293,13 +293,15 @@ Compression may be disabled with the command-line option [`--no-compress`](comma
 
 ### PDF Encryption and Document Security
 
-Prince can encrypt the produced PDF files with the [`--encrypt`](command-line.md#cl-encrypt) command-line option. The default key size is 128 bits. With the option [`--key-bits`](command-line.md#cl-key-bits) a different key size can be chosen. Also the JavaScript methods [`PDF.encrypt`](js-support.md#window.PDF.encrypt) and [`PDF.keyBits`](js-support.md#window.PDF.keyBits) can be used for the same purpose.
+Prince can encrypt the produced PDF files with the [`--encrypt`](command-line.md#cl-encrypt) command-line option.
 
-The command-line options [`--user-password`](command-line.md#cl-user-password) and [`--owner-password`](command-line.md#cl-owner-password) set respectively the PDF user password and the PDF owner password.
+Prince supports the RC4 encryption algorithm, and the default key size is 128 bits. With the option [`--key-bits`](command-line.md#cl-key-bits) a different key size can be chosen - the options are 40 bits, or 128 bits. Also the JavaScript methods [`PDF.encrypt`](js-support.md#window.PDF.encrypt) and [`PDF.keyBits`](js-support.md#window.PDF.keyBits) can be used for the same purpose.
+
+The command-line options [`--user-password`](command-line.md#cl-user-password) and [`--owner-password`](command-line.md#cl-owner-password) set respectively the PDF user password and the PDF owner password.  Please note that passwords may be of maximum 32 characters from the Latin-1 encoding only.
 
 Prince also offers a range of command-line options to disallow printing, copying, annotating and modifying the PDF output: [`--disallow-print`](command-line.md#cl-disallow-print), [`--disallow-copy`](command-line.md#cl-disallow-copy), [`--disallow-annotate`](command-line.md#cl-disallow-annotate) and [`--disallow-modify`](command-line.md#cl-disallow-modify).
 
-However, the strict setting to prevent copying also impacts accessibility by screan readers.  Prince offers a command-line option to enable text access for screen reader devices ([`--allow-copy-for-accessibility`](command-line.md#cl-allow-copy-for-accessibility)) for the visually impaired, to be used as an exception for `--disallow-copy`.
+However, the strict setting to prevent copying also impacts accessibility by screan readers.  Prince offers a command-line option to enable text access for screen reader devices  for the visually impaired ([`--allow-copy-for-accessibility`](command-line.md#cl-allow-copy-for-accessibility)), to be used as an exception for `--disallow-copy`.
 
 The command-line option [`--allow-assembly`](command-line.md#cl-allow-assembly) can be used together with `--disallow-modify` - while preventing modification of the document itself, it allows for the document to be inserted into another document or other pages to be added.
 

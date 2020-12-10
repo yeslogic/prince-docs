@@ -505,13 +505,13 @@ dl>
   </dd>
   <dt id="cl-user-password"><code>--user-password=<span class="replaceable">PASS</span></code></dt>
   <dd>
-    Set PDF user password.
+    Set PDF user password - max. 32 characters (Latin-1).
   </dd>
   <dt id="cl-owner-password">
     <code>--owner-password=<span class="replaceable">PASS</span></code>
   </dt>
   <dd>
-    Set PDF owner password.
+    Set PDF owner password - max. 32 characters (Latin-1).
   </dd>
   <dt id="cl-disallow-print"><code>--disallow-print</code></dt>
   <dd>
