@@ -299,9 +299,9 @@ Prince supports the RC4 encryption algorithm, and the default key size is 128 bi
 
 The command-line options [`--user-password`](command-line.md#cl-user-password) and [`--owner-password`](command-line.md#cl-owner-password) set respectively the PDF user password and the PDF owner password.  Please note that passwords may be of maximum 32 characters from the Latin-1 encoding only.
 
-Prince also offers a range of command-line options to disallow printing, copying, annotating and modifying the PDF output: [`--disallow-print`](command-line.md#cl-disallow-print), [`--disallow-copy`](command-line.md#cl-disallow-copy), [`--disallow-annotate`](command-line.md#cl-disallow-annotate) and [`--disallow-modify`](command-line.md#cl-disallow-modify).
+The PDF user password, also known as Document Open Password, prevents opening of a PDF file by unauthorized users by prompting for the password.  The owner password, also known as Permissions Password, is used to configure document restrictions: Prince offers a range of command-line options to disallow printing ([`--disallow-print`](command-line.md#cl-disallow-print)), copying ([`--disallow-copy`](command-line.md#cl-disallow-copy)), annotating ([`--disallow-annotate`](command-line.md#cl-disallow-annotate)) and modifying ([`--disallow-modify`](command-line.md#cl-disallow-modify)) the PDF output.
 
-However, the strict setting to prevent copying also impacts accessibility by screan readers.  Prince offers a command-line option to enable text access for screen reader devices  for the visually impaired ([`--allow-copy-for-accessibility`](command-line.md#cl-allow-copy-for-accessibility)), to be used as an exception for `--disallow-copy`.
+However, the strict setting to prevent copying also impacts accessibility by screan readers.  Prince offers a command-line option to enable text access only for screen reader devices for the visually impaired ([`--allow-copy-for-accessibility`](command-line.md#cl-allow-copy-for-accessibility)), to be used as an exception for `--disallow-copy`.
 
 The command-line option [`--allow-assembly`](command-line.md#cl-allow-assembly) can be used together with `--disallow-modify` - while preventing modification of the document itself, it allows for the document to be inserted into another document or other pages to be added.
 
