@@ -64,7 +64,7 @@ To install Prince on MacOS X, please run the `install.sh` shell script contained
 2.  Change to the download directory and unpack the downloaded file.
     
         $ cd download_directory
-        $ tar xvf prince-package-macosx.tar.gz
+        $ tar xvf prince-package-macosx.zip
 
 3.  Change to the extracted directory.
     
