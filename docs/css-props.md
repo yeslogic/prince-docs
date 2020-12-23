@@ -1318,6 +1318,23 @@ For the values, the grammar draws on the [CSS Values and Units Module Level 3](h
         <code>float: top</code> will create a column float in a multicol context,
         rather than a page float.</p></div><div><div id="prop-float-reference-seealso">See Also</div><ul><li><a href="/doc/styling#floats">Floats</a></li></ul></div><div><div id="prop-float-reference-spec">Specification</div><ul><li><a href="https://figures.spec.whatwg.org/#setting-the-page-float-reference:-float-reference">CSS Figures</a></li><li><a href="https://drafts.csswg.org/css-page-floats/#float-reference-property">CSS Page Floats</a></li></ul></div></div></details>
 
+<details><summary class="ext" id="prop-float-tail">float-tail* <a class="self-link" href="#prop-float-tail"></a></summary><div><div><div id="prop-float-tail-syntax">Syntax</div><div class="example"><div class="syntax-block"><pre><code>float-tail: keep |&#160;fill-page</code></pre></div></div></div><div><div class="example"><div class="syntax-block"><table class="property-table"><tr><th scope="row">
+          Initial value
+        </th><td><code>keep</code></td></tr><tr><th scope="row">
+          Applies to
+        </th><td>all floated elements</td></tr><tr><th scope="row">
+          Inherited
+        </th><td>
+                  yes
+                </td></tr></table></div></div></div><div><div id="prop-float-tail-examples">Examples</div><div class="example"><div class="programlisting"><pre><code>figure {
+&nbsp;&nbsp;float: top;
+&nbsp;&nbsp;float-tail: fill-page;
+}</code></pre></div></div></div><div><div id="prop-float-tail-comments">Comments</div><p>
+        The <code>float-tail</code> property instructs Prince how to deal with page
+        floats that end up past the end of normal content: with the value
+        <code>fill-page</code>, Prince will try to fill the last page, but discard
+        any page floats that would create more pages.</p></div><div><div id="prop-float-tail-seealso">See Also</div><ul><li><a href="/doc/styling#floats">Floats</a></li></ul></div></div></details>
+
 <details><summary class="ext" id="prop-flow">flow*  <a class="self-link" href="#prop-flow"></a></summary><div><div><div id="prop-flow-syntax">Syntax</div><div class="example"><div class="syntax-block"><pre><code>flow: normal |&#160;static(&#160;<i>name</i>, [ start |&#160;current ]?&#160;)</code></pre></div></div></div><div><div class="example"><div class="syntax-block"><table class="property-table"><tr><th scope="row">
           Initial value
         </th><td><code>normal</code></td></tr><tr><th scope="row">
