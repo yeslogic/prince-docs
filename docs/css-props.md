@@ -1809,6 +1809,20 @@ For the values, the grammar draws on the [CSS Values and Units Module Level 3](h
         setting the following CSS properties:
     </p><ul><li><code><a href="#prop-margin-bottom">margin-bottom</a></code></li><li><code><a href="#prop-margin-inside">margin-inside</a></code></li><li><code><a href="#prop-margin-left">margin-left</a></code></li><li><code><a href="#prop-margin-outside">margin-outside</a></code></li><li><code><a href="#prop-margin-right">margin-right</a></code></li><li><code><a href="#prop-margin-top">margin-top</a></code></li></ul></div><div><div id="prop-margin-seealso">See Also</div><ul><li><a href="/doc/styling#margin">Margin</a></li></ul></div><div><div id="prop-margin-spec">Specification</div><ul><li><a href="https://www.w3.org/TR/CSS2/box.html#margin-properties">CSS 2.1</a></li></ul></div></div></details>
 
+<details><summary class="ext" id="prop-margin-alt">margin-alt* <a class="self-link" href="#prop-margin-alt"></a></summary><div><div><div id="prop-margin-alt-syntax">Syntax</div><div class="example"><div class="syntax-block"><pre><code>margin-alt: none |&#160;<i>length</i> <i>length</i>?</code></pre></div></div></div><div><div class="example"><div class="syntax-block"><table class="property-table"><tr><th scope="row">
+          Initial value
+        </th><td><code>none</code></td></tr><tr><th scope="row">
+          Applies to
+        </th><td>all top- or bottom-floated elements</td></tr><tr><th scope="row">
+          Inherited
+        </th><td>
+                  no
+                </td></tr></table></div></div></div><div><div id="prop-margin-comments">Comments</div><p>
+        The <code>margin-alt</code> property defines a top and/or bottom margin
+        for elements floated to the top or bottom of a page or column,
+        by replacing the value of the corresponding margin property.
+    </p></div><div><div id="prop-margin-seealso">See Also</div><ul><li><a href="/doc/styling#margin">Margin</a></li></ul></div></div></details>
+
 <details><summary id="prop-margin-bottom">margin-bottom <a class="self-link" href="#prop-margin-bottom"></a></summary><div><div><div id="prop-margin-bottom-syntax">Syntax</div><div class="example"><div class="syntax-block"><pre><code>margin-bottom: auto |&#160;<i>length</i> |&#160;<i>percent</i></code></pre></div></div></div><div><div class="example"><div class="syntax-block"><table class="property-table"><tr><th scope="row">
           Initial value
         </th><td><code>0</code></td></tr><tr><th scope="row">
