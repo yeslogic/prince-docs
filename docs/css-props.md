@@ -1213,10 +1213,7 @@ For the values, the grammar draws on the [CSS Values and Units Module Level 3](h
         setting the following CSS properties:
     </p><ul><li><code><a href="#prop-flex-direction">flex-direction</a></code></li><li><code><a href="#prop-flex-wrap">flex-wrap</a></code></li></ul></div><div><div id="prop-flex-flow-spec">Specification</div><ul><li><a href="https://www.w3.org/TR/css-flexbox-1/#flex-flow-property">CSS Flexible Box Layout Module Level 1</a></li></ul></div></div></details>
 
-<details><summary id="prop-float">float <a class="self-link" href="#prop-float"></a></summary><div><div><div id="prop-float-syntax">Syntax</div><div class="example"><div class="syntax-block"><pre><code>float: <br />&#160;&#160;&#160;none |&#160;left |&#160;right |&#160;<span class="ext">inside</span> |&#160;<span class="ext">outside</span>
-&#160;&#160;&#160;|&#160;footnote |&#160;<span class="ext">inline-footnote</span>
-&#160;&#160;&#160;|&#160;<span class="ext">prince-snap</span>
-&#160;&#160;&#160;|&#160;[ <span class="ext">top</span> |&#160;<span class="ext">bottom</span> |&#160;<span class="ext">top-bottom</span> ] &amp;&amp;&#160;<span class="ext">unless-fit</span> ?</code></pre></div></div></div><div><div class="example"><div class="syntax-block"><table class="property-table"><tr><th scope="row">
+<details><summary class="ext" id="prop-float">float* <a class="self-link" href="#prop-float"></a></summary><div><div><div id="prop-float-syntax">Syntax</div><div class="example"><div class="syntax-block"><pre><code>float: <br />&#160;&#160;&#160;<i class="ext">float-reference</i> ||&#160;<i class="ext">float-placement</i> <span>unless-fit</span>?</code></pre></div></div></div><div><div class="example"><div class="syntax-block"><table class="property-table"><tr><th scope="row">
           Initial value
         </th><td><code>none</code></td></tr><tr><th scope="row">
           Applies to
@@ -1230,27 +1227,24 @@ For the values, the grammar draws on the [CSS Values and Units Module Level 3](h
     an element should be floated to the top or to the bottom, or to the nearest edge
     of the column.
 	</p><p>
-    The values <code>top</code> or <code>bottom</code> float the element to, respectively,
-    the top or the bottom of the float reference (a page, or a column), while
-    <code>top-bottom</code> tries to float it to the top, and if that should not be possible,
-    it is floated to the bottom.
+    Prince's implementation of <code>float</code> is a shorthand for the following properties:
+	</p>
+    <ul><li><code><a href="#prop-float-reference">float-reference</a></code></li><li><code><a href="#prop-float-placement">float-placement</a></code></li></ul>
+    <p>
+    Note that when setting only the value for <code><i>float-reference</i></code>, i.e.
+    <code>column</code> or <code>page</code>, the default value for <code>float-placement</code>
+    is <code>top-bottom</code> and differs from its initial value.  This means that Prince
+    will try to float the element to the top of the indicated float reference, and if that
+    should not be possible, it would be floated to the bottom.
     </p><p>
-    The value <code>prince-snap</code> floats the element to the nearest "end", i.e.
-    to the top or bottom of the page, or of the column in the case of a multi-column
-    layout.
+    On a vertical float to the top or bottom of the float reference, a vertical margin
+    set to the value <code>auto</code> will expand and thereby repal other content.  By
+    setting top and bottom margins to <code>auto</code>, the element is vertically centered.
     </p><p>
-    The values <code>inside</code> and <code>outside</code> float the element respectively
-    to the inside or outside of a spread: <code>inside</code> moves the element to
-    the right when used on a left-facing page, and to the left on a right-facing page;
-    <code>outside</code> moves the element to the left when used on a left-facing
-    page, and to the right on a right-facing page.
+    Please also see the property <code><a href="#prop-margin-alt">margin-alt</a></code> for
+    alternative margins for top or bottom floated elements.
     </p><p>
-    The value <code>footnote</code> transforms the element into a footnote - the footnote
-    marker is placed outside of the block of the footnote.  The value <code>inline-footnote</code>
-    transforms the element into a footnote and places the footnote marker inside of
-    the block of the footnote.
-    </p><p>
-    The modifier <code>unless-fit</code> expresses a conditional: the element is only
+    The optional modifier <code>unless-fit</code> expresses a conditional: the element is only
     floated if it would otherwise cause a page or column break.
     </p></div><div><div id="prop-float-seealso">See Also</div><ul><li><a href="/doc/styling#floats">Floats</a></li></ul></div><div><div id="prop-float-spec">Specification</div><ul><li><a href="https://www.w3.org/TR/CSS2/visuren.html#float-position">CSS 2.1</a></li><li><a href="https://www.w3.org/TR/css-gcpm-3/#footnotes">CSS Generated Content for Paged Media Module</a></li><li><a href="https://figures.spec.whatwg.org/">CSS Figures</a></li><li><a href="https://books.spec.whatwg.org/#footnotes">CSS Books</a></li><li><a href="https://drafts.csswg.org/css-page-floats/">CSS Page Floats</a></li></ul></div></div></details>
 
