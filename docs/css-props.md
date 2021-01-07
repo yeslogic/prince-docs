@@ -1282,6 +1282,53 @@ For the values, the grammar draws on the [CSS Values and Units Module Level 3](h
 }</code></pre></div></div></div><div><div id="prop-float-defer-page-comments">Comments</div><p>
         The <code>float-defer-page</code> property specifies whether the float is placed after previous page floats have been placed, or in another float reference container.</p></div><div><div id="prop-float-defer-page-seealso">See Also</div><ul><li><a href="/doc/styling#floats">Floats</a></li></ul></div><div><div id="prop-float-defer-page-spec">Specification</div><ul><li><a href="https://figures.idea.whatwg.org/#float-defer-page">CSS Figures</a></li><li><a href="https://drafts.csswg.org/css-page-floats/#float-defer-property">CSS Page Floats</a></li></ul></div></div></details>
 
+<details><summary class="ext" id="prop-float-placement">float-placement* <a class="self-link" href="#prop-float-placement"></a></summary><div><div><div id="prop-float-placement-syntax">Syntax</div><div class="example"><div class="syntax-block"><pre><code>float-placement: none |&#160;left |&#160;right |&#160;inside |&#160;outside
+&#160;&#160;&#160;&#160;|&#160;top |&#160;bottom |&#160;top-bottom |&#160;snap
+&#160;&#160;&#160;&#160;|&#160;footnote |&#160;inline-footnote |&#160;region(<region>)</code></pre></div></div></div><div><div class="example"><div class="syntax-block"><table class="property-table"><tr><th scope="row">
+          Initial value
+        </th><td><code>none</code></td></tr><tr><th scope="row">
+          Applies to
+        </th><td>all floated elements</td></tr><tr><th scope="row">
+          Inherited
+        </th><td>
+                  yes
+                </td></tr></table></div></div></div><div><div id="prop-float-placement-examples">Examples</div><div class="example"><div class="programlisting"><pre><code>figure {
+&nbsp;&nbsp;float-reference: page;
+&nbsp;&nbsp;float-placement: bottom;
+}</code></pre></div></div></div><div><div id="prop-float-placement-comments">Comments</div><p>
+        The <code>float-placement</code> property defines how a floated element
+        is positioned.  Its values are basically the values of the standard
+        <code>float</code> property, plus some Prince-specific extensions.
+        </p><p>
+        The values <code>top</code> or <code>bottom</code> float the element to, respectively,
+        the top or the bottom of the float reference (a page, or a column), while
+        <code>top-bottom</code> tries to float it to the top, and if that should not be possible,
+        it is floated to the bottom.
+        </p><p>
+        Note that the default value for <code>float-placement</code>, when omitted in the
+        <code><a href="#prop-float">float</a></code> shorthand property, is
+        <code>top-bottom</code>, and differs from its initial value.  This means that Prince
+        will try to float the element to the top of the indicated float reference, and if that
+        should not be possible, it would be floated to the bottom.
+        </p><p>
+        The value <code>snap</code> floats the element to the nearest "end", i.e.
+        to the top or bottom of the page or of the column.
+        </p><p>
+        The values <code>inside</code> and <code>outside</code> float the element respectively
+        to the inside or outside of a spread: <code>inside</code> moves the element to
+        the right when used on a left-facing page, and to the left on a right-facing page;
+        <code>outside</code> moves the element to the left when used on a left-facing
+        page, and to the right on a right-facing page.
+        </p><p>
+        The value <code>footnote</code> transforms the element into a footnote - the footnote
+        marker is placed outside of the block of the footnote.  The value <code>inline-footnote</code>
+        transforms the element into a footnote and places the footnote marker inside of
+        the block of the footnote.
+        </p><p>
+        The function <code>region(<i>page-region</i>)</code> takes a page region as argument,
+        and floats the element to the specified page region.
+        </p></div><div><div id="prop-float-placement-seealso">See Also</div><ul><li><code><a href="#prop-float">float</a></code></li><li><a href="/doc/styling#floats">Floats</a></li><li><a href="/doc/paged#page-regions">Page Regions</a></li></ul></div><div><div id="prop-float-placement-spec">Specification</div><ul><li><a href="https://www.w3.org/TR/CSS2/visuren.html#float-position">CSS 2.1</a></li><li><a href="https://www.w3.org/TR/css-gcpm-3/#footnotes">CSS Generated Content for Paged Media Module</a></li><li><a href="https://figures.spec.whatwg.org/">CSS Figures</a></li><li><a href="https://books.spec.whatwg.org/#footnotes">CSS Books</a></li><li><a href="https://drafts.csswg.org/css-page-floats/">CSS Page Floats</a></li></ul></div></div></details>
+
 <details><summary class="ext" id="prop-float-policy">float-policy* <a class="self-link" href="#prop-float-policy"></a></summary><div><div><div id="prop-float-policy-syntax">Syntax</div><div class="example"><div class="syntax-block"><pre><code>float-policy: normal |&#160;in-order</code></pre></div></div></div><div><div class="example"><div class="syntax-block"><table class="property-table"><tr><th scope="row">
           Initial value
         </th><td><code>normal</code></td></tr><tr><th scope="row">
