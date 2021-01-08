@@ -792,7 +792,7 @@ For the values, the grammar draws on the [CSS Values and Units Module Level 3](h
 	the top or bottom of the table.
 	</p></div><div><div id="prop-caption-side-seealso">See Also</div><ul><li><a href="/doc/styling#table-captions">Table captions</a></li></ul></div><div><div id="prop-caption-side-spec">Specification</div><ul><li><a href="https://www.w3.org/TR/CSS2/tables.html#caption-position">CSS 2.1</a></li></ul></div></div></details>
 
-<details><summary id="prop-clear">clear <a class="self-link" href="#prop-clear"></a></summary><div><div><div id="prop-clear-syntax">Syntax</div><div class="example"><div class="syntax-block"><pre><code>clear: none |&#160;left |&#160;right |&#160;<span class="ext">inside</span> |&#160;<span class="ext">outside</span> |&#160;<span class="ext">both</span> |&#160;<span class="ext">page</span> |&#160;<span class="ext">column</span> |&#160;<span class="ext">end</span></code></pre></div></div></div><div><div class="example"><div class="syntax-block"><table class="property-table"><tr><th scope="row">
+<details><summary class="ext" id="prop-clear">clear <a class="self-link" href="#prop-clear"></a></summary><div><div><div id="prop-clear-syntax">Syntax</div><div class="example"><div class="syntax-block"><pre><code>clear: none |&#160;left |&#160;right |&#160;<span class="ext">inside</span> |&#160;<span class="ext">outside</span> |&#160;<span class="ext">both</span> |&#160;<span class="ext">page</span> |&#160;<span class="ext">column</span> |&#160;<span class="ext">end</span></code></pre></div></div></div><div><div class="example"><div class="syntax-block"><table class="property-table"><tr><th scope="row">
           Initial value
         </th><td><code>none</code></td></tr><tr><th scope="row">
           Applies to
@@ -808,7 +808,7 @@ For the values, the grammar draws on the [CSS Values and Units Module Level 3](h
 	values correspond to values given to the <code><a href="#prop-float">float</a></code>
 	property, while <code>both</code> will clear floats on either side.
 	</p><p>
-    The keyword <code>end</code> clears the float and places the next
+    The keyword <code>end</code> clears the float, and places the next
     float in the next available position - so if e.g. you have a column
     layout with a float already at the top of the first column, it will
     place the next float, whose natural position would be just below the
@@ -818,7 +818,9 @@ For the values, the grammar draws on the [CSS Values and Units Module Level 3](h
     further float would be pushed to the next column), while the keyword
     <code>page</code> clears the page (pushing further floats to the next
     page).
-    </p></div><div><div id="prop-float-seealso">See Also</div><ul><li><a href="/doc/styling#floats">Floats</a></li><li><code><a href="#prop-float">float</a></code></li></ul></div><div><div id="prop-clear-spec">Specification</div><ul><li><a href="https://www.w3.org/TR/CSS2/visuren.html#flow-control">CSS 2.1</a></li><li><a href="https://figures.spec.whatwg.org/#floating-inside-and-outside-pages">CSS Figures - Floating Inside and Outside Pages</a></li><li><a href="https://figures.idea.whatwg.org/#page-floats">CSS Figures - Page Floats</a></li></ul></div></div></details>
+    </p><p class="note">
+        The property <a href="#prop-prince-clear"><code>prince-clear</code></a> can be used as an alias.
+        </p></div><div><div id="prop-float-seealso">See Also</div><ul><li><a href="/doc/styling#floats">Floats</a></li><li><code><a href="#prop-float">float</a></code></li></ul></div><div><div id="prop-clear-spec">Specification</div><ul><li><a href="https://www.w3.org/TR/CSS2/visuren.html#flow-control">CSS 2.1</a></li><li><a href="https://figures.spec.whatwg.org/#floating-inside-and-outside-pages">CSS Figures - Floating Inside and Outside Pages</a></li><li><a href="https://figures.idea.whatwg.org/#page-floats">CSS Figures - Page Floats</a></li></ul></div></div></details>
 
 <details><summary id="prop-clip">clip <a class="self-link" href="#prop-clip"></a></summary><div><div><div id="prop-clip-syntax">Syntax</div><div class="example"><div class="syntax-block"><pre><code>clip: auto |&#160;rect(&#160;<i>offset</i>, <i>offset</i>, <i>offset</i>, <i>offset</i>&#160;)</code></pre></div></div></div><div><div class="example"><div class="syntax-block"><table class="property-table"><tr><th scope="row">
           Initial value
@@ -1242,7 +1244,7 @@ For the values, the grammar draws on the [CSS Values and Units Module Level 3](h
     <ul><li><code><a href="#prop-float-reference">float-reference</a></code></li><li><code><a href="#prop-float-placement">float-placement</a></code></li></ul>
     <p>
     Note that when setting only the value for <code><i>float-reference</i></code>, i.e.
-    <code>column</code> or <code>page</code>, the default value for <code>float-placement</code>
+    <code>column</code> or <code>page</code>, the default value for <code><i>float-placement</i></code>
     is <code>top-bottom</code> and differs from its initial value.  This means that Prince
     will try to float the element to the top of the indicated float reference, and if that
     should not be possible, it would be floated to the bottom.
@@ -1256,7 +1258,9 @@ For the values, the grammar draws on the [CSS Values and Units Module Level 3](h
     </p><p>
     The optional modifier <code>unless-fit</code> expresses a conditional: the element is only
     floated if it would otherwise cause a page or column break.
-    </p></div><div><div id="prop-float-seealso">See Also</div><ul><li><a href="/doc/styling#floats">Floats</a></li></ul></div><div><div id="prop-float-spec">Specification</div><ul><li><a href="https://www.w3.org/TR/CSS2/visuren.html#float-position">CSS 2.1</a></li><li><a href="https://www.w3.org/TR/css-gcpm-3/#footnotes">CSS Generated Content for Paged Media Module</a></li><li><a href="https://figures.spec.whatwg.org/">CSS Figures</a></li><li><a href="https://books.spec.whatwg.org/#footnotes">CSS Books</a></li><li><a href="https://drafts.csswg.org/css-page-floats/">CSS Page Floats</a></li></ul></div></div></details>
+    </p><p class="note">
+        The property <a href="#prop-prince-float"><code>prince-float</code></a> can be used as an alias.
+        </p></div><div><div id="prop-float-seealso">See Also</div><ul><li><a href="/doc/styling#floats">Floats</a></li></ul></div><div><div id="prop-float-spec">Specification</div><ul><li><a href="https://www.w3.org/TR/CSS2/visuren.html#float-position">CSS 2.1</a></li><li><a href="https://www.w3.org/TR/css-gcpm-3/#footnotes">CSS Generated Content for Paged Media Module</a></li><li><a href="https://figures.spec.whatwg.org/">CSS Figures</a></li><li><a href="https://books.spec.whatwg.org/#footnotes">CSS Books</a></li><li><a href="https://drafts.csswg.org/css-page-floats/">CSS Page Floats</a></li></ul></div></div></details>
 
 <details><summary class="ext" id="prop-float-defer-column">float-defer-column* <a class="self-link" href="#prop-float-defer-column"></a></summary><div><div><div id="prop-float-defer-column-syntax">Syntax</div><div class="example"><div class="syntax-block"><pre><code>float-defer-column: none |&#160;inside |&#160;outside |&#160;last |&#160;<i>integer</i></code></pre></div></div></div><div><div class="example"><div class="syntax-block"><table class="property-table"><tr><th scope="row">
           Initial value
@@ -1270,7 +1274,9 @@ For the values, the grammar draws on the [CSS Values and Units Module Level 3](h
 &nbsp;&nbsp;float: top;
 &nbsp;&nbsp;float-defer-column: 1;
 }</code></pre></div></div></div><div><div id="prop-float-defer-column-comments">Comments</div><p>
-        The <code>float-defer-column</code> property defines the number of columns that the float should be deferred.</p></div><div><div id="prop-float-defer-column-seealso">See Also</div><ul><li><a href="/doc/styling#floats">Floats</a></li></ul></div><div><div id="prop-float-defer-column-spec">Specification</div><ul><li><a href="https://figures.spec.whatwg.org/#float-defer-column">CSS Figures</a></li></ul></div></div></details>
+        The <code>float-defer-column</code> property defines the number of columns that the float should be deferred.</p><p class="note">
+        The property <a href="#prop-prince-float-defer-column"><code>prince-float-defer-column</code></a> can be used as an alias.
+        </p></div><div><div id="prop-float-defer-column-seealso">See Also</div><ul><li><a href="/doc/styling#floats">Floats</a></li></ul></div><div><div id="prop-float-defer-column-spec">Specification</div><ul><li><a href="https://figures.spec.whatwg.org/#float-defer-column">CSS Figures</a></li></ul></div></div></details>
 
 <details><summary class="ext" id="prop-float-defer-page">float-defer-page* <a class="self-link" href="#prop-float-defer-page"></a></summary><div><div><div id="prop-float-defer-page-syntax">Syntax</div><div class="example"><div class="syntax-block"><pre><code>float-defer-page: none |&#160;[ <i>integer</i> ||&#160;[ left |&#160;right ]]</code></pre></div></div></div><div><div class="example"><div class="syntax-block"><table class="property-table"><tr><th scope="row">
           Initial value
@@ -1284,11 +1290,13 @@ For the values, the grammar draws on the [CSS Values and Units Module Level 3](h
 &nbsp;&nbsp;float: top;
 &nbsp;&nbsp;float-defer-page: right;
 }</code></pre></div></div></div><div><div id="prop-float-defer-page-comments">Comments</div><p>
-        The <code>float-defer-page</code> property specifies whether the float is placed after previous page floats have been placed, or in another float reference container.</p></div><div><div id="prop-float-defer-page-seealso">See Also</div><ul><li><a href="/doc/styling#floats">Floats</a></li></ul></div><div><div id="prop-float-defer-page-spec">Specification</div><ul><li><a href="https://figures.idea.whatwg.org/#float-defer-page">CSS Figures</a></li><li><a href="https://drafts.csswg.org/css-page-floats/#float-defer-property">CSS Page Floats</a></li></ul></div></div></details>
+        The <code>float-defer-page</code> property specifies whether the float is placed after previous page floats have been placed, or in another float reference container.</p><p class="note">
+        The property <a href="#prop-prince-float-defer-page"><code>prince-float-defer-page</code></a> can be used as an alias.
+        </p></div><div><div id="prop-float-defer-page-seealso">See Also</div><ul><li><a href="/doc/styling#floats">Floats</a></li></ul></div><div><div id="prop-float-defer-page-spec">Specification</div><ul><li><a href="https://figures.idea.whatwg.org/#float-defer-page">CSS Figures</a></li><li><a href="https://drafts.csswg.org/css-page-floats/#float-defer-property">CSS Page Floats</a></li></ul></div></div></details>
 
-<details><summary class="ext" id="prop-float-placement">float-placement* <a class="self-link" href="#prop-float-placement"></a></summary><div><div><div id="prop-float-placement-syntax">Syntax</div><div class="example"><div class="syntax-block"><pre><code>float-placement: none |&#160;left |&#160;right |&#160;inside |&#160;outside
-&#160;&#160;&#160;&#160;|&#160;top |&#160;bottom |&#160;top-bottom |&#160;snap
-&#160;&#160;&#160;&#160;|&#160;footnote |&#160;inline-footnote</code></pre></div></div></div><div><div class="example"><div class="syntax-block"><table class="property-table"><tr><th scope="row">
+<details><summary class="ext" id="prop-float-placement">float-placement* <a class="self-link" href="#prop-float-placement"></a></summary><div><div><div id="prop-float-placement-syntax">Syntax</div><div class="example"><div class="syntax-block"><pre><code>float-placement: none |&#160;left |&#160;right |&#160;<span class="ext">inside</span> |&#160;<span class="ext">outside</span>
+&#160;&#160;&#160;&#160;|&#160;<span class="ext">top</span> |&#160;<span class="ext">bottom</span> |&#160;<span class="ext">top-bottom</span> |&#160;<span class="ext">snap</span>
+&#160;&#160;&#160;&#160;|&#160;footnote |&#160;<span class="ext">inline-footnote</span></code></pre></div></div></div><div><div class="example"><div class="syntax-block"><table class="property-table"><tr><th scope="row">
           Initial value
         </th><td><code>none</code></td></tr><tr><th scope="row">
           Applies to
@@ -1328,6 +1336,8 @@ For the values, the grammar draws on the [CSS Values and Units Module Level 3](h
         marker is placed outside of the block of the footnote.  The value <code>inline-footnote</code>
         transforms the element into a footnote and places the footnote marker inside of
         the block of the footnote.
+        </p><p class="note">
+        The property <a href="#prop-prince-float-placement"><code>prince-float-placement</code></a> can be used as an alias.
         </p></div><div><div id="prop-float-placement-seealso">See Also</div><ul><li><code><a href="#prop-float">float</a></code></li><li><a href="/doc/styling#floats">Floats</a></li><li><a href="/doc/paged#page-regions">Page Regions</a></li></ul></div><div><div id="prop-float-placement-spec">Specification</div><ul><li><a href="https://www.w3.org/TR/CSS2/visuren.html#float-position">CSS 2.1</a></li><li><a href="https://www.w3.org/TR/css-gcpm-3/#footnotes">CSS Generated Content for Paged Media Module</a></li><li><a href="https://figures.spec.whatwg.org/">CSS Figures</a></li><li><a href="https://books.spec.whatwg.org/#footnotes">CSS Books</a></li><li><a href="https://drafts.csswg.org/css-page-floats/">CSS Page Floats</a></li></ul></div></div></details>
 
 <details><summary class="ext" id="prop-float-policy">float-policy* <a class="self-link" href="#prop-float-policy"></a></summary><div><div><div id="prop-float-policy-syntax">Syntax</div><div class="example"><div class="syntax-block"><pre><code>float-policy: normal |&#160;in-order</code></pre></div></div></div><div><div class="example"><div class="syntax-block"><table class="property-table"><tr><th scope="row">
@@ -1345,7 +1355,9 @@ For the values, the grammar draws on the [CSS Values and Units Module Level 3](h
         The <code>float-policy</code> property defines the policy adopted when
         floating an element.  The value <code>in-order</code> imposes that page
         floats must be shown in source order - <code>normal</code> adds no extra
-        constraints to the float.</p></div><div><div id="prop-float-policy-seealso">See Also</div><ul><li><a href="/doc/styling#floats">Floats</a></li></ul></div><div><div id="prop-float-policy-spec">Specification</div><ul><li><a href="https://figures.spec.whatwg.org/#page-float-preferences:-float-policy">CSS Figures</a></li></ul></div></div></details>
+        constraints to the float.</p><p class="note">
+        The property <a href="#prop-prince-float-policy"><code>prince-float-policy</code></a> can be used as an alias.
+        </p></div><div><div id="prop-float-policy-seealso">See Also</div><ul><li><a href="/doc/styling#floats">Floats</a></li></ul></div><div><div id="prop-float-policy-spec">Specification</div><ul><li><a href="https://figures.spec.whatwg.org/#page-float-preferences:-float-policy">CSS Figures</a></li></ul></div></div></details>
 
 <details><summary class="ext" id="prop-float-reference">float-reference* <a class="self-link" href="#prop-float-reference"></a></summary><div><div><div id="prop-float-reference-syntax">Syntax</div><div class="example"><div class="syntax-block"><pre><code>float-reference: column |&#160;page</code></pre></div></div></div><div><div class="example"><div class="syntax-block"><table class="property-table"><tr><th scope="row">
           Initial value
@@ -1364,7 +1376,9 @@ For the values, the grammar draws on the [CSS Values and Units Module Level 3](h
         column, or of the page.</p><p>
         Please note that the initial value is <code>column</code> - the style rule
         <code>float: top</code> will create a column float in a multicol context,
-        rather than a page float.</p></div><div><div id="prop-float-reference-seealso">See Also</div><ul><li><a href="/doc/styling#floats">Floats</a></li></ul></div><div><div id="prop-float-reference-spec">Specification</div><ul><li><a href="https://figures.spec.whatwg.org/#setting-the-page-float-reference:-float-reference">CSS Figures</a></li><li><a href="https://drafts.csswg.org/css-page-floats/#float-reference-property">CSS Page Floats</a></li></ul></div></div></details>
+        rather than a page float.</p><p class="note">
+        The property <a href="#prop-prince-float-reference"><code>prince-float-reference</code></a> can be used as an alias.
+        </p></div><div><div id="prop-float-reference-seealso">See Also</div><ul><li><a href="/doc/styling#floats">Floats</a></li></ul></div><div><div id="prop-float-reference-spec">Specification</div><ul><li><a href="https://figures.spec.whatwg.org/#setting-the-page-float-reference:-float-reference">CSS Figures</a></li><li><a href="https://drafts.csswg.org/css-page-floats/#float-reference-property">CSS Page Floats</a></li></ul></div></div></details>
 
 <details><summary class="ext" id="prop-float-tail">float-tail* <a class="self-link" href="#prop-float-tail"></a></summary><div><div><div id="prop-float-tail-syntax">Syntax</div><div class="example"><div class="syntax-block"><pre><code>float-tail: keep |&#160;fill-page</code></pre></div></div></div><div><div class="example"><div class="syntax-block"><table class="property-table"><tr><th scope="row">
           Initial value
@@ -1381,7 +1395,9 @@ For the values, the grammar draws on the [CSS Values and Units Module Level 3](h
         The <code>float-tail</code> property instructs Prince how to deal with page
         floats that end up past the end of normal content: with the value
         <code>fill-page</code>, Prince will try to fill the last page, but discard
-        any page floats that would create more pages.</p></div><div><div id="prop-float-tail-seealso">See Also</div><ul><li><a href="/doc/styling#floats">Floats</a></li></ul></div></div></details>
+        any page floats that would create more pages.</p><p class="note">
+        The property <a href="#prop-prince-float-tail"><code>prince-float-tail</code></a> can be used as an alias.
+        </p></div><div><div id="prop-float-tail-seealso">See Also</div><ul><li><a href="/doc/styling#floats">Floats</a></li></ul></div></div></details>
 
 <details><summary class="ext" id="prop-flow">flow*  <a class="self-link" href="#prop-flow"></a></summary><div><div><div id="prop-flow-syntax">Syntax</div><div class="example"><div class="syntax-block"><pre><code>flow: normal |&#160;static(&#160;<i>name</i>, [ start |&#160;current ]?&#160;)</code></pre></div></div></div><div><div class="example"><div class="syntax-block"><table class="property-table"><tr><th scope="row">
           Initial value
@@ -1869,7 +1885,9 @@ For the values, the grammar draws on the [CSS Values and Units Module Level 3](h
         The <code>margin-alt</code> property defines a top and/or bottom margin
         for elements floated to the top or bottom of a page or column,
         by replacing the value of the corresponding margin property.
-    </p></div><div><div id="prop-margin-seealso">See Also</div><ul><li><a href="/doc/styling#margin">Margin</a></li></ul></div></div></details>
+    </p><p class="note">
+        The property <a href="#prop-prince-margin-alt"><code>prince-margin-alt</code></a> can be used as an alias.
+        </p></div><div><div id="prop-margin-seealso">See Also</div><ul><li><a href="/doc/styling#margin">Margin</a></li></ul></div></div></details>
 
 <details><summary id="prop-margin-bottom">margin-bottom <a class="self-link" href="#prop-margin-bottom"></a></summary><div><div><div id="prop-margin-bottom-syntax">Syntax</div><div class="example"><div class="syntax-block"><pre><code>margin-bottom: auto |&#160;<i>length</i> |&#160;<i>percent</i></code></pre></div></div></div><div><div class="example"><div class="syntax-block"><table class="property-table"><tr><th scope="row">
           Initial value
@@ -2439,6 +2457,36 @@ supplier, item { overflow-wrap: normal; }
         The property <a href="#prop-caption-page"><code>caption-page</code></a> can be used as an alias.
         </p></div><div><div id="prop-prince-caption-page-seealso">See Also</div><ul><li><a href="/doc/styling#table-captions">Table captions</a></li></ul></div></div></details>
 
+<details><summary class="ext" id="prop-prince-clear">prince-clear <a class="self-link" href="#prop-prince-clear"></a></summary><div><div><div id="prop-prince-clear-syntax">Syntax</div><div class="example"><div class="syntax-block"><pre><code>prince-clear: none |&#160;left |&#160;right |&#160;<span class="ext">inside</span> |&#160;<span class="ext">outside</span> |&#160;<span class="ext">both</span> |&#160;<span class="ext">page</span> |&#160;<span class="ext">column</span> |&#160;<span class="ext">end</span></code></pre></div></div></div><div><div class="example"><div class="syntax-block"><table class="property-table"><tr><th scope="row">
+          Initial value
+        </th><td><code>none</code></td></tr><tr><th scope="row">
+          Applies to
+        </th><td>block-level elements</td></tr><tr><th scope="row">
+          Inherited
+        </th><td>
+                  no
+                </td></tr></table></div></div></div><div><div id="prop-prince-clear-comments">Comments</div><p>
+	This property determines whether an element should be moved down the
+	page in order to clear elements that have been floated to the left or
+	right of the page. The <code>left</code>, <code>right</code>,
+	<code>inside</code> and <code>outside</code>
+	values correspond to values given to the <code><a href="#prop-float">float</a></code>
+	property, while <code>both</code> will clear floats on either side.
+	</p><p>
+    The keyword <code>end</code> clears the float, and places the next
+    float in the next available position - so if e.g. you have a column
+    layout with a float already at the top of the first column, it will
+    place the next float, whose natural position would be just below the
+    first one, at the bottom of the same column.
+    </p><p>
+    The keyword <code>column</code> clears the end of the column (so any
+    further float would be pushed to the next column), while the keyword
+    <code>page</code> clears the page (pushing further floats to the next
+    page).
+    </p><p class="note">
+        The property <a href="#prop-clear"><code>clear</code></a> can be used as an alias.
+        </p></div><div><div id="prop-float-seealso">See Also</div><ul><li><a href="/doc/styling#floats">Floats</a></li><li><code><a href="#prop-float">float</a></code></li></ul></div><div><div id="prop-prince-clear-spec">Specification</div><ul><li><a href="https://www.w3.org/TR/CSS2/visuren.html#flow-control">CSS 2.1</a></li><li><a href="https://figures.spec.whatwg.org/#floating-inside-and-outside-pages">CSS Figures - Floating Inside and Outside Pages</a></li><li><a href="https://figures.idea.whatwg.org/#page-floats">CSS Figures - Page Floats</a></li></ul></div></div></details>
+
 <details><summary class="ext" id="prop-prince-expansion-text">prince-expansion-text*  <a class="self-link" href="#prop-prince-expansion-text"></a></summary><div><div><div id="prop-prince-expansion-text-syntax">Syntax</div><div class="example"><div class="syntax-block"><pre><code>prince-expansion-text: auto |&#160;none |&#160;"string"</code></pre></div></div></div><div><div class="example"><div class="syntax-block"><table class="property-table"><tr><th scope="row">
           Initial value
         </th><td><code>auto</code></td></tr><tr><th scope="row">
@@ -2489,6 +2537,180 @@ supplier, item { overflow-wrap: normal; }
     <a href="/doc/css-refs#at-prince-pdf"><code>@prince-pdf</code></a>
     at-rule.  In this latter case, it affects all filters in the document.
     </p></div><div><div id="prop-prince-filter-resolution-seealso">See Also</div><ul><li><a href="/doc/graphics#filters">Filters</a></li></ul></div></div></details>
+
+<details><summary class="ext" id="prop-prince-float">prince-float* <a class="self-link" href="#prop-prince-float"></a></summary><div><div><div id="prop-prince-float-syntax">Syntax</div><div class="example"><div class="syntax-block"><pre><code>prince-float: <br />&#160;&#160;&#160;<i class="ext">prince-float-reference</i> ||&#160;<i class="ext">prince-float-placement</i> <span>unless-fit</span>?</code></pre></div></div></div><div><div class="example"><div class="syntax-block"><table class="property-table"><tr><th scope="row">
+          Initial value
+        </th><td><code>none</code></td></tr><tr><th scope="row">
+          Applies to
+        </th><td>all elements</td></tr><tr><th scope="row">
+          Inherited
+        </th><td>
+                  no
+                </td></tr></table></div></div></div><div><div id="prop-prince-float-comments">Comments</div><p>
+	Traditionally, floats move in the inline direction, left or right.  Prince extends
+    this behavior with page floats that move in the block direction, specifying that
+    an element should be floated to the top or to the bottom, or to the nearest edge
+    of the column.
+	</p><p>
+    Prince's implementation of <code>prince-float</code> is a shorthand for the following properties:
+	</p>
+    <ul><li><code><a href="#prop-prince-float-reference">prince-float-reference</a></code></li><li><code><a href="#prop-prince-float-placement">prince-float-placement</a></code></li></ul>
+    <p>
+    Note that when setting only the value for <code><i>prince-float-reference</i></code>, i.e.
+    <code>column</code> or <code>page</code>, the default value for <code><i>prince-float-placement</i></code>
+    is <code>top-bottom</code> and differs from its initial value.  This means that Prince
+    will try to float the element to the top of the indicated float reference, and if that
+    should not be possible, it would be floated to the bottom.
+    </p><p>
+    On a vertical float to the top or bottom of the float reference, a vertical margin
+    set to the value <code>auto</code> will expand and thereby repal other content.  By
+    setting top and bottom margins to <code>auto</code>, the element is vertically centered.
+    </p><p>
+    Please also see the property <code><a href="#prop-prince-margin-alt">prince-margin-alt</a></code> for
+    alternative margins for top or bottom floated elements.
+    </p><p>
+    The optional modifier <code>unless-fit</code> expresses a conditional: the element is only
+    floated if it would otherwise cause a page or column break.
+    </p><p class="note">
+        The property <a href="#prop-float"><code>float</code></a> can be used as an alias.
+        </p></div><div><div id="prop-prince-float-seealso">See Also</div><ul><li><a href="/doc/styling#floats">Floats</a></li></ul></div><div><div id="prop-prince-float-spec">Specification</div><ul><li><a href="https://www.w3.org/TR/CSS2/visuren.html#float-position">CSS 2.1</a></li><li><a href="https://www.w3.org/TR/css-gcpm-3/#footnotes">CSS Generated Content for Paged Media Module</a></li><li><a href="https://figures.spec.whatwg.org/">CSS Figures</a></li><li><a href="https://books.spec.whatwg.org/#footnotes">CSS Books</a></li><li><a href="https://drafts.csswg.org/css-page-floats/">CSS Page Floats</a></li></ul></div></div></details>
+
+<details><summary class="ext" id="prop-prince-float-defer-column">prince-float-defer-column* <a class="self-link" href="#prop-prince-float-defer-column"></a></summary><div><div><div id="prop-prince-float-defer-column-syntax">Syntax</div><div class="example"><div class="syntax-block"><pre><code>prince-float-defer-column: none |&#160;inside |&#160;outside |&#160;last |&#160;<i>integer</i></code></pre></div></div></div><div><div class="example"><div class="syntax-block"><table class="property-table"><tr><th scope="row">
+          Initial value
+        </th><td><code>none</code></td></tr><tr><th scope="row">
+          Applies to
+        </th><td>all floated elements</td></tr><tr><th scope="row">
+          Inherited
+        </th><td>
+                  yes
+                </td></tr></table></div></div></div><div><div id="prop-prince-float-defer-column-examples">Examples</div><div class="example"><div class="programlisting"><pre><code>figure {
+&nbsp;&nbsp;prince-float: top;
+&nbsp;&nbsp;prince-float-defer-column: 1;
+}</code></pre></div></div></div><div><div id="prop-prince-float-defer-column-comments">Comments</div><p>
+        The <code>prince-float-defer-column</code> property defines the number of columns that the float should be deferred.</p><p class="note">
+        The property <a href="#prop-float-defer-column"><code>float-defer-column</code></a> can be used as an alias.
+        </p></div><div><div id="prop-prince-float-defer-column-seealso">See Also</div><ul><li><a href="/doc/styling#floats">Floats</a></li></ul></div><div><div id="prop-prince-float-defer-column-spec">Specification</div><ul><li><a href="https://figures.spec.whatwg.org/#float-defer-column">CSS Figures</a></li></ul></div></div></details>
+
+<details><summary class="ext" id="prop-prince-float-defer-page">prince-float-defer-page* <a class="self-link" href="#prop-prince-float-defer-page"></a></summary><div><div><div id="prop-prince-float-defer-page-syntax">Syntax</div><div class="example"><div class="syntax-block"><pre><code>prince-float-defer-page: none |&#160;[ <i>integer</i> ||&#160;[ left |&#160;right ]]</code></pre></div></div></div><div><div class="example"><div class="syntax-block"><table class="property-table"><tr><th scope="row">
+          Initial value
+        </th><td><code>none</code></td></tr><tr><th scope="row">
+          Applies to
+        </th><td>all floated elements</td></tr><tr><th scope="row">
+          Inherited
+        </th><td>
+                  yes
+                </td></tr></table></div></div></div><div><div id="prop-prince-float-defer-page-examples">Examples</div><div class="example"><div class="programlisting"><pre><code>figure {
+&nbsp;&nbsp;prince-float: top;
+&nbsp;&nbsp;prince-float-defer-page: right;
+}</code></pre></div></div></div><div><div id="prop-prince-float-defer-page-comments">Comments</div><p>
+        The <code>prince-float-defer-page</code> property specifies whether the float is placed after previous page floats have been placed, or in another float reference container.</p><p class="note">
+        The property <a href="#prop-float-defer-page"><code>float-defer-page</code></a> can be used as an alias.
+        </p></div><div><div id="prop-prince-float-defer-page-seealso">See Also</div><ul><li><a href="/doc/styling#floats">Floats</a></li></ul></div><div><div id="prop-prince-float-defer-page-spec">Specification</div><ul><li><a href="https://figures.idea.whatwg.org/#float-defer-page">CSS Figures</a></li><li><a href="https://drafts.csswg.org/css-page-floats/#float-defer-property">CSS Page Floats</a></li></ul></div></div></details>
+
+<details><summary class="ext" id="prop-prince-float-placement">prince-float-placement* <a class="self-link" href="#prop-prince-float-placement"></a></summary><div><div><div id="prop-prince-float-placement-syntax">Syntax</div><div class="example"><div class="syntax-block"><pre><code>prince-float-placement: none |&#160;left |&#160;right |&#160;<span class="ext">inside</span> |&#160;<span class="ext">outside</span>
+&#160;&#160;&#160;&#160;|&#160;<span class="ext">top</span> |&#160;<span class="ext">bottom</span> |&#160;<span class="ext">top-bottom</span> |&#160;<span class="ext">snap</span>
+&#160;&#160;&#160;&#160;|&#160;footnote |&#160;<span class="ext">inline-footnote</span></code></pre></div></div></div><div><div class="example"><div class="syntax-block"><table class="property-table"><tr><th scope="row">
+          Initial value
+        </th><td><code>none</code></td></tr><tr><th scope="row">
+          Applies to
+        </th><td>all floated elements</td></tr><tr><th scope="row">
+          Inherited
+        </th><td>
+                  yes
+                </td></tr></table></div></div></div><div><div id="prop-prince-float-placement-examples">Examples</div><div class="example"><div class="programlisting"><pre><code>figure {
+&nbsp;&nbsp;prince-float-reference: page;
+&nbsp;&nbsp;prince-float-placement: bottom;
+}</code></pre></div></div></div><div><div id="prop-prince-float-placement-comments">Comments</div><p>
+        The <code>prince-float-placement</code> property defines how a floated element
+        is positioned.  Its values are basically the values of the standard
+        <code>float</code> property, plus some Prince-specific extensions.
+        </p><p>
+        The values <code>top</code> or <code>bottom</code> float the element to, respectively,
+        the top or the bottom of the float reference (a page, or a column), while
+        <code>top-bottom</code> tries to float it to the top, and if that should not be possible,
+        it is floated to the bottom.
+        </p><p>
+        Note that the default value for <code>prince-float-placement</code>, when omitted in the
+        <code><a href="#prop-prince-float">prince-float</a></code> shorthand property, is
+        <code>top-bottom</code>, and differs from its initial value.  This means that Prince
+        will try to float the element to the top of the indicated float reference, and if that
+        should not be possible, it would be floated to the bottom.
+        </p><p>
+        The value <code>snap</code> floats the element to the nearest "end", i.e.
+        to the top or bottom of the page or of the column.
+        </p><p>
+        The values <code>inside</code> and <code>outside</code> float the element respectively
+        to the inside or outside of a spread: <code>inside</code> moves the element to
+        the right when used on a left-facing page, and to the left on a right-facing page;
+        <code>outside</code> moves the element to the left when used on a left-facing
+        page, and to the right on a right-facing page.
+        </p><p>
+        The value <code>footnote</code> transforms the element into a footnote - the footnote
+        marker is placed outside of the block of the footnote.  The value <code>inline-footnote</code>
+        transforms the element into a footnote and places the footnote marker inside of
+        the block of the footnote.
+        </p><p class="note">
+        The property <a href="#prop-float-placement"><code>float-placement</code></a> can be used as an alias.
+        </p></div><div><div id="prop-prince-float-placement-seealso">See Also</div><ul><li><code><a href="#prop-float">float</a></code></li><li><a href="/doc/styling#floats">Floats</a></li><li><a href="/doc/paged#page-regions">Page Regions</a></li></ul></div><div><div id="prop-prince-float-placement-spec">Specification</div><ul><li><a href="https://www.w3.org/TR/CSS2/visuren.html#float-position">CSS 2.1</a></li><li><a href="https://www.w3.org/TR/css-gcpm-3/#footnotes">CSS Generated Content for Paged Media Module</a></li><li><a href="https://figures.spec.whatwg.org/">CSS Figures</a></li><li><a href="https://books.spec.whatwg.org/#footnotes">CSS Books</a></li><li><a href="https://drafts.csswg.org/css-page-floats/">CSS Page Floats</a></li></ul></div></div></details>
+
+<details><summary class="ext" id="prop-prince-float-policy">prince-float-policy* <a class="self-link" href="#prop-prince-float-policy"></a></summary><div><div><div id="prop-prince-float-policy-syntax">Syntax</div><div class="example"><div class="syntax-block"><pre><code>prince-float-policy: normal |&#160;in-order</code></pre></div></div></div><div><div class="example"><div class="syntax-block"><table class="property-table"><tr><th scope="row">
+          Initial value
+        </th><td><code>normal</code></td></tr><tr><th scope="row">
+          Applies to
+        </th><td>all floated elements</td></tr><tr><th scope="row">
+          Inherited
+        </th><td>
+                  yes
+                </td></tr></table></div></div></div><div><div id="prop-prince-float-policy-examples">Examples</div><div class="example"><div class="programlisting"><pre><code>figure {
+&nbsp;&nbsp;prince-float: bottom;
+&nbsp;&nbsp;prince-float-policy: in-order;
+}</code></pre></div></div></div><div><div id="prop-prince-float-policy-comments">Comments</div><p>
+        The <code>prince-float-policy</code> property defines the policy adopted when
+        floating an element.  The value <code>in-order</code> imposes that page
+        floats must be shown in source order - <code>normal</code> adds no extra
+        constraints to the float.</p><p class="note">
+        The property <a href="#prop-float-policy"><code>float-policy</code></a> can be used as an alias.
+        </p></div><div><div id="prop-prince-float-policy-seealso">See Also</div><ul><li><a href="/doc/styling#floats">Floats</a></li></ul></div><div><div id="prop-prince-float-policy-spec">Specification</div><ul><li><a href="https://figures.spec.whatwg.org/#page-float-preferences:-float-policy">CSS Figures</a></li></ul></div></div></details>
+
+<details><summary class="ext" id="prop-prince-float-reference">prince-float-reference* <a class="self-link" href="#prop-prince-float-reference"></a></summary><div><div><div id="prop-prince-float-reference-syntax">Syntax</div><div class="example"><div class="syntax-block"><pre><code>prince-float-reference: column |&#160;page</code></pre></div></div></div><div><div class="example"><div class="syntax-block"><table class="property-table"><tr><th scope="row">
+          Initial value
+        </th><td><code>column</code></td></tr><tr><th scope="row">
+          Applies to
+        </th><td>all floated elements</td></tr><tr><th scope="row">
+          Inherited
+        </th><td>
+                  yes
+                </td></tr></table></div></div></div><div><div id="prop-prince-float-reference-examples">Examples</div><div class="example"><div class="programlisting"><pre><code>figure {
+&nbsp;&nbsp;prince-float: top;
+&nbsp;&nbsp;prince-float-reference: page;
+}</code></pre></div></div></div><div><div id="prop-prince-float-reference-comments">Comments</div><p>
+        The <code>prince-float-reference</code> property defines the reference context for
+        the float, i.e. whether the element should be floated to the top of the
+        column, or of the page.</p><p>
+        Please note that the initial value is <code>column</code> - the style rule
+        <code>prince-float: top</code> will create a column float in a multicol context,
+        rather than a page float.</p><p class="note">
+        The property <a href="#prop-float-reference"><code>float-reference</code></a> can be used as an alias.
+        </p></div><div><div id="prop-prince-float-reference-seealso">See Also</div><ul><li><a href="/doc/styling#floats">Floats</a></li></ul></div><div><div id="prop-prince-float-reference-spec">Specification</div><ul><li><a href="https://figures.spec.whatwg.org/#setting-the-page-float-reference:-float-reference">CSS Figures</a></li><li><a href="https://drafts.csswg.org/css-page-floats/#float-reference-property">CSS Page Floats</a></li></ul></div></div></details>
+
+<details><summary class="ext" id="prop-prince-float-tail">prince-float-tail* <a class="self-link" href="#prop-prince-float-tail"></a></summary><div><div><div id="prop-prince-float-tail-syntax">Syntax</div><div class="example"><div class="syntax-block"><pre><code>prince-float-tail: keep |&#160;fill-page</code></pre></div></div></div><div><div class="example"><div class="syntax-block"><table class="property-table"><tr><th scope="row">
+          Initial value
+        </th><td><code>keep</code></td></tr><tr><th scope="row">
+          Applies to
+        </th><td>all floated elements</td></tr><tr><th scope="row">
+          Inherited
+        </th><td>
+                  yes
+                </td></tr></table></div></div></div><div><div id="prop-prince-float-tail-examples">Examples</div><div class="example"><div class="programlisting"><pre><code>figure {
+&nbsp;&nbsp;prince-float: top;
+&nbsp;&nbsp;prince-float-tail: fill-page;
+}</code></pre></div></div></div><div><div id="prop-prince-float-tail-comments">Comments</div><p>
+        The <code>prince-float-tail</code> property instructs Prince how to deal with page
+        floats that end up past the end of normal content: with the value
+        <code>fill-page</code>, Prince will try to fill the last page, but discard
+        any page floats that would create more pages.</p><p class="note">
+        The property <a href="#prop-float-tail"><code>float-tail</code></a> can be used as an alias.
+        </p></div><div><div id="prop-prince-float-tail-seealso">See Also</div><ul><li><a href="/doc/styling#floats">Floats</a></li></ul></div></div></details>
 
 <details><summary class="ext" id="prop-prince-flow">prince-flow*  <a class="self-link" href="#prop-prince-flow"></a></summary><div><div><div id="prop-prince-flow-syntax">Syntax</div><div class="example"><div class="syntax-block"><pre><code>prince-flow: normal |&#160;static(&#160;<i>name</i>, [ start |&#160;current ]?&#160;)</code></pre></div></div></div><div><div class="example"><div class="syntax-block"><table class="property-table"><tr><th scope="row">
           Initial value
@@ -2759,6 +2981,22 @@ supplier, item { overflow-wrap: normal; }
     </p><p class="note">
         The property <a href="#prop-link"><code>link</code></a> can be used as an alias.
         </p></div><div><div id="prop-prince-link-seealso">See Also</div><ul><li><a href="/doc/prince-output#pdf-links">PDF Links</a></li></ul></div></div></details>
+
+<details><summary class="ext" id="prop-prince-margin-alt">prince-margin-alt* <a class="self-link" href="#prop-prince-margin-alt"></a></summary><div><div><div id="prop-prince-margin-alt-syntax">Syntax</div><div class="example"><div class="syntax-block"><pre><code>prince-margin-alt: none |&#160;<i>length</i> <i>length</i>?</code></pre></div></div></div><div><div class="example"><div class="syntax-block"><table class="property-table"><tr><th scope="row">
+          Initial value
+        </th><td><code>none</code></td></tr><tr><th scope="row">
+          Applies to
+        </th><td>all top- or bottom-floated elements</td></tr><tr><th scope="row">
+          Inherited
+        </th><td>
+                  no
+                </td></tr></table></div></div></div><div><div id="prop-margin-comments">Comments</div><p>
+        The <code>prince-margin-alt</code> property defines a top and/or bottom margin
+        for elements floated to the top or bottom of a page or column,
+        by replacing the value of the corresponding margin property.
+    </p><p class="note">
+        The property <a href="#prop-margin-alt"><code>margin-alt</code></a> can be used as an alias.
+        </p></div><div><div id="prop-margin-seealso">See Also</div><ul><li><a href="/doc/styling#margin">Margin</a></li></ul></div></div></details>
 
 <details><summary class="ext" id="prop-prince-mark-length">prince-mark-length*  <a class="self-link" href="#prop-prince-mark-length"></a></summary><div><div><div id="prop-prince-mark-length-syntax">Syntax</div><div class="example"><div class="syntax-block"><pre><code>prince-mark-length: <i>length</i></code></pre></div></div></div><div><div class="example"><div class="syntax-block"><table class="property-table"><tr><th scope="row">
           Initial value
