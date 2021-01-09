@@ -1885,6 +1885,14 @@ For the values, the grammar draws on the [CSS Values and Units Module Level 3](h
         The <code>margin-alt</code> property defines a top and/or bottom margin
         for elements floated to the top or bottom of a page or column,
         by replacing the value of the corresponding margin property.
+    </p><p>
+    The default value is <code>none</code>, which means that no alternative margin value
+    is defined, and thus the default margin, specified with the <code>margin</code>
+    property, is applied.
+    </p><p>
+    If only one value is given, it refers to both the top and bottom alternative margin.
+    When two values are given, the first one refers to the top alternative margin, while
+    the second one refers to the bottom one.
     </p><p class="note">
         The property <a href="#prop-prince-margin-alt"><code>-prince-margin-alt</code></a> can be used as an alias.
         </p></div><div><div id="prop-margin-seealso">See Also</div><ul><li><a href="/doc/styling#margin">Margin</a></li></ul></div></div></details>
@@ -2994,6 +3002,14 @@ supplier, item { overflow-wrap: normal; }
         The <code>-prince-margin-alt</code> property defines a top and/or bottom margin
         for elements floated to the top or bottom of a page or column,
         by replacing the value of the corresponding margin property.
+    </p><p>
+    The default value is <code>none</code>, which means that no alternative margin value
+    is defined, and thus the default margin, specified with the <code>margin</code>
+    property, is applied.
+    </p><p>
+    If only one value is given, it refers to both the top and bottom alternative margin.
+    When two values are given, the first one refers to the top alternative margin, while
+    the second one refers to the bottom one.
     </p><p class="note">
         The property <a href="#prop-margin-alt"><code>margin-alt</code></a> can be used as an alias.
         </p></div><div><div id="prop-margin-seealso">See Also</div><ul><li><a href="/doc/styling#margin">Margin</a></li></ul></div></div></details>
