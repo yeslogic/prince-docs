@@ -751,6 +751,7 @@ var std = {
             princeBookmarkTarget: {},
             princeBorderClip: {},
             princeCaptionPage: {},
+            princeClear: {},
             princeFilterResolution: {},
             princeFloatDeferColumn: {},
             princeFloatDeferPage: {},

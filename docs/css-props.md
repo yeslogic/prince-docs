@@ -792,7 +792,7 @@ For the values, the grammar draws on the [CSS Values and Units Module Level 3](h
 	the top or bottom of the table.
 	</p></div><div><div id="prop-caption-side-seealso">See Also</div><ul><li><a href="/doc/styling#table-captions">Table captions</a></li></ul></div><div><div id="prop-caption-side-spec">Specification</div><ul><li><a href="https://www.w3.org/TR/CSS2/tables.html#caption-position">CSS 2.1</a></li></ul></div></div></details>
 
-<details><summary class="ext" id="prop-clear">clear <a class="self-link" href="#prop-clear"></a></summary><div><div><div id="prop-clear-syntax">Syntax</div><div class="example"><div class="syntax-block"><pre><code>clear: none |&#160;left |&#160;right |&#160;<span class="ext">inside</span> |&#160;<span class="ext">outside</span> |&#160;<span class="ext">both</span> |&#160;<span class="ext">page</span> |&#160;<span class="ext">column</span> |&#160;<span class="ext">end</span></code></pre></div></div></div><div><div class="example"><div class="syntax-block"><table class="property-table"><tr><th scope="row">
+<details><summary class="ext" id="prop-clear">clear* <a class="self-link" href="#prop-clear"></a></summary><div><div><div id="prop-clear-syntax">Syntax</div><div class="example"><div class="syntax-block"><pre><code>clear: none |&#160;left |&#160;right |&#160;<span class="ext">inside</span> |&#160;<span class="ext">outside</span> |&#160;<span class="ext">both</span> |&#160;<span class="ext">page</span> |&#160;<span class="ext">column</span> |&#160;<span class="ext">end</span></code></pre></div></div></div><div><div class="example"><div class="syntax-block"><table class="property-table"><tr><th scope="row">
           Initial value
         </th><td><code>none</code></td></tr><tr><th scope="row">
           Applies to
@@ -2465,7 +2465,7 @@ supplier, item { overflow-wrap: normal; }
         The property <a href="#prop-caption-page"><code>caption-page</code></a> can be used as an alias.
         </p></div><div><div id="prop-prince-caption-page-seealso">See Also</div><ul><li><a href="/doc/styling#table-captions">Table captions</a></li></ul></div></div></details>
 
-<details><summary class="ext" id="prop-prince-clear">-prince-clear <a class="self-link" href="#prop-prince-clear"></a></summary><div><div><div id="prop-prince-clear-syntax">Syntax</div><div class="example"><div class="syntax-block"><pre><code>-prince-clear: none |&#160;left |&#160;right |&#160;<span class="ext">inside</span> |&#160;<span class="ext">outside</span> |&#160;<span class="ext">both</span> |&#160;<span class="ext">page</span> |&#160;<span class="ext">column</span> |&#160;<span class="ext">end</span></code></pre></div></div></div><div><div class="example"><div class="syntax-block"><table class="property-table"><tr><th scope="row">
+<details><summary class="ext" id="prop-prince-clear">-prince-clear* <a class="self-link" href="#prop-prince-clear"></a></summary><div><div><div id="prop-prince-clear-syntax">Syntax</div><div class="example"><div class="syntax-block"><pre><code>-prince-clear: none |&#160;left |&#160;right |&#160;<span class="ext">inside</span> |&#160;<span class="ext">outside</span> |&#160;<span class="ext">both</span> |&#160;<span class="ext">page</span> |&#160;<span class="ext">column</span> |&#160;<span class="ext">end</span></code></pre></div></div></div><div><div class="example"><div class="syntax-block"><table class="property-table"><tr><th scope="row">
           Initial value
         </th><td><code>none</code></td></tr><tr><th scope="row">
           Applies to
