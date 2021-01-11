@@ -95,7 +95,11 @@ function add(parent, thing, annotations, type, hasChildren, length, parentDescs)
         if(annotations && annotations.url) {
             div = theDetailsDiv.appendChild(document.createElement('div'));
             div.className = 'url-property';
-            property = thing.replace(/([A-Z])/g, '-$1').toLowerCase();
+            if(thing == 'cssFloat') {
+                property = 'float';
+            } else {
+                property = thing.replace(/([A-Z])/g, '-$1').toLowerCase();
+            }
             url = div.appendChild(document.createElement('a'));
             url.setAttribute("href", "/doc/css-props#prop-" + property);
             url.appendChild(document.createTextNode(property));
