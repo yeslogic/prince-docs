@@ -994,6 +994,109 @@ A more basic means for rotation, allowing for less fine-tuning, is the use of th
 For a different approach to rotating content, see the section on [Printing wide content sideways](#printing-wide-content-sideways).
 
 
+How and Where is my Box?
+-------------
+
+<dl class="ingredients">
+  <dt>You need</dt>
+    <dd><a href="/doc/javascript#the-prince-object">The Prince Object</a></dd>
+    <dd><a href="/doc/javascript#the-box-tracking-api">The Box Tracking API</a></dd>
+</dl>
+
+The `BoxInfo()` method returns a list of *boxes*, each of which has a series of properties defining them.
+
+The following script adds some useful higher-level functionality, making the `marginBox(u)`, `borderBox(u)`, `paddingBox(u)` and `contentBox(u)` methods available on the BoxInfo objects. The parameter `u` defines the units to use, and needs to be one of `cm`, `in`, `mm`, `q`, `pc`, `pt` or `px`.
+
+The methods return a box object with properties `x`, `y`, `w` and `h`, giving the position and size of the box in the requested units.
+
+```javascript
+    if (typeof Prince != "undefined") {
+        addBoxInfoMethods();
+    }
+    
+    function Box(x, y, w, h, u) {
+        var d = 1;
+    
+        if (u == "cm") {
+            d = 72/2.54;
+        } else if (u == "in") {
+            d = 72;
+        } else if (u == "mm") {
+            d = 72/25.4;
+        } else if (u == "q") {
+            d = 72/101.6;
+        } else if (u == "pc") {
+            d = 1/12;
+        } else if (u == "pt") {
+            d = 1;
+        } else if (u == "px") {
+            d = 72/96;
+        } else {
+            console.log("Box: unknown units: " + u);
+        }
+    
+        this.x = x/d;
+        this.y = y/d;
+        this.w = w/d;
+        this.h = h/d;
+    }
+    
+    function addBoxInfoMethods() {
+        BoxInfo.prototype.marginBox = function (u) {
+            var x = this.x - this.marginLeft;
+            var y = this.y + this.marginTop;
+            var w = this.w + this.marginLeft + this.marginRight;
+            var h = this.h + this.marginTop + this.marginBottom;
+            return new Box(x, y, w, h, u);
+        };
+    
+        BoxInfo.prototype.borderBox = function (u) {
+            var x = this.x;
+            var y = this.y;
+            var w = this.w;
+            var h = this.h;
+            return new Box(x, y, w, h, u);
+        };
+    
+        BoxInfo.prototype.paddingBox = function(u) {
+            var bTop = parseFloat(this.style.borderTopWidth.slice(0, -2));
+            var bRight = parseFloat(this.style.borderRightWidth.slice(0, -2));
+            var bBottom = parseFloat(this.style.borderBottomWidth.slice(0, -2));
+            var bLeft = parseFloat(this.style.borderLeftWidth.slice(0, -2));
+            var x = this.x + bLeft;
+            var y = this.y - bTop;
+            var w = this.w - bLeft - bRight;
+            var h = this.h - bTop - bBottom;
+            return new Box(x, y, w, h, u);
+        };
+    
+        BoxInfo.prototype.contentBox = function(u) {
+            var bTop = parseFloat(this.style.borderTopWidth.slice(0, -2));
+            var bRight = parseFloat(this.style.borderRightWidth.slice(0, -2));
+            var bBottom = parseFloat(this.style.borderBottomWidth.slice(0, -2));
+            var bLeft = parseFloat(this.style.borderLeftWidth.slice(0, -2));
+            var pTop = parseFloat(this.style.paddingTop.slice(0, -2));
+            var pRight = parseFloat(this.style.paddingRight.slice(0, -2));
+            var pBottom = parseFloat(this.style.paddingBottom.slice(0, -2));
+            var pLeft = parseFloat(this.style.paddingLeft.slice(0, -2));
+            var x = this.x + bLeft + pLeft;
+            var y = this.y - bTop - pTop;
+            var w = this.w - bLeft - bRight - pLeft - pRight;
+            var h = this.h - bTop - bBottom - pTop - pBottom;
+            return new Box(x, y, w, h, u);
+        };
+    }
+```
+
+To use the features, the script just needs to be included in the HTML directly as a script, or as an imported JavaScript file.  It is then easy to detect e.g. the width of the content:
+
+```javascript
+    var e = document.getElementById("someId");
+    var b = e.getPrinceBoxes()[0];
+    console.log("Content width is " + b.contentBox("cm").w + "cm");
+```
+
+
 The "Multi-Pass" Solution
 -----------------------
 
