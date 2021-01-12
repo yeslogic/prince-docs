@@ -182,6 +182,8 @@ It then becomes available in the `complete` event (see [Event Handling](javascri
         }
     }, false);
 ```
+
+
 The [`PDF.pages`](js-support.md#window.PDF.pages) array mentioned earlier (see [The PDF Object](javascript.md#the-pdf-object)) also is available only after the `complete` event and also returns a list of *boxes* (see [Page regions](paged.md#page-regions)).
 
 ```javascript
@@ -206,39 +208,44 @@ The [`PDF.pages`](js-support.md#window.PDF.pages) array mentioned earlier (see [
 ```
 *Boxes* are JavaScript objects with some or all of the following properties:
 
-
-    type =     "BODY" |
-               "COLUMN" |
-               "FLEXLINE" |
-               "FOOTNOTES" |
-               "FLOATS" |
-               "BOX" |
-               "LINE" |
-               "SPAN" |
-               "TEXT" |
-               "SVG" |
-               "IMAGE"
-    pageNum =  the page of the current box
-    x =        x-coordinate, in pt
-    y =        y-coordinate, in pt (set to zero on some boxes)
-    w =        width, in pt
-    h =        height, in pt (set to zero on some boxes)
-    baseline = the y-coordinate of the baseline of the box,
-               ie. the line that the text rests on, in pt -
-               applies only to inline boxes
-    children = array of child boxes
-    parent =   parent box
-    element =  DOM element for box (may be null)
-    pseudo =   pseudo-element name or null
-    text =     string
-    src =      URL string for images
-    style =    CSS style object for box
+    type =          "BODY" |
+                    "COLUMN" |
+                    "FLEXLINE" |
+                    "FOOTNOTES" |
+                    "FLOATS" |
+                    "BOX" |
+                    "LINE" |
+                    "SPAN" |
+                    "TEXT" |
+                    "SVG" |
+                    "IMAGE"
+    pageNum =       the page of the current box
+    x =             x-coordinate, in pt
+    y =             y-coordinate, in pt (set to zero on some boxes)
+    w =             width, in pt
+    h =             height, in pt (set to zero on some boxes)
+    baseline =      the y-coordinate of the baseline of the box,
+                    ie. the line that the text rests on, in pt -
+                    applies only to inline boxes
+    marginTop
+    marginRight
+    marginBottom
+    marginLeft =    the used values for margins
+    children =      array of child boxes
+    parent =        parent box
+    element =       DOM element for box (may be null)
+    pseudo =        pseudo-element name or null
+    text =          string
+    src =           URL string for images
+    style =         CSS style object for box
 
 The `x`, `y`, `w`, `h` and `baseline` measures, defining respectively the x- and y-coordinates and the width and height of the *box*, use the same coordinate system as the PDF, i.e. the box tracking units are measured in points (`pt`) and the origin is the lower left corner of the page.
 
 The box with the value `BODY` represents the *page area* returned by [`PDF.pages`](js-support.md#window.PDF.pages) (and thus is not necessarily equivalent with the `body` element); the content of the *page-margin boxes* is not included in the tree (see [Page regions](paged.md#page-regions) for the definition of *page area* and *page-margin boxes*).
 
 The properties of a *box* can be queried with the [`BoxInfo()`](js-support.md#window.BoxInfo) method.
+
+The `marginTop`, `marginRight`, `marginBottom` and `marginLeft` properties return the *used* values for margins.  This can be useful in cases of elements that are snapped to the nearest column or page end (see [Page and Column Floats](styling.md#page-and-column-floats)), since it is impossible to predict whether they will be floated to the top or bottom, and thus whether the alternative margin will be applied (see [Margins of Page and Column Floats](styling.md#margins-of-page-and-column-floats)).  See also [our nifty script](cookbook.md#how-and-where-is-my-box) to return the position and dimension of the margin box, the border box, the padding box and the content box of an element.
 
 Since the box tracking API is available only *after* the `complete` event, it cannot be used to modify the document (see [JavaScript in Printed Media](javascript.md#javascript-in-printed-media)).
 

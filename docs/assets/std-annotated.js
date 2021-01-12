@@ -1310,6 +1310,22 @@ var stdAnnotated = {
                 type: "function",
                 returns: "height, in pt"
             },
+            marginBottom: {
+                type: "function",
+                returns: "the used value for the bottom margin",
+            },
+           marginLeft: {
+                type: "function",
+                returns: "the used value for the left margin",
+            },
+            marginRight: {
+                type: "function",
+                returns: "the used value for the right margin",
+            },
+             marginTop: {
+                type: "function",
+                returns: "the used value for the top margin",
+            },
             children: {
                 type: "function",
                 returns: "array of child boxes"
