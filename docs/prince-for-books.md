@@ -19,15 +19,15 @@ Line breaking
 
 Prince for Books introduces a few new CSS properties to try handling line breaks in a more granular way, and additionally, it tries harder to avoid a hyphen at the end of a page and at the end of the last full line, as well as for ragged text (i.e. for left-aligned or centered text). It also tries to avoid a short last line, especially if it is shorter than the value of `text-indent`.
 
-### The property `prince-wrap-inside`
+### The property `-prince-wrap-inside`
 
-The property [`prince-wrap-inside`](css-props.md#prop-prince-wrap-inside) offers a way to instruct Prince how to break text: the keyword `phrase` is for marking up a phrase that one would weakly prefer to keep on a single line. It adds to Prince's perceived cost of breaking within that phrase, but only a small cost, comparable to the cost of hyphenating a compound adjective such as ‘midyear’.
+The property [`-prince-wrap-inside`](css-props.md#prop-prince-wrap-inside) offers a way to instruct Prince how to break text: the keyword `phrase` is for marking up a phrase that one would weakly prefer to keep on a single line. It adds to Prince's perceived cost of breaking within that phrase, but only a small cost, comparable to the cost of hyphenating a compound adjective such as ‘midyear’.
 
 The keyword `avoid` is a stronger directive: it avoids breaking the text to which the property is applied even if it causes the affected text to be unusually tight, or the previous line to be unusually loose; but not if either line would become truly exceptionally tightly or loosely spaced.
 
 This property would most commonly be used in headings, or perhaps in important passages of body text such as in instructions or for the name of a product in advertising. For example, if one opens a book that was printed before the widespread use of computers in publishing, then one would likely see that any headings that don't fit in one line won't simply put as much on the first line as fits, but will instead break somewhat according to natural phrasing.
 
-To make it more likely for Prince for Books to produce this effect, one might put `span` elements around phrases, styling each of these spans with `prince-wrap-inside:phrase`.
+To make it more likely for Prince for Books to produce this effect, one might put `span` elements around phrases, styling each of these spans with `-prince-wrap-inside: phrase`.
 
 HTML
 
@@ -39,7 +39,7 @@ CSS
 
 ```css
     span {
-      prince-wrap-inside: phrase;
+      -prince-wrap-inside: phrase;
     }
 ```
 The example would produce a title line like this:
@@ -53,9 +53,9 @@ If however the final available space were narrower than the required space, Prin
 of the law and<br/>
 of the prophets</p>
 
-### The property `prince-line-break-choices`
+### The property `-prince-line-break-choices`
 
-Another property for fine-tuning the line breaking behaviour is [`prince-line-break-choices`](css-props.md#prop-prince-line-break-choices).
+Another property for fine-tuning the line breaking behaviour is [`-prince-line-break-choices`](css-props.md#prop-prince-line-break-choices).
 
 The keyword `title` is intended for title pages of books or chapters, where phrasing considerations are of prime consideration even at the cost of extremely unbalanced lines.
 
@@ -71,7 +71,7 @@ A disadvantage of lookahead is that any "mistakes" (that is, differences from wh
 
 This means that the non-lookahead versions might be a better choice in jobs where Prince's line breaks will be accepted without human oversight; whereas if a typesetter will look for and correct any problems in the rag of the paragraph, then the lookahead versions will typically give a better starting point.
 
-A typesetter's intervention currently involves modifying the HTML: it is not requireed to assign an `id` to each paragraph, but it is nevertheless common practice to do so for making other changes, such as changing the number of lines in a paragraph for pagination purposes (whether using `prince-n-lines` or `word-spacing` or `letter-spacing`), or assigning a unique value to each chapter in order to change how many lines are on the last page of the chapter (say, by adding `1pt` to the inside margin). See also [Spread Balancing](prince-for-books.md#pfb-spreadbalancing).
+A typesetter's intervention currently involves modifying the HTML: it is not requireed to assign an `id` to each paragraph, but it is nevertheless common practice to do so for making other changes, such as changing the number of lines in a paragraph for pagination purposes (whether using `-prince-n-lines` or `word-spacing` or `letter-spacing`), or assigning a unique value to each chapter in order to change how many lines are on the last page of the chapter (say, by adding `1pt` to the inside margin). See also [Spread Balancing](prince-for-books.md#pfb-spreadbalancing).
 
 To illustrate the difference, one could also say that non-lookahead versions give paragraph shapes reminiscent of those given by word processors and web browsers, while the lookahead versions come slightly closer to what one might find in books.
 
@@ -81,10 +81,10 @@ The base stylesheet that Prince for Books applies to all HTML documents (i.e. th
 
 ```
     h1, h2, h3, h4, h5, h6 {
-        prince-line-break-choices: heading;
+        -prince-line-break-choices: heading;
     }
 ```
-but HTML semantics alone do not distinguish content where the more extreme `prince-line-break-choices: title` could be appropriate. Doing so requires additional conventions, such as those given in the [HTMLBook](https://oreillymedia.github.io/HTMLBook/) specification.
+but HTML semantics alone do not distinguish content where the more extreme `-prince-line-break-choices: title` could be appropriate. Doing so requires additional conventions, such as those given in the [HTMLBook](https://oreillymedia.github.io/HTMLBook/) specification.
 
 The below example applies `title-lookahead` line-breaking to the book title, chapter titles and part titles, while applying `heading-lookahead` line-breaking to subtitles.
 
@@ -97,26 +97,26 @@ CSS
     section[data-type="chapter"] > heading > h1,
     div[data-type="part"] > h1,
     div[data-type="part"] > heading > h1 {
-        prince-line-break-choices: title-lookahead;
+        -prince-line-break-choices: title-lookahead;
     }
 
     heading > * {
-        prince-line-break-choices: heading-lookahead;
+        -prince-line-break-choices: heading-lookahead;
     }
 ```
 HTMLBook uses a slightly non-standard representation of subtitles: not using `hgroup`, and using `p` elements rather than the heading elements `h1` to `h6`.
 
-### The property `prince-forced-breaks`
+### The property `-prince-forced-breaks`
 
-The property [`prince-forced-breaks`](css-props.md#prop-prince-forced-breaks) controls whether a line ended by a "preserved newline" (such as introduced by `<br>`) should preferably appear to be a normal full line (as if ended only by normal line wrapping), or whether being shorter than a normal full line is actually preferable, for example to mark a deliberate break.
+The property [`-prince-forced-breaks`](css-props.md#prop-prince-forced-breaks) controls whether a line ended by a "preserved newline" (such as introduced by `<br>`) should preferably appear to be a normal full line (as if ended only by normal line wrapping), or whether being shorter than a normal full line is actually preferable, for example to mark a deliberate break.
 
-The `br` element would usually create a visually forced break, treating that line much as if it were the last line of a paragraph. For example, it would continue to do so in any UA not supporting the property [`prince-forced-breaks`](css-props.md#prop-prince-forced-breaks) (thus getting in the way of reading the content in some other UA, or using the same source document for web/epub deployment), or if the stylesheet doesn't load. Tweaking line breaks using `prince-forced-breaks: full` is not intended to be consciously noticeable by readers, so `br` would not be the best approximation in HTML.
+The `br` element would usually create a visually forced break, treating that line much as if it were the last line of a paragraph. For example, it would continue to do so in any UA not supporting the property [`-prince-forced-breaks`](css-props.md#prop-prince-forced-breaks) (thus getting in the way of reading the content in some other UA, or using the same source document for web/epub deployment), or if the stylesheet doesn't load. Tweaking line breaks using `-prince-forced-breaks: full` is not intended to be consciously noticeable by readers, so `br` would not be the best approximation in HTML.
 
 CSS
 
 ```
     lb { white-space: pre; }
-    lb::before { content: "\A"; prince-forced-breaks: full; }
+    lb::before { content: "\A"; -prince-forced-breaks: full; }
 ```
 This example shows the styling for an `<lb />` element, which can be added to force breaks. Of course we first need to instruct Prince to respect "preserved newlines" - we do this with the [`white-space`](css-props.md#prop-white-space) property.
 
@@ -138,7 +138,7 @@ HTML
 ```
 in the document where a line break should be forced only in editions A and C.
 
-The difference is particularly marked in justified text, where lines ended by `prince-forced-breaks: full` are subject to justification like most other lines.
+The difference is particularly marked in justified text, where lines ended by `-prince-forced-breaks: full` are subject to justification like most other lines.
 
 Spread Balancing
 ----------------
@@ -147,15 +147,15 @@ A prominent new feature is the concept of "spread balancing": Prince for Books c
 
 Prince for Books also tries to reduce the number of uneven spreads.
 
-### The property `prince-page-fill`
+### The property `-prince-page-fill`
 
-The property [`prince-page-fill`](css-props.md#prop-prince-page-fill) is used to turn on the page balancing mechanism. Prince for Books will check how much space is left at the bottom of each page of a two-page spread and compares it with the line-height to determine whether the pages end with different numbers of lines. If one page is longer than the other, Prince will attempt to repack that page one line shorter, so that they match in height. If it is still unbalanced, which might happen due to triggering another widows/orphans constraint, it will revert to the original layout.
+The property [`-prince-page-fill`](css-props.md#prop-prince-page-fill) is used to turn on the page balancing mechanism. Prince for Books will check how much space is left at the bottom of each page of a two-page spread and compares it with the line-height to determine whether the pages end with different numbers of lines. If one page is longer than the other, Prince will attempt to repack that page one line shorter, so that they match in height. If it is still unbalanced, which might happen due to triggering another widows/orphans constraint, it will revert to the original layout.
 
 Prince also includes the bottom margin in the evaluation for balancing, allowing said margin to be truncated for purposes of deciding whether the two pages can be considered to have the same length.
 
-### The property `prince-n-lines`
+### The property `-prince-n-lines`
 
-Another way to address page balancing is by using the property [`prince-n-lines`](css-props.md#prop-prince-n-lines). It is for use in the pagination phase of typesetting, for ensuring that page ends are even while avoiding widows and other awkward breaks.
+Another way to address page balancing is by using the property [`-prince-n-lines`](css-props.md#prop-prince-n-lines). It is for use in the pagination phase of typesetting, for ensuring that page ends are even while avoiding widows and other awkward breaks.
 
 Typically, the best paragraph to apply this property to will be either already long and/or currently has either a very short or almost full last line, so that the paragraph doesn't need to change much in length compared to its existing "length" (as reckoned by its height). That is, the typesetter can choose a good candidate by looking at how much the last line would need to shrink or grow (including a word or two for the next line if growing), and how many times that length would fit in the height of the paragraph, with more being better.
 

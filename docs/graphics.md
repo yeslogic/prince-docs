@@ -90,13 +90,13 @@ The aim of Prince, within a color-managed workflow, is to preserve color informa
 
 As described in the [PDF Versions and Profiles](prince-output.md#pdf-versions-and-profiles) section, both PDF/A and PDF/X profiles impose restrictions on the features that may be used in a PDF file, including restrictions on color.
 
-PDF/A and PDF/X files have an output intent that defines the intended output color space of the PDF file. In Prince, the output intent color profile is selected using the [`--pdf-output-intent`](command-line.md#cl-pdf-output-intent) command-line option, or using the [`prince-pdf-output-intent`](css-props.md#prop-prince-pdf-output-intent) property inside a [`@prince-pdf`](css-refs.md#at-prince-pdf) at-rule. Both take a filename or URL to an ICC profile as its value.
+PDF/A and PDF/X files have an output intent that defines the intended output color space of the PDF file. In Prince, the output intent color profile is selected using the [`--pdf-output-intent`](command-line.md#cl-pdf-output-intent) command-line option, or using the [`-prince-pdf-output-intent`](css-props.md#prop-prince-pdf-output-intent) property inside a [`@prince-pdf`](css-refs.md#at-prince-pdf) at-rule. Both take a filename or URL to an ICC profile as its value.
 
-The URL specified with the [`--pdf-output-intent`](command-line.md#cl-pdf-output-intent) command-line option or the [`prince-pdf-output-intent`](css-props.md#prop-prince-pdf-output-intent) property will be resolved relative to the base URL of the style sheet or document in which the rule is, and needs to point to an existing color profile file.
+The URL specified with the [`--pdf-output-intent`](command-line.md#cl-pdf-output-intent) command-line option or the [`-prince-pdf-output-intent`](css-props.md#prop-prince-pdf-output-intent) property will be resolved relative to the base URL of the style sheet or document in which the rule is, and needs to point to an existing color profile file.
 
 ```
     @prince-pdf {
-        prince-pdf-output-intent: url("ISOcoated_v2_eci.icc")
+        -prince-pdf-output-intent: url("ISOcoated_v2_eci.icc")
     }
 ```
 For PDF/X, the output intent must be given as it describes the intended printing process. For PDF/A, Prince assumes an sRGB ICC profile if an output intent is not given.
@@ -124,7 +124,7 @@ Prince supports RGB, RGBA, HSL, HSLA, CMYK, and named spot colors. For Prince's 
 
 As CSS defines RGB colors in the sRGB color space, Prince tags those colors with an sRGB ICC profile in the PDF output. See also the section on [Rich black and true black](#rich-black-and-true-black) below.
 
-CMYK colors specified using the `cmyk()` function syntax, or equivalent `device-cmyk()` syntax, represent device-dependent colors, so they will be left as such in the PDF when possible. Device-dependent color is not allowed in PDF/A or PDF/X, so those CMYK colors will be assumed to be either in the output intent color space (if it is CMYK), or else the color space of the fallback CMYK profile. See the command-line option [`--fallback-cmyk-profile`](command-line.md#cl-fallback-cmyk-profile) in the [PDF Output Options](command-line.md#pdf-output-options) section, or the [`prince-fallback-cmyk-profile`](css-props.md#prop-prince-fallback-cmyk-profile) property.
+CMYK colors specified using the `cmyk()` function syntax, or equivalent `device-cmyk()` syntax, represent device-dependent colors, so they will be left as such in the PDF when possible. Device-dependent color is not allowed in PDF/A or PDF/X, so those CMYK colors will be assumed to be either in the output intent color space (if it is CMYK), or else the color space of the fallback CMYK profile. See the command-line option [`--fallback-cmyk-profile`](command-line.md#cl-fallback-cmyk-profile) in the [PDF Output Options](command-line.md#pdf-output-options) section, or the [`-prince-fallback-cmyk-profile`](css-props.md#prop-prince-fallback-cmyk-profile) property.
 ```bash
     prince input.html
            --pdf-profile=PDF/A-1b
@@ -133,27 +133,27 @@ CMYK colors specified using the `cmyk()` function syntax, or equivalent `device-
 ```
 ```css
     @prince-pdf {
-        prince-pdf-output-intent: url("sRGB.icc");
-        prince-fallback-cmyk-profile: url("ISOcoated_v2_eci.icc");
+        -prince-pdf-output-intent: url("sRGB.icc");
+        -prince-fallback-cmyk-profile: url("ISOcoated_v2_eci.icc");
     }
 ```
-Prince preserves the ICC profiles embedded in bitmap images, unless directed not to (see the `ignore-icc-profile` value of the [`prince-image-magic`](css-props.md#prop-prince-image-magic) property). If an image does not have an embedded ICC profile, the behavior depends on the color model of the image. Untagged RGB images will be assumed to be in the sRGB color space. Untagged CMYK images will, when necessary, be assumed to be either in the output intent color space (if it is CMYK), or else the color space of the fallback CMYK profile. Untagged grayscale images will be left as DeviceGray in the PDF (in PDF/A and PDF/X, it means it is characterized by the output intent color space).
+Prince preserves the ICC profiles embedded in bitmap images, unless directed not to (see the `ignore-icc-profile` value of the [`-prince-image-magic`](css-props.md#prop-prince-image-magic) property). If an image does not have an embedded ICC profile, the behavior depends on the color model of the image. Untagged RGB images will be assumed to be in the sRGB color space. Untagged CMYK images will, when necessary, be assumed to be either in the output intent color space (if it is CMYK), or else the color space of the fallback CMYK profile. Untagged grayscale images will be left as DeviceGray in the PDF (in PDF/A and PDF/X, it means it is characterized by the output intent color space).
 
 ### Color conversion
 
-Prince will convert all the colors in a document to a single color space if the [`--convert-colors`](command-line.md#cl-convert-colors) command-line option or the [`prince-pdf-color-conversion`](css-props.md#prop-prince-pdf-color-conversion-syntax2) descriptor in the [`@prince-pdf`](css-refs.md#at-prince-pdf) at-rule is used. The destination color space is specified with the [`--pdf-output-intent`](command-line.md#cl-pdf-output-intent) option (or the [`prince-pdf-output-intent`](css-props.md#prop-prince-pdf-output-intent) property), even when not producing PDF/A or PDF/X files.
+Prince will convert all the colors in a document to a single color space if the [`--convert-colors`](command-line.md#cl-convert-colors) command-line option or the [`-prince-pdf-color-conversion`](css-props.md#prop-prince-pdf-color-conversion-syntax2) descriptor in the [`@prince-pdf`](css-refs.md#at-prince-pdf) at-rule is used. The destination color space is specified with the [`--pdf-output-intent`](command-line.md#cl-pdf-output-intent) option (or the [`-prince-pdf-output-intent`](css-props.md#prop-prince-pdf-output-intent) property), even when not producing PDF/A or PDF/X files.
 
-Prince automatically converts colors to the output intent color space only when producing PDF/X-1a files. Files in any of the other profiles need also the [`--convert-colors`](command-line.md#cl-convert-colors) command-line option or the [`prince-pdf-color-conversion`](css-props.md#prop-prince-pdf-color-conversion) property if colors are to be converted.
+Prince automatically converts colors to the output intent color space only when producing PDF/X-1a files. Files in any of the other profiles need also the [`--convert-colors`](command-line.md#cl-convert-colors) command-line option or the [`-prince-pdf-color-conversion`](css-props.md#prop-prince-pdf-color-conversion) property if colors are to be converted.
 
-When used as a descriptor in a [`@prince-pdf`](css-refs.md#at-prince-pdf) at-rule, the [`prince-pdf-color-conversion`](css-props.md#prop-prince-pdf-color-conversion-syntax2) descriptor also takes an optional second argument to define the rendering intent, or to cause the target ICC profile to not be embedded in the output PDF, unless required by the PDF profile.  For details, please see the entry for [the `prince-pdf-color-conversion` descriptor](css-props.md#prop-prince-pdf-color-conversion-syntax2).
+When used as a descriptor in a [`@prince-pdf`](css-refs.md#at-prince-pdf) at-rule, the [`-prince-pdf-color-conversion`](css-props.md#prop-prince-pdf-color-conversion-syntax2) descriptor also takes an optional second argument to define the rendering intent, or to cause the target ICC profile to not be embedded in the output PDF, unless required by the PDF profile.  For details, please see the entry for [the `-prince-pdf-color-conversion` descriptor](css-props.md#prop-prince-pdf-color-conversion-syntax2).
 
-Prince however also allows to use [`prince-pdf-color-conversion`](css-props.md#prop-prince-pdf-color-conversion) as a property, applied to individual elements.  In this case, the value `auto` is the default and will enable color conversion for this element, if color conversion is enabled at the top level in the [`@prince-pdf`](css-refs.md#at-prince-pdf) at-rule or with the command-line argument.  The value `none` allows color conversion to be disabled for that element and its descendants.
+Prince however also allows to use [`-prince-pdf-color-conversion`](css-props.md#prop-prince-pdf-color-conversion) as a property, applied to individual elements.  In this case, the value `auto` is the default and will enable color conversion for this element, if color conversion is enabled at the top level in the [`@prince-pdf`](css-refs.md#at-prince-pdf) at-rule or with the command-line argument.  The value `none` allows color conversion to be disabled for that element and its descendants.
 
 ### Rich black and true black
 
 In printing, "rich black" is a mixture of CMYK ink colors to produce a darker tone than using the black ink alone ("true black").
 
-The property [`prince-pdf-color-options`](css-props.md#prop-prince-pdf-color-options) controls the encoding of CSS RGB values representing black and grays, i.e. RGB colors with equal values of red, green and blue.
+The property [`-prince-pdf-color-options`](css-props.md#prop-prince-pdf-color-options) controls the encoding of CSS RGB values representing black and grays, i.e. RGB colors with equal values of red, green and blue.
 
 When the value `use-true-black` is used, such an RGB value will be encoded in the DeviceGray color space in the PDF. A CMYK printer should print the gray level using only the black ink. This is the default setting of Prince.
 
@@ -161,14 +161,14 @@ On the other hand, the `use-rich-black` value instructs Prince to keep all RGB c
 
 ```
     @prince-pdf {
-        prince-pdf-color-options: use-rich-black;
+        -prince-pdf-color-options: use-rich-black;
     }
 ```
 Color conversion takes into account the `use-true-black` value when converting CSS RGB values to CMYK. True blacks and grays will be converted to CMYK with only non-zero values in the K channel. Note, however, that this does not affect bitmap images.
 
 ### Page color space
 
-The property [`prince-pdf-page-colorspace`](css-props.md#prop-prince-pdf-page-colorspace) controls the color space of pages in the PDF file. It affects the compositing of transparent content onto the page by selecting the color space in which compositing is performed. Prince currently defaults to the RGB color space. It may be useful to set this property to avoid converting the colors of transparent content before it is composited onto the page, possibly resulting in distorted colors.
+The property [`-prince-pdf-page-colorspace`](css-props.md#prop-prince-pdf-page-colorspace) controls the color space of pages in the PDF file. It affects the compositing of transparent content onto the page by selecting the color space in which compositing is performed. Prince currently defaults to the RGB color space. It may be useful to set this property to avoid converting the colors of transparent content before it is composited onto the page, possibly resulting in distorted colors.
 
 
 Filters
@@ -215,7 +215,7 @@ Alternatively, a filter can be written in SVG and can be referenced by a URL:
 `filter: url(<url>)`  
 This filter takes the URL of an SVG filter. An anchor can be used to reference a specific filter element.
 
-The resolution used when rasterizing to images for applying CSS and SVG filters is controlled through the [prince-filter-resolution](css-props.md#prop-prince-filter-resolution) property. The default value is `96dpi` for compatibility with web browsers.
+The resolution used when rasterizing to images for applying CSS and SVG filters is controlled through the [`-prince-filter-resolution`](css-props.md#prop-prince-filter-resolution) property. The default value is `96dpi` for compatibility with web browsers.
 
 
 Images
@@ -301,25 +301,25 @@ This property applies only to content images (e.g. replaced elements and generat
 
 #### Image Size
 
-CSS properties also control the size of images in print. Unless an explicit size for an image is specified by using the `width` and `height` properties, Prince will determine the intrinsic size from the image resolution (DPI), which can be overridden using the [`prince-image-resolution`](css-props.md#prop-prince-image-resolution) property:
+CSS properties also control the size of images in print. Unless an explicit size for an image is specified by using the `width` and `height` properties, Prince will determine the intrinsic size from the image resolution (DPI), which can be overridden using the [`-prince-image-resolution`](css-props.md#prop-prince-image-resolution) property:
 
 ```
-    prince-image-resolution: 300dpi;        /* set an explicit DPI */
-    prince-image-resolution: normal;        /* 1 image pixel maps to 1px unit */
-    prince-image-resolution: auto, normal;  /* auto-detect, fallback to normal */
-    prince-image-resolution: auto, 96dpi;   /* auto-detect, fallback to 96dpi */
+    -prince-image-resolution: 300dpi;        /* set an explicit DPI */
+    -prince-image-resolution: normal;        /* 1 image pixel maps to 1px unit */
+    -prince-image-resolution: auto, normal;  /* auto-detect, fallback to normal */
+    -prince-image-resolution: auto, 96dpi;   /* auto-detect, fallback to 96dpi */
 ```
 Not all images have an internal resolution set, so sometimes it is necessary to specify an explicit resolution. Alternatively, specifying a resolution of `normal` means that an image that is 100 pixels wide, will be the same size on the page as a block that is 100px units wide.
 
-The property [`prince-background-image-resolution`](css-props.md#prop-prince-background-image-resolution) does the same for background images.
+The property [`-prince-background-image-resolution`](css-props.md#prop-prince-background-image-resolution) does the same for background images.
 
 The property [`object-fit`](css-props.md#prop-object-fit) offers another mechanism to determine how an image should be resized to fit its container. The position of the image in its container can be determined with the [`object-position`](css-props.md#prop-object-position) property.
 
 The [`object-fit`](css-props.md#prop-object-fit) and [`object-position`](css-props.md#prop-object-position) properties are not specific to images, but apply to all replaced content, including content inserted as [Generated Content](gen-content.md) via the [`content`](css-props.md#prop-content) property.
 
-Please note that specifying [`prince-image-resolution`](css-props.md#prop-prince-image-resolution) and [`prince-background-image-resolution`](css-props.md#prop-prince-background-image-resolution), or [`object-fit`](css-props.md#prop-object-fit), only affects the default DPI of images, ie. it makes them physically bigger or smaller on the page, and - it does not affect the number of pixels in the image, and thus the PDF file size will be the same.
+Please note that specifying [`-prince-image-resolution`](css-props.md#prop-prince-image-resolution) and [`-prince-background-image-resolution`](css-props.md#prop-prince-background-image-resolution), or [`object-fit`](css-props.md#prop-object-fit), only affects the default DPI of images, ie. it makes them physically bigger or smaller on the page, and - it does not affect the number of pixels in the image, and thus the PDF file size will be the same.
 
-To reduce the PDF file size, JPEG images can be recompressed at a lower quality level, or PNG images be converted to JPEG, with the [`prince-image-magic`](css-props.md#prop-prince-image-magic) property. See also [Image Magic](cookbook#image-magic).
+To reduce the PDF file size, JPEG images can be recompressed at a lower quality level, or PNG images be converted to JPEG, with the [`-prince-image-magic`](css-props.md#prop-prince-image-magic) property. See also [Image Magic](cookbook#image-magic).
 
 
 Scalable Vector Graphics (SVG)

@@ -86,7 +86,7 @@ Frequently Asked Questions
   <dd><p>Prince usually takes care of reformatting a document to fit on a printed
   page.  However, there are cases where it doesn't work as expected.  Wide content
   can be made fit by <a href="/doc/cookbook#rotating-content">Rotating content</a>, or by applying the CSS property
-  <code>prince-shrink-to-fit</code>, which scales down all content
+  <code>-prince-shrink-to-fit</code>, which scales down all content
   equally.  Alternatively, the command-line option
   <a href="/doc/command-line#cl-css-dpi">--css-dpi</a> changes the DPI of
   the "px" units in CSS, which defaults to 96dpi.</p>
@@ -105,8 +105,8 @@ Frequently Asked Questions
 
   <dt><p id="faq-tooltips">How can I create tooltips in the PDF file?
   <a class="self-link" href="#faq-tooltips"></a></p></dt>
-  <dd><p>PDF tooltips can be enabled with the CSS property <code>prince-tooltip</code> like this:</p>
-	  <pre><code class="hljs css language-css">    *<span class="hljs-selector-attr">[title]</span> { <span class="hljs-attribute">prince-tooltip</span>: <span class="hljs-built_in">attr</span>(title) }
+  <dd><p>PDF tooltips can be enabled with the CSS property <code>-prince-tooltip</code> like this:</p>
+	  <pre><code class="hljs css language-css">    *<span class="hljs-selector-attr">[title]</span> { <span class="hljs-attribute">-prince-tooltip</span>: <span class="hljs-built_in">attr</span>(title) }
 </code></pre>
   <p>However, please note that tooltips are not a standard PDF feature, and they
   may only work in Adobe Reader and Adobe Acrobat and may not be visible in other

@@ -161,7 +161,7 @@ On a paragraph level, the properties [`text-align`](css-props.md#prop-text-align
         string-set: chapter-title content();
     }
     img {
-        float: inside;
+        -prince-float: inside;
     }
 ```
 This style snippet could be part of the stylesheet for a little booklet - it displays the page number in the upper outside corners, the book title in the upper inside of the left, or *verso* page, and the chapter title in the upper inside of the right, or *recto* page. Chapter headings are aligned to the outside of the page spreads, while any image in the book is floated close to the central gutter.
@@ -187,13 +187,13 @@ The table itself is naturally split over several pages - but if you want table h
 
 Tables can also be provided with a table caption by using the `caption` HTML element, or by styling an arbitrary element with `display: table-caption` to be made to behave like `caption` elements. The caption is positioned above the table by default, but it can be moved to the bottom with the [`caption-side`](css-props.md#prop-caption-side) property.
 
-When a table spans across more than one page, the [`prince-caption-page`](css-props.md#prop-prince-caption-page) property determines whether table captions will be displayed on the first page of a table, or only on the following pages, or repeated on every page that a table appears on. See also [Fancy Table Captions](#fancy-table-captions).
+When a table spans across more than one page, the [`-prince-caption-page`](css-props.md#prop-prince-caption-page) property determines whether table captions will be displayed on the first page of a table, or only on the following pages, or repeated on every page that a table appears on. See also [Fancy Table Captions](#fancy-table-captions).
 
 ```
     table + p {
         display: table-caption;
         caption-side: bottom;
-        prince-caption-page: following;
+        -prince-caption-page: following;
     }
 ```
 
@@ -213,7 +213,7 @@ Fancy Table Captions
 
 HTML tables only have one caption per table. However, in printed form a table might span several pages (see [Long Tables](#long-tables)) and it might be desirable to have separate captions for the first and the following pages - you might want to add "cont." to the caption of the first one, or otherwise differentiate them. Prince offers an extension mechanism to do so.
 
-As mentioned in [Long Tables](#long-tables), when a table spans across more than one page, the [`prince-caption-page`](css-props.md#prop-prince-caption-page) property determines whether table captions will be displayed on the first page of a table, or only on the following pages, or repeated on every page that a table appears on. This opens up the possibility to have a different caption on the first and on the following pages.
+As mentioned in [Long Tables](#long-tables), when a table spans across more than one page, the [`-prince-caption-page`](css-props.md#prop-prince-caption-page) property determines whether table captions will be displayed on the first page of a table, or only on the following pages, or repeated on every page that a table appears on. This opens up the possibility to have a different caption on the first and on the following pages.
 
 You might define a caption in HTML for the main table caption - to be displayed on the first page. Additionally, you make another element into a table caption with the [`display`](css-props.md#prop-display) property - and display it only on the following pages!
 
@@ -244,12 +244,12 @@ CSS
 ```
     caption {
         caption-side: bottom;
-        prince-caption-page: first;
+        -prince-caption-page: first;
     }
     table + p {
         display: table-caption;
         caption-side: bottom;
-        prince-caption-page: following;
+        -prince-caption-page: following;
     }
 ```
 
@@ -670,12 +670,12 @@ Image Magic
   <dd>
 <a href="/doc/graphics#css-and-images">CSS and Images</a>
     <ul>
-      <li><code>prince-image-magic</code></li>
+      <li><code>-prince-image-magic</code></li>
     </ul>
   </dd>
 </dl>
 
-The [`prince-image-magic`](css-props.md#prop-prince-image-magic) property performs various image-related, Prince-specific tasks that do not fit into other existing CSS properties. It applies magic to images!
+The [`-prince-image-magic`](css-props.md#prop-prince-image-magic) property performs various image-related, Prince-specific tasks that do not fit into other existing CSS properties. It applies magic to images!
 
 To reduce the PDF file size, JPEG images can be recompressed at a lower quality level by using the function `recompress-jpeg(quality%)` with the required quality percentage as argument.
 
@@ -685,11 +685,11 @@ Prince usually strips unnecessary metadata from JPEG images to help contain size
 
 Two more keywords perform more obscure tasks that might be required in very specific circumstances: the keyword `ignore-icc-profile` causes Prince to ignore any ICC color profile embedded in the image, useful e.g. in those cases when the embedded ICC profile is broken; and `snap-to-integer-coords` can be used to avoid blurring of images in some PDF viewers.
 
-Several of the values can be combined, to perform more than one magic on images - for details please check the grammar of the [`prince-image-magic`](css-props.md#prop-prince-image-magic) property.
+Several of the values can be combined, to perform more than one magic on images - for details please check the grammar of the [`-prince-image-magic`](css-props.md#prop-prince-image-magic) property.
 
 ```
     img {
-        prince-image-magic: recompress-jpeg(50%) convert-to-jpeg(50%) snap-to-integer-coords;
+        -prince-image-magic: recompress-jpeg(50%) convert-to-jpeg(50%) snap-to-integer-coords;
     }
 ```
 This example recompresses all JPEG images to 50%, converts any non-JPEG images to JPEG with the same quality, and snaps them all to integer coordinates to avoid blurring in some PDF viewers.
@@ -703,11 +703,11 @@ Hyphenation
     <dd>
 <code><a href="/doc/css-props#prop-hyphens">hyphens</a></code>
       <ul>
-        <li><code><a href="/doc/css-props#prop-prince-hyphenate-character">prince-hyphenate-character</a></code></li>
-        <li><code><a href="/doc/css-props#prop-prince-hyphenate-before">prince-hyphenate-before</a></code></li>
-        <li><code><a href="/doc/css-props#prop-prince-hyphenate-after">prince-hyphenate-after</a></code></li>
-        <li><code><a href="/doc/css-props#prop-prince-hyphenate-limit-lines">prince-hyphenate-limit-lines</a></code></li>
-        <li><code><a href="/doc/css-props#prop-prince-hyphenate-patterns">prince-hyphenate-patterns</a></code></li>
+        <li><code><a href="/doc/css-props#prop-prince-hyphenate-character">-prince-hyphenate-character</a></code></li>
+        <li><code><a href="/doc/css-props#prop-prince-hyphenate-before">-prince-hyphenate-before</a></code></li>
+        <li><code><a href="/doc/css-props#prop-prince-hyphenate-after">-prince-hyphenate-after</a></code></li>
+        <li><code><a href="/doc/css-props#prop-prince-hyphenate-limit-lines">-prince-hyphenate-limit-lines</a></code></li>
+        <li><code><a href="/doc/css-props#prop-prince-hyphenate-patterns">-prince-hyphenate-patterns</a></code></li>
       </ul>
     </dd>
 </dl>
@@ -720,11 +720,11 @@ The value `none` instructs never to hyphenate, while the default value `manual` 
 
 In order to make automatic hyphenation work as intended, it is important to communicate to Prince the natural language the text is in, so that the language-specific hyphenation rules can be applied - this is done by means to the `lang` or `xml:lang` attributes.
 
-The character shown at the end of a line when the word is hyphenated can be specified with the [`prince-hyphenate-character`](css-props.md#prop-prince-hyphenate-character) property.
+The character shown at the end of a line when the word is hyphenated can be specified with the [`-prince-hyphenate-character`](css-props.md#prop-prince-hyphenate-character) property.
 
-Fine-tuning of hyphenation can be done with the `prince-hyphenate-after` and `prince-hyphenate-before` properties to determine the minimum number of letters in a word that may be moved to the next line or that may be left at the end of a line when the word is hyphenated.
+Fine-tuning of hyphenation can be done with the `-prince-hyphenate-after` and `-prince-hyphenate-before` properties to determine the minimum number of letters in a word that may be moved to the next line or that may be left at the end of a line when the word is hyphenated.
 
-The [`prince-hyphenate-limit-lines`](css-props.md#prop-prince-hyphenate-limit-lines) property is used to determine the maximum number of consecutive lines that may end with a hyphenated word.
+The [`-prince-hyphenate-limit-lines`](css-props.md#prop-prince-hyphenate-limit-lines) property is used to determine the maximum number of consecutive lines that may end with a hyphenated word.
 
 Prince uses the hyphenation patterns from the CTAN archive - the full archive is accessible [here](http://tug.ctan.org/tex-archive/language/hyph-utf8/tex/generic/hyph-utf8/patterns/txt/). The default hyphenation patterns can be found in the installed `hyph.css` file, located in the default style sheets location (see [Installation Layout](installing.md#installation-layout)).
 
@@ -791,7 +791,7 @@ Hyphenation patterns for the following languages are provided:
 
 A special case is Thai hyphenation, supported thanks to the [LibThai](http://linux.thai.net/projects/libthai) package.
 
-To add hyphenation patterns for other languages, download them from the [CTAN archive](http://tug.ctan.org/tex-archive/language/hyph-utf8/tex/generic/hyph-utf8/patterns/txt/). Save the files for the chosen language without the `.txt` extension, and link to the pattern file (with the `.pat` extension) with the [`prince-hyphenate-patterns`](css-props.md#prop-prince-hyphenate-patterns) CSS property.
+To add hyphenation patterns for other languages, download them from the [CTAN archive](http://tug.ctan.org/tex-archive/language/hyph-utf8/tex/generic/hyph-utf8/patterns/txt/). Save the files for the chosen language without the `.txt` extension, and link to the pattern file (with the `.pat` extension) with the [`-prince-hyphenate-patterns`](css-props.md#prop-prince-hyphenate-patterns) CSS property.
 
 The renaming of the file is not essential - the content, not the extension counts.
 
@@ -799,7 +799,7 @@ Prince determines which language to use for hyphenation with the help of the `:l
 
 ```
     :lang(en-GB) {
-        prince-hyphenate-patterns: url("hyph-en-gb.pat");
+        -prince-hyphenate-patterns: url("hyph-en-gb.pat");
     }
 ```
 ```html
@@ -809,7 +809,7 @@ Alternatively, link directly to the required remote hyphenation file:
 
 ```
     :lang(en-GB) {
-        prince-hyphenate-patterns: url("http://tug.ctan.org/tex-archive/language/hyph-utf8/tex/generic/hyph-utf8/patterns/txt/hyph-en-gb.pat.txt");
+        -prince-hyphenate-patterns: url("http://tug.ctan.org/tex-archive/language/hyph-utf8/tex/generic/hyph-utf8/patterns/txt/hyph-en-gb.pat.txt");
     }
 ```
 ```html
@@ -824,7 +824,7 @@ Typographic Ligatures
     <dd><a href="/doc/styling#opentype-features-in-prince">OpenType Features in Prince</a></dd>
     <dd><code><a href="/doc/css-props#prop-font-variant-ligatures">font-variant-ligatures</a></code></dd>
     <dd><code><a href="/doc/css-props#prop-font-variant">font-variant</a>: prince-opentype()</code></dd>
-    <dd><code><a href="/doc/css-props#prop-prince-text-replace">prince-text-replace</a></code></dd>
+    <dd><code><a href="/doc/css-props#prop-prince-text-replace">-prince-text-replace</a></code></dd>
 </dl>
 
 Prince supports typographic ligatures found in OpenType fonts, i.e. Prince will replace certain characters that appear next to each other with other special glyphs that join those two characters together into one single glyph.
@@ -852,7 +852,7 @@ Some ligatures were in common use in the past, such as ligatures with the so-cal
 
 Some scripts, most notably Arabic and Syriac scripts, require certain ligatures to be used in normal conditions. These "required ligatures" are covered by the `rlig` feature. Prince enables this feature by default in Arabic script. The only way to manually enable this feature is through the `prince-opentype()` function of the [`font-variant`](css-props.md#prop-font-variant) CSS property.
 
-Another mechanism for replacing specific characters is given with the [`prince-text-replace`](css-props.md#prop-prince-text-replace) property. For an example use, please see the section on [Character Entities](characters.md#characters).
+Another mechanism for replacing specific characters is given with the [`-prince-text-replace`](css-props.md#prop-prince-text-replace) property. For an example use, please see the section on [Character Entities](characters.md#characters).
 
 
 Watermarks
@@ -910,8 +910,8 @@ Sometimes it is necessary to rotate a block element so that it fits on the page.
 
 <dl class="ingredients">
   <dt>You need</dt>
-    <dd><code><a href="/doc/css-props#prop-prince-rotate-body">prince-rotate-body</a></code></dd>
-    <dd><code><a href="/doc/css-props#prop-prince-shrink-to-fit">prince-shrink-to-fit</a></code></dd>
+    <dd><code><a href="/doc/css-props#prop-prince-rotate-body">-prince-rotate-body</a></code></dd>
+    <dd><code><a href="/doc/css-props#prop-prince-shrink-to-fit">-prince-shrink-to-fit</a></code></dd>
 </dl>
 
 Figure [Printing a big table sideways](#printing-wide-content-sideways) shows a table, rotated so that its width fits within the page's length. This can be achieved with the following rules:
@@ -919,19 +919,19 @@ Figure [Printing a big table sideways](#printing-wide-content-sideways) shows a 
 Printing a big table sideways
 
 ![Image of a large table printed sideways so that its width fits along the page's length.](assets/samples/rotate-body-2.bw.png)
-This table is too wide to fit on the paper, so we use `prince-rotate-body` in a *named page* to print it sideways. Download the [PDF](assets/samples/rotate-body.pdf) or the [HTML](assets/samples/rotate-body.html).
+This table is too wide to fit on the paper, so we use `-prince-rotate-body` in a *named page* to print it sideways. Download the [PDF](assets/samples/rotate-body.pdf) or the [HTML](assets/samples/rotate-body.html).
 
 ```
     @page big_table {
-        prince-rotate-body: landscape;
-        prince-shrink-to-fit: auto;
+        -prince-rotate-body: landscape;
+        -prince-shrink-to-fit: auto;
     }
 
     table.big {
         page: big_table
     }
 ```
-The [`prince-rotate-body`](css-props.md#prop-prince-rotate-body) property works within [`@page`](css-refs.md#at-page) rules only, so this example uses a named page to place the table on a page of its own. Then the [`@page`](css-refs.md#at-page) rule for `big_table` pages uses the [`prince-rotate-body`](css-props.md#prop-prince-rotate-body) property to tell prince that the body of the page, but not the headers and footers, should be rotated. The table in this example is still too wide so we also use the [`prince-shrink-to-fit`](css-props.md#prop-prince-shrink-to-fit) property to make it a little smaller.
+The [`-prince-rotate-body`](css-props.md#prop-prince-rotate-body) property works within [`@page`](css-refs.md#at-page) rules only, so this example uses a named page to place the table on a page of its own. Then the [`@page`](css-refs.md#at-page) rule for `big_table` pages uses the [`-prince-rotate-body`](css-props.md#prop-prince-rotate-body) property to tell prince that the body of the page, but not the headers and footers, should be rotated. The table in this example is still too wide so we also use the [`-prince-shrink-to-fit`](css-props.md#prop-prince-shrink-to-fit) property to make it a little smaller.
 
 If you download the full example ([HTML](assets/samples/rotate-body.html) or [PDF](assets/samples/rotate-body.pdf)) you will see that the paragraphs before and after the table are not placed on the same page. This is because they do not belong to the same named page (see [Named pages](paged.md#named-pages)). However on page four there are two tables, both tables belong to the same named page and therefore Prince will try to place them together on the same page.
 

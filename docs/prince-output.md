@@ -39,12 +39,12 @@ PDF 1.5
 -   if 16-bit images are included in the PDF;
 
 PDF 1.6  
--   if the [`prince-pdf-print-scaling`](css-props.md#prop-prince-pdf-print-scaling) property is set, or
--   if the [`prince-pdf-page-mode`](css-props.md#prop-prince-pdf-page-mode) property has the value `show-attachments`;
+-   if the [`-prince-pdf-print-scaling`](css-props.md#prop-prince-pdf-print-scaling) property is set, or
+-   if the [`-prince-pdf-page-mode`](css-props.md#prop-prince-pdf-page-mode) property has the value `show-attachments`;
 
 PDF 1.7  
--   if the [`prince-pdf-paper-tray`](css-props.md#prop-prince-pdf-paper-tray) property is set, or
--   if the [`prince-pdf-duplex`](css-props.md#prop-prince-pdf-duplex) property is set.
+-   if the [`-prince-pdf-paper-tray`](css-props.md#prop-prince-pdf-paper-tray) property is set, or
+-   if the [`-prince-pdf-duplex`](css-props.md#prop-prince-pdf-duplex) property is set.
 
 To enable tagged PDF without using one of the profiles that already imply it, the command-line option [`--tagged-pdf`](command-line.md#cl-tagged-pdf) can be used.
 
@@ -116,21 +116,21 @@ Prince supports a wide range of PDF features, including the following:
 
 ### PDF Links
 
-Prince supports PDF-internal and -external links. HTML hyperlinks are automatically converted. To make an element in XML, or any arbitrary element, a clickable link, the [`prince-link`](css-props.md#prop-prince-link) CSS property is required.
+Prince supports PDF-internal and -external links. HTML hyperlinks are automatically converted. To make an element in XML, or any arbitrary element, a clickable link, the [`-prince-link`](css-props.md#prop-prince-link) CSS property is required.
 
 ```
     xref {
-        prince-link: attr( linkend )
+        -prince-link: attr( linkend )
     }
 ```
-The property [`prince-pdf-link-type`](css-props.md#prop-prince-pdf-link-type) may be used to control the link type and target, i.e. whether relative links should be embedded in the PDF as web (URL) links or file links (by default they will be resolved against the base URL of the input document) and whether to open the links in the same or a new window. Note however that the optional link target keywords `same-window` and `new-window` only affect links to local PDF files.
+The property [`-prince-pdf-link-type`](css-props.md#prop-prince-pdf-link-type) may be used to control the link type and target, i.e. whether relative links should be embedded in the PDF as web (URL) links or file links (by default they will be resolved against the base URL of the input document) and whether to open the links in the same or a new window. Note however that the optional link target keywords `same-window` and `new-window` only affect links to local PDF files.
 
 ```
     a[href] {
-        prince-pdf-link-type: new-window;
+        -prince-pdf-link-type: new-window;
     }
 ```
-This example is equivalent to `prince-pdf-link-type: auto new-window` and has only effect for links to local files.
+This example is equivalent to `-prince-pdf-link-type: auto new-window` and has only effect for links to local files.
 
 Prince also supports the following PDF-specific fragment identifiers, supported by web browsers, and will use them when generating links to local PDF files.
 
@@ -139,7 +139,7 @@ Prince also supports the following PDF-specific fragment identifiers, supported 
 
     <a href="test.pdf#nameddest=section1">...</a>
 ```
-Named destinations (`nameddest`) in PDF files have a similar function to HTML IDs: they can be the target anchors for links from other documents. The property [`prince-pdf-destination`](css-props.md#prop-prince-pdf-destination) is used for creating them.
+Named destinations (`nameddest`) in PDF files have a similar function to HTML IDs: they can be the target anchors for links from other documents. The property [`-prince-pdf-destination`](css-props.md#prop-prince-pdf-destination) is used for creating them.
 
 HTML
 
@@ -150,7 +150,7 @@ CSS
 
 ```css
     div.section {
-        prince-pdf-destination: attr( data-sectionid )
+        -prince-pdf-destination: attr( data-sectionid )
     }
 ```
 In order to link to this section, the following syntax is used:
@@ -171,56 +171,56 @@ However, Prince passes the provided values verbatim to the PDF viewer, so the us
 
 Please be advised that this and the following actions and scripts are dependent on the PDF viewer, and in many cases might only work in Adobe Acrobat products.
 
-The property [`prince-pdf-open-action`](css-props.md#prop-prince-pdf-open-action) may be used to specify a space-separated list of actions to perform when the PDF file is opened, like eg. popping up the print dialog box automatically, or setting the default zoom level for PDF documents. Any arbitrary identifier can be specified, although these may be PDF viewer specific; Acrobat can take just about any menu item.
+The property [`-prince-pdf-open-action`](css-props.md#prop-prince-pdf-open-action) may be used to specify a space-separated list of actions to perform when the PDF file is opened, like eg. popping up the print dialog box automatically, or setting the default zoom level for PDF documents. Any arbitrary identifier can be specified, although these may be PDF viewer specific; Acrobat can take just about any menu item.
 
 ```css
     @prince-pdf {
-        prince-pdf-open-action: zoom(fit-page) print;
+        -prince-pdf-open-action: zoom(fit-page) print;
     }
 ```
-In a similar fashion, scripts that will be executed when the PDF file is opened may be included with the [`prince-pdf-script`](css-props.md#prop-prince-pdf-script) property. A common use case is to activate the "Print" dialog automatically. To achieve the equivalent of the previous example, the following code could be used:
+In a similar fashion, scripts that will be executed when the PDF file is opened may be included with the [`-prince-pdf-script`](css-props.md#prop-prince-pdf-script) property. A common use case is to activate the "Print" dialog automatically. To achieve the equivalent of the previous example, the following code could be used:
 
 ```css
     @prince-pdf {
-        prince-pdf-script: "this.zoomType = zoomtype.fitP; this.print();"
+        -prince-pdf-script: "this.zoomType = zoomtype.fitP; this.print();"
     }
 ```
 The property can also take the `url()` function to reference an external JavaScript file.
 
 ```css
     @prince-pdf {
-        prince-pdf-script: url("myscript.js")
+        -prince-pdf-script: url("myscript.js")
     }
 ```
-Prince offers yet another way to include scripts in a document through a stylesheet: the [`prince-pdf-event-scripts`](css-props.md#prop-prince-pdf-event-scripts) property can be used to include JavaScript code that will be executed in the PDF when printing, saving, and closing the PDF, known as "Document Action" scripts. Just as with the previous property, scripts can either be given inline, or be included from an external file.
+Prince offers yet another way to include scripts in a document through a stylesheet: the [`-prince-pdf-event-scripts`](css-props.md#prop-prince-pdf-event-scripts) property can be used to include JavaScript code that will be executed in the PDF when printing, saving, and closing the PDF, known as "Document Action" scripts. Just as with the previous property, scripts can either be given inline, or be included from an external file.
 
 ```css
     @prince-pdf {
-        prince-pdf-event-scripts: will-close url("onclose.js"), will-print url("onprint.js");
+        -prince-pdf-event-scripts: will-close url("onclose.js"), will-print url("onprint.js");
     }
 ```
 ### PDF Pages
 
-Prince allows for some degree of control on the pages and the page layout in a PDF file. The CSS property [`prince-pdf-page-label`](css-props.md#prop-prince-pdf-page-label) can be used to set the page label that will be displayed in the PDF viewer. It can be used to instruct the PDF viewer to display the page label in the ToC in a particular way.
+Prince allows for some degree of control on the pages and the page layout in a PDF file. The CSS property [`-prince-pdf-page-label`](css-props.md#prop-prince-pdf-page-label) can be used to set the page label that will be displayed in the PDF viewer. It can be used to instruct the PDF viewer to display the page label in the ToC in a particular way.
 
 ```css
     @page {
-        prince-pdf-page-label: counter(page, lower-roman);
+        -prince-pdf-page-label: counter(page, lower-roman);
     }
 ```
 
-The property [`prince-pdf-page-mode`](css-props.md#prop-prince-pdf-page-mode) can be used to set the default page mode for the PDF file when it is opened. For example, whether the bookmarks panel should be displayed, and whether the viewer should be fullscreen.
+The property [`-prince-pdf-page-mode`](css-props.md#prop-prince-pdf-page-mode) can be used to set the default page mode for the PDF file when it is opened. For example, whether the bookmarks panel should be displayed, and whether the viewer should be fullscreen.
 
 ```css
     @prince-pdf {
-        prince-pdf-page-mode: fullscreen;
+        -prince-pdf-page-mode: fullscreen;
     }
 ```
-Also the default page layout for the PDF file when it is opened can be determined with the [`prince-pdf-page-layout`](css-props.md#prop-prince-pdf-page-layout) property.
+Also the default page layout for the PDF file when it is opened can be determined with the [`-prince-pdf-page-layout`](css-props.md#prop-prince-pdf-page-layout) property.
 
 ```css
     @prince-pdf {
-        prince-pdf-page-layout: two-column-right;
+        -prince-pdf-page-layout: two-column-right;
     }
 ```
 The values of this property are mapped to PDF page layout options:
@@ -271,18 +271,18 @@ The values of this property are mapped to PDF page layout options:
 </tbody>
 </table>
 
-The property [`prince-pdf-display-doc-title`](css-props.md#prop-prince-pdf-display-doc-title) can be used to configure whether the document file name, or the document title are displayed in the title bar of the PDF viewer.  Note that Prince will force it to true for the PDF/UA-1 profile, which requires it, and also for PDF/A-1a and PDF/A-3a which technically do not require it but users may still expect it - or they will see a warning if they run the Adobe accessibility checker on their PDFs.
+The property [`-prince-pdf-display-doc-title`](css-props.md#prop-prince-pdf-display-doc-title) can be used to configure whether the document file name, or the document title are displayed in the title bar of the PDF viewer.  Note that Prince will force it to true for the PDF/UA-1 profile, which requires it, and also for PDF/A-1a and PDF/A-3a which technically do not require it but users may still expect it - or they will see a warning if they run the Adobe accessibility checker on their PDFs.
 
 
 ### PDF Printing
 
-Prince also provides two properties to fine-tune the printing of the PDF. The property [`prince-pdf-print-scaling`](css-props.md#prop-prince-pdf-print-scaling) can be used to disable print scaling for the PDF file when it is printed and the property `prince-pdf-paper-tray` controls the PickTrayByPDFSize flag in generated PDF files, which specifies whether the PDF page size is used to select the input paper tray.
+Prince also provides two properties to fine-tune the printing of the PDF. The property [`-prince-pdf-print-scaling`](css-props.md#prop-prince-pdf-print-scaling) can be used to disable print scaling for the PDF file when it is printed and the property `-prince-pdf-paper-tray` controls the PickTrayByPDFSize flag in generated PDF files, which specifies whether the PDF page size is used to select the input paper tray.
 
-Duplex printing is supported with the CSS property [`prince-pdf-duplex`](css-props.md#prop-prince-pdf-duplex). This property may be used inside the [`@prince-pdf`](css-refs.mn#at-prince-pdf) at-rule to set the `Duplex` property in the `PDFViewerPreferences` dictionary. The values `duplex-flip-short-edge` and `duplex-flip-long-edge` tell about how to flip the paper, while the value `simplex` suppresses duplex printing.
+Duplex printing is supported with the CSS property [`-prince-pdf-duplex`](css-props.md#prop-prince-pdf-duplex). This property may be used inside the [`@prince-pdf`](css-refs.mn#at-prince-pdf) at-rule to set the `Duplex` property in the `PDFViewerPreferences` dictionary. The values `duplex-flip-short-edge` and `duplex-flip-long-edge` tell about how to flip the paper, while the value `simplex` suppresses duplex printing.
 
 ```css
     @prince-pdf {
-        prince-pdf-duplex: duplex-flip-long-edge;
+        -prince-pdf-duplex: duplex-flip-long-edge;
     }
 ```
 ### PDF Compression
@@ -326,43 +326,43 @@ Prince can create PDF bookmarks that link to document content.
 
 #### Bookmark levels
 
-PDF bookmarks have numeric levels that place them in a bookmark hierarchy. For example, a bookmark at level 2 can contain nested bookmarks at level 3, or any higher level. The level of a bookmark is controlled using the [`prince-bookmark-level`](css-props.md#prop-prince-bookmark-level) property, shown here being applied to the XHTML heading elements:
+PDF bookmarks have numeric levels that place them in a bookmark hierarchy. For example, a bookmark at level 2 can contain nested bookmarks at level 3, or any higher level. The level of a bookmark is controlled using the [`-prince-bookmark-level`](css-props.md#prop-prince-bookmark-level) property, shown here being applied to the XHTML heading elements:
 
 ```
-    h1 { prince-bookmark-level: 1 }
-    h2 { prince-bookmark-level: 2 }
-    h3 { prince-bookmark-level: 3 }
-    h4 { prince-bookmark-level: 4 }
-    h5 { prince-bookmark-level: 5 }
-    h6 { prince-bookmark-level: 6 }
+    h1 { -prince-bookmark-level: 1 }
+    h2 { -prince-bookmark-level: 2 }
+    h3 { -prince-bookmark-level: 3 }
+    h4 { -prince-bookmark-level: 4 }
+    h5 { -prince-bookmark-level: 5 }
+    h6 { -prince-bookmark-level: 6 }
 ```
 The default value for this property is `none`, which inhibits the creation of a bookmark for the element.
 
-It is possible to control the state of the bookmark, i.e. whether the bookmark is in an `open` or `closed` state, with the [`prince-bookmark-state`](css-props.md#prop-prince-bookmark-state) property. In this way you can close each chapter and hide the subsections for documents that are very long, or you can choose to have a deep bookmark tree.
+It is possible to control the state of the bookmark, i.e. whether the bookmark is in an `open` or `closed` state, with the [`-prince-bookmark-state`](css-props.md#prop-prince-bookmark-state) property. In this way you can close each chapter and hide the subsections for documents that are very long, or you can choose to have a deep bookmark tree.
 
 #### Bookmark labels
 
-PDF bookmarks have textual labels that by default are copied from the text content of the element that generated the bookmark. The text of this label may be controlled using the [`prince-bookmark-label`](css-props.md#prop-prince-bookmark-label) property, shown here being applied to a chapter element that has a title attribute:
+PDF bookmarks have textual labels that by default are copied from the text content of the element that generated the bookmark. The text of this label may be controlled using the [`-prince-bookmark-label`](css-props.md#prop-prince-bookmark-label) property, shown here being applied to a chapter element that has a title attribute:
 
 CSS
 
 ```
     chapter {
-        prince-bookmark-level: 1;
-        prince-bookmark-label: attr(title)
+        -prince-bookmark-level: 1;
+        -prince-bookmark-label: attr(title)
     }
 ```
 This property can take any content value, including literal text strings and counters. See [Generated Content Functions](gen-content.md#generated-content-functions).
 
 #### Bookmark targets
 
-PDF bookmarks are links that display a particular part of the document when activated. By default, a bookmark will link to the element that generated the bookmark, which is sensible behavior for bookmarks generated from headings or chapter elements. It is also possible to change the target of a bookmark using the [`prince-bookmark-target`](css-props.md#prop-prince-bookmark-target) property, which takes a URL directly or an attribute containing a URL:
+PDF bookmarks are links that display a particular part of the document when activated. By default, a bookmark will link to the element that generated the bookmark, which is sensible behavior for bookmarks generated from headings or chapter elements. It is also possible to change the target of a bookmark using the [`-prince-bookmark-target`](css-props.md#prop-prince-bookmark-target) property, which takes a URL directly or an attribute containing a URL:
 
 CSS
 
 ```
-    bookmark { prince-bookmark-target: url(#intro) }
-    bookmark { prince-bookmark-target: attr(href) }
+    bookmark { -prince-bookmark-target: url(#intro) }
+    bookmark { -prince-bookmark-target: attr(href) }
 ```
 The default value for this property is `self`, referring to the element that generated the bookmark.
 
@@ -371,16 +371,16 @@ The default value for this property is `self`, referring to the element that gen
 
 Tagged PDF files have special handling mechanisms for specific tag types. When enabling tagged PDF files with the command line option [`--tagged-pdf`](command-line.md#cl-tagged-pdf) Prince automatically assigns default values to certain HTML elements, which can be seen in the default `html.css` style sheet (see [Installation Layout](installing.md#installation-layout)).
 
-However, in specific cases it is advisable to fine-tune the PDF tags with the [`prince-pdf-tag-type`](css-props.md#prop-prince-pdf-tag-type) property. In Prince, it is possible to assign PDF tag types to elements in the document through the [`prince-pdf-tag-type`](css-props.md#prop-prince-pdf-tag-type) property, in order to create XML vocabularies in the PDF.
+However, in specific cases it is advisable to fine-tune the PDF tags with the [`-prince-pdf-tag-type`](css-props.md#prop-prince-pdf-tag-type) property. In Prince, it is possible to assign PDF tag types to elements in the document through the [`-prince-pdf-tag-type`](css-props.md#prop-prince-pdf-tag-type) property, in order to create XML vocabularies in the PDF.
 
 CSS
 
 ```
     ul.toc {
-      prince-pdf-tag-type: TOC;
+      -prince-pdf-tag-type: TOC;
     }
     .toc li {
-      prince-pdf-tag-type: TOCI;
+      -prince-pdf-tag-type: TOCI;
     }
 ```
 HTML
@@ -452,9 +452,9 @@ XML
 ```
 #### XMP Metadata
 
-Additionally, XMP metadata can be added to a PDF file from an XMP file. This file needs to be passed to Prince either via the [`--pdf-xmp`](command-line.md#cl-pdf-xmp) command-line option, the [prince-pdf-xmp](css-props.md#prop-prince-pdf-xmp) CSS property, or it can be specified in JavaScript with the [`PDF.xmp()`](js-support.md#window.PDF.xmp) function.
+Additionally, XMP metadata can be added to a PDF file from an XMP file. This file needs to be passed to Prince either via the [`--pdf-xmp`](command-line.md#cl-pdf-xmp) command-line option, the [-prince-pdf-xmp](css-props.md#prop-prince-pdf-xmp) CSS property, or it can be specified in JavaScript with the [`PDF.xmp()`](js-support.md#window.PDF.xmp) function.
 
-The [`PDF.xmp()`](js-support.md#window.PDF.xmp) JavaScript function, the [prince-pdf-xmp](css-props.md#prop-prince-pdf-xmp) CSS property and the [`--pdf-xmp`](command-line.md#cl-pdf-xmp) command-line option require either a URL pointing to an XMP file, or an encoded `data:` URL.
+The [`PDF.xmp()`](js-support.md#window.PDF.xmp) JavaScript function, the [-prince-pdf-xmp](css-props.md#prop-prince-pdf-xmp) CSS property and the [`--pdf-xmp`](command-line.md#cl-pdf-xmp) command-line option require either a URL pointing to an XMP file, or an encoded `data:` URL.
 
 Prince includes data from the `<x:xmpmeta>` element and its contents. The `xpacket` processing instructions are ignored, as Prince generates those itself when it produces the PDF file.
 

@@ -354,7 +354,7 @@ Now that you have decided on the basic properties of the text, you can turn your
 
 If the [`text-align`](css-props.md#prop-text-align) property has a value of `left`, `right` or `center`, the text will be aligned to the left, right or center respectively. The `justify` value instructs Prince to justify text. It is not uncommon, in printed texts, to align text based on whether the text appears on a left or right page. To support this, two new keywords are added to the [`text-align`](css-props.md#prop-text-align) property: `inside` is the same as 'left' on right pages and 'right' on left pages, and `outside` is the same as 'right' on left pages and 'left' on right pages.
 
-Prince adds the property [`prince-text-justify`](css-props.md#prop-prince-text-justify) to define how to treat justified text for CJK languages. The value `prince-cjk` allows space to be inserted between CJK characters when justifying even if there aren't any space characters.
+Prince adds the property [`-prince-text-justify`](css-props.md#prop-prince-text-justify) to define how to treat justified text for CJK languages. The value `prince-cjk` allows space to be inserted between CJK characters when justifying even if there aren't any space characters.
 
 The last line of an element can receive its own alignment style with the [`text-align-last`](css-props.md#prop-text-align-last) property. It takes the same values as [`text-align`](css-props.md#prop-text-align).
 
@@ -395,7 +395,7 @@ The property [`line-stacking-strategy`](css-props.md#prop-line-stacking-strategy
 
 In order to lay out text in a well-balanced way, it might at times be necessary to hyphenate some words - to enable hyphenation, the [`hyphens`](css-props.md#prop-hyphens) property is used. For details please refer to the section on [Hyphenation](cookbook.md#hyphenation).
 
-Prince also allows for line-breaking in certain situations even in the absence of whitespace - for example, after slashes in long URLs. This behavior can be disabled with the [`prince-linebreak-magic`](css-props.md#prop-prince-linebreak-magic) property for situations in which more precise control over line-breaking is preferred.
+Prince also allows for line-breaking in certain situations even in the absence of whitespace - for example, after slashes in long URLs. This behavior can be disabled with the [`-prince-linebreak-magic`](css-props.md#prop-prince-linebreak-magic) property for situations in which more precise control over line-breaking is preferred.
 
 The property [`overflow-wrap`](css-props.md#prop-overflow-wrap) controls wrapping behavior *of last resort*: whether it is better for a word to overflow its container, or to be broken at an arbitrary point (subject to [`white-space`](css-props.md#prop-white-space), and not splitting within a grapheme cluster), without adding a hyphen.
 
@@ -469,7 +469,7 @@ If there are only:
 
 The background of an element can be styled with the [`background-color`](css-props.md#prop-background-color) and the [`background-image`](css-props.md#prop-background-image) properties, or with the shorthand property [`background`](css-props.md#prop-background). See also [Background Images](graphics.md#background-images).
 
-Various standard properties are available to position the background, to clip it or to determine whether, and how it should be repeated. Prince extends control on the background with the [`prince-background-image-resolution`](css-props.md#prop-prince-background-image-resolution) property, used to control image size in print (see [Image Size](graphics.md#image-size)), and with the `bleed` modifier of the [`background-attachment`](css-props.md#prop-background-attachment) property, which, when used together with `background-size: cover`, allows a background image to cover the entire page bleed area (see [Trimming marks](paged.md#trimming-marks)).
+Various standard properties are available to position the background, to clip it or to determine whether, and how it should be repeated. Prince extends control on the background with the [`-prince-background-image-resolution`](css-props.md#prop-prince-background-image-resolution) property, used to control image size in print (see [Image Size](graphics.md#image-size)), and with the `bleed` modifier of the [`background-attachment`](css-props.md#prop-background-attachment) property, which, when used together with `background-size: cover`, allows a background image to cover the entire page bleed area (see [Trimming marks](paged.md#trimming-marks)).
 
 
 ### Display
@@ -874,7 +874,7 @@ See also [Long Tables](cookbook.md#long-tables).
 
 Tables can also be provided with a table caption by using the `caption` HTML element, or by styling an arbitrary element with `display: table-caption` to be made to behave like `caption` elements. The caption is positioned above the table by default, but it can be moved to the bottom with the [`caption-side`](css-props.md#prop-caption-side) property.
 
-When a table spans across more than one page, the [`prince-caption-page`](css-props.md#prop-prince-caption-page) property determines whether table captions will be displayed on the first page of a table, or only on the following pages, or repeated on every page that a table appears on. See also [Fancy Table Captions](cookbook.md#fancy-table-captions).
+When a table spans across more than one page, the [`-prince-caption-page`](css-props.md#prop-prince-caption-page) property determines whether table captions will be displayed on the first page of a table, or only on the following pages, or repeated on every page that a table appears on. See also [Fancy Table Captions](cookbook.md#fancy-table-captions).
 
 
 ### Columns

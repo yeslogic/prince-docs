@@ -9,9 +9,9 @@ Generated content is text and other content that is not found in the original in
 Generated content is inserted by means of several functions that typically are used within the [`content`](css-props.md#prop-content) property. However, please note that these functions are not unique to the [`content`](css-props.md#prop-content) property, but can be used for the same purpose in several other ones, namely:
 
 -   `content`
--   `prince-bookmark-label`
--   `prince-pdf-page-label`
--   `prince-tooltip`
+-   `-prince-bookmark-label`
+-   `-prince-pdf-page-label`
+-   `-prince-tooltip`
 -   `string-set`
 
 See also the section on [CSS Functional Expressions](css-refs#css-functional-expressions) for additional details on these functions.
@@ -52,7 +52,7 @@ It can also be done with the <code>prince-fallback(<i>url</i>)</code> function, 
 
 The content to be inserted can also be fetched from the attributes of other elements with the <code>attr(<i>attribute-name</i>)</code> function, or from other elements with the following mechanisms:
 
--   Any block-level element can be removed from the normal document flow, to be inserted in a page region: it is best removed with the [`position`](css-props.md#prop-position) property and its <code>running(<i>name</i>)</code> function, and inserted with the <code>element(<i>name</i>)</code> function. Alternatively, it can be removed with the [`prince-flow`](css-props.md#prop-prince-flow) property, to be inserted with the <code>flow(<i>name</i>)</code> function. See the documentation for [Taking elements from the document](paged.md#taking-elements-from-the-document) for more details.
+-   Any block-level element can be removed from the normal document flow, to be inserted in a page region: it is best removed with the [`position`](css-props.md#prop-position) property and its <code>running(<i>name</i>)</code> function, and inserted with the <code>element(<i>name</i>)</code> function. Alternatively, it can be removed with the [`-prince-flow`](css-props.md#prop-prince-flow) property, to be inserted with the <code>flow(<i>name</i>)</code> function. See the documentation for [Taking elements from the document](paged.md#taking-elements-from-the-document) for more details.
 -   An element can be referenced with the <code>string(<i>ident</i>)</code> function after having been defined in the [`string-set`](css-props.md#prop-string-set) property with the `content()` function. This does not remove the element from the natural document flow, but instead copies it into the page region. See [Copying content from the document](paged.md#copying-content-from-the-document).
 
 The function <code>prince-expansion-text(<i>expansion</i>, <i>abbreviation</i>)</code> is useful with tagged PDF files by resolving abbreviations in the targeted element or psedudo-element.
@@ -63,7 +63,7 @@ The function <code>prince-expansion-text(<i>expansion</i>, <i>abbreviation</i>)<
     }
 ```
 
-This example might show the text "see p. 17" and the tagged PDF structure tree will treat the "p." as an abbreviation with the full expanded text being "see page 17".  The CSS property [prince-expansion-text](css-props.md#prop-prince-expansion-text) works in a similar fashion.
+This example might show the text "see p. 17" and the tagged PDF structure tree will treat the "p." as an abbreviation with the full expanded text being "see page 17".  The CSS property [-prince-expansion-text](css-props.md#prop-prince-expansion-text) works in a similar fashion.
 
 Please note that the <code>prince-expansion-text()</code> function <em>only</em> works in the [content](css-props.md#prop-content) property, and not in the other properties for whom generated content functions work.
 

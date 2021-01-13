@@ -1297,7 +1297,7 @@ in a page region with the <code>element()</code> function.  See
 <tr class="ext">
 <td><code>recompress-jpeg( <i>quality%</i> )*</code></td>
 <td>Recompresses JPEG images by the indicated percentage to save space.</td>
-<td rowspan="2"><code><a href="/doc/css-props#prop-prince-image-magic">prince-image-magic</a></code></td>
+<td rowspan="2"><code><a href="/doc/css-props#prop-prince-image-magic">-prince-image-magic</a></code></td>
 </tr>
 <tr class="ext">
 <td><code>convert-to-jpeg( <i>quality%</i> )*</code></td>
@@ -1307,14 +1307,14 @@ in a page region with the <code>element()</code> function.  See
 <td><code>static( <i>name</i>, [ start | current ]? )*</code></td>
 <td>Removes an element from the normal document flow, to make it available for use
 with the <code>flow()</code> function.  See <a href="/doc/paged#taking-elements-from-the-document">Taking elements from the document</a>.</td>
-<td><code><a href="/doc/css-props#prop-prince-flow">prince-flow</a></code></td>
+<td><code><a href="/doc/css-props#prop-prince-flow">-prince-flow</a></code></td>
 </tr>
 <tr class="ext">
 <td><code>command( <i>ident</i> )*</code></td>
 <td>Specifies any arbitrary command to be passed to the PDF viewer when the PDF file
 is opened.  The user can supply values that Prince doesn't know about, but the viewer
 does.</td>
-<td><code><a href="/doc/css-props#prop-prince-pdf-open-action">prince-pdf-open-action</a></code></td>
+<td><code><a href="/doc/css-props#prop-prince-pdf-open-action">-prince-pdf-open-action</a></code></td>
 </tr>
 <tr>
 <td><code>format()</code></td>
@@ -1493,20 +1493,20 @@ The initial values for <code>@page</code> styles are documented in the
 <code><a href="/doc/css-props#prop-background-attachment">background-attachment</a></code> |
 <code><a href="/doc/css-props#prop-bleed">bleed</a></code> |
 <code><a href="/doc/css-props#prop-marks">marks</a></code> |
-<code><a href="/doc/css-props#prop-prince-mark-length">prince-mark-length</a></code> |
-<code><a href="/doc/css-props#prop-prince-mark-offset">prince-mark-offset</a></code> |
-<code><a href="/doc/css-props#prop-prince-mark-width">prince-mark-width</a></code> |
-<code><a href="/doc/css-props#prop-prince-pdf-page-colorspace">prince-pdf-page-colorspace</a></code> |
-<code><a href="/doc/css-props#prop-prince-pdf-page-label">prince-pdf-page-label</a></code> |
-<code><a href="/doc/css-props#prop-prince-rotate-body">prince-rotate-body</a></code> |
-<code><a href="/doc/css-props#prop-prince-shrink-to-fit">prince-shrink-to-fit</a></code> |
-<code><a href="/doc/css-props#prop-prince-trim">prince-trim</a></code> |
+<code><a href="/doc/css-props#prop-prince-mark-length">-prince-mark-length</a></code> |
+<code><a href="/doc/css-props#prop-prince-mark-offset">-prince-mark-offset</a></code> |
+<code><a href="/doc/css-props#prop-prince-mark-width">-prince-mark-width</a></code> |
+<code><a href="/doc/css-props#prop-prince-pdf-page-colorspace">-prince-pdf-page-colorspace</a></code> |
+<code><a href="/doc/css-props#prop-prince-pdf-page-label">-prince-pdf-page-label</a></code> |
+<code><a href="/doc/css-props#prop-prince-rotate-body">-prince-rotate-body</a></code> |
+<code><a href="/doc/css-props#prop-prince-shrink-to-fit">-prince-shrink-to-fit</a></code> |
+<code><a href="/doc/css-props#prop-prince-trim">-prince-trim</a></code> |
 <code><a href="/doc/css-props#prop-size">size</a></code>
 </td>
 </tr>
 <tr>
 <td colspan="2">Additionally, <a href="/doc/prince-for-books">Prince for Books</a> takes the following CSS property:
-<code><a href="/doc/css-props#prop-prince-page-fill">prince-page-fill</a></code>
+<code><a href="/doc/css-props#prop-prince-page-fill">-prince-page-fill</a></code>
 </td>
 </tr>
 </table>
@@ -1591,23 +1591,23 @@ a stylesheet with the <code>prince-color()</code> function.  (See <a href="/doc/
 </tr>
 <tr>
 <td colspan="2">The <code>@prince-pdf</code> rule takes the following CSS properties:
-<code><a href="/doc/css-props#prop-prince-fallback-cmyk-profile">prince-fallback-cmyk-profile</a></code> |
-<code><a href="/doc/css-props#prop-prince-filter-resolution">prince-filter-resolution</a></code> |
-<code><a href="/doc/css-props#prop-prince-pdf-color-conversion">prince-pdf-color-conversion</a></code> |
-<code><a href="/doc/css-props#prop-prince-pdf-color-options">prince-pdf-color-options</a></code> |
-<code><a href="/doc/css-props#prop-prince-pdf-display-doc-title">prince-pdf-display-doc-title</a></code> |
-<code><a href="/doc/css-props#prop-prince-pdf-duplex">prince-pdf-duplex</a></code> |
-<code><a href="/doc/css-props#prop-prince-pdf-event-scripts">prince-pdf-event-scripts</a></code> |
-<code><a href="/doc/css-props#prop-prince-pdf-link-type">prince-pdf-link-type</a></code> |
-<code><a href="/doc/css-props#prop-prince-pdf-open-action">prince-pdf-open-action</a></code> |
-<code><a href="/doc/css-props#prop-prince-pdf-output-intent">prince-pdf-output-intent</a></code> |
-<code><a href="/doc/css-props#prop-prince-pdf-page-layout">prince-pdf-page-layout</a></code> |
-<code><a href="/doc/css-props#prop-prince-pdf-page-mode">prince-pdf-page-mode</a></code> |
-<code><a href="/doc/css-props#prop-prince-pdf-paper-tray">prince-pdf-paper-tray</a></code> |
-<code><a href="/doc/css-props#prop-prince-pdf-print-scaling">prince-pdf-print-scaling</a></code> |
-<code><a href="/doc/css-props#prop-prince-pdf-profile">prince-pdf-profile</a></code> |
-<code><a href="/doc/css-props#prop-prince-pdf-script">prince-pdf-script</a></code> |
-<code><a href="/doc/css-props#prop-prince-pdf-xmp">prince-pdf-xmp</a></code></td>
+<code><a href="/doc/css-props#prop-prince-fallback-cmyk-profile">-prince-fallback-cmyk-profile</a></code> |
+<code><a href="/doc/css-props#prop-prince-filter-resolution">-prince-filter-resolution</a></code> |
+<code><a href="/doc/css-props#prop-prince-pdf-color-conversion">-prince-pdf-color-conversion</a></code> |
+<code><a href="/doc/css-props#prop-prince-pdf-color-options">-prince-pdf-color-options</a></code> |
+<code><a href="/doc/css-props#prop-prince-pdf-display-doc-title">-prince-pdf-display-doc-title</a></code> |
+<code><a href="/doc/css-props#prop-prince-pdf-duplex">-prince-pdf-duplex</a></code> |
+<code><a href="/doc/css-props#prop-prince-pdf-event-scripts">-prince-pdf-event-scripts</a></code> |
+<code><a href="/doc/css-props#prop-prince-pdf-link-type">-prince-pdf-link-type</a></code> |
+<code><a href="/doc/css-props#prop-prince-pdf-open-action">-prince-pdf-open-action</a></code> |
+<code><a href="/doc/css-props#prop-prince-pdf-output-intent">-prince-pdf-output-intent</a></code> |
+<code><a href="/doc/css-props#prop-prince-pdf-page-layout">-prince-pdf-page-layout</a></code> |
+<code><a href="/doc/css-props#prop-prince-pdf-page-mode">-prince-pdf-page-mode</a></code> |
+<code><a href="/doc/css-props#prop-prince-pdf-paper-tray">-prince-pdf-paper-tray</a></code> |
+<code><a href="/doc/css-props#prop-prince-pdf-print-scaling">-prince-pdf-print-scaling</a></code> |
+<code><a href="/doc/css-props#prop-prince-pdf-profile">-prince-pdf-profile</a></code> |
+<code><a href="/doc/css-props#prop-prince-pdf-script">-prince-pdf-script</a></code> |
+<code><a href="/doc/css-props#prop-prince-pdf-xmp">-prince-pdf-xmp</a></code></td>
 </tr>
 </table>
 
