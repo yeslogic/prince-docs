@@ -64,7 +64,7 @@ For the values, the grammar draws on the [CSS Values and Units Module Level 3](h
                   no
                 </td></tr></table></div></div></div><div /><div><div id="prop-align-self-spec">Specification</div><ul><li><a href="https://www.w3.org/TR/css-flexbox-1/#align-items-property">CSS Flexible Box Layout Module Level 1</a></li></ul></div></div></details>
 
-<details><summary class="ext" id="prop-alternate-color">alternate-color*  <a class="self-link" href="#prop-alternate-color"></a></summary><div><div><div id="prop-alternate-color-syntax">Syntax</div><div class="example"><div class="syntax-block"><pre><code>alternate-color: <i>color</i></code></pre></div></div></div><div><div class="example"><div class="syntax-block"><table class="property-table"><tr><th scope="row">
+<details><summary class="ext" title="Prince extension" id="prop-alternate-color">alternate-color*  <a class="self-link" href="#prop-alternate-color"></a></summary><div><div><div id="prop-alternate-color-syntax">Syntax</div><div class="example"><div class="syntax-block"><pre><code>alternate-color: <i>color</i></code></pre></div></div></div><div><div class="example"><div class="syntax-block"><table class="property-table"><tr><th scope="row">
           Initial value
         </th><td><code /></td></tr><tr><th scope="row">
           Applies to
@@ -154,7 +154,7 @@ For the values, the grammar draws on the [CSS Values and Units Module Level 3](h
                   no
                 </td></tr></table></div></div></div><div /><div><div id="prop-background-image-spec">Specification</div><ul><li><a href="https://www.w3.org/TR/css-backgrounds-3/#the-background-image">CSS Backgrounds and Borders Module Level 3</a></li></ul></div></div></details>
 
-<details><summary class="ext" id="prop-background-image-resolution">background-image-resolution*  <a class="self-link" href="#prop-background-image-resolution"></a></summary><div><div><div id="prop-background-image-resolution-syntax">Syntax</div><div class="example"><div class="syntax-block"><pre><code>background-image-resolution: <i>dpi</i> |&#160;normal |&#160;auto [ , normal |&#160;<i>dpi</i> ]?</code></pre></div></div></div><div><div class="example"><div class="syntax-block"><table class="property-table"><tr><th scope="row">
+<details><summary class="ext" title="Prince extension" id="prop-background-image-resolution">background-image-resolution*  <a class="self-link" href="#prop-background-image-resolution"></a></summary><div><div><div id="prop-background-image-resolution-syntax">Syntax</div><div class="example"><div class="syntax-block"><pre><code>background-image-resolution: <i>dpi</i> |&#160;normal |&#160;auto [ , normal |&#160;<i>dpi</i> ]?</code></pre></div></div></div><div><div class="example"><div class="syntax-block"><table class="property-table"><tr><th scope="row">
           Initial value
         </th><td><code>normal</code></td></tr><tr><th scope="row">
           Applies to
@@ -254,7 +254,7 @@ For the values, the grammar draws on the [CSS Values and Units Module Level 3](h
 	page when crop marks are enabled.
 	</p></div><div><div id="prop-bleed-seealso">See Also</div><ul><li><a href="/doc/paged#page-style">Page style</a></li><li><code><a href="#prop-prince-trim">-prince-trim</a></code></li></ul></div><div><div id="prop-bleed-spec">Specification</div><ul><li><a href="https://www.w3.org/TR/css-page-3/#bleed">CSS Paged Media Module Level 3</a></li></ul></div></div></details>
 
-<details><summary class="ext" id="prop-bookmark-label">bookmark-label*  <a class="self-link" href="#prop-bookmark-label"></a></summary><div><div><div id="prop-bookmark-label-syntax">Syntax</div><div class="example"><div class="syntax-block"><pre><code>bookmark-label: none |&#160;<i>content</i></code></pre></div></div></div><div><div class="example"><div class="syntax-block"><table class="property-table"><tr><th scope="row">
+<details><summary class="ext" title="Prince extension" id="prop-bookmark-label">bookmark-label*  <a class="self-link" href="#prop-bookmark-label"></a></summary><div><div><div id="prop-bookmark-label-syntax">Syntax</div><div class="example"><div class="syntax-block"><pre><code>bookmark-label: none |&#160;<i>content</i></code></pre></div></div></div><div><div class="example"><div class="syntax-block"><table class="property-table"><tr><th scope="row">
           Initial value
         </th><td><code>content()</code></td></tr><tr><th scope="row">
           Applies to
@@ -280,7 +280,7 @@ For the values, the grammar draws on the [CSS Values and Units Module Level 3](h
         The property <a href="#prop-prince-bookmark-label"><code>-prince-bookmark-label</code></a> can be used as an alias.
         </p></div><div><div id="prop-bookmark-label-seealso">See Also</div><ul><li><a href="/doc/gen-content#generated-content-functions">Generated Content Functions</a></li><li><a href="/doc/prince-output#bookmark-labels">Bookmark labels</a></li><li><code><a href="#prop-content">content</a></code></li></ul></div><div><div id="prop-bookmark-label-spec">Specification</div><ul><li><a href="https://books.spec.whatwg.org/#'bookmark-label'">CSS Books</a></li></ul></div></div></details>
 
-<details><summary class="ext" id="prop-bookmark-level">bookmark-level*  <a class="self-link" href="#prop-bookmark-level"></a></summary><div><div><div id="prop-bookmark-level-syntax">Syntax</div><div class="example"><div class="syntax-block"><pre><code>bookmark-level: none |&#160;<i>integer</i></code></pre></div></div></div><div><div class="example"><div class="syntax-block"><table class="property-table"><tr><th scope="row">
+<details><summary class="ext" title="Prince extension" id="prop-bookmark-level">bookmark-level*  <a class="self-link" href="#prop-bookmark-level"></a></summary><div><div><div id="prop-bookmark-level-syntax">Syntax</div><div class="example"><div class="syntax-block"><pre><code>bookmark-level: none |&#160;<i>integer</i></code></pre></div></div></div><div><div class="example"><div class="syntax-block"><table class="property-table"><tr><th scope="row">
           Initial value
         </th><td><code>none</code></td></tr><tr><th scope="row">
           Applies to
@@ -296,7 +296,7 @@ For the values, the grammar draws on the [CSS Values and Units Module Level 3](h
         The property <a href="#prop-prince-bookmark-level"><code>-prince-bookmark-level</code></a> can be used as an alias.
         </p></div><div><div id="prop-bookmark-level-seealso">See Also</div><ul><li><a href="/doc/prince-output#bookmark-levels">Bookmark levels</a></li></ul></div><div><div id="prop-bookmark-level-spec">Specification</div><ul><li><a href="https://books.spec.whatwg.org/#'bookmark-level'">CSS Books</a></li></ul></div></div></details>
 
-<details><summary class="ext" id="prop-bookmark-state">bookmark-state*  <a class="self-link" href="#prop-bookmark-state"></a></summary><div><div><div id="prop-bookmark-state-syntax">Syntax</div><div class="example"><div class="syntax-block"><pre><code>bookmark-state: open |&#160;closed</code></pre></div></div></div><div><div class="example"><div class="syntax-block"><table class="property-table"><tr><th scope="row">
+<details><summary class="ext" title="Prince extension" id="prop-bookmark-state">bookmark-state*  <a class="self-link" href="#prop-bookmark-state"></a></summary><div><div><div id="prop-bookmark-state-syntax">Syntax</div><div class="example"><div class="syntax-block"><pre><code>bookmark-state: open |&#160;closed</code></pre></div></div></div><div><div class="example"><div class="syntax-block"><table class="property-table"><tr><th scope="row">
           Initial value
         </th><td><code>open</code></td></tr><tr><th scope="row">
           Applies to
@@ -313,7 +313,7 @@ For the values, the grammar draws on the [CSS Values and Units Module Level 3](h
         The property <a href="#prop-prince-bookmark-state"><code>-prince-bookmark-state</code></a> can be used as an alias.
         </p></div><div><div id="prop-bookmark-state-seealso">See Also</div><ul><li><a href="/doc/prince-output#bookmark-levels">Bookmark levels</a></li></ul></div><div><div id="prop-bookmark-state-spec">Specification</div><ul><li><a href="https://books.spec.whatwg.org/#'bookmark-state'">CSS Books</a></li></ul></div></div></details>
 
-<details><summary class="ext" id="prop-bookmark-target">bookmark-target*  <a class="self-link" href="#prop-bookmark-target"></a></summary><div><div><div id="prop-bookmark-target-syntax">Syntax</div><div class="example"><div class="syntax-block"><pre><code>bookmark-target: self |&#160;url(&#160;<i>target-url</i>&#160;) |&#160;attr(&#160;<i>target-attr</i>&#160;)</code></pre></div></div></div><div><div class="example"><div class="syntax-block"><table class="property-table"><tr><th scope="row">
+<details><summary class="ext" title="Prince extension" id="prop-bookmark-target">bookmark-target*  <a class="self-link" href="#prop-bookmark-target"></a></summary><div><div><div id="prop-bookmark-target-syntax">Syntax</div><div class="example"><div class="syntax-block"><pre><code>bookmark-target: self |&#160;url(&#160;<i>target-url</i>&#160;) |&#160;attr(&#160;<i>target-attr</i>&#160;)</code></pre></div></div></div><div><div class="example"><div class="syntax-block"><table class="property-table"><tr><th scope="row">
           Initial value
         </th><td><code>self</code></td></tr><tr><th scope="row">
           Applies to
@@ -763,7 +763,7 @@ For the values, the grammar draws on the [CSS Values and Units Module Level 3](h
     for more details.
     </p></div><div><div id="prop-break-inside-spec">Specification</div><ul><li><a href="https://www.w3.org/TR/css-break-3/#breaking-controls">CSS Fragmentation Module Level 3</a></li></ul></div></div></details>
 
-<details><summary class="ext" id="prop-caption-page">caption-page*  <a class="self-link" href="#prop-caption-page"></a></summary><div><div><div id="prop-caption-page-syntax">Syntax</div><div class="example"><div class="syntax-block"><pre><code>caption-page: first |&#160;following |&#160;all</code></pre></div></div></div><div><div class="example"><div class="syntax-block"><table class="property-table"><tr><th scope="row">
+<details><summary class="ext" title="Prince extension" id="prop-caption-page">caption-page*  <a class="self-link" href="#prop-caption-page"></a></summary><div><div><div id="prop-caption-page-syntax">Syntax</div><div class="example"><div class="syntax-block"><pre><code>caption-page: first |&#160;following |&#160;all</code></pre></div></div></div><div><div class="example"><div class="syntax-block"><table class="property-table"><tr><th scope="row">
           Initial value
         </th><td><code>first</code></td></tr><tr><th scope="row">
           Applies to
@@ -792,7 +792,7 @@ For the values, the grammar draws on the [CSS Values and Units Module Level 3](h
 	the top or bottom of the table.
 	</p></div><div><div id="prop-caption-side-seealso">See Also</div><ul><li><a href="/doc/styling#table-captions">Table captions</a></li></ul></div><div><div id="prop-caption-side-spec">Specification</div><ul><li><a href="https://www.w3.org/TR/CSS2/tables.html#caption-position">CSS 2.1</a></li></ul></div></div></details>
 
-<details><summary class="ext" id="prop-clear">clear* <a class="self-link" href="#prop-clear"></a></summary><div><div><div id="prop-clear-syntax">Syntax</div><div class="example"><div class="syntax-block"><pre><code>clear: none |&#160;left |&#160;right |&#160;<span class="ext">inside</span> |&#160;<span class="ext">outside</span> |&#160;<span class="ext">both</span> |&#160;<span class="ext">page</span> |&#160;<span class="ext">column</span> |&#160;<span class="ext">end</span></code></pre></div></div></div><div><div class="example"><div class="syntax-block"><table class="property-table"><tr><th scope="row">
+<details><summary class="ext" title="Prince extension" id="prop-clear">clear* <a class="self-link" href="#prop-clear"></a></summary><div><div><div id="prop-clear-syntax">Syntax</div><div class="example"><div class="syntax-block"><pre><code>clear: none |&#160;left |&#160;right |&#160;<span class="ext">inside</span> |&#160;<span class="ext">outside</span> |&#160;<span class="ext">both</span> |&#160;<span class="ext">page</span> |&#160;<span class="ext">column</span> |&#160;<span class="ext">end</span></code></pre></div></div></div><div><div class="example"><div class="syntax-block"><table class="property-table"><tr><th scope="row">
           Initial value
         </th><td><code>none</code></td></tr><tr><th scope="row">
           Applies to
@@ -1225,7 +1225,7 @@ For the values, the grammar draws on the [CSS Values and Units Module Level 3](h
         setting the following CSS properties:
     </p><ul><li><code><a href="#prop-flex-direction">flex-direction</a></code></li><li><code><a href="#prop-flex-wrap">flex-wrap</a></code></li></ul></div><div><div id="prop-flex-flow-spec">Specification</div><ul><li><a href="https://www.w3.org/TR/css-flexbox-1/#flex-flow-property">CSS Flexible Box Layout Module Level 1</a></li></ul></div></div></details>
 
-<details><summary class="ext" id="prop-float">float* <a class="self-link" href="#prop-float"></a></summary><div><div><div id="prop-float-syntax">Syntax</div><div class="example"><div class="syntax-block"><pre><code>float: <br />&#160;&#160;&#160;<i class="ext">float-reference</i> ||&#160;<i class="ext">float-placement</i> <span>unless-fit</span>?</code></pre></div></div></div><div><div class="example"><div class="syntax-block"><table class="property-table"><tr><th scope="row">
+<details><summary class="ext" title="Prince extension" id="prop-float">float* <a class="self-link" href="#prop-float"></a></summary><div><div><div id="prop-float-syntax">Syntax</div><div class="example"><div class="syntax-block"><pre><code>float: <br />&#160;&#160;&#160;<i class="ext">float-reference</i> ||&#160;<i class="ext">float-placement</i> <span>unless-fit</span>?</code></pre></div></div></div><div><div class="example"><div class="syntax-block"><table class="property-table"><tr><th scope="row">
           Initial value
         </th><td><code>none</code></td></tr><tr><th scope="row">
           Applies to
@@ -1262,7 +1262,7 @@ For the values, the grammar draws on the [CSS Values and Units Module Level 3](h
         The property <a href="#prop-prince-float"><code>-prince-float</code></a> can be used as an alias.
         </p></div><div><div id="prop-float-seealso">See Also</div><ul><li><a href="/doc/styling#floats">Floats</a></li></ul></div><div><div id="prop-float-spec">Specification</div><ul><li><a href="https://www.w3.org/TR/CSS2/visuren.html#float-position">CSS 2.1</a></li><li><a href="https://www.w3.org/TR/css-gcpm-3/#footnotes">CSS Generated Content for Paged Media Module</a></li><li><a href="https://figures.spec.whatwg.org/">CSS Figures</a></li><li><a href="https://books.spec.whatwg.org/#footnotes">CSS Books</a></li><li><a href="https://drafts.csswg.org/css-page-floats/">CSS Page Floats</a></li></ul></div></div></details>
 
-<details><summary class="ext" id="prop-float-defer-column">float-defer-column* <a class="self-link" href="#prop-float-defer-column"></a></summary><div><div><div id="prop-float-defer-column-syntax">Syntax</div><div class="example"><div class="syntax-block"><pre><code>float-defer-column: none |&#160;inside |&#160;outside |&#160;last |&#160;<i>integer</i></code></pre></div></div></div><div><div class="example"><div class="syntax-block"><table class="property-table"><tr><th scope="row">
+<details><summary class="ext" title="Prince extension" id="prop-float-defer-column">float-defer-column* <a class="self-link" href="#prop-float-defer-column"></a></summary><div><div><div id="prop-float-defer-column-syntax">Syntax</div><div class="example"><div class="syntax-block"><pre><code>float-defer-column: none |&#160;inside |&#160;outside |&#160;last |&#160;<i>integer</i></code></pre></div></div></div><div><div class="example"><div class="syntax-block"><table class="property-table"><tr><th scope="row">
           Initial value
         </th><td><code>none</code></td></tr><tr><th scope="row">
           Applies to
@@ -1278,7 +1278,7 @@ For the values, the grammar draws on the [CSS Values and Units Module Level 3](h
         The property <a href="#prop-prince-float-defer-column"><code>-prince-float-defer-column</code></a> can be used as an alias.
         </p></div><div><div id="prop-float-defer-column-seealso">See Also</div><ul><li><a href="/doc/styling#floats">Floats</a></li></ul></div><div><div id="prop-float-defer-column-spec">Specification</div><ul><li><a href="https://figures.spec.whatwg.org/#float-defer-column">CSS Figures</a></li></ul></div></div></details>
 
-<details><summary class="ext" id="prop-float-defer-page">float-defer-page* <a class="self-link" href="#prop-float-defer-page"></a></summary><div><div><div id="prop-float-defer-page-syntax">Syntax</div><div class="example"><div class="syntax-block"><pre><code>float-defer-page: none |&#160;[ <i>integer</i> ||&#160;[ left |&#160;right ]]</code></pre></div></div></div><div><div class="example"><div class="syntax-block"><table class="property-table"><tr><th scope="row">
+<details><summary class="ext" title="Prince extension" id="prop-float-defer-page">float-defer-page* <a class="self-link" href="#prop-float-defer-page"></a></summary><div><div><div id="prop-float-defer-page-syntax">Syntax</div><div class="example"><div class="syntax-block"><pre><code>float-defer-page: none |&#160;[ <i>integer</i> ||&#160;[ left |&#160;right ]]</code></pre></div></div></div><div><div class="example"><div class="syntax-block"><table class="property-table"><tr><th scope="row">
           Initial value
         </th><td><code>none</code></td></tr><tr><th scope="row">
           Applies to
@@ -1294,7 +1294,7 @@ For the values, the grammar draws on the [CSS Values and Units Module Level 3](h
         The property <a href="#prop-prince-float-defer-page"><code>-prince-float-defer-page</code></a> can be used as an alias.
         </p></div><div><div id="prop-float-defer-page-seealso">See Also</div><ul><li><a href="/doc/styling#floats">Floats</a></li></ul></div><div><div id="prop-float-defer-page-spec">Specification</div><ul><li><a href="https://figures.idea.whatwg.org/#float-defer-page">CSS Figures</a></li><li><a href="https://drafts.csswg.org/css-page-floats/#float-defer-property">CSS Page Floats</a></li></ul></div></div></details>
 
-<details><summary class="ext" id="prop-float-placement">float-placement* <a class="self-link" href="#prop-float-placement"></a></summary><div><div><div id="prop-float-placement-syntax">Syntax</div><div class="example"><div class="syntax-block"><pre><code>float-placement: none |&#160;left |&#160;right |&#160;<span class="ext">inside</span> |&#160;<span class="ext">outside</span>
+<details><summary class="ext" title="Prince extension" id="prop-float-placement">float-placement* <a class="self-link" href="#prop-float-placement"></a></summary><div><div><div id="prop-float-placement-syntax">Syntax</div><div class="example"><div class="syntax-block"><pre><code>float-placement: none |&#160;left |&#160;right |&#160;<span class="ext">inside</span> |&#160;<span class="ext">outside</span>
 &#160;&#160;&#160;&#160;|&#160;<span class="ext">top</span> |&#160;<span class="ext">bottom</span> |&#160;<span class="ext">top-bottom</span> |&#160;<span class="ext">snap</span>
 &#160;&#160;&#160;&#160;|&#160;footnote |&#160;<span class="ext">inline-footnote</span></code></pre></div></div></div><div><div class="example"><div class="syntax-block"><table class="property-table"><tr><th scope="row">
           Initial value
@@ -1340,7 +1340,7 @@ For the values, the grammar draws on the [CSS Values and Units Module Level 3](h
         The property <a href="#prop-prince-float-placement"><code>-prince-float-placement</code></a> can be used as an alias.
         </p></div><div><div id="prop-float-placement-seealso">See Also</div><ul><li><code><a href="#prop-float">float</a></code></li><li><a href="/doc/styling#floats">Floats</a></li><li><a href="/doc/paged#page-regions">Page Regions</a></li></ul></div><div><div id="prop-float-placement-spec">Specification</div><ul><li><a href="https://www.w3.org/TR/CSS2/visuren.html#float-position">CSS 2.1</a></li><li><a href="https://www.w3.org/TR/css-gcpm-3/#footnotes">CSS Generated Content for Paged Media Module</a></li><li><a href="https://figures.spec.whatwg.org/">CSS Figures</a></li><li><a href="https://books.spec.whatwg.org/#footnotes">CSS Books</a></li><li><a href="https://drafts.csswg.org/css-page-floats/">CSS Page Floats</a></li></ul></div></div></details>
 
-<details><summary class="ext" id="prop-float-policy">float-policy* <a class="self-link" href="#prop-float-policy"></a></summary><div><div><div id="prop-float-policy-syntax">Syntax</div><div class="example"><div class="syntax-block"><pre><code>float-policy: normal |&#160;in-order</code></pre></div></div></div><div><div class="example"><div class="syntax-block"><table class="property-table"><tr><th scope="row">
+<details><summary class="ext" title="Prince extension" id="prop-float-policy">float-policy* <a class="self-link" href="#prop-float-policy"></a></summary><div><div><div id="prop-float-policy-syntax">Syntax</div><div class="example"><div class="syntax-block"><pre><code>float-policy: normal |&#160;in-order</code></pre></div></div></div><div><div class="example"><div class="syntax-block"><table class="property-table"><tr><th scope="row">
           Initial value
         </th><td><code>normal</code></td></tr><tr><th scope="row">
           Applies to
@@ -1359,7 +1359,7 @@ For the values, the grammar draws on the [CSS Values and Units Module Level 3](h
         The property <a href="#prop-prince-float-policy"><code>-prince-float-policy</code></a> can be used as an alias.
         </p></div><div><div id="prop-float-policy-seealso">See Also</div><ul><li><a href="/doc/styling#floats">Floats</a></li></ul></div><div><div id="prop-float-policy-spec">Specification</div><ul><li><a href="https://figures.spec.whatwg.org/#page-float-preferences:-float-policy">CSS Figures</a></li></ul></div></div></details>
 
-<details><summary class="ext" id="prop-float-reference">float-reference* <a class="self-link" href="#prop-float-reference"></a></summary><div><div><div id="prop-float-reference-syntax">Syntax</div><div class="example"><div class="syntax-block"><pre><code>float-reference: column |&#160;page</code></pre></div></div></div><div><div class="example"><div class="syntax-block"><table class="property-table"><tr><th scope="row">
+<details><summary class="ext" title="Prince extension" id="prop-float-reference">float-reference* <a class="self-link" href="#prop-float-reference"></a></summary><div><div><div id="prop-float-reference-syntax">Syntax</div><div class="example"><div class="syntax-block"><pre><code>float-reference: column |&#160;page</code></pre></div></div></div><div><div class="example"><div class="syntax-block"><table class="property-table"><tr><th scope="row">
           Initial value
         </th><td><code>column</code></td></tr><tr><th scope="row">
           Applies to
@@ -1380,7 +1380,7 @@ For the values, the grammar draws on the [CSS Values and Units Module Level 3](h
         The property <a href="#prop-prince-float-reference"><code>-prince-float-reference</code></a> can be used as an alias.
         </p></div><div><div id="prop-float-reference-seealso">See Also</div><ul><li><a href="/doc/styling#floats">Floats</a></li></ul></div><div><div id="prop-float-reference-spec">Specification</div><ul><li><a href="https://figures.spec.whatwg.org/#setting-the-page-float-reference:-float-reference">CSS Figures</a></li><li><a href="https://drafts.csswg.org/css-page-floats/#float-reference-property">CSS Page Floats</a></li></ul></div></div></details>
 
-<details><summary class="ext" id="prop-float-tail">float-tail* <a class="self-link" href="#prop-float-tail"></a></summary><div><div><div id="prop-float-tail-syntax">Syntax</div><div class="example"><div class="syntax-block"><pre><code>float-tail: keep |&#160;fill-page</code></pre></div></div></div><div><div class="example"><div class="syntax-block"><table class="property-table"><tr><th scope="row">
+<details><summary class="ext" title="Prince extension" id="prop-float-tail">float-tail* <a class="self-link" href="#prop-float-tail"></a></summary><div><div><div id="prop-float-tail-syntax">Syntax</div><div class="example"><div class="syntax-block"><pre><code>float-tail: keep |&#160;fill-page</code></pre></div></div></div><div><div class="example"><div class="syntax-block"><table class="property-table"><tr><th scope="row">
           Initial value
         </th><td><code>keep</code></td></tr><tr><th scope="row">
           Applies to
@@ -1399,7 +1399,7 @@ For the values, the grammar draws on the [CSS Values and Units Module Level 3](h
         The property <a href="#prop-prince-float-tail"><code>-prince-float-tail</code></a> can be used as an alias.
         </p></div><div><div id="prop-float-tail-seealso">See Also</div><ul><li><a href="/doc/styling#floats">Floats</a></li></ul></div></div></details>
 
-<details><summary class="ext" id="prop-flow">flow*  <a class="self-link" href="#prop-flow"></a></summary><div><div><div id="prop-flow-syntax">Syntax</div><div class="example"><div class="syntax-block"><pre><code>flow: normal |&#160;static(&#160;<i>name</i>, [ start |&#160;current ]?&#160;)</code></pre></div></div></div><div><div class="example"><div class="syntax-block"><table class="property-table"><tr><th scope="row">
+<details><summary class="ext" title="Prince extension" id="prop-flow">flow*  <a class="self-link" href="#prop-flow"></a></summary><div><div><div id="prop-flow-syntax">Syntax</div><div class="example"><div class="syntax-block"><pre><code>flow: normal |&#160;static(&#160;<i>name</i>, [ start |&#160;current ]?&#160;)</code></pre></div></div></div><div><div class="example"><div class="syntax-block"><table class="property-table"><tr><th scope="row">
           Initial value
         </th><td><code>normal</code></td></tr><tr><th scope="row">
           Applies to
@@ -1576,7 +1576,7 @@ For the values, the grammar draws on the [CSS Values and Units Module Level 3](h
     fit on one line, they will be treated as inline elements to take up less space.
     </p></div><div><div id="prop-footnote-display-spec">Specification</div><ul><li><a href="https://www.w3.org/TR/css-gcpm-3/#propdef-footnote-display">CSS Generated Content for Paged Media Module</a></li></ul></div></div></details>
 
-<details><summary class="ext" id="prop-footnote-style-position">footnote-style-position*  <a class="self-link" href="#prop-footnote-style-position"></a></summary><div><div><div id="prop-footnote-style-position-syntax">Syntax</div><div class="example"><div class="syntax-block"><pre><code>footnote-style-position: outside |&#160;inside</code></pre></div></div></div><div><div class="example"><div class="syntax-block"><table class="property-table"><tr><th scope="row">
+<details><summary class="ext" title="Prince extension" id="prop-footnote-style-position">footnote-style-position*  <a class="self-link" href="#prop-footnote-style-position"></a></summary><div><div><div id="prop-footnote-style-position-syntax">Syntax</div><div class="example"><div class="syntax-block"><pre><code>footnote-style-position: outside |&#160;inside</code></pre></div></div></div><div><div class="example"><div class="syntax-block"><table class="property-table"><tr><th scope="row">
           Initial value
         </th><td><code>outside</code></td></tr><tr><th scope="row">
           Applies to
@@ -1615,7 +1615,7 @@ For the values, the grammar draws on the [CSS Values and Units Module Level 3](h
     in a line of text.
     </p></div><div><div id="prop-hyphens-seealso">See Also</div><ul><li><a href="/doc/cookbook#hyphenation">Hyphenation</a></li></ul></div><div><div id="prop-hyphens-spec">Specification</div><ul><li><a href="https://www.w3.org/TR/css-text-3/#hyphens-property">CSS Text Module Level 3</a></li></ul></div></div></details>
 
-<details><summary class="ext" id="prop-hyphenate-patterns">hyphenate-patterns*  <a class="self-link" href="#prop-hyphenate-patterns"></a></summary><div><div><div id="prop-hyphenate-patterns-syntax">Syntax</div><div class="example"><div class="syntax-block"><pre><code>hyphenate-patterns: none |&#160;url(&#160;<i>patterns-url</i>&#160;)</code></pre></div></div></div><div><div class="example"><div class="syntax-block"><table class="property-table"><tr><th scope="row">
+<details><summary class="ext" title="Prince extension" id="prop-hyphenate-patterns">hyphenate-patterns*  <a class="self-link" href="#prop-hyphenate-patterns"></a></summary><div><div><div id="prop-hyphenate-patterns-syntax">Syntax</div><div class="example"><div class="syntax-block"><pre><code>hyphenate-patterns: none |&#160;url(&#160;<i>patterns-url</i>&#160;)</code></pre></div></div></div><div><div class="example"><div class="syntax-block"><table class="property-table"><tr><th scope="row">
           Initial value
         </th><td><code>none</code></td></tr><tr><th scope="row">
           Applies to
@@ -1632,7 +1632,7 @@ For the values, the grammar draws on the [CSS Values and Units Module Level 3](h
         The property <a href="#prop-prince-hyphenate-patterns"><code>-prince-hyphenate-patterns</code></a> can be used as an alias.
         </p></div><div><div id="prop-hyphenate-patterns-seealso">See Also</div><ul><li><a href="/doc/cookbook#hyphenation">Hyphenation</a></li></ul></div></div></details>
 
-<details><summary class="ext" id="prop-hyphenate-after">hyphenate-after*  <a class="self-link" href="#prop-hyphenate-after"></a></summary><div><div><div id="prop-hyphenate-after-syntax">Syntax</div><div class="example"><div class="syntax-block"><pre><code>hyphenate-after: <i>integer</i></code></pre></div></div></div><div><div class="example"><div class="syntax-block"><table class="property-table"><tr><th scope="row">
+<details><summary class="ext" title="Prince extension" id="prop-hyphenate-after">hyphenate-after*  <a class="self-link" href="#prop-hyphenate-after"></a></summary><div><div><div id="prop-hyphenate-after-syntax">Syntax</div><div class="example"><div class="syntax-block"><pre><code>hyphenate-after: <i>integer</i></code></pre></div></div></div><div><div class="example"><div class="syntax-block"><table class="property-table"><tr><th scope="row">
           Initial value
         </th><td><code>1</code></td></tr><tr><th scope="row">
           Applies to
@@ -1647,7 +1647,7 @@ For the values, the grammar draws on the [CSS Values and Units Module Level 3](h
         The property <a href="#prop-prince-hyphenate-after"><code>-prince-hyphenate-after</code></a> can be used as an alias.
         </p></div><div><div id="prop-hyphenate-after-seealso">See Also</div><ul><li><a href="/doc/cookbook#hyphenation">Hyphenation</a></li></ul></div></div></details>
 
-<details><summary class="ext" id="prop-hyphenate-before">hyphenate-before*  <a class="self-link" href="#prop-hyphenate-before"></a></summary><div><div><div id="prop-hyphenate-before-syntax">Syntax</div><div class="example"><div class="syntax-block"><pre><code>hyphenate-before: <i>integer</i></code></pre></div></div></div><div><div class="example"><div class="syntax-block"><table class="property-table"><tr><th scope="row">
+<details><summary class="ext" title="Prince extension" id="prop-hyphenate-before">hyphenate-before*  <a class="self-link" href="#prop-hyphenate-before"></a></summary><div><div><div id="prop-hyphenate-before-syntax">Syntax</div><div class="example"><div class="syntax-block"><pre><code>hyphenate-before: <i>integer</i></code></pre></div></div></div><div><div class="example"><div class="syntax-block"><table class="property-table"><tr><th scope="row">
           Initial value
         </th><td><code>1</code></td></tr><tr><th scope="row">
           Applies to
@@ -1662,7 +1662,7 @@ For the values, the grammar draws on the [CSS Values and Units Module Level 3](h
         The property <a href="#prop-prince-hyphenate-before"><code>-prince-hyphenate-before</code></a> can be used as an alias.
         </p></div><div><div id="prop-hyphenate-before-seealso">See Also</div><ul><li><a href="/doc/cookbook#hyphenation">Hyphenation</a></li></ul></div></div></details>
 
-<details><summary class="ext" id="prop-hyphenate-character">hyphenate-character*  <a class="self-link" href="#prop-hyphenate-character"></a></summary><div><div><div id="prop-hyphenate-character-syntax">Syntax</div><div class="example"><div class="syntax-block"><pre><code>hyphenate-character: auto |&#160;"string"</code></pre></div></div></div><div><div class="example"><div class="syntax-block"><table class="property-table"><tr><th scope="row">
+<details><summary class="ext" title="Prince extension" id="prop-hyphenate-character">hyphenate-character*  <a class="self-link" href="#prop-hyphenate-character"></a></summary><div><div><div id="prop-hyphenate-character-syntax">Syntax</div><div class="example"><div class="syntax-block"><pre><code>hyphenate-character: auto |&#160;"string"</code></pre></div></div></div><div><div class="example"><div class="syntax-block"><table class="property-table"><tr><th scope="row">
           Initial value
         </th><td><code>auto</code></td></tr><tr><th scope="row">
           Applies to
@@ -1677,7 +1677,7 @@ For the values, the grammar draws on the [CSS Values and Units Module Level 3](h
         The property <a href="#prop-prince-hyphenate-character"><code>-prince-hyphenate-character</code></a> can be used as an alias.
         </p></div><div><div id="prop-hyphenate-character-seealso">See Also</div><ul><li><a href="/doc/cookbook#hyphenation">Hyphenation</a></li></ul></div></div></details>
 
-<details><summary class="ext" id="prop-hyphenate-lines">hyphenate-lines*  <a class="self-link" href="#prop-hyphenate-lines"></a></summary><div><div><div id="prop-hyphenate-lines-syntax">Syntax</div><div class="example"><div class="syntax-block"><pre><code>hyphenate-lines: no-limit |&#160;<i>integer</i></code></pre></div></div></div><div><div class="example"><div class="syntax-block"><table class="property-table"><tr><th scope="row">
+<details><summary class="ext" title="Prince extension" id="prop-hyphenate-lines">hyphenate-lines*  <a class="self-link" href="#prop-hyphenate-lines"></a></summary><div><div><div id="prop-hyphenate-lines-syntax">Syntax</div><div class="example"><div class="syntax-block"><pre><code>hyphenate-lines: no-limit |&#160;<i>integer</i></code></pre></div></div></div><div><div class="example"><div class="syntax-block"><table class="property-table"><tr><th scope="row">
           Initial value
         </th><td><code>no-limit</code></td></tr><tr><th scope="row">
           Applies to
@@ -1692,7 +1692,7 @@ For the values, the grammar draws on the [CSS Values and Units Module Level 3](h
         The property <a href="#prop-prince-hyphenate-limit-lines"><code>-prince-hyphenate-limit-lines</code></a> can be used as an alias.
         </p></div><div><div id="prop-hyphenate-lines-seealso">See Also</div><ul><li><a href="/doc/cookbook#hyphenation">Hyphenation</a></li></ul></div><div><div id="prop-hyphenate-lines-spec">Specification</div><ul><li><a href="https://www.w3.org/TR/css-text-4/#hyphenate-line-limits">CSS Text Module Level 4</a></li></ul></div></div></details>
 
-<details><summary class="ext" id="prop-image-resolution">image-resolution*  <a class="self-link" href="#prop-image-resolution"></a></summary><div><div><div id="prop-image-resolution-syntax">Syntax</div><div class="example"><div class="syntax-block"><pre><code>image-resolution: <i>dpi</i> |&#160;normal |&#160;auto [ , normal |&#160;<i>dpi</i> ]?</code></pre></div></div></div><div><div class="example"><div class="syntax-block"><table class="property-table"><tr><th scope="row">
+<details><summary class="ext" title="Prince extension" id="prop-image-resolution">image-resolution*  <a class="self-link" href="#prop-image-resolution"></a></summary><div><div><div id="prop-image-resolution-syntax">Syntax</div><div class="example"><div class="syntax-block"><pre><code>image-resolution: <i>dpi</i> |&#160;normal |&#160;auto [ , normal |&#160;<i>dpi</i> ]?</code></pre></div></div></div><div><div class="example"><div class="syntax-block"><table class="property-table"><tr><th scope="row">
           Initial value
         </th><td><code>normal</code></td></tr><tr><th scope="row">
           Applies to
@@ -1803,7 +1803,7 @@ For the values, the grammar draws on the [CSS Values and Units Module Level 3](h
                   yes
                 </td></tr></table></div></div></div><div /><div><div id="prop-line-height-seealso">See Also</div><ul><li><a href="/doc/styling#paragraph-formatting">Paragraph formatting</a></li></ul></div><div><div id="prop-line-height-spec">Specification</div><ul><li><a href="https://www.w3.org/TR/CSS2/visudet.html#propdef-line-height">CSS 2.1</a></li></ul></div></div></details>
 
-<details><summary class="ext" id="prop-link">link*  <a class="self-link" href="#prop-link"></a></summary><div><div><div id="prop-link-syntax">Syntax</div><div class="example"><div class="syntax-block"><pre><code>link: none |&#160;url(&#160;<i>target-url</i>&#160;) |&#160;attr(&#160;<i>target-attr</i>&#160;)</code></pre></div></div></div><div><div class="example"><div class="syntax-block"><table class="property-table"><tr><th scope="row">
+<details><summary class="ext" title="Prince extension" id="prop-link">link*  <a class="self-link" href="#prop-link"></a></summary><div><div><div id="prop-link-syntax">Syntax</div><div class="example"><div class="syntax-block"><pre><code>link: none |&#160;url(&#160;<i>target-url</i>&#160;) |&#160;attr(&#160;<i>target-attr</i>&#160;)</code></pre></div></div></div><div><div class="example"><div class="syntax-block"><table class="property-table"><tr><th scope="row">
           Initial value
         </th><td><code>none</code></td></tr><tr><th scope="row">
           Applies to
@@ -1873,7 +1873,7 @@ For the values, the grammar draws on the [CSS Values and Units Module Level 3](h
         setting the following CSS properties:
     </p><ul><li><code><a href="#prop-margin-bottom">margin-bottom</a></code></li><li><code><a href="#prop-margin-inside">margin-inside</a></code></li><li><code><a href="#prop-margin-left">margin-left</a></code></li><li><code><a href="#prop-margin-outside">margin-outside</a></code></li><li><code><a href="#prop-margin-right">margin-right</a></code></li><li><code><a href="#prop-margin-top">margin-top</a></code></li></ul></div><div><div id="prop-margin-seealso">See Also</div><ul><li><a href="/doc/styling#margin">Margin</a></li></ul></div><div><div id="prop-margin-spec">Specification</div><ul><li><a href="https://www.w3.org/TR/CSS2/box.html#margin-properties">CSS 2.1</a></li></ul></div></div></details>
 
-<details><summary class="ext" id="prop-margin-alt">margin-alt* <a class="self-link" href="#prop-margin-alt"></a></summary><div><div><div id="prop-margin-alt-syntax">Syntax</div><div class="example"><div class="syntax-block"><pre><code>margin-alt: none |&#160;<i>length</i> <i>length</i>?</code></pre></div></div></div><div><div class="example"><div class="syntax-block"><table class="property-table"><tr><th scope="row">
+<details><summary class="ext" title="Prince extension" id="prop-margin-alt">margin-alt* <a class="self-link" href="#prop-margin-alt"></a></summary><div><div><div id="prop-margin-alt-syntax">Syntax</div><div class="example"><div class="syntax-block"><pre><code>margin-alt: none |&#160;<i>length</i> <i>length</i>?</code></pre></div></div></div><div><div class="example"><div class="syntax-block"><table class="property-table"><tr><th scope="row">
           Initial value
         </th><td><code>none</code></td></tr><tr><th scope="row">
           Applies to
@@ -1907,7 +1907,7 @@ For the values, the grammar draws on the [CSS Values and Units Module Level 3](h
                   no
                 </td></tr></table></div></div></div><div /><div><div id="prop-margin-bottom-seealso">See Also</div><ul><li><a href="/doc/styling#margin">Margin</a></li></ul></div><div><div id="prop-margin-bottom-spec">Specification</div><ul><li><a href="https://www.w3.org/TR/CSS2/box.html#margin-properties">CSS 2.1</a></li></ul></div></div></details>
 
-<details><summary class="ext" id="prop-margin-inside">margin-inside*  <a class="self-link" href="#prop-margin-inside"></a></summary><div><div><div id="prop-margin-inside-syntax">Syntax</div><div class="example"><div class="syntax-block"><pre><code>margin-inside: auto |&#160;<i>length</i> |&#160;<i>percent</i></code></pre></div></div></div><div><div class="example"><div class="syntax-block"><table class="property-table"><tr><th scope="row">
+<details><summary class="ext" title="Prince extension" id="prop-margin-inside">margin-inside*  <a class="self-link" href="#prop-margin-inside"></a></summary><div><div><div id="prop-margin-inside-syntax">Syntax</div><div class="example"><div class="syntax-block"><pre><code>margin-inside: auto |&#160;<i>length</i> |&#160;<i>percent</i></code></pre></div></div></div><div><div class="example"><div class="syntax-block"><table class="property-table"><tr><th scope="row">
           Initial value
         </th><td><code>auto</code></td></tr><tr><th scope="row">
           Applies to
@@ -1934,7 +1934,7 @@ For the values, the grammar draws on the [CSS Values and Units Module Level 3](h
                   no
                 </td></tr></table></div></div></div><div /><div><div id="prop-margin-left-seealso">See Also</div><ul><li><a href="/doc/styling#margin">Margin</a></li></ul></div><div><div id="prop-margin-left-spec">Specification</div><ul><li><a href="https://www.w3.org/TR/CSS2/box.html#margin-properties">CSS 2.1</a></li></ul></div></div></details>
 
-<details><summary class="ext" id="prop-margin-outside">margin-outside*  <a class="self-link" href="#prop-margin-outside"></a></summary><div><div><div id="prop-margin-outside-syntax">Syntax</div><div class="example"><div class="syntax-block"><pre><code>margin-outside: auto |&#160;<i>length</i> |&#160;<i>percent</i></code></pre></div></div></div><div><div class="example"><div class="syntax-block"><table class="property-table"><tr><th scope="row">
+<details><summary class="ext" title="Prince extension" id="prop-margin-outside">margin-outside*  <a class="self-link" href="#prop-margin-outside"></a></summary><div><div><div id="prop-margin-outside-syntax">Syntax</div><div class="example"><div class="syntax-block"><pre><code>margin-outside: auto |&#160;<i>length</i> |&#160;<i>percent</i></code></pre></div></div></div><div><div class="example"><div class="syntax-block"><table class="property-table"><tr><th scope="row">
           Initial value
         </th><td><code>auto</code></td></tr><tr><th scope="row">
           Applies to
@@ -2309,7 +2309,7 @@ supplier, item { overflow-wrap: normal; }
     instead.  See the documentation for <a href="/doc/paged#page-breaks">Page breaks</a> for more details.
     </p></div><div><div id="prop-page-break-inside-seealso">See Also</div><ul><li><code><a href="#prop-break-inside">break-inside</a></code></li></ul></div><div><div id="prop-page-break-inside-spec">Specification</div><ul><li><a href="https://www.w3.org/TR/CSS2/page.html#propdef-page-break-before">CSS 2.1</a></li></ul></div></div></details>
 
-<details><summary class="ext" id="prop-page-group">page-group*  <a class="self-link" href="#prop-page-group"></a></summary><div><div><div id="prop-page-group-syntax">Syntax</div><div class="example"><div class="syntax-block"><pre><code>page-group: start |&#160;auto</code></pre></div></div></div><div><div class="example"><div class="syntax-block"><table class="property-table"><tr><th scope="row">
+<details><summary class="ext" title="Prince extension" id="prop-page-group">page-group*  <a class="self-link" href="#prop-page-group"></a></summary><div><div><div id="prop-page-group-syntax">Syntax</div><div class="example"><div class="syntax-block"><pre><code>page-group: start |&#160;auto</code></pre></div></div></div><div><div class="example"><div class="syntax-block"><table class="property-table"><tr><th scope="row">
           Initial value
         </th><td><code>auto</code></td></tr><tr><th scope="row">
           Applies to
@@ -2339,7 +2339,7 @@ supplier, item { overflow-wrap: normal; }
     property.  See also <a href="/doc/gen-content#taking-elements-from-the-document">Taking elements from the document</a>.
 	</p></div><div><div id="prop-position-seealso">See Also</div><ul><li><a href="/doc/paged#page-regions">Page regions</a></li><li><a href="/doc/gen-content#taking-elements-from-the-document">Taking elements from the document</a></li><li><code><a href="#prop-content">content</a></code></li></ul></div><div><div id="prop-position-spec">Specification</div><ul><li><a href="https://www.w3.org/TR/CSS2/visuren.html#propdef-position">CSS 2.1</a></li><li><a href="https://www.w3.org/TR/css-gcpm-3/#running-syntax">CSS Generated Content for Paged Media Module</a></li></ul></div></div></details>
 
-<details><summary class="ext" id="prop-prince-alt-text">-prince-alt-text*  <a class="self-link" href="#prop-prince-alt-text"></a></summary><div><div><div id="prop-prince-alt-text-syntax">Syntax</div><div class="example"><div class="syntax-block"><pre><code>-prince-alt-text: auto |&#160;none |&#160;"string"</code></pre></div></div></div><div><div class="example"><div class="syntax-block"><table class="property-table"><tr><th scope="row">
+<details><summary class="ext" title="Prince extension" id="prop-prince-alt-text">-prince-alt-text*  <a class="self-link" href="#prop-prince-alt-text"></a></summary><div><div><div id="prop-prince-alt-text-syntax">Syntax</div><div class="example"><div class="syntax-block"><pre><code>-prince-alt-text: auto |&#160;none |&#160;"string"</code></pre></div></div></div><div><div class="example"><div class="syntax-block"><table class="property-table"><tr><th scope="row">
           Initial value
         </th><td><code>auto</code></td></tr><tr><th scope="row">
           Applies to
@@ -2354,7 +2354,7 @@ supplier, item { overflow-wrap: normal; }
     when producing tagged PDF files.
 	</p></div></div></details>
 
-<details><summary class="ext" id="prop-prince-background-image-resolution">-prince-background-image-resolution*  <a class="self-link" href="#prop-prince-background-image-resolution"></a></summary><div><div><div id="prop-prince-background-image-resolution-syntax">Syntax</div><div class="example"><div class="syntax-block"><pre><code>-prince-background-image-resolution: <i>dpi</i> |&#160;normal |&#160;auto [ , normal |&#160;<i>dpi</i> ]?</code></pre></div></div></div><div><div class="example"><div class="syntax-block"><table class="property-table"><tr><th scope="row">
+<details><summary class="ext" title="Prince extension" id="prop-prince-background-image-resolution">-prince-background-image-resolution*  <a class="self-link" href="#prop-prince-background-image-resolution"></a></summary><div><div><div id="prop-prince-background-image-resolution-syntax">Syntax</div><div class="example"><div class="syntax-block"><pre><code>-prince-background-image-resolution: <i>dpi</i> |&#160;normal |&#160;auto [ , normal |&#160;<i>dpi</i> ]?</code></pre></div></div></div><div><div class="example"><div class="syntax-block"><table class="property-table"><tr><th scope="row">
           Initial value
         </th><td><code>normal</code></td></tr><tr><th scope="row">
           Applies to
@@ -2374,7 +2374,7 @@ supplier, item { overflow-wrap: normal; }
         The property <a href="#prop-background-image-resolution"><code>background-image-resolution</code></a> can be used as an alias.
         </p></div><div><div id="prop-prince-background-image-resolution-seealso">See Also</div><ul><li><a href="/doc/graphics#image-size">Image Size</a></li></ul></div></div></details>
 
-<details><summary class="ext" id="prop-prince-bookmark-label">-prince-bookmark-label*  <a class="self-link" href="#prop-prince-bookmark-label"></a></summary><div><div><div id="prop-prince-bookmark-label-syntax">Syntax</div><div class="example"><div class="syntax-block"><pre><code>-prince-bookmark-label: none |&#160;<i>content</i></code></pre></div></div></div><div><div class="example"><div class="syntax-block"><table class="property-table"><tr><th scope="row">
+<details><summary class="ext" title="Prince extension" id="prop-prince-bookmark-label">-prince-bookmark-label*  <a class="self-link" href="#prop-prince-bookmark-label"></a></summary><div><div><div id="prop-prince-bookmark-label-syntax">Syntax</div><div class="example"><div class="syntax-block"><pre><code>-prince-bookmark-label: none |&#160;<i>content</i></code></pre></div></div></div><div><div class="example"><div class="syntax-block"><table class="property-table"><tr><th scope="row">
           Initial value
         </th><td><code>content()</code></td></tr><tr><th scope="row">
           Applies to
@@ -2400,7 +2400,7 @@ supplier, item { overflow-wrap: normal; }
         The property <a href="#prop-bookmark-label"><code>bookmark-label</code></a> can be used as an alias.
         </p></div><div><div id="prop-prince-bookmark-label-seealso">See Also</div><ul><li><a href="/doc/gen-content#generated-content-functions">Generated Content Functions</a></li><li><a href="/doc/prince-output#bookmark-labels">Bookmark labels</a></li><li><code><a href="#prop-content">content</a></code></li></ul></div><div><div id="prop-prince-bookmark-label-spec">Specification</div><ul><li><a href="https://books.spec.whatwg.org/#'bookmark-label'">CSS Books</a></li></ul></div></div></details>
 
-<details><summary class="ext" id="prop-prince-bookmark-level">-prince-bookmark-level*  <a class="self-link" href="#prop-prince-bookmark-level"></a></summary><div><div><div id="prop-prince-bookmark-level-syntax">Syntax</div><div class="example"><div class="syntax-block"><pre><code>-prince-bookmark-level: none |&#160;<i>integer</i></code></pre></div></div></div><div><div class="example"><div class="syntax-block"><table class="property-table"><tr><th scope="row">
+<details><summary class="ext" title="Prince extension" id="prop-prince-bookmark-level">-prince-bookmark-level*  <a class="self-link" href="#prop-prince-bookmark-level"></a></summary><div><div><div id="prop-prince-bookmark-level-syntax">Syntax</div><div class="example"><div class="syntax-block"><pre><code>-prince-bookmark-level: none |&#160;<i>integer</i></code></pre></div></div></div><div><div class="example"><div class="syntax-block"><table class="property-table"><tr><th scope="row">
           Initial value
         </th><td><code>none</code></td></tr><tr><th scope="row">
           Applies to
@@ -2416,7 +2416,7 @@ supplier, item { overflow-wrap: normal; }
         The property <a href="#prop-bookmark-level"><code>bookmark-level</code></a> can be used as an alias.
         </p></div><div><div id="prop-prince-bookmark-level-seealso">See Also</div><ul><li><a href="/doc/prince-output#bookmark-levels">Bookmark levels</a></li></ul></div><div><div id="prop-prince-bookmark-level-spec">Specification</div><ul><li><a href="https://books.spec.whatwg.org/#'bookmark-level'">CSS Books</a></li></ul></div></div></details>
 
-<details><summary class="ext" id="prop-prince-bookmark-state">-prince-bookmark-state*  <a class="self-link" href="#prop-prince-bookmark-state"></a></summary><div><div><div id="prop-prince-bookmark-state-syntax">Syntax</div><div class="example"><div class="syntax-block"><pre><code>-prince-bookmark-state: open |&#160;closed</code></pre></div></div></div><div><div class="example"><div class="syntax-block"><table class="property-table"><tr><th scope="row">
+<details><summary class="ext" title="Prince extension" id="prop-prince-bookmark-state">-prince-bookmark-state*  <a class="self-link" href="#prop-prince-bookmark-state"></a></summary><div><div><div id="prop-prince-bookmark-state-syntax">Syntax</div><div class="example"><div class="syntax-block"><pre><code>-prince-bookmark-state: open |&#160;closed</code></pre></div></div></div><div><div class="example"><div class="syntax-block"><table class="property-table"><tr><th scope="row">
           Initial value
         </th><td><code>open</code></td></tr><tr><th scope="row">
           Applies to
@@ -2433,7 +2433,7 @@ supplier, item { overflow-wrap: normal; }
         The property <a href="#prop-bookmark-state"><code>bookmark-state</code></a> can be used as an alias.
         </p></div><div><div id="prop-prince-bookmark-state-seealso">See Also</div><ul><li><a href="/doc/prince-output#bookmark-levels">Bookmark levels</a></li></ul></div><div><div id="prop-prince-bookmark-state-spec">Specification</div><ul><li><a href="https://books.spec.whatwg.org/#'bookmark-state'">CSS Books</a></li></ul></div></div></details>
 
-<details><summary class="ext" id="prop-prince-bookmark-target">-prince-bookmark-target*  <a class="self-link" href="#prop-prince-bookmark-target"></a></summary><div><div><div id="prop-prince-bookmark-target-syntax">Syntax</div><div class="example"><div class="syntax-block"><pre><code>-prince-bookmark-target: self |&#160;url(&#160;<i>target-url</i>&#160;) |&#160;attr(&#160;<i>target-attr</i>&#160;)</code></pre></div></div></div><div><div class="example"><div class="syntax-block"><table class="property-table"><tr><th scope="row">
+<details><summary class="ext" title="Prince extension" id="prop-prince-bookmark-target">-prince-bookmark-target*  <a class="self-link" href="#prop-prince-bookmark-target"></a></summary><div><div><div id="prop-prince-bookmark-target-syntax">Syntax</div><div class="example"><div class="syntax-block"><pre><code>-prince-bookmark-target: self |&#160;url(&#160;<i>target-url</i>&#160;) |&#160;attr(&#160;<i>target-attr</i>&#160;)</code></pre></div></div></div><div><div class="example"><div class="syntax-block"><table class="property-table"><tr><th scope="row">
           Initial value
         </th><td><code>self</code></td></tr><tr><th scope="row">
           Applies to
@@ -2449,7 +2449,7 @@ supplier, item { overflow-wrap: normal; }
         The property <a href="#prop-bookmark-target"><code>bookmark-target</code></a> can be used as an alias.
         </p></div><div><div id="prop-prince-bookmark-target-seealso">See Also</div><ul><li><a href="/doc/prince-output#bookmark-targets">Bookmark targets</a></li></ul></div></div></details>
 
-<details><summary class="ext" id="prop-prince-caption-page">-prince-caption-page*  <a class="self-link" href="#prop-prince-caption-page"></a></summary><div><div><div id="prop-prince-caption-page-syntax">Syntax</div><div class="example"><div class="syntax-block"><pre><code>-prince-caption-page: first |&#160;following |&#160;all</code></pre></div></div></div><div><div class="example"><div class="syntax-block"><table class="property-table"><tr><th scope="row">
+<details><summary class="ext" title="Prince extension" id="prop-prince-caption-page">-prince-caption-page*  <a class="self-link" href="#prop-prince-caption-page"></a></summary><div><div><div id="prop-prince-caption-page-syntax">Syntax</div><div class="example"><div class="syntax-block"><pre><code>-prince-caption-page: first |&#160;following |&#160;all</code></pre></div></div></div><div><div class="example"><div class="syntax-block"><table class="property-table"><tr><th scope="row">
           Initial value
         </th><td><code>first</code></td></tr><tr><th scope="row">
           Applies to
@@ -2465,7 +2465,7 @@ supplier, item { overflow-wrap: normal; }
         The property <a href="#prop-caption-page"><code>caption-page</code></a> can be used as an alias.
         </p></div><div><div id="prop-prince-caption-page-seealso">See Also</div><ul><li><a href="/doc/styling#table-captions">Table captions</a></li></ul></div></div></details>
 
-<details><summary class="ext" id="prop-prince-clear">-prince-clear* <a class="self-link" href="#prop-prince-clear"></a></summary><div><div><div id="prop-prince-clear-syntax">Syntax</div><div class="example"><div class="syntax-block"><pre><code>-prince-clear: none |&#160;left |&#160;right |&#160;<span class="ext">inside</span> |&#160;<span class="ext">outside</span> |&#160;<span class="ext">both</span> |&#160;<span class="ext">page</span> |&#160;<span class="ext">column</span> |&#160;<span class="ext">end</span></code></pre></div></div></div><div><div class="example"><div class="syntax-block"><table class="property-table"><tr><th scope="row">
+<details><summary class="ext" title="Prince extension" id="prop-prince-clear">-prince-clear* <a class="self-link" href="#prop-prince-clear"></a></summary><div><div><div id="prop-prince-clear-syntax">Syntax</div><div class="example"><div class="syntax-block"><pre><code>-prince-clear: none |&#160;left |&#160;right |&#160;<span class="ext">inside</span> |&#160;<span class="ext">outside</span> |&#160;<span class="ext">both</span> |&#160;<span class="ext">page</span> |&#160;<span class="ext">column</span> |&#160;<span class="ext">end</span></code></pre></div></div></div><div><div class="example"><div class="syntax-block"><table class="property-table"><tr><th scope="row">
           Initial value
         </th><td><code>none</code></td></tr><tr><th scope="row">
           Applies to
@@ -2495,7 +2495,7 @@ supplier, item { overflow-wrap: normal; }
         The property <a href="#prop-clear"><code>clear</code></a> can be used as an alias.
         </p></div><div><div id="prop-float-seealso">See Also</div><ul><li><a href="/doc/styling#floats">Floats</a></li><li><code><a href="#prop-float">float</a></code></li></ul></div><div><div id="prop-prince-clear-spec">Specification</div><ul><li><a href="https://www.w3.org/TR/CSS2/visuren.html#flow-control">CSS 2.1</a></li><li><a href="https://figures.spec.whatwg.org/#floating-inside-and-outside-pages">CSS Figures - Floating Inside and Outside Pages</a></li><li><a href="https://figures.idea.whatwg.org/#page-floats">CSS Figures - Page Floats</a></li></ul></div></div></details>
 
-<details><summary class="ext" id="prop-prince-expansion-text">-prince-expansion-text*  <a class="self-link" href="#prop-prince-expansion-text"></a></summary><div><div><div id="prop-prince-expansion-text-syntax">Syntax</div><div class="example"><div class="syntax-block"><pre><code>prince-expansion-text: auto |&#160;none |&#160;"string"</code></pre></div></div></div><div><div class="example"><div class="syntax-block"><table class="property-table"><tr><th scope="row">
+<details><summary class="ext" title="Prince extension" id="prop-prince-expansion-text">-prince-expansion-text*  <a class="self-link" href="#prop-prince-expansion-text"></a></summary><div><div><div id="prop-prince-expansion-text-syntax">Syntax</div><div class="example"><div class="syntax-block"><pre><code>prince-expansion-text: auto |&#160;none |&#160;"string"</code></pre></div></div></div><div><div class="example"><div class="syntax-block"><table class="property-table"><tr><th scope="row">
           Initial value
         </th><td><code>auto</code></td></tr><tr><th scope="row">
           Applies to
@@ -2510,7 +2510,7 @@ supplier, item { overflow-wrap: normal; }
     to tell Prince what to show as an expansion text, which is crucial when producing tagged PDF files.
 	</p></div></div></details>
 
-<details><summary class="ext" id="prop-prince-fallback-cmyk-profile">-prince-fallback-cmyk-profile*  <a class="self-link" href="#prop-prince-fallback-cmyk-profile"></a></summary><div><div><div id="prop-prince-fallback-cmyk-profile-syntax">Syntax</div><div class="example"><div class="syntax-block"><pre><code>-prince-fallback-cmyk-profile: url(&#160;<i>filename</i>&#160;)</code></pre></div></div></div><div><div class="example"><div class="syntax-block"><table class="property-table"><tr><th scope="row">
+<details><summary class="ext" title="Prince extension" id="prop-prince-fallback-cmyk-profile">-prince-fallback-cmyk-profile*  <a class="self-link" href="#prop-prince-fallback-cmyk-profile"></a></summary><div><div><div id="prop-prince-fallback-cmyk-profile-syntax">Syntax</div><div class="example"><div class="syntax-block"><pre><code>-prince-fallback-cmyk-profile: url(&#160;<i>filename</i>&#160;)</code></pre></div></div></div><div><div class="example"><div class="syntax-block"><table class="property-table"><tr><th scope="row">
           Initial value
         </th><td><code /></td></tr><tr><th scope="row">
           Applies to
@@ -2532,7 +2532,7 @@ supplier, item { overflow-wrap: normal; }
 	dependent CMYK colors are treated as uncalibrated CMYK colors.
 	</p></div><div><div id="prop-prince-fallback-cmyk-profile-seealso">See Also</div><ul><li><code><a href="#prop-prince-pdf-output-intent">-prince-pdf-output-intent</a></code></li><li><a href="/doc/graphics#color-management">Color Management</a></li></ul></div></div></details>
 
-<details><summary class="ext" id="prop-prince-filter-resolution">-prince-filter-resolution*  <a class="self-link" href="#prop-prince-filter-resolution"></a></summary><div><div><div id="prop-prince-filter-resolution-syntax">Syntax</div><div class="example"><div class="syntax-block"><pre><code>-prince-filter-resolution: <i>dpi</i></code></pre></div></div></div><div><div class="example"><div class="syntax-block"><table class="property-table"><tr><th scope="row">
+<details><summary class="ext" title="Prince extension" id="prop-prince-filter-resolution">-prince-filter-resolution*  <a class="self-link" href="#prop-prince-filter-resolution"></a></summary><div><div><div id="prop-prince-filter-resolution-syntax">Syntax</div><div class="example"><div class="syntax-block"><pre><code>-prince-filter-resolution: <i>dpi</i></code></pre></div></div></div><div><div class="example"><div class="syntax-block"><table class="property-table"><tr><th scope="row">
           Initial value
         </th><td><code>96dpi</code></td></tr><tr><th scope="row">
           Applies to
@@ -2546,7 +2546,7 @@ supplier, item { overflow-wrap: normal; }
     at-rule.  In this latter case, it affects all filters in the document.
     </p></div><div><div id="prop-prince-filter-resolution-seealso">See Also</div><ul><li><a href="/doc/graphics#filters">Filters</a></li></ul></div></div></details>
 
-<details><summary class="ext" id="prop-prince-float">-prince-float* <a class="self-link" href="#prop-prince-float"></a></summary><div><div><div id="prop-prince-float-syntax">Syntax</div><div class="example"><div class="syntax-block"><pre><code>-prince-float: <br />&#160;&#160;&#160;<i class="ext">-prince-float-reference</i> ||&#160;<i class="ext">-prince-float-placement</i> <span>unless-fit</span>?</code></pre></div></div></div><div><div class="example"><div class="syntax-block"><table class="property-table"><tr><th scope="row">
+<details><summary class="ext" title="Prince extension" id="prop-prince-float">-prince-float* <a class="self-link" href="#prop-prince-float"></a></summary><div><div><div id="prop-prince-float-syntax">Syntax</div><div class="example"><div class="syntax-block"><pre><code>-prince-float: <br />&#160;&#160;&#160;<i class="ext">-prince-float-reference</i> ||&#160;<i class="ext">-prince-float-placement</i> <span>unless-fit</span>?</code></pre></div></div></div><div><div class="example"><div class="syntax-block"><table class="property-table"><tr><th scope="row">
           Initial value
         </th><td><code>none</code></td></tr><tr><th scope="row">
           Applies to
@@ -2583,7 +2583,7 @@ supplier, item { overflow-wrap: normal; }
         The property <a href="#prop-float"><code>float</code></a> can be used as an alias.
         </p></div><div><div id="prop-prince-float-seealso">See Also</div><ul><li><a href="/doc/styling#floats">Floats</a></li></ul></div><div><div id="prop-prince-float-spec">Specification</div><ul><li><a href="https://www.w3.org/TR/CSS2/visuren.html#float-position">CSS 2.1</a></li><li><a href="https://www.w3.org/TR/css-gcpm-3/#footnotes">CSS Generated Content for Paged Media Module</a></li><li><a href="https://figures.spec.whatwg.org/">CSS Figures</a></li><li><a href="https://books.spec.whatwg.org/#footnotes">CSS Books</a></li><li><a href="https://drafts.csswg.org/css-page-floats/">CSS Page Floats</a></li></ul></div></div></details>
 
-<details><summary class="ext" id="prop-prince-float-defer-column">-prince-float-defer-column* <a class="self-link" href="#prop-prince-float-defer-column"></a></summary><div><div><div id="prop-prince-float-defer-column-syntax">Syntax</div><div class="example"><div class="syntax-block"><pre><code>-prince-float-defer-column: none |&#160;inside |&#160;outside |&#160;last |&#160;<i>integer</i></code></pre></div></div></div><div><div class="example"><div class="syntax-block"><table class="property-table"><tr><th scope="row">
+<details><summary class="ext" title="Prince extension" id="prop-prince-float-defer-column">-prince-float-defer-column* <a class="self-link" href="#prop-prince-float-defer-column"></a></summary><div><div><div id="prop-prince-float-defer-column-syntax">Syntax</div><div class="example"><div class="syntax-block"><pre><code>-prince-float-defer-column: none |&#160;inside |&#160;outside |&#160;last |&#160;<i>integer</i></code></pre></div></div></div><div><div class="example"><div class="syntax-block"><table class="property-table"><tr><th scope="row">
           Initial value
         </th><td><code>none</code></td></tr><tr><th scope="row">
           Applies to
@@ -2599,7 +2599,7 @@ supplier, item { overflow-wrap: normal; }
         The property <a href="#prop-float-defer-column"><code>float-defer-column</code></a> can be used as an alias.
         </p></div><div><div id="prop-prince-float-defer-column-seealso">See Also</div><ul><li><a href="/doc/styling#floats">Floats</a></li></ul></div><div><div id="prop-prince-float-defer-column-spec">Specification</div><ul><li><a href="https://figures.spec.whatwg.org/#float-defer-column">CSS Figures</a></li></ul></div></div></details>
 
-<details><summary class="ext" id="prop-prince-float-defer-page">-prince-float-defer-page* <a class="self-link" href="#prop-prince-float-defer-page"></a></summary><div><div><div id="prop-prince-float-defer-page-syntax">Syntax</div><div class="example"><div class="syntax-block"><pre><code>-prince-float-defer-page: none |&#160;[ <i>integer</i> ||&#160;[ left |&#160;right ]]</code></pre></div></div></div><div><div class="example"><div class="syntax-block"><table class="property-table"><tr><th scope="row">
+<details><summary class="ext" title="Prince extension" id="prop-prince-float-defer-page">-prince-float-defer-page* <a class="self-link" href="#prop-prince-float-defer-page"></a></summary><div><div><div id="prop-prince-float-defer-page-syntax">Syntax</div><div class="example"><div class="syntax-block"><pre><code>-prince-float-defer-page: none |&#160;[ <i>integer</i> ||&#160;[ left |&#160;right ]]</code></pre></div></div></div><div><div class="example"><div class="syntax-block"><table class="property-table"><tr><th scope="row">
           Initial value
         </th><td><code>none</code></td></tr><tr><th scope="row">
           Applies to
@@ -2615,7 +2615,7 @@ supplier, item { overflow-wrap: normal; }
         The property <a href="#prop-float-defer-page"><code>float-defer-page</code></a> can be used as an alias.
         </p></div><div><div id="prop-prince-float-defer-page-seealso">See Also</div><ul><li><a href="/doc/styling#floats">Floats</a></li></ul></div><div><div id="prop-prince-float-defer-page-spec">Specification</div><ul><li><a href="https://figures.idea.whatwg.org/#float-defer-page">CSS Figures</a></li><li><a href="https://drafts.csswg.org/css-page-floats/#float-defer-property">CSS Page Floats</a></li></ul></div></div></details>
 
-<details><summary class="ext" id="prop-prince-float-placement">-prince-float-placement* <a class="self-link" href="#prop-prince-float-placement"></a></summary><div><div><div id="prop-prince-float-placement-syntax">Syntax</div><div class="example"><div class="syntax-block"><pre><code>-prince-float-placement: none |&#160;left |&#160;right |&#160;<span class="ext">inside</span> |&#160;<span class="ext">outside</span>
+<details><summary class="ext" title="Prince extension" id="prop-prince-float-placement">-prince-float-placement* <a class="self-link" href="#prop-prince-float-placement"></a></summary><div><div><div id="prop-prince-float-placement-syntax">Syntax</div><div class="example"><div class="syntax-block"><pre><code>-prince-float-placement: none |&#160;left |&#160;right |&#160;<span class="ext">inside</span> |&#160;<span class="ext">outside</span>
 &#160;&#160;&#160;&#160;|&#160;<span class="ext">top</span> |&#160;<span class="ext">bottom</span> |&#160;<span class="ext">top-bottom</span> |&#160;<span class="ext">snap</span>
 &#160;&#160;&#160;&#160;|&#160;footnote |&#160;<span class="ext">inline-footnote</span></code></pre></div></div></div><div><div class="example"><div class="syntax-block"><table class="property-table"><tr><th scope="row">
           Initial value
@@ -2661,7 +2661,7 @@ supplier, item { overflow-wrap: normal; }
         The property <a href="#prop-float-placement"><code>float-placement</code></a> can be used as an alias.
         </p></div><div><div id="prop-prince-float-placement-seealso">See Also</div><ul><li><code><a href="#prop-float">float</a></code></li><li><a href="/doc/styling#floats">Floats</a></li><li><a href="/doc/paged#page-regions">Page Regions</a></li></ul></div><div><div id="prop-prince-float-placement-spec">Specification</div><ul><li><a href="https://www.w3.org/TR/CSS2/visuren.html#float-position">CSS 2.1</a></li><li><a href="https://www.w3.org/TR/css-gcpm-3/#footnotes">CSS Generated Content for Paged Media Module</a></li><li><a href="https://figures.spec.whatwg.org/">CSS Figures</a></li><li><a href="https://books.spec.whatwg.org/#footnotes">CSS Books</a></li><li><a href="https://drafts.csswg.org/css-page-floats/">CSS Page Floats</a></li></ul></div></div></details>
 
-<details><summary class="ext" id="prop-prince-float-policy">-prince-float-policy* <a class="self-link" href="#prop-prince-float-policy"></a></summary><div><div><div id="prop-prince-float-policy-syntax">Syntax</div><div class="example"><div class="syntax-block"><pre><code>-prince-float-policy: normal |&#160;in-order</code></pre></div></div></div><div><div class="example"><div class="syntax-block"><table class="property-table"><tr><th scope="row">
+<details><summary class="ext" title="Prince extension" id="prop-prince-float-policy">-prince-float-policy* <a class="self-link" href="#prop-prince-float-policy"></a></summary><div><div><div id="prop-prince-float-policy-syntax">Syntax</div><div class="example"><div class="syntax-block"><pre><code>-prince-float-policy: normal |&#160;in-order</code></pre></div></div></div><div><div class="example"><div class="syntax-block"><table class="property-table"><tr><th scope="row">
           Initial value
         </th><td><code>normal</code></td></tr><tr><th scope="row">
           Applies to
@@ -2680,7 +2680,7 @@ supplier, item { overflow-wrap: normal; }
         The property <a href="#prop-float-policy"><code>float-policy</code></a> can be used as an alias.
         </p></div><div><div id="prop-prince-float-policy-seealso">See Also</div><ul><li><a href="/doc/styling#floats">Floats</a></li></ul></div><div><div id="prop-prince-float-policy-spec">Specification</div><ul><li><a href="https://figures.spec.whatwg.org/#page-float-preferences:-float-policy">CSS Figures</a></li></ul></div></div></details>
 
-<details><summary class="ext" id="prop-prince-float-reference">-prince-float-reference* <a class="self-link" href="#prop-prince-float-reference"></a></summary><div><div><div id="prop-prince-float-reference-syntax">Syntax</div><div class="example"><div class="syntax-block"><pre><code>-prince-float-reference: column |&#160;page</code></pre></div></div></div><div><div class="example"><div class="syntax-block"><table class="property-table"><tr><th scope="row">
+<details><summary class="ext" title="Prince extension" id="prop-prince-float-reference">-prince-float-reference* <a class="self-link" href="#prop-prince-float-reference"></a></summary><div><div><div id="prop-prince-float-reference-syntax">Syntax</div><div class="example"><div class="syntax-block"><pre><code>-prince-float-reference: column |&#160;page</code></pre></div></div></div><div><div class="example"><div class="syntax-block"><table class="property-table"><tr><th scope="row">
           Initial value
         </th><td><code>column</code></td></tr><tr><th scope="row">
           Applies to
@@ -2701,7 +2701,7 @@ supplier, item { overflow-wrap: normal; }
         The property <a href="#prop-float-reference"><code>float-reference</code></a> can be used as an alias.
         </p></div><div><div id="prop-prince-float-reference-seealso">See Also</div><ul><li><a href="/doc/styling#floats">Floats</a></li></ul></div><div><div id="prop-prince-float-reference-spec">Specification</div><ul><li><a href="https://figures.spec.whatwg.org/#setting-the-page-float-reference:-float-reference">CSS Figures</a></li><li><a href="https://drafts.csswg.org/css-page-floats/#float-reference-property">CSS Page Floats</a></li></ul></div></div></details>
 
-<details><summary class="ext" id="prop-prince-float-tail">-prince-float-tail* <a class="self-link" href="#prop-prince-float-tail"></a></summary><div><div><div id="prop-prince-float-tail-syntax">Syntax</div><div class="example"><div class="syntax-block"><pre><code>-prince-float-tail: keep |&#160;fill-page</code></pre></div></div></div><div><div class="example"><div class="syntax-block"><table class="property-table"><tr><th scope="row">
+<details><summary class="ext" title="Prince extension" id="prop-prince-float-tail">-prince-float-tail* <a class="self-link" href="#prop-prince-float-tail"></a></summary><div><div><div id="prop-prince-float-tail-syntax">Syntax</div><div class="example"><div class="syntax-block"><pre><code>-prince-float-tail: keep |&#160;fill-page</code></pre></div></div></div><div><div class="example"><div class="syntax-block"><table class="property-table"><tr><th scope="row">
           Initial value
         </th><td><code>keep</code></td></tr><tr><th scope="row">
           Applies to
@@ -2720,7 +2720,7 @@ supplier, item { overflow-wrap: normal; }
         The property <a href="#prop-float-tail"><code>float-tail</code></a> can be used as an alias.
         </p></div><div><div id="prop-prince-float-tail-seealso">See Also</div><ul><li><a href="/doc/styling#floats">Floats</a></li></ul></div></div></details>
 
-<details><summary class="ext" id="prop-prince-flow">-prince-flow*  <a class="self-link" href="#prop-prince-flow"></a></summary><div><div><div id="prop-prince-flow-syntax">Syntax</div><div class="example"><div class="syntax-block"><pre><code>-prince-flow: normal |&#160;static(&#160;<i>name</i>, [ start |&#160;current ]?&#160;)</code></pre></div></div></div><div><div class="example"><div class="syntax-block"><table class="property-table"><tr><th scope="row">
+<details><summary class="ext" title="Prince extension" id="prop-prince-flow">-prince-flow*  <a class="self-link" href="#prop-prince-flow"></a></summary><div><div><div id="prop-prince-flow-syntax">Syntax</div><div class="example"><div class="syntax-block"><pre><code>-prince-flow: normal |&#160;static(&#160;<i>name</i>, [ start |&#160;current ]?&#160;)</code></pre></div></div></div><div><div class="example"><div class="syntax-block"><table class="property-table"><tr><th scope="row">
           Initial value
         </th><td><code>normal</code></td></tr><tr><th scope="row">
           Applies to
@@ -2742,7 +2742,7 @@ supplier, item { overflow-wrap: normal; }
         The property <a href="#prop-flow"><code>flow</code></a> can be used as an alias.
         </p></div><div><div id="prop-prince-flow-seealso">See Also</div><ul><li><a href="/doc/paged#page-regions">Page regions</a></li><li><a href="/doc/gen-content#taking-elements-from-the-document">Taking elements from the document</a></li><li><code><a href="#prop-content">content</a></code></li></ul></div><div><div id="prop-prince-flow-spec">Specification</div><ul><li><a href="https://books.spec.whatwg.org/#flowing-content-to-a-named-area:-'flow'">CSS Books</a></li></ul></div></div></details>
 
-<details><summary class="ext" id="prop-prince-footnote-policy">-prince-footnote-policy*  <a class="self-link" href="#prop-prince-footnote-policy"></a></summary><div><div><div id="prop-prince-footnote-policy-syntax">Syntax</div><div class="example"><div class="syntax-block"><pre><code>-prince-footnote-policy: auto |&#160;keep-with-line |&#160;keep-with-block</code></pre></div></div></div><div><div class="example"><div class="syntax-block"><table class="property-table"><tr><th scope="row">
+<details><summary class="ext" title="Prince extension" id="prop-prince-footnote-policy">-prince-footnote-policy*  <a class="self-link" href="#prop-prince-footnote-policy"></a></summary><div><div><div id="prop-prince-footnote-policy-syntax">Syntax</div><div class="example"><div class="syntax-block"><pre><code>-prince-footnote-policy: auto |&#160;keep-with-line |&#160;keep-with-block</code></pre></div></div></div><div><div class="example"><div class="syntax-block"><table class="property-table"><tr><th scope="row">
           Initial value
         </th><td><code>auto</code></td></tr><tr><th scope="row">
           Applies to
@@ -2761,7 +2761,7 @@ supplier, item { overflow-wrap: normal; }
     to the footnote element itself.
 	</p></div><div><div id="prop-prince-footnote-policy-seealso">See Also</div><ul><li><a href="/doc/styling#footnotes">Footnotes</a></li></ul></div></div></details>
 
-<details><summary class="ext" id="prop-prince-forced-breaks">-prince-forced-breaks*  <a class="self-link" href="#prop-prince-forced-breaks"></a></summary><div><div><div id="prop-prince-forced-breaks-syntax">Syntax</div><div class="example"><div class="syntax-block"><pre><code>-prince-forced-breaks: short |&#160;full</code></pre></div></div></div><div><div class="example"><div class="syntax-block"><table class="property-table"><tr><th scope="row">
+<details><summary class="ext" title="Prince extension" id="prop-prince-forced-breaks">-prince-forced-breaks*  <a class="self-link" href="#prop-prince-forced-breaks"></a></summary><div><div><div id="prop-prince-forced-breaks-syntax">Syntax</div><div class="example"><div class="syntax-block"><pre><code>-prince-forced-breaks: short |&#160;full</code></pre></div></div></div><div><div class="example"><div class="syntax-block"><table class="property-table"><tr><th scope="row">
           Initial value
         </th><td><code>short</code></td></tr><tr><th scope="row">
           Applies to
@@ -2777,7 +2777,7 @@ supplier, item { overflow-wrap: normal; }
 	where lines ended by <code>-prince-forced-breaks:full</code> are subject to
 	justification like most other lines.</p><p>(Limitation: At the time of writing, this property only affects justified text.)</p><p>This property only applies to <a href="/doc/prince-for-books">Prince for Books</a>.</p></div><div><div id="prop-prince-forced-breaks-seealso">See Also</div><ul><li><a href="/doc/prince-for-books#line-breaking">Line breaking</a></li><li><code><a href="/doc/prince-for-books#the-property-prince-forced-breaks">-prince-forced-breaks</a></code></li><li><code><a href="#prop-text-align-last">text-align-last</a></code></li><li><code><a href="#prop-white-space">white-space</a></code></li><li><code><a href="#prop-prince-wrap-inside">-prince-wrap-inside</a></code></li></ul></div></div></details>
 
-<details><summary class="ext" id="prop-prince-hyphenate-patterns">-prince-hyphenate-patterns*  <a class="self-link" href="#prop-prince-hyphenate-patterns"></a></summary><div><div><div id="prop-prince-hyphenate-patterns-syntax">Syntax</div><div class="example"><div class="syntax-block"><pre><code>-prince-hyphenate-patterns: none |&#160;url(&#160;<i>patterns-url</i>&#160;)</code></pre></div></div></div><div><div class="example"><div class="syntax-block"><table class="property-table"><tr><th scope="row">
+<details><summary class="ext" title="Prince extension" id="prop-prince-hyphenate-patterns">-prince-hyphenate-patterns*  <a class="self-link" href="#prop-prince-hyphenate-patterns"></a></summary><div><div><div id="prop-prince-hyphenate-patterns-syntax">Syntax</div><div class="example"><div class="syntax-block"><pre><code>-prince-hyphenate-patterns: none |&#160;url(&#160;<i>patterns-url</i>&#160;)</code></pre></div></div></div><div><div class="example"><div class="syntax-block"><table class="property-table"><tr><th scope="row">
           Initial value
         </th><td><code>none</code></td></tr><tr><th scope="row">
           Applies to
@@ -2794,7 +2794,7 @@ supplier, item { overflow-wrap: normal; }
         The property <a href="#prop-hyphenate-patterns"><code>hyphenate-patterns</code></a> can be used as an alias.
         </p></div><div><div id="prop-prince-hyphenate-patterns-seealso">See Also</div><ul><li><a href="/doc/cookbook#hyphenation">Hyphenation</a></li></ul></div></div></details>
 
-<details><summary class="ext" id="prop-prince-hyphenate-after">-prince-hyphenate-after*  <a class="self-link" href="#prop-prince-hyphenate-after"></a></summary><div><div><div id="prop-prince-hyphenate-after-syntax">Syntax</div><div class="example"><div class="syntax-block"><pre><code>-prince-hyphenate-after: <i>integer</i></code></pre></div></div></div><div><div class="example"><div class="syntax-block"><table class="property-table"><tr><th scope="row">
+<details><summary class="ext" title="Prince extension" id="prop-prince-hyphenate-after">-prince-hyphenate-after*  <a class="self-link" href="#prop-prince-hyphenate-after"></a></summary><div><div><div id="prop-prince-hyphenate-after-syntax">Syntax</div><div class="example"><div class="syntax-block"><pre><code>-prince-hyphenate-after: <i>integer</i></code></pre></div></div></div><div><div class="example"><div class="syntax-block"><table class="property-table"><tr><th scope="row">
           Initial value
         </th><td><code>1</code></td></tr><tr><th scope="row">
           Applies to
@@ -2809,7 +2809,7 @@ supplier, item { overflow-wrap: normal; }
         The property <a href="#prop-hyphenate-after"><code>hyphenate-after</code></a> can be used as an alias.
         </p></div><div><div id="prop-prince-hyphenate-after-seealso">See Also</div><ul><li><a href="/doc/cookbook#hyphenation">Hyphenation</a></li></ul></div></div></details>
 
-<details><summary class="ext" id="prop-prince-hyphenate-before">-prince-hyphenate-before*  <a class="self-link" href="#prop-prince-hyphenate-before"></a></summary><div><div><div id="prop-prince-hyphenate-before-syntax">Syntax</div><div class="example"><div class="syntax-block"><pre><code>-prince-hyphenate-before: <i>integer</i></code></pre></div></div></div><div><div class="example"><div class="syntax-block"><table class="property-table"><tr><th scope="row">
+<details><summary class="ext" title="Prince extension" id="prop-prince-hyphenate-before">-prince-hyphenate-before*  <a class="self-link" href="#prop-prince-hyphenate-before"></a></summary><div><div><div id="prop-prince-hyphenate-before-syntax">Syntax</div><div class="example"><div class="syntax-block"><pre><code>-prince-hyphenate-before: <i>integer</i></code></pre></div></div></div><div><div class="example"><div class="syntax-block"><table class="property-table"><tr><th scope="row">
           Initial value
         </th><td><code>1</code></td></tr><tr><th scope="row">
           Applies to
@@ -2824,7 +2824,7 @@ supplier, item { overflow-wrap: normal; }
         The property <a href="#prop-hyphenate-before"><code>hyphenate-before</code></a> can be used as an alias.
         </p></div><div><div id="prop-prince-hyphenate-before-seealso">See Also</div><ul><li><a href="/doc/cookbook#hyphenation">Hyphenation</a></li></ul></div></div></details>
 
-<details><summary class="ext" id="prop-prince-hyphenate-character">-prince-hyphenate-character*  <a class="self-link" href="#prop-prince-hyphenate-character"></a></summary><div><div><div id="prop-prince-hyphenate-character-syntax">Syntax</div><div class="example"><div class="syntax-block"><pre><code>-prince-hyphenate-character: auto |&#160;"string"</code></pre></div></div></div><div><div class="example"><div class="syntax-block"><table class="property-table"><tr><th scope="row">
+<details><summary class="ext" title="Prince extension" id="prop-prince-hyphenate-character">-prince-hyphenate-character*  <a class="self-link" href="#prop-prince-hyphenate-character"></a></summary><div><div><div id="prop-prince-hyphenate-character-syntax">Syntax</div><div class="example"><div class="syntax-block"><pre><code>-prince-hyphenate-character: auto |&#160;"string"</code></pre></div></div></div><div><div class="example"><div class="syntax-block"><table class="property-table"><tr><th scope="row">
           Initial value
         </th><td><code>auto</code></td></tr><tr><th scope="row">
           Applies to
@@ -2839,7 +2839,7 @@ supplier, item { overflow-wrap: normal; }
         The property <a href="#prop-hyphenate-character"><code>hyphenate-character</code></a> can be used as an alias.
         </p></div><div><div id="prop-prince-hyphenate-character-seealso">See Also</div><ul><li><a href="/doc/cookbook#hyphenation">Hyphenation</a></li></ul></div></div></details>
 
-<details><summary class="ext" id="prop-prince-hyphenate-limit-lines">-prince-hyphenate-limit-lines*  <a class="self-link" href="#prop-prince-hyphenate-limit-lines"></a></summary><div><div><div id="prop-prince-hyphenate-limit-lines-syntax">Syntax</div><div class="example"><div class="syntax-block"><pre><code>-prince-hyphenate-limit-lines: no-limit |&#160;<i>integer</i></code></pre></div></div></div><div><div class="example"><div class="syntax-block"><table class="property-table"><tr><th scope="row">
+<details><summary class="ext" title="Prince extension" id="prop-prince-hyphenate-limit-lines">-prince-hyphenate-limit-lines*  <a class="self-link" href="#prop-prince-hyphenate-limit-lines"></a></summary><div><div><div id="prop-prince-hyphenate-limit-lines-syntax">Syntax</div><div class="example"><div class="syntax-block"><pre><code>-prince-hyphenate-limit-lines: no-limit |&#160;<i>integer</i></code></pre></div></div></div><div><div class="example"><div class="syntax-block"><table class="property-table"><tr><th scope="row">
           Initial value
         </th><td><code>no-limit</code></td></tr><tr><th scope="row">
           Applies to
@@ -2854,7 +2854,7 @@ supplier, item { overflow-wrap: normal; }
         The property <a href="#prop-hyphenate-lines"><code>hyphenate-lines</code></a> can be used as an alias.
         </p></div><div><div id="prop-prince-hyphenate-limit-lines-seealso">See Also</div><ul><li><a href="/doc/cookbook#hyphenation">Hyphenation</a></li></ul></div><div><div id="prop-prince-hyphenate-limit-lines-spec">Specification</div><ul><li><a href="https://www.w3.org/TR/css-text-4/#hyphenate-line-limits">CSS Text Module Level 4</a></li></ul></div></div></details>
 
-<details><summary class="ext" id="prop-prince-hyphenate-lines">-prince-hyphenate-lines*  <a class="self-link" href="#prop-prince-hyphenate-lines"></a></summary><div><div><div id="prop-prince-hyphenate-lines-syntax">Syntax</div><div class="example"><div class="syntax-block"><pre><code>-prince-hyphenate-lines: no-limit |&#160;<i>integer</i></code></pre></div></div></div><div><div class="example"><div class="syntax-block"><table class="property-table"><tr><th scope="row">
+<details><summary class="ext" title="Prince extension" id="prop-prince-hyphenate-lines">-prince-hyphenate-lines*  <a class="self-link" href="#prop-prince-hyphenate-lines"></a></summary><div><div><div id="prop-prince-hyphenate-lines-syntax">Syntax</div><div class="example"><div class="syntax-block"><pre><code>-prince-hyphenate-lines: no-limit |&#160;<i>integer</i></code></pre></div></div></div><div><div class="example"><div class="syntax-block"><table class="property-table"><tr><th scope="row">
           Initial value
         </th><td><code>no-limit</code></td></tr><tr><th scope="row">
           Applies to
@@ -2869,7 +2869,7 @@ supplier, item { overflow-wrap: normal; }
         The property <a href="#prop-prince-hyphenate-limit-lines"><code>-prince-hyphenate-limit-lines</code></a> can be used as an alias.
         </p></div><div><div id="prop-prince-hyphenate-lines-seealso">See Also</div><ul><li><a href="/doc/cookbook#hyphenation">Hyphenation</a></li></ul></div><div><div id="prop-prince-hyphenate-lines-spec">Specification</div><ul><li><a href="https://www.w3.org/TR/css-text-4/#hyphenate-line-limits">CSS Text Module Level 4</a></li></ul></div></div></details>
 
-<details><summary class="ext" id="prop-prince-image-magic">-prince-image-magic*  <a class="self-link" href="#prop-prince-image-magic"></a></summary><div><div><div id="prop-prince-image-magic-syntax">Syntax</div><div class="example"><div class="syntax-block"><pre><code>-prince-image-magic: none |&#160;[ snap-to-integer-coords ||&#160;ignore-icc-profile ||&#160;[ jpeg-verbatim |&#160;recompress-jpeg(&#160;<i>percent</i>&#160;) ] ||&#160;[ convert-to-jpeg |&#160;convert-to-jpeg(&#160;<i>percent</i>&#160;) ] ]</code></pre></div></div></div><div><div class="example"><div class="syntax-block"><table class="property-table"><tr><th scope="row">
+<details><summary class="ext" title="Prince extension" id="prop-prince-image-magic">-prince-image-magic*  <a class="self-link" href="#prop-prince-image-magic"></a></summary><div><div><div id="prop-prince-image-magic-syntax">Syntax</div><div class="example"><div class="syntax-block"><pre><code>-prince-image-magic: none |&#160;[ snap-to-integer-coords ||&#160;ignore-icc-profile ||&#160;[ jpeg-verbatim |&#160;recompress-jpeg(&#160;<i>percent</i>&#160;) ] ||&#160;[ convert-to-jpeg |&#160;convert-to-jpeg(&#160;<i>percent</i>&#160;) ] ]</code></pre></div></div></div><div><div class="example"><div class="syntax-block"><table class="property-table"><tr><th scope="row">
           Initial value
         </th><td><code>none</code></td></tr><tr><th scope="row">
           Applies to
@@ -2902,7 +2902,7 @@ supplier, item { overflow-wrap: normal; }
     magic on images.
     </p></div><div><div id="prop-prince-image-magic-seealso">See Also</div><ul><li><a href="/doc/graphics#image-size">Image Size</a></li><li><a href="/doc/cookbook#image-magic">Image Magic</a></li></ul></div></div></details>
 
-<details><summary class="ext" id="prop-prince-image-resolution">-prince-image-resolution*  <a class="self-link" href="#prop-prince-image-resolution"></a></summary><div><div><div id="prop-prince-image-resolution-syntax">Syntax</div><div class="example"><div class="syntax-block"><pre><code>-prince-image-resolution: <i>dpi</i> |&#160;normal |&#160;auto [ , normal |&#160;<i>dpi</i> ]?</code></pre></div></div></div><div><div class="example"><div class="syntax-block"><table class="property-table"><tr><th scope="row">
+<details><summary class="ext" title="Prince extension" id="prop-prince-image-resolution">-prince-image-resolution*  <a class="self-link" href="#prop-prince-image-resolution"></a></summary><div><div><div id="prop-prince-image-resolution-syntax">Syntax</div><div class="example"><div class="syntax-block"><pre><code>-prince-image-resolution: <i>dpi</i> |&#160;normal |&#160;auto [ , normal |&#160;<i>dpi</i> ]?</code></pre></div></div></div><div><div class="example"><div class="syntax-block"><table class="property-table"><tr><th scope="row">
           Initial value
         </th><td><code>normal</code></td></tr><tr><th scope="row">
           Applies to
@@ -2922,7 +2922,7 @@ supplier, item { overflow-wrap: normal; }
         The property <a href="#prop-image-resolution"><code>image-resolution</code></a> can be used as an alias.
         </p></div><div><div id="prop-prince-image-resolution-seealso">See Also</div><ul><li><a href="/doc/graphics#image-size">Image Size</a></li></ul></div></div></details>
 
-<details><summary class="ext" id="prop-prince-linebreak-magic">-prince-linebreak-magic*  <a class="self-link" href="#prop-prince-linebreak-magic"></a></summary><div><div><div id="prop-prince-linebreak-magic-syntax">Syntax</div><div class="example"><div class="syntax-block"><pre><code>-prince-linebreak-magic: none |&#160;auto</code></pre></div></div></div><div><div class="example"><div class="syntax-block"><table class="property-table"><tr><th scope="row">
+<details><summary class="ext" title="Prince extension" id="prop-prince-linebreak-magic">-prince-linebreak-magic*  <a class="self-link" href="#prop-prince-linebreak-magic"></a></summary><div><div><div id="prop-prince-linebreak-magic-syntax">Syntax</div><div class="example"><div class="syntax-block"><pre><code>-prince-linebreak-magic: none |&#160;auto</code></pre></div></div></div><div><div class="example"><div class="syntax-block"><table class="property-table"><tr><th scope="row">
           Initial value
         </th><td><code>auto</code></td></tr><tr><th scope="row">
           Applies to
@@ -2937,7 +2937,7 @@ supplier, item { overflow-wrap: normal; }
 	line-breaking behavior is preferred.
 	</p></div><div><div id="prop-prince-linebreak-magic-seealso">See Also</div><ul><li><a href="/doc/styling#paragraph-formatting">Paragraph formatting</a></li></ul></div></div></details>
 
-<details><summary class="ext" id="prop-prince-line-break-choices">-prince-line-break-choices*  <a class="self-link" href="#prop-prince-line-break-choices"></a></summary><div><div><div id="prop-prince-line-break-choices-syntax">Syntax</div><div class="example"><div class="syntax-block"><pre><code>-prince-line-break-choices: body |&#160;heading |&#160;title |&#160;body-gready |&#160;body-lookahead |&#160;heading-gready |&#160;heading-lookahead |&#160;title-gready |&#160;title-lookahead |&#160;fast</code></pre></div></div></div><div><div class="example"><div class="syntax-block"><table class="property-table"><tr><th scope="row">
+<details><summary class="ext" title="Prince extension" id="prop-prince-line-break-choices">-prince-line-break-choices*  <a class="self-link" href="#prop-prince-line-break-choices"></a></summary><div><div><div id="prop-prince-line-break-choices-syntax">Syntax</div><div class="example"><div class="syntax-block"><pre><code>-prince-line-break-choices: body |&#160;heading |&#160;title |&#160;body-gready |&#160;body-lookahead |&#160;heading-gready |&#160;heading-lookahead |&#160;title-gready |&#160;title-lookahead |&#160;fast</code></pre></div></div></div><div><div class="example"><div class="syntax-block"><table class="property-table"><tr><th scope="row">
           Initial value
         </th><td><code>body</code></td></tr><tr><th scope="row">
           Applies to
@@ -2976,7 +2976,7 @@ supplier, item { overflow-wrap: normal; }
         The property <a href="#prop-prince-text-wrap"><code>-prince-text-wrap</code></a> can be used as an alias.
         </p></div><div><div id="prop-prince-line-break-choices-seealso">See Also</div><ul><li><a href="/doc/prince-for-books#line-breaking">Line breaking</a></li><li><code><a href="/doc/prince-for-books#the-property-prince-line-break-choices">-prince-line-break-choices</a></code></li></ul></div></div></details>
 
-<details><summary class="ext" id="prop-prince-link">-prince-link*  <a class="self-link" href="#prop-prince-link"></a></summary><div><div><div id="prop-prince-link-syntax">Syntax</div><div class="example"><div class="syntax-block"><pre><code>-prince-link: none |&#160;url(&#160;<i>target-url</i>&#160;) |&#160;attr(&#160;<i>target-attr</i>&#160;)</code></pre></div></div></div><div><div class="example"><div class="syntax-block"><table class="property-table"><tr><th scope="row">
+<details><summary class="ext" title="Prince extension" id="prop-prince-link">-prince-link*  <a class="self-link" href="#prop-prince-link"></a></summary><div><div><div id="prop-prince-link-syntax">Syntax</div><div class="example"><div class="syntax-block"><pre><code>-prince-link: none |&#160;url(&#160;<i>target-url</i>&#160;) |&#160;attr(&#160;<i>target-attr</i>&#160;)</code></pre></div></div></div><div><div class="example"><div class="syntax-block"><table class="property-table"><tr><th scope="row">
           Initial value
         </th><td><code>none</code></td></tr><tr><th scope="row">
           Applies to
@@ -2990,7 +2990,7 @@ supplier, item { overflow-wrap: normal; }
         The property <a href="#prop-link"><code>link</code></a> can be used as an alias.
         </p></div><div><div id="prop-prince-link-seealso">See Also</div><ul><li><a href="/doc/prince-output#pdf-links">PDF Links</a></li></ul></div></div></details>
 
-<details><summary class="ext" id="prop-prince-margin-alt">-prince-margin-alt* <a class="self-link" href="#prop-prince-margin-alt"></a></summary><div><div><div id="prop-prince-margin-alt-syntax">Syntax</div><div class="example"><div class="syntax-block"><pre><code>-prince-margin-alt: none |&#160;<i>length</i> <i>length</i>?</code></pre></div></div></div><div><div class="example"><div class="syntax-block"><table class="property-table"><tr><th scope="row">
+<details><summary class="ext" title="Prince extension" id="prop-prince-margin-alt">-prince-margin-alt* <a class="self-link" href="#prop-prince-margin-alt"></a></summary><div><div><div id="prop-prince-margin-alt-syntax">Syntax</div><div class="example"><div class="syntax-block"><pre><code>-prince-margin-alt: none |&#160;<i>length</i> <i>length</i>?</code></pre></div></div></div><div><div class="example"><div class="syntax-block"><table class="property-table"><tr><th scope="row">
           Initial value
         </th><td><code>none</code></td></tr><tr><th scope="row">
           Applies to
@@ -3014,7 +3014,7 @@ supplier, item { overflow-wrap: normal; }
         The property <a href="#prop-margin-alt"><code>margin-alt</code></a> can be used as an alias.
         </p></div><div><div id="prop-margin-seealso">See Also</div><ul><li><a href="/doc/styling#margin">Margin</a></li></ul></div></div></details>
 
-<details><summary class="ext" id="prop-prince-mark-length">-prince-mark-length*  <a class="self-link" href="#prop-prince-mark-length"></a></summary><div><div><div id="prop-prince-mark-length-syntax">Syntax</div><div class="example"><div class="syntax-block"><pre><code>-prince-mark-length: <i>length</i></code></pre></div></div></div><div><div class="example"><div class="syntax-block"><table class="property-table"><tr><th scope="row">
+<details><summary class="ext" title="Prince extension" id="prop-prince-mark-length">-prince-mark-length*  <a class="self-link" href="#prop-prince-mark-length"></a></summary><div><div><div id="prop-prince-mark-length-syntax">Syntax</div><div class="example"><div class="syntax-block"><pre><code>-prince-mark-length: <i>length</i></code></pre></div></div></div><div><div class="example"><div class="syntax-block"><table class="property-table"><tr><th scope="row">
           Initial value
         </th><td><code>24pt</code></td></tr><tr><th scope="row">
           Applies to
@@ -3026,7 +3026,7 @@ supplier, item { overflow-wrap: normal; }
 	the edge of the paper.
 	</p></div><div><div id="prop-prince-mark-length-seealso">See Also</div><ul><li><code><a href="#prop-marks">marks</a></code></li></ul></div></div></details>
 
-<details><summary class="ext" id="prop-prince-mark-offset">-prince-mark-offset*  <a class="self-link" href="#prop-prince-mark-offset"></a></summary><div><div><div id="prop-prince-mark-offset-syntax">Syntax</div><div class="example"><div class="syntax-block"><pre><code>-prince-mark-offset: auto |&#160;[ <i>length</i> ]{1..4}</code></pre></div></div></div><div><div class="example"><div class="syntax-block"><table class="property-table"><tr><th scope="row">
+<details><summary class="ext" title="Prince extension" id="prop-prince-mark-offset">-prince-mark-offset*  <a class="self-link" href="#prop-prince-mark-offset"></a></summary><div><div><div id="prop-prince-mark-offset-syntax">Syntax</div><div class="example"><div class="syntax-block"><pre><code>-prince-mark-offset: auto |&#160;[ <i>length</i> ]{1..4}</code></pre></div></div></div><div><div class="example"><div class="syntax-block"><table class="property-table"><tr><th scope="row">
           Initial value
         </th><td><code>auto</code></td></tr><tr><th scope="row">
           Applies to
@@ -3037,7 +3037,7 @@ supplier, item { overflow-wrap: normal; }
 	cross marks and the page area.
 	</p></div><div><div id="prop-prince-mark-offset-seealso">See Also</div><ul><li><code><a href="#prop-marks">marks</a></code></li></ul></div></div></details>
 
-<details><summary class="ext" id="prop-prince-mark-width">-prince-mark-width*  <a class="self-link" href="#prop-prince-mark-width"></a></summary><div><div><div id="prop-prince-mark-width-syntax">Syntax</div><div class="example"><div class="syntax-block"><pre><code>-prince-mark-width: <i>width</i></code></pre></div></div></div><div><div class="example"><div class="syntax-block"><table class="property-table"><tr><th scope="row">
+<details><summary class="ext" title="Prince extension" id="prop-prince-mark-width">-prince-mark-width*  <a class="self-link" href="#prop-prince-mark-width"></a></summary><div><div><div id="prop-prince-mark-width-syntax">Syntax</div><div class="example"><div class="syntax-block"><pre><code>-prince-mark-width: <i>width</i></code></pre></div></div></div><div><div class="example"><div class="syntax-block"><table class="property-table"><tr><th scope="row">
           Initial value
         </th><td><code>0.1pt</code></td></tr><tr><th scope="row">
           Applies to
@@ -3048,7 +3048,7 @@ supplier, item { overflow-wrap: normal; }
 	cross marks.
 	</p></div><div><div id="prop-prince-mark-width-seealso">See Also</div><ul><li><code><a href="#prop-marks">marks</a></code></li></ul></div></div></details>
 
-<details><summary class="ext" id="prop-prince-n-lines">-prince-n-lines*  <a class="self-link" href="#prop-prince-n-lines"></a></summary><div><div><div id="prop-prince-n-lines-syntax">Syntax</div><div class="example"><div class="syntax-block"><pre><code>-prince-n-lines: auto |&#160;<i>integer</i>? [ longer |&#160;shorter ] |&#160;change |&#160;<i>integer</i></code></pre></div></div></div><div><div class="example"><div class="syntax-block"><table class="property-table"><tr><th scope="row">
+<details><summary class="ext" title="Prince extension" id="prop-prince-n-lines">-prince-n-lines*  <a class="self-link" href="#prop-prince-n-lines"></a></summary><div><div><div id="prop-prince-n-lines-syntax">Syntax</div><div class="example"><div class="syntax-block"><pre><code>-prince-n-lines: auto |&#160;<i>integer</i>? [ longer |&#160;shorter ] |&#160;change |&#160;<i>integer</i></code></pre></div></div></div><div><div class="example"><div class="syntax-block"><table class="property-table"><tr><th scope="row">
           Initial value
         </th><td><code>auto</code></td></tr><tr><th scope="row">
           Applies to
@@ -3089,7 +3089,7 @@ supplier, item { overflow-wrap: normal; }
     having a hyphenation at the end of a page.
     </p><p>This property only applies to <a href="/doc/prince-for-books">Prince for Books</a>.</p></div><div><div id="prop-prince-n-lines-seealso">See Also</div><ul><li><a href="/doc/prince-for-books#spread-balancing">Spread Balancing</a></li><li><code><a href="/doc/prince-for-books#the-property-prince-n-lines">-prince-n-lines</a></code></li></ul></div></div></details>
 
-<details><summary class="ext" id="prop-prince-page-fill">-prince-page-fill*  <a class="self-link" href="#prop-prince-page-fill"></a></summary><div><div><div id="prop-prince-page-fill-syntax">Syntax</div><div class="example"><div class="syntax-block"><pre><code>-prince-page-fill: prefer-balance |&#160;prefer-fill</code></pre></div></div></div><div><div class="example"><div class="syntax-block"><table class="property-table"><tr><th scope="row">
+<details><summary class="ext" title="Prince extension" id="prop-prince-page-fill">-prince-page-fill*  <a class="self-link" href="#prop-prince-page-fill"></a></summary><div><div><div id="prop-prince-page-fill-syntax">Syntax</div><div class="example"><div class="syntax-block"><pre><code>-prince-page-fill: prefer-balance |&#160;prefer-fill</code></pre></div></div></div><div><div class="example"><div class="syntax-block"><table class="property-table"><tr><th scope="row">
           Initial value
         </th><td><code>prefer-fill</code></td></tr><tr><th scope="row">
           Applies to
@@ -3102,7 +3102,7 @@ supplier, item { overflow-wrap: normal; }
     spreads.
 	</p><p>This property only applies to <a href="/doc/prince-for-books">Prince for Books</a>.</p></div><div><div id="prop-prince-page-fill-seealso">See Also</div><ul><li><a href="/doc/prince-for-books#spread-balancing">Spread Balancing</a></li><li><code><a href="/doc/prince-for-books#the-property-prince-n-lines">-prince-n-lines</a></code></li></ul></div></div></details>
 
-<details><summary class="ext" id="prop-prince-page-group">-prince-page-group*  <a class="self-link" href="#prop-prince-page-group"></a></summary><div><div><div id="prop-prince-page-group-syntax">Syntax</div><div class="example"><div class="syntax-block"><pre><code>-prince-page-group: start |&#160;auto</code></pre></div></div></div><div><div class="example"><div class="syntax-block"><table class="property-table"><tr><th scope="row">
+<details><summary class="ext" title="Prince extension" id="prop-prince-page-group">-prince-page-group*  <a class="self-link" href="#prop-prince-page-group"></a></summary><div><div><div id="prop-prince-page-group-syntax">Syntax</div><div class="example"><div class="syntax-block"><pre><code>-prince-page-group: start |&#160;auto</code></pre></div></div></div><div><div class="example"><div class="syntax-block"><table class="property-table"><tr><th scope="row">
           Initial value
         </th><td><code>auto</code></td></tr><tr><th scope="row">
           Applies to
@@ -3117,7 +3117,7 @@ supplier, item { overflow-wrap: normal; }
         The property <a href="#prop-page-group"><code>page-group</code></a> can be used as an alias.
         </p></div><div><div id="prop-prince-page-group-seealso">See Also</div><ul><li><a href="/doc/paged#page-groups">Page groups</a></li></ul></div></div></details>
 
-<details><summary class="ext" id="prop-prince-pdf-color-conversion">-prince-pdf-color-conversion*  <a class="self-link" href="#prop-prince-pdf-color-conversion"></a></summary><div><div><div id="prop-prince-pdf-color-conversion-syntax">Syntax</div><div class="example"><div class="syntax-block"><pre><code>-prince-pdf-color-conversion: auto |&#160;none</code></pre></div></div></div><div><div class="example"><div class="syntax-block"><table class="property-table"><tr><th scope="row">
+<details><summary class="ext" title="Prince extension" id="prop-prince-pdf-color-conversion">-prince-pdf-color-conversion*  <a class="self-link" href="#prop-prince-pdf-color-conversion"></a></summary><div><div><div id="prop-prince-pdf-color-conversion-syntax">Syntax</div><div class="example"><div class="syntax-block"><pre><code>-prince-pdf-color-conversion: auto |&#160;none</code></pre></div></div></div><div><div class="example"><div class="syntax-block"><table class="property-table"><tr><th scope="row">
           Initial value
         </th><td><code>auto</code></td></tr><tr><th scope="row">
           Applies to
@@ -3167,7 +3167,7 @@ supplier, item { overflow-wrap: normal; }
     has a different syntax - see <a href="#prop-prince-pdf-color-conversion">above</a>.
     </p></div><div><div id="prop-prince-pdf-color-conversion-seealso2">See Also</div><ul><li><a href="/doc/graphics#color-conversion">Color conversion</a></li></ul></div></div></details>
 
-<details><summary class="ext" id="prop-prince-pdf-color-options">-prince-pdf-color-options*  <a class="self-link" href="#prop-prince-pdf-color-options"></a></summary><div><div><div id="prop-prince-pdf-color-options-syntax">Syntax</div><div class="example"><div class="syntax-block"><pre><code>-prince-pdf-color-options: auto |&#160;use-true-black |&#160;use-rich-black</code></pre></div></div></div><div><div class="example"><div class="syntax-block"><table class="property-table"><tr><th scope="row">
+<details><summary class="ext" title="Prince extension" id="prop-prince-pdf-color-options">-prince-pdf-color-options*  <a class="self-link" href="#prop-prince-pdf-color-options"></a></summary><div><div><div id="prop-prince-pdf-color-options-syntax">Syntax</div><div class="example"><div class="syntax-block"><pre><code>-prince-pdf-color-options: auto |&#160;use-true-black |&#160;use-rich-black</code></pre></div></div></div><div><div class="example"><div class="syntax-block"><table class="property-table"><tr><th scope="row">
           Initial value
         </th><td><code>auto</code></td></tr><tr><th scope="row">
           Applies to
@@ -3183,7 +3183,7 @@ supplier, item { overflow-wrap: normal; }
 		and keeps all the colors in RGB. Currently, auto is equivalent to <code>use-true-black</code>.
 		</p></div><div><div id="prop-prince-pdf-color-options-seealso">See Also</div><ul><li><a href="/doc/graphics#rich-black-and-true-black">Rich black and true black</a></li></ul></div></div></details>
 
-<details><summary class="ext" id="prop-prince-pdf-destination">-prince-pdf-destination*  <a class="self-link" href="#prop-prince-pdf-destination"></a></summary><div><div><div id="prop-prince-pdf-destination-syntax">Syntax</div><div class="example"><div class="syntax-block"><pre><code>-prince-pdf-destination: none |&#160;"name" |&#160;attr(&#160;<i>attr</i>&#160;)</code></pre></div></div></div><div><div class="example"><div class="syntax-block"><table class="property-table"><tr><th scope="row">
+<details><summary class="ext" title="Prince extension" id="prop-prince-pdf-destination">-prince-pdf-destination*  <a class="self-link" href="#prop-prince-pdf-destination"></a></summary><div><div><div id="prop-prince-pdf-destination-syntax">Syntax</div><div class="example"><div class="syntax-block"><pre><code>-prince-pdf-destination: none |&#160;"name" |&#160;attr(&#160;<i>attr</i>&#160;)</code></pre></div></div></div><div><div class="example"><div class="syntax-block"><table class="property-table"><tr><th scope="row">
           Initial value
         </th><td><code>none</code></td></tr><tr><th scope="row">
           Applies to
@@ -3196,7 +3196,7 @@ supplier, item { overflow-wrap: normal; }
     in generated PDF files which can be linked to from other documents.
     </p></div><div><div id="prop-prince-pdf-destination-seealso">See Also</div><ul><li><a href="/doc/prince-output#pdf-links">PDF Links</a></li></ul></div></div></details>
 
-<details><summary class="ext" id="prop-prince-pdf-display-doc-title">-prince-pdf-display-doc-title*  <a class="self-link" href="#prop-prince-pdf-display-doc-title"></a></summary><div><div><div id="prop-prince-pdf-display-doc-title-syntax">Syntax</div><div class="example"><div class="syntax-block"><pre><code>-prince-pdf-display-doc-title: true |&#160;false</code></pre></div></div></div><div><div class="example"><div class="syntax-block"><table class="property-table"><tr><th scope="row">
+<details><summary class="ext" title="Prince extension" id="prop-prince-pdf-display-doc-title">-prince-pdf-display-doc-title*  <a class="self-link" href="#prop-prince-pdf-display-doc-title"></a></summary><div><div><div id="prop-prince-pdf-display-doc-title-syntax">Syntax</div><div class="example"><div class="syntax-block"><pre><code>-prince-pdf-display-doc-title: true |&#160;false</code></pre></div></div></div><div><div class="example"><div class="syntax-block"><table class="property-table"><tr><th scope="row">
           Initial value
         </th><td><code>false</code></td></tr><tr><th scope="row">
           Applies to
@@ -3214,7 +3214,7 @@ supplier, item { overflow-wrap: normal; }
     Adobe accessibility checker on their PDFs.
     </p></div><div><div id="prop-prince-pdf-display-doc-title-seealso">See Also</div><ul><li><a href="/doc/prince-output#pdf-pages">PDF Pages</a></li></ul></div></div></details>
 
-<details><summary class="ext" id="prop-prince-pdf-duplex">-prince-pdf-duplex*  <a class="self-link" href="#prop-prince-pdf-duplex"></a></summary><div><div><div id="prop-prince-pdf-duplex-syntax">Syntax</div><div class="example"><div class="syntax-block"><pre><code>-prince-pdf-duplex: auto |&#160;simplex |&#160;duplex-flip-short-edge |&#160;duplex-flip-long-edge</code></pre></div></div></div><div><div class="example"><div class="syntax-block"><table class="property-table"><tr><th scope="row">
+<details><summary class="ext" title="Prince extension" id="prop-prince-pdf-duplex">-prince-pdf-duplex*  <a class="self-link" href="#prop-prince-pdf-duplex"></a></summary><div><div><div id="prop-prince-pdf-duplex-syntax">Syntax</div><div class="example"><div class="syntax-block"><pre><code>-prince-pdf-duplex: auto |&#160;simplex |&#160;duplex-flip-short-edge |&#160;duplex-flip-long-edge</code></pre></div></div></div><div><div class="example"><div class="syntax-block"><table class="property-table"><tr><th scope="row">
           Initial value
         </th><td><code>auto</code></td></tr><tr><th scope="row">
           Applies to
@@ -3229,7 +3229,7 @@ supplier, item { overflow-wrap: normal; }
     <code>PDFViewerPreferences</code> dictionary.
 	</p></div><div><div id="prop-prince-pdf-duplex-seealso">See Also</div><ul><li><a href="/doc/prince-output#pdf-printing">PDF Printing</a></li></ul></div></div></details>
 
-<details><summary class="ext" id="prop-prince-pdf-event-scripts">-prince-pdf-event-scripts*  <a class="self-link" href="#prop-prince-pdf-event-scripts"></a></summary><div><div><div id="prop-prince-pdf-event-scripts-syntax">Syntax</div><div class="example"><div class="syntax-block"><pre><code>-prince-pdf-event-scripts: <br />&#160;&#160;&#160;none
+<details><summary class="ext" title="Prince extension" id="prop-prince-pdf-event-scripts">-prince-pdf-event-scripts*  <a class="self-link" href="#prop-prince-pdf-event-scripts"></a></summary><div><div><div id="prop-prince-pdf-event-scripts-syntax">Syntax</div><div class="example"><div class="syntax-block"><pre><code>-prince-pdf-event-scripts: <br />&#160;&#160;&#160;none
 &#160;&#160;&#160;|&#160;[ [ will-close |&#160;will-save |&#160;did-save |&#160;will-print |&#160;did-print ] [ "JavaScript" |&#160;<i>url</i> ] ]#</code></pre></div></div></div><div><div class="example"><div class="syntax-block"><table class="property-table"><tr><th scope="row">
           Initial value
         </th><td><code>""</code></td></tr><tr><th scope="row">
@@ -3247,7 +3247,7 @@ supplier, item { overflow-wrap: normal; }
     in many cases might only work in Adobe Acrobat products.
     </p></div><div><div id="prop-prince-pdf-event-scripts-seealso">See Also</div><ul><li><a href="/doc/prince-output#pdf-actions">PDF Actions</a></li></ul></div></div></details>
 
-<details><summary class="ext" id="prop-prince-pdf-link-type">-prince-pdf-link-type*  <a class="self-link" href="#prop-prince-pdf-link-type"></a></summary><div><div><div id="prop-prince-pdf-link-type-syntax">Syntax</div><div class="example"><div class="syntax-block"><pre><code>-prince-pdf-link-type: [ auto |&#160;file ]? [ same-window |&#160;new-window ]? |&#160;web</code></pre></div></div></div><div><div class="example"><div class="syntax-block"><table class="property-table"><tr><th scope="row">
+<details><summary class="ext" title="Prince extension" id="prop-prince-pdf-link-type">-prince-pdf-link-type*  <a class="self-link" href="#prop-prince-pdf-link-type"></a></summary><div><div><div id="prop-prince-pdf-link-type-syntax">Syntax</div><div class="example"><div class="syntax-block"><pre><code>-prince-pdf-link-type: [ auto |&#160;file ]? [ same-window |&#160;new-window ]? |&#160;web</code></pre></div></div></div><div><div class="example"><div class="syntax-block"><table class="property-table"><tr><th scope="row">
           Initial value
         </th><td><code>auto</code></td></tr><tr><th scope="row">
           Applies to
@@ -3265,7 +3265,7 @@ supplier, item { overflow-wrap: normal; }
     and <code>new-window</code> only affect links to local PDF files.
     </p></div><div><div id="prop-prince-pdf-link-type-seealso">See Also</div><ul><li><a href="/doc/prince-output#pdf-links">PDF Links</a></li></ul></div></div></details>
 
-<details><summary class="ext" id="prop-prince-pdf-open-action">-prince-pdf-open-action*  <a class="self-link" href="#prop-prince-pdf-open-action"></a></summary><div><div><div id="prop-prince-pdf-open-action-syntax">Syntax</div><div class="example"><div class="syntax-block"><pre><code>-prince-pdf-open-action: none |&#160;[ print |&#160;command(&#160;<i>ident</i>&#160;) |&#160;zoom(&#160;fit-page |&#160;fit-width |&#160;fit-height |&#160;<i>percent</i>&#160;) ]+</code></pre></div></div></div><div><div class="example"><div class="syntax-block"><table class="property-table"><tr><th scope="row">
+<details><summary class="ext" title="Prince extension" id="prop-prince-pdf-open-action">-prince-pdf-open-action*  <a class="self-link" href="#prop-prince-pdf-open-action"></a></summary><div><div><div id="prop-prince-pdf-open-action-syntax">Syntax</div><div class="example"><div class="syntax-block"><pre><code>-prince-pdf-open-action: none |&#160;[ print |&#160;command(&#160;<i>ident</i>&#160;) |&#160;zoom(&#160;fit-page |&#160;fit-width |&#160;fit-height |&#160;<i>percent</i>&#160;) ]+</code></pre></div></div></div><div><div class="example"><div class="syntax-block"><table class="property-table"><tr><th scope="row">
           Initial value
         </th><td><code>none</code></td></tr><tr><th scope="row">
           Applies to
@@ -3281,7 +3281,7 @@ supplier, item { overflow-wrap: normal; }
     specific; Acrobat can take just about any menu item.
 	</p></div><div><div id="prop-prince-pdf-open-action-seealso">See Also</div><ul><li><a href="/doc/prince-output#pdf-actions">PDF Actions</a></li></ul></div></div></details>
 
-<details><summary class="ext" id="prop-prince-pdf-output-intent">-prince-pdf-output-intent*  <a class="self-link" href="#prop-prince-pdf-output-intent"></a></summary><div><div><div id="prop-prince-pdf-output-intent-syntax">Syntax</div><div class="example"><div class="syntax-block"><pre><code>-prince-pdf-output-intent: auto |&#160;url(&#160;<i>filename</i>&#160;)</code></pre></div></div></div><div><div class="example"><div class="syntax-block"><table class="property-table"><tr><th scope="row">
+<details><summary class="ext" title="Prince extension" id="prop-prince-pdf-output-intent">-prince-pdf-output-intent*  <a class="self-link" href="#prop-prince-pdf-output-intent"></a></summary><div><div><div id="prop-prince-pdf-output-intent-syntax">Syntax</div><div class="example"><div class="syntax-block"><pre><code>-prince-pdf-output-intent: auto |&#160;url(&#160;<i>filename</i>&#160;)</code></pre></div></div></div><div><div class="example"><div class="syntax-block"><table class="property-table"><tr><th scope="row">
           Initial value
         </th><td><code>auto</code></td></tr><tr><th scope="row">
           Applies to
@@ -3294,7 +3294,7 @@ supplier, item { overflow-wrap: normal; }
     at-rule to select the intended output color space of the generated PDF file.
     </p></div><div><div id="prop-prince-pdf-output-intent-seealso">See Also</div><ul><li><code><a href="#prop-prince-fallback-cmyk-profile">-prince-fallback-cmyk-profile</a></code></li><li><a href="/doc/graphics#color-management">Color Management</a></li></ul></div></div></details>
 
-<details><summary class="ext" id="prop-prince-pdf-page-colorspace">-prince-pdf-page-colorspace*  <a class="self-link" href="#prop-prince-pdf-page-colorspace"></a></summary><div><div><div id="prop-prince-pdf-page-colorspace-syntax">Syntax</div><div class="example"><div class="syntax-block"><pre><code>-prince-pdf-page-colorspace: auto |&#160;none |&#160;rgb |&#160;cmyk |&#160;gray</code></pre></div></div></div><div><div class="example"><div class="syntax-block"><table class="property-table"><tr><th scope="row">
+<details><summary class="ext" title="Prince extension" id="prop-prince-pdf-page-colorspace">-prince-pdf-page-colorspace*  <a class="self-link" href="#prop-prince-pdf-page-colorspace"></a></summary><div><div><div id="prop-prince-pdf-page-colorspace-syntax">Syntax</div><div class="example"><div class="syntax-block"><pre><code>-prince-pdf-page-colorspace: auto |&#160;none |&#160;rgb |&#160;cmyk |&#160;gray</code></pre></div></div></div><div><div class="example"><div class="syntax-block"><table class="property-table"><tr><th scope="row">
           Initial value
         </th><td><code>auto</code></td></tr><tr><th scope="row">
           Applies to
@@ -3312,7 +3312,7 @@ supplier, item { overflow-wrap: normal; }
 	<code>rgb</code> in the absence of a specified output intent.
 	</p></div><div><div id="prop-prince-pdf-page-colorspace-seealso">See Also</div><ul><li><a href="/doc/graphics#page-color-space">Page color space</a></li></ul></div></div></details>
 
-<details><summary class="ext" id="prop-prince-pdf-page-label">-prince-pdf-page-label*  <a class="self-link" href="#prop-prince-pdf-page-label"></a></summary><div><div><div id="prop-prince-pdf-page-label-syntax">Syntax</div><div class="example"><div class="syntax-block"><pre><code>-prince-pdf-page-label: auto |&#160;<i>content</i></code></pre></div></div></div><div><div class="example"><div class="syntax-block"><table class="property-table"><tr><th scope="row">
+<details><summary class="ext" title="Prince extension" id="prop-prince-pdf-page-label">-prince-pdf-page-label*  <a class="self-link" href="#prop-prince-pdf-page-label"></a></summary><div><div><div id="prop-prince-pdf-page-label-syntax">Syntax</div><div class="example"><div class="syntax-block"><pre><code>-prince-pdf-page-label: auto |&#160;<i>content</i></code></pre></div></div></div><div><div class="example"><div class="syntax-block"><table class="property-table"><tr><th scope="row">
           Initial value
         </th><td><code>auto</code></td></tr><tr><th scope="row">
           Applies to
@@ -3329,7 +3329,7 @@ supplier, item { overflow-wrap: normal; }
     section.
     </p></div><div><div id="prop-prince-pdf-page-label-seealso">See Also</div><ul><li><a href="/doc/gen-content#generated-content-functions">Generated Content Functions</a></li><li><a href="/doc/prince-output#pdf-pages">PDF Pages</a></li><li><code><a href="#prop-content">content</a></code></li></ul></div></div></details>
 
-<details><summary class="ext" id="prop-prince-pdf-page-layout">-prince-pdf-page-layout*  <a class="self-link" href="#prop-prince-pdf-page-layout"></a></summary><div><div><div id="prop-prince-pdf-page-layout-syntax">Syntax</div><div class="example"><div class="syntax-block"><pre><code>-prince-pdf-page-layout: auto |&#160;single-page |&#160;two-page |&#160;two-page-left |&#160;two-page-right |&#160;one-column |&#160;two-column |&#160;two-column-left |&#160;two-column-right</code></pre></div></div></div><div><div class="example"><div class="syntax-block"><table class="property-table"><tr><th scope="row">
+<details><summary class="ext" title="Prince extension" id="prop-prince-pdf-page-layout">-prince-pdf-page-layout*  <a class="self-link" href="#prop-prince-pdf-page-layout"></a></summary><div><div><div id="prop-prince-pdf-page-layout-syntax">Syntax</div><div class="example"><div class="syntax-block"><pre><code>-prince-pdf-page-layout: auto |&#160;single-page |&#160;two-page |&#160;two-page-left |&#160;two-page-right |&#160;one-column |&#160;two-column |&#160;two-column-left |&#160;two-column-right</code></pre></div></div></div><div><div class="example"><div class="syntax-block"><table class="property-table"><tr><th scope="row">
           Initial value
         </th><td><code>auto</code></td></tr><tr><th scope="row">
           Applies to
@@ -3343,7 +3343,7 @@ supplier, item { overflow-wrap: normal; }
 	displayed in one or two columns.
 	</p></div><div><div id="prop-prince-pdf-page-layout-seealso">See Also</div><ul><li><a href="/doc/prince-output#pdf-pages">PDF Pages</a></li></ul></div></div></details>
 
-<details><summary class="ext" id="prop-prince-pdf-page-mode">-prince-pdf-page-mode*  <a class="self-link" href="#prop-prince-pdf-page-mode"></a></summary><div><div><div id="prop-prince-pdf-page-mode-syntax">Syntax</div><div class="example"><div class="syntax-block"><pre><code>-prince-pdf-page-mode: auto |&#160;show-attachments |&#160;show-bookmarks |&#160;fullscreen</code></pre></div></div></div><div><div class="example"><div class="syntax-block"><table class="property-table"><tr><th scope="row">
+<details><summary class="ext" title="Prince extension" id="prop-prince-pdf-page-mode">-prince-pdf-page-mode*  <a class="self-link" href="#prop-prince-pdf-page-mode"></a></summary><div><div><div id="prop-prince-pdf-page-mode-syntax">Syntax</div><div class="example"><div class="syntax-block"><pre><code>-prince-pdf-page-mode: auto |&#160;show-attachments |&#160;show-bookmarks |&#160;fullscreen</code></pre></div></div></div><div><div class="example"><div class="syntax-block"><table class="property-table"><tr><th scope="row">
           Initial value
         </th><td><code>auto</code></td></tr><tr><th scope="row">
           Applies to
@@ -3357,7 +3357,7 @@ supplier, item { overflow-wrap: normal; }
 	be displayed, and whether the viewer should be fullscreen.
 	</p></div><div><div id="prop-prince-pdf-page-mode-seealso">See Also</div><ul><li><a href="/doc/prince-output#pdf-pages">PDF Pages</a></li></ul></div></div></details>
 
-<details><summary class="ext" id="prop-prince-pdf-paper-tray">-prince-pdf-paper-tray*  <a class="self-link" href="#prop-prince-pdf-paper-tray"></a></summary><div><div><div id="prop-prince-pdf-paper-tray-syntax">Syntax</div><div class="example"><div class="syntax-block"><pre><code>-prince-pdf-paper-tray: auto |&#160;pick-tray-by-pdf-size</code></pre></div></div></div><div><div class="example"><div class="syntax-block"><table class="property-table"><tr><th scope="row">
+<details><summary class="ext" title="Prince extension" id="prop-prince-pdf-paper-tray">-prince-pdf-paper-tray*  <a class="self-link" href="#prop-prince-pdf-paper-tray"></a></summary><div><div><div id="prop-prince-pdf-paper-tray-syntax">Syntax</div><div class="example"><div class="syntax-block"><pre><code>-prince-pdf-paper-tray: auto |&#160;pick-tray-by-pdf-size</code></pre></div></div></div><div><div class="example"><div class="syntax-block"><table class="property-table"><tr><th scope="row">
           Initial value
         </th><td><code>auto</code></td></tr><tr><th scope="row">
           Applies to
@@ -3371,7 +3371,7 @@ supplier, item { overflow-wrap: normal; }
     the input paper tray. (See the checkbox in the Acrobat print dialog).
 	</p></div><div><div id="prop-prince-pdf-paper-tray-seealso">See Also</div><ul><li><a href="/doc/prince-output#pdf-printing">PDF Printing</a></li></ul></div></div></details>
 
-<details><summary class="ext" id="prop-prince-pdf-print-scaling">-prince-pdf-print-scaling*  <a class="self-link" href="#prop-prince-pdf-print-scaling"></a></summary><div><div><div id="prop-prince-pdf-print-scaling-syntax">Syntax</div><div class="example"><div class="syntax-block"><pre><code>-prince-pdf-print-scaling: auto |&#160;none</code></pre></div></div></div><div><div class="example"><div class="syntax-block"><table class="property-table"><tr><th scope="row">
+<details><summary class="ext" title="Prince extension" id="prop-prince-pdf-print-scaling">-prince-pdf-print-scaling*  <a class="self-link" href="#prop-prince-pdf-print-scaling"></a></summary><div><div><div id="prop-prince-pdf-print-scaling-syntax">Syntax</div><div class="example"><div class="syntax-block"><pre><code>-prince-pdf-print-scaling: auto |&#160;none</code></pre></div></div></div><div><div class="example"><div class="syntax-block"><table class="property-table"><tr><th scope="row">
           Initial value
         </th><td><code>auto</code></td></tr><tr><th scope="row">
           Applies to
@@ -3384,7 +3384,7 @@ supplier, item { overflow-wrap: normal; }
     it is printed.
 	</p></div><div><div id="prop-prince-pdf-print-scaling-seealso">See Also</div><ul><li><a href="/doc/prince-output#pdf-printing">PDF Printing</a></li></ul></div></div></details>
 
-<details><summary class="ext" id="prop-prince-pdf-profile">-prince-pdf-profile*  <a class="self-link" href="#prop-prince-pdf-profile"></a></summary><div><div><div id="prop-prince-pdf-profile-syntax">Syntax</div><div class="example"><div class="syntax-block"><pre><code>-prince-pdf-profile: none |&#160;"Profile"</code></pre></div></div></div><div><div class="example"><div class="syntax-block"><table class="property-table"><tr><th scope="row">
+<details><summary class="ext" title="Prince extension" id="prop-prince-pdf-profile">-prince-pdf-profile*  <a class="self-link" href="#prop-prince-pdf-profile"></a></summary><div><div><div id="prop-prince-pdf-profile-syntax">Syntax</div><div class="example"><div class="syntax-block"><pre><code>-prince-pdf-profile: none |&#160;"Profile"</code></pre></div></div></div><div><div class="example"><div class="syntax-block"><table class="property-table"><tr><th scope="row">
           Initial value
         </th><td><code>none</code></td></tr><tr><th scope="row">
           Applies to
@@ -3397,7 +3397,7 @@ supplier, item { overflow-wrap: normal; }
     more details and the supported PDF profiles, see <a href="/doc/prince-output#pdf-versions-and-profiles">PDF Versions and Profiles</a>.
     </p></div><div><div id="prop-prince-pdf-profile-seealso">See Also</div><ul><li><a href="/doc/prince-output#pdf-versions-and-profiles">PDF Versions and Profiles</a></li></ul></div></div></details>
 
-<details><summary class="ext" id="prop-prince-pdf-script">-prince-pdf-script*  <a class="self-link" href="#prop-prince-pdf-script"></a></summary><div><div><div id="prop-prince-pdf-script-syntax">Syntax</div><div class="example"><div class="syntax-block"><pre><code>-prince-pdf-script: "JavaScript" |&#160;<i>url</i></code></pre></div></div></div><div><div class="example"><div class="syntax-block"><table class="property-table"><tr><th scope="row">
+<details><summary class="ext" title="Prince extension" id="prop-prince-pdf-script">-prince-pdf-script*  <a class="self-link" href="#prop-prince-pdf-script"></a></summary><div><div><div id="prop-prince-pdf-script-syntax">Syntax</div><div class="example"><div class="syntax-block"><pre><code>-prince-pdf-script: "JavaScript" |&#160;<i>url</i></code></pre></div></div></div><div><div class="example"><div class="syntax-block"><table class="property-table"><tr><th scope="row">
           Initial value
         </th><td><code>""</code></td></tr><tr><th scope="row">
           Applies to
@@ -3415,7 +3415,7 @@ supplier, item { overflow-wrap: normal; }
     in many cases might only work in Adobe Acrobat products.
     </p></div><div><div id="prop-prince-pdf-script-seealso">See Also</div><ul><li><a href="/doc/prince-output#pdf-actions">PDF Actions</a></li></ul></div></div></details>
 
-<details><summary class="ext" id="prop-prince-pdf-tag-type">-prince-pdf-tag-type*  <a class="self-link" href="#prop-prince-pdf-tag-type"></a></summary><div><div><div id="prop-prince-pdf-tag-type-syntax">Syntax</div><div class="example"><div class="syntax-block"><pre><code>-prince-pdf-tag-type: auto |&#160;Part |&#160;Art |&#160;Sect |&#160;Div |&#160;Index |&#160;BlockQuote |&#160;Caption |&#160;TOC |&#160;TOCI |&#160;P |&#160;H1 |&#160;H2 |&#160;H3 |&#160;H4 |&#160;H5 |&#160;H6 |&#160;OL |&#160;UL |&#160;LI |&#160;Lbl |&#160;DL |&#160;DL-Div |&#160;DT |&#160;DD |&#160;Span |&#160;Quote |&#160;Table |&#160;BibEntry |&#160;Code |&#160;Figure |&#160;Formula |&#160;Artifact |&#160;none</code></pre></div></div></div><div><div class="example"><div class="syntax-block"><table class="property-table"><tr><th scope="row">
+<details><summary class="ext" title="Prince extension" id="prop-prince-pdf-tag-type">-prince-pdf-tag-type*  <a class="self-link" href="#prop-prince-pdf-tag-type"></a></summary><div><div><div id="prop-prince-pdf-tag-type-syntax">Syntax</div><div class="example"><div class="syntax-block"><pre><code>-prince-pdf-tag-type: auto |&#160;Part |&#160;Art |&#160;Sect |&#160;Div |&#160;Index |&#160;BlockQuote |&#160;Caption |&#160;TOC |&#160;TOCI |&#160;P |&#160;H1 |&#160;H2 |&#160;H3 |&#160;H4 |&#160;H5 |&#160;H6 |&#160;OL |&#160;UL |&#160;LI |&#160;Lbl |&#160;DL |&#160;DL-Div |&#160;DT |&#160;DD |&#160;Span |&#160;Quote |&#160;Table |&#160;BibEntry |&#160;Code |&#160;Figure |&#160;Formula |&#160;Artifact |&#160;none</code></pre></div></div></div><div><div class="example"><div class="syntax-block"><table class="property-table"><tr><th scope="row">
           Initial value
         </th><td><code>auto</code></td></tr><tr><th scope="row">
           Applies to
@@ -3434,7 +3434,7 @@ supplier, item { overflow-wrap: normal; }
     The special value <code>none</code> can be used to make specific elements (such as e.g. wrapper span or block elements) transparent in a tagged PDF structure tree.
     </p></div><div><div id="prop-prince-pdf-tag-type-seealso">See Also</div><ul><li><a href="/doc/prince-output#pdf-tags">PDF Tags</a></li></ul></div></div></details>
 
-<details><summary class="ext" id="prop-prince-pdf-xmp">-prince-pdf-xmp*  <a class="self-link" href="#prop-prince-pdf-xmp"></a></summary><div><div><div id="prop-prince-pdf-xmp-syntax">Syntax</div><div class="example"><div class="syntax-block"><pre><code>-prince-pdf-xmp: url(&#160;<i>filename</i>&#160;)</code></pre></div></div></div><div><div class="example"><div class="syntax-block"><table class="property-table"><tr><th scope="row">
+<details><summary class="ext" title="Prince extension" id="prop-prince-pdf-xmp">-prince-pdf-xmp*  <a class="self-link" href="#prop-prince-pdf-xmp"></a></summary><div><div><div id="prop-prince-pdf-xmp-syntax">Syntax</div><div class="example"><div class="syntax-block"><pre><code>-prince-pdf-xmp: url(&#160;<i>filename</i>&#160;)</code></pre></div></div></div><div><div class="example"><div class="syntax-block"><table class="property-table"><tr><th scope="row">
           Initial value
         </th><td><code>""</code></td></tr><tr><th scope="row">
           Applies to
@@ -3453,7 +3453,7 @@ supplier, item { overflow-wrap: normal; }
     file, or an encoded <code>data:</code> URL.
     </p></div><div><div id="prop-prince-pdf-xmp-seealso">See Also</div><ul><li><a href="/doc/prince-output#xmp-metadata">XMP Metadata</a></li></ul></div></div></details>
 
-<details><summary class="ext" id="prop-prince-rotate-body">-prince-rotate-body*  <a class="self-link" href="#prop-prince-rotate-body"></a></summary><div><div><div id="prop-prince-rotate-body-syntax">Syntax</div><div class="example"><div class="syntax-block"><pre><code>-prince-rotate-body: portrait |&#160;landscape |&#160;<i>angle</i></code></pre></div></div></div><div><div class="example"><div class="syntax-block"><table class="property-table"><tr><th scope="row">
+<details><summary class="ext" title="Prince extension" id="prop-prince-rotate-body">-prince-rotate-body*  <a class="self-link" href="#prop-prince-rotate-body"></a></summary><div><div><div id="prop-prince-rotate-body-syntax">Syntax</div><div class="example"><div class="syntax-block"><pre><code>-prince-rotate-body: portrait |&#160;landscape |&#160;<i>angle</i></code></pre></div></div></div><div><div class="example"><div class="syntax-block"><table class="property-table"><tr><th scope="row">
           Initial value
         </th><td><code>0deg</code></td></tr><tr><th scope="row">
           Applies to
@@ -3470,7 +3470,7 @@ supplier, item { overflow-wrap: normal; }
     the default orientation of the page.
     </p></div><div><div id="prop-prince-rotate-body-seealso">See Also</div><ul><li><a href="/doc/cookbook#printing-wide-content-sideways">Printing wide content sideways</a></li></ul></div></div></details>
 
-<details><summary class="ext" id="prop-prince-shrink-to-fit">-prince-shrink-to-fit*  <a class="self-link" href="#prop-prince-shrink-to-fit"></a></summary><div><div><div id="prop-prince-shrink-to-fit-syntax">Syntax</div><div class="example"><div class="syntax-block"><pre><code>-prince-shrink-to-fit: none |&#160;auto</code></pre></div></div></div><div><div class="example"><div class="syntax-block"><table class="property-table"><tr><th scope="row">
+<details><summary class="ext" title="Prince extension" id="prop-prince-shrink-to-fit">-prince-shrink-to-fit*  <a class="self-link" href="#prop-prince-shrink-to-fit"></a></summary><div><div><div id="prop-prince-shrink-to-fit-syntax">Syntax</div><div class="example"><div class="syntax-block"><pre><code>-prince-shrink-to-fit: none |&#160;auto</code></pre></div></div></div><div><div class="example"><div class="syntax-block"><table class="property-table"><tr><th scope="row">
           Initial value
         </th><td><code>none</code></td></tr><tr><th scope="row">
           Applies to
@@ -3483,7 +3483,7 @@ supplier, item { overflow-wrap: normal; }
 	down in size to fit the paper width.
 	</p></div><div><div id="prop-prince-shrink-to-fit-seealso">See Also</div><ul><li><a href="/doc/cookbook#printing-wide-content-sideways">Printing wide content sideways</a></li></ul></div></div></details>
 
-<details><summary class="ext" id="prop-prince-table-column-span">-prince-table-column-span*  <a class="self-link" href="#prop-prince-table-column-span"></a></summary><div><div><div id="prop-prince-table-column-span-syntax">Syntax</div><div class="example"><div class="syntax-block"><pre><code>-prince-table-column-span: <i>number</i> |&#160;attr(&#160;<i>colspan</i>&#160;)</code></pre></div></div></div><div><div class="example"><div class="syntax-block"><table class="property-table"><tr><th scope="row">
+<details><summary class="ext" title="Prince extension" id="prop-prince-table-column-span">-prince-table-column-span*  <a class="self-link" href="#prop-prince-table-column-span"></a></summary><div><div><div id="prop-prince-table-column-span-syntax">Syntax</div><div class="example"><div class="syntax-block"><pre><code>-prince-table-column-span: <i>number</i> |&#160;attr(&#160;<i>colspan</i>&#160;)</code></pre></div></div></div><div><div class="example"><div class="syntax-block"><table class="property-table"><tr><th scope="row">
           Initial value
         </th><td><code>1</code></td></tr><tr><th scope="row">
           Applies to
@@ -3499,7 +3499,7 @@ supplier, item { overflow-wrap: normal; }
         The property <a href="#prop-table-column-span"><code>table-column-span</code></a> can be used as an alias.
         </p></div><div><div id="prop-prince-table-column-span-seealso">See Also</div><ul><li><a href="/doc/styling#tables">Tables</a></li></ul></div></div></details>
 
-<details><summary class="ext" id="prop-prince-table-row-span">-prince-table-row-span*  <a class="self-link" href="#prop-prince-table-row-span"></a></summary><div><div><div id="prop-prince-table-row-span-syntax">Syntax</div><div class="example"><div class="syntax-block"><pre><code>-prince-table-row-span: <i>number</i> |&#160;attr(&#160;<i>rowspan</i>&#160;)</code></pre></div></div></div><div><div class="example"><div class="syntax-block"><table class="property-table"><tr><th scope="row">
+<details><summary class="ext" title="Prince extension" id="prop-prince-table-row-span">-prince-table-row-span*  <a class="self-link" href="#prop-prince-table-row-span"></a></summary><div><div><div id="prop-prince-table-row-span-syntax">Syntax</div><div class="example"><div class="syntax-block"><pre><code>-prince-table-row-span: <i>number</i> |&#160;attr(&#160;<i>rowspan</i>&#160;)</code></pre></div></div></div><div><div class="example"><div class="syntax-block"><table class="property-table"><tr><th scope="row">
           Initial value
         </th><td><code>1</code></td></tr><tr><th scope="row">
           Applies to
@@ -3515,7 +3515,7 @@ supplier, item { overflow-wrap: normal; }
         The property <a href="#prop-table-row-span"><code>table-row-span</code></a> can be used as an alias.
         </p></div><div><div id="prop-prince-table-row-span-seealso">See Also</div><ul><li><a href="/doc/styling#tables">Tables</a></li></ul></div></div></details>
 
-<details><summary class="ext" id="prop-prince-text-justify">-prince-text-justify*  <a class="self-link" href="#prop-prince-text-justify"></a></summary><div><div><div id="prop-prince-text-justify-syntax">Syntax</div><div class="example"><div class="syntax-block"><pre><code>-prince-text-justify: auto |&#160;prince-cjk</code></pre></div></div></div><div><div class="example"><div class="syntax-block"><table class="property-table"><tr><th scope="row">
+<details><summary class="ext" title="Prince extension" id="prop-prince-text-justify">-prince-text-justify*  <a class="self-link" href="#prop-prince-text-justify"></a></summary><div><div><div id="prop-prince-text-justify-syntax">Syntax</div><div class="example"><div class="syntax-block"><pre><code>-prince-text-justify: auto |&#160;prince-cjk</code></pre></div></div></div><div><div class="example"><div class="syntax-block"><table class="property-table"><tr><th scope="row">
           Initial value
         </th><td><code>auto</code></td></tr><tr><th scope="row">
           Applies to
@@ -3529,7 +3529,7 @@ supplier, item { overflow-wrap: normal; }
     aren't any space characters.
 	</p></div><div><div id="prop-prince-text-justify-seealso">See Also</div><ul><li><a href="/doc/styling#paragraph-formatting">Paragraph formatting</a></li></ul></div></div></details>
 
-<details><summary class="ext" id="prop-prince-text-replace">-prince-text-replace*  <a class="self-link" href="#prop-prince-text-replace"></a></summary><div><div><div id="prop-prince-text-replace-syntax">Syntax</div><div class="example"><div class="syntax-block"><pre><code>-prince-text-replace: none |&#160;[ "search" "replace" ]+</code></pre></div></div></div><div><div class="example"><div class="syntax-block"><table class="property-table"><tr><th scope="row">
+<details><summary class="ext" title="Prince extension" id="prop-prince-text-replace">-prince-text-replace*  <a class="self-link" href="#prop-prince-text-replace"></a></summary><div><div><div id="prop-prince-text-replace-syntax">Syntax</div><div class="example"><div class="syntax-block"><pre><code>-prince-text-replace: none |&#160;[ "search" "replace" ]+</code></pre></div></div></div><div><div class="example"><div class="syntax-block"><table class="property-table"><tr><th scope="row">
           Initial value
         </th><td><code>none</code></td></tr><tr><th scope="row">
           Applies to
@@ -3546,7 +3546,7 @@ supplier, item { overflow-wrap: normal; }
     if in the end of a word, where the replacement is reversed.
 	</p></div><div><div id="prop-prince-text-replace-seealso">See Also</div><ul><li><a href="/doc/characters">Character Entities</a></li></ul></div></div></details>
 
-<details><summary class="ext" id="prop-prince-text-wrap">-prince-text-wrap*  <a class="self-link" href="#prop-prince-text-wrap"></a></summary><div><div><div id="prop-prince-text-wrap-syntax">Syntax</div><div class="example"><div class="syntax-block"><pre><code>-prince-text-wrap: body |&#160;heading |&#160;title |&#160;body-gready |&#160;body-lookahead |&#160;heading-gready |&#160;heading-lookahead |&#160;title-gready |&#160;title-lookahead |&#160;fast</code></pre></div></div></div><div><div class="example"><div class="syntax-block"><table class="property-table"><tr><th scope="row">
+<details><summary class="ext" title="Prince extension" id="prop-prince-text-wrap">-prince-text-wrap*  <a class="self-link" href="#prop-prince-text-wrap"></a></summary><div><div><div id="prop-prince-text-wrap-syntax">Syntax</div><div class="example"><div class="syntax-block"><pre><code>-prince-text-wrap: body |&#160;heading |&#160;title |&#160;body-gready |&#160;body-lookahead |&#160;heading-gready |&#160;heading-lookahead |&#160;title-gready |&#160;title-lookahead |&#160;fast</code></pre></div></div></div><div><div class="example"><div class="syntax-block"><table class="property-table"><tr><th scope="row">
           Initial value
         </th><td><code>body</code></td></tr><tr><th scope="row">
           Applies to
@@ -3585,7 +3585,7 @@ supplier, item { overflow-wrap: normal; }
         The property <a href="#prop-prince-line-break-choices"><code>-prince-line-break-choices</code></a> can be used as an alias.
         </p></div><div><div id="prop-prince-text-wrap-seealso">See Also</div><ul><li><a href="/doc/prince-for-books#line-breaking">Line breaking</a></li><li><code><a href="/doc/prince-for-books#the-property-prince-line-break-choices">-prince-line-break-choices</a></code></li></ul></div></div></details>
 
-<details><summary class="ext" id="prop-prince-tooltip">-prince-tooltip*  <a class="self-link" href="#prop-prince-tooltip"></a></summary><div><div><div id="prop-prince-tooltip-syntax">Syntax</div><div class="example"><div class="syntax-block"><pre><code>-prince-tooltip: transparent |&#160;none |&#160;normal |&#160;<i>content</i></code></pre></div></div></div><div><div class="example"><div class="syntax-block"><table class="property-table"><tr><th scope="row">
+<details><summary class="ext" title="Prince extension" id="prop-prince-tooltip">-prince-tooltip*  <a class="self-link" href="#prop-prince-tooltip"></a></summary><div><div><div id="prop-prince-tooltip-syntax">Syntax</div><div class="example"><div class="syntax-block"><pre><code>-prince-tooltip: transparent |&#160;none |&#160;normal |&#160;<i>content</i></code></pre></div></div></div><div><div class="example"><div class="syntax-block"><table class="property-table"><tr><th scope="row">
           Initial value
         </th><td><code>transparent</code></td></tr><tr><th scope="row">
           Applies to
@@ -3612,7 +3612,7 @@ supplier, item { overflow-wrap: normal; }
 	PDF viewers, such as web browsers.
 	</p></div><div><div id="prop-prince-tooltip-seealso">See Also</div><ul><li><a href="/doc/gen-content#generated-content-functions">Generated Content Functions</a></li><li><a href="/doc/gen-content">Generated Content</a></li><li><code><a href="#prop-content">content</a></code></li></ul></div></div></details>
 
-<details><summary class="ext" id="prop-prince-trim">-prince-trim*  <a class="self-link" href="#prop-prince-trim"></a></summary><div><div><div id="prop-prince-trim-syntax">Syntax</div><div class="example"><div class="syntax-block"><pre><code>-prince-trim: auto |&#160;[ <i>length</i> ]{1..4}</code></pre></div></div></div><div><div class="example"><div class="syntax-block"><table class="property-table"><tr><th scope="row">
+<details><summary class="ext" title="Prince extension" id="prop-prince-trim">-prince-trim*  <a class="self-link" href="#prop-prince-trim"></a></summary><div><div><div id="prop-prince-trim-syntax">Syntax</div><div class="example"><div class="syntax-block"><pre><code>-prince-trim: auto |&#160;[ <i>length</i> ]{1..4}</code></pre></div></div></div><div><div class="example"><div class="syntax-block"><table class="property-table"><tr><th scope="row">
           Initial value
         </th><td><code>auto</code></td></tr><tr><th scope="row">
           Applies to
@@ -3625,7 +3625,7 @@ supplier, item { overflow-wrap: normal; }
 	page when crop marks are enabled.
 	</p></div><div><div id="prop-prince-trim-seealso">See Also</div><ul><li><a href="/doc/paged#page-style">Page style</a></li><li><code><a href="#prop-bleed">bleed</a></code></li></ul></div></div></details>
 
-<details><summary class="ext" id="prop-prince-wrap-inside">-prince-wrap-inside*  <a class="self-link" href="#prop-prince-wrap-inside"></a></summary><div><div><div id="prop-prince-wrap-inside-syntax">Syntax</div><div class="example"><div class="syntax-block"><pre><code>-prince-wrap-inside: auto |&#160;phrase |&#160;avoid</code></pre></div></div></div><div><div class="example"><div class="syntax-block"><table class="property-table"><tr><th scope="row">
+<details><summary class="ext" title="Prince extension" id="prop-prince-wrap-inside">-prince-wrap-inside*  <a class="self-link" href="#prop-prince-wrap-inside"></a></summary><div><div><div id="prop-prince-wrap-inside-syntax">Syntax</div><div class="example"><div class="syntax-block"><pre><code>-prince-wrap-inside: auto |&#160;phrase |&#160;avoid</code></pre></div></div></div><div><div class="example"><div class="syntax-block"><table class="property-table"><tr><th scope="row">
           Initial value
         </th><td><code>auto</code></td></tr><tr><th scope="row">
           Applies to
@@ -3853,7 +3853,7 @@ supplier, item { overflow-wrap: normal; }
                   no
                 </td></tr></table></div></div></div><div /></div></details>
 
-<details><summary class="ext" id="prop-table-column-span">table-column-span*  <a class="self-link" href="#prop-table-column-span"></a></summary><div><div><div id="prop-table-column-span-syntax">Syntax</div><div class="example"><div class="syntax-block"><pre><code>table-column-span: <i>number</i> |&#160;attr(&#160;<i>colspan</i>&#160;)</code></pre></div></div></div><div><div class="example"><div class="syntax-block"><table class="property-table"><tr><th scope="row">
+<details><summary class="ext" title="Prince extension" id="prop-table-column-span">table-column-span*  <a class="self-link" href="#prop-table-column-span"></a></summary><div><div><div id="prop-table-column-span-syntax">Syntax</div><div class="example"><div class="syntax-block"><pre><code>table-column-span: <i>number</i> |&#160;attr(&#160;<i>colspan</i>&#160;)</code></pre></div></div></div><div><div class="example"><div class="syntax-block"><table class="property-table"><tr><th scope="row">
           Initial value
         </th><td><code>1</code></td></tr><tr><th scope="row">
           Applies to
@@ -3883,7 +3883,7 @@ supplier, item { overflow-wrap: normal; }
     documentation for more details.
 	</p></div><div><div id="prop-table-layout-spec">Specification</div><ul><li><a href="https://www.w3.org/TR/CSS2/tables.html#width-layout">CSS 2.1</a></li></ul></div></div></details>
 
-<details><summary class="ext" id="prop-table-row-span">table-row-span*  <a class="self-link" href="#prop-table-row-span"></a></summary><div><div><div id="prop-table-row-span-syntax">Syntax</div><div class="example"><div class="syntax-block"><pre><code>table-row-span: <i>number</i> |&#160;attr(&#160;<i>rowspan</i>&#160;)</code></pre></div></div></div><div><div class="example"><div class="syntax-block"><table class="property-table"><tr><th scope="row">
+<details><summary class="ext" title="Prince extension" id="prop-table-row-span">table-row-span*  <a class="self-link" href="#prop-table-row-span"></a></summary><div><div><div id="prop-table-row-span-syntax">Syntax</div><div class="example"><div class="syntax-block"><pre><code>table-row-span: <i>number</i> |&#160;attr(&#160;<i>rowspan</i>&#160;)</code></pre></div></div></div><div><div class="example"><div class="syntax-block"><table class="property-table"><tr><th scope="row">
           Initial value
         </th><td><code>1</code></td></tr><tr><th scope="row">
           Applies to
