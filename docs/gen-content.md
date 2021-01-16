@@ -143,6 +143,8 @@ The [`counter-increment`](css-props.md#prop-counter-increment) property applies 
 
 The [`counter-increment`](css-props.md#prop-counter-increment) and [`counter-reset`](css-props.md#prop-counter-reset) properties are ignored on elements whose [`display`](css-props.md#prop-display) property has the value `none`.
 
+Note that the `counter-increment` and `counter-reset` properties can also be used in `@page` at-rules to create counters that track the page number, for example to number the pages within each chapter separately from the normal `page` and `pages` counters.
+
 ### Displaying counters
 
 Once initialized, a counter can be displayed with either the `counter()` or `counters()` function in a [`content`](css-props.md#prop-content) property.

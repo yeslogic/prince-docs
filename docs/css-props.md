@@ -1036,7 +1036,7 @@ For the values, the grammar draws on the [CSS Values and Units Module Level 3](h
           Initial value
         </th><td><code>none</code></td></tr><tr><th scope="row">
           Applies to
-        </th><td>all elements</td></tr><tr><th scope="row">
+        </th><td>all elements, or @page at-rule</td></tr><tr><th scope="row">
           Inherited
         </th><td>
                   no
@@ -1049,7 +1049,7 @@ For the values, the grammar draws on the [CSS Values and Units Module Level 3](h
           Initial value
         </th><td><code>none</code></td></tr><tr><th scope="row">
           Applies to
-        </th><td>all elements</td></tr><tr><th scope="row">
+        </th><td>all elements, or @page at-rule</td></tr><tr><th scope="row">
           Inherited
         </th><td>
                   no
