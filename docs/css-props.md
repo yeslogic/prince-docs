@@ -68,7 +68,7 @@ For the values, the grammar draws on the [CSS Values and Units Module Level 3](h
           Initial value
         </th><td><code /></td></tr><tr><th scope="row">
           Applies to
-        </th><td>@prince-color at-rule</td></tr><tr><th scope="row">
+        </th><td><code>@prince-color</code> at-rule</td></tr><tr><th scope="row">
           Inherited
         </th><td>
                   no
@@ -247,7 +247,7 @@ For the values, the grammar draws on the [CSS Values and Units Module Level 3](h
           Initial value
         </th><td><code>auto</code></td></tr><tr><th scope="row">
           Applies to
-        </th><td>@page at-rule</td></tr><tr><th scope="row">
+        </th><td><code>@page</code> at-rule</td></tr><tr><th scope="row">
           Inherited
         </th><td /></tr></table></div></div></div><div><div id="prop-bleed-examples">Examples</div><div class="example"><div class="programlisting"><pre><code>@page { bleed: 10mm }</code></pre></div></div></div><div><div id="prop-bleed-comments">Comments</div><p>
 	This CSS at-rule descriptor can be used to specify the size of the bleed area of the
@@ -1036,7 +1036,7 @@ For the values, the grammar draws on the [CSS Values and Units Module Level 3](h
           Initial value
         </th><td><code>none</code></td></tr><tr><th scope="row">
           Applies to
-        </th><td>all elements, or @page at-rule</td></tr><tr><th scope="row">
+        </th><td>all elements, or <code>@page</code> at-rule</td></tr><tr><th scope="row">
           Inherited
         </th><td>
                   no
@@ -1049,7 +1049,7 @@ For the values, the grammar draws on the [CSS Values and Units Module Level 3](h
           Initial value
         </th><td><code>none</code></td></tr><tr><th scope="row">
           Applies to
-        </th><td>all elements, or @page at-rule</td></tr><tr><th scope="row">
+        </th><td>all elements, or <code>@page</code> at-rule</td></tr><tr><th scope="row">
           Inherited
         </th><td>
                   no
@@ -1438,7 +1438,7 @@ For the values, the grammar draws on the [CSS Values and Units Module Level 3](h
           Initial value
         </th><td><code>serif</code></td></tr><tr><th scope="row">
           Applies to
-        </th><td>all elements / @font-face at-rule</td></tr><tr><th scope="row">
+        </th><td>all elements / <code>@font-face</code> at-rule</td></tr><tr><th scope="row">
           Inherited
         </th><td>
                   yes
@@ -2005,7 +2005,7 @@ For the values, the grammar draws on the [CSS Values and Units Module Level 3](h
           Initial value
         </th><td><code>none</code></td></tr><tr><th scope="row">
           Applies to
-        </th><td>@page at-rule</td></tr><tr><th scope="row">
+        </th><td><code>@page</code> at-rule</td></tr><tr><th scope="row">
           Inherited
         </th><td /></tr></table></div></div></div><div><div id="prop-marks-examples">Examples</div><div class="example"><div class="programlisting"><pre><code>@page { marks: crop }</code></pre></div><div class="programlisting"><pre><code>@page { marks: crop cross }</code></pre></div></div></div><div><div id="prop-marks-comments">Comments</div><p>
     This CSS at-rule descriptor, used with the
@@ -2514,7 +2514,7 @@ supplier, item { overflow-wrap: normal; }
           Initial value
         </th><td><code /></td></tr><tr><th scope="row">
           Applies to
-        </th><td>@prince-pdf at-rule</td></tr><tr><th scope="row">
+        </th><td><code>@prince-pdf</code> at-rule</td></tr><tr><th scope="row">
           Inherited
         </th><td /></tr></table></div></div></div><div><div id="prop-prince-fallback-cmyk-profile-examples">Examples</div><div class="example"><div class="programlisting"><pre><code>@prince-pdf {
     -prince-pdf-output-intent: url("AdobeRGB1998.icc");
@@ -2536,7 +2536,7 @@ supplier, item { overflow-wrap: normal; }
           Initial value
         </th><td><code>96dpi</code></td></tr><tr><th scope="row">
           Applies to
-        </th><td>all elements, @prince-pdf at-rule</td></tr><tr><th scope="row">
+        </th><td>all elements, <code>@prince-pdf</code> at-rule</td></tr><tr><th scope="row">
           Inherited
         </th><td /></tr></table></div></div></div><div><div id="prop-prince-filter-resolution-comments">Comments</div><p>
     This property is used to specify the resolution used when
@@ -3018,7 +3018,7 @@ supplier, item { overflow-wrap: normal; }
           Initial value
         </th><td><code>24pt</code></td></tr><tr><th scope="row">
           Applies to
-        </th><td>@page at-rule</td></tr><tr><th scope="row">
+        </th><td><code>@page</code> at-rule</td></tr><tr><th scope="row">
           Inherited
         </th><td /></tr></table></div></div></div><div><div id="prop-prince-mark-length-examples">Examples</div><div class="example"><div class="programlisting"><pre><code>@page { -prince-mark-length: 2cm }</code></pre></div></div></div><div><div id="prop-prince-mark-length-comments">Comments</div><p>
 	This CSS at-rule descriptor can be used to specify the length of crop marks,
@@ -3030,7 +3030,7 @@ supplier, item { overflow-wrap: normal; }
           Initial value
         </th><td><code>auto</code></td></tr><tr><th scope="row">
           Applies to
-        </th><td>@page at-rule</td></tr><tr><th scope="row">
+        </th><td><code>@page</code> at-rule</td></tr><tr><th scope="row">
           Inherited
         </th><td /></tr></table></div></div></div><div><div id="prop-prince-mark-offset-examples">Examples</div><div class="example"><div class="programlisting"><pre><code>@page { -prince-mark-offset: 6pt }</code></pre></div></div></div><div><div id="prop-prince-mark-offset-comments">Comments</div><p>
 	This CSS at-rule descriptor can be used to specify the offset between crop and
@@ -3041,7 +3041,7 @@ supplier, item { overflow-wrap: normal; }
           Initial value
         </th><td><code>0.1pt</code></td></tr><tr><th scope="row">
           Applies to
-        </th><td>@page at-rule</td></tr><tr><th scope="row">
+        </th><td><code>@page</code> at-rule</td></tr><tr><th scope="row">
           Inherited
         </th><td /></tr></table></div></div></div><div><div id="prop-prince-mark-width-examples">Examples</div><div class="example"><div class="programlisting"><pre><code>@page { -prince-mark-width: 1pt }</code></pre></div></div></div><div><div id="prop-prince-mark-width-comments">Comments</div><p>
 	This CSS at-rule descriptor can be used to specify the line width of the crop and
@@ -3093,7 +3093,7 @@ supplier, item { overflow-wrap: normal; }
           Initial value
         </th><td><code>prefer-fill</code></td></tr><tr><th scope="row">
           Applies to
-        </th><td>@page at-rule</td></tr><tr><th scope="row">
+        </th><td><code>@page</code> at-rule</td></tr><tr><th scope="row">
           Inherited
         </th><td>
                   no
@@ -3138,7 +3138,7 @@ supplier, item { overflow-wrap: normal; }
           Initial value
         </th><td><code>output-intent</code></td></tr><tr><th scope="row">
           Applies to
-        </th><td>@prince-pdf at-rule</td></tr><tr><th scope="row">
+        </th><td><code>@prince-pdf</code> at-rule</td></tr><tr><th scope="row">
           Inherited
         </th><td>
               no
@@ -3171,7 +3171,7 @@ supplier, item { overflow-wrap: normal; }
           Initial value
         </th><td><code>auto</code></td></tr><tr><th scope="row">
           Applies to
-        </th><td>@prince-pdf at-rule</td></tr><tr><th scope="row">
+        </th><td><code>@prince-pdf</code> at-rule</td></tr><tr><th scope="row">
           Inherited
         </th><td>
                   no
@@ -3200,7 +3200,7 @@ supplier, item { overflow-wrap: normal; }
           Initial value
         </th><td><code>false</code></td></tr><tr><th scope="row">
           Applies to
-        </th><td>@prince-pdf at-rule</td></tr><tr><th scope="row">
+        </th><td><code>@prince-pdf</code> at-rule</td></tr><tr><th scope="row">
           Inherited
         </th><td>
                   no
@@ -3218,7 +3218,7 @@ supplier, item { overflow-wrap: normal; }
           Initial value
         </th><td><code>auto</code></td></tr><tr><th scope="row">
           Applies to
-        </th><td>@prince-pdf at-rule</td></tr><tr><th scope="row">
+        </th><td><code>@prince-pdf</code> at-rule</td></tr><tr><th scope="row">
           Inherited
         </th><td>
                   no
@@ -3234,7 +3234,7 @@ supplier, item { overflow-wrap: normal; }
           Initial value
         </th><td><code>""</code></td></tr><tr><th scope="row">
           Applies to
-        </th><td>@prince-pdf at-rule</td></tr><tr><th scope="row">
+        </th><td><code>@prince-pdf</code> at-rule</td></tr><tr><th scope="row">
           Inherited
         </th><td /></tr></table></div></div></div><div><div id="prop-prince-pdf-event-scripts-examples">Examples</div><div class="example"><div class="programlisting"><pre><code>@prince-pdf {
     -prince-pdf-event-scripts: will-close url("onclose.js"), will-print url("onprint.js");
@@ -3251,7 +3251,7 @@ supplier, item { overflow-wrap: normal; }
           Initial value
         </th><td><code>auto</code></td></tr><tr><th scope="row">
           Applies to
-        </th><td>@prince-pdf at-rule</td></tr><tr><th scope="row">
+        </th><td><code>@prince-pdf</code> at-rule</td></tr><tr><th scope="row">
           Inherited
         </th><td>
                   no
@@ -3269,7 +3269,7 @@ supplier, item { overflow-wrap: normal; }
           Initial value
         </th><td><code>none</code></td></tr><tr><th scope="row">
           Applies to
-        </th><td>@prince-pdf at-rule</td></tr><tr><th scope="row">
+        </th><td><code>@prince-pdf</code> at-rule</td></tr><tr><th scope="row">
           Inherited
         </th><td /></tr></table></div></div></div><div><div id="prop-prince-pdf-open-action-examples">Examples</div><div class="example"><div class="programlisting"><pre><code>@prince-pdf {
     -prince-pdf-open-action: zoom(fit-page) print;
@@ -3285,7 +3285,7 @@ supplier, item { overflow-wrap: normal; }
           Initial value
         </th><td><code>auto</code></td></tr><tr><th scope="row">
           Applies to
-        </th><td>@prince-pdf at-rule</td></tr><tr><th scope="row">
+        </th><td><code>@prince-pdf</code> at-rule</td></tr><tr><th scope="row">
           Inherited
         </th><td /></tr></table></div></div></div><div><div id="prop-prince-pdf-output-intent-examples">Examples</div><div class="example"><div class="programlisting"><pre><code>@prince-pdf {
     -prince-pdf-output-intent: url("ISOcoated_v2_eci.icc")
@@ -3298,7 +3298,7 @@ supplier, item { overflow-wrap: normal; }
           Initial value
         </th><td><code>auto</code></td></tr><tr><th scope="row">
           Applies to
-        </th><td>@page at-rule</td></tr><tr><th scope="row">
+        </th><td><code>@page</code> at-rule</td></tr><tr><th scope="row">
           Inherited
         </th><td>
                   no
@@ -3316,7 +3316,7 @@ supplier, item { overflow-wrap: normal; }
           Initial value
         </th><td><code>auto</code></td></tr><tr><th scope="row">
           Applies to
-        </th><td>@page at-rule</td></tr><tr><th scope="row">
+        </th><td><code>@page</code> at-rule</td></tr><tr><th scope="row">
           Inherited
         </th><td /></tr></table></div></div></div><div><div id="prop-prince-pdf-page-label-examples">Examples</div><div class="example"><div class="programlisting"><pre><code>@page {
     -prince-pdf-page-label: counter(page, lower-roman)
@@ -3333,7 +3333,7 @@ supplier, item { overflow-wrap: normal; }
           Initial value
         </th><td><code>auto</code></td></tr><tr><th scope="row">
           Applies to
-        </th><td>@prince-pdf at-rule</td></tr><tr><th scope="row">
+        </th><td><code>@prince-pdf</code> at-rule</td></tr><tr><th scope="row">
           Inherited
         </th><td /></tr></table></div></div></div><div><div id="prop-prince-pdf-page-layout-examples">Examples</div><div class="example"><div class="programlisting"><pre><code>@prince-pdf {
     -prince-pdf-page-layout: two-column
@@ -3347,7 +3347,7 @@ supplier, item { overflow-wrap: normal; }
           Initial value
         </th><td><code>auto</code></td></tr><tr><th scope="row">
           Applies to
-        </th><td>@prince-pdf at-rule</td></tr><tr><th scope="row">
+        </th><td><code>@prince-pdf</code> at-rule</td></tr><tr><th scope="row">
           Inherited
         </th><td /></tr></table></div></div></div><div><div id="prop-prince-pdf-page-mode-examples">Examples</div><div class="example"><div class="programlisting"><pre><code>@prince-pdf {
     -prince-pdf-page-mode: show-bookmarks
@@ -3361,7 +3361,7 @@ supplier, item { overflow-wrap: normal; }
           Initial value
         </th><td><code>auto</code></td></tr><tr><th scope="row">
           Applies to
-        </th><td>@prince-pdf at-rule</td></tr><tr><th scope="row">
+        </th><td><code>@prince-pdf</code> at-rule</td></tr><tr><th scope="row">
           Inherited
         </th><td /></tr></table></div></div></div><div><div id="prop-prince-pdf-paper-tray-examples">Examples</div><div class="example"><div class="programlisting"><pre><code>@prince-pdf {
     -prince-pdf-paper-tray: pick-tray-by-pdf-size
@@ -3375,7 +3375,7 @@ supplier, item { overflow-wrap: normal; }
           Initial value
         </th><td><code>auto</code></td></tr><tr><th scope="row">
           Applies to
-        </th><td>@prince-pdf at-rule</td></tr><tr><th scope="row">
+        </th><td><code>@prince-pdf</code> at-rule</td></tr><tr><th scope="row">
           Inherited
         </th><td /></tr></table></div></div></div><div><div id="prop-prince-pdf-print-scaling-examples">Examples</div><div class="example"><div class="programlisting"><pre><code>@prince-pdf {
     -prince-pdf-print-scaling: none
@@ -3388,7 +3388,7 @@ supplier, item { overflow-wrap: normal; }
           Initial value
         </th><td><code>none</code></td></tr><tr><th scope="row">
           Applies to
-        </th><td>@prince-pdf at-rule</td></tr><tr><th scope="row">
+        </th><td><code>@prince-pdf</code> at-rule</td></tr><tr><th scope="row">
           Inherited
         </th><td /></tr></table></div></div></div><div><div id="prop-prince-pdf-profile-examples">Examples</div><div class="example"><div class="programlisting"><pre><code>@prince-pdf {
     -prince-pdf-profile: "PDF/X-3:2003"
@@ -3401,7 +3401,7 @@ supplier, item { overflow-wrap: normal; }
           Initial value
         </th><td><code>""</code></td></tr><tr><th scope="row">
           Applies to
-        </th><td>@prince-pdf at-rule</td></tr><tr><th scope="row">
+        </th><td><code>@prince-pdf</code> at-rule</td></tr><tr><th scope="row">
           Inherited
         </th><td /></tr></table></div></div></div><div><div id="prop-prince-pdf-script-examples">Examples</div><div class="example"><div class="programlisting"><pre><code>@prince-pdf {
     -prince-pdf-script: "this.print();"
@@ -3457,7 +3457,7 @@ supplier, item { overflow-wrap: normal; }
           Initial value
         </th><td><code>0deg</code></td></tr><tr><th scope="row">
           Applies to
-        </th><td>@page at-rule</td></tr><tr><th scope="row">
+        </th><td><code>@page</code> at-rule</td></tr><tr><th scope="row">
           Inherited
         </th><td /></tr></table></div></div></div><div><div id="prop-prince-rotate-body-examples">Examples</div><div class="example"><div class="programlisting"><pre><code>@page {
     -prince-rotate-body: landscape
@@ -3474,7 +3474,7 @@ supplier, item { overflow-wrap: normal; }
           Initial value
         </th><td><code>none</code></td></tr><tr><th scope="row">
           Applies to
-        </th><td>@page at-rule</td></tr><tr><th scope="row">
+        </th><td><code>@page</code> at-rule</td></tr><tr><th scope="row">
           Inherited
         </th><td /></tr></table></div></div></div><div><div id="prop-prince-shrink-to-fit-examples">Examples</div><div class="example"><div class="programlisting"><pre><code>@page {
 	-prince-shrink-to-fit: auto
@@ -3616,7 +3616,7 @@ supplier, item { overflow-wrap: normal; }
           Initial value
         </th><td><code>auto</code></td></tr><tr><th scope="row">
           Applies to
-        </th><td>@page at-rule</td></tr><tr><th scope="row">
+        </th><td><code>@page</code> at-rule</td></tr><tr><th scope="row">
           Inherited
         </th><td /></tr></table></div></div></div><div><div id="prop-prince-trim-examples">Examples</div><div class="example"><div class="programlisting"><pre><code>@page {
 	-prince-trim: 60mm
@@ -3662,7 +3662,7 @@ supplier, item { overflow-wrap: normal; }
           Initial value
         </th><td><code>Letter</code></td></tr><tr><th scope="row">
           Applies to
-        </th><td>@page at-rule</td></tr><tr><th scope="row">
+        </th><td><code>@page</code> at-rule</td></tr><tr><th scope="row">
           Inherited
         </th><td /></tr></table></div></div></div><div><div id="prop-size-examples">Examples</div><div class="example"><div class="programlisting"><pre><code>@page { size: A4 }</code></pre></div><div class="programlisting"><pre><code>@page { size: A4 landscape }</code></pre></div><div class="programlisting"><pre><code>@page { size: Letter }</code></pre></div><div class="programlisting"><pre><code>@page { size: 10cm 5cm }</code></pre></div></div></div><div><div id="prop-size-comments">Comments</div><p>
     This CSS at-rule descriptor, used with the
@@ -3676,7 +3676,7 @@ supplier, item { overflow-wrap: normal; }
           Initial value
         </th><td><code>n/a</code></td></tr><tr><th scope="row">
           Applies to
-        </th><td>@font-face at-rule</td></tr><tr><th scope="row">
+        </th><td><code>@font-face</code> at-rule</td></tr><tr><th scope="row">
           Inherited
         </th><td /></tr></table></div></div></div><div><div id="prop-src-examples">Examples</div><div class="example"><div class="programlisting"><pre><code>@font-face {
     font-family: MyFontA;
@@ -4169,7 +4169,7 @@ supplier, item { overflow-wrap: normal; }
           Initial value
         </th><td><code>U+0-10FFFF</code></td></tr><tr><th scope="row">
           Applies to
-        </th><td>@font-face at-rule</td></tr><tr><th scope="row">
+        </th><td><code>@font-face</code> at-rule</td></tr><tr><th scope="row">
           Inherited
         </th><td /></tr></table></div></div></div><div><div id="prop-unicode-range-examples">Examples</div><div class="example"><div class="programlisting"><pre><code>@font-face {
     unicode-range: U+0025-00FF;
