@@ -75,7 +75,7 @@ a different interface to the functionality of footnotes (see <a href="/doc/styli
 <td>Prince recognizes the properties <code>float</code>, <code>float-reference</code> and <code>float-defer</code>, but takes a different syntax.</td>
 </tr>
 <tr>
-<td><a href="https://drafts.csswg.org/css-images-3/">CSS Images Module Level 3 - Editor's Draft</a></td>
+<td><a href="https://www.w3.org/TR/css-images-3/">CSS Images Module Level 3</a></td>
 <td>Prince supports the mandatory values of <code>image-orientation</code>, as
 well as the properties <code>object-fit</code> and <code>object-position</code>.</td>
 </tr>
