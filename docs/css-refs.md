@@ -239,6 +239,34 @@ The font length units are relative to the [`font-size`](css-props.md#prop-font-s
 </tr>
 </table>
 
+### Viewport Length Units
+
+The viewport length units are relative to the [`@page` area](#at-page): the unit `vw` is equal to 1% of the width of the *content area*, comprising [the page area and the page regions](paged.md#page-regions) (but within the margin area), while the unit `vh` is equal to 1% of its height.
+
+The values `pvw` and `pvh` are equal to respectively 1% of the width and height of the *entire page*, as defined by the [page size](paged.md#page-size).
+
+<table class="grid">
+<tr>
+<th colspan="2">Viewport length Units</th>
+</tr>
+<tr>
+<td class="example"><code>vw</code></td>
+<td>content area width</td>
+</tr>
+<tr>
+<td class="example"><code>vh</code></td>
+<td>content area height</td>
+</tr>
+<tr>
+<td class="example"><code>pvw</code></td>
+<td>page width</td>
+</tr>
+<tr>
+<td class="example"><code>pvh</code></td>
+<td>page height</td>
+</tr>
+</table>
+
 ### Pixel Unit
 
 The pixel unit is relative to the de-facto standard of `96dpi` (or rather, 96 *pixel* per inch) for compatibility with browsers.
