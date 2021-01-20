@@ -8,13 +8,13 @@ Prince uses the following open source projects:
 
 <dt id="boehmgc">Boehm GC</dt>
 <dd>
-The <a href="http://www.hboehm.info/gc/">Boehm GC</a>
+The <a href="https://www.hboehm.info/gc/">Boehm GC</a>
 library is used by the Mercury runtime for garbage collection.
 </dd>
 
 <dt id="cairo-pixman">Cairo and Pixman</dt>
 <dd>
-The <a href="http://www.cairographics.org/">Cairo</a>
+The <a href="https://www.cairographics.org/">Cairo</a>
 and <a href="http://www.pixman.org/">Pixman</a>
 libraries are used by Prince for rasterization.
 </dd>
@@ -28,7 +28,7 @@ hyphenation pattern files from the
 
 <dt id="datrie">datrie</dt>
 <dd>
-The <a href="http://linux.thai.net/projects/datrie">datrie</a>
+The <a href="https://linux.thai.net/projects/datrie">datrie</a>
 library is used by Prince to load the Thai dictionary.
 </dd>
 
@@ -40,7 +40,7 @@ library is used by Prince on Linux to scan for installed system fonts.
 
 <dt id="freetype">FreeType</dt>
 <dd>
-The <a href="http://freetype.org/">FreeType</a>
+The <a href="https://freetype.org/">FreeType</a>
 library is used by Prince to load and process TrueType font files.
 </dd>
 
@@ -58,7 +58,7 @@ library is used by Prince to load JPEG image files.
 
 <dt id="libcurl">libcurl</dt>
 <dd>
-The <a href="http://curl.haxx.se/">libcurl</a>
+The <a href="http://curl.se/">libcurl</a>
 library is used by Prince to load resources from HTTP URLs.
 </dd>
 
@@ -76,7 +76,7 @@ library is used by Prince to load PNG image files.
 
 <dt id="libthai">libthai</dt>
 <dd>
-The <a href="http://linux.thai.net/projects/libthai">libthai</a>
+The <a href="https://linux.thai.net/projects/libthai">libthai</a>
 library is used by Prince to handle word breaking in the Thai language.
 </dd>
 
@@ -94,7 +94,7 @@ library is used by Prince to load XML and HTML documents.
 
 <dt id="littlecms">Little CMS</dt>
 <dd>
-<a href="http://www.littlecms.com/">Little CMS</a> (lcms2)
+<a href="https://www.littlecms.com/">Little CMS</a> (lcms2)
 library is used by Prince for color management.
 </dd>
 
@@ -107,7 +107,7 @@ programming language.
 
 <dt id="openssl-nss">OpenSSL and NSS</dt>
 <dd>
-The <a href="http://www.openssl.org/">OpenSSL</a> and
+The <a href="https://www.openssl.org/">OpenSSL</a> and
 <a href="https://developer.mozilla.org/en-US/docs/Mozilla/Projects/NSS">NSS</a>
 libraries are used by Prince to load resources from secure HTTPS URLs.
 </dd>
