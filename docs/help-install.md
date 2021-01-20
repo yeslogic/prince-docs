@@ -126,7 +126,7 @@ Frequently Asked Questions
 
 <dl class="faq">
   <dt id="faq-win64"><p>Why does Prince on 64-bit Windows install
-  into the 32-bit compatibility directory `%ProgramFiles(x86)%`?
+  into the 32-bit compatibility directory <code>%ProgramFiles(x86)%</code>?
   <a href="#faq-win64" class="self-link"></a></p></dt>
   <dd><p>The Prince GUI is still a 32-bit program, but the formatting engine
   is 64-bit.</p></dd>
