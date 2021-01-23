@@ -72,7 +72,7 @@ a different interface to the functionality of footnotes (see <a href="/doc/styli
 </tr>
 <tr>
 <td><a href="https://drafts.csswg.org/css-page-floats/">CSS Page Floats - Editor's Draft</a></td>
-<td>Prince recognizes the properties <code>float-reference</code> and <code>float-defer</code>, but takes a different syntax.</td>
+<td>Prince recognizes the properties <code>float</code>, <code>float-reference</code> and <code>float-defer</code>, but takes a different syntax.</td>
 </tr>
 <tr>
 <td><a href="https://www.w3.org/TR/css3-images/">CSS Image Values and Replaced Content Module Level 3</a></td>
