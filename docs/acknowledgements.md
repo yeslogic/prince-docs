@@ -58,7 +58,7 @@ library is used by Prince to load JPEG image files.
 
 <dt id="libcurl">libcurl</dt>
 <dd>
-The <a href="http://curl.se/">libcurl</a>
+The <a href="https://curl.se/">libcurl</a>
 library is used by Prince to load resources from HTTP URLs.
 </dd>
 
