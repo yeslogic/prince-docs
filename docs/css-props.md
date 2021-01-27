@@ -2959,7 +2959,7 @@ supplier, item { overflow-wrap: normal; }
     </p><p>
     The <code>\*-greedy</code> keywords decide on line breaks solely based on the
     current line and on the length of the next word, never going back to change a
-    decision on a line in the light of line-breaknig issues encountered later.
+    decision on a line in the light of line-breaking issues encountered later.
     </p><p>
     The <code>\*-lookahead</code> keywords, on the other hand, enable paragraph-at-a-time
     line-breaking not just based on what seems best for the current line, but also

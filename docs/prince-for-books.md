@@ -61,7 +61,7 @@ The keyword `title` is intended for title pages of books or chapters, where phra
 
 The keyword `heading`, on the other hand, is closer to `body`, differing mainly in that it's less likely to hyphenate, and is more willing to make the first line(s) a little shorter if doing so avoids a short last line.
 
-The `*-greedy` keywords decide on line breaks solely based on the current line and on the length of the next word, never going back to change a decision on a line in the light of line-breaknig issues encountered later.
+The `*-greedy` keywords decide on line breaks solely based on the current line and on the length of the next word, never going back to change a decision on a line in the light of line-breaking issues encountered later.
 
 The `*-lookahead` keywords enable paragraph-at-a-time line-breaking for the paragraph in a non-justified paragraph: choosing where to end the line not just based on what seems best for the current line (as one might decide if using a pen or typewriter), but also considering the effect on future lines.  It might better be described as "change previous lines", e.g. that if one finds that a loose line is produced, a human typesetter would check whether a short word or two could be brought forward from the previous line or two.
 
