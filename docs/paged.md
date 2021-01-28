@@ -121,7 +121,7 @@ This is used in [Fancy headers](#fig-fancyheader).
 
 ![A page with content in some of its page regions.](assets/samples/marginboxes-1.colour.png)
 
-Most content appears inside the *page area* of one or more pages. Surrounding the page area, but within the margin area, are the *page-margin boxes*. Other special areas are overlaying the whole page or are placed at the bottom of the *page area*. Collectively, they are known as the *page regions*.
+Most content appears inside the *page area* of one or more pages. Surrounding the page area is the margin area, which contains the *page-margin boxes*. Other special areas are overlaying the whole page or are placed at the bottom of the *page area*. Collectively, they are known as the *page regions*.
 
 This figure shows the positions of some page regions placed in the page margin, called the *page-margin boxes*. Some of them can be used for creating running page headers and footers.
 
@@ -331,6 +331,8 @@ The page region `@prince-overlay` is a special region, overlaying all of the pag
 The page region `@footnote` is placed by default at the foot of the page area and contains the footnotes (see [Footnotes](styling.md#footnotes)). Note that if there are no footnotes on a page, the footnote area will not be displayed on that page at all.
 
 Many CSS properties can be applied to page regions:
+
+-   The height of the top and bottom page-margin boxes, as well as the width of the left and right page-margin boxes is defined by the [`margin`](css-props.md#prop-margin) values of the page style given in a `@page` rule (see [Page style](#page-style) for more details).
 
 -   All of the [`margin`](css-props.md#prop-margin), [`border`](css-props.md#prop-border), [`padding`](css-props.md#prop-padding) and [`background`](css-props.md#prop-background) properties can be used to style page regions.
 
