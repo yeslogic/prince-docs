@@ -231,6 +231,7 @@ The [`PDF.pages`](js-support.md#window.PDF.pages) array mentioned earlier (see [
     marginRight
     marginBottom
     marginLeft =    the used values for margins
+    floatPosition = "TOP" | "BOTTOM"
     children =      array of child boxes
     parent =        parent box
     element =       DOM element for box (may be null)
@@ -245,7 +246,11 @@ The box with the value `BODY` represents the *page area* returned by [`PDF.pages
 
 The properties of a *box* can be queried with the [`BoxInfo()`](js-support.md#window.BoxInfo) method.
 
-The `marginTop`, `marginRight`, `marginBottom` and `marginLeft` properties return the *used* values for margins.  This can be useful in cases of elements that are snapped to the nearest column or page end (see [Page and Column Floats](styling.md#page-and-column-floats)), since it is impossible to predict whether they will be floated to the top or bottom, and thus whether the alternative margin will be applied (see [Margins of Page and Column Floats](styling.md#margins-of-page-and-column-floats)).  See also [our nifty script](cookbook.md#how-and-where-is-my-box) to return the position and dimension of the margin box, the border box, the padding box and the content box of an element.
+The `marginTop`, `marginRight`, `marginBottom` and `marginLeft` properties return the *used* values for margins.  This can be useful in cases of elements that are being floated to the top or to the bottom of a column, to determine whether the alternative margin will be applied (see [Margins of Page and Column Floats](styling.md#margins-of-page-and-column-floats)).
+
+When elements are snapped to the nearest column or page end (see [Page and Column Floats](styling.md#page-and-column-floats)), the `floatPosition` property tells us whether the element snapped to the top, or to the bottom.
+
+See also [our nifty script](cookbook.md#how-and-where-is-my-box) to return the position and dimension of the margin box, the border box, the padding box and the content box of an element.
 
 Since the box tracking API is available only *after* the `complete` event, it cannot be used to modify the document (see [JavaScript in Printed Media](javascript.md#javascript-in-printed-media)).
 

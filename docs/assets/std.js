@@ -1184,6 +1184,7 @@ var std = {
             marginLeft: {},
             marginRight: {},
             marginTop: {},
+            floatPosition: {},
             children: {},
             parent: {},
             element: {},

@@ -1314,7 +1314,7 @@ var stdAnnotated = {
                 type: "function",
                 returns: "the used value for the bottom margin",
             },
-           marginLeft: {
+            marginLeft: {
                 type: "function",
                 returns: "the used value for the left margin",
             },
@@ -1322,9 +1322,13 @@ var stdAnnotated = {
                 type: "function",
                 returns: "the used value for the right margin",
             },
-             marginTop: {
+            marginTop: {
                 type: "function",
                 returns: "the used value for the top margin",
+            },
+            floatPosition: {
+                type: "function",
+                returns: "\"TOP\" | \"BOTTOM\"",
             },
             children: {
                 type: "function",
