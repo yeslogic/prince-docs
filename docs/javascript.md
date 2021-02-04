@@ -22,7 +22,7 @@ Please also note that a consequence of the non-interactive nature of printed med
 JavaScript in Prince
 --------------------
 
-Prince supports most of ECMAScript 5th edition (ES5), but not strict mode. Later editions of ECMAScript are not supported.
+Prince supports most of ECMAScript 5th edition (ES5), with the exception of strict mode. ES6 is not fully supported yet, and later editions of ECMAScript are not supported.
 
 JavaScript is not run by default - it needs to be explicitly enabled. See [Applying JavaScript in Prince](prince-input.md#applying-javascript-in-prince).
 
