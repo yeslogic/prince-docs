@@ -252,9 +252,7 @@ When elements are snapped to the nearest column or page end (see [Page and Colum
 
 See also [our nifty script](cookbook.md#how-and-where-is-my-box) to return the position and dimension of the margin box, the border box, the padding box and the content box of an element.
 
-Since the box tracking API is available only *after* the `complete` event, it cannot be used to modify the document (see [JavaScript in Printed Media](javascript.md#javascript-in-printed-media)).
-
-However, see [The "Multi-Pass" Solution](cookbook.md#the-multi-pass-solution) for making use of its output. Two further sample applications of the box tracking API can be seen in the [Changebars](//www.princexml.com/forum/topic/3516/changebars) example, and in [Detecting Overflow](//www.princexml.com/forum/topic/3603/detecting-overflow).
+Two further sample applications of the box tracking API can be seen in the [Changebars](//www.princexml.com/forum/topic/3516/changebars) example, and in [Detecting Overflow](//www.princexml.com/forum/topic/3603/detecting-overflow).
 
 ### Unsupported DOM Properties
 
