@@ -1077,7 +1077,12 @@ The "Multi-Pass" Solution
   <dt>You need</dt>
     <dd><a href="/doc/javascript#javascript-in-printed-media">JavaScript in Printed Media</a></dd>
     <dd><a href="/doc/javascript#event-handling">Event Handling</a></dd>
-    <dd><a href="/doc/javascript#the-prince-object">The Prince Object</a></dd>
+    <dd>
+      <a href="/doc/javascript#the-prince-object">The Prince Object</a>
+      <ul>
+        <li><a href="/doc/javascript#multi-pass-formatting">Multi-Pass formatting</a></li>
+      </ul>
+    </dd>
 </dl>
 
 One limitation of producing a document intended for print is its non-interactive, static nature: in principle a document cannot be modified after it is deemed to be ready for print. See [JavaScript in Printed Media](javascript.md#js-print).
