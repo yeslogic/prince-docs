@@ -248,7 +248,7 @@ The properties of a *box* can be queried with the [`BoxInfo()`](js-support.md#wi
 
 The `marginTop`, `marginRight`, `marginBottom` and `marginLeft` properties return the *used* values for margins.  This can be useful in cases of elements that are being floated to the top or to the bottom of a column, to determine whether the alternative margin will be applied (see [Margins of Page and Column Floats](styling.md#margins-of-page-and-column-floats)).
 
-When elements are snapped to the nearest column or page end (see [Page and Column Floats](styling.md#page-and-column-floats)), the `floatPosition` property tells us whether the element snapped to the top, or to the bottom.
+When elements are snapped to the nearest column or page end (see [Page and Column Floats](styling.md#page-and-column-floats)), the `floatPosition` property tells us whether the element snapped to the top, or to the bottom - please note that it needs to be checked not on the element itself, but on the anonymous (non-element) *parent* box that gets created to contain all the floats at the top or bottom of a page or column (in just the same fashion as the footnotes area contains all the footnotes).
 
 See also [our nifty script](cookbook.md#how-and-where-is-my-box) to return the position and dimension of the margin box, the border box, the padding box and the content box of an element.
 
