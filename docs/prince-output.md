@@ -20,6 +20,8 @@ The available profiles, and the PDF version they are based on, are:
 |---------------|-------------|
 | PDF/A-1a      | PDF 1.4     |
 | PDF/A-1b      | PDF 1.4     |
+| PDF/A-2a      | PDF 1.7     |
+| PDF/A-2b      | PDF 1.7     |
 | PDF/A-3a      | PDF 1.7     |
 | PDF/A-3b      | PDF 1.7     |
 | PDF/UA-1      | PDF 1.7     |
@@ -30,6 +32,8 @@ The available profiles, and the PDF version they are based on, are:
 | PDF/X-4       | PDF 1.6     |
 
 Prince supports files with the combined PDF/A-1a+PDF/UA-1 and PDF/A-3a+PDF/UA-1 profiles.
+
+Please note that the PDF/A-2 profiles do not support attachments.
 
 Prince also uses:
 
