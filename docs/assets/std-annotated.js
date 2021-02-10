@@ -173,6 +173,7 @@ var stdAnnotated = {
             reverse: {},
             shift: {},
             unshift: {},
+            find: {},
             sort: {},
             slice: {},
             splice: {},
