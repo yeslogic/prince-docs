@@ -654,7 +654,7 @@ By omitting log messages, or by delaying them until after the PDF is written, th
 
 ### Fail-Safe Options
 
-Prince offers three Fail-Safe Options:
+Prince offers six Fail-Safe Options:
 
 `--fail-dropped-content`  
 Fail if any content is dropped.
@@ -665,7 +665,16 @@ Fail if any resources cannot be loaded.
 `--fail-missing-glyphs`  
 Fail if glyphs cannot be found for any characters.
 
-Usually Prince will try hard to solve any unexpected issues that arise, prioritizing the creation of a PDF - missing glyphs would be represented as a question mark ("?") and resources not loaded would simply be dropped. The fail-safe options are there to prevent the creation of broken PDFs due to temporary network problems or unexpected font issues. If the condition specified with one of the command-line options is triggered, the conversion will return an explicit failure status, and no PDF is created. Appropriate action to identify and fix the problem can be taken before attempting a new conversion.
+`--fail-pdf-profile-error`  
+Fail if the chosen PDF profile cannot be used.
+
+`--fail-pdf-tag-error`  
+Fail if there is an accessibility tagging error.
+
+`--fail-safe`  
+Enables all of the preceding fail-safe options.
+
+Usually Prince will try hard to solve any unexpected issues that arise, prioritizing the creation of a PDF - missing glyphs would be represented as a question mark ("?") and resources not loaded would simply be dropped. The fail-safe options are there to prevent the creation of broken PDFs due to temporary network problems or unexpected issues. If the condition specified with one of the command-line options is triggered, the conversion will return an explicit failure status, and no PDF is created. Appropriate action to identify and fix the problem can be taken before attempting a new conversion.
 
 The JavaScript property [`Prince.failStatus`](js-support.md#window.Prince.failStatus) can also be used to trigger an explicit failure status based on custom criteria. See also under [The Prince Object](javascript.md#js-prince-obj).
 

@@ -661,8 +661,11 @@ Rasterization is enabled with the `--raster-output` option below. When this is u
   <dt id="cl-fail-dropped-content"><code>--fail-dropped-content</code></dt>
   <dt id="cl-fail-missing-resources"><code>--fail-missing-resources</code></dt>
   <dt id="cl-fail-missing-glyphs"><code>--fail-missing-glyphs</code></dt>
+  <dt id="cl-fail-pdf-profile-error"><code>--fail-pdf-profile-error</code></dt>
+  <dt id="cl-fail-pdf-tag-error"><code>--fail-pdf-tag-error</code></dt>
+  <dt id="cl-fail-safe"><code>--fail-safe</code></dt>
   <dd>
-    <p>These three Fail-Safe Options abort the creation of a PDF when one of
+    <p>These six Fail-Safe Options abort the creation of a PDF when one of
     the conditions is met.  For more details, please check the detailed
     documentation in the separate <a href="/doc/server-integration/#fail-safe-options">Fail-Safe Options</a> chapter.</p>
   </dd>
