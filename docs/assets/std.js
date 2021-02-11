@@ -65,6 +65,7 @@ var std = {
             shift: {},
             unshift: {},
             find: {},
+            findIndex: {},
             sort: {},
             slice: {},
             splice: {},

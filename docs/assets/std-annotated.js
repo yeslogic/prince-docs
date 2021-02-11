@@ -174,6 +174,7 @@ var stdAnnotated = {
             shift: {},
             unshift: {},
             find: {},
+            findIndex: {},
             sort: {},
             slice: {},
             splice: {},
