@@ -418,7 +418,11 @@ Prince can easily be installed also on Amazon's EC2 platform - Bruce Lawson prov
 Advanced Command-Line Options
 -----------------------------
 
-Prince can also be called from the command-line with two special options, useful for understanding the calls Prince can be controlled with, and the output it produces, in order to write your own wrapper: the [Prince Control Protocol](#prince-control-protocol) and the [Structured Log](#structured-log).
+Prince can also be called from the command-line with some special options for fine-tuning the creation of PDF files.
+
+Two options are useful for understanding the calls Prince can be controlled with, and the output it produces, in order to write your own wrapper: the [Prince Control Protocol](#prince-control-protocol) and the [Structured Log](#structured-log).
+
+Prince also offers a set of [Fail-Safe Options](#fail-safe-options) to prevent the creation of a PDF file in case of specific conditions.
 
 ### Prince Control Protocol
 
