@@ -61,6 +61,9 @@ Choosing one profile over another can help producing a PDF file which has the ri
     prince: error: PDF/A-1b does not support encryption
     prince: error: PDF/A-1b requires fonts to be embedded
 ```
+
+To abort the production of a PDF file when the requirements for a specific PDF profile are not met, the `--fail-pdf-profile-error` command-line option from the [Fail-Safe Options](server-integration.md#fail-safe-options) needs to be invoked.
+
 Generally speaking, PDF/A profiles were created with the goal of long-term preservation of the documents (**PDF** for **A**rchiving), while PDF/X profiles were created to address publisher's needs in the graphic arts industry (**PDF** for e**X**change). The PDF/UA profile is a standard for producing accessible electronic documents (**PDF** for **U**niversal **A**ccessibility).
 
 ### PDF/A
