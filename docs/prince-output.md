@@ -33,8 +33,6 @@ The available profiles, and the PDF version they are based on, are:
 
 Prince supports files with the combined PDF/A-1a+PDF/UA-1 and PDF/A-3a+PDF/UA-1 profiles.
 
-Please note that the PDF/A-2 profiles do not support attachments.
-
 Prince also uses:
 
 PDF 1.5  
@@ -73,6 +71,8 @@ Generally speaking, PDF/A profiles were created with the goal of long-term prese
 -   Colorspaces should be specified in a device-independent manner: all color data must be Grayscale, CMYK or named Spot Colors and there must be an output intent. Transparency is not allowed. See also [Color Management and PDF Profiles](graphics.md#color-management-and-pdf-profiles)
 -   Encryption is forbidden
 
+The PDF/A-3 profiles support attachments.  Please note that currently Prince does not support attachments in the PDF/A-2 profiles.
+
 ### PDF/UA
 
 -   Content must be tagged in a logical order
@@ -83,6 +83,8 @@ Generally speaking, PDF/A profiles were created with the goal of long-term prese
 -   All fonts must be embedded
 -   Text must be mapped to Unicode
 
+The PDF/UA-1 profile supports attachments.
+
 ### PDF/X
 
 -   PDF/X is intended to support "blind exchange", i.e. no exchange of technical information is needed to render the printed page as intended
@@ -92,6 +94,7 @@ Generally speaking, PDF/A profiles were created with the goal of long-term prese
 -   See the [Color Management and PDF Profiles](graphics.md#color-management-and-pdf-profiles) section for the color profiles available in each PDF/X version. Transparency is not allowed, with the exception of PDF/X-4
 -   Encryption is forbidden
 
+The PDF/X-4 profile supports attachments.
 
 PDF Accessibility
 -----------------
@@ -321,7 +324,9 @@ Font embedding can be disabled if necessary, for example if Prince is being used
 
 ### PDF Attachments
 
-Prince supports adding files to PDF documents as attachments. The main mechanisms for doing so are the JavaScript function [`PDF.attachFile`](js-support.md#window.PDF.attachFile) and the command-line option [`--attach`](command-line.md#cl-attach). Additionally, the job description JSON format, used by the [Prince Control Protocol](server-integration.md#prince-control-protocol), can be used to provid an attachment "inline" through the Java/C\# APIs (see [Prince Wrappers](server-integration.md#wrappers)) instead of as a separate file on the filesystem. See [Prince Control Protocol](server-integration.md#prince-control-protocol) for details on the job description JSON format.
+Prince supports adding files to PDF documents as attachments - but please note that not all PDF profiles allow for attachments (see [PDF Versions and Profiles](#pdf-versions-and-profiles) for details).
+
+The main mechanisms for doing so are the JavaScript function [`PDF.attachFile`](js-support.md#window.PDF.attachFile) and the command-line option [`--attach`](command-line.md#cl-attach). Additionally, the job description JSON format, used by the [Prince Control Protocol](server-integration.md#prince-control-protocol), can be used to provid an attachment "inline" through the Java/C\# APIs (see [Prince Wrappers](server-integration.md#wrappers)) instead of as a separate file on the filesystem. See [Prince Control Protocol](server-integration.md#prince-control-protocol) for details on the job description JSON format.
 
 
 ### PDF Bookmarks
