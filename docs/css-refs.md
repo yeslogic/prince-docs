@@ -245,6 +245,8 @@ The viewport length units are relative to the [`@page` area](#at-page): the unit
 
 The values `pvw` and `pvh` are equal to respectively 1% of the width and height of the *entire page*, as defined by the [page size](paged.md#page-size).
 
+Please note that these values cannot be used with elements for which a viewport, such as the root element, has not been established.
+
 <table class="grid">
 <tr>
 <th colspan="2">Viewport length Units</th>
@@ -258,12 +260,28 @@ The values `pvw` and `pvh` are equal to respectively 1% of the width and height 
 <td>content area height</td>
 </tr>
 <tr>
+<td class="example"><code>vmin</code></td>
+<td>the smaller length of <code>vw</code> or <code>vh</code></td>
+</tr>
+<tr>
+<td class="example"><code>vmax</code></td>
+<td>the larger length of <code>vw</code> or <code>vh</code></td>
+</tr>
+<tr>
 <td class="example"><code>pvw</code></td>
 <td>page width</td>
 </tr>
 <tr>
 <td class="example"><code>pvh</code></td>
 <td>page height</td>
+</tr>
+<tr>
+<td class="example"><code>pvmin</code></td>
+<td>the smaller length of <code>pvw</code> or <code>pvh</code></td>
+</tr>
+<tr>
+<td class="example"><code>pvmax</code></td>
+<td>the larger length of <code>pvw</code> or <code>pvh</code></td>
 </tr>
 </table>
 
