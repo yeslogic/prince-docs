@@ -931,7 +931,7 @@ When printed texts contain images, the text is usually laid out to wrap around t
 ```
 The property [`clear`](css-props.md#prop-clear) can be considered the float's sister property: an element that has the [`clear`](css-props.md#prop-clear) property set on it will not move up, next to the floated element, like the float is asking for. Instead, it will move down after the float.
 
-Prince extends the traditional behavior of floats with a few features that have been ubiquitous in printing for a long time.  In addition to the following documentation, the [quick guide to page and column floats in Prince 14](https://www.princexml.com/howcome/2021/guides/float/) provides many more examples for float, cear and defer properties.
+Prince extends the traditional behavior of floats with a few features that have been ubiquitous in printing for a long time.  In addition to the following documentation, the [quick guide to page and column floats in Prince 14](https://www.princexml.com/howcome/2021/guides/float/) provides many more examples for float, clear and defer properties.
 
 #### Prince Extensions to Floats
 
