@@ -1006,7 +1006,7 @@ Note that when setting only the value for `-prince-float-reference` in the short
     }
 ```
 
-The value `snap` instructs Prince to float the image to the nearest "end", i.e. to the top or bottom of the page or column.
+The value `snap` instructs Prince to float the image to the *nearest* end, which could be either the top or bottom of the page or column.
 
 ```
     img {
@@ -1014,7 +1014,7 @@ The value `snap` instructs Prince to float the image to the nearest "end", i.e. 
     }
 ```
 
-A floated element in a multi-column context can span several columns with the help of the [`column-span`](css-props.md#prop-column-span) property (see [Columns](#columns)). The following example, when used in a multi-column layout, instructs Prince to make the image span all columns:
+A floated element in a multi-column context can span several columns with the help of the [`column-span`](css-props.md#prop-column-span) property (see [Columns](#columns)). The following example, when used in a multi-column layout with two columns, instructs Prince to make the image span all columns:
 
 ```
     img {
@@ -1031,7 +1031,7 @@ A similar result can be achieved by specifying the page as a float reference:
     }
 ```
 
-However, there is an important difference: an image with `column-span: all` will stay within its parent element, but an image with the page defined as a float reference will escape its parent and align itself with the page area.
+However, there is an important difference: an image with `column-span: all` will stay *within* its parent element, but an image with the page defined as a float reference will *escape* its parent and align itself with the page area, as can easily be seen in [this example](https://www.princexml.com/howcome/2021/guides/float/#escaping-columns).
 
 ##### Page and Column Float Order
 
@@ -1052,6 +1052,8 @@ CSS
     }
 ```
 
+Would the `in-order` directive have been omitted, the figure with class `two` would have been floated above the one with class `one`.
+
 ##### Dropping Excess Floats
 
 The property [`-prince-float-tail`](css-props.md#prop-prince-float-tail) instructs Prince how to deal with page floats that end up past the end of normal content: with the value `fill-page`, Prince will try to fill the last page, but discard any page floats that would create more pages.  The value `keep` will keep all images and create enough new pages to accomodate them all.
@@ -1067,6 +1069,8 @@ Margins in vertical flows are a powerful styling tool.  Setting a vertical margi
     }
 ```
 
+See also [this example](https://www.princexml.com/howcome/2021/guides/float/#repelling-other-content) for repelling other content from column floats.
+
 When elements snap to the nearest edge, it is impossible to predict whether they end up at the top or at the bottom.  Therefore Prince offers a way to specify an alternative margin value for the vertical margins with the property [`-prince-margin-alt`](css-props.md#prop-prince-margin-alt).
 
 ```
@@ -1081,7 +1085,7 @@ When elements snap to the nearest edge, it is impossible to predict whether they
 
 In print one typically has to deal with left facing and right facing pages, together forming a spread. To take this into account when placing an element, Prince extends the [`float`](css-props.md#prop-float) property with the values `inside` and `outside`, moving the element respectively to the inside or outside of a spread.
 
-If the `inside` and `outside` values are used in a multi-column layout, by default the element is floated to the inside or outside of the column it appears in its natural flow.  To change this behaviour, the page loat reference needs to be specified:
+If the `inside` and `outside` values are used in a multi-column layout, by default the element is floated to the inside or outside of the column it appears in its natural flow.  To change this behaviour, the page float reference needs to be specified:
 
 ```
     img {
@@ -1120,6 +1124,8 @@ The clear values for page and column floats are very powerful in multi-column la
 * `-prince-clear: page` clears the page and forces the second float to the next page.
 
 For page floats, the clear values `column` and `page` behave the same way, since Prince treats the page as a single column.
+
+Please also see the examples for [clearing page floats](https://www.princexml.com/howcome/2021/guides/float/#clearing-page-floats) and [clearing column floats](https://www.princexml.com/howcome/2021/guides/float/#clearing-column-floats).
 
 ### Footnotes
 
