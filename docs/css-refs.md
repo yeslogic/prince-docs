@@ -39,7 +39,7 @@ properties.</td>
 <code>2</code> to <code>1</code>.</td>
 </tr>
 <tr>
-<td><a href="https://www.w3.org/TR/css3-color/">CSS Color Module Level 3</a></td>
+<td><a href="https://www.w3.org/TR/css-color-3/">CSS Color Module Level 3</a></td>
 <td>Prince supports <code>opacity</code>. It supports some of the extensions of the
 <code>color</code> property. <code>rgba()</code> is supported in builds after
 Prince 11, <code>hsl()</code> and <code>hsla()</code> are supported as
@@ -60,7 +60,7 @@ Prince also provides a different interface to the functionality of the
 function.</td>
 </tr>
 <tr>
-<td><a href="https://www.w3.org/TR/css-lists-3/">CSS Lists Module Level 3</a></td>
+<td><a href="https://www.w3.org/TR/css-lists-3/">CSS Lists and Counters Module Level 3</a></td>
 <td>Prince does not support the <code>marker-side</code> and <code>counter-set</code> properties.</td>
 </tr>
 <tr>
@@ -80,7 +80,7 @@ a different interface to the functionality of footnotes (see <a href="/doc/styli
 well as the properties <code>object-fit</code> and <code>object-position</code>.</td>
 </tr>
 <tr>
-<td><a href="https://www.w3.org/TR/css3-multicol/">CSS Multi-column Layout Module</a></td>
+<td><a href="https://www.w3.org/TR/css-multicol-1/">CSS Multi-column Layout Module Level 1</a></td>
 <td>Prince largely supports this module.</td>
 </tr>
 <tr>
@@ -88,7 +88,7 @@ well as the properties <code>object-fit</code> and <code>object-position</code>.
 <td>Prince supports the <code>overflow</code> property's behaviour as described in the Level 3 module, but does not support the 2-value syntax.</td>
 </tr>
 <tr>
-<td><a href="https://www.w3.org/TR/css3-page/">CSS Paged Media Module Level 3</a></td>
+<td><a href="https://www.w3.org/TR/css-page-3/">CSS Paged Media Module Level 3</a></td>
 <td>Prince supports this module.</td>
 </tr>
 <tr>
@@ -115,12 +115,12 @@ does not recognize <code>transform-box</code>. Prince does not allow perspective
 <td>Prince supports namespaces in CSS.</td>
 </tr>
 <tr>
-<td><a href="https://www.w3.org/TR/css3-conditional/">CSS Conditional Rules Module Level 3</a></td>
+<td><a href="https://www.w3.org/TR/css-conditional-3/">CSS Conditional Rules Module Level 3</a></td>
 <td>Prince supports the <a href="#at-media"><code>@media</code></a>
 and <a href="#at-supports"><code>@supports</code></a> at-rules.</td>
 </tr>
 <tr>
-<td><a href="https://drafts.fxtf.org/filters/">Filter Effects Module Level 1</a></td>
+<td><a href="https://drafts.fxtf.org/filter-effects/">Filter Effects Module Level 1</a></td>
 <td>Prince supports the <code>filter</code> property.</td>
 </tr>
 <tr>
@@ -133,7 +133,7 @@ and <a href="#at-supports"><code>@supports</code></a> at-rules.</td>
   <code>visibility: collapse</code> and vertical writing.</td>
 </tr>
 <tr>
-<td><a href="https://www.w3.org/TR/selectors4/">Selectors Level 4</a></td>
+<td><a href="https://www.w3.org/TR/selectors-4/">Selectors Level 4</a></td>
 <td>Prince largely supports this module.</td>
 </tr>
 <tr>
@@ -160,12 +160,12 @@ and <a href="#at-supports"><code>@supports</code></a> at-rules.</td>
 <th colspan="2">Living Standards</th>
 </tr>
 <tr>
-<td><a href="https://books.spec.whatwg.org/">CSS Books</a></td>
+<td><a href="https://books.idea.whatwg.org/">CSS Books</a></td>
 <td>Prince supports target counters, footnote floats, bookmarks labels, levels and
 states, the <code>flow</code> property and the <code>string-set</code> property.</td>
 </tr>
 <tr>
-<td><a href="https://figures.spec.whatwg.org/">CSS Figures</a></td>
+<td><a href="https://figures.idea.whatwg.org/">CSS Figures</a></td>
 <td>Prince largely supports the float extensions of the spec.</td>
 </tr>
 <tr>
