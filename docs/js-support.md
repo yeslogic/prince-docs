@@ -102,7 +102,12 @@ function add(parent, thing, annotations, type, hasChildren, length, parentDescs)
             }
             url = div.appendChild(document.createElement('a'));
             url.setAttribute("href", "/doc/css-props#prop-" + property);
-            url.appendChild(document.createTextNode(property));
+            if(thing.includes("prince")) {
+                proptext = "-" + property;
+            } else {
+                proptext = property;
+            }
+            url.appendChild(document.createTextNode(proptext));
         }
         if(annotations && annotations.desc) {
             div = theDetailsDiv.appendChild(document.createElement('div'));
