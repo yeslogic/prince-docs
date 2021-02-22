@@ -943,6 +943,7 @@ Prince's implementation of `float` differs from the standard implementation unde
 
 * [`-prince-float-reference`](css-props.md#prop-prince-float-reference)
 * [`-prince-float-placement`](css-props.md#prop-prince-float-placement)
+* [`-prince-float-modifier`](css-props.md#prop-prince-float-modifier)
 
 The values for *where* to float an element to, which traditionally are assigned with the property `float`, are now defined by the property `-prince-float-placement`.  However, when using the shorthand `float`, no difference to the standard implementation can be noticed.
 
@@ -1103,13 +1104,24 @@ The value `footnote` transforms the element into a footnote: it creates a footno
 
 ##### Conditional Modifiers
 
-The optional modifier `unless-fit` is to be used in combination with other float instructions, and expresses a conditional: the element is only floated if it would otherwise cause a page or column break. For example, If you have a large image that happens to occur at the end of the page, it could force a page break and leave a gap at the end of the previous page. So you could float the image `top unless-fit`, which would move it to the top of the next page *unless it fits on the current page without causing a break and leaving a gap*:
+The property [`-prince-float-modifier`](css-props.md#prop-prince-float-modifier) is to be used in combination with other float instructions.  When used with the value `unless-fit` it expresses a conditional: the element is only floated if it would otherwise cause a page or column break. For example, If you have a large image that happens to occur at the end of the page, it could force a page break and leave a gap at the end of the previous page. So you could float the image with the modifier value `unless-fit`, which would move it to the top of the next page *unless it fits on the current page without causing a break and leaving a gap*:
+
+```
+    img {
+        -prince-float-placement: top;
+        -prince-float-modifier: unless-fit;
+    }
+```
+
+Or, in shorthand notation:
 
 ```
     img {
         -prince-float: top unless-fit;
     }
 ```
+
+
 
 ##### Clearing Floats
 

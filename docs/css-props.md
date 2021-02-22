@@ -1225,7 +1225,7 @@ For the values, the grammar draws on the [CSS Values and Units Module Level 3](h
         setting the following CSS properties:
     </p><ul><li><code><a href="#prop-flex-direction">flex-direction</a></code></li><li><code><a href="#prop-flex-wrap">flex-wrap</a></code></li></ul></div><div><div id="prop-flex-flow-spec">Specification</div><ul><li><a href="https://www.w3.org/TR/css-flexbox-1/#flex-flow-property">CSS Flexible Box Layout Module Level 1</a></li></ul></div></div></details>
 
-<details><summary class="ext" title="Prince extension" id="prop-float">float* <a class="self-link" href="#prop-float"></a></summary><div><div><div id="prop-float-syntax">Syntax</div><div class="example"><div class="syntax-block"><pre><code>float: <br />&#160;&#160;&#160;<i class="ext">float-reference</i> ||&#160;<i class="ext">float-placement</i> <span>unless-fit</span>?</code></pre></div></div></div><div><div class="example"><div class="syntax-block"><table class="property-table"><tr><th scope="row">
+<details><summary class="ext" title="Prince extension" id="prop-float">float* <a class="self-link" href="#prop-float"></a></summary><div><div><div id="prop-float-syntax">Syntax</div><div class="example"><div class="syntax-block"><pre><code>float: <br />&#160;&#160;&#160;<i class="ext">float-reference</i> ||&#160;<i class="ext">float-placement</i> ||&#160;<i class="ext">float-modifier</i></code></pre></div></div></div><div><div class="example"><div class="syntax-block"><table class="property-table"><tr><th scope="row">
           Initial value
         </th><td><code>none</code></td></tr><tr><th scope="row">
           Applies to
@@ -1241,7 +1241,7 @@ For the values, the grammar draws on the [CSS Values and Units Module Level 3](h
 	</p><p>
     Prince's implementation of <code>float</code> is a shorthand for the following properties:
 	</p>
-    <ul><li><code><a href="#prop-float-reference">float-reference</a></code></li><li><code><a href="#prop-float-placement">float-placement</a></code></li></ul>
+    <ul><li><code><a href="#prop-float-reference">float-reference</a></code></li><li><code><a href="#prop-float-placement">float-placement</a></code></li><li><code><a href="#prop-float-modifier">float-modifier</a></code></li></ul>
     <p>
     Note that when setting only the value for <code><i>float-reference</i></code>, i.e.
     <code>column</code> or <code>page</code>, the default value for <code><i>float-placement</i></code>
@@ -1255,9 +1255,6 @@ For the values, the grammar draws on the [CSS Values and Units Module Level 3](h
     </p><p>
     Please also see the property <code><a href="#prop-margin-alt">margin-alt</a></code> for
     alternative margins for top or bottom floated elements.
-    </p><p>
-    The optional modifier <code>unless-fit</code> expresses a conditional: the element is only
-    floated if it would otherwise cause a page or column break.
     </p><p class="note">
         The property <a href="#prop-prince-float"><code>-prince-float</code></a> can be used as an alias.
         </p></div><div><div id="prop-float-seealso">See Also</div><ul><li><a href="/doc/styling#floats">Floats</a></li></ul></div><div><div id="prop-float-spec">Specification</div><ul><li><a href="https://www.w3.org/TR/CSS2/visuren.html#float-position">CSS 2.1</a></li><li><a href="https://www.w3.org/TR/css-gcpm-3/#footnotes">CSS Generated Content for Paged Media Module</a></li><li><a href="https://figures.spec.whatwg.org/">CSS Figures</a></li><li><a href="https://books.spec.whatwg.org/#footnotes">CSS Books</a></li><li><a href="https://drafts.csswg.org/css-page-floats/">CSS Page Floats</a></li></ul></div></div></details>
@@ -1293,6 +1290,25 @@ For the values, the grammar draws on the [CSS Values and Units Module Level 3](h
         The <code>float-defer-page</code> property specifies whether the float is placed after previous page floats have been placed, or in another float reference container.</p><p class="note">
         The property <a href="#prop-prince-float-defer-page"><code>-prince-float-defer-page</code></a> can be used as an alias.
         </p></div><div><div id="prop-float-defer-page-seealso">See Also</div><ul><li><a href="/doc/styling#floats">Floats</a></li></ul></div><div><div id="prop-float-defer-page-spec">Specification</div><ul><li><a href="https://figures.idea.whatwg.org/#float-defer-page">CSS Figures</a></li><li><a href="https://drafts.csswg.org/css-page-floats/#float-defer-property">CSS Page Floats</a></li></ul></div></div></details>
+
+<details><summary class="ext" title="Prince extension" id="prop-float-modifier">float-modifier* <a class="self-link" href="#prop-float-modifier"></a></summary><div><div><div id="prop-float-modifier-syntax">Syntax</div><div class="example"><div class="syntax-block"><pre><code>float-modifier: normal |&#160;unless-fit</code></pre></div></div></div><div><div class="example"><div class="syntax-block"><table class="property-table"><tr><th scope="row">
+          Initial value
+        </th><td><code>normal</code></td></tr><tr><th scope="row">
+          Applies to
+        </th><td>all floated elements</td></tr><tr><th scope="row">
+          Inherited
+        </th><td>
+                  yes
+                </td></tr></table></div></div></div><div><div id="prop-float-modifier-examples">Examples</div><div class="example"><div class="programlisting"><pre><code>figure {
+&nbsp;&nbsp;float: top;
+&nbsp;&nbsp;float-modifier: unless-fit;
+}</code></pre></div></div></div><div><div id="prop-float-modifier-comments">Comments</div><p>
+        The <code>float-modifier</code> property expresses a conditional
+        with the use of the keyword <code>unless-fit</code>: the element
+        is only floated if it would otherwise cause a page or column break.
+        </p><p class="note">
+        The property <a href="#prop-prince-float-modifier"><code>-prince-float-modifier</code></a> can be used as an alias.
+        </p></div><div><div id="prop-float-modifier-seealso">See Also</div><ul><li><a href="/doc/styling#floats">Floats</a></li></ul></div></div></details>
 
 <details><summary class="ext" title="Prince extension" id="prop-float-placement">float-placement* <a class="self-link" href="#prop-float-placement"></a></summary><div><div><div id="prop-float-placement-syntax">Syntax</div><div class="example"><div class="syntax-block"><pre><code>float-placement: none |&#160;left |&#160;right |&#160;<span class="ext">inside</span> |&#160;<span class="ext">outside</span>
 &#160;&#160;&#160;&#160;|&#160;<span class="ext">top</span> |&#160;<span class="ext">bottom</span> |&#160;<span class="ext">top-bottom</span> |&#160;<span class="ext">snap</span>
@@ -2550,7 +2566,7 @@ supplier, item { overflow-wrap: normal; }
     at-rule.  In this latter case, it affects all filters in the document.
     </p></div><div><div id="prop-prince-filter-resolution-seealso">See Also</div><ul><li><a href="/doc/graphics#filters">Filters</a></li></ul></div></div></details>
 
-<details><summary class="ext" title="Prince extension" id="prop-prince-float">-prince-float* <a class="self-link" href="#prop-prince-float"></a></summary><div><div><div id="prop-prince-float-syntax">Syntax</div><div class="example"><div class="syntax-block"><pre><code>-prince-float: <br />&#160;&#160;&#160;<i class="ext">-prince-float-reference</i> ||&#160;<i class="ext">-prince-float-placement</i> <span>unless-fit</span>?</code></pre></div></div></div><div><div class="example"><div class="syntax-block"><table class="property-table"><tr><th scope="row">
+<details><summary class="ext" title="Prince extension" id="prop-prince-float">-prince-float* <a class="self-link" href="#prop-prince-float"></a></summary><div><div><div id="prop-prince-float-syntax">Syntax</div><div class="example"><div class="syntax-block"><pre><code>-prince-float: <br />&#160;&#160;&#160;<i class="ext">-prince-float-reference</i> ||&#160;<i class="ext">-prince-float-placement</i> ||&#160;<i class="ext">-prince-float-modifier</i></code></pre></div></div></div><div><div class="example"><div class="syntax-block"><table class="property-table"><tr><th scope="row">
           Initial value
         </th><td><code>none</code></td></tr><tr><th scope="row">
           Applies to
@@ -2566,7 +2582,7 @@ supplier, item { overflow-wrap: normal; }
 	</p><p>
     Prince's implementation of <code>-prince-float</code> is a shorthand for the following properties:
 	</p>
-    <ul><li><code><a href="#prop-prince-float-reference">-prince-float-reference</a></code></li><li><code><a href="#prop-prince-float-placement">-prince-float-placement</a></code></li></ul>
+    <ul><li><code><a href="#prop-prince-float-reference">-prince-float-reference</a></code></li><li><code><a href="#prop-prince-float-placement">-prince-float-placement</a></code></li><li><code><a href="#prop-prince-float-modifier">-prince-float-modifier</a></code></li></ul>
     <p>
     Note that when setting only the value for <code><i>-prince-float-reference</i></code>, i.e.
     <code>column</code> or <code>page</code>, the default value for <code><i>-prince-float-placement</i></code>
@@ -2580,9 +2596,6 @@ supplier, item { overflow-wrap: normal; }
     </p><p>
     Please also see the property <code><a href="#prop-prince-margin-alt">-prince-margin-alt</a></code> for
     alternative margins for top or bottom floated elements.
-    </p><p>
-    The optional modifier <code>unless-fit</code> expresses a conditional: the element is only
-    floated if it would otherwise cause a page or column break.
     </p><p class="note">
         The property <a href="#prop-float"><code>float</code></a> can be used as an alias.
         </p></div><div><div id="prop-prince-float-seealso">See Also</div><ul><li><a href="/doc/styling#floats">Floats</a></li></ul></div><div><div id="prop-prince-float-spec">Specification</div><ul><li><a href="https://www.w3.org/TR/CSS2/visuren.html#float-position">CSS 2.1</a></li><li><a href="https://www.w3.org/TR/css-gcpm-3/#footnotes">CSS Generated Content for Paged Media Module</a></li><li><a href="https://figures.spec.whatwg.org/">CSS Figures</a></li><li><a href="https://books.spec.whatwg.org/#footnotes">CSS Books</a></li><li><a href="https://drafts.csswg.org/css-page-floats/">CSS Page Floats</a></li></ul></div></div></details>
@@ -2618,6 +2631,25 @@ supplier, item { overflow-wrap: normal; }
         The <code>-prince-float-defer-page</code> property specifies whether the float is placed after previous page floats have been placed, or in another float reference container.</p><p class="note">
         The property <a href="#prop-float-defer-page"><code>float-defer-page</code></a> can be used as an alias.
         </p></div><div><div id="prop-prince-float-defer-page-seealso">See Also</div><ul><li><a href="/doc/styling#floats">Floats</a></li></ul></div><div><div id="prop-prince-float-defer-page-spec">Specification</div><ul><li><a href="https://figures.idea.whatwg.org/#float-defer-page">CSS Figures</a></li><li><a href="https://drafts.csswg.org/css-page-floats/#float-defer-property">CSS Page Floats</a></li></ul></div></div></details>
+
+<details><summary class="ext" title="Prince extension" id="prop-prince-float-modifier">-prince-float-modifier* <a class="self-link" href="#prop-prince-float-modifier"></a></summary><div><div><div id="prop-prince-float-modifier-syntax">Syntax</div><div class="example"><div class="syntax-block"><pre><code>-prince-float-modifier: normal |&#160;unless-fit</code></pre></div></div></div><div><div class="example"><div class="syntax-block"><table class="property-table"><tr><th scope="row">
+          Initial value
+        </th><td><code>normal</code></td></tr><tr><th scope="row">
+          Applies to
+        </th><td>all floated elements</td></tr><tr><th scope="row">
+          Inherited
+        </th><td>
+                  yes
+                </td></tr></table></div></div></div><div><div id="prop-prince-float-modifier-examples">Examples</div><div class="example"><div class="programlisting"><pre><code>figure {
+&nbsp;&nbsp;-prince-float: top;
+&nbsp;&nbsp;-prince-float-modifier: unless-fit;
+}</code></pre></div></div></div><div><div id="prop-prince-float-modifier-comments">Comments</div><p>
+        The <code>-prince-float-modifier</code> property expresses a conditional
+        with the use of the keyword <code>unless-fit</code>: the element
+        is only floated if it would otherwise cause a page or column break.
+        </p><p class="note">
+        The property <a href="#prop-float-modifier"><code>float-modifier</code></a> can be used as an alias.
+        </p></div><div><div id="prop-prince-float-modifier-seealso">See Also</div><ul><li><a href="/doc/styling#floats">Floats</a></li></ul></div></div></details>
 
 <details><summary class="ext" title="Prince extension" id="prop-prince-float-placement">-prince-float-placement* <a class="self-link" href="#prop-prince-float-placement"></a></summary><div><div><div id="prop-prince-float-placement-syntax">Syntax</div><div class="example"><div class="syntax-block"><pre><code>-prince-float-placement: none |&#160;left |&#160;right |&#160;<span class="ext">inside</span> |&#160;<span class="ext">outside</span>
 &#160;&#160;&#160;&#160;|&#160;<span class="ext">top</span> |&#160;<span class="ext">bottom</span> |&#160;<span class="ext">top-bottom</span> |&#160;<span class="ext">snap</span>
