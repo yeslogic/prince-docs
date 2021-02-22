@@ -440,7 +440,7 @@ Prince expands the margin properties with [`-prince-margin-inside`](css-props.md
 
 Always keep in mind that `margin-top` and `margin-bottom` of blocks are combined (i.e. "collapsed") into a single margin according to a possibly rather complex behavior known as *margin collapsing*. The notable exception is the behavior of margins in [Flex Layout](#flex-layout).
 
-Prince also supports [page and column floats](#page-and-column-floats) - in some cases, the `margin-top` and `margin-bottom` values of these floats are overwritten by alternative margin value specified with the `-prince-margin-alt` property.  For details, please see [Margins of Page and Column Floats](#margins-of-page-and-column-floats).
+Prince also supports [page and column floats](#page-and-column-floats) - in some cases, the `margin-top` and `margin-bottom` values of these floats are overwritten by alternative margin value specified with the [`-prince-margin-alt`](css-props.md#prop-prince-margin-alt) property.  For details, please see [Margins of Page and Column Floats](#margins-of-page-and-column-floats).
 
 #### Border
 
