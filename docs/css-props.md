@@ -1922,7 +1922,9 @@ For the values, the grammar draws on the [CSS Values and Units Module Level 3](h
 	if the element is on a right-facing page. The result is a horizontal
 	margin on the side of the element that is on the "inside" of the
 	two-page spread.
-	</p></div><div><div id="prop-margin-inside-seealso">See Also</div><ul><li><a href="/doc/styling#margin">Margin</a></li></ul></div></div></details>
+	</p><p class="note">
+        The property <a href="#prop-prince-margin-inside"><code>-prince-margin-inside</code></a> can be used as an alias.
+        </p></div><div><div id="prop-margin-inside-seealso">See Also</div><ul><li><a href="/doc/styling#margin">Margin</a></li></ul></div></div></details>
 
 <details><summary id="prop-margin-left">margin-left <a class="self-link" href="#prop-margin-left"></a></summary><div><div><div id="prop-margin-left-syntax">Syntax</div><div class="example"><div class="syntax-block"><pre><code>margin-left: auto |&#160;<i>length</i> |&#160;<i>percent</i></code></pre></div></div></div><div><div class="example"><div class="syntax-block"><table class="property-table"><tr><th scope="row">
           Initial value
@@ -1949,7 +1951,9 @@ For the values, the grammar draws on the [CSS Values and Units Module Level 3](h
 	if the element is on a right-facing page. The result is a horizontal
 	margin on the side of the element that is on the "outside" of the
 	two-page spread.
-	</p></div><div><div id="prop-margin-outside-seealso">See Also</div><ul><li><a href="/doc/styling#margin">Margin</a></li></ul></div></div></details>
+	</p><p class="note">
+        The property <a href="#prop-prince-margin-outside"><code>-prince-margin-outside</code></a> can be used as an alias.
+        </p></div><div><div id="prop-margin-outside-seealso">See Also</div><ul><li><a href="/doc/styling#margin">Margin</a></li></ul></div></div></details>
 
 <details><summary id="prop-margin-right">margin-right <a class="self-link" href="#prop-margin-right"></a></summary><div><div><div id="prop-margin-right-syntax">Syntax</div><div class="example"><div class="syntax-block"><pre><code>margin-right: auto |&#160;<i>length</i> |&#160;<i>percent</i></code></pre></div></div></div><div><div class="example"><div class="syntax-block"><table class="property-table"><tr><th scope="row">
           Initial value
@@ -3013,6 +3017,44 @@ supplier, item { overflow-wrap: normal; }
     </p><p class="note">
         The property <a href="#prop-margin-alt"><code>margin-alt</code></a> can be used as an alias.
         </p></div><div><div id="prop-margin-seealso">See Also</div><ul><li><a href="/doc/styling#margin">Margin</a></li></ul></div></div></details>
+
+<details><summary class="ext" title="Prince extension" id="prop-prince-margin-inside">-prince-margin-inside*  <a class="self-link" href="#prop-prince-margin-inside"></a></summary><div><div><div id="prop-prince-margin-inside-syntax">Syntax</div><div class="example"><div class="syntax-block"><pre><code>-prince-margin-inside: auto |&#160;<i>length</i> |&#160;<i>percent</i></code></pre></div></div></div><div><div class="example"><div class="syntax-block"><table class="property-table"><tr><th scope="row">
+          Initial value
+        </th><td><code>auto</code></td></tr><tr><th scope="row">
+          Applies to
+        </th><td>all elements, except elements with table display types other than table-caption, table and inline-table</td></tr><tr><th scope="row">
+          Inherited
+        </th><td>
+                  no
+                </td></tr></table></div></div></div><div><div id="prop-prince-margin-inside-comments">Comments</div><p>
+	The <code>-prince-margin-inside</code> property overrides the value of the
+	<code>margin-right</code> property if the element is on a left-facing
+	page and overrides the value of the <code>margin-left</code> property
+	if the element is on a right-facing page. The result is a horizontal
+	margin on the side of the element that is on the "inside" of the
+	two-page spread.
+	</p><p class="note">
+        The property <a href="#prop-margin-inside"><code>margin-inside</code></a> can be used as an alias.
+        </p></div><div><div id="prop-prince-margin-inside-seealso">See Also</div><ul><li><a href="/doc/styling#margin">Margin</a></li></ul></div></div></details>
+
+<details><summary class="ext" title="Prince extension" id="prop-prince-margin-outside">-prince-margin-outside*  <a class="self-link" href="#prop-prince-margin-outside"></a></summary><div><div><div id="prop-prince-margin-outside-syntax">Syntax</div><div class="example"><div class="syntax-block"><pre><code>-prince-margin-outside: auto |&#160;<i>length</i> |&#160;<i>percent</i></code></pre></div></div></div><div><div class="example"><div class="syntax-block"><table class="property-table"><tr><th scope="row">
+          Initial value
+        </th><td><code>auto</code></td></tr><tr><th scope="row">
+          Applies to
+        </th><td>all elements, except elements with table display types other than table-caption, table and inline-table</td></tr><tr><th scope="row">
+          Inherited
+        </th><td>
+                  no
+                </td></tr></table></div></div></div><div><div id="prop-prince-margin-outside-comments">Comments</div><p>
+	The <code>-prince-margin-outside</code> property overrides the value of the
+	<code>margin-left</code> property if the element is on a left-facing
+	page and overrides the value of the <code>margin-right</code> property
+	if the element is on a right-facing page. The result is a horizontal
+	margin on the side of the element that is on the "outside" of the
+	two-page spread.
+	</p><p class="note">
+        The property <a href="#prop-margin-outside"><code>margin-outside</code></a> can be used as an alias.
+        </p></div><div><div id="prop-prince-margin-outside-seealso">See Also</div><ul><li><a href="/doc/styling#margin">Margin</a></li></ul></div></div></details>
 
 <details><summary class="ext" title="Prince extension" id="prop-prince-mark-length">-prince-mark-length*  <a class="self-link" href="#prop-prince-mark-length"></a></summary><div><div><div id="prop-prince-mark-length-syntax">Syntax</div><div class="example"><div class="syntax-block"><pre><code>-prince-mark-length: <i>length</i></code></pre></div></div></div><div><div class="example"><div class="syntax-block"><table class="property-table"><tr><th scope="row">
           Initial value
