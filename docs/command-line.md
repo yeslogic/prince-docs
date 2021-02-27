@@ -1,5 +1,5 @@
 ---
-title: Command-line Reference
+title: Command-line Options
 ---
 
 Prince may be called from the command-line with the following arguments:
