@@ -21,10 +21,10 @@
         "prince-for-books"
     ],
     "Reference Guide": [
-        "command-line",
         "css-refs",
         "css-props",
         "js-support",
+        "command-line",
         "page-size-keywords",
         "characters",
         "acknowledgements"
