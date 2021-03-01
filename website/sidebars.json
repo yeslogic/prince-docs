@@ -21,8 +21,14 @@
         "prince-for-books"
     ],
     "Reference Guide": [
-        "css-refs",
-        "css-props",
+        {
+          "type": "subcategory",
+          "label": "CSS Support",
+          "ids": [
+            "css-refs",
+            "css-props"
+          ]
+        },
         "js-support",
         "command-line",
         "page-size-keywords",
