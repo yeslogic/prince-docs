@@ -25,14 +25,25 @@
           "type": "subcategory",
           "label": "CSS Support",
           "ids": [
-            "css-refs",
-            "css-props"
+            "css-length-units",
+            "css-props",
+            "css-selectors",
+            "css-media-queries",
+            "css-functions",
+            "css-at-rules",
+            "css-refs"
           ]
         },
         "js-support",
         "command-line",
-        "page-size-keywords",
-        "characters",
+        {
+          "type": "subcategory",
+          "label": "Miscellaneous",
+          "ids": [
+            "page-size-keywords",
+            "characters"
+          ]
+        },
         "acknowledgements"
     ]
   }
