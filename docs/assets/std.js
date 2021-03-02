@@ -84,6 +84,7 @@ var std = {
     },
     String: {
         fromCharCode: {},
+        fromCodePoint: {},
         prototype: {
             constructor: {},
             length: {},
