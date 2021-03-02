@@ -69,7 +69,7 @@ function add(parent, thing, annotations, type, hasChildren, length, parentDescs)
             type = '';
         }
         b.appendChild(document.createTextNode(thing));
-        if ((type === 'function') || (annotations && annotations.arguments)) {
+        if ((annotations.type == 'function') || (type === 'function') || (annotations && annotations.arguments)) {
             var argslist = (annotations && annotations.arguments ? annotations.arguments.map(function(item) {return item.name}) : [])
             .join(', ');
             span = b.appendChild(document.createElement('span'));
