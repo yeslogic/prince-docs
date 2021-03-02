@@ -193,6 +193,7 @@ var stdAnnotated = {
     },
     String: {
         fromCharCode: {},
+        fromCodePoint: {},
         prototype: {
             constructor: {},
             length: {},
