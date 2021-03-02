@@ -148,10 +148,6 @@ p:hover .self-link, #prop-list summary:hover .self-link, #js-support-table summa
   content: ")";
   font-style: normal;
 }
-#js-support-table div.ext .argslist::after {
-  content: ")*";
-  font-style: normal;
-}
 #js-support-table .argslist {
   font-style: italic;
 }
@@ -164,6 +160,12 @@ p:hover .self-link, #prop-list summary:hover .self-link, #js-support-table summa
 }
 #js-support-table .ext .example {
   background-color: #f2f2f2;
+}
+#js-support-table .ext .self-link::before {
+  content: "*";
+  visibility: visible;
+  opacity: 1 !important;
+  font-style: normal;
 }
 #js-support-table .ext .ext {
   padding-top: 0px;
