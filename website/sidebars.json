@@ -31,6 +31,7 @@
             "css-media-queries",
             "css-functions",
             "css-at-rules",
+            "css-color-names",
             "css-refs"
           ]
         },

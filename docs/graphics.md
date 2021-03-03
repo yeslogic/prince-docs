@@ -9,7 +9,7 @@ Color
 
 Prince supports RGB, RGBA, CMYK, HSL, HSLA and named spot colors. For Prince's color management, please see the [Color Management](#color-management) section.
 
-Prince understands CSS basic color names as well as the list of extended color keywords from the [CSS Color Module Level 4](https://www.w3.org/TR/css-color-4/#named-colors). It also supports the keywords `transparent` and `currentColor`.
+Prince understands CSS [basic color keywords](css-color-names.md#basic-color-keywords) as well as the list of [extended color keywords](css-color-names.md#extended-color-keywords) from the [CSS Color Module Level 4](https://www.w3.org/TR/css-color-4/#named-colors). It also supports the keywords `transparent` and `currentColor`.
 
 ### RGB(A)
 
