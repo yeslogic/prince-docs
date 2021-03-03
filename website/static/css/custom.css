@@ -36,6 +36,18 @@ table.property-table td {
 .self-link:after {
   content: " \B6 ";
 }
+#version-nav {
+    cursor: pointer;
+}
+#version-nav > summary {
+    list-style: none;
+    outline: none;
+    padding-bottom: 20px;
+    margin-top: 50px;
+}
+#version-nav > summary::-webkit-details-marker {
+    display: none;
+}
 #prop-list summary, #js-support-table summary {
   font-weight: bold;
   padding: 0.7em;
