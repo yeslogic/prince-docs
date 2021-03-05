@@ -127,7 +127,7 @@ The following table shows the basic color keywords with their sRGB values.
 
 ### Extended color keywords
 
-However, CSS offers also an extended list of color keywords, shared with the SVG color keyword names.
+However, CSS offers also an extended list of color keywords, shared with the SVG color keyword names - and presented here, for the ease of reference, in alphabetical order.
 
 A *caveat*, given in the [CSS Color Module Level 4](https://www.w3.org/TR/css-color-4/#named-colors) specification, is important: it is often hard to imagine what each color name will look like, the names are not evenly distributed throughout the sRGB color volume and the names are not even internally consistent.  But their use and implementation has been widespread for decades and they come in handy.
 
