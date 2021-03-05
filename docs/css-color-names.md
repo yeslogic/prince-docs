@@ -145,7 +145,7 @@ A *caveat*, given in the [CSS Color Module Level 4](https://www.w3.org/TR/css-co
       <td style="background-color: aliceblue"></td>
       <td>aliceblue</td>
       <td>#F0F8FF</td>
-      <td>rgb(240,248,255)</td>
+      <td>240,248,255</td>
     </tr>
     <tr>
       <td style="background-color: antiquewhite"></td>
