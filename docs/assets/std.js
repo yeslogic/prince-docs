@@ -85,6 +85,7 @@ var std = {
     String: {
         fromCharCode: {},
         fromCodePoint: {},
+        CodePointAt: {},
         prototype: {
             constructor: {},
             length: {},
