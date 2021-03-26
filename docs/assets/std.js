@@ -82,6 +82,20 @@ var std = {
             reduceRight: {}
         }
     },
+    Map: {
+        prototype: {
+            size: {},
+            clear: {},
+            delete: {},
+            get: {},
+            has: {},
+            set: {},
+            keys: {},
+            values: {},
+            entries: {},
+            forEach: {}
+        }
+    },
     String: {
         fromCharCode: {},
         fromCodePoint: {},

@@ -191,6 +191,42 @@ var stdAnnotated = {
             reduceRight: {}
         }
     },
+    Map: {
+        prototype: {
+            size: {},
+            clear: {},
+            delete: {
+                arguments:[
+                    {name: "key", type: "string"}
+                ]
+            },
+            get: {
+                arguments:[
+                    {name: "key", type: "string"}
+                ]
+            },
+            has: {
+                arguments:[
+                    {name: "key", type: "string"}
+                ]
+            },
+            set: {
+                arguments:[
+                    {name: "key", type: "string"},
+                    {name: "value", type: "string"}
+                ]
+            },
+            keys: {},
+            values: {},
+            entries: {},
+            forEach: {
+                arguments:[
+                    {name: "callbackFn", type: "function"},
+                    {name: "thisArg", type: "argument"}
+                ]
+            }
+        }
+    },
     String: {
         fromCharCode: {},
         fromCodePoint: {},
