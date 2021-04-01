@@ -74,7 +74,7 @@ The command-line may include the options described below:
 
 ### General Options
 
-dl>
+<dl>
     <dt id="cl-help">
 <code>-h</code>, <code>--help</code>
 </dt>
@@ -88,6 +88,10 @@ dl>
     <dt id="cl-credits"><code>--credits</code></dt>
     <dd>
     Display credits and acknowledgments.
+    </dd>
+    <dt id="cl-license-key"><code>--license-key=<span class="replaceable">KEY</span></code></dt>
+    <dd>
+    Pass the license key on the command line.
     </dd>
 </dl>
 
