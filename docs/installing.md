@@ -82,7 +82,7 @@ To install Prince on MacOS X, please run the `install.sh` shell script contained
 If you chose a non-standard location you may need to add the `bin/` subdirectory to your `PATH` environment variable. There are many different types of command interpreters (also called shells), we cannot possibly document all of them. However for Bourne-style shells (the most common type) the command might look like this:
 
 
-    $ export PATH=/usr/local/prince12/bin:$PATH
+    $ export PATH=/usr/local/myPrinceDir/bin:$PATH
 
 You will need to add the appropriate command to your shell's configuration or startup file. See your distribution or shell's documentation for how to do this.
 
