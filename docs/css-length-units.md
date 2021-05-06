@@ -1,8 +1,8 @@
 ---
-title: Length Units
+title: Length & Angle Units
 ---
 
-Prince supports the following length units:
+Prince supports the following length and angle units:
 
 Absolute Length Units
 ---------------------
@@ -123,3 +123,17 @@ The pixel unit is relative to the de-facto standard of `96dpi` (or rather, 96 *p
 <td>pixel</td>
 </tr>
 </table>
+
+
+
+Angle Units
+-----------
+
+Furthermore, Prince supports the four angle units `deg`, `grad`, `rad` and `turn` on the following properties:
+
+* the CSS `transform` property has `rotate` and `skew` operators;
+* linear gradients have and angle;
+* `hsl`/`hsla` colors have a hue angle;
+* the `hue-rotate` filter takes an angle;
+* the @page `prince-rotate-body` property takes multiples of `90deg`.
+
