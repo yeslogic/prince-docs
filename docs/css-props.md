@@ -3540,6 +3540,8 @@ supplier, item { overflow-wrap: normal; }
 	landscape content on a portrait page, while leaving the headers and
 	footers where they are.
 	</p><p>
+    It takes multiples of `90deg` as an angle value.
+	</p><p>
     Please see the <code><a href="#prop-size">size</a></code> property for determining
     the default orientation of the page.
     </p></div><div><div id="prop-prince-rotate-body-seealso">See Also</div><ul><li><a href="/doc/cookbook#printing-wide-content-sideways">Printing wide content sideways</a></li></ul></div></div></details>
