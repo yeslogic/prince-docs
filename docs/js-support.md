@@ -2,7 +2,7 @@
 title: JavaScript Support
 ---
 
-Prince supports most of ECMAScript 5th edition, but not strict mode. Later editions of ECMAScript are not supported.
+Prince supports most of ECMAScript 5th edition (ES5), with the exception of strict mode. ES6 is not fully supported yet, and later editions of ECMAScript are not supported.
 
 The following table shows supported JavaScript objects, methods and properties. For more details, see also [JavaScript in Prince](javascript.md#javascript-in-prince).
 
