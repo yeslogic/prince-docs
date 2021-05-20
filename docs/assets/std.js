@@ -506,6 +506,7 @@ var std = {
             namespaceURI: {},
             id: {},
             className: {},
+            classList: {},
             innerHTML: {},
             firstElementChild: {},
             lastElementChild: {},
