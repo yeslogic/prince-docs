@@ -891,6 +891,23 @@ var std = {
             parseFromString: {}
         }
     },
+    DOMTokenList: {
+        prototype: {
+            length: {},
+            value: {},
+            item: {},
+            contains: {},
+            add: {},
+            remove: {},
+            replace: {},
+            supports: {},
+            toggle: {},
+            entries: {},
+            forEach: {},
+            keys: {},
+            values: {}
+        }
+    },
     SVGMatrix: {
         prototype: {
             multiply: {},
