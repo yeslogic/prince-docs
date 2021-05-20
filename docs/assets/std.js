@@ -27,6 +27,7 @@ var std = {
         keys: {},
         getOwnPropertyDescriptor: {},
         getOwnPropertyNames: {},
+        getOwnPropertySymbols: {},
         getPrototypeOf: {},
         setPrototypeOf: {},
         prototype: {
