@@ -129,6 +129,7 @@ var stdAnnotated = {
         keys: {},
         getOwnPropertyDescriptor: {},
         getOwnPropertyNames: {},
+        getOwnPropertySymbols: {},
         getPrototypeOf: {},
         setPrototypeOf: {},
         prototype: {
