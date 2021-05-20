@@ -637,6 +637,7 @@ var stdAnnotated = {
             namespaceURI: {},
             id: {},
             className: {},
+            classList: {},
             innerHTML: {},
             firstElementChild: {},
             lastElementChild: {},
