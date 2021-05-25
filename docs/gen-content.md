@@ -103,16 +103,16 @@ A special function is <code>prince-glyph-index(<i>int</i>)</code>, which allows 
 The generated content functions `element()`, `counter()`, `counters()`, `string()` and `flow()`, have a second, optional argument, namely `page-policy`, which can be one of the following:
 
 `start`  
-defining the value the counter had at the start of the page (eg. the last value it was set to on the previous page);
+defining the value the counter, or element had at the start of the page (eg. the last value it was set to on the previous page);
 
 `first`  
-defining the first value the counter was set to on this page, or the same as `start` if the counter was not set on this page;
+defining the first value the counter, or element was set to on this page, or the same as `start` if the counter, or element was not set on this page;
 
 `first-except`  
-defining the first value the counter was set to on this page, or no value at all if it was set on this page;
+defining the first value the counter, or element was set to on this page, or no value at all if it was set only on this page;
 
 `last`  
-defining the last value the counter was set to on this page, or the same as `start` if the counter was not set on this page.
+defining the last value the counter, or element was set to on this page, or the same as `start` if the counter, or element was not set on this page.
 
 The page policy values of the `string()` function are only meaningful for `string()` used in page region content.
 
