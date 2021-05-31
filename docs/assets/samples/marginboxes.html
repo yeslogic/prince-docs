@@ -1,0 +1,55 @@
+<html>
+<head>
+<title>Foo</title>
+<style>
+@page {
+    size: a4;
+    border: thin black solid;
+    padding: 0cm;
+    margin: 4cm;
+    background-color: #ccc;
+    font-size: 32pt;
+    font-family: sans-serif;
+    @top {
+        content: "@top";
+        background-color: #ff8;
+    }
+    @bottom {
+        content: "@bottom";
+        background-color: #ff8;
+    }
+    @left {
+        content: "@left";
+        background-color: #f88;
+    }
+    @right {
+        content: "@right";
+        background-color: #f88;
+    }
+    @top-left {
+        content: "@top-left";
+        background-color: #8f8;
+    }
+    @left-top {
+        content: "@left-top";
+        background-color: #8f8;
+    }
+    @top-right-corner {
+        content: "@c";
+        background-color: #88f;
+    }
+}
+body {
+    background-color: #fff;
+    padding: 0.2cm;
+    font-size: 48pt;
+    text-align: center;
+    font-family: sans-serif;
+}
+</style>
+</head>
+<body>
+Page area
+</body>
+</html>
+

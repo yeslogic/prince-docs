@@ -1,0 +1,338 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+<title>Prince ActiveX Wrapper Documentation</title>
+</head>
+<style>
+code pre { display: inline; }
+ul { padding-left: 0px; margin: 0px; }
+ol { padding-left: 15px; margin: 0px; }
+ul li { list-style: none; }
+dl { counter-reset: notes; max-width: 800px; }
+#notes { margin-left: 40px; }
+#notes dt { margin-bottom: 1em; }
+#notes dd { margin-bottom: 2em; }
+dt:before { counter-increment: notes; content: counter(notes) ". " ;}
+dd:before { content: none; }
+</style>
+<body>
+
+<h1>Prince ActiveX Wrapper Documentation</h1>
+
+<dl>
+<dt>Prince ActiveX Dll file</dt>
+<dd><code><pre>Prince.dll</pre></code></dd>
+<dt>Object Class</dt>
+<dd><code><pre>PrinceCom.Prince</pre></code></dd>
+<dt>Class Methods</dt>
+<dd>
+  <ul>
+    <li><code><pre>Public Sub <a href="#SetPrincePath">SetPrincePath</a>(ByVal exePath As String)</pre></code></li>
+    <li><code><pre>Public Function <a href="#Convert">Convert</a>(ByVal xmlPath As String, _
+               Optional ByVal pdfPath As String = "") As Long</pre></code></li>
+    <li><code><pre>Public Function <a href="#ConvertMultiple">ConvertMultiple</a>(ByRef xmlPaths() As String, ByVal pdfPath As String)</pre></code></li>
+    <li><code><pre>Public Sub <a href="#AddStyleSheet">AddStyleSheet</a>(ByVal cssPath As String)</pre></code></li>
+    <li><code><pre>Public Sub <a href="#ClearStyleSheets">ClearStyleSheets</a>()</pre></code></li>
+    <li><code><pre>Public Sub <a href="#AddScript">AddScript</a>(ByVal jsPath As String)</pre></code></li>
+    <li><code><pre>Public Sub <a href="#ClearScripts">ClearScripts</a>()</pre></code></li>
+    <li><code><pre>Public Sub <a href="#AddFileAttachment">AddFileAttachment</a>(ByVal filePath As String)</pre></code></li>
+    <li><code><pre>Public Sub <a href="#ClearFileAttachments">ClearFileAttachments</a>()</pre></code></li>
+    <li><code><pre>Public Sub <a href="#SetLicenseFile">SetLicenseFile</a>(ByVal file As String)</pre></code></li>
+    <li><code><pre>Public Sub <a href="#SetLicenseKey">SetLicenseKey</a>(ByVal key As String)</pre></code></li>
+    <li><code><pre>Public Sub <a href="#SetInputType">SetInputType</a>(ByVal inputType As String)</pre></code></li>
+    <li><code><pre>Public Sub <a href="#SetJavaScript">SetJavaScript</a>(ByVal js As Boolean)</pre></code></li>
+    <li><code><pre>Public Sub <a href="#SetHTML">SetHTML</a>(ByVal html As Boolean)</pre></code></li>
+    <li><code><pre>Public Sub <a href="#SetLog">SetLog</a>(ByVal logFile As String)</pre></code></li>
+    <li><code><pre>Public Sub <a href="#SetBaseURL">SetBaseURL</a>(ByVal baseurl As String)</pre></code></li>
+    <li><code><pre>Public Sub <a href="#SetXInclude">SetXInclude</a>(ByVal xinclude As Boolean)</pre></code></li>
+    <li><code><pre>Public Sub <a href="#SetHttpUser">SetHttpUser</a>(ByVal user As String)</pre></code></li>
+    <li><code><pre>Public Sub <a href="#SetHttpPassword">SetHttpPassword</a>(ByVal password As String)</pre></code></li>
+    <li><code><pre>Public Sub <a href="#SetHttpProxy">SetHttpProxy</a>(ByVal proxy As String)</pre></code></li>
+    <li><code><pre>Public Sub <a href="#SetInsecure">SetInsecure</a>(ByVal insecure As Boolean)</pre></code></li>
+    <li><code><pre>Public Sub <a href="#SetFileRoot">SetFileRoot</a>(ByVal fileRoot As String)</pre></code></li>
+    <li><code><pre>Public Sub <a href="#SetEmbedFonts">SetEmbedFonts</a>(ByVal embed As Boolean)</pre></code></li>
+    <li><code><pre>Public Sub <a href="#SetSubsetFonts">SetSubsetFonts</a>(ByVal subset As Boolean)</pre></code></li>
+    <li><code><pre>Public Sub <a href="#SetCompress">SetCompress</a>(ByVal compress As Boolean)</pre></code></li>
+    <li><code><pre>Public Sub <a href="#SetExtraOptions">SetExtraOptions</a>(ByVal extra As String)</pre></code></li>
+    <li><code><pre>Public Sub <a href="#SetEncrypt">SetEncrypt</a>(ByVal encrypt As Boolean)</pre></code></li>
+    <li><code><pre>Public Sub <a href="#SetEncryptInfo">SetEncryptInfo</a>(ByVal keyBits As Integer, _
+                      	  ByVal userPassword As String, _
+                      	  ByVal ownerPassword As String, _
+                     	  ByVal disallowPrint As Boolean, _
+                      	  ByVal disallowModify As Boolean, _
+                      	  ByVal disallowCopy As Boolean, _
+                      	  ByVal disallowAnnotate As Boolean)</pre></code></li>
+  </ul>
+</dd>
+
+<p>Notes:</p>
+
+<dl id="notes">
+<dt id="SetPrincePath">
+Procedure <code>SetPrincePath</code> takes one string argument: <code>exePath</code>
+</dt>
+<dd>
+<ul>
+  <li>Argument <code>exePath</code> is the full path of the <code>prince.exe</code>
+  file. If you have Prince installed, it should be in the
+  <code>prince\engine\bin</code> directory.</li>
+  <li>This procedure should be called to set the Prince path attribute before
+  calling the <code>Convert</code> function. <code>Convert</code> will exit
+  with an error if the Prince path attribute is not set correctly.</li>
+</ul>
+</dd>
+<dt id="Convert">
+Function <code>Convert</code> takes two arguments:
+</dt>
+<dd>
+  <ol>
+    <li>String <code>xmlPath</code> is the full path of the xml file</li>
+    <li>String <code>pdfPath</code> is optional, and is the full path of the output pdf file. If this argument is omitted, the output pdf file is placed in the same directory as the input xml file</li>
+  </ol>
+This function returns <code>1</code> if conversion is successful, <code>0</code>
+if conversion fails.
+</dd>
+<dt id="ConvertMultiple">
+Function <code>ConvertMultiple</code> takes two arguments
+</dt>
+<dd>
+  <ol>
+    <li>String array <code>xmlPaths</code> contains the full paths of the documents to be converted.</li>
+    <li>String <code>pdfPath</code> is the full path of the output pdf file.</li>
+  </ol>
+This function returns <code>1</code> if conversion is successful, <code>0</code> if conversion fails.
+</dd>
+<dt id="AddStyleSheet">
+Procedure <code>AddStyleSheet</code> takes a string argument: <code>cssPath</code>
+</dt>
+<dd>
+<code>CssPath</code> is the full path of the Cascading Style Sheet css file.
+<code>AddStyleSheet</code> can be called more than once to add multiple style sheets.
+Style sheets will be accumulated and applied to the conversion.
+This procedure can be called before calling a convert function.
+</dd>
+<dt id="ClearStyleSheets">
+Procedure <code>ClearStyleSheets</code>
+</dt>
+<dd>
+clears all of the accumulated style sheet(s).
+</dd>
+<dt id="AddScript">Procedure <code>AddScript</code> takes a string argument: <code>jsPath</code>
+</dt>
+<dd>
+<code>JsPath</code> is the full path of the JavaScript file.
+<code>AddScript</code> can be called more than once to add multiple scripts.
+This procedure can be called before calling a convert function.
+</dd>
+<dt id="ClearScripts">
+Procedure <code>ClearScripts</code>
+</dt>
+<dd>
+clears all of the scripts accumulated by calling <code>AddScript</code>.
+</dd>
+<dt id="AddFileAttachment">
+Procedure <code>AddFileAttachment</code> takes a string argument: <code>filePath</code>
+</dt>
+<dd>
+<code>FilePath</code> is the full path of the file to be attached to the PDF file.
+<code>AddFileAttachment</code> can be called more than once to add multiple file attachments.
+This procedure can be called before calling a convert function.
+</dd>
+<dt id="ClearFileAttachments">
+Procedure <code>ClearFileAttachments</code>
+</dt>
+<dd>
+clears all of the file attachments accumulated by calling <code>AddFileAttachment</code>.
+</dd>
+<dt id="SetLicenseFile">
+Procedure <code>SetLicenseFile</code> takes a string argument: <code>file</code>
+</dt>
+<dd>
+Specify the license file. Argument <code>file</code> is the full path of the license file.
+</dd>
+<dt id="SetLicenseKey">
+Procedure <code>SetLicenseKey</code> take a string argument: <code>key</code>
+</dt>
+<dd>
+Specify the license key. Argument <code>key</code> is the license key.
+</dd>
+<dt id="SetInputType">
+Procedure <code>SetInputType</code> takes a string argument: <code>inputType</code>
+</dt>
+<dd>
+Specify the type of the input document.
+Argument <code>inputType</code> can take a value of : "<code>xml</code>", "<code>html</code>" or "<code>auto</code>".
+</dd>
+<dt id="SetJavaScript">
+Procedure <code>SetJavaScript</code> takes a boolean argument: <code>js</code>
+</dt>
+<dd>
+		Specify whether JavaScripts found in documents should be run.
+		Document scripts will be run if <code>js</code> is true.
+</dd>
+<dt id="SetHTML">
+Procedure <code>SetHTML</code> takes a boolean argument: <code>html</code>
+</dt>
+<dd>
+		Specify whether documents should be parsed as HTML or XML/XHTML.
+		All documents will be treated as HTML if html is true.
+</dd>
+<dt id="SetLog">
+Procedure <code>SetLog</code> takes a string argument: <code>logFile</code>
+</dt>
+<dd>
+		Specify a file that Prince should use to log error/warning messages.
+		Argument <code>logFile</code> is the full path of the log file.
+		Logging will be disabled if <code>logFile</code> is the empty string.
+</dd>
+<dt id="SetBaseURL">
+Procedure <code>SetBaseURL</code> takes a string argument: <code>baseurl</code>
+</dt>
+<dd>
+		Specify the base URL of the input document.
+		Argument <code>baseurl</code> is the base URL or path of the input document, or the empty string.
+</dd>
+<dt id="SetXInclude">
+Procedure <code>SetXInclude</code> takes a boolean argument: <code>xinclude</code>
+</dt>
+<dd>
+		Specify whether XML Inclusions (XInclude) processing should be applied to input documents.
+		XInclude processing will be performed by default unless explicitly disabled.
+		XInclude processing will be disabled if <code>xinclude</code> is false.
+</dd>
+<dt id="SetHttpUser">
+Procedure <code>SetHttpUser</code> takes a string argument: <code>user</code>
+</dt>
+<dd>
+		Specify a username to use when fetching remote resources over HTTP.
+		Argument user is the username to use for basic HTTP authentication.
+</dd>
+<dt id="SetHttpPassword">
+Procedure <code>SetHttpPassword</code> takes a string argument: <code>password</code>
+</dt>
+<dd>
+		Specify a password to use when fetching remote resources over HTTP.
+		Argument <code>password</code> is the password to use for basic HTTP authentication.
+</dd>
+<dt id="SetHttpProxy">
+Procedure <code>SetHttpProxy</code> takes a string argument: <code>proxy</code>
+</dt>
+<dd>
+		Specify the URL for the HTTP proxy server, if needed.
+		Argument <code>proxy</code> is the URL for the HTTP proxy server.
+</dd>
+<dt id="SetInsecure">
+Procedure <code>SetInsecure</code> takes a boolean argument: <code>insecure</code>
+</dt>
+<dd>
+		Specify whether to disable SSL verification.
+		If <code>insecure</code> is true, SSL verification will be disabled. (not recommended)
+</dd>
+<dt id="SetFileRoot">
+Procedure <code>SetFileRoot</code> takes a string argument: <code>fileRoot</code>
+</dt>
+<dd>
+		Specify the root directory for absolute filenames.
+		This can be used when converting a local file that uses absolute paths to refer to web resources.
+		For example, <code>/images/logo.jpg</code> can be rewritten to <code>/usr/share/images/logo.jpg</code> by specifying "<code>/usr/share</code>" as the root.
+		Argument <code>fileRoot</code> is the path to prepend to absolute filenames.
+</dd>
+<dt id="SetEmbedFonts">
+Procedure <code>SetEmbedFonts</code> takes a boolean argument: <code>embed</code>
+</dt>
+<dd>
+		Specify whether fonts should be embedded in the output PDF file.
+		Fonts will be embedded by default unless explicitly disabled.
+		PDF font embedding will be disabled if <code>embed</code> is false.
+</dd>
+<dt id="SetSubsetFonts">
+Procedure <code>SetSubsetFonts</code> takes a boolean argument: <code>subset</code>
+</dt>
+<dd>
+		Specify whether embedded fonts should be subset in the output PDF file.
+		Fonts will be subset by default unless explicitly disabled.
+		PDF font subsetting will be disabled if <code>subset</code> is false.
+</dd>
+<dt id="SetCompress">
+Procedure <code>SetCompress</code> takes a boolean argument: <code>compress</code>
+</dt>
+<dd>
+		Specify whether compression should be applied to the output PDF file.
+		Compression will be applied by default unless explicitly disabled.
+		PDF compression will be disabled if <code>compress</code> is false.
+</dd>
+<dt id="SetEncrypt">
+Procedure <code>SetEncrypt</code> takes a boolean argument: <code>encrypt</code>
+</dt>
+<dd>
+		Specify whether encryption should be applied to the output PDF file.
+		Encryption will not be applied by default unless explicitly enabled.
+		PDF encryption will be enabled if <code>encrypt</code> is true.
+</dd>
+<dt id="SetEncryptInfo">
+Procedure <code>SetEncryptInfo</code> takes seven arguments. They are related to encryption of the output PDF file.
+	    This procedure can be called if encryption is required. It can be called before calling a convert function.
+</dt>
+<dd>
+  <ol>
+    <li>Integer <code>keyBits</code> can be either <code>40</code> or <code>128</code>.</li>
+    <li>String <code>userPassword</code> sets the password the user will have to type in to open the PDF file
+		   as a user.</li>
+    <li>String <code>ownerPassword</code> sets the password the user will have to type in to open the PDF file
+		   as the owner.
+    <li>Boolean <code>disallowPrint</code>, if set true, printing will be disallowed for the user.
+    <li>Boolean <code>disallowModify</code>, if set true, modifying will be disallowed for the user.
+    <li>Boolean <code>disallowCopy</code>, if set true, copying text will be disallowed for the user.
+    <li>Boolean <code>disallowAnnotate</code>, if set true, annotation will be disallowed for the user.
+  </ol>
+</dd>
+<dt>
+Messages from Prince are passed on to the caller as events. An event is raised
+for each message Prince outputs. The message event is declared as follows:
+</dt>
+<dd>
+<code><pre>Public Event Message(msgType As String, msgLocation As String, msg As String)</pre></code>
+<p>
+It has three string arguments representing the message type, its location and the message.
+</p>
+<ol>
+  <li><code>msgType</code>:
+    <table>
+      <tr>
+        <th>Value</th>
+        <th>Meaning</th>
+      </tr>
+      <tr>
+        <td><code>inf</code></td>
+        <td>information</td>
+      </tr>
+      <tr>
+        <td><code>wrn</code></td>
+        <td>warning</td>
+      </tr>
+      <tr>
+        <td><code>err</code></td>
+        <td>error</td>
+      </tr>
+    </table></li>
+    <li><code>msgLocation</code>: shows where the message came from or where the error occured (this can be empty).</li>
+    <li><code>msg</code>: is the content of the message</li>
+</ol>
+</dl>
+
+<p>
+	   Visual Basic Users wishing to write an event handler to process messages from Prince will need to
+	   declare a WithEvents variable, create a Prince class object then assign the the latter to the former.
+</p>
+
+<p>Example:</p>
+<div class="example">
+<div class="programlisting">
+<code language="VB"><pre>Dim WithEvents pr As Prince
+Dim WithEvents pr As Prince
+...
+Set pr = New Prince</pre></code>
+</div>
+</div>
+
+

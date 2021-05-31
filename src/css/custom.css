@@ -7,14 +7,17 @@
 
 /* You can override the default Infima variables here. */
 :root {
-  --ifm-color-primary: #25c2a0;
-  --ifm-color-primary-dark: rgb(33, 175, 144);
-  --ifm-color-primary-darker: rgb(31, 165, 136);
-  --ifm-color-primary-darkest: rgb(26, 136, 112);
-  --ifm-color-primary-light: rgb(70, 203, 174);
-  --ifm-color-primary-lighter: rgb(102, 212, 189);
-  --ifm-color-primary-lightest: rgb(146, 224, 208);
+  --ifm-color-primary: #6e2577;
+  --ifm-color-primary-dark: #63216b;
+  --ifm-color-primary-darker: #5e1f65;
+  --ifm-color-primary-darkest: #4d1a53;
+  --ifm-color-primary-light: #792983;
+  --ifm-color-primary-lighter: #7f2b89;
+  --ifm-color-primary-lightest: #8f309b;
   --ifm-code-font-size: 95%;
+
+  --ifm-navbar-link-color: white;
+  --ifm-navbar-link-hover-color: white;
 }
 
 .docusaurus-highlight-code-line {
@@ -22,4 +25,295 @@
   display: block;
   margin: 0 calc(-1 * var(--ifm-pre-padding));
   padding: 0 var(--ifm-pre-padding);
+}
+
+/* your custom css */
+
+.navbar, .navbar__items {
+    background-color: #6e2577;
+    color: white;
+}
+.menu__list {
+    font-size: 14px;
+    font-weight: normal;
+}
+.menu__link--sublist {
+    font-weight: bold;
+}
+
+.fixedHeaderContainer header img {
+    margin-right: 30px;
+}
+.mdxCodeBlock_node_modules-\@docusaurus-theme-classic-lib-theme-MDXComponents- code {
+    padding: var(--ifm-table-cell-padding);
+    display: block;
+}
+#entry {
+    max-width: 350px;
+    margin: 30px auto;
+}
+dl { padding-bottom: 1em; }
+dd { padding-left: 2em; }
+dl ul { margin-bottom: 0em; }
+
+pre code, code pre {
+    white-space: pre-wrap;
+}
+code {
+    background-color: rgba(27,31,35,.05);
+    border-radius: 3px;
+    color: inherit;
+}
+table.property-table, .syntax-block code, .example code {
+  border: none;
+  background-color: white;
+}
+table.property-table tr {
+  border: none;
+}
+table.property-table th, table.property-table td {
+  border: none;
+}
+table.property-table th {
+  white-space: nowrap;
+  text-align: left;
+}
+table.property-table td {
+  padding-left: 2.5em;
+}
+.syntax-block {
+  margin-bottom: 1em;
+}
+.self-link {
+  visibility: hidden;
+}
+.self-link:after {
+  content: " \B6 ";
+}
+#prop-list summary, #js-support-table summary {
+  font-weight: bold;
+  padding: 0.7em;
+  display: block;
+}
+#prop-list summary .self-link, #js-support-table summary .self-link {
+  opacity: 0.2;
+}
+p:hover .self-link, #prop-list summary:hover .self-link, #js-support-table summary:hover .self-link {
+  visibility: visible;
+}
+#prop-list details, #js-support-table details {
+  border: 1px solid lightgrey;
+  border-radius: 10px;
+  background-color: #e5f6ee;
+  display: block;
+}
+#prop-list summary:focus, #js-support-table summary:focus {
+  outline: none;
+}
+#prop-list summary + div, #prop-list summary + div + div, #js-support-table summary + div, #js-support-table summary + div + div {
+  margin-top: 0em;
+  margin-left: 0em;
+  padding: 0.7em 2em;
+}
+#prop-list summary.ext, #prop-list summary.ext + div, #prop-list summary.ext + div + div, #js-support-table summary.ext, #js-support-table summary.ext + div, #js-support-table summary.ext + div + div {
+  background-color: #dcede6 !important;
+  border-color: #22b573;
+  border-radius: 10px;
+}
+#prop-list details[open] summary.ext, #js-support-table details[open] summary.ext {
+  border-radius: 10px 10px 0px 0px;
+}
+#prop-list details[open] summary.ext + div, #prop-list details[open] summary.ext + div + div, #js-support-table details[open] summary.ext + div, #js-support-table details[open] summary.ext + div + div {
+  border-radius: 0px 0px 10px 10px;
+}
+#prop-list span.ext {
+  background-color: #eee;
+}
+#prop-list details, #js-support-table details {
+  margin: 1em 0em;
+}
+#prop-list details details, #js-support-table details details {
+  margin: 1em;
+}
+#prop-list details:hover, #js-support-table details:hover {
+  border-color: grey !important;
+}
+#prop-list details .hash-link {
+    margin-left: 0px;
+}
+#js-support-table details.object {
+  background-color: #f2f2f2;
+}
+#js-support-table {
+  padding: 0px;
+  margin-bottom: 1em;
+}
+#js-support-table .type {
+  font-style: italic;
+  display: inline;
+}
+#js-support-table .type::after {
+  content: " – ";
+}
+#js-support-table .returns {
+  font-style: italic;
+}
+#js-support-table .returns::before {
+  content: "Returns: ";
+}
+#js-support-table .desc {
+  display: inline;
+  min-width: 40%;
+}
+#js-support-table li.argument {
+  display: block;
+}
+#js-support-table ul, #js-support-table li {
+  margin: 0;
+  padding: 0;
+}
+#js-support-table .name {
+  font-weight: bold;
+  display: inline;
+}
+#js-support-table .name.level {
+  margin-right: 0.5em;
+}
+#js-support-table pre {
+  background-color: #fff;
+}
+#js-support-table .example {
+  padding: 5px;
+}
+#js-support-table .example pre {
+  white-space: pre-wrap;
+}
+#js-support-table .example-return {
+  display: block;
+}
+#js-support-table .example-return::before {
+  content: " // returns: ";
+}
+#js-support-table .argslist::before {
+  content: "(";
+  font-style: normal;
+}
+#js-support-table .argslist::after {
+  content: ")";
+  font-style: normal;
+}
+#js-support-table div.ext .argslist::after {
+  content: ")*";
+  font-style: normal;
+}
+#js-support-table .argslist {
+  font-style: italic;
+}
+#js-support-table .ext {
+  background-color: #dcede6 !important;
+  border-color: #22b573;
+}
+#js-support-table .ext .level {
+  background-color: inherit;
+}
+#js-support-table .ext .example {
+  background-color: #f2f2f2;
+}
+#js-support-table .ext .ext {
+  padding-top: 0px;
+  padding-right: 0px;
+}
+#js-support-table .url-property::before {
+  content: "See the property ";
+}
+#ex-list-marker-position {
+  border: solid 2px darkgreen;
+}
+#ex-list-marker-position li {
+  border: solid 1px black;
+  list-style-position: inside;
+}
+#ex-list-marker-position li+li {
+  border: solid 1px black;
+  list-style-position: outside;
+}
+#ex-list-marker-type li {
+  list-style-type: upper-alpha;
+}
+#ex-list-marker-type li+li {
+  list-style-type: lower-roman;
+}
+#ex-separated-table-borders {
+  border-collapse: separate;
+  border-spacing: 5px;
+  border: solid 3px black;
+}
+#ex-separated-table-borders .border-red, #ex-collapsing-table-borders .border-red {
+  border: solid 1px red;
+}
+#ex-separated-table-borders .border-blue, #ex-collapsing-table-borders .border-blue {
+  border: 2px dashed blue;
+}
+#ex-separated-table-borders .border-green, #ex-collapsing-table-borders .border-green {
+  border: 2px solid green;
+}
+#ex-collapsing-table-borders {
+  border-collapse: collapse;
+  border-spacing: 5px;
+  border: solid 3px black;
+}
+.colspan2 {
+    text-align: center;
+}
+.rowspan2 {
+    vertical-align: middle;
+}
+#ex-prince-wrap-inside-1, #ex-prince-wrap-inside-2 {
+    text-align: center;
+}
+#table-page-regions .background-color-yellow {
+    background-color: #ff8;
+}
+#table-page-regions .background-color-red {
+    background-color: #f88;
+}
+#table-page-regions .background-color-green {
+    background-color: #8f8;
+}
+#table-page-regions .background-color-blue {
+    background-color: #88f;
+}
+sup {
+    vertical-align:super;
+    font-size:smaller;
+}
+dl.faq dt p {
+    font-weight: bold;
+}
+a[href*='//']:not([href*='princexml.com'])::after {
+  content: " \21D7";
+  color: lightgrey; }
+footer a[href*='//']:not([href*='princexml.com'])::after {
+    content: "";
+}
+footer a[href] {
+    color: rgba(255, 255, 255, 0.4);
+}
+footer a[href]:hover {
+    text-decoration: underline;
+}
+
+@media only screen and (min-device-width: 360px) and (max-device-width: 736px) {
+}
+
+@media only screen and (min-width: 1024px) {
+}
+
+@media only screen and (max-width: 1023px) {
+}
+
+@media only screen and (min-width: 1400px) {
+}
+
+@media only screen and (min-width: 1500px) {
 }

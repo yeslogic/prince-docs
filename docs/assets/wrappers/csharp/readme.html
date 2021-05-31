@@ -1,0 +1,208 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+<title>Prince C# Wrapper Documentation</title>
+<style>
+code pre { display: inline; }
+ul { padding-left: 0px; margin: 0px; }
+ol { padding-left: 15px; margin: 0px; }
+ul li { list-style: none; }
+dl { counter-reset: notes; max-width: 800px; }
+dl { margin-left: 40px; }
+dl dt { margin-bottom: 1em; }
+dl dd { margin-bottom: 2em; }
+dt:before { counter-increment: notes; content: counter(notes) ". " ;}
+dd:before { content: none; }
+h2 { margin-top: 2em; }
+</style>
+</head>
+<body>
+
+<h1>Prince C# Wrapper Documentation</h1>
+
+
+<h2>Prince C# class</h2>
+
+<p>
+The <code>prince.cs</code> file defines a class called <code>Prince</code> that
+contains methods that can be called to convert XML and HTML documents into PDF.
+</p>
+<p>
+There is a public interface called <code>PrinceEvents</code> which can be
+implemented by the user to allow messages from Prince to be handled during
+conversion.
+</p>
+
+
+<h2>Constructors</h2>
+
+
+<dl>
+<dt><code>public Prince(string princePath)</code></dt>
+<dd>Example:
+    <code>Prince prn = new Prince("C:\\Program Files\\Prince\\Engine\\bin\\prince.exe");</code>
+</dd>
+<dt><code>public Prince(string princePath, PrinceEvents events)</code></dt>
+<dd>
+Example:
+    <ul>
+      <li>Implement a class for the interface <code>PrinceEvents</code> and make
+      an instance of that class.</li>
+      <li>Pass the instance to the <code>Prince</code> constructor:</li>
+    </ul>
+<code>Prince prn = new Prince("C:\\Program Files\\Prince\\Engine\\bin\\prince.exe", events);</code>
+</dd>
+</dl>
+
+<p>On Windows, be sure to specify the path to the <code>prince.exe</code> file
+located within the <code>Engine\bin</code> subfolder of the Prince installation.</p>
+
+
+
+
+<h2>Conversion methods</h2>
+
+<dl>
+<dt><code>public bool Convert(string xmlPath)</code></dt>
+    <dd>Convert an XML or HTML file to a PDF file.</dd>
+<dt><code>public bool Convert(string xmlPath, string pdfPath)</code></dt>
+    <dd>Convert an XML or HTML file to a PDF file specified by <code>pdfPath</code>.</dd>
+<dt><code>public bool ConvertMultiple(string[] xmlPaths, string pdfPath)</code></dt>
+    <dd>Convert multiple XML or HTML files to a PDF file specified by <code>pdfPath</code>.</dd>
+<dt><code>public bool Convert(string xmlPath, Stream pdfOutput)</code></dt>
+    <dd>Convert an XML or HTML file to a PDF which is written to the stream specified by <code>pdfOutput</code>.</dd>
+<dt><code>public bool Convert(Stream xmlInput, string pdfPath)</code></dt>
+    <dd>Convert the XML or HTML read from stream <code>xmlIput</code> to a PDF file specified by <code>pdfPath</code>.</dd>
+<dt><code>public bool Convert(Stream xmlInput, Stream pdfOutput)</code></dt>
+    <dd>Convert the XML or HTML read from stream <code>xmlIput</code> to a PDF which is written to the stream specified by <code>pdfOutput</code>.</dd>
+<dt><code>public bool ConvertMemoryStream(MemoryStream xmlInput, Stream pdfOutput)</code></dt>
+    <dd>Convert the XML or HTML read from <code>MemoryStream</code> <code>xmlInput</code> to a PDF which is written to
+    the stream specified by <code>pdfOutput</code>.</dd>
+<dt><code>public bool ConvertString(string xmlInput, Stream pdfOutput)</code></dt>
+    <dd>Convert the XML or HTML read from the string <code>xmlInput</code> to a PDF which is written
+    to the stream specified by <code>pdfOutput</code>.</dd>
+</dl>
+
+
+
+
+<h2>Configuration methods</h2>
+
+<dl>
+<dt><code>public void AddStyleSheet(string cssPath)</code></dt>
+    <dd>Add the CSS style sheet specified by <code>cssPath</code>.
+    It will be applied to each input document.
+    Multiple style sheets can be accumulated by calling the function repeatedly.</dd>
+<dt><code>public void ClearStyleSheets()</code></dt>
+    <dd>Clear all of the CSS style sheets accumulated.</dd>
+<dt><code>public void AddScript(string jsPath)</code></dt>
+    <dd>Add a JavaScript specified by <code>jsPath</code>.
+    Multiple JavaScript's can be added by calling the function repeatedly.</dd>
+<dt><code>public void ClearScripts()</code></dt>
+    <dd>Clear all Javascript's.</dd>
+<dt><code>public void AddFileAttachment(string filePath)</code></dt>
+    <dd>Add a file attachment specified by <code>filePath</code> that will be attached to the PDF file.
+    Multiple file attachments can be added by calling the function repeatedly.</dd>
+<dt><code>public void ClearFileAttachments()</code></dt>
+    <dd>Clear all of the file attachments.</dd>
+<dt><code>public void SetLicenseFile(string file)</code></dt>
+    <dd>Notify Prince the license file.</dd>
+<dt><code>public void SetLicensekey(string key)</code></dt>
+    <dd>Set the license key.</dd>
+<dt><code>public void SetInputType(string inputType)</code></dt>
+    <dd>Specify the input type of the document.
+    The inputType value can be: "<code>xml</code>", "<code>html</code>" or "<code>auto</code>".</dd>
+<dt><code>public void SetJavaScript(bool js)</code></dt>
+    <dd>Specify whether to run Javascripts in documents.</dd>
+<dt><code>public void SetHttpUser(string user)</code></dt>
+    <dd>Specify the username to use when accessing remote resources over HTTP.</dd>
+<dt><code>public void SetHttpPassword(string password)</code></dt>
+    <dd>Specify the password to use when accessing remote resources over HTTP</dd>
+<dt><code>public void SetHttpProxy(string proxy)</code></dt>
+    <dd>Specify the URL for the HTTP proxy server, if needed.</dd>
+<dt><code>public void SetInsecure(bool insecure)</code></dt>
+    <dd>Specify whether to disable SSL verification.
+    If set to true, SSL verification is disabled. (not recommended)</dd>
+<dt><code>public void SetHTML(bool html)</code></dt>
+    <dd>If set <code>true</code>, document will be parsed as HTML.
+    If set <code>false</code>, document will be parsed as XML.</dd>
+<dt><code>public void SetLog(string logFile)</code></dt>
+    <dd>Specify the log file for writing error/warning messages.</dd>
+<dt><code>public void SetBaseURL(string baseURL)</code></dt>
+    <dd>Specify the base URL of the input document.
+    <code>baseURL</code> is the base URL, or the path of the input document, or ''.</dd>
+<dt><code>public void SetFileRoot(string fileRoot)</code></dt>
+    <dd>Specify the root directory for absolute filenames.
+    This can be used when converting a local file that uses absolute paths to refer to web resources.
+    For example, <code>/images/logo.jpg</code> can be rewritten to <code>/usr/share/images/logo.jpg</code>
+    by specifying "<code>/usr/share"</code> as the root.</dd>
+<dt><code>public void SetXInclude(bool xInclude)</code></dt>
+    <dd>Specify whether XML Inclusions (XInclude) processing should be applied to input documents.
+    XInclude processing will be performed by default unless explicitly disabled.</dd>
+<dt><code>public void SetEmbedFonts(bool embed)</code></dt>
+    <dd>Specify whether fonts should be embedded in the output PDF file.
+    Fonts are embedded by default unless explicitly disabled.</dd>
+<dt><code>public void SetSubsetFonts(bool subset)</code></dt>
+    <dd>Specify whether embedded fonts should be subset in the output PDF file.
+    Fonts are subset by default unless explicitly disabled.</dd>
+<dt><code>public void SetCompress(bool compress)</code></dt>
+    <dd>Specfy whether compression should be applied to the output PDF file.
+    Compression is applied by default unless explicitly disabled.</dd>
+<dt><code>public void SetNoArtificialFonts(bool noArtificialFonts)</code></dt>
+    <dd>Specify whether artificial bold/italic fonts should be generated if necessary.
+    Artificial fonts are enabled by default.</dd>
+<dt><code>public void SetPDFTitle(string pdfTitle)</code></dt>
+    <dd>Specify the document title for PDF metadata.</dd>
+<dt><code>public void SetPDFSubject(string pdfSubject)</code></dt>
+    <dd>Specify the document subject for PDF metadata.</dd>
+<dt><code>public void SetPDFAuthor(string pdfAuthor)</code></dt>
+    <dd>Specify the document author for PDF metadata.</dd>
+<dt><code>public void SetPDFKeywords(string pdfKeywords)</code></dt>
+    <dd>Specify the document keywords for PDF metadata.</dd>
+<dt><code>public void SetPDFCreator(string pdfCreator)</code></dt>
+    <dd>Specify the document creator for PDF metadata.</dd>
+<dt><code>public void SetAuthMethod(string authMethod)</code></dt>
+    <dd>Specify HTTP authentication methods. (<code>basic</code>, <code>digest</code>, <code>ntlm</code>, <code>negotiate</code>)</dd>
+<dt><code>public void SetAuthUser(string authUser)</code></dt>
+    <dd>Specify username for HTTP authentication.</dd>
+<dt><code>public void SetAuthPassword(string authPassword)</code></dt>
+    <dd>Specify password for HTTP authentication.</dd>
+<dt><code>public void SetAuthServer(string authServer)</code></dt>
+    <dd>Only send USER:PASS to this server.</dd>
+<dt><code>public void SetAuthScheme(string authScheme)</code></dt>
+    <dd>Only send USER:PASS for this scheme. (HTTP, HTTPS)</dd>
+<dt><code>public void SetNoAuthPreemptive(bool noAuthPreemptive)</code></dt>
+    <dd>Do not authenticate with named servers until asked.</dd>
+<dt><code>public void SetPageSize(string pageSize)</code></dt>
+    <dd>Specify the page size (eg. <code>A4</code>).</dd>
+<dt><code>public void SetPageMargin(string pageMargin)</code></dt>
+    <dd>Specify the page margin (eg. <code>20mm</code>).</dd>
+<dt><code>public void SetEncrypt(bool encrypt)</code></dt>
+    <dd>Specify whether to apply encryption to the output PDF file.
+    The default is no encryption.</dd>
+<dt><code>public void SetEncryptInfo(int keyBits,
+                               string userPassword,
+                               string ownerPassword,
+                               bool disallowPrint,
+                               bool disallowModify,
+                               bool disallowCopy,
+                               bool disallowAnnotate)</code></dt>
+    <dd>Set the parameters used for PDF encryption.
+    Calling this method will also enable encryption, equivalent to calling setEncrypt(true).
+    It should be called before calling a convert method for encryption information to be applied.
+    <ul>
+      <li><code>keyBits</code>:     The size of the encryption key in bits (must be <code></code>40 or <code></code>128).</li>
+      <li><code>userPassword</code>:        The user password for the PDF file (may be empty).</li>
+      <li><code>ownerPassword</code>:       The owner password for the PDF file (may be empty).</li>
+      <li><code>disallowPrint</code>:       True to disallow printing of the PDF file.</li>
+      <li><code>disallowModify</code>:      True to disallow modification of the PDF file.</li>
+      <li><code>disallowCopy</code>:        True to disallow copying from the PDF file.</li>
+      <li><code>disallowAnnotate</code>:    True to disallow annotation of the PDF file.</li>
+    </ul></dd>
+<dt><code>public void SetOptions(string options)</code></dt>
+    <dd>Set other options.</dd>
+</dl>
+
+
+
+<p>Copyright © 2005-2015 YesLogic Pty. Ltd.</p>
