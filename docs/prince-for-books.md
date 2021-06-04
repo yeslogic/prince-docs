@@ -149,9 +149,13 @@ Prince for Books also tries to reduce the number of uneven spreads.
 
 ### The property `-prince-page-fill`
 
-The property [`-prince-page-fill`](css-props.md#prop-prince-page-fill) is used to turn on the page balancing mechanism. Prince for Books will check how much space is left at the bottom of each page of a two-page spread and compares it with the line-height to determine whether the pages end with different numbers of lines. If one page is longer than the other, Prince will attempt to repack that page one line shorter, so that they match in height. If it is still unbalanced, which might happen due to triggering another widows/orphans constraint, it will revert to the original layout.
+The property [`-prince-page-fill`](css-props.md#prop-prince-page-fill) is used to tweak the page balancing mechanism.
+
+With its default value `prefer-balance`, Prince for Books will check how much space is left at the bottom of each page of a two-page spread and compares it with the line-height to determine whether the pages end with different numbers of lines. If one page is longer than the other, Prince will attempt to repack that page one line shorter, so that they match in height. If it is still unbalanced, which might happen due to triggering another widows/orphans constraint, it will revert to the original layout.
 
 Prince also includes the bottom margin in the evaluation for balancing, allowing said margin to be truncated for purposes of deciding whether the two pages can be considered to have the same length.
+
+To turn off the balancing mechanism, use the value `prefer-fill`.
 
 ### The property `-prince-n-lines`
 
