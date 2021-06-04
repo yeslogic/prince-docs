@@ -3165,7 +3165,7 @@ supplier, item { overflow-wrap: normal; }
 
 <details><summary class="ext" title="Prince extension" id="prop-prince-page-fill">-prince-page-fill*  <a class="self-link" href="#prop-prince-page-fill"></a></summary><div><div><div id="prop-prince-page-fill-syntax">Syntax</div><div class="example"><div class="syntax-block"><pre><code>-prince-page-fill: prefer-balance |&#160;prefer-fill</code></pre></div></div></div><div><div class="example"><div class="syntax-block"><table class="property-table"><tr><th scope="row">
           Initial value
-        </th><td><code>prefer-fill</code></td></tr><tr><th scope="row">
+        </th><td><code>prefer-balance</code></td></tr><tr><th scope="row">
           Applies to
         </th><td><code>@page</code> at-rule</td></tr><tr><th scope="row">
           Inherited
