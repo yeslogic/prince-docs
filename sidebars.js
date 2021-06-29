@@ -21,12 +21,30 @@ module.exports = {
         "prince-for-books"
     ],
     "Reference Guide": [
-        "command-line",
-        "css-refs",
-        "css-props",
+        {
+          type: "category",
+          label: "CSS Support",
+          items: [
+            "css-length-units",
+            "css-props",
+            "css-selectors",
+            "css-media-queries",
+            "css-functions",
+            "css-at-rules",
+            "css-color-names",
+            "css-refs"
+          ]
+        },
         "js-support",
-        "page-size-keywords",
-        "characters",
+        "command-line",
+        {
+          type: "category",
+          label: "Miscellaneous",
+          items: [
+            "page-size-keywords",
+            "characters"
+          ]
+        },
         "acknowledgements"
     ]
   },

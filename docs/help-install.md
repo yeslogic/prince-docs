@@ -107,7 +107,9 @@ Explanation
 Gatekeeper triggers a system alert when trying to run the Prince executable.
 
 Solution  
-In order to run the command line utility, you need to open the Security and Privacy preference pane in System Preferences, select the General tab, and click "Allow Anyway".
+In order to run Prince in a version lower than 13.6, you need to open the Security and Privacy preference pane in System Preferences, select the General tab, and click "Allow Anyway".
+
+Starting with Prince 13.6, the Prince binaries are signed and do not trigger warnings.
 
 Alternatively, you can run the following commands from Terminal to first remove any quarantine attribute applied by Safari when downloading `prince`, and then manually add a SecAssessment system policy label to the executable:
 
@@ -123,13 +125,13 @@ Frequently Asked Questions
 --------------------------
 
 <dl class="faq">
-  <dt><a aria-hidden="true" tabindex="-1" class="anchor enhancedAnchor_node_modules-@docusaurus-theme-classic-lib-theme-Heading-" id="faq-win64"></a><p>Why does Prince on 64-bit Windows install
-  into the 32-bit compatibility directory `%ProgramFiles(x86)%`?
+  <dt id="faq-win64"><p>Why does Prince on 64-bit Windows install
+  into the 32-bit compatibility directory <code>%ProgramFiles(x86)%</code>?
   <a href="#faq-win64" class="self-link"></a></p></dt>
   <dd><p>The Prince GUI is still a 32-bit program, but the formatting engine
   is 64-bit.</p></dd>
 
-  <dt><a aria-hidden="true" tabindex="-1" class="anchor enhancedAnchor_node_modules-@docusaurus-theme-classic-lib-theme-Heading-" id="faq-win-no-ui"></a><p>How can I run Prince on Windows without showing the UI?
+  <dt id="faq-win-no-ui"><p>How can I run Prince on Windows without showing the UI?
   <a href="#faq-win-no-ui" class="self-link"></a></p></dt>
   <dd><p>On Linux, you typically run Prince with the following command:</p>
   <pre><code class="hljs">    prince file.xml -o file.pdf</code></pre>
@@ -139,7 +141,7 @@ Frequently Asked Questions
   which is the command-line program. See also <a href="command-line#command-line">Command-line Reference</a>.</p>
   <pre><code class="hljs">    "C:\Program Files (x86)\Prince\engine\bin\prince.exe" file.xml -o file.pdf</code></pre></dd>
 
-  <dt><a aria-hidden="true" tabindex="-1" class="anchor enhancedAnchor_node_modules-@docusaurus-theme-classic-lib-theme-Heading-" id="faq-install-cloud"></a><p>Can I install Prince on cloud services or
+  <dt id="faq-install-cloud"><p>Can I install Prince on cloud services or
   containers (Azure, AWS, Docker)? <a href="#faq-install-cloud" class="self-link"></a></p></dt>
   <dd><p>Prince can be installed on the <a href="installing#installing">supported operating systems</a> -
   also when they are running in cloud or container services. On Linux, some
@@ -149,12 +151,13 @@ Frequently Asked Questions
   or by trying to install the missing dependencies.</p>
   <p>Our chapter on <a href="server-integration#prince-in-cloud-computing">Prince In Cloud Computing</a>
   details installation instructions for Prince on <a href="server-integration#prince-docker-image">Docker</a>,
+  <a href="server-integration#prince-on-microsoft-azure">Microsoft Azure</a>,
   <a href="server-integration#prince-on-aws-lambda">AWS Lambda</a> and
   <a href="server-integration#prince-on-ec2">AWS EC2</a>.</p>
   <p>See also <a href="https://www.princexml.com/forum/topic/2094/silent-installation-on-windows#20332">this forum post</a>
   for a description of an installation on Azure.</p></dd>
 
-  <dt><a aria-hidden="true" tabindex="-1" class="anchor enhancedAnchor_node_modules-@docusaurus-theme-classic-lib-theme-Heading-" id="faq-install-books"></a><p>How do I install Prince for Books?
+  <dt id="faq-install-books"><p>How do I install Prince for Books?
   <a href="#faq-install-books" class="self-link"></a></p></dt>
   <dd><p><a href="prince-for-books#pfb">Prince for Books</a> is available
   in package bundles only - to install it, the files need to be copied into
@@ -162,12 +165,12 @@ Frequently Asked Questions
   It can be installed without problem alongside a normal Prince installation -
   the executable to run is called <code>prince-books</code>.</p></dd>
 
-  <dt><a aria-hidden="true" tabindex="-1" class="anchor enhancedAnchor_node_modules-@docusaurus-theme-classic-lib-theme-Heading-" id="faq-install-wrappers"></a><p>How do I install the Prince wrappers?
+  <dt id="faq-install-wrappers"><p>How do I install the Prince wrappers?
   <a href="#faq-install-wrappers" class="self-link"></a></p></dt>
-  <dd><p>The <a href="server-integration#wrappers">Prince Wrappers</a> come in
+  <dd><p>The <a href="/doc/server-integration/#prince-wrappers">Prince Wrappers</a> come in
   different languages, and each one has a different installation procedure.
   Mostly they are explained in the documentation for each of the
-  <a href="server-integration#wrappers">Prince Wrappers</a>. The short principle
+  <a href="/doc/server-integration/#prince-wrappers">Prince Wrappers</a>. The short principle
   is that the wrapper files need to be placed in a location from which they can
   run - this may slightly vary depending on the hosting Operating System.</p></dd>
 </dl>

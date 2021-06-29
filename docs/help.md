@@ -46,19 +46,18 @@ For assisting in tracking down difficult platform bugs, the `princedebug` script
 This script is not available on Windows.
 
 
-
 Frequently Asked Questions
 --------------------------
 
 <dl class="faq">
-  <dt><a aria-hidden="true" tabindex="-1" class="anchor enhancedAnchor_node_modules-@docusaurus-theme-classic-lib-theme-Heading-" id="faq-garbled-chars"></a><p>Why do I see garbled characters on my page?
+  <dt id="faq-garbled-chars"><p>Why do I see garbled characters on my page?
   <a class="self-link" href="#faq-garbled-chars"></a></p></dt>
   <dd><p>This usually happens when Prince is not able to find a suitable font, or
   might be using the wrong font.  Try installing a font that supports your script,
   or try using a different font in your stylesheet.  See also: <a href="/doc/styling#fonts">Fonts</a>
   and <a href="/doc/styling#redefining-the-generic-font-families">Redefining the generic font families</a>.</p></dd>
 
-  <dt><a aria-hidden="true" tabindex="-1" class="anchor enhancedAnchor_node_modules-@docusaurus-theme-classic-lib-theme-Heading-" id="faq-misspelled-words"></a><p>Why do I get strangely misspelled words when I copy text from the PDF?
+  <dt><p id="faq-misspelled-words">Why do I get strangely misspelled words when I copy text from the PDF?
   <a class="self-link" href="#faq-misspelled-words"></a></p></dt>
   <dd><p>Prince creates artificial bold text by double printing with an offset
   when it does not find a bold font.  To solve the issue, install the bold font,
@@ -66,7 +65,7 @@ Frequently Asked Questions
   <a href="/doc/command-line#cl-no-artificial-fonts"><code>--no-artificial-fonts</code></a>.
   See also <a href="/doc/styling#defining-a-font-family">Defining a font family</a>.</p></dd>
 
-  <dt><a aria-hidden="true" tabindex="-1" class="anchor enhancedAnchor_node_modules-@docusaurus-theme-classic-lib-theme-Heading-" id="faq-one-page"></a><p>Why is all the content displayed on one page, while
+  <dt><p id="faq-one-page">Why is all the content displayed on one page, while
   I was expecting it to take several pages?
   <a class="self-link" href="#faq-one-page"></a></p></dt>
   <dd><p>Typically content displays on only one page, even though it should be
@@ -82,12 +81,12 @@ Frequently Asked Questions
   content in a document, or to just a section of it.  This issue does not affect
   browsers, because they don't paginate.  See also: <a href="/doc/paged">Paged Media</a>.</p></dd>
 
-  <dt><a aria-hidden="true" tabindex="-1" class="anchor enhancedAnchor_node_modules-@docusaurus-theme-classic-lib-theme-Heading-" id="faq-resize-page"></a><p>How can I resize my web page to fit it on the printed page?
+  <dt><p id="faq-resize-page">How can I resize my web page to fit it on the printed page?
   <a class="self-link" href="#faq-resize-page"></a></p></dt>
   <dd><p>Prince usually takes care of reformatting a document to fit on a printed
   page.  However, there are cases where it doesn't work as expected.  Wide content
   can be made fit by <a href="/doc/cookbook#rotating-content">Rotating content</a>, or by applying the CSS property
-  <code>prince-shrink-to-fit</code>, which scales down all content
+  <code>-prince-shrink-to-fit</code>, which scales down all content
   equally.  Alternatively, the command-line option
   <a href="/doc/command-line#cl-css-dpi">--css-dpi</a> changes the DPI of
   the "px" units in CSS, which defaults to 96dpi.</p>
@@ -95,7 +94,7 @@ Frequently Asked Questions
   instead advise to design a layout specifically appropriate for the paper being
   used.  Or at least using relative size units.</p></dd>
 
-  <dt><a aria-hidden="true" tabindex="-1" class="anchor enhancedAnchor_node_modules-@docusaurus-theme-classic-lib-theme-Heading-" id="faq-no-trans"></a><p>Why does my PDF file not show the transparent
+  <dt><p id="faq-no-trans">Why does my PDF file not show the transparent
   background? <a class="self-link" href="#faq-no-trans"></a></p></dt>
   <dd><p>Different PDF profiles have different requirements - you might be
   generating a PDF with a version or profile which does not support transparency.
@@ -104,21 +103,22 @@ Frequently Asked Questions
   and <a href="/doc/graphics#color-management-and-pdf-profiles">Color Management and
   PDF Profiles</a>.</p></dd>
 
-  <dt><a aria-hidden="true" tabindex="-1" class="anchor enhancedAnchor_node_modules-@docusaurus-theme-classic-lib-theme-Heading-" id="faq-tooltips"></a><p>How can I create tooltips in the PDF file?
+  <dt><p id="faq-tooltips">How can I create tooltips in the PDF file?
   <a class="self-link" href="#faq-tooltips"></a></p></dt>
-  <dd><p>PDF tooltips can be enabled with the CSS property <code>prince-tooltip</code> like this:</p>
-	  <div className="mdxCodeBlock_node_modules-@docusaurus-theme-classic-lib-theme-MDXComponents-"><div className="codeBlockContent_node_modules-@docusaurus-theme-classic-lib-theme-CodeBlock-"><button type="button" aria-label="Copy code to clipboard" className="copyButton_node_modules-@docusaurus-theme-classic-lib-theme-CodeBlock-">Copy</button><div tabIndex={0} className="prism-code language-undefined codeBlock_node_modules-@docusaurus-theme-classic-lib-theme-CodeBlock-"><div className="codeBlockLines_node_modules-@docusaurus-theme-classic-lib-theme-CodeBlock-" style={{color: 'rgb(191, 199, 213)', backgroundColor: 'rgb(41, 45, 62)'}}><div className="token-line" style={{color: 'rgb(191, 199, 213)'}}><span className="token plain">*[title] {'{'} prince-tooltip: attr(title) {'}'}</span></div></div></div></div></div>
+  <dd><p>PDF tooltips can be enabled with the CSS property <code>-prince-tooltip</code> like this:</p>
+	  <pre><code class="hljs css language-css">    *<span class="hljs-selector-attr">[title]</span> {'{'} <span class="hljs-attribute">-prince-tooltip</span>: <span class="hljs-built_in">attr</span>(title) {'}'}
+</code></pre>
   <p>However, please note that tooltips are not a standard PDF feature, and they
   may only work in Adobe Reader and Adobe Acrobat and may not be visible in other
   PDF viewers, such as web browsers.</p></dd>
 
-  <dt><a aria-hidden="true" tabindex="-1" class="anchor enhancedAnchor_node_modules-@docusaurus-theme-classic-lib-theme-Heading-" id="faq-everypage"></a><p>How can I make an element, such as an image or some
+  <dt><p id="faq-everypage">How can I make an element, such as an image or some
   text, appear on each page of the PDF document?
   <a class="self-link" href="#faq-everypage"></a></p></dt>
   <dd><p>For this purpose you can use the <a href="/doc/css-refs#at-page"><code>@page</code></a>
   page regions.  See: <a href="/doc/paged#page-regions">Page regions</a> and <a href="/doc/cookbook#watermarks">Watermarks</a>.</p></dd>
 
-  <dt><a aria-hidden="true" tabindex="-1" class="anchor enhancedAnchor_node_modules-@docusaurus-theme-classic-lib-theme-Heading-" id="faq-page-regions"></a><p>How can I apply CSS styles in page regions?
+  <dt><p id="faq-page-regions">How can I apply CSS styles in page regions?
   <a class="self-link" href="#faq-page-regions"></a></p></dt>
   <dd><p>You cannot add style to generated content in the page regions, except for
   some inline style properties, such as <code>color</code> and
@@ -129,17 +129,21 @@ Frequently Asked Questions
   <a href="/doc/paged#content-taking-elements">Taking elements from the document</a> -
   however, this latter approach will remove the element from the document itself.</p></dd>
 
-  <dt><a aria-hidden="true" tabindex="-1" class="anchor enhancedAnchor_node_modules-@docusaurus-theme-classic-lib-theme-Heading-" id="faq-counting-pages"></a><p>How can I start counting pages on a left page and display a right page
+  <dt><p id="faq-counting-pages">How can I start counting pages on a left page and display a right page
   as second page? <a class="self-link" href="#faq-counting-pages"></a></p></dt>
   <dd><p>You can specify <code>break-before:left | right</code>
   on the root element of the document.</p>
   <p class="label">CSS</p>
-  <div className="mdxCodeBlock_node_modules-@docusaurus-theme-classic-lib-theme-MDXComponents-"><div className="codeBlockContent_node_modules-@docusaurus-theme-classic-lib-theme-CodeBlock-"><button type="button" aria-label="Copy code to clipboard" className="copyButton_node_modules-@docusaurus-theme-classic-lib-theme-CodeBlock-">Copy</button><div tabIndex={0} className="prism-code language-undefined codeBlock_node_modules-@docusaurus-theme-classic-lib-theme-CodeBlock-"><div className="codeBlockLines_node_modules-@docusaurus-theme-classic-lib-theme-CodeBlock-" style={{color: 'rgb(191, 199, 213)', backgroundColor: 'rgb(41, 45, 62)'}}><div className="token-line" style={{color: 'rgb(191, 199, 213)'}}><span className="token plain">body[start=even] {'{'}</span></div><div className="token-line" style={{color: 'rgb(191, 199, 213)'}}><span className="token plain">  break-before:left;</span></div><div className="token-line" style={{color: 'rgb(191, 199, 213)'}}><span className="token plain">{'}'}</span></div></div></div></div></div>
-  <p class="label">HTML</p>
-  <div className="mdxCodeBlock_node_modules-@docusaurus-theme-classic-lib-theme-MDXComponents-"><div className="codeBlockContent_node_modules-@docusaurus-theme-classic-lib-theme-CodeBlock-"><button type="button" aria-label="Copy code to clipboard" className="copyButton_node_modules-@docusaurus-theme-classic-lib-theme-CodeBlock-">Copy</button><div tabIndex={0} className="prism-code language-undefined codeBlock_node_modules-@docusaurus-theme-classic-lib-theme-CodeBlock-"><div className="codeBlockLines_node_modules-@docusaurus-theme-classic-lib-theme-CodeBlock-" style={{color: 'rgb(191, 199, 213)', backgroundColor: 'rgb(41, 45, 62)'}}><div className="token-line" style={{color: 'rgb(191, 199, 213)'}}><span className="token plain">&lt;body start="even" startpage="28"&gt;</span></div></div></div></div></div>
+  <pre><code class="hljs">    <span class="hljs-selector-tag">body</span><span class="hljs-selector-attr">[start=even]</span> {'{'}
+      <span class="hljs-attribute">break-before</span>:left;
+    {'}'}
+</code></pre>
+    <p class="label">HTML</p>
+    <pre><code class="hljs css language-html">    <span class="hljs-tag">&lt;<span class="hljs-name">body</span> <span class="hljs-attr">start</span>=<span class="hljs-string">"even"</span> <span class="hljs-attr">startpage</span>=<span class="hljs-string">"28"</span>&gt;</span>
+</code></pre>
   </dd>
 
-  <dt><a aria-hidden="true" tabindex="-1" class="anchor enhancedAnchor_node_modules-@docusaurus-theme-classic-lib-theme-Heading-" id="faq-js"></a><p>Does Prince support JavaScript?
+  <dt><p id="faq-js">Does Prince support JavaScript?
   <a class="self-link" href="#faq-js"></a></p></dt>
   <dd><p>Yes, Prince supports JavaScript - remember to enable it with the
   <a href="/doc/command-line#cl-javascript"><code>--javascript</code></a>
@@ -148,13 +152,13 @@ Frequently Asked Questions
   events make no sense in this context.  Also, modifications of the document
   after layout has finished are not possible.  See: <a href="/doc/javascript#javascript">Scripting</a>.</p></dd>
 
-  <dt><a aria-hidden="true" tabindex="-1" class="anchor enhancedAnchor_node_modules-@docusaurus-theme-classic-lib-theme-Heading-" id="faq-jsafterlayout"></a><p>Can I modify the document after layout has
-  finished? <a class="self-link" href="#faq-jsafterlayout"></a></p></dt>
+  <dt><p id="faq-jsafterkayout">Can I modify the document after layout has
+  finished? <a class="self-link" href="#faq-jsafterkayout"></a></p></dt>
   <dd><p>No, unfortunately this is part of the inherent limitations of printed media -
   see <a href="/doc/javascript#javascript-in-printed-media">JavaScript in Printed Media</a>.  However, JavaScript can run after layout is done,
   and the output can be used for a second run of Prince - see <a href="/doc/cookbook#the-multi-pass-solution">The "Multi-Pass" Solution</a>.</p></dd>
 
-  <dt><a aria-hidden="true" tabindex="-1" class="anchor enhancedAnchor_node_modules-@docusaurus-theme-classic-lib-theme-Heading-" id="faq-xinclude"></a><p>Can I include content of external files in my document?
+  <dt><p id="faq-xinclude">Can I include content of external files in my document?
   <a class="self-link" href="#faq-xinclude"></a></p></dt>
   <dd><p>Yes.  In XML, this is done by means of <a href="/doc/prince-input#xml-inclusions-xinclude">XML Inclusions (XInclude)</a>.  Note
   that XInclude is disabled by default, and can be enabled with the
@@ -164,7 +168,20 @@ Frequently Asked Questions
   the <a href="/doc/command-line#cl-input"><code>--input</code></a>
   command-line option.</p>
   <p>Another option in HTML is to use the <code>iframe</code> element:</p>
-  <div className="mdxCodeBlock_node_modules-@docusaurus-theme-classic-lib-theme-MDXComponents-"><div className="codeBlockContent_node_modules-@docusaurus-theme-classic-lib-theme-CodeBlock-"><button type="button" aria-label="Copy code to clipboard" className="copyButton_node_modules-@docusaurus-theme-classic-lib-theme-CodeBlock-">Copy</button><div tabIndex={0} className="prism-code language-undefined codeBlock_node_modules-@docusaurus-theme-classic-lib-theme-CodeBlock-"><div className="codeBlockLines_node_modules-@docusaurus-theme-classic-lib-theme-CodeBlock-" style={{color: 'rgb(191, 199, 213)', backgroundColor: 'rgb(41, 45, 62)'}}><div className="token-line" style={{color: 'rgb(191, 199, 213)'}}><span className="token plain">&lt;style&gt;</span></div><div className="token-line" style={{color: 'rgb(191, 199, 213)'}}><span className="token plain">@page {'{'}</span></div><div className="token-line" style={{color: 'rgb(191, 199, 213)'}}><span className="token plain">  @bottom {'{'}</span></div><div className="token-line" style={{color: 'rgb(191, 199, 213)'}}><span className="token plain">    border: solid red thin;</span></div><div className="token-line" style={{color: 'rgb(191, 199, 213)'}}><span className="token plain">    content: flow(footer)</span></div><div className="token-line" style={{color: 'rgb(191, 199, 213)'}}><span className="token plain">  {'}'}</span></div><div className="token-line" style={{color: 'rgb(191, 199, 213)'}}><span className="token plain">{'}'}</span></div><div className="token-line" style={{color: 'rgb(191, 199, 213)'}}><span className="token plain">.footer {'{'}</span></div><div className="token-line" style={{color: 'rgb(191, 199, 213)'}}><span className="token plain">  flow: static(footer)</span></div><div className="token-line" style={{color: 'rgb(191, 199, 213)'}}><span className="token plain">{'}'}</span></div><div className="token-line" style={{color: 'rgb(191, 199, 213)'}}><span className="token plain">&lt;/style&gt;</span></div><div className="token-line" style={{color: 'rgb(191, 199, 213)'}}><span className="token plain">&lt;iframe class="footer" src="http://www.google.com"&gt;&lt;/iframe&gt;</span></div><div className="token-line" style={{color: 'rgb(191, 199, 213)'}}><span className="token plain">&lt;p&gt;Normal content&lt;/p&gt;</span></div></div></div></div></div>
+  <pre><code class="hljs css language-html">    <span class="hljs-tag">&lt;<span class="hljs-name">style</span>&gt;</span>
+    @page {'{'}
+      @bottom {'{'}
+        border: solid red thin;
+        content: flow(footer)
+      {'}'}
+    {'}'}
+    .footer {'{'}
+      flow: static(footer)
+    {'}'}
+    <span class="hljs-tag">&lt;/<span class="hljs-name">style</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">iframe</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"footer"</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"http://www.google.com"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">iframe</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>Normal content<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+</code></pre>
   <p>However there may be some subtleties required to get the correct size and
   styling of content within iframe elements.</p>
   <p>Yet another option would be to use JavaScript to issue an XMLHttpRequest,
@@ -172,4 +189,3 @@ Frequently Asked Questions
   copy them into the main document. However, it will be tricky to support
   nested styles this way.</p></dd>
 </dl>
-

@@ -7,7 +7,7 @@ In this section we will process a very simple document. We've chosen a document 
 The lab report
 --------------
 
-The report itself is very basic, the HTML source is shown below. You can save the HTML to a file named lab\_report.html or download it [here](samples/lab_report.html).
+The report itself is very basic, the HTML source is shown below. You can save the HTML to a file named lab\_report.html or download it [here](/doc/assets/samples/lab_report.html).
 
 ```html
     <!DOCTYPE html>

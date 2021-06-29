@@ -161,7 +161,7 @@ On a paragraph level, the properties [`text-align`](css-props.md#prop-text-align
         string-set: chapter-title content();
     }
     img {
-        float: inside;
+        -prince-float: inside;
     }
 ```
 This style snippet could be part of the stylesheet for a little booklet - it displays the page number in the upper outside corners, the book title in the upper inside of the left, or *verso* page, and the chapter title in the upper inside of the right, or *recto* page. Chapter headings are aligned to the outside of the page spreads, while any image in the book is floated close to the central gutter.
@@ -187,13 +187,13 @@ The table itself is naturally split over several pages - but if you want table h
 
 Tables can also be provided with a table caption by using the `caption` HTML element, or by styling an arbitrary element with `display: table-caption` to be made to behave like `caption` elements. The caption is positioned above the table by default, but it can be moved to the bottom with the [`caption-side`](css-props.md#prop-caption-side) property.
 
-When a table spans across more than one page, the [`prince-caption-page`](css-props.md#prop-prince-caption-page) property determines whether table captions will be displayed on the first page of a table, or only on the following pages, or repeated on every page that a table appears on. See also [Fancy Table Captions](#fancy-table-captions).
+When a table spans across more than one page, the [`-prince-caption-page`](css-props.md#prop-prince-caption-page) property determines whether table captions will be displayed on the first page of a table, or only on the following pages, or repeated on every page that a table appears on. See also [Fancy Table Captions](#fancy-table-captions).
 
 ```
     table + p {
         display: table-caption;
         caption-side: bottom;
-        prince-caption-page: following;
+        -prince-caption-page: following;
     }
 ```
 
@@ -213,7 +213,7 @@ Fancy Table Captions
 
 HTML tables only have one caption per table. However, in printed form a table might span several pages (see [Long Tables](#long-tables)) and it might be desirable to have separate captions for the first and the following pages - you might want to add "cont." to the caption of the first one, or otherwise differentiate them. Prince offers an extension mechanism to do so.
 
-As mentioned in [Long Tables](#long-tables), when a table spans across more than one page, the [`prince-caption-page`](css-props.md#prop-prince-caption-page) property determines whether table captions will be displayed on the first page of a table, or only on the following pages, or repeated on every page that a table appears on. This opens up the possibility to have a different caption on the first and on the following pages.
+As mentioned in [Long Tables](#long-tables), when a table spans across more than one page, the [`-prince-caption-page`](css-props.md#prop-prince-caption-page) property determines whether table captions will be displayed on the first page of a table, or only on the following pages, or repeated on every page that a table appears on. This opens up the possibility to have a different caption on the first and on the following pages.
 
 You might define a caption in HTML for the main table caption - to be displayed on the first page. Additionally, you make another element into a table caption with the [`display`](css-props.md#prop-display) property - and display it only on the following pages!
 
@@ -244,12 +244,12 @@ CSS
 ```
     caption {
         caption-side: bottom;
-        prince-caption-page: first;
+        -prince-caption-page: first;
     }
     table + p {
         display: table-caption;
         caption-side: bottom;
-        prince-caption-page: following;
+        -prince-caption-page: following;
     }
 ```
 
@@ -423,33 +423,6 @@ In some documents, particularly those that are unbound such as office documents,
 ```
 This rule will generate page footers such as "Page 1 of 89".
 
-
-Footnotes per Column
---------------------
-
-<dl class="ingredients">
-  <dt>You need</dt>
-  <dd><a href="/doc/styling#columns">Columns</a></dd>
-  <dd><a href="/doc/styling#page-and-column-floats">Page and column floats</a></dd>
-  <dd>
-<a href="/doc/styling#footnotes">Footnotes</a>
-    <ul>
-      <li><code>float: prince-column-footnote</code></li>
-    </ul>
-  </dd>
-</dl>
-
-Prince has a simple way of creating footnotes: the `@footnote` page area, where footnotes can be floated to with the [`float`](css-props.md#prop-float) property. For details see [Footnotes](styling.md#footnotes).
-
-In a multi-column layout (see [Columns](styling.md#columns)), footnotes can be placed at the bottom of the page, spanning all columns. But usually you want to position the footnote at the bottom of the column the footnote call appears in.
-
-To achieve this, the values `prince-column-footnote` or `prince-column-inline-footnote` of the [`float`](css-props.md#prop-float) property are used.
-
-The value `prince-column-footnote` transforms the element into a column footnote: it creates a footnote call in the place where it appears in its natural flow, and moves the element to the bottom of the column. The footnote marker is placed outside of the block of the footnote. With the value `prince-column-inline-footnote`, the footnote marker is placed inside of the block of the footnote.
-
-```
-    float: prince-column-footnote
-```
 
 Multiple Footnotes
 ------------------
@@ -670,12 +643,12 @@ Image Magic
   <dd>
 <a href="/doc/graphics#css-and-images">CSS and Images</a>
     <ul>
-      <li><code>prince-image-magic</code></li>
+      <li><code>-prince-image-magic</code></li>
     </ul>
   </dd>
 </dl>
 
-The [`prince-image-magic`](css-props.md#prop-prince-image-magic) property performs various image-related, Prince-specific tasks that do not fit into other existing CSS properties. It applies magic to images!
+The [`-prince-image-magic`](css-props.md#prop-prince-image-magic) property performs various image-related, Prince-specific tasks that do not fit into other existing CSS properties. It applies magic to images!
 
 To reduce the PDF file size, JPEG images can be recompressed at a lower quality level by using the function `recompress-jpeg(quality%)` with the required quality percentage as argument.
 
@@ -685,11 +658,11 @@ Prince usually strips unnecessary metadata from JPEG images to help contain size
 
 Two more keywords perform more obscure tasks that might be required in very specific circumstances: the keyword `ignore-icc-profile` causes Prince to ignore any ICC color profile embedded in the image, useful e.g. in those cases when the embedded ICC profile is broken; and `snap-to-integer-coords` can be used to avoid blurring of images in some PDF viewers.
 
-Several of the values can be combined, to perform more than one magic on images - for details please check the grammar of the [`prince-image-magic`](css-props.md#prop-prince-image-magic) property.
+Several of the values can be combined, to perform more than one magic on images - for details please check the grammar of the [`-prince-image-magic`](css-props.md#prop-prince-image-magic) property.
 
 ```
     img {
-        prince-image-magic: recompress-jpeg(50%) convert-to-jpeg(50%) snap-to-integer-coords;
+        -prince-image-magic: recompress-jpeg(50%) convert-to-jpeg(50%) snap-to-integer-coords;
     }
 ```
 This example recompresses all JPEG images to 50%, converts any non-JPEG images to JPEG with the same quality, and snaps them all to integer coordinates to avoid blurring in some PDF viewers.
@@ -703,11 +676,11 @@ Hyphenation
     <dd>
 <code><a href="/doc/css-props#prop-hyphens">hyphens</a></code>
       <ul>
-        <li><code><a href="/doc/css-props#prop-prince-hyphenate-character">prince-hyphenate-character</a></code></li>
-        <li><code><a href="/doc/css-props#prop-prince-hyphenate-before">prince-hyphenate-before</a></code></li>
-        <li><code><a href="/doc/css-props#prop-prince-hyphenate-after">prince-hyphenate-after</a></code></li>
-        <li><code><a href="/doc/css-props#prop-prince-hyphenate-limit-lines">prince-hyphenate-limit-lines</a></code></li>
-        <li><code><a href="/doc/css-props#prop-prince-hyphenate-patterns">prince-hyphenate-patterns</a></code></li>
+        <li><code><a href="/doc/css-props#prop-prince-hyphenate-character">-prince-hyphenate-character</a></code></li>
+        <li><code><a href="/doc/css-props#prop-prince-hyphenate-before">-prince-hyphenate-before</a></code></li>
+        <li><code><a href="/doc/css-props#prop-prince-hyphenate-after">-prince-hyphenate-after</a></code></li>
+        <li><code><a href="/doc/css-props#prop-prince-hyphenate-limit-lines">-prince-hyphenate-limit-lines</a></code></li>
+        <li><code><a href="/doc/css-props#prop-prince-hyphenate-patterns">-prince-hyphenate-patterns</a></code></li>
       </ul>
     </dd>
 </dl>
@@ -720,11 +693,11 @@ The value `none` instructs never to hyphenate, while the default value `manual` 
 
 In order to make automatic hyphenation work as intended, it is important to communicate to Prince the natural language the text is in, so that the language-specific hyphenation rules can be applied - this is done by means to the `lang` or `xml:lang` attributes.
 
-The character shown at the end of a line when the word is hyphenated can be specified with the [`prince-hyphenate-character`](css-props.md#prop-prince-hyphenate-character) property.
+The character shown at the end of a line when the word is hyphenated can be specified with the [`-prince-hyphenate-character`](css-props.md#prop-prince-hyphenate-character) property.
 
-Fine-tuning of hyphenation can be done with the `prince-hyphenate-after` and `prince-hyphenate-before` properties to determine the minimum number of letters in a word that may be moved to the next line or that may be left at the end of a line when the word is hyphenated.
+Fine-tuning of hyphenation can be done with the `-prince-hyphenate-after` and `-prince-hyphenate-before` properties to determine the minimum number of letters in a word that may be moved to the next line or that may be left at the end of a line when the word is hyphenated.
 
-The [`prince-hyphenate-limit-lines`](css-props.md#prop-prince-hyphenate-limit-lines) property is used to determine the maximum number of consecutive lines that may end with a hyphenated word.
+The [`-prince-hyphenate-limit-lines`](css-props.md#prop-prince-hyphenate-limit-lines) property is used to determine the maximum number of consecutive lines that may end with a hyphenated word.
 
 Prince uses the hyphenation patterns from the CTAN archive - the full archive is accessible [here](http://tug.ctan.org/tex-archive/language/hyph-utf8/tex/generic/hyph-utf8/patterns/txt/). The default hyphenation patterns can be found in the installed `hyph.css` file, located in the default style sheets location (see [Installation Layout](installing.md#installation-layout)).
 
@@ -791,7 +764,7 @@ Hyphenation patterns for the following languages are provided:
 
 A special case is Thai hyphenation, supported thanks to the [LibThai](http://linux.thai.net/projects/libthai) package.
 
-To add hyphenation patterns for other languages, download them from the [CTAN archive](http://tug.ctan.org/tex-archive/language/hyph-utf8/tex/generic/hyph-utf8/patterns/txt/). Save the files for the chosen language without the `.txt` extension, and link to the pattern file (with the `.pat` extension) with the [`prince-hyphenate-patterns`](css-props.md#prop-prince-hyphenate-patterns) CSS property.
+To add hyphenation patterns for other languages, download them from the [CTAN archive](http://tug.ctan.org/tex-archive/language/hyph-utf8/tex/generic/hyph-utf8/patterns/txt/). Save the files for the chosen language without the `.txt` extension, and link to the pattern file (with the `.pat` extension) with the [`-prince-hyphenate-patterns`](css-props.md#prop-prince-hyphenate-patterns) CSS property.
 
 The renaming of the file is not essential - the content, not the extension counts.
 
@@ -799,7 +772,7 @@ Prince determines which language to use for hyphenation with the help of the `:l
 
 ```
     :lang(en-GB) {
-        prince-hyphenate-patterns: url("hyph-en-gb.pat");
+        -prince-hyphenate-patterns: url("hyph-en-gb.pat");
     }
 ```
 ```html
@@ -809,7 +782,7 @@ Alternatively, link directly to the required remote hyphenation file:
 
 ```
     :lang(en-GB) {
-        prince-hyphenate-patterns: url("http://tug.ctan.org/tex-archive/language/hyph-utf8/tex/generic/hyph-utf8/patterns/txt/hyph-en-gb.pat.txt");
+        -prince-hyphenate-patterns: url("http://tug.ctan.org/tex-archive/language/hyph-utf8/tex/generic/hyph-utf8/patterns/txt/hyph-en-gb.pat.txt");
     }
 ```
 ```html
@@ -824,7 +797,7 @@ Typographic Ligatures
     <dd><a href="/doc/styling#opentype-features-in-prince">OpenType Features in Prince</a></dd>
     <dd><code><a href="/doc/css-props#prop-font-variant-ligatures">font-variant-ligatures</a></code></dd>
     <dd><code><a href="/doc/css-props#prop-font-variant">font-variant</a>: prince-opentype()</code></dd>
-    <dd><code><a href="/doc/css-props#prop-prince-text-replace">prince-text-replace</a></code></dd>
+    <dd><code><a href="/doc/css-props#prop-prince-text-replace">-prince-text-replace</a></code></dd>
 </dl>
 
 Prince supports typographic ligatures found in OpenType fonts, i.e. Prince will replace certain characters that appear next to each other with other special glyphs that join those two characters together into one single glyph.
@@ -852,7 +825,7 @@ Some ligatures were in common use in the past, such as ligatures with the so-cal
 
 Some scripts, most notably Arabic and Syriac scripts, require certain ligatures to be used in normal conditions. These "required ligatures" are covered by the `rlig` feature. Prince enables this feature by default in Arabic script. The only way to manually enable this feature is through the `prince-opentype()` function of the [`font-variant`](css-props.md#prop-font-variant) CSS property.
 
-Another mechanism for replacing specific characters is given with the [`prince-text-replace`](css-props.md#prop-prince-text-replace) property. For an example use, please see the section on [Character Entities](characters.md#characters).
+Another mechanism for replacing specific characters is given with the [`-prince-text-replace`](css-props.md#prop-prince-text-replace) property. For an example use, please see the section on [Character Entities](characters.md#characters).
 
 
 Watermarks
@@ -910,8 +883,8 @@ Sometimes it is necessary to rotate a block element so that it fits on the page.
 
 <dl class="ingredients">
   <dt>You need</dt>
-    <dd><code><a href="/doc/css-props#prop-prince-rotate-body">prince-rotate-body</a></code></dd>
-    <dd><code><a href="/doc/css-props#prop-prince-shrink-to-fit">prince-shrink-to-fit</a></code></dd>
+    <dd><code><a href="/doc/css-props#prop-prince-rotate-body">-prince-rotate-body</a></code></dd>
+    <dd><code><a href="/doc/css-props#prop-prince-shrink-to-fit">-prince-shrink-to-fit</a></code></dd>
 </dl>
 
 Figure [Printing a big table sideways](#printing-wide-content-sideways) shows a table, rotated so that its width fits within the page's length. This can be achieved with the following rules:
@@ -919,19 +892,19 @@ Figure [Printing a big table sideways](#printing-wide-content-sideways) shows a 
 Printing a big table sideways
 
 ![Image of a large table printed sideways so that its width fits along the page's length.](assets/samples/rotate-body-2.bw.png)
-This table is too wide to fit on the paper, so we use `prince-rotate-body` in a *named page* to print it sideways. Download the [PDF](assets/samples/rotate-body.pdf) or the [HTML](assets/samples/rotate-body.html).
+This table is too wide to fit on the paper, so we use `-prince-rotate-body` in a *named page* to print it sideways. Download the [PDF](assets/samples/rotate-body.pdf) or the [HTML](assets/samples/rotate-body.html).
 
 ```
     @page big_table {
-        prince-rotate-body: landscape;
-        prince-shrink-to-fit: auto;
+        -prince-rotate-body: landscape;
+        -prince-shrink-to-fit: auto;
     }
 
     table.big {
         page: big_table
     }
 ```
-The [`prince-rotate-body`](css-props.md#prop-prince-rotate-body) property works within [`@page`](css-refs.md#at-page) rules only, so this example uses a named page to place the table on a page of its own. Then the [`@page`](css-refs.md#at-page) rule for `big_table` pages uses the [`prince-rotate-body`](css-props.md#prop-prince-rotate-body) property to tell prince that the body of the page, but not the headers and footers, should be rotated. The table in this example is still too wide so we also use the [`prince-shrink-to-fit`](css-props.md#prop-prince-shrink-to-fit) property to make it a little smaller.
+The [`-prince-rotate-body`](css-props.md#prop-prince-rotate-body) property works within [`@page`](css-refs.md#at-page) rules only, so this example uses a named page to place the table on a page of its own. Then the [`@page`](css-refs.md#at-page) rule for `big_table` pages uses the [`-prince-rotate-body`](css-props.md#prop-prince-rotate-body) property to tell prince that the body of the page, but not the headers and footers, should be rotated. The table in this example is still too wide so we also use the [`-prince-shrink-to-fit`](css-props.md#prop-prince-shrink-to-fit) property to make it a little smaller.
 
 If you download the full example ([HTML](assets/samples/rotate-body.html) or [PDF](assets/samples/rotate-body.pdf)) you will see that the paragraphs before and after the table are not placed on the same page. This is because they do not belong to the same named page (see [Named pages](paged.md#named-pages)). However on page four there are two tables, both tables belong to the same named page and therefore Prince will try to place them together on the same page.
 
@@ -994,6 +967,109 @@ A more basic means for rotation, allowing for less fine-tuning, is the use of th
 For a different approach to rotating content, see the section on [Printing wide content sideways](#printing-wide-content-sideways).
 
 
+How and Where is my Box?
+-------------
+
+<dl class="ingredients">
+  <dt>You need</dt>
+    <dd><a href="/doc/javascript#the-prince-object">The Prince Object</a></dd>
+    <dd><a href="/doc/javascript#the-box-tracking-api">The Box Tracking API</a></dd>
+</dl>
+
+The `BoxInfo()` method returns a list of *boxes*, each of which has a series of properties defining them.
+
+The following script adds some useful higher-level functionality, making the `marginBox(u)`, `borderBox(u)`, `paddingBox(u)` and `contentBox(u)` methods available on the BoxInfo objects. The parameter `u` defines the units to use, and needs to be one of `cm`, `in`, `mm`, `q`, `pc`, `pt` or `px`.
+
+The methods return a box object with properties `x`, `y`, `w` and `h`, giving the position and size of the box in the requested units.
+
+```javascript
+    if (typeof Prince != "undefined") {
+        addBoxInfoMethods();
+    }
+    
+    function Box(x, y, w, h, u) {
+        var d = 1;
+    
+        if (u == "cm") {
+            d = 72/2.54;
+        } else if (u == "in") {
+            d = 72;
+        } else if (u == "mm") {
+            d = 72/25.4;
+        } else if (u == "q") {
+            d = 72/101.6;
+        } else if (u == "pc") {
+            d = 1/12;
+        } else if (u == "pt") {
+            d = 1;
+        } else if (u == "px") {
+            d = 72/96;
+        } else {
+            console.log("Box: unknown units: " + u);
+        }
+    
+        this.x = x/d;
+        this.y = y/d;
+        this.w = w/d;
+        this.h = h/d;
+    }
+    
+    function addBoxInfoMethods() {
+        BoxInfo.prototype.marginBox = function (u) {
+            var x = this.x - this.marginLeft;
+            var y = this.y + this.marginTop;
+            var w = this.w + this.marginLeft + this.marginRight;
+            var h = this.h + this.marginTop + this.marginBottom;
+            return new Box(x, y, w, h, u);
+        };
+    
+        BoxInfo.prototype.borderBox = function (u) {
+            var x = this.x;
+            var y = this.y;
+            var w = this.w;
+            var h = this.h;
+            return new Box(x, y, w, h, u);
+        };
+    
+        BoxInfo.prototype.paddingBox = function(u) {
+            var bTop = parseFloat(this.style.borderTopWidth.slice(0, -2));
+            var bRight = parseFloat(this.style.borderRightWidth.slice(0, -2));
+            var bBottom = parseFloat(this.style.borderBottomWidth.slice(0, -2));
+            var bLeft = parseFloat(this.style.borderLeftWidth.slice(0, -2));
+            var x = this.x + bLeft;
+            var y = this.y - bTop;
+            var w = this.w - bLeft - bRight;
+            var h = this.h - bTop - bBottom;
+            return new Box(x, y, w, h, u);
+        };
+    
+        BoxInfo.prototype.contentBox = function(u) {
+            var bTop = parseFloat(this.style.borderTopWidth.slice(0, -2));
+            var bRight = parseFloat(this.style.borderRightWidth.slice(0, -2));
+            var bBottom = parseFloat(this.style.borderBottomWidth.slice(0, -2));
+            var bLeft = parseFloat(this.style.borderLeftWidth.slice(0, -2));
+            var pTop = parseFloat(this.style.paddingTop.slice(0, -2));
+            var pRight = parseFloat(this.style.paddingRight.slice(0, -2));
+            var pBottom = parseFloat(this.style.paddingBottom.slice(0, -2));
+            var pLeft = parseFloat(this.style.paddingLeft.slice(0, -2));
+            var x = this.x + bLeft + pLeft;
+            var y = this.y - bTop - pTop;
+            var w = this.w - bLeft - bRight - pLeft - pRight;
+            var h = this.h - bTop - bBottom - pTop - pBottom;
+            return new Box(x, y, w, h, u);
+        };
+    }
+```
+
+To use the features, the script just needs to be included in the HTML directly as a script, or as an imported JavaScript file.  It is then easy to detect e.g. the width of the content:
+
+```javascript
+    var e = document.getElementById("someId");
+    var b = e.getPrinceBoxes()[0];
+    console.log("Content width is " + b.contentBox("cm").w + "cm");
+```
+
+
 The "Multi-Pass" Solution
 -----------------------
 
@@ -1001,7 +1077,12 @@ The "Multi-Pass" Solution
   <dt>You need</dt>
     <dd><a href="/doc/javascript#javascript-in-printed-media">JavaScript in Printed Media</a></dd>
     <dd><a href="/doc/javascript#event-handling">Event Handling</a></dd>
-    <dd><a href="/doc/javascript#the-prince-object">The Prince Object</a></dd>
+    <dd>
+      <a href="/doc/javascript#the-prince-object">The Prince Object</a>
+      <ul>
+        <li><a href="/doc/javascript#multi-pass-formatting">Multi-Pass formatting</a></li>
+      </ul>
+    </dd>
 </dl>
 
 One limitation of producing a document intended for print is its non-interactive, static nature: in principle a document cannot be modified after it is deemed to be ready for print. See [JavaScript in Printed Media](javascript.md#js-print).
@@ -1014,7 +1095,7 @@ A problematic situation arises when you want to modify your document after layou
 
 To address this problem, Prince offers the possibility to delay the generation of a PDF and to register the function [`Prince.registerPostLayoutFunc(func)`](js-support.md#window.Prince.registerPostLayoutFunc), which is called after layout finished, similar to the current `oncomplete` event. If this function modifies the DOM, Prince will perform layout again on the updated document once the function returns, and before generating the PDF.
 
-The post layout function can register itself, or another post layout function, in order to repeat this process multiple times! By default the number of passes is limited to two, but this can be increased by using the [`--max-passes=N`](command-line.md#cl-max-passes) command-line option.
+The post layout function can register itself, or another post layout function, in order to repeat this process multiple times! By default the number of passes is not limited, but in order to prevent endless layout loops you can set a limit by using the [`--max-passes=N`](command-line.md#cl-max-passes) command-line option.
 
 Here is a minimalistic "multi-pass" solution where the document is adorned with a ToC and index:
 

@@ -1,5 +1,5 @@
 ---
-title: Command-line Reference
+title: Command-line Options
 ---
 
 Prince may be called from the command-line with the following arguments:
@@ -17,7 +17,6 @@ Please note that on Windows, Prince can be called from the command-line by runni
         FILES
         [-o PDF]
 ```
-
 Examples
 --------
 
@@ -90,6 +89,10 @@ The command-line may include the options described below:
     <dd>
     Display credits and acknowledgments.
     </dd>
+    <dt id="cl-license-key"><code>--license-key=<span class="replaceable">KEY</span></code></dt>
+    <dd>
+    Pass the license key on the command line.
+    </dd>
 </dl>
 
 ### Logging Options
@@ -105,7 +108,7 @@ The command-line may include the options described below:
     <dd>
     Log debug messages.
     </dd>
-    <dt id="cl-log"><code>--log=FILE</code></dt>
+    <dt id="cl-log"><code>--log=<span class="replaceable">FILE</span></code></dt>
     <dd>
     Append log messages to a file.
     </dd>
@@ -128,8 +131,8 @@ The command-line may include the options described below:
 
 <dl>
   <dt id="cl-input">
-    <code>-i FORMAT</code>,
-    <code>--input=FORMAT</code>
+    <code>-i <span class="replaceable">FORMAT</span></code>,
+    <code>--input=<span class="replaceable">FORMAT</span></code>
   </dt>
   <dd>
     Set input format [<code>auto</code> | <code>xml</code> |
@@ -137,19 +140,19 @@ The command-line may include the options described below:
   </dd>
   <dt id="cl-input-list">
     <code>-l</code>,
-    <code>--input-list=FILE</code>
+    <code>--input-list=<span class="replaceable">FILE</span></code>
   </dt>
   <dd>
     Read input file list from specified file.
   </dd>
   <dt id="cl-baseurl">
-    <code>--baseurl=URL</code>
+    <code>--baseurl=<span class="replaceable">URL</span></code>
   </dt>
   <dd>
     Specify the base URL of the input document.
   </dd>
   <dt id="cl-remap">
-    <code>--remap=URL=DIR</code>
+    <code>--remap=<span class="replaceable">URL</span>=<span class="replaceable">DIR</span></code>
   </dt>
   <dd>
   <p>
@@ -171,7 +174,7 @@ The command-line may include the options described below:
   </p>
   </dd>
   <dt id="cl-fileroot">
-    <code>--fileroot=DIR</code>
+    <code>--fileroot=<span class="replaceable">DIR</span></code>
   </dt>
   <dd>
     Specify the root directory for absolute filenames (deprecated).
@@ -211,29 +214,29 @@ The command-line may include the options described below:
   <dd>
   Disable all HTTP and HTTPS redirects.
   </dd>
-  <dt id="cl-auth-user"><code>--auth-user=USER</code></dt>
+  <dt id="cl-auth-user"><code>--auth-user=<span class="replaceable">USER</span></code></dt>
   <dd>
   Specify the username for HTTP authentication.
   </dd>
-  <dt id="cl-auth-password"><code>--auth-password=PASS</code></dt>
+  <dt id="cl-auth-password"><code>--auth-password=<span class="replaceable">PASS</span></code></dt>
   <dd>
   Specify the password for HTTP authentication.
   </dd>
   <dt id="cl-auth-server">
-    <code>--auth-server=HOST[:PORT</code>]
+    <code>--auth-server=<span class="replaceable">HOST</span>[:<span class="replaceable">PORT</span></code>]
   </dt>
   <dd>
   Send username and password credentials to the specified server only. (The default
   is to send them to any server which challenges for authentication).
   </dd>
   <dt id="cl-auth-scheme">
-    <code>--auth-scheme=SCHEME</code>
+    <code>--auth-scheme=<span class="replaceable">SCHEME</span></code>
   </dt>
   <dd>
   Send username and password credentials only for requests with the given
   scheme, either <code>http</code> or <code>https</code>
   </dd>
-  <dt id="cl-auth-method"><code>--auth-method=METHOD</code></dt>
+  <dt id="cl-auth-method"><code>--auth-method=<span class="replaceable">METHOD</span></code></dt>
   <dd>
   Specify a comma separated list of HTTP authentication methods to enable.
   Valid entries are:
@@ -241,11 +244,11 @@ The command-line may include the options described below:
   <code>negotiate</code>.
   The default is <code>basic</code>.
   </dd>
-  <dt id="cl-auth"><code>--auth=URL</code></dt>
+  <dt id="cl-auth"><code>--auth=<span class="replaceable">URL</span></code></dt>
   <dd>
   Specify a URL with credentials for HTTP
   authentication:
-  <code>[SCHEME:]//USER:PASS@HOST[:PORT]</code>.
+  <code>[<span class="replaceable">SCHEME</span>:]//<span class="replaceable">USER</span>:<span class="replaceable">PASS</span>@<span class="replaceable">HOST</span>[:<span class="replaceable">PORT</span>]</code>.
   Unlike the preceding
   options, <code>--auth</code> may be used multiple times.
   The username and password must be percent-encoded.
@@ -257,61 +260,61 @@ The command-line may include the options described below:
   initial  request may be required to discover the methods supported by the
   remote site.
   </dd>
-  <dt id="cl-http-proxy"><code>--http-proxy=PROXY</code></dt>
+  <dt id="cl-http-proxy"><code>--http-proxy=<span class="replaceable">PROXY</span></code></dt>
   <dd>
   Specify the HTTP proxy server.
   </dd>
-  <dt id="cl-http-timeout"><code>--http-timeout=SEC</code></dt>
+  <dt id="cl-http-timeout"><code>--http-timeout=<span class="replaceable">SEC</span></code></dt>
   <dd>
   Specify the HTTP timeout in seconds.
   </dd>
-  <dt id="cl-cookie"><code>--cookie=COOKIE</code></dt>
+  <dt id="cl-cookie"><code>--cookie=<span class="replaceable">COOKIE</span></code></dt>
   <dd>
   Set a value for the <code>Set-Cookie</code> HTTP header value.
   <code>--cookie</code> may be used multiple times.
   </dd>
-  <dt id="cl-cookiejar"><code>--cookiejar=FILE</code></dt>
+  <dt id="cl-cookiejar"><code>--cookiejar=<span class="replaceable">FILE</span></code></dt>
   <dd>
   Specify a file containing HTTP cookies.
   </dd>
-  <dt id="cl-ssl-cacert"><code>--ssl-cacert=FILE</code></dt>
+  <dt id="cl-ssl-cacert"><code>--ssl-cacert=<span class="replaceable">FILE</span></code></dt>
   <dd>
   Specify an SSL certificate file.
   </dd>
-  <dt id="cl-ssl-capath"><code>--ssl-capath=PATH</code></dt>
+  <dt id="cl-ssl-capath"><code>--ssl-capath=<span class="replaceable">PATH</span></code></dt>
   <dd>
   Specify an SSL certificate directory.
   </dd>
-  <dt id="cl-ssl-cert"><code>--ssl-cert=FILE</code></dt>
+  <dt id="cl-ssl-cert"><code>--ssl-cert=<span class="replaceable">FILE</span></code></dt>
   <dd>
   Specify an SSL client certificate file.  On MacOS, specify a PKCS#12 file containing
   a client certificate and private key.  Client authentication is not supported on Windows.
   </dd>
-  <dt id="cl-ssl-cert-type"><code>--ssl-cert-type=TYPE</code></dt>
+  <dt id="cl-ssl-cert-type"><code>--ssl-cert-type=<span class="replaceable">TYPE</span></code></dt>
   <dd>
   Specify the SSL client certificate file type (PEM, DER). The default is PEM.
   This option is not supported on MacOS or Windows.
   </dd>
-  <dt id="cl-ssl-key"><code>--ssl-key=FILE</code></dt>
+  <dt id="cl-ssl-key"><code>--ssl-key=<span class="replaceable">FILE</span></code></dt>
   <dd>
   Specify an SSL private key file.  This option is not supported on MacOS or Windows.
   </dd>
-  <dt id="cl-ssl-key-type"><code>--ssl-key-type=TYPE</code></dt>
+  <dt id="cl-ssl-key-type"><code>--ssl-key-type=<span class="replaceable">TYPE</span></code></dt>
   <dd>
   Specify the SSL private key file type (PEM, DER). The default is PEM.  This option
   is not supported on MacOS or Windows.
   </dd>
-  <dt id="cl-ssl-key-password"><code>--ssl-key-password=PASS</code></dt>
+  <dt id="cl-ssl-key-password"><code>--ssl-key-password=<span class="replaceable">PASS</span></code></dt>
   <dd>
   Specify passphrase for the private key.
   </dd>
-  <dt id="cl-ssl-version"><code>--ssl-version=VERSION</code></dt>
+  <dt id="cl-ssl-version"><code>--ssl-version=<span class="replaceable">VERSION</span></code></dt>
   <dd>
   Set the minimum version of SSL to allow.
   May be one of: <code>default</code> (let
   <a href="/doc/acknowledgements/">libcurl</a>
   choose), <code>tlsv1</code>,
-  <code>tlsv1.0</code>, <code>tlsv1.1</code> or <code>tlsv1.2</code>.
+  <code>tlsv1.0</code>, <code>tlsv1.1</code>, <code>tlsv1.2</code> or <code>tlsv1.3</code>.
   </dd>
   <dt id="cl-insecure"><code>--insecure</code></dt>
   <dd>
@@ -333,13 +336,13 @@ The command-line may include the options described below:
   <dd>
     Enable JavaScript in HTML documents.
   </dd>
-  <dt id="cl-script"><code>--script=FILE</code></dt>
+  <dt id="cl-script"><code>--script=<span class="replaceable">FILE</span></code></dt>
   <dd>
     Run an external script.
   </dd>
-  <dt id="cl-max-passes"><code>--max-passes=NUMBER</code></dt>
+  <dt id="cl-max-passes"><code>--max-passes=<span class="replaceable">NUMBER</span></code></dt>
   <dd>
-    Defines the maximal number of consequent layout passes - see <a href="cookbook#the-multi-pass-solution">The "Multi-Pass" Solution</a>.  The default value is 2.
+    Defines the maximal number of consequent layout passes - see <a href="cookbook#the-multi-pass-solution">The "Multi-Pass" Solution</a>.  The default is unlimited passes.
   </dd>
 </dl>
 
@@ -347,8 +350,8 @@ The command-line may include the options described below:
 
 <dl>
   <dt id="cl-style">
-    <code>-s FILE</code>,
-    <code>--style=FILE</code>
+    <code>-s <span class="replaceable">FILE</span></code>,
+    <code>--style=<span class="replaceable">FILE</span></code>
   </dt>
   <dd>
     Apply an external style sheet. Note that repeating the option multiple times
@@ -356,13 +359,13 @@ The command-line may include the options described below:
     they are provided - and hence the last one will overwrite previous ones.
   </dd>
   <dt id="cl-media">
-    <code>--media=MEDIA</code>
+    <code>--media=<span class="replaceable">MEDIA</span></code>
   </dt>
   <dd>
     Specify the media type (eg. print, screen).
   </dd>
   <dt id="cl-page-size">
-    <code>--page-size=SIZE</code>
+    <code>--page-size=<span class="replaceable">SIZE</span></code>
   </dt>
   <dd>
     Specify the page size (eg. A4, "155mm 190mm", etc).  The syntax is the same as
@@ -372,7 +375,7 @@ The command-line may include the options described below:
     also <a href="/doc/paged/#page-size">Page size</a> and <a href="/doc/page-size-keywords/">Page Size Keywords</a>.
   </dd>
   <dt id="cl-page-margin">
-    <code>--page-margin=MARGIN</code>
+    <code>--page-margin=<span class="replaceable">MARGIN</span></code>
   </dt>
   <dd>
     Specify the page margin (eg. 20mm).
@@ -391,32 +394,32 @@ The command-line may include the options described below:
 
 <dl>
   <dt id="cl-output">
-    <code>-o FILE.PDF</code>,
-    <code>--output=FILE.PDF</code>
+    <code>-o <span class="replaceable">FILE.PDF</span></code>,
+    <code>--output=<span class="replaceable">FILE.PDF</span></code>
   </dt>
   <dd>
     Specify the output PDF file.
   </dd>
   <dt id="cl-pdf-lang">
-    <code>--pdf-lang=LANG</code>
+    <code>--pdf-lang=<span class="replaceable">LANG</span></code>
   </dt>
   <dd>
     Specify the PDF document's Lang entry in the document catalog - what is known as the Reading Options' Language.
   </dd>
   <dt id="cl-pdf-profile">
-    <code>--pdf-profile=PROFILE</code>
+    <code>--pdf-profile=<span class="replaceable">PROFILE</span></code>
   </dt>
   <dd>
     Specify the PDF profile (see <a href="/doc/prince-output/#pdf-versions-and-profiles">PDF Versions and Profiles</a>) to use.
   </dd>
   <dt id="cl-pdf-output-intent">
-    <code>--pdf-output-intent=ICC</code>
+    <code>--pdf-output-intent=<span class="replaceable">ICC</span></code>
   </dt>
   <dd>
     Specify the ICC profile to use.
   </dd>
   <dt id="cl-attach">
-    <code>--attach=FILE</code>
+    <code>--attach=<span class="replaceable">FILE</span></code>
   </dt>
   <dd>
     Attach a file to the PDF.
@@ -457,7 +460,7 @@ The command-line may include the options described below:
   <dd>
     Convert colors to output intent color space.
   </dd>
-  <dt id="cl-fallback-cmyk-profile"><code>--fallback-cmyk-profile=ICC</code></dt>
+  <dt id="cl-fallback-cmyk-profile"><code>--fallback-cmyk-profile=<span class="replaceable">ICC</span></code></dt>
   <dd>
     Set fallback ICC profile for uncalibrated CMYK.
   </dd>
@@ -476,19 +479,19 @@ The command-line may include the options described below:
 ### PDF Metadata Options
 
 <dl>
-  <dt id="cl-pdf-title"><code>--pdf-title=TITLE</code></dt>
+  <dt id="cl-pdf-title"><code>--pdf-title=<span class="replaceable">TITLE</span></code></dt>
   <dd>Set PDF document title.</dd>
-  <dt id="cl-pdf-subject"><code>--pdf-subject=SUBJECT</code></dt>
+  <dt id="cl-pdf-subject"><code>--pdf-subject=<span class="replaceable">SUBJECT</span></code></dt>
   <dd>Set PDF document subject.</dd>
-  <dt id="cl-pdf-author"><code>--pdf-author=AUTHOR</code></dt>
+  <dt id="cl-pdf-author"><code>--pdf-author=<span class="replaceable">AUTHOR</span></code></dt>
   <dd>Set PDF document author.</dd>
   <dt id="cl-pdf-keywords">
-    <code>--pdf-keywords=KEYWORDS</code>
+    <code>--pdf-keywords=<span class="replaceable">KEYWORDS</span></code>
   </dt>
   <dd>Set PDF document keywords.</dd>
-  <dt id="cl-pdf-creator"><code>--pdf-creator=CREATOR</code></dt>
+  <dt id="cl-pdf-creator"><code>--pdf-creator=<span class="replaceable">CREATOR</span></code></dt>
   <dd>Set PDF document creator.</dd>
-  <dt id="cl-pdf-xmp"><code>--pdf-xmp=XMP</code></dt>
+  <dt id="cl-pdf-xmp"><code>--pdf-xmp=<span class="replaceable">XMP</span></code></dt>
   <dd>Include additional XMP metadata in the PDF.  The argument is an XMP file,
   from which the data is taken.</dd>
 </dl>
@@ -500,19 +503,19 @@ The command-line may include the options described below:
   <dd>
     Encrypt PDF output.
   </dd>
-  <dt id="cl-key-bits"><code>--key-bits=NUM</code></dt>
+  <dt id="cl-key-bits"><code>--key-bits=<span class="replaceable">NUM</span></code></dt>
   <dd>
     Set encryption key size to either 40 or 128.
   </dd>
-  <dt id="cl-user-password"><code>--user-password=PASS</code></dt>
+  <dt id="cl-user-password"><code>--user-password=<span class="replaceable">PASS</span></code></dt>
   <dd>
-    Set PDF user password.
+    Set PDF user password - max. 32 characters (Latin-1).
   </dd>
   <dt id="cl-owner-password">
-    <code>--owner-password=PASS</code>
+    <code>--owner-password=<span class="replaceable">PASS</span></code>
   </dt>
   <dd>
-    Set PDF owner password.
+    Set PDF owner password - max. 32 characters (Latin-1).
   </dd>
   <dt id="cl-disallow-print"><code>--disallow-print</code></dt>
   <dd>
@@ -522,6 +525,10 @@ The command-line may include the options described below:
   <dd>
     Disallow copying from PDF output.
   </dd>
+  <dt id="cl-allow-copy-for-accessibility"><code>--allow-copy-for-accessibility</code></dt>
+  <dd>
+    Used together with <code>--disallow-copy</code>, for which it creates an exception by enabling text access for screen reader devices for the visually impaired.
+  </dd>
   <dt id="cl-disallow-annotate"><code>--disallow-annotate</code></dt>
   <dd>
     Disallow annotation of PDF output.
@@ -529,6 +536,10 @@ The command-line may include the options described below:
   <dt id="cl-disallow-modify"><code>--disallow-modify</code></dt>
   <dd>
     Disallow modification of PDF output.
+  </dd>
+  <dt id="cl-allow-assembly"><code>--allow-assembly</code></dt>
+  <dd>
+    Used together with <code>--disallow-modify</code>, for which it creates an exception.  It allows the document to be inserted into another document or other pages to be added, but the content of the document cannot be modified.
   </dd>
 </dl>
 
@@ -538,16 +549,16 @@ Rasterization is enabled with the `--raster-output` option below. When this is u
 
 <dl>
   <dt id="cl-raster-output">
-    <code>--raster-output=TEMPLATE</code>
+    <code>--raster-output=<span class="replaceable">TEMPLATE</span></code>
   </dt>
   <dd>
     <p>
     Enable raster output.
     The output files will be named based on the template.
     Prince will replace every
-    '<code>%[WIDTH]d</code>'
+    '<code>%[<span class="replaceable">WIDTH</span>]d</code>'
     with the current page number.
-    The optional WIDTH value gives the
+    The optional <span class="replaceable">WIDTH</span> value gives the
     number of characters the page number should take within the file name.
     Smaller page numbers will be padded to the left with either spaces,
     or if the width begins with a zero, with zeros.
@@ -566,7 +577,7 @@ Rasterization is enabled with the `--raster-output` option below. When this is u
     </p>
   </dd>
   <dt id="cl-raster-format">
-    <code>--raster-format=FORMAT</code>
+    <code>--raster-format=<span class="replaceable">FORMAT</span></code>
   </dt>
   <dd>
     Set the format for the raster output.  Valid formats are:
@@ -584,23 +595,23 @@ Rasterization is enabled with the `--raster-output` option below. When this is u
     format.  It takes a number between 0 and 100, default is 92.
   </dd>
   <dt id="cl-raster-pages">
-    <code>--raster-pages=PAGE</code>
+    <code>--raster-pages=<span class="replaceable">PAGE</span></code>
   </dt>
   <dd>
     Set the range of pages to be rasterize.
     Valid ranges are
     <code>all</code> (the default),
     <code>first</code> and
-    <code>NUM</code> (a single page).
+    <code><span class="replaceable">NUM</span></code> (a single page).
   </dd>
   <dt id="cl-raster-dpi">
-    <code>--raster-dpi=DPI</code>
+    <code>--raster-dpi=<span class="replaceable">DPI</span></code>
   </dt>
   <dd>
     Set the resolution of raster output (The default is 96 dots per inch).
   </dd>
   <dt id="cl-raster-threads">
-    <code>--raster-threads=NUM</code>
+    <code>--raster-threads=<span class="replaceable">NUM</span></code>
   </dt>
   <dd>
     Set the number of threads to use for multi-threaded rasterization.
@@ -608,7 +619,7 @@ Rasterization is enabled with the `--raster-output` option below. When this is u
     cores and hyperthreads your system provides.
   </dd>
   <dt id="cl-raster-background">
-    <code>--raster-background=BACKGROUND</code>
+    <code>--raster-background=<span class="replaceable">BACKGROUND</span></code>
   </dt>
   <dd>
     Set the background - allowed values are <code>transparent</code> or
@@ -622,7 +633,7 @@ Rasterization is enabled with the `--raster-output` option below. When this is u
 ### Utility Options
 
 <dl>
-  <dt id="cl-scanfonts"><code>--scanfonts FILES...</code></dt>
+  <dt id="cl-scanfonts"><code>--scanfonts <span class="replaceable">FILES...</span></code></dt>
   <dd>
     Scan font files and create a CSS file.
   </dd>
@@ -631,8 +642,8 @@ Rasterization is enabled with the `--raster-output` option below. When this is u
 ### Advanced Options
 
 <dl>
-  <dt id="cl-capture"><code>--capture DIR</code></dt>
-  <dt id="cl-replay"><code>--replay DIR</code></dt>
+  <dt id="cl-capture"><code>--capture <span class="replaceable">DIR</span></code></dt>
+  <dt id="cl-replay"><code>--replay <span class="replaceable">DIR</span></code></dt>
   <dd>
     <p>The capture/replay system saves a copy of all the information in a job to
     a specified directory, conveniently allowing it to be replayed later for
@@ -645,7 +656,7 @@ Rasterization is enabled with the `--raster-output` option below. When this is u
     For more details, please check the detailed documentation in the separate <a href="/doc/server-integration/#prince-control-protocol">Prince Control Protocol</a>
     chapter.</p>
   </dd>
-  <dt id="cl-structured-log"><code>--structured-log=LEVEL</code></dt>
+  <dt id="cl-structured-log"><code>--structured-log=<span class="replaceable">LEVEL</span></code></dt>
   <dd>
     <p>The Structured Log option is a formatting option for Prince's output to stderr.
     For more details, please check the detailed documentation in the separate <a href="/doc/server-integration/#structured-log">Structured Log</a>
@@ -654,10 +665,12 @@ Rasterization is enabled with the `--raster-output` option below. When this is u
   <dt id="cl-fail-dropped-content"><code>--fail-dropped-content</code></dt>
   <dt id="cl-fail-missing-resources"><code>--fail-missing-resources</code></dt>
   <dt id="cl-fail-missing-glyphs"><code>--fail-missing-glyphs</code></dt>
+  <dt id="cl-fail-pdf-profile-error"><code>--fail-pdf-profile-error</code></dt>
+  <dt id="cl-fail-pdf-tag-error"><code>--fail-pdf-tag-error</code></dt>
+  <dt id="cl-fail-safe"><code>--fail-safe</code></dt>
   <dd>
-    <p>These three Fail-Safe Options abort the creation of a PDF when one of
+    <p>These six Fail-Safe Options abort the creation of a PDF when one of
     the conditions is met.  For more details, please check the detailed
     documentation in the separate <a href="/doc/server-integration/#fail-safe-options">Fail-Safe Options</a> chapter.</p>
   </dd>
 </dl>
-

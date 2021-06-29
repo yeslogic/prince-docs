@@ -16,7 +16,7 @@ Prince applies default styles to all (X)HTML documents - these style rules can b
 Fonts
 -----
 
-Prince supports the Web Open Font (WOFF/WOFF2), TrueType and OpenType (with TTF or CFF outlines, SVG, and CBLC/CBDT or sbix colour bitmaps) font formats.
+Prince supports the Web Open Font (WOFF/WOFF2), TrueType and OpenType (with TTF or CFF outlines, SVG, and CBLC/CBDT or sbix colour bitmaps) font formats, as well as TTC and WOFF2 font collection.
 
 ### Defining a font family
 
@@ -354,7 +354,7 @@ Now that you have decided on the basic properties of the text, you can turn your
 
 If the [`text-align`](css-props.md#prop-text-align) property has a value of `left`, `right` or `center`, the text will be aligned to the left, right or center respectively. The `justify` value instructs Prince to justify text. It is not uncommon, in printed texts, to align text based on whether the text appears on a left or right page. To support this, two new keywords are added to the [`text-align`](css-props.md#prop-text-align) property: `inside` is the same as 'left' on right pages and 'right' on left pages, and `outside` is the same as 'right' on left pages and 'left' on right pages.
 
-Prince adds the property [`prince-text-justify`](css-props.md#prop-prince-text-justify) to define how to treat justified text for CJK languages. The value `prince-cjk` allows space to be inserted between CJK characters when justifying even if there aren't any space characters.
+Prince adds the property [`-prince-text-justify`](css-props.md#prop-prince-text-justify) to define how to treat justified text for CJK languages. The value `prince-cjk` allows space to be inserted between CJK characters when justifying even if there aren't any space characters.
 
 The last line of an element can receive its own alignment style with the [`text-align-last`](css-props.md#prop-text-align-last) property. It takes the same values as [`text-align`](css-props.md#prop-text-align).
 
@@ -395,7 +395,7 @@ The property [`line-stacking-strategy`](css-props.md#prop-line-stacking-strategy
 
 In order to lay out text in a well-balanced way, it might at times be necessary to hyphenate some words - to enable hyphenation, the [`hyphens`](css-props.md#prop-hyphens) property is used. For details please refer to the section on [Hyphenation](cookbook.md#hyphenation).
 
-Prince also allows for line-breaking in certain situations even in the absence of whitespace - for example, after slashes in long URLs. This behavior can be disabled with the [`prince-linebreak-magic`](css-props.md#prop-prince-linebreak-magic) property for situations in which more precise control over line-breaking is preferred.
+Prince also allows for line-breaking in certain situations even in the absence of whitespace - for example, after slashes in long URLs. This behavior can be disabled with the [`-prince-linebreak-magic`](css-props.md#prop-prince-linebreak-magic) property for situations in which more precise control over line-breaking is preferred.
 
 The property [`overflow-wrap`](css-props.md#prop-overflow-wrap) controls wrapping behavior *of last resort*: whether it is better for a word to overflow its container, or to be broken at an arbitrary point (subject to [`white-space`](css-props.md#prop-white-space), and not splitting within a grapheme cluster), without adding a hyphen.
 
@@ -436,9 +436,11 @@ If there are only:
 -   two values: then the left margin is set equal to the right margin, and the bottom margin is set equal to the top margin;
 -   one value: then all margins are made equal.
 
-Prince expands the margin properties with [`margin-inside`](css-props.md#prop-margin-inside) and [`margin-outside`](css-props.md#prop-margin-outside), defining the margin respectively on the inside or outside of a spread: inside is on the right when used on a left-facing page, and on left on a right-facing page; outside is on the left when used on a left-facing page, and on the right on a right-facing page.
+Prince expands the margin properties with [`-prince-margin-inside`](css-props.md#prop-prince-margin-inside) and [`-prince-margin-outside`](css-props.md#prop-prince-margin-outside), defining the margin respectively on the inside or outside of a spread: inside is on the right when used on a left-facing page, and on left on a right-facing page; outside is on the left when used on a left-facing page, and on the right on a right-facing page.
 
 Always keep in mind that `margin-top` and `margin-bottom` of blocks are combined (i.e. "collapsed") into a single margin according to a possibly rather complex behavior known as *margin collapsing*. The notable exception is the behavior of margins in [Flex Layout](#flex-layout).
+
+Prince also supports [page and column floats](#page-and-column-floats) - in some cases, the `margin-top` and `margin-bottom` values of these floats are overwritten by alternative margin value specified with the [`-prince-margin-alt`](css-props.md#prop-prince-margin-alt) property.  For details, please see [Margins of Page and Column Floats](#margins-of-page-and-column-floats).
 
 #### Border
 
@@ -448,7 +450,7 @@ To style the borders, the [`border-color`](css-props.md#prop-border-color), [`bo
 
 The [`border-radius`](css-props.md#prop-border-radius) property can be used for styling rounded corners.
 
-The [`border-clip`](css-props.md#prop-border-clip) property splits the borders into parts along the border edge - the first part is visible, the second one is invisible, the third part is visible, etc.
+The [`border-clip`](css-props.md#prop-border-clip) property splits the borders into parts along the border edge.  Please note that currently this property only applies to footnotes.
 
 #### Padding
 
@@ -467,7 +469,7 @@ If there are only:
 
 The background of an element can be styled with the [`background-color`](css-props.md#prop-background-color) and the [`background-image`](css-props.md#prop-background-image) properties, or with the shorthand property [`background`](css-props.md#prop-background). See also [Background Images](graphics.md#background-images).
 
-Various standard properties are available to position the background, to clip it or to determine whether, and how it should be repeated. Prince extends control on the background with the [`prince-background-image-resolution`](css-props.md#prop-prince-background-image-resolution) property, used to control image size in print (see [Image Size](graphics.md#image-size)), and with the `bleed` modifier of the [`background-attachment`](css-props.md#prop-background-attachment) property, which, when used together with `background-size: cover`, allows a background image to cover the entire page bleed area (see [Trimming marks](paged.md#trimming-marks)).
+Various standard properties are available to position the background, to clip it or to determine whether, and how it should be repeated. Prince extends control on the background with the [`-prince-background-image-resolution`](css-props.md#prop-prince-background-image-resolution) property, used to control image size in print (see [Image Size](graphics.md#image-size)), and with the `bleed` modifier of the [`background-attachment`](css-props.md#prop-background-attachment) property, which, when used together with `background-size: cover`, allows a background image to cover the entire page bleed area (see [Trimming marks](paged.md#trimming-marks)).
 
 
 ### Display
@@ -535,7 +537,6 @@ CSS
 ```
     li::marker { content: "No. " counter(list-item) }
 ```
-
 #### List marker position
 
 List markers are rendered outside the list item in the left margin area by default. If the CSS property [`list-style-position`](css-props.md#prop-list-style-position) has value `inside`, the marker is rendered as the first inline box inside the list item.
@@ -551,11 +552,16 @@ CSS
     li.outside { list-style-position: outside }
 ```
 Output
-<ol id="ex-list-marker-position">
-<li>This list item sets the <code><a href="/doc/css-props#prop-list-style-position">list-style-position</a></code> to <code>inside</code>,
-    so the list marker is rendered inside the principal box of <code>li</code>.</li>
-<li>This list item sets the <code><a href="/doc/css-props#prop-list-style-position">list-style-position</a></code> to <code>outside</code>,
-    so the list marker is rendered outside the principal box of <code>li</code>.</li>
+
+<ol style="border: solid 2px darkgreen">
+<li style="border: solid 1px black; list-style-position: inside">
+    This list item sets the <code><a href="/doc/css-props#prop-list-style-position">list-style-position</a></code> to <code>inside</code>,
+    so the list marker is rendered inside the principal box of <code>li</code>.
+</li>
+<li style="border: solid 1px black; list-style-position: outside">
+    This list item sets the <code><a href="/doc/css-props#prop-list-style-position">list-style-position</a></code> to <code>outside</code>,
+    so the list marker is rendered outside the principal box of <code>li</code>.
+</li>
 </ol>
 
 When the marker position is <code>outside</code>,
@@ -568,12 +574,17 @@ or <code>li</code> enough left margin.
 
 #### List marker type
 
-Different list marker types can be chosen by setting the CSS property [`list-style-type`](css-props.md#prop-list-style-type) to different values: `disc` | `hyphen` | `decimal` | `lower-alpha` | ...
-
-The property [`list-style-type`](css-props.md#prop-list-style-type) applies to list items and determines the type of marker that they receive. The following table shows examples of some list style types (a table with examples of all supported options for ordered lists, see [Counter styles](gen-content.md#counter-styles)).
+Different list marker types can be chosen by setting the CSS property [`list-style-type`](css-props.md#prop-list-style-type) to different values. This property applies to list items and determines the type of marker that they receive. The following table shows examples of some list style types (for a table with examples of supported options for ordered lists, see [Counter styles](gen-content.md#counter-styles)).
 
 |                              |                                 |
 |------------------------------|---------------------------------|
+| `box`                        | ▫, ▫, ▫, ...                    |
+| `check`                      | ✓, ✓, ✓, ...                    |
+| `circle`                     | ◦, ◦, ◦, ...                    |
+| `diamond`                    | ♦, ♦, ♦, ...                    |
+| `disc`                       | •, •, •, ...                    |
+| `hyphen`                     | -, -, -, ...                    |
+| `square`                     | ▪, ▪, ▪, ...                    |
 | `decimal`                    | 1, 2, 3, ...                    |
 | `decimal-leading-zero`       | 01, 02, 03, ... 09, 10, 11, ... |
 | `lower-alpha`, `lower-latin` | a, b, c, ... z, aa, ab, ...     |
@@ -589,14 +600,15 @@ CSS
 ```
 Output
 
-<ol id="ex-list-marker-type">
-<li>
+<ol>
+<li style="list-style-type: upper-alpha">
     The marker type of this list item is upper-alpha.
 </li>
-<li>
+<li style="list-style-type: lower-roman">
     The marker type of this list item is lower-roman.
 </li>
 </ol>
+
 
 #### List marker style
 
@@ -620,7 +632,6 @@ CSS
     }
 ```
 Output
-
 ![Marker example](assets/images/marker.png)
 
 
@@ -682,26 +693,28 @@ CSS
 ```
 Output
 
-<table id="ex-separated-table-borders">
+<table style="border-collapse: separate; border-spacing: 5px; border: solid 3px black;">
 <tr>
-    <td class="border-red"> A </td>
-    <td class="border-red"> B </td>
-    <td class="border-red"> C </td>
+    <td style="border: solid 1px red"> A </td>
+    <td style="border: solid 1px red"> B </td>
+    <td style="border: solid 1px red"> C </td>
 </tr>
 <tr>
-    <td class="border-red"> D </td>
-    <td class="border-blue"> E </td>
-    <td class="border-green"> F </td>
+    <td style="border: solid 1px red"> D </td>
+    <td style="border: 2px dashed blue"> E </td>
+    <td style="border: 2px solid green"> F </td>
 </tr>
 <tr>
-    <td class="border-red"> G </td>
-    <td class="border-red"> H </td>
-    <td class="border-red"> I </td>
+    <td style="border: solid 1px red"> G </td>
+    <td style="border: solid 1px red"> H </td>
+    <td style="border: solid 1px red"> I </td>
 </tr>
 </table>
 
 Note that by default,
-the value of <code><a href="/doc/css-props#prop-border-collapse">border-collapse</a></code> is <code>separate</code>.
+the value of <code><a href="/doc/css-props#prop-border-collapse">border-collapse</a></code> is
+<code>separate</code>.
+
 
 
 #### Collapsing table borders
@@ -720,26 +733,27 @@ CSS
 ```
 Output
 
-<table id="ex-collapsing-table-borders">
+<table style="border-collapse: collapse; border-spacing: 5px; border: solid 3px black;">
 <tr>
-    <td class="border-red"> A </td>
-    <td class="border-red"> B </td>
-    <td class="border-red"> C </td>
+    <td style="border: solid 1px red"> A </td>
+    <td style="border: solid 1px red"> B </td>
+    <td style="border: solid 1px red"> C </td>
 </tr>
 <tr>
-    <td class="border-red"> D </td>
-    <td class="border-blue"> E </td>
-    <td class="border-green"> F </td>
+    <td style="border: solid 1px red"> D </td>
+    <td style="border: 2px dashed blue"> E </td>
+    <td style="border: 2px solid green"> F </td>
 </tr>
 <tr>
-    <td class="border-red"> G </td>
-    <td class="border-red"> H </td>
-    <td class="border-red"> I </td>
+    <td style="border: solid 1px red"> G </td>
+    <td style="border: solid 1px red"> H </td>
+    <td style="border: solid 1px red"> I </td>
 </tr>
 </table>
 
 Note that the [`border-spacing`](css-props.md#prop-border-spacing) property is not used
 in the collapsing table border model.
+
 
 
 The rules used by Prince for choosing the "winner" border are as follows:
@@ -790,7 +804,7 @@ Output
 
 <table class="rowspan">
 <tr>
-<td class="rowspan2" rowspan="2">A</td> <td>B</td> <td>C</td>
+<td class="rowspan2" rowspan="2" style="vertical-align: middle">A</td> <td>B</td> <td>C</td>
 </tr>
 <tr>
 <td>D</td> <td>E</td>
@@ -856,12 +870,11 @@ Rows inside the <code>tfoot</code> element are used as a running table footer.
 
 See also [Long Tables](cookbook.md#long-tables).
 
-
 #### Table captions
 
 Tables can also be provided with a table caption by using the `caption` HTML element, or by styling an arbitrary element with `display: table-caption` to be made to behave like `caption` elements. The caption is positioned above the table by default, but it can be moved to the bottom with the [`caption-side`](css-props.md#prop-caption-side) property.
 
-When a table spans across more than one page, the [`prince-caption-page`](css-props.md#prop-prince-caption-page) property determines whether table captions will be displayed on the first page of a table, or only on the following pages, or repeated on every page that a table appears on. See also [Fancy Table Captions](cookbook.md#fancy-table-captions).
+When a table spans across more than one page, the [`-prince-caption-page`](css-props.md#prop-prince-caption-page) property determines whether table captions will be displayed on the first page of a table, or only on the following pages, or repeated on every page that a table appears on. See also [Fancy Table Captions](cookbook.md#fancy-table-captions).
 
 
 ### Columns
@@ -903,7 +916,9 @@ The following example instructs Prince to make the `h1` heading element span all
         column-span: all;
     }
 ```
-Prince features also several column-specific extensions to the [`float`](css-props.md#prop-float) property, namely [Page and column floats](#page-and-column-floats) and [Page and column footnotes](#page-and-column-footnotes).
+
+Please note that starting with Prince 14, Prince treats a non-multi-column layout as a *single column layout*.
+
 
 ### Floats
 
@@ -916,70 +931,219 @@ When printed texts contain images, the text is usually laid out to wrap around t
 ```
 The property [`clear`](css-props.md#prop-clear) can be considered the float's sister property: an element that has the [`clear`](css-props.md#prop-clear) property set on it will not move up, next to the floated element, like the float is asking for. Instead, it will move down after the float.
 
-Prince extends the traditional behavior of floats with a few features that have been ubiquitous in printing for a long time.
+Prince extends the traditional behavior of floats with a few features that have been ubiquitous in printing for a long time.  In addition to the following documentation, the [quick guide to page and column floats in Prince 14](https://www.princexml.com/howcome/2021/guides/float/) provides many more examples for float, clear and defer properties.
 
-#### Prince extensions to floats
+#### Prince Extensions to Floats
 
-Traditionally, floats move in the inline direction, left or right. Prince extends this behavior with page floats that move in the block direction, specifying that an element should be floated to the top or to the bottom of a page, and with column floats that move the float to the nearest edge of the column in a multi-column layout, with optional column spanning of the float.
+Traditionally, floats move in the inline direction, left or right. Prince extends this behavior with page and column floats that move in the block direction, specifying that an element should be floated to the top, to the bottom, or to the nearest edge of a page or of a column.
 
 This allows for more flexible layout options that meet the needs of formatting documents for print.
 
-##### Page and column floats
+Prince's implementation of `float` differs from the standard implementation under the hood: it really is a shorthand for the following properties:
 
-When giving the [`float`](css-props.md#prop-float) property the value `top` or `bottom`, the element will be floated to, respectively, the top or the bottom of the page. The values `column-top` and `column-bottom` float the element to the top or bottom of the column it appears in, while `column-top-corner` and `column-bottom-corner` float the element to the top or bottom of the last column, rather than its natural column. These can be useful if you wanted to create a magazine-style layout, floating an image to the right-hand corner of the current multi-column layout.
+* [`-prince-float-reference`](css-props.md#prop-prince-float-reference)
+* [`-prince-float-placement`](css-props.md#prop-prince-float-placement)
+* [`-prince-float-modifier`](css-props.md#prop-prince-float-modifier)
+
+The values for *where* to float an element to, which traditionally are assigned with the property `float`, are now defined by the property `-prince-float-placement`.  However, when using the shorthand `float`, no difference to the standard implementation can be noticed.
+
+Thus, the following two examples achieve exactly the same when used in a multi-column page:
 
 ```
     img {
-        float: column-top-corner;
+        float: right;
     }
 ```
-A floated element can span several columns with the help of the [`column-span`](css-props.md#prop-column-span) property (see [Columns](#columns)). The following example instructs Prince to make the image span two columns:
 
 ```
     img {
-        float: column-top-corner;
+        -prince-float-reference: column;
+        -prince-float-placement: right;
+    }
+```
+
+Please keep in mind that starting with Prince 14, Prince treats a non-multi-column layout as a *single column layout*.  The default reference context for a float is `column`.  In most cases this should be of no concern for users.  However, in some corner cases this might lead to unexpected consequences.
+
+All float-related properties have our vendor prefix `-prince-`, since they differ from the standard.  When using standard values in our documentation, we use the form without prefix:
+
+```
+    img {
+        float: right;
+    }
+```
+
+However, when using a non-standard value, we use the form with prefix:
+
+```
+    img {
+        -prince-float: top;
+    }
+```
+
+##### Page and Column Floats
+
+When giving the [`-prince-float`](css-props.md#prop-prince-float) property the value `top` or `bottom`, the element will be floated to, respectively, the top or the bottom of the column or page - the correct reference context for the float is defined through the [`-prince-float-reference`](css-props.md#prop-prince-float-reference) property.
+
+```
+    img {
+        -prince-float: top;
+        -prince-float-reference: page;
+    }
+```
+
+Note that from Prince 14 onwards, the element will by default be floated to the top or bottom of the *column* it appears in.  This should mostly work as intended, since a normal page can be considered simply as a layout with one column!  However, earlier implementations of page floats with the [`float`](css-props.md#prop-float) property would float to the top of a *page* also in a multi-column layout.  If the previous behaviour is the desired one, the following style rule needs to be added to your stylesheet:
+
+```
+    * { -prince-float-reference: page; }
+```
+
+The value `top-bottom` tries to float the element to the top of the reference context (i.e. a column or a page), and if that should not be possible, it is floated to the bottom.
+
+Note that when setting only the value for `-prince-float-reference` in the shorthand property `-prince-float`, i.e. `column` or `page`, the default value for `-prince-float-placement` is `top-bottom` and differs from its initial value!  This means that Prince will try to float the element to the top of the indicated float reference, and if that should not be possible, it would be floated to the bottom.
+
+```
+    img {
+        -prince-float: page;
+    }
+```
+
+The value `snap` instructs Prince to float the image to the *nearest* end, which could be either the top or bottom of the page or column.
+
+```
+    img {
+        -prince-float: snap;
+    }
+```
+
+A floated element in a multi-column context can span several columns with the help of the [`column-span`](css-props.md#prop-column-span) property (see [Columns](#columns)). The following example, when used in a multi-column layout with two columns, instructs Prince to make the image span all columns:
+
+```
+    img {
+        -prince-float: top;
         column-span: 2;
     }
 ```
-The value `prince-snap` instructs Prince to float the image to the nearest "end", i.e. to the top or bottom of the page, or of the column in the case of a multi-column layout.
+
+A similar result can be achieved by specifying the page as a float reference:
 
 ```
     img {
-        float: prince-snap;
+        -prince-float: page top;
     }
 ```
-##### Spread floats
+
+However, there is an important difference: an image with `column-span: all` will stay *within* its parent element, but an image with the page defined as a float reference will *escape* its parent and align itself with the page area, as can easily be seen in [this example](https://www.princexml.com/howcome/2021/guides/float/#escaping-columns).
+
+##### Page and Column Float Order
+
+Floating elements can sometimes appear in a different order than the source order - to exactly control the order, Prince provides the property [`-prince-float-policy`](css-props.md#prop-prince-float-policy).  The value `in-order` tells Prince to always show the floated elements in the order in which they were defined in the source, while the value `normal` makes them appear in the processing order.
+
+The following example will float both figures to the bottom, and the figure with class `one` will float *above* the one with class `two`:
+
+HTML
+```html
+    <figure class="one"></figure>
+    <figure class="two"></figure>
+```
+CSS
+```css
+    figure { 
+        -prince-float: bottom;
+        -prince-float-policy: in-order;
+    }
+```
+
+Would the `in-order` directive have been omitted, the figure with class `two` would have been floated above the one with class `one`.
+
+##### Dropping Excess Floats
+
+The property [`-prince-float-tail`](css-props.md#prop-prince-float-tail) instructs Prince how to deal with page floats that end up past the end of normal content: with the value `fill-page`, Prince will try to fill the last page, but discard any page floats that would create more pages.  The value `keep` will keep all images and create enough new pages to accomodate them all.
+
+##### Margins of Page and Column Floats
+
+Margins in vertical flows are a powerful styling tool.  Setting a vertical margin to the value `auto` will expand, and thereby repel other content - setting both top and bottom margins to `auto` will vertically center the element!
+
+```
+    img {
+        -prince-float: top;
+        margin: auto 0;
+    }
+```
+
+See also [this example](https://www.princexml.com/howcome/2021/guides/float/#repelling-other-content) for repelling other content from column floats.
+
+When elements snap to the nearest edge, it is impossible to predict whether they end up at the top or at the bottom.  Therefore Prince offers a way to specify an alternative margin value for the vertical margins with the property [`-prince-margin-alt`](css-props.md#prop-prince-margin-alt).
+
+```
+    img { 
+        -prince-float: snap;
+        margin: 1em 0;
+        -prince-margin-alt: 0; 
+    }
+```
+
+##### Spread Floats
 
 In print one typically has to deal with left facing and right facing pages, together forming a spread. To take this into account when placing an element, Prince extends the [`float`](css-props.md#prop-float) property with the values `inside` and `outside`, moving the element respectively to the inside or outside of a spread.
 
-If the `inside` and `outside` values are used in a multi-column layout, the element is floated to the inside or outside of the column it appears in its natural flow.
-
-##### Page and column footnotes
-
-The value `footnote` transforms the element into a footnote: it creates a footnote call in the place where it appears in its natural flow, and moves the element to the bottom of the page. The footnote marker is placed outside of the block of the footnote. With the value `inline-footnote`, the footnote marker is placed inside of the block of the footnote. Two additional values, namely `prince-column-footnote` and `prince-column-inline-footnote` behave in an analogous way, but move the footnote not to the bottom of the page, but to the bottom of its column instead. See also [Footnotes](#footnotes).
-
-##### Conditional modifiers
-
-Prince also takes the additional modifier `next`. In a multi-column layout, this defers the float to the next column, otherwise it defers the float to the next page.
+If the `inside` and `outside` values are used in a multi-column layout, by default the element is floated to the inside or outside of the column it appears in its natural flow.  To change this behaviour, the page float reference needs to be specified:
 
 ```
     img {
-        float: column-top next;
+        -prince-float: page inside;
     }
 ```
-The optional modifier `unless-fit` is to be used in combination with other float instructions, and expresses a conditional: the element is only floated if it would otherwise cause a page or column break. For example, If you have a large image that happens to occur at the end of the page, it could force a page break and leave a gap at the end of the previous page. So you could float the image `top unless-fit`, which would move it to the top of the next page *unless it fits on the current page without causing a break and leaving a gap*:
+
+##### Deferring Floats
+
+Floats can be deferred, to be laid out at a later position.  The properties [`-prince-float-defer-column`](css-props.md#prop-prince-float-defer-column) and [`-prince-float-defer-page`](css-props.md#prop-prince-float-defer-page) are used to defer the float to, respectively, some other column or page.
+
+##### Page and Column Footnotes
+
+The value `footnote` transforms the element into a footnote: it creates a footnote call in the place where it appears in its natural flow, and moves the element to the bottom of the column - please note that a normal page is considered to be a single column layout. The footnote marker is placed outside of the block of the footnote. With the value `inline-footnote`, the footnote marker is placed inside of the block of the footnote. To move the footnote to the bottom of a page in a multi-column layout, instead of to the bottom of its column, the correct float reference needs to be defined with the [`-prince-float-reference`](css-props.md#prop-prince-float-reference) property.  See also [Footnotes](#footnotes).
+
+##### Conditional Modifiers
+
+The property [`-prince-float-modifier`](css-props.md#prop-prince-float-modifier) is to be used in combination with other float instructions.  When used with the value `unless-fit` it expresses a conditional: the element is only floated if it would otherwise cause a page or column break. For example, If you have a large image that happens to occur at the end of the page, it could force a page break and leave a gap at the end of the previous page. So you could float the image with the modifier value `unless-fit`, which would move it to the top of the next page *unless it fits on the current page without causing a break and leaving a gap*:
 
 ```
     img {
-        float: top unless-fit;
+        -prince-float-placement: top;
+        -prince-float-modifier: unless-fit;
     }
 ```
+
+Or, in shorthand notation:
+
+```
+    img {
+        -prince-float: top unless-fit;
+    }
+```
+
+
+
+##### Clearing Floats
+
+Prince also extends the [`clear`](css-props.md#prop-clear) property with new keywords.
+
+The values `inside` and `outside` clear inside and outside spread floats, while the keyword `both` clears&hellip; both.
+
+The clear values for page and column floats are very powerful in multi-column layout.  Imagine that you have a two-column layout with a first float at the top of the first column.  If you create a second column float whose natural position would be just below the first one, then:
+
+* `-prince-clear: end` clears the float and forces the second float to the next available placement, i.e. to the bottom of the first column;
+* `-prince-clear: column` clears the column and forces the second float to the second column;
+* `-prince-clear: page` clears the page and forces the second float to the next page.
+
+For page floats, the clear values `column` and `page` behave the same way, since Prince treats the page as a single column.
+
+Please also see the examples for [clearing page floats](https://www.princexml.com/howcome/2021/guides/float/#clearing-page-floats) and [clearing column floats](https://www.princexml.com/howcome/2021/guides/float/#clearing-column-floats).
 
 ### Footnotes
 
 Prince supports footnotes using the [`float`](css-props.md#prop-float) property. If an element has the property `float: footnote` then it will be floated into the footnote area of the page and a reference will be placed in the text.
 
-This example shows some simple footnotes, the fn class is used to create footnotes:
+This example shows some simple footnotes, the `.fn` class is used to create footnotes:
 
 Footnotes example
 
@@ -1085,15 +1249,15 @@ The property [`footnote-display`](css-props.md#prop-footnote-display) can be use
 
 Making a footnote into an inline element moves the footnote marker into the footnote box as the first inline box inside the footnote.
 
-The [`float`](css-props.md#prop-float) property offers also the value `inline-footnote`, which is another mechanism to transform the footnote into an inline element.
+The [`-prince-float`](css-props.md#prop-prince-float) property offers also the value `inline-footnote`, which is another mechanism to transform the footnote into an inline element.
 
-In a multi-column layout, footnotes can be rendered at the bottom of the page as normal footnotes, or alternatively at the bottom of each column by using the values `prince-column-footnote` or `prince-column-inline-footnote` for the [`float`](css-props.md#prop-float) property. See also [Prince extensions to floats](#prince-extensions-to-floats).
+Please note that from Prince 14 onwards, the footnote will by default be floated to the top or bottom of the *column* it appears in!  In a multi-column layout, footnotes are thus rendered by default at the bottom of each column!  To float them to the bottom of the page, as was previous behaviour, the correct float context needs to be defined with the [`-prince-float-reference`](css-props.md#prop-prince-float-reference) property.  See also [Page and Column Floats](#page-and-column-floats).
 
-In some situations it might happen that footnotes do not fit on the page on which the footnote call was placed. It might be desirable to tie the footnote to the same page as the call - the property [`prince-footnote-policy`](css-props.md#prop-prince-footnote-policy) can be of help. The following example instructs Prince to move the line with the footnote call to the next page, in order to keep it on the same page as the footnote itself:
+In some situations it might happen that footnotes do not fit on the page on which the footnote call was placed. It might be desirable to tie the footnote to the same page as the call - the property [`-prince-footnote-policy`](css-props.md#prop-prince-footnote-policy) can be of help. The following example instructs Prince to move the line with the footnote call to the next page, in order to keep it on the same page as the footnote itself:
 
 ```
     p {
-      prince-footnote-policy: keep-with-line;
+      -prince-footnote-policy: keep-with-line;
     }
 ```
 Alternatively, the value `keep-with-block` moves the entire paragraph to the next page.
@@ -1161,7 +1325,7 @@ Please notice that percentage values of margins and paddings of flex items are r
 
 Complex designs often have very large amounts of CSS with a lot of repeated values. The same color might for example be used in hundreds of different places, requiring a global search-and-replace if that color needs to be changed. Prince supports custom properties, which allow a value to be stored in one place, then be referenced in all other places.
 
-The custom properties are set by using the cutom property notation, which requires the use of two dashes ([`--`](css-props.md#prop---custom-property-name)) before the custom property name - a good approach is to set this property on the `:root` pseudo-class (see [Tree-Structural pseudo-classes](css-refs.md#tree-structural-pseudo-classes)). It is then accessed in other places by using the `var()` function (see [CSS Functional Expressions](css-refs.md#css-functional-expressions)).
+The custom properties are set by using the custom property notation, which requires the use of two dashes ([`--`](css-props.md#prop---custom-property-name)) before the custom property name - a good approach is to set this property on the `:root` pseudo-class (see [Tree-Structural pseudo-classes](css-refs.md#tree-structural-pseudo-classes)). It is then accessed in other places by using the `var()` function (see [CSS Functional Expressions](css-refs.md#css-functional-expressions)).
 
 Unlike other CSS properties, custom property names are case-sensitive.
 
@@ -1180,5 +1344,3 @@ When a fallback value needs to be provided, this can be indicated in the `var()`
       color: var(--main-text-color, brown);
     }
 ```
-
-

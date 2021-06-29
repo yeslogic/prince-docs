@@ -14,6 +14,8 @@ The input files can be provided in several ways:
 
 Input files can either be local files, or remote files that will be fetched over HTTP or HTTPS, in which case the URL to the file, or to the site, needs to be provided. Prince will automatically create the PDF output once the input pages and files have finished loading.
 
+Last but not least, it is good practice familiarizing yourself with the security implications of HTML, CSS or JavaScript files provided by users we do not have total control over - please see the chapter on [Security](server-integration.md#security).
+
 
 Applying Style Sheets in Prince
 -------------------------------
@@ -146,7 +148,9 @@ XML Inclusions (XInclude) provides a method of including content from other file
 
 The core of XInclude is a single element, `<include href="..."/>`, which specifies the inclusion of the file referenced by the `href` attribute. The element is in the XInclude namespace, `http://www.w3.org/2001/XInclude`, which must be declared either on the element itself or one of its ancestor elements.
 
-Please note that XInclude is disabled by default, and can be enabled with the [`--xinclude`](command-line.md#cl-xinclude) command-line option. Also note that XInclude only applies to XML files. To apply it to HTML files, the input format needs to be specified with the [`--input`](command-line.md#cl-input) command-line option.
+Please note that XInclude is disabled by default, and can be enabled with the [`--xinclude`](command-line.md#cl-xinclude) command-line option - but consider all security-related considerations this might imply (see also [XML External Entities and XInclude](server-integration.md#xml-external-entities-and-xinclude)). Please also note that, even when enabled, XIncludes are never processed anywhere but in the main document.
+
+Also note that XInclude only applies to XML files. To apply it to HTML files, the input format needs to be specified with the [`--input`](command-line.md#cl-input) command-line option.
 
 #### Including XML files
 

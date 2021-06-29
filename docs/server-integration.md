@@ -4,21 +4,6 @@ title: Server Integration
 
 Prince can be used server-side to produce PDFs, invoked by a wrapper script. Some care needs to be used in the configuration to make it reliable and secure.
 
-Security and performance
-------------------------
-
-When you control the input, Prince produces the expected output. But when you have no control on the input, as happens when running Prince on a server, it might be important to harden the installation in order to reduce a possible surface of vulnerability. Prince offers some options to aid the configuration, while other possibilities depend on the environment configuration on the server.
-
-It might be a good precaution to run Prince with the command-line option [`--no-local-files`](command-line.md#cl-no-local-files) in order to exclude any unwanted access to the local file system. It is also a good idea *not* to enable [`--xml-external-entities`](command-line.md#cl-xxe) or [`--xinclude`](command-line.md#cl-xinclude) (they are not enabled by default).
-
-A more comprehensive hardening practice is to run Prince in a chroot/jail/vms/container. Prince needs access to several libraries it depends on, as well as fonts and SSL certificates. To check direct dependencies, run the following command:
-
-```bash
-$ ldd /usr/lib/prince/bin/prince
-```
-
-When running multiple instances of Prince, it might be advisable to disable parallel rasterization with the command-line option [`--raster-threads=1`](command-line.md#cl-raster-threads) to improve throughput. Setting `GC_MARKERS=1` in the environment will do the same for garbage collection threads.
-
 Prince Wrappers
 ---------------
 
@@ -62,7 +47,7 @@ Please note that document scripts need to first be enabled with `prn.SetJavaScri
 
 The following code sample demonstrates how to convert a single HTML document into a PDF file:
 
-```csharp
+```cs
     // instantiate Prince by specifying the full path to the engine executable
     Prince prn = new Prince("C:\\Program Files\\Prince\\Engine\\bin\\prince.exe");
 
@@ -82,7 +67,7 @@ The following code sample demonstrates how to convert a single HTML document int
 ```
 To combine multiple HTML documents into a single PDF file, call `ConvertMultiple`:
 
-```csharp
+```cs
     String[] doc_array = {"C:\\docs\\test1.html", "C:\\docs\\test2.html"};
 
     prn.ConvertMultiple(doc_array, "C:\\docs\\pdf\\merged.pdf");
@@ -127,17 +112,32 @@ To combine multiple HTML documents into a single PDF file, call `ConvertMultiple
     prn.ConvertMultiple(doc_array, "C:\docs\pdf\merged.pdf")
 ```
 
-### The PHP5 Wrapper
+### The PHP Wrapper
 
-Prince can be called from PHP using the [PHP interface](/download/wrappers/#wrapper-php5).
+Prince can be called from PHP using the [PHP interface](/download/wrappers/#wrapper-php).
 
-This package contains two files:
+Note that the Prince class requires PHP 5.3.0 or later.
+
+The package contains two files:
 
 -   The `prince.php` script and
 -   the [API documentation](https://github.com/yeslogic/prince-php-wrapper).
 
+The PHP wrapper is also [hosted on Packagist](https://packagist.org/packages/yeslogic/prince-php-wrapper), so that it can be used from Composer.  It can now be installed with the command-line:
+
+```bash
+    $ composer require yeslogic/prince-php-wrapper
+```
+
 The `prince.php` file contains the PHP class that provides the interface to Prince. The `readme.html` file lists the PHP class methods and explains how to use them.
 
+When instantiating the `Prince` class, pass in the full path of the Prince executable to the constructor as a string argument.
+
+```php
+    use Prince\Prince;
+
+    $prince = new Prince('/usr/bin/prince');
+```
 
 ### The ActiveX/COM Wrapper
 
@@ -163,7 +163,7 @@ Please note that document scripts need to first be enabled with `prn.SetJavaScri
 
 The following is some sample code for illustration:
 
-```aspnet
+```
     <%
     Dim pr
     Dim res
@@ -212,7 +212,7 @@ Place the `Prince.jar` file in a directory of your choice then start ColdFusion 
 
 If this is done correctly, ColdFusion should know where to find the Prince Java interface class. The following is some sample CFML code showing how to use it:
 
-```java
+```
     <cfscript>
        pr = CreateObject("java", "com.princexml.Prince");
 
@@ -244,7 +244,7 @@ In order to call Prince from ColdFusion, we need to create a COM object using th
 
 The following is some sample code for illustration:
 
-```java
+```
     <cfscript>
        pr = CreateObject("Com", "PrinceCom.Prince", "local");
 
@@ -373,37 +373,41 @@ Prince In Cloud Computing
 --------------------------
 
 Prince can easily be deployed on many different cloud computing platforms and solutions.  As example deployments,
-we detail here installation procedures for Prince on Docker, AWS Lambda and AWS EC2.
+we detail here installation procedures for Prince on Docker, Azure, AWS Lambda and AWS EC2.
 
 ### Prince Docker Image
 
 Prince can easily be deployed in Docker images.  On the Docker Hub you can find [the Prince Dockerfiles](https://hub.docker.com/r/yeslogic/prince).  To pull the images, run the Docker Pull Command
 
-```bash
+```
 docker pull yeslogic/prince
 ```
 
 The Prince images can be run with the following command:
 
-```bash
+```
 docker run --rm -it yeslogic/prince
 ```
 
 They can be run with a `license.dat` file in the following way:
 
-```bash
+```
 docker run --rm -it -v /path/on/host/licence.dat:/usr/lib/prince/licence/licence.dat yeslogic/prince
 ```
 
 If, however, you want to run a specific Prince version, rather than the latest, you need to add the version tag to the docker commands:
 
-```bash
+```
 docker run --rm -it yeslogic/prince:13.1
 ```
 
+### Prince on Microsoft Azure
+
+Running Prince on Microsoft Azure is quite straightforward: we have a tutorial and a package for [deploying Prince on Azure](https://github.com/yeslogic/azure-prince-example/).  This is a Visual Studio 2019 project that demonstrates generating a PDF with Prince in C#/ASP.NET Core. It uses the [Prince C#/.Net Wrapper](#the-c--net-wrapper) and has been confirmed to work when deployed as an App Service on Microsoft Azure.
+
 ### Prince on AWS Lambda
 
-Setting up Prince on AWS Lambda is not much more difficult than setting it up for Docker.  Bruce Lawson has written a detailed article on how to [set up Prince on AWS Lambda](https://medium.com/@bruce_39084/setting-up-prince-on-aws-lambda-and-api-gateway-4d524dcb035b) using Node.js, with all the required steps.
+Setting up Prince on AWS Lambda is not much more difficult than setting it up for Docker or Azure.  Bruce Lawson has written a detailed article on how to [set up Prince on AWS Lambda](https://medium.com/@bruce_39084/setting-up-prince-on-aws-lambda-and-api-gateway-4d524dcb035b) using Node.js, with all the required steps.
 
 ### Prince on EC2
 
@@ -414,7 +418,11 @@ Prince can easily be installed also on Amazon's EC2 platform - Bruce Lawson prov
 Advanced Command-Line Options
 -----------------------------
 
-Prince can also be called from the command-line with two special options, useful for understanding the calls Prince can be controlled with, and the output it produces, in order to write your own wrapper: the [Prince Control Protocol](#prince-control-protocol) and the [Structured Log](#structured-log).
+Prince can also be called from the command-line with some special options for fine-tuning the creation of PDF files.
+
+Two options are useful for understanding the calls Prince can be controlled with, and the output it produces, in order to write your own wrapper: the [Prince Control Protocol](#prince-control-protocol) and the [Structured Log](#structured-log).
+
+Prince also offers a set of [Fail-Safe Options](#fail-safe-options) to prevent the creation of a PDF file in case of specific conditions.
 
 ### Prince Control Protocol
 
@@ -650,18 +658,93 @@ By omitting log messages, or by delaying them until after the PDF is written, th
 
 ### Fail-Safe Options
 
-Prince offers three Fail-Safe Options:
+Prince offers six Fail-Safe Options:
 
 `--fail-dropped-content`  
-Fail if any content is dropped.
+Fail if any content is dropped, e.g. due to a specified attachment which needs to be dropped because the chosen PDF profile does not support attachments, or due to a layout problem, where Prince cannot pack a block on the page for some reason and is forced to discard it.
 
 `--fail-missing-resources`  
-Fail if any resources cannot be loaded.
+Fail if any resources cannot be loaded, e.g. due to network problems.
 
 `--fail-missing-glyphs`  
 Fail if glyphs cannot be found for any characters.
 
-Usually Prince will try hard to solve any unexpected issues that arise, prioritizing the creation of a PDF - missing glyphs would be represented as a question mark ("?") and resources not loaded would simply be dropped. The fail-safe options are there to prevent the creation of broken PDFs due to temporary network problems or unexpected font issues. If the condition specified with one of the command-line options is triggered, the conversion will return an explicit failure status, and no PDF is created. Appropriate action to identify and fix the problem can be taken before attempting a new conversion.
+`--fail-pdf-profile-error`  
+Fail if there are problems complying with the specified PDF profile, e.g. due to incompatible options.
+
+`--fail-pdf-tag-error`  
+Fail if there are problems tagging the PDF document for accessibility.
+
+`--fail-safe`  
+Enables all of the preceding fail-safe options.
+
+Usually Prince will try hard to solve any unexpected issues that arise, prioritizing the creation of a PDF - missing glyphs would be represented as a question mark ("?") and resources not loaded would simply be dropped. The fail-safe options are there to prevent the creation of broken PDFs due to temporary network problems or unexpected issues. If the condition specified with one of the command-line options is triggered, the conversion will return an explicit failure status, and no PDF is created. Appropriate action to identify and fix the problem can be taken before attempting a new conversion.
 
 The JavaScript property [`Prince.failStatus`](js-support.md#window.Prince.failStatus) can also be used to trigger an explicit failure status based on custom criteria. See also under [The Prince Object](javascript.md#js-prince-obj).
+
+
+Security
+--------
+
+When you control the input, Prince produces the expected output - you are dealing with trusted input with no (intentionally) malicious code.
+
+But when you have no control over the input - as happens when running Prince on a server, where all content is contributed by other users, and thus must at all times be considered untrusted - it is important to take some precautions to avoid any unexpected, or even harmful things happening.
+
+### Untrusted Input
+
+A first step is to thoroughly filter and escape all untrusted content - this includes all text, HTML, XML, SVG, CSS and JavaScript fed to Prince.  All untrusted HTML tags and attributes need to be sanitised with standard HTML sanitising procedures (whitelisting is always your safer option) before reaching Prince.
+
+This procedure is the same standard safety precaution taken when passing untrusted data to web applications and web forms.  As a starting point, the OWASP Cross Site Scripting Prevention Cheat Sheet has some nice suggestions, summed up in a series of [XSS Prevention Rules](https://cheatsheetseries.owasp.org/cheatsheets/Cross_Site_Scripting_Prevention_Cheat_Sheet.html#xss-prevention-rules).
+
+There are also some [ready-made libraries](https://lib.rs/crates/sanitize_html) to help you [sanitize](https://github.com/rgrove/sanitize) your HTML and CSS.
+
+### XML External Entities and XInclude
+
+XML offers various ways of including external content in the parsing, namely external entities, and XInclude.
+
+The XML standard allows for external entities, which can access local or remote content through a declared system identifier by replacing the entity with the contents dereferenced by the system identifier. This may lead to the [disclosure of confidential data](https://cheatsheetseries.owasp.org/cheatsheets/XML_External_Entity_Prevention_Cheat_Sheet.html) and other nasty things. To make use of external entities, they have to explicitly be enabled with the command-line option [`--xml-external-entities`](command-line.md#cl-xxe).
+
+XInclude is a generic mechanism for including XML or non-XML data in XML files. It needs to be enabled with the command-line option [`--xinclude`](command-line.md#cl-xinclude) - see [XML Inclusions (XInclude)](prince-input.md#xml-inclusions-xinclude) for more details.
+
+It is highly recommended to *never* enable XML external entities or XInclude when dealing with untrusted data! These options are not enabled by default.
+
+Please also note that, even when enabled, external entities and XIncludes are never processed anywhere but in the main document.  This means that they would not be processed in SVG images included in a document (but they would be processed, if eneabled, if the main document were an SVG image).
+
+### Local Files
+
+However, XML external entities and XInclude are not the only way for accessing local files.  Any image, CSS or JavaScript file in an HTML file can point to a local resource!  This can potentially lead to exposing resources that need to be kept confidential.
+
+It is important to know that by default, Prince *does* have access to local files.
+
+Therefore, it is good and safe practice to always run Prince with the command-line option [`--no-local-files`](command-line.md#cl-no-local-files) in order to exclude any unwanted access to the local file system when dealing with untrusted content.
+
+### Network Resources
+
+Similarly, it might be desirable to prevent a document fed to Prince to access other external resources over the network, which might possibly circumvent the filtering and escaping mechanisms you might have put in place.
+
+Run Prince with the [`--no-network`](command-line.md#cl-no-network) command-line option to prevent all HTTP downloads.
+
+### Running Prince in a Container
+
+A more comprehensive hardening practice is to run Prince in a chroot, a jail, a VM or a container, in order to completely isolate the process and prevent any potential damage resulting from uncaught malicious untrusted content.
+
+As a general rule, consider that, in order to function best, Prince will need to have access not only to several shared libraries, but also to fonts, and possibly SSL certificates.
+
+For ease of use, Prince offers its own, maintained [Docker Images](https://hub.docker.com/r/yeslogic/prince).  See also [Prince In Cloud Computing](#prince-in-cloud-computing) for more installation guides in cloud containers.
+
+
+
+
+Performance
+-----------
+
+When preparing PDFs for printing, high performance is at times not as important as proper balancing of content on a page spread.
+
+Indeed, Prince for Books, a Prince version specifically addressed at publishers, spends more time on several calculations of line breaking and spread balancing than the standard version. For more details, please consult the [Prince for Books](prince-for-books.md) chapters.
+
+But even for normal PDF creation there are times when performance tweaks are called for - as for example in heavy throughput scenarios. Generally speaking, Prince's performance scales linearly, since it is a standalone application - the more computing power you offer, the faster it will perform.
+
+When running multiple instances of Prince, it might be advisable to disable parallel rasterization with the command-line option [`--raster-threads=1`](command-line.md#cl-raster-threads) to improve throughput.
+
+Setting `GC_MARKERS=1` in the environment will do the same for garbage collection threads.
 

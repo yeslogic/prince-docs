@@ -15,18 +15,18 @@ Prince is a user agent producing primarily documents meant to be printed, and as
 
 The most notable difference is the fact that a printed page cannot be interactive, being static in nature: in principle a document cannot be modified after it is deemed to be ready for print. JavaScript can basically be run twice: the first time it is run before layout, where it interacts with and modifies the layout (and the DOM structure). Once layout is finished, JavaScript can be run a second time from the `complete` event handler (see [Event Handling](javascript.md#event-handling)) to inspect the layout, without modifying the DOM.
 
-However, Prince also offers to register the function [`Prince.registerPostLayoutFunc(func)`](js-support.md#window.Prince.registerPostLayoutFunc), which is called after layout finished, similar to the current `oncomplete` event. If this function modifies the DOM, Prince will perform layout again on the updated document. For more details see [The Prince Object](#the-prince-object) and [The "Multi-Pass" Solution](cookbook.md#the-multi-pass-solution).
+However, Prince also offers to register the function [`Prince.registerPostLayoutFunc(func)`](js-support.md#window.Prince.registerPostLayoutFunc), which is called after layout finished, similar to the current `oncomplete` event. If this function modifies the DOM, Prince will perform layout again on the updated document. For more details see [Multi-Pass formatting](#multi-pass-formatting) and [The "Multi-Pass" Solution](cookbook.md#the-multi-pass-solution).
 
 Please also note that a consequence of the non-interactive nature of printed media is that any interactive events, such as e.g. `onClick`, do not make sense, and will never fire.
 
 JavaScript in Prince
 --------------------
 
-Prince supports most of ECMAScript 5th edition (ES5), but not strict mode. Later editions of ECMAScript are not supported.
+Prince supports most of ECMAScript 5th edition (ES5), with the exception of strict mode. ES6 is not fully supported yet, and later editions of ECMAScript are not supported.
 
 JavaScript is not run by default - it needs to be explicitly enabled. See [Applying JavaScript in Prince](prince-input.md#applying-javascript-in-prince).
 
-In addition to normal JavaScript run in the document, Prince allows also for scripts to be passed directly to the PDF, to be executed when the PDF file is opened (`prince-pdf-script`), or triggered by specific events (`prince-pdf-event-scripts`). See [Script Functions](gen-content.md#script-functions) and [PDF Actions](prince-output.md#pdf-actions) for more details.
+In addition to normal JavaScript run in the document, Prince allows also for scripts to be passed directly to the PDF, to be executed when the PDF file is opened (by means of the CSS property [`-prince-pdf-script`](css-props.md#prop-prince-pdf-script)), or triggered by specific events (with the CSS property [`-prince-pdf-event-scripts`](css-props.md#prop-prince-pdf-event-scripts)). See [Script Functions](gen-content.md#script-functions) and [PDF Actions](prince-output.md#pdf-actions) for more details.
 
 These PDF scripts, known as "Document Action" scripts, will always be run. Note, however, that these scripts are dependent on the PDF viewer, and in many cases might only work in Adobe Acrobat products.
 
@@ -113,9 +113,11 @@ It can be set to true by a script that runs after layout in the `oncomplete` han
 
 For example, perhaps there should be only one page: you check the page count (see [Document Statistics](javascript.md#document-statistics)), and if it's greater than one, you log a warning and trigger the fail-safe to ensure that no PDF is generated.
 
+#### Multi-Pass formatting
+
 Prince also offers the possibility to register the function [`Prince.registerPostLayoutFunc(func)`](js-support.md#window.Prince.registerPostLayoutFunc), which is called after layout finished, similar to the current `oncomplete` event. If this function modifies the DOM, Prince will perform layout again on the updated document once the function returns, and before generating the PDF.
 
-A post layout function may register itself, or another post layout function, in order to repeat this process multiple times! By default the number of passes is limited to two, but this can be increased by using the [`--max-passes=N`](command-line.md#cl-max-passes) command-line option. For more details see [The "Multi-Pass" Solution](cookbook.md#the-multi-pass-solution).
+A post layout function may register itself, or another post layout function, in order to repeat this process multiple times! By default the number of passes is not limited, but in order to prevent endless layout loops you can set a limit by using the [`--max-passes=N`](command-line.md#cl-max-passes) command-line option. For more details see [The "Multi-Pass" Solution](cookbook.md#the-multi-pass-solution).
 
 
 ### The PDF Object
@@ -182,6 +184,8 @@ It then becomes available in the `complete` event (see [Event Handling](javascri
         }
     }, false);
 ```
+
+
 The [`PDF.pages`](js-support.md#window.PDF.pages) array mentioned earlier (see [The PDF Object](javascript.md#the-pdf-object)) also is available only after the `complete` event and also returns a list of *boxes* (see [Page regions](paged.md#page-regions)).
 
 ```javascript
@@ -206,33 +210,37 @@ The [`PDF.pages`](js-support.md#window.PDF.pages) array mentioned earlier (see [
 ```
 *Boxes* are JavaScript objects with some or all of the following properties:
 
-
-    type =     "BODY" |
-               "COLUMN" |
-               "FLEXLINE" |
-               "FOOTNOTES" |
-               "FLOATS" |
-               "BOX" |
-               "LINE" |
-               "SPAN" |
-               "TEXT" |
-               "SVG" |
-               "IMAGE"
-    pageNum =  the page of the current box
-    x =        x-coordinate, in pt
-    y =        y-coordinate, in pt (set to zero on some boxes)
-    w =        width, in pt
-    h =        height, in pt (set to zero on some boxes)
-    baseline = the y-coordinate of the baseline of the box,
-               ie. the line that the text rests on, in pt -
-               applies only to inline boxes
-    children = array of child boxes
-    parent =   parent box
-    element =  DOM element for box (may be null)
-    pseudo =   pseudo-element name or null
-    text =     string
-    src =      URL string for images
-    style =    CSS style object for box
+    type =          "BODY" |
+                    "COLUMN" |
+                    "FLEXLINE" |
+                    "FOOTNOTES" |
+                    "FLOATS" |
+                    "BOX" |
+                    "LINE" |
+                    "SPAN" |
+                    "TEXT" |
+                    "SVG" |
+                    "IMAGE"
+    pageNum =       the page of the current box
+    x =             x-coordinate, in pt
+    y =             y-coordinate, in pt (set to zero on some boxes)
+    w =             width, in pt
+    h =             height, in pt (set to zero on some boxes)
+    baseline =      the y-coordinate of the baseline of the box,
+                    ie. the line that the text rests on, in pt -
+                    applies only to inline boxes
+    marginTop
+    marginRight
+    marginBottom
+    marginLeft =    the used values for margins
+    floatPosition = "TOP" | "BOTTOM"
+    children =      array of child boxes
+    parent =        parent box
+    element =       DOM element for box (may be null)
+    pseudo =        pseudo-element name or null
+    text =          string
+    src =           URL string for images
+    style =         CSS style object for box
 
 The `x`, `y`, `w`, `h` and `baseline` measures, defining respectively the x- and y-coordinates and the width and height of the *box*, use the same coordinate system as the PDF, i.e. the box tracking units are measured in points (`pt`) and the origin is the lower left corner of the page.
 
@@ -240,9 +248,13 @@ The box with the value `BODY` represents the *page area* returned by [`PDF.pages
 
 The properties of a *box* can be queried with the [`BoxInfo()`](js-support.md#window.BoxInfo) method.
 
-Since the box tracking API is available only *after* the `complete` event, it cannot be used to modify the document (see [JavaScript in Printed Media](javascript.md#javascript-in-printed-media)).
+The `marginTop`, `marginRight`, `marginBottom` and `marginLeft` properties return the *used* values for margins.  This can be useful in cases of elements that are being floated to the top or to the bottom of a column, to determine whether the alternative margin will be applied (see [Margins of Page and Column Floats](styling.md#margins-of-page-and-column-floats)).
 
-However, see [The "Multi-Pass" Solution](cookbook.md#the-multi-pass-solution) for making use of its output. Two further sample applications of the box tracking API can be seen in the [Changebars](//www.princexml.com/forum/topic/3516/changebars) example, and in [Detecting Overflow](//www.princexml.com/forum/topic/3603/detecting-overflow).
+When elements are snapped to the nearest column or page end (see [Page and Column Floats](styling.md#page-and-column-floats)), the `floatPosition` property tells us whether the element snapped to the top, or to the bottom - please note that it needs to be checked not on the element itself, but on the anonymous (non-element) *parent* box that gets created to contain all the floats at the top or bottom of a page or column (in just the same fashion as the footnotes area contains all the footnotes).
+
+See also [our nifty script](cookbook.md#how-and-where-is-my-box) to return the position and dimension of the margin box, the border box, the padding box and the content box of an element.
+
+Two further sample applications of the box tracking API can be seen in the [Changebars](//www.princexml.com/forum/topic/3516/changebars) example, and in [Detecting Overflow](//www.princexml.com/forum/topic/3603/detecting-overflow).
 
 ### Unsupported DOM Properties
 

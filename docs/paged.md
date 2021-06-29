@@ -55,17 +55,17 @@ The initial values for CSS properties are defined internally - these are the ini
 ```
     @page {
         margin: 54pt;
-        prince-bleed: auto /* '6pt' if marks present */ ;
-        prince-trim: auto /* '57pt 48pt' if marks present */ ;
+        -prince-bleed: auto /* '6pt' if marks present */ ;
+        -prince-trim: auto /* '57pt 48pt' if marks present */ ;
         marks: none;
-        mark-length: 24pt;
-        mark-width: 0.1pt;
-        mark-offset: auto /* equal to prince-bleed */ ;
+        -prince-mark-length: 24pt;
+        -prince-mark-width: 0.1pt;
+        -prince-mark-offset: auto /* equal to prince-bleed */ ;
         size: Letter;
-        prince-pdf-page-colorspace: auto;
-        prince-pdf-page-label: auto;
-        prince-rotate-body: 0deg;
-        prince-shrink-to-fit: none;
+        -prince-pdf-page-colorspace: auto;
+        -prince-pdf-page-label: auto;
+        -prince-rotate-body: 0deg;
+        -prince-shrink-to-fit: none;
     }
 ```
 
@@ -121,7 +121,7 @@ This is used in [Fancy headers](#fig-fancyheader).
 
 ![A page with content in some of its page regions.](assets/samples/marginboxes-1.colour.png)
 
-Most content appears inside the *page area* of one or more pages. Surrounding the page area, but within the margin area, are the *page-margin boxes*. Other special areas are overlaying the whole page or are placed at the bottom of the *page area*. Collectively, they are known as the *page regions*.
+Most content appears inside the *page area* of one or more pages. Surrounding the page area is the margin area, which contains the *page-margin boxes*. Other special areas are overlaying the whole page or are placed at the bottom of the *page area*. Collectively, they are known as the *page regions*.
 
 This figure shows the positions of some page regions placed in the page margin, called the *page-margin boxes*. Some of them can be used for creating running page headers and footers.
 
@@ -158,7 +158,7 @@ Several other page regions can also be used. The full list of page regions is sh
 
 <p id="tab-marginboxes">Page regions</p>
 
-<table class="grid" id="table-page-regions">
+<table class="grid">
 <thead>
 <tr>
 <th>Name</th>
@@ -177,31 +177,31 @@ Several other page regions can also be used. The full list of page regions is sh
 <td><code>@top</code></td>
 <td>center</td>
 <td>middle</td>
-<td class="background-color-yellow">yellow</td>
+<td style="background-color: #ff8">yellow</td>
 </tr>
 <tr>
 <td><code>@bottom</code></td>
 <td>center</td>
 <td>middle</td>
-<td class="background-color-yellow">yellow</td>
+<td style="background-color: #ff8">yellow</td>
 </tr>
 <tr>
 <td><code>@left</code></td>
 <td>center</td>
 <td>middle</td>
-<td class="background-color-red">red</td>
+<td style="background-color: #f88">red</td>
 </tr>
 <tr>
 <td><code>@right</code></td>
 <td>center</td>
 <td>middle</td>
-<td class="background-color-red">red</td>
+<td style="background-color: #f88">red</td>
 </tr>
 <tr>
 <td><code>@top-left</code></td>
 <td>left</td>
 <td>middle</td>
-<td class="background-color-green">green</td>
+<td style="background-color: #8f8">green</td>
 </tr>
 <tr>
 <td><code>@top-center</code></td>
@@ -237,7 +237,7 @@ Several other page regions can also be used. The full list of page regions is sh
 <td><code>@left-top</code></td>
 <td>center</td>
 <td>top</td>
-<td class="background-color-green">green</td>
+<td style="background-color: #8f8">green</td>
 </tr>
 <tr>
 <td><code>@left-middle</code></td>
@@ -279,7 +279,7 @@ Several other page regions can also be used. The full list of page regions is sh
 <td><code>@top-right-corner</code></td>
 <td>left</td>
 <td>middle</td>
-<td class="background-color-blue">blue</td>
+<td style="background-color: #88f">blue</td>
 </tr>
 <tr>
 <td><code>@bottom-left-corner</code></td>
@@ -332,6 +332,8 @@ The page region `@footnote` is placed by default at the foot of the page area an
 
 Many CSS properties can be applied to page regions:
 
+-   The height of the top and bottom page-margin boxes, as well as the width of the left and right page-margin boxes is defined by the [`margin`](css-props.md#prop-margin) values of the page style given in a `@page` rule (see [Page style](#page-style) for more details).
+
 -   All of the [`margin`](css-props.md#prop-margin), [`border`](css-props.md#prop-border), [`padding`](css-props.md#prop-padding) and [`background`](css-props.md#prop-background) properties can be used to style page regions.
 
 -   The [`vertical-align`](css-props.md#prop-vertical-align) property can be applied to any page region to vertically align its content.
@@ -359,8 +361,8 @@ HTML
         <div class="chapter"> chapter 1...</div>
         <div class="chapter"> chapter 2...</div>
         </div>
-        <div class="appendix"> appendix1 </div>
-        <div class="appendix"> appendix2, ... </div>
+        <div class=appendix"> appendix1 </div>
+        <div class=appendix"> appendix2, ... </div>
     </body>
 ```
 CSS
@@ -483,7 +485,7 @@ This example demonstrates a more complete headers style. It uses generated conte
 
     div.body h1 {
         break-before: right;
-        prince-page-group: start;
+        -prince-page-group: start;
         string-set: chapter content();
         counter-increment: chapter;
         counter-reset: section;
@@ -561,7 +563,7 @@ The `@page` rule specifies that the top page region is a new running header name
 
 The rule for the `h1` element moves it to the "header" running element, removing it from the default normal flow.
 
-Prince also provides another interface for creating running headers: the content can be removed from the normal flow with `prince-flow: static()`, to be placed in a page region with `content: flow()`.
+Prince also provides another interface for creating running headers: the content can be removed from the normal flow with `-prince-flow: static()`, to be placed in a page region with `content: flow()`.
 
 CSS
 
@@ -569,7 +571,7 @@ CSS
     @page {
         @bottom { content: flow(footer) }
     }
-    footer { prince-flow: static(footer, start) }
+    footer { -prince-flow: static(footer, start) }
 ```
 In addition to the standard mechanism, the Prince specific one offers an extra feature that might be useful in certain scenarios: the `static()` function accepts an optional `start` argument, which makes the fetched content available, as if it were fetched from the start of the document. An example to clarify:
 
@@ -587,7 +589,7 @@ Unfortunately, if you want to place the footer element in the page footer, it wi
     <footer>
     main content
 ```
-It can be achieved by using JavaScript to move the element, but the simple `start` keyword on the [`prince-flow`](css-props.md#prop-prince-flow) property instructs Prince to pretend that the element was seen at the beginning of the document.
+It can be achieved by using JavaScript to move the element, but the simple `start` keyword on the [`-prince-flow`](css-props.md#prop-prince-flow) property instructs Prince to pretend that the element was seen at the beginning of the document.
 
 The `element()` and `flow()` functions replace the entire margin box, and cannot be combined with other content. If you just want to capture some text from the document, use named strings instead (see [Copying content from the document](#copying-content-from-the-document)) - they can be combined with other content.
 
@@ -638,7 +640,7 @@ A title page example showing use of `@page:first`. Download the [PDF](assets/sam
 ```
 In this example the [`@page`](css-refs.md#at-page) rule specifies styles that apply to all pages: Then the `@page:first` rule overrides this for the first page only. It resets the [`content`](css-props.md#prop-content) property for the footer and increases the top margin, printing the title of the novel in a reasonable place on the page (see [Page style](#page-style)). This example also uses the [`break-before`](css-props.md#prop-break-before) property to force a page break (see [Page breaks](#page-breaks)).
 
-When using the `:first` page selector to choose the first page in each chapter (such as in [Fancy headers](#fig-fancyheader)) it may be necessary to add `prince-page-group: start` to the first element in each chapter (such as `h1`). See [Page groups](#page-groups).
+When using the `:first` page selector to choose the first page in each chapter (such as in [Fancy headers](#fig-fancyheader)) it may be necessary to add `-prince-page-group: start` to the first element in each chapter (such as `h1`). See [Page groups](#page-groups).
 
 The `:left` and `:right` page selectors can be used to style left and right pages in a bound book differently. This is often used in text books to place the page number on the outside top corners of pages.
 
@@ -719,13 +721,13 @@ Selectors such as `:first`, `:Nth`, `:left` and `:right` also work with named pa
         }
     }
 ```
-This example only works when a page name is used only once within a document, such as for the preface of a document (documents only have one preface). If you wish to apply a style to the first page of every chapter then you must use the [`prince-page-group`](css-props.md#prop-prince-page-group) property to create *page groups*:
+This example only works when a page name is used only once within a document, such as for the preface of a document (documents only have one preface). If you wish to apply a style to the first page of every chapter then you must use the [`-prince-page-group`](css-props.md#prop-prince-page-group) property to create *page groups*:
 
 ```
     div.chapter {
         page: chapter;
         break-before: right;
-        prince-page-group: start;
+        -prince-page-group: start;
     }
     @page chapter {
         @bottom {
@@ -738,7 +740,7 @@ This example only works when a page name is used only once within a document, su
         }
     }
 ```
-The property `prince-page-group: start` instructs Prince to start a new page group. This is necessary for the `div.chapter:first` selector to match the first page of each chapter, instead of only the first page in the first chapter. See [Page groups](#page-groups).
+The property `-prince-page-group: start` instructs Prince to start a new page group. This is necessary for the `div.chapter:first` selector to match the first page of each chapter, instead of only the first page in the first chapter. See [Page groups](#page-groups).
 
 ### Blank pages
 
@@ -795,16 +797,16 @@ This can happen either:
 -   when chapters are separated by an element, such as `h1` which may have `break-before: right` applied (this can be seen in [Fancy headers](#fig-fancyheader));
 -   or when each chapter is a block element such as a `div`.
 
-Prince provides the [`prince-page-group`](css-props.md#prop-prince-page-group) property that can be used to start a new page group. It can be seen in [Fancy headers](#fig-fancyheader) applied to h1 elements in the body of the document.
+Prince provides the [`-prince-page-group`](css-props.md#prop-prince-page-group) property that can be used to start a new page group. It can be seen in [Fancy headers](#fig-fancyheader) applied to h1 elements in the body of the document.
 
 ```
     div.body h1 {
         break-before: right;
-        prince-page-group: start;
+        -prince-page-group: start;
         ...
     }
 ```
-`prince-page-group` also forces a page break, overriding any properties that attempt to avoid page breaks. The more specific `left` and `right` page take precedence over `prince-page-group`.
+`-prince-page-group` also forces a page break, overriding any properties that attempt to avoid page breaks. The more specific `left` and `right` page take precedence over `-prince-page-group`.
 
 ## Controlling pagination
 
@@ -992,10 +994,9 @@ The furniture catalogue with bleed and trim areas for printing and cropping. Dow
         background-repeat: no-repeat;
         marks: crop cross;
         bleed: 0.25in;
-        prince-trim: 0.25in;
+        -prince-trim: 0.25in;
     }
 ```
-This example uses some of the properties that we introduced above, plus three new ones: [`marks`](css-props.md#prop-marks), [`bleed`](css-props.md#prop-bleed) and [`prince-trim`](css-props.md#prop-prince-trim). These options enable crop and cross marks and specify bleed and trim areas. Note that size of the content does not change when we add these options, the *page* is still 8.5in by 10.5in as specified by the [`size`](css-props.md#prop-size) property. Instead 0.25in of bleed area and 0.25in of trim area has been added to each edge (1in total). Therefore we will need to print on 9.5in by 11.5in paper. Prince will print solid background colors and repeating pictures into the bleed area - we set the background size to 104% so that it would print into the bleed area.
+This example uses some of the properties that we introduced above, plus three new ones: [`marks`](css-props.md#prop-marks), [`bleed`](css-props.md#prop-bleed) and [`-prince-trim`](css-props.md#prop-prince-trim). These options enable crop and cross marks and specify bleed and trim areas. Note that size of the content does not change when we add these options, the *page* is still 8.5in by 10.5in as specified by the [`size`](css-props.md#prop-size) property. Instead 0.25in of bleed area and 0.25in of trim area has been added to each edge (1in total). Therefore we will need to print on 9.5in by 11.5in paper. Prince will print solid background colors and repeating pictures into the bleed area - we set the background size to 104% so that it would print into the bleed area.
 
-Prince also allows the placement, length and width of the crop marks to be specified respectively with the [`prince-mark-offset`](css-props.md#prop-prince-mark-offset), [`prince-mark-length`](css-props.md#prop-prince-mark-length) and [`prince-mark-width`](css-props.md#prop-prince-mark-width) properties.
-
+Prince also allows the placement, length and width of the crop marks to be specified respectively with the [`-prince-mark-offset`](css-props.md#prop-prince-mark-offset), [`-prince-mark-length`](css-props.md#prop-prince-mark-length) and [`-prince-mark-width`](css-props.md#prop-prince-mark-width) properties.

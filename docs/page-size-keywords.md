@@ -44,10 +44,10 @@ Keywords are *not* case sensitive, thus "A4" and "a4" are equivalent.
 | id-1            | 85.60mm × 53.98mm |
 | id-2            | 105.0mm × 74.0mm  |
 | id-3            | 125.0mm × 88.0mm  |
-| US-Letter       | 8.5in × 11.0in    |
-| US-Legal        | 8.5in × 14.0in    |
+| US-Letter, letter|8.5in × 11.0in    |
+| US-Legal, legal | 8.5in × 14.0in    |
 | US-Executive    | 7.25in × 10.5in   |
-| US-Ledger       | 17.0in × 11.0in   |
+| US-Ledger, ledger|17.0in × 11.0in   |
 | US-Tabloid      | 11.0in × 17.0in   |
 | US-Government   | 8.0in × 11.0in    |
 | US-Statement    | 5.5in × 8.5in     |

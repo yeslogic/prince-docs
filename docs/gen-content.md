@@ -9,27 +9,63 @@ Generated content is text and other content that is not found in the original in
 Generated content is inserted by means of several functions that typically are used within the [`content`](css-props.md#prop-content) property. However, please note that these functions are not unique to the [`content`](css-props.md#prop-content) property, but can be used for the same purpose in several other ones, namely:
 
 -   `content`
--   `prince-bookmark-label`
--   `prince-pdf-page-label`
--   `prince-tooltip`
+-   `-prince-bookmark-label`
+-   `-prince-pdf-page-label`
+-   `-prince-tooltip`
 -   `string-set`
 
 See also the section on [CSS Functional Expressions](css-refs#css-functional-expressions) for additional details on these functions.
 
 The most simple use of generating content in these properties is to insert a literal string. A literal string can also be passed as an argument to the `leader()` function, which expands to fill the available space on the line like justified text, by repeating the string as many times as necessary. An optional second argument can be used to specify a minimum width.
 
+HTML
+
+```html
+<ul id="index">
+  <li><a href="#chapter1">Chapter 1</a></li>
+  <li><a href="#chapter2">Chapter 2</a></li>
+</ul>
+```
+
+CSS
+
+```css
+    #index a:after {
+      content: leader('.') "p. " target-counter(attr(href), page);
+    }
+```
+The above example will generate something looking like "Chapter 1..................p. 5", assuming that chapter 1 indeed starts on page 5!  See below for the two other functions appearing in this example, namely `target-counter()` and `attr()`.
+
 The properties can also insert external content fetched from another resource. This can be done with the following functions:
 
 -   the <code>url(<i>url</i>)</code> function, returning the text content at the given URL,
--   the <code>target-content(<i>url</i>)</code> function, referencing the text content of the linked element (see [Using target-content()](#using-target-content)), or
+-   the <code>target-content(<i>url</i>)</code> function, referencing the text content of the linked element (see [Using target-content()](#using-target-content) for an example), or
 -   the `prince-base-url()` function, returning the base URL of the current document.
 
 It can also be done with the <code>prince-fallback(<i>url</i>)</code> function, which works just like the `url()` function, but also has the possibility of specifying a fallback `content`, in case the loading of the URL should fail.
 
+```css
+    img {
+      content: prince-fallback(attr(src, url)), attr(data-altsrc, url);
+    }
+```
+
 The content to be inserted can also be fetched from the attributes of other elements with the <code>attr(<i>attribute-name</i>)</code> function, or from other elements with the following mechanisms:
 
--   Any block-level element can be removed from the normal document flow, to be inserted in a page region: it is best removed with the [`position`](css-props.md#prop-position) property and its <code>running(<i>name</i>)</code> function, and inserted with the <code>element(<i>name</i>)</code> function. Alternatively, it can be removed with the [`prince-flow`](css-props.md#prop-prince-flow) property, to be inserted with the <code>flow(<i>name</i>)</code> function. See the documentation for [Taking elements from the document](paged.md#taking-elements-from-the-document) for more details.
+-   Any block-level element can be removed from the normal document flow, to be inserted in a page region: it is best removed with the [`position`](css-props.md#prop-position) property and its <code>running(<i>name</i>)</code> function, and inserted with the <code>element(<i>name</i>)</code> function. Alternatively, it can be removed with the [`-prince-flow`](css-props.md#prop-prince-flow) property, to be inserted with the <code>flow(<i>name</i>)</code> function. See the documentation for [Taking elements from the document](paged.md#taking-elements-from-the-document) for more details.
 -   An element can be referenced with the <code>string(<i>ident</i>)</code> function after having been defined in the [`string-set`](css-props.md#prop-string-set) property with the `content()` function. This does not remove the element from the natural document flow, but instead copies it into the page region. See [Copying content from the document](paged.md#copying-content-from-the-document).
+
+The function <code>prince-expansion-text(<i>expansion</i>, <i>abbreviation</i>)</code> is useful with tagged PDF files by resolving abbreviations in the targeted element or psedudo-element.
+
+```css
+    p::after {
+      content: "see " prince-expansion-text("page ", "p. ") target-counter(attr(href), page);
+    }
+```
+
+This example might show the text "see p. 17" and the tagged PDF structure tree will treat the "p." as an abbreviation with the full expanded text being "see page 17".  The CSS property [-prince-expansion-text](css-props.md#prop-prince-expansion-text) works in a similar fashion.
+
+Please note that the <code>prince-expansion-text()</code> function <em>only</em> works in the [content](css-props.md#prop-content) property, and not in the other properties for whom generated content functions work.
 
 The following functions can also be used for different forms of counters:
 
@@ -38,9 +74,27 @@ The following functions can also be used for different forms of counters:
 -   the <code>target-counter(<i>url</i>, <i>counter</i>)</code> function retrieves the value of the innermost counter with a given name at the given URL, and
 -   the <code>target-counters(<i>url</i>, <i>counter</i>, "separator")</code> function retrieves the value of all counters of a given name from the end of the given URL.
 
+For a detailed survey on counters, please see the chapter [Counters and Numbering](#counters-and-numbering).
+
 All counter functions can take an optional argument to define the counter style (see [Counter styles](#counter-styles)). Prince also offers two mechanisms to create user-defined counter styles: either by means of the `prince-script()` function (see below, and [User-defined counter styles](#user-defined-counter-styles)), or by means of the generated content functions <code>repeat(<i>string</i>+)</code>, defining a sequentially repeated pattern for numbering the items, or <code>symbols(<i>string</i>+)</code>, defining the symbols used for numbering the items.
 
-Last but not least, Prince supports arbitrary JavaScript functions to be called from CSS generated content using the `prince-script()` function (see [Script Functions](#script-functions)).
+```css
+    h4::before {
+      content: counter(h4, repeat("x", "y", "z"))
+    }
+```
+
+The `repeat()` function defines a sequentially repeated pattern for numbering the items - here it will yield the sequence "x, y, z, xx, yy, zz" etc.
+
+```css
+    h4::before {
+      content: counter(h4, symbols("x", "y", "z"))
+    }
+```
+
+The `symbols()` function defines the symbols used for numbering the items - in this case it will yield the sequence "x, y, z, 4, 5, 6" etc.
+
+Last but not least, Prince supports arbitrary JavaScript functions to be called from CSS generated content using the `prince-script()` function (see [Script Functions](#script-functions) for details and examples).
 
 A special function is <code>prince-glyph-index(<i>int</i>)</code>, which allows to choose a glyph from a font by the index of that glyph in the font. Note that this is very non-portable, as glyph indices are specific to individual font versions. But it is a possible escape hatch for people who need a specific glyph and don't have any other way of accessing it (by Unicode character or OpenType substitution).
 
@@ -49,16 +103,16 @@ A special function is <code>prince-glyph-index(<i>int</i>)</code>, which allows 
 The generated content functions `element()`, `counter()`, `counters()`, `string()` and `flow()`, have a second, optional argument, namely `page-policy`, which can be one of the following:
 
 `start`  
-defining the value the counter had at the start of the page (eg. the last value it was set to on the previous page);
+defining the value the counter, or element had at the start of the page (eg. the last value it was set to on the previous page);
 
 `first`  
-defining the first value the counter was set to on this page, or the same as `start` if the counter was not set on this page;
+defining the first value the counter, or element was set to on this page, or the same as `start` if the counter, or element was not set on this page;
 
 `first-except`  
-defining the first value the counter was set to on this page, or no value at all if it was set on this page;
+defining the first value the counter, or element was set to on this page, or no value at all if it was set only on this page;
 
 `last`  
-defining the last value the counter was set to on this page, or the same as `start` if the counter was not set on this page.
+defining the last value the counter, or element was set to on this page, or the same as `start` if the counter, or element was not set on this page.
 
 The page policy values of the `string()` function are only meaningful for `string()` used in page region content.
 
@@ -88,6 +142,8 @@ Unless the resetting of a counter creates a nested counter, the scope of the cou
 The [`counter-increment`](css-props.md#prop-counter-increment) property applies to any element and increments or decrements one or more counters by the specified values, or by one if no value is specified.
 
 The [`counter-increment`](css-props.md#prop-counter-increment) and [`counter-reset`](css-props.md#prop-counter-reset) properties are ignored on elements whose [`display`](css-props.md#prop-display) property has the value `none`.
+
+Note that the `counter-increment` and `counter-reset` properties can also be used in `@page` at-rules to create counters that track the page number, for example to number the pages within each chapter separately from the normal `page` and `pages` counters.
 
 ### Displaying counters
 
