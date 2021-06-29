@@ -44,12 +44,12 @@ CSS
 ```
 The example would produce a title line like this:
 
-<p style="text-align: center">The fulfilment of the law<br/>
+<p id="ex-prince-wrap-inside-1">The fulfilment of the law<br/>
 and of the prophets</p>
 
 If however the final available space were narrower than the required space, Prince might instead format as:
 
-<p style="text-align: center">The fulfilment<br/>
+<p id="ex-prince-wrap-inside-2">The fulfilment<br/>
 of the law and<br/>
 of the prophets</p>
 

@@ -553,12 +553,12 @@ CSS
 ```
 Output
 
-<ol style="border: solid 2px darkgreen">
-<li style="border: solid 1px black; list-style-position: inside">
+<ol id="ex-list-marker-position">
+<li>
     This list item sets the <code><a href="/doc/css-props#prop-list-style-position">list-style-position</a></code> to <code>inside</code>,
     so the list marker is rendered inside the principal box of <code>li</code>.
 </li>
-<li style="border: solid 1px black; list-style-position: outside">
+<li>
     This list item sets the <code><a href="/doc/css-props#prop-list-style-position">list-style-position</a></code> to <code>outside</code>,
     so the list marker is rendered outside the principal box of <code>li</code>.
 </li>
@@ -600,11 +600,11 @@ CSS
 ```
 Output
 
-<ol>
-<li style="list-style-type: upper-alpha">
+<ol id="ex-list-marker-type">
+<li>
     The marker type of this list item is upper-alpha.
 </li>
-<li style="list-style-type: lower-roman">
+<li>
     The marker type of this list item is lower-roman.
 </li>
 </ol>
@@ -693,21 +693,21 @@ CSS
 ```
 Output
 
-<table style="border-collapse: separate; border-spacing: 5px; border: solid 3px black;">
+<table id="ex-separated-table-borders">
 <tr>
-    <td style="border: solid 1px red"> A </td>
-    <td style="border: solid 1px red"> B </td>
-    <td style="border: solid 1px red"> C </td>
+    <td class="border-red"> A </td>
+    <td class="border-red"> B </td>
+    <td class="border-red"> C </td>
 </tr>
 <tr>
-    <td style="border: solid 1px red"> D </td>
-    <td style="border: 2px dashed blue"> E </td>
-    <td style="border: 2px solid green"> F </td>
+    <td class="border-red"> D </td>
+    <td class="border-blue"> E </td>
+    <td class="border-green"> F </td>
 </tr>
 <tr>
-    <td style="border: solid 1px red"> G </td>
-    <td style="border: solid 1px red"> H </td>
-    <td style="border: solid 1px red"> I </td>
+    <td class="border-red"> G </td>
+    <td class="border-red"> H </td>
+    <td class="border-red"> I </td>
 </tr>
 </table>
 
@@ -733,21 +733,21 @@ CSS
 ```
 Output
 
-<table style="border-collapse: collapse; border-spacing: 5px; border: solid 3px black;">
+<table id="ex-collapsing-table-borders">
 <tr>
-    <td style="border: solid 1px red"> A </td>
-    <td style="border: solid 1px red"> B </td>
-    <td style="border: solid 1px red"> C </td>
+    <td class="border-red"> A </td>
+    <td class="border-red"> B </td>
+    <td class="border-red"> C </td>
 </tr>
 <tr>
-    <td style="border: solid 1px red"> D </td>
-    <td style="border: 2px dashed blue"> E </td>
-    <td style="border: 2px solid green"> F </td>
+    <td class="border-red"> D </td>
+    <td class="border-blue"> E </td>
+    <td class="border-green"> F </td>
 </tr>
 <tr>
-    <td style="border: solid 1px red"> G </td>
-    <td style="border: solid 1px red"> H </td>
-    <td style="border: solid 1px red"> I </td>
+    <td class="border-red"> G </td>
+    <td class="border-red"> H </td>
+    <td class="border-red"> I </td>
 </tr>
 </table>
 
@@ -804,7 +804,7 @@ Output
 
 <table class="rowspan">
 <tr>
-<td class="rowspan2" rowspan="2" style="vertical-align: middle">A</td> <td>B</td> <td>C</td>
+<td class="rowspan2" rowspan="2">A</td> <td>B</td> <td>C</td>
 </tr>
 <tr>
 <td>D</td> <td>E</td>

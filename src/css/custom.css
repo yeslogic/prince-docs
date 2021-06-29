@@ -283,6 +283,429 @@ p:hover .self-link, #prop-list summary:hover .self-link, #js-support-table summa
 #table-page-regions .background-color-blue {
     background-color: #88f;
 }
+.colortable .aliceblue {
+    background-color: aliceblue;
+}
+.colortable .antiquewhite {
+    background-color: antiquewhite;
+}
+.colortable .aqua {
+    background-color: aqua;
+}
+.colortable .aquamarine {
+    background-color: aquamarine;
+}
+.colortable .azure {
+    background-color: azure;
+}
+.colortable .beige {
+    background-color: beige;
+}
+.colortable .bisque {
+    background-color: bisque;
+}
+.colortable .black {
+    background-color: black;
+}
+.colortable .blanchedalmond {
+    background-color: blanchedalmond;
+}
+.colortable .blue {
+    background-color: blue;
+}
+.colortable .blueviolet {
+    background-color: blueviolet;
+}
+.colortable .brown {
+    background-color: brown;
+}
+.colortable .burlywood {
+    background-color: burlywood;
+}
+.colortable .cadetblue {
+    background-color: cadetblue;
+}
+.colortable .chartreuse {
+    background-color: chartreuse;
+}
+.colortable .chocolate {
+    background-color: chocolate;
+}
+.colortable .coral {
+    background-color: coral;
+}
+.colortable .cornflowerblue {
+    background-color: cornflowerblue;
+}
+.colortable .cornsilk {
+    background-color: cornsilk;
+}
+.colortable .crimson {
+    background-color: crimson;
+}
+.colortable .cyan {
+    background-color: cyan;
+}
+.colortable .darkblue {
+    background-color: darkblue;
+}
+.colortable .darkcyan {
+    background-color: darkcyan;
+}
+.colortable .darkgoldenrod {
+    background-color: darkgoldenrod;
+}
+.colortable .darkgray {
+    background-color: darkgray;
+}
+.colortable .darkgreen {
+    background-color: darkgreen;
+}
+.colortable .darkkhaki {
+    background-color: darkkhaki;
+}
+.colortable .darkmagenta {
+    background-color: darkmagenta;
+}
+.colortable .darkolivegreen {
+    background-color: darkolivegreen;
+}
+.colortable .darkorange {
+    background-color: darkorange;
+}
+.colortable .darkorchid {
+    background-color: darkorchid;
+}
+.colortable .darkred {
+    background-color: darkred;
+}
+.colortable .darksalmon {
+    background-color: darksalmon;
+}
+.colortable .darkseagreen {
+    background-color: darkseagreen;
+}
+.colortable .darkslateblue {
+    background-color: darkslateblue;
+}
+.colortable .darkslategray {
+    background-color: darkslategray;
+}
+.colortable .darkturquoise {
+    background-color: darkturquoise;
+}
+.colortable .darkviolet {
+    background-color: darkviolet;
+}
+.colortable .deeppink {
+    background-color: deeppink;
+}
+.colortable .deepskyblue {
+    background-color: deepskyblue;
+}
+.colortable .dimgray {
+    background-color: dimgray;
+}
+.colortable .dodgerblue {
+    background-color: dodgerblue;
+}
+.colortable .firebrick {
+    background-color: firebrick;
+}
+.colortable .floralwhite {
+    background-color: floralwhite;
+}
+.colortable .forestgreen {
+    background-color: forestgreen;
+}
+.colortable .fuchsia {
+    background-color: fuchsia;
+}
+.colortable .gainsboro {
+    background-color: gainsboro;
+}
+.colortable .ghostwhite {
+    background-color: ghostwhite;
+}
+.colortable .gold {
+    background-color: gold;
+}
+.colortable .goldenrod {
+    background-color: goldenrod;
+}
+.colortable .gray {
+    background-color: gray;
+}
+.colortable .green {
+    background-color: green;
+}
+.colortable .greenyellow {
+    background-color: greenyellow;
+}
+.colortable .honeydew {
+    background-color: honeydew;
+}
+.colortable .hotpink {
+    background-color: hotpink;
+}
+.colortable .indianred {
+    background-color: indianred;
+}
+.colortable .indigo {
+    background-color: indigo;
+}
+.colortable .ivory {
+    background-color: ivory;
+}
+.colortable .khaki {
+    background-color: khaki;
+}
+.colortable .lavender {
+    background-color: lavender;
+}
+.colortable .lavenderblush {
+    background-color: lavenderblush;
+}
+.colortable .lawngreen {
+    background-color: lawngreen;
+}
+.colortable .lemonchiffon {
+    background-color: lemonchiffon;
+}
+.colortable .lightblue {
+    background-color: lightblue;
+}
+.colortable .lightcoral {
+    background-color: lightcoral;
+}
+.colortable .lightcyan {
+    background-color: lightcyan;
+}
+.colortable .lightgoldenrodyellow {
+    background-color: lightgoldenrodyellow;
+}
+.colortable .lightgray {
+    background-color: lightgray;
+}
+.colortable .lightgreen {
+    background-color: lightgreen;
+}
+.colortable .lightpink {
+    background-color: lightpink;
+}
+.colortable .lightsalmon {
+    background-color: lightsalmon;
+}
+.colortable .lightseagreen {
+    background-color: lightseagreen;
+}
+.colortable .lightskyblue {
+    background-color: lightskyblue;
+}
+.colortable .lightslategray {
+    background-color: lightslategray;
+}
+.colortable .lightsteelblue {
+    background-color: lightsteelblue;
+}
+.colortable .lightyellow {
+    background-color: lightyellow;
+}
+.colortable .lime {
+    background-color: lime;
+}
+.colortable .limegreen {
+    background-color: limegreen;
+}
+.colortable .linen {
+    background-color: linen;
+}
+.colortable .magenta {
+    background-color: magenta;
+}
+.colortable .maroon {
+    background-color: maroon;
+}
+.colortable .mediumaquamarine {
+    background-color: mediumaquamarine;
+}
+.colortable .mediumblue {
+    background-color: mediumblue;
+}
+.colortable .mediumorchid {
+    background-color: mediumorchid;
+}
+.colortable .mediumpurple {
+    background-color: mediumpurple;
+}
+.colortable .mediumseagreen {
+    background-color: mediumseagreen;
+}
+.colortable .mediumslateblue {
+    background-color: mediumslateblue;
+}
+.colortable .mediumspringgreen {
+    background-color: mediumspringgreen;
+}
+.colortable .mediumturquoise {
+    background-color: mediumturquoise;
+}
+.colortable .mediumvioletred {
+    background-color: mediumvioletred;
+}
+.colortable .midnightblue {
+    background-color: midnightblue;
+}
+.colortable .mintcream {
+    background-color: mintcream;
+}
+.colortable .mistyrose {
+    background-color: mistyrose;
+}
+.colortable .moccasin {
+    background-color: moccasin;
+}
+.colortable .navajowhite {
+    background-color: navajowhite;
+}
+.colortable .navy {
+    background-color: navy;
+}
+.colortable .oldlace {
+    background-color: oldlace;
+}
+.colortable .olive {
+    background-color: olive;
+}
+.colortable .olivedrab {
+    background-color: olivedrab;
+}
+.colortable .orange {
+    background-color: orange;
+}
+.colortable .orangered {
+    background-color: orangered;
+}
+.colortable .orchid {
+    background-color: orchid;
+}
+.colortable .palegoldenrod {
+    background-color: palegoldenrod;
+}
+.colortable .palegreen {
+    background-color: palegreen;
+}
+.colortable .paleturquoise {
+    background-color: paleturquoise;
+}
+.colortable .palevioletred {
+    background-color: palevioletred;
+}
+.colortable .papayawhip {
+    background-color: papayawhip;
+}
+.colortable .peachpuff {
+    background-color: peachpuff;
+}
+.colortable .peru {
+    background-color: peru;
+}
+.colortable .pink {
+    background-color: pink;
+}
+.colortable .plum {
+    background-color: plum;
+}
+.colortable .powderblue {
+    background-color: powderblue;
+}
+.colortable .purple {
+    background-color: purple;
+}
+.colortable .rebeccapurple {
+    background-color: rebeccapurple;
+}
+.colortable .red {
+    background-color: red;
+}
+.colortable .rosybrown {
+    background-color: rosybrown;
+}
+.colortable .royalblue {
+    background-color: royalblue;
+}
+.colortable .saddlebrown {
+    background-color: saddlebrown;
+}
+.colortable .salmon {
+    background-color: salmon;
+}
+.colortable .sandybrown {
+    background-color: sandybrown;
+}
+.colortable .seagreen {
+    background-color: seagreen;
+}
+.colortable .seashell {
+    background-color: seashell;
+}
+.colortable .sienna {
+    background-color: sienna;
+}
+.colortable .silver {
+    background-color: silver;
+}
+.colortable .skyblue {
+    background-color: skyblue;
+}
+.colortable .slateblue {
+    background-color: slateblue;
+}
+.colortable .slategray {
+    background-color: slategray;
+}
+.colortable .snow {
+    background-color: snow;
+}
+.colortable .springgreen {
+    background-color: springgreen;
+}
+.colortable .steelblue {
+    background-color: steelblue;
+}
+.colortable .tan {
+    background-color: tan;
+}
+.colortable .teal {
+    background-color: teal;
+}
+.colortable .thistle {
+    background-color: thistle;
+}
+.colortable .tomato {
+    background-color: tomato;
+}
+.colortable .turquoise {
+    background-color: turquoise;
+}
+.colortable .violet {
+    background-color: violet;
+}
+.colortable .wheat {
+    background-color: wheat;
+}
+.colortable .white {
+    background-color: white;
+}
+.colortable .whitesmoke {
+    background-color: whitesmoke;
+}
+.colortable .yellow {
+    background-color: yellow;
+}
+.colortable .yellowgreen {
+    background-color: yellowgreen;
+}
 sup {
     vertical-align:super;
     font-size:smaller;

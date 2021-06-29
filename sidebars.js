@@ -24,6 +24,7 @@ module.exports = {
         {
           type: "category",
           label: "CSS Support",
+          collapsed: false,
           items: [
             "css-length-units",
             "css-props",

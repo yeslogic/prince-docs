@@ -158,7 +158,7 @@ Several other page regions can also be used. The full list of page regions is sh
 
 <p id="tab-marginboxes">Page regions</p>
 
-<table class="grid">
+<table class="grid" id="table-page-regions">
 <thead>
 <tr>
 <th>Name</th>
@@ -177,31 +177,31 @@ Several other page regions can also be used. The full list of page regions is sh
 <td><code>@top</code></td>
 <td>center</td>
 <td>middle</td>
-<td style="background-color: #ff8">yellow</td>
+<td class="background-color-yellow">yellow</td>
 </tr>
 <tr>
 <td><code>@bottom</code></td>
 <td>center</td>
 <td>middle</td>
-<td style="background-color: #ff8">yellow</td>
+<td class="background-color-yellow">yellow</td>
 </tr>
 <tr>
 <td><code>@left</code></td>
 <td>center</td>
 <td>middle</td>
-<td style="background-color: #f88">red</td>
+<td class="background-color-red">red</td>
 </tr>
 <tr>
 <td><code>@right</code></td>
 <td>center</td>
 <td>middle</td>
-<td style="background-color: #f88">red</td>
+<td class="background-color-red">red</td>
 </tr>
 <tr>
 <td><code>@top-left</code></td>
 <td>left</td>
 <td>middle</td>
-<td style="background-color: #8f8">green</td>
+<td class="background-color-green">green</td>
 </tr>
 <tr>
 <td><code>@top-center</code></td>
@@ -237,7 +237,7 @@ Several other page regions can also be used. The full list of page regions is sh
 <td><code>@left-top</code></td>
 <td>center</td>
 <td>top</td>
-<td style="background-color: #8f8">green</td>
+<td class="background-color-green">green</td>
 </tr>
 <tr>
 <td><code>@left-middle</code></td>
@@ -279,7 +279,7 @@ Several other page regions can also be used. The full list of page regions is sh
 <td><code>@top-right-corner</code></td>
 <td>left</td>
 <td>middle</td>
-<td style="background-color: #88f">blue</td>
+<td class="background-color-blue">blue</td>
 </tr>
 <tr>
 <td><code>@bottom-left-corner</code></td>
