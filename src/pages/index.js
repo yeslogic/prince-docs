@@ -74,10 +74,13 @@ function Home() {
           <li>the <a href="/doc/intro-userguide/">User Guide</a> for the latest version, and</li>
           <li>the <a href="/doc/command-line/">Reference Guide</a>.</li>
         </ul>
-        <p>Alternatively, you can choose the User Guide by Prince version:</p>
-        <div id="section-nav">
-          <ul>
-            <li class="curr"><a href="/doc/intro-userguide">User Guide for Prince 13</a></li>
+        <details id="version-nav">
+          <summary>
+            Alternatively, you can <b>choose</b> the User Guide by Prince version.
+          </summary>
+          <div id="section-nav"><ul>
+            <li class="curr"><a href="/doc/intro-userguide">User Guide for Prince 14 (current)</a></li>
+            <li><a href="/doc/13/intro-userguide">User Guide for Prince 13</a></li>
             <li><a href="/doc/12/doc-prince/">User Guide for Prince 12</a></li>
             <li><a href="/doc/11/">User Guide for Prince 11</a></li>
             <li><a href="/doc/10/">User Guide for Prince 10</a></li>
@@ -86,8 +89,8 @@ function Home() {
             <li><a href="/doc/7.1/">User Guide for Prince 7.1</a></li>
             <li><a href="/doc/6.0/">User Guide for Prince 6.0</a></li>
             <li><a href="/doc/5.1/">User Guide for Prince 5.1</a></li>
-          </ul>
-        </div>
+          </ul></div>
+        </details>
       </main>
     </Layout>
   );
