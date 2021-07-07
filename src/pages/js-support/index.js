@@ -7,14 +7,17 @@ import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 import styles from '../index.module.css';
 
+import JavascriptSupportItem from '../../components/JavascriptSupportItem';
+import std from '/js/std';
+import stdAnnotated from '/js/std-annotated';
+
+
 function JsSupport() {
     return (
 
 
 <div>
 <ScriptTag type="text/javascript" src="/js/shiftWindow.js" />
-<ScriptTag type="text/javascript" src="/js/std.js" />
-<ScriptTag type="text/javascript" src="/js/std-annotated.js" />
 <div className="markdown">
   <p>
     Prince supports most of ECMAScript 5th edition, but not
@@ -33,12 +36,22 @@ function JsSupport() {
     * objects, methods and properties marked with an asterisk
     are Prince extensions.
   </p>
-  <a href="#" onClick={() => toggleAllDetails('js')} id="toggle-js">
-    Toggle (open/close) all properties
-  </a>
-  <div className="js-overview level" id="js-support-table"></div>
+
+  <div className="js-overview level" id="js-support-table">
+  <JavascriptSupportItem
+    id="window"
+    name="window"
+    theObject={window}
+    desc="The global object"
+    ext={false}
+    subProperties={std}
+    open={true}
+    annotations={stdAnnotated}
+  />
+
+
+  </div>
 </div>
-<ScriptTag type="text/javascript" src="/js/buildjsdoc.js" />
 </div>
 
     );
