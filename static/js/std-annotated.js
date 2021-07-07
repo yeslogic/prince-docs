@@ -47,6 +47,8 @@ const stdAnnotated = {
     escape: {
         desc: "Computes a new string by replacing certain characters with a hexadecimal escape sequence.",
         returns: "string",
+        example: "escape('20%'))",
+        exampleReturn: '20%25',
         arguments: [
             {name: "string", desc: "String to escape", type: "string"}
         ]
@@ -54,6 +56,8 @@ const stdAnnotated = {
     unescape: {
         desc: "Computes a new string by replacing hexadecimal escape sequences with the characters they represent.",
         returns: "string",
+        example: "unescape('%22hi%22'))",
+        exampleReturn: '"hi"',
         arguments: [
             {name: "string", desc: "String to unescape", type: "string"}
         ]
@@ -95,7 +99,7 @@ const stdAnnotated = {
         returns: "string"
     },
     valueOf: {
-        desc: "Returns the primitive value an object.",
+        desc: "Returns the primitive value of an object.",
         returns: "primitive value"
     },
     hasOwnProperty: {
@@ -114,7 +118,12 @@ const stdAnnotated = {
         returns: "boolean"
     },
     Object: {
-        create: {},
+        create: {
+          desc: "Creates a new object, using argument as prototype",
+          arguments: [
+            {type: "object", name: "prototype object"}
+          ]
+        },
         defineProperty: {
             desc: "Adds a property to the object and defines certain traits like enumerability.", type: "function",
             arguments: [
