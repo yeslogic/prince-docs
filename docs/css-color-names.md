@@ -2,6 +2,19 @@
 title: Color Names
 ---
 
+export const Highlight = ({color}) => (
+  <>
+  <td
+    style={{
+      backgroundColor: color,
+    }}>
+  </td>
+  <td>
+    {color}
+  </td>
+  </>
+);
+
 CSS offers several ways of defining colors - either by keyword, or by numerical specification expressed as RGB, RGBA, CMYK, HSL or HSLA colors. For more details, please see the chapter on [Color](graphics.md#color).
 
 
@@ -27,98 +40,82 @@ The following table shows the basic color keywords with their sRGB values.
   </thead>
   <tbody>
     <tr>
-      <td class="black"></td>
-      <td>black</td>
+      <Highlight color="black"></Highlight>
       <td>#000000</td>
       <td>0,0,0</td>
     </tr>
     <tr>
-      <td class="silver"></td>
-      <td>silver</td>
+      <Highlight color="silver"></Highlight>
       <td>#C0C0C0</td>
       <td>192,192,192</td>
     </tr>
     <tr>
-      <td class="gray"></td>
-      <td>gray</td>
+      <Highlight color="gray"></Highlight>
       <td>#808080</td>
       <td>128,128,128</td>
     </tr>
     <tr>
-      <td class="white"></td>
-      <td>white</td>
+      <Highlight color="white"></Highlight>
       <td>#FFFFFF</td>
       <td>255,255,255</td>
     </tr>
     <tr>
-      <td class="maroon"></td>
-      <td>maroon</td>
+      <Highlight color="maroon"></Highlight>
       <td>#800000</td>
       <td>128,0,0</td>
     </tr>
     <tr>
-      <td class="red"></td>
-      <td>red</td>
+      <Highlight color="red"></Highlight>
       <td>#FF0000</td>
       <td>255,0,0</td>
     </tr>
     <tr>
-      <td class="purple"></td>
-      <td>purple</td>
+      <Highlight color="purple"></Highlight>
       <td>#800080</td>
       <td>128,0,128</td>
     </tr>
     <tr>
-      <td class="fuchsia"></td>
-      <td>fuchsia</td>
+      <Highlight color="fuchsia"></Highlight>
       <td>#FF00FF</td>
       <td>255,0,255</td>
     </tr>
     <tr>
-      <td class="green"></td>
-      <td>green</td>
+      <Highlight color="green"></Highlight>
       <td>#008000</td>
       <td>0,128,0</td>
     </tr>
     <tr>
-      <td class="lime"></td>
-      <td>lime</td>
+      <Highlight color="lime"></Highlight>
       <td>#00FF00</td>
       <td>0,255,0</td>
     </tr>
     <tr>
-      <td class="olive"></td>
-      <td>olive</td>
+      <Highlight color="olive"></Highlight>
       <td>#808000</td>
       <td>128,128,0</td>
     </tr>
     <tr>
-      <td class="yellow"></td>
-      <td>yellow</td>
+      <Highlight color="yellow"></Highlight>
       <td>#FFFF00</td>
       <td>255,255,0</td>
     </tr>
     <tr>
-      <td class="navy"></td>
-      <td>navy</td>
+      <Highlight color="navy"></Highlight>
       <td>#000080</td>
       <td>0,0,128</td>
     </tr>
     <tr>
-      <td class="blue"></td>
-      <td>blue</td>
+      <Highlight color="blue"></Highlight>
       <td>#0000FF</td>
       <td>0,0,255</td>
     </tr>
     <tr>
-      <td class="teal"></td>
-      <td>teal</td>
+      <Highlight color="teal"></Highlight>
       <td>#008080</td>
       <td>0,128,128</td>
     </tr>
     <tr>
-      <td class="aqua"></td>
-      <td>aqua</td>
+      <Highlight color="aqua"></Highlight>
       <td>#00FFFF</td>
       <td>0,255,255</td>
     </tr>
@@ -142,848 +139,707 @@ A *caveat*, given in the [CSS Color Module Level 4](https://www.w3.org/TR/css-co
   </thead>
   <tbody>
     <tr>
-      <td class="aliceblue"></td>
-      <td>aliceblue</td>
+      <Highlight color="aliceblue"></Highlight>
       <td>#F0F8FF</td>
       <td>240,248,255</td>
     </tr>
     <tr>
-      <td class="antiquewhite"></td>
-      <td>antiquewhite</td>
+      <Highlight color="antiquewhite"></Highlight>
       <td>#FAEBD7</td>
       <td>250,235,215</td>
     </tr>
     <tr>
-      <td class="aqua"></td>
-      <td>aqua, cyan</td>
+      <Highlight color="aqua"></Highlight>
       <td>#00FFFF</td>
       <td>0,255,255</td>
     </tr>
     <tr>
-      <td class="aquamarine"></td>
-      <td>aquamarine</td>
+      <Highlight color="aquamarine"></Highlight>
       <td>#7FFFD4</td>
       <td>127,255,212</td>
     </tr>
     <tr>
-      <td class="azure"></td>
-      <td>azure</td>
+      <Highlight color="azure"></Highlight>
       <td>#F0FFFF</td>
       <td>240,255,255</td>
     </tr>
     <tr>
-      <td class="beige"></td>
-      <td>beige</td>
+      <Highlight color="beige"></Highlight>
       <td>#F5F5DC</td>
       <td>245,245,220</td>
     </tr>
     <tr>
-      <td class="bisque"></td>
-      <td>bisque</td>
+      <Highlight color="bisque"></Highlight>
       <td>#FFE4C4</td>
       <td>255,228,196</td>
     </tr>
     <tr>
-      <td class="black"></td>
-      <td>black</td>
+      <Highlight color="black"></Highlight>
       <td>#000000</td>
       <td>0,0,0</td>
     </tr>
     <tr>
-      <td class="blanchedalmond"></td>
-      <td>blanchedalmond</td>
+      <Highlight color="blanchedalmond"></Highlight>
       <td>#FFEBCD</td>
       <td>255,235,205</td>
     </tr>
     <tr>
-      <td class="blue"></td>
-      <td>blue</td>
+      <Highlight color="blue"></Highlight>
       <td>#0000FF</td>
       <td>0,0,255</td>
     </tr>
     <tr>
-      <td class="blueviolet"></td>
-      <td>blueviolet</td>
+      <Highlight color="blueviolet"></Highlight>
       <td>#8A2BE2</td>
       <td>138,43,226</td>
     </tr>
     <tr>
-      <td class="brown"></td>
-      <td>brown</td>
+      <Highlight color="brown"></Highlight>
       <td>#A52A2A</td>
       <td>165,42,42</td>
     </tr>
     <tr>
-      <td class="burlywood"></td>
-      <td>burlywood</td>
+      <Highlight color="burlywood"></Highlight>
       <td>#DEB887</td>
       <td>222,184,135</td>
     </tr>
     <tr>
-      <td class="cadetblue"></td>
-      <td>cadetblue</td>
+      <Highlight color="cadetblue"></Highlight>
       <td>#5F9EA0</td>
       <td>95,158,160</td>
     </tr>
     <tr>
-      <td class="chartreuse"></td>
-      <td>chartreuse</td>
+      <Highlight color="chartreuse"></Highlight>
       <td>#7FFF00</td>
       <td>127,255,0</td>
     </tr>
     <tr>
-      <td class="chocolate"></td>
-      <td>chocolate</td>
+      <Highlight color="chocolate"></Highlight>
       <td>#D2691E</td>
       <td>210,105,30</td>
     </tr>
     <tr>
-      <td class="coral"></td>
-      <td>coral</td>
+      <Highlight color="coral"></Highlight>
       <td>#FF7F50</td>
       <td>255,127,80</td>
     </tr>
     <tr>
-      <td class="cornflowerblue"></td>
-      <td>cornflowerblue</td>
+      <Highlight color="cornflowerblue"></Highlight>
       <td>#6495ED</td>
       <td>100,149,237</td>
     </tr>
     <tr>
-      <td class="cornsilk"></td>
-      <td>cornsilk</td>
+      <Highlight color="cornsilk"></Highlight>
       <td>#FFF8DC</td>
       <td>255,248,220</td>
     </tr>
     <tr>
-      <td class="crimson"></td>
-      <td>crimson</td>
+      <Highlight color="crimson"></Highlight>
       <td>#DC143C</td>
       <td>220,20,60</td>
     </tr>
     <tr>
-      <td class="cyan"></td>
-      <td>cyan, aqua</td>
+      <Highlight color="cyan"></Highlight>
       <td>#00FFFF</td>
       <td>0,255,255</td>
     </tr>
     <tr>
-      <td class="darkblue"></td>
-      <td>darkblue</td>
+      <Highlight color="darkblue"></Highlight>
       <td>#00008B</td>
       <td>0,0,139</td>
     </tr>
     <tr>
-      <td class="darkcyan"></td>
-      <td>darkcyan</td>
+      <Highlight color="darkcyan"></Highlight>
       <td>#008B8B</td>
       <td>0,139,139</td>
     </tr>
     <tr>
-      <td class="darkgoldenrod"></td>
-      <td>darkgoldenrod</td>
+      <Highlight color="darkgoldenrod"></Highlight>
       <td>#B8860B</td>
       <td>184,134,11</td>
     </tr>
     <tr>
-      <td class="darkgray"></td>
-      <td>darkgray, darkgrey</td>
+      <Highlight color="darkgray"></Highlight>
       <td>#A9A9A9</td>
       <td>169,169,169</td>
     </tr>
     <tr>
-      <td class="darkgreen"></td>
-      <td>darkgreen</td>
+      <Highlight color="darkgreen"></Highlight>
       <td>#006400</td>
       <td>0,100,0</td>
     </tr>
     <tr>
-      <td class="darkkhaki"></td>
-      <td>darkkhaki</td>
+      <Highlight color="darkkhaki"></Highlight>
       <td>#BDB76B</td>
       <td>189,183,107</td>
     </tr>
     <tr>
-      <td class="darkmagenta"></td>
-      <td>darkmagenta</td>
+      <Highlight color="darkmagenta"></Highlight>
       <td>#8B008B</td>
       <td>139,0,139</td>
     </tr>
     <tr>
-      <td class="darkolivegreen"></td>
-      <td>darkolivegreen</td>
+      <Highlight color="darkolivegreen"></Highlight>
       <td>#556B2F</td>
       <td>85,107,47</td>
     </tr>
     <tr>
-      <td class="darkorange"></td>
-      <td>darkorange</td>
+      <Highlight color="darkorange"></Highlight>
       <td>#FF8C00</td>
       <td>255,140,0</td>
     </tr>
     <tr>
-      <td class="darkorchid"></td>
-      <td>darkorchid</td>
+      <Highlight color="darkorchid"></Highlight>
       <td>#9932CC</td>
       <td>153,50,204</td>
     </tr>
     <tr>
-      <td class="darkred"></td>
-      <td>darkred</td>
+      <Highlight color="darkred"></Highlight>
       <td>#8B0000</td>
       <td>139,0,0</td>
     </tr>
     <tr>
-      <td class="darksalmon"></td>
-      <td>darksalmon</td>
+      <Highlight color="darksalmon"></Highlight>
       <td>#E9967A</td>
       <td>233,150,122</td>
     </tr>
     <tr>
-      <td class="darkseagreen"></td>
-      <td>darkseagreen</td>
+      <Highlight color="darkseagreen"></Highlight>
       <td>#8FBC8F</td>
       <td>143,188,143</td>
     </tr>
     <tr>
-      <td class="darkslateblue"></td>
-      <td>darkslateblue</td>
+      <Highlight color="darkslateblue"></Highlight>
       <td>#483D8B</td>
       <td>72,61,139</td>
     </tr>
     <tr>
-      <td class="darkslategray"></td>
-      <td>darkslategray, darkslategrey</td>
+      <Highlight color="darkslategray"></Highlight>
       <td>#2F4F4F</td>
       <td>47,79,79</td>
     </tr>
     <tr>
-      <td class="darkturquoise"></td>
-      <td>darkturquoise</td>
+      <Highlight color="darkturquoise"></Highlight>
       <td>#00CED1</td>
       <td>0,206,209</td>
     </tr>
     <tr>
-      <td class="darkviolet"></td>
-      <td>darkviolet</td>
+      <Highlight color="darkviolet"></Highlight>
       <td>#9400D3</td>
       <td>148,0,211</td>
     </tr>
     <tr>
-      <td class="deeppink"></td>
-      <td>deeppink</td>
+      <Highlight color="deeppink"></Highlight>
       <td>#FF1493</td>
       <td>255,20,147</td>
     </tr>
     <tr>
-      <td class="deepskyblue"></td>
-      <td>deepskyblue</td>
+      <Highlight color="deepskyblue"></Highlight>
       <td>#00BFFF</td>
       <td>0,191,255</td>
     </tr>
     <tr>
-      <td class="dimgray"></td>
-      <td>dimgray, dimgrey</td>
+      <Highlight color="dimgray"></Highlight>
       <td>#696969</td>
       <td>105,105,105</td>
     </tr>
     <tr>
-      <td class="dodgerblue"></td>
-      <td>dodgerblue</td>
+      <Highlight color="dodgerblue"></Highlight>
       <td>#1E90FF</td>
       <td>30,144,255</td>
     </tr>
     <tr>
-      <td class="firebrick"></td>
-      <td>firebrick</td>
+      <Highlight color="firebrick"></Highlight>
       <td>#B22222</td>
       <td>178,34,34</td>
     </tr>
     <tr>
-      <td class="floralwhite"></td>
-      <td>floralwhite</td>
+      <Highlight color="floralwhite"></Highlight>
       <td>#FFFAF0</td>
       <td>255,250,240</td>
     </tr>
     <tr>
-      <td class="forestgreen"></td>
-      <td>forestgreen</td>
+      <Highlight color="forestgreen"></Highlight>
       <td>#228B22</td>
       <td>34,139,34</td>
     </tr>
     <tr>
-      <td class="fuchsia"></td>
-      <td>fuchsia, magenta</td>
+      <Highlight color="fuchsia"></Highlight>
       <td>#FF00FF</td>
       <td>255,0,255</td>
     </tr>
     <tr>
-      <td class="gainsboro"></td>
-      <td>gainsboro</td>
+      <Highlight color="gainsboro"></Highlight>
       <td>#DCDCDC</td>
       <td>220,220,220</td>
     </tr>
     <tr>
-      <td class="ghostwhite"></td>
-      <td>ghostwhite</td>
+      <Highlight color="ghostwhite"></Highlight>
       <td>#F8F8FF</td>
       <td>248,248,255</td>
     </tr>
     <tr>
-      <td class="gold"></td>
-      <td>gold</td>
+      <Highlight color="gold"></Highlight>
       <td>#FFD700</td>
       <td>255,215,0</td>
     </tr>
     <tr>
-      <td class="goldenrod"></td>
-      <td>goldenrod</td>
+      <Highlight color="goldenrod"></Highlight>
       <td>#DAA520</td>
       <td>218,165,32</td>
     </tr>
     <tr>
-      <td class="gray"></td>
-      <td>gray, grey</td>
+      <Highlight color="gray"></Highlight>
       <td>#808080</td>
       <td>128,128,128</td>
     </tr>
     <tr>
-      <td class="green"></td>
-      <td>green</td>
+      <Highlight color="green"></Highlight>
       <td>#008000</td>
       <td>0,128,0</td>
     </tr>
     <tr>
-      <td class="greenyellow"></td>
-      <td>greenyellow</td>
+      <Highlight color="greenyellow"></Highlight>
       <td>#ADFF2F</td>
       <td>173,255,47</td>
     </tr>
     <tr>
-      <td class="honeydew"></td>
-      <td>honeydew</td>
+      <Highlight color="honeydew"></Highlight>
       <td>#F0FFF0</td>
       <td>240,255,240</td>
     </tr>
     <tr>
-      <td class="hotpink"></td>
-      <td>hotpink</td>
+      <Highlight color="hotpink"></Highlight>
       <td>#FF69B4</td>
       <td>255,105,180</td>
     </tr>
     <tr>
-      <td class="indianred"></td>
-      <td>indianred</td>
+      <Highlight color="indianred"></Highlight>
       <td>#CD5C5C</td>
       <td>205,92,92</td>
     </tr>
     <tr>
-      <td class="indigo"></td>
-      <td>indigo</td>
+      <Highlight color="indigo"></Highlight>
       <td>#4B0082</td>
       <td>75,0,130</td>
     </tr>
     <tr>
-      <td class="ivory"></td>
-      <td>ivory</td>
+      <Highlight color="ivory"></Highlight>
       <td>#FFFFF0</td>
       <td>255,255,240</td>
     </tr>
     <tr>
-      <td class="khaki"></td>
-      <td>khaki</td>
+      <Highlight color="khaki"></Highlight>
       <td>#F0E68C</td>
       <td>240,230,140</td>
     </tr>
     <tr>
-      <td class="lavender"></td>
-      <td>lavender</td>
+      <Highlight color="lavender"></Highlight>
       <td>#E6E6FA</td>
       <td>230,230,250</td>
     </tr>
     <tr>
-      <td class="lavenderblush"></td>
-      <td>lavenderblush</td>
+      <Highlight color="lavenderblush"></Highlight>
       <td>#FFF0F5</td>
       <td>255,240,245</td>
     </tr>
     <tr>
-      <td class="lawngreen"></td>
-      <td>lawngreen</td>
+      <Highlight color="lawngreen"></Highlight>
       <td>#7CFC00</td>
       <td>124,252,0</td>
     </tr>
     <tr>
-      <td class="lemonchiffon"></td>
-      <td>lemonchiffon</td>
+      <Highlight color="lemonchiffon"></Highlight>
       <td>#FFFACD</td>
       <td>255,250,205</td>
     </tr>
     <tr>
-      <td class="lightblue"></td>
-      <td>lightblue</td>
+      <Highlight color="lightblue"></Highlight>
       <td>#ADD8E6</td>
       <td>173,216,230</td>
     </tr>
     <tr>
-      <td class="lightcoral"></td>
-      <td>lightcoral</td>
+      <Highlight color="lightcoral"></Highlight>
       <td>#F08080</td>
       <td>240,128,128</td>
     </tr>
     <tr>
-      <td class="lightcyan"></td>
-      <td>lightcyan</td>
+      <Highlight color="lightcyan"></Highlight>
       <td>#E0FFFF</td>
       <td>224,255,255</td>
     </tr>
     <tr>
-      <td class="lightgoldenrodyellow"></td>
-      <td>lightgoldenrodyellow</td>
+      <Highlight color="lightgoldenrodyellow"></Highlight>
       <td>#FAFAD2</td>
       <td>250,250,210</td>
     </tr>
     <tr>
-      <td class="lightgray"></td>
-      <td>lightgray, lightgrey</td>
+      <Highlight color="lightgray"></Highlight>
       <td>#D3D3D3</td>
       <td>211,211,211</td>
     </tr>
     <tr>
-      <td class="lightgreen"></td>
-      <td>lightgreen</td>
+      <Highlight color="lightgreen"></Highlight>
       <td>#90EE90</td>
       <td>144,238,144</td>
     </tr>
     <tr>
-      <td class="lightpink"></td>
-      <td>lightpink</td>
+      <Highlight color="lightpink"></Highlight>
       <td>#FFB6C1</td>
       <td>255,182,193</td>
     </tr>
     <tr>
-      <td class="lightsalmon"></td>
-      <td>lightsalmon</td>
+      <Highlight color="lightsalmon"></Highlight>
       <td>#FFA07A</td>
       <td>255,160,122</td>
     </tr>
     <tr>
-      <td class="lightseagreen"></td>
-      <td>lightseagreen</td>
+      <Highlight color="lightseagreen"></Highlight>
       <td>#20B2AA</td>
       <td>32,178,170</td>
     </tr>
     <tr>
-      <td class="lightskyblue"></td>
-      <td>lightskyblue</td>
+      <Highlight color="lightskyblue"></Highlight>
       <td>#87CEFA</td>
       <td>135,206,250</td>
     </tr>
     <tr>
-      <td class="lightslategray"></td>
-      <td>lightslategray, lightslategrey</td>
+      <Highlight color="lightslategray"></Highlight>
       <td>#778899</td>
       <td>119,136,153</td>
     </tr>
     <tr>
-      <td class="lightsteelblue"></td>
-      <td>lightsteelblue</td>
+      <Highlight color="lightsteelblue"></Highlight>
       <td>#B0C4DE</td>
       <td>176,196,222</td>
     </tr>
     <tr>
-      <td class="lightyellow"></td>
-      <td>lightyellow</td>
+      <Highlight color="lightyellow"></Highlight>
       <td>#FFFFE0</td>
       <td>255,255,224</td>
     </tr>
     <tr>
-      <td class="lime"></td>
-      <td>lime</td>
+      <Highlight color="lime"></Highlight>
       <td>#00FF00</td>
       <td>0,255,0</td>
     </tr>
     <tr>
-      <td class="limegreen"></td>
-      <td>limegreen</td>
+      <Highlight color="limegreen"></Highlight>
       <td>#32CD32</td>
       <td>50,205,50</td>
     </tr>
     <tr>
-      <td class="linen"></td>
-      <td>linen</td>
+      <Highlight color="linen"></Highlight>
       <td>#FAF0E6</td>
       <td>250,240,230</td>
     </tr>
     <tr>
-      <td class="magenta"></td>
-      <td>magenta, fuchsia</td>
+      <Highlight color="magenta"></Highlight>
       <td>#FF00FF</td>
       <td>255,0,255</td>
     </tr>
     <tr>
-      <td class="maroon"></td>
-      <td>maroon</td>
+      <Highlight color="maroon"></Highlight>
       <td>#800000</td>
       <td>128,0,0</td>
     </tr>
     <tr>
-      <td class="mediumaquamarine"></td>
-      <td>mediumaquamarine</td>
+      <Highlight color="mediumaquamarine"></Highlight>
       <td>#66CDAA</td>
       <td>102,205,170</td>
     </tr>
     <tr>
-      <td class="mediumblue"></td>
-      <td>mediumblue</td>
+      <Highlight color="mediumblue"></Highlight>
       <td>#0000CD</td>
       <td>0,0,205</td>
     </tr>
     <tr>
-      <td class="mediumorchid"></td>
-      <td>mediumorchid</td>
+      <Highlight color="mediumorchid"></Highlight>
       <td>#BA55D3</td>
       <td>186,85,211</td>
     </tr>
     <tr>
-      <td class="mediumpurple"></td>
-      <td>mediumpurple</td>
+      <Highlight color="mediumpurple"></Highlight>
       <td>#9370DB</td>
       <td>147,112,219</td>
     </tr>
     <tr>
-      <td class="mediumseagreen"></td>
-      <td>mediumseagreen</td>
+      <Highlight color="mediumseagreen"></Highlight>
       <td>#3CB371</td>
       <td>60,179,113</td>
     </tr>
     <tr>
-      <td class="mediumslateblue"></td>
-      <td>mediumslateblue</td>
+      <Highlight color="mediumslateblue"></Highlight>
       <td>#7B68EE</td>
       <td>123,104,238</td>
     </tr>
     <tr>
-      <td class="mediumspringgreen"></td>
-      <td>mediumspringgreen</td>
+      <Highlight color="mediumspringgreen"></Highlight>
       <td>#00FA9A</td>
       <td>0,250,154</td>
     </tr>
     <tr>
-      <td class="mediumturquoise"></td>
-      <td>mediumturquoise</td>
+      <Highlight color="mediumturquoise"></Highlight>
       <td>#48D1CC</td>
       <td>72,209,204</td>
     </tr>
     <tr>
-      <td class="mediumvioletred"></td>
-      <td>mediumvioletred</td>
+      <Highlight color="mediumvioletred"></Highlight>
       <td>#C71585</td>
       <td>199,21,133</td>
     </tr>
     <tr>
-      <td class="midnightblue"></td>
-      <td>midnightblue</td>
+      <Highlight color="midnightblue"></Highlight>
       <td>#191970</td>
       <td>25,25,112</td>
     </tr>
     <tr>
-      <td class="mintcream"></td>
-      <td>mintcream</td>
+      <Highlight color="mintcream"></Highlight>
       <td>#F5FFFA</td>
       <td>245,255,250</td>
     </tr>
     <tr>
-      <td class="mistyrose"></td>
-      <td>mistyrose</td>
+      <Highlight color="mistyrose"></Highlight>
       <td>#FFE4E1</td>
       <td>255,228,225</td>
     </tr>
     <tr>
-      <td class="moccasin"></td>
-      <td>moccasin</td>
+      <Highlight color="moccasin"></Highlight>
       <td>#FFE4B5</td>
       <td>255,228,181</td>
     </tr>
     <tr>
-      <td class="navajowhite"></td>
-      <td>navajowhite</td>
+      <Highlight color="navajowhite"></Highlight>
       <td>#FFDEAD</td>
       <td>255,222,173</td>
     </tr>
     <tr>
-      <td class="navy"></td>
-      <td>navy</td>
+      <Highlight color="navy"></Highlight>
       <td>#000080</td>
       <td>0,0,128</td>
     </tr>
     <tr>
-      <td class="oldlace"></td>
-      <td>oldlace</td>
+      <Highlight color="oldlace"></Highlight>
       <td>#FDF5E6</td>
       <td>253,245,230</td>
     </tr>
     <tr>
-      <td class="olive"></td>
-      <td>olive</td>
+      <Highlight color="olive"></Highlight>
       <td>#808000</td>
       <td>128,128,0</td>
     </tr>
     <tr>
-      <td class="olivedrab"></td>
-      <td>olivedrab</td>
+      <Highlight color="olivedrab"></Highlight>
       <td>#6B8E23</td>
       <td>107,142,35</td>
     </tr>
     <tr>
-      <td class="orange"></td>
-      <td>orange</td>
+      <Highlight color="orange"></Highlight>
       <td>#FFA500</td>
       <td>255,165,0</td>
     </tr>
     <tr>
-      <td class="orangered"></td>
-      <td>orangered</td>
+      <Highlight color="orangered"></Highlight>
       <td>#FF4500</td>
       <td>255,69,0</td>
     </tr>
     <tr>
-      <td class="orchid"></td>
-      <td>orchid</td>
+      <Highlight color="orchid"></Highlight>
       <td>#DA70D6</td>
       <td>218,112,214</td>
     </tr>
     <tr>
-      <td class="palegoldenrod"></td>
-      <td>palegoldenrod</td>
+      <Highlight color="palegoldenrod"></Highlight>
       <td>#EEE8AA</td>
       <td>238,232,170</td>
     </tr>
     <tr>
-      <td class="palegreen"></td>
-      <td>palegreen</td>
+      <Highlight color="palegreen"></Highlight>
       <td>#98FB98</td>
       <td>152,251,152</td>
     </tr>
     <tr>
-      <td class="paleturquoise"></td>
-      <td>paleturquoise</td>
+      <Highlight color="paleturquoise"></Highlight>
       <td>#AFEEEE</td>
       <td>175,238,238</td>
     </tr>
     <tr>
-      <td class="palevioletred"></td>
-      <td>palevioletred</td>
+      <Highlight color="palevioletred"></Highlight>
       <td>#DB7093</td>
       <td>219,112,147</td>
     </tr>
     <tr>
-      <td class="papayawhip"></td>
-      <td>papayawhip</td>
+      <Highlight color="papayawhip"></Highlight>
       <td>#FFEFD5</td>
       <td>255,239,213</td>
     </tr>
     <tr>
-      <td class="peachpuff"></td>
-      <td>peachpuff</td>
+      <Highlight color="peachpuff"></Highlight>
       <td>#FFDAB9</td>
       <td>255,218,185</td>
     </tr>
     <tr>
-      <td class="peru"></td>
-      <td>peru</td>
+      <Highlight color="peru"></Highlight>
       <td>#CD853F</td>
       <td>205,133,63</td>
     </tr>
     <tr>
-      <td class="pink"></td>
-      <td>pink</td>
+      <Highlight color="pink"></Highlight>
       <td>#FFC0CB</td>
       <td>255,192,203</td>
     </tr>
     <tr>
-      <td class="plum"></td>
-      <td>plum</td>
+      <Highlight color="plum"></Highlight>
       <td>#DDA0DD</td>
       <td>221,160,221</td>
     </tr>
     <tr>
-      <td class="powderblue"></td>
-      <td>powderblue</td>
+      <Highlight color="powderblue"></Highlight>
       <td>#B0E0E6</td>
       <td>176,224,230</td>
     </tr>
     <tr>
-      <td class="purple"></td>
-      <td>purple</td>
+      <Highlight color="purple"></Highlight>
       <td>#800080</td>
       <td>128,0,128</td>
     </tr>
     <tr>
-      <td class="rebeccapurple"></td>
-      <td>rebeccapurple</td>
+      <Highlight color="rebeccapurple"></Highlight>
       <td>#663399</td>
       <td>102,51,153</td>
     </tr>
     <tr>
-      <td class="red"></td>
-      <td>red</td>
+      <Highlight color="red"></Highlight>
       <td>#FF0000</td>
       <td>255,0,0</td>
     </tr>
     <tr>
-      <td class="rosybrown"></td>
-      <td>rosybrown</td>
+      <Highlight color="rosybrown"></Highlight>
       <td>#BC8F8F</td>
       <td>188,143,143</td>
     </tr>
     <tr>
-      <td class="royalblue"></td>
-      <td>royalblue</td>
+      <Highlight color="royalblue"></Highlight>
       <td>#4169E1</td>
       <td>65,105,225</td>
     </tr>
     <tr>
-      <td class="saddlebrown"></td>
-      <td>saddlebrown</td>
+      <Highlight color="saddlebrown"></Highlight>
       <td>#8B4513</td>
       <td>139,69,19</td>
     </tr>
     <tr>
-      <td class="salmon"></td>
-      <td>salmon</td>
+      <Highlight color="salmon"></Highlight>
       <td>#FA8072</td>
       <td>250,128,114</td>
     </tr>
     <tr>
-      <td class="sandybrown"></td>
-      <td>sandybrown</td>
+      <Highlight color="sandybrown"></Highlight>
       <td>#F4A460</td>
       <td>244,164,96</td>
     </tr>
     <tr>
-      <td class="seagreen"></td>
-      <td>seagreen</td>
+      <Highlight color="seagreen"></Highlight>
       <td>#2E8B57</td>
       <td>46,139,87</td>
     </tr>
     <tr>
-      <td class="seashell"></td>
-      <td>seashell</td>
+      <Highlight color="seashell"></Highlight>
       <td>#FFF5EE</td>
       <td>255,245,238</td>
     </tr>
     <tr>
-      <td class="sienna"></td>
-      <td>sienna</td>
+      <Highlight color="sienna"></Highlight>
       <td>#A0522D</td>
       <td>160,82,45</td>
     </tr>
     <tr>
-      <td class="silver"></td>
-      <td>silver</td>
+      <Highlight color="silver"></Highlight>
       <td>#C0C0C0</td>
       <td>192,192,192</td>
     </tr>
     <tr>
-      <td class="skyblue"></td>
-      <td>skyblue</td>
+      <Highlight color="skyblue"></Highlight>
       <td>#87CEEB</td>
       <td>135,206,235</td>
     </tr>
     <tr>
-      <td class="slateblue"></td>
-      <td>slateblue</td>
+      <Highlight color="slateblue"></Highlight>
       <td>#6A5ACD</td>
       <td>106,90,205</td>
     </tr>
     <tr>
-      <td class="slategray"></td>
-      <td>slategray, slategrey</td>
+      <Highlight color="slategray"></Highlight>
       <td>#708090</td>
       <td>112,128,144</td>
     </tr>
     <tr>
-      <td class="snow"></td>
-      <td>snow</td>
+      <Highlight color="snow"></Highlight>
       <td>#FFFAFA</td>
       <td>255,250,250</td>
     </tr>
     <tr>
-      <td class="springgreen"></td>
-      <td>springgreen</td>
+      <Highlight color="springgreen"></Highlight>
       <td>#00FF7F</td>
       <td>0,255,127</td>
     </tr>
     <tr>
-      <td class="steelblue"></td>
-      <td>steelblue</td>
+      <Highlight color="steelblue"></Highlight>
       <td>#4682B4</td>
       <td>70,130,180</td>
     </tr>
     <tr>
-      <td class="tan"></td>
-      <td>tan</td>
+      <Highlight color="tan"></Highlight>
       <td>#D2B48C</td>
       <td>210,180,140</td>
     </tr>
     <tr>
-      <td class="teal"></td>
-      <td>teal</td>
+      <Highlight color="teal"></Highlight>
       <td>#008080</td>
       <td>0,128,128</td>
     </tr>
     <tr>
-      <td class="thistle"></td>
-      <td>thistle</td>
+      <Highlight color="thistle"></Highlight>
       <td>#D8BFD8</td>
       <td>216,191,216</td>
     </tr>
     <tr>
-      <td class="tomato"></td>
-      <td>tomato</td>
+      <Highlight color="tomato"></Highlight>
       <td>#FF6347</td>
       <td>255,99,71</td>
     </tr>
     <tr>
-      <td class="turquoise"></td>
-      <td>turquoise</td>
+      <Highlight color="turquoise"></Highlight>
       <td>#40E0D0</td>
       <td>64,224,208</td>
     </tr>
     <tr>
-      <td class="violet"></td>
-      <td>violet</td>
+      <Highlight color="violet"></Highlight>
       <td>#EE82EE</td>
       <td>238,130,238</td>
     </tr>
     <tr>
-      <td class="wheat"></td>
-      <td>wheat</td>
+      <Highlight color="wheat"></Highlight>
       <td>#F5DEB3</td>
       <td>245,222,179</td>
     </tr>
     <tr>
-      <td class="white"></td>
-      <td>white</td>
+      <Highlight color="white"></Highlight>
       <td>#FFFFFF</td>
       <td>255,255,255</td>
     </tr>
     <tr>
-      <td class="whitesmoke"></td>
-      <td>whitesmoke</td>
+      <Highlight color="whitesmoke"></Highlight>
       <td>#F5F5F5</td>
       <td>245,245,245</td>
     </tr>
     <tr>
-      <td class="yellow"></td>
-      <td>yellow</td>
+      <Highlight color="yellow"></Highlight>
       <td>#FFFF00</td>
       <td>255,255,0</td>
     </tr>
     <tr>
-      <td class="yellowgreen"></td>
-      <td>yellowgreen</td>
+      <Highlight color="yellowgreen"></Highlight>
       <td>#9ACD32</td>
       <td>154,205,50</td>
     </tr>
