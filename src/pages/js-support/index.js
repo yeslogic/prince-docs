@@ -39,12 +39,12 @@ function JsSupport() {
 
   <div className="js-overview level" id="js-support-table">
   <JavascriptSupportItem
-    id="window"
+    path={['window']}
     name="window"
-    theObject={window}
+    uaObject={window}
     desc="The global object"
-    ext={false}
-    subProperties={std}
+    ext={null}
+    dumpedPropertyList={std}
     open={true}
     annotations={stdAnnotated}
   />

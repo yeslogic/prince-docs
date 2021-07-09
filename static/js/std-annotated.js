@@ -56,8 +56,8 @@ const stdAnnotated = {
     unescape: {
         desc: "Computes a new string by replacing hexadecimal escape sequences with the characters they represent.",
         returns: "string",
-        example: "unescape('%22hi%22'))",
-        exampleReturn: '"hi"',
+        example: "unescape('hi%21'))",
+        exampleReturn: 'hi!',
         arguments: [
             {name: "string", desc: "String to unescape", type: "string"}
         ]
@@ -1673,4 +1673,5 @@ const stdAnnotated = {
         }
     },
 };
+
 export default stdAnnotated;
