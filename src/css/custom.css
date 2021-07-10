@@ -214,7 +214,7 @@ p:hover .self-link, #prop-list summary:hover .self-link, #js-support-table summa
   content: ")";
   font-style: normal;
 }
-#js-support-table div.ext .argslist::after {
+#js-support-table .ext .argslist::after {
   content: ")*";
   font-style: normal;
 }
