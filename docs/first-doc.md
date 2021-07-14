@@ -139,7 +139,7 @@ The styled lab report, download the [here](assets/samples/lab_report-styled.pdf)
         font-size: 14pt;
     }
 ```
-Note that we use the `.class` syntax to style only the subtitle, which is a `h2` with the subtitle class, without affecting the other `h2` elements in the document. See the section on [CSS Selectors](css-refs.md#css-selectors) for more information. Information about alignment (such as centered text) can be found in the [Paragraph formatting](styling.md#paragraph-formatting) section.
+Note that we use the `.class` syntax to style only the subtitle, which is a `h2` with the subtitle class, without affecting the other `h2` elements in the document. See the section on [CSS Selectors](css-selectors.md) for more information. Information about alignment (such as centered text) can be found in the [Paragraph formatting](styling.md#paragraph-formatting) section.
 
 Finally we will make the "Hello World!" paragraph stand out. This paragraph is identified by an `id` attribute so we can use the `#id` syntax in the CSS selector.
 
