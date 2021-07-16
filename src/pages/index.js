@@ -72,7 +72,7 @@ function Home() {
         <ul>
           <li>the <a href="/doc/installing/">Installation Guide</a>,</li>
           <li>the <a href="/doc/intro-userguide/">User Guide</a> for the latest version, and</li>
-          <li>the <a href="/doc/command-line/">Reference Guide</a>.</li>
+          <li>the <a href="/doc/css-props/">Reference Guide</a>.</li>
         </ul>
         <details id="version-nav">
           <summary>
