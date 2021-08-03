@@ -1,0 +1,168 @@
+# TODO
+#
+# replace example with something more useful, like comment
+#
+
+start = properties
+
+properties =
+    element properties {
+	property*
+    }
+
+property =
+    element property {
+	element name { text },
+	(
+	    (
+		element value { value+ },
+		element initial { text },
+		element applyto { text },
+		element inherit { "no" | "yes" | "n/a" },
+		element shorthand {
+		    element prop { text }+
+		} ?,
+		element extension { empty } ?,
+		element example { text }*,
+		element see { reference | html-link }*,
+		element comments { para+ } ?,
+		element spec { html-link | "n/a" }*,
+		element aliastarget { text } ?,
+		element value2 { value+ }?,
+		element initial2 { text }?,
+		element applyto2 { text }?,
+		element inherit2 { "no" | "yes" | "n/a" }?,
+		element example2 { text }*,
+		element see2 { reference | html-link }*,
+		element comments2 { para+ } ?
+		)
+	|
+	    element alias { text }
+	)
+    }
+
+value =
+    element text { text } |
+    # Usually indicates a delim token, but one property uses this for
+    # an ellipsis for function arguments.
+
+    element attr { text } |
+
+    element keyword { class*, text } |
+    # An ident token with the given value (other than case difference).
+
+    type-value |
+    element ref { text } |
+    element integer { text } |
+    element percentage { class*, empty } |
+
+    element ident { text } |
+    # A user-chosen ident token such as for a counter name (as distinct from
+    # keyword).  Element content is a label (such as "name").
+
+    element url { text } |
+
+    element string { text } |
+    # A string token; the text content is a label.
+
+    element sequence { two-groupable } |
+    # Normal juxtaposition.
+    # (Note that the children of value,repeat,optional
+    # are also considered to represent a sequence; whereas
+    # children of choice etc. are considered to be operands.)
+
+    element choice { two-groupable } |
+
+    element reorderable { two-groupable } |
+    # "&&": every child must appear once, but in any order.
+
+    element multiple { two-groupable } |
+    # "||": like a <reorderable> of <optional>'s where at least
+    # one must be present.
+
+    element optional { value+ } |
+    # "?"
+
+    element repeat {
+	attribute min { xsd:integer },
+	attribute max { xsd:integer } ?,
+	attribute sep { "," } ?,
+	value+
+    } |
+    # "*", "+", "#", or "{@min..@max}".
+
+    element function {
+	attribute name { text },
+    class*,
+	value*
+    }
+
+two-groupable =
+    # Two or more values, or one or more groups that between them
+    # contain two or more values.
+    (value, value+)
+    | (element group {
+	value, value+
+      }, element group { value+ } *)
+    | (element group { value }, element group { value+ } +)
+
+type-value =
+    element type {
+	"angle" |
+	"border-style" |
+	"border-width" |
+	"color" |
+	"content" |
+	"counter-style" |
+	"declaration-value" |
+	"dpi" |
+	"integer" |
+	"length" |
+	"length-percentage" |
+	"number" |
+	"page-policy" |
+	"paper-size" |
+	"urange" |
+	"url"
+    }
+
+para =
+    element p { attribute class { text } ?, html-inline* } |
+    element pre { html-text } |
+    html-list
+
+html-inline = html-link |
+    html-phrase |
+    html-text |
+    reference
+
+html-link =
+    element a { attribute href { text }, html-text* }
+
+html-list =
+    element ul { html-list-item+ }
+
+html-list-item =
+    element li { html-inline* }
+
+html-phrase = element em { html-text } |
+    element strong { html-text } |
+    element sup { attribute style { text }, html-text }
+
+html-text =
+    element code { html-text } |
+    text
+
+reference =
+    element xref {
+        attribute linkend { text }
+    } |
+    element code {
+        element property  {
+            attribute name { text }
+        } ?,
+        text ?
+    }
+
+class =
+    attribute class { "ext" }
