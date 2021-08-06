@@ -94,6 +94,7 @@ TO ADD:
 	<inherit>n/a</inherit>
 	<extension/>
 	<example>@prince-color  TestColor { alternate-color: cmyk(1, 0, 0, 0) }
+
 	color: prince-color(TestColor)</example>
     <see><xref linkend="color-spot"/></see>
     <comments>
@@ -4892,11 +4893,11 @@ supplier, item { overflow-wrap: normal; }
             <keyword>body</keyword>
             <keyword>heading</keyword>
             <keyword>title-page</keyword>
-            <keyword>body-gready</keyword>
+            <keyword>body-greedy</keyword>
             <keyword>body-lookahead</keyword>
-            <keyword>heading-gready</keyword>
+            <keyword>heading-greedy</keyword>
             <keyword>heading-lookahead</keyword>
-            <keyword>title-page-gready</keyword>
+            <keyword>title-page-greedy</keyword>
             <keyword>title-page-lookahead</keyword>
             <keyword>fast</keyword>
         </choice>
