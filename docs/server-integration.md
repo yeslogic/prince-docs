@@ -392,7 +392,7 @@ docker run --rm -it yeslogic/prince
 They can be run with a `license.dat` file in the following way:
 
 ```
-docker run --rm -it -v /path/on/host/licence.dat:/usr/lib/prince/licence/licence.dat yeslogic/prince
+docker run --rm -it -v /path/on/host/license.dat:/usr/lib/prince/license/license.dat yeslogic/prince
 ```
 
 If, however, you want to run a specific Prince version, rather than the latest, you need to add the version tag to the docker commands:
