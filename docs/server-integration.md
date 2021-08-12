@@ -483,7 +483,6 @@ The JSON job description has several nested objects with fields corresponding to
         "input": { <input options> },
         "pdf": { <pdf options> },
         "metadata": { <metadata options> },
-        "raster": { <raster options> },
         "job-resource-count": <int>
     }
 ```
@@ -502,6 +501,7 @@ The `input options` object includes these fields:
         "default-style": <bool>,
         "author-style": <bool>,
         "javascript": <bool>,
+        "max-passes": <integer>,
         "xinclude": <bool>,
         "xml-external-entities": <bool>
     }
@@ -542,6 +542,7 @@ The `pdf options` object includes these fields:
         "artificial-fonts": <bool>,
         "force-identity-encoding": <bool>,
         "compress": <bool>,
+        "object-streams": <bool>,
         "encrypt": {
             "key-bits": 40 | 128,
             "user-password": <string>,
@@ -549,12 +550,15 @@ The `pdf options` object includes these fields:
             "disallow-print": <bool>,
             "disallow-modify": <bool>,
             "disallow-copy": <bool>,
-            "disallow-annotate": <bool>
+            "disallow-annotate": <bool>,
+            "allow-copy-for-accessibility": <bool>,
+            "allow-assembly": <bool>
         },
         "pdf-profile": <string>,
         "pdf-output-intent": <URL>,
         "fallback-cmyk-profile": <URL>,
-        "color-conversion": "none" | "full",
+        "color-conversion": "none" | "output-intent" | "full",
+        "pdf-id": <string>,
         "pdf-lang": <string>,
         "pdf-xmp": <url>,
         "tagged-pdf": "auto" | <bool>,
@@ -581,14 +585,7 @@ The `metadata options` object includes these fields:
         "creator": <string>,
     }
 ```
-The `raster options` object includes these fields:
 
-```json
-    {
-        "dpi": <integer>,
-        "background": "white" | "transparent"
-    }
-```
 ### Structured Log
 
 `--structured-log=LEVEL`  
