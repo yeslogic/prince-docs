@@ -94,7 +94,6 @@ TO ADD:
 	<inherit>n/a</inherit>
 	<extension/>
 	<example>@prince-color  TestColor { alternate-color: cmyk(1, 0, 0, 0) }
-
 	color: prince-color(TestColor)</example>
     <see><xref linkend="color-spot"/></see>
     <comments>
@@ -3924,9 +3923,6 @@ supplier, item { overflow-wrap: normal; }
 	or to be broken at an arbitrary point
 	(subject to <code>white-space</code>, and not splitting within a grapheme cluster),
 	without adding a hyphen.
-	<!-- todo: Move the information from the above parenthesis to a
-	    detail paragraph below, once we have such a paragraph.
-	-->
 	</p>
 
     <p>
@@ -3945,28 +3941,6 @@ supplier, item { overflow-wrap: normal; }
 	between any pair of grapheme clusters.
 	</p>
 
-	<!-- We could also mention the experimental prince-wrap-inside property,
-	    which could be combined with word-break:break-all to try harder
-	    not to break within that region, but still preferring to
-	    break than to leave a short line.  prince-wrap-inside for now is only
-        available in Prince for Books.
-
-	    (For the moment, we simply mention the property in the <see> section
-	    without adding any commentry.)
-	-->
-
-	<!--
-	<p>Values:</p>
-
-	<dl>
-	<dt><code>normal</code></dt>
-	<dd>Allow text containing no other wrap opportunities to overflow.</dd>
-
-	<dt><code>break-word</code>
-	<dd>
-	</dl>
-	-->
-
 	<p>
 	The element whose <code>overflow-wrap</code> property controls
 	whether such a wrap opportunity exists at a given boundary
@@ -3977,16 +3951,6 @@ supplier, item { overflow-wrap: normal; }
 	even if two components are directly adjacent to each other, as
     seen in the above example.
 	</p>
-	<!-- We could have a standard section on portability.
-	     E.g. that the rule that determines which element's overflow-wrap property
-	     is consulted conforms to css-text, but differs from some common web browsers:
-	     from memory, in Gecko it's the leaf element that contains the codepoint
-	     following the boundary.
-
-	     Relatedly, one might mention the first Prince release to
-	     support the feature (in this case present in Prince 10,
-	     and I think absent in Prince 9).
-	 -->
     </comments>
     <spec><a href="https://www.w3.org/TR/css-text-3/#overflow-wrap-property">CSS Text Module Level 3</a></spec>
 </property>
@@ -4632,9 +4596,6 @@ supplier, item { overflow-wrap: normal; }
     <see><code><property name="prince-wrap-inside"/></code></see>
     <comments>
 	<p>This property controls whether a line ended by a “preserved newline”
-	<!-- todo: Consider either adding a link to w3c documentation,
-	    or describing the term in a later paragraph.
-	-->
 	(such as introduced by <code>&lt;br&gt;</code>)
 	should preferably appear to be a normal full line (as if ended only by normal line wrapping),
 	or whether being shorter than a normal full line is actually preferable,
