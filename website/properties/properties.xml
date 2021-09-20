@@ -20,7 +20,7 @@ TO ADD:
 	<initial>nothing</initial>
     <applyto>all elements</applyto>
 	<inherit>yes</inherit>
-    <see><xref linkend="css-vars"/></see>
+    <see><a href="/doc/styling/#custom-properties-css-variables">Custom properties (CSS variables)</a></see>
     <comments>
     <p>This property family, called custom properties, is defined as any valid
     identifier that starts with two dashes. Custom properties are solely for
@@ -95,7 +95,7 @@ TO ADD:
 	<extension/>
 	<example>@prince-color  TestColor { alternate-color: cmyk(1, 0, 0, 0) }
 	color: prince-color(TestColor)</example>
-    <see><xref linkend="color-spot"/></see>
+    <see><a href="/doc/graphics/#spot-colors">Spot colors</a></see>
     <comments>
     <p>This descriptor takes an RGB or CMYK color in any of the valid notations for
     RGB and CMYK colors, that will be used to display the color being defined, when
@@ -203,7 +203,7 @@ TO ADD:
     background-attachment: fixed bleed;
     background-size: cover;
 }</example>
-    <see><xref linkend="background"/></see>
+    <see><a href="/doc/styling/#background">Background</a></see>
     <comments>
 	<p>
 	The <code>background-attachment</code> property determines the origin
@@ -234,7 +234,7 @@ TO ADD:
     <initial>transparent</initial>
     <applyto>all elements</applyto>
     <inherit>no</inherit>
-    <see><xref linkend="color"/></see>
+    <see><a href="/doc/graphics/#color">Color</a></see>
     <spec><a href="https://www.w3.org/TR/css-backgrounds-3/#the-background-color">CSS Backgrounds and Borders Module Level 3</a></spec>
 </property>
 
@@ -485,7 +485,7 @@ TO ADD:
     <applyto>@page at-rule</applyto>
     <inherit>n/a</inherit>
     <example>@page { bleed: 10mm }</example>
-    <see><xref linkend="page-style"/></see>
+    <see><a href="/doc/paged/#page-style">Page style</a></see>
     <see><code><property name="prince-trim"/></code></see>
     <comments>
 	<p>
@@ -571,7 +571,7 @@ TO ADD:
     <initial>CurrentColor</initial>
     <applyto>all elements</applyto>
     <inherit>no</inherit>
-    <see><xref linkend="color"/></see>
+    <see><a href="/doc/graphics/#color">Color</a></see>
     <spec><a href="https://www.w3.org/TR/css-backgrounds-3/#the-border-color">CSS Backgrounds and Borders Module Level 3</a></spec>
 </property>
 
@@ -651,7 +651,7 @@ TO ADD:
 	<p>
 	This property determines whether tables use separate table and cell
 	borders or collapse the table and cell borders together. See the
-	<xref linkend="tables"/> documentation for more details.
+	<a href="/doc/styling/#tables">Tables</a> documentation for more details.
 	</p>
     </comments>
     <spec><a href="https://www.w3.org/TR/CSS2/tables.html#borders">CSS 2.1</a></spec>
@@ -673,7 +673,7 @@ TO ADD:
 	<prop>border-right-color</prop>
 	<prop>border-top-color</prop>
     </shorthand>
-    <see><xref linkend="color"/></see>
+    <see><a href="/doc/graphics/#color">Color</a></see>
     <spec><a href="https://www.w3.org/TR/css-backgrounds-3/#the-border-color">CSS Backgrounds and Borders Module Level 3</a></spec>
 </property>
 
@@ -703,7 +703,7 @@ TO ADD:
     <initial>CurrentColor</initial>
     <applyto>all elements</applyto>
     <inherit>no</inherit>
-    <see><xref linkend="color"/></see>
+    <see><a href="/doc/graphics/#color">Color</a></see>
     <spec><a href="https://www.w3.org/TR/css-backgrounds-3/#the-border-color">CSS Backgrounds and Borders Module Level 3</a></spec>
 </property>
 
@@ -856,7 +856,7 @@ TO ADD:
     <initial>CurrentColor</initial>
     <applyto>all elements</applyto>
     <inherit>no</inherit>
-    <see><xref linkend="color"/></see>
+    <see><a href="/doc/graphics/#color">Color</a></see>
     <spec><a href="https://www.w3.org/TR/css-backgrounds-3/#the-border-color">CSS Backgrounds and Borders Module Level 3</a></spec>
 </property>
 
@@ -920,7 +920,7 @@ TO ADD:
 	<p>
 	This property determines the spacing between table cell borders for
 	tables that use the separated table border model. See the
-	<xref linkend="tables"/> documentation for more details.
+	<a href="/doc/styling/#tables">Tables</a> documentation for more details.
 	</p>
     </comments>
     <spec><a href="https://www.w3.org/TR/CSS2/tables.html#separated-borders">CSS 2.1</a></spec>
@@ -971,7 +971,7 @@ TO ADD:
     <initial>CurrentColor</initial>
     <applyto>all elements</applyto>
     <inherit>no</inherit>
-    <see><xref linkend="color"/></see>
+    <see><a href="/doc/graphics/#color">Color</a></see>
     <spec><a href="https://www.w3.org/TR/css-backgrounds-3/#the-border-color">CSS Backgrounds and Borders Module Level 3</a></spec>
 </property>
 
@@ -1176,7 +1176,7 @@ TO ADD:
     also avoiding column breaks.
     </p>
     <p>
-    See the documentation for <xref linkend="page-breaks"/> for more details.
+    See the documentation for <a href="/doc/paged/#page-breaks">Page breaks</a> for more details.
     </p>
     </comments>
     <spec><a href="https://www.w3.org/TR/css-break-3/#breaking-controls">CSS Fragmentation Module Level 3</a></spec>
@@ -1216,7 +1216,7 @@ TO ADD:
     also avoiding column breaks.
     </p>
     <p>
-    See the documentation for <xref linkend="page-breaks"/> for more details.
+    See the documentation for <a href="/doc/paged/#page-breaks">Page breaks</a> for more details.
     </p>
     </comments>
     <spec><a href="https://www.w3.org/TR/css-break-3/#breaking-controls">CSS Fragmentation Module Level 3</a></spec>
@@ -1238,7 +1238,7 @@ TO ADD:
     <comments>
     <p>
     This property can be used to suppress page breaks inside an
-    element. See the documentation for <xref linkend="page-breaks"/>
+    element. See the documentation for <a href="/doc/paged/#page-breaks">Page breaks</a>
     for more details.
     </p>
     </comments>
@@ -1261,7 +1261,7 @@ TO ADD:
     <initial>top</initial>
     <applyto>table-caption elements</applyto>
     <inherit>yes</inherit>
-    <see><xref linkend="tables-caption"/></see>
+    <see><a href="/doc/styling/#table-captions">Table captions</a></see>
     <comments>
 	<p>
 	This property determines whether table captions will be displayed at
@@ -1289,7 +1289,7 @@ TO ADD:
     <initial>none</initial>
     <applyto>block-level elements</applyto>
     <inherit>no</inherit>
-    <see><xref linkend="floats"/></see>
+    <see><a href="/doc/styling/#floats">Floats</a></see>
     <see><code><property name="float"/></code></see>
     <comments>
 	<p>
@@ -1395,10 +1395,10 @@ TO ADD:
     <initial>black</initial>
     <applyto>all elements</applyto>
     <inherit>yes</inherit>
-    <see><xref linkend="color"/></see>
+    <see><a href="/doc/graphics/#color">Color</a></see>
     <comments>
 	<p>
-	See the <xref linkend="color"/> section for supported color values.
+	See the <a href="/doc/graphics/#color">Color</a> section for supported color values.
 	</p>
     </comments>
     <spec><a href="https://www.w3.org/TR/css3-color/#foreground">CSS Color Module Level 3</a></spec>
@@ -1419,7 +1419,7 @@ TO ADD:
     <comments>
     <p class="note">
     This property is deprecated.  Use <code><property name="break-after"/>:column</code>
-    instead.  See the documentation for <xref linkend="columns"/> for more details.
+    instead.  See the documentation for <a href="/doc/styling/#columns">Columns</a> for more details.
     </p>
     </comments>
 </property>
@@ -1439,7 +1439,7 @@ TO ADD:
     <comments>
     <p class="note">
     This property is deprecated.  Use <code><property name="break-before"/>:column</code>
-    instead.  See the documentation for <xref linkend="columns"/> for more details.
+    instead.  See the documentation for <a href="/doc/styling/#columns">Columns</a> for more details.
     </p>
     </comments>
 </property>
@@ -1455,7 +1455,7 @@ TO ADD:
     <initial>auto</initial>
     <applyto>non-replaced block-level elements (except table elements), table cells, and inline-block elements</applyto>
     <inherit>no</inherit>
-    <see><xref linkend="columns"/></see>
+    <see><a href="/doc/styling/#columns">Columns</a></see>
     <spec><a href="https://www.w3.org/TR/css3-multicol/#cc">CSS Multi-column Layout Module</a></spec>
 </property>
 
@@ -1470,7 +1470,7 @@ TO ADD:
     <initial>balance</initial>
     <applyto>multicol elements</applyto>
     <inherit>no</inherit>
-    <see><xref linkend="columns"/></see>
+    <see><a href="/doc/styling/#columns">Columns</a></see>
     <spec><a href="https://www.w3.org/TR/css3-multicol/#cf">CSS Multi-column Layout Module</a></spec>
 </property>
 
@@ -1486,7 +1486,7 @@ TO ADD:
     <initial>normal</initial>
     <applyto>multicol elements</applyto>
     <inherit>no</inherit>
-    <see><xref linkend="columns"/></see>
+    <see><a href="/doc/styling/#columns">Columns</a></see>
     <spec><a href="https://www.w3.org/TR/css3-multicol/#column-gap">CSS Multi-column Layout Module</a></spec>
 </property>
 
@@ -1507,7 +1507,7 @@ TO ADD:
 	<prop>column-rule-style</prop>
 	<prop>column-rule-width</prop>
     </shorthand>
-    <see><xref linkend="columns"/></see>
+    <see><a href="/doc/styling/#columns">Columns</a></see>
     <spec><a href="https://www.w3.org/TR/css3-multicol/#column-rule">CSS Multi-column Layout Module</a></spec>
 </property>
 
@@ -1517,8 +1517,8 @@ TO ADD:
     <initial>CurrentColor</initial>
     <applyto>multicol elements</applyto>
     <inherit>no</inherit>
-    <see><xref linkend="columns"/></see>
-    <see><xref linkend="color"/></see>
+    <see><a href="/doc/styling/#columns">Columns</a></see>
+    <see><a href="/doc/graphics/#color">Color</a></see>
     <spec><a href="https://www.w3.org/TR/css3-multicol/#crc">CSS Multi-column Layout Module</a></spec>
 </property>
 
@@ -1540,7 +1540,7 @@ TO ADD:
     <initial>none</initial>
     <applyto>multicol elements</applyto>
     <inherit>no</inherit>
-    <see><xref linkend="columns"/></see>
+    <see><a href="/doc/styling/#columns">Columns</a></see>
     <spec><a href="https://www.w3.org/TR/css3-multicol/#crs">CSS Multi-column Layout Module</a></spec>
 </property>
 
@@ -1557,7 +1557,7 @@ TO ADD:
     <initial>medium</initial>
     <applyto>multicol elements</applyto>
     <inherit>no</inherit>
-    <see><xref linkend="columns"/></see>
+    <see><a href="/doc/styling/#columns">Columns</a></see>
     <comments>
 	<p class="note">
 	Even though the initial value for this property is
@@ -1581,7 +1581,7 @@ TO ADD:
     <initial>none</initial>
     <applyto>in-flow block-level elements</applyto>
     <inherit>no</inherit>
-    <see><xref linkend="columns"/></see>
+    <see><a href="/doc/styling/#columns">Columns</a></see>
     <comments>
     <p class="note">
     A numeric <code>column-span</code> value other than <code>1</code>
@@ -1604,7 +1604,7 @@ TO ADD:
     <initial>auto</initial>
     <applyto>non-replaced block-level elements (except table elements), table cells, and inline-block elements</applyto>
     <inherit>no</inherit>
-    <see><xref linkend="columns"/></see>
+    <see><a href="/doc/styling/#columns">Columns</a></see>
     <spec><a href="https://www.w3.org/TR/css3-multicol/#cw">CSS Multi-column Layout Module</a></spec>
 </property>
 
@@ -1623,7 +1623,7 @@ TO ADD:
 	<prop>column-count</prop>
 	<prop>column-width</prop>
     </shorthand>
-    <see><xref linkend="columns"/></see>
+    <see><a href="/doc/styling/#columns">Columns</a></see>
     <spec><a href="https://www.w3.org/TR/css3-multicol/#columns">CSS Multi-column Layout Module</a></spec>
 </property>
 
@@ -1744,22 +1744,22 @@ TO ADD:
     <initial>normal</initial>
     <applyto>all elements, tree-abiding pseudo-elements, and page regions</applyto>
     <inherit>no</inherit>
-    <see><xref linkend="gen-content-functions"/></see>
-    <see><xref linkend="gen-content"/></see>
-    <see><xref linkend="page-gen-content"/></see>
-    <see><xref linkend="content-copying-text"/></see>
-    <see><xref linkend="content-taking-elements"/></see>
-    <see><xref linkend="counters"/></see>
-    <see><xref linkend="crossref"/></see>
+    <see><a href="/doc/gen-content/#generated-content-functions">Generated Content Functions</a></see>
+    <see><a href="/doc/gen-content/">Generated Content</a></see>
+    <see><a href="/doc/paged/#generated-content-in-page-regions">Generated content in page regions</a></see>
+    <see><a href="/doc/paged/#copying-content-from-the-document">Copying content from the document</a></see>
+    <see><a href="/doc/paged/#taking-elements-from-the-document">Taking elements from the document</a></see>
+    <see><a href="/doc/gen-content/#counters-and-numbering">Counters and Numbering</a></see>
+    <see><a href="/doc/gen-content/#cross-references">Cross-references</a></see>
     <comments>
     <p>
     The <code>content</code> property can be used to insert text and other content
     into the original document.  The uses are very wide-ranging and are treated in
-    more depth in the <xref linkend="gen-content"/> section.
+    more depth in the <a href="/doc/gen-content/">Generated Content</a> section.
     </p>
     <p>
     Several ways of creating content are here defined by means of functions - the
-    detailed explanation can be found in the <xref linkend="gen-content-functions"/>
+    detailed explanation can be found in the <a href="/doc/gen-content/#generated-content-functions">Generated Content Functions</a>
     section.
     </p>
     </comments>
@@ -1785,7 +1785,7 @@ TO ADD:
     <comments>
 	<p>
 	For information about the use of the <code>counter-increment</code>
-	property see the documentation for <xref linkend="counters"/>.
+	property see the documentation for <a href="/doc/gen-content/#counters-and-numbering">Counters and Numbering</a>.
 	</p>
     </comments>
     <spec><a href="https://www.w3.org/TR/CSS2/generate.html#propdef-counter-increment">CSS 2.1</a></spec>
@@ -1808,7 +1808,7 @@ TO ADD:
     <comments>
 	<p>
 	For information about the use of the <code>counter-reset</code>
-	property see the documentation for <xref linkend="counters"/>.
+	property see the documentation for <a href="/doc/gen-content/#counters-and-numbering">Counters and Numbering</a>.
 	</p>
     </comments>
     <spec><a href="https://www.w3.org/TR/CSS2/generate.html#propdef-counter-reset">CSS 2.1</a></spec>
@@ -1855,7 +1855,7 @@ TO ADD:
     <initial>inline</initial>
     <applyto>all elements</applyto>
     <inherit>no</inherit>
-    <see><xref linkend="display"/></see>
+    <see><a href="/doc/styling/#display">Display</a></see>
     <spec><a href="https://www.w3.org/TR/CSS2/visuren.html#display-prop">CSS 2.1</a></spec>
     <spec><a href="https://www.w3.org/TR/css-flexbox-1/#flex-containers">CSS Flexible Box Layout Module Level 1</a></spec>
 </property>
@@ -2041,11 +2041,11 @@ TO ADD:
     <initial>none</initial>
     <applyto>all elements</applyto>
     <inherit>no</inherit>
-    <see><xref linkend="filters"/></see>
+    <see><a href="/doc/graphics/#filters">Filters</a></see>
 	<comments>
 	<p>The <code>filter</code> property provides graphical effects like blurring,
 	saturating or color shifting an element.  For more details see the
-    <xref linkend="filters"/> section.
+    <a href="/doc/graphics/#filters">Filters</a> section.
 	</p>
     </comments>
     <spec><a href="https://drafts.fxtf.org/filters/#FilterProperty">Filter Effects Module Level 1</a></spec>
@@ -2185,7 +2185,7 @@ TO ADD:
         -->
     </shorthand>
     <extension/>
-    <see><xref linkend="floats"/></see>
+    <see><a href="/doc/styling/#floats">Floats</a></see>
     <comments>
 	<p>
 	Traditionally, floats move in the inline direction, left or right.  Prince extends
@@ -2252,7 +2252,7 @@ TO ADD:
     float: top;
     float-defer-column: 1;
 }</example>
-    <see><xref linkend="floats"/></see>
+    <see><a href="/doc/styling/#floats">Floats</a></see>
     <comments>
     <p>
         The <code>float-defer-column</code> property defines the number of columns that the float should be deferred.</p>
@@ -2283,7 +2283,7 @@ TO ADD:
     float: top;
     float-defer-page: right;
 }</example>
-    <see><xref linkend="floats"/></see>
+    <see><a href="/doc/styling/#floats">Floats</a></see>
     <comments>
     <p>
         The <code>float-defer-page</code> property specifies whether the float is placed after previous page floats have been placed, or in another float reference container.</p>
@@ -2309,7 +2309,7 @@ TO ADD:
     float: top;
     float-modifier: unless-fit;
 }</example>
-    <see><xref linkend="floats"/></see>
+    <see><a href="/doc/styling/#floats">Floats</a></see>
     <comments>
     <p>
         The <code>float-modifier</code> property expresses a conditional
@@ -2352,8 +2352,8 @@ TO ADD:
     float-placement: bottom;
 }</example>
     <see><code><property name="float"/></code></see>
-    <see><xref linkend="floats"/></see>
-    <see><xref linkend="page-regions"/></see>
+    <see><a href="/doc/styling/#floats">Floats</a></see>
+    <see><a href="/doc/paged/#page-regions">Page regions</a></see>
     <comments>
     <p>
         The <code>float-placement</code> property defines how a floated element
@@ -2420,7 +2420,7 @@ TO ADD:
     float: bottom;
     float-policy: in-order;
 }</example>
-    <see><xref linkend="floats"/></see>
+    <see><a href="/doc/styling/#floats">Floats</a></see>
     <comments>
     <p>
         The <code>float-policy</code> property defines the policy adopted when
@@ -2448,7 +2448,7 @@ TO ADD:
     float: top;
     float-reference: page;
 }</example>
-    <see><xref linkend="floats"/></see>
+    <see><a href="/doc/styling/#floats">Floats</a></see>
     <comments>
     <p>
         The <code>float-reference</code> property defines the reference context for
@@ -2481,7 +2481,7 @@ TO ADD:
     float: top;
     float-tail: fill-page;
 }</example>
-    <see><xref linkend="floats"/></see>
+    <see><a href="/doc/styling/#floats">Floats</a></see>
     <comments>
     <p>
         The <code>float-tail</code> property instructs Prince how to deal with page
@@ -2568,7 +2568,7 @@ TO ADD:
 	<prop>line-height</prop>
     </shorthand>
     <example>font: bold 14pt/16pt Georgia, "Times New Roman", serif</example>
-    <see><xref linkend="text-formatting"/></see>
+    <see><a href="/doc/styling/#text-formatting">Text formatting</a></see>
     <spec><a href="https://www.w3.org/TR/CSS2/fonts.html#font-shorthand">CSS 2.1</a></spec>
 </property>
 
@@ -2593,9 +2593,9 @@ TO ADD:
     <inherit>yes</inherit>
     <example>font-family: Georgia, "Times New Roman", serif</example>
     <example>font-family: MyFont, prince-no-fallback</example>
-    <see><xref linkend="fonts"/></see>
-    <see><xref linkend="redefining-font-families"/></see>
-    <see><xref linkend="text-formatting"/></see>
+    <see><a href="/doc/styling/#fonts">Fonts</a></see>
+    <see><a href="/doc/styling/#redefining-the-generic-font-families">Redefining the generic font families</a></see>
+    <see><a href="/doc/styling/#text-formatting">Text formatting</a></see>
     <comments>
 	<p>
 	The special keyword <code>prince-no-fallback</code> triggers a warning if
@@ -2625,7 +2625,7 @@ TO ADD:
     <initial>auto</initial>
     <applyto>all elements</applyto>
     <inherit>yes</inherit>
-    <see><xref linkend="opentype-features-in-prince"/></see>
+    <see><a href="/doc/styling/#opentype-features-in-prince">OpenType Features in Prince</a></see>
     <comments>
     <p>The value <code>none</code> disables font kerning.  <a href="#prop-font-variant">font-variant: prince-no-kerning</a> accomplishes the same.</p>
     </comments>
@@ -2651,7 +2651,7 @@ TO ADD:
     <initial>12pt</initial>
     <applyto>all elements</applyto>
     <inherit>yes</inherit>
-    <see><xref linkend="text-formatting"/></see>
+    <see><a href="/doc/styling/#text-formatting">Text formatting</a></see>
     <spec><a href="https://www.w3.org/TR/CSS2/fonts.html#propdef-font-size">CSS 2.1</a></spec>
 </property>
 
@@ -2678,7 +2678,7 @@ TO ADD:
     <initial>normal</initial>
     <applyto>all elements, @font-face at-rule</applyto>
     <inherit>yes</inherit>
-    <see><xref linkend="text-formatting"/></see>
+    <see><a href="/doc/styling/#text-formatting">Text formatting</a></see>
     <comments>
 	<p>
 	The <code>font-stretch</code> property is not supported for system
@@ -2700,7 +2700,7 @@ TO ADD:
     <initial>normal</initial>
     <applyto>all elements, @font-face at-rule</applyto>
     <inherit>yes</inherit>
-    <see><xref linkend="text-formatting"/></see>
+    <see><a href="/doc/styling/#text-formatting">Text formatting</a></see>
     <spec><a href="https://www.w3.org/TR/CSS2/fonts.html#propdef-font-style">CSS 2.1</a></spec>
 </property>
 
@@ -2780,8 +2780,8 @@ TO ADD:
     <example>&lt;span style="font-family: SpecialFont; font-variant: prince-opentype(aalt(2))"&gt;&amp;amp;&lt;/span&gt;</example>
     <example>font-variant: prince-opentype(onum, ccmp, liga)</example>
     <example>font-variant: historical-ligatures all-small-caps;</example>
-    <see><xref linkend="ligatures"/></see>
-    <see><xref linkend="opentype-features"/></see>
+    <see><a href="/doc/cookbook/#typographic-ligatures">Typographic Ligatures</a></see>
+    <see><a href="/doc/styling/#opentype-features-in-prince">OpenType Features in Prince</a></see>
     <comments>
     <p>The <code>prince-opentype()</code> function takes a comma-separated list of
     OpenType features. Microsoft has a list of the OpenType feature names
@@ -2814,7 +2814,7 @@ TO ADD:
     <initial>normal</initial>
     <applyto>all elements</applyto>
     <inherit>yes</inherit>
-    <see><xref linkend="opentype-features-in-prince"/></see>
+    <see><a href="/doc/styling/#opentype-features-in-prince">OpenType Features in Prince</a></see>
     <comments>
     <p>The value <code>small-caps</code> enables the display of small capitals, i.e. the OpenType feature <code>smcp</code>.</p>
 
@@ -2852,8 +2852,8 @@ TO ADD:
     <initial>normal</initial>
     <applyto>all elements</applyto>
     <inherit>yes</inherit>
-    <see><xref linkend="opentype-features-in-prince"/></see>
-    <see><xref linkend="typographic-ligatures"/></see>
+    <see><a href="/doc/styling/#opentype-features-in-prince">OpenType Features in Prince</a></see>
+    <see><a href="/doc/cookbook/#typographic-ligatures">Typographic Ligatures</a></see>
     <comments>
     <p>This property allows for fine-tuning of various ligature types.</p>
 
@@ -2896,7 +2896,7 @@ TO ADD:
     <initial>normal</initial>
     <applyto>all elements</applyto>
     <inherit>yes</inherit>
-    <see><xref linkend="opentype-features-in-prince"/></see>
+    <see><a href="/doc/styling/#opentype-features-in-prince">OpenType Features in Prince</a></see>
     <comments>
     <p>This property specifies control over numeric forms.</p>
 
@@ -2934,7 +2934,7 @@ TO ADD:
     <initial>normal</initial>
     <applyto>all elements, @font-face at-rule</applyto>
     <inherit>yes</inherit>
-    <see><xref linkend="text-formatting"/></see>
+    <see><a href="/doc/styling/#text-formatting">Text formatting</a></see>
     <spec><a href="https://www.w3.org/TR/CSS2/fonts.html#propdef-font-weight">CSS 2.1</a></spec>
     <spec><a href="https://www.w3.org/TR/css-fonts-4/#propdef-font-weight">css-text-4</a></spec>
 </property>
@@ -2980,7 +2980,7 @@ TO ADD:
     <comments>
 	<p>
 	For information about the use of the <code>footnote-style-position</code>
-	property see the documentation for <xref linkend="footnotes"/>.
+	property see the documentation for <a href="/doc/styling/#footnotes">Footnotes</a>.
 	</p>
     </comments>
 </property>
@@ -3023,7 +3023,7 @@ TO ADD:
     <initial>manual</initial>
     <applyto>all elements</applyto>
     <inherit>yes</inherit>
-    <see><xref linkend="hyphenation"/></see>
+    <see><a href="/doc/cookbook/#hyphenation">Hyphenation</a></see>
     <comments>
     <p>
     This property defines if hyphenation is allowed to create more wrapping points
@@ -3167,7 +3167,7 @@ TO ADD:
     <initial>inline-line-height</initial>
     <applyto>block-level elements</applyto>
     <inherit>yes</inherit>
-    <see><xref linkend="paragraph-formatting"/></see>
+    <see><a href="/doc/styling/#paragraph-formatting">Paragraph formatting</a></see>
     <see><code><property name="line-height"/></code></see>
     <comments>
     <p>
@@ -3212,7 +3212,7 @@ TO ADD:
     <initial>normal</initial>
     <applyto>all elements</applyto>
     <inherit>yes</inherit>
-    <see><xref linkend="paragraph-formatting"/></see>
+    <see><a href="/doc/styling/#paragraph-formatting">Paragraph formatting</a></see>
     <spec><a href="https://www.w3.org/TR/CSS2/visudet.html#propdef-line-height">CSS 2.1</a></spec>
 </property>
 
@@ -3238,7 +3238,7 @@ TO ADD:
 	<prop>list-style-position</prop>
 	<prop>list-style-type</prop>
     </shorthand>
-    <see><xref linkend="lists"/></see>
+    <see><a href="/doc/styling/#lists">Lists</a></see>
     <spec><a href="https://www.w3.org/TR/CSS2/generate.html#propdef-list-style">CSS 2.1</a></spec>
 </property>
 
@@ -3253,7 +3253,7 @@ TO ADD:
     <initial>none</initial>
     <applyto>list items</applyto>
     <inherit>yes</inherit>
-    <see><xref linkend="lists"/></see>
+    <see><a href="/doc/styling/#lists">Lists</a></see>
     <spec><a href="https://www.w3.org/TR/CSS2/generate.html#propdef-list-style-image">CSS 2.1</a></spec>
 </property>
 
@@ -3268,7 +3268,7 @@ TO ADD:
     <initial>outside</initial>
     <applyto>list items</applyto>
     <inherit>yes</inherit>
-    <see><xref linkend="lists"/></see>
+    <see><a href="/doc/styling/#lists">Lists</a></see>
     <spec><a href="https://www.w3.org/TR/CSS2/generate.html#propdef-list-style-position">CSS 2.1</a></spec>
 </property>
 
@@ -3340,8 +3340,8 @@ TO ADD:
     <initial>disc</initial>
     <applyto>list items</applyto>
     <inherit>yes</inherit>
-    <see><xref linkend="lists"/></see>
-    <see><xref linkend="counters"/></see>
+    <see><a href="/doc/styling/#lists">Lists</a></see>
+    <see><a href="/doc/gen-content/#counters-and-numbering">Counters and Numbering</a></see>
     <spec><a href="https://www.w3.org/TR/CSS2/generate.html#propdef-list-style-type">CSS 2.1</a></spec>
     <spec><a href="https://www.w3.org/TR/2002/WD-css3-lists-20021107/#ltglyphgt">CSS3 module: Lists (W3C Working Draft 7 November 2002)</a></spec>
     <spec><a href="https://www.w3.org/TR/css-lists-3/">CSS Lists Module Level 3</a></spec>
@@ -3368,7 +3368,7 @@ TO ADD:
 	<prop>margin-right</prop>
 	<prop>margin-top</prop>
     </shorthand>
-    <see><xref linkend="margin"/></see>
+    <see><a href="/doc/styling/#margin">Margin</a></see>
     <spec><a href="https://www.w3.org/TR/CSS2/box.html#margin-properties">CSS 2.1</a></spec>
 </property>
 
@@ -3389,7 +3389,7 @@ TO ADD:
     <applyto>all top- or bottom-floated elements</applyto>
     <inherit>no</inherit>
     <extension/>
-    <see><xref linkend="margin"/></see>
+    <see><a href="/doc/styling/#margin">Margin</a></see>
     <comments>
     <p>
         The <code>margin-alt</code> property defines a top and/or bottom margin
@@ -3423,7 +3423,7 @@ TO ADD:
     <initial>0</initial>
     <applyto>all elements, except elements with table display types other than table-caption, table and inline-table</applyto>
     <inherit>no</inherit>
-    <see><xref linkend="margin"/></see>
+    <see><a href="/doc/styling/#margin">Margin</a></see>
     <spec><a href="https://www.w3.org/TR/CSS2/box.html#margin-properties">CSS 2.1</a></spec>
 </property>
 
@@ -3439,7 +3439,7 @@ TO ADD:
     <applyto>all elements, except elements with table display types other than table-caption, table and inline-table</applyto>
     <inherit>no</inherit>
     <extension/>
-    <see><xref linkend="margin"/></see>
+    <see><a href="/doc/styling/#margin">Margin</a></see>
     <comments>
 	<p>
 	The <code>margin-inside</code> property overrides the value of the
@@ -3464,7 +3464,7 @@ TO ADD:
     <initial>0</initial>
     <applyto>all elements, except elements with table display types other than table-caption, table and inline-table</applyto>
     <inherit>no</inherit>
-    <see><xref linkend="margin"/></see>
+    <see><a href="/doc/styling/#margin">Margin</a></see>
     <spec><a href="https://www.w3.org/TR/CSS2/box.html#margin-properties">CSS 2.1</a></spec>
 </property>
 
@@ -3480,7 +3480,7 @@ TO ADD:
     <applyto>all elements, except elements with table display types other than table-caption, table and inline-table</applyto>
     <inherit>no</inherit>
     <extension/>
-    <see><xref linkend="margin"/></see>
+    <see><a href="/doc/styling/#margin">Margin</a></see>
     <comments>
 	<p>
 	The <code>margin-outside</code> property overrides the value of the
@@ -3505,7 +3505,7 @@ TO ADD:
     <initial>0</initial>
     <applyto>all elements, except elements with table display types other than table-caption, table and inline-table</applyto>
     <inherit>no</inherit>
-    <see><xref linkend="margin"/></see>
+    <see><a href="/doc/styling/#margin">Margin</a></see>
     <spec><a href="https://www.w3.org/TR/CSS2/box.html#margin-properties">CSS 2.1</a></spec>
 </property>
 
@@ -3520,7 +3520,7 @@ TO ADD:
     <initial>0</initial>
     <applyto>all elements, except elements with table display types other than table-caption, table and inline-table</applyto>
     <inherit>no</inherit>
-    <see><xref linkend="margin"/></see>
+    <see><a href="/doc/styling/#margin">Margin</a></see>
     <spec><a href="https://www.w3.org/TR/CSS2/box.html#margin-properties">CSS 2.1</a></spec>
 </property>
 
@@ -3853,7 +3853,7 @@ TO ADD:
     <initial>1</initial>
     <applyto>block container elements</applyto>
     <inherit>yes</inherit>
-    <see><xref linkend="widows-and-orphans"/></see>
+    <see><a href="/doc/paged/#widows-and-orphans">Widows and orphans</a></see>
     <see><code><property name="widows"/></code></see>
     <comments>
 	<p>
@@ -3913,7 +3913,7 @@ TO ADD:
     <example>part { overflow-wrap: break-word; }
 supplier, item { overflow-wrap: normal; }
 &lt;part&gt;&lt;supplier&gt;xyz&lt;/supplier&gt;&lt;item&gt;12345&lt;/item&gt;&lt;/part&gt;</example>
-    <see><xref linkend="paragraph-formatting"/></see>
+    <see><a href="/doc/styling/#paragraph-formatting">Paragraph formatting</a></see>
     <see><code><property name="word-break"/></code></see>
     <see><code><property name="prince-wrap-inside"/></code></see>
     <see><code><property name="white-space"/></code></see>
@@ -3971,7 +3971,7 @@ supplier, item { overflow-wrap: normal; }
 	<prop>padding-right</prop>
 	<prop>padding-top</prop>
     </shorthand>
-    <see><xref linkend="padding"/></see>
+    <see><a href="/doc/styling/#padding">Padding</a></see>
     <spec><a href="https://www.w3.org/TR/CSS2/box.html#padding-properties">CSS 2.1</a></spec>
 </property>
 
@@ -3983,7 +3983,7 @@ supplier, item { overflow-wrap: normal; }
     <initial>0</initial>
     <applyto>all elements, except table-row-group, table-header-group, table-footer-group, table-row, table-column-group and table-column</applyto>
     <inherit>no</inherit>
-    <see><xref linkend="padding"/></see>
+    <see><a href="/doc/styling/#padding">Padding</a></see>
     <spec><a href="https://www.w3.org/TR/CSS2/box.html#padding-properties">CSS 2.1</a></spec>
 </property>
 
@@ -3995,7 +3995,7 @@ supplier, item { overflow-wrap: normal; }
     <initial>0</initial>
     <applyto>all elements, except table-row-group, table-header-group, table-footer-group, table-row, table-column-group and table-column</applyto>
     <inherit>no</inherit>
-    <see><xref linkend="padding"/></see>
+    <see><a href="/doc/styling/#padding">Padding</a></see>
     <spec><a href="https://www.w3.org/TR/CSS2/box.html#padding-properties">CSS 2.1</a></spec>
 </property>
 
@@ -4007,7 +4007,7 @@ supplier, item { overflow-wrap: normal; }
     <initial>0</initial>
     <applyto>all elements, except table-row-group, table-header-group, table-footer-group, table-row, table-column-group and table-column</applyto>
     <inherit>no</inherit>
-    <see><xref linkend="padding"/></see>
+    <see><a href="/doc/styling/#padding">Padding</a></see>
     <spec><a href="https://www.w3.org/TR/CSS2/box.html#padding-properties">CSS 2.1</a></spec>
 </property>
 
@@ -4019,7 +4019,7 @@ supplier, item { overflow-wrap: normal; }
     <initial>0</initial>
     <applyto>all elements, except table-row-group, table-header-group, table-footer-group, table-row, table-column-group and table-column</applyto>
     <inherit>no</inherit>
-    <see><xref linkend="padding"/></see>
+    <see><a href="/doc/styling/#padding">Padding</a></see>
     <spec><a href="https://www.w3.org/TR/CSS2/box.html#padding-properties">CSS 2.1</a></spec>
 </property>
 
@@ -4037,7 +4037,7 @@ supplier, item { overflow-wrap: normal; }
     <comments>
 	<p>
 	This property determines which named page, if any, the current element
-	should be placed on. See the documentation for <xref linkend="page-rules"/>
+	should be placed on. See the documentation for <a href="/doc/paged/#selecting-pages">Selecting pages</a>
 	for more details.
 	</p>
     </comments>
@@ -4069,7 +4069,7 @@ supplier, item { overflow-wrap: normal; }
     </p>
     <p class="note">
     This property is deprecated.  Use the property <code><property name="break-after"/></code>
-    instead.  See the documentation for <xref linkend="page-breaks"/> for more details.
+    instead.  See the documentation for <a href="/doc/paged/#page-breaks">Page breaks</a> for more details.
     </p>
     </comments>
     <spec><a href="https://www.w3.org/TR/CSS2/page.html#propdef-page-break-after">CSS 2.1</a></spec>
@@ -4100,7 +4100,7 @@ supplier, item { overflow-wrap: normal; }
     </p>
     <p class="note">
     This property is deprecated.  Use the property <code><property name="break-before"/></code>
-    instead.  See the documentation for <xref linkend="page-breaks"/> for more details.
+    instead.  See the documentation for <a href="/doc/paged/#page-breaks">Page breaks</a> for more details.
     </p>
     </comments>
     <spec><a href="https://www.w3.org/TR/CSS2/page.html#propdef-page-break-before">CSS 2.1</a></spec>
@@ -4125,7 +4125,7 @@ supplier, item { overflow-wrap: normal; }
     </p>
     <p class="note">
     This property is deprecated.  Use the property <code><property name="break-inside"/></code>
-    instead.  See the documentation for <xref linkend="page-breaks"/> for more details.
+    instead.  See the documentation for <a href="/doc/paged/#page-breaks">Page breaks</a> for more details.
     </p>
     </comments>
     <spec><a href="https://www.w3.org/TR/CSS2/page.html#propdef-page-break-before">CSS 2.1</a></spec>
@@ -4152,15 +4152,15 @@ supplier, item { overflow-wrap: normal; }
     <initial>static</initial>
     <applyto>all elements</applyto>
     <inherit>no</inherit>
-    <see><xref linkend="page-regions"/></see>
-    <see><xref linkend="content-taking-elements"/></see>
+    <see><a href="/doc/paged/#page-regions">Page regions</a></see>
+    <see><a href="/doc/paged/#taking-elements-from-the-document">Taking elements from the document</a></see>
     <see><code><property name="content"/></code></see>
     <comments>
 	<p>
 	The <code>running()</code> function removes the element from the normal document
     flow and makes it available to be placed in a page region with the
     <code>element()</code> function of the <code><property name="content"/></code>
-    property.  See also <xref linkend="content-taking-elements"/>.
+    property.  See also <a href="/doc/paged/#taking-elements-from-the-document">Taking elements from the document</a>.
 	</p>
     </comments>
     <spec><a href="https://www.w3.org/TR/CSS2/visuren.html#propdef-position">CSS 2.1</a></spec>
@@ -4213,7 +4213,7 @@ supplier, item { overflow-wrap: normal; }
     <applyto>background image elements</applyto>
     <inherit>yes</inherit>
     <extension/>
-    <see><xref linkend="images-size"/></see>
+    <see><a href="/doc/graphics/#image-sizes">Image Size</a></see>
     <comments>
 	<p>
     This property determines the resolution of a background image.  The value <code>normal</code>
@@ -4240,8 +4240,8 @@ supplier, item { overflow-wrap: normal; }
     <applyto>all elements</applyto>
     <inherit>no</inherit>
     <extension/>
-    <see><xref linkend="gen-content-functions"/></see>
-    <see><xref linkend="bookmark-labels"/></see>
+    <see><a href="/doc/gen-content/#generated-content-functions">Generated Content Functions</a></see>
+    <see><a href="/doc/prince-output/#bookmark-labels">Bookmark labels</a></see>
     <see><code><property name="content"/></code></see>
     <comments>
 	<p>
@@ -4250,7 +4250,7 @@ supplier, item { overflow-wrap: normal; }
 	</p>
     <p>
     Several ways of creating content are here defined by means of functions - the
-    detailed explanation can be found in the <xref linkend="gen-content-functions"/>
+    detailed explanation can be found in the <a href="/doc/gen-content/#generated-content-functions">Generated Content Functions</a>
     section.
     </p>
 	<p class="note">
@@ -4260,7 +4260,7 @@ supplier, item { overflow-wrap: normal; }
 	property is <code>none</code>.
     </p>
     <p>
-	See the documentation for <xref linkend="pdf-bookmarks"/> for more details.
+	See the documentation for <a href="/doc/prince-output/#pdf-bookmarks">PDF Bookmarks</a> for more details.
 	</p>
 	</comments>
     <spec><a href="https://books.spec.whatwg.org/#'bookmark-label'">CSS Books</a></spec>
@@ -4279,12 +4279,12 @@ supplier, item { overflow-wrap: normal; }
     <applyto>all elements</applyto>
     <inherit>no</inherit>
     <extension/>
-    <see><xref linkend="bookmark-levels"/></see>
+    <see><a href="/doc/prince-output/#bookmark-levels">Bookmark levels</a></see>
     <comments>
 	<p>
 	This property is used to determine the numeric level in the bookmark
 	hierarchy of the PDF bookmark generated by the current element.
-	See the documentation for <xref linkend="pdf-bookmarks"/> for more details.
+	See the documentation for <a href="/doc/prince-output/#pdf-bookmarks">PDF Bookmarks</a> for more details.
 	</p>
 	</comments>
     <spec><a href="https://books.spec.whatwg.org/#'bookmark-level'">CSS Books</a></spec>
@@ -4303,7 +4303,7 @@ supplier, item { overflow-wrap: normal; }
     <applyto>all elements</applyto>
     <inherit>no</inherit>
     <extension/>
-    <see><xref linkend="bookmark-levels"/></see>
+    <see><a href="/doc/prince-output/#bookmark-levels">Bookmark levels</a></see>
     <comments>
     <p>
     This property is used to determine whether the bookmark tree item is open or closed
@@ -4329,12 +4329,12 @@ supplier, item { overflow-wrap: normal; }
     <applyto>all elements</applyto>
     <inherit>no</inherit>
     <extension/>
-    <see><xref linkend="bookmark-targets"/></see>
+    <see><a href="/doc/prince-output/#bookmark-targets">Bookmark targets</a></see>
     <comments>
 	<p>
 	This property is used to determine the link target for the
 	PDF bookmark generated by the current element.
-	See the documentation for <xref linkend="pdf-bookmarks"/> for more details.
+	See the documentation for <a href="/doc/prince-output/#pdf-bookmarks">PDF Bookmarks</a> for more details.
 	</p>
 	</comments>
     <aliastarget>bookmark-target</aliastarget>
@@ -4353,7 +4353,7 @@ supplier, item { overflow-wrap: normal; }
     <applyto>table elements</applyto>
     <inherit>yes</inherit>
     <extension/>
-    <see><xref linkend="tables-caption"/></see>
+    <see><a href="/doc/styling/#table-captions">Table captions</a></see>
     <comments>
 	<p>
 	This property determines whether table captions will be displayed on
@@ -4407,7 +4407,7 @@ supplier, item { overflow-wrap: normal; }
     -prince-fallback-cmyk-profile: url("ISOcoated_v2_eci.icc");
 }</example>
     <see><code><property name="prince-pdf-output-intent"/></code></see>
-    <see><xref linkend="color-management"/></see>
+    <see><a href="/doc/graphics/#color-management">Color Management</a></see>
     <comments>
     <p>
     This property is used inside a
@@ -4437,7 +4437,7 @@ supplier, item { overflow-wrap: normal; }
     <applyto>all elements</applyto>
     <inherit>yes</inherit>
     <extension/>
-    <see><xref linkend="filters"/></see>
+    <see><a href="/doc/graphics/#filters">Filters</a></see>
     <comments>
     <p>
     This property is used to specify the resolution used when
@@ -4456,7 +4456,7 @@ supplier, item { overflow-wrap: normal; }
     <initial2>96dpi</initial2>
     <applyto2>@prince-pdf at-rule</applyto2>
     <inherit2>n/a</inherit2>
-    <see2><xref linkend="filters"/></see2>
+    <see2><a href="/doc/graphics/#filters">Filters</a></see2>
     <comments2>
     <p>This descriptor provides a default resolution to be used for
     rasterizing to images for applying CSS and SVG filters,
@@ -4526,8 +4526,8 @@ supplier, item { overflow-wrap: normal; }
     <applyto>all elements</applyto>
     <inherit>no</inherit>
     <extension/>
-    <see><xref linkend="page-regions"/></see>
-    <see><xref linkend="content-taking-elements"/></see>
+    <see><a href="/doc/paged/#page-regions">Page regions</a></see>
+    <see><a href="/doc/paged/#taking-elements-from-the-document">Taking elements from the document</a></see>
     <see><code><property name="content"/></code></see>
     <comments>
     <p>
@@ -4541,7 +4541,7 @@ supplier, item { overflow-wrap: normal; }
     of the document.
     </p>
     <p>
-    See the documentation for <xref linkend="content-taking-elements"/> for more details.
+    See the documentation for <a href="/doc/paged/#taking-elements-from-the-document">Taking elements from the document</a> for more details.
     </p>
     </comments>
     <spec><a href="https://books.spec.whatwg.org/#flowing-content-to-a-named-area:-'flow'">CSS Books</a></spec>
@@ -4561,7 +4561,7 @@ supplier, item { overflow-wrap: normal; }
     <applyto>footnote elements</applyto>
     <inherit>yes</inherit>
     <extension/>
-    <see><xref linkend="footnotes"/></see>
+    <see><a href="/doc/styling/#footnotes">Footnotes</a></see>
     <comments>
 	<p>
 	This property determines whether a footnote should always be displayed on the
@@ -4589,8 +4589,8 @@ supplier, item { overflow-wrap: normal; }
     <applyto>all elements</applyto>
     <inherit>yes</inherit>
     <extension/>
-    <see><xref linkend="pfb-linebreaking"/></see>
-    <see><xref linkend="pfb-princeforcedbreaks"/></see>
+    <see><a href="/doc/prince-for-books/#line-breaking">Line breaking</a></see>
+    <see><a href="/doc/prince-for-books/#the-property--prince-forced-breaks">The property <code>-prince-forced-breaks</code></a></see>
     <see><code><property name="text-align-last"/></code></see>
     <see><code><property name="white-space"/></code></see>
     <see><code><property name="prince-wrap-inside"/></code></see>
@@ -4607,7 +4607,7 @@ supplier, item { overflow-wrap: normal; }
 
 	<p>(Limitation: At the time of writing, this property only affects justified text.)</p>
 
-    <p>This property only applies to <xref linkend="pfb"/>.</p>
+    <p>This property only applies to <a href="/doc/prince-for-books/">Prince for Books</a>.</p>
     </comments>
 </property>
 
@@ -4623,7 +4623,7 @@ supplier, item { overflow-wrap: normal; }
     <applyto>all elements</applyto>
     <inherit>yes</inherit>
     <extension/>
-    <see><xref linkend="hyphenation"/></see>
+    <see><a href="/doc/cookbook/#hyphenation">Hyphenation</a></see>
     <comments>
     <p>
     This property is used to point to a hyphenation dictionary.  Normally this is
@@ -4645,7 +4645,7 @@ supplier, item { overflow-wrap: normal; }
     <applyto>all elements</applyto>
     <inherit>yes</inherit>
     <extension/>
-    <see><xref linkend="hyphenation"/></see>
+    <see><a href="/doc/cookbook/#hyphenation">Hyphenation</a></see>
     <comments>
 	<p>
 	This property specifies the minimum number of letters in a word that
@@ -4664,7 +4664,7 @@ supplier, item { overflow-wrap: normal; }
     <applyto>all elements</applyto>
     <inherit>yes</inherit>
     <extension/>
-    <see><xref linkend="hyphenation"/></see>
+    <see><a href="/doc/cookbook/#hyphenation">Hyphenation</a></see>
     <comments>
 	<p>
 	This property specifies the minimum number of letters in a word that
@@ -4686,7 +4686,7 @@ supplier, item { overflow-wrap: normal; }
     <applyto>all elements</applyto>
     <inherit>yes</inherit>
     <extension/>
-    <see><xref linkend="hyphenation"/></see>
+    <see><a href="/doc/cookbook/#hyphenation">Hyphenation</a></see>
     <comments>
 	<p>
 	This property specifies the character that is shown at the end of a line
@@ -4708,7 +4708,7 @@ supplier, item { overflow-wrap: normal; }
     <applyto>all elements</applyto>
     <inherit>yes</inherit>
     <extension/>
-    <see><xref linkend="hyphenation"/></see>
+    <see><a href="/doc/cookbook/#hyphenation">Hyphenation</a></see>
     <comments>
 	<p>
 	This property specifies the maximum number of consecutive lines that
@@ -4751,8 +4751,8 @@ supplier, item { overflow-wrap: normal; }
     <applyto>image elements</applyto>
     <inherit>yes</inherit>
     <extension/>
-    <see><xref linkend="images-size"/></see>
-    <see><xref linkend="image-magic"/></see>
+    <see><a href="/doc/graphics/#image-sizes">Image Size</a></see>
+    <see><a href="/doc/cookbook/#image-magic">Image Magic</a></see>
     <comments>
     <p>
     This property performs various image-related, Prince-specific tasks that do not
@@ -4809,7 +4809,7 @@ supplier, item { overflow-wrap: normal; }
     <applyto>image elements</applyto>
     <inherit>yes</inherit>
     <extension/>
-    <see><xref linkend="images-size"/></see>
+    <see><a href="/doc/graphics/#image-sizes">Image Size</a></see>
     <comments>
     <p>
     This property determines the resolution of an image.  The value <code>normal</code>
@@ -4836,7 +4836,7 @@ supplier, item { overflow-wrap: normal; }
     <applyto>all elements</applyto>
     <inherit>yes</inherit>
     <extension/>
-    <see><xref linkend="paragraph-formatting"/></see>
+    <see><a href="/doc/styling/#paragraph-formatting">Paragraph formatting</a></see>
     <comments>
 	<p>
 	This property enables line-breaking in certain situations even in the
@@ -4867,8 +4867,8 @@ supplier, item { overflow-wrap: normal; }
     <applyto>all elements</applyto>
     <inherit>yes</inherit>
     <extension/>
-    <see><xref linkend="pfb-linebreaking"/></see>
-    <see><xref linkend="pfb-princelinebreakchoices"/></see>
+    <see><a href="/doc/prince-for-books/#line-breaking">Line breaking</a></see>
+    <see><a href="/doc/prince-for-books/#the-property--prince-line-break-choices">The property <code>-prince-line-break-choices</code></a></see>
     <comments>
 	<p>
 	This property is used for fine tuning the line breaking approach.
@@ -4938,11 +4938,11 @@ supplier, item { overflow-wrap: normal; }
 
     <p>
     For more information on how to influence line breaks,
-    please see <xref linkend="pfb-linebreaking"/>.
+    please see <a href="/doc/prince-for-books/#line-breaking">Line breaking</a>.
     </p>
 
     <p>
-    This property only applies to <xref linkend="pfb"/>.
+    This property only applies to <a href="/doc/prince-for-books/">Prince for Books</a>.
     </p>
     </comments>
     <aliastarget>prince-text-wrap</aliastarget>
@@ -4961,7 +4961,7 @@ supplier, item { overflow-wrap: normal; }
     <applyto>all elements</applyto>
     <inherit>no</inherit>
     <extension/>
-    <see><xref linkend="pdf-links"/></see>
+    <see><a href="/doc/prince-output/#pdf-links">PDF Links</a></see>
     <comments>
     <p>
     This property makes an element into a link to the specified URL.
@@ -5068,8 +5068,8 @@ supplier, item { overflow-wrap: normal; }
     <applyto>“paragraphs”: block container boxes that establish inline formatting contexts</applyto>
     <inherit>no</inherit>
     <extension/>
-    <see><xref linkend="pfb-spreadbalancing"/></see>
-    <see><xref linkend="pfb-princenlines"/></see>
+    <see><a href="/doc/prince-for-books/#spread-balancing">Spread Balancing</a></see>
+    <see><a href="/doc/prince-for-books/#the-property--prince-n-lines">The property <code>-prince-n-lines</code></a></see>
     <comments>
     <p>
     This property is for use in the pagination phase of typesetting, for
@@ -5108,7 +5108,7 @@ supplier, item { overflow-wrap: normal; }
     having a hyphenation at the end of a page.
     </p>
 
-    <p>This property only applies to <xref linkend="pfb"/>.</p>
+    <p>This property only applies to <a href="/doc/prince-for-books/">Prince for Books</a>.</p>
     </comments>
 </property>
 
@@ -5124,8 +5124,8 @@ supplier, item { overflow-wrap: normal; }
     <applyto>@page at-rule</applyto>
     <inherit>n/a</inherit>
     <extension/>
-    <see><xref linkend="pfb-spreadbalancing"/></see>
-    <see><xref linkend="pfb-princenlines"/></see>
+    <see><a href="/doc/prince-for-books/#spread-balancing">Spread Balancing</a></see>
+    <see><a href="/doc/prince-for-books/#the-property--prince-n-lines">The property <code>-prince-n-lines</code></a></see>
     <comments>
 	<p>
         This property determines whether Prince should shorten a page to match
@@ -5153,7 +5153,7 @@ supplier, item { overflow-wrap: normal; }
 	approximately balanced.
 	</p>
 
-	<p>This property only applies to <xref linkend="pfb"/>.</p>
+	<p>This property only applies to <a href="/doc/prince-for-books/">Prince for Books</a>.</p>
     </comments>
 </property>
 
@@ -5169,7 +5169,7 @@ supplier, item { overflow-wrap: normal; }
     <applyto>all elements</applyto>
     <inherit>no</inherit>
     <extension/>
-    <see><xref linkend="page-groups"/></see>
+    <see><a href="/doc/paged/#page-groups">Page groups</a></see>
     <comments>
 	<p>
 	This property determines whether the first page of this element
@@ -5241,7 +5241,7 @@ supplier, item { overflow-wrap: normal; }
     <initial2>output-intent</initial2>
     <applyto2>@prince-pdf at-rule</applyto2>
     <inherit2>no</inherit2>
-    <see2><xref linkend="color-conversion"/></see2>
+    <see2><a href="/doc/graphics/#color-conversion">Color conversion</a></see2>
     <comments2>
     <p>
     As a descriptor inside the
@@ -5295,7 +5295,7 @@ supplier, item { overflow-wrap: normal; }
 	<example>@prince-pdf {
     -prince-pdf-color-options: use-rich-black;
 }</example>
-    <see><xref linkend="rich-true-black"/></see>
+    <see><a href="/doc/graphics/#rich-black-and-true-black">Rich black and true black</a></see>
 	<comments>
 		<p>This property may be used to control the encoding of RGB blacks and grays:
 		when <code>use-true-black</code> is used, they are encoded in the /DeviceGray colorspace
@@ -5318,7 +5318,7 @@ supplier, item { overflow-wrap: normal; }
     <applyto>all elements</applyto>
     <inherit>no</inherit>
     <extension/>
-    <see><xref linkend="pdf-links"/></see>
+    <see><a href="/doc/prince-output/#pdf-links">PDF Links</a></see>
     <comments>
     <p>
     This property may be used to create "named destinations" (<code>nameddest</code>)
@@ -5418,7 +5418,7 @@ supplier, item { overflow-wrap: normal; }
     <example>@prince-pdf {
     -prince-pdf-event-scripts: will-close url("onclose.js"), will-print url("onprint.js");
 }</example>
-    <see><xref linkend="pdf-actions"/></see>
+    <see><a href="/doc/prince-output/#pdf-actions">PDF Actions</a></see>
     <comments>
 	<p>
 	This property can be used to include JavaScript code that will be
@@ -5457,7 +5457,7 @@ supplier, item { overflow-wrap: normal; }
     <applyto>hyperlink elements</applyto>
     <inherit>no</inherit>
     <extension/>
-    <see><xref linkend="pdf-links"/></see>
+    <see><a href="/doc/prince-output/#pdf-links">PDF Links</a></see>
     <comments>
 	<p>
 	This property controls whether relative links should be embedded in the PDF
@@ -5502,7 +5502,7 @@ supplier, item { overflow-wrap: normal; }
     <example>@prince-pdf {
     -prince-pdf-open-action: zoom(fit-page) print;
 }</example>
-    <see><xref linkend="pdf-actions"/></see>
+    <see><a href="/doc/prince-output/#pdf-actions">PDF Actions</a></see>
     <comments>
 	<p>
 	This property specifies a space-separated list of actions to perform when
@@ -5530,7 +5530,7 @@ supplier, item { overflow-wrap: normal; }
     -prince-pdf-output-intent: url("ISOcoated_v2_eci.icc")
 }</example>
     <see><code><property name="prince-fallback-cmyk-profile"/></code></see>
-    <see><xref linkend="color-management"/></see>
+    <see><a href="/doc/graphics/#color-management">Color Management</a></see>
     <comments>
     <p>
     This property is used inside a <a href="doc-latest/doc-refs.html#at-prince-pdf"><code>@prince-pdf</code></a>
@@ -5557,7 +5557,7 @@ supplier, item { overflow-wrap: normal; }
     <example>@page {
     -prince-pdf-page-colorspace: cmyk;
 }</example>
-    <see><xref linkend="page-color-space"/></see>
+    <see><a href="/doc/graphics/#page-color-space">Page color space</a></see>
     <comments>
 	<p>
 	This CSS at-rule descriptor can control the colorspace of pages in the PDF
@@ -5584,8 +5584,8 @@ supplier, item { overflow-wrap: normal; }
     <example>@page {
     -prince-pdf-page-label: counter(page, lower-roman)
 }</example>
-    <see><xref linkend="gen-content-functions"/></see>
-    <see><xref linkend="pdf-pages"/></see>
+    <see><a href="/doc/gen-content/#generated-content-functions">Generated Content Functions</a></see>
+    <see><a href="/doc/prince-output/#pdf-pages">PDF Pages</a></see>
     <see><code><property name="content"/></code></see>
     <comments>
 	<p>
@@ -5594,7 +5594,7 @@ supplier, item { overflow-wrap: normal; }
     </p>
     <p>
     Several ways of creating content are here defined by means of functions - the
-    detailed explanation can be found in the <xref linkend="gen-content-functions"/>
+    detailed explanation can be found in the <a href="/doc/gen-content/#generated-content-functions">Generated Content Functions</a>
     section.
     </p>
 </comments>
@@ -5622,7 +5622,7 @@ supplier, item { overflow-wrap: normal; }
     <example>@prince-pdf {
     -prince-pdf-page-layout: two-column
 }</example>
-    <see><xref linkend="pdf-pages"/></see>
+    <see><a href="/doc/prince-output/#pdf-pages">PDF Pages</a></see>
     <comments>
 	<p>
 	This property can be used to set the default page layout for the PDF
@@ -5649,7 +5649,7 @@ supplier, item { overflow-wrap: normal; }
     <example>@prince-pdf {
     -prince-pdf-page-mode: show-bookmarks
 }</example>
-    <see><xref linkend="pdf-pages"/></see>
+    <see><a href="/doc/prince-output/#pdf-pages">PDF Pages</a></see>
     <comments>
 	<p>
 	This property can be used to set the default page mode for the PDF
@@ -5674,7 +5674,7 @@ supplier, item { overflow-wrap: normal; }
     <example>@prince-pdf {
     -prince-pdf-paper-tray: pick-tray-by-pdf-size
 }</example>
-	<see><xref linkend="pdf-printing"/></see>
+	<see><a href="/doc/prince-output/#pdf-printing">PDF Printing</a></see>
     <comments>
 	<p>
 	This property controls the PickTrayByPDFSize flag in generated PDF
@@ -5699,7 +5699,7 @@ supplier, item { overflow-wrap: normal; }
     <example>@prince-pdf {
     -prince-pdf-print-scaling: none
 }</example>
-	<see><xref linkend="pdf-printing"/></see>
+	<see><a href="/doc/prince-output/#pdf-printing">PDF Printing</a></see>
     <comments>
 	<p>
 	This property can be used to disable print scaling for the PDF file when
@@ -5723,11 +5723,11 @@ supplier, item { overflow-wrap: normal; }
     <example>@prince-pdf {
     -prince-pdf-profile: "PDF/X-3:2003"
 }</example>
-	<see><xref linkend="pdf-profiles"/></see>
+	<see><a href="/doc/prince-output/#pdf-versions-and-profiles">PDF Versions and Profiles</a></see>
     <comments>
     <p>
     PDF Profiles are used to optimize the PDF file for its specific use - for
-    more details and the supported PDF profiles, see <xref linkend="pdf-profiles"/>.
+    more details and the supported PDF profiles, see <a href="/doc/prince-output/#pdf-versions-and-profiles">PDF Versions and Profiles</a>.
     </p>
     </comments>
 </property>
@@ -5747,7 +5747,7 @@ supplier, item { overflow-wrap: normal; }
     <example>@prince-pdf {
     -prince-pdf-script: "this.print();"
 }</example>
-    <see><xref linkend="pdf-actions"/></see>
+    <see><a href="/doc/prince-output/#pdf-actions">PDF Actions</a></see>
     <comments>
     <p>
     This property can be used to include JavaScript code that will be
@@ -5812,7 +5812,7 @@ supplier, item { overflow-wrap: normal; }
 .toc li {
   -prince-pdf-tag-type: TOCI;
 }</example>
-    <see><xref linkend="pdf-tags"/></see>
+    <see><a href="/doc/prince-output/#pdf-tags">PDF Tags</a></see>
     <comments>
     <p>
     This property is used to influence tagged PDF for XML vocabularies or when
@@ -5868,7 +5868,7 @@ supplier, item { overflow-wrap: normal; }
     <example>@page {
     -prince-rotate-body: landscape
 }</example>
-    <see><xref linkend="wide-content-sideways"/></see>
+    <see><a href="/doc/cookbook/#printing-wide-content-sideways">Printing wide content sideways</a></see>
     <comments>
 	<p>
 	This CSS at-rule descriptor can be used to rotate the page body, e.g. to fit
@@ -5922,7 +5922,7 @@ supplier, item { overflow-wrap: normal; }
     <example>@page {
 	-prince-shrink-to-fit: auto
 }</example>
-    <see><xref linkend="wide-content-sideways"/></see>
+    <see><a href="/doc/cookbook/#printing-wide-content-sideways">Printing wide content sideways</a></see>
     <comments>
 	<p>
 	Specifying a value of <code>auto</code> will result in wide web pages being scaled
@@ -5953,7 +5953,7 @@ supplier, item { overflow-wrap: normal; }
     <applyto>all elements</applyto>
     <inherit>yes</inherit>
     <extension/>
-    <see><xref linkend="paragraph-formatting"/></see>
+    <see><a href="/doc/styling/#paragraph-formatting">Paragraph formatting</a></see>
     <comments>
 	<p>
 	This property defines how to treat justified text.  The value <code>prince-cjk</code>
@@ -5982,7 +5982,7 @@ supplier, item { overflow-wrap: normal; }
   -prince-text-replace: "s" "\017F"
                        "\017F\20" "s\20";
 }</example>
-    <see><xref linkend="characters"/></see>
+    <see><a href="/doc/characters/">Character Entities</a></see>
     <comments>
 	<p>
     This property can be used to replace a character string with another one.  In
@@ -6014,8 +6014,8 @@ supplier, item { overflow-wrap: normal; }
 	<example>*[title] {
   -prince-tooltip: attr(title)
 }</example>
-    <see><xref linkend="gen-content-functions"/></see>
-    <see><xref linkend="gen-content"/></see>
+    <see><a href="/doc/gen-content/#generated-content-functions">Generated Content Functions</a></see>
+    <see><a href="/doc/gen-content/">Generated Content</a></see>
     <see><code><property name="content"/></code></see>
     <comments>
     <p>
@@ -6028,7 +6028,7 @@ supplier, item { overflow-wrap: normal; }
     </p>
     <p>
     Several ways of creating content are here defined by means of functions - the
-    detailed explanation can be found in the <xref linkend="gen-content-functions"/>
+    detailed explanation can be found in the <a href="/doc/gen-content/#generated-content-functions">Generated Content Functions</a>
     section.
     </p>
 	<p class="note">
@@ -6056,7 +6056,7 @@ supplier, item { overflow-wrap: normal; }
     <example>@page {
 	-prince-trim: 60mm
 }</example>
-    <see><xref linkend="page-style"/></see>
+    <see><a href="/doc/paged/#page-style">Page style</a></see>
     <see><code><property name="bleed"/></code></see>
     <comments>
 	<p>
@@ -6079,8 +6079,8 @@ supplier, item { overflow-wrap: normal; }
     <applyto>all elements</applyto>
     <inherit>no</inherit>
     <extension/>
-    <see><xref linkend="pfb-linebreaking"/></see>
-    <see><xref linkend="pfb-princewrapinside"/></see>
+    <see><a href="/doc/prince-for-books/#line-breaking">Line breaking</a></see>
+    <see><a href="/doc/prince-for-books/#the-property--prince-wrap-inside">The property <code>-prince-wrap-inside</code></a></see>
     <see><code><property name="prince-forced-breaks"/></code></see>
     <see><code><property name="white-space"/></code></see>
     <comments>
@@ -6100,7 +6100,7 @@ supplier, item { overflow-wrap: normal; }
 
 	<p>(Limitation: At the time of writing, <code>-prince-wrap-inside</code> only affects justified text.)</p>
 
-    <p>This property only applies to <xref linkend="pfb"/>.</p>
+    <p>This property only applies to <a href="/doc/prince-for-books/">Prince for Books</a>.</p>
     </comments>
 </property>
 
@@ -6150,8 +6150,8 @@ supplier, item { overflow-wrap: normal; }
     <example>@page { size: A4 landscape }</example>
     <example>@page { size: Letter }</example>
     <example>@page { size: 10cm 5cm }</example>
-    <see><xref linkend="page-size"/></see>
-    <see><xref linkend="page-size-keywords"/></see>
+    <see><a href="/doc/paged/#page-size">Page size</a></see>
+    <see><a href="/doc/page-size-keywords/">Page Size Keywords</a></see>
     <see><code><property name="prince-rotate-body"/></code></see>
     <comments>
 	<p>
@@ -6201,7 +6201,7 @@ supplier, item { overflow-wrap: normal; }
     src: prince-lookup("MyFontA");
 }
     </example>
-    <see><xref linkend="fonts"/></see>
+    <see><a href="/doc/styling/#fonts">Fonts</a></see>
     <comments>
 	<p>
     This CSS at-rule descriptor, used with the
@@ -6232,7 +6232,7 @@ supplier, item { overflow-wrap: normal; }
 	<initial>black</initial>
     <applyto>SVG elements</applyto>
 	<inherit>no</inherit>
-    <see><xref linkend="color"/></see>
+    <see><a href="/doc/graphics/#color">Color</a></see>
 	<comments>
 	<p>
 	The <code>stop-color</code> property only applies to SVG elements.
@@ -6276,7 +6276,7 @@ supplier, item { overflow-wrap: normal; }
     <initial>none</initial>
     <applyto>all elements</applyto>
     <inherit>no</inherit>
-    <see><xref linkend="gen-content-functions"/></see>
+    <see><a href="/doc/gen-content/#generated-content-functions">Generated Content Functions</a></see>
     <see><code><property name="content"/></code></see>
     <comments>
 	<p>
@@ -6287,8 +6287,8 @@ supplier, item { overflow-wrap: normal; }
     </p>
     <p>
     But any other means of generating content, as described in the
-    <xref linkend="gen-content-functions"/> section, are available.  See also
-    <xref linkend="page-regions"/> for more details.
+    <a href="/doc/gen-content/#generated-content-functions">Generated Content Functions</a> section, are available.  See also
+    <a href="/doc/paged/#page-regions">Page regions</a> for more details.
 	</p>
     </comments>
     <spec><a href="https://www.w3.org/TR/css-gcpm-3/#setting-named-strings-the-string-set-pro">CSS Generated Content for Paged Media Module</a></spec>
@@ -6485,7 +6485,7 @@ supplier, item { overflow-wrap: normal; }
     <comments>
 	<p>
 	This property applies to table cells and determines the number of
-	table columns spanned by the table cell. See the <xref linkend="tables"/>
+	table columns spanned by the table cell. See the <a href="/doc/styling/#tables">Tables</a>
     documentation for more details.
 	</p>
     </comments>
@@ -6506,7 +6506,7 @@ supplier, item { overflow-wrap: normal; }
     <comments>
 	<p>
 	This property determines whether a table uses automatic table
-	layout or fixed table layout. See the <xref linkend="tables"/>
+	layout or fixed table layout. See the <a href="/doc/styling/#tables">Tables</a>
     documentation for more details.
 	</p>
     </comments>
@@ -6528,7 +6528,7 @@ supplier, item { overflow-wrap: normal; }
     <comments>
 	<p>
 	This property applies to table cells and determines the number of
-	table rows spanned by the table cell. See the <xref linkend="tables"/>
+	table rows spanned by the table cell. See the <a href="/doc/styling/#tables">Tables</a>
     documentation for more details.
 	</p>
     </comments>
@@ -6704,7 +6704,7 @@ supplier, item { overflow-wrap: normal; }
 	<prop>text-underline-color</prop>
 	<prop>text-underline-style</prop>
     </shorthand>
-    <see><xref linkend="text-formatting"/></see>
+    <see><a href="/doc/styling/#text-formatting">Text formatting</a></see>
     <spec><a href="https://www.w3.org/TR/CSS2/text.html#lining-striking-props">CSS 2.1</a></spec>
 </property>
 
@@ -6767,7 +6767,7 @@ supplier, item { overflow-wrap: normal; }
     <initial>CurrentColor</initial>
     <applyto>all elements</applyto>
     <inherit>no</inherit>
-    <see><xref linkend="color"/></see>
+    <see><a href="/doc/graphics/#color">Color</a></see>
 </property>
 
 <property>
@@ -6822,7 +6822,7 @@ supplier, item { overflow-wrap: normal; }
     <initial>CurrentColor</initial>
     <applyto>all elements</applyto>
     <inherit>no</inherit>
-    <see><xref linkend="color"/></see>
+    <see><a href="/doc/graphics/#color">Color</a></see>
 </property>
 
 <property>
@@ -6860,7 +6860,7 @@ supplier, item { overflow-wrap: normal; }
     <initial>none</initial>
     <applyto>all elements</applyto>
     <inherit>yes</inherit>
-    <see><xref linkend="text-formatting"/></see>
+    <see><a href="/doc/styling/#text-formatting">Text formatting</a></see>
     <spec><a href="https://www.w3.org/TR/css-text-decor-3/#text-shadow-property">CSS Text Decoration Module Level 3</a></spec>
 </property>
 
@@ -6877,7 +6877,7 @@ supplier, item { overflow-wrap: normal; }
     <initial>none</initial>
     <applyto>all elements</applyto>
     <inherit>yes</inherit>
-    <see><xref linkend="text-formatting"/></see>
+    <see><a href="/doc/styling/#text-formatting">Text formatting</a></see>
     <spec><a href="https://www.w3.org/TR/CSS2/text.html#caps-prop">CSS 2.1</a></spec>
 </property>
 
@@ -6904,7 +6904,7 @@ supplier, item { overflow-wrap: normal; }
     <initial>CurrentColor</initial>
     <applyto>all elements</applyto>
     <inherit>no</inherit>
-    <see><xref linkend="color"/></see>
+    <see><a href="/doc/graphics/#color">Color</a></see>
 </property>
 
 <property>
@@ -7246,9 +7246,9 @@ supplier, item { overflow-wrap: normal; }
     <initial>1</initial>
     <applyto>block container elements</applyto>
     <inherit>yes</inherit>
-    <see><xref linkend="widows-and-orphans"/></see>
-    <see><xref linkend="pfb"/></see>
-    <see><xref linkend="pfb-fractionalwidows"/></see>
+    <see><a href="/doc/paged/#widows-and-orphans">Widows and orphans</a></see>
+    <see><a href="/doc/prince-for-books/">Prince for Books</a></see>
+    <see><a href="/doc/prince-for-books/#fractional-widows">Fractional Widows</a></see>
     <see><code><property name="orphans"/></code></see>
     <comments>
 	<p>
@@ -7257,11 +7257,11 @@ supplier, item { overflow-wrap: normal; }
 	the second page or column.
 	</p>
     <p>
-    The percentage value only applies to <xref linkend="pfb"/>, and indicates
+    The percentage value only applies to <a href="/doc/prince-for-books/">Prince for Books</a>, and indicates
     that one widow line is accepted, as long as the line width is at least the
     given percentage value of the available page width, to avoid the worst case
     of having a widow line that is only one or two words long.  For more details
-    see <xref linkend="pfb-fractionalwidows"/>.
+    see <a href="/doc/prince-for-books/#fractional-widows">Fractional Widows</a>.
     </p>
 
     <p>
@@ -7309,7 +7309,7 @@ supplier, item { overflow-wrap: normal; }
     <initial>normal</initial>
     <applyto>all elements</applyto>
     <inherit>yes</inherit>
-    <see><xref linkend="paragraph-formatting"/></see>
+    <see><a href="/doc/styling/#paragraph-formatting">Paragraph formatting</a></see>
     <see><code><property name="overflow-wrap"/></code></see>
     <!--<see><a href="http://www.w3.org/TR/css3-text/#word-break-property">W3C documentation for 'word-break'</a></see>-->
     <!-- Known variation from w3c specs (as at Prince 10):
