@@ -11,11 +11,14 @@ output:
 properties: valid output table.xsl properties.xml
 	xsltproc table.xsl properties.xml > output/css-props.xml
 
-selflink: properties
-	./docs_selflink.py output/css-props.xml
+process: properties
+	./docs-process.py output/css-props-out.xml output/css-props.xml
+
+selflink: process
+	./docs_selflink.py output/css-props-out.xml
 
 noroot: selflink
-	xsltproc noroot.xsl output/css-props.xml > output/css-props.md
+	xsltproc noroot.xsl output/css-props-out.xml > output/css-props.md
 	sed -i '1s;^;---\ntitle: CSS Properties\n---\n\n;' output/css-props.md
 	cat script >> output/css-props.md
 
