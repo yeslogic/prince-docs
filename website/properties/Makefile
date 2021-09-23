@@ -25,3 +25,4 @@ noroot: selflink
 .PHONY: clean
 clean:
 	rm -rf output
+	rm -rf __pycache__
