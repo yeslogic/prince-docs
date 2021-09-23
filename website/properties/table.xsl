@@ -210,7 +210,7 @@ explained above.  A short explanation of the signs:
     <xsl:when test="alias">
       <xsl:for-each select="/properties/property[name=$alias]/shorthand/prop">
         <li>
-        <code><a href="doc-latest/doc-refs.html#prop-{.}">
+        <code><a href="#prop-{.}">
           <xsl:if test="starts-with(., 'prince-')"><xsl:text>-</xsl:text></xsl:if>
           <xsl:value-of select="."/>
         </a></code>
@@ -220,7 +220,7 @@ explained above.  A short explanation of the signs:
     <xsl:otherwise>
       <xsl:for-each select="shorthand/prop">
         <li>
-        <code><a href="doc-latest/doc-refs.html#prop-{.}">
+        <code><a href="#prop-{.}">
           <xsl:if test="starts-with(., 'prince-')"><xsl:text>-</xsl:text></xsl:if>
           <xsl:value-of select="."/>
         </a></code>
@@ -667,7 +667,7 @@ explained above.  A short explanation of the signs:
 
 <xsl:template match="ref">
     <xsl:variable name="href" select="."/>
-    <i><a href="doc-latest/doc-refs.html#prop-{$href}">
+    <i><a href="#prop-{$href}">
       <xsl:if test="starts-with(., 'prince-')"><xsl:text>-</xsl:text></xsl:if>
       <xsl:value-of select="."/>
     </a></i>

@@ -2604,7 +2604,7 @@ TO ADD:
 	</p>
     <p>
     When used as a descriptor for the
-    <a href="doc-latest/doc-refs.html#at-font-face"><code>@font-face</code></a> at-rule,
+    <a href="/doc/css-at-rules/#at-font-face"><code>@font-face</code></a> at-rule,
     <code>font-family</code> defines the font family name that will be used in
     all CSS font family name matching.  It is required for the <code>@font-face</code>
     rule to be valid.
@@ -3629,7 +3629,7 @@ TO ADD:
     <comments>
     <p>
     This CSS at-rule descriptor, used with the
-    <a href="doc-latest/doc-refs.html#at-page"><code>@page</code></a> at-rule, adds
+    <a href="/doc/css-at-rules/#at-page"><code>@page</code></a> at-rule, adds
     crop and/or cross marks to the page.
     </p>
 	<p>
@@ -4411,7 +4411,7 @@ supplier, item { overflow-wrap: normal; }
     <comments>
     <p>
     This property is used inside a
-    <a href="doc-latest/doc-refs.html#at-prince-pdf"><code>@prince-pdf</code></a>
+    <a href="/doc/css-at-rules/#at-prince-pdf"><code>@prince-pdf</code></a>
     at-rule to determine a fallback CMYK profile to be used for uncalibrated
     (untagged) CMYK colors or images, if it is not possible to use the output
     intent ICC profile (see <code><property name="prince-pdf-output-intent"/></code>).
@@ -5245,7 +5245,7 @@ supplier, item { overflow-wrap: normal; }
     <comments2>
     <p>
     As a descriptor inside the
-    <a href="doc-latest/doc-refs.html#at-prince-pdf"><code>@prince-pdf</code></a>
+    <a href="/doc/css-at-rules/#at-prince-pdf"><code>@prince-pdf</code></a>
     at-rule, <code>-prince-pdf-color-conversion</code> is used
     to convert the colors of the PDF to the output intent color space, or to a
     color profile of choice.
@@ -5253,7 +5253,7 @@ supplier, item { overflow-wrap: normal; }
     <p>
     When used with the default value <code>output-intent</code>, it functions
     like the
-    <a href="doc-latest/doc-refs.html#cl-convert-colors"><code>--convert-colors</code></a>
+    <a href="/doc/command-line/#cl-convert-colors"><code>--convert-colors</code></a>
     command-line option - the colors are converted to the output intent color profile.
     </p>
     <p class="note">
@@ -5370,7 +5370,7 @@ supplier, item { overflow-wrap: normal; }
     <comments>
 	<p>
 	This property may be used inside the
-    <a href="doc-latest/doc-refs.html#at-prince-pdf"><code>@prince-pdf</code></a>
+    <a href="/doc/css-at-rules/#at-prince-pdf"><code>@prince-pdf</code></a>
     at-rule to set the <code>Duplex</code> property in the
     <code>PDFViewerPreferences</code> dictionary.
 	</p>
@@ -5533,7 +5533,7 @@ supplier, item { overflow-wrap: normal; }
     <see><a href="/doc/graphics/#color-management">Color Management</a></see>
     <comments>
     <p>
-    This property is used inside a <a href="doc-latest/doc-refs.html#at-prince-pdf"><code>@prince-pdf</code></a>
+    This property is used inside a <a href="/doc/css-at-rules/#at-prince-pdf"><code>@prince-pdf</code></a>
     at-rule to select the intended output color space of the generated PDF file.
     </p>
     </comments>
@@ -5839,7 +5839,7 @@ supplier, item { overflow-wrap: normal; }
     <comments>
 	<p>
     This property can be used inside a <a href=
-    "doc-latest/doc-refs.html#at-prince-pdf"><code>@prince-pdf</code></a>
+    "/doc/css-at-rules/#at-prince-pdf"><code>@prince-pdf</code></a>
     rule to add XMP metadata to a PDF file.  Currently it takes an XMP
     file as input and includes data from the &lt;x:xmpmeta&gt; element
     and its contents (the xpacket processing instructions are ignored, as
@@ -6156,7 +6156,7 @@ supplier, item { overflow-wrap: normal; }
     <comments>
 	<p>
     This CSS at-rule descriptor, used with the
-    <a href="doc-latest/doc-refs.html#at-page"><code>@page</code></a> at-rule, defines
+    <a href="/doc/css-at-rules/#at-page"><code>@page</code></a> at-rule, defines
     the size and orientation of the page.  Please see also the
     <code><property name="prince-rotate-body"/></code> property to control the
     orientation of selected pages.
@@ -6205,7 +6205,7 @@ supplier, item { overflow-wrap: normal; }
     <comments>
 	<p>
     This CSS at-rule descriptor, used with the
-    <a href="doc-latest/doc-refs.html#at-font-face"><code>@font-face</code></a> at-rule,
+    <a href="/doc/css-at-rules/#at-font-face"><code>@font-face</code></a> at-rule,
     specifies the resource containing font data. It is required for the <code>@font-face</code>
     rule to be valid.
     </p>
@@ -7161,7 +7161,7 @@ supplier, item { overflow-wrap: normal; }
     <comments>
 	<p>
     This CSS at-rule descriptor, used with the
-    <a href="doc-latest/doc-refs.html#at-font-face"><code>@font-face</code></a> at-rule,
+    <a href="/doc/css-at-rules/#at-font-face"><code>@font-face</code></a> at-rule,
     defines the set of Unicode codepoints that may be supported by the font face
     for which it is declared.  The descriptor value is a comma-delimited list of
     Unicode range (&lt;urange&gt;) values.  The union of these ranges defines the
