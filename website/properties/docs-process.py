@@ -34,7 +34,10 @@ class ProcessDoc(MyHTMLParser):
     def handle_startendtag(self, tag, attrs):
         attrs = dict(attrs)
         if tag == "property":
-            self.write(self.property(attrs['name']))
+            if "prince-" in self.property(attrs['name']):
+                self.write("-" + self.property(attrs['name']))
+            else:
+                self.write(self.property(attrs['name']))
         else:
             self.write(self.get_starttag_text())
 
