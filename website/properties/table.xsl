@@ -19,10 +19,9 @@ For their precise definitions please refer to the CSS specifications.
 * properties marked with an asterisk and a darker background color shade are
 Prince extensions, while the extension values of a standard property are
 highlighted with a <span class="ext">light grey background</span>.
-</p>
-<p class="note">
-Prince accepts <code>-prince-</code> as a vendor prefix for Prince-specific
-CSS properties to comply with validators.
+Besides the standard <code>-prince-</code> prefix, Prince also accepts
+<code>prince-</code> as a vendor prefix for Prince-specific
+CSS properties.
 </p>
 <p>
 For the values, the grammar draws on the
