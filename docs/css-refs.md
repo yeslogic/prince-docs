@@ -115,7 +115,7 @@ does not recognize <code>transform-box</code>. Prince does not allow perspective
 and <a href="#at-supports"><code>@supports</code></a> at-rules.</td>
 </tr>
 <tr>
-<td><a href="https://drafts.fxtf.org/filter-effects/">Filter Effects Module Level 1</a></td>
+<td><a href="https://drafts.fxtf.org/filter-effects/">Filter Effects Module Level 1 - Editor's Draft</a></td>
 <td>Prince supports the <code>filter</code> property.</td>
 </tr>
 <tr>
@@ -144,7 +144,7 @@ and <a href="#at-supports"><code>@supports</code></a> at-rules.</td>
 <td>Prince recognizes the <code>border-clip</code> property, but takes a different syntax.</td>
 </tr>
 <tr>
-<td><a href="https://drafts.csswg.org/css-images-4/">CSS Images Module Level 4</a></td>
+<td><a href="https://drafts.csswg.org/css-images-4/">CSS Images Module Level 4 - Editor's Draft</a></td>
 <td>Prince recognizes <code>image-resolution</code>, but takes a different syntax.</td>
 </tr>
 <tr>
