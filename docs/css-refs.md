@@ -167,7 +167,7 @@ states, the <code>flow</code> property and the <code>string-set</code> property.
 <th colspan="2">SVG</th>
 </tr>
 <tr>
-<td><a href="https://www.w3.org/TR/SVG/">SVG 1.1</a></td>
+<td><a href="https://www.w3.org/TR/SVG11/">SVG 1.1</a></td>
 <td>Prince supports the specification with some exceptions - please see
 <a href="/doc/graphics#scalable-vector-graphics-svg">Scalable Vector Graphics (SVG)</a> for a full list of currently not supported elements.</td>
 </tr>
