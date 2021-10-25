@@ -202,8 +202,33 @@ footer a[href]:hover {
     text-decoration: underline;
 }
 
-.navListItemActive {
+.navListItemActive a {
     font-weight: bold;
+}
+
+ul.toc-headings {
+    padding-left: 0px !important;
+}
+ul.toc-headings li a {
+    padding-left: 15px;
+}
+
+ul.toc-headings li a.active {
+    border-left: 2px solid #e0e0e0;
+    padding-left: 13px;
+}
+
+ul.toc-headings li ul.toc-headings li a {
+    padding-left: 30px;
+}
+
+ul.toc-headings li ul.toc-headings li a.active {
+    border-left: 2px solid #e0e0e0;
+    padding-left: 28px;
+}
+
+a.active {
+    border-left: 2px solid #e0e0e0;
 }
 
 @media only screen and (min-device-width: 360px) and (max-device-width: 736px) {
