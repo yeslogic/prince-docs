@@ -135,5 +135,5 @@ Furthermore, Prince supports the four angle units `deg`, `grad`, `rad` and `turn
 * linear gradients have and angle;
 * `hsl`/`hsla` colors have a hue angle;
 * the `hue-rotate` filter takes an angle;
-* the @page `prince-rotate-body` property takes multiples of `90deg`.
+* the @page `-prince-rotate-body` property takes multiples of `90deg`.
 
