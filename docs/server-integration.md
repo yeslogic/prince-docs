@@ -705,7 +705,7 @@ XInclude is a generic mechanism for including XML or non-XML data in XML files. 
 
 It is highly recommended to *never* enable XML external entities or XInclude when dealing with untrusted data! These options are not enabled by default.
 
-Please also note that, even when enabled, external entities and XIncludes are never processed anywhere but in the main document.  This means that they would not be processed in SVG images included in a document (but they would be processed, if eneabled, if the main document were an SVG image).
+Please also note that, even when enabled, external entities and XIncludes are never processed anywhere but in the main document.  This means that they would not be processed in SVG images included in a document (but they would be processed, if enabled, if the main document were an SVG image).
 
 ### Local Files
 
@@ -744,4 +744,3 @@ But even for normal PDF creation there are times when performance tweaks are cal
 When running multiple instances of Prince, it might be advisable to disable parallel rasterization with the command-line option [`--raster-threads=1`](command-line.md#cl-raster-threads) to improve throughput.
 
 Setting `GC_MARKERS=1` in the environment will do the same for garbage collection threads.
-
