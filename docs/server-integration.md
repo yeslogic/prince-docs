@@ -379,7 +379,7 @@ we detail here installation procedures for Prince on Docker, Azure, AWS Lambda a
 
 ### Prince Docker Image
 
-Prince can easily be deployed in Docker images.  On the Docker Hub you can find [the Prince Dockerfiles](https://hub.docker.com/r/yeslogic/prince).  To pull the images, run the Docker Pull Command
+Prince can easily be deployed in Docker images.  On the Docker Hub you can find [the Prince Dockerfiles](https://hub.docker.com/r/yeslogic/prince).  To pull the images, run the Docker command:
 
 ```
 docker pull yeslogic/prince
@@ -397,7 +397,7 @@ They can be run with a `license.dat` file in the following way:
 docker run --rm -it -v /path/on/host/license.dat:/usr/lib/prince/license/license.dat yeslogic/prince
 ```
 
-If, however, you want to run a specific Prince version, rather than the latest, you need to add the version tag to the docker commands:
+If, however, you want to run a specific Prince version, rather than the latest, you need to add the version tag to the command:
 
 ```
 docker run --rm -it yeslogic/prince:13.1
