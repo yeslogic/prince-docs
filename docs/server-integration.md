@@ -189,7 +189,9 @@ Prince can be called from Visual Basic and other languages on Windows using the 
 
 This interface is provided in the form of an ActiveX DLL file that needs to be registered in the Windows registry using REGSVR32.EXE:
 
-    regsvr32 C:\Prince\PRINCE.dll
+```powershell
+regsvr32 C:\Prince\PRINCE.dll
+```
 
 Please read the README.TXT file that comes with the ActiveX DLL file for more details of the COM interface methods.
 
@@ -431,9 +433,10 @@ The Prince Control Protocol, accessible through the command-line option `--contr
 
 Each chunk contains a sequence of bytes with a length and a three letter tag. Here is an example "version" chunk to demonstrate the syntax:
 
-
-    ver 15
-    Prince 20161219
+```
+ver 15
+Prince 20161219
+```
 
 This chunk has a tag `ver` (all tags are three ASCII characters) followed by a space, then the length of the data expressed as a decimal number, then a newline character, then the data itself (15 bytes), then another newline (not part of the data).
 
@@ -441,8 +444,9 @@ This version chunk is emitted by Prince when the control protocol begins and can
 
 If a chunk contains no data then the length is zero and the chunk ends with the newline immediately following the length. In fact the length itself may be omitted, making this a perfectly valid chunk:
 
-
-    end
+```
+end
+```
 
 This `end` chunk consists of three letters and a newline character and can be used to terminate the Prince process when there are no further jobs to process.
 
@@ -461,14 +465,15 @@ And these chunks sent by the caller:
 
 A typical interaction looks like this:
 
-
-    Prince: ver
-    Caller: job
-    Caller: dat
-    Caller: dat
-    Prince: pdf
-    Prince: log
-    Caller: end
+```
+Prince: ver
+Caller: job
+Caller: dat
+Caller: dat
+Prince: pdf
+Prince: log
+Caller: end
+```
 
 Instead of sending the final `end` chunk the caller may choose to submit another `job` chunk and continue converting documents. The protocol is synchronous so replies simply match requests in order.
 
@@ -599,10 +604,11 @@ This option is designed to make it easier to integrate other software with Princ
 
 The default is `--no-structured-log`, in which case error and warning messages will be written to the terminal (stderr stream) as they occur in a human readable format, eg.
 
-
-    prince: foo.html: error: can't open input file: No such file or directory
-    prince: foo.html: error: could not load input file
-    prince: error: failed to load all input documents
+```
+prince: foo.html: error: can't open input file: No such file or directory
+prince: foo.html: error: could not load input file
+prince: error: failed to load all input documents
+```
 
 Specifying `--structured-log=normal` writes the log messages in an alternate format with fields separated by `|` characters, in order to make it easier to parse by other software.
 
@@ -623,29 +629,32 @@ The first field indicates the type of message, which can be:
 
     and always followed by source location and the message itself.
 
-
-    msg|err|foo.html|can't open input file: No such file or directory
-    msg|err|foo.html|could not load input file
-    msg|err||failed to load all input documents
-    fin|failure
+```
+msg|err|foo.html|can't open input file: No such file or directory
+msg|err|foo.html|could not load input file
+msg|err||failed to load all input documents
+fin|failure
+```
 
 The last `msg|err` message has an empty source location field.
 
 Specifying `--structured-log=quiet` suppresses *all* log messages, except for the final `fin` message, indicating success or failure:
 
-
-    fin|failure
+```
+fin|failure
+```
 
 This allows other software to read the stdout stream from Prince containing the PDF file in its entirety, then read the final status from the stderr stream, without worrying about blocking due to deadlocks.
 
 Specifying `--structured-log=progress` prints percentage log messages for use in GUI applications:
 
-
-    prg|94
-    prg|96
-    prg|99
-    prg|100
-    fin|success
+```
+prg|94
+prg|96
+prg|99
+prg|100
+fin|success
+```
 
 Specifying `--structured-log=buffered` is the same as `normal`, but all log messages will be delayed until after the full PDF has been written to the stdout stream, again so that other software can read from stdout and then read the log from stderr without deadlocking.
 
