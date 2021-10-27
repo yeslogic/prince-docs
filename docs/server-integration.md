@@ -331,16 +331,16 @@ print("PDF is "+str(len(pdf))+" bytes in size")
 Prince can be called from Perl using the [command-line interface](command-line.md), like this:
 
 ```perl
-system("prince foo.xml bar.pdf");
+system("prince foo.xml -o bar.pdf");
 ```
-It is possible to write XML to Prince directly from the Perl script rather than have Prince read it from an external file:
+It is possible to write XML/HTML to Prince directly from the Perl script rather than have Prince read it from an external file:
 
 ```perl
-open(PRINCE, "| prince - out.pdf");
+open(PRINCE, "| prince - -o out.pdf");
 print PRINCE "<html><body><h1>Hello, world!</h1></body></html>";
 close(PRINCE);
 ```
-The first filename argument of "-" instructs Prince to read the XML from its standard input stream rather than from a file.
+The first filename argument of `-` instructs Prince to read the XML/HTML from its standard input stream rather than from a file.
 
 For Perl CGI scripts, the PDF output can be written to the standard output stream so that it is returned to the browser:
 
@@ -350,13 +350,13 @@ open(PRINCE, "| prince -");
 print PRINCE "<html><body><h1>Hello, world!</h1></body></html>";
 close(PRINCE);
 ```
-Because the second filename argument has been omitted and the XML is being read from standard input, the PDF will be written to standard output. Be careful to redirect the output of this script if you try running it from the terminal.
+Because the second filename argument has been omitted and the XML/HTML is being read from standard input, the PDF will be written to standard output. Be careful to redirect the output of this script if you try running it from the terminal.
 
 Alternatively, it is possible for the Perl script to read the PDF output directly rather than have Prince save it to an external file:
 
 ```perl
-open(PRINCE, "prince foo.xml - |");
-# ... read PDF output from PRINCE file handle
+open(PRINCE, "prince foo.xml -o - |");
+# ... Read PDF output from PRINCE file handle.
 close(PRINCE);
 ```
 
