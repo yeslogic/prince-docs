@@ -21,8 +21,8 @@ Prince can be called from within a Java class for servlets by using [Java interf
 This package contains:
 
 -   A single JAR file (`prince.jar`),
--   the [API documentation](assets/wrappers/java/doc/index.html) and
--   the Java source code for reference.
+-   the [API documentation](https://yeslogic.github.io/prince-java-wrapper/) and
+-   the [Java source code](https://github.com/yeslogic/prince-java-wrapper) for reference.
 
 The `Prince.jar` file contains the class file that provides the Java interface to Prince (`com.princexml.Prince`). The documentation lists the Java class methods and explains how to use them.
 
@@ -34,8 +34,8 @@ Prince can be called from .NET languages using the [Prince C\# / .Net wrapper](/
 The wrapper package contains:
 
 -   the DLL file,
--   the [API documentation](assets/wrappers/csharp/readme.html) and
--   the source code.
+-   the [API documentation](https://yeslogic.github.io/prince-csharp-wrapper) and
+-   the [source code](https://github.com/yeslogic/prince-csharp-wrapper).
 
 #### Using Prince with C\#
 
@@ -116,12 +116,12 @@ To combine multiple HTML documents into a single PDF file, call `ConvertMultiple
 
 Prince can be called from PHP using the [PHP interface](/download/wrappers/#wrapper-php).
 
-Note that the Prince class requires PHP 5.3.0 or later.
+Note that the Prince class requires PHP 5.3.0 or later. The source code is available [on Github](https://github.com/yeslogic/prince-php-wrapper).
 
 The package contains two files:
 
 -   The `prince.php` script and
--   the [API documentation](https://github.com/yeslogic/prince-php-wrapper).
+-   the [API documentation](https://yeslogic.github.io/prince-php-wrapper).
 
 The PHP wrapper is also [hosted on Packagist](https://packagist.org/packages/yeslogic/prince-php-wrapper), so that it can be used from Composer.  It can now be installed with the command-line:
 
@@ -203,8 +203,8 @@ Prince can be called from ColdFusion pages using the Java interface or the [Acti
 Start by downloading the [Java interface](#the-java-wrapper) for Prince. This package contains:
 
 -   A single JAR file (`prince.jar`),
--   the [API documentation](assets/wrappers/java/doc/index.html) and
--   the Java source code for reference.
+-   the [API documentation](https://yeslogic.github.io/prince-java-wrapper/) and
+-   the [Java source code](https://github.com/yeslogic/prince-java-wrapper) for reference.
 
 The `Prince.jar` file contains the class file that provides the Java interface to Prince (`com.princexml.Prince`). The documentation lists the Java class methods and explains how to use them.
 
