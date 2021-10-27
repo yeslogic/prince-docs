@@ -275,55 +275,77 @@ Prince can be called from Python using the [command-line interface](command-line
 ```python
 import subprocess
 
-subprocess.call(["prince","foo.xml","bar.pdf"]);
+subprocess.call(["prince", "foo.xml", "-o", "bar.pdf"])
 ```
-It is possible to write XML to Prince directly from the Python script rather than have Prince read it from an external file:
+It is possible to write XML/HTML to Prince directly from the Python script rather than have Prince read it from an external file:
 
 ```python
 import subprocess
 
-p = Popen(["prince","-","out.pdf"], stdin=subprocess.PIPE, stdout=subprocess.PIPE)
+p = subprocess.Popen(
+    ["prince", "-", "-o", "out.pdf"],
+    stdin=subprocess.PIPE,
+    stdout=subprocess.PIPE,
+    stderr=subprocess.PIPE)
 
-outs, errs = p.communicate("<html><body><h1>Hello, world!</h1></body></html>".encode("utf-8"))
+outs, errs = p.communicate("""
+    <html>
+        <body><h1>Hello, world!</h1></body>
+    </html>""".encode("utf-8"))
 
-if p.returncode :
-    # Ugh.
-else :
-    pdf = outs
+if p.returncode:
+    # Handle `errs`.
+    pass
+else:
+    # Handle `outs`.
+    pass
 ```
-The first filename argument of "-" instructs Prince to read the XML from its standard input stream rather than from a file.
+The first filename argument of `-` instructs Prince to read the XML/HTML from its standard input stream rather than from a file.
 
 For Python CGI scripts, the PDF output can be written to the standard output stream so that it is returned to the browser:
 
 ```python
 import subprocess
 
-p = Popen(["prince","-"], stdin=subprocess.PIPE, stdout=subprocess.PIPE)
+p = subprocess.Popen(
+    ["prince", "-"],
+    stdin=subprocess.PIPE,
+    stderr=subprocess.PIPE)
 
-outs, errs = p.communicate("<html><body><h1>Hello, world!</h1></body></html>".encode("utf-8"))
+print("Content-Type: application/pdf\n")
+_outs, errs = p.communicate("""
+    <html>
+        <body><h1>Hello, world!</h1></body>
+    </html>""".encode("utf-8"))
 
-if p.returncode :
-    # Ugh.
-else :
-    pdf = outs
+if p.returncode:
+    # Handle `errs`.
+    pass
 ```
-Because the second filename argument has been omitted and the XML is being read from standard input, the PDF will be written to standard output. Be careful to redirect the output of this script if you try running it from the terminal.
+Because the second filename argument has been omitted and the XML/HTML is being read from standard input, the PDF will be written to standard output. Be careful to redirect the output of this script if you try running it from the terminal.
 
 Alternatively, it is possible for the Python script to read the PDF output directly rather than have Prince save it to an external file:
 
 ```python
 import subprocess
 
-p = Popen(["prince","-"], stdin=subprocess.PIPE, stdout=subprocess.PIPE)
+p = subprocess.Popen(
+    ["prince", "-"],
+    stdin=subprocess.PIPE,
+    stdout=subprocess.PIPE,
+    stderr=subprocess.PIPE)
 
-outs, errs = p.communicate("<html><body><h1>Hello, world!</h1></body></html>".encode("utf-8"))
+outs, errs = p.communicate("""
+    <html>
+        <body><h1>Hello, world!</h1></body>
+    </html>""".encode("utf-8"))
 
-if p.returncode :
-    # Ugh.
-else :
+if p.returncode:
+    # Handle `errs`.
+    pass
+else:
     pdf = outs
-
-print("PDF is "+str(len(pdf))+" bytes in size")
+    print("PDF is " + str(len(pdf)) + " bytes in size")
 ```
 
 ### Using Prince with Perl
