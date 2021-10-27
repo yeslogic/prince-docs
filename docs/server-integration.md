@@ -689,7 +689,7 @@ But when you have no control over the input - as happens when running Prince on 
 
 ### Untrusted Input
 
-A first step is to thoroughly filter and escape all untrusted content - this includes all text, HTML, XML, SVG, CSS and JavaScript fed to Prince.  All untrusted HTML tags and attributes need to be sanitised with standard HTML sanitising procedures (whitelisting is always your safer option) before reaching Prince.
+A first step is to thoroughly filter and escape all untrusted content - this includes all text, HTML, XML, SVG, CSS and JavaScript fed to Prince.  All untrusted HTML tags and attributes need to be sanitized with standard HTML sanitizing procedures (whitelisting is always your safer option) before reaching Prince.
 
 This procedure is the same standard safety precaution taken when passing untrusted data to web applications and web forms.  As a starting point, the OWASP Cross Site Scripting Prevention Cheat Sheet has some nice suggestions, summed up in a series of [XSS Prevention Rules](https://cheatsheetseries.owasp.org/cheatsheets/Cross_Site_Scripting_Prevention_Cheat_Sheet.html#xss-prevention-rules).
 
