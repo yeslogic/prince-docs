@@ -48,29 +48,29 @@ Please note that document scripts need to first be enabled with `prn.SetJavaScri
 The following code sample demonstrates how to convert a single HTML document into a PDF file:
 
 ```cs
-    // instantiate Prince by specifying the full path to the engine executable
-    Prince prn = new Prince("C:\\Program Files\\Prince\\Engine\\bin\\prince.exe");
+// instantiate Prince by specifying the full path to the engine executable
+Prince prn = new Prince("C:\\Program Files\\Prince\\Engine\\bin\\prince.exe");
 
-    // specify the log file for error and warning messages
-    // make sure that you have write permissions for this file
-    prn.SetLog("C:\\docs\\log.txt");
+// specify the log file for error and warning messages
+// make sure that you have write permissions for this file
+prn.SetLog("C:\\docs\\log.txt");
 
-    // apply a CSS style sheet (optional)
-    prn.AddStyleSheet("C:\\docs\\css\\stylesheet-1.css");
+// apply a CSS style sheet (optional)
+prn.AddStyleSheet("C:\\docs\\css\\stylesheet-1.css");
 
-    // apply an external JavaScript file (optional) and enable document JavaScript
-    prn.AddScript("C:\\docs\\js\\test.js");
-    prn.SetJavaScript(true);
+// apply an external JavaScript file (optional) and enable document JavaScript
+prn.AddScript("C:\\docs\\js\\test.js");
+prn.SetJavaScript(true);
 
-    // convert a HTML document into a PDF file
-    prn.Convert("C:\\docs\\test1.html", "C:\\docs\\pdf\\test1.pdf");
+// convert a HTML document into a PDF file
+prn.Convert("C:\\docs\\test1.html", "C:\\docs\\pdf\\test1.pdf");
 ```
 To combine multiple HTML documents into a single PDF file, call `ConvertMultiple`:
 
 ```cs
-    String[] doc_array = {"C:\\docs\\test1.html", "C:\\docs\\test2.html"};
+String[] doc_array = {"C:\\docs\\test1.html", "C:\\docs\\test2.html"};
 
-    prn.ConvertMultiple(doc_array, "C:\\docs\\pdf\\merged.pdf");
+prn.ConvertMultiple(doc_array, "C:\\docs\\pdf\\merged.pdf");
 ```
 #### Using Prince with VB.NET
 
@@ -83,33 +83,33 @@ Please note that document scripts need to first be enabled with `prn.SetJavaScri
 The following code sample demonstrates how to convert a single HTML document into a PDF file:
 
 ```vbnet
-    ' instantiate Prince by specifying the full path to the engine executable
-    Dim prn As Prince
+' instantiate Prince by specifying the full path to the engine executable
+Dim prn As Prince
 
-    prn = New Prince("C:\Program Files\Prince\Engine\bin\prince.exe")
+prn = New Prince("C:\Program Files\Prince\Engine\bin\prince.exe")
 
-    ' specify the log file for error and warning messages
-    ' make sure that you have write permissions for this file
-    prn.SetLog("C:\docs\log.txt")
+' specify the log file for error and warning messages
+' make sure that you have write permissions for this file
+prn.SetLog("C:\docs\log.txt")
 
-    ' apply a CSS style sheet (optional)
-    prn.AddStyleSheet("C:\docs\css\stylesheet-1.css")
+' apply a CSS style sheet (optional)
+prn.AddStyleSheet("C:\docs\css\stylesheet-1.css")
 
-    // apply an external JavaScript file (optional) and enable document JavaScript
-    prn.AddScript("C:\\docs\\js\\test.js")
-    prn.SetJavaScript(true)
+// apply an external JavaScript file (optional) and enable document JavaScript
+prn.AddScript("C:\\docs\\js\\test.js")
+prn.SetJavaScript(true)
 
-    ' convert a HTML document into a PDF file
-    prn.Convert("C:\docs\test1.html", "C:\docs\pdf\test1.pdf")
+' convert a HTML document into a PDF file
+prn.Convert("C:\docs\test1.html", "C:\docs\pdf\test1.pdf")
 ```
 To combine multiple HTML documents into a single PDF file, call `ConvertMultiple`:
 
 ```vbnet
-    Dim doc_array() As String
+Dim doc_array() As String
 
-    doc_array = {"C:\docs\test1.html", "C:\docs\test2.html"}
+doc_array = {"C:\docs\test1.html", "C:\docs\test2.html"}
 
-    prn.ConvertMultiple(doc_array, "C:\docs\pdf\merged.pdf")
+prn.ConvertMultiple(doc_array, "C:\docs\pdf\merged.pdf")
 ```
 
 ### The PHP Wrapper
@@ -126,7 +126,7 @@ The package contains two files:
 The PHP wrapper is also [hosted on Packagist](https://packagist.org/packages/yeslogic/prince-php-wrapper), so that it can be used from Composer.  It can now be installed with the command-line:
 
 ```bash
-    $ composer require yeslogic/prince-php-wrapper
+$ composer require yeslogic/prince-php-wrapper
 ```
 
 The `prince.php` file contains the PHP class that provides the interface to Prince. The `readme.html` file lists the PHP class methods and explains how to use them.
@@ -134,9 +134,9 @@ The `prince.php` file contains the PHP class that provides the interface to Prin
 When instantiating the `Prince` class, pass in the full path of the Prince executable to the constructor as a string argument.
 
 ```php
-    use Prince\Prince;
+use Prince\Prince;
 
-    $prince = new Prince('/usr/bin/prince');
+$prince = new Prince('/usr/bin/prince');
 ```
 
 ### The ActiveX/COM Wrapper
@@ -155,7 +155,7 @@ Prince can be called from ASP pages using the [ActiveX/COM interface](#the-activ
 This interface is provided in the form of an ActiveX DLL file that needs to be registered in the Windows registry using REGSVR32.EXE:
 
 ```powershell
-    regsvr32 C:\Prince\PRINCE.dll
+regsvr32 C:\Prince\PRINCE.dll
 ```
 In order to call Prince from an ASP page, we need to create a COM object using the CreateObject server method. Once the COM object is created, you can use the COM interface methods to perform the tasks.
 
@@ -164,23 +164,23 @@ Please note that document scripts need to first be enabled with `prn.SetJavaScri
 The following is some sample code for illustration:
 
 ```
-    <%
-    Dim pr
-    Dim res
+<%
+Dim pr
+Dim res
 
-    Set pr = Server.CreateObject("PrinceCom.Prince")
-    pr.SetPrincePath "C:\Prince\engine\bin\prince.exe"
-    pr.AddStyleSheet "C:\Prince\css\test1.css"
-    pr.AddStyleSheet "C:\Prince\css\test2.css"
-    pr.SetJavaScript(True)
-    pr.SetEncryptInfo 128, "password1", "password2", true, true, true, true
+Set pr = Server.CreateObject("PrinceCom.Prince")
+pr.SetPrincePath "C:\Prince\engine\bin\prince.exe"
+pr.AddStyleSheet "C:\Prince\css\test1.css"
+pr.AddStyleSheet "C:\Prince\css\test2.css"
+pr.SetJavaScript(True)
+pr.SetEncryptInfo 128, "password1", "password2", true, true, true, true
 
-    If pr.Convert("C:\Prince\examples\magic.html", "C:\output.pdf") = 1 Then
-        res = "Successful"
-    Else
-        res = "Unsuccessful"
-    End If
-    %>
+If pr.Convert("C:\Prince\examples\magic.html", "C:\output.pdf") = 1 Then
+    res = "Successful"
+Else
+    res = "Unsuccessful"
+End If
+%>
 ```
 
 #### Using Prince with ActiveX / COM / Visual Basic
@@ -215,21 +215,21 @@ Place the `Prince.jar` file in a directory of your choice then start ColdFusion 
 If this is done correctly, ColdFusion should know where to find the Prince Java interface class. The following is some sample CFML code showing how to use it:
 
 ```
-    <cfscript>
-       pr = CreateObject("java", "com.princexml.Prince");
+<cfscript>
+    pr = CreateObject("java", "com.princexml.Prince");
 
-       pr.init("C:\Prince\engine\bin\prince.exe");
-       pr.addStyleSheet("C:\Prince\test\test1.css");
-       pr.addStyleSheet("C:\Prince\test\test2.css");
-       pr.setJavaScript(true);
-       pr.setEncryptInfo(128, "secretPassword1", "secretPassword2",
-          True, True, True, True);
+    pr.init("C:\Prince\engine\bin\prince.exe");
+    pr.addStyleSheet("C:\Prince\test\test1.css");
+    pr.addStyleSheet("C:\Prince\test\test2.css");
+    pr.setJavaScript(true);
+    pr.setEncryptInfo(128, "secretPassword1", "secretPassword2",
+        True, True, True, True);
 
-       if (pr.Convert("C:\Prince\examples\magic.html", "C:\output.pdf"))
-          WriteOutput("Successful");
-       else
-          WriteOutput("Unsuccessful");
-    </cfscript>
+    if (pr.Convert("C:\Prince\examples\magic.html", "C:\output.pdf"))
+        WriteOutput("Successful");
+    else
+        WriteOutput("Unsuccessful");
+</cfscript>
 ```
 If on Linux, substitute the paths with the appropriate UNIX style paths.
 
@@ -240,30 +240,30 @@ If you are running ColdFusion on Windows, you can also call Prince using the [Ac
 This interface is provided in the form of an ActiveX DLL file that needs to be registered in the Windows registry using REGSVR32.EXE:
 
 ```powershell
-    regsvr32 C:\Prince\PRINCE.dll
+regsvr32 C:\Prince\PRINCE.dll
 ```
 In order to call Prince from ColdFusion, we need to create a COM object using the CreateObject function that is available in CFML scripting (you can also use the `<cfobject ...>` tag if you prefer). Once the COM object is created, you can use the COM interface methods to perform the tasks.
 
 The following is some sample code for illustration:
 
 ```
-    <cfscript>
-       pr = CreateObject("Com", "PrinceCom.Prince", "local");
+<cfscript>
+    pr = CreateObject("Com", "PrinceCom.Prince", "local");
 
-       pr.SetPrincePath("C:\Prince\engine\bin\prince.exe");
-       pr.AddStyleSheet("C:\Prince\test\test1.css");
-       pr.AddStyleSheet("C:\Prince\test\test2.css");
-       pr.setJavaScript(true);
-       pr.SetEncryptInfo(128, "secretPassword1", "secretPassword2",
-          True, True, True, True);
+    pr.SetPrincePath("C:\Prince\engine\bin\prince.exe");
+    pr.AddStyleSheet("C:\Prince\test\test1.css");
+    pr.AddStyleSheet("C:\Prince\test\test2.css");
+    pr.setJavaScript(true);
+    pr.SetEncryptInfo(128, "secretPassword1", "secretPassword2",
+        True, True, True, True);
 
-       if (pr.Convert("C:\Prince\examples\magic.html", "C:\output.pdf") eq 1)
-          WriteOutput("Successful");
-       else
-          WriteOutput("Unsuccessful");
+    if (pr.Convert("C:\Prince\examples\magic.html", "C:\output.pdf") eq 1)
+        WriteOutput("Successful");
+    else
+        WriteOutput("Unsuccessful");
 
-       ReleaseComObject(pr);
-    </cfscript>
+    ReleaseComObject(pr);
+</cfscript>
 ```
 Please read the README.TXT file that comes with the ActiveX DLL file for more details of the COM interface methods.
 
@@ -273,57 +273,57 @@ Please read the README.TXT file that comes with the ActiveX DLL file for more de
 Prince can be called from Python using the [command-line interface](command-line.md), like this:
 
 ```python
-    import subprocess
+import subprocess
 
-    subprocess.call(["prince","foo.xml","bar.pdf"]);
+subprocess.call(["prince","foo.xml","bar.pdf"]);
 ```
 It is possible to write XML to Prince directly from the Python script rather than have Prince read it from an external file:
 
 ```python
-    import subprocess
+import subprocess
 
-    p = Popen(["prince","-","out.pdf"], stdin=subprocess.PIPE, stdout=subprocess.PIPE)
+p = Popen(["prince","-","out.pdf"], stdin=subprocess.PIPE, stdout=subprocess.PIPE)
 
-    outs, errs = p.communicate("<html><body><h1>Hello, world!</h1></body></html>".encode("utf-8"))
+outs, errs = p.communicate("<html><body><h1>Hello, world!</h1></body></html>".encode("utf-8"))
 
-    if p.returncode :
-      # Ugh.
-    else :
-      pdf = outs
+if p.returncode :
+    # Ugh.
+else :
+    pdf = outs
 ```
 The first filename argument of "-" instructs Prince to read the XML from its standard input stream rather than from a file.
 
 For Python CGI scripts, the PDF output can be written to the standard output stream so that it is returned to the browser:
 
 ```python
-    import subprocess
+import subprocess
 
-    p = Popen(["prince","-"], stdin=subprocess.PIPE, stdout=subprocess.PIPE)
+p = Popen(["prince","-"], stdin=subprocess.PIPE, stdout=subprocess.PIPE)
 
-    outs, errs = p.communicate("<html><body><h1>Hello, world!</h1></body></html>".encode("utf-8"))
+outs, errs = p.communicate("<html><body><h1>Hello, world!</h1></body></html>".encode("utf-8"))
 
-    if p.returncode :
-      # Ugh.
-    else :
-      pdf = outs
+if p.returncode :
+    # Ugh.
+else :
+    pdf = outs
 ```
 Because the second filename argument has been omitted and the XML is being read from standard input, the PDF will be written to standard output. Be careful to redirect the output of this script if you try running it from the terminal.
 
 Alternatively, it is possible for the Python script to read the PDF output directly rather than have Prince save it to an external file:
 
 ```python
-    import subprocess
+import subprocess
 
-    p = Popen(["prince","-"], stdin=subprocess.PIPE, stdout=subprocess.PIPE)
+p = Popen(["prince","-"], stdin=subprocess.PIPE, stdout=subprocess.PIPE)
 
-    outs, errs = p.communicate("<html><body><h1>Hello, world!</h1></body></html>".encode("utf-8"))
+outs, errs = p.communicate("<html><body><h1>Hello, world!</h1></body></html>".encode("utf-8"))
 
-    if p.returncode :
-      # Ugh.
-    else :
-      pdf = outs
+if p.returncode :
+    # Ugh.
+else :
+    pdf = outs
 
-    print("PDF is "+str(len(pdf))+" bytes in size")
+print("PDF is "+str(len(pdf))+" bytes in size")
 ```
 
 ### Using Prince with Perl
@@ -331,33 +331,33 @@ Alternatively, it is possible for the Python script to read the PDF output direc
 Prince can be called from Perl using the [command-line interface](command-line.md), like this:
 
 ```perl
-    system("prince foo.xml bar.pdf");
+system("prince foo.xml bar.pdf");
 ```
 It is possible to write XML to Prince directly from the Perl script rather than have Prince read it from an external file:
 
 ```perl
-    open(PRINCE, "| prince - out.pdf");
-    print PRINCE "<html><body><h1>Hello, world!</h1></body></html>";
-    close(PRINCE);
+open(PRINCE, "| prince - out.pdf");
+print PRINCE "<html><body><h1>Hello, world!</h1></body></html>";
+close(PRINCE);
 ```
 The first filename argument of "-" instructs Prince to read the XML from its standard input stream rather than from a file.
 
 For Perl CGI scripts, the PDF output can be written to the standard output stream so that it is returned to the browser:
 
 ```perl
-    print "Content-Type: application/pdf\n\n";
-    open(PRINCE, "| prince -");
-    print PRINCE "<html><body><h1>Hello, world!</h1></body></html>";
-    close(PRINCE);
+print "Content-Type: application/pdf\n\n";
+open(PRINCE, "| prince -");
+print PRINCE "<html><body><h1>Hello, world!</h1></body></html>";
+close(PRINCE);
 ```
 Because the second filename argument has been omitted and the XML is being read from standard input, the PDF will be written to standard output. Be careful to redirect the output of this script if you try running it from the terminal.
 
 Alternatively, it is possible for the Perl script to read the PDF output directly rather than have Prince save it to an external file:
 
 ```perl
-    open(PRINCE, "prince foo.xml - |");
-    # ... read PDF output from PRINCE file handle
-    close(PRINCE);
+open(PRINCE, "prince foo.xml - |");
+# ... read PDF output from PRINCE file handle
+close(PRINCE);
 ```
 
 ### Third-Party Wrappers
@@ -484,111 +484,111 @@ The number of `dat` chunks is specified by the `job-resource-count` field in the
 The JSON job description has several nested objects with fields corresponding to Prince options:
 
 ```json
-    {
-        "input": { <input options> },
-        "pdf": { <pdf options> },
-        "metadata": { <metadata options> },
-        "job-resource-count": <int>
-    }
+{
+    "input": { <input options> },
+    "pdf": { <pdf options> },
+    "metadata": { <metadata options> },
+    "job-resource-count": <int>
+}
 ```
 The `input options` and `job-resource-count` are mandatory, the rest are optional and will default to the normal values.
 
 The `input options` object includes these fields:
 
 ```json
-    {
-        "src": <single URL or list of URLs>,
-        "type": <string>,
-        "base": <string>,
-        "media": <string>,
-        "styles": [ <list of URLs> ],
-        "scripts": [ <list of URLs> ],
-        "default-style": <bool>,
-        "author-style": <bool>,
-        "javascript": <bool>,
-        "max-passes": <integer>,
-        "xinclude": <bool>,
-        "xml-external-entities": <bool>
-    }
+{
+    "src": <single URL or list of URLs>,
+    "type": <string>,
+    "base": <string>,
+    "media": <string>,
+    "styles": [ <list of URLs> ],
+    "scripts": [ <list of URLs> ],
+    "default-style": <bool>,
+    "author-style": <bool>,
+    "javascript": <bool>,
+    "max-passes": <integer>,
+    "xinclude": <bool>,
+    "xml-external-entities": <bool>
+}
 ```
 Only the `src` field is required, the rest can be left as defaults.
 
 Now we can make some simple job descriptions, eg. to convert a single HTML file:
 
 ```json
-    {
-        "input": {
-            "src": "/path/to/input.html"
-        },
-        "job-resource-count": 0
-    }
+{
+    "input": {
+        "src": "/path/to/input.html"
+    },
+    "job-resource-count": 0
+}
 ```
 This can be sent as a single `job` chunk and Prince will respond with a `pdf` chunk if the conversion succeeded and a `log` chunk.
 
 Or you can convert a HTML document without saving it to a temporary file:
 
 ```json
-    {
-        "input": {
-            "src": "job-resource:0"
-        },
-        "job-resource-count": 1
-    }
+{
+    "input": {
+        "src": "job-resource:0"
+    },
+    "job-resource-count": 1
+}
 ```
 This requires the `job` chunk to be followed by a `dat` chunk that contains the HTML and then Prince will respond as before.
 
 The `pdf options` object includes these fields:
 
 ```json
-    {
-        "color-options": "auto" | "use-true-black" | "use-rich-black",
-        "embed-fonts": <bool>,
-        "subset-fonts": <bool>,
-        "artificial-fonts": <bool>,
-        "force-identity-encoding": <bool>,
-        "compress": <bool>,
-        "object-streams": <bool>,
-        "encrypt": {
-            "key-bits": 40 | 128,
-            "user-password": <string>,
-            "owner-password": <string>,
-            "disallow-print": <bool>,
-            "disallow-modify": <bool>,
-            "disallow-copy": <bool>,
-            "disallow-annotate": <bool>,
-            "allow-copy-for-accessibility": <bool>,
-            "allow-assembly": <bool>
-        },
-        "pdf-profile": <string>,
-        "pdf-output-intent": <URL>,
-        "fallback-cmyk-profile": <URL>,
-        "color-conversion": "none" | "output-intent" | "full",
-        "pdf-id": <string>,
-        "pdf-lang": <string>,
-        "pdf-xmp": <url>,
-        "tagged-pdf": "auto" | <bool>,
-        "attach": [ <list of attachments> ]
-    }
+{
+    "color-options": "auto" | "use-true-black" | "use-rich-black",
+    "embed-fonts": <bool>,
+    "subset-fonts": <bool>,
+    "artificial-fonts": <bool>,
+    "force-identity-encoding": <bool>,
+    "compress": <bool>,
+    "object-streams": <bool>,
+    "encrypt": {
+        "key-bits": 40 | 128,
+        "user-password": <string>,
+        "owner-password": <string>,
+        "disallow-print": <bool>,
+        "disallow-modify": <bool>,
+        "disallow-copy": <bool>,
+        "disallow-annotate": <bool>,
+        "allow-copy-for-accessibility": <bool>,
+        "allow-assembly": <bool>
+    },
+    "pdf-profile": <string>,
+    "pdf-output-intent": <URL>,
+    "fallback-cmyk-profile": <URL>,
+    "color-conversion": "none" | "output-intent" | "full",
+    "pdf-id": <string>,
+    "pdf-lang": <string>,
+    "pdf-xmp": <url>,
+    "tagged-pdf": "auto" | <bool>,
+    "attach": [ <list of attachments> ]
+}
 ```
 Each attachment is a &lt;url&gt; (string) or an object:
 
 ```json
-    {
-        "url": <url>,
-        "filename": <string>,
-        "description": <string>
-    }
+{
+    "url": <url>,
+    "filename": <string>,
+    "description": <string>
+}
 ```
 The `metadata options` object includes these fields:
 
 ```json
-    {
-        "title": <string>,
-        "subject": <string>,
-        "author": <string>,
-        "keywords": <string>,
-        "creator": <string>,
-    }
+{
+    "title": <string>,
+    "subject": <string>,
+    "author": <string>,
+    "keywords": <string>,
+    "creator": <string>,
+}
 ```
 
 ### Structured Log
