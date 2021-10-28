@@ -16,16 +16,32 @@ For details on the usage of each of the wrappers, please consult the following c
 
 ### The Java Wrapper
 
-Prince can be called from within a Java class for servlets by using [Java interface](/download/wrappers/#wrapper-java).
+Prince can be called from within a Java class for servlets by using the [Java wrapper](/download/wrappers/#wrapper-java).
 
-This package contains:
+The Java wrapper is [hosted on GitHub Packages as a Maven package](https://github.com/yeslogic/prince-java-wrapper/packages/993641). Installing this package requires authenticating to GitHub Packages with a [personal access token](https://docs.github.com/en/packages/working-with-a-github-packages-registry/working-with-the-apache-maven-registry#authenticating-with-a-personal-access-token). Ensure that the personal access token has registry read access.
 
--   A single JAR file (`prince.jar`),
--   the [API documentation](assets/wrappers/java/doc/index.html) and
--   the Java source code for reference.
+Alternatively, the JAR file can be [downloaded directly](https://github.com/yeslogic/prince-java-wrapper/packages/993641) via the links on the sidebar.
 
-The `Prince.jar` file contains the class file that provides the Java interface to Prince (`com.princexml.Prince`). The documentation lists the Java class methods and explains how to use them.
+The [API documentation](https://yeslogic.github.io/prince-java-wrapper) lists the Java class methods and explains how to use them.
 
+The following code sample demonstrates how to convert a single HTML document into a PDF file:
+
+```java
+import com.princexml.wrapper.Prince;
+
+Prince prn = new Prince("/usr/bin/prince");
+
+prn.setLog("/path/to/log.txt");
+prn.addStyleSheet("/path/to/stylesheet.css");
+prn.addScript("/path/to/script.js");
+prn.setJavaScript(true);
+
+try {
+    prn.convert("/path/to/input.html", "/path/to/output.pdf");
+} catch (IOException e) {
+    e.printStackTrace();
+}
+```
 
 ### The C\# / .Net Wrapper
 
