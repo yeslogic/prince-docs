@@ -27,9 +27,9 @@ This package contains:
 The `Prince.jar` file contains the class file that provides the Java interface to Prince (`com.princexml.Prince`). The documentation lists the Java class methods and explains how to use them.
 
 
-### The C\# / .Net Wrapper
+### The C\# / .NET Wrapper
 
-Prince can be called from .NET languages using the [Prince C\# / .Net wrapper](/download/wrappers/#wrapper-csharp).
+Prince can be called from .NET languages using the [Prince C\# / .NET wrapper](/download/wrappers/#wrapper-csharp).
 
 The wrapper package contains:
 
@@ -311,7 +311,7 @@ docker run --rm -it yeslogic/prince:13.1
 
 ### Prince on Microsoft Azure
 
-Running Prince on Microsoft Azure is quite straightforward: we have a tutorial and a package for [deploying Prince on Azure](https://github.com/yeslogic/azure-prince-example/).  This is a Visual Studio 2019 project that demonstrates generating a PDF with Prince in C#/ASP.NET Core. It uses the [Prince C#/.Net Wrapper](#the-c--net-wrapper) and has been confirmed to work when deployed as an App Service on Microsoft Azure.
+Running Prince on Microsoft Azure is quite straightforward: we have a tutorial and a package for [deploying Prince on Azure](https://github.com/yeslogic/azure-prince-example/).  This is a Visual Studio 2019 project that demonstrates generating a PDF with Prince in C#/ASP.NET Core. It uses the [Prince C#/.NET Wrapper](#the-c--net-wrapper) and has been confirmed to work when deployed as an App Service on Microsoft Azure.
 
 ### Prince on AWS Lambda
 
