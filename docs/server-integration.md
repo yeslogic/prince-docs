@@ -116,22 +116,11 @@ prn.Convert("C:\docs\test1.html", "C:\docs\pdf\test1.pdf")
 
 ### The PHP Wrapper
 
-Prince can be called from PHP using the [PHP interface](/download/wrappers/#wrapper-php).
+Prince can be called from PHP using the [PHP wrapper](/download/wrappers/#wrapper-php).
 
-Note that the Prince class requires PHP 5.3.0 or later.
+The PHP wrapper is [hosted on Packagist](https://packagist.org/packages/yeslogic/prince-php-wrapper), so that it can be used from Composer.
 
-The package contains two files:
-
--   The `prince.php` script and
--   the [API documentation](https://github.com/yeslogic/prince-php-wrapper).
-
-The PHP wrapper is also [hosted on Packagist](https://packagist.org/packages/yeslogic/prince-php-wrapper), so that it can be used from Composer.  It can now be installed with the command-line:
-
-```bash
-$ composer require yeslogic/prince-php-wrapper
-```
-
-The `prince.php` file contains the PHP class that provides the interface to Prince. The `readme.html` file lists the PHP class methods and explains how to use them.
+The [API documentation](https://yeslogic.github.io/prince-php-wrapper) lists the PHP class methods and explains how to use them.
 
 When instantiating the `Prince` class, pass in the full path of the Prince executable to the constructor as a string argument.
 
@@ -139,6 +128,13 @@ When instantiating the `Prince` class, pass in the full path of the Prince execu
 use Prince\Prince;
 
 $prince = new Prince('/usr/bin/prince');
+
+$prince->setLog('/path/to/log.txt');
+$prince->addStyleSheet('/path/to/stylesheet.css');
+$prince->addScript('/path/to/script.js');
+$prince->setJavaScript(true);
+
+$prince->convertFile('/path/to/file.html');
 ```
 
 <!--
