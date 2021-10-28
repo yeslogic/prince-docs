@@ -47,47 +47,43 @@ try {
 
 Prince can be called from .NET languages using the [Prince C\# / .NET wrapper](/download/wrappers/#wrapper-csharp).
 
-The wrapper package contains:
+The C\# wrapper is [hosted on GitHub Packages as a NuGet package](https://github.com/yeslogic/prince-csharp-wrapper/packages/1039110). Installing this package requires authenticating to GitHub Packages with a [personal access token](https://docs.github.com/en/packages/working-with-a-github-packages-registry/working-with-the-nuget-registry#authenticating-with-a-personal-access-token). Ensure that the personal access token has registry read access.
 
--   the DLL file,
--   the [API documentation](assets/wrappers/csharp/readme.html) and
--   the source code.
+Alternatively, the NuGet package can be [downloaded directly](https://github.com/yeslogic/prince-csharp-wrapper/packages/1039110) via the links on the sidebar. The package is just a zip file, and can be unzipped to access the DLL file directly, if that is desired.
+
+The [API documentation](https://yeslogic.github.io/prince-csharp-wrapper) lists the C\# class methods and explains how to use them.
 
 #### Using Prince with C\#
 
-To use the Prince .NET wrapper in C\#, add a reference to the DLL to your Visual Studio project.
+To use the Prince .NET wrapper in C\#, add it as a dependency to your Visual Studio project.
 
-To convert HTML or XML files into PDF, instantiate a Prince object with the full path to the Prince engine executable file. Once this is done, you can apply style sheets and scripts, or configure other properties by calling the appropriate subroutines. Finally, you can call one of the Convert functions to generate a PDF file.
+To convert HTML or XML files into PDF, instantiate a Prince object with the full path to the Prince engine executable file. Once this is done, you can apply style sheets and scripts, or configure other properties by calling the appropriate methods. Finally, you can call one of the `Convert` methods to generate a PDF file.
 
-Please note that document scripts need to first be enabled with `prn.SetJavaScript(true)` - external scripts added with `AddScript` will always be run.
+Please note that document scripts need to first be enabled with `JavaScript = true` - external scripts added with `Scripts.Add()` will always be run.
 
 The following code sample demonstrates how to convert a single HTML document into a PDF file:
 
 ```cs
-// instantiate Prince by specifying the full path to the engine executable
-Prince prn = new Prince("C:\\Program Files\\Prince\\Engine\\bin\\prince.exe");
+using PrinceXML.Wrapper;
 
-// specify the log file for error and warning messages
-// make sure that you have write permissions for this file
-prn.SetLog("C:\\docs\\log.txt");
+// Instantiate Prince by specifying the full path to the engine executable.
+Prince prn = new Prince("C:\\Program Files\\Prince\\engine\\bin\\prince.exe");
 
-// apply a CSS style sheet (optional)
-prn.AddStyleSheet("C:\\docs\\css\\stylesheet-1.css");
+// Specify the log file for error and warning messages.
+// Make sure that you have write permissions for this file.
+prn.Log = "C:\\docs\\log.txt";
 
-// apply an external JavaScript file (optional) and enable document JavaScript
-prn.AddScript("C:\\docs\\js\\test.js");
-prn.SetJavaScript(true);
+// Apply a CSS style sheet (optional).
+prn.StyleSheets.Add("C:\\docs\\css\\stylesheet-1.css");
 
-// convert a HTML document into a PDF file
+// Apply an external JavaScript file (optional) and enable document JavaScript.
+prn.Scripts.Add("C:\\docs\\js\\test.js");
+prn.JavaScript = true;
+
+// Convert a HTML document into a PDF file.
 prn.Convert("C:\\docs\\test1.html", "C:\\docs\\pdf\\test1.pdf");
 ```
-To combine multiple HTML documents into a single PDF file, call `ConvertMultiple`:
 
-```cs
-String[] doc_array = {"C:\\docs\\test1.html", "C:\\docs\\test2.html"};
-
-prn.ConvertMultiple(doc_array, "C:\\docs\\pdf\\merged.pdf");
-```
 #### Using Prince with VB.NET
 
 To use the Prince [The C\# / .NET Wrapper](#the-c-net-wrapper-) in VB.NET, add a reference to the DLL to your Visual Studio project. Alternatively, you can include the Prince.vb source file directly if you prefer.
