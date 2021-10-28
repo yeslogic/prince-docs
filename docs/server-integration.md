@@ -139,66 +139,9 @@ When instantiating the `Prince` class, pass in the full path of the Prince execu
     $prince = new Prince('/usr/bin/prince');
 ```
 
-### The ActiveX/COM Wrapper
-
-The [ActiveX/COM wrapper](/download/wrappers/#wrapper-activex) allows Prince to be called from various languages: [ASP](#using-prince-with-asp), [ActiveX, COM, Visual Basic](#using-prince-with-activex-com-visual-basic) and also [Coldfusion](#using-prince-with-coldfusion).
-
-This package contains two files:
-
--   The `PRINCE.dll` file and
--   the [API documentation](assets/wrappers/activex/readme.html).
-
-#### Using Prince with ASP
-
-Prince can be called from ASP pages using the [ActiveX/COM interface](#the-activex-com-wrapper).
-
-This interface is provided in the form of an ActiveX DLL file that needs to be registered in the Windows registry using REGSVR32.EXE:
-
-```powershell
-    regsvr32 C:\Prince\PRINCE.dll
-```
-In order to call Prince from an ASP page, we need to create a COM object using the CreateObject server method. Once the COM object is created, you can use the COM interface methods to perform the tasks.
-
-Please note that document scripts need to first be enabled with `prn.SetJavaScript(true)` - external scripts added with `AddScript` will always be run.
-
-The following is some sample code for illustration:
-
-```
-    <%
-    Dim pr
-    Dim res
-
-    Set pr = Server.CreateObject("PrinceCom.Prince")
-    pr.SetPrincePath "C:\Prince\engine\bin\prince.exe"
-    pr.AddStyleSheet "C:\Prince\css\test1.css"
-    pr.AddStyleSheet "C:\Prince\css\test2.css"
-    pr.SetJavaScript(True)
-    pr.SetEncryptInfo 128, "password1", "password2", true, true, true, true
-
-    If pr.Convert("C:\Prince\examples\magic.html", "C:\output.pdf") = 1 Then
-        res = "Successful"
-    Else
-        res = "Unsuccessful"
-    End If
-    %>
-```
-
-#### Using Prince with ActiveX / COM / Visual Basic
-
-Prince can be called from Visual Basic and other languages on Windows using the [ActiveX/COM interface](#the-activex-com-wrapper).
-
-This interface is provided in the form of an ActiveX DLL file that needs to be registered in the Windows registry using REGSVR32.EXE:
-
-    regsvr32 C:\Prince\PRINCE.dll
-
-Please read the README.TXT file that comes with the ActiveX DLL file for more details of the COM interface methods.
-
-
 ### Using Prince with ColdFusion
 
-Prince can be called from ColdFusion pages using the Java interface or the [ActiveX/COM interface](#the-activex-com-wrapper), if on Windows.
-
-#### Using Java
+Prince can be called from ColdFusion pages using the Java interface.
 
 Start by downloading the [Java interface](#the-java-wrapper) for Prince. This package contains:
 
@@ -230,41 +173,6 @@ If this is done correctly, ColdFusion should know where to find the Prince Java 
     </cfscript>
 ```
 If on Linux, substitute the paths with the appropriate UNIX style paths.
-
-#### Using ActiveX/COM
-
-If you are running ColdFusion on Windows, you can also call Prince using the [ActiveX/COM interface](#the-activex-com-wrapper).
-
-This interface is provided in the form of an ActiveX DLL file that needs to be registered in the Windows registry using REGSVR32.EXE:
-
-```powershell
-    regsvr32 C:\Prince\PRINCE.dll
-```
-In order to call Prince from ColdFusion, we need to create a COM object using the CreateObject function that is available in CFML scripting (you can also use the `<cfobject ...>` tag if you prefer). Once the COM object is created, you can use the COM interface methods to perform the tasks.
-
-The following is some sample code for illustration:
-
-```
-    <cfscript>
-       pr = CreateObject("Com", "PrinceCom.Prince", "local");
-
-       pr.SetPrincePath("C:\Prince\engine\bin\prince.exe");
-       pr.AddStyleSheet("C:\Prince\test\test1.css");
-       pr.AddStyleSheet("C:\Prince\test\test2.css");
-       pr.setJavaScript(true);
-       pr.SetEncryptInfo(128, "secretPassword1", "secretPassword2",
-          True, True, True, True);
-
-       if (pr.Convert("C:\Prince\examples\magic.html", "C:\output.pdf") eq 1)
-          WriteOutput("Successful");
-       else
-          WriteOutput("Unsuccessful");
-
-       ReleaseComObject(pr);
-    </cfscript>
-```
-Please read the README.TXT file that comes with the ActiveX DLL file for more details of the COM interface methods.
-
 
 ### Using Prince with Python
 
