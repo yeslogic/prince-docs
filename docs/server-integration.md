@@ -139,6 +139,7 @@ use Prince\Prince;
 $prince = new Prince('/usr/bin/prince');
 ```
 
+<!--
 ### The ActiveX/COM Wrapper
 
 The [ActiveX/COM wrapper](/download/wrappers/#wrapper-activex) allows Prince to be called from various languages: [ASP](#using-prince-with-asp), [ActiveX, COM, Visual Basic](#using-prince-with-activex-com-visual-basic) and also [Coldfusion](#using-prince-with-coldfusion).
@@ -194,11 +195,12 @@ regsvr32 C:\Prince\PRINCE.dll
 ```
 
 Please read the README.TXT file that comes with the ActiveX DLL file for more details of the COM interface methods.
+-->
 
 
 ### Using Prince with ColdFusion
 
-Prince can be called from ColdFusion pages using the Java interface or the [ActiveX/COM interface](#the-activex-com-wrapper), if on Windows.
+Prince can be called from ColdFusion pages using the Java interface<!-- or the [ActiveX/COM interface](#the-activex-com-wrapper), if on Windows-->.
 
 #### Using Java
 
@@ -233,6 +235,7 @@ If this is done correctly, ColdFusion should know where to find the Prince Java 
 ```
 If on Linux, substitute the paths with the appropriate UNIX style paths.
 
+<!--
 #### Using ActiveX/COM
 
 If you are running ColdFusion on Windows, you can also call Prince using the [ActiveX/COM interface](#the-activex-com-wrapper).
@@ -266,6 +269,7 @@ The following is some sample code for illustration:
 </cfscript>
 ```
 Please read the README.TXT file that comes with the ActiveX DLL file for more details of the COM interface methods.
+-->
 
 
 ### Using Prince with Python
