@@ -134,8 +134,6 @@ $prince->setJavaScript(true);
 
 $prince->convertFile('/path/to/file.html');
 ```
-In order to call Prince from an ASP page, we need to create a COM object using the CreateObject server method. Once the COM object is created, you can use the COM interface methods to perform the tasks.
-
 
 ### Using Prince with ColdFusion
 
