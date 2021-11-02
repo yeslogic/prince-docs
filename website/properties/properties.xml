@@ -5433,6 +5433,30 @@ supplier, item { overflow-wrap: normal; }
 </property>
 
 <property>
+    <name>prince-pdf-form</name>
+    <value>
+    <choice>
+            <keyword>auto</keyword>
+            <keyword>enable</keyword>
+            <keyword>disable</keyword>
+    </choice>
+    </value>
+    <initial>auto</initial>
+    <applyto>all form elements</applyto>
+    <inherit>no</inherit>
+    <extension/>
+    <see><a href="/doc/prince-output/#pdf-forms">PDF Forms</a></see>
+    <comments>
+	<p>
+	This property selectively enables or disables PDF form elements. It must be applied to each form element and is not inherited.
+	</p>
+    <p>
+    The default value <code>auto</code> leaves behaviour up to the command-line option <a href="/doc/command-line/#cl-pdf-forms"><code>--pdf-forms</code></a>.
+    </p>
+    </comments>
+</property>
+
+<property>
     <name>prince-pdf-link-type</name>
     <value>
     <choice>

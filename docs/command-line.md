@@ -469,6 +469,10 @@ The command-line may include the options described below:
   <dd>
     Enable tagged PDF.
   </dd>
+  <dt id="cl-pdf-forms"><code>--pdf-forms</code></dt>
+  <dd>
+    Enable PDF forms.
+  </dd>
   <dt id="cl-css-dpi"><code>--css-dpi</code></dt>
   <dd>
     Changes the DPI of the "px" units in CSS, which defaults to 96dpi.  It can be

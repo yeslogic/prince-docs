@@ -284,6 +284,29 @@ The values of this property are mapped to PDF page layout options:
 The property [`-prince-pdf-display-doc-title`](css-props.md#prop-prince-pdf-display-doc-title) can be used to configure whether the document file name, or the document title are displayed in the title bar of the PDF viewer.  Note that Prince will force it to true for the PDF/UA-1 profile, which requires it, and also for PDF/A-1a and PDF/A-3a which technically do not require it but users may still expect it - or they will see a warning if they run the Adobe accessibility checker on their PDFs.
 
 
+### PDF Forms
+
+Prince provides support for PDF Forms. To enable them, run Prince with the command-line option [`--pdf-forms`](command-line.md#cl-pdf-forms).
+
+```bash
+$ prince --pdf-forms simple-form.html
+```
+
+This creates a form that can be filled in with Acrobat or other PDF viewers and saved or printed. You may also wish to specify `--pdf-profile=PDF/UA-1` for [accessibility](#pdf-accessibility).
+
+Most HTML form controls are supported, and it is also possible to include submit and reset buttons, although not every PDF viewer supports these yet.
+
+The `--pdf-forms` command-line option is a shorthand for applying the CSS property [`-prince-pdf-form`](css-props.md#prop-prince-pdf-form) to all of the form elements. This CSS property allows individual form elements to be selectively enabled or disabled.
+
+```css
+form input, form select option {
+    -prince-pdf-form: enabled;
+}
+```
+
+In case of conflict, the property has the final say: the command-line option only determines whether the default value `auto` will be treated as `enable` or `disable`.
+
+
 ### PDF Printing
 
 Prince also provides two properties to fine-tune the printing of the PDF. The property [`-prince-pdf-print-scaling`](css-props.md#prop-prince-pdf-print-scaling) can be used to disable print scaling for the PDF file when it is printed and the property `-prince-pdf-paper-tray` controls the PickTrayByPDFSize flag in generated PDF files, which specifies whether the PDF page size is used to select the input paper tray.
