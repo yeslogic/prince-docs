@@ -100,7 +100,7 @@ colors that radiate from an origin point</td>
 <td><code>content()</code></td>
 <td>Retrieves the text content of the selected element.  It can be used with several
 different properties.</td>
-<td rowspan="16"><code><a href="/doc/css-props#prop-content">content</a></code> - see also <a href="/doc/gen-content#generated-content-functions">Generated Content Functions</a></td>
+<td rowspan="17"><code><a href="/doc/css-props#prop-content">content</a></code> - see also <a href="/doc/gen-content#generated-content-functions">Generated Content Functions</a></td>
 </tr>
 <tr>
 <td><code>element( <i>name</i>, <i>page-policy</i>? )</code></td>
