@@ -206,6 +206,10 @@ footer a[href]:hover {
     font-weight: bold;
 }
 
+.navListItemActive a:hover {
+    padding-left: 0px !important;
+}
+
 ul.toc-headings {
     padding-left: 0px !important;
 }
@@ -227,8 +231,20 @@ ul.toc-headings li ul.toc-headings li a.active {
     padding-left: 28px;
 }
 
-a.active {
+.navListItemActive a.active {
     border-left: 2px solid #e0e0e0;
+}
+
+.toc .toggleNav h4 {
+    font-weight: normal !important;
+}
+
+.toc .toggleNav ul {
+    padding-left: 12px;
+}
+
+.toc .toggleNav ul a:hover {
+    padding-left: 1px;
 }
 
 @media only screen and (min-device-width: 360px) and (max-device-width: 736px) {
