@@ -8,10 +8,19 @@ dl { padding-bottom: 1em; }
 dd { padding-left: 2em; }
 dl ul { margin-bottom: 0em; }
 
-pre code, code pre {
+code {
+    white-space: pre;
+}
+
+pre code, code pre, .syntax-block code, .grid code {
     white-space: pre-wrap;
 }
-table.property-table, .syntax-block code, .example code {
+
+#prop-list ul li code {
+    white-space: normal;
+}
+
+table.property-table, .syntax-block, .example code {
   border: none;
   background-color: white;
 }
