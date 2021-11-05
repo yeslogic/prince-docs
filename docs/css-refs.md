@@ -89,8 +89,10 @@ well as the properties <code>object-fit</code> and <code>object-position</code>.
 <tr>
 <td><a href="https://www.w3.org/TR/css-text-3/">CSS Text Module Level 3</a></td>
 <td>Prince does not recognize <code>line-break</code>, <code>text-align-all</code>
-and <code>hanging-punctuation</code>, and it does not support the value
-<code>break-word</code> of the property <code>word-break</code>.</td>
+and <code>hanging-punctuation</code>. It does not support the value
+<code>break-word</code> of the property <code>word-break</code>, nor the value
+<code>anywhere</code> of the property <code>overflow-wrap</code>, nor the value
+<code>break-spaces</code> of the property <code>white-space</code>.</td>
 </tr>
 <tr>
 <td><a href="https://www.w3.org/TR/css-transforms-1/">CSS Transforms Module Level 1</a></td>
