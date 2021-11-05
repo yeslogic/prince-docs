@@ -3951,6 +3951,9 @@ supplier, item { overflow-wrap: normal; }
 	even if two components are directly adjacent to each other, as
     seen in the above example.
 	</p>
+    <p>
+    Prince also treats <code>word-wrap</code> as a legacy name alias for this property.
+    </p>
     </comments>
     <spec><a href="https://www.w3.org/TR/css-text-3/#overflow-wrap-property">CSS Text Module Level 3</a></spec>
 </property>
