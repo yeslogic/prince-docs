@@ -10,16 +10,16 @@ function redirects() {
         window.location.href = '/doc/css-refs#supported-css-specifications'
     }
     else if (location.hash.indexOf('selectors') == 1) {
-        window.location.href = '/doc/css-refs#css-selectors'
+        window.location.href = '/doc/css-selectors'
     }
     else if (location.hash.indexOf('media-queries') == 1) {
-        window.location.href = '/doc/css-refs#css-media-queries'
+        window.location.href = '/doc/css-media-queries'
     }
     else if (location.hash.indexOf('css-functions') == 1) {
-        window.location.href = '/doc/css-refs#css-functional-expressions'
+        window.location.href = '/doc/css-functions'
     }
     else if (location.hash.indexOf('css-atrules') == 1) {
-        window.location.href = '/doc/css-refs#css-at-rules'
+        window.location.href = '/doc/css-at-rules'
     }
     else if (location.hash.indexOf('properties') == 1) {
         window.location.href = '/doc/css-props'

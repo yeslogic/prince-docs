@@ -311,7 +311,7 @@ In case of conflict, the property has the final say: the command-line option onl
 
 Prince also provides two properties to fine-tune the printing of the PDF. The property [`-prince-pdf-print-scaling`](css-props.md#prop-prince-pdf-print-scaling) can be used to disable print scaling for the PDF file when it is printed and the property `-prince-pdf-paper-tray` controls the PickTrayByPDFSize flag in generated PDF files, which specifies whether the PDF page size is used to select the input paper tray.
 
-Duplex printing is supported with the CSS property [`-prince-pdf-duplex`](css-props.md#prop-prince-pdf-duplex). This property may be used inside the [`@prince-pdf`](css-refs.mn#at-prince-pdf) at-rule to set the `Duplex` property in the `PDFViewerPreferences` dictionary. The values `duplex-flip-short-edge` and `duplex-flip-long-edge` tell about how to flip the paper, while the value `simplex` suppresses duplex printing.
+Duplex printing is supported with the CSS property [`-prince-pdf-duplex`](css-props.md#prop-prince-pdf-duplex). This property may be used inside the [`@prince-pdf`](css-at-rules.md#at-prince-pdf) at-rule to set the `Duplex` property in the `PDFViewerPreferences` dictionary. The values `duplex-flip-short-edge` and `duplex-flip-long-edge` tell about how to flip the paper, while the value `simplex` suppresses duplex printing.
 
 ```css
     @prince-pdf {

@@ -14,7 +14,7 @@ Generated content is inserted by means of several functions that typically are u
 -   `-prince-tooltip`
 -   `string-set`
 
-See also the section on [CSS Functional Expressions](css-refs.md#css-functional-expressions) for additional details on these functions.
+See also the section on [CSS Functional Expressions](css-functions.md) for additional details on these functions.
 
 The most simple use of generating content in these properties is to insert a literal string. A literal string can also be passed as an argument to the `leader()` function, which expands to fill the available space on the line like justified text, by repeating the string as many times as necessary. An optional second argument can be used to specify a minimum width.
 

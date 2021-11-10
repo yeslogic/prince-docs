@@ -115,7 +115,7 @@ Frequently Asked Questions
   <dt><p id="faq-everypage">How can I make an element, such as an image or some
   text, appear on each page of the PDF document?
   <a class="self-link" href="#faq-everypage"></a></p></dt>
-  <dd><p>For this purpose you can use the <a href="/doc/css-refs#at-page"><code>@page</code></a></a>
+  <dd><p>For this purpose you can use the <a href="/doc/css-at-rules#at-page"><code>@page</code></a></a>
   page regions.  See: <a href="/doc/paged#page-regions">Page regions</a> and <a href="/doc/cookbook#watermarks">Watermarks</a>.</p></dd>
 
   <dt><p id="faq-page-regions">How can I apply CSS styles in page regions?

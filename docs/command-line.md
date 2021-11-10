@@ -370,7 +370,7 @@ The command-line may include the options described below:
   </dt>
   <dd>
     Specify the page size (eg. A4, "155mm 190mm", etc).  The syntax is the same as
-    the <code><a href="/doc/css-props/#prop-size">size</a></code> property in <a href="/doc/css-refs/#at-page"><code>@page</code></a>
+    the <code><a href="/doc/css-props/#prop-size">size</a></code> property in <a href="/doc/css-at-rules/#at-page"><code>@page</code></a>
     rules, which can take two values for horizontal and vertical dimensions. On the
     command-line it needs to be written between quotes as a single argument.  See
     also <a href="/doc/paged/#page-size">Page size</a> and <a href="/doc/page-size-keywords/">Page Size Keywords</a>.
@@ -440,7 +440,7 @@ The command-line may include the options described below:
   <dt id="cl-no-system-fonts"><code>--no-system-fonts</code></dt>
   <dd>
     Disable system fonts in PDF output.  Only fonts defined with
-    <a href="/doc/css-refs/#at-font-face"><code>@font-face</code></a>
+    <a href="/doc/css-at-rules/#at-font-face"><code>@font-face</code></a>
     rules in CSS will be available.
   </dd>
   <dt id="cl-force-identity-encoding"><code>--force-identity-encoding</code></dt>

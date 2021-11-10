@@ -35,7 +35,7 @@ Default style sheets
 
 ### Importing Style Sheets
 
-Style sheets may import other style sheets using [`@import`](css-refs.md#at-import) rules. These rules must occur before any other rules or declarations in the style sheet, and have the effect of importing all the rules and declarations from the specified style sheet. See [CSS At-rules](css-refs.md#css-at-rules).
+Style sheets may import other style sheets using [`@import`](css-at-rules.md#at-import) rules. These rules must occur before any other rules or declarations in the style sheet, and have the effect of importing all the rules and declarations from the specified style sheet. See [CSS At-rules](css-at-rules.md).
 
 ```
     @import "base.css";

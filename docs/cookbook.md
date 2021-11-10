@@ -97,7 +97,7 @@ Thinking in Spreads
 
 Prince produces PDFs - which are a prominent example of paged media. The main difference with conventional CSS design for browsers is to always keep in mind that you are dealing with pagination, i.e. the content is placed on discrete pages.
 
-The basic unit for paged media in print is the page, organized in page spreads: the left page, called *verso* in a left-to-right script (see [Writing Mode](styling#writing-mode)), and the right page, called *recto*, are of the same size and typically are symmetrical to each other and are centered on the gutter. [Selected](paged.md#page-rules) and [Named pages](paged.md#named-pages) can be placed *recto* or *verso*, and Prince expands several properties and the [`@page`](css-refs.md#at-page) at-rule pseudo-classes with the values `verso` and `recto`, or `inside` and `outside`, referring to the layout on each page of the spread to facilitate the work with page spreads.
+The basic unit for paged media in print is the page, organized in page spreads: the left page, called *verso* in a left-to-right script (see [Writing Mode](styling#writing-mode)), and the right page, called *recto*, are of the same size and typically are symmetrical to each other and are centered on the gutter. [Selected](paged.md#page-rules) and [Named pages](paged.md#named-pages) can be placed *recto* or *verso*, and Prince expands several properties and the [`@page`](css-at-rules.md#at-page) at-rule pseudo-classes with the values `verso` and `recto`, or `inside` and `outside`, referring to the layout on each page of the spread to facilitate the work with page spreads.
 
 ### Pagination on a page spread
 
@@ -110,7 +110,7 @@ You have control on wether to place specific selected and named pages right or l
 ```
 This rule places an `h1` element always at the beginning of a *recto* page.
 
-Pages can also be specifically targeted and styled with the [`@page`](css-refs.md#at-page) at-rule pseudo-classes `:right` and `:left`, or `:recto` and `:verso`.
+Pages can also be specifically targeted and styled with the [`@page`](css-at-rules.md#at-page) at-rule pseudo-classes `:right` and `:left`, or `:recto` and `:verso`.
 
 ### Layout on a page spread
 
@@ -217,7 +217,7 @@ As mentioned in [Long Tables](#long-tables), when a table spans across more than
 
 You might define a caption in HTML for the main table caption - to be displayed on the first page. Additionally, you make another element into a table caption with the [`display`](css-props.md#prop-display) property - and display it only on the following pages!
 
-The paragraph functioning as a table caption can be hidden in browsers by using [CSS Media Queries](css-refs.md#media-queries).
+The paragraph functioning as a table caption can be hidden in browsers by using [CSS Media Queries](css-media-queries.md#media-queries).
 
 HTML
 
@@ -809,7 +809,7 @@ Prince automatically enables ligatures declared by the OpenType fonts with the `
 Other special ligatures need to be explicitly enabled in Prince to take effect. This is achieved by using the [`font-variant-ligatures`](css-props.md#prop-font-variant-ligatures) CSS property.
 Note that the property [`font-variant`](css-props.md#prop-font-variant) can be used as a shorthand for enabling this, and possibly other font features.
 
-Another means to enable ligatures is through the [`font-variant`](css-props.md#prop-font-variant) CSS property with the `prince-opentype()` function (see [CSS Functional Expressions](css-refs.md#css-functional-expressions)).  However, care must be taken in which order the features are enabled!  Also, enabling one feature will disable all the default features. To see which OpenType features are enabled by default, see the [OpenType Features in Prince](styling.md#opentype-features-in-prince) section.
+Another means to enable ligatures is through the [`font-variant`](css-props.md#prop-font-variant) CSS property with the `prince-opentype()` function (see [CSS Functional Expressions](css-functions.md#css-functional-expressions)).  However, care must be taken in which order the features are enabled!  Also, enabling one feature will disable all the default features. To see which OpenType features are enabled by default, see the [OpenType Features in Prince](styling.md#opentype-features-in-prince) section.
 
 ```
     body {
@@ -845,7 +845,7 @@ Watermarks
 
 When producing a PDF, it might be desirable to include a watermark, visible on all pages. In Prince it is easy to do so with CSS.
 
-In order to repeat it on all pages, the watermark needs to be placed in a [`@page`](css-refs.md#at-page) at-rule. We shall place it in the page region `@prince-overlay` (see [Page regions](paged.md#page-regions)) and create the watermark with generated content (see [Generated content in page regions](paged.md#page-gen-content)):
+In order to repeat it on all pages, the watermark needs to be placed in a [`@page`](css-at-rules.md#at-page) at-rule. We shall place it in the page region `@prince-overlay` (see [Page regions](paged.md#page-regions)) and create the watermark with generated content (see [Generated content in page regions](paged.md#page-gen-content)):
 
 ```
     @page {
@@ -904,7 +904,7 @@ This table is too wide to fit on the paper, so we use `-prince-rotate-body` in a
         page: big_table
     }
 ```
-The [`-prince-rotate-body`](css-props.md#prop-prince-rotate-body) property works within [`@page`](css-refs.md#at-page) rules only, so this example uses a named page to place the table on a page of its own. Then the [`@page`](css-refs.md#at-page) rule for `big_table` pages uses the [`-prince-rotate-body`](css-props.md#prop-prince-rotate-body) property to tell prince that the body of the page, but not the headers and footers, should be rotated. The table in this example is still too wide so we also use the [`-prince-shrink-to-fit`](css-props.md#prop-prince-shrink-to-fit) property to make it a little smaller.
+The [`-prince-rotate-body`](css-props.md#prop-prince-rotate-body) property works within [`@page`](css-at-rules.md#at-page) rules only, so this example uses a named page to place the table on a page of its own. Then the [`@page`](css-at-rules.md#at-page) rule for `big_table` pages uses the [`-prince-rotate-body`](css-props.md#prop-prince-rotate-body) property to tell prince that the body of the page, but not the headers and footers, should be rotated. The table in this example is still too wide so we also use the [`-prince-shrink-to-fit`](css-props.md#prop-prince-shrink-to-fit) property to make it a little smaller.
 
 If you download the full example ([HTML](assets/samples/rotate-body.html) or [PDF](assets/samples/rotate-body.pdf)) you will see that the paragraphs before and after the table are not placed on the same page. This is because they do not belong to the same named page (see [Named pages](paged.md#named-pages)). However on page four there are two tables, both tables belong to the same named page and therefore Prince will try to place them together on the same page.
 
