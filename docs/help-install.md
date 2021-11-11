@@ -12,7 +12,7 @@ The Prince Installation Guide tries to be exhaustive in explaining how to instal
 Troubleshooting
 ---------------
 
-We work hard to make Prince work on multiple platforms (Windows, Linux, etc) and with multiple configurations. However things don't always work correctly the first time. You're very welcome to [contact us](contact.html) for support or visit our [forum](forum/forum.html). However if you are facing a common problem, you may be able to find an explanation and solution below.
+We work hard to make Prince work on multiple platforms (Windows, Linux, etc) and with multiple configurations. However things don't always work correctly the first time. You're very welcome to [contact us](contact.html) for support or visit our [forum](//www.princexml.com/forum/). However if you are facing a common problem, you may be able to find an explanation and solution below.
 
 ### Missing glyphs or fonts
 
