@@ -47,7 +47,7 @@ Prince can be called from .NET languages using the [Prince C\# / .NET wrapper](/
 
 The C\# wrapper is hosted on the [NuGet gallery](https://www.nuget.org/packages/PrinceXMLWrapper/).
 
-The [API documentation](https://yeslogic.github.io/prince-csharp-wrapper) lists the C\# class methods and explains how to use them.
+The [API documentation](https://yeslogic.github.io/prince-csharp-wrapper/current/api/PrinceXML.Wrapper.html) lists the C\# class methods and explains how to use them.
 
 #### Using Prince with C\#
 
