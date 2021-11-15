@@ -137,7 +137,7 @@ Frequently Asked Questions
   <pre><code class="hljs">    prince file.xml -o file.pdf</code></pre>
   <p>On Windows, you replace the name of the executable with
   <code>Prince\engine\bin\prince.exe</code> in the installation directory
-  (see <a href="installing#windows-installation-layout">Windows installation layout</a>,
+  (see <a href="installing#windows-installation-layout">Windows installation layout</a>),
   which is the command-line program. See also <a href="command-line#command-line">Command-line Reference</a>.</p>
   <pre><code class="hljs">    "C:\Program Files (x86)\Prince\engine\bin\prince.exe" file.xml -o file.pdf</code></pre></dd>
 
