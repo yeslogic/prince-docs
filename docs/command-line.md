@@ -643,7 +643,7 @@ Rasterization is enabled with the `--raster-output` option below. When this is u
   <dd>
     <p>The capture/replay system saves a copy of all the information in a job to
     a specified directory, conveniently allowing it to be replayed later for
-    debugging purposes. See also <a href="/doc/help/#the-capture-replay-system">The capture/replay system</a>.</p>
+    debugging purposes. See also <a href="/doc/help/#the-capturereplay-system">The capture/replay system</a>.</p>
   </dd>
   <dt id="cl-control"><code>--control</code></dt>
   <dd>
