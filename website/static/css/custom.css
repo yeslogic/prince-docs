@@ -108,6 +108,9 @@ p:hover .self-link, #prop-list summary:hover .self-link, #js-support-table summa
 #prop-list details .hash-link {
     margin-left: 0px;
 }
+#prop-list .programlisting pre {
+    white-space: normal;
+}
 #js-support-table details.object {
   background-color: #f2f2f2;
 }
