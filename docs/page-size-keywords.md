@@ -5,6 +5,7 @@ title: Page Size Keywords
 Prince supports the following page size keywords.
 
 Keywords are *not* case sensitive, thus "A4" and "a4" are equivalent.
+The default size value is `US-Letter` (see also the [`size`](css-props.md#prop-size) property).
 
 | Keyword         | Page Size         |
 |-----------------|-------------------|
@@ -44,7 +45,7 @@ Keywords are *not* case sensitive, thus "A4" and "a4" are equivalent.
 | id-1            | 85.60mm × 53.98mm |
 | id-2            | 105.0mm × 74.0mm  |
 | id-3            | 125.0mm × 88.0mm  |
-| US-Letter, letter|8.5in × 11.0in    |
+| **US-Letter, letter**|**8.5in × 11.0in**    |
 | US-Legal, legal | 8.5in × 14.0in    |
 | US-Executive    | 7.25in × 10.5in   |
 | US-Ledger, ledger|17.0in × 11.0in   |
