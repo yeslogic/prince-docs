@@ -18,6 +18,7 @@ jobs:
       - name: Make the properties
         run: |
           cd ./website/properties
+          mkdir ./output
           xsltproc table.xsl properties.xml > output/css-props.xml
           ./docs-process.py output/css-props-out.xml output/css-props.xml
           ./docs_selflink.py output/css-props-out.xml
@@ -25,6 +26,7 @@ jobs:
           sed -i '1s;^;---\ntitle: CSS Properties\n---\n\n;' output/css-props.md
           cat script >> output/css-props.md
           cp output/css-props.md ../../docs/
+          rm -rf ./output
           cd ./../..
         shell: bash
       - name: Set up Node
