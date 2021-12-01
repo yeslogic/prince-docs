@@ -60,7 +60,7 @@ jobs:
         uses: nogsantos/scp-deploy@master
         with:
           #src: ./website/build/prince-docs/*
-          src: ./SUCCESS
+          src: ./website/build/prince-docs/SUCCESS
           host: ${{ secrets.SSH_HOST }}
           remote: ${{ secrets.SSH_DIR }}
           port: ${{ secrets.SSH_PORT }}
