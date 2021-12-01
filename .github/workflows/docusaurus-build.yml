@@ -45,11 +45,11 @@ jobs:
           npm run build
       - name: Prepare deployment
         run: |
-          cd ./website/build/prince-docs/doc
-          rm *.html
-          rm ./../sitemap.xml
-          cp ./../index.html ./
-          cd ./../../../..
+          cd ./website/build/prince-docs
+          rm sitemap.xml doc/*.html
+          mv ./index.html ./doc/
+          mv doc/doc-install doc/doc-prince doc/doc-refs ./
+          cd ./../../..
       # remove the following lines
       - name: Test
         run: |
