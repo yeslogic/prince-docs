@@ -127,24 +127,13 @@ This figure shows the positions of some page regions placed in the page margin, 
 
 The [`@page`](css-at-rules.md#at-page) background is <span class="fig-marginboxes-lightgrey">grey</span> and the body's, i.e. the page area's background is <span class="fig-marginboxes-white">white</span>.
 
-The first four page-margin boxes, namely
-
--   `@top`,
--   `@bottom`,
--   `@left` and
--   `@right`
-
-are easy to understand and are shown in <span class="fig-marginboxes-yellow">yellow</span> and <span class="fig-marginboxes-red">red</span>.
-
-Each of these page-margin boxes has a synonym ending in `-center` or `-middle` - for instance `@top-center` is the same as `@top`, while `@left-middle` is the same as `@left`.
-
 You can place content in a page-margin box with the [`content`](css-props.md#prop-content) property.
 
 For example, you can print the current page number at the bottom of each page (see [Generated Content](gen-content.md)):
 
 ```
     @page {
-        @bottom {
+        @bottom-center {
             content: counter(page)
         }
     }
@@ -174,30 +163,6 @@ Several other page regions can also be used. The full list of page regions is sh
 </thead>
 <tbody>
 <tr>
-<td><code>@top</code></td>
-<td>center</td>
-<td>middle</td>
-<td style="background-color: #ff8">yellow</td>
-</tr>
-<tr>
-<td><code>@bottom</code></td>
-<td>center</td>
-<td>middle</td>
-<td style="background-color: #ff8">yellow</td>
-</tr>
-<tr>
-<td><code>@left</code></td>
-<td>center</td>
-<td>middle</td>
-<td style="background-color: #f88">red</td>
-</tr>
-<tr>
-<td><code>@right</code></td>
-<td>center</td>
-<td>middle</td>
-<td style="background-color: #f88">red</td>
-</tr>
-<tr>
 <td><code>@top-left</code></td>
 <td>left</td>
 <td>middle</td>
@@ -207,7 +172,7 @@ Several other page regions can also be used. The full list of page regions is sh
 <td><code>@top-center</code></td>
 <td>center</td>
 <td>middle</td>
-<td>not shown</td>
+<td style="background-color: #ff8">yellow</td>
 </tr>
 <tr>
 <td><code>@top-right</code></td>
@@ -225,7 +190,7 @@ Several other page regions can also be used. The full list of page regions is sh
 <td><code>@bottom-center</code></td>
 <td>center</td>
 <td>middle</td>
-<td>not shown</td>
+<td style="background-color: #ff8">yellow</td>
 </tr>
 <tr>
 <td><code>@bottom-right</code></td>
@@ -243,7 +208,7 @@ Several other page regions can also be used. The full list of page regions is sh
 <td><code>@left-middle</code></td>
 <td>center</td>
 <td>middle</td>
-<td>not shown</td>
+<td style="background-color: #f88">red</td>
 </tr>
 <tr>
 <td><code>@left-bottom</code></td>
@@ -261,7 +226,7 @@ Several other page regions can also be used. The full list of page regions is sh
 <td><code>@right-middle</code></td>
 <td>center</td>
 <td>middle</td>
-<td>not shown</td>
+<td style="background-color: #f88">red</td>
 </tr>
 <tr>
 <td><code>@right-bottom</code></td>
@@ -320,11 +285,11 @@ Several other page regions can also be used. The full list of page regions is sh
 </tbody>
 </table>
 
-Prince will try to create page regions of the correct sizes. If you need to create boxes of specific sizes you may need to use only a single box (eg: `@top`) and use the [`content`](css-props.md#prop-content) property to place elements with specific sizes in it.
+Prince will try to create page regions of the correct sizes. If you need to create boxes of specific sizes you may need to use only a single box (eg: `@top-center`) and use the [`content`](css-props.md#prop-content) property to place elements with specific sizes in it.
 
-Note that in the above [Page regions](#fig-marginboxes) figure, Prince leaves space for `@top-right` and `@left-bottom` boxes because their counterparts (`@top-left` and `@left-top` respectively) have been defined. This keeps the `@top` and `@left` centered along the top and side of the page respectively.
+Note that in the above [Page regions](#fig-marginboxes) figure, Prince leaves space for `@top-right` and `@left-bottom` boxes because their counterparts (`@top-left` and `@left-top` respectively) have been defined. This keeps the `@top-center` and `@left-middle` centered along the top and side of the page respectively.
 
-The page-margin boxes `@top`, `@top-left` or `@top-right` can be used to create running page headers, and the page-margin boxes `@bottom`, `@bottom-left` or `@bottom-right` are useful for page footers (see [Page Headers and Footers](cookbook.md#page-headers-and-footers)).
+The page-margin boxes `@top-center`, `@top-left` or `@top-right` can be used to create running page headers, and the page-margin boxes `@bottom-center`, `@bottom-left` or `@bottom-right` are useful for page footers (see [Page Headers and Footers](cookbook.md#page-headers-and-footers)).
 
 The page region `@prince-overlay` is a special region, overlaying all of the page area. A typical use is for creating watermarks on all pages of the document (see [Watermarks](cookbook.md#watermarks)).
 
@@ -373,10 +338,10 @@ CSS
         counter-reset: page 1
     }
     @page table-of-contents {
-        @top {
+        @top-center {
             content: "Table of Contents"
         }
-        @bottom {
+        @bottom-center {
             content: counter(page, lower-alpha)
         }
     }
@@ -386,10 +351,10 @@ CSS
         counter-reset: page 1
     }
     @page main {
-        @top {
+        @top-center {
             content: string(chapter-title)
         }
-        @bottom {
+        @bottom-center {
             content: counter(page)
         }
     }
@@ -410,7 +375,7 @@ In some documents, particularly those that are unbound such as office documents,
 
 ```
     @page {
-        @bottom {
+        @bottom-center {
             content: "Page " counter(page) " of " counter(pages)
         }
     }
@@ -512,7 +477,7 @@ CSS
 
 ```
     @page {
-        @top {
+        @top-center {
             content: string(doctitle)
         }
     }
@@ -555,7 +520,7 @@ CSS
 
 ```
     @page {
-        @top { content: element(header) }
+        @top-center { content: element(header) }
     }
     h1 { position: running(header) }
 ```
@@ -569,7 +534,7 @@ CSS
 
 ```
     @page {
-        @bottom { content: flow(footer) }
+        @bottom-center { content: flow(footer) }
     }
     footer { -prince-flow: static(footer, start) }
 ```
@@ -609,13 +574,13 @@ A title page example showing use of `@page:first`. Download the [PDF](assets/sam
     <head>
     <style>
     @page {
-        @bottom {
+        @bottom-center {
             content: counter(page)
         }
     }
     @page:first {
         margin-top: 10cm;
-        @bottom {
+        @bottom-center {
             content: normal
         }
     }
@@ -697,8 +662,8 @@ Then using this page name to apply a different [`@page`](css-at-rules.md#at-page
 
 ```css
     @page table-of-contents {
-        @top { content: "Table of Contents" }
-        @bottom {
+        @top-center { content: "Table of Contents" }
+        @bottom-center {
             content: counter(page, lower-alpha)
         }
     }
@@ -711,12 +676,12 @@ Selectors such as `:first`, `:Nth`, `:left` and `:right` also work with named pa
 
 ```css
     @page preface {
-        @bottom {
+        @bottom-center {
             content: counter(page, lower-alpha)
         }
     }
     @page preface:first {
-        @bottom {
+        @bottom-center {
             content: normal;
         }
     }
@@ -730,12 +695,12 @@ This example only works when a page name is used only once within a document, su
         -prince-page-group: start;
     }
     @page chapter {
-        @bottom {
+        @bottom-center {
             content: counter(page);
         }
     }
     @page chapter:first {
-        @bottom {
+        @bottom-center {
             content: normal;
         }
     }
@@ -777,11 +742,11 @@ This example clears the generated content used on these pages. This works becaus
 
 ```css
     @page frontmatter {
-        @bottom { content: counter(page, lower-roman); }
+        @bottom-center { content: counter(page, lower-roman); }
     }
 
     @page frontmatter:blank {
-        @bottom { content: normal; }
+        @bottom-center { content: normal; }
     }
 ```
 If chapter 1 also resets page numbering, then the page numbers will be reset on the first *content page*, i.e. a non-blank page.

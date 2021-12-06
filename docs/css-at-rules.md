@@ -70,20 +70,20 @@ The initial values for <code>@page</code> styles are documented in the
 <td><code>:nth(<i>N</i>)</code></td>
 </tr>
 <tr>
-<td><code>@left</code> | <code>@left-top</code> | <code>@left-middle</code> |
+<td><code>@left-top</code> | <code>@left-middle</code> |
 <code>@left-bottom</code></td>
 <td rowspan="6"><a href="/doc/paged#page-regions">Page region</a> at-rules</td>
 </tr>
 <tr>
-<td><code>@right</code> | <code>@right-top</code> | <code>@right-middle</code> |
+<td><code>@right-top</code> | <code>@right-middle</code> |
 <code>@right-bottom</code></td>
 </tr>
 <tr>
-<td><code>@top</code> | <code>@top-left-corner</code> | <code>@top-left</code> |
+<td><code>@top-left-corner</code> | <code>@top-left</code> |
 <code>@top-center</code> | <code>@top-right</code> | <code>@top-right-corner</code></td>
 </tr>
 <tr>
-<td><code>@bottom</code> | <code>@bottom-left-corner</code> | <code>@bottom-left</code> |
+<td><code>@bottom-left-corner</code> | <code>@bottom-left</code> |
 <code>@bottom-center</code> | <code>@bottom-right</code> | <code>@bottom-right-corner</code></td>
 </tr>
 <tr>
