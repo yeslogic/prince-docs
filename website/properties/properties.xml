@@ -4216,7 +4216,7 @@ supplier, item { overflow-wrap: normal; }
     <applyto>background image elements</applyto>
     <inherit>yes</inherit>
     <extension/>
-    <see><a href="/doc/graphics/#image-sizes">Image Size</a></see>
+    <see><a href="/doc/graphics/#image-size">Image Size</a></see>
     <comments>
 	<p>
     This property determines the resolution of a background image.  The value <code>normal</code>
@@ -4754,7 +4754,7 @@ supplier, item { overflow-wrap: normal; }
     <applyto>image elements</applyto>
     <inherit>yes</inherit>
     <extension/>
-    <see><a href="/doc/graphics/#image-sizes">Image Size</a></see>
+    <see><a href="/doc/graphics/#image-size">Image Size</a></see>
     <see><a href="/doc/cookbook/#image-magic">Image Magic</a></see>
     <comments>
     <p>
@@ -4812,7 +4812,7 @@ supplier, item { overflow-wrap: normal; }
     <applyto>image elements</applyto>
     <inherit>yes</inherit>
     <extension/>
-    <see><a href="/doc/graphics/#image-sizes">Image Size</a></see>
+    <see><a href="/doc/graphics/#image-size">Image Size</a></see>
     <comments>
     <p>
     This property determines the resolution of an image.  The value <code>normal</code>
