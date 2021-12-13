@@ -62,7 +62,7 @@ jobs:
           #src: ./website/build/prince-docs/*
           src: ./website/build/prince-docs/SUCCESS
           host: ${{ secrets.SSH_HOST }}
-          remote: ${{ secrets.SSH_DIR }}
+          remote: ${{ secrets.WEB_ROOT }}
           port: ${{ secrets.SSH_PORT }}
           user: ${{ secrets.SSH_USER }}
           key: ${{ secrets.SSH_KEY }}
