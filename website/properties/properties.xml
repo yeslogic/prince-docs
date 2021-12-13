@@ -5128,7 +5128,7 @@ supplier, item { overflow-wrap: normal; }
     <inherit>n/a</inherit>
     <extension/>
     <see><a href="/doc/prince-for-books/#spread-balancing">Spread Balancing</a></see>
-    <see><a href="/doc/prince-for-books/#the-property--prince-n-lines">The property <code>-prince-n-lines</code></a></see>
+    <see><a href="/doc/prince-for-books/#the-property--prince-page-fill">The property <code>-prince-page-fill</code></a></see>
     <comments>
 	<p>
         This property determines whether Prince should shorten a page to match
