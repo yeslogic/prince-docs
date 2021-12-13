@@ -54,15 +54,5 @@ jobs:
       - name: Test
         run: |
           touch ./website/build/prince-docs/SUCCESS
-          ls -r ./website/build/prince-docs/*
+          ls -r ./website/build/prince-docs/doc/*
       # remove the previous lines
-      - name: Deploy
-        uses: nogsantos/ssh-scp-deploy@master
-        with:
-          #src: ./website/build/prince-docs/*
-          src: ./website/build/prince-docs/SUCCESS
-          host: ${{ secrets.SSH_HOST }}
-          remote: ${{ secrets.WEB_ROOT }}
-          port: ${{ secrets.SSH_PORT }}
-          user: ${{ secrets.SSH_USER }}
-          key: ${{ secrets.SSH_KEY }}
