@@ -357,9 +357,9 @@ by other <code>@font-face</code> rules.  See <a href="/doc/styling#defining-a-fo
 </tr>
 <tr>
 <td><code>supports([ &lt;<i>supports-condition</i>&gt; | &lt;<i>declaration</i>&gt; ])</code></td>
-<td>Interpreted as a <code><a href="#at-supports">@supports</a></code>
+<td>Interpreted as a <code><a href="/doc/css-at-rules/#at-supports">@supports</a></code>
 condition.</td>
-<td><code><a href="#at-import">@import</a></code></td>
+<td><code><a href="/doc/css-at-rules/#at-import">@import</a></code></td>
 </tr>
 </tbody>
 </table>
