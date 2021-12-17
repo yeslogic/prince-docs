@@ -6493,8 +6493,16 @@ supplier, item { overflow-wrap: normal; }
 	<integer>number</integer>
     </value>
     <initial>1</initial>
-    <applyto>table and inline-table elements</applyto>
+    <applyto>inline-table elements</applyto>
     <inherit>no</inherit>
+    <extension/>
+    <comments>
+    <p>
+    This property only applies to inline tables, and it determines which row is treated as the
+    baseline for the purposes of vertical alignment. See the <a href="/doc/styling/#inline-tables">Inline tables</a>
+    documentation for more details.
+    </p>
+    </comments>
 </property>
 
 <property>

@@ -877,6 +877,45 @@ Tables can also be provided with a table caption by using the `caption` HTML ele
 When a table spans across more than one page, the [`-prince-caption-page`](css-props.md#prop-prince-caption-page) property determines whether table captions will be displayed on the first page of a table, or only on the following pages, or repeated on every page that a table appears on. See also [Fancy Table Captions](cookbook.md#fancy-table-captions).
 
 
+#### Inline tables
+
+Tables can also appear as inline elements in running text - to do so, use `display: inline-table`.
+
+Vertical alignment of these inline tables can be defined with the property [`table-baseline`](css-props.md#prop-table-baseline), which is used to define which table row is treated as the baseline for the vertical alignment.
+
+CSS
+```css
+    .inline { display: inline-table; }
+    td { vertical-align: baseline; }
+```
+HTML
+```html
+    <div>
+      a line of text
+      <table class="inline" style="table-baseline: 1">
+        <tr><td>1</td></tr>
+        <tr><td>2</td></tr>
+        <tr><td>3</td></tr>
+      </table>
+      with some
+      <table class="inline" style="table-baseline: 2">
+        <tr><td>1</td></tr>
+        <tr><td>2</td></tr>
+        <tr><td>3</td></tr>
+      </table>
+      inline
+      <table class="inline" style="table-baseline: 3">
+        <tr><td>1</td></tr>
+        <tr><td>2</td></tr>
+        <tr><td>3</td></tr>
+      </table>
+      tables.
+    </div>
+```
+Output
+![Table baseline](assets/images/table.png)
+
+
 ### Columns
 
 Reading long lines of text can be difficult - multiple columns have been used in print for a very long time. CSS allows for clean styling in multiple columns with the help of several properties.

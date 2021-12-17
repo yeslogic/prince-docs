@@ -953,7 +953,7 @@ var stdAnnotated = {
             strokeMiterlimit: { url: "property" },
             strokeOpacity: { url: "property" },
             strokeWidth: { url: "property" },
-            tableBaseline: { url: "property" },
+            tableBaseline: { ext: "ext", url: "property" },
             tableColumnSpan: { ext: "ext", url: "property" },
             tableLayout: { url: "property" },
             tableRowSpan: { ext: "ext", url: "property" },
