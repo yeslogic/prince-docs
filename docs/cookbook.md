@@ -538,7 +538,18 @@ The advantage is to position the footnotes vertically aligned with the footnote 
 
 The disadvantage is that footnote calls and markers are not created automatically, but need to be manually added as counters, and styled. Also, footnotes may overlap vertically if they are too close together.
 
-A variant of this approach, useful when creating floating sidenotes in a multicol layout, can make use of some scripting to determine, with the help of [The Box Tracking API](javascript.md#js-box), in which column the sidenote call, and thus the sidenote, is placed - making sure the sidenote is always in the correct position. You can see this in full action in the [Sidenotes](http://css4.pub/#sidenotes) sample ([HTML](http://css4.pub/2019/sidenotes/index.html) - [PDF](http://css4.pub/2019/sidenotes/index.pdf)).
+A variant of this approach, useful when creating floating sidenotes in a multicol layout, can make use of some scripting to determine, with the help of [The Box Tracking API](javascript.md#js-box), in which column the sidenote call, and thus the sidenote, is placed - making sure the sidenote is always in the correct position. You can see this in full action in the Sidenotes samples:
+
+-   In a small two-column demo document, sidenotes that naturally appear in the first column are shown on the left side. And sidenotes in the second column are shown on the right side. This is done by adding a class name to elements based on which column they naturally appear in ("col1", "col2") ([HTML](https://css4.pub/2020/sidenotes/index.html) - [PDF](https://css4.pub/2020/sidenotes/index.pdf)).
+-   In this demo, sidenotes are placed in the margin area, stacked from the top. The sidenotes are absolutely positioned by setting a style attribute with a carefully computed 'top' value. Sidenotes remain on the page where they naturally occur ([HTML](https://www.css4.pub/2020/sidenotes/top.html) - [PDF](https://www.css4.pub/2020/sidenotes/top.pdf)).
+-   Yet another variation, one where the figure caption is placed in the margin, below or above the figure depending on the figure's placement on the page ([HTML](https://www.css4.pub/2020/sidenotes/caption.html) - [PDF](https://www.css4.pub/2020/sidenotes/caption.pdf)).
+-   And finally, a document with several types of sidenotes: (1) baseline-aligned sidenotes (2) top-of-page-aligned sidenotes, and (3) sidenotes placed above or below full-width figures. The script tries to detect and avoid overlap in the margin area, and images are (slightly) resized to align with the text. This solution is not fully battle-tested yet, but it shows potential ([HTML](https://www.css4.pub/2020/christian-krohg/hg.html) - [PDF](https://www.css4.pub/2020/christian-krohg/hg.pdf)).
+
+To format the latter one, just run:
+```bash
+    prince -j https://www.css4.pub/2020/christian-krohg/hg.html -o hg.pdf
+```
+
 
 
 Endnotes
