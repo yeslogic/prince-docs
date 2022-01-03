@@ -38,6 +38,7 @@ table.property-table td {
 }
 .syntax-block {
   margin-bottom: 1em;
+  padding: 0.2em 1em;
 }
 .self-link {
   visibility: hidden;
