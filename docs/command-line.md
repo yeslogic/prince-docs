@@ -57,11 +57,14 @@ If the output file name is omitted, the output will be placed in a file with the
 
 It is necessary to specify the output file when the input is a HTTP or HTTPS URL.
 
-Any of the `--long` command-line options can either be passed as a single command-line argument with an equals sign (=), or as two command-line arguments with space:
+Any of the `--long` command-line options can either be passed as a single command-line argument with an equals sign (`=`), or as two command-line arguments with space:
 
+    --output=out.pdf
+    --output out.pdf
 
-      --output out.pdf
-      --output=out.pdf
+The short command-line options are always passed as two command-line arguments, separated by a space:
+
+    -o out.pdf
 
 If the value of a command-line option contains a space or other command characters, the value has to be written between quotation marks.
 
