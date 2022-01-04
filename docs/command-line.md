@@ -408,7 +408,7 @@ The command-line may include the options described below:
     <code>--pdf-lang=<span class="replaceable">LANG</span></code>
   </dt>
   <dd>
-    Specify the PDF document's Lang entry in the document catalog - what is known as the Reading Options' Language.
+    Specify the PDF document's <code>Lang</code> entry in the document catalog - what is known as the Reading Options' Language.
   </dd>
   <dt id="cl-pdf-profile">
     <code>--pdf-profile=<span class="replaceable">PROFILE</span></code>
@@ -564,7 +564,7 @@ Rasterization is enabled with the `--raster-output` option below. When this is u
     Enable raster output.
     The output files will be named based on the template.
     Prince will replace every
-    '<code>%[<span class="replaceable">WIDTH</span>]d</code>'
+    <code>%[<span class="replaceable">WIDTH</span>]d</code>
     with the current page number.
     The optional <span class="replaceable">WIDTH</span> value gives the
     number of characters the page number should take within the file name.
@@ -580,7 +580,7 @@ Rasterization is enabled with the `--raster-output` option below. When this is u
     <code class="filename">page_11.png</code> etc.
     </p>
     <p>
-    Prince also accepts `<code>-</code>' meaning the standard output
+    Prince also accepts <code>-</code> meaning the standard output
     stream.
     </p>
   </dd>
@@ -592,7 +592,7 @@ Rasterization is enabled with the `--raster-output` option below. When this is u
     <code>auto</code> (guess based on file extension, the default),
     <code>png</code> or <code>jpeg</code>.
     If Prince does not recognize the file extension, or
-    <code>--raster-output</code> is '<code>-</code>',
+    <code>--raster-output</code> is <code>-</code>,
     then it is necessary to provide this option.
   </dd>
   <dt id="cl-raster-jpeg-quality">
