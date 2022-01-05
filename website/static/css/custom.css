@@ -271,3 +271,39 @@ ul.toc-headings li ul.toc-headings li a.active {
 
 @media only screen and (min-width: 1500px) {
 }
+
+@media print {
+    @page {
+        size: A4;
+        margin: 0em 2em 2em;
+        margin-inside: 3em;
+        @bottom-center {
+            content: counter(page);
+        }
+    }
+    h1, h2, h3, h4, h5 {
+        page-break-after: avoid;
+    }
+    h3 + h4 {
+        page-break-before: avoid !important;
+    }
+    h4:contains('List marker type') ~ table thead {
+        display: none;
+    }
+    .fixedHeaderContainer, footer, #docsNav, .docs-prevnext, .toggle, #toggle-js {
+        display: none;
+    }
+    p, pre {
+        orphans: 2;
+        widows: 2;
+    }
+    p:contains('CSS') + pre, p:contains('HTML') + pre, p:contains('XML') + pre, p:contains('SVG') + pre, p:contains('JavaScript') + pre, p:contains('fonts.css') + pre, p:contains('Output') + ol, p:contains('Output') + table, p:contains('Novel title') + p, p:contains('Textbook page') + p, p:contains('Box decoration') + p, p:contains('Furniture catalogue') + p, p:contains('Printing a big table') + p  {
+        page-break-before: avoid !important;
+    }
+    pre, p:contains('Output') {
+        page-break-inside: avoid;
+    }
+    details {
+        box-decoration-break: slice;
+    }
+}
