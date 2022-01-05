@@ -113,8 +113,8 @@ does not recognize <code>transform-box</code>. Prince does not allow perspective
 </tr>
 <tr>
 <td><a href="https://www.w3.org/TR/css-conditional-3/">CSS Conditional Rules Module Level 3</a></td>
-<td>Prince supports the <a href="#at-media"><code>@media</code></a>
-and <a href="#at-supports"><code>@supports</code></a> at-rules.</td>
+<td>Prince supports the <a href="/doc/css-at-rules/#at-media"><code>@media</code></a>
+and <a href="/doc/css-at-rules/#at-supports"><code>@supports</code></a> at-rules.</td>
 </tr>
 <tr>
 <td><a href="https://drafts.fxtf.org/filter-effects/">Filter Effects Module Level 1 - Editor's Draft</a></td>

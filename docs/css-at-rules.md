@@ -121,7 +121,7 @@ The initial values for <code>@page</code> styles are documented in the
 </tr>
 <tr>
 <td>The rules will apply if the device meets the criteria of the condition defined
-in the media query. See <a href="#css-media-queries">CSS Media Queries</a> for details.</td>
+in the media query. See <a href="/doc/css-media-queries">CSS Media Queries</a> for details.</td>
 </tr>
 </table>
 

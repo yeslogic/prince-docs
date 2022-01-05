@@ -59,7 +59,7 @@ alpha component.</td>
 </tr>
 <tr class="ext">
 <td><code>prince-color( <i>colorname</i>  [,&#160;<i>number</i> |&#160;<i>percentage</i>]? , overprint? )*</code></td>
-<td>Using a spot color defined in the <code><a href="#at-prince-color">@prince-color</a></code>
+<td>Using a spot color defined in the <code><a href="/doc/css-at-rules/#at-prince-color">@prince-color</a></code>
 at-rule. The number or percentage defines the tint. An optional <code>overprint</code>
 keyword instructs Prince whether to overprint the color.
 <pre>

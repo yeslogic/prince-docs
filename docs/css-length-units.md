@@ -65,7 +65,7 @@ The font length units are relative to the [`font-size`](css-props.md#prop-font-s
 Viewport Length Units
 ---------------------
 
-The viewport length units are relative to the [`@page` area](#at-page): the unit `vw` is equal to 1% of the width of the *page area*, i.e. the [page size minus the margin area](paged.md#page-regions) (and minus border and padding), while the unit `vh` is equal to 1% of its height.
+The viewport length units are relative to the [`@page` area](css-at-rules.md#at-page): the unit `vw` is equal to 1% of the width of the *page area*, i.e. the [page size minus the margin area](paged.md#page-regions) (and minus border and padding), while the unit `vh` is equal to 1% of its height.
 
 The values `pvw` and `pvh` are equal to respectively 1% of the width and height of the *entire page*, as defined by the [page size](paged.md#page-size).
 
