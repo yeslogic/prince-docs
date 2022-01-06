@@ -20,6 +20,9 @@ pre code, code pre, .syntax-block code, .grid code {
     white-space: normal;
 }
 
+table thead tr th:empty {
+    display: none;
+}
 table.property-table, .syntax-block, .example code {
   border: none;
   background-color: white;
@@ -286,9 +289,6 @@ ul.toc-headings li ul.toc-headings li a.active {
     }
     h3 + h4 {
         page-break-before: avoid !important;
-    }
-    h4:contains('List marker type') ~ table thead {
-        display: none;
     }
     .fixedHeaderContainer, footer, #docsNav, .docs-prevnext, .toggle, #toggle-js {
         display: none;
