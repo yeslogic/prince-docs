@@ -20,6 +20,12 @@ pre code, code pre, .syntax-block code, .grid code {
     white-space: normal;
 }
 
+img {
+    border: 1px solid lightgrey;
+    margin-top: 1em;
+    margin-bottom: 1em;
+}
+
 table thead tr th:empty {
     display: none;
 }
@@ -279,7 +285,7 @@ ul.toc-headings li ul.toc-headings li a.active {
     @page {
         size: A4;
         margin: 0em 2em 2em;
-        margin-inside: 3em;
+        margin-inside: 4em;
         @bottom-center {
             content: counter(page);
         }
