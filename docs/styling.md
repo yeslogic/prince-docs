@@ -28,9 +28,9 @@ To prevent this font switching mechanism and force Prince to only use the define
     h1 { font-family: MyFont, prince-no-fallback; }
 ```
 
-The [`@font-face`](css-refs.md#at-font-face) at-rule can be used to define custom font names. The `font-family` descriptor defines the font family name that will be used in all CSS font family name matching, and the `src` descriptor specifies the resource containing font data. They both are required for the [`@font-face`](css-refs.md#at-font-face) rule to be valid.
+The [`@font-face`](css-at-rules.md#at-font-face) at-rule can be used to define custom font names. The `font-family` descriptor defines the font family name that will be used in all CSS font family name matching, and the `src` descriptor specifies the resource containing font data. They both are required for the [`@font-face`](css-at-rules.md#at-font-face) rule to be valid.
 
-The `src` descriptor can define the resource with a `url()` function - an optional `format()` function defines the format of the remotely fetched font. Alternatively, the `local()` and `prince-lookup()` functions can be used - the former searches for locally installed system fonts, while the latter will also find fonts defined by other [`@font-face`](css-refs.md#at-font-face) rules. See [CSS Functional Expressions](css-refs.md#css-functional-expressions).
+The `src` descriptor can define the resource with a `url()` function - an optional `format()` function defines the format of the remotely fetched font. Alternatively, the `local()` and `prince-lookup()` functions can be used - the former searches for locally installed system fonts, while the latter will also find fonts defined by other [`@font-face`](css-at-rules.md#at-font-face) rules. See [CSS Functional Expressions](css-functions.md).
 
 ```
     @font-face {
@@ -108,7 +108,7 @@ If this example is rendered with small-caps in the Arno Pro font, the two lines 
 
 ![Language-specific OpenType shaping](assets/images/opentype-shaping.png)
 
-It is possible to also enable other OpenType features, not covered by the previous properties, by using the [`font-variant`](css-props.md#prop-font-variant) CSS property with the `prince-opentype()` function (see [CSS Functional Expressions](css-refs.md#css-functional-expressions)).
+It is possible to also enable other OpenType features, not covered by the previous properties, by using the [`font-variant`](css-props.md#prop-font-variant) CSS property with the `prince-opentype()` function (see [CSS Functional Expressions](css-functions.md)).
 
 It is a very powerful tool, but care must be taken in which order the features are enabled!  All required features need to be explicitly enabled: please note that enabling one feature will disable all the default features.
 
@@ -266,7 +266,7 @@ In order to redefine these defaults, see [Redefining the generic font families](
 
 ### Redefining the generic font families
 
-The CSS generic font families can be redefined to use different fonts by editing the `fonts.css` file in the Prince installation (see [Installation Layout](installing.md#installation-layout)). Each font family is defined using a [`@font-face`](css-refs.md#at-font-face) rule, which maps a font family to an actual font either by name or by filename. (See [Generic font families](#generic-font-families)).
+The CSS generic font families can be redefined to use different fonts by editing the `fonts.css` file in the Prince installation (see [Installation Layout](installing.md#installation-layout)). Each font family is defined using a [`@font-face`](css-at-rules.md#at-font-face) rule, which maps a font family to an actual font either by name or by filename. (See [Generic font families](#generic-font-families)).
 
 Here is an example of mapping the generic "sans-serif" font family to the local system font called "Trebuchet MS".
 
@@ -278,7 +278,7 @@ fonts.css
         src: local("Trebuchet MS")
     }
 ```
-It is also possible to map the generic font families to local fonts specified by the filename of the TrueType font file. This will usually require using multiple [`@font-face`](css-refs.md#at-font-face) rules, one for each TrueType font file in the font family, which usually includes four files (normal, bold, italic and bold-italic). Here is an example of mapping the generic "sans-serif" font family to the "Trebuchet MS" font using filenames, assuming that the font is installed in the usual system directory on Linux.
+It is also possible to map the generic font families to local fonts specified by the filename of the TrueType font file. This will usually require using multiple [`@font-face`](css-at-rules.md#at-font-face) rules, one for each TrueType font file in the font family, which usually includes four files (normal, bold, italic and bold-italic). Here is an example of mapping the generic "sans-serif" font family to the "Trebuchet MS" font using filenames, assuming that the font is installed in the usual system directory on Linux.
 
 fonts.css
 
@@ -311,7 +311,7 @@ fonts.css
         src: url("/usr/share/fonts/truetype/msttcorefonts/trebucbi.ttf")
     }
 ```
-Prince can be instructed not to use system fonts with the [`--no-system-fonts`](command-line.md#cl-no-system-fonts) command-line option. Only fonts defined with [`@font-face`](css-refs.md#at-font-face) rules in CSS will be available.
+Prince can be instructed not to use system fonts with the [`--no-system-fonts`](command-line.md#cl-no-system-fonts) command-line option. Only fonts defined with [`@font-face`](css-at-rules.md#at-font-face) rules in CSS will be available.
 
 
 Layout
@@ -321,7 +321,7 @@ Layout is the way in which text and pictures are set out on a page. It defines t
 
 In the following chapters we shall go through the main points when preparing the layout of a page. It mainly follows the general steps of layout for web pages: starting from [Text formatting](#text-formatting) and [Paragraph formatting](#paragraph-formatting), via the [Box Model](#box-model), until [Tables](#tables), [Lists](#lists), [Columns](#columns), [Floats](#floats), [Flex Layout](#flex-layout), and [Footnotes](#footnotes).
 
-A separate chapter, [Paged Media](paged.md#paged), will analyze in-depth the major difference between formatting for the web and PDF/Print, namely that PDF is paginated, content is placed on discrete pages.
+A separate chapter, [Paged Media](paged.md), will analyze in-depth the major difference between formatting for the web and PDF/Print, namely that PDF is paginated, content is placed on discrete pages.
 
 
 ### Text formatting
@@ -1256,7 +1256,7 @@ Footnote markers are rendered outside the footnote in the left margin area by de
 
 #### Styling and behavior of footnotes
 
-Footnotes are placed within the `@footnote` area of the page (see [Page regions](paged.md#page-regions)), which can be styled within [`@page`](css-refs.md#at-page) rules.
+Footnotes are placed within the `@footnote` area of the page (see [Page regions](paged.md#page-regions)), which can be styled within [`@page`](css-at-rules.md#at-page) rules.
 
 ```
     @page {
@@ -1364,7 +1364,7 @@ Please notice that percentage values of margins and paddings of flex items are r
 
 Complex designs often have very large amounts of CSS with a lot of repeated values. The same color might for example be used in hundreds of different places, requiring a global search-and-replace if that color needs to be changed. Prince supports custom properties, which allow a value to be stored in one place, then be referenced in all other places.
 
-The custom properties are set by using the custom property notation, which requires the use of two dashes ([`--`](css-props.md#prop---custom-property-name)) before the custom property name - a good approach is to set this property on the `:root` pseudo-class (see [Tree-Structural pseudo-classes](css-refs.md#tree-structural-pseudo-classes)). It is then accessed in other places by using the `var()` function (see [CSS Functional Expressions](css-refs.md#css-functional-expressions)).
+The custom properties are set by using the custom property notation, which requires the use of two dashes ([`--`](css-props.md#prop---custom-property-name)) before the custom property name - a good approach is to set this property on the `:root` pseudo-class (see [Tree-Structural pseudo-classes](css-selectors.md#tree-structural-pseudo-classes)). It is then accessed in other places by using the `var()` function (see [CSS Functional Expressions](css-functions.md)).
 
 Unlike other CSS properties, custom property names are case-sensitive.
 

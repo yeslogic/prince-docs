@@ -39,7 +39,7 @@ Prince produces PDFs - which are a prominent example of paged media. There are a
   details and scripting after layout please check the section on <a href="/doc/javascript#javascript-in-printed-media">JavaScript in Printed Media</a>.</p></dd>
 </dl>
 
-Prince allows you to control a number of options that affect how to format pages, from straight-forward options such as [page size](#page-size), to [page style](#page-style), [page regions](#page-regions) like headers and footers, [pagination control](#controlling-pagination) and [page numbering](gen-content.md#counters).
+Prince allows you to control a number of options that affect how to format pages, from straight-forward options such as [page size](#page-size), to [page style](#page-style), [page regions](#page-regions) like headers and footers, [pagination control](#controlling-pagination) and [page numbering](gen-content.md#counters-and-numbering).
 
 CSS properties that affect pages are specified within page *at-rules* (see [CSS At-rules](css-at-rules.md)). For example, we can use the [`size`](css-props.md#prop-size) property within the [`@page`](css-at-rules.md#at-page) rule to specify the page size (see [Page size](#page-size)).
 
@@ -72,7 +72,7 @@ The initial values for CSS properties are defined internally - these are the ini
 
 ## Page size
 
-Page size can be specified using the [`size`](css-props.md#prop-size) property in *length* units or by a page size keyword (see [Page Size Keywords](page-size-keywords.md#page-size-keywords) for a list), optionally combined with the `portrait` or `landscape` keyword.
+Page size can be specified using the [`size`](css-props.md#prop-size) property in *length* units or by a page size keyword (see [Page Size Keywords](page-size-keywords.md) for a list), optionally combined with the `portrait` or `landscape` keyword.
 
 
 ```
@@ -89,7 +89,7 @@ Page size can be specified using the [`size`](css-props.md#prop-size) property i
     /* Use square paper, this sets width and height */
     @page { size: 30cm }
 ```
-Sometimes it can be useful to specify the page dimensions in pixels, for example when creating presentation slides (see [Presentation slides](#presentation-slides)).
+Sometimes it can be useful to specify the page dimensions in pixels, for example when creating presentation slides (see the [Presentation slides example](#fig-slides)).
 
 ```
     @page {
@@ -98,7 +98,7 @@ Sometimes it can be useful to specify the page dimensions in pixels, for example
 ```
 ## Page style
 
-Pages, like other block level elements, follow the CSS box model introduced in [Box Model](styling.md#css-box). Their `margin`, `border`, `padding` and `background` can be styled within [`@page`](css-at-rules.md#at-page) rules.
+Pages, like other block level elements, follow the CSS box model introduced in [Box Model](styling.md#box-model). Their `margin`, `border`, `padding` and `background` can be styled within [`@page`](css-at-rules.md#at-page) rules.
 
 The [`@page`](css-at-rules.md#at-page) rules can only style the page and its margin boxes - it cannot contain style rules to target specific elements, but it can contain at-rules to target the page regions (for a complete list of possible at-rules, see [Page regions](#page-regions)).
 
@@ -287,7 +287,7 @@ Several other page regions can also be used. The full list of page regions is sh
 
 Prince will try to create page regions of the correct sizes. If you need to create boxes of specific sizes you may need to use only a single box (eg: `@top-center`) and use the [`content`](css-props.md#prop-content) property to place elements with specific sizes in it.
 
-Note that in the above [Page regions](#fig-marginboxes) figure, Prince leaves space for `@top-right` and `@left-bottom` boxes because their counterparts (`@top-left` and `@left-top` respectively) have been defined. This keeps the `@top-center` and `@left-middle` centered along the top and side of the page respectively.
+Note that in the above [Page regions](#page-regions) figure, Prince leaves space for `@top-right` and `@left-bottom` boxes because their counterparts (`@top-left` and `@left-top` respectively) have been defined. This keeps the `@top-center` and `@left-middle` centered along the top and side of the page respectively.
 
 The page-margin boxes `@top-center`, `@top-left` or `@top-right` can be used to create running page headers, and the page-margin boxes `@bottom-center`, `@bottom-left` or `@bottom-right` are useful for page footers (see [Page Headers and Footers](cookbook.md#page-headers-and-footers)).
 

@@ -97,7 +97,7 @@ Thinking in Spreads
 
 Prince produces PDFs - which are a prominent example of paged media. The main difference with conventional CSS design for browsers is to always keep in mind that you are dealing with pagination, i.e. the content is placed on discrete pages.
 
-The basic unit for paged media in print is the page, organized in page spreads: the left page, called *verso* in a left-to-right script (see [Writing Mode](styling#writing-mode)), and the right page, called *recto*, are of the same size and typically are symmetrical to each other and are centered on the gutter. [Selected](paged.md#page-rules) and [Named pages](paged.md#named-pages) can be placed *recto* or *verso*, and Prince expands several properties and the [`@page`](css-at-rules.md#at-page) at-rule pseudo-classes with the values `verso` and `recto`, or `inside` and `outside`, referring to the layout on each page of the spread to facilitate the work with page spreads.
+The basic unit for paged media in print is the page, organized in page spreads: the left page, called *verso* in a left-to-right script (see [Writing Mode](styling#writing-mode)), and the right page, called *recto*, are of the same size and typically are symmetrical to each other and are centered on the gutter. [Selected](paged.md#selecting-pages) and [Named pages](paged.md#named-pages) can be placed *recto* or *verso*, and Prince expands several properties and the [`@page`](css-at-rules.md#at-page) at-rule pseudo-classes with the values `verso` and `recto`, or `inside` and `outside`, referring to the layout on each page of the spread to facilitate the work with page spreads.
 
 ### Pagination on a page spread
 
@@ -268,7 +268,7 @@ Prince uses CSS for these headers and footers and for styling them.
 
 Each page is structured in [Page regions](paged.md#page-regions) - most page content is located inside the *page area*, including the [Footnotes](styling.md#footnotes), but the *page-margin boxes* contain most of the content repeating in slightly varied way across the whole book - the running headers and footers.
 
-A typical case is page numbering, which can easily be obtained with [Generated Content](gen-content.md#gen-content): the current page number can be printed in a page region with the [`content`](css-props.md#prop-content) property. (See also [Page Numbering](#page-numbering)).
+A typical case is page numbering, which can easily be obtained with [Generated Content](gen-content.md): the current page number can be printed in a page region with the [`content`](css-props.md#prop-content) property. (See also [Page Numbering](#page-numbering)).
 
 ```
     @page {
@@ -277,9 +277,9 @@ A typical case is page numbering, which can easily be obtained with [Generated C
         }
     }
 ```
-By using [Named pages](paged.md#named-pages), you can style the page numbering of the Preface with roman numbers and the main pages with arabic numbers - see the example [Restarting page numbering](paged.md#ex-restart-page-numbers).
+By using [Named pages](paged.md#named-pages), you can style the page numbering of the Preface with roman numbers and the main pages with arabic numbers - see the example [Restarting page numbering](paged.md#fig-restart-page-numbers).
 
-The title of the book, or the current chapter, can be copyied into the page regions by using the [string-set](css-props.md#prop-string-set) property. For details, please see the [Copying content from the document](paged.md#content-copying-text) chapter.
+The title of the book, or the current chapter, can be copyied into the page regions by using the [string-set](css-props.md#prop-string-set) property. For details, please see the [Copying content from the document](paged.md#copying-content-from-the-document) chapter.
 
 CSS
 
@@ -292,7 +292,7 @@ CSS
 ```
 The @page rule specifies that the top-center page region will contain the text content of the document title copied from the text content of the `h1` element in the document.
 
-If some special formatting of the text in the margin box is required, copying the text will not suffice - you need to remove an element from the natural page flow to place it in the margin box. See [Taking elements from the document](paged.md#content-taking-elements) for details.
+If some special formatting of the text in the margin box is required, copying the text will not suffice - you need to remove an element from the natural page flow to place it in the margin box. See [Taking elements from the document](paged.md#taking-elements-from-the-document) for details.
 
 
 Dictionary Page Headers
@@ -311,9 +311,9 @@ Dictionary Page Headers
   </dd>
 </dl>
 
-A peculiar and interesting use of page headers happens in dictionaries: typically, you might want to display page headers like "a-af", where "a" is the first definition on the page and "af" is the last one. This can easily be obtained by adding [The optional page-policy value](gen-content.md#gen-content-functions-pagepolicy) to the `string()` function.
+A peculiar and interesting use of page headers happens in dictionaries: typically, you might want to display page headers like "a-af", where "a" is the first definition on the page and "af" is the last one. This can easily be obtained by adding [The optional page-policy value](gen-content.md#the-optional-page-policy-value) to the `string()` function.
 
-The [`string-set`](css-props.md#prop-string-set) property is applied to each definition in the dictionary (the **b:first-child** from the following example), and then the `first` and `last` page policy values are use to select the relevant definition to display in the page header.
+The [`string-set`](css-props.md#prop-string-set) property is applied to each definition in the dictionary (the `b:first-child` from the following example), and then the `first` and `last` page policy values are use to select the relevant definition to display in the page header.
 
 ```
     @page {
@@ -370,7 +370,7 @@ Page counters work a bit more simple and usually don't need to be explicitly ini
       }
     }
 ```
-However, if you want to restart the numbering after the Preface of your book, you need to name the pages (see [Named pages](paged.md#named-pages)) and the counter needs to be re-initialized with the main content. See also the example [Restarting page numbering](paged.md#ex-restart-page-numbers).
+However, if you want to restart the numbering after the Preface of your book, you need to name the pages (see [Named pages](paged.md#named-pages)) and the counter needs to be re-initialized with the main content. See also the example [Restarting page numbering](paged.md#fig-restart-page-numbers).
 
 ```css
     .preface {
@@ -538,7 +538,7 @@ The advantage is to position the footnotes vertically aligned with the footnote 
 
 The disadvantage is that footnote calls and markers are not created automatically, but need to be manually added as counters, and styled. Also, footnotes may overlap vertically if they are too close together.
 
-A variant of this approach, useful when creating floating sidenotes in a multicol layout, can make use of some scripting to determine, with the help of [The Box Tracking API](javascript.md#js-box), in which column the sidenote call, and thus the sidenote, is placed - making sure the sidenote is always in the correct position. You can see this in full action in the Sidenotes samples:
+A variant of this approach, useful when creating floating sidenotes in a multicol layout, can make use of some scripting to determine, with the help of [The Box Tracking API](javascript.md#the-box-tracking-api), in which column the sidenote call, and thus the sidenote, is placed - making sure the sidenote is always in the correct position. You can see this in full action in the Sidenotes samples:
 
 -   In a small two-column demo document, sidenotes that naturally appear in the first column are shown on the left side. And sidenotes in the second column are shown on the right side. This is done by adding a class name to elements based on which column they naturally appear in ("col1", "col2") ([HTML](https://css4.pub/2020/sidenotes/index.html) - [PDF](https://css4.pub/2020/sidenotes/index.pdf)).
 -   In this demo, sidenotes are placed in the margin area, stacked from the top. The sidenotes are absolutely positioned by setting a style attribute with a carefully computed 'top' value. Sidenotes remain on the page where they naturally occur ([HTML](https://www.css4.pub/2020/sidenotes/top.html) - [PDF](https://www.css4.pub/2020/sidenotes/top.pdf)).
@@ -594,7 +594,7 @@ Hyperlinks in Print
 
 Hyperlinks are a direct reference to another location, easy to follow on the interactive web page, or a PDF loaded in a viewer, by clicking on it. On the printed page, this mechanism obviously does not work.
 
-Prince offers some CSS functions to help translating hyperlinks into print-friendly display, useful in different scenarios: `target-counter()`, `target-content()` and `attr()`, to be used with the [`content`](css-props.md#prop-content) property. (See also [Generated Content Functions](gen-content.md#gen-content-functions)).
+Prince offers some CSS functions to help translating hyperlinks into print-friendly display, useful in different scenarios: `target-counter()`, `target-content()` and `attr()`, to be used with the [`content`](css-props.md#prop-content) property. (See also [Generated Content Functions](gen-content.md#generated-content-functions)).
 
 The `target-counter()` function can be used to reference the value of a counter at a linked element, and it can specify any counter, allowing cross-references to refer to list items, chapters or sections as well as pages.
 
@@ -820,7 +820,7 @@ Prince automatically enables ligatures declared by the OpenType fonts with the `
 Other special ligatures need to be explicitly enabled in Prince to take effect. This is achieved by using the [`font-variant-ligatures`](css-props.md#prop-font-variant-ligatures) CSS property.
 Note that the property [`font-variant`](css-props.md#prop-font-variant) can be used as a shorthand for enabling this, and possibly other font features.
 
-Another means to enable ligatures is through the [`font-variant`](css-props.md#prop-font-variant) CSS property with the `prince-opentype()` function (see [CSS Functional Expressions](css-functions.md#css-functional-expressions)).  However, care must be taken in which order the features are enabled!  Also, enabling one feature will disable all the default features. To see which OpenType features are enabled by default, see the [OpenType Features in Prince](styling.md#opentype-features-in-prince) section.
+Another means to enable ligatures is through the [`font-variant`](css-props.md#prop-font-variant) CSS property with the `prince-opentype()` function (see [CSS Functional Expressions](css-functions.md)).  However, care must be taken in which order the features are enabled!  Also, enabling one feature will disable all the default features. To see which OpenType features are enabled by default, see the [OpenType Features in Prince](styling.md#opentype-features-in-prince) section.
 
 ```
     body {
@@ -836,7 +836,7 @@ Some ligatures were in common use in the past, such as ligatures with the so-cal
 
 Some scripts, most notably Arabic and Syriac scripts, require certain ligatures to be used in normal conditions. These "required ligatures" are covered by the `rlig` feature. Prince enables this feature by default in Arabic script. The only way to manually enable this feature is through the `prince-opentype()` function of the [`font-variant`](css-props.md#prop-font-variant) CSS property.
 
-Another mechanism for replacing specific characters is given with the [`-prince-text-replace`](css-props.md#prop-prince-text-replace) property. For an example use, please see the section on [Character Entities](characters.md#characters).
+Another mechanism for replacing specific characters is given with the [`-prince-text-replace`](css-props.md#prop-prince-text-replace) property. For an example use, please see the section on [Character Entities](characters.md).
 
 
 Watermarks
@@ -856,7 +856,7 @@ Watermarks
 
 When producing a PDF, it might be desirable to include a watermark, visible on all pages. In Prince it is easy to do so with CSS.
 
-In order to repeat it on all pages, the watermark needs to be placed in a [`@page`](css-at-rules.md#at-page) at-rule. We shall place it in the page region `@prince-overlay` (see [Page regions](paged.md#page-regions)) and create the watermark with generated content (see [Generated content in page regions](paged.md#page-gen-content)):
+In order to repeat it on all pages, the watermark needs to be placed in a [`@page`](css-at-rules.md#at-page) at-rule. We shall place it in the page region `@prince-overlay` (see [Page regions](paged.md#page-regions)) and create the watermark with generated content (see [Generated content in page regions](paged.md#generated-content-in-page-regions)):
 
 ```
     @page {
@@ -877,7 +877,7 @@ The overlay can be styled in all possible ways and it can be aligned in other pl
        }
     }
 ```
-Currently it is only possible to have one overlay, but you could flow an entire element having multiple individually positioned contents (see [Taking elements from the document](paged.md#content-taking-elements)).
+Currently it is only possible to have one overlay, but you could flow an entire element having multiple individually positioned contents (see [Taking elements from the document](paged.md#taking-elements-from-the-document)).
 
 The styled watermark can be saved into a `watermark.css` file, which will be called when generating the document:
 
@@ -1096,13 +1096,13 @@ The "Multi-Pass" Solution
     </dd>
 </dl>
 
-One limitation of producing a document intended for print is its non-interactive, static nature: in principle a document cannot be modified after it is deemed to be ready for print. See [JavaScript in Printed Media](javascript.md#js-print).
+One limitation of producing a document intended for print is its non-interactive, static nature: in principle a document cannot be modified after it is deemed to be ready for print. See [JavaScript in Printed Media](javascript.md#javascript-in-printed-media).
 
 JavaScript can basically be run twice: the first time it is run before layout, where it interacts with and modifies the layout (and the DOM structure). Once layout is finished, JavaScript can be run a second time from the `complete` event handler (see [Event Handling](javascript.md#event-handling)) to inspect the layout, without modifying the DOM - the results might be printed to console for monitoring the document for mistakes.
 
 A problematic situation arises when you want to modify your document after layout has finished - a typical scenario would be when you want an index to be created with correct page numbers. The content depends on the layout of the document itself.
 
-(Please note that this recipe only addresses the creation of an index - a simple table of contents or a reference to a place on another page can easily be achieved with [target-counter links](gen-content.md#counter-target).)
+(Please note that this recipe only addresses the creation of an index - a simple table of contents or a reference to a place on another page can easily be achieved with [target-counter links](gen-content.md#using-target-counter).)
 
 To address this problem, Prince offers the possibility to delay the generation of a PDF and to register the function [`Prince.registerPostLayoutFunc(func)`](js-support.md#window.Prince.registerPostLayoutFunc), which is called after layout finished, similar to the current `oncomplete` event. If this function modifies the DOM, Prince will perform layout again on the updated document once the function returns, and before generating the PDF.
 

@@ -124,9 +124,9 @@ Frequently Asked Questions
   some inline style properties, such as <code>color</code> and
   <code>font</code>.  A possibility for using more complex styling is to use
   the <code>element()</code> or <code>flow()</code> CSS functions.  See
-  <a href="/doc/paged#page-gen-content">Generated content in page regions</a>,
-  <a href="/doc/paged#content-copying-text">Copying content from the document</a> and
-  <a href="/doc/paged#content-taking-elements">Taking elements from the document</a> -
+  <a href="/doc/paged#generated-content-in-page-regions">Generated content in page regions</a>,
+  <a href="/doc/paged#copying-content-from-the-document">Copying content from the document</a> and
+  <a href="/doc/paged#taking-elements-from-the-document">Taking elements from the document</a> -
   however, this latter approach will remove the element from the document itself.</p></dd>
 
   <dt><p id="faq-counting-pages">How can I start counting pages on a left page and display a right page
@@ -150,7 +150,7 @@ Frequently Asked Questions
   command-line option (see <a href="/doc/prince-input#applying-javascript-in-prince">Applying JavaScript in Prince</a>).  However,
   there are some limitations: Prince produces printed documents, and interactive
   events make no sense in this context.  Also, modifications of the document
-  after layout has finished are not possible.  See: <a href="/doc/javascript#javascript">Scripting</a>.</p></dd>
+  after layout has finished are not possible.  See: <a href="/doc/javascript">Scripting</a>.</p></dd>
 
   <dt><p id="faq-jsafterkayout">Can I modify the document after layout has
   finished? <a class="self-link" href="#faq-jsafterkayout"></a></p></dt>

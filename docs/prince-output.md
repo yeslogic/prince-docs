@@ -12,7 +12,7 @@ PDF Versions and Profiles
 
 The PDF files produced by Prince conform to several different PDF versions, up to PDF 1.7, depending on the chosen PDF Profile and the enabled PDF features.
 
-Prince supports tagged PDF files and optional PDF profiles, which can be selected using the [`--pdf-profile`](command-line.md#cl-pdf-profile) option on the [command-line interface](command-line.md), or the `setProfile` method if using a [server wrapper](server-integration.md#wrappers), or the [`PDF.profile`](js-support.md#window.PDF.profile) function in JavaScript.
+Prince supports tagged PDF files and optional PDF profiles, which can be selected using the [`--pdf-profile`](command-line.md#cl-pdf-profile) option on the [command-line interface](command-line.md), or the `setProfile` method if using a [server wrapper](server-integration.md#prince-wrappers), or the [`PDF.profile`](js-support.md#window.PDF.profile) function in JavaScript.
 
 The available profiles, and the PDF version they are based on, are:
 
@@ -93,7 +93,7 @@ The PDF/UA-1 profile supports attachments.
 -   PDF/X is intended to support "blind exchange", i.e. no exchange of technical information is needed to render the printed page as intended
 -   Audio and video content is forbidden
 -   All fonts are embedded
--   Colorspaces must be specified in a device-independent manner - an output intent is required (see the [`--pdf-output-intent`](command-line.md#cl-pdf-output-intent) command-line option in the [PDF Output Options](command-line.md#cmd-pdf) section)
+-   Colorspaces must be specified in a device-independent manner - an output intent is required (see the [`--pdf-output-intent`](command-line.md#cl-pdf-output-intent) command-line option in the [PDF Output Options](command-line.md#pdf-output-options) section)
 -   See the [Color Management and PDF Profiles](graphics.md#color-management-and-pdf-profiles) section for the color profiles available in each PDF/X version. Transparency is not allowed, with the exception of PDF/X-4
 -   Encryption is forbidden
 
@@ -106,7 +106,7 @@ Producing accessible documents is very important when documents are to be shared
 
 The relevant criteria for producing accessible PDF can also be found in a separate document, the [PDF Techniques for WCAG 2.0](https://www.w3.org/TR/WCAG20-TECHS/pdf.html).
 
-A first step would be to produce files with one of the PDF profiles addressing accessibility, namely the PDF/UA-1 profile or the combined PDF/A-1a+PDF/UA-1 or PDF/A-3a+PDF/UA-1 profiles, by specifying the [`--pdf-profile`](doc-refs.html#cl-pdf-profile) command line option. See [PDF Versions and Profiles](#pdf-versions-and-profiles) for details.
+A first step would be to produce files with one of the PDF profiles addressing accessibility, namely the PDF/UA-1 profile or the combined PDF/A-1a+PDF/UA-1 or PDF/A-3a+PDF/UA-1 profiles, by specifying the [`--pdf-profile`](command-line.md#cl-pdf-profile) command line option. See [PDF Versions and Profiles](#pdf-versions-and-profiles) for details.
 
 The next step would be to specifically check compliance of the document's content with the requirements. A number of resoures or tools can be helpful in this step:
 
@@ -352,7 +352,7 @@ Font embedding can be disabled if necessary, for example if Prince is being used
 
 Prince supports adding files to PDF documents as attachments - but please note that not all PDF profiles allow for attachments (see [PDF Versions and Profiles](#pdf-versions-and-profiles) for details).
 
-The main mechanisms for doing so are the JavaScript function [`PDF.attachFile`](js-support.md#window.PDF.attachFile) and the command-line option [`--attach`](command-line.md#cl-attach). Additionally, the job description JSON format, used by the [Prince Control Protocol](server-integration.md#prince-control-protocol), can be used to provid an attachment "inline" through the Java/C\# APIs (see [Prince Wrappers](server-integration.md#wrappers)) instead of as a separate file on the filesystem. See [Prince Control Protocol](server-integration.md#prince-control-protocol) for details on the job description JSON format.
+The main mechanisms for doing so are the JavaScript function [`PDF.attachFile`](js-support.md#window.PDF.attachFile) and the command-line option [`--attach`](command-line.md#cl-attach). Additionally, the job description JSON format, used by the [Prince Control Protocol](server-integration.md#prince-control-protocol), can be used to provid an attachment "inline" through the Java/C\# APIs (see [Prince Wrappers](server-integration.md#prince-wrappers)) instead of as a separate file on the filesystem. See [Prince Control Protocol](server-integration.md#prince-control-protocol) for details on the job description JSON format.
 
 
 ### PDF Bookmarks

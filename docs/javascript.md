@@ -89,7 +89,7 @@ The [`Prince`](js-support.md#window.Prince) object can be used to control variou
     Prince.convertToFile(JSON, OutputFileName, ...optional extra job resources)
     Prince.convertToBuffer(JSON, ...optional extra job resources)
 ```
-The [`Prince.addScriptFunc`](js-support.md#window.Prince.addScriptFunc) method takes two arguments: the string name that will be exposed to CSS, and the function itself. See [Script Functions](gen-content.md#scriptfunc) for an example.
+The [`Prince.addScriptFunc`](js-support.md#window.Prince.addScriptFunc) method takes two arguments: the string name that will be exposed to CSS, and the function itself. See [Script Functions](gen-content.md#script-functions) for an example.
 
 [`Prince.trackBoxes`](js-support.md#window.Prince.trackBoxes) is a bool that will enable the box tracking API if set to true, so that it can be used later in the `complete` event. See [The Box Tracking API](javascript.md#the-box-tracking-api).
 
