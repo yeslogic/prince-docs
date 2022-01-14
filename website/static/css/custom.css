@@ -52,9 +52,6 @@ table.property-table td {
   margin-bottom: 1em;
   padding: 0.2em 1em;
 }
-.self-link {
-  visibility: hidden;
-}
 .self-link:after {
   content: " \B6 ";
 }
@@ -76,10 +73,11 @@ table.property-table td {
   display: block;
 }
 #prop-list summary .self-link, #js-support-table summary .self-link {
-  opacity: 0.2;
+  opacity: 0;
+  transition: opacity 0.3s;
 }
 p:hover .self-link, #prop-list summary:hover .self-link, #js-support-table summary:hover .self-link {
-  visibility: visible;
+  opacity: 0.2 !important;
 }
 #prop-list details, #js-support-table details {
   border: 1px solid lightgrey;
