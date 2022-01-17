@@ -313,4 +313,19 @@ ul.toc-headings li ul.toc-headings li a.active {
     details {
         box-decoration-break: slice;
     }
+    a[href]::after {
+        content: " [see page " target-counter(attr(href), page) "]";
+        color: black;
+    }
+    a[href*='//']::after {
+        content: " [at the URL " attr(href) "]" !important;
+        color: black;
+    }
+    a[href*='first']::after, a[href*='install']::after, a[href*='samples']::after, a[href*='forum']::after, a[href*='contact']::after, a[href*='download']::after, a[href='http://www.princexml.com/']::after, a[href='/books/']::after {
+        content: " [available only online]";
+        color: black;
+    }
+    a[href].hash-link::after, #prop-list details a[href]::after {
+        content: "" !important;
+    }
 }
