@@ -484,7 +484,7 @@ An `inline` element, on the other hand, does not start on a new line, and only t
 
 A hybrid type, namely the `inline-block` element, is like `inline` elements, but it can have a width and a height - which can be very useful when you want to create a grid of CSS boxes that fills all the width and wraps nicely. The inside of an `inline-block` element is formatted like a block box.
 
-Care needs to be taken with `inline-block` elements, because Prince [cannot split them over several pages](help#faq-one-page).
+Care needs to be taken with `inline-block` elements, because Prince [cannot split them over several pages](help.md#faq-one-page).
 
 The value `run-in` displays a block element as if it were an inline element at the beginning of the following block element.
 

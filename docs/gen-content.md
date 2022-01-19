@@ -2,7 +2,7 @@
 title: Generated Content
 ---
 
-Generated content is text and other content that is not found in the original input document, but is added to the output from a style sheet using the CSS [`content`](css-props.md#prop-content) property. Useful applications of this property include [Page regions](paged.md#page-regions), [List markers](styling#list-markers) or [Footnotes](styling#footnotes).
+Generated content is text and other content that is not found in the original input document, but is added to the output from a style sheet using the CSS [`content`](css-props.md#prop-content) property. Useful applications of this property include [Page regions](paged.md#page-regions), [List markers](styling.md#list-markers) or [Footnotes](styling.md#footnotes).
 
 ## Generated Content Functions
 

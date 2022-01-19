@@ -319,7 +319,7 @@ The [`object-fit`](css-props.md#prop-object-fit) and [`object-position`](css-pro
 
 Please note that specifying [`-prince-image-resolution`](css-props.md#prop-prince-image-resolution) and [`-prince-background-image-resolution`](css-props.md#prop-prince-background-image-resolution), or [`object-fit`](css-props.md#prop-object-fit), only affects the default DPI of images, ie. it makes them physically bigger or smaller on the page, and - it does not affect the number of pixels in the image, and thus the PDF file size will be the same.
 
-To reduce the PDF file size, JPEG images can be recompressed at a lower quality level, or PNG images be converted to JPEG, with the [`-prince-image-magic`](css-props.md#prop-prince-image-magic) property. See also [Image Magic](cookbook#image-magic).
+To reduce the PDF file size, JPEG images can be recompressed at a lower quality level, or PNG images be converted to JPEG, with the [`-prince-image-magic`](css-props.md#prop-prince-image-magic) property. See also [Image Magic](cookbook.md#image-magic).
 
 
 Scalable Vector Graphics (SVG)

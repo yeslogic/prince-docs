@@ -346,7 +346,7 @@ The command-line may include the options described below:
   </dd>
   <dt id="cl-max-passes"><code>--max-passes=<span class="replaceable">NUMBER</span></code></dt>
   <dd>
-    Defines the maximal number of consequent layout passes - see <a href="cookbook#the-multi-pass-solution">The "Multi-Pass" Solution</a>.  The default is unlimited passes.
+    Defines the maximal number of consequent layout passes - see <a href="/doc/cookbook#the-multi-pass-solution">The "Multi-Pass" Solution</a>.  The default is unlimited passes.
   </dd>
 </dl>
 
