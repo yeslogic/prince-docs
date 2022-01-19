@@ -6634,7 +6634,7 @@ supplier, item { overflow-wrap: normal; }
         <prop>text-align-last</prop>
     </shorthand>
     <spec><a href="https://www.w3.org/TR/CSS2/text.html#alignment-prop">CSS 2.1</a></spec>
-    <spec><a href="https://www.w3.org/TR/css-text-3/#text-align-property">css-text-3</a></spec>
+    <spec><a href="https://www.w3.org/TR/css-text-3/#text-align-property">CSS Text Module Level 3</a></spec>
     <spec><a href="https://figures.spec.whatwg.org/#aligning-text-inside-and-outside-pages">CSS Figures</a></spec>
 </property>
 
@@ -6664,7 +6664,7 @@ supplier, item { overflow-wrap: normal; }
 	It controls the alignment of lines other than the last line of the paragraph.
 	</p>
     </comments>
-    <spec><a href="https://www.w3.org/TR/css-text-3/#text-align-property">css-text-3</a></spec>
+    <spec><a href="https://www.w3.org/TR/css-text-3/#text-align-property">CSS Text Module Level 3</a></spec>
     <spec><a href="https://figures.spec.whatwg.org/#aligning-text-inside-and-outside-pages">CSS Figures</a></spec>
 </property>
 
