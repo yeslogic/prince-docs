@@ -55,7 +55,7 @@ Console access is only supported when running Prince directly from the command-l
 
 When the document has been fully parsed and is ready for processing, Prince will fire the `DOMContentLoaded` and `load` events on the `window` object.
 
-These load events can be captured by setting the `onload` attribute on the `body` element in HTML documents, or by setting the `window.onload` property or calling [`window.addEventListener`](js-support.md#windowaddEventListener.).
+These load events can be captured by setting the `onload` attribute on the `body` element in HTML documents, or by setting the `window.onload` property or calling [`window.addEventListener`](js-support.md#window.addEventListener).
 
 When document conversion has finished, Prince will fire the `complete` event on the `Prince` object. This event can be captured by calling `Prince.addEventListener`, and is useful for logging document statistics.
 
