@@ -317,15 +317,15 @@ ul.toc-headings li ul.toc-headings li a.active {
         content: " [see page " target-counter(attr(href), page) "]";
         color: black;
     }
-    a[href*='//']::after {
+    a[href*='//']:not([href*='princexml.com'])::after {
         content: " [at the URL " attr(href) "]" !important;
         color: black;
     }
-    a[href*='first']::after, a[href*='install']::after, a[href*='samples']::after, a[href*='forum']::after, a[href*='contact']::after, a[href*='download']::after, a[href='http://www.princexml.com/']::after, a[href='/books/']::after {
-        content: " [available only online]";
+    a[href*='first']::after, a[href*='install']::after, a[href*='samples']::after, a[href*='forum']::after, a[href*='contact']::after, a[href*='download']::after, a[href='/books/']::after, a[href*='/howcome/']::after  {
+        content: " [available only online]" !important;
         color: black;
     }
-    a[href].hash-link::after, #prop-list details a[href]::after {
+    a[href].hash-link::after, #prop-list details a[href]::after, a[href='http://www.princexml.com/']::after  {
         content: "" !important;
     }
 }
