@@ -89,6 +89,9 @@ const siteConfig = {
   },
 
   // Add custom scripts here that would be placed in <script> tags.
+  // Please make sure, when bulding a version to be archived, to change
+  // the call for scripts with
+  // scripts: ['/js/print.js', '/js/warning.js'],
   scripts: ['/js/print.js'],
 
   // On page navigation for the current documentation page.
