@@ -1117,3 +1117,76 @@ Here is a minimalistic "multi-pass" solution where the document is adorned with 
 Another use of the "multi-pass" solution is to create changebars - see the description [here](http://www.princexml.com/forum/topic/3516/changebars).
 
 
+Build Your Own Docu-PDF
+-----------------------
+
+<dl class="ingredients">
+  <dt>You need</dt>
+    <dd><a href="/doc/paged">Paged Media</a></dd>
+    <dd><a href="/doc/javascript#javascript-in-printed-media">JavaScript in Printed Media</a></dd>
+</dl>
+
+Finally, a neat way of showcasing Prince in action - to generate a PDF of the Prince documentation itself!
+
+If you have Node.js (and, obviously, Prince) installed, there is a neat way of just invoking the `docusaurus-prince-pdf` package to generate the PDF without any further ado:
+
+```bash
+    $ npx docusaurus-prince-pdf -u https://www.princexml.com/doc/ --selector '.docs-next' --prince-args '\-j'
+```
+
+Note that you do not need to install `docusaurus-prince-pdf`!
+
+This command will generate a PDF of the Prince documentation - without the Installation Guide, given that to run the command, Prince has to be already installed...
+
+We will now detail what exactly happens when executing the command, so that it can also be run without having Node.js installed, and for possibly fine-tuning which parts of the documentation you want to print out.
+
+The `docusaurus-prince-pdf` package automatically generates a list of URLs, one for each page of the documentation, and instructs Prince to concatenate all pages into one PDF.  For details on how this works, please check [the documentation](https://www.npmjs.com/package/docusaurus-prince-pdf) for the package itself.
+
+Interesting for us, is that we have a list with the URLs for all pages of the documentation - let us call it `list.txt`:
+
+```
+https://princexml.com/doc/intro-userguide
+https://princexml.com/doc/styling
+https://princexml.com/doc/paged
+https://princexml.com/doc/gen-content
+https://princexml.com/doc/javascript
+https://princexml.com/doc/graphics
+https://princexml.com/doc/cookbook
+https://princexml.com/doc/help
+https://princexml.com/doc/prince-input
+https://princexml.com/doc/prince-output
+https://princexml.com/doc/prince-networking
+https://princexml.com/doc/server-integration
+https://princexml.com/doc/prince-for-books
+https://princexml.com/doc/css-length-units
+https://princexml.com/doc/css-props
+https://princexml.com/doc/css-selectors
+https://princexml.com/doc/css-media-queries
+https://princexml.com/doc/css-functions
+https://princexml.com/doc/css-at-rules
+https://princexml.com/doc/css-color-names
+https://princexml.com/doc/css-refs
+https://princexml.com/doc/js-support
+https://princexml.com/doc/command-line
+https://princexml.com/doc/page-size-keywords
+https://princexml.com/doc/characters
+https://princexml.com/doc/acknowledgements
+```
+
+We now need to tell Prince to generate a PDF, which we shall call `prince-documentation.pdf`, from this list, concatenating all pages:
+
+```bash
+    $ prince -l list.txt -o prince-documentation.pdf
+```
+
+But this is not enough yet. 
+
+Prince's [JavaScript Support](js-support.md) is generated... by JavaScript.  To get this part of the documentation when creating the PDF, we need to enable it - remember, [JavaScript is not enabled by default](prince-input.md#applying-javascript-in-prince)!
+
+Enabling JavaScript is also useful for fixing little glitches in the generated PDF, which usually are being taken care of by the server when viewing the documentation online, in your browser.
+
+```bash
+    $ prince -j -l list.txt -o prince-documentation.pdf
+```
+
+And that's it!  You now have a PDF of the Prince documentation.
