@@ -1128,7 +1128,7 @@ Build Your Own Docu-PDF
 
 Finally, a neat way of showcasing Prince in action - to generate a PDF of the Prince documentation itself!
 
-If you have Node.js (and, obviously, Prince) installed, there is a neat way of just invoking the `docusaurus-prince-pdf` package to generate the PDF without any further ado:
+If you have Node.js (and, obviously, Prince) installed, there is a neat way of just invoking [the `docusaurus-prince-pdf` package](https://github.com/signcl/docusaurus-prince-pdf#readme) to generate the PDF without any further ado:
 
 ```bash
     $ npx docusaurus-prince-pdf -u https://www.princexml.com/doc/ --selector '.docs-next' --prince-args '\-j'
