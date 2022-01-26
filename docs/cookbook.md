@@ -1131,46 +1131,47 @@ Finally, a neat way of showcasing Prince in action - to generate a PDF of the Pr
 If you have Node.js (and, obviously, Prince) installed, there is a neat way of just invoking [the `docusaurus-prince-pdf` package](https://github.com/signcl/docusaurus-prince-pdf#readme) to generate the PDF without any further ado:
 
 ```bash
-    $ npx docusaurus-prince-pdf -u https://www.princexml.com/doc/ --selector '.docs-next' --prince-args '\-j'
+    $ npx docusaurus-prince-pdf -u https://www.princexml.com/doc/ --include-index --selector '.docs-next' --prince-args '\-j'
 ```
 
 Note that you do not need to install `docusaurus-prince-pdf`!
 
 This command will generate a PDF of the Prince documentation - without the Installation Guide, given that to run the command, Prince has to be already installed...
 
-We will now detail what exactly happens when executing the command, so that it can also be run without having Node.js installed, and for possibly fine-tuning which parts of the documentation you want to print out.
+We will now detail what exactly happens when executing the command, so that all the steps can also be manually run without having Node.js installed, and for possibly fine-tuning which parts of the documentation you want to print out.
 
 The `docusaurus-prince-pdf` package automatically generates a list of URLs, one for each page of the documentation, and instructs Prince to concatenate all pages into one PDF.  For details on how this works, please check [the documentation](https://www.npmjs.com/package/docusaurus-prince-pdf) for the package itself.
 
 Interesting for us, is that we have a list with the URLs for all pages of the documentation - let us call it `list.txt`:
 
 ```
-https://princexml.com/doc/intro-userguide
-https://princexml.com/doc/styling
-https://princexml.com/doc/paged
-https://princexml.com/doc/gen-content
-https://princexml.com/doc/javascript
-https://princexml.com/doc/graphics
-https://princexml.com/doc/cookbook
-https://princexml.com/doc/help
-https://princexml.com/doc/prince-input
-https://princexml.com/doc/prince-output
-https://princexml.com/doc/prince-networking
-https://princexml.com/doc/server-integration
-https://princexml.com/doc/prince-for-books
-https://princexml.com/doc/css-length-units
-https://princexml.com/doc/css-props
-https://princexml.com/doc/css-selectors
-https://princexml.com/doc/css-media-queries
-https://princexml.com/doc/css-functions
-https://princexml.com/doc/css-at-rules
-https://princexml.com/doc/css-color-names
-https://princexml.com/doc/css-refs
-https://princexml.com/doc/js-support
-https://princexml.com/doc/command-line
-https://princexml.com/doc/page-size-keywords
-https://princexml.com/doc/characters
-https://princexml.com/doc/acknowledgements
+https://princexml.com/doc/
+https://princexml.com/doc/intro-userguide/
+https://princexml.com/doc/styling/
+https://princexml.com/doc/paged/
+https://princexml.com/doc/gen-content/
+https://princexml.com/doc/javascript/
+https://princexml.com/doc/graphics/
+https://princexml.com/doc/cookbook/
+https://princexml.com/doc/help/
+https://princexml.com/doc/prince-input/
+https://princexml.com/doc/prince-output/
+https://princexml.com/doc/prince-networking/
+https://princexml.com/doc/server-integration/
+https://princexml.com/doc/prince-for-books/
+https://princexml.com/doc/css-length-units/
+https://princexml.com/doc/css-props/
+https://princexml.com/doc/css-selectors/
+https://princexml.com/doc/css-media-queries/
+https://princexml.com/doc/css-functions/
+https://princexml.com/doc/css-at-rules/
+https://princexml.com/doc/css-color-names/
+https://princexml.com/doc/css-refs/
+https://princexml.com/doc/js-support/
+https://princexml.com/doc/command-line/
+https://princexml.com/doc/page-size-keywords/
+https://princexml.com/doc/characters/
+https://princexml.com/doc/acknowledgements/
 ```
 
 We now need to tell Prince to generate a PDF, which we shall call `prince-documentation.pdf`, from this list, concatenating all pages:
