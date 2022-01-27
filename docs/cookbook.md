@@ -1124,6 +1124,7 @@ Build Your Own Docu-PDF
   <dt>You need</dt>
     <dd><a href="/doc/paged">Paged Media</a></dd>
     <dd><a href="/doc/javascript#javascript-in-printed-media">JavaScript in Printed Media</a></dd>
+    <dd><a href="#table-of-contents">Table of Contents</a></dd>
 </dl>
 
 Finally, a neat way of showcasing Prince in action - to generate a PDF of the Prince documentation itself!
@@ -1184,7 +1185,9 @@ But this is not enough yet.
 
 Prince's [JavaScript Support](js-support.md) is generated... by JavaScript.  To get this part of the documentation when creating the PDF, we need to enable it - remember, [JavaScript is not enabled by default](prince-input.md#applying-javascript-in-prince)!
 
-Enabling JavaScript is also useful for fixing little glitches in the generated PDF, which usually are being taken care of by the server when viewing the documentation online, in your browser.
+Enabling JavaScript is also useful for fixing little glitches in the generated PDF, which usually are being taken care of by the server when viewing the documentation online, in your browser, and for displaying the [table of contents](#table-of-contents), generated from the documentation navigation on your left.
+
+
 
 ```bash
     $ prince -j -l list.txt -o prince-documentation.pdf
