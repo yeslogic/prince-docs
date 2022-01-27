@@ -21,6 +21,7 @@ window.onload = function() {
             toc[0].style.setProperty('display', 'none');
             toc[1].lastChild.removeAttribute('class');
             toc[2].lastChild.removeAttribute('class');
+            document.getElementsByTagName('p')[2].style.setProperty('display', 'none');
         }
     }
 }
