@@ -297,8 +297,11 @@ ul.toc-headings li ul.toc-headings li a.active {
     h3 + h4 {
         break-before: avoid !important;
     }
-    .fixedHeaderContainer, footer, #docsNav, .docs-prevnext, .toggle, #toggle-js {
+    #version-nav, .fixedHeaderContainer, footer, #docsNav, .navBreadcrumb, .arrow, .docs-prevnext, .toggle, #toggle-js, #idx-contens + p, #idx-contens + p + ul {
         display: none;
+    }
+    #idx {
+        padding-top: 50%;
     }
     p, pre {
         orphans: 2;
@@ -327,5 +330,21 @@ ul.toc-headings li ul.toc-headings li a.active {
     }
     a[href].hash-link::after, #prop-list details a[href]::after, a[href='http://www.princexml.com/']::after  {
         content: "" !important;
+    }
+    #docsNav {
+        break-after: page;
+    }
+    #docsNav .navGroup.subNavGroup {
+        break-inside: avoid !important;
+    }
+    #docsNav a[href]::after {
+        content: leader('.') "p. " target-counter(attr(href), page);
+    }
+    #docsNav .toc .toggleNav ul ul {
+        padding-right: 0px;
+    }
+    #docsNav .toc .toggleNav ul li.navListItemActive a {
+        font-weight: normal;
+        color: #717171;
     }
 }
