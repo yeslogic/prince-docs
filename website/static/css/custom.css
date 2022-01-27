@@ -291,6 +291,9 @@ ul.toc-headings li ul.toc-headings li a.active {
             content: counter(page);
         }
     }
+    @prince-pdf {
+        -prince-pdf-display-doc-title: true;
+    }
     h1, h2, h3, h4, h5 {
         break-after: avoid;
     }
