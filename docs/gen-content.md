@@ -30,7 +30,7 @@ HTML
 CSS
 
 ```css
-    #index a:after {
+    #index a::after {
       content: leader('.') "p. " target-counter(attr(href), page);
     }
 ```

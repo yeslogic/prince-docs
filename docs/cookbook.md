@@ -31,14 +31,14 @@ The transformation into a proper table of contents happens with CSS when Prince 
 This is achieved automatically with the `target-counter()` function in the [`content`](css-props.md#prop-content) property, using the `page` counter. The URL is being automatically fetched from the `href` attribute of the hyperlink element `<a>`.
 
 ```
-    #toc a:after {
+    #toc a::after {
       content: target-counter(attr(href), page);
     }
 ```
 The page numbers are best styled right-aligned, while the link texts are left-aligned. An easy way to achieve this is with the `leader()` function: it defines a literal string, which expands to fill the available space on the line like justified text, by repeating the string as many times as necessary. The complete CSS entry for a simple table of contents entry thus looks like this:
 
 ```
-    #toc a:after {
+    #toc a::after {
       content: leader('.') target-counter(attr(href), page);
     }
 ```
