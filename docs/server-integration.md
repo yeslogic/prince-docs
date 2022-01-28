@@ -84,7 +84,7 @@ prn.Convert("C:\\docs\\test1.html", "C:\\docs\\pdf\\test1.pdf");
 
 #### Using Prince with VB.NET
 
-To use the Prince [The C\# / .NET Wrapper](#the-c-net-wrapper-) in VB.NET, add it as a dependency to your Visual Studio project.
+To use the Prince [The C\# / .NET Wrapper](#the-c--net-wrapper) in VB.NET, add it as a dependency to your Visual Studio project.
 
 To convert HTML or XML files into PDF, instantiate a Prince object with the full path to the Prince engine executable file. Once this is done, you can apply style sheets and scripts, or configure other properties by calling the appropriate methods. Finally, you can call one of the `Convert` methods to generate a PDF file.
 
@@ -329,7 +329,7 @@ docker run --rm -it yeslogic/prince:13.1
 
 ### Prince on Microsoft Azure
 
-Running Prince on Microsoft Azure is quite straightforward: we have a tutorial and a package for [deploying Prince on Azure](https://github.com/yeslogic/azure-prince-example/).  This is a Visual Studio 2019 project that demonstrates generating a PDF with Prince in C#/ASP.NET Core. It uses the [Prince C#/.NET Wrapper](#the-c-net-wrapper-) and has been confirmed to work when deployed as an App Service on Microsoft Azure.
+Running Prince on Microsoft Azure is quite straightforward: we have a tutorial and a package for [deploying Prince on Azure](https://github.com/yeslogic/azure-prince-example/).  This is a Visual Studio 2019 project that demonstrates generating a PDF with Prince in C#/ASP.NET Core. It uses the [Prince C#/.NET Wrapper](#the-c--net-wrapper) and has been confirmed to work when deployed as an App Service on Microsoft Azure.
 
 ### Prince on AWS Lambda
 
