@@ -12,7 +12,7 @@ Prince supports all the main Web Standards:
 -   HTML, XHTML, XML, SVG
 -   Cascading Style Sheets (CSS)
 -   JavaScript / ECMAScript
--   JPEG, PNG, GIF, TIFF
+-   JPEG, PNG, GIF, TIFF, WebP
 
 To install Prince, follow the [Installation Guide](installing.md), else
 proceed to the [User Guide](styling.md).
