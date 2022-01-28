@@ -1,12 +1,13 @@
 # Prince Documentation
 
-This is the Prince documentation, built with the [Docusaurus v1](https://v1.docusaurus.io/) framework.
+This is the repository of the [Prince documentation](https://www.princexml.com/doc/),
+built with the [Docusaurus v1](https://v1.docusaurus.io/) framework.
 
 The CSS properties are however stored *outside* of the Docusaurus framework,
-in order to preserve the XML format in which the properties' documentation
-is stored. They are located in `./website/properties`.
+in order to preserve the XML format for the properties' documentation, which is
+located in `./website/properties`.
 
-They need a special, preliminary step to be created, before creating
+The properties need a special, preliminary step to be created, before creating
 the Docusaurus documentation - you first need to run `make` in the
 `./website/properties` folder.
 
