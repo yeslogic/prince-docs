@@ -47,9 +47,7 @@ try {
 
 Prince can be called from .NET languages using the [Prince C\# / .NET wrapper](/download/wrappers/#wrapper-csharp).
 
-The C\# wrapper is [hosted on GitHub Packages as a NuGet package](https://github.com/yeslogic/prince-csharp-wrapper/packages/1039110). Installing this package requires authenticating to GitHub Packages with a [personal access token](https://docs.github.com/en/packages/working-with-a-github-packages-registry/working-with-the-nuget-registry#authenticating-with-a-personal-access-token). Ensure that the personal access token has registry read access.
-
-Alternatively, the NuGet package can be [downloaded directly](https://github.com/yeslogic/prince-csharp-wrapper/packages/1039110) via the links on the sidebar. The package is just a zip file, and can be unzipped to access the DLL file directly, if that is desired.
+The C\# wrapper is hosted on the [NuGet gallery](https://www.nuget.org/packages/PrinceXMLWrapper/).
 
 The [API documentation](https://yeslogic.github.io/prince-csharp-wrapper) lists the C\# class methods and explains how to use them.
 
