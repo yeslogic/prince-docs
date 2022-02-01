@@ -182,6 +182,12 @@ The command-line may include the options described below:
   <dd>
     Specify the root directory for absolute filenames (deprecated).
   </dd>
+  <dt id="cl-iframes">
+    <code>--iframes</code>
+  </dt>
+  <dd>
+    Enable HTML iframes.
+  </dd>
   <dt id="cl-xinclude">
     <code>--xinclude</code>
   </dt>

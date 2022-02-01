@@ -624,9 +624,15 @@ This procedure is the same standard safety precaution taken when passing untrust
 
 There are also some [ready-made libraries](https://lib.rs/crates/sanitize_html) to help you [sanitize](https://github.com/rgrove/sanitize) your HTML and CSS.
 
+### Iframes
+
+The HTML standard offers the possibility to embed other HTML files by means of iframes.  To allow for this feature, iframes need to explicitly be enabled with the command-line option [`--iframes`](command-line.md#cl-iframes).
+
+It is highly recommended to never enable iframes when dealing with untrusted data!  This option is not enabled by default.
+
 ### XML External Entities and XInclude
 
-XML offers various ways of including external content in the parsing, namely external entities, and XInclude.
+Likewise, XML offers various ways of including external content in the parsing, namely external entities, and XInclude.
 
 The XML standard allows for external entities, which can access local or remote content through a declared system identifier by replacing the entity with the contents dereferenced by the system identifier. This may lead to the [disclosure of confidential data](https://cheatsheetseries.owasp.org/cheatsheets/XML_External_Entity_Prevention_Cheat_Sheet.html) and other nasty things. To make use of external entities, they have to explicitly be enabled with the command-line option [`--xml-external-entities`](command-line.md#cl-xxe).
 
