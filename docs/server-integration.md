@@ -18,9 +18,7 @@ For details on the usage of each of the wrappers, please consult the following c
 
 Prince can be called from within a Java class for servlets by using the [Java wrapper](/download/wrappers/#wrapper-java).
 
-The Java wrapper is [hosted on GitHub Packages as a Maven package](https://github.com/yeslogic/prince-java-wrapper/packages/993641). Installing this package requires authenticating to GitHub Packages with a [personal access token](https://docs.github.com/en/packages/working-with-a-github-packages-registry/working-with-the-apache-maven-registry#authenticating-with-a-personal-access-token). Ensure that the personal access token has registry read access.
-
-Alternatively, the JAR file can be [downloaded directly](https://github.com/yeslogic/prince-java-wrapper/packages/993641) via the links on the sidebar.
+The Java wrapper is hosted on the [Maven Central Repository](https://search.maven.org/artifact/com.princexml/prince-java-wrapper).
 
 The [API documentation](https://yeslogic.github.io/prince-java-wrapper) lists the Java class methods and explains how to use them.
 
