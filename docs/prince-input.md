@@ -33,6 +33,8 @@ Author style sheets
 Default style sheets  
 -   applied automatically depending on the type of the document being formatted
 
+Prince also offers a mechanism to disable some of the style sheets: the command-line option [`--no-author-style`](command-line.md#cl-no-author-style) disables author style sheets, while [`--no-default-style`](command-line.md#cl-no-default-style) disables default style sheets.
+
 ### Importing Style Sheets
 
 Style sheets may import other style sheets using [`@import`](css-at-rules.md#at-import) rules. These rules must occur before any other rules or declarations in the style sheet, and have the effect of importing all the rules and declarations from the specified style sheet. See [CSS At-rules](css-at-rules.md).
