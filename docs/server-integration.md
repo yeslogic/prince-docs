@@ -427,6 +427,7 @@ The `input options` object includes these fields:
     "author-style": <bool>,
     "javascript": <bool>,
     "max-passes": <integer>,
+    "iframes": <bool>,
     "xinclude": <bool>,
     "xml-external-entities": <bool>
 }
