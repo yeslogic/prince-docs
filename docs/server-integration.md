@@ -485,16 +485,16 @@ The `pdf options` object includes these fields:
     "color-conversion": "none" | "output-intent" | "full",
     "pdf-id": <string>,
     "pdf-lang": <string>,
-    "pdf-xmp": <url>,
+    "pdf-xmp": <URL>,
     "tagged-pdf": "auto" | <bool>,
     "attach": [ <list of attachments> ]
 }
 ```
-Each attachment is a &lt;url&gt; (string) or an object:
+Each attachment is a &lt;URL&gt; (string) or an object:
 
 ```json
 {
-    "url": <url>,
+    "url": <URL>,
     "filename": <string>,
     "description": <string>
 }
