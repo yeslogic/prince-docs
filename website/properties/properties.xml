@@ -4897,7 +4897,7 @@ supplier, item { overflow-wrap: normal; }
     </p>
 
     <p>
-    Values other than ‘<code>fast</code>’ currently have no effect on justified
+    Values other than <code>fast</code> currently have no effect on justified
     paragraphs.
     </p>
 
@@ -4930,14 +4930,14 @@ supplier, item { overflow-wrap: normal; }
     </p>
 
     <p>
-    The default at present is to use paragraph-at-a-time line breaking for ‘<code>heading</code>’
-    and ‘<code>title-page</code>’,
-    while still using simple line-at-a-time line breaking for ‘<code>body</code>’.
+    The default at present is to use paragraph-at-a-time line breaking for <code>heading</code>
+    and <code>title-page</code>,
+    while still using simple line-at-a-time line breaking for <code>body</code>.
     To those who would usually check and tweak line breaks in ragged text before publication,
     we suggest that paragraph-at-a-time line breaking will give you a better starting point:
     </p>
 
-    <pre>body { -prince-line-break-choices: body-lookahead }</pre>
+    <pre><code>body { -prince-line-break-choices: body-lookahead }</code></pre>
 
     <p>
     For more information on how to influence line breaks,

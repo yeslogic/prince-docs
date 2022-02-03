@@ -57,25 +57,27 @@ of the prophets</p>
 
 Another property for fine-tuning the line breaking behaviour is [`-prince-line-break-choices`](css-props.md#prop-prince-line-break-choices).
 
-The keyword `title` is intended for title pages of books or chapters, where phrasing considerations are of prime consideration even at the cost of extremely unbalanced lines.
+The keyword `title-page` is intended for title pages of books or chapters, where phrasing considerations are of prime consideration even at the cost of extremely unbalanced lines.
 
 The keyword `heading`, on the other hand, is closer to `body`, differing mainly in that it's less likely to hyphenate, and is more willing to make the first line(s) a little shorter if doing so avoids a short last line.
 
+The `*-greedy` and `*-lookahead` variations allow control over whether the choice of where to end a line can be affected by consequences further down the paragraph:
+
 The `*-greedy` keywords decide on line breaks solely based on the current line and on the length of the next word, never going back to change a decision on a line in the light of line-breaking issues encountered later.
 
-The `*-lookahead` keywords enable paragraph-at-a-time line-breaking for the paragraph in a non-justified paragraph: choosing where to end the line not just based on what seems best for the current line (as one might decide if using a pen or typewriter), but also considering the effect on future lines.  It might better be described as "change previous lines", e.g. that if one finds that a loose line is produced, a human typesetter would check whether a short word or two could be brought forward from the previous line or two.
+The `*-lookahead` keywords, on the other hand, enable paragraph-at-a-time line-breaking for the paragraph in a non-justified paragraph: choosing where to end the line not just based on what seems best for the current line (as one might decide if using a pen or typewriter), but also considering the effect on future lines.  It might better be described as "change previous lines", e.g. that if one finds that a loose line is produced, a human typesetter would check whether a short word or two could be brought forward from the previous line or two.
 
 Enabling lookahead for a paragraph makes Prince take longer, though the results are typically slightly better: still ragged, but fewer lines that are much shorter than nearby lines.
 
 A disadvantage of lookahead is that any "mistakes" (that is, differences from what a human would choose) risk appearing inexplicable to a reader, unlike with the non-lookahead versions where the only reason that a line would be noticeably short is where the following line starts with a long word.
 
-This means that the non-lookahead versions might be a better choice in jobs where Prince's line breaks will be accepted without human oversight; whereas if a typesetter will look for and correct any problems in the rag of the paragraph, then the lookahead versions will typically give a better starting point.
+This means that the non-lookahead versions might be a better choice in jobs where Prince's line breaks will be accepted without human oversight; whereas if a typesetter will look, for and correct any problems in the rag of the paragraph, then the lookahead versions will typically give a better starting point.
 
 <p id="note-typesetter">A typesetter's intervention currently involves modifying the HTML: it is not requireed to assign an <code>id</code> to each paragraph, but it is nevertheless common practice to do so for making other changes, such as changing the number of lines in a paragraph for pagination purposes (whether using <code>-prince-n-lines</code> or <code>word-spacing</code> or <code>letter-spacing</code>), or assigning a unique value to each chapter in order to change how many lines are on the last page of the chapter (say, by adding <code>1pt</code> to the inside margin). See also <a href="#spread-balancing">Spread Balancing</a>.</p>
 
 To illustrate the difference, one could also say that non-lookahead versions give paragraph shapes reminiscent of those given by word processors and web browsers, while the lookahead versions come slightly closer to what one might find in books.
 
-The keyword `fast` can be used for quick web-browers–style line breaking, useful for testing the effect of styling changes that don't depend on good line breaking.
+The keyword `fast` can be used for quick web-browers–style line breaking, useful for testing the effect of styling changes that don't depend on good line breaking.  Values other than `fast` currently have no effect on justified paragraphs.
 
 The base stylesheet that Prince for Books applies to all HTML documents (i.e. the "user-agent style sheet", in CSS terminology) includes the ruleset
 
