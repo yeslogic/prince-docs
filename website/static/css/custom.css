@@ -3,6 +3,27 @@
 .fixedHeaderContainer header img {
     margin-right: 30px;
 }
+.fixedHeaderContainer {
+    font-family: Lato, Verdana, sans-serif;
+    font-size: 14px;
+    height: 50px !important;
+    padding: 0px;
+}
+.headerWrapper, .headerWrapper header, .headerWrapper header a, .navigationWrapper, .slidingNav {
+    height: 50px !important;
+}
+.headerWrapper header a {
+    padding: 8px 0px;
+}
+.navigationSlider .slidingNav ul li:first-child, .navigationSlider .slidingNav ul li:first-child > a:hover, .navigationSlider .slidingNav ul li.siteNavGroupActive > a {
+    background-color: #fff !important;
+}
+.nav-site li:first-child a {
+    color: #333 !important;
+}
+.nav-site li a:hover {
+    color: #22b573 !important;
+}
 
 dl { padding-bottom: 1em; }
 dd { padding-left: 2em; }
@@ -72,7 +93,7 @@ table.property-table td {
   padding: 0.7em;
   display: block;
 }
-#prop-list summary .self-link, #js-support-table summary .self-link {
+#prop-list summary .self-link, #js-support-table summary .self-link, .faq .self-link  {
   opacity: 0;
   transition: opacity 0.3s;
 }
