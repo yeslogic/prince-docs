@@ -1,6 +1,29 @@
 ---
 title: Help
 ---
+<style>
+.navigationSlider .slidingNav ul li:first-child {
+    background-color: #7d146c !important;
+}
+.navigationSlider .slidingNav ul li:first-child a {
+        color: rgba(255, 255, 255, 0.8) !important;
+}
+.navigationSlider .slidingNav ul li:first-child a:hover {
+        background-color: #7d146c !important;
+}
+.navigationSlider .slidingNav ul li:nth-child(2) {
+    background-color: #fff !important;
+}
+.navigationSlider .slidingNav ul li:nth-child(2) a {
+    color: #333 !important;
+}
+.navigationSlider .slidingNav ul li:nth-child(2) a:hover {
+    background-color: #fff !important;
+}
+.navigationSlider .slidingNav ul li a:hover {
+    color: #22b573 !important;
+}
+</style>
 
 The Prince User Guide tries to be exhaustive in explaining how to use the application and its features. However, there might always be something not answered in the documentation, or something not working as expected. There are a couple of ways to get help to solve the problems:
 
