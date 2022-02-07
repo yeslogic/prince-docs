@@ -206,7 +206,7 @@ Just as with the previous property, scripts need to be provided inline.
         -prince-pdf-event-scripts: will-close "app.alert('This file is now closing!', 3)", will-print "app.alert('This file will be printed.', 1);";
     }
 ```
-Please note that starting from Prince 15, these CSS properties will not longer allow for the `url()` function as an argument - to provide an external file, the command-line options [`--pdf-script`](command-line.md#cl-pdf-script) and [`--pdf-event-script`](command-line.md#cl-pdf-event-script) need to be used instead.
+Please note that starting from Prince 15, these CSS properties will not longer allow for the `url()` function as an argument - to provide an external file, the command-line options [`--prince-pdf-script`](command-line.md#cl-prince-pdf-script) and [`--prince-pdf-event-script`](command-line.md#cl-prince-pdf-event-script) need to be used instead.
 
 ### PDF Pages
 
