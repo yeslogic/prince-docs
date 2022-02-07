@@ -197,7 +197,9 @@ In a similar fashion, scripts that will be executed when the PDF file is opened 
         -prince-pdf-script: "this.zoomType = zoomtype.fitP; this.print();"
     }
 ```
-Prince offers yet another way to include scripts in a document through a stylesheet: the [`-prince-pdf-event-scripts`](css-props.md#prop-prince-pdf-event-scripts) property can be used to include JavaScript code that will be executed in the PDF when printing, saving, and closing the PDF, known as "Document Action" scripts. Just as with the previous property, scripts need to be provided inline.
+Prince offers yet another way to include scripts in a document through a stylesheet: the [`-prince-pdf-event-scripts`](css-props.md#prop-prince-pdf-event-scripts) property can be used to include JavaScript code that will be executed in the PDF when printing, saving, and closing the PDF, known as "Document Action" scripts. Adobe provides a [JavaScript for Acrobat API Reference](https://opensource.adobe.com/dc-acrobat-sdk-docs/acrobatsdk/pdfs/acrobatsdk_jsapiref.pdf) - always keep in mind that in many cases these might only work in Adobe Acrobat products.
+
+Just as with the previous property, scripts need to be provided inline.
 
 ```css
     @prince-pdf {
