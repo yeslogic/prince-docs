@@ -484,6 +484,14 @@ The `pdf options` object includes these fields:
     "pdf-output-intent": <URL>,
     "fallback-cmyk-profile": <URL>,
     "color-conversion": "none" | "output-intent" | "full",
+    "pdf-script": <string> | {"url": <URL>},
+    "pdf-event-scripts": {
+        "will-close": <string> | {"url": <URL>},
+        "will-save": <string> | {"url": <URL>},
+        "did-save": <string> | {"url": <URL>},
+        "will-print": <string> | {"url": <URL>},
+        "did-print": <string> | {"url": <URL>}
+    },
     "pdf-id": <string>,
     "pdf-lang": <string>,
     "pdf-xmp": <URL>,

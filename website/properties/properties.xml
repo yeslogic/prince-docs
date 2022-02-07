@@ -5402,12 +5402,7 @@ supplier, item { overflow-wrap: normal; }
             </choice>
             </group>
             <group>
-            <choice>
-                <group>
                 <string>JavaScript</string>
-                <type>url</type>
-                </group>
-            </choice>
             </group>
             </sequence>
         </repeat>
@@ -5419,15 +5414,22 @@ supplier, item { overflow-wrap: normal; }
     <inherit>n/a</inherit>
     <extension/>
     <example>@prince-pdf {
-    -prince-pdf-event-scripts: will-close url("onclose.js"), will-print url("onprint.js");
+    -prince-pdf-event-scripts: will-close "app.alert('This file is now closing!', 3)", will-print "app.alert('This file will be printed.', 1);";
 }</example>
-    <see><a href="/doc/prince-output/#pdf-actions">PDF Actions</a></see>
+    <see><a href="/doc/prince-output/#pdf-scripts">PDF Scripts</a></see>
     <comments>
 	<p>
 	This property can be used to include JavaScript code that will be
     executed in the PDF when printing, saving, and closing the PDF,
     known as "Document Action" scripts.
 	</p>
+    <p>
+    Starting from Prince 15 this property does not allow for the <code>url()</code>
+    function as an argument - to provide an external file, the command-line options
+    <a href="/doc/command-line/#cl-pdf-script"><code>--pdf-script</code></a> and
+    <a href="/doc/command-line/#cl-pdf-event-script"><code>--pdf-event-script</code></a>
+    need to be used instead.
+    </p>
     <p class="note">
     Please be advised that these scripts are dependent on the PDF viewer, and
     in many cases might only work in Adobe Acrobat products.
@@ -5762,10 +5764,7 @@ supplier, item { overflow-wrap: normal; }
 <property>
     <name>prince-pdf-script</name>
     <value>
-    <choice>
         <string>JavaScript</string>
-        <type>url</type>
-    </choice>
     </value>
     <initial>""</initial>
     <applyto>@prince-pdf at-rule</applyto>
@@ -5774,13 +5773,19 @@ supplier, item { overflow-wrap: normal; }
     <example>@prince-pdf {
     -prince-pdf-script: "this.print();"
 }</example>
-    <see><a href="/doc/prince-output/#pdf-actions">PDF Actions</a></see>
+    <see><a href="/doc/prince-output/#pdf-scripts">PDF Scripts</a></see>
     <comments>
     <p>
     This property can be used to include JavaScript code that will be
     executed when the PDF file is opened. A common use case is to activate
-    the "Print" dialog automatically.  The script can be located in an
-    external JavaScript file, referenced with the <code>url()</code> function.
+    the "Print" dialog automatically.
+    </p>
+    <p>
+    Starting from Prince 15 this property does not allow for the <code>url()</code>
+    function as an argument - to provide an external file, the command-line options
+    <a href="/doc/command-line/#cl-pdf-script"><code>--pdf-script</code></a> and
+    <a href="/doc/command-line/#cl-pdf-event-script"><code>--pdf-event-script</code></a>
+    need to be used instead.
     </p>
     <p class="note">
     Please be advised that these scripts are dependent on the PDF viewer, and

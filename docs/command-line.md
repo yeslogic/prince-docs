@@ -354,6 +354,14 @@ The command-line may include the options described below:
   <dd>
     Defines the maximal number of consequent layout passes - see <a href="/doc/cookbook#the-multi-pass-solution">The "Multi-Pass" Solution</a>.  The default is unlimited passes.
   </dd>
+  <dt id="cl-pdf-script"><code>--pdf-script=<span class="replaceable">FILE</span></code></dt>
+  <dd>
+    Include a PDF script file to run when the PDF is opened.
+  </dd>
+  <dt id="cl-pdf-event-script"><code>--pdf-event-script=<span class="replaceable">EVENT</span>:<span class="replaceable">FILE</span></code></dt>
+  <dd>
+    Include a PDF script file to run on a specific event (<code>will-close</code>, <code>will-save</code>, <code>did-save</code>, <code>will-print</code>, <code>did-print</code>).
+  </dd>
 </dl>
 
 ### CSS Options

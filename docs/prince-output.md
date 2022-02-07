@@ -177,9 +177,9 @@ Prince supports the `pdf-action:` URL scheme for PDF actions. Typical values are
 ```html
     <a href="pdf-action:Print">Print Document</a>
 ```
-However, Prince passes the provided values verbatim to the PDF viewer, so the user can supply values that Prince doesn't know about, but the viewer does. Also, these scripts will always be run, unlike JavaScript (see [Applying JavaScript in Prince](prince-input.md#applying-javascript-in-prince)).
+However, Prince passes the provided values verbatim to the PDF viewer, so the user can supply values that Prince doesn't know about, but the viewer does. Also, please note that these scripts will *always* be run, unlike JavaScript (see [Applying JavaScript in Prince](prince-input.md#applying-javascript-in-prince)).
 
-Please be advised that this and the following actions and scripts are dependent on the PDF viewer, and in many cases might only work in Adobe Acrobat products.
+Be advised that this and the following actions and scripts are dependent on the PDF viewer, and in many cases might only work in Adobe Acrobat products.
 
 The property [`-prince-pdf-open-action`](css-props.md#prop-prince-pdf-open-action) may be used to specify a space-separated list of actions to perform when the PDF file is opened, like eg. popping up the print dialog box automatically, or setting the default zoom level for PDF documents. Any arbitrary identifier can be specified, although these may be PDF viewer specific; Acrobat can take just about any menu item.
 
@@ -188,6 +188,8 @@ The property [`-prince-pdf-open-action`](css-props.md#prop-prince-pdf-open-actio
         -prince-pdf-open-action: zoom(fit-page) print;
     }
 ```
+### PDF Scripts
+
 In a similar fashion, scripts that will be executed when the PDF file is opened may be included with the [`-prince-pdf-script`](css-props.md#prop-prince-pdf-script) property. A common use case is to activate the "Print" dialog automatically. To achieve the equivalent of the previous example, the following code could be used:
 
 ```css
@@ -195,20 +197,15 @@ In a similar fashion, scripts that will be executed when the PDF file is opened 
         -prince-pdf-script: "this.zoomType = zoomtype.fitP; this.print();"
     }
 ```
-The property can also take the `url()` function to reference an external JavaScript file.
+Prince offers yet another way to include scripts in a document through a stylesheet: the [`-prince-pdf-event-scripts`](css-props.md#prop-prince-pdf-event-scripts) property can be used to include JavaScript code that will be executed in the PDF when printing, saving, and closing the PDF, known as "Document Action" scripts. Just as with the previous property, scripts need to be provided inline.
 
 ```css
     @prince-pdf {
-        -prince-pdf-script: url("myscript.js")
+        -prince-pdf-event-scripts: will-close "app.alert('This file is now closing!', 3)", will-print "app.alert('This file will be printed.', 1);";
     }
 ```
-Prince offers yet another way to include scripts in a document through a stylesheet: the [`-prince-pdf-event-scripts`](css-props.md#prop-prince-pdf-event-scripts) property can be used to include JavaScript code that will be executed in the PDF when printing, saving, and closing the PDF, known as "Document Action" scripts. Just as with the previous property, scripts can either be given inline, or be included from an external file.
+Please note that starting from Prince 15, these CSS properties will not longer allow for the `url()` function as an argument - to provide an external file, the command-line options [`--pdf-script`](command-line.md#cl-pdf-script) and [`--pdf-event-script`](command-line.md#cl-pdf-event-script) need to be used instead.
 
-```css
-    @prince-pdf {
-        -prince-pdf-event-scripts: will-close url("onclose.js"), will-print url("onprint.js");
-    }
-```
 ### PDF Pages
 
 Prince allows for some degree of control on the pages and the page layout in a PDF file. The CSS property [`-prince-pdf-page-label`](css-props.md#prop-prince-pdf-page-label) can be used to set the page label that will be displayed in the PDF viewer. It can be used to instruct the PDF viewer to display the page label in the ToC in a particular way.
