@@ -5425,10 +5425,9 @@ supplier, item { overflow-wrap: normal; }
 	</p>
     <p>
     Starting from Prince 15 this property does not allow for the <code>url()</code>
-    function as an argument - to provide an external file, the command-line options
-    <a href="/doc/command-line/#cl-prince-pdf-script"><code>--prince-pdf-script</code></a> and
+    function as an argument - to provide an external file, the command-line option
     <a href="/doc/command-line/#cl-prince-pdf-event-script"><code>--prince-pdf-event-script</code></a>
-    need to be used instead.
+    needs to be used instead.
     </p>
     <p class="note">
     Please be advised that these scripts are dependent on the PDF viewer, and
@@ -5782,10 +5781,9 @@ supplier, item { overflow-wrap: normal; }
     </p>
     <p>
     Starting from Prince 15 this property does not allow for the <code>url()</code>
-    function as an argument - to provide an external file, the command-line options
-    <a href="/doc/command-line/#cl-prince-pdf-script"><code>--prince-pdf-script</code></a> and
-    <a href="/doc/command-line/#cl-prince-pdf-event-script"><code>--prince-pdf-event-script</code></a>
-    need to be used instead.
+    function as an argument - to provide an external file, the command-line option
+    <a href="/doc/command-line/#cl-prince-pdf-script"><code>--prince-pdf-script</code></a>
+    needs to be used instead.
     </p>
     <p class="note">
     Please be advised that these scripts are dependent on the PDF viewer, and
