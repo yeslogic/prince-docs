@@ -221,7 +221,7 @@ The resolution used when rasterizing to images for applying CSS and SVG filters 
 Images
 ------
 
-Prince supports JPEG, PNG, TIFF, GIF and WebP images as well as [Scalable Vector Graphics (SVG)](#scalable-vector-graphics-svg).
+Prince supports the JPEG, PNG, TIFF, GIF, WebP and AVIF image formats, as well as [Scalable Vector Graphics (SVG)](#scalable-vector-graphics-svg).
 
 Images can be included in XHTML and DocBook documents using the appropriate image elements, which are pre-defined in the default style sheets.
 
