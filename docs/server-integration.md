@@ -401,7 +401,7 @@ The `job` chunk contains a description of the conversion job represented in JSON
 
 The number of `dat` chunks is specified by the `job-resource-count` field in the job description, and these files can be accessed via a special job-resource URL scheme, eg. `job-resource:0` will access the content of the first `dat` chunk, then `job-resource:1`, `job-resource:2`, etc. This allows any number of resources to be provided inline with the request and removes the need to create actual temporary files.
 
-The JSON job description has several nested objects with fields corresponding to Prince options:
+The JSON job description ([here](#job-description-json) you can see the full description) has several nested objects with fields corresponding to Prince options:
 
 ```json
 {
@@ -517,6 +517,79 @@ The `metadata options` object includes these fields:
     "author": <string>,
     "keywords": <string>,
     "creator": <string>,
+}
+```
+
+#### Job description JSON
+
+The following is the full JSON job description:
+
+```json
+{
+    "input": {
+        "src": <single URL or list of URLs>,
+        "type": <string>,
+        "base": <string>,
+        "media": <string>,
+        "styles": [ <list of URLs> ],
+        "scripts": [ <list of URLs> ],
+        "default-style": <bool>,
+        "author-style": <bool>,
+        "javascript": <bool>,
+        "max-passes": <integer>,
+        "iframes": <bool>,
+        "xinclude": <bool>,
+        "xml-external-entities": <bool>
+    },
+    "pdf": {
+        "color-options": "auto" | "use-true-black" | "use-rich-black",
+        "embed-fonts": <bool>,
+        "subset-fonts": <bool>,
+        "artificial-fonts": <bool>,
+        "force-identity-encoding": <bool>,
+        "compress": <bool>,
+        "object-streams": <bool>,
+        "encrypt": {
+            "key-bits": 40 | 128,
+            "user-password": <string>,
+            "owner-password": <string>,
+            "disallow-print": <bool>,
+            "disallow-modify": <bool>,
+            "disallow-copy": <bool>,
+            "disallow-annotate": <bool>,
+            "allow-copy-for-accessibility": <bool>,
+            "allow-assembly": <bool>
+        },
+        "pdf-profile": <string>,
+        "pdf-output-intent": <URL>,
+        "fallback-cmyk-profile": <URL>,
+        "color-conversion": "none" | "output-intent" | "full",
+        "pdf-script": <string> | {"url": <URL>},
+        "pdf-event-scripts": {
+            "will-close": <string> | {"url": <URL>},
+            "will-save": <string> | {"url": <URL>},
+            "did-save": <string> | {"url": <URL>},
+            "will-print": <string> | {"url": <URL>},
+            "did-print": <string> | {"url": <URL>}
+        },
+        "pdf-id": <string>,
+        "pdf-lang": <string>,
+        "pdf-xmp": <URL>,
+        "tagged-pdf": "auto" | <bool>,
+        "attach": [ {
+            "url": <URL>,
+            "filename": <string>,
+            "description": <string>
+        } ]
+    },
+    "metadata": {
+        "title": <string>,
+        "subject": <string>,
+        "author": <string>,
+        "keywords": <string>,
+        "creator": <string>,
+    },
+    "job-resource-count": <int>
 }
 ```
 
