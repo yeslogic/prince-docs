@@ -3894,6 +3894,11 @@ TO ADD:
     establishes a new block formatting context instead - other than that, it is
     treated the same as <code>visible</code>.
     </p>
+    <p>
+    Also, please note that Prince does not support separate <code>overflow-x</code>
+    and <code>overflow-y</code> properties, the <code>overflow</code> property only
+    sets both to the same value.
+    </p>
     </comments>
     <spec><a href="https://www.w3.org/TR/CSS2/visufx.html#overflow">CSS 2.1</a></spec>
     <spec><a href="https://drafts.csswg.org/css-overflow-3/#propdef-overflow">CSS Overflow Module Level 3 Draft</a></spec>
