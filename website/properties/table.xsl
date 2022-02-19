@@ -146,6 +146,9 @@ explained above.  A short explanation of the signs:
                 <xsl:when test="/properties/property[name=$alias]/inherit='no'">
                   no
                 </xsl:when>
+                <xsl:when test="/properties/property[name=$alias]/inherit='n/a'">
+                  n/a
+                </xsl:when>
               </xsl:choose>
             </xsl:when>
             <xsl:otherwise>
@@ -155,6 +158,9 @@ explained above.  A short explanation of the signs:
                 </xsl:when>
                 <xsl:when test="inherit='no'">
                   no
+                </xsl:when>
+                <xsl:when test="inherit='n/a'">
+                  n/a
                 </xsl:when>
               </xsl:choose>
             </xsl:otherwise>
