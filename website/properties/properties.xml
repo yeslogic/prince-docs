@@ -89,7 +89,7 @@ TO ADD:
 	<value>
 	<type>color</type>
 	</value>
-	<initial></initial>
+	<initial>""</initial>
 	<applyto>@prince-color at-rule</applyto>
 	<inherit>n/a</inherit>
 	<extension/>
@@ -4406,7 +4406,7 @@ supplier, item { overflow-wrap: normal; }
     <value>
         <url>filename</url>
     </value>
-    <initial></initial>
+    <initial>""</initial>
     <applyto>@prince-pdf at-rule</applyto>
     <inherit>n/a</inherit>
     <extension/>
