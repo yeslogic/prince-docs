@@ -7006,6 +7006,27 @@ supplier, item { overflow-wrap: normal; }
 </property>
 
 <property>
+    <name>text-underline-position</name>
+    <value>
+    <choice>
+      <keyword>auto</keyword>
+      <multiple>
+        <keyword>under</keyword>
+        <choice>
+          <keyword>left</keyword>
+          <keyword>right</keyword>
+        </choice>
+      </multiple>
+    </choice>
+    </value>
+    <initial>auto</initial>
+    <applyto>all elements</applyto>
+    <inherit>yes</inherit>
+    <see><a href="/doc/styling/#text-formatting">Text formatting</a></see>
+    <spec><a href="https://www.w3.org/TR/css-text-decor-3/#text-underline-position-property">CSS Text Decoration Module Level 3</a></spec>
+</property>
+
+<property>
     <name>text-underline-style</name>
     <value>
 	<choice>
