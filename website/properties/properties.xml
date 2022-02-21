@@ -6727,6 +6727,40 @@ supplier, item { overflow-wrap: normal; }
 <property>
     <name>text-decoration</name>
     <value>
+    <multiple>
+        <ref>text-decoration-line</ref>
+        <ref>text-decoration-style</ref>
+        <ref>text-decoration-color</ref>
+    </multiple>
+    </value>
+    <initial>none</initial>
+    <applyto>all elements</applyto>
+    <inherit>no</inherit>
+    <shorthand>
+	<prop>text-decoration-line</prop>
+	<prop>text-decoration-style</prop>
+	<prop>text-decoration-color</prop>
+    </shorthand>
+    <see><a href="/doc/styling/#text-formatting">Text formatting</a></see>
+    <spec><a href="https://www.w3.org/TR/CSS2/text.html#lining-striking-props">CSS 2.1</a></spec>
+</property>
+
+<property>
+    <name>text-decoration-color</name>
+    <value><type>color</type></value>
+    <initial>currentcolor</initial>
+    <applyto>all elements</applyto>
+    <inherit>no</inherit>
+    <see><a href="/doc/styling/#text-formatting">Text formatting</a></see>
+    <comments>
+    <p></p>
+    </comments>
+    <spec><a href="https://www.w3.org/TR/css-text-decor-3/#text-decoration-color-property">CSS Text Decoration Module Level 3</a></spec>
+</property>
+
+<property>
+    <name>text-decoration-line</name>
+    <value>
     <choice>
       <keyword>none</keyword>
       <multiple>
@@ -6739,16 +6773,37 @@ supplier, item { overflow-wrap: normal; }
     <initial>none</initial>
     <applyto>all elements</applyto>
     <inherit>no</inherit>
-    <shorthand>
-	<prop>text-line-through-color</prop>
-	<prop>text-line-through-style</prop>
-	<prop>text-overline-color</prop>
-	<prop>text-overline-style</prop>
-	<prop>text-underline-color</prop>
-	<prop>text-underline-style</prop>
-    </shorthand>
     <see><a href="/doc/styling/#text-formatting">Text formatting</a></see>
-    <spec><a href="https://www.w3.org/TR/CSS2/text.html#lining-striking-props">CSS 2.1</a></spec>
+    <comments>
+    <p>
+    Please note that even though this property is defined as not being inherited,
+    the property's specification gives a much more nuanced explanation - check the
+    specification's chapter <a href="https://www.w3.org/TR/css-text-decor-3/#line-decoration">Line
+    Decoration: Underline, Overline, and Strike-Through</a>.
+    </p>
+    </comments>
+    <spec><a href="https://www.w3.org/TR/css-text-decor-3/#text-decoration-line-property">CSS Text Decoration Module Level 3</a></spec>
+</property>
+
+<property>
+    <name>text-decoration-style</name>
+    <value>
+    <choice>
+      <keyword>solid</keyword>
+      <keyword>double</keyword>
+      <keyword>dotted</keyword>
+      <keyword>dashed</keyword>
+      <keyword>wavy</keyword>
+    </choice>
+    </value>
+    <initial>solid</initial>
+    <applyto>all elements</applyto>
+    <inherit>no</inherit>
+    <see><a href="/doc/styling/#text-formatting">Text formatting</a></see>
+    <comments>
+    <p></p>
+    </comments>
+    <spec><a href="https://www.w3.org/TR/css-text-decor-3/#text-decoration-style-property">CSS Text Decoration Module Level 3</a></spec>
 </property>
 
 <!--
