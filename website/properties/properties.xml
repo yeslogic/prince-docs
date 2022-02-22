@@ -1161,10 +1161,6 @@ TO ADD:
     <initial>auto</initial>
     <applyto>block-level elements in the normal flow of the root element</applyto>
     <inherit>no</inherit>
-    <shorthand>
-        <prop>column-break-after</prop>
-        <prop>page-break-after</prop>
-    </shorthand>
     <comments>
     <p>
     This property can be used to force or suppress page breaks after an
