@@ -23,6 +23,7 @@ property =
 		    element prop { text }+
 		} ?,
 		element extension { empty } ?,
+		element deprecated { empty } ?,
 		element example { text }*,
 		element see { reference | html-link }*,
 		element comments { para+ } ?,
@@ -165,4 +166,4 @@ reference =
     }
 
 class =
-    attribute class { "ext" }
+    attribute class { "ext" | "dep" }

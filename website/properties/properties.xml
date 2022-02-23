@@ -1411,6 +1411,7 @@ TO ADD:
     <initial>auto</initial>
     <applyto>multicol elements</applyto>
     <inherit>no</inherit>
+    <deprecated/>
     <see><code><property name="break-after"/></code></see>
     <comments>
     <p class="note">
@@ -1431,6 +1432,7 @@ TO ADD:
     <initial>auto</initial>
     <applyto>multicol elements</applyto>
     <inherit>no</inherit>
+    <deprecated/>
     <see><code><property name="break-before"/></code></see>
     <comments>
     <p class="note">
@@ -4064,6 +4066,7 @@ supplier, item { overflow-wrap: normal; }
     <initial>auto</initial>
     <applyto>block-level elements in the normal flow of the root element</applyto>
     <inherit>no</inherit>
+    <deprecated/>
     <see><code><property name="break-after"/></code></see>
     <comments>
     <p>
@@ -4095,6 +4098,7 @@ supplier, item { overflow-wrap: normal; }
     <initial>auto</initial>
     <applyto>block-level elements in the normal flow of the root element</applyto>
     <inherit>no</inherit>
+    <deprecated/>
     <see><code><property name="break-before"/></code></see>
     <comments>
     <p>
@@ -4121,6 +4125,7 @@ supplier, item { overflow-wrap: normal; }
     <initial>auto</initial>
     <applyto>block-level elements in the normal flow of the root element</applyto>
     <inherit>no</inherit>
+    <deprecated/>
     <see><code><property name="break-inside"/></code></see>
     <comments>
     <p>
@@ -5215,7 +5220,7 @@ supplier, item { overflow-wrap: normal; }
             <sequence>
                 <choice>
                     <keyword>output-intent</keyword>
-                    <keyword>full</keyword>
+                    <keyword class="dep">full</keyword>
                     <url>color-profile</url>
                 </choice>
                 <optional>
@@ -6853,6 +6858,7 @@ supplier, item { overflow-wrap: normal; }
 	<prop>text-line-through-color</prop>
 	<prop>text-line-through-style</prop>
     </shorthand>
+    <deprecated/>
 </property>
 
 <property>
@@ -6861,6 +6867,7 @@ supplier, item { overflow-wrap: normal; }
     <initial>CurrentColor</initial>
     <applyto>all elements</applyto>
     <inherit>no</inherit>
+    <deprecated/>
     <see><a href="/doc/graphics/#color">Color</a></see>
 </property>
 
@@ -6877,6 +6884,7 @@ supplier, item { overflow-wrap: normal; }
     <initial>none</initial>
     <applyto>all elements</applyto>
     <inherit>no</inherit>
+    <deprecated/>
 </property>
 
 <property>
@@ -6908,6 +6916,7 @@ supplier, item { overflow-wrap: normal; }
 	<prop>text-overline-color</prop>
 	<prop>text-overline-style</prop>
     </shorthand>
+    <deprecated/>
 </property>
 
 <property>
@@ -6916,6 +6925,7 @@ supplier, item { overflow-wrap: normal; }
     <initial>CurrentColor</initial>
     <applyto>all elements</applyto>
     <inherit>no</inherit>
+    <deprecated/>
     <see><a href="/doc/graphics/#color">Color</a></see>
 </property>
 
@@ -6932,6 +6942,7 @@ supplier, item { overflow-wrap: normal; }
     <initial>none</initial>
     <applyto>all elements</applyto>
     <inherit>no</inherit>
+    <deprecated/>
 </property>
 
 <property>
@@ -6990,6 +7001,7 @@ supplier, item { overflow-wrap: normal; }
 	<prop>text-underline-color</prop>
 	<prop>text-underline-style</prop>
     </shorthand>
+    <deprecated/>
 </property>
 
 <property>
@@ -6998,6 +7010,7 @@ supplier, item { overflow-wrap: normal; }
     <initial>CurrentColor</initial>
     <applyto>all elements</applyto>
     <inherit>no</inherit>
+    <deprecated/>
     <see><a href="/doc/graphics/#color">Color</a></see>
 </property>
 
@@ -7035,6 +7048,7 @@ supplier, item { overflow-wrap: normal; }
     <initial>none</initial>
     <applyto>all elements</applyto>
     <inherit>no</inherit>
+    <deprecated/>
 </property>
 
 <property>

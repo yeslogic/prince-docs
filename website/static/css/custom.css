@@ -143,6 +143,13 @@ p:hover .self-link, #prop-list summary:hover .self-link, #js-support-table summa
 #prop-list .programlisting pre {
     white-space: normal;
 }
+#prop-list summary.dep, span.dep {
+    text-decoration: line-through;
+}
+#prop-list summary.dep, #prop-list summary.dep + div, #prop-list summary.dep + div + div, #prop-list span.dep {
+    opacity: 0.4;
+}
+
 #js-support-table details.object {
   background-color: #f2f2f2;
 }

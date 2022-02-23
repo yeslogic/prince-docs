@@ -16,12 +16,16 @@ Below are all of the CSS properties supported by Prince.
 For their precise definitions please refer to the CSS specifications.
 </p>
 <p id="ext-props">
-* properties marked with an asterisk and a darker background color shade are
+The properties marked with an asterisk (<b>*</b>) and a darker background color shade are
 Prince extensions, while the extension values of a standard property are
 highlighted with a <span class="ext">light grey background</span>.
 Besides the standard <code>-prince-</code> prefix, Prince also accepts
 <code>prince-</code> as a vendor prefix for Prince-specific
 CSS properties.
+</p>
+<p id="dep-props">
+The <span class="dep">properties with a line-through</span> are deprecated properties, support might
+be removed in a future Prince version.
 </p>
 <p>
 For the values, the grammar draws on the
@@ -65,6 +69,12 @@ explained above.  A short explanation of the signs:
   <summary class="ext" title="Prince extension" id="prop-{$propid}">
     <xsl:if test="starts-with(name, 'prince-')"><xsl:text>-</xsl:text></xsl:if>
     <xsl:value-of select="name"/>*
+  </summary>
+  </xsl:when>
+  <xsl:when test="deprecated">
+  <summary class="dep" id="prop-{$propid}">
+    <xsl:if test="starts-with(name, 'prince-')"><xsl:text>-</xsl:text></xsl:if>
+    <xsl:value-of select="name"/>
   </summary>
   </xsl:when>
   <xsl:otherwise>
@@ -746,6 +756,10 @@ explained above.  A short explanation of the signs:
 
 <xsl:template match="keyword[@class='ext']">
     <span class="ext"><xsl:value-of select="."/></span>
+</xsl:template>
+
+<xsl:template match="keyword[@class='dep']">
+    <span class="dep"><xsl:value-of select="."/></span>
 </xsl:template>
 
 <xsl:template match="text">
