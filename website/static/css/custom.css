@@ -187,6 +187,7 @@ p:hover .self-link, #prop-list summary:hover .self-link, #js-support-table summa
 }
 #js-support-table .name.level {
   margin-right: 0.5em;
+  font-weight: 500;
 }
 #js-support-table pre {
   background-color: #fff;
