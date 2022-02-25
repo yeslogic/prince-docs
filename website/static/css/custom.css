@@ -150,6 +150,24 @@ p:hover .self-link, #prop-list summary:hover .self-link, #js-support-table summa
     opacity: 0.4;
 }
 
+p.note, p.warning {
+    border: 1px solid pink;
+    border-radius: 10px;
+    padding: 10px;
+}
+p.note::before {
+    content: "Note: ";
+    font-weight: bold;
+}
+p.warning::before {
+    content: "Warning: ";
+    color: red;
+    font-weight: bold;
+}
+p.note:only-child {
+    margin-bottom: 0;
+}
+
 #js-support-table details.object {
   background-color: #f2f2f2;
 }
