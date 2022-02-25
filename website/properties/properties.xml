@@ -5221,32 +5221,27 @@ supplier, item { overflow-wrap: normal; }
                 <choice>
                     <keyword>output-intent</keyword>
                     <keyword class="dep">full</keyword>
-                    <url>color-profile</url>
+                    <sequence>
+                        <url>color-profile</url>
+                        <optional>
+                            <keyword>no-embed</keyword>
+                        </optional>
+                    </sequence>
                 </choice>
                 <optional>
-                    <multiple>
-                        <choice>
-                            <keyword>absolute-colorimetric</keyword>
-                            <keyword>relative-colorimetric</keyword>
-                            <keyword>relative-colorimetric-bpc</keyword>
-                            <keyword>perceptual</keyword>
-                            <keyword>perceptual-bpc</keyword>
-                            <keyword>saturation</keyword>
-                            <keyword>saturation-bpc</keyword>
-                        </choice>
-                        <keyword>no-embed</keyword>
-                    </multiple>
+                    <choice>
+                        <keyword>absolute-colorimetric</keyword>
+                        <keyword>relative-colorimetric</keyword>
+                        <keyword>relative-colorimetric-bpc</keyword>
+                        <keyword>perceptual</keyword>
+                        <keyword>perceptual-bpc</keyword>
+                        <keyword>saturation</keyword>
+                        <keyword>saturation-bpc</keyword>
+                    </choice>
                 </optional>
             </sequence>
         </choice>
     </value2>
-    <!-- XXX: The URI can optionally be followed by 'no-embed' (whether before
-        or after the rendering intent, if both are given) to prevent embedding
-        the ICC profile.
-
-        (Consider documenting it as accepted only immediately after the URI,
-        just to simplify the syntax.)
-    -->
     <initial2>output-intent</initial2>
     <applyto2>@prince-pdf at-rule</applyto2>
     <inherit2>no</inherit2>
@@ -5272,15 +5267,16 @@ supplier, item { overflow-wrap: normal; }
     The <code>url()</code> function allows for an ICC color profile to convert
     to, different from the output-intent.
     </p>
-
+    <p>
+    Prince allows for the additional <code>no-embed</code> keyword, which
+    causes the color conversion target ICC profile to not be embedded in the
+    output PDF, unless required by the PDF profile.  The converted colors will
+    be left device dependent or else implicitly mapped to the output intent color
+    space.
+    </p>
     <p>
     The optional second argument comprises the rendering intent: Black point compensation (“BPC”) will most commonly be used with a relative-colorimetric rendering intent.  Prince however also accepts black point compensation with perceptual and saturation rendering intents because “there are atypical profiles [...] in which BPC may actually be beneficial for Perceptual or Saturation processing” (quoted from the in-depth analysis <a href="http://www.color.org/WP40-Black_Point_Compensation_2010-07-27.pdf">Black-point compensation: theory and application</a>).
     </p>
-
-    <p>
-    Prince also allows for the additional <code>no-embed</code> keyword, which causes the color conversion target ICC profile to not be embedded in the output PDF, unless required by the PDF profile.  The converted colors will be left device dependent or else implicitly mapped to the output intent color space.
-    </p>
-
     <p class="note">
     When the descriptor is used as a property, applied to single elements, it
     has a different syntax — see <a href="#prop-prince-pdf-color-conversion">above</a>.
