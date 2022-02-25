@@ -73,7 +73,7 @@ A disadvantage of lookahead is that any "mistakes" (that is, differences from wh
 
 This means that the non-lookahead versions might be a better choice in jobs where Prince's line breaks will be accepted without human oversight; whereas if a typesetter will look, for and correct any problems in the rag of the paragraph, then the lookahead versions will typically give a better starting point.
 
-<p id="note-typesetter">A typesetter's intervention currently involves modifying the HTML: it is not requireed to assign an <code>id</code> to each paragraph, but it is nevertheless common practice to do so for making other changes, such as changing the number of lines in a paragraph for pagination purposes (whether using <code>-prince-n-lines</code> or <code>word-spacing</code> or <code>letter-spacing</code>), or assigning a unique value to each chapter in order to change how many lines are on the last page of the chapter (say, by adding <code>1pt</code> to the inside margin). See also <a href="#spread-balancing">Spread Balancing</a>.</p>
+<p id="note-typesetter" class="note">A typesetter's intervention currently involves modifying the HTML: it is not requireed to assign an <code>id</code> to each paragraph, but it is nevertheless common practice to do so for making other changes, such as changing the number of lines in a paragraph for pagination purposes (whether using <code>-prince-n-lines</code> or <code>word-spacing</code> or <code>letter-spacing</code>), or assigning a unique value to each chapter in order to change how many lines are on the last page of the chapter (say, by adding <code>1pt</code> to the inside margin). See also <a href="#spread-balancing">Spread Balancing</a>.</p>
 
 To illustrate the difference, one could also say that non-lookahead versions give paragraph shapes reminiscent of those given by word processors and web browsers, while the lookahead versions come slightly closer to what one might find in books.
 
@@ -165,7 +165,9 @@ Another way to address page balancing is by using the property [`-prince-n-lines
 
 Typically, the best paragraph to apply this property to will be either already long and/or currently has either a very short or almost full last line, so that the paragraph doesn't need to change much in length compared to its existing "length" (as reckoned by its height). That is, the typesetter can choose a good candidate by looking at how much the last line would need to shrink or grow (including a word or two for the next line if growing), and how many times that length would fit in the height of the paragraph, with more being better.
 
-As noted [before](#note-typesetter), a typesetter's intervention currently involves modifying the HTML.
+<p class="note">
+As noted <a href="#note-typesetter">before</a>, a typesetter's intervention currently involves modifying the HTML.
+</p>
 
 Values other than the initial value of `auto` request that the paragraph occupy the given number of lines; where values other than a simple integer are relative to the number of lines that the paragraph would have occupied if this property still had its initial value (`auto`).
 

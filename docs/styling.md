@@ -480,7 +480,9 @@ A `block` element always starts on a new line and takes up all the available wid
 
 An `inline` element, on the other hand, does not start on a new line, and only takes up as much space as necessary.
 
-`inline` elements are not allowed to have `block` elements inside it.
+<p class="note">
+<code>inline</code> elements are not allowed to have <code>block</code> elements inside it.
+</p>
 
 A hybrid type, namely the `inline-block` element, is like `inline` elements, but it can have a width and a height - which can be very useful when you want to create a grid of CSS boxes that fills all the width and wraps nicely. The inside of an `inline-block` element is formatted like a block box.
 
@@ -941,7 +943,9 @@ The [`column-fill`](css-props.md#prop-column-fill) property determines how the c
 
 When content is laid out in multiple columns, Prince can determine where column breaks are placed in a similar way to breaking content into pages. Use the properties [`break-before`](css-props.md#prop-break-before) and [`break-after`](css-props.md#prop-break-after) with the value `column` to fine tune this behavior.
 
-Prince also supports the properties [`column-break-before`](css-props.md#prop-column-break-before) and [`column-break-after`](css-props.md#prop-column-break-after). However, you are encouraged to use the newer properties [`break-before`](css-props.md#prop-break-before), [`break-after`](css-props.md#prop-break-after) with the keyword `column` from the CSS Fragmentation Module Level 3.
+<p class="note">
+Prince also supports the properties <a href="/doc/css-props/#prop-column-break-before"><code>column-break-before</code></a> and <a href="/doc/css-props/#prop-column-break-after"><code>column-break-after</code></a>. However, you are encouraged to use the newer properties <a href="/doc/css-props/#prop-break-before"><code>break-before</code></a> and <a href="/doc/css-props/#prop-break-after"><code>break-after</code></a> with the keyword <code>column</code> from the CSS Fragmentation Module Level 3.
+</p>
 
 If an element is to break the flow and span several columns, the property [`column-span`](css-props.md#prop-column-span) helps to achieve this. For floated elements (see [Floats](#floats)) a numeric value tells Prince how many columns the element should span. A numeric value other than `1` will only affect floated elements.
 
@@ -1301,7 +1305,9 @@ In some situations it might happen that footnotes do not fit on the page on whic
 ```
 Alternatively, the value `keep-with-block` moves the entire paragraph to the next page.
 
+<p class="note">
 This property must be applied to the paragraph in which the footnote occurs, not to the footnote element itself.
+</p>
 
 
 ### Flex Layout

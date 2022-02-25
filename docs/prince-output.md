@@ -116,7 +116,9 @@ The next step would be to specifically check compliance of the document's conten
 
 Prince helps in creating accessible documents. Note, however, that Prince does not create WCAG-compliant documents by itself - care has to be taken, and the HTML source has to be coded in specific ways to address all requirements in order to create WCAG-compliant PDF documents.
 
-Bruce Lawson has written an interesting introduction on how to make [accessible tagged PDFs with Prince](https://medium.com/@bruce_39084/making-accessible-tagged-pdfs-with-prince-ad7fd7a48711) - all you need to know about PDF tags and Prince! Last but not least, there is a nice [Resources](https://taggedpdf.com/resources/) page on tagged and accessible PDFs.
+<p class="note">
+Bruce Lawson has written an interesting introduction on how to make <a href="https://medium.com/@bruce_39084/making-accessible-tagged-pdfs-with-prince-ad7fd7a48711">accessible tagged PDFs with Prince</a> - all you need to know about PDF tags and Prince! Last but not least, there is a nice <a href="https://taggedpdf.com/resources/">Resources</a> page on tagged and accessible PDFs.
+</p>
 
 
 PDF Features
@@ -464,7 +466,9 @@ The default value `auto` leaves the tag assignment to Prince.
 
 The special value `none` can be used to make specific elements (such as e.g. wrapper span or block elements) transparent in a tagged PDF structure tree.
 
-Bruce Lawson has written an interesting introduction on how to make [accessible tagged PDFs with Prince](https://medium.com/@bruce_39084/making-accessible-tagged-pdfs-with-prince-ad7fd7a48711) - all you need to know about PDF tags and Prince!
+<p class="note">
+Bruce Lawson has written an interesting introduction on how to make <a href="https://medium.com/@bruce_39084/making-accessible-tagged-pdfs-with-prince-ad7fd7a48711">accessible tagged PDFs with Prince</a> - all you need to know about PDF tags and Prince!
+</p>
 
 
 ### PDF Metadata

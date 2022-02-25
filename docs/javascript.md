@@ -61,7 +61,9 @@ When document conversion has finished, Prince will fire the `complete` event on 
 
 Prince also offers the possibility to register the function [`Prince.registerPostLayoutFunc(func)`](js-support.md#window.Prince.registerPostLayoutFunc) after layout has finished for possibly triggering a new layout - see [The Prince Object](#the-prince-object) for more details.
 
-When multiple documents are processed into one PDF, the `complete` event will only fire once, on the first document.
+<p class="note">
+When multiple documents are processed into one PDF, the <code>complete</code> event will only fire once, on the <em>first</em> document.
+</p>
 
 User interface events such as `onclick` are not supported by Prince.
 

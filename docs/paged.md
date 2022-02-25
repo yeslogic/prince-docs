@@ -305,7 +305,9 @@ Many CSS properties can be applied to page regions:
 
 -   When a page region contains generated content, many inline style properties such as [`color`](css-props.md#prop-color) and [`font`](css-props.md#prop-font) can be applied to style the generated content.
 
-The `@footnote` area can be positioned other than its default position (see [Styling and behavior of footnotes](styling.md#styling-and-behavior-of-footnotes) and [Sidenotes](cookbook.md#sidenotes)). All other page regions cannot be moved - their position is defined by the page margins.
+<p class="note">
+The <code>@footnote</code> area can be positioned other than its default position (see <a href="/doc/styling#styling-and-behavior-of-footnotes">Styling and behavior of footnotes</a> and <a href="/doc/cookbook#sidenotes">Sidenotes</a>). All other page regions cannot be moved - their position is defined by the page margins.
+</p>
 
 ### Generated content in page regions
 
@@ -751,7 +753,9 @@ This example clears the generated content used on these pages. This works becaus
 ```
 If chapter 1 also resets page numbering, then the page numbers will be reset on the first *content page*, i.e. a non-blank page.
 
+<p class="note">
 It is not always desirable to have no content on blank pages. Sometimes otherwise blank pages are required have some content, such as a notice saying "This page intentionally left blank". For example, in legal documents, this prevents people from mistaking a dangerous printing error for an intentionally blank page.
+</p>
 
 ### Page groups
 
@@ -893,12 +897,14 @@ Avoiding page breaks within an element is also important. For example, it is bes
 ```
 If the figure or table would have been split across two pages, it may be moved to the next page to keep it in one piece. An element longer than one page will still need to be split across multiple pages.
 
-The [`break-inside`](css-props.md#prop-break-inside) property cannot be used to create forced page breaks; its only valid values are `auto` and `avoid`.
+<p class="note">
+The <a href="/doc/css-props#prop-break-inside"><code>break-inside</code></a> property cannot be used to create forced page breaks; its only valid values are <code>auto</code>, and the inhibiting <code>avoid</code>, <code>avoid-page</code> and <code>avoid-column</code>.
+</p>
 
 These three properties can be applied to block-level elements, table rows and table row groups that occur within an in-flow element (ie. inside the normal flow of the document, not inside a float or an absolutely positioned block). Therefore the figure and table example only make sense when the figure or table is not floated.
 
 
-Page breaks have similarities with column breaks, see [Columns](styling.md#columns).
+Page breaks have similarities with column breaks - for further details, see [Columns](styling.md#columns).
 
 #### Page breaks and decoration
 
