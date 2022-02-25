@@ -897,7 +897,6 @@ The [`break-inside`](css-props.md#prop-break-inside) property cannot be used to 
 
 These three properties can be applied to block-level elements, table rows and table row groups that occur within an in-flow element (ie. inside the normal flow of the document, not inside a float or an absolutely positioned block). Therefore the figure and table example only make sense when the figure or table is not floated.
 
-Prince also supports the properties [`page-break-before`](css-props.md#prop-page-break-before), [`page-break-after`](css-props.md#prop-page-break-after) and [`page-break-inside`](css-props.md#prop-page-break-inside) from the CSS 2.1 specification. However, you are encouraged to use the newer properties [`break-before`](css-props.md#prop-break-before), [`break-after`](css-props.md#prop-break-after) and [`break-inside`](css-props.md#prop-break-inside) from the CSS Fragmentation Module Level 3.
 
 Page breaks have similarities with column breaks, see [Columns](styling.md#columns).
 
