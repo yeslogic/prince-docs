@@ -149,6 +149,9 @@ p:hover .self-link, #prop-list summary:hover .self-link, #js-support-table summa
 #prop-list summary.dep, #prop-list summary.dep + div, #prop-list summary.dep + div + div, #prop-list span.dep {
     opacity: 0.4;
 }
+#prop-list summary#prop---custom-property-name, #prop-list summary#prop---custom-property-name + div .example .syntax-block code {
+    font-style: italic;
+}
 
 p.note, p.warning {
     border: 1px solid pink;
