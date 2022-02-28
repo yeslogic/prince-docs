@@ -22,10 +22,11 @@ TO ADD:
 	<inherit>yes</inherit>
     <see><a href="/doc/styling/#custom-properties-css-variables">Custom properties (CSS variables)</a></see>
     <comments>
-    <p>This property family, called custom properties, is defined as any valid
-    identifier that starts with two dashes. Custom properties are solely for
-    use by authors and users; CSS will never give them a meaning beyond what
-    is presented here.</p>
+    <p>This property family, called custom properties, and used to define
+    the substitution value of <code>var()</code> functions, is defined as
+    any valid identifier that starts with two dashes. Custom properties
+    are solely for use by authors and users; CSS will never give them a
+    meaning beyond what is presented in the specification.</p>
     <p class="note">Unlike other CSS properties, custom property names are case-sensitive.</p>
     </comments>
     <spec><a href="https://www.w3.org/TR/css-variables-1/#defining-variables">CSS Custom Properties for Cascading Variables Module Level 1</a></spec>
