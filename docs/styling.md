@@ -1363,7 +1363,9 @@ Finally, the property [`align-self`](css-props.md#prop-align-self) allows the de
 
 It is important to know that margins of flex items behave in a slightly special way: margins of adjacent flex items do not collapse, and using the keyword `auto` for the margins of a flex item will automatically distribute the available space equally around the item - and it will be centered in both axis!
 
-Please notice that percentage values of margins and paddings of flex items are resolved by Prince against the inline axis, i.e. left/right/top/bottom percentages all resolve against width.
+<p class="note">
+Percentage values of margins and paddings of flex items are resolved by Prince against the inline axis, i.e. left/right/top/bottom percentages <em>all resolve against width</em>.
+</p>
 
 
 ### Custom properties (CSS variables)
