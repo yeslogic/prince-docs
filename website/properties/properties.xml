@@ -1194,10 +1194,6 @@
     <initial>auto</initial>
     <applyto>block-level elements in the normal flow of the root element</applyto>
     <inherit>no</inherit>
-    <shorthand>
-        <prop>column-break-before</prop>
-        <prop>page-break-before</prop>
-    </shorthand>
     <comments>
     <p>
     This property can be used to force or suppress page breaks before an
