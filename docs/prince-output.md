@@ -429,38 +429,38 @@ HTML
 ```
 The possible values are the following PDF tag types:
 
--   Part
--   Art
--   Sect
--   Div
--   Index
--   BlockQuote
--   Caption
--   TOC
--   TOCI
--   P
--   H1
--   H2
--   H3
--   H4
--   H5
--   H6
--   OL
--   UL
--   LI
--   Lbl
--   DL
--   DL-Div
--   DT
--   DD
--   Span
--   Quote
--   Table
--   BibEntry
--   Code
--   Figure
--   Formula
--   Artifact
+-   `Part`
+-   `Art`
+-   `Sect`
+-   `Div`
+-   `Index`
+-   `BlockQuote`
+-   `Caption`
+-   `TOC`
+-   `TOCI`
+-   `P`
+-   `H1`
+-   `H2`
+-   `H3`
+-   `H4`
+-   `H5`
+-   `H6`
+-   `OL`
+-   `UL`
+-   `LI`
+-   `Lbl`
+-   `DL`
+-   `DL-Div`
+-   `DT`
+-   `DD`
+-   `Span`
+-   `Quote`
+-   `Table`
+-   `BibEntry`
+-   `Code`
+-   `Figure`
+-   `Formula`
+-   `Artifact`
 
 The default value `auto` leaves the tag assignment to Prince.
 
