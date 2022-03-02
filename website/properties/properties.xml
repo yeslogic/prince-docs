@@ -11,9 +11,11 @@
 <property>
 	<name>--custom-property-name</name>
 	<value>
-        <type>declaration-value</type>
+        <optional>
+            <type>declaration-value</type>
+        </optional>
 	</value>
-	<initial>nothing</initial>
+	<initial>the guaranteed-invalid value</initial>
     <applyto>all elements</applyto>
 	<inherit>yes</inherit>
     <see><a href="/doc/styling/#custom-properties-css-variables">Custom properties (CSS variables)</a></see>
