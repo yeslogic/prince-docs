@@ -25,6 +25,9 @@
     any valid identifier that starts with two dashes. Custom properties
     are solely for use by authors and users; CSS will never give them a
     meaning beyond what is presented in the specification.</p>
+    <p>Please check <a href="https://www.w3.org/TR/css-variables-1/">the
+    specification</a> for details on the custom properties.
+    </p>
     <p class="note">Unlike other CSS properties, custom property names are case-sensitive.</p>
     </comments>
     <spec><a href="https://www.w3.org/TR/css-variables-1/#defining-variables">CSS Custom Properties for Cascading Variables Module Level 1</a></spec>
