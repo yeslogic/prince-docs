@@ -366,7 +366,7 @@ ul.toc-headings li ul.toc-headings li a.active {
     pre, p:contains('Output') {
         break-inside: avoid;
     }
-    details {
+    details, p.note, p.warning {
         box-decoration-break: slice;
     }
     a[href]::after {
