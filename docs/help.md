@@ -53,7 +53,7 @@ Symptom
     prince: ./picture.bmp: warning: Unknown image format
 ```
 Explanation  
-Prince supports the JPEG, PNG, TIFF, GIF, WebP and AVIF image formats, as well as [SVG](#scalable-vector-graphics-svg) (see [Images](graphics.md#images)). If you try to format a document that includes images in a format that is not supported by Prince, such as BMP, you may see the above error message from Prince.
+Prince supports the JPEG, PNG, TIFF, GIF, WebP and AVIF image formats, as well as SVG (see [Images](graphics.md#images)). If you try to format a document that includes images in a format that is not supported by Prince, such as BMP, you may see the above error message from Prince.
 
 Solution  
 The solution is to convert the image file into a format that is supported by Prince. We suggest PNG, which is a well-supported general purpose image format with lossless compression.
