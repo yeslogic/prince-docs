@@ -1111,8 +1111,7 @@ The post layout function can register itself, or another post layout function, i
 Here is a minimalistic "multi-pass" solution where the document is adorned with a ToC and index:
 
 ```bash
-    $ wget https://css4.pub/2020/musick/musick.html -O musick.html;
-    $ prince --javascript musick.html -o musick.pdf
+    $ prince --javascript https://css4.pub/2020/musick/musick.html -o musick.pdf
 ```
 Another use of the "multi-pass" solution is to create changebars - see the description [here](http://www.princexml.com/forum/topic/3516/changebars).
 
