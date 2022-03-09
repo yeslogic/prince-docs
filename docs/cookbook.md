@@ -52,8 +52,7 @@ Our [example document](http://css4.pub/2018/toc/index.html) generates at Table o
 A [second example document](https://css4.pub/2020/musick/musick.html) generates at ToC by way of JavaScript and, even more impressively, the script also generates an index which is added to the end of the document when Prince runs JavaScript a second time, after layout (see [The "Multi-Pass" Solution](#the-multi-pass-solution)). Notice how subsequent page numbers in the index are folded into a range. To produce this document, try running these commands from a Linux command-line:
 
 ```bash
-    $ wget https://css4.pub/2020/musick/musick.html -O musick.html;
-    $ prince --javascript musick.html -o musick.pdf
+    $ prince --javascript https://css4.pub/2020/musick/musick.html -o musick.pdf
 ```
 You can view the resulting PDF [here](https://css4.pub/2020/musick/musick.pdf).
 
