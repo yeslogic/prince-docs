@@ -23,6 +23,11 @@ title: Help
 .navigationSlider .slidingNav ul li a:hover {
     color: #22b573 !important;
 }
+@media only screen and (max-width: 1023px) {
+    .navigationSlider .slidingNav ul li:first-child {
+        background-color: #3b5668 !important;
+    }
+}
 </style>
 
 The Prince User Guide tries to be exhaustive in explaining how to use the application and its features. However, there might always be something not answered in the documentation, or something not working as expected. There are a couple of ways to get help to solve the problems:
