@@ -10,7 +10,7 @@ For the error and warning output log, please see [Output log](help.md#output-log
 PDF Versions and Profiles
 -------------------------
 
-The PDF files produced by Prince conform to several different PDF versions, up to PDF 1.7, depending on the chosen PDF Profile and the enabled PDF features.
+The PDF files produced by Prince conform to several different PDF versions, up to PDF 1.7 (ISO 32000-1:2008), depending on the chosen PDF Profile and the enabled PDF features.
 
 Prince supports tagged PDF files and optional PDF profiles, which can be selected using the [`--pdf-profile`](command-line.md#cl-pdf-profile) option on the [command-line interface](command-line.md), or the `setProfile` method if using a [server wrapper](server-integration.md#prince-wrappers), or the [`PDF.profile`](js-support.md#window.PDF.profile) function in JavaScript.
 
@@ -20,16 +20,16 @@ The available profiles, and the PDF version they are based on, are:
 |---------------|-------------|
 | PDF/A-1a      | PDF 1.4     |
 | PDF/A-1b      | PDF 1.4     |
-| PDF/A-2a      | PDF 1.7     |
-| PDF/A-2b      | PDF 1.7     |
-| PDF/A-3a      | PDF 1.7     |
-| PDF/A-3b      | PDF 1.7     |
-| PDF/UA-1      | PDF 1.7     |
-| PDF/X-1a:2001 | PDF 1.3     |
-| PDF/X-1a:2003 | PDF 1.4     |
+| PDF/A-2a      | PDF 1.7 (ISO 32000-1:2008)    |
+| PDF/A-2b      | PDF 1.7 (ISO 32000-1:2008)    |
+| PDF/A-3a      | PDF 1.7 (ISO 32000-1:2008)    |
+| PDF/A-3b      | PDF 1.7 (ISO 32000-1:2008)    |
+| PDF/UA-1 (ISO 14289-1)     | PDF 1.7 (ISO 32000-1:2008)    |
+| PDF/X-1a:2001 (ISO 15930-1:2001) | PDF 1.3     |
+| PDF/X-1a:2003 (ISO 15930-4:2003) | PDF 1.4     |
 | PDF/X-3:2002  | PDF 1.3     |
-| PDF/X-3:2003  | PDF 1.4     |
-| PDF/X-4       | PDF 1.6     |
+| PDF/X-3:2003 (ISO 15930-6:2003) | PDF 1.4     |
+| PDF/X-4 (ISO 15930-7:2008)      | PDF 1.6     |
 
 Prince supports files with the combined PDF/A-1a+PDF/UA-1, PDF/A-2a+PDF/UA-1, and PDF/A-3a+PDF/UA-1 profiles.
 
@@ -44,7 +44,7 @@ PDF 1.6
 -   if the [`-prince-pdf-print-scaling`](css-props.md#prop-prince-pdf-print-scaling) property is set, or
 -   if the [`-prince-pdf-page-mode`](css-props.md#prop-prince-pdf-page-mode) property has the value `show-attachments`;
 
-PDF 1.7  
+PDF 1.7 (ISO 32000-1:2008)  
 -   if the [`-prince-pdf-paper-tray`](css-props.md#prop-prince-pdf-paper-tray) property is set, or
 -   if the [`-prince-pdf-duplex`](css-props.md#prop-prince-pdf-duplex) property is set.
 
