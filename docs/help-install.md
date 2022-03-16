@@ -96,7 +96,7 @@ Add Prince's `bin/` subdirectory to your `PATH` and ensure that these changes ar
 
 This should be added to your command interpreter's configuration. For more information see your operating system's documentation.
 
-### Prince cannot be run on MacOS Catalina.
+### Prince cannot run on MacOS Catalina.
 
 Symptom  
 
