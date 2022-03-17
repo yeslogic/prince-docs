@@ -1442,6 +1442,7 @@ var stdAnnotated = {
         },
         trackBoxes: {
             type: "function",
+            desc: "See <a href='/doc/javascript#the-box-tracking-api'>The Box Tracking API</a>",
             arguments: [
                 {type: "boolean"}
             ]
