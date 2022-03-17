@@ -1236,6 +1236,7 @@ var std = {
     // Prince APIs
     Prince: {
         registerPostLayoutFunc: {},
+        addEventListener: {},
         addScriptFunc: {},
         trackBoxes: {},
         convertToFile: {},
