@@ -102,14 +102,14 @@ The [`Prince.convertToFile`](js-support.md#window.Prince.convertToFile) and [`Pr
 ```javascript
     convertToFile(JSON, OutputFileName, ...optional extra job resources)
 ```
-- returns bool indicating success
+- returns bool indicating success;
 
 ```javascript
     convertToBuffer(JSON, ...optional extra job resources)
 ```
-- returns ArrayBuffer if successful, null if not
+- returns ArrayBuffer if successful, null if not;
 
-Whereby `JSON` is a job description similar to the one specified in the [Prince Control Protocol](server-integration.md#prince-control-protocol), while the optional extra job resource arguments are ArrayBuffers or strings that can be referenced from the JSON using the `job-resource:` URLs. See [Prince Control Protocol](server-integration.md#prince-control-protocol).
+whereby `JSON` is a job description similar to the one specified in the [Prince Control Protocol](server-integration.md#prince-control-protocol), while the optional extra job resource arguments are ArrayBuffers or strings that can be referenced from the JSON using the `job-resource:` URLs. See [Prince Control Protocol](server-integration.md#prince-control-protocol).
 
 The property [`Prince.failStatus`](js-support.md#window.Prince.failStatus) is a boolean which can be set to trigger an explicit failure status through JavaScript, based on custom criteria. See also [Fail-Safe Options](server-integration.md#fail-safe-options).
 
