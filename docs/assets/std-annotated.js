@@ -1645,7 +1645,7 @@ var stdAnnotated = {
         },
         objectStreams: {
             type: "function",
-            desc: "Disables PDF object streams.",
+            desc: "Can be used to disable PDF object streams.  Object streams are enabled by default.",
             arguments: [
                 {type: "boolean" }
             ]
