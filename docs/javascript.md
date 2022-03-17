@@ -44,12 +44,14 @@ The Prince log can be accessed from JavaScript via the [`Log`](js-support.md#win
 ```
 ### Console Access
 
-When running Prince from the command-line, the `console` object can be used to write messages directly to the terminal:
+When running Prince from the command-line, the [`console`](js-support.md#window.console) object can be used to write messages directly to the terminal:
 
 ```javascript
     console.log("Hello, world!")
 ```
+<p class="note">
 Console access is only supported when running Prince directly from the command-line, and should not be used when calling Prince through a server wrapper or graphical user interface.
+</p>
 
 ### Event Handling
 
