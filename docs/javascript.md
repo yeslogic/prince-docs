@@ -24,7 +24,7 @@ JavaScript in Prince
 
 Prince supports most of ECMAScript 5th edition (ES5), with the exception of strict mode. ES6 is not fully supported yet, and later editions of ECMAScript are not supported.
 
-JavaScript is not run by default - it needs to be explicitly enabled. See [Applying JavaScript in Prince](prince-input.md#applying-javascript-in-prince).
+Document JavaScript is not run by default - it needs to be explicitly enabled. See [Applying JavaScript in Prince](prince-input.md#applying-javascript-in-prince) for details.
 
 In addition to normal JavaScript run in the document, Prince allows also for scripts to be passed directly to the PDF, to be executed when the PDF file is opened (by means of the CSS property [`-prince-pdf-script`](css-props.md#prop-prince-pdf-script)), or triggered by specific events (with the CSS property [`-prince-pdf-event-scripts`](css-props.md#prop-prince-pdf-event-scripts)). See [Script Functions](gen-content.md#script-functions) and [PDF Actions](prince-output.md#pdf-actions) for more details.
 
