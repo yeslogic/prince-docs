@@ -59,7 +59,7 @@ When the document has been fully parsed and is ready for processing, Prince will
 
 These load events can be captured by setting the `onload` attribute on the `body` element in HTML documents, or by setting the `window.onload` property or calling [`window.addEventListener`](js-support.md#window.addEventListener).
 
-When document conversion has finished, Prince will fire the `complete` event on the `Prince` object. This event can be captured by calling [`Prince.addEventListener`](js-support.md#window.Prince.addEventListener), and is useful for logging document statistics.
+When document conversion has finished, Prince will fire the `complete` event on the `Prince` object. This event can be captured by calling [`Prince.addEventListener`](js-support.md#window.Prince.addEventListener), or by setting the [`Prince.oncomplete`](js-support.md#window.Prince.oncomplete) property, and is useful for logging document statistics.
 
 Prince also offers the possibility to register the function [`Prince.registerPostLayoutFunc(func)`](js-support.md#window.Prince.registerPostLayoutFunc) after layout has finished for possibly triggering a new layout - see [The Prince Object](#the-prince-object) for more details.
 
@@ -93,6 +93,9 @@ The [`Prince`](js-support.md#window.Prince) object can be used to control variou
     Prince.convertToFile(JSON, OutputFileName, ...optional extra job resources)
     Prince.convertToBuffer(JSON, ...optional extra job resources)
 ```
+
+The [`Prince.addEventListener`](js-support.md#window.Prince.addEventListener) method or the [`Prince.oncomplete`](js-support.md#window.Prince.oncomplete) property can be called to listen to the `complete` event on the Prince object, which is fired when all layout is finished (and after the last repeated layout, if this was requested), just before the PDF is generated, so that it can cancel the PDF output by triggering a fail-safe if necessary, or log information about the PDF like the page count.
+
 The [`Prince.addScriptFunc`](js-support.md#window.Prince.addScriptFunc) method takes two arguments: the string name that will be exposed to CSS, and the function itself. See [Script Functions](gen-content.md#script-functions) for an example.
 
 [`Prince.trackBoxes`](js-support.md#window.Prince.trackBoxes) is a bool that will enable the box tracking API if set to true, so that it can be used later in the `complete` event. See [The Box Tracking API](javascript.md#the-box-tracking-api).
