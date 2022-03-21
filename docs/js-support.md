@@ -134,7 +134,7 @@ function add(parent, thing, annotations, type, hasChildren, length, parentDescs)
                 if(arg.desc) {
                     div = li.appendChild(document.createElement('div'));
                     div.className = 'desc';
-                    div.appendChild(document.createTextNode(arg.desc));
+                    div.innerHTML = arg.desc;
                 }
             });
         }
