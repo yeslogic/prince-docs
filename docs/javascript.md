@@ -124,6 +124,20 @@ For example, perhaps there should be only one page: you check the page count (se
 
 Prince also offers the possibility to register the function [`Prince.registerPostLayoutFunc(func)`](js-support.md#window.Prince.registerPostLayoutFunc), which is called after layout finished, similar to the current `oncomplete` event. If this function modifies the DOM, Prince will perform layout again on the updated document once the function returns, and before generating the PDF.
 
+JavaScript
+```javascript
+    Prince.registerPostLayoutFunc(function() {
+        var str = '@prince-color Color1 { alternate-color: cmyk(1,0,0,0) }';
+        var add = document.getElementById('add');
+        add.appendChild(document.createTextNode(str));
+    });
+```
+HTML
+```html
+    <style id='add'></style>
+    <p style='color: prince-color(Color1)'>This was black, becomes cyan</p>
+```
+
 A post layout function may register itself, or another post layout function, in order to repeat this process multiple times! By default the number of passes is not limited, but in order to prevent endless layout loops you can set a limit by using the [`--max-passes=N`](command-line.md#cl-max-passes) command-line option. For more details see [The "Multi-Pass" Solution](cookbook.md#the-multi-pass-solution).
 
 
