@@ -1429,7 +1429,7 @@ var stdAnnotated = {
             arguments: [
                 {name: "function", type: "string"}
             ],
-            desc: "See <a href='/doc/cookbook#the-multi-pass-solution'>The \"Multi-Pass\" Solution</a>"
+            desc: "See <a href='/doc/javascript#multi-pass-formatting'>Multi-Pass formatting</a>"
         },
         oncomplete: {
             desc: "The <code>complete</code> event is fired when all layout is finished (and after the last repeated layout, if this was requested), just before the PDF is output, so that it can cancel the PDF output by triggering a fail-safe if necessary, or log information about the PDF like the page count.",
