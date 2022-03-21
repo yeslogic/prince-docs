@@ -69,36 +69,35 @@ When multiple documents are processed into one PDF, the <code>complete</code> ev
 
 User interface events such as `onclick` are not supported by Prince.
 
-### Document Statistics
-
-The [`Prince.pageCount`](js-support.md#window.Prince.pageCount) property can be accessed after document conversion has finished, then logged as data for the calling process to access:
-
-```javascript
-    function logPageCount()
-    {
-        Log.data("total-page-count", Prince.pageCount);
-    }
-
-    Prince.addEventListener("complete", logPageCount, false);
-```
-See also [The "Multi-Pass" Solution](cookbook.md#the-multi-pass-solution) for another use of accessing document properties after the document conversion has finished.
-
 ### The Prince Object
 
 The [`Prince`](js-support.md#window.Prince) object can be used to control various scripting aspects in Prince.
 
 ```javascript
-    Prince.addScriptFunc(name, function)
+    Prince.addEventListener(type, ...callback, optional extra options)
+    Prince.oncomplete
+    Prince.addScriptFunc(name, func)
     Prince.trackBoxes = (boolean)
     Prince.convertToFile(JSON, OutputFileName, ...optional extra job resources)
     Prince.convertToBuffer(JSON, ...optional extra job resources)
+    Prince.failStatus
+    Prince.pageCount
+    Prince.registerPostLayoutFunc(func)
 ```
+
+#### Event tracking
 
 The [`Prince.addEventListener`](js-support.md#window.Prince.addEventListener) method or the [`Prince.oncomplete`](js-support.md#window.Prince.oncomplete) property can be called to listen to the `complete` event on the Prince object, which is fired when all layout is finished (and after the last repeated layout, if this was requested), just before the PDF is generated, so that it can cancel the PDF output by triggering a fail-safe if necessary, or log information about the PDF like the page count.
 
+#### Script functions
+
 The [`Prince.addScriptFunc`](js-support.md#window.Prince.addScriptFunc) method takes two arguments: the string name that will be exposed to CSS, and the function itself. See [Script Functions](gen-content.md#script-functions) for an example.
 
+#### Box tracking
+
 [`Prince.trackBoxes`](js-support.md#window.Prince.trackBoxes) is a bool that will enable the box tracking API if set to true, so that it can be used later in the `complete` event. See [The Box Tracking API](javascript.md#the-box-tracking-api).
+
+#### Prince jobs
 
 The [`Prince.convertToFile`](js-support.md#window.Prince.convertToFile) and [`Prince.convertToBuffer`](js-support.md#window.Prince.convertToBuffer) methods allow you to start new Prince jobs:
 
@@ -112,13 +111,29 @@ The [`Prince.convertToFile`](js-support.md#window.Prince.convertToFile) and [`Pr
 ```
 - returns ArrayBuffer if successful, null if not;
 
-whereby `JSON` is a job description similar to the one specified in the [Prince Control Protocol](server-integration.md#prince-control-protocol), while the optional extra job resource arguments are ArrayBuffers or strings that can be referenced from the JSON using the `job-resource:` URLs. See [Prince Control Protocol](server-integration.md#prince-control-protocol).
+whereby `JSON` is a job description as specified in the [Job description JSON](server-integration.md#job-description-json), while the optional extra job resource arguments are ArrayBuffers or strings that can be referenced from the JSON using the `job-resource:` URLs. See [Prince Control Protocol](server-integration.md#prince-control-protocol).
+
+#### Failure status
 
 The property [`Prince.failStatus`](js-support.md#window.Prince.failStatus) is a boolean which can be set to trigger an explicit failure status through JavaScript, based on custom criteria. See also [Fail-Safe Options](server-integration.md#fail-safe-options).
 
 It can be set to true by a script that runs after layout in the `oncomplete` handler (see [Event Handling](javascript.md#event-handling)) and checks for complex conditions, like overlapping content (see [The Box Tracking API](javascript.md#the-box-tracking-api) and the [Detecting Overflow](http://www.princexml.com/forum/topic/3603/detecting-overflow) sample) or some other user-defined issue that you want to trigger the fail-safe.
 
 For example, perhaps there should be only one page: you check the page count (see [Document Statistics](javascript.md#document-statistics)), and if it's greater than one, you log a warning and trigger the fail-safe to ensure that no PDF is generated.
+
+#### Document Statistics
+
+The [`Prince.pageCount`](js-support.md#window.Prince.pageCount) property can be accessed after document conversion has finished, then logged as data for the calling process to access:
+
+```javascript
+    function logPageCount()
+    {
+        Log.data("total-page-count", Prince.pageCount);
+    }
+
+    Prince.addEventListener("complete", logPageCount, false);
+```
+See also [The "Multi-Pass" Solution](cookbook.md#the-multi-pass-solution) for another use of accessing document properties after the document conversion has finished.
 
 #### Multi-Pass formatting
 

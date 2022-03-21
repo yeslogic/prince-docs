@@ -1424,16 +1424,6 @@ var stdAnnotated = {
         type: "object",
         ext: "ext",
         desc: "See <a href='/doc/javascript#the-prince-object'>The Prince Object</a>",
-        registerPostLayoutFunc: {
-            type: "function",
-            arguments: [
-                {name: "function", type: "string"}
-            ],
-            desc: "See <a href='/doc/javascript#multi-pass-formatting'>Multi-Pass formatting</a>"
-        },
-        oncomplete: {
-            desc: "The <code>complete</code> event is fired when all layout is finished (and after the last repeated layout, if this was requested), just before the PDF is output, so that it can cancel the PDF output by triggering a fail-safe if necessary, or log information about the PDF like the page count.",
-        },
         addEventListener: {
             type: "function",
             desc: "can be called to listen to the <code>complete</code> event on the Prince object. See <a href='/doc/javascript#event-handling'>Event Handling</a>.",
@@ -1442,6 +1432,9 @@ var stdAnnotated = {
             {name: "callback", type: "string"},
             {name: "optional extra options", type: "string"},
             ],
+        },
+        oncomplete: {
+            desc: "The <code>complete</code> event is fired when all layout is finished (and after the last repeated layout, if this was requested), just before the PDF is output, so that it can cancel the PDF output by triggering a fail-safe if necessary, or log information about the PDF like the page count.",
         },
         addScriptFunc: {
             type: "function",
@@ -1461,9 +1454,9 @@ var stdAnnotated = {
         convertToFile: {
             type: "function",
             arguments: [
-                {name: "JSON", type: "string"},
+                {name: "JSON", type: "string", desc: "as specified in the <a href='/doc/server-integration#job-description-json'>Job description JSON</a>;"},
                 {name: "OutputFileName", type: "string"},
-                {name: "optional extra resources", type: "ArrayBuffers or strings"}
+                {name: "...optional extra job resources", type: "ArrayBuffers or strings"}
             ],
             returns: "boolean, indicating success"
         },
@@ -1471,7 +1464,7 @@ var stdAnnotated = {
             type: "function",
             arguments: [
                 {name: "JSON", type: "string"},
-                {name: "optional extra resources", type: "ArrayBuffers or strings"}
+                {name: "...optional extra job resources", type: "ArrayBuffers or strings"}
             ],
             returns: "ArrayBuffer if successful, null if not"
         },
@@ -1481,6 +1474,13 @@ var stdAnnotated = {
         pageCount: {
             type: "function",
             returns: "Total number of document pages, can be accessed after document conversion has finished"
+        },
+        registerPostLayoutFunc: {
+            type: "function",
+            arguments: [
+                {name: "function", type: "string"}
+            ],
+            desc: "See <a href='/doc/javascript#multi-pass-formatting'>Multi-Pass formatting</a>"
         },
         Log: {
             debug: {},

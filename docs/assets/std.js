@@ -1235,15 +1235,15 @@ var std = {
     },
     // Prince APIs
     Prince: {
-        registerPostLayoutFunc: {},
-        oncomplete: {},
         addEventListener: {},
+        oncomplete: {},
         addScriptFunc: {},
         trackBoxes: {},
         convertToFile: {},
         convertToBuffer: {},
 		failStatus: {},
         pageCount: {},
+        registerPostLayoutFunc: {},
         Log: {
             debug: {},
             info: {},
