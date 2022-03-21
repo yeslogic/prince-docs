@@ -1449,7 +1449,7 @@ var stdAnnotated = {
                 {name: "name", type: "string"},
                 {name: "function", type: "string"}
             ],
-            example: "function myfunc() {\n  return 'Some generated content text!';\n}\nPrince.addScriptFunc('myfunc', myfunc);"
+            desc: "exposes an arbitrary JavaScript function to CSS. See <a href='/doc/gen-content#script-functions'>Script Functions</a>.",
         },
         trackBoxes: {
             type: "function",
