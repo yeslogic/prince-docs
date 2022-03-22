@@ -91,7 +91,7 @@ The [`Prince.addEventListener`](js-support.md#window.Prince.addEventListener) me
 
 #### Script functions
 
-The [`Prince.addScriptFunc`](js-support.md#window.Prince.addScriptFunc) method takes two arguments: the string name that will be exposed to CSS, and the function itself. See [Script Functions](gen-content.md#script-functions) for an example.
+The [`Prince.addScriptFunc`](js-support.md#window.Prince.addScriptFunc) method exposes an arbitrary JavaScript function to CSS.  It takes two arguments: the string name that will be exposed to CSS, and the function itself. See [Script Functions](gen-content.md#script-functions) for an example.
 
 #### Box tracking
 
