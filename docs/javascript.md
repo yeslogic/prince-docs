@@ -133,7 +133,6 @@ The [`Prince.pageCount`](js-support.md#window.Prince.pageCount) property can be 
 
     Prince.addEventListener("complete", logPageCount, false);
 ```
-See also [The "Multi-Pass" Solution](cookbook.md#the-multi-pass-solution) for another use of accessing document properties after the document conversion has finished.
 
 #### Multi-Pass formatting
 
