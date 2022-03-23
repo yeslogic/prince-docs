@@ -37,11 +37,16 @@ A full list of all supported JavaScript objects, methods and properties can be f
 The Prince log can be accessed from JavaScript via the [`Log`](js-support.md#window.Log) object (also available as [`Prince.Log`](js-support.md#window.Prince.Log)), which has the following methods:
 
 ```javascript
+    Log.debug("message")
     Log.info("message")
     Log.warning("message")
     Log.error("message")
     Log.data("name", "value")
 ```
+<p class="note">
+<code>Log.debug()</code> is only available when the <a href="/doc/command-line#cl-debug"><code>--debug</code></a> command-line option has been specified, while <code>Log.info()</code> is only available when the <a href="/doc/command-line#cl-verbose"><code>--verbose</code></a> command-line option has been specified.
+</p>
+
 ### Console Access
 
 When running Prince from the command-line, the [`console`](js-support.md#window.console) object can be used to write messages directly to the terminal:

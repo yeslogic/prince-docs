@@ -1483,23 +1483,36 @@ var stdAnnotated = {
             desc: "See <a href='/doc/javascript#multi-pass-formatting'>Multi-Pass formatting</a>"
         },
         Log: {
-            debug: {},
+            type: "object",
+            desc: "also available as <a href='#window.Log'><code>Log</code></a>.",
+            debug: {
+                type: "function",
+                desc: "only available when the <code>--debug</code> command-line option is specified.",
+                arguments: [
+                    {name: "message", type: "string"}
+                ]
+            },
             info: {
+                type: "function",
+                desc: "only available when the <code>--verbose</code> command-line option is specified.",
                 arguments: [
                     {name: "message", type: "string"}
                 ]
             },
             warning: {
+                type: "function",
                 arguments: [
                     {name: "message", type: "string"}
                 ]
             },
             error: {
+                type: "function",
                 arguments: [
                     {name: "message", type: "string"}
                 ]
             },
             data: {
+                type: "function",
                 arguments: [
                     {name: "name", type: "string"},
                     {name: "value", type: "string"}
@@ -1738,10 +1751,16 @@ var stdAnnotated = {
     Log: {
         ext: "ext",
         type: "object",
+        desc: "also available as <a href='#window.Prince.Log'><code>Prince.Log</code></a>.",
         debug: {
+            desc: "only available when the <code>--debug</code> command-line option is specified.",
             type: "function",
+            arguments: [
+                {name: "message", type: "string"}
+            ]
         },
         info: {
+            desc: "only available when the <code>--verbose</code> command-line option is specified.",
             type: "function",
             arguments: [
                 {name: "message", type: "string"}
