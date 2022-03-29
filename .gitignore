@@ -11,4 +11,7 @@ website/yarn.lock
 website/node_modules
 website/i18n/*
 
+website/samples/*.png
+
 docs/css-props.md
+docs/assets/samples/marginboxes*

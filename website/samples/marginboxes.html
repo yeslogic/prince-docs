@@ -8,7 +8,7 @@
     padding: 0cm;
     margin: 4cm;
     background-color: #ccc;
-    font-size: 32pt;
+    font-size: 22pt;
     font-family: sans-serif;
     @top-center {
         content: "@top-center";
@@ -35,8 +35,20 @@
         background-color: #8f8;
     }
     @top-right-corner {
-        content: "@c";
+        content: "@top-right-corner";
+        font-size: 15pt;
         background-color: #88f;
+    }
+    @leftnote {
+        width: 10vw;
+        background-color: pink;
+    }
+    @rightnote {
+        width: 10vw;
+        background-color: thistle;
+    }
+    @footnote {
+        background-color: aliceblue;
     }
 }
 body {
@@ -46,10 +58,29 @@ body {
     text-align: center;
     font-family: sans-serif;
 }
+#footnote {
+    float: footnote;
+    font-size: 22pt;
+}
+#leftnote {
+    float: leftnote align-bottom;
+    font-size: 22pt;
+    transform: rotate(-90deg);
+    margin-bottom: -6em;
+}
+#rightnote {
+    float: rightnote;
+    font-size: 22pt;
+    transform: rotate(90deg);
+    padding-left: 9vw;
+}
+*::footnote-call, *::footnote-marker {
+    content: "";
+}
 </style>
 </head>
 <body>
-Page area
+Page area<span id="footnote">@footnote</span><span id="leftnote">@leftnote</span><span id="rightnote">@rightnote</span>
 </body>
 </html>
 
