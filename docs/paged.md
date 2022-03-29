@@ -280,7 +280,19 @@ Several other page regions can also be used. The full list of page regions is sh
 <td><code>@footnote</code></td>
 <td>left</td>
 <td>middle</td>
-<td>not shown</td>
+<td style="background-color: aliceblue">aliceblue</td>
+</tr>
+<tr>
+<td><code>@leftnote</code></td>
+<td>left</td>
+<td>middle</td>
+<td style="background-color: pink">pink</td>
+</tr>
+<tr>
+<td><code>@rightnote</code></td>
+<td>left</td>
+<td>middle</td>
+<td style="background-color: thistle">thistle</td>
 </tr>
 </tbody>
 </table>
@@ -294,6 +306,8 @@ The page-margin boxes `@top-center`, `@top-left` or `@top-right` can be used to 
 The page region `@prince-overlay` is a special region, overlaying all of the page area. A typical use is for creating watermarks on all pages of the document (see [Watermarks](cookbook.md#watermarks)).
 
 The page region `@footnote` is placed by default at the foot of the page area and contains the footnotes (see [Footnotes](styling.md#footnotes)). Note that if there are no footnotes on a page, the footnote area will not be displayed on that page at all.
+
+The `@leftnote` and `@rightnote` areas for sidenotes are placed left and right of the page area and contain the sidenotes (see [Sidenotes](styling.md#sidenotes)).  The sidenote areas need a width to be defined.
 
 Many CSS properties can be applied to page regions:
 
