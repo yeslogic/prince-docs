@@ -18,9 +18,13 @@ There are some little requirements for this:
 
 (Hint: If *really* need be, you could do without Jing, just fix your Makefile.)
 
-The quick and lazy thing, is to run, instead of `yarn start`,
-just the following command from the `./website` folder:
+Also the rasterized Page Region image is generated outside of the Docusaurus
+framework - you first need to run `make` in the `./website/properties` folder.
+
+Both makefiles are called from the Makefile in the `./website` folder. To start
+the fully set up documentation, instead of just `yarn start`, you run
+the following command from the `./website` folder:
 
 ```
-    $ cd ./properties && make && cd - && yarn start
+    $ make && yarn start
 ```
