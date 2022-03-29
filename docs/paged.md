@@ -294,6 +294,18 @@ Several other page regions can also be used. The full list of page regions is sh
 <td>middle</td>
 <td style="background-color: thistle">thistle</td>
 </tr>
+<tr>
+<td><code>@outsidenote</code></td>
+<td>left</td>
+<td>middle</td>
+<td>not shown</td>
+</tr>
+<tr>
+<td><code>@insidenote</code></td>
+<td>left</td>
+<td>middle</td>
+<td>not shown</td>
+</tr>
 </tbody>
 </table>
 
@@ -307,7 +319,7 @@ The page region `@prince-overlay` is a special region, overlaying all of the pag
 
 The page region `@footnote` is placed by default at the foot of the page area and contains the footnotes (see [Footnotes](styling.md#footnotes)). Note that if there are no footnotes on a page, the footnote area will not be displayed on that page at all.
 
-The `@leftnote` and `@rightnote` areas for sidenotes are placed left and right of the page area and contain the sidenotes (see [Sidenotes](styling.md#sidenotes)).  The sidenote areas need a width to be defined.
+The `@leftnote` and `@rightnote` areas for sidenotes are placed left and right of the page area and contain the sidenotes (see [Sidenotes](styling.md#sidenotes)).  For page spreads, there are also at-rules for `@outsidenote` and `@insidenote`.  The sidenote areas need a width to be defined.
 
 Many CSS properties can be applied to page regions:
 

@@ -93,7 +93,7 @@ The initial values for <code>@page</code> styles are documented in the
 <td><code>@footnote</code></td>
 </tr>
 <tr>
-<td><code>@leftnote</code> | <code>@rightnote</code></td>
+<td><code>@leftnote</code> | <code>@rightnote | @insidenote</code> | <code>@outsidenote</code></td>
 </tr>
 <tr>
 <td colspan="2">The <code>@page</code> rule takes the following CSS properties:
