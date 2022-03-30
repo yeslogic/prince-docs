@@ -1,10 +1,6 @@
 .PHONY : all
-all : properties samples
-
-properties :
+all :
 	$(MAKE) -C properties
-
-samples :
 	$(MAKE) -C samples
 
 .PHONY : clean
