@@ -1363,6 +1363,8 @@ Alternatively, sidenotes can also be floated to the top, or to the bottom within
     }
 ```
 
+Please note that this affects also the stacking order: if sidenotes are floated to the top, subsequent notes will be naturally stacked below the first note.  If however they are floated to the bottom, subsequent notes will be stacked *above* the previous notes!
+
 The property `-prince-float` can be used as a shorthand:
 
 ```
