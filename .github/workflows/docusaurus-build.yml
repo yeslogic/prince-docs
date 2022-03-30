@@ -11,26 +11,6 @@ jobs:
     steps:
       - name: Check out repository code
         uses: actions/checkout@v2
-      - name: Install xsltproc
-        run: |
-          sudo apt-get update
-          sudo apt-get install -y xsltproc
-      - name: Make the properties
-        run: |
-          cd ./website/properties
-          mkdir ./output
-          xsltproc table.xsl properties.xml > output/css-props.xml
-          chmod +x ./docs-process.py
-          chmod +x ./docs_selflink.py
-          ./docs-process.py output/css-props-out.xml output/css-props.xml
-          ./docs_selflink.py output/css-props-out.xml
-          xsltproc noroot.xsl output/css-props-out.xml > output/css-props.md
-          sed -i '1s;^;---\ntitle: CSS Properties\n---\n\n;' output/css-props.md
-          cat script >> output/css-props.md
-          cp output/css-props.md ../../docs/
-          rm -rf ./output
-          cd ./../..
-        shell: bash
       - name: Set up Node
         uses: actions/setup-node@v2
         with:
