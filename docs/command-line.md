@@ -266,8 +266,9 @@ dl>
   </dd>
   <dt id="cl-cookie"><code>--cookie=<span class="replaceable">COOKIE</span></code></dt>
   <dd>
-  Set a value for the <code>Set-Cookie</code> HTTP header value.
-  <code>--cookie</code> may be used multiple times.
+  Specify a cookie that may be sent when making HTTP requests.  The format is a Set-Cookie header field
+  value, e.g. <code>--cookie "name=value; domain=example.com"</code>. If you do not specify a domain
+  for the cookie, it may not be sent.  The exact behaviour depends on the underlying libcurl version.
   </dd>
   <dt id="cl-cookiejar"><code>--cookiejar=<span class="replaceable">FILE</span></code></dt>
   <dd>
