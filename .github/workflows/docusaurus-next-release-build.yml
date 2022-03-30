@@ -31,6 +31,19 @@ jobs:
           rm -rf ./output
           cd ./../..
         shell: bash
+      - name: Install Prince
+        run: |
+          curl https://www.princexml.com/download/prince-14.2-ubuntu20.04-amd64.tar.gz -O
+          tar zxf prince-14.2-ubuntu20.04-amd64.tar.gz
+          cd prince-14.2-ubuntu20.04-amd64
+          yes "" | sudo ./install.sh
+      - name: Make the page region image
+        run: |
+          cd ./website/samples
+          prince marginboxes.html --raster-output marginboxes-1.full.png --raster-dpi=150 --raster-pages=1 --raster-format=png
+          convert marginboxes-1.full.png -resize 421x marginboxes-1.colour.png
+          cp marginboxes-1.colour.png ../../docs/assets/samples/
+          cd ./../..
       - name: Set up Node
         uses: actions/setup-node@v2
         with:
