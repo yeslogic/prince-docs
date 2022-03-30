@@ -18,7 +18,7 @@ The advanced command-line option [`--no-auth-preemptive`](command-line.md#cl-no-
 Cookies
 -------
 
-If cookies are required, the [`--cookie`](command-line.md#cl-cookie) command-line option can be used to set a value for the Set-Cookie HTTP header value. If you do not specify a domain for the cookie, it may not be sent.  The exact behaviour depends on the underlying libcurl version.  The option may be used multiple times. Alternatively, the option [`--cookiejar`](command-line.md#cl-cookiejar) specifies a file containing HTTP cookies.
+If cookies are required, the [`--cookie`](command-line.md#cl-cookie) command-line option can be used to set a value for the Set-Cookie HTTP header value. If you do not specify a domain for the cookie, it may not be sent.  The exact behaviour depends on the underlying libcurl version.  The option may be used multiple times. Alternatively, the option [`--cookie-file`](command-line.md#cl-cookie-file) specifies a file containing HTTP cookies.
 
 SSL
 ---

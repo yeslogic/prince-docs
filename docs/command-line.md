@@ -283,9 +283,10 @@ The command-line may include the options described below:
   value, e.g. <code>--cookie "name=value; domain=example.com"</code>. If you do not specify a domain
   for the cookie, it may not be sent.  The exact behaviour depends on the underlying libcurl version.
   </dd>
-  <dt id="cl-cookiejar"><code>--cookiejar=<span class="replaceable">FILE</span></code></dt>
+  <dt id="cl-cookie-file"><code>--cookie-file=<span class="replaceable">FILE</span></code></dt>
   <dd>
-  Specify a file containing HTTP cookies.
+  Specify a file containing HTTP cookies.  The cookies may be sent when making HTTP requests.  The format
+  of the file should be plain HTTP headers (Set-Cookie style) or the Netscape/Mozilla cookie file format.
   </dd>
   <dt id="cl-ssl-cacert"><code>--ssl-cacert=<span class="replaceable">FILE</span></code></dt>
   <dd>
