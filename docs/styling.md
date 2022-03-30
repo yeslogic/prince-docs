@@ -1145,6 +1145,10 @@ Floats can be deferred, to be laid out at a later position.  The properties [`-p
 
 The value `footnote` transforms the element into a footnote: it creates a footnote call in the place where it appears in its natural flow, and moves the element to the bottom of the column - please note that a normal page is considered to be a single column layout. The footnote marker is placed outside of the block of the footnote. With the value `inline-footnote`, the footnote marker is placed inside of the block of the footnote. To move the footnote to the bottom of a page in a multi-column layout, instead of to the bottom of its column, the correct float reference needs to be defined with the [`-prince-float-reference`](css-props.md#prop-prince-float-reference) property.  See also [Footnotes](#footnotes).
 
+##### Sidenote floats
+
+Prince allows elements to be floated to a predefined sidenote area, left or right of the main page area.  Within that region, they can be placed at the top or the bottom, or be aligned in different ways with their natural anchoring points. For more details see [Sidenotes](#sidenotes).
+
 ##### Conditional Modifiers
 
 The property [`-prince-float-modifier`](css-props.md#prop-prince-float-modifier) is to be used in combination with other float instructions.  When used with the value `unless-fit` it expresses a conditional: the element is only floated if it would otherwise cause a page or column break. For example, If you have a large image that happens to occur at the end of the page, it could force a page break and leave a gap at the end of the previous page. So you could float the image with the modifier value `unless-fit`, which would move it to the top of the next page *unless it fits on the current page without causing a break and leaving a gap*:
@@ -1308,6 +1312,64 @@ Alternatively, the value `keep-with-block` moves the entire paragraph to the nex
 <p class="note">
 This property must be applied to the paragraph in which the footnote occurs, not to the footnote element itself.
 </p>
+
+
+### Sidenotes
+
+Prince supports sidenotes using extensions to the `float` property. If an element has the property `-prince-float: sidenote` then it will be floated into the sidenote area of the page - think of it like a float to the left or to the right, yet *into a predefined area*.  Sidenotes are thus not automatically numbered the way footnotes are.
+
+A sidenote area needs to be first defined as an `@page` region.
+
+```
+    @page {
+        @rightnote { width: 40vw; }
+    }
+```
+
+To float the note to the sidenote area, the `float-reference` property is used with the value `sidenote`.
+
+```
+    note {
+        -prince-float-reference: sidenote;
+    }
+```
+
+If two sidenote areas are defined as `@leftnote` and `@rightnote`, you need to specify into which area to float your note.  For page spreads, the sidenote areas `@insidenote` and `@outsidenote` can be defined.
+
+```
+    note.left {
+        -prince-float-reference: leftnote;
+    }
+    note.right {
+        -prince-float-reference: rightnote;
+    }
+```
+
+By default, sidenotes appear near their natural anchoring points - the top of the sidenote will be aligned with the top of the box where it naturally appears.  This is expressed by the value `align-top` of the `-prince-float-placement` property.  If more than one sidenote naturally appears on the same line, the sidenotes will be stacked in the content order.  The value `align-bottom` is used to align the *bottom* of the sidenote with the top of the box where it naturally appears.
+
+```
+    note {
+        -prince-float-reference: rightnote;
+        -prince-float-placement: align-bottom;
+    }
+```
+
+Alternatively, sidenotes can also be floated to the top, or to the bottom within the sidenote area.
+
+```
+    note {
+        -prince-float-reference: rightnote;
+        -prince-float-placement: top;
+    }
+```
+
+The property `-prince-float` can be used as a shorthand:
+
+```
+    note {
+        -prince-float: rightnote top;
+    }
+```
 
 
 ### Flex Layout
