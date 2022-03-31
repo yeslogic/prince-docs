@@ -1,5 +1,11 @@
 /* your custom css */
 
+/* first, we reset unnecessary default table styling */
+table {
+    display: table;
+    width: auto;
+}
+
 .fixedHeaderContainer header img {
     margin-right: 30px;
 }
