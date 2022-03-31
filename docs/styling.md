@@ -1145,9 +1145,14 @@ Floats can be deferred, to be laid out at a later position.  The properties [`-p
 
 The value `footnote` transforms the element into a footnote: it creates a footnote call in the place where it appears in its natural flow, and moves the element to the bottom of the column - please note that a normal page is considered to be a single column layout. The footnote marker is placed outside of the block of the footnote. With the value `inline-footnote`, the footnote marker is placed inside of the block of the footnote. To move the footnote to the bottom of a page in a multi-column layout, instead of to the bottom of its column, the correct float reference needs to be defined with the [`-prince-float-reference`](css-props.md#prop-prince-float-reference) property.  See also [Footnotes](#footnotes).
 
-##### Sidenote floats
+##### Sidenotes and wide floats
 
-Prince allows elements to be floated to a predefined sidenote area, left or right of the main page area.  Within that region, they can be placed at the top or the bottom, or be aligned in different ways with their natural anchoring points. For more details see [Sidenotes](#sidenotes).
+Prince allows elements to be floated into a predefined sidenote area, left or right of the main page area, with the `sidenote` value.  Within that region, they can be placed at the top or the bottom, or be aligned in different ways with their natural anchoring points. For more details see [Sidenotes](#sidenotes).
+
+Wide floats allow elements to *extend* into sidenote areas.  This is achieved with the value `wide` of the [`-prince-float-reference`](css-props.md#prop-prince-float-reference) CSS property, which will display an element in its natural position and allow it to extend into all available sidenote areas.  If you want to limit it extending into just one sidenote area, the behaviour can be finde-tuned with the values `wide-left`, `wide-right`, or `wide-inside` and `wide-outside`.
+
+Please note that wide floats are being laid out *before* other sidenotes, thus "reserving" the space taken in, for themselves.  Further sidenote floats at the same natural anchoring point will then be stacked in the content order, as happens for regular [sidenotes](#sidenotes).
+
 
 ##### Conditional Modifiers
 
@@ -1316,9 +1321,9 @@ This property must be applied to the paragraph in which the footnote occurs, not
 
 ### Sidenotes
 
-Prince supports sidenotes using extensions to the `float` property. If an element has the property `-prince-float: sidenote` then it will be floated into the sidenote area of the page - think of it like a float to the left or to the right, yet *into a predefined area*.  Sidenotes are thus not automatically numbered the way footnotes are.
+Prince supports sidenotes using extensions to the [`float`](css-props.md#prop-float) property. If an element has the property `-prince-float: sidenote` then it will be floated into the sidenote area of the page - think of it like a float to the left or to the right, yet *into a predefined area*.  Sidenotes are thus not automatically numbered the way footnotes are.
 
-A sidenote area needs to be first defined as an `@page` region.
+A sidenote area needs to be first defined as an [`@page`](css-at-rules.md#at-page) region.
 
 ```
     @page {
@@ -1326,7 +1331,7 @@ A sidenote area needs to be first defined as an `@page` region.
     }
 ```
 
-To float the note to the sidenote area, the `float-reference` property is used with the value `sidenote`.
+To float the note to the sidenote area, the [`-prince-float-reference`](css-props.md#prop-prince-float-reference) property is used with the value `sidenote`.
 
 ```
     note {
@@ -1345,7 +1350,7 @@ If two sidenote areas are defined as `@leftnote` and `@rightnote`, you need to s
     }
 ```
 
-By default, sidenotes appear near their natural anchoring points - the top of the sidenote will be aligned with the top of the box where it naturally appears.  This is expressed by the value `align-top` of the `-prince-float-placement` property.  If more than one sidenote naturally appears on the same line, the sidenotes will be stacked in the content order.  The value `align-bottom` is used to align the *bottom* of the sidenote with the top of the box where it naturally appears.
+By default, sidenotes appear near their natural anchoring points - the top of the sidenote will be aligned with the top of the box where it naturally appears.  This is expressed by the value `align-top` of the [`-prince-float-placement`](css-props.md#prop-prince-float-placement) property.  If more than one sidenote naturally appears on the same line, the sidenotes will be stacked in the content order.  The value `align-bottom` is used to align the *bottom* of the sidenote with the top of the box where it naturally appears.
 
 ```
     note {
@@ -1373,6 +1378,7 @@ The property `-prince-float` can be used as a shorthand:
     }
 ```
 
+Elements can also not be entirely moved into a sidenote area, but just *extend* into a sidenote area - for details see [Sidenotes and wide floats](#sidenotes-and-wide-floats).
 
 ### Flex Layout
 
