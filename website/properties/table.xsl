@@ -54,6 +54,10 @@ explained above.  A short explanation of the signs:
 </ul>
 </p>
 
+<p>
+Prince also supports the two special keywords <code>initial</code> and <code>inherit</code> on all properties.
+</p>
+
 <p class="toggle">
 <a href="#" onclick="javascript:toggleAllDetails('css'); return false;" id="toggle-css">Toggle (open/close) all properties</a>
 </p>
