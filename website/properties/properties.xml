@@ -6036,24 +6036,7 @@ supplier, item { overflow-wrap: normal; }
 
 <property>
     <name>prince-text-justify</name>
-    <value>
-	<choice>
-	    <keyword>auto</keyword>
-	    <keyword>prince-cjk</keyword>
-	</choice>
-    </value>
-    <initial>auto</initial>
-    <applyto>all elements</applyto>
-    <inherit>yes</inherit>
-    <extension/>
-    <see><a href="/doc/styling/#paragraph-formatting">Paragraph formatting</a></see>
-    <comments>
-	<p>
-	This property defines how to treat justified text.  The value <code>prince-cjk</code>
-    allows space to be inserted between CJK characters when justifying even if there
-    aren't any space characters.
-	</p>
-    </comments>
+    <alias>text-justify</alias>
 </property>
 
 <property>
@@ -6898,6 +6881,32 @@ supplier, item { overflow-wrap: normal; }
 	</p>
     </comments>
     <spec><a href="https://www.w3.org/TR/css-text-3/#text-indent-property">CSS Text Module Level 3</a></spec>
+</property>
+
+<property>
+    <name>text-justify</name>
+    <value>
+	<choice>
+	    <keyword>auto</keyword>
+	    <keyword>prince-cjk</keyword>
+	</choice>
+    </value>
+    <initial>auto</initial>
+    <applyto>text elements</applyto>
+    <inherit>yes</inherit>
+    <extension/>
+    <see><a href="/doc/styling/#paragraph-formatting">Paragraph formatting</a></see>
+    <comments>
+	<p>
+	This property defines how to treat justified text.
+    </p>
+    <p>
+    The value <code>prince-cjk</code> allows space to be inserted between CJK
+    characters when justifying even if there aren't any space characters.
+	</p>
+    </comments>
+    <spec><a href="https://www.w3.org/TR/css-text-3/#text-justify-property">CSS Text Module Level 3</a></spec>
+    <aliastarget>prince-text-justify</aliastarget>
 </property>
 
 <property>
