@@ -2541,7 +2541,7 @@
 	<type>color</type>
     </value>
     <initial>black</initial>
-    <applyto>feFlood and feDropShadow elements in SVG</applyto>
+    <applyto>feFlood and feDropShadow SVG elements</applyto>
     <inherit>no</inherit>
     <comments>
 	<p>
@@ -2550,7 +2550,7 @@
 	<code>feDropShadow</code> filter effects within SVG.
 	</p>
     </comments>
-    <spec><a href="https://www.w3.org/TR/SVG11/filters.html#FloodColorProperty">SVG 1.1</a></spec>
+    <spec><a href="https://drafts.fxtf.org/filter-effects-1/#FloodColorProperty">Filter Effects Module Level 1 Editor's Draft</a></spec>
 </property>
 
 <property>
@@ -2559,7 +2559,7 @@
 	<type>number</type>
     </value>
     <initial>1</initial>
-    <applyto>feFlood and feDropShadow elements in SVG</applyto>
+    <applyto>feFlood and feDropShadow SVG elements</applyto>
     <inherit>no</inherit>
     <comments>
 	<p>
@@ -2568,7 +2568,7 @@
 	<code>feDropShadow</code> filter effects within SVG.
 	</p>
     </comments>
-    <spec><a href="https://www.w3.org/TR/SVG11/filters.html#FloodOpacityProperty">SVG 1.1</a></spec>
+    <spec><a href="https://drafts.fxtf.org/filter-effects-1/#FloodOpacityProperty">Filter Effects Module Level 1 Editor's Draft</a></spec>
 </property>
 
 <property>
@@ -3195,6 +3195,22 @@
     <applyto>all elements</applyto>
     <inherit>yes</inherit>
     <spec><a href="https://www.w3.org/TR/css-text-3/#letter-spacing-property">CSS Text Module Level 3</a></spec>
+</property>
+
+<property>
+    <name>lighting-color</name>
+    <value>
+    <type>color</type>
+    </value>
+    <initial>white</initial>
+    <applyto>feDiffuseLighting and feSpecularLighting SVG elements</applyto>
+    <inherit>no</inherit>
+    <comments>
+    <p>
+    This property defines the color of the light source for the SVG filter primitives <code>feDiffuseLighting</code> and <code>feSpecularLighting</code>.
+    </p>
+    </comments>
+    <spec><a href="https://drafts.fxtf.org/filter-effects-1/#LightingColorProperty">Filter Effects Module Level 1 Editor's Draft</a></spec>
 </property>
 
 <property>
