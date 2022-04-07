@@ -3137,6 +3137,50 @@
 </property>
 
 <property>
+    <name>inset-inside</name>
+    <value>
+	<choice>
+	    <keyword>auto</keyword>
+	    <type>length-percentage</type>
+	</choice>
+    </value>
+    <initial>auto</initial>
+    <applyto>positioned elements</applyto>
+    <inherit>no</inherit>
+    <extension/>
+    <comments>
+	<p>
+	This property determines the inside offset for positioned elements
+	(ie. elements with a <code><property name="position"/></code>
+	value of <code>relative</code>, <code>absolute</code> or
+	<code>fixed</code>).
+	</p>
+    </comments>
+</property>
+
+<property>
+    <name>inset-outside</name>
+    <value>
+	<choice>
+	    <keyword>auto</keyword>
+	    <type>length-percentage</type>
+	</choice>
+    </value>
+    <initial>auto</initial>
+    <applyto>positioned elements</applyto>
+    <inherit>no</inherit>
+    <extension/>
+    <comments>
+	<p>
+	This property determines the outisde offset for positioned elements
+	(ie. elements with a <code><property name="position"/></code>
+	value of <code>relative</code>, <code>absolute</code> or
+	<code>fixed</code>).
+	</p>
+    </comments>
+</property>
+
+<property>
 	<name>justify-content</name>
 	<value>
 	  <choice>
