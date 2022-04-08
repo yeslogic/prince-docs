@@ -118,6 +118,7 @@ type-value =
 	"declaration-value" |
 	"dpi" |
 	"integer" |
+	"language" |
 	"length" |
 	"length-percentage" |
 	"number" |

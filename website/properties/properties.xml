@@ -4940,6 +4940,35 @@ supplier, item { overflow-wrap: normal; }
 </property>
 
 <property>
+    <name>prince-lang</name>
+    <value>
+	<choice>
+	    <keyword>auto</keyword>
+	    <type>language</type>
+	</choice>
+    </value>
+    <initial>auto</initial>
+    <applyto>all elements</applyto>
+    <inherit>yes</inherit>
+    <extension/>
+    <see><a href="/doc/styling/#opentype-features-in-prince">OpenType Features in Prince</a></see>
+    <comments>
+	<p>
+	This property determines language-specific font-selection.
+    </p>
+    <p>
+    Text language can influence how the text is displayed - normally you would
+    use the <code>lang</code> or <code>xml:lang</code> attributes in HTML or XHTML.
+    This property helps defining the language in cases where the attributes cannot
+    be applied, such as in the case of CSS generated content.
+	</p>
+    <p>
+    In case of conflict between the attributes and the property, the CSS property prevails.
+    </p>
+    </comments>
+</property>
+
+<property>
     <name>prince-linebreak-magic</name>
     <value>
 	<choice>
