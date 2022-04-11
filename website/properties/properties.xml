@@ -6125,6 +6125,7 @@ supplier, item { overflow-wrap: normal; }
 	Specifying a value of <code>auto</code> will result in wide web pages being scaled
 	down in size to fit the paper width.
 	</p>
+    <p class="note">The scaling is calculated on the content's <em>width</em>, and not its height.</p>
     </comments>
 </property>
 

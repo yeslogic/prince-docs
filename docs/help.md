@@ -116,15 +116,22 @@ Frequently Asked Questions
   <dt><p id="faq-resize-page">How can I resize my web page to fit it on the printed page?
   <a class="self-link" href="#faq-resize-page"></a></p></dt>
   <dd><p>Prince usually takes care of reformatting a document to fit on a printed
-  page.  However, there are cases where it doesn't work as expected.  Wide content
-  can be made fit by <a href="/doc/cookbook#rotating-content">Rotating content</a>, or by applying the CSS property
-  <code>-prince-shrink-to-fit</code>, which scales down all content
-  equally.  Alternatively, the command-line option
+  page.  However, there are cases where it doesn't work as expected.</p>
+  <p><em>Wide</em> content can be made to fit by <a href="/doc/cookbook#rotating-content">Rotating content</a>,
+  or by applying the CSS property <a href="/doc/css-props#prop-prince-shrink-to-fit"><code>-prince-shrink-to-fit</code></a>,
+  which scales down all content equally.  Alternatively, the command-line option
   <a href="/doc/command-line#cl-css-dpi">--css-dpi</a> changes the DPI of
   the "px" units in CSS, which defaults to 96dpi.</p>
   <p class="note">We do not recommend people making a habit of using this, and
   instead advise to design a layout specifically appropriate for the paper being
-  used.  Or at least using relative size units.</p></dd>
+  used.  Or at least using relative size units.</p>
+  <p>Note that this however does not affect <em>tall</em> content - if you need elements too tall to fit on a page
+  to be rescaled, there are other ways of achieving this: e.g. by limiting the <code>max-height</code>
+  of an element - Prince supports <a href="/doc/css-length-units#viewport-length-units">Viewport Length Units</a>,
+  and in a paged media context the viewport units refer to various aspects of the page and page area.</p>
+  <p>Alternatively, <a href="/doc/styling#flex-layout">Flex Layout</a> can be used, or the content
+  can be custom resized with <a href="/doc/javascript#the-box-tracking-api">The Box Tracking API</a>.</p>
+  </dd>
 
   <dt><p id="faq-no-trans">Why does my PDF file not show the transparent
   background? <a class="self-link" href="#faq-no-trans"></a></p></dt>
