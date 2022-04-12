@@ -118,7 +118,7 @@ and <a href="/doc/css-at-rules/#at-supports"><code>@supports</code></a> at-rules
 </tr>
 <tr>
 <td><a href="https://drafts.fxtf.org/filter-effects/">Filter Effects Module Level 1 - Editor's Draft</a></td>
-<td>Prince supports the <code>filter</code> property.</td>
+<td>Prince supports the <code>filter</code>, <code>color-interpolation-filters</code>, <code>flood-color</code> and <code>flood-opacity</code> properties.</td>
 </tr>
 <tr>
 <th colspan="2">CSS Level 4</th>

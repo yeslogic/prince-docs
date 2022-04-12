@@ -1399,6 +1399,36 @@
 </property>
 
 <property>
+    <name>color-interpolation</name>
+    <value>
+    <choice>
+    <keyword>auto</keyword>
+    <keyword>sRGB</keyword>
+    <keyword>linearRGB</keyword>
+    </choice>
+    </value>
+    <initial>sRGB</initial>
+    <applyto>SVG container elements, graphics elements, gradient elements, and the use element</applyto>
+    <inherit>yes</inherit>
+    <spec><a href="https://www.w3.org/TR/SVG11/painting.html#ColorInterpolationProperty">SVG 1.1</a></spec>
+</property>
+
+<property>
+    <name>color-interpolation-filters</name>
+    <value>
+    <choice>
+    <keyword>auto</keyword>
+    <keyword>sRGB</keyword>
+    <keyword>linearRGB</keyword>
+    </choice>
+    </value>
+    <initial>linearRGB</initial>
+    <applyto>all SVG filter primitives</applyto>
+    <inherit>yes</inherit>
+    <spec><a href="https://www.w3.org/TR/SVG11/painting.html#ColorInterpolationFiltersProperty">SVG 1.1</a></spec>
+</property>
+
+<property>
     <name>column-break-after</name>
     <value>
 	<choice>
