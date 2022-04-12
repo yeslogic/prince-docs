@@ -331,12 +331,11 @@ The `display`, `float`, and `flow` properties and all `margin`, `padding`, `bord
 
 Fonts defined inside an embedded SVG image file with CSS `@font-face` rules control the display of fonts.
 
-Prince supports SVG 1.1, with some exceptions - the following elements are currently *not* supported:
+Prince supports SVG 1.1, with some exceptions - vertical text is not supported, and the following elements are currently *not* supported:
 
 -   `scripting`
 -   `animation`
 -   `clip` (deprecated)
--   `color-interpolation`
 -   `color-profile` & `icc-color`
 -   `color-rendering`
 -   `cursor`
@@ -351,27 +350,34 @@ Prince supports SVG 1.1, with some exceptions - the following elements are curre
 -   `shape-rendering`
 -   `textPath method="stretch"`
 -   `text-rendering`
--   `writing-mode`
 -   `tref` (removed)
 -   `view`
--   `externalResourcesRequired`
--   `zoomAndPan`
--   `filterRes`
--   `lengthAdjust`
--   vertical text
 -   `foreignObject`
 -   `svgz`
 -   `visibility:collapse`
 -   `switch` (`requiredFeatures`, `requiredExtensions`, `systemLanguage`)
+
+Also the following attributes are *not* supported:
+
+-   `externalResourcesRequired`
+-   `zoomAndPan`
+-   `filterRes`
+-   `lengthAdjust`
 -   `alignment-baseline`
+-   `writing-mode`
 
-### Style Properties
+The element `color-interpolation` is only supported in the `mask` element.
 
-The following style properties *are* supported on SVG elements:
+
+### SVG Style Properties
+
+The following style properties are supported on SVG elements:
 
 -   `baseline-shift`
 -   `clip-path`
 -   `clip-rule`
+-   `color-interpolation`
+-   `color-interpolation-filters`
 -   `dominant-baseline`
 -   `font-family`
 -   `font-size`
@@ -380,9 +386,15 @@ The following style properties *are* supported on SVG elements:
 -   `fill`
 -   `fill-opacity`
 -   `fill-rule`
+-   `flood-color`
+-   `flood-opacity`
+-   `lighting-color`
+-   `marker`
 -   `marker-start`
 -   `marker-mid`
 -   `marker-end`
+-   `mask`
+-   `-prince-filter-resolution`
 -   `stop-color`
 -   `stop-opacity`
 -   `stroke`
