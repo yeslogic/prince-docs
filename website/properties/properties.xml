@@ -3808,6 +3808,7 @@
     <applyto>all elements but non-replaced inline elements, table columns, and column groups</applyto>
     <inherit>no</inherit>
     <spec><a href="https://www.w3.org/TR/CSS2/visudet.html#min-max-heights">CSS 2.1</a></spec>
+    <spec><a href="https://www.w3.org/TR/css-sizing-3/#max-size-properties">CSS Box Sizing Module Level 3</a></spec>
 </property>
 
 <property>
@@ -3824,6 +3825,7 @@
     <applyto>all elements but non-replaced inline elements, table rows, and row groups</applyto>
     <inherit>no</inherit>
     <spec><a href="https://www.w3.org/TR/CSS2/visudet.html#min-max-widths">CSS 2.1</a></spec>
+    <spec><a href="https://www.w3.org/TR/css-sizing-3/#max-size-properties">CSS Box Sizing Module Level 3</a></spec>
 </property>
 
 <property>
@@ -3840,7 +3842,7 @@
     <applyto>all elements but non-replaced inline elements, table columns, and column groups</applyto>
     <inherit>no</inherit>
     <spec><a href="https://www.w3.org/TR/CSS2/visudet.html#min-max-heights">CSS 2.1</a></spec>
-    <spec><a href="https://www.w3.org/TR/css-flexbox-1/#min-size-auto">CSS Flexible Box Layout Module Level 1</a></spec>
+    <spec><a href="https://www.w3.org/TR/css-sizing-3/#min-size-properties">CSS Box Sizing Module Level 3</a></spec>
 </property>
 
 <property>
@@ -3857,7 +3859,7 @@
     <applyto>all elements but non-replaced inline elements, table rows, and row groups</applyto>
     <inherit>no</inherit>
     <spec><a href="https://www.w3.org/TR/CSS2/visudet.html#min-max-widths">CSS 2.1</a></spec>
-    <spec><a href="https://www.w3.org/TR/css-flexbox-1/#min-size-auto">CSS Flexible Box Layout Module Level 1</a></spec>
+    <spec><a href="https://www.w3.org/TR/css-sizing-3/#min-size-properties">CSS Box Sizing Module Level 3</a></spec>
 </property>
 
 <property>
