@@ -1160,6 +1160,9 @@ Floats can be deferred, to be laid out at a later position.  The properties [`-p
 
 The value `footnote` transforms the element into a footnote: it creates a footnote call in the place where it appears in its natural flow, and moves the element to the bottom of the column - please note that a normal page is considered to be a single column layout. The footnote marker is placed outside of the block of the footnote. With the value `inline-footnote`, the footnote marker is placed inside of the block of the footnote. To move the footnote to the bottom of a page in a multi-column layout, instead of to the bottom of its column, the correct float reference needs to be defined with the [`-prince-float-reference`](css-props.md#prop-prince-float-reference) property.  See also [Footnotes](#footnotes).
 
+Please also consult [A quick guide to creating footnotes in Prince](https://www.princexml.com/howcome/2022/guides/footnotes/) for more examples and complex applications of footnotes.
+
+
 ##### Sidenotes and wide floats
 
 Prince allows elements to be floated into a predefined sidenote area, left or right of the main page area, with the `sidenote` value.  Within that region, they can be placed at the top or the bottom, or be aligned in different ways with their natural anchoring points. For more details see [Sidenotes](#sidenotes).
@@ -1334,6 +1337,8 @@ Alternatively, the value `keep-with-block` moves the entire paragraph to the nex
 <p class="note">
 This property must be applied to the paragraph in which the footnote occurs, not to the footnote element itself.
 </p>
+
+Please also consult [A quick guide to creating footnotes in Prince](https://www.princexml.com/howcome/2022/guides/footnotes/) for more examples and complex applications of footnotes.
 
 
 ### Sidenotes
