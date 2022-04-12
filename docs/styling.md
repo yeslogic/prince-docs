@@ -1168,6 +1168,8 @@ Wide floats allow elements to *extend* into sidenote areas.  This is achieved wi
 
 Please note that wide floats are being laid out *before* other sidenotes, thus "reserving" the space taken in, for themselves.  Further sidenote floats at the same natural anchoring point will then be stacked in the content order, as happens for regular [sidenotes](#sidenotes).
 
+Please also consult [A quick guide to creating sidenotes in Prince](https://www.princexml.com/howcome/2022/guides/sidenotes/) for more examples and complex applications of sidenotes.
+
 
 ##### Conditional Modifiers
 
@@ -1394,6 +1396,9 @@ The property `-prince-float` can be used as a shorthand:
 ```
 
 Elements can also not be entirely moved into a sidenote area, but just *extend* into a sidenote area - for details see [Sidenotes and wide floats](#sidenotes-and-wide-floats).
+
+Please also consult [A quick guide to creating sidenotes in Prince](https://www.princexml.com/howcome/2022/guides/sidenotes/) for more examples and complex applications of sidenotes.
+
 
 ### Flex Layout
 
