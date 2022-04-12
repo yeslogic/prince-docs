@@ -1356,7 +1356,9 @@ To float the note to the sidenote area, the [`-prince-float-reference`](css-prop
     }
 ```
 
-If two sidenote areas are defined as `@leftnote` and `@rightnote`, you need to specify into which area to float your note.  For page spreads, the sidenote areas `@insidenote` and `@outsidenote` can be defined.
+If two sidenote areas are defined as `@leftnote` and `@rightnote`, you need to specify into which area to float your note - by default (that is, if you do not specify whereto to float) it will be floated to the "start" as defined by CSS, i.e. to the left for English, and to the right for traditional Chinese.
+
+For page spreads, the sidenote areas `@insidenote` and `@outsidenote` can be defined.
 
 ```
     note.left {
