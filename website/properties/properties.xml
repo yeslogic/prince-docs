@@ -1408,8 +1408,13 @@
     </choice>
     </value>
     <initial>sRGB</initial>
-    <applyto>SVG container elements, graphics elements, gradient elements, and the use element</applyto>
+    <applyto>SVG mask element</applyto>
     <inherit>yes</inherit>
+    <comments>
+    <p>
+    Please note that this property is only applied on the SVG <code>mask</code> element.
+    </p>
+    </comments>
     <spec><a href="https://www.w3.org/TR/SVG11/painting.html#ColorInterpolationProperty">SVG 1.1</a></spec>
 </property>
 
