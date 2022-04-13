@@ -7658,8 +7658,13 @@ supplier, item { overflow-wrap: normal; }
 	</choice>
     </value>
     <initial>horizontal-tb</initial>
-    <applyto>all elements except table row groups, table column groups, table rows, and table columns</applyto>
+    <applyto>all elements, except table row groups, table column groups, table rows, table columns, and SVG</applyto>
     <inherit>yes</inherit>
+    <comments>
+    <p>
+    Please note that this property currently does not apply to SVG.
+    </p>
+    </comments>
     <spec><a href="https://drafts.csswg.org/css-writing-modes-3/#block-flow">CSS Writing Modes Level 3</a></spec>
 </property>
 
