@@ -401,7 +401,7 @@ Prince also allows for line-breaking in certain situations even in the absence o
 
 The property [`overflow-wrap`](css-props.md#prop-overflow-wrap) controls wrapping behavior *of last resort*: whether it is better for a word to overflow its container, or to be broken at an arbitrary point (subject to [`white-space`](css-props.md#prop-white-space), and not splitting within a grapheme cluster), without adding a hyphen.
 
-Prince does not support the value `break-word` of the property [`word-break`](css-props.md#prop-word-break) to achieve a similar effect. Use the value `break-all` of [`word-break`](css-props.md#prop-word-break), or the property [`overflow-wrap`](css-props.md#prop-overflow-wrap) with the value `break-word` instead.
+Prince does not support [`word-break:`](css-props.md#prop-word-break)`break-word` to achieve a similar effect - use `word-break: break-all`, or [`overflow-wrap:`](css-props.md#prop-overflow-wrap)`break-word` instead.
 
 
 ### Writing Mode
