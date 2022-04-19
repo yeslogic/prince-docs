@@ -16,7 +16,13 @@ Generated content is inserted by means of several functions that typically are u
 
 See also the section on [CSS Functional Expressions](css-functions.md) for additional details on these functions.
 
-The most simple use of generating content in these properties is to insert a literal string. A literal string can also be passed as an argument to the `leader()` function, which expands to fill the available space on the line like justified text, by repeating the string as many times as necessary. An optional second argument can be used to specify a minimum width.
+The most simple use of generating content in these properties is to insert a literal string.
+
+<p class="note">
+CSS generated content strings can also take special characters - but they need to be escaped with a backslash character ("\"), and need to be hexadecimal encoded.  Hence the generated content string "one \a two" will insert a line break character between "one" and "two".
+</p>
+
+A literal string can also be passed as an argument to the `leader()` function, which expands to fill the available space on the line like justified text, by repeating the string as many times as necessary. An optional second argument can be used to specify a minimum width.
 
 HTML
 
