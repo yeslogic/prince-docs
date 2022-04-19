@@ -141,7 +141,15 @@ Counters are the mechanism provided by CSS to perform numbering. They can be use
 
 ### Initializing and incrementing counters
 
-To use a counter, it first needs to be initialized with the [`counter-reset`](css-props.md#prop-counter-reset) property, which can be applied to any element and initializes one or more counters to the specified values, or to zero if no value is specified. The property can be used to reset a counter by re-initializing it.
+To use a counter, it first needs to be initialized with the [`counter-reset`](css-props.md#prop-counter-reset) property, which can be applied to any element and initializes one or more counters to the specified values, or to zero if no value is specified. The property can be used to reset a counter by re-initializing it.  It can also be used to initialize a page number to something different than its default value.
+
+CSS
+
+```
+    body { counter-reset: page 86; }
+```
+
+This example will start numbering the pages from "86" - it can be useful when printing only a chapter of a book, but we'd like to keep the original page numbering.
 
 Unless the resetting of a counter creates a nested counter, the scope of the counter includes the current element and all of its following siblings.
 
