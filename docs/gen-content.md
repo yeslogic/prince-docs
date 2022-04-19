@@ -71,7 +71,7 @@ The function <code>prince-expansion-text(<i>expansion</i>, <i>abbreviation</i>)<
 
 This example might show the text "see p. 17" and the tagged PDF structure tree will treat the "p." as an abbreviation with the full expanded text being "see page 17".  The CSS property [-prince-expansion-text](css-props.md#prop-prince-expansion-text) works in a similar fashion.
 
-Please note that the <code>prince-expansion-text()</code> function <em>only</em> works in the [content](css-props.md#prop-content) property, and not in the other properties for whom generated content functions work.
+<p class="note">The <code>prince-expansion-text()</code> function <em>only</em> works in the <a href="/doc/css-props/#prop-content"><code>content</code></a> property, and not in the other properties for which generated content functions work.</p>
 
 The following functions can also be used for different forms of counters:
 
