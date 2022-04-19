@@ -406,7 +406,9 @@ Prince does not support [`word-break:`](css-props.md#prop-word-break)`break-word
 
 ### Writing Mode
 
-A writing mode describes the directionality of a script, i.e. it describes the direction the script is to be read. In (X)HTML, the language of a document is defined by the `lang` or `xml:lang` attributes. To control the rendering of the text, a couple of CSS properties can be used: the [`direction`](css-props.md#prop-direction) property defines the inline direction of the script, that is left-to-right (like e.g. Latin or Indic scripts) or right-to-left (like e.g. Arabic and Hebrew scripts).
+A writing mode describes the directionality of a script, i.e. it describes the direction the script is to be read. In (X)HTML, the language of a document, or of an element, is defined by the `lang` or `xml:lang` attributes - where this is not available (such as in CSS generated content in [Before and After pseudo-elements](gen-content.md#before-and-after-pseudo-elements), or in [page margin boxes](paged.md#page-regions)), Prince provides the CSS property [`-prince-lang`](css-props.md#prop-prince-lang) (see also [OpenType Features in Prince](#opentype-features-in-prince) for the impact this has on language-specific OpenType shaping).
+
+To control the rendering of the text, a couple of specific CSS properties can be used: the [`direction`](css-props.md#prop-direction) property defines the inline direction of the script, that is left-to-right (like e.g. Latin or Indic scripts) or right-to-left (like e.g. Arabic and Hebrew scripts).
 
 The [`writing-mode`](css-props.md#prop-writing-mode) property, on the other hand, describes the block direction of the script, namely whether the text should be laid out horizontally, top-to-bottom (like e.g. Latin or Arabic scripts), or vertically, right-to-left (like e.g. Chinese scripts). The default value is `horizontal-tb`, which means horizontal, top-to-bottom.
 
@@ -416,7 +418,7 @@ Changing the writing mode of a document, that is, the inline or block direction,
 
 The page selector pseudo-classes `:recto` and `:verso` (see [Selecting pages](paged.md#selecting-pages)) are relative to the direction of the script. In a left-to-right script, `:recto` is the right-hand side of a spread, and `:verso` is the left-hand side, while in a right-to-left script these values are inverted: `:recto` defines the left-hand side of a spread, and `:verso` defines the right-hand side. See also [Selecting pages](paged.md#selecting-pages).
 
-Columns (see the chapter on [Columns](#columns)) change their orientation when the writing mode is changed - the [`writing-mode`](css-props.md#prop-writing-mode) value `vertical-rl` arranges the columns horizontally, top-to-bottom.
+Columns (see the chapter on [Columns](#columns)) change their orientation when the writing mode is changed - the [`writing-mode`](css-props.md#prop-writing-mode) value `vertical-rl` arranges the columns *horizontally*, top-to-bottom.
 
 This can be used to rotate content - see [Printing wide content sideways](cookbook.md#printing-wide-content-sideways) and [Rotating content in table cells](cookbook.md#rotating-content-in-table-cells).
 
