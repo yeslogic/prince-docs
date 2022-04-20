@@ -332,7 +332,7 @@ Text can be styled with CSS by defining font styles or text layout styles.
 
 After choosing an appropriate typeface for your text with the [`font-family`](css-props.md#prop-font-family) property (see [Fonts](#fonts)), you can assign it different sizes with the [`font-size`](css-props.md#prop-font-size) property.
 
-Next up you should decide whether to give it some `color`. The default text color for a page is defined in the `body` selector, but each selector can have its own color.
+Next up you should decide whether to give it some [`color`](css-props.md#prop-color). The default text color for a page is defined in the `body` selector, but each selector can have its own color.
 
 ```
     body {
