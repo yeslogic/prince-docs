@@ -1305,7 +1305,7 @@ This rule adds a border and some padding to the top of the footnotes area.
 
 If there are no footnotes on a page, the footnotes area will not be displayed on that page at all.
 
-By default, the `@footnote` area is at the bottom of the page. However, Prince allows to position the area in different places, effectively offering a mechanism to create simple sidenotes (see [Sidenotes](cookbook.md#sidenotes)).
+By default, the `@footnote` area is at the bottom of the page. However, Prince allows to position the area in different places, effectively offering an alternative mechanism to creating simple sidenotes (see however [Sidenotes](#sidenotes) below).
 
 ```
     @page {
