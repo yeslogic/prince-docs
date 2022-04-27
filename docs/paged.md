@@ -121,13 +121,13 @@ This is used in [Fancy headers](#fig-fancyheader).
 
 ![A page with content in some of its page regions.](assets/samples/marginboxes-1.colour.png)
 
-Most content appears inside the *page area* of one or more pages. Surrounding the page area is the margin area, which contains the *page-margin boxes*. Other special areas are overlaying the whole page or are placed at the bottom of the *page area*. Collectively, they are known as the *page regions*.
+Most content appears inside the *page area* of one or more pages - in the above figure the *page area* is marked with a solid black border.  Surrounding the page area is the margin area, which contains the *page-margin boxes*.  Other special areas are overlaying the *page area*, or are placed at its left, or right side, or at its top, or bottom.  Collectively, they are known as the *page regions*.
 
-This figure shows the positions of some page regions placed in the page margin, called the *page-margin boxes*. Some of them can be used for creating running page headers and footers.
+The figure above shows the position of some *page-margin boxes*, which can be used for creating running page headers and footers, as well as some common regions in the main *page area*.
 
-The [`@page`](css-at-rules.md#at-page) background is <span class="fig-marginboxes-lightgrey">grey</span> and the body's, i.e. the page area's background is <span class="fig-marginboxes-white">white</span>.
+The [`@page`](css-at-rules.md#at-page) background is lightgrey and the body's, i.e. the *page area*'s background is white.
 
-You can place content in a page-margin box with the [`content`](css-props.md#prop-content) property.
+You can place content in a page-margin box with the [`content`](css-props.md#prop-content) property.  The areas inside the page area, however, do not take generated content.
 
 For example, you can print the current page number at the bottom of each page (see [Generated Content](gen-content.md)):
 
@@ -147,14 +147,16 @@ Several other page regions can also be used. The full list of page regions is sh
 
 <p id="tab-marginboxes">Page regions</p>
 
-<table class="grid">
+<table class="grid" id="pregions">
 <thead>
 <tr>
+<th/>
 <th>Name</th>
 <th colspan="2">Default alignment</th>
 <th>In figure</th>
 </tr>
 <tr>
+<th/>
 <th/>
 <th><code><a href="/doc/css-props#prop-text-align">text-align</a></code></th>
 <th><code><a href="/doc/css-props#prop-vertical-align">vertical-align</a></code></th>
@@ -163,16 +165,26 @@ Several other page regions can also be used. The full list of page regions is sh
 </thead>
 <tbody>
 <tr>
+<td></td>
+<td><b><i>Page area</i></b></td>
+<td>start</td>
+<td>baseline</td>
+<td style="border: 3px black solid;">solid black border</td>
+</tr>
+</tbody>
+<tbody>
+<tr>
+<td rowspan="16">Page-margin boxes</td>
 <td><code>@top-left</code></td>
 <td>left</td>
 <td>middle</td>
-<td style="background-color: #8f8">green</td>
+<td style="background-color: lightgreen">lightgreen</td>
 </tr>
 <tr>
 <td><code>@top-center</code></td>
 <td>center</td>
 <td>middle</td>
-<td style="background-color: #ff8">yellow</td>
+<td style="background-color: lemonchiffon">lemonchiffon</td>
 </tr>
 <tr>
 <td><code>@top-right</code></td>
@@ -190,7 +202,7 @@ Several other page regions can also be used. The full list of page regions is sh
 <td><code>@bottom-center</code></td>
 <td>center</td>
 <td>middle</td>
-<td style="background-color: #ff8">yellow</td>
+<td style="background-color: lemonchiffon">lemonchiffon</td>
 </tr>
 <tr>
 <td><code>@bottom-right</code></td>
@@ -202,13 +214,13 @@ Several other page regions can also be used. The full list of page regions is sh
 <td><code>@left-top</code></td>
 <td>center</td>
 <td>top</td>
-<td style="background-color: #8f8">green</td>
+<td style="background-color: lightgreen">lightgreen</td>
 </tr>
 <tr>
 <td><code>@left-middle</code></td>
 <td>center</td>
 <td>middle</td>
-<td style="background-color: #f88">red</td>
+<td style="background-color: lightcoral">lightcoral</td>
 </tr>
 <tr>
 <td><code>@left-bottom</code></td>
@@ -226,7 +238,7 @@ Several other page regions can also be used. The full list of page regions is sh
 <td><code>@right-middle</code></td>
 <td>center</td>
 <td>middle</td>
-<td style="background-color: #f88">red</td>
+<td style="background-color: lightcoral">lightcoral</td>
 </tr>
 <tr>
 <td><code>@right-bottom</code></td>
@@ -244,7 +256,7 @@ Several other page regions can also be used. The full list of page regions is sh
 <td><code>@top-right-corner</code></td>
 <td>left</td>
 <td>middle</td>
-<td style="background-color: #88f">blue</td>
+<td style="background-color: cornflowerblue">cornflowerblue</td>
 </tr>
 <tr>
 <td><code>@bottom-left-corner</code></td>
@@ -259,22 +271,25 @@ Several other page regions can also be used. The full list of page regions is sh
 <td>not shown</td>
 </tr>
 <tr>
+</tbody>
+<tbody>
+<td rowspan="8">Page area regions</td>
 <td><code>@page-float-top</code></td>
 <td>center</td>
 <td>top</td>
-<td>not shown</td>
+<td style="background-color: lightblue">lightblue</td>
 </tr>
 <tr>
 <td><code>@page-float-bottom</code></td>
 <td>center</td>
 <td>bottom</td>
-<td>not shown</td>
+<td style="background-color: gainsboro">gainsboro</td>
 </tr>
 <tr>
 <td><code>@prince-overlay</code></td>
 <td>center</td>
 <td>middle</td>
-<td>not shown</td>
+<td style="background: repeating-linear-gradient( -45deg, rgba(255,255,255, 0.1), rgba(255,255,255, 0.1) 10px, rgba(255,0,0, 0.2) 10px, rgba(255,0,0, 0.2) 20px );">stripes</td>
 </tr>
 <tr>
 <td><code>@footnote</code></td>
@@ -309,17 +324,44 @@ Several other page regions can also be used. The full list of page regions is sh
 </tbody>
 </table>
 
-Prince will try to create page regions of the correct sizes. If you need to create boxes of specific sizes you may need to use only a single box (eg: `@top-center`) and use the [`content`](css-props.md#prop-content) property to place elements with specific sizes in it.
+<dl>
+  <dt>Page-margin boxes</dt>
+  <dd><p>Prince will try to create <em>page-margin boxes</em> of the correct sizes. If you
+  need to create boxes of specific sizes you may need to use only a single box (eg:
+  <code>@top-center</code>) and use the <a href="/doc/css-props#prop-content"><code>content</code></a> property to place elements with specific sizes in it.</p>
+  <p>Note that in the above <a href="#page-regions">Page regions</a> figure, Prince leaves
+  space for <code>@top-right</code> and <code>@left-bottom</code> boxes because their
+  counterparts (<code>@top-left</code> and <code>@left-top</code> respectively) have been
+  defined. This keeps the <code>@top-center</code> and <code>@left-middle</code> centered
+  along the top and side of the page respectively.</p>
+  <p>The page-margin boxes <code>@top-center</code>, <code>@top-left</code> or <code>@top-right</code> can be used to create running page headers, and the page-margin boxes <code>@bottom-center</code>, <code>@bottom-left</code> or <code>@bottom-right</code> are useful for page footers (see <a href="/doc/cookbook#page-headers-and-footers">Page Headers and Footers</a>).</p>
+  </dd>
 
-Note that in the above [Page regions](#page-regions) figure, Prince leaves space for `@top-right` and `@left-bottom` boxes because their counterparts (`@top-left` and `@left-top` respectively) have been defined. This keeps the `@top-center` and `@left-middle` centered along the top and side of the page respectively.
-
-The page-margin boxes `@top-center`, `@top-left` or `@top-right` can be used to create running page headers, and the page-margin boxes `@bottom-center`, `@bottom-left` or `@bottom-right` are useful for page footers (see [Page Headers and Footers](cookbook.md#page-headers-and-footers)).
-
-The page region `@prince-overlay` is a special region, overlaying all of the page area. A typical use is for creating watermarks on all pages of the document (see [Watermarks](cookbook.md#watermarks)).
-
-The page region `@footnote` is placed by default at the foot of the page area and contains the footnotes (see [Footnotes](styling.md#footnotes)). Note that if there are no footnotes on a page, the footnote area will not be displayed on that page at all.
-
-The `@leftnote` and `@rightnote` areas for sidenotes are placed left and right of the page area and contain the sidenotes (see [Sidenotes](styling.md#sidenotes)).  For page spreads, there are also at-rules for `@outsidenote` and `@insidenote`.  The sidenote areas need a width to be defined.
+  <dt>Page area regions</dt>
+  <dd><p>The <em>page area</em> itself has a few special regions that can be addressed with
+  specific at-rules: to the left and right are two sidenote regions (<code>@leftnote</code>
+  and <code>@rightnote</code>), and at the top and bottom of the remaining space are two more
+  regions (<code>@page-float-top</code> and <code>@page-float-bottom</code>).  Below all these,
+  there is the footnote area.</p>
+  <p>The page region <code>@prince-overlay</code> is a special region, overlaying all of the
+  page area. A typical use is for creating watermarks on all pages of the document (see
+  <a href="/doc/cookbook#watermarks">Watermarks</a>).</p>
+  <p>The page region <code>@footnote</code> is placed by default at the foot of the page area
+  and contains the footnotes (see <a href="/doc/styling#footnotes">Footnotes</a>). Note that
+  if there are no footnotes on a page, the footnote area will not be displayed on that page at
+  all.</p>
+  <p class="note">The <code>@footnote</code> area can be positioned other than its default
+  position (see <a href="/doc/styling#styling-and-behavior-of-footnotes">Styling and behavior
+  of footnotes</a> and <a href="/doc/cookbook#sidenotes">Sidenotes</a>). All other page
+  regions cannot be moved - their position is defined by the page margins, or their position
+  in the page area.</p>
+  <p>The <code>@leftnote</code> and <code>@rightnote</code> areas for sidenotes are placed
+  left and right of the page area and contain the sidenotes (see
+  <a href="/doc/styling#sidenotes">Sidenotes</a>).  For page spreads, there are also at-rules
+  for <code>@outsidenote</code> and <code>@insidenote</code>.  The sidenote areas need a width
+  to be defined.</p>
+  </dd>
+</dl>
 
 Many CSS properties can be applied to page regions:
 
@@ -330,10 +372,6 @@ Many CSS properties can be applied to page regions:
 -   The [`vertical-align`](css-props.md#prop-vertical-align) property can be applied to any page region to vertically align its content.
 
 -   When a page region contains generated content, many inline style properties such as [`color`](css-props.md#prop-color) and [`font`](css-props.md#prop-font) can be applied to style the generated content.
-
-<p class="note">
-The <code>@footnote</code> area can be positioned other than its default position (see <a href="/doc/styling#styling-and-behavior-of-footnotes">Styling and behavior of footnotes</a> and <a href="/doc/cookbook#sidenotes">Sidenotes</a>). All other page regions cannot be moved - their position is defined by the page margins.
-</p>
 
 ### Generated content in page regions
 

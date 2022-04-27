@@ -6,6 +6,12 @@ table {
     width: auto;
 }
 
+table#pregions td[rowspan] {
+    writing-mode: vertical-rl;
+    text-align: center;
+    transform: rotate(180deg);
+}
+
 .fixedHeaderContainer header img {
     margin-right: 30px;
 }
