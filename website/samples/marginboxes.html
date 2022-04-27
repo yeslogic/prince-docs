@@ -4,40 +4,40 @@
 <style>
 @page {
     size: a4;
-    border: thin black solid;
+    border: 8px black solid;
     padding: 0cm;
     margin: 4cm;
-    background-color: #ccc;
+    background-color: lightgrey;
     font-size: 22pt;
     font-family: sans-serif;
     @top-center {
         content: "@top-center";
-        background-color: #ff8;
+        background-color: lemonchiffon;
     }
     @bottom-center {
         content: "@bottom-center";
-        background-color: #ff8;
+        background-color: lemonchiffon;
     }
     @left-middle {
         content: "@left-middle";
-        background-color: #f88;
+        background-color: lightcoral;
     }
     @right-middle {
         content: "@right-middle";
-        background-color: #f88;
+        background-color: lightcoral;
     }
     @top-left {
         content: "@top-left";
-        background-color: #8f8;
+        background-color: lightgreen;
     }
     @left-top {
         content: "@left-top";
-        background-color: #8f8;
+        background-color: lightgreen;
     }
     @top-right-corner {
         content: "@top-right-corner";
         font-size: 15pt;
-        background-color: #88f;
+        background-color: cornflowerblue;
     }
     @leftnote {
         width: 10vw;
@@ -50,29 +50,64 @@
     @footnote {
         background-color: aliceblue;
     }
+    @prince-overlay {
+        background: repeating-linear-gradient(
+            -45deg,
+            rgba(255,255,255, 0.1),
+            rgba(255,255,255, 0.1) 20px,
+            rgba(255,0,0, 0.2) 20px,
+            rgba(255,0,0, 0.2) 40px
+        );
+        color: rgba(255,0,0, 0.6);
+        content: "@prince-overlay";
+    }
+    @page-float-top {
+        background-color: lightblue;
+    }
+    @page-float-bottom {
+        background-color: gainsboro;
+    }
 }
 body {
-    background-color: #fff;
+    background-color: white;
     padding: 0.2cm;
     font-size: 48pt;
     text-align: center;
     font-family: sans-serif;
 }
+p {
+    font-weight: bold;
+}
 #footnote {
     float: footnote;
     font-size: 22pt;
+    font-weight: normal;
 }
 #leftnote {
     float: leftnote align-bottom;
     font-size: 22pt;
     transform: rotate(-90deg);
     margin-bottom: -6em;
+    font-weight: normal;
 }
 #rightnote {
     float: rightnote;
     font-size: 22pt;
     transform: rotate(90deg);
     padding-left: 9vw;
+    font-weight: normal;
+}
+#pagefloattop {
+    float: top;
+    font-weight: normal;
+    font-size: 22pt;
+    font-style: italic;
+}
+#pagefloatbottom {
+    float: bottom;
+    font-weight: normal;
+    font-size: 22pt;
+    font-style: italic;
 }
 *::footnote-call, *::footnote-marker {
     content: "";
@@ -80,7 +115,9 @@ body {
 </style>
 </head>
 <body>
-Page area<span id="footnote">@footnote</span><span id="leftnote">@leftnote</span><span id="rightnote">@rightnote</span>
+<p>Page area<span id="footnote">@footnote</span><span id="leftnote">@leftnote</span><span id="rightnote">@rightnote</span></p>
+<p id="pagefloattop">@page-float-top</p>
+<p id="pagefloatbottom">@page-float-bottom</p>
 </body>
 </html>
 
