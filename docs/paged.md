@@ -392,8 +392,8 @@ HTML
         <div class="chapter"> chapter 1...</div>
         <div class="chapter"> chapter 2...</div>
         </div>
-        <div class=appendix"> appendix1 </div>
-        <div class=appendix"> appendix2, ... </div>
+        <div class="appendix"> appendix1 </div>
+        <div class="appendix"> appendix2, ... </div>
     </body>
 ```
 CSS
