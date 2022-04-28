@@ -352,9 +352,8 @@ Several other page regions can also be used. The full list of page regions is sh
   all.</p>
   <p class="note">The <code>@footnote</code> area can be positioned other than its default
   position (see <a href="/doc/styling#styling-and-behavior-of-footnotes">Styling and behavior
-  of footnotes</a> and <a href="/doc/cookbook#sidenotes">Sidenotes</a>). All other page
-  regions cannot be moved - their position is defined by the page margins, or their position
-  in the page area.</p>
+  of footnotes</a>). All other page regions cannot be moved - their position is defined by the
+  page margins, or their position in the page area.</p>
   <p>The <code>@leftnote</code> and <code>@rightnote</code> areas for sidenotes are placed
   left and right of the page area and contain the sidenotes (see
   <a href="/doc/styling#sidenotes">Sidenotes</a>).  For page spreads, there are also at-rules
