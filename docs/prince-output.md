@@ -403,6 +403,35 @@ CSS
 The default value for this property is `self`, referring to the element that generated the bookmark.
 
 
+### PDF Annotations
+
+Prince supports PDF annotations by means of a range of custom CSS properties.  Annotations can be applied to almost every element and pseudo-element - but not to [page-margin boxes](/doc/paged#page-regions).
+
+To specify an annotation, the type of annotation has to be declared with the CSS property [`-prince-pdf-annotation-type`](css-props.md#prop-prince-pdf-annotation-type).  Please note that currently only text annotations are supported.
+
+Next, the annotation title and content are defined with respectively the [`-prince-pdf-annotation-title`](css-props.md#prop-prince-pdf-annotation-title) and [`-prince-pdf-annotation-contents`](css-props.md#prop-prince-pdf-annotation-contents) properties.
+
+```css
+    p#annotation {
+        -prince-pdf-annotation-type: text;
+        -prince-pdf-annotation-title: "PDF Annotation Title";
+        -prince-pdf-annotation-contents: "This is a PDF annotation.";
+    }
+```
+
+The position of the annotation can be specified with the CSS property [`-prince-pdf-annotation-position`](css-props.md#prop-prince-pdf-annotation-position). The default value is `top left`, taking the element box as the reference.  To take the trim box of the page as a reference, the values `page-left` and `page-right`, as well as `page-top` and `page-bottom` should be used.  Length or percentage values can furthermore be used to fine-tune the position.
+
+```css
+    p#annotation {
+        -prince-pdf-annotation-position: left 10px top 10px;
+    }
+```
+
+The color of the annotation is yellow by default, i.e. `rgb(255,255,0)` - but it can be configured with the property [`-prince-pdf-annotation-color`](css-props.md#prop-prince-pdf-annotation-color).
+
+The author of the annotation can be specified through the [`-prince-pdf-annotation-author`](css-props.md#prop-prince-pdf-annotation-author) property.  Prince also offers the possibility of specifying the annotation creation, and modification dates, with the properties [`-prince-pdf-annotation-createdate`](css-props.md#prop-prince-pdf-annotation-createdate) and [`-prince-pdf-annotation-modifydate`](css-props.md#prop-prince-pdf-annotation-modifydate).
+
+
 ### PDF Tags
 
 Tagged PDF files have special handling mechanisms for specific tag types. When enabling tagged PDF files with the command line option [`--tagged-pdf`](command-line.md#cl-tagged-pdf) Prince automatically assigns default values to certain HTML elements, which can be seen in the default `html.css` style sheet (see [Installation Layout](installing.md#installation-layout)).

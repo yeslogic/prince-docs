@@ -5457,6 +5457,191 @@ supplier, item { overflow-wrap: normal; }
 </property>
 
 <property>
+	<name>prince-pdf-annotation-author</name>
+	<value>
+	<choice>
+		<keyword>none</keyword>
+        <string>string</string>
+	</choice>
+	</value>
+	<initial>none</initial>
+    <applyto>all elements</applyto>
+	<inherit>no</inherit>
+	<extension/>
+	<example>-prince-pdf-annotation-author: "John Doe";</example>
+    <see><a href="/doc/prince-output/#pdf-annotations">PDF Annotations</a></see>
+	<comments>
+		<p>This property is used to specify the author of a PDF annotation.
+		</p>
+    </comments>
+</property>
+
+<property>
+	<name>prince-pdf-annotation-color</name>
+	<value>
+        <type>color</type>
+	</value>
+	<initial>yellow</initial>
+    <applyto>all elements</applyto>
+	<inherit>no</inherit>
+	<extension/>
+	<example>-prince-pdf-annotation-color: pink;</example>
+    <see><a href="/doc/prince-output/#pdf-annotations">PDF Annotations</a></see>
+	<comments>
+		<p>This property is used to define the color of the PDF annotation.  The
+        default color is <code>rgb(255,255,0)</code>, i.e. yellow.
+		</p>
+    </comments>
+</property>
+
+<property>
+	<name>prince-pdf-annotation-contents</name>
+	<value>
+	<choice>
+		<keyword>none</keyword>
+        <string>string</string>
+	</choice>
+	</value>
+	<initial>none</initial>
+    <applyto>all elements</applyto>
+	<inherit>no</inherit>
+	<extension/>
+	<example>-prince-pdf-annotation-contents: "This is a PDF annotation.";</example>
+    <see><a href="/doc/prince-output/#pdf-annotations">PDF Annotations</a></see>
+	<comments>
+		<p>This property is used to define the PDF annotation content.
+		</p>
+    </comments>
+</property>
+
+<property>
+	<name>prince-pdf-annotation-createdate</name>
+	<value>
+	<choice>
+		<keyword>none</keyword>
+		<string>string</string>
+	</choice>
+	</value>
+	<initial>none</initial>
+    <applyto>all elements</applyto>
+	<inherit>no</inherit>
+	<extension/>
+	<example>-prince-pdf-annotation-createdate: "2022-04-28"</example>
+    <see><a href="/doc/prince-output/#pdf-annotations">PDF Annotations</a></see>
+	<comments>
+		<p>This property is used to define the PDF annotation date of creation.
+        Please note that the string needs to be a valid ISO 8601 date format.
+		</p>
+    </comments>
+</property>
+
+<property>
+	<name>prince-pdf-annotation-modifydate</name>
+	<value>
+	<choice>
+		<keyword>none</keyword>
+		<string>string</string>
+	</choice>
+	</value>
+	<initial>none</initial>
+    <applyto>all elements</applyto>
+	<inherit>no</inherit>
+	<extension/>
+	<example>-prince-pdf-annotation-modifydate: "2022-04-28"</example>
+    <see><a href="/doc/prince-output/#pdf-annotations">PDF Annotations</a></see>
+	<comments>
+		<p>This property is used to define the PDF annotation date of modification.
+        Please note that the string needs to be a valid ISO 8601 date format.
+		</p>
+    </comments>
+</property>
+
+<property>
+	<name>prince-pdf-annotation-position</name>
+	<value>
+	<multiple>
+		<sequence>
+            <choice>
+                <keyword>left</keyword>
+                <keyword>right</keyword>
+                <keyword>page-left</keyword>
+                <keyword>page-right</keyword>
+            </choice>
+            <optional>
+                <type>length-percentage</type>
+            </optional>
+        </sequence>
+		<sequence>
+            <choice>
+                <keyword>top</keyword>
+                <keyword>bottom</keyword>
+                <keyword>page-top</keyword>
+                <keyword>page-bottom</keyword>
+            </choice>
+            <optional>
+                <type>length-percentage</type>
+            </optional>
+        </sequence>
+	</multiple>
+	</value>
+	<initial>left top</initial>
+    <applyto>all elements</applyto>
+	<inherit>no</inherit>
+	<extension/>
+	<example>-prince-pdf-annotation-position: page-left 10% page-top 50%;</example>
+    <see><a href="/doc/prince-output/#pdf-annotations">PDF Annotations</a></see>
+	<comments>
+		<p>This property is used to define the PDF annotation position.
+		</p>
+        <p>The values <code>left</code>, <code>right</code>, <code>top</code>
+        and <code>bottom</code> refer to the element box, while the equivalent
+        keywords <code>page-left</code>, <code>page-right</code>, <code>page-top</code>
+        and <code>page-bottom</code> refer to the trim box of the page.</p>
+    </comments>
+</property>
+
+<property>
+	<name>prince-pdf-annotation-title</name>
+	<value>
+	<choice>
+		<keyword>none</keyword>
+		<string>string</string>
+	</choice>
+	</value>
+	<initial>none</initial>
+    <applyto>all elements</applyto>
+	<inherit>no</inherit>
+	<extension/>
+	<example>-prince-pdf-annotation-title: "PDF Annotation Title"</example>
+    <see><a href="/doc/prince-output/#pdf-annotations">PDF Annotations</a></see>
+	<comments>
+		<p>This property is used to define the PDF annotation title.
+		</p>
+    </comments>
+</property>
+
+<property>
+	<name>prince-pdf-annotation-type</name>
+	<value>
+	<choice>
+		<keyword>none</keyword>
+		<keyword>text</keyword>
+	</choice>
+	</value>
+	<initial>none</initial>
+    <applyto>all elements</applyto>
+	<inherit>no</inherit>
+	<extension/>
+	<example>-prince-pdf-annotation-type: text;</example>
+    <see><a href="/doc/prince-output/#pdf-annotations">PDF Annotations</a></see>
+	<comments>
+		<p>This property is used to define the PDF annotation type.  Prince currently
+        only supports text annotations.
+		</p>
+    </comments>
+</property>
+
+<property>
 	<name>prince-pdf-color-options</name>
 	<value>
 	<choice>
