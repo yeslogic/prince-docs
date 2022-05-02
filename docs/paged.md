@@ -384,7 +384,19 @@ Many CSS properties can be applied to page regions:
 
 ### Generated content in page regions
 
-We have already shown an example of using the `page` counter to print the page number at the bottom of each page, this is one example of generated content. The `page` counter is predefined and starts at 1; it increments automatically for each new page. (Note that the page counter cannot be incremented manually using the [`counter-increment`](css-props.md#prop-counter-increment) property.)
+As mentioned, *page-margin boxes* can be populated with generated content with the `content` property, but the *page area regions* do not allow for generated content.
+
+We have also seen how to print the page number at the bottom of each page with the `page` counter.
+
+```css
+    @page {
+        @bottom-center {
+            content: counter(page);
+        }
+    }
+```
+
+The `page` counter is predefined and starts at 1; it increments automatically for each new page. (Note that the page counter cannot be incremented manually using the [`counter-increment`](css-props.md#prop-counter-increment) property.)
 
 The `page` counter can be reset using the [`counter-reset`](css-props.md#prop-counter-reset) property at any block-level element within a non-floating element in the normal flow. This is useful for restarting page numbering at a new section of the document.
 
@@ -440,7 +452,7 @@ CSS
 
 This example also uses [Named pages](#named-pages) which we will explain in more detail below. We create three types of pages: table-of-contents pages, main pages, and pages without a name.
 
-The .contents rule names the pages that it appears on as table-of-contents and resets the page counter to 1 at the start of the contents div. Then the [`@page`](css-at-rules.md#at-page) rule for those pages generates a page footer that contains the current page number in `lower-alpha` style. This rule also sets the page header to the string "Table of Contents".
+The `.contents` rule names the pages that it appears on as table-of-contents and resets the page counter to 1 at the start of the contents div. Then the [`@page`](css-at-rules.md#at-page) rule for those pages generates a page footer that contains the current page number in `lower-alpha` style. This rule also sets the page header to the string "Table of Contents".
 
 The `.body` rule names the pages that it appears on as main and resets the page counter to 1 at the start of main div. Then the [`@page`](css-at-rules.md#at-page) rule for the main pages generates a page footer that contains the current page number in the default decimal style. This rule, together with the .chapter h1 rule, sets the page header to the title of the chapter.
 
