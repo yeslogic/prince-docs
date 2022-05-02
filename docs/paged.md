@@ -354,9 +354,12 @@ The full list of page regions is shown in the following [Page regions](#tab-marg
   page area. A typical use is for creating watermarks on all pages of the document (see
   <a href="/doc/cookbook#watermarks">Watermarks</a>).</p>
   <p>The page region <code>@footnote</code> is placed by default at the foot of the page area
-  and contains the footnotes (see <a href="/doc/styling#footnotes">Footnotes</a>). Note that
-  if there are no footnotes on a page, the footnote area will not be displayed on that page at
-  all.</p>
+  and contains the footnotes (see <a href="/doc/styling#footnotes">Footnotes</a>).</p>
+  <p> If there are no footnotes on a page, or if the footnote elements are empty, the footnote
+  area will not be displayed on that page at all.</p>
+  <p>The regions <code>@page-float-top</code> and <code>@page-float-bottom</code> are also
+  not displayed at all, if no elements exist for them, but, as opposed to the footnote area,
+  they <em>are</em> displayed if an element exists, but is without content, i.e. an empty element.</p>
   <p class="note">The <code>@footnote</code> area can be positioned other than its default
   position (see <a href="/doc/styling#styling-and-behavior-of-footnotes">Styling and behavior
   of footnotes</a>). All other page regions cannot be moved - their position is defined by the
