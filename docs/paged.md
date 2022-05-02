@@ -121,20 +121,27 @@ This is used in [Fancy headers](#fig-fancyheader).
 
 ![A page with content in some of its page regions.](assets/samples/marginboxes-1.colour.png)
 
-Most content appears inside the *page area* of one or more pages - in the above figure the *page area* is marked with a solid black border.  Surrounding the page area is the margin area, which contains the *page-margin boxes*.  Other special areas are overlaying the *page area*, or are placed at its left, or right side, or at its top, or bottom.  Collectively, they are known as the *page regions*.
+Most content appears inside the *page area* of one or more pages - in the above figure the *page area* is marked with a solid black border.  Surrounding the page area is the margin area, defined by the [margins set with `@page` rules](#page-style), which contains the *page-margin boxes*.  Other special areas, i.e. the *page area regions*, are overlaying the page area, or are placed at its left, or right side, or at its top, or bottom.  Collectively, they are known as the *page regions*.
 
 The figure above shows the position of some *page-margin boxes*, which can be used for creating running page headers and footers, as well as some common regions in the main *page area*.
 
-The [`@page`](css-at-rules.md#at-page) background is lightgrey and the body's, i.e. the *page area*'s background is white.
+The [`@page`](css-at-rules.md#at-page) background is lightgrey and the `body`'s, i.e. the *page area*'s background, is white.
 
-You can place content in a page-margin box with the [`content`](css-props.md#prop-content) property.  The areas inside the page area, however, do not take generated content.
-
-For example, you can print the current page number at the bottom of each page (see [Generated Content](gen-content.md)):
-
+```css
+    @page {
+        background-color: lightgrey;
+    }
+    body {
+        background-color: white;
+    }
 ```
+
+You can place content in a page-margin box with the [`content`](css-props.md#prop-content) property - the areas inside the page area, however, do not take generated content.  You can thus print the current page number at the bottom of each page (see [Generated Content](gen-content.md)):
+
+```css
     @page {
         @bottom-center {
-            content: counter(page)
+            content: counter(page);
         }
     }
 ```
@@ -143,7 +150,7 @@ Two examples in [the next chapter](#selecting-pages) show examples of page heade
 -   the [Novel title page example](#fig-titlepage) creates a footer to display the page number, but suppresses it for the title page; and
 -   the [Textbook page numbers example](#fig-textbook) displays a more complex use of headers by placing the book title in the header of left pages, and the current chapter's title in the header of right-facing pages, in addition to the page number.
 
-Several other page regions can also be used. The full list of page regions is shown in the [Page regions](#tab-marginboxes) table.
+The full list of page regions is shown in the following [Page regions](#tab-marginboxes) table.
 
 <p id="tab-marginboxes">Page regions</p>
 
