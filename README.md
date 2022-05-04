@@ -19,7 +19,7 @@ There are some little requirements for this:
 (Hint: If *really* need be, you could do without Jing, just fix your Makefile.)
 
 Also the rasterized Page Region image is generated outside of the Docusaurus
-framework - you first need to run `make` in the `./website/properties` folder.
+framework - you first need to run `make` in the `./website/samples` folder.
 
 Both makefiles are called from the Makefile in the `./website` folder. To start
 the fully set up documentation, instead of just `yarn start`, you run
