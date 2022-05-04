@@ -2226,14 +2226,6 @@
 	</p>
 
     <p>
-    Prince's implementation of <code>float</code> is a shorthand for the following properties:
-	</p>
-    <ul>
-    <li><code><property name="float-reference"/></code></li>
-    <li><code><property name="float-placement"/></code></li>
-    <li><code><property name="float-modifier"/></code></li>
-    </ul>
-    <p>
     Note that when setting only the value for <code>float-reference</code>, i.e.
     <code>column</code> or <code>page</code>, the default value for <code>float-placement</code>
     is <code>top-bottom</code> and differs from its initial value.  This means that Prince
