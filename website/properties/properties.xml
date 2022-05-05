@@ -2199,18 +2199,18 @@
     <name>float</name>
     <value>
         <multiple>
-            <ref>float-reference</ref>
-            <ref>float-placement</ref>
-            <ref>float-modifier</ref>
+            <ref>prince-float-reference</ref>
+            <ref>prince-float-placement</ref>
+            <ref>prince-float-modifier</ref>
         </multiple>
     </value>
     <initial>none</initial>
     <applyto>all elements</applyto>
     <inherit>no</inherit>
     <shorthand>
-        <prop>float-reference</prop>
-        <prop>float-placement</prop>
-        <prop>float-modifier</prop>
+        <prop>prince-float-reference</prop>
+        <prop>prince-float-placement</prop>
+        <prop>prince-float-modifier</prop>
         <!-- XXX: Add prefix to each property here, in <value> and in the <ul>
             below once the aliasings have been added.
         -->
@@ -2226,8 +2226,8 @@
 	</p>
 
     <p>
-    Note that when setting only the value for <code>float-reference</code>, i.e.
-    <code>column</code> or <code>page</code>, the default value for <code>float-placement</code>
+    Note that when setting only the value for <code>prince-float-reference</code>, i.e.
+    <code>column</code> or <code>page</code>, the default value for <code>-prince-float-placement</code>
     is <code>top-bottom</code> and differs from its initial value.  This means that Prince
     will try to float the element to the top of the indicated float reference, and if that
     should not be possible, it would be floated to the bottom.
@@ -2383,7 +2383,7 @@
     <see><a href="/doc/paged/#page-regions">Page regions</a></see>
     <comments>
     <p>
-        The <code>float-placement</code> property defines how a floated element
+        The <code>-prince-float-placement</code> property defines how a floated element
         is positioned.  Its values are basically the values of the standard
         <code>float</code> property, plus some Prince-specific extensions.
         </p>
@@ -2395,8 +2395,8 @@
         it is floated to the bottom.
         </p>
 
-    <p>
-        Note that the default value for <code>float-placement</code>, when omitted in the
+    <p class="note">
+        The default value for <code>-prince-float-placement</code>, when omitted in the
         <code><property name="float"/></code> shorthand property, is
         <code>top-bottom</code>, and differs from its initial value.  This means that Prince
         will try to float the element to the top of the indicated float reference, and if that
@@ -2476,18 +2476,18 @@
             <keyword>page</keyword>
         </group>
         <group>
-            <keyword>sidenote</keyword>
-            <keyword>leftnote</keyword>
-            <keyword>rightnote</keyword>
-            <keyword>insidenote</keyword>
-            <keyword>outsidenote</keyword>
+            <keyword class="ext">sidenote</keyword>
+            <keyword class="ext">leftnote</keyword>
+            <keyword class="ext">rightnote</keyword>
+            <keyword class="ext">insidenote</keyword>
+            <keyword class="ext">outsidenote</keyword>
         </group>
         <group>
-            <keyword>wide</keyword>
-            <keyword>wide-left</keyword>
-            <keyword>wide-right</keyword>
-            <keyword>wide-inside</keyword>
-            <keyword>wide-outside</keyword>
+            <keyword class="ext">wide</keyword>
+            <keyword class="ext">wide-left</keyword>
+            <keyword class="ext">wide-right</keyword>
+            <keyword class="ext">wide-inside</keyword>
+            <keyword class="ext">wide-outside</keyword>
         </group>
         </choice>
     </value>
