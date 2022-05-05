@@ -3519,7 +3519,7 @@
     <applyto>all top- or bottom-floated elements</applyto>
     <inherit>no</inherit>
     <extension/>
-    <see><a href="/doc/styling/#margin">Margin</a></see>
+    <see><a href="/doc/styling/#margins-of-page-and-column-floats">Margins of Page and Column Floats</a></see>
     <comments>
     <p>
         The <code>margin-alt</code> property defines a top and/or bottom margin
