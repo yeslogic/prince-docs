@@ -3520,6 +3520,7 @@
     <inherit>no</inherit>
     <extension/>
     <see><a href="/doc/styling/#margins-of-page-and-column-floats">Margins of Page and Column Floats</a></see>
+    <see><a href="#prop-margin"><code>margin</code></a></see>
     <comments>
     <p>
         The <code>margin-alt</code> property defines a top and/or bottom margin
