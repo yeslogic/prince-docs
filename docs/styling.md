@@ -436,9 +436,9 @@ At the very outside of the box are the margins. Each margin's size can be set in
 ```
 If there are only:
 
--   three values: then the left margin is set equal to the right margin;
--   two values: then the left margin is set equal to the right margin, and the bottom margin is set equal to the top margin;
--   one value: then all margins are made equal.
+-   three values: the left margin is set equal to the right margin;
+-   two values: the left margin is set equal to the right margin, and the bottom margin is set equal to the top margin;
+-   one value: all margins are made equal.
 
 Prince expands the margin properties with [`-prince-margin-inside`](css-props.md#prop-prince-margin-inside) and [`-prince-margin-outside`](css-props.md#prop-prince-margin-outside), defining the margin respectively on the inside or outside of a spread: inside is on the right when used on a left-facing page, and on left on a right-facing page; outside is on the left when used on a left-facing page, and on the right on a right-facing page.
 
@@ -465,9 +465,9 @@ The property [`padding`](css-props.md#prop-padding) defines the padding inside t
 ```
 If there are only:
 
--   three values: then the left padding is set equal to the right padding;
--   two values: then the left padding is set equal to the right padding, and the bottom padding is set equal to the top padding;
--   one value: then all paddings are made equal.
+-   three values: the left padding is set equal to the right padding;
+-   two values: the left padding is set equal to the right padding, and the bottom padding is set equal to the top padding;
+-   one value: all paddings are made equal.
 
 #### Background
 
