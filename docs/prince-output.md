@@ -407,7 +407,7 @@ The default value for this property is `self`, referring to the element that gen
 
 Prince supports PDF annotations by means of a range of custom CSS properties.  Annotations can be applied to almost every element and pseudo-element - but not to [page-margin boxes](/doc/paged#page-regions).
 
-To specify an annotation, the type of annotation has to be declared with the CSS property [`-prince-pdf-annotation-type`](css-props.md#prop-prince-pdf-annotation-type).  Please note that currently only text annotations are supported.
+To specify an annotation, the type of annotation has to be declared with the CSS property [`-prince-pdf-annotation-type`](css-props.md#prop-prince-pdf-annotation-type).  The keyword `wavy` maps to the Squiggly PDF annotation type, and `line-through` maps to StrikeOut.
 
 Next, the annotation title and content are defined with respectively the [`-prince-pdf-annotation-title`](css-props.md#prop-prince-pdf-annotation-title) and [`-prince-pdf-annotation-contents`](css-props.md#prop-prince-pdf-annotation-contents) properties.
 
@@ -427,7 +427,12 @@ The position of the annotation can be specified with the CSS property [`-prince-
     }
 ```
 
-The color of the annotation is yellow by default, i.e. `rgb(255,255,0)` - but it can be configured with the property [`-prince-pdf-annotation-color`](css-props.md#prop-prince-pdf-annotation-color).
+The default color of the annotation depends on the annotation type:
+-   icons and highlights are yellow,
+-   underlines and squiggly underlines are green, and
+-   strike-outs are red.
+
+It can however be configured with the property [`-prince-pdf-annotation-color`](css-props.md#prop-prince-pdf-annotation-color).
 
 The author of the annotation can be specified through the [`-prince-pdf-annotation-author`](css-props.md#prop-prince-pdf-annotation-author) property.  Prince also offers the possibility of specifying the annotation creation, and modification dates, with the properties [`-prince-pdf-annotation-createdate`](css-props.md#prop-prince-pdf-annotation-createdate) and [`-prince-pdf-annotation-modifydate`](css-props.md#prop-prince-pdf-annotation-modifydate).
 

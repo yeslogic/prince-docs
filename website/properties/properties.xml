@@ -5472,7 +5472,10 @@ supplier, item { overflow-wrap: normal; }
 <property>
 	<name>prince-pdf-annotation-color</name>
 	<value>
+    <choice>
+        <keyword>auto</keyword>
         <type>color</type>
+    </choice>
 	</value>
 	<initial>yellow</initial>
     <applyto>all elements</applyto>
@@ -5481,9 +5484,13 @@ supplier, item { overflow-wrap: normal; }
 	<example>-prince-pdf-annotation-color: pink;</example>
     <see><a href="/doc/prince-output/#pdf-annotations">PDF Annotations</a></see>
 	<comments>
-		<p>This property is used to define the color of the PDF annotation.  The
-        default color is <code>rgb(255,255,0)</code>, i.e. yellow.
-		</p>
+		<p>This property is used to define the color of the different PDF annotation types.</p>
+        <p>When choosing the keyword <code>auto</code>, the default colors are applied:</p>
+        <ul>
+          <li>icons and highlights are yellow;</li>
+          <li>underlines and squiggly underlines are green; and</li>
+          <li>strike-outs are red.</li>
+        </ul>
     </comments>
 </property>
 
@@ -5619,6 +5626,10 @@ supplier, item { overflow-wrap: normal; }
 	<choice>
 		<keyword>none</keyword>
 		<keyword>text</keyword>
+		<keyword>highlight</keyword>
+		<keyword>underline</keyword>
+		<keyword>wavy</keyword>
+		<keyword>line-through</keyword>
 	</choice>
 	</value>
 	<initial>none</initial>
@@ -5628,9 +5639,9 @@ supplier, item { overflow-wrap: normal; }
 	<example>-prince-pdf-annotation-type: text;</example>
     <see><a href="/doc/prince-output/#pdf-annotations">PDF Annotations</a></see>
 	<comments>
-		<p>This property is used to define the PDF annotation type.  Prince currently
-        only supports text annotations.
-		</p>
+		<p>This property is used to define the PDF annotation type.</p>
+        <p>The keyword <code>wavy</code> maps to the <code>Squiggly</code> annotation type in PDF,
+        and <code>line-through</code> maps to <code>StrikeOut</code>.</p>
     </comments>
 </property>
 
