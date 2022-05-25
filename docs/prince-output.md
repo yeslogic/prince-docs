@@ -428,9 +428,9 @@ The position of the annotation can be specified with the CSS property [`-prince-
 ```
 
 The default color of the annotation depends on the annotation type:
--   icons and highlights are yellow,
--   underlines and squiggly underlines are green, and
--   strike-outs are red.
+-   icons for text annotations, and highlights, are yellow,
+-   underlines and squiggly/wavy underlines are green, and
+-   strike-outs/line-throughs are red.
 
 It can however be configured with the property [`-prince-pdf-annotation-color`](css-props.md#prop-prince-pdf-annotation-color).
 
