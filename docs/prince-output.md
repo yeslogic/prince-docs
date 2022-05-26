@@ -427,7 +427,7 @@ The position of the annotation can be specified with the CSS property [`-prince-
     }
 ```
 
-The default color of the annotation depends on the annotation type:
+The default color of the annotation depends on the PDF annotation type:
 -   icons for text annotations, and highlights, are yellow,
 -   underlines and squiggly/wavy underlines are green, and
 -   strike-outs/line-throughs are red.

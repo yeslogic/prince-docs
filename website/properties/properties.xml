@@ -5483,9 +5483,11 @@ supplier, item { overflow-wrap: normal; }
 	<extension/>
 	<example>-prince-pdf-annotation-color: pink;</example>
     <see><a href="/doc/prince-output/#pdf-annotations">PDF Annotations</a></see>
+    <see><code><property name="prince-pdf-annotation-type"/></code></see>
 	<comments>
-		<p>This property is used to define the color of the different PDF annotation types.</p>
-        <p>When choosing the keyword <code>auto</code>, the default colors are applied:</p>
+        <p>This property is used to define the color of a PDF annotation.</p>
+        <p>When choosing the keyword <code>auto</code>, the following default
+        colors are applied to the different PDF annotation types:</p>
         <ul>
           <li>icons and highlights are yellow;</li>
           <li>underlines and squiggly underlines are green; and</li>
