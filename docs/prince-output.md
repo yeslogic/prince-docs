@@ -126,6 +126,8 @@ Prince helps in creating accessible documents. Note, however, that Prince does n
 Bruce Lawson has written an interesting introduction on how to make <a href="https://medium.com/@bruce_39084/making-accessible-tagged-pdfs-with-prince-ad7fd7a48711">accessible tagged PDFs with Prince</a> - all you need to know about PDF tags and Prince! Last but not least, there is a nice <a href="https://taggedpdf.com/resources/">Resources</a> page on tagged and accessible PDFs.
 </p>
 
+Special care needs to be taken when restricting certain features on the created document - notably disallowing copying (with the [--disallow-copy](command-line.md#cl-disallow-copy) command-line option) creates a barrier for screen readers.  To prevent this inconvenience, Prince offers the option to enable text access only for screen reader devices for the visually impaired ([--allow-copy-for-accessibility](command-line.md#cl-allow-copy-for-accessibility)) - see also [PDF Encryption and Document Security](#pdf-encryption-and-document-security).
+
 
 PDF Features
 ------------
