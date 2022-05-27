@@ -16,22 +16,28 @@ Prince supports tagged PDF files and optional PDF profiles, which can be selecte
 
 The available profiles, and the PDF version they are based on, are:
 
-| PDF Profile   | PDF version |
-|---------------|-------------|
-| PDF/A-1a      | PDF 1.4     |
-| PDF/A-1b      | PDF 1.4     |
-| PDF/A-2a      | PDF 1.7 (ISO 32000-1:2008)    |
-| PDF/A-2b      | PDF 1.7 (ISO 32000-1:2008)    |
-| PDF/A-3a      | PDF 1.7 (ISO 32000-1:2008)    |
-| PDF/A-3b      | PDF 1.7 (ISO 32000-1:2008)    |
-| PDF/UA-1 (ISO 14289-1)     | PDF 1.7 (ISO 32000-1:2008)    |
-| PDF/X-1a:2001 (ISO 15930-1:2001) | PDF 1.3     |
-| PDF/X-1a:2003 (ISO 15930-4:2003) | PDF 1.4     |
-| PDF/X-3:2002  | PDF 1.3     |
-| PDF/X-3:2003 (ISO 15930-6:2003) | PDF 1.4     |
-| PDF/X-4 (ISO 15930-7:2008)      | PDF 1.6     |
+| PDF Profile   | ISO version      | PDF version                   |
+|---------------|------------------|-------------------------------|
+| PDF/A-1a      |                  | PDF 1.4                       |
+| PDF/A-1b      |                  | PDF 1.4                       |
+| PDF/A-2a      |                  | PDF 1.7 (ISO 32000-1:2008)    |
+| PDF/A-2b      |                  | PDF 1.7 (ISO 32000-1:2008)    |
+| PDF/A-3a      |                  | PDF 1.7 (ISO 32000-1:2008)    |
+| PDF/A-3b      |                  | PDF 1.7 (ISO 32000-1:2008)    |
+| PDF/UA-1      | ISO 14289-1      | PDF 1.7 (ISO 32000-1:2008)    |
+| PDF/X-1a:2001 | ISO 15930-1:2001 | PDF 1.3                       |
+| PDF/X-1a:2003 | ISO 15930-4:2003 | PDF 1.4                       |
+| PDF/X-3:2002  |                  | PDF 1.3                       |
+| PDF/X-3:2003  | ISO 15930-6:2003 | PDF 1.4                       |
+| PDF/X-4       | ISO 15930-7:2008 | PDF 1.6                       |
 
-Prince supports files with the combined PDF/A-1a+PDF/UA-1, PDF/A-2a+PDF/UA-1, and PDF/A-3a+PDF/UA-1 profiles.
+Prince supports also the creation of files with the following combined profiles:
+
+|                 |
+|-----------------|
+|PDF/A-1a+PDF/UA-1|
+|PDF/A-2a+PDF/UA-1|
+|PDF/A-3a+PDF/UA-1|
 
 Prince also uses:
 
