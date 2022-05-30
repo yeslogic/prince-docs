@@ -1,0 +1,37 @@
+
+name: Archive the Prince documentation
+on:
+  workflow_dispatch:
+
+jobs:
+  build-docs:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository code
+        uses: actions/checkout@v2
+      - name: Set up Node
+        uses: actions/setup-node@v2
+        with:
+          node-version: '14'
+      - name: Build Docusaurus Docs
+        run: |
+          cd website
+          npm install 
+          npm run build
+      - name: Prepare deployment
+        # update the archive directory to the one used as docsUrl
+        run: |
+          cd ./website/build/prince-docs
+          rm sitemap.xml doc/14/*.html
+          mv ./index.html ./doc/14/
+          rm -r doc/14/doc-install doc/14/doc-prince doc/14/doc-refs
+          cd ./../../..
+      - name: Deploy
+        uses: nogsantos/ssh-scp-deploy@master
+        with:
+          src: ./website/build/prince-docs/*
+          host: ${{ secrets.SSH_HOST }}
+          remote: ${{ secrets.WEB_ROOT }}
+          port: ${{ secrets.SSH_PORT }}
+          user: ${{ secrets.SSH_USER }}
+          key: ${{ secrets.SSH_KEY }}
