@@ -95,7 +95,7 @@ const siteConfig = {
   onPageNav: 'separate',
   // No .html extensions for paths.
   cleanUrl: true,
-  docsUrl: 'doc',
+  docsUrl: 'doc/14',
   disableHeaderTitle: true,
 
   // Open Graph and Twitter card images.
