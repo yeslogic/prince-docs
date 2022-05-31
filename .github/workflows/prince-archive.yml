@@ -25,8 +25,7 @@ jobs:
       - name: Prepare deployment
         run: |
           cd ./website/build/prince-docs
-          rm sitemap.xml $DOCS_URL/*.html
-          mv ./index.html ./$DOCS_URL/
+          rm index.html sitemap.xml $DOCS_URL/*.html
           rm -r $DOCS_URL/doc-install $DOCS_URL/doc-prince $DOCS_URL/doc-refs
           cd ./../../..
       - name: Deploy
