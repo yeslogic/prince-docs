@@ -3,6 +3,10 @@ name: Archive the Prince documentation
 on:
   workflow_dispatch:
 
+env:
+  # set DOCS_URL to docsUrl from siteConfig
+  DOCS_URL: doc/14
+
 jobs:
   build-docs:
     runs-on: ubuntu-latest
@@ -19,12 +23,11 @@ jobs:
           npm install 
           npm run build
       - name: Prepare deployment
-        # update the archive directory to the one used as docsUrl
         run: |
           cd ./website/build/prince-docs
-          rm sitemap.xml doc/14/*.html
-          mv ./index.html ./doc/14/
-          rm -r doc/14/doc-install doc/14/doc-prince doc/14/doc-refs
+          rm sitemap.xml $DOCS_URL/*.html
+          mv ./index.html ./$DOCS_URL/
+          rm -r $DOCS_URL/doc-install $DOCS_URL/doc-prince $DOCS_URL/doc-refs
           cd ./../../..
       - name: Deploy
         uses: nogsantos/ssh-scp-deploy@master
