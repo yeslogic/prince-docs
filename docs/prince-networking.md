@@ -25,9 +25,15 @@ SSL
 
 The command-line option [`--ssl-cacert`](command-line.md#cl-ssl-cacert) specifies an SSL certificate file, while the option [`--ssl-capath`](command-line.md#cl-ssl-capath) is used to specify an SSL certificate directory.
 
-The command-line option [`--ssl-version`](command-line.md#cl-ssl-version) sets the minimum version of SSL to allow. It may be one of: `default`, `tlsv1`, `tlsv1.0`, `tlsv1.1`, `tlsv1.2` or `tlsv1.3`. The value `default` lets libcurl choose. The option [`--insecure`](command-line.md#cl-insecure) disables SSL verification. Please note that using this option is not recommended!
+The command-line option [`--ssl-version`](command-line.md#cl-ssl-version) sets the minimum version of SSL to allow. It may be one of: `default`, `tlsv1`, `tlsv1.0`, `tlsv1.1`, `tlsv1.2` or `tlsv1.3`. The value `default` lets libcurl choose.
+
+Prince on Windows allows for fine-tuning SSL certificate revocation checks: it can ignore certificate revocation checks that fail due to missing or offline distribution points for the revocation check lists with [`--ssl-revoke-best-effort`](command-line.md#cl-ssl-revoke-best-effort), or it can outright disable them with [`--ssl-no-revoke`](command-line.md#cl-ssl-no-revoke).
+
+The option [`--insecure`](command-line.md#cl-insecure) disables SSL verification. Please note that using this option is not recommended!
 
 Prince makes use of the libcurl library to process network locations - see [Acknowledgments](acknowledgements.md). Please note that command-line options are passed to curl as-is. On some systems curl might use a library other than OpenSSL to handle SSL - in those cases the SSL-related command-line options might behave in a slightly different way. In case of doubt, please check your own curl documentation.
+
+
 
 ### Client Certificates
 

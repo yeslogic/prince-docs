@@ -327,6 +327,17 @@ The command-line may include the options described below:
   choose), <code>tlsv1</code>,
   <code>tlsv1.0</code>, <code>tlsv1.1</code>, <code>tlsv1.2</code> or <code>tlsv1.3</code>.
   </dd>
+  <dt id="cl-ssl-no-revoke"><code>--ssl-no-revoke</code></dt>
+  <dd>
+  Disable certificate revocation checks.
+  This option only has effect on Windows.
+  </dd>
+  <dt id="cl-ssl-revoke-best-effort"><code>--ssl-revoke-best-effort</code></dt>
+  <dd>
+  Ignore certificate revocation checks that fail due to missing or offline
+  distribution points for the revocation check lists.
+  This option only has effect on Windows.
+  </dd>
   <dt id="cl-insecure"><code>--insecure</code></dt>
   <dd>
   Disable SSL verification (not recommended).
