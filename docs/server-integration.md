@@ -728,9 +728,11 @@ Please also note that, even when enabled, external entities and XIncludes are ne
 
 However, XML external entities and XInclude are not the only way for accessing local files.  Any image, CSS or JavaScript file in an HTML file can point to a local resource!  This can potentially lead to exposing resources that need to be kept confidential: be aware that the URLs are accessed while Prince is running and the *content* is embedded in the PDFs, not just the URLs themselves!
 
-It is important to know that by default, Prince *does* have access to local files.
+<p class="warning">
+It is important to know that by default, Prince <em>does</em> have access to local files.
+</p>
 
-Therefore, it is good and safe practice to always run Prince with the command-line option [`--no-local-files`](command-line.md#cl-no-local-files) in order to exclude any unwanted access to the local file system when dealing with untrusted content.
+It is good and safe practice to always run Prince with the command-line option [`--no-local-files`](command-line.md#cl-no-local-files) in order to exclude any unwanted access to the local file system when dealing with untrusted content.
 
 ### Network Resources
 
