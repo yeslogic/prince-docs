@@ -173,7 +173,7 @@ The full list of page regions is shown in the following [Page regions](#tab-marg
 <tbody>
 <tr>
 <td></td>
-<td><b><i>Page area</i></b></td>
+<td><b>Page area</b></td>
 <td>start</td>
 <td>baseline</td>
 <td style="border: 3px black solid;">solid black border</td>
