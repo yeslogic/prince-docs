@@ -29,7 +29,7 @@ The command-line option [`--ssl-version`](command-line.md#cl-ssl-version) sets t
 
 Prince on Windows allows for fine-tuning SSL certificate revocation checks: it can ignore certificate revocation checks that fail due to missing or offline distribution points for the revocation check lists with [`--ssl-revoke-best-effort`](command-line.md#cl-ssl-revoke-best-effort), or it can outright disable them with [`--ssl-no-revoke`](command-line.md#cl-ssl-no-revoke).
 
-The option [`--insecure`](command-line.md#cl-insecure) disables SSL verification. Please note that using this option is not recommended!
+The option [`--insecure`](command-line.md#cl-insecure) disables SSL verification altogether. Please note that using this option is not recommended!  As the name already suggests, all secure connections are downgraded to insecure.
 
 Prince makes use of the libcurl library to process network locations - see [Acknowledgments](acknowledgements.md). Please note that command-line options are passed to curl as-is. On some systems curl might use a library other than OpenSSL to handle SSL - in those cases the SSL-related command-line options might behave in a slightly different way. In case of doubt, please check your own curl documentation.
 
