@@ -296,9 +296,9 @@ See also [our nifty script](cookbook.md#how-and-where-is-my-box) to return the p
 
 Two further sample applications of the box tracking API can be seen in the [Changebars](//www.princexml.com/forum/topic/3516/changebars) example, and in [Detecting Overflow](//www.princexml.com/forum/topic/3603/detecting-overflow).
 
-### Unsupported DOM Properties
+### Unsupported DOM Methods
 
-The following DOM properties are not supported in Prince:
+The following DOM methods are not supported in Prince:
 
 ```javascript
     document.write
