@@ -6,7 +6,7 @@ Prince supports most of ECMAScript 5th edition (ES5), with the exception of stri
 
 The following table shows supported JavaScript objects, methods and properties. For more details, see also [JavaScript in Prince](javascript.md#javascript-in-prince).
 
-\* objects, methods and properties marked with an asterisk are Prince extensions.
+\* objects, methods and properties marked with an asterisk and a darker background color shade are Prince extensions.
 
 <a href="#" id="toggle-js" onclick="javascript:toggleAllDetails('js'); return false;">Toggle (open/close) all properties</a>
 
