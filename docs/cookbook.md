@@ -11,7 +11,6 @@ Table of Contents
 <dl class="ingredients">
   <dt>You need</dt>
   <dd><a href="/doc/javascript#javascript-in-printed-media">JavaScript in Printed Media</a></dd>
-  <dd><a href="#the-multi-pass-solution">The "Multi-Pass" Solution</a></dd>
   <dd><a href="/doc/gen-content#generated-content-functions">Generated Content Functions</a>
     <ul>
       <li><code>content: target-counter()</code></li>
@@ -58,7 +57,7 @@ You can view the resulting PDF [here](https://css4.pub/2020/musick/musick.pdf).
 
 ### Multifile Table of Contents
 
-For longer books, it makes sense to split chapters into separate files. Generating a Table of Contents across all files is tricky in JavaScript since scripts only see one file at a time. In Prince, you can work around this limitation with a multi-pass solution (see [The "Multi-Pass" Solution](#the-multi-pass-solution)) where the first pass collects items for the ToC, and the second pass generates the PDF with the ToC.
+For longer books, it makes sense to split chapters into separate files. Generating a Table of Contents across all files is tricky in JavaScript since scripts only see one file at a time. In Prince, you can work around this limitation with a so-called "two-pass" approach, by running Prince twice - the first pass collects items for the ToC, and the second pass generates the PDF with the ToC.  When scripts need to communicate across multiple input documents, the built-in ["multi-pass" solution](#the-multi-pass-solution) is not an option.
 
 To try this for yourself, first fetch these five sample files into your own file system, e.g. by running:
 
@@ -1119,6 +1118,8 @@ Here is a minimalistic "multi-pass" solution where the document is adorned with 
     $ prince --javascript https://css4.pub/2020/musick/musick.html -o musick.pdf
 ```
 Another use of the "multi-pass" solution is to create changebars - see the description [here](http://www.princexml.com/forum/topic/3516/changebars).
+
+When however scripts need to communicate across multiple input documents, the built-in "multi-pass" solution is not an option - see e.g. the [Multifile Table of Contents](#multifile-table-of-contents), which makes use of a "two-pass" approach by running Prince twice.
 
 
 Build Your Own Docu-PDF
