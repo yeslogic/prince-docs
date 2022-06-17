@@ -288,7 +288,7 @@ Ruby on Rails
 [A simple Rails wrapper for the PrinceXML PDF generation library](https://github.com/mbleigh/princely/tree/master)
 
 Node.js  
-[Node API for executing XML/HTML to PDF renderer PrinceXML via prince(1) CLI](https://www.npmjs.com/package/prince)
+[Node API for executing XML/HTML to PDF renderer PrinceXML via `prince` CLI](https://www.npmjs.com/package/prince)
 
 
 Prince In Cloud Computing
