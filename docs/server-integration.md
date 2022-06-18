@@ -168,7 +168,7 @@ If on Linux, substitute the paths with the appropriate UNIX style paths.
 
 ### Using Prince with Python
 
-Prince can be called from Python using the [command-line interface](command-line.md), like this:
+Prince can be called from Python using the command-line interface, like this:
 
 ```python
 import subprocess
