@@ -139,7 +139,7 @@ Prince can be called from ColdFusion pages using the Java interface.
 
 #### Using Java
 
-Start by downloading the [Java wrapper JAR file](https://github.com/yeslogic/prince-java-wrapper/packages/993641) via the links on the sidebar.
+Start by downloading the Java wrapper from the [Maven Central Repository](https://search.maven.org/artifact/com.princexml/prince-java-wrapper).
 
 The [API documentation](https://yeslogic.github.io/prince-java-wrapper) lists the Java class methods and explains how to use them.
 
