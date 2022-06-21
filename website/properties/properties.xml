@@ -3539,6 +3539,10 @@
     When two values are given, the first one refers to the top alternative margin, while
     the second one refers to the bottom one.
     </p>
+
+    <p>
+    Unlike the margin property, it does not take percentage values.
+    </p>
     </comments>
     <aliastarget>prince-margin-alt</aliastarget>
 </property>
