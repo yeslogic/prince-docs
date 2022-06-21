@@ -666,13 +666,16 @@ By omitting log messages, or by delaying them until after the PDF is written, th
 
 ### Fail-Safe Options
 
-Prince offers six Fail-Safe Options:
+Prince offers seven Fail-Safe Options:
 
 `--fail-dropped-content`  
 Fail if any content is dropped, e.g. due to a specified attachment which needs to be dropped because the chosen PDF profile does not support attachments, or due to a layout problem, where Prince cannot pack a block on the page for some reason and is forced to discard it.
 
 `--fail-missing-resources`  
 Fail if any resources cannot be loaded, e.g. due to network problems.
+
+`--fail-stripped-transparency`
+Fail if transparent images are used with a PDF profile that does not support opacity.
 
 `--fail-missing-glyphs`  
 Fail if glyphs cannot be found for any characters.
@@ -686,9 +689,9 @@ Fail if there are problems tagging the PDF document for accessibility.
 `--fail-safe`  
 Enables all of the preceding fail-safe options.
 
-Usually Prince will try hard to solve any unexpected issues that arise, prioritizing the creation of a PDF - missing glyphs would be represented as a question mark ("?") and resources not loaded would simply be dropped. The fail-safe options are there to prevent the creation of broken PDFs due to temporary network problems or unexpected issues. If the condition specified with one of the command-line options is triggered, the conversion will return an explicit failure status, and no PDF is created. Appropriate action to identify and fix the problem can be taken before attempting a new conversion.
+Usually Prince will try hard to solve any unexpected issues that arise, prioritizing the creation of a PDF - missing glyphs would be represented as a question mark ("?"), transparent images would have their transparency removed and resources not loaded would simply be dropped. The fail-safe options are there to prevent the creation of broken PDFs due to temporary network problems or unexpected issues. If the condition specified with one of the command-line options is triggered, the conversion will return an explicit failure status, and no PDF is created. Appropriate action to identify and fix the problem can be taken before attempting a new conversion.
 
-The JavaScript property [`Prince.failStatus`](js-support.md#window.Prince.failStatus) can also be used to trigger an explicit failure status based on custom criteria. See also under [The Prince Object](javascript.md#the-prince-object).
+The JavaScript property [`Prince.failStatus`](js-support.md#window.Prince.failStatus) can also be used to trigger an explicit failure status based on custom criteria. See also under [Failure status](javascript.md#failure-status).
 
 
 Security
