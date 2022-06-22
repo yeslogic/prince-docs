@@ -674,7 +674,7 @@ Fail if any content is dropped, e.g. due to a specified attachment which needs t
 `--fail-missing-resources`  
 Fail if any resources cannot be loaded, e.g. due to network problems.
 
-`--fail-stripped-transparency`
+`--fail-stripped-transparency`  
 Fail if transparent images are used with a PDF profile that does not support opacity.
 
 `--fail-missing-glyphs`  
