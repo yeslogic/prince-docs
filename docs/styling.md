@@ -132,7 +132,7 @@ The following table shows the default fonts for the main languages on Windows, M
 </thead>
 <tbody>
 <tr>
-<td rowspan="15"><code>serif</code></td>
+<td rowspan="28"><code>serif</code></td>
 <td rowspan="5">Windows</td>
 <td>Latin</td>
 <td>Times New Roman</td>
@@ -175,17 +175,25 @@ The following table shows the default fonts for the main languages on Windows, M
 <td>Devanagari MT</td>
 </tr>
 <tr>
-<td rowspan="5">Linux</td>
-<td>Latin</td>
+<td rowspan="18">Linux</td>
+<td>Latin, Greek, Cyrillic</td>
 <td>Times New Roman, DejaVu Serif, DejaVu LGC Serif, Liberation Serif</td>
 </tr>
 <tr>
-<td>Chinese</td>
+<td>Chinese, simplified</td>
 <td>AR PL UMing CN, AR PL SungtiL GB</td>
 </tr>
 <tr>
+<td>Chinese, traditional (TW)</td>
+<td>AR PL UMing TW, AR PL Mingti2L Big5</td>
+</tr>
+<tr>
+<td>Chinese, traditional (HK)</td>
+<td>AR PL UMing HK, AR PL Mingti2L Big5</td>
+</tr>
+<tr>
 <td>Japanese</td>
-<td>Kochi Mincho, IPAMincho</td>
+<td>Kochi Mincho, IPAMincho, TakaoMincho</td>
 </tr>
 <tr>
 <td>Korean</td>
@@ -196,7 +204,51 @@ The following table shows the default fonts for the main languages on Windows, M
 <td>Lohit Devanagari</td>
 </tr>
 <tr>
-<td rowspan="12"><code>sans-serif</code></td>
+<td>Bengali</td>
+<td>Lohit Bengali, Ani, Mukti Narrow</td>
+</tr>
+<tr>
+<td>Gurmukhi/Punjabi</td>
+<td>Lohit Punjabi</td>
+</tr>
+<tr>
+<td>Gujarati</td>
+<td>Lohit Gujarati</td>
+</tr>
+<tr>
+<td>Tamil</td>
+<td>Lohit Tamil</td>
+</tr>
+<tr>
+<td>Telugu</td>
+<td>Lohit Telugu</td>
+</tr>
+<tr>
+<td>Kannada</td>
+<td>Lohit Kannada</td>
+</tr>
+<tr>
+<td>Malayalam</td>
+<td>Lohit Malayalam</td>
+</tr>
+<tr>
+<td>Oriya</td>
+<td>Lohit Oriya</td>
+</tr>
+<tr>
+<td>Thai</td>
+<td>Garuda</td>
+</tr>
+<tr>
+<td>Emoji</td>
+<td>JoyPixels, Noto Color Emoji</td>
+</tr>
+<tr>
+<td>Symbols</td>
+<td>OpenSymbol, DejaVu Sans</td>
+</tr>
+<tr>
+<td rowspan="14"><code>sans-serif</code></td>
 <td rowspan="4">Windows</td>
 <td>Latin</td>
 <td rowspan="2">Arial</td>
@@ -230,17 +282,25 @@ The following table shows the default fonts for the main languages on Windows, M
 <td>Apple SD Gothic Neo, Apple Gothic</td>
 </tr>
 <tr>
-<td rowspan="4">Linux</td>
-<td>Latin</td>
+<td rowspan="6">Linux</td>
+<td>Latin, Greek, Cyrillic</td>
 <td>Arial, DejaVu Sans, DejaVu LGC Sans, Liberation Sans</td>
 </tr>
 <tr>
-<td>Chinese</td>
+<td>Chinese, simplified</td>
 <td>AR PL UKai CN, AR PL KaitiM GB</td>
 </tr>
 <tr>
+<td>Chinese, traditional (TW)</td>
+<td>AR PL UKai TW, AR PL KaitiM Big5</td>
+</tr>
+<tr>
+<td>Chinese, traditional (HK)</td>
+<td>AR PL UKai HK, AR PL KaitiM Big5</td>
+</tr>
+<tr>
 <td>Japanese</td>
-<td>Kochi Gothic, IPAGothic</td>
+<td>Kochi Gothic, IPAGothic, TakaoGothic</td>
 </tr>
 <tr>
 <td>Korean</td>
