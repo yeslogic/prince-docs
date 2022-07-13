@@ -119,6 +119,8 @@ It is a very powerful tool, but care must be taken in which order the features a
 
 Prince maps the CSS generic font families to the Microsoft Core Fonts. The Microsoft Core Fonts are pre-installed on Windows and MacOS X systems but not on Linux systems. To use them on Linux you must install the [msttcorefonts](http://corefonts.sourceforge.net) package, which is available for most Linux distributions.
 
+<p class="note">Instructions for installing fonts on Linux greatly depend on the distribution you are running - we recommend checking the documentation for your own distro.  Here are links to fonts documentation for <a href="https://wiki.ubuntu.com/Fonts">Ubuntu</a>, <a href="https://en.opensuse.org/Fonts">openSuse</a>, <a href="https://wiki.debian.org/Fonts">Debian</a>, and <a href="https://wiki.alpinelinux.org/wiki/Fonts">Alpine Linux</a>.</p>
+
 The following table shows the default fonts for the main languages on Windows, MacOS X and Linux.
 
 <table class="grid">
