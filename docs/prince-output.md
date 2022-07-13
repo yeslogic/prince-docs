@@ -460,6 +460,8 @@ It can however be configured with the property [`-prince-pdf-annotation-color`](
 
 The author of the annotation can be specified through the [`-prince-pdf-annotation-author`](css-props.md#prop-prince-pdf-annotation-author) property.  Prince also offers the possibility of specifying the annotation creation, and modification dates, with the properties [`-prince-pdf-annotation-createdate`](css-props.md#prop-prince-pdf-annotation-createdate) and [`-prince-pdf-annotation-modifydate`](css-props.md#prop-prince-pdf-annotation-modifydate).
 
+Please also consult [A quick guide to PDF comments in Prince](https://css4.pub/2022/comments/) for more examples.
+
 
 ### PDF Tags
 
