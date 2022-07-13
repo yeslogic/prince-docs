@@ -427,6 +427,22 @@ Next, the annotation title and content are defined with respectively the [`-prin
     }
 ```
 
+<p class="note">It is good practice to keep the comments in the HTML file, rather than in CSS - therefore we recommend using data attributes, as we show in the following example:</p>
+
+HTML
+```html
+<p>This is a sentence with a <span class="comment" data-title="PDF Annotation Title" data-contents="This is a PDF annotation.">comment</span>.
+```
+
+CSS
+```css
+    p#annotation {
+        -prince-pdf-annotation-type: text;
+        -prince-pdf-annotation-title: attr(data-title);
+        -prince-pdf-annotation-contents: attr(data-contents);
+    }
+```
+
 The position of the annotation can be specified with the CSS property [`-prince-pdf-annotation-position`](css-props.md#prop-prince-pdf-annotation-position). The default value is `top left`, taking the element box as the reference.  To take the trim box of the page as a reference, the values `page-left` and `page-right`, as well as `page-top` and `page-bottom` should be used.  Length or percentage values can furthermore be used to fine-tune the position.
 
 ```css
