@@ -5358,102 +5358,6 @@ supplier, item { overflow-wrap: normal; }
 </property>
 
 <property>
-    <name>prince-pdf-color-conversion</name>
-    <value>
-        <choice>
-            <keyword>auto</keyword>
-            <keyword>none</keyword>
-        </choice>
-    </value>
-    <initial>auto</initial>
-    <applyto>all elements</applyto>
-    <inherit>yes</inherit>
-    <extension/>
-    <comments>
-    <p>
-    As a property, <code>-prince-pdf-color-conversion</code>
-    is applied to elements in order to convert the colors of the elements to
-    the output intent color space, if provided.  The value <code>none</code>
-    can be used to prevent color conversion for individual elements if the
-    document itself is converted.
-    </p>
-    <p class="note">
-    The same property, used as a descriptor in the <code>@prince-pdf</code>
-    at-rule, has a different syntax - see <a href="#prop-prince-pdf-color-conversion-syntax2">below</a>.
-	</p>
-    </comments>
-
-    <value2>
-        <choice>
-            <keyword>none</keyword>
-            <sequence>
-                <choice>
-                    <keyword>output-intent</keyword>
-                    <keyword class="dep">full</keyword>
-                    <sequence>
-                        <url>color-profile</url>
-                        <optional>
-                            <keyword>no-embed</keyword>
-                        </optional>
-                    </sequence>
-                </choice>
-                <optional>
-                    <choice>
-                        <keyword>absolute-colorimetric</keyword>
-                        <keyword>relative-colorimetric</keyword>
-                        <keyword>relative-colorimetric-bpc</keyword>
-                        <keyword>perceptual</keyword>
-                        <keyword>perceptual-bpc</keyword>
-                        <keyword>saturation</keyword>
-                        <keyword>saturation-bpc</keyword>
-                    </choice>
-                </optional>
-            </sequence>
-        </choice>
-    </value2>
-    <initial2>output-intent</initial2>
-    <applyto2>@prince-pdf at-rule</applyto2>
-    <inherit2>no</inherit2>
-    <see2><a href="/doc/graphics/#color-conversion">Color conversion</a></see2>
-    <comments2>
-    <p>
-    As a descriptor inside the
-    <a href="/doc/css-at-rules/#at-prince-pdf"><code>@prince-pdf</code></a>
-    at-rule, <code>-prince-pdf-color-conversion</code> is used
-    to convert the colors of the PDF to the output intent color space, or to a
-    color profile of choice.
-    </p>
-    <p>
-    When used with the default value <code>output-intent</code>, it functions
-    like the
-    <a href="/doc/command-line/#cl-convert-colors"><code>--convert-colors</code></a>
-    command-line option - the colors are converted to the output intent color profile.
-    </p>
-    <p class="note">
-    The value <code>full</code> is a deprecated synonym for <code>output-intent</code>.
-    </p>
-    <p>
-    The <code>url()</code> function allows for an ICC color profile to convert
-    to, different from the output-intent.
-    </p>
-    <p>
-    Prince allows for the additional <code>no-embed</code> keyword, which
-    causes the color conversion target ICC profile to not be embedded in the
-    output PDF, unless required by the PDF profile.  The converted colors will
-    be left device dependent or else implicitly mapped to the output intent color
-    space.
-    </p>
-    <p>
-    The optional second argument comprises the rendering intent: Black point compensation (“BPC”) will most commonly be used with a relative-colorimetric rendering intent.  Prince however also accepts black point compensation with perceptual and saturation rendering intents because “there are atypical profiles [...] in which BPC may actually be beneficial for Perceptual or Saturation processing” (quoted from the in-depth analysis <a href="http://www.color.org/WP40-Black_Point_Compensation_2010-07-27.pdf">Black-point compensation: theory and application</a>).
-    </p>
-    <p class="note">
-    When the descriptor is used as a property, applied to single elements, it
-    has a different syntax — see <a href="#prop-prince-pdf-color-conversion">above</a>.
-    </p>
-    </comments2>
-</property>
-
-<property>
 	<name>prince-pdf-annotation-author</name>
 	<value>
 	<choice>
@@ -5649,6 +5553,102 @@ supplier, item { overflow-wrap: normal; }
         <p>The keyword <code>wavy</code> maps to the <code>Squiggly</code> annotation type in PDF,
         and <code>line-through</code> maps to <code>StrikeOut</code>.</p>
     </comments>
+</property>
+
+<property>
+    <name>prince-pdf-color-conversion</name>
+    <value>
+        <choice>
+            <keyword>auto</keyword>
+            <keyword>none</keyword>
+        </choice>
+    </value>
+    <initial>auto</initial>
+    <applyto>all elements</applyto>
+    <inherit>yes</inherit>
+    <extension/>
+    <comments>
+    <p>
+    As a property, <code>-prince-pdf-color-conversion</code>
+    is applied to elements in order to convert the colors of the elements to
+    the output intent color space, if provided.  The value <code>none</code>
+    can be used to prevent color conversion for individual elements if the
+    document itself is converted.
+    </p>
+    <p class="note">
+    The same property, used as a descriptor in the <code>@prince-pdf</code>
+    at-rule, has a different syntax - see <a href="#prop-prince-pdf-color-conversion-syntax2">below</a>.
+	</p>
+    </comments>
+
+    <value2>
+        <choice>
+            <keyword>none</keyword>
+            <sequence>
+                <choice>
+                    <keyword>output-intent</keyword>
+                    <keyword class="dep">full</keyword>
+                    <sequence>
+                        <url>color-profile</url>
+                        <optional>
+                            <keyword>no-embed</keyword>
+                        </optional>
+                    </sequence>
+                </choice>
+                <optional>
+                    <choice>
+                        <keyword>absolute-colorimetric</keyword>
+                        <keyword>relative-colorimetric</keyword>
+                        <keyword>relative-colorimetric-bpc</keyword>
+                        <keyword>perceptual</keyword>
+                        <keyword>perceptual-bpc</keyword>
+                        <keyword>saturation</keyword>
+                        <keyword>saturation-bpc</keyword>
+                    </choice>
+                </optional>
+            </sequence>
+        </choice>
+    </value2>
+    <initial2>output-intent</initial2>
+    <applyto2>@prince-pdf at-rule</applyto2>
+    <inherit2>no</inherit2>
+    <see2><a href="/doc/graphics/#color-conversion">Color conversion</a></see2>
+    <comments2>
+    <p>
+    As a descriptor inside the
+    <a href="/doc/css-at-rules/#at-prince-pdf"><code>@prince-pdf</code></a>
+    at-rule, <code>-prince-pdf-color-conversion</code> is used
+    to convert the colors of the PDF to the output intent color space, or to a
+    color profile of choice.
+    </p>
+    <p>
+    When used with the default value <code>output-intent</code>, it functions
+    like the
+    <a href="/doc/command-line/#cl-convert-colors"><code>--convert-colors</code></a>
+    command-line option - the colors are converted to the output intent color profile.
+    </p>
+    <p class="note">
+    The value <code>full</code> is a deprecated synonym for <code>output-intent</code>.
+    </p>
+    <p>
+    The <code>url()</code> function allows for an ICC color profile to convert
+    to, different from the output-intent.
+    </p>
+    <p>
+    Prince allows for the additional <code>no-embed</code> keyword, which
+    causes the color conversion target ICC profile to not be embedded in the
+    output PDF, unless required by the PDF profile.  The converted colors will
+    be left device dependent or else implicitly mapped to the output intent color
+    space.
+    </p>
+    <p>
+    The optional second argument comprises the rendering intent: Black point compensation (“BPC”) will most commonly be used with a relative-colorimetric rendering intent.  Prince however also accepts black point compensation with perceptual and saturation rendering intents because “there are atypical profiles [...] in which BPC may actually be beneficial for Perceptual or Saturation processing” (quoted from the in-depth analysis <a href="http://www.color.org/WP40-Black_Point_Compensation_2010-07-27.pdf">Black-point compensation: theory and application</a>).
+    </p>
+    <p class="note">
+    When the descriptor is used as a property, applied to single elements, it
+    has a different syntax — see <a href="#prop-prince-pdf-color-conversion">above</a>.
+    </p>
+    </comments2>
 </property>
 
 <property>
