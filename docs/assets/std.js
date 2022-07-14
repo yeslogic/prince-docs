@@ -802,6 +802,8 @@ var std = {
             princePdfAnnotationPosition: {},
             princePdfAnnotationTitle: {},
             princePdfAnnotationType: {},
+            princePdfColorConversion: {},
+            princePdfColorOptions: {},
             princePdfDestination: {},
             princePdfLinkType: {},
             princePdfTagType: {},

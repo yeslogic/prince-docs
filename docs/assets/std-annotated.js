@@ -936,6 +936,8 @@ var stdAnnotated = {
             princePdfAnnotationPosition: { ext: "ext", url: "property" },
             princePdfAnnotationTitle: { ext: "ext", url: "property" },
             princePdfAnnotationType: { ext: "ext", url: "property" },
+            princePdfColorConversion: { ext: "ext", url: "property" },
+            princePdfColorOptions: { ext: "ext", url: "property" },
             princePdfDestination: { ext: "ext", url: "property" },
             princePdfLinkType: { ext: "ext", url: "property" },
             princePdfTagType: { ext: "ext", url: "property" },
