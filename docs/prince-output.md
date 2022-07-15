@@ -415,7 +415,7 @@ The default value for this property is `self`, referring to the element that gen
 
 Prince supports PDF annotations by means of a range of custom CSS properties.  Annotations can be applied to almost every element and pseudo-element - but not to [page-margin boxes](/doc/paged#page-regions).
 
-To specify an annotation, the type of annotation has to be declared with the CSS property [`-prince-pdf-annotation-type`](css-props.md#prop-prince-pdf-annotation-type).  The keyword `wavy` maps to the Squiggly PDF annotation type, and `line-through` maps to StrikeOut.
+To specify an annotation, the type of annotation has to be declared with the CSS property [`-prince-pdf-annotation-type`](css-props.md#prop-prince-pdf-annotation-type).  The keyword values should be rather self-explanatory. The keyword `wavy` maps to the "Squiggly" PDF annotation type, and `line-through` maps to "StrikeOut".
 
 Next, the annotation title and content are defined with respectively the [`-prince-pdf-annotation-title`](css-props.md#prop-prince-pdf-annotation-title) and [`-prince-pdf-annotation-contents`](css-props.md#prop-prince-pdf-annotation-contents) properties.
 
@@ -427,7 +427,7 @@ Next, the annotation title and content are defined with respectively the [`-prin
     }
 ```
 
-<p class="note">It is good practice to keep the comments in the HTML file, rather than in CSS - therefore we recommend using data attributes, as we show in the following example:</p>
+<p class="note">Based on the underlying principle of keeping content and style separated, it is good practice to keep the comments in the HTML file, rather than in CSS - therefore we recommend using data attributes, as we show in the following example:</p>
 
 HTML
 ```html
@@ -458,7 +458,7 @@ The default color of the annotation depends on the PDF annotation type:
 
 It can however be configured with the property [`-prince-pdf-annotation-color`](css-props.md#prop-prince-pdf-annotation-color).
 
-The author of the annotation can be specified through the [`-prince-pdf-annotation-author`](css-props.md#prop-prince-pdf-annotation-author) property.  Prince also offers the possibility of specifying the annotation creation, and modification dates, with the properties [`-prince-pdf-annotation-createdate`](css-props.md#prop-prince-pdf-annotation-createdate) and [`-prince-pdf-annotation-modifydate`](css-props.md#prop-prince-pdf-annotation-modifydate).
+The author of the annotation can be specified through the [`-prince-pdf-annotation-author`](css-props.md#prop-prince-pdf-annotation-author) property.  Prince also offers the possibility of specifying the annotation creation and modification dates, with the properties [`-prince-pdf-annotation-createdate`](css-props.md#prop-prince-pdf-annotation-createdate) and [`-prince-pdf-annotation-modifydate`](css-props.md#prop-prince-pdf-annotation-modifydate).
 
 Please also consult [A quick guide to PDF comments in Prince](https://css4.pub/2022/comments/) for more examples.
 
