@@ -431,7 +431,7 @@ Next, the annotation title and content are defined with respectively the [`-prin
 
 HTML
 ```html
-<p>This is a sentence with an <span class="comment" data-title="PDF Annotation Title" data-contents="This is a PDF annotation.">annotation</span>.
+<p>This is a sentence with an <span class="annotation" data-title="PDF Annotation Title" data-contents="This is a PDF annotation.">annotation</span>.
 ```
 
 CSS
