@@ -105,7 +105,7 @@ The PDF/UA-1 profile supports attachments.
 -   See the [Color Management and PDF Profiles](graphics.md#color-management-and-pdf-profiles) section for the color profiles available in each PDF/X version. Transparency is not allowed, with the exception of PDF/X-4
 -   Encryption is forbidden
 
-The PDF/X-4 profile supports attachments.
+The PDF/X-4 profile supports attachments, but doesn't allow links.
 
 PDF Accessibility
 -----------------
