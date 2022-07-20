@@ -58,7 +58,9 @@ To enable tagged PDF without using one of the profiles that already imply it, th
 
 Prince supports PDF object streams to reduce the size of tagged PDFs. This can be disabled by the command-line argument [`--no-object-streams`](command-line.md#cl-no-object-streams) or from JavaScript via the [`PDF.objectStreams`](js-support.md#window.PDF.objectStreams) boolean property.
 
+<p class="note">
 Object streams are enabled by default, therefore Prince produces files with PDF version 1.5 - unless a profile that requires older PDF versions will automatically disable object streams.
+</p>
 
 Choosing one profile over another can help producing a PDF file which has the right properties for its intended destination. Each PDF profile places restrictions on the features allowed in a PDF file in order to achieve its aims. Please also see the [Color Management](graphics.md#color-management) section for the impact the PDF profiles have on color management. Prince produces error messages when the restrictions are not respected.
 
