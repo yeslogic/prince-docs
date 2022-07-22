@@ -460,6 +460,8 @@ The default color of the annotation depends on the PDF annotation type:
 
 It can however be configured with the property [`-prince-pdf-annotation-color`](css-props.md#prop-prince-pdf-annotation-color).
 
+PDF annotations can also be provided with an icon, to help seeing at a glance what the annotation is meant to convey - the CSS property [`-prince-pdf-annotation-icon`](css-props.md#prop-prince-pdf-annotation-icon) can be used for this.
+
 The author of the annotation can be specified through the [`-prince-pdf-annotation-author`](css-props.md#prop-prince-pdf-annotation-author) property.  Prince also offers the possibility of specifying the annotation creation and modification dates, with the properties [`-prince-pdf-annotation-createdate`](css-props.md#prop-prince-pdf-annotation-createdate) and [`-prince-pdf-annotation-modifydate`](css-props.md#prop-prince-pdf-annotation-modifydate).
 
 Please also consult [A quick guide to PDF comments in Prince](https://css4.pub/2022/comments/) for more examples.

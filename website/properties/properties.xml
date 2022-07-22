@@ -5451,6 +5451,31 @@ supplier, item { overflow-wrap: normal; }
 </property>
 
 <property>
+	<name>prince-pdf-annotation-icon</name>
+	<value>
+	<choice>
+		<keyword>note</keyword>
+		<keyword>comment</keyword>
+		<keyword>key</keyword>
+		<keyword>help</keyword>
+		<keyword>new-paragraph</keyword>
+		<keyword>paragraph</keyword>
+		<keyword>insert</keyword>
+	</choice>
+	</value>
+	<initial>note</initial>
+    <applyto>all elements</applyto>
+	<inherit>no</inherit>
+	<extension/>
+	<example>-prince-pdf-annotation-icon: help</example>
+    <see><a href="/doc/prince-output/#pdf-annotations">PDF Annotations</a></see>
+	<comments>
+		<p>This property is used to define which icon should be used for the PDF annotation.
+		</p>
+    </comments>
+</property>
+
+<property>
 	<name>prince-pdf-annotation-modifydate</name>
 	<value>
 	<choice>
