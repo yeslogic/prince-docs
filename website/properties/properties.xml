@@ -5409,7 +5409,12 @@ supplier, item { overflow-wrap: normal; }
 	<value>
 	<choice>
 		<keyword>none</keyword>
-        <string>string</string>
+        <repeat min="1">
+            <choice>
+                <string>string</string>
+                <attr>attr</attr>
+            </choice>
+	    </repeat>
 	</choice>
 	</value>
 	<initial>none</initial>
