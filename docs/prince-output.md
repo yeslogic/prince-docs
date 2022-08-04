@@ -118,7 +118,7 @@ A first step would be to produce files with one of the PDF profiles addressing a
 
 The next step would be to specifically check compliance of the document's content with the requirements. A number of resoures or tools can be helpful in this step:
 
--   [Free PDF Accessibility Checker](https://www.access-for-all.ch/en/pdf-lab/pdf-accessibility-checker-pac.html)
+-   [Free PDF Accessibility Checker](https://www.access-for-all.ch/en/pdf-accessibility-checker.html)
 -   [VIP-PDF-Reader](https://www.access-for-all.ch/en/pdf-lab/500-vip-pdf-reader-e.html)
 -   [PDF Checker of the European Internet Inclusion Initiative](http://checkers.eiii.eu/en/pdfcheck/)
 
