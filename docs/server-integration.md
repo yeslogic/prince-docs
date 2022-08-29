@@ -666,7 +666,7 @@ By omitting log messages, or by delaying them until after the PDF is written, th
 
 ### Fail-Safe Options
 
-Prince offers seven Fail-Safe Options:
+Prince offers eight Fail-Safe Options:
 
 `--fail-dropped-content`  
 Fail if any content is dropped, e.g. due to a specified attachment which needs to be dropped because the chosen PDF profile does not support attachments, or due to a layout problem, where Prince cannot pack a block on the page for some reason and is forced to discard it.
@@ -685,6 +685,9 @@ Fail if there are problems complying with the specified PDF profile, e.g. due to
 
 `--fail-pdf-tag-error`  
 Fail if there are problems tagging the PDF document for accessibility.
+
+`--fail-invalid-license`  
+Fail if the Prince license is invalid or not readable.
 
 `--fail-safe`  
 Enables all of the preceding fail-safe options.
