@@ -12,7 +12,11 @@ For the time being, Prince for Books is only available as a a command-line appli
 prince-books OPTIONS FILES [-o PDF]
 ```
 
-To download it, head over to the [Prince for Books download page](/books/). It is available in package bundles only - to install it, the files need to be copied into place (Windows), or an installation script needs to be run (on Linux and MacOS X). It can be installed without problem alongside a normal Prince installation - the executable to run is called `prince-books`.
+To download it, head over to the [Prince for Books download page](/books/). It is available in package bundles only - to install it, the files need to be copied into place (Windows), or an installation script needs to be run (on Linux and MacOS X).
+
+<p class="note">
+Prince for Books can be installed without problem alongside a normal Prince installation - the executable to run is called <code>prince-books</code>.
+</p>
 
 Line breaking
 -------------
