@@ -191,11 +191,11 @@ Frequently Asked Questions
   events make no sense in this context.  Also, modifications of the document
   after layout has finished are not possible.  See: <a href="/doc/javascript">Scripting</a>.</p></dd>
 
-  <dt><p id="faq-jsafterkayout">Can I modify the document after layout has
-  finished? <a class="self-link" href="#faq-jsafterkayout"></a></p></dt>
-  <dd><p>No, unfortunately this is part of the inherent limitations of printed media -
-  see <a href="/doc/javascript#javascript-in-printed-media">JavaScript in Printed Media</a>.  However, JavaScript can run after layout is done,
-  and the output can be used for a second run of Prince - see <a href="/doc/cookbook#the-multi-pass-solution">The "Multi-Pass" Solution</a>.</p></dd>
+  <dt><p id="faq-jsafterlayout">Can I modify the document after layout has
+  finished? <a class="self-link" href="#faq-jsafterlayout"></a></p></dt>
+  <dd><p>Part of the inherent limitations of printed media is the impossibility to modify a document after it has been printed -
+  see <a href="/doc/javascript#javascript-in-printed-media">JavaScript in Printed Media</a>.</p>
+  <p>However, Prince offers the possibility to register the function <a href="/doc/js-support/#window.Prince.registerPostLayoutFunc"><code>Prince.registerPostLayoutFunc(func)</code></a> after layout has finished and before producing the PDF for possibly triggering a new layout - see <a href="/doc/javascript/#multi-pass-formatting">Multi-Pass formatting</a> for more details.</p></dd>
 
   <dt><p id="faq-xinclude">Can I include content of external files in my document?
   <a class="self-link" href="#faq-xinclude"></a></p></dt>
