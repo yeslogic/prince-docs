@@ -676,6 +676,12 @@ Rasterization is enabled with the `--raster-output` option below. When this is u
 ### Advanced Options
 
 <dl>
+  <dt id="cl-user-agent"><code>--user-agent <span class="replaceable">USER-AGENT</span></code></dt>
+  <dd>
+    <p>A custom user-agent string can be passed to Prince to circumvent user-agent-sniffing that leads to
+    undesired results, degrading the PDF output.  Please be aware that there can be unforseen side-effects
+    when pretending to be somebody else on the web.</p>
+  </dd>
   <dt id="cl-capture"><code>--capture <span class="replaceable">DIR</span></code></dt>
   <dt id="cl-replay"><code>--replay <span class="replaceable">DIR</span></code></dt>
   <dd>
