@@ -197,6 +197,12 @@ Frequently Asked Questions
   see <a href="/doc/javascript#javascript-in-printed-media">JavaScript in Printed Media</a>.</p>
   <p>However, Prince offers the possibility to register the function <a href="/doc/js-support/#window.Prince.registerPostLayoutFunc"><code>Prince.registerPostLayoutFunc(func)</code></a> after layout has finished and before producing the PDF for possibly triggering a new layout - see <a href="/doc/javascript/#multi-pass-formatting">Multi-Pass formatting</a> for more details.</p></dd>
 
+  <dt><p id="faq-webfonts">Why are Web fonts not loaded? <a class="self-link" href="#faq-webfonts"></a></p></dt>
+  <dd><p>Prince supports and loads web fonts.  However, in some specific cases the web fonts served to Prince might
+  differ from those served to browsers.  In such cases the command-line options <a href="/doc/command-line/#cl-user-agent"><code>--user-agent</code></a> may be used
+  to spoof the user agent string sent to the servers, basically pretending to be a browser.</p>
+  <p class="note">Please be aware that there can be unforseen side-effects when pretending to be somebody else on the web.</p></dd>
+
   <dt><p id="faq-xinclude">Can I include content of external files in my document?
   <a class="self-link" href="#faq-xinclude"></a></p></dt>
   <dd><p>Yes.  In XML, this is done by means of <a href="/doc/prince-input#xml-inclusions-xinclude">XML Inclusions (XInclude)</a>.  Note
