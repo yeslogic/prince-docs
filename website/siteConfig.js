@@ -46,7 +46,8 @@ const siteConfig = {
 
   // The Search
   algolia: {
-    apiKey: '63dda203371e77ee63a05de413c3d741',
+    appId: '9T8TI2GYRX',
+    apiKey: '9f574677a5391f7dd2a6044d6dbfcad1',
     indexName: 'princexml',
     algoliaOptions: { 'facetFilters': ["language:en"] }
   },
