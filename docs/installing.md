@@ -6,7 +6,7 @@ Let's get started with Prince. We will download and install the software and use
 
 Readers should already be familiar with HTML and CSS - many good tutorials are available on the topic. Familiarity with your computer's command line interface is desirable but not essential. Because the chapter is aimed at getting started as quickly as possible we may skip some explanations, don't worry as these will be covered later in the manual.
 
-If Prince is already installed, you can directly skip to the [User Guide](intro-userguide).
+If Prince is already installed, you can directly skip to the [User Guide](intro-userguide.md).
 
 Installing Prince
 -----------------
@@ -54,7 +54,7 @@ To run Prince on Windows, you typically double-click on the Prince icon created 
 
 For the layout of a Prince installation on Windows, see the [Windows installation layout](#windows-installation-layout) section.
 
-For information about using Prince from PHP, Java, .NET, and other server frameworks you will need to install one or more [Prince wrappers](wrappers.html). See [Server Integration](server-integration.md#server-integration) for installation and usage information.
+For information about using Prince from PHP, Java, .NET, and other server frameworks you will need to install one or more [Prince wrappers](/doc/server-integration/#prince-wrappers). See [Server Integration](server-integration.md) for installation and usage information.
 
 ### Installing Prince on MacOS X
 
@@ -90,7 +90,7 @@ Prince is now ready to use - to run Prince on MacOS X, enter the `prince` comman
 
 For the layout of a Prince installation on MacOS X, see the [MacOS X installation layout](#macos-x-installation-layout) section.
 
-For information about using Prince from PHP, Java, .NET, and other server frameworks you will need to install one or more [Prince wrappers](wrappers.html). See [Server Integration](server-integration.md#server-integration) for installation and usage information.
+For information about using Prince from PHP, Java, .NET, and other server frameworks you will need to install one or more [Prince wrappers](/doc/server-integration/#prince-wrappers). See [Server Integration](server-integration.md) for installation and usage information.
 
 ### Installing Prince on Linux/FreeBSD
 
@@ -178,7 +178,7 @@ The process will then end with messages similar to:
 
 Prince is now ready to use. [Your First Document](first-doc.md#first-doc) will walk you through generating your first PDF document.
 
-For information about using Prince from PHP, Java, .NET, and other server frameworks you will need to install one or more [Prince wrappers](wrappers.html). See [Server Integration](server-integration.md#server-integration) for installation and usage information.
+For information about using Prince from PHP, Java, .NET, and other server frameworks you will need to install one or more [Prince wrappers](/doc/server-integration/#prince-wrappers). See [Server Integration](server-integration.md) for installation and usage information.
 
 #### Tarballs - Alpine Linux, FreeBSD and Generic Linux
 
@@ -230,7 +230,7 @@ You will need to add the appropriate command to your shell's configuration or st
 
 Prince is now ready to use. [Your First Document](first-doc.md#first-doc) will walk you through generating your first PDF document.
 
-For information about using Prince from PHP, Java, .NET, and other server frameworks you will need to install one or more [Prince wrappers](wrappers.html). See [Server Integration](server-integration.md#server-integration) for installation and usage information.
+For information about using Prince from PHP, Java, .NET, and other server frameworks you will need to install one or more [Prince wrappers](/doc/server-integration/#prince-wrappers). See [Server Integration](server-integration.md) for installation and usage information.
 
 Installing a license file
 -------------------------

@@ -12,7 +12,7 @@ The Prince Installation Guide tries to be exhaustive in explaining how to instal
 Troubleshooting
 ---------------
 
-We work hard to make Prince work on multiple platforms (Windows, Linux, etc) and with multiple configurations. However things don't always work correctly the first time. You're very welcome to [contact us](contact.html) for support or visit our [forum](//www.princexml.com/forum/). However if you are facing a common problem, you may be able to find an explanation and solution below.
+We work hard to make Prince work on multiple platforms (Windows, Linux, etc) and with multiple configurations. However things don't always work correctly the first time. You're very welcome to [contact us](//www.princexml.com/contact/) for support or visit our [forum](//www.princexml.com/forum/). However if you are facing a common problem, you may be able to find an explanation and solution below.
 
 ### Missing glyphs or fonts
 
@@ -137,29 +137,29 @@ Frequently Asked Questions
   <pre><code class="hljs">    prince file.xml -o file.pdf</code></pre>
   <p>On Windows, you replace the name of the executable with
   <code>Prince\engine\bin\prince.exe</code> in the installation directory
-  (see <a href="installing#windows-installation-layout">Windows installation layout</a>),
-  which is the command-line program. See also <a href="command-line#command-line">Command-line Reference</a>.</p>
+  (see <a href="/doc/installing/#windows-installation-layout">Windows installation layout</a>),
+  which is the command-line program. See also <a href="/doc/command-line/">Command-line Reference</a>.</p>
   <pre><code class="hljs">    "C:\Program Files (x86)\Prince\engine\bin\prince.exe" file.xml -o file.pdf</code></pre></dd>
 
   <dt id="faq-install-cloud"><p>Can I install Prince on cloud services or
   containers (Azure, AWS, Docker)? <a href="#faq-install-cloud" class="self-link"></a></p></dt>
-  <dd><p>Prince can be installed on the <a href="installing#installing">supported operating systems</a> -
+  <dd><p>Prince can be installed on the <a href="/doc/installing/#installing-prince">supported operating systems</a> -
   also when they are running in cloud or container services. On Linux, some
   environments might not provide for all dependencies - you can address this
   by either trying to install the Generic Linux Prince package (see
-  <a href="installing#install-generic">Tarballs - Alpine Linux, FreeBSD and Generic Linux</a>),
+  <a href="/doc/installing/#tarballs---alpine-linux-freebsd-and-generic-linux">Tarballs - Alpine Linux, FreeBSD and Generic Linux</a>),
   or by trying to install the missing dependencies.</p>
-  <p>Our chapter on <a href="server-integration#prince-in-cloud-computing">Prince In Cloud Computing</a>
-  details installation instructions for Prince on <a href="server-integration#prince-docker-image">Docker</a>,
-  <a href="server-integration#prince-on-microsoft-azure">Microsoft Azure</a>,
-  <a href="server-integration#prince-on-aws-lambda">AWS Lambda</a> and
-  <a href="server-integration#prince-on-ec2">AWS EC2</a>.</p>
+  <p>Our chapter on <a href="/doc/server-integration/#prince-in-cloud-computing">Prince In Cloud Computing</a>
+  details installation instructions for Prince on <a href="/doc/server-integration/#prince-docker-image">Docker</a>,
+  <a href="/doc/server-integration/#prince-on-microsoft-azure">Microsoft Azure</a>,
+  <a href="/doc/server-integration/#prince-on-aws-lambda">AWS Lambda</a> and
+  <a href="/doc/server-integration/#prince-on-ec2">AWS EC2</a>.</p>
   <p>See also <a href="https://www.princexml.com/forum/topic/2094/silent-installation-on-windows#20332">this forum post</a>
   for a description of an installation on Azure.</p></dd>
 
   <dt id="faq-install-books"><p>How do I install Prince for Books?
   <a href="#faq-install-books" class="self-link"></a></p></dt>
-  <dd><p><a href="prince-for-books#pfb">Prince for Books</a> is available
+  <dd><p><a href="/doc/prince-for-books/">Prince for Books</a> is available
   in package bundles only - to install it, the files need to be copied into
   place (Windows), or an installation script needs to be run (on Linux and MacOS X).
   It can be installed without problem alongside a normal Prince installation -
