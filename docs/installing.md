@@ -184,7 +184,7 @@ For information about using Prince from PHP, Java, .NET, and other server framew
 
 Prince can be installed on Alpine Linux and FreeBSD from a *tarball* (a `.tar.gz` file). The tarball packages can also be used on Linux when there is no `.deb` or `.rpm` package for your system or the package for your system didn't work for some reason. In these cases this section contains the relevant installation instructions.
 
-Start by choosing the tarball that is the closest match for your system, take care to match operating system (Linux vs FreeBSD) and processor type (32 vs 64bit - please note that Prince supports only x86 and x86\_64 processors).
+Start by choosing the tarball that is the closest match for your system, take care to match operating system (Linux vs FreeBSD) and architecture (Intel or ARM).
 
 The Generic Linux package should be able to run on a wider range of Linux versions than other packages.
 
