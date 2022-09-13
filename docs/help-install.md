@@ -161,7 +161,7 @@ Frequently Asked Questions
   <a href="#faq-install-books" class="self-link"></a></p></dt>
   <dd><p><a href="/doc/prince-for-books/">Prince for Books</a> is available
   in package bundles only - to install it, the files need to be copied into
-  place (Windows), or an installation script needs to be run (on Linux and MacOS X).
+  place (Windows), or an installation script needs to be run (on Linux and MacOS).
   It can be installed without problem alongside a normal Prince installation -
   the executable to run is called <code>prince-books</code>.</p></dd>
 

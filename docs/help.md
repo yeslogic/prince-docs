@@ -69,7 +69,7 @@ Prince offers a convenient capture/replay system with the two command-line optio
 
 ### Running the debug script
 
-For assisting in tracking down difficult platform bugs, the `princedebug` script is available on Linux and MacOS X platforms. It is located in `/usr/lib/prince/bin` and runs Prince with the specified command-line arguments, dumping a considerable amount of debug information to two files in the `/tmp` directory, namely `prince.debug` and `prince.strace`.
+For assisting in tracking down difficult platform bugs, the `princedebug` script is available on Linux and MacOS platforms. It is located in `/usr/lib/prince/bin` and runs Prince with the specified command-line arguments, dumping a considerable amount of debug information to two files in the `/tmp` directory, namely `prince.debug` and `prince.strace`.
 
 <p class="warning">
 These files contain information about the system and environment in which Prince was run, and about the job in question, so we recommend only submitting them by email when requested to do so, instead of posting them on the forum.

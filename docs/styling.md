@@ -117,11 +117,11 @@ It is a very powerful tool, but care must be taken in which order the features a
 
 ### Generic font families
 
-Prince maps the CSS generic font families to the Microsoft Core Fonts. The Microsoft Core Fonts are pre-installed on Windows and MacOS X systems but not on Linux systems. To use them on Linux you must install the [msttcorefonts](http://corefonts.sourceforge.net) package, which is available for most Linux distributions.
+Prince maps the CSS generic font families to the Microsoft Core Fonts. The Microsoft Core Fonts are pre-installed on Windows and MacOS systems but not on Linux systems. To use them on Linux you must install the [msttcorefonts](http://corefonts.sourceforge.net) package, which is available for most Linux distributions.
 
 <p class="note">Instructions for installing fonts on Linux greatly depend on the distribution you are running - we recommend checking the documentation for your own distro.  Here are links to fonts documentation for <a href="https://wiki.ubuntu.com/Fonts">Ubuntu</a>, <a href="https://en.opensuse.org/Fonts">openSuse</a>, <a href="https://wiki.debian.org/Fonts">Debian</a>, and <a href="https://wiki.alpinelinux.org/wiki/Fonts">Alpine Linux</a>.</p>
 
-The following table shows the default fonts for the main languages on Windows, MacOS X and Linux.
+The following table shows the default fonts for the main languages on Windows, MacOS and Linux.
 
 <table class="grid">
 <thead>
@@ -156,7 +156,7 @@ The following table shows the default fonts for the main languages on Windows, M
 <td>Mangal</td>
 </tr>
 <tr>
-<td rowspan="5">MacOS X</td>
+<td rowspan="5">MacOS</td>
 <td>Latin</td>
 <td>Times New Roman</td>
 </tr>
@@ -267,7 +267,7 @@ The following table shows the default fonts for the main languages on Windows, M
 <td>Dotum</td>
 </tr>
 <tr>
-<td rowspan="4">MacOS X</td>
+<td rowspan="4">MacOS</td>
 <td>Latin</td>
 <td>Arial</td>
 </tr>
@@ -314,7 +314,7 @@ The following table shows the default fonts for the main languages on Windows, M
 <td colspan="2" rowspan="2">Courier New</td>
 </tr>
 <tr>
-<td>MacOS X</td>
+<td>MacOS</td>
 </tr>
 <tr>
 <td>Linux</td>

@@ -11,7 +11,7 @@ If Prince is already installed, you can directly skip to the [User Guide](intro-
 Installing Prince
 -----------------
 
-Prince is available for Windows, MacOS X, Linux (multiple distributions) and FreeBSD. You can download the relevant file from our [downloads page](/download/). For Linux and FreeBSD you may need to choose based on your distribution type, version and processor type (32/64 bits).
+Prince is available for Windows, MacOS, Linux (multiple distributions) and FreeBSD. You can download the relevant file from our [downloads page](/download/). For Linux and FreeBSD you may need to choose based on your distribution type, version and processor type (32/64 bits).
 
 Prince is provided under the terms of the [Prince End-User License Agreement](/license/).
 
@@ -56,19 +56,19 @@ For the layout of a Prince installation on Windows, see the [Windows installatio
 
 For information about using Prince from PHP, Java, .NET, and other server frameworks you will need to install one or more [Prince wrappers](/doc/server-integration/#prince-wrappers). See [Server Integration](server-integration.md) for installation and usage information.
 
-### Installing Prince on MacOS X
+### Installing Prince on MacOS
 
-To install Prince on MacOS X, please run the `install.sh` shell script contained in the package downloaded to your computer from the [download page](/download/). This will involve the following procedure:
+To install Prince on MacOS, please run the `install.sh` shell script contained in the package downloaded to your computer from the [download page](/download/). This will involve the following procedure:
 
 1.  Open the Terminal application.
 2.  Change to the download directory and unpack the downloaded file.
     
         $ cd download_directory
-        $ tar xvf prince-package-macosx.zip
+        $ tar xvf prince-package-macos.zip
 
 3.  Change to the extracted directory.
     
-        $ cd prince-package-macosx
+        $ cd prince-package-macos
 
 4.  Run the installation shell script.
     
@@ -86,9 +86,9 @@ If you chose a non-standard location you may need to add the `bin/` subdirectory
 
 You will need to add the appropriate command to your shell's configuration or startup file. See your distribution or shell's documentation for how to do this.
 
-Prince is now ready to use - to run Prince on MacOS X, enter the `prince` command on the command line - for details please see the [Command-line Reference](command-line.md#command-line). [Your First Document](first-doc.md#first-doc) will walk you through generating your first PDF document.
+Prince is now ready to use - to run Prince on MacOS, enter the `prince` command on the command line - for details please see the [Command-line Reference](command-line.md#command-line). [Your First Document](first-doc.md#first-doc) will walk you through generating your first PDF document.
 
-For the layout of a Prince installation on MacOS X, see the [MacOS X installation layout](#macos-x-installation-layout) section.
+For the layout of a Prince installation on MacOS, see the [MacOS installation layout](#macos-installation-layout) section.
 
 For information about using Prince from PHP, Java, .NET, and other server frameworks you will need to install one or more [Prince wrappers](/doc/server-integration/#prince-wrappers). See [Server Integration](server-integration.md) for installation and usage information.
 
@@ -302,9 +302,9 @@ In the subfolder `engine` are all resource files:
 | `math`    | MathML resource files                                                           |
 | `style`   | The default CSS style sheets                                                    |
 
-### MacOS X installation layout
+### MacOS installation layout
 
-Prince installs its files by default to `/usr/local` on MacOS X:
+Prince installs its files by default to `/usr/local` on MacOS:
 
 -   `/usr/local/bin/prince` is the shell script
 -   `/usr/local/lib/prince/` contains all resource files
