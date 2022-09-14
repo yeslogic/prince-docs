@@ -480,11 +480,10 @@ Sidenotes
 ---------
 
 <p class="note">
-    Prince supports <a href="/doc/styling#sidenotes">sidenotes</a> natively as of Prince 14.3.
-    The following recipes have been kept as an alternative legacy way to create sidenotes.
+    Prince offers also experimental native support for sidenotes as of Prince 14.3.
+    See <a href="/doc/styling#sidenotes">Sidenotes</a>.
 </p>
 
-<div style="opacity: 0.4;">
 <dl class="ingredients">
   <dt>You need</dt>
   <dd><a href="/doc/styling#prince-extensions-to-floats">Prince extensions to floats</a></dd>
@@ -553,7 +552,6 @@ To format the latter one, just run:
 ```bash
     prince -j https://www.css4.pub/2020/christian-krohg/hg.html -o hg.pdf
 ```
-</div>
 
 
 Endnotes

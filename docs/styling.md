@@ -1229,11 +1229,11 @@ Please also consult [A quick guide to creating footnotes in Prince](https://www.
 
 ##### Sidenotes and wide floats
 
-Prince allows elements to be floated into a predefined sidenote area, left or right of the main page area, with the `sidenote` value.  Within that region, they can be placed at the top or the bottom, or be aligned in different ways with their natural anchoring points. For more details see [Sidenotes](#sidenotes).
+Prince offers experimental support for allowing elements to be floated into a predefined sidenote area, left or right of the main page area, with the `sidenote` value.  Within that region, they can be placed at the top or the bottom, or be aligned in different ways with their natural anchoring points. For more details see [Sidenotes](#sidenotes).
 
 Wide floats allow elements to *extend* into sidenote areas.  This is achieved with the value `wide` of the [`-prince-float-reference`](css-props.md#prop-prince-float-reference) CSS property, which will display an element in its natural position and allow it to extend into all available sidenote areas.  If you want to limit it extending into just one sidenote area, the behaviour can be finde-tuned with the values `wide-left`, `wide-right`, or `wide-inside` and `wide-outside`.
 
-Please note that wide floats are being laid out *before* other sidenotes, thus "reserving" the space taken in, for themselves.  Further sidenote floats at the same natural anchoring point will then be stacked in the content order, as happens for regular [sidenotes](#sidenotes).
+Please note that wide floats are being laid out *before* other sidenotes, thus "reserving" the space taken in for themselves.  Further sidenote floats at the same natural anchoring point will then be stacked in the content order, as happens for regular [sidenotes](#sidenotes).
 
 Please also consult [A quick guide to creating sidenotes in Prince](https://www.princexml.com/howcome/2022/guides/sidenotes/) for more examples and complex applications of sidenotes.
 
@@ -1407,7 +1407,7 @@ Please also consult [A quick guide to creating footnotes in Prince](https://www.
 
 ### Sidenotes
 
-Prince supports sidenotes using extensions to the [`float`](css-props.md#prop-float) property. If an element has the property `-prince-float: sidenote` then it will be floated into the sidenote area of the page - think of it like a float to the left or to the right, yet *into a predefined area*.  Sidenotes are thus not automatically numbered the way footnotes are.
+Prince offers experimental support for sidenotes using extensions to the [`float`](css-props.md#prop-float) property. If an element has the property `-prince-float: sidenote` then it will be floated into the sidenote area of the page - think of it like a float to the left or to the right, yet *into a predefined area*.  Sidenotes are thus not automatically numbered the way footnotes are.
 
 A sidenote area needs to be first defined as an [`@page`](css-at-rules.md#at-page) region.
 
