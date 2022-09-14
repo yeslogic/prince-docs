@@ -48,7 +48,7 @@ Symptom
     Fontconfig error: Cannot load default config file
 
 Explanation  
-Prince uses the [Fontconfig](http://www.fontconfig.org) library on Linux systems to search for fonts. Fontconfig is installed as a standard component on most desktop Linux distributions such as Ubuntu and recent versions of Red Hat Linux.
+Prince uses the [Fontconfig](https://www.fontconfig.org) library on Linux systems to search for fonts. Fontconfig is installed as a standard component on most desktop Linux distributions such as Ubuntu and recent versions of Red Hat Linux.
 
 Some older Linux distributions do not come with fontconfig and this may cause the above error. This error will usually be followed by errors relating to [Missing glyphs or fonts](#missing-glyphs-or-fonts) that cannot be found due to the absence of Fontconfig.
 

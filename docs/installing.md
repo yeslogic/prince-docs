@@ -211,7 +211,7 @@ To install Prince from a tarball enter these commands.
 
     Installation complete.
         Thank you for choosing Prince, we hope you find it useful.
-        Please visit http://www.princexml.com for updates and development news.
+        Please visit https://www.princexml.com for updates and development news.
 
 1.  Start by unpacking the package. Note that the package name may be different than the example shown here. This will create a new directory containing the Prince files.
 

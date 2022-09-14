@@ -122,7 +122,7 @@ whereby `JSON` is a job description as specified in the [Job description JSON](s
 
 The property [`Prince.failStatus`](js-support.md#window.Prince.failStatus) is a boolean which can be set to trigger an explicit failure status through JavaScript, based on custom criteria. See also [Fail-Safe Options](server-integration.md#fail-safe-options).
 
-It can be set to true by a script that runs after layout in the `oncomplete` handler (see [Event Handling](javascript.md#event-handling)) and checks for complex conditions, like overlapping content (see [The Box Tracking API](javascript.md#the-box-tracking-api) and the [Detecting Overflow](http://www.princexml.com/forum/topic/3603/detecting-overflow) sample) or some other user-defined issue that you want to trigger the fail-safe.
+It can be set to true by a script that runs after layout in the `oncomplete` handler (see [Event Handling](javascript.md#event-handling)) and checks for complex conditions, like overlapping content (see [The Box Tracking API](javascript.md#the-box-tracking-api) and the [Detecting Overflow](https://www.princexml.com/forum/topic/3603/detecting-overflow) sample) or some other user-defined issue that you want to trigger the fail-safe.
 
 For example, perhaps there should be only one page: you check the page count (see [Document Statistics](javascript.md#document-statistics)), and if it's greater than one, you log a warning and trigger the fail-safe to ensure that no PDF is generated.
 

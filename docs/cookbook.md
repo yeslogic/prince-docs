@@ -43,10 +43,10 @@ The page numbers are best styled right-aligned, while the link texts are left-al
 ```
 ### Simple Table of Contents
 
-Our [example document](http://css4.pub/2018/toc/index.html) generates at Table of Contents (ToC) by way of JavaScript. You can easily test it by running Prince from the command line:
+Our [example document](https://css4.pub/2018/toc/index.html) generates at Table of Contents (ToC) by way of JavaScript. You can easily test it by running Prince from the command line:
 
 ```bash
-    $ prince --javascript http://css4.pub/2018/toc -o toc.pdf
+    $ prince --javascript https://css4.pub/2018/toc -o toc.pdf
 ```
 A [second example document](https://css4.pub/2020/musick/musick.html) generates at ToC by way of JavaScript and, even more impressively, the script also generates an index which is added to the end of the document when Prince runs JavaScript a second time, after layout (see [The "Multi-Pass" Solution](#the-multi-pass-solution)). Notice how subsequent page numbers in the index are folded into a range. To produce this document, try running these commands from a Linux command-line:
 
@@ -62,11 +62,11 @@ For longer books, it makes sense to split chapters into separate files. Generati
 To try this for yourself, first fetch these five sample files into your own file system, e.g. by running:
 
 ```bash
-    $ wget http://css4.pub/2018/multifile-toc/toc.js;
-    $ wget http://css4.pub/2018/multifile-toc/toc.html;
-    $ wget http://css4.pub/2018/multifile-toc/ch1.html;
-    $ wget http://css4.pub/2018/multifile-toc/ch2.html;
-    $ wget http://css4.pub/2018/multifile-toc/style.css;
+    $ wget https://css4.pub/2018/multifile-toc/toc.js;
+    $ wget https://css4.pub/2018/multifile-toc/toc.html;
+    $ wget https://css4.pub/2018/multifile-toc/ch1.html;
+    $ wget https://css4.pub/2018/multifile-toc/ch2.html;
+    $ wget https://css4.pub/2018/multifile-toc/style.css;
 ```
 Then, run Prince twice:
 
@@ -74,7 +74,7 @@ Then, run Prince twice:
     $ prince --javascript --script=toc.js ch1.html ch2.html -o book.pdf >> toc.html;
     $ prince toc.html ch1.html ch2.html -o book.pdf;
 ```
-You can view the resulting PDF [here](http://css4.pub/2018/multifile-toc/book.pdf).
+You can view the resulting PDF [here](https://css4.pub/2018/multifile-toc/book.pdf).
 
 
 Thinking in Spreads
@@ -570,8 +570,8 @@ In their most simple form, an endnote is placed at the end of the document by th
 
 However, it can be laborious to manually synchronize references in this manner. A more convenient alternative is to keep the notes inline and to move them to the end of the document at the time of formatting. This is a simple tree transformation which can be performed by a script. The following sample document features references which are kept inline and moved to the end by a script:
 
--   [HTML document](http://css4.pub/2015/usenix/example.html)
--   [PDF document](http://css4.pub/2015/usenix/example.pdf)
+-   [HTML document](https://css4.pub/2015/usenix/example.html)
+-   [PDF document](https://css4.pub/2015/usenix/example.pdf)
 
 No special CSS formatting is required to support endnotes.
 
@@ -646,7 +646,7 @@ CSS
         content: " [Located at '" attr(href) "']";
     }
 ```
-This will add the URL after every link. For example: "\[Located at 'http://www.princexml.com/&#8203;'\]".
+This will add the URL after every link. For example: "\[Located at 'https://www.princexml.com/&#8203;'\]".
 
 
 Image Magic
@@ -777,7 +777,7 @@ Hyphenation patterns for the following languages are provided:
   </tr>
 </table>
 
-A special case is Thai hyphenation, supported thanks to the [LibThai](http://linux.thai.net/projects/libthai) package.
+A special case is Thai hyphenation, supported thanks to the [LibThai](https://linux.thai.net/projects/libthai) package.
 
 To add hyphenation patterns for other languages, download them from the [CTAN archive](http://tug.ctan.org/tex-archive/language/hyph-utf8/tex/generic/hyph-utf8/patterns/txt/). Save the files for the chosen language without the `.txt` extension, and link to the pattern file (with the `.pat` extension) with the [`-prince-hyphenate-patterns`](css-props.md#prop-prince-hyphenate-patterns) CSS property.
 
@@ -1117,7 +1117,7 @@ Here is a minimalistic "multi-pass" solution where the document is adorned with 
 ```bash
     $ prince --javascript https://css4.pub/2020/musick/musick.html -o musick.pdf
 ```
-Another use of the "multi-pass" solution is to create changebars - see the description [here](http://www.princexml.com/forum/topic/3516/changebars).
+Another use of the "multi-pass" solution is to create changebars - see the description [here](https://www.princexml.com/forum/topic/3516/changebars).
 
 When however scripts need to communicate across multiple input documents, the built-in "multi-pass" solution is not an option - see e.g. the [Multifile Table of Contents](#multifile-table-of-contents), which makes use of a "two-pass" approach by running Prince twice.
 

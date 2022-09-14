@@ -395,7 +395,7 @@ ul.toc-headings li ul.toc-headings li a.active {
         content: " [available only online]" !important;
         color: black;
     }
-    a[href].hash-link::after, #prop-list details a[href]::after, a[href='http://www.princexml.com/']::after  {
+    a[href].hash-link::after, #prop-list details a[href]::after, a[href='https://www.princexml.com/']::after  {
         content: "" !important;
     }
     #docsNav {

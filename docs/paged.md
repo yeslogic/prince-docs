@@ -592,7 +592,7 @@ This can be very useful as a means to repeating the title of a chapter as a page
       @top-center { content: string(letter, first-except);}
     }
 ```
-You can see these examples in full action in the [Dictionary](/samples/#dictionary) sample ([HTML](http://css4.pub/2015/icelandic/dictionary.html) - [PDF](http://css4.pub/2015/icelandic/dictionary.pdf)).
+You can see these examples in full action in the [Dictionary](/samples/#dictionary) sample ([HTML](https://css4.pub/2015/icelandic/dictionary.html) - [PDF](https://css4.pub/2015/icelandic/dictionary.pdf)).
 
 ### Taking elements from the document
 
@@ -962,7 +962,7 @@ HTML
 ```
 The `font-family` and `color` properties are specified both in the `@page` and `body` rules, even though they're the same. This is required because the page regions are outside of the `body` and must be styled separately, likewise the content within `body` cannot be styled by the `@page` rule.
 
-A rendered slide for this example is shown in [Presentation slides example](#fig-slides). The example has been adapted from [slides (HTML+CSS)](https://github.com/yeslogic/prince-samples/tree/master/mfug_talk) for a presentation about the [Mercury programming language](http://mercurylang.org). This is part of our [samples repository](https://github.com/yeslogic/prince-samples). You are encouraged to use samples from the repository and contribute your own.
+A rendered slide for this example is shown in [Presentation slides example](#fig-slides). The example has been adapted from [slides (HTML+CSS)](https://github.com/yeslogic/prince-samples/tree/master/mfug_talk) for a presentation about the [Mercury programming language](https://mercurylang.org). This is part of our [samples repository](https://github.com/yeslogic/prince-samples). You are encouraged to use samples from the repository and contribute your own.
 
 So far we have discussed forcing a page break, however suppressing page breaks is also important. For example, it is poor style to have a page break between a header and the first paragraph of a section. Therefore, the default Prince stylesheet will use the [`break-after`](css-props.md#prop-break-after) property to suppress page breaks immediately after headers:
 

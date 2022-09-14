@@ -120,7 +120,7 @@ The next step would be to specifically check compliance of the document's conten
 
 -   [Free PDF Accessibility Checker](https://www.access-for-all.ch/en/pdf-accessibility-checker.html)
 -   [VIP-PDF-Reader](https://www.access-for-all.ch/en/pdf-lab/500-vip-pdf-reader-e.html)
--   [PDF Checker of the European Internet Inclusion Initiative](http://checkers.eiii.eu/en/pdfcheck/)
+-   [PDF Checker of the European Internet Inclusion Initiative](https://checkers.eiii.eu/en/pdfcheck/)
 
 Prince helps in creating accessible documents. Note, however, that Prince does not create WCAG-compliant documents by itself - care has to be taken, and the HTML source has to be coded in specific ways to address all requirements in order to create WCAG-compliant PDF documents.
 

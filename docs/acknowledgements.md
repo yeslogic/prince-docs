@@ -34,7 +34,7 @@ library is used by Prince to load the Thai dictionary.
 
 <dt id="fontconfig">Fontconfig</dt>
 <dd>
-The <a href="http://www.fontconfig.org/">Fontconfig</a>
+The <a href="https://www.fontconfig.org/">Fontconfig</a>
 library is used by Prince on Linux to scan for installed system fonts.
 </dd>
 
@@ -101,7 +101,7 @@ library is used by Prince for color management.
 <dt id="mercury">Mercury</dt>
 <dd>
 Prince is written in the
-<a href="http://mercurylang.org">Mercury</a>
+<a href="https://mercurylang.org">Mercury</a>
 programming language.
 </dd>
 
@@ -114,7 +114,7 @@ libraries are used by Prince to load resources from secure HTTPS URLs.
 
 <dt id="zlib">zlib</dt>
 <dd>
-The <a href="http://www.zlib.net/">zlib</a>
+The <a href="https://www.zlib.net/">zlib</a>
 library is used by Prince to perform compression of PDF files.
 </dd>
 
