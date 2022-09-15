@@ -29,6 +29,26 @@
 
 /* your custom css */
 
+table {
+    display: table;
+    width: auto;
+}
+
+table#pregions td[rowspan] {
+    writing-mode: vertical-rl;
+    text-align: center;
+    transform: rotate(180deg);
+    vertical-align: middle;
+    padding: 10px;
+}
+
+article p img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 100%;
+}
+
 .navbar, .navbar__items {
     background-color: #6e2577;
     color: white;
@@ -301,6 +321,23 @@ sup {
 }
 dl.faq dt p {
     font-weight: bold;
+}
+p.note, p.warning {
+    border: 1px solid pink;
+    border-radius: 10px;
+    padding: 10px;
+}
+p.note::before {
+    content: "Note: ";
+    font-weight: bold;
+}
+p.warning::before {
+    content: "Warning: ";
+    color: red;
+    font-weight: bold;
+}
+p.note:only-child {
+    margin-bottom: 0;
 }
 a[href*='//']:not([href*='princexml.com'])::after {
   content: " \21D7";
