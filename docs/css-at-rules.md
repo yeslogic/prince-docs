@@ -1,24 +1,22 @@
 ---
 title: CSS At-rules
 ---
-
 In this section you find the documentation for the supported CSS at-rules.
 
 Prince accepts `@-prince` as a vendor prefix for Prince-specific at-rules to comply with validators - eg. `@-prince-pdf` and `@-prince-color`.
 
-Initial At-Rules
-----------------
+## Initial At-Rules
 
 The following at-rules have to appear at the beginning of the CSS document, and exactly in this order:
 
-<table class="grid">
-<tr>
-<td class="example" id="at-charset"><code>@charset</code></td>
+<table className="grid">
+<tbody><tr>
+<td className="example" id="at-charset"><code>@charset</code></td>
 <td>Defines the fallback encoding to use for the stylesheet. Prince supports stylesheets
 in <code>UTF-8</code>, <code>UTF-16</code>, <code>Latin1</code> and <code>Windows-1252</code>.</td>
 </tr>
 <tr>
-<td class="example" id="at-import"><code>@import [ &lt;url(<i>URL</i>)&gt; | &lt;<i>string</i>&gt; ] supports([ &lt;<i>supports-condition</i>&gt; | &lt;<i>declaration</i>&gt; ])?
+<td className="example" id="at-import"><code>@import [ &lt;url(<i>URL</i>)&gt; | &lt;<i>string</i>&gt; ] supports([ &lt;<i>supports-condition</i>&gt; | &lt;<i>declaration</i>&gt; ])?
 &lt;<i>media-query-list</i>&gt;?</code></td>
 <td>Allows authors to import style rules from other style sheets. The <code>url(<i>URL</i>)</code>
 or <code>&lt;<i>string</i>&gt;</code> give the URL of the style sheet to be imported, while
@@ -26,22 +24,21 @@ the optional <code>supports(...)</code> expression and <code>&lt;<i>media-query-
 state the import conditions.</td>
 </tr>
 <tr>
-<td class="example" id="at-namespace"><code>@namespace [<i>Prefix</i>]? [ &lt;url(<i>URL</i>)&gt; | &lt;<i>string</i>&gt; ]</code></td>
+<td className="example" id="at-namespace"><code>@namespace [<i>Prefix</i>]? [ &lt;url(<i>URL</i>)&gt; | &lt;<i>string</i>&gt; ]</code></td>
 <td>Defines a namespace prefix or default namespace to be used in the stylesheet.</td>
 </tr>
-</table>
+</tbody></table>
 
-Nested At-Rules
----------------
+## Nested At-Rules
 
 After the initial at-rules, the following at-rules can appear also in nested form in the CSS document:
 
-<table class="grid">
-<tr>
-<th colspan="2" id="at-page"><code>@page [<i>Name</i>] <i>Selectors</i> { <i>Page-declarations</i> }</code></th>
+<table className="grid">
+<tbody><tr>
+<th colSpan="2" id="at-page"><code>@page [<i>Name</i>] <i>Selectors</i> {"{"} <i>Page-declarations</i> {"}"}</code></th>
 </tr>
 <tr>
-<td colspan="2">Modifies margins, orphans, widows and page breaks of a document when
+<td colSpan="2">Modifies margins, orphans, widows and page breaks of a document when
 printing it. The pages are identified either by a name, or by a page pseudo-class and
 page declarations can either be style declarations or page region at-rules.
 The initial values for <code>@page</code> styles are documented in the
@@ -49,7 +46,7 @@ The initial values for <code>@page</code> styles are documented in the
 </tr>
 <tr>
 <td><code>:left</code></td>
-<td rowspan="7">Page pseudo-classes</td>
+<td rowSpan={7}>Page pseudo-classes</td>
 </tr>
 <tr>
 <td><code>:right</code></td>
@@ -70,20 +67,20 @@ The initial values for <code>@page</code> styles are documented in the
 <td><code>:nth(<i>N</i>)</code></td>
 </tr>
 <tr>
-<td><code>@left</code> | <code>@left-top</code> | <code>@left-middle</code> |
+<td><code>@left-top</code> | <code>@left-middle</code> |
 <code>@left-bottom</code></td>
-<td rowspan="6"><a href="/doc/paged#page-regions">Page region</a> at-rules</td>
+<td rowSpan={7}><a href="/doc/paged#page-regions">Page region</a> at-rules</td>
 </tr>
 <tr>
-<td><code>@right</code> | <code>@right-top</code> | <code>@right-middle</code> |
+<td><code>@right-top</code> | <code>@right-middle</code> |
 <code>@right-bottom</code></td>
 </tr>
 <tr>
-<td><code>@top</code> | <code>@top-left-corner</code> | <code>@top-left</code> |
+<td><code>@top-left-corner</code> | <code>@top-left</code> |
 <code>@top-center</code> | <code>@top-right</code> | <code>@top-right-corner</code></td>
 </tr>
 <tr>
-<td><code>@bottom</code> | <code>@bottom-left-corner</code> | <code>@bottom-left</code> |
+<td><code>@bottom-left-corner</code> | <code>@bottom-left</code> |
 <code>@bottom-center</code> | <code>@bottom-right</code> | <code>@bottom-right-corner</code></td>
 </tr>
 <tr>
@@ -93,7 +90,10 @@ The initial values for <code>@page</code> styles are documented in the
 <td><code>@footnote</code></td>
 </tr>
 <tr>
-<td colspan="2">The <code>@page</code> rule takes the following CSS properties:
+<td><code>@leftnote</code> | <code>@rightnote | @insidenote</code> | <code>@outsidenote</code></td>
+</tr>
+<tr>
+<td colSpan="2">The <code>@page</code> rule takes the following CSS properties:
 <code><a href="/doc/css-props#prop-background-attachment">background-attachment</a></code> |
 <code><a href="/doc/css-props#prop-bleed">bleed</a></code> |
 <code><a href="/doc/css-props#prop-marks">marks</a></code> |
@@ -109,41 +109,41 @@ The initial values for <code>@page</code> styles are documented in the
 </td>
 </tr>
 <tr>
-<td colspan="2">Additionally, <a href="/doc/prince-for-books">Prince for Books</a> takes the following CSS property:
+<td colSpan="2">Additionally, <a href="/doc/prince-for-books">Prince for Books</a> takes the following CSS property:
 <code><a href="/doc/css-props#prop-prince-page-fill">-prince-page-fill</a></code>
 </td>
 </tr>
-</table>
+</tbody></table>
 
-<table class="grid">
-<tr>
-<th id="at-media"><code>@media <i>Media-query-list</i> { <i>Rules</i> }</code></th>
+<table className="grid">
+<tbody><tr>
+<th id="at-media"><code>@media <i>Media-query-list</i> {"{"} <i>Rules</i> {"}"}</code></th>
 </tr>
 <tr>
 <td>The rules will apply if the device meets the criteria of the condition defined
-in the media query. See <a href="#css-media-queries">CSS Media Queries</a> for details.</td>
+in the media query. See <a href="/doc/css-media-queries">CSS Media Queries</a> for details.</td>
 </tr>
-</table>
+</tbody></table>
 
-<table class="grid">
-<tr>
-<th id="at-supports"><code>@supports <i>Condition</i> { <i>Rules</i> }</code></th>
+<table className="grid">
+<tbody><tr>
+<th id="at-supports"><code>@supports <i>Condition</i> {"{"} <i>Rules</i> {"}"}</code></th>
 </tr>
 <tr>
 <td>Checks whether particular <code>property:value</code> combinations are supported.
 Unlike media queries, this uses the classical two-valued logic.</td>
 </tr>
-</table>
+</tbody></table>
 
-<table class="grid">
-<tr>
-<th colspan="2" id="at-font-face"><code>@font-face { <i>Font-declarations</i> }</code></th>
+<table className="grid">
+<tbody><tr>
+<th colSpan="2" id="at-font-face"><code>@font-face {"{"} <i>Font-declarations</i> {"}"}</code></th>
 </tr>
 <tr>
-<td colspan="2">Links a font family to an actual font.</td>
+<td colSpan="2">Links a font family to an actual font.</td>
 </tr>
 <tr>
-<td colspan="2">The <code>@font-face</code> rule takes the following CSS descriptors:</td>
+<td colSpan="2">The <code>@font-face</code> rule takes the following CSS descriptors:</td>
 </tr>
 <tr>
 <td><code><a href="/doc/css-props#prop-font-family">font-family</a>: &lt;<i>family-name</i>&gt;</code></td>
@@ -164,37 +164,37 @@ fonts defined by other <code>@font-face</code> rules.</td>
 the font face. The descriptor value is a comma-delimited list of Unicode range values.</td>
 </tr>
 <tr>
-<td colspan="2">Additionally, <code>@font-face</code> takes the CSS descriptors
+<td colSpan="2">Additionally, <code>@font-face</code> takes the CSS descriptors
 <code><a href="/doc/css-props#prop-font-variant">font-variant</a></code>, <code><a href="/doc/css-props#prop-font-stretch">font-stretch</a></code>,
 <code><a href="/doc/css-props#prop-font-weight">font-weight</a></code> and <code><a href="/doc/css-props#prop-font-style">font-style</a></code>,
 which take the same values as the CSS properties with the same name.</td>
 </tr>
-</table>
+</tbody></table>
 
-<table class="grid">
-<tr>
-<th colspan="2" id="at-prince-color"><code>@prince-color <i>Name</i> {'{'} alternate-color: ... {'}'}</code></th>
+<table className="grid">
+<tbody><tr>
+<th colSpan="2" id="at-prince-color"><code>@prince-color <i>Name</i> {"{"} alternate-color: ... {"}"}</code></th>
 </tr>
 <tr>
-<td colspan="2">Defines a new color name.</td>
+<td colSpan="2">Defines a new color name.</td>
 </tr>
 <tr>
-<td colspan="2">The <code>@prince-color</code> rule takes the mandatory
+<td colSpan="2">The <code>@prince-color</code> rule takes the mandatory
 <code><a href="/doc/css-props#prop-alternate-color">alternate-color</a></code> descriptor to specify an alternate
 color to use if the named spot color is not available.  The named color is used in
 a stylesheet with the <code>prince-color()</code> function.  (See <a href="/doc/graphics#spot-colors">Spot colors</a>).</td>
 </tr>
-</table>
+</tbody></table>
 
-<table class="grid">
-<tr>
-<th colspan="2" id="at-prince-pdf"><code>@prince-pdf <i>Name</i> { <i>Declarations</i> }</code></th>
+<table className="grid">
+<tbody><tr>
+<th colSpan="2" id="at-prince-pdf"><code>@prince-pdf <i>Name</i> {"{"} <i>Declarations</i> {"}"}</code></th>
 </tr>
 <tr>
-<td colspan="2">Defines properties relating to PDFs.</td>
+<td colSpan="2">Defines properties relating to PDFs.</td>
 </tr>
 <tr>
-<td colspan="2">The <code>@prince-pdf</code> rule takes the following CSS properties:
+<td colSpan="2">The <code>@prince-pdf</code> rule takes the following CSS properties:
 <code><a href="/doc/css-props#prop-prince-fallback-cmyk-profile">-prince-fallback-cmyk-profile</a></code> |
 <code><a href="/doc/css-props#prop-prince-filter-resolution">-prince-filter-resolution</a></code> |
 <code><a href="/doc/css-props#prop-prince-pdf-color-conversion">-prince-pdf-color-conversion</a></code> |
@@ -213,4 +213,4 @@ a stylesheet with the <code>prince-color()</code> function.  (See <a href="/doc/
 <code><a href="/doc/css-props#prop-prince-pdf-script">-prince-pdf-script</a></code> |
 <code><a href="/doc/css-props#prop-prince-pdf-xmp">-prince-pdf-xmp</a></code></td>
 </tr>
-</table>
+</tbody></table>

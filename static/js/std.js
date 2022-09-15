@@ -1,4 +1,5 @@
-const std = {
+
+var std = {
     NaN: {},
     Infinity: {},
     undefined: {},
@@ -26,6 +27,7 @@ const std = {
         keys: {},
         getOwnPropertyDescriptor: {},
         getOwnPropertyNames: {},
+        getOwnPropertySymbols: {},
         getPrototypeOf: {},
         setPrototypeOf: {},
         prototype: {
@@ -63,6 +65,8 @@ const std = {
             reverse: {},
             shift: {},
             unshift: {},
+            find: {},
+            findIndex: {},
             sort: {},
             slice: {},
             splice: {},
@@ -79,8 +83,24 @@ const std = {
             reduceRight: {}
         }
     },
+    Map: {
+        prototype: {
+            size: {},
+            clear: {},
+            delete: {},
+            get: {},
+            has: {},
+            set: {},
+            keys: {},
+            values: {},
+            entries: {},
+            forEach: {}
+        }
+    },
     String: {
         fromCharCode: {},
+        fromCodePoint: {},
+        CodePointAt: {},
         prototype: {
             constructor: {},
             length: {},
@@ -487,6 +507,7 @@ const std = {
             namespaceURI: {},
             id: {},
             className: {},
+            classList: {},
             innerHTML: {},
             firstElementChild: {},
             lastElementChild: {},
@@ -655,7 +676,6 @@ const std = {
             content: {},
             counterIncrement: {},
             counterReset: {},
-            cssFloat: {},
             direction: {},
             display: {},
             dominantBaseline: {},
@@ -673,6 +693,14 @@ const std = {
             flexWrap: {},
             floodColor: {},
             floodOpacity: {},
+            cssFloat: {},
+            floatDeferColumn: {},
+            floatDeferPage: {},
+            floatModifier: {},
+            floatPlacement: {},
+            floatReference: {},
+            floatTail: {},
+            floatPolicy: {},
             flow: {},
             font: {},
             fontFamily: {},
@@ -705,6 +733,7 @@ const std = {
             listStylePosition: {},
             listStyleType: {},
             margin: {},
+            marginAlt: {},
             marginBottom: {},
             marginInside: {},
             marginLeft: {},
@@ -741,31 +770,45 @@ const std = {
             princeBookmarkLevel: {},
             princeBookmarkState: {},
             princeBookmarkTarget: {},
-            princeBorderClip: {},
             princeCaptionPage: {},
+            princeClear: {},
             princeFilterResolution: {},
+            princeFloatDeferColumn: {},
+            princeFloatDeferPage: {},
+            princeFloatModifier: {},
+            princeFloatPlacement: {},
+            princeFloatReference: {},
+            princeFloatTail: {},
+            princeFloatPolicy: {},
             princeFlow: {},
-            princeFootnoteDisplay: {},
             princeFootnotePolicy: {},
             princeHyphenateAfter: {},
             princeHyphenateBefore: {},
             princeHyphenateCharacter: {},
             princeHyphenateLines: {},
             princeHyphenatePatterns: {},
-            princeHyphens: {},
             princeImageMagic: {},
             princeImageResolution: {},
             princeLang: {},
             princeLinebreakMagic: {},
             princeLink: {},
+            princeMarginAlt: {},
             princePageGroup: {},
+            princePdfAnnotationAuthor: {},
+            princePdfAnnotationColor: {},
+            princePdfAnnotationContents: {},
+            princePdfAnnotationCreatedate: {},
+            princePdfAnnotationModifydate: {},
+            princePdfAnnotationPosition: {},
+            princePdfAnnotationTitle: {},
+            princePdfAnnotationType: {},
+            princePdfColorConversion: {},
+            princePdfColorOptions: {},
             princePdfDestination: {},
             princePdfLinkType: {},
             princePdfTagType: {},
             princeTableColumnSpan: {},
             princeTableRowSpan: {},
-            princeTabSize: {},
-            princeTextAlignAll: {},
             princeTextJustify: {},
             princeTextReplace: {},
             princeTooltip: {},
@@ -852,6 +895,23 @@ const std = {
     DOMParser: {
         prototype: {
             parseFromString: {}
+        }
+    },
+    DOMTokenList: {
+        prototype: {
+            length: {},
+            value: {},
+            item: {},
+            contains: {},
+            add: {},
+            remove: {},
+            replace: {},
+            supports: {},
+            toggle: {},
+            entries: {},
+            forEach: {},
+            keys: {},
+            values: {}
         }
     },
     SVGMatrix: {
@@ -1164,6 +1224,11 @@ const std = {
             y: {},
             w: {},
             h: {},
+            marginBottom: {},
+            marginLeft: {},
+            marginRight: {},
+            marginTop: {},
+            floatPosition: {},
             children: {},
             parent: {},
             element: {},
@@ -1180,13 +1245,15 @@ const std = {
     },
     // Prince APIs
     Prince: {
-        registerPostLayoutFunc: {},
+        addEventListener: {},
+        oncomplete: {},
         addScriptFunc: {},
         trackBoxes: {},
         convertToFile: {},
         convertToBuffer: {},
 		failStatus: {},
         pageCount: {},
+        registerPostLayoutFunc: {},
         Log: {
             debug: {},
             info: {},
@@ -1243,4 +1310,69 @@ const std = {
     },
 };
 
-export default std;
+//dump("", window, std);
+
+void function dump(prefix, base, map)
+{
+    for (var i in map) {
+        if (i === "_is_root") continue;
+        try {
+            var val = base[i];
+            if (typeof val === "function")
+            {
+                if (i != val.name)
+                {
+                    val = "function "+prefix+i+"/"+val.length+" (but .name is '"+val.name+"')"
+                }
+                else
+                {
+                    val = "function "+prefix+i+"/"+val.length;
+                }
+            }
+            else
+            {
+                val = prefix+i+": "+val;
+            }
+
+            //console.log(val);
+
+            if (i === "constructor")
+            {
+                if (base[i].prototype !== base)
+                {
+                    throw "constructor/prototype link is broken!";
+                }
+            }
+            else
+            {
+                dump(prefix+i+".", base[i], map[i]);
+            }
+        }
+        catch (x) {
+            //console.log(prefix+i+": "+x);
+        }
+    }
+
+    if ((typeof base === "object" && base !== null) || typeof base === "function")
+    {
+        if (!map._is_root)
+        {
+            var names = Object.getOwnPropertyNames(base);
+
+            for (var i in names)
+            {
+                var name = names[i];
+
+                if (!(typeof base === "function" && (name === "name" || name === "length")) &&
+                    !(base === window && name === "std"))
+                {
+                    if (!(name in map))
+                    {
+                        //console.log("no def for "+prefix+name+"?");
+                    }
+                }
+            }
+        }
+    }
+}("", window, std);
+

@@ -1,11 +1,9 @@
 ---
 title: Graphics
 ---
-
 Prince supports a wide range of graphic features, treated in more detail in the following sections. RGB, RGBA, HSL, HSLA, CMYK, and named spot colors are supported, and so is color management. Bitmap images and SVG are supported.
 
-Color
------
+## Color
 
 Prince supports RGB, RGBA, CMYK, HSL, HSLA and named spot colors. For Prince's color management, please see the [Color Management](#color-management) section.
 
@@ -16,27 +14,36 @@ Prince understands CSS [basic color keywords](css-color-names.md#basic-color-key
 To use an RGB color in CSS, it can be expressed either as a value in hexadecimal notation, as an `rgb()` function or as a named color. For example, red can be specified in three ways:
 
 ```css
+
     color: #ff0000
     color: rgb(255, 0, 0)
     color: red
+
 ```
+
 RGBA colors are equivalent to RGB plus an opacity (or alpha) value between 0 and 1. When the opacity is 0 the color is transparent, and when the opacity is 1 the color is identical to the RGB color. RGBA colors are expressed as an `rgba()` function.
 
 ```css
+
     color: rgba(255, 0, 0, 1)    // red
     color: rgba(255, 0, 0, 0.5)  // translucent red
     color: rgba(255, 0, 0, 0)    // fully transparent
+
 ```
+
 ### CMYK
 
 CMYK colors can be specified using the `cmyk()` or, alternatively, the equivalent `device-cmyk()` function syntax. An optional fifth value is for the alpha channel, i.e. for opacity.
 
 ```
+
     color: cmyk(1, 0, 0, 0)       // cyan
     color: cmyk(0, 1, 1, 0)       // red
     color: cmyk(0, 0, 0, 1)       // black
     color: cmyk(0, 1, 1, 0, 0.1)  // translucent red
+
 ```
+
 ### HSL(A)
 
 HSL(A) colors are supported as of Prince 12.1 .
@@ -56,27 +63,34 @@ The advantage of HSL over RGB is that it is much more intuitive to use and easie
 Prince also supports named spot colors that can be defined with the [`@prince-color`](css-at-rules.md#at-prince-color) rule. An alternate color must also be specified with the [`alternate-color`](css-props.md#prop-alternate-color) descriptor, using any of the valid notations for RGB, HSL or CMYK colors. This will be used in situations where the named color is not available, such as when viewing the generated PDF file on a display. Please note that [`alternate-color`](css-props.md#prop-alternate-color) cannot be RGBA, HSLA or CMYKA.
 
 ```css
+
     @prince-color MyColor {
         alternate-color: rgb(255,0,0)
     }
+
 ```
+
 Spot colors can be used with the `prince-color()` function with a specified tint value between 0 and 1, which defaults to 1, or alternatively expressed in percentage. They can also enable overprint:
 
 ```
+
     color: prince-color(MyColor)                  // tint 1.0
     color: prince-color(MyColor, 0.5)             // tint 0.5
     color: prince-color(MyColor, overprint)       // tint 1.0, overprint
     color: prince-color(MyColor, 50%, overprint)  // tint 50%, overprint
+
 ```
+
 Another way to enable overprint is by using the `prince-overprint()` function, which allows to specify a non-transparent color value.
 
 ```css
+
     color: prince-overprint(red);
     color: prince-overprint(cmyk(0,1,1,0));
+
 ```
 
-Color Management
-----------------
+## Color Management
 
 ### Introduction
 
@@ -95,24 +109,30 @@ PDF/A and PDF/X files have an output intent that defines the intended output col
 The URL specified with the [`--pdf-output-intent`](command-line.md#cl-pdf-output-intent) command-line option or the [`-prince-pdf-output-intent`](css-props.md#prop-prince-pdf-output-intent) property will be resolved relative to the base URL of the style sheet or document in which the rule is, and needs to point to an existing color profile file.
 
 ```
+
     @prince-pdf {
         -prince-pdf-output-intent: url("ISOcoated_v2_eci.icc")
     }
+
 ```
+
 For PDF/X, the output intent must be given as it describes the intended printing process. For PDF/A, Prince assumes an sRGB ICC profile if an output intent is not given.
 
 Briefly, the restrictions on color imposed by PDF/X are:
 
 PDF/X-1  
+
 -   All color data must be Grayscale, CMYK or named Spot Colors;
 -   Transparency is not allowed.
 -   All colors must be characterized by the output intent - Prince implicitly performs color conversions.
 
 PDF/X-3  
+
 -   Allows other color spaces but colors must be device-independent, or else characterized by the output intent;
 -   Transparency is not allowed.
 
 PDF/X-4  
+
 -   Allows other color spaces but colors must be device-independent, or else characterized by the output intent;
 -   PDF transparency is supported.
 
@@ -125,18 +145,25 @@ Prince supports RGB, RGBA, HSL, HSLA, CMYK, and named spot colors. For Prince's 
 As CSS defines RGB colors in the sRGB color space, Prince tags those colors with an sRGB ICC profile in the PDF output. See also the section on [Rich black and true black](#rich-black-and-true-black) below.
 
 CMYK colors specified using the `cmyk()` function syntax, or equivalent `device-cmyk()` syntax, represent device-dependent colors, so they will be left as such in the PDF when possible. Device-dependent color is not allowed in PDF/A or PDF/X, so those CMYK colors will be assumed to be either in the output intent color space (if it is CMYK), or else the color space of the fallback CMYK profile. See the command-line option [`--fallback-cmyk-profile`](command-line.md#cl-fallback-cmyk-profile) in the [PDF Output Options](command-line.md#pdf-output-options) section, or the [`-prince-fallback-cmyk-profile`](css-props.md#prop-prince-fallback-cmyk-profile) property.
+
 ```bash
+
     prince input.html
            --pdf-profile=PDF/A-1b
            --pdf-output-intent=sRGB.icc
            --fallback-cmyk-profile=ISOcoated_v2_eci.icc
+
 ```
+
 ```css
+
     @prince-pdf {
         -prince-pdf-output-intent: url("sRGB.icc");
         -prince-fallback-cmyk-profile: url("ISOcoated_v2_eci.icc");
     }
+
 ```
+
 Prince preserves the ICC profiles embedded in bitmap images, unless directed not to (see the `ignore-icc-profile` value of the [`-prince-image-magic`](css-props.md#prop-prince-image-magic) property). If an image does not have an embedded ICC profile, the behavior depends on the color model of the image. Untagged RGB images will be assumed to be in the sRGB color space. Untagged CMYK images will, when necessary, be assumed to be either in the output intent color space (if it is CMYK), or else the color space of the fallback CMYK profile. Untagged grayscale images will be left as DeviceGray in the PDF (in PDF/A and PDF/X, it means it is characterized by the output intent color space).
 
 ### Color conversion
@@ -160,19 +187,20 @@ When the value `use-true-black` is used, such an RGB value will be encoded in th
 On the other hand, the `use-rich-black` value instructs Prince to keep all RGB colors as RGB in the PDF. A CMYK printer should print RGB colors using a mixture of all four CMYK inks.
 
 ```
+
     @prince-pdf {
         -prince-pdf-color-options: use-rich-black;
     }
+
 ```
+
 Color conversion takes into account the `use-true-black` value when converting CSS RGB values to CMYK. True blacks and grays will be converted to CMYK with only non-zero values in the K channel. Note, however, that this does not affect bitmap images.
 
 ### Page color space
 
 The property [`-prince-pdf-page-colorspace`](css-props.md#prop-prince-pdf-page-colorspace) controls the color space of pages in the PDF file. It affects the compositing of transparent content onto the page by selecting the color space in which compositing is performed. Prince currently defaults to the RGB color space. It may be useful to set this property to avoid converting the colors of transparent content before it is composited onto the page, possibly resulting in distorted colors.
 
-
-Filters
--------
+## Filters
 
 The [`filter`](css-props.md#prop-filter) property provides graphical effects like blurring, saturating or color shifting an element. Filters can be used alone, or combined in any way. However, the order in which filters are applied matters - applying `grayscale()` after any other filter will result in a gray result.
 
@@ -217,11 +245,9 @@ This filter takes the URL of an SVG filter. An anchor can be used to reference a
 
 The resolution used when rasterizing to images for applying CSS and SVG filters is controlled through the [`-prince-filter-resolution`](css-props.md#prop-prince-filter-resolution) property. The default value is `96dpi` for compatibility with web browsers.
 
+## Images
 
-Images
-------
-
-Prince supports JPEG, PNG, TIFF and GIF images as well as [Scalable Vector Graphics (SVG)](#scalable-vector-graphics-svg).
+Prince supports the JPEG, PNG, TIFF, GIF, WebP and AVIF image formats, as well as [Scalable Vector Graphics (SVG)](#scalable-vector-graphics-svg).
 
 Images can be included in XHTML and DocBook documents using the appropriate image elements, which are pre-defined in the default style sheets.
 
@@ -238,8 +264,11 @@ The `img` element is used to include images in XHTML documents.
 XML
 
 ```xml
+
     <img src="picture.jpg" alt="A Nice Picture"/>
+
 ```
+
 ### Images in DocBook
 
 The `imagedata` element is used to include images in DocBook documents.
@@ -247,12 +276,15 @@ The `imagedata` element is used to include images in DocBook documents.
 XML
 
 ```xml
+
     <mediaobject>
         <imageobject>
           <imagedata fileref="picture.jpg"/>
         </imageobject>
     </mediaobject>
+
 ```
+
 ### Images in Arbitrary XML
 
 Images can be included in arbitrary XML documents by using the CSS [`content`](css-props.md#prop-content) property to specify the image filename.
@@ -262,25 +294,37 @@ The [`content`](css-props.md#prop-content) property can specify the image filena
 CSS
 
 ```
+
     picture { content: url("picture.png") }
+
 ```
+
 XML
 
 ```xml
+
     <para> A nice <picture /> here. </para>
+
 ```
+
 The [`content`](css-props.md#prop-content) property directly specifies the filename of the image that will be used as the content of the `picture` element.
 
 CSS
 
 ```
+
     picture { content: attr("src", url) }
+
 ```
+
 XML
 
 ```xml
+
     <para> A nice <picture src="picture.tiff" /> here. </para>
+
 ```
+
 The [`content`](css-props.md#prop-content) property specifies that the content of the `picture` element will be an image loaded from the filename specified by the `src` attribute of the element.
 
 ### CSS and Images
@@ -304,11 +348,14 @@ This property applies only to content images (e.g. replaced elements and generat
 CSS properties also control the size of images in print. Unless an explicit size for an image is specified by using the `width` and `height` properties, Prince will determine the intrinsic size from the image resolution (DPI), which can be overridden using the [`-prince-image-resolution`](css-props.md#prop-prince-image-resolution) property:
 
 ```
+
     -prince-image-resolution: 300dpi;        /* set an explicit DPI */
     -prince-image-resolution: normal;        /* 1 image pixel maps to 1px unit */
     -prince-image-resolution: auto, normal;  /* auto-detect, fallback to normal */
     -prince-image-resolution: auto, 96dpi;   /* auto-detect, fallback to 96dpi */
+
 ```
+
 Not all images have an internal resolution set, so sometimes it is necessary to specify an explicit resolution. Alternatively, specifying a resolution of `normal` means that an image that is 100 pixels wide, will be the same size on the page as a block that is 100px units wide.
 
 The property [`-prince-background-image-resolution`](css-props.md#prop-prince-background-image-resolution) does the same for background images.
@@ -319,11 +366,9 @@ The [`object-fit`](css-props.md#prop-object-fit) and [`object-position`](css-pro
 
 Please note that specifying [`-prince-image-resolution`](css-props.md#prop-prince-image-resolution) and [`-prince-background-image-resolution`](css-props.md#prop-prince-background-image-resolution), or [`object-fit`](css-props.md#prop-object-fit), only affects the default DPI of images, ie. it makes them physically bigger or smaller on the page, and - it does not affect the number of pixels in the image, and thus the PDF file size will be the same.
 
-To reduce the PDF file size, JPEG images can be recompressed at a lower quality level, or PNG images be converted to JPEG, with the [`-prince-image-magic`](css-props.md#prop-prince-image-magic) property. See also [Image Magic](cookbook#image-magic).
+To reduce the PDF file size, JPEG images can be recompressed at a lower quality level, or PNG images be converted to JPEG, with the [`-prince-image-magic`](css-props.md#prop-prince-image-magic) property. See also [Image Magic](cookbook.md#image-magic).
 
-
-Scalable Vector Graphics (SVG)
-------------------------------
+## Scalable Vector Graphics (SVG)
 
 SVG can be included in any XML document simply by adding a `svg` element.
 
@@ -331,12 +376,11 @@ The `display`, `float`, and `flow` properties and all `margin`, `padding`, `bord
 
 Fonts defined inside an embedded SVG image file with CSS `@font-face` rules control the display of fonts.
 
-Prince supports SVG 1.1, with some exceptions - the following elements are currently *not* supported:
+Prince supports SVG 1.1, with some exceptions - vertical text is not supported, and the following elements are currently _not_ supported:
 
 -   `scripting`
 -   `animation`
 -   `clip` (deprecated)
--   `color-interpolation`
 -   `color-profile` & `icc-color`
 -   `color-rendering`
 -   `cursor`
@@ -351,27 +395,33 @@ Prince supports SVG 1.1, with some exceptions - the following elements are curre
 -   `shape-rendering`
 -   `textPath method="stretch"`
 -   `text-rendering`
--   `writing-mode`
 -   `tref` (removed)
 -   `view`
--   `externalResourcesRequired`
--   `zoomAndPan`
--   `filterRes`
--   `lengthAdjust`
--   vertical text
 -   `foreignObject`
 -   `svgz`
 -   `visibility:collapse`
 -   `switch` (`requiredFeatures`, `requiredExtensions`, `systemLanguage`)
+
+Also the following attributes are _not_ supported:
+
+-   `externalResourcesRequired`
+-   `zoomAndPan`
+-   `filterRes`
+-   `lengthAdjust`
 -   `alignment-baseline`
+-   `writing-mode`
 
-### Style Properties
+The element `color-interpolation` is only supported in the `mask` element.
 
-The following style properties *are* supported on SVG elements:
+### SVG Style Properties
+
+The following style properties are supported on SVG elements:
 
 -   `baseline-shift`
 -   `clip-path`
 -   `clip-rule`
+-   `color-interpolation`
+-   `color-interpolation-filters`
 -   `dominant-baseline`
 -   `font-family`
 -   `font-size`
@@ -380,9 +430,15 @@ The following style properties *are* supported on SVG elements:
 -   `fill`
 -   `fill-opacity`
 -   `fill-rule`
+-   `flood-color`
+-   `flood-opacity`
+-   `lighting-color`
+-   `marker`
 -   `marker-start`
 -   `marker-mid`
 -   `marker-end`
+-   `mask`
+-   `-prince-filter-resolution`
 -   `stop-color`
 -   `stop-opacity`
 -   `stroke`
@@ -398,50 +454,66 @@ The following style properties *are* supported on SVG elements:
 Style properties can be applied using SVG presentation attributes:
 
 ```xml
+
     <rect fill="yellow" stroke="blue" stroke-width="20"
             width="200" height="100"/>
+
 ```
+
 Or by using CSS properties inside the `style` attribute or element:
 
 ```xml
+
     <rect style="fill:yellow; stroke:blue; stroke-width:20"
             width="200" height="100"/>
+
 ```
+
 Alternatively, style properties can be applied by linking a stylesheet, or an XML stylesheet:
 
 SVG
 
 ```xml
+
     ...
     <?xml-stylesheet type="text/css" href="style.css"?>
     ...
     <rect width="200" height="100"/>
+
 ```
+
 CSS
 
 ```
+
     svg rect {
         fill: yellow;
         stroke: blue;
         stroke-width: 20;
     }
+
 ```
 
-Rasterization
--------------
+## Rasterization
 
 Prince allows for the output of a rasterized image rather than, or in addition to a PDF output. This produces a JPEG or PNG image of the content, which can be convenient when e.g. planning to use it as a quick preview or thumbnail of the PDF content to display on a website, as can e.g. be seen in the [Sample Documents](/samples/) section on this website.
 
 Rasterization is enabled with the [`--raster-output`](command-line.md#cl-raster-output) command-line option, which also defines the template of the file naming. The output format can be chosen either based on the extension of the file name, or by explicitly indicating it.
 
 ```bash
+
       prince doc.html --raster-output=page_%02d.png
+
 ```
+
 Furthermore the range of pages to rasterize and the resolution of the raster output can be tweaked in order to determine the number of pages in rasterized format, and the size of the images.
 
 ```bash
+
       prince doc.html --raster-output=title-thumbnail.jpg --raster-pages=first --raster-dpi=24
+
 ```
+
 Please note that when creating a JPEG image output, the default quality parameter given
 to libjpeg is `92`.  To tweak this value and set a different compression level,
 use the command-line option [`--raster-jpeg-quality`](command-line.md#cl-raster-jpeg-quality).
@@ -449,4 +521,3 @@ use the command-line option [`--raster-jpeg-quality`](command-line.md#cl-raster-
 If you want to rasterize the HTML to an image format that supports transparency (PNG, not JPEG) and have a transparent background, in order to composite it with something else later, the command-line option [`--raster-background`](command-line.md#cl-raster-background) can be used with the value `transparent`.
 
 A full list of rasterization possibilities can be found in the [Raster Output Options](command-line.md#raster-output-options) section.
-

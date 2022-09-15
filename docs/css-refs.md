@@ -1,12 +1,11 @@
 ---
 title: Supported CSS Specifications
 ---
-
 Prince supports, fully or partially, the following CSS specifications:
 
-<table class="grid">
-<tr>
-<th colspan="2">CSS Level 2</th>
+<table className="grid">
+<tbody><tr>
+<th colSpan="2">CSS Level 2</th>
 </tr>
 <tr>
 <td><a href="https://www.w3.org/TR/CSS2/">CSS 2.1</a></td>
@@ -20,7 +19,7 @@ treats <code>1ex</code> equivalently to <code>0.5em</code>, which might not be c
 for some fonts.</td>
 </tr>
 <tr>
-<th colspan="2">CSS Level 3</th>
+<th colSpan="2">CSS Level 3</th>
 </tr>
 <tr>
 <td><a href="https://www.w3.org/TR/css-backgrounds-3/">CSS Backgrounds and Borders Module Level 3</a></td>
@@ -89,8 +88,10 @@ well as the properties <code>object-fit</code> and <code>object-position</code>.
 <tr>
 <td><a href="https://www.w3.org/TR/css-text-3/">CSS Text Module Level 3</a></td>
 <td>Prince does not recognize <code>line-break</code>, <code>text-align-all</code>
-and <code>hanging-punctuation</code>, and it does not support the value
-<code>break-word</code> of the property <code>word-break</code>.</td>
+and <code>hanging-punctuation</code>. It does not support the value
+<code>break-word</code> of the property <code>word-break</code>, nor the value
+<code>anywhere</code> of the property <code>overflow-wrap</code>, nor the value
+<code>break-spaces</code> of the property <code>white-space</code>.</td>
 </tr>
 <tr>
 <td><a href="https://www.w3.org/TR/css-transforms-1/">CSS Transforms Module Level 1</a></td>
@@ -111,15 +112,15 @@ does not recognize <code>transform-box</code>. Prince does not allow perspective
 </tr>
 <tr>
 <td><a href="https://www.w3.org/TR/css-conditional-3/">CSS Conditional Rules Module Level 3</a></td>
-<td>Prince supports the <a href="#at-media"><code>@media</code></a>
-and <a href="#at-supports"><code>@supports</code></a> at-rules.</td>
+<td>Prince supports the <a href="/doc/css-at-rules/#at-media"><code>@media</code></a>
+and <a href="/doc/css-at-rules/#at-supports"><code>@supports</code></a> at-rules.</td>
 </tr>
 <tr>
-<td><a href="https://drafts.fxtf.org/filter-effects/">Filter Effects Module Level 1</a></td>
-<td>Prince supports the <code>filter</code> property.</td>
+<td><a href="https://drafts.fxtf.org/filter-effects/">Filter Effects Module Level 1 - Editor's Draft</a></td>
+<td>Prince supports the <code>filter</code>, <code>color-interpolation-filters</code>, <code>flood-color</code> and <code>flood-opacity</code> properties.</td>
 </tr>
 <tr>
-<th colspan="2">CSS Level 4</th>
+<th colSpan="2">CSS Level 4</th>
 </tr>
 <tr>
 <td><a href="https://www.w3.org/TR/css-flexbox-1/">CSS Flexible Box Layout Module Level 1</a></td>
@@ -144,7 +145,7 @@ and <a href="#at-supports"><code>@supports</code></a> at-rules.</td>
 <td>Prince recognizes the <code>border-clip</code> property, but takes a different syntax.</td>
 </tr>
 <tr>
-<td><a href="https://drafts.csswg.org/css-images-4/">CSS Images Module Level 4</a></td>
+<td><a href="https://drafts.csswg.org/css-images-4/">CSS Images Module Level 4 - Editor's Draft</a></td>
 <td>Prince recognizes <code>image-resolution</code>, but takes a different syntax.</td>
 </tr>
 <tr>
@@ -152,7 +153,7 @@ and <a href="#at-supports"><code>@supports</code></a> at-rules.</td>
 <td>Prince supports this module.</td>
 </tr>
 <tr>
-<th colspan="2">Living Standards</th>
+<th colSpan="2">Living Standards</th>
 </tr>
 <tr>
 <td><a href="https://books.idea.whatwg.org/">CSS Books</a></td>
@@ -164,11 +165,11 @@ states, the <code>flow</code> property and the <code>string-set</code> property.
 <td>Prince largely supports the float extensions of the spec.</td>
 </tr>
 <tr>
-<th colspan="2">SVG</th>
+<th colSpan="2">SVG</th>
 </tr>
 <tr>
-<td><a href="https://www.w3.org/TR/SVG/">SVG 1.1</a></td>
+<td><a href="https://www.w3.org/TR/SVG11/">SVG 1.1</a></td>
 <td>Prince supports the specification with some exceptions - please see
 <a href="/doc/graphics#scalable-vector-graphics-svg">Scalable Vector Graphics (SVG)</a> for a full list of currently not supported elements.</td>
 </tr>
-</table>
+</tbody></table>

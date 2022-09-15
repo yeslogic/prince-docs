@@ -1,4 +1,5 @@
-const stdAnnotated = {
+
+var stdAnnotated = {
     NaN: {
         desc: "The special value Not a Number."
     },
@@ -47,8 +48,6 @@ const stdAnnotated = {
     escape: {
         desc: "Computes a new string by replacing certain characters with a hexadecimal escape sequence.",
         returns: "string",
-        example: "escape('20%'))",
-        exampleReturn: '20%25',
         arguments: [
             {name: "string", desc: "String to escape", type: "string"}
         ]
@@ -56,8 +55,6 @@ const stdAnnotated = {
     unescape: {
         desc: "Computes a new string by replacing hexadecimal escape sequences with the characters they represent.",
         returns: "string",
-        example: "unescape('hi%21'))",
-        exampleReturn: 'hi!',
         arguments: [
             {name: "string", desc: "String to unescape", type: "string"}
         ]
@@ -99,7 +96,7 @@ const stdAnnotated = {
         returns: "string"
     },
     valueOf: {
-        desc: "Returns the primitive value of an object.",
+        desc: "Returns the primitive value an object.",
         returns: "primitive value"
     },
     hasOwnProperty: {
@@ -118,12 +115,7 @@ const stdAnnotated = {
         returns: "boolean"
     },
     Object: {
-        create: {
-          desc: "Creates a new object, using argument as prototype",
-          arguments: [
-            {type: "object", name: "prototype object"}
-          ]
-        },
+        create: {},
         defineProperty: {
             desc: "Adds a property to the object and defines certain traits like enumerability.", type: "function",
             arguments: [
@@ -137,6 +129,7 @@ const stdAnnotated = {
         keys: {},
         getOwnPropertyDescriptor: {},
         getOwnPropertyNames: {},
+        getOwnPropertySymbols: {},
         getPrototypeOf: {},
         setPrototypeOf: {},
         prototype: {
@@ -181,6 +174,8 @@ const stdAnnotated = {
             reverse: {},
             shift: {},
             unshift: {},
+            find: {},
+            findIndex: {},
             sort: {},
             slice: {},
             splice: {},
@@ -197,8 +192,46 @@ const stdAnnotated = {
             reduceRight: {}
         }
     },
+    Map: {
+        prototype: {
+            size: {},
+            clear: {},
+            delete: {
+                arguments:[
+                    {name: "key", type: "string"}
+                ]
+            },
+            get: {
+                arguments:[
+                    {name: "key", type: "string"}
+                ]
+            },
+            has: {
+                arguments:[
+                    {name: "key", type: "string"}
+                ]
+            },
+            set: {
+                arguments:[
+                    {name: "key", type: "string"},
+                    {name: "value", type: "string"}
+                ]
+            },
+            keys: {},
+            values: {},
+            entries: {},
+            forEach: {
+                arguments:[
+                    {name: "callbackFn", type: "function"},
+                    {name: "thisArg", type: "argument"}
+                ]
+            }
+        }
+    },
     String: {
         fromCharCode: {},
+        fromCodePoint: {},
+        CodePointAt: {},
         prototype: {
             constructor: {},
             length: {},
@@ -605,6 +638,7 @@ const stdAnnotated = {
             namespaceURI: {},
             id: {},
             className: {},
+            classList: {},
             innerHTML: {},
             firstElementChild: {},
             lastElementChild: {},
@@ -725,7 +759,7 @@ const stdAnnotated = {
             borderBottomRightRadius: { url: "property" },
             borderBottomStyle: { url: "property" },
             borderBottomWidth: { url: "property" },
-            borderClip: { ext: "ext", url: "property" },
+            borderClip: { url: "property" },
             borderCollapse: { url: "property" },
             borderColor: { url: "property" },
             borderLeft: { url: "property" },
@@ -754,7 +788,7 @@ const stdAnnotated = {
             breakInside: { url: "property" },
             captionPage: { ext: "ext", url: "property" },
             captionSide: { url: "property" },
-            clear: { url: "property" },
+            clear: { ext: "ext", url: "property" },
             clip: { url: "property" },
             clipPath: { url: "property" },
             clipRule: { url: "property" },
@@ -776,7 +810,6 @@ const stdAnnotated = {
             content: { url: "property" },
             counterIncrement: { url: "property" },
             counterReset: { url: "property" },
-            cssFloat: { url: "property" },
             direction: { url: "property" },
             display: { url: "property" },
             dominantBaseline: { url: "property" },
@@ -794,6 +827,14 @@ const stdAnnotated = {
             flexWrap: { url: "property" },
             floodColor: { url: "property" },
             floodOpacity: { url: "property" },
+            cssFloat: { ext: "ext", url: "property" },
+            floatDeferColumn: { ext: "ext", url: "property" },
+            floatDeferPage: { ext: "ext", url: "property" },
+            floatModifier: { ext: "ext", url: "property" },
+            floatPlacement: { ext: "ext", url: "property" },
+            floatReference: { ext: "ext", url: "property" },
+            floatTail: { ext: "ext", url: "property" },
+            floatPolicy: { ext: "ext", url: "property" },
             flow: { ext: "ext", url: "property" },
             font: { url: "property" },
             fontFamily: { url: "property" },
@@ -802,14 +843,14 @@ const stdAnnotated = {
             fontStyle: { url: "property" },
             fontVariant: { url: "property" },
             fontWeight: { url: "property" },
-            footnoteDisplay: { ext: "ext", url: "property" },
+            footnoteDisplay: { url: "property" },
             footnoteStylePosition: { url: "property" },
             height: { url: "property" },
             hyphenateAfter: { ext: "ext", url: "property" },
             hyphenateBefore: { ext: "ext", url: "property" },
             hyphenateLines: { ext: "ext", url: "property" },
             hyphenatePatterns: { ext: "ext", url: "property" },
-            hyphens: { ext: "ext", url: "property" },
+            hyphens: { url: "property" },
             imageOrientation: { url: "property" },
             imageResolution: { ext: "ext", url: "property" },
             insetInside: { url: "property" },
@@ -826,6 +867,7 @@ const stdAnnotated = {
             listStylePosition: { url: "property" },
             listStyleType: { url: "property" },
             margin: { url: "property" },
+            marginAlt: { ext: "ext", url: "property" },
             marginBottom: { url: "property" },
             marginInside: { ext: "ext", url: "property" },
             marginLeft: { url: "property" },
@@ -862,31 +904,45 @@ const stdAnnotated = {
             princeBookmarkLevel: { ext: "ext", url: "property" },
             princeBookmarkState: { ext: "ext", url: "property" },
             princeBookmarkTarget: { ext: "ext", url: "property" },
-            princeBorderClip: { ext: "ext", url: "property" },
             princeCaptionPage: { ext: "ext", url: "property" },
+            princeClear: { ext: "ext", url: "property" },
             princeFilterResolution: { ext: "ext", url: "property" },
+            princeFloatDeferColumn: { ext: "ext", url: "property" },
+            princeFloatDeferPage: { ext: "ext", url: "property" },
+            princeFloatModifier: { ext: "ext", url: "property" },
+            princeFloatPlacement: { ext: "ext", url: "property" },
+            princeFloatReference: { ext: "ext", url: "property" },
+            princeFloatTail: { ext: "ext", url: "property" },
+            princeFloatPolicy: { ext: "ext", url: "property" },
             princeFlow: { ext: "ext", url: "property" },
-            princeFootnoteDisplay: { ext: "ext", url: "property" },
             princeFootnotePolicy: { ext: "ext", url: "property" },
             princeHyphenateAfter: { ext: "ext", url: "property" },
             princeHyphenateBefore: { ext: "ext", url: "property" },
             princeHyphenateCharacter: { ext: "ext", url: "property" },
             princeHyphenateLines: { ext: "ext", url: "property" },
             princeHyphenatePatterns: { ext: "ext", url: "property" },
-            princeHyphens: { ext: "ext", url: "property" },
             princeImageMagic: { ext: "ext", url: "property" },
             princeImageResolution: { ext: "ext", url: "property" },
             princeLang: { ext: "ext", url: "property" },
             princeLinebreakMagic: { ext: "ext", url: "property" },
             princeLink: { ext: "ext", url: "property" },
+            princeMarginAlt: { ext: "ext", url: "property" },
             princePageGroup: { ext: "ext", url: "property" },
+            princePdfAnnotationAuthor: { ext: "ext", url: "property" },
+            princePdfAnnotationColor: { ext: "ext", url: "property" },
+            princePdfAnnotationContents: { ext: "ext", url: "property" },
+            princePdfAnnotationCreatedate: { ext: "ext", url: "property" },
+            princePdfAnnotationModifydate: { ext: "ext", url: "property" },
+            princePdfAnnotationPosition: { ext: "ext", url: "property" },
+            princePdfAnnotationTitle: { ext: "ext", url: "property" },
+            princePdfAnnotationType: { ext: "ext", url: "property" },
+            princePdfColorConversion: { ext: "ext", url: "property" },
+            princePdfColorOptions: { ext: "ext", url: "property" },
             princePdfDestination: { ext: "ext", url: "property" },
             princePdfLinkType: { ext: "ext", url: "property" },
             princePdfTagType: { ext: "ext", url: "property" },
             princeTableColumnSpan: { ext: "ext", url: "property" },
             princeTableRowSpan: { ext: "ext", url: "property" },
-            princeTabSize: { ext: "ext", url: "property" },
-            princeTextAlignAll: { ext: "ext", url: "property" },
             princeTextJustify: { ext: "ext", url: "property" },
             princeTextReplace: { ext: "ext", url: "property" },
             princeTooltip: { ext: "ext", url: "property" },
@@ -902,13 +958,13 @@ const stdAnnotated = {
             strokeMiterlimit: { url: "property" },
             strokeOpacity: { url: "property" },
             strokeWidth: { url: "property" },
-            tableBaseline: { url: "property" },
+            tableBaseline: { ext: "ext", url: "property" },
             tableColumnSpan: { ext: "ext", url: "property" },
             tableLayout: { url: "property" },
             tableRowSpan: { ext: "ext", url: "property" },
-            tabSize: { ext: "ext", url: "property" },
+            tabSize: { url: "property" },
             textAlign: { url: "property" },
-            textAlignAll: { ext: "ext", url: "property" },
+            textAlignAll: { url: "property" },
             textAlignLast: { url: "property" },
             textAnchor: { url: "property" },
             textDecoration: { url: "property" },
@@ -973,6 +1029,23 @@ const stdAnnotated = {
     DOMParser: {
         prototype: {
             parseFromString: {}
+        }
+    },
+    DOMTokenList: {
+        prototype: {
+            length: {},
+            value: {},
+            item: {},
+            contains: {},
+            add: {},
+            remove: {},
+            replace: {},
+            supports: {},
+            toggle: {},
+            entries: {},
+            forEach: {},
+            keys: {},
+            values: {}
         }
     },
     SVGMatrix: {
@@ -1303,6 +1376,26 @@ const stdAnnotated = {
                 type: "function",
                 returns: "height, in pt"
             },
+            marginBottom: {
+                type: "function",
+                returns: "the used value for the bottom margin",
+            },
+            marginLeft: {
+                type: "function",
+                returns: "the used value for the left margin",
+            },
+            marginRight: {
+                type: "function",
+                returns: "the used value for the right margin",
+            },
+            marginTop: {
+                type: "function",
+                returns: "the used value for the top margin",
+            },
+            floatPosition: {
+                type: "function",
+                returns: "\"TOP\" | \"BOTTOM\"",
+            },
             children: {
                 type: "function",
                 returns: "array of child boxes"
@@ -1341,13 +1434,17 @@ const stdAnnotated = {
         type: "object",
         ext: "ext",
         desc: "See <a href='/doc/javascript#the-prince-object'>The Prince Object</a>",
-        registerPostLayoutFunc: {
+        addEventListener: {
             type: "function",
+            desc: "can be called to listen to the <code>complete</code> event on the Prince object. See <a href='/doc/javascript#event-handling'>Event Handling</a>.",
             arguments: [
-                {name: "function", type: "string"}
+            {name: "type", type: "string"},
+            {name: "callback", type: "string"},
+            {name: "optional extra options", type: "string"},
             ],
-            example: "<script> \nPrince.registerPostLayoutFunc(function() {\n    var str = '@prince-color Color1 { alternate-color: cmyk(1,0,0,0) }';\n    var add = document.getElementById('add');\n    add.appendChild(document.createTextNode(str));\n});\n</script>\n<style id='add'></style>\n<p style='color: prince-color(Color1)'>This was black, becomes cyan</p>",
-            desc: "See <a href='/doc/cookbook#the-multi-pass-solution'>The \"Multi-Pass\" Solution</a>"
+        },
+        oncomplete: {
+            desc: "The <code>complete</code> event is fired when all layout is finished (and after the last repeated layout, if this was requested), just before the PDF is output, so that it can cancel the PDF output by triggering a fail-safe if necessary, or log information about the PDF like the page count.",
         },
         addScriptFunc: {
             type: "function",
@@ -1355,10 +1452,11 @@ const stdAnnotated = {
                 {name: "name", type: "string"},
                 {name: "function", type: "string"}
             ],
-            example: "function myfunc() {\n  return 'Some generated content text!';\n}\nPrince.addScriptFunc('myfunc', myfunc);"
+            desc: "exposes an arbitrary JavaScript function to CSS. See <a href='/doc/gen-content#script-functions'>Script Functions</a>.",
         },
         trackBoxes: {
             type: "function",
+            desc: "See <a href='/doc/javascript#the-box-tracking-api'>The Box Tracking API</a>",
             arguments: [
                 {type: "boolean"}
             ]
@@ -1366,9 +1464,9 @@ const stdAnnotated = {
         convertToFile: {
             type: "function",
             arguments: [
-                {name: "JSON", type: "string"},
+                {name: "JSON", type: "string", desc: "as specified in the <a href='/doc/server-integration#job-description-json'>Job description JSON</a>;"},
                 {name: "OutputFileName", type: "string"},
-                {name: "optional extra resources", type: "ArrayBuffers or strings"}
+                {name: "...optional extra job resources", type: "ArrayBuffers or strings"}
             ],
             returns: "boolean, indicating success"
         },
@@ -1376,7 +1474,7 @@ const stdAnnotated = {
             type: "function",
             arguments: [
                 {name: "JSON", type: "string"},
-                {name: "optional extra resources", type: "ArrayBuffers or strings"}
+                {name: "...optional extra job resources", type: "ArrayBuffers or strings"}
             ],
             returns: "ArrayBuffer if successful, null if not"
         },
@@ -1387,24 +1485,44 @@ const stdAnnotated = {
             type: "function",
             returns: "Total number of document pages, can be accessed after document conversion has finished"
         },
+        registerPostLayoutFunc: {
+            type: "function",
+            arguments: [
+                {name: "function", type: "string"}
+            ],
+            desc: "See <a href='/doc/javascript#multi-pass-formatting'>Multi-Pass formatting</a>"
+        },
         Log: {
-            debug: {},
+            type: "object",
+            desc: "also available as <a href='#window.Log'><code>Log</code></a>.",
+            debug: {
+                type: "function",
+                desc: "only available when the <code>--debug</code> command-line option is specified.",
+                arguments: [
+                    {name: "message", type: "string"}
+                ]
+            },
             info: {
+                type: "function",
+                desc: "only available when the <code>--verbose</code> command-line option is specified.",
                 arguments: [
                     {name: "message", type: "string"}
                 ]
             },
             warning: {
+                type: "function",
                 arguments: [
                     {name: "message", type: "string"}
                 ]
             },
             error: {
+                type: "function",
                 arguments: [
                     {name: "message", type: "string"}
                 ]
             },
             data: {
+                type: "function",
                 arguments: [
                     {name: "name", type: "string"},
                     {name: "value", type: "string"}
@@ -1562,7 +1680,7 @@ const stdAnnotated = {
         },
         objectStreams: {
             type: "function",
-            desc: "Disables PDF object streams.",
+            desc: "Can be used to disable PDF object streams.  Object streams are enabled by default.",
             arguments: [
                 {type: "boolean" }
             ]
@@ -1643,10 +1761,16 @@ const stdAnnotated = {
     Log: {
         ext: "ext",
         type: "object",
+        desc: "also available as <a href='#window.Prince.Log'><code>Prince.Log</code></a>.",
         debug: {
+            desc: "only available when the <code>--debug</code> command-line option is specified.",
             type: "function",
+            arguments: [
+                {name: "message", type: "string"}
+            ]
         },
         info: {
+            desc: "only available when the <code>--verbose</code> command-line option is specified.",
             type: "function",
             arguments: [
                 {name: "message", type: "string"}
@@ -1674,4 +1798,69 @@ const stdAnnotated = {
     },
 };
 
-export default stdAnnotated;
+//dump("", window, std);
+
+void function dump(prefix, base, map)
+{
+    for (var i in map) {
+        if (i === "_is_root") continue;
+        try {
+            var val = base[i];
+            if (typeof val === "function")
+            {
+                if (i != val.name)
+                {
+                    val = "function "+prefix+i+"/"+val.length+" (but .name is '"+val.name+"')"
+                }
+                else
+                {
+                    val = "function "+prefix+i+"/"+val.length;
+                }
+            }
+            else
+            {
+                val = prefix+i+": "+val;
+            }
+
+            //console.log(val);
+
+            if (i === "constructor")
+            {
+                if (base[i].prototype !== base)
+                {
+                    throw "constructor/prototype link is broken!";
+                }
+            }
+            else
+            {
+                dump(prefix+i+".", base[i], map[i]);
+            }
+        }
+        catch (x) {
+            //console.log(prefix+i+": "+x);
+        }
+    }
+
+    if ((typeof base === "object" && base !== null) || typeof base === "function")
+    {
+        if (!map._is_root)
+        {
+            var names = Object.getOwnPropertyNames(base);
+
+            for (var i in names)
+            {
+                var name = names[i];
+
+                if (!(typeof base === "function" && (name === "name" || name === "length")) &&
+                    !(base === window && name === "std"))
+                {
+                    if (!(name in map))
+                    {
+                        //console.log("no def for "+prefix+name+"?");
+                    }
+                }
+            }
+        }
+    }
+}("", window, std);
+
