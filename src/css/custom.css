@@ -49,6 +49,13 @@ article p img {
     max-width: 100%;
 }
 
+.navbar, .navbar--fixed-top {
+    height: 55px;
+}
+.navbar__logo img {
+    border: none;
+    margin: 0;
+}
 .navbar, .navbar__items {
     background-color: #6e2577;
     color: white;
