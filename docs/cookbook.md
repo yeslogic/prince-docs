@@ -724,417 +724,537 @@ This will add the URL after every link. For example: "\[Located at 'https:.
 
 ## Image Magic
 
+<dl class="ingredients">
+  <dt>You need</dt>
+  <dd><a href="/doc/graphics#images">Images</a></dd>
+  <dd>
+<a href="/doc/graphics#css-and-images">CSS and Images</a>
+    <ul>
+      <li><code>-prince-image-magic</code></li>
+    </ul>
+  </dd>
+</dl>
 
-  You need
-  Images
-  
-CSS and Images
-    
-      -prince-image-magic
-    
-  
+The [`-prince-image-magic`](css-props.md#prop-prince-image-magic) property performs various image-related, Prince-specific tasks that do not fit into other existing CSS properties. It applies magic to images!
 
+To reduce the PDF file size, JPEG images can be recompressed at a lower quality level by using the function `recompress-jpeg(quality%)` with the required quality percentage as argument.
 
-The [``](css-props.md#prop-prince-image-magic) property performs various image-related, Prince-specific tasks that do not fit into other existing CSS properties. It applies magic to images!
+PNG images can be converted to JPEG images with the keyword `convert-to-jpeg` (using the default compression rate), or they can also be converted to JPEG with the required compression rate as argument with the function `convert-to-jpeg(quality%)`.
 
-To reduce the PDF file size, JPEG images can be recompressed at a lower quality level by using the function `` with the required quality percentage as argument.
+Prince usually strips unnecessary metadata from JPEG images to help contain size. But it might happen that you need that extra data, possibly for further downstream processing. The keyword `jpeg-verbatim` inhibtis this stripping and includes the images without modification in the PDF file.
 
-PNG images can be converted to JPEG images with the keyword `` (using the default compression rate), or they can also be converted to JPEG with the required compression rate as argument with the function ``.
+Two more keywords perform more obscure tasks that might be required in very specific circumstances: the keyword `ignore-icc-profile` causes Prince to ignore any ICC color profile embedded in the image, useful e.g. in those cases when the embedded ICC profile is broken; and `snap-to-integer-coords` can be used to avoid blurring of images in some PDF viewers.
 
-Prince usually strips unnecessary metadata from JPEG images to help contain size. But it might happen that you need that extra data, possibly for further downstream processing. The keyword `` inhibtis this stripping and includes the images without modification in the PDF file.
-
-Two more keywords perform more obscure tasks that might be required in very specific circumstances: the keyword `` causes Prince to ignore any ICC color profile embedded in the image, useful e.g. in those cases when the embedded ICC profile is broken; and `` can be used to avoid blurring of images in some PDF viewers.
-
-Several of the values can be combined, to perform more than one magic on images - for details please check the grammar of the [``](css-props.md#prop-prince-image-magic) property.
-
-```
-
-
+Several of the values can be combined, to perform more than one magic on images - for details please check the grammar of the [`-prince-image-magic`](css-props.md#prop-prince-image-magic) property.
 
 ```
-
+    img {
+        -prince-image-magic: recompress-jpeg(50%) convert-to-jpeg(50%) snap-to-integer-coords;
+    }
+```
 This example recompresses all JPEG images to 50%, converts any non-JPEG images to JPEG with the same quality, and snaps them all to integer coordinates to avoid blurring in some PDF viewers.
+
 
 ## Hyphenation
 
+<dl class="ingredients">
+  <dt>You need</dt>
+    <dd>
+<code><a href="/doc/css-props#prop-hyphens">hyphens</a></code>
+      <ul>
+        <li><code><a href="/doc/css-props#prop-prince-hyphenate-character">-prince-hyphenate-character</a></code></li>
+        <li><code><a href="/doc/css-props#prop-prince-hyphenate-before">-prince-hyphenate-before</a></code></li>
+        <li><code><a href="/doc/css-props#prop-prince-hyphenate-after">-prince-hyphenate-after</a></code></li>
+        <li><code><a href="/doc/css-props#prop-prince-hyphenate-limit-lines">-prince-hyphenate-limit-lines</a></code></li>
+        <li><code><a href="/doc/css-props#prop-prince-hyphenate-patterns">-prince-hyphenate-patterns</a></code></li>
+      </ul>
+    </dd>
+</dl>
 
-  You need
-    
-hyphens
-      
-        -prince-hyphenate-character
-        -prince-hyphenate-before
-        -prince-hyphenate-after
-        -prince-hyphenate-limit-lines
-        -prince-hyphenate-patterns
-      
-    
+The property [`hyphens`](css-props.md#prop-hyphens) controls whether hyphenation is allowed to create opportunities to wrap within a line of text.
 
+The default value of the [`hyphens`](css-props.md#prop-hyphens) property is `manual` - to enable automatic hyphenation in a body of text, the value `auto` has to be declared.
 
-The property [``](css-props.md#prop-hyphens) controls whether hyphenation is allowed to create opportunities to wrap within a line of text.
+The value `none` instructs never to hyphenate, while the default value `manual` tells Prince to only hyphenate when there are characters inside the word that explicitly suggest hyphenation opportunities, such as e.g. "soft hyphens" (represented either by the Unicode character `U+00AD` or the HTML entity `&shy;`). With the value `auto`, words may be broken at appropriate hyphenation points as determined automatically by the language-appropriate hyphenation resources, or by hyphenation characters in a word.
 
-The default value of the [``](css-props.md#prop-hyphens) property is `` - to enable automatic hyphenation in a body of text, the value `` has to be declared.
+In order to make automatic hyphenation work as intended, it is important to communicate to Prince the natural language the text is in, so that the language-specific hyphenation rules can be applied - this is done by means to the `lang` or `xml:lang` attributes.
 
-The value `` instructs never to hyphenate, while the default value `` tells Prince to only hyphenate when there are characters inside the word that explicitly suggest hyphenation opportunities, such as e.g. "soft hyphens" (represented either by the Unicode character `` or the HTML entity ``). With the value ``, words may be broken at appropriate hyphenation points as determined automatically by the language-appropriate hyphenation resources, or by hyphenation characters in a word.
+The character shown at the end of a line when the word is hyphenated can be specified with the [`-prince-hyphenate-character`](css-props.md#prop-prince-hyphenate-character) property.
 
-In order to make automatic hyphenation work as intended, it is important to communicate to Prince the natural language the text is in, so that the language-specific hyphenation rules can be applied - this is done by means to the `` or `` attributes.
+Fine-tuning of hyphenation can be done with the `-prince-hyphenate-after` and `-prince-hyphenate-before` properties to determine the minimum number of letters in a word that may be moved to the next line or that may be left at the end of a line when the word is hyphenated.
 
-The character shown at the end of a line when the word is hyphenated can be specified with the [``](css-props.md#prop-prince-hyphenate-character) property.
+The [`-prince-hyphenate-limit-lines`](css-props.md#prop-prince-hyphenate-limit-lines) property is used to determine the maximum number of consecutive lines that may end with a hyphenated word.
 
-Fine-tuning of hyphenation can be done with the `` and `` properties to determine the minimum number of letters in a word that may be moved to the next line or that may be left at the end of a line when the word is hyphenated.
-
-The [``](css-props.md#prop-prince-hyphenate-limit-lines) property is used to determine the maximum number of consecutive lines that may end with a hyphenated word.
-
-Prince uses the hyphenation patterns from the CTAN archive - the full archive is accessible [here](http://tug.ctan.org/tex-archive/language/hyph-utf8/tex/generic/hyph-utf8/patterns/txt/). The default hyphenation patterns can be found in the installed `` file, located in the default style sheets location (see [Installation Layout](installing.md#installation-layout)).
+Prince uses the hyphenation patterns from the CTAN archive - the full archive is accessible [here](http://tug.ctan.org/tex-archive/language/hyph-utf8/tex/generic/hyph-utf8/patterns/txt/). The default hyphenation patterns can be found in the installed `hyph.css` file, located in the default style sheets location (see [Installation Layout](installing.md#installation-layout)).
 
 Hyphenation patterns for the following languages are provided:
 
-
-  
-    da
-    Danish
-  
-  
-    de
-    German
-  
-  
-    en-US
-    English
-  
-  
-    es
-    Spanish
-  
-  
-    fi
-    Finnish
-  
-  
-    fr
-    French
-  
-  
-    is
-    Icelandic
-  
-  
-    it
-    Italian
-  
-  
-    lt
-    Lithuanian
-  
-  
-    pl
-    Polish
-  
-  
-    pt
-    Portuguese
-  
-  
-    ru
-    Russian
-  
-  
-    sl
-    Slovenian
-  
-  
-    sv
-    Swedish
-  
-
+<table class="grid">
+  <tr>
+    <td>da</td>
+    <td>Danish</td>
+  </tr>
+  <tr>
+    <td>de</td>
+    <td>German</td>
+  </tr>
+  <tr>
+    <td>en-US</td>
+    <td>English</td>
+  </tr>
+  <tr>
+    <td>es</td>
+    <td>Spanish</td>
+  </tr>
+  <tr>
+    <td>fi</td>
+    <td>Finnish</td>
+  </tr>
+  <tr>
+    <td>fr</td>
+    <td>French</td>
+  </tr>
+  <tr>
+    <td>is</td>
+    <td>Icelandic</td>
+  </tr>
+  <tr>
+    <td>it</td>
+    <td>Italian</td>
+  </tr>
+  <tr>
+    <td>lt</td>
+    <td>Lithuanian</td>
+  </tr>
+  <tr>
+    <td>pl</td>
+    <td>Polish</td>
+  </tr>
+  <tr>
+    <td>pt</td>
+    <td>Portuguese</td>
+  </tr>
+  <tr>
+    <td>ru</td>
+    <td>Russian</td>
+  </tr>
+  <tr>
+    <td>sl</td>
+    <td>Slovenian</td>
+  </tr>
+  <tr>
+    <td>sv</td>
+    <td>Swedish</td>
+  </tr>
+</table>
 
 A special case is Thai hyphenation, supported thanks to the [LibThai](https://linux.thai.net/projects/libthai) package.
 
-To add hyphenation patterns for other languages, download them from the [CTAN archive](http://tug.ctan.org/tex-archive/language/hyph-utf8/tex/generic/hyph-utf8/patterns/txt/). Save the files for the chosen language without the `` extension, and link to the pattern file (with the `` extension) with the [``](css-props.md#prop-prince-hyphenate-patterns) CSS property.
+To add hyphenation patterns for other languages, download them from the [CTAN archive](http://tug.ctan.org/tex-archive/language/hyph-utf8/tex/generic/hyph-utf8/patterns/txt/). Save the files for the chosen language without the `.txt` extension, and link to the pattern file (with the `.pat` extension) with the [`-prince-hyphenate-patterns`](css-props.md#prop-prince-hyphenate-patterns) CSS property.
 
 The renaming of the file is not essential - the content, not the extension counts.
 
-Prince determines which language to use for hyphenation with the help of the `` CSS selector, which in turn checks the `` or `` attributes of the document:
+Prince determines which language to use for hyphenation with the help of the `:lang()` CSS selector, which in turn checks the `lang` or `xml:lang` attributes of the document:
 
 ```
-
-
-
+    :lang(en-GB) {
+        -prince-hyphenate-patterns: url("hyph-en-gb.pat");
+    }
 ```
-
 ```html
-
-
-
+    <span lang="en-GB">supercalifragilisticexpialidocious</span>
 ```
-
 Alternatively, link directly to the required remote hyphenation file:
 
 ```
-
-
-
+    :lang(en-GB) {
+        -prince-hyphenate-patterns: url("http://tug.ctan.org/tex-archive/language/hyph-utf8/tex/generic/hyph-utf8/patterns/txt/hyph-en-gb.pat.txt");
+    }
 ```
-
 ```html
-
-
-
+    <span lang="en-GB">supercalifragilisticexpialidocious</span>
 ```
 
-## Typographic Ligatures
+Typographic Ligatures
+---------------------
 
-
-  You need
-    OpenType Features in Prince
-    font-variant-ligatures
-    font-variant: prince-opentype()
-    -prince-text-replace
-
+<dl class="ingredients">
+  <dt>You need</dt>
+    <dd><a href="/doc/styling#opentype-features-in-prince">OpenType Features in Prince</a></dd>
+    <dd><code><a href="/doc/css-props#prop-font-variant-ligatures">font-variant-ligatures</a></code></dd>
+    <dd><code><a href="/doc/css-props#prop-font-variant">font-variant</a>: prince-opentype()</code></dd>
+    <dd><code><a href="/doc/css-props#prop-prince-text-replace">-prince-text-replace</a></code></dd>
+</dl>
 
 Prince supports typographic ligatures found in OpenType fonts, i.e. Prince will replace certain characters that appear next to each other with other special glyphs that join those two characters together into one single glyph.
 
-A prominent example of a typographic ligature is **ﬁ**, which replaces the two characters **fi** with a single glyph.
+A prominent example of a typographic ligature is **ﬁ**, which replaces the two characters **<span>f</span><span>i</span>** with a single glyph.
 
-Prince automatically enables ligatures declared by the OpenType fonts with the `` feature (see [OpenType Features in Prince](styling.md#opentype-features-in-prince)). This feature covers the "standard ligatures" which the font manufacturer thinks should be used in normal conditions. Microsoft has a list of the OpenType feature names [here](https://www.microsoft.com/typography/otspec/featurelist.htm).
+Prince automatically enables ligatures declared by the OpenType fonts with the `liga` feature (see [OpenType Features in Prince](styling.md#opentype-features-in-prince)). This feature covers the "standard ligatures" which the font manufacturer thinks should be used in normal conditions. Microsoft has a list of the OpenType feature names [here](https://www.microsoft.com/typography/otspec/featurelist.htm).
 
-Other special ligatures need to be explicitly enabled in Prince to take effect. This is achieved by using the [``](css-props.md#prop-font-variant-ligatures) CSS property.
-Note that the property [``](css-props.md#prop-font-variant) can be used as a shorthand for enabling this, and possibly other font features.
+Other special ligatures need to be explicitly enabled in Prince to take effect. This is achieved by using the [`font-variant-ligatures`](css-props.md#prop-font-variant-ligatures) CSS property.
+Note that the property [`font-variant`](css-props.md#prop-font-variant) can be used as a shorthand for enabling this, and possibly other font features.
 
-Another means to enable ligatures is through the [``](css-props.md#prop-font-variant) CSS property with the `` function (see [CSS Functional Expressions](css-functions.md)).  However, care must be taken in which order the features are enabled!  Also, enabling one feature will disable all the default features. To see which OpenType features are enabled by default, see the [OpenType Features in Prince](styling.md#opentype-features-in-prince) section.
-
-```
-
-
+Another means to enable ligatures is through the [`font-variant`](css-props.md#prop-font-variant) CSS property with the `prince-opentype()` function (see [CSS Functional Expressions](css-functions.md)).  However, care must be taken in which order the features are enabled!  Also, enabling one feature will disable all the default features. To see which OpenType features are enabled by default, see the [OpenType Features in Prince](styling.md#opentype-features-in-prince) section.
 
 ```
+    body {
+        font-variant-ligatures: historical-ligatures;
+    }
+```
 
-The most commn type of ligatures, the OpenType feature ``, is enabled by default.  Unlike other ligature features, the `` feature specifies the context in which the ligature is recommended. "Contextual ligatures" are important in some script designs.  Both these ligatures are enabled with the value ``.
+The most commn type of ligatures, the OpenType feature `liga`, is enabled by default.  Unlike other ligature features, the `clig` feature specifies the context in which the ligature is recommended. "Contextual ligatures" are important in some script designs.  Both these ligatures are enabled with the value `common-ligatures`.
 
-The `` feature covers the "discretionary ligatures" which may be used for special effects. To enable them, use the value ``.
+The `dlig` feature covers the "discretionary ligatures" which may be used for special effects. To enable them, use the value `discretionary-ligatures`.
 
-Some ligatures were in common use in the past, such as ligatures with the so-called "long s" - but they appear anachronistic today. Some fonts include the historical forms as alternates, so the "historical ligatures", covered by the `` feature, can be used for a 'period' effect. This feature replaces the default (current) forms with the historical alternates. To enable these ligatures, use the value ``.
+Some ligatures were in common use in the past, such as ligatures with the so-called "long s" - but they appear anachronistic today. Some fonts include the historical forms as alternates, so the "historical ligatures", covered by the `hlig` feature, can be used for a 'period' effect. This feature replaces the default (current) forms with the historical alternates. To enable these ligatures, use the value `historical-ligatures`.
 
-Some scripts, most notably Arabic and Syriac scripts, require certain ligatures to be used in normal conditions. These "required ligatures" are covered by the `` feature. Prince enables this feature by default in Arabic script. The only way to manually enable this feature is through the `` function of the [``](css-props.md#prop-font-variant) CSS property.
+Some scripts, most notably Arabic and Syriac scripts, require certain ligatures to be used in normal conditions. These "required ligatures" are covered by the `rlig` feature. Prince enables this feature by default in Arabic script. The only way to manually enable this feature is through the `prince-opentype()` function of the [`font-variant`](css-props.md#prop-font-variant) CSS property.
 
-Another mechanism for replacing specific characters is given with the [``](css-props.md#prop-prince-text-replace) property. For an example use, please see the section on [Character Entities](characters.md).
-
-## Watermarks
+Another mechanism for replacing specific characters is given with the [`-prince-text-replace`](css-props.md#prop-prince-text-replace) property. For an example use, please see the section on [Character Entities](characters.md).
 
 
-  You need
-    
-Page regions
-      
-        @prince-overlay
-      
-    
-    Generated content in page regions
-    Taking elements from the document
+Watermarks
+----------
 
+<dl class="ingredients">
+  <dt>You need</dt>
+    <dd>
+<a href="/doc/paged#page-regions">Page regions</a>
+      <ul>
+        <li><code>@prince-overlay</code></li>
+      </ul>
+    </dd>
+    <dd><a href="/doc/paged#generated-content-in-page-regions">Generated content in page regions</a></dd>
+    <dd><a href="/doc/paged#taking-elements-from-the-document">Taking elements from the document</a></dd>
+</dl>
 
 When producing a PDF, it might be desirable to include a watermark, visible on all pages. In Prince it is easy to do so with CSS.
 
-In order to repeat it on all pages, the watermark needs to be placed in a [``](css-at-rules.md#at-page) at-rule. We shall place it in the page region `` (see [Page regions](paged.md#page-regions)) and create the watermark with generated content (see [Generated content in page regions](paged.md#generated-content-in-page-regions)):
+In order to repeat it on all pages, the watermark needs to be placed in a [`@page`](css-at-rules.md#at-page) at-rule. We shall place it in the page region `@prince-overlay` (see [Page regions](paged.md#page-regions)) and create the watermark with generated content (see [Generated content in page regions](paged.md#generated-content-in-page-regions)):
 
 ```
-
-
-
+    @page {
+       @prince-overlay {
+          color: rgba(0,0,0,0.8);
+          content: "Watermark";
+          font-size: 20pt;
+       }
+    }
 ```
-
 The overlay can be styled in all possible ways and it can be aligned in other places than middle center:
 
 ```
-
-
-
+    @page {
+       @prince-overlay {
+          content: "Watermark";
+          vertical-align: top;
+       }
+    }
 ```
-
 Currently it is only possible to have one overlay, but you could flow an entire element having multiple individually positioned contents (see [Taking elements from the document](paged.md#taking-elements-from-the-document)).
 
-The styled watermark can be saved into a `` file, which will be called when generating the document:
+The styled watermark can be saved into a `watermark.css` file, which will be called when generating the document:
 
 ```bash
-
-
-
+    prince --style=watermark.css myfile.md -o myfile_with_watermark.pdf
 ```
 
-## Rotating content
+Rotating content
+----------------
 
 Sometimes it is necessary to rotate a block element so that it fits on the page. This is common with tables. Two approaches are possible: either the whole page is [printed sideways](#printing-wide-content-sideways), or only [the content in a table cell is rotated](#rotating-content-in-table-cells). We shall see each approach separately.
 
 ### Printing wide content sideways
 
-
-  You need
-    -prince-rotate-body
-    -prince-shrink-to-fit
-
+<dl class="ingredients">
+  <dt>You need</dt>
+    <dd><code><a href="/doc/css-props#prop-prince-rotate-body">-prince-rotate-body</a></code></dd>
+    <dd><code><a href="/doc/css-props#prop-prince-shrink-to-fit">-prince-shrink-to-fit</a></code></dd>
+</dl>
 
 Figure [Printing a big table sideways](#printing-wide-content-sideways) shows a table, rotated so that its width fits within the page's length. This can be achieved with the following rules:
 
 Printing a big table sideways
 
 ![Image of a large table printed sideways so that its width fits along the page's length.](assets/samples/rotate-body-2.bw.png)
-This table is too wide to fit on the paper, so we use `` in a _named page_ to print it sideways. Download the [PDF](assets/samples/rotate-body.pdf) or the [HTML](assets/samples/rotate-body.html).
+This table is too wide to fit on the paper, so we use `-prince-rotate-body` in a *named page* to print it sideways. Download the [PDF](assets/samples/rotate-body.pdf) or the [HTML](assets/samples/rotate-body.html).
 
 ```
+    @page big_table {
+        -prince-rotate-body: landscape;
+        -prince-shrink-to-fit: auto;
+    }
 
-
-
+    table.big {
+        page: big_table
+    }
 ```
-
-The [``](css-props.md#prop-prince-rotate-body) property works within [``](css-at-rules.md#at-page) rules only, so this example uses a named page to place the table on a page of its own. Then the [``](css-at-rules.md#at-page) rule for `` pages uses the [``](css-props.md#prop-prince-rotate-body) property to tell prince that the body of the page, but not the headers and footers, should be rotated. The table in this example is still too wide so we also use the [``](css-props.md#prop-prince-shrink-to-fit) property to make it a little smaller.
+The [`-prince-rotate-body`](css-props.md#prop-prince-rotate-body) property works within [`@page`](css-at-rules.md#at-page) rules only, so this example uses a named page to place the table on a page of its own. Then the [`@page`](css-at-rules.md#at-page) rule for `big_table` pages uses the [`-prince-rotate-body`](css-props.md#prop-prince-rotate-body) property to tell prince that the body of the page, but not the headers and footers, should be rotated. The table in this example is still too wide so we also use the [`-prince-shrink-to-fit`](css-props.md#prop-prince-shrink-to-fit) property to make it a little smaller.
 
 If you download the full example ([HTML](assets/samples/rotate-body.html) or [PDF](assets/samples/rotate-body.pdf)) you will see that the paragraphs before and after the table are not placed on the same page. This is because they do not belong to the same named page (see [Named pages](paged.md#named-pages)). However on page four there are two tables, both tables belong to the same named page and therefore Prince will try to place them together on the same page.
 
-Another way of rotating content is by changing the writing mode with the [``](css-props.md#prop-writing-mode) property, or by transforming an element with `` - see [Rotating content in table cells](#rotating-content-in-table-cells).
+Another way of rotating content is by changing the writing mode with the [`writing-mode`](css-props.md#prop-writing-mode) property, or by transforming an element with `transform: rotate()` - see [Rotating content in table cells](#rotating-content-in-table-cells).
 
 ### Rotating content in table cells
 
-
-  You need
-    transform: rotate()
-    writing-mode
-
+<dl class="ingredients">
+  <dt>You need</dt>
+    <dd><code><a href="/doc/css-props#prop-transform">transform</a>: rotate()</code></dd>
+    <dd><code><a href="/doc/css-props#prop-writing-mode">writing-mode</a></code></dd>
+</dl>
 
 There are cases, when preparing a table with a large amount of content, that you would like to configure your layout to be most efficient - a useful trick is to rotate the content in some table cells, or in the table headers. Rotating by 90° might be a way to achieve this, but readability suffers. A reasonable compromise is to rotate 45° only - the space it needs is not more than with a 90° rotation, and your readers don't have to tilt their heads repeatedly. In the following example we shall rotate table headers by 45°.
 
-The rotation is achieved with ``. It could be applied directly to the `` element, but it is impossible to configure the width of the column as we wish it. We shall thus nest a `` and a `` element:
+The rotation is achieved with `transform: rotate()`. It could be applied directly to the `th` element, but it is impossible to configure the width of the column as we wish it. We shall thus nest a `div` and a `span` element:
 
 ```html
-
-
-
+    <th class="rotate">
+      <div>
+        <span>Column header 1</span>
+      </div>
+    </th>
 ```
-
 The rotation will happen with the following CSS code:
 
 ```
+    th.rotate {
+      /* Make sure the th is high enough, */
+      height: 150px;
+      /* and make sure the words of the header are not split with a newline. */
+      white-space: nowrap;
+    }
 
-
+    th.rotate > div {
+      transform:
+        /* Magic Numbers to put it in place, */
+        translate(25px, 50px)
+        /* rotate it, */
+        rotate(-45deg);
+      /* and give the div the width you wish. */
+      width: 30px;
+    }
+    th.rotate > div > span {
+      /* And finally, add some styling. */
+      border-bottom: 1px solid #ccc;
+      padding: 5px 10px;
+    }
+```
+A more basic means for rotation, allowing for less fine-tuning, is the use of the [`writing-mode`](css-props.md#prop-writing-mode) CSS property. This option only allows rotation by 90°. It can be very handy when only some table cells with too much content are rotated, so as not to use too much horizontal space. You cannot rotate the table cell directly, so you have to nest one `span` element inside - and then you style it:
 
 ```
-
-A more basic means for rotation, allowing for less fine-tuning, is the use of the [``](css-props.md#prop-writing-mode) CSS property. This option only allows rotation by 90°. It can be very handy when only some table cells with too much content are rotated, so as not to use too much horizontal space. You cannot rotate the table cell directly, so you have to nest one `` element inside - and then you style it:
-
+    td.rotate > span {
+      /* Rotate the content */
+      writing-mode: vertical-rl;
+      /* Optionally, you can force the table cell's content not to wrap */
+      white-space: nowrap;
+    }
 ```
-
-
-
-```
-
 For a different approach to rotating content, see the section on [Printing wide content sideways](#printing-wide-content-sideways).
 
-## How and Where is my Box?
 
+How and Where is my Box?
+-------------
 
-  You need
-    The Prince Object
-    The Box Tracking API
+<dl class="ingredients">
+  <dt>You need</dt>
+    <dd><a href="/doc/javascript#the-prince-object">The Prince Object</a></dd>
+    <dd><a href="/doc/javascript#the-box-tracking-api">The Box Tracking API</a></dd>
+</dl>
 
+The `BoxInfo()` method returns a list of *boxes*, each of which has a series of properties defining them.
 
-The `` method returns a list of _boxes_, each of which has a series of properties defining them.
+The following script adds some useful higher-level functionality, making the `marginBox(u)`, `borderBox(u)`, `paddingBox(u)` and `contentBox(u)` methods available on the BoxInfo objects. The parameter `u` defines the units to use, and needs to be one of `cm`, `in`, `mm`, `q`, `pc`, `pt` or `px`.
 
-The following script adds some useful higher-level functionality, making the ``, ``, `` and `` methods available on the BoxInfo objects. The parameter `` defines the units to use, and needs to be one of ``, ``, ``, ``, ``, `` or ``.
-
-The methods return a box object with properties ``, ``, `` and ``, giving the position and size of the box in the requested units.
+The methods return a box object with properties `x`, `y`, `w` and `h`, giving the position and size of the box in the requested units.
 
 ```javascript
-
-
-
+    if (typeof Prince != "undefined") {
+        addBoxInfoMethods();
+    }
+    
+    function Box(x, y, w, h, u) {
+        var d = 1;
+    
+        if (u == "cm") {
+            d = 72/2.54;
+        } else if (u == "in") {
+            d = 72;
+        } else if (u == "mm") {
+            d = 72/25.4;
+        } else if (u == "q") {
+            d = 72/101.6;
+        } else if (u == "pc") {
+            d = 1/12;
+        } else if (u == "pt") {
+            d = 1;
+        } else if (u == "px") {
+            d = 72/96;
+        } else {
+            console.log("Box: unknown units: " + u);
+        }
+    
+        this.x = x/d;
+        this.y = y/d;
+        this.w = w/d;
+        this.h = h/d;
+    }
+    
+    function addBoxInfoMethods() {
+        BoxInfo.prototype.marginBox = function (u) {
+            var x = this.x - this.marginLeft;
+            var y = this.y + this.marginTop;
+            var w = this.w + this.marginLeft + this.marginRight;
+            var h = this.h + this.marginTop + this.marginBottom;
+            return new Box(x, y, w, h, u);
+        };
+    
+        BoxInfo.prototype.borderBox = function (u) {
+            var x = this.x;
+            var y = this.y;
+            var w = this.w;
+            var h = this.h;
+            return new Box(x, y, w, h, u);
+        };
+    
+        BoxInfo.prototype.paddingBox = function(u) {
+            var bTop = parseFloat(this.style.borderTopWidth.slice(0, -2));
+            var bRight = parseFloat(this.style.borderRightWidth.slice(0, -2));
+            var bBottom = parseFloat(this.style.borderBottomWidth.slice(0, -2));
+            var bLeft = parseFloat(this.style.borderLeftWidth.slice(0, -2));
+            var x = this.x + bLeft;
+            var y = this.y - bTop;
+            var w = this.w - bLeft - bRight;
+            var h = this.h - bTop - bBottom;
+            return new Box(x, y, w, h, u);
+        };
+    
+        BoxInfo.prototype.contentBox = function(u) {
+            var bTop = parseFloat(this.style.borderTopWidth.slice(0, -2));
+            var bRight = parseFloat(this.style.borderRightWidth.slice(0, -2));
+            var bBottom = parseFloat(this.style.borderBottomWidth.slice(0, -2));
+            var bLeft = parseFloat(this.style.borderLeftWidth.slice(0, -2));
+            var pTop = parseFloat(this.style.paddingTop.slice(0, -2));
+            var pRight = parseFloat(this.style.paddingRight.slice(0, -2));
+            var pBottom = parseFloat(this.style.paddingBottom.slice(0, -2));
+            var pLeft = parseFloat(this.style.paddingLeft.slice(0, -2));
+            var x = this.x + bLeft + pLeft;
+            var y = this.y - bTop - pTop;
+            var w = this.w - bLeft - bRight - pLeft - pRight;
+            var h = this.h - bTop - bBottom - pTop - pBottom;
+            return new Box(x, y, w, h, u);
+        };
+    }
 ```
 
 To use the features, the script just needs to be included in the HTML directly as a script, or as an imported JavaScript file.  It is then easy to detect e.g. the width of the content:
 
 ```javascript
-
-
-
+    var e = document.getElementById("someId");
+    var b = e.getPrinceBoxes()[0];
+    console.log("Content width is " + b.contentBox("cm").w + "cm");
 ```
 
-## The "Multi-Pass" Solution
 
+The "Multi-Pass" Solution
+-----------------------
 
-  You need
-    JavaScript in Printed Media
-    Event Handling
-    
-      The Prince Object
-      
-        Multi-Pass formatting
-      
-    
-
+<dl class="ingredients">
+  <dt>You need</dt>
+    <dd><a href="/doc/javascript#javascript-in-printed-media">JavaScript in Printed Media</a></dd>
+    <dd><a href="/doc/javascript#event-handling">Event Handling</a></dd>
+    <dd>
+      <a href="/doc/javascript#the-prince-object">The Prince Object</a>
+      <ul>
+        <li><a href="/doc/javascript#multi-pass-formatting">Multi-Pass formatting</a></li>
+      </ul>
+    </dd>
+</dl>
 
 One limitation of producing a document intended for print is its non-interactive, static nature: in principle a document cannot be modified after it is deemed to be ready for print. See [JavaScript in Printed Media](javascript.md#javascript-in-printed-media).
 
-JavaScript can basically be run twice: the first time it is run before layout, where it interacts with and modifies the layout (and the DOM structure). Once layout is finished, JavaScript can be run a second time from the `` event handler (see [Event Handling](javascript.md#event-handling)) to inspect the layout, without modifying the DOM - the results might be printed to console for monitoring the document for mistakes.
+JavaScript can basically be run twice: the first time it is run before layout, where it interacts with and modifies the layout (and the DOM structure). Once layout is finished, JavaScript can be run a second time from the `complete` event handler (see [Event Handling](javascript.md#event-handling)) to inspect the layout, without modifying the DOM - the results might be printed to console for monitoring the document for mistakes.
 
 A problematic situation arises when you want to modify your document after layout has finished - a typical scenario would be when you want an index to be created with correct page numbers. The content depends on the layout of the document itself.
 
 (Please note that this recipe only addresses the creation of an index - a simple table of contents or a reference to a place on another page can easily be achieved with [target-counter links](gen-content.md#using-target-counter).)
 
-To address this problem, Prince offers the possibility to delay the generation of a PDF and to register the function [``](js-support.md#window.Prince.registerPostLayoutFunc), which is called after layout finished, similar to the current `` event. If this function modifies the DOM, Prince will perform layout again on the updated document once the function returns, and before generating the PDF.
+To address this problem, Prince offers the possibility to delay the generation of a PDF and to register the function [`Prince.registerPostLayoutFunc(func)`](js-support.md#window.Prince.registerPostLayoutFunc), which is called after layout finished, similar to the current `oncomplete` event. If this function modifies the DOM, Prince will perform layout again on the updated document once the function returns, and before generating the PDF.
 
-The post layout function can register itself, or another post layout function, in order to repeat this process multiple times! By default the number of passes is not limited, but in order to prevent endless layout loops you can set a limit by using the [``](command-line.md#cl-max-passes) command-line option.
+The post layout function can register itself, or another post layout function, in order to repeat this process multiple times! By default the number of passes is not limited, but in order to prevent endless layout loops you can set a limit by using the [`--max-passes=N`](command-line.md#cl-max-passes) command-line option.
 
 Here is a minimalistic "multi-pass" solution where the document is adorned with a ToC and index:
 
 ```bash
-
-
-
+    $ prince --javascript https://css4.pub/2020/musick/musick.html -o musick.pdf
 ```
-
 Another use of the "multi-pass" solution is to create changebars - see the description [here](https://www.princexml.com/forum/topic/3516/changebars).
 
 When however scripts need to communicate across multiple input documents, the built-in "multi-pass" solution is not an option - see e.g. the [Multifile Table of Contents](#multifile-table-of-contents), which makes use of a "two-pass" approach by running Prince twice.
 
-## Build Your Own Docu-PDF
 
+Build Your Own Docu-PDF
+-----------------------
 
-  You need
-    Paged Media
-    JavaScript in Printed Media
-    Table of Contents
-
+<dl class="ingredients">
+  <dt>You need</dt>
+    <dd><a href="/doc/paged">Paged Media</a></dd>
+    <dd><a href="/doc/javascript#javascript-in-printed-media">JavaScript in Printed Media</a></dd>
+    <dd><a href="#table-of-contents">Table of Contents</a></dd>
+</dl>
 
 Finally, a neat way of showcasing Prince in action - to generate a PDF of the Prince documentation itself!
 
-If you have Node.js (and, obviously, Prince) installed, there is a neat way of just invoking [the `` package](https://github.com/signcl/docusaurus-prince-pdf#readme) to generate the PDF without any further ado:
+If you have Node.js (and, obviously, Prince) installed, there is a neat way of just invoking [the `docusaurus-prince-pdf` package](https://github.com/signcl/docusaurus-prince-pdf#readme) to generate the PDF without any further ado:
 
 ```bash
-
-
-
+    $ npx docusaurus-prince-pdf -u https://www.princexml.com/doc/ --include-index --selector '.docs-next' --prince-args '\-j'
 ```
 
-Note that you do not need to install ``!
+Note that you do not need to install `docusaurus-prince-pdf`!
 
 This command will generate a PDF of the Prince documentation - without the Installation Guide, given that to run the command, Prince has to be already installed...
 
 We will now detail what exactly happens when executing the command, so that all the steps can also be manually run without having Node.js installed, and for possibly fine-tuning which parts of the documentation you want to print out.
 
-The `` package automatically generates a list of URLs, one for each page of the documentation, and instructs Prince to concatenate all pages into one PDF.  For details on how this works, please check [the documentation](https://www.npmjs.com/package/docusaurus-prince-pdf) for the package itself.
+The `docusaurus-prince-pdf` package automatically generates a list of URLs, one for each page of the documentation, and instructs Prince to concatenate all pages into one PDF.  For details on how this works, please check [the documentation](https://www.npmjs.com/package/docusaurus-prince-pdf) for the package itself.
 
-Interesting for us, is that we have a list with the URLs for all pages of the documentation - let us call it ``:
-
-```
-
-
+Interesting for us, is that we have a list with the URLs for all pages of the documentation - let us call it `list.txt`:
 
 ```
+https://princexml.com/doc/
+https://princexml.com/doc/intro-userguide/
+https://princexml.com/doc/styling/
+https://princexml.com/doc/paged/
+https://princexml.com/doc/gen-content/
+https://princexml.com/doc/javascript/
+https://princexml.com/doc/graphics/
+https://princexml.com/doc/cookbook/
+https://princexml.com/doc/help/
+https://princexml.com/doc/prince-input/
+https://princexml.com/doc/prince-output/
+https://princexml.com/doc/prince-networking/
+https://princexml.com/doc/server-integration/
+https://princexml.com/doc/prince-for-books/
+https://princexml.com/doc/css-length-units/
+https://princexml.com/doc/css-props/
+https://princexml.com/doc/css-selectors/
+https://princexml.com/doc/css-media-queries/
+https://princexml.com/doc/css-functions/
+https://princexml.com/doc/css-at-rules/
+https://princexml.com/doc/css-color-names/
+https://princexml.com/doc/css-refs/
+https://princexml.com/doc/js-support/
+https://princexml.com/doc/command-line/
+https://princexml.com/doc/page-size-keywords/
+https://princexml.com/doc/characters/
+https://princexml.com/doc/acknowledgements/
+```
 
-We now need to tell Prince to generate a PDF, which we shall call ``, from this list, concatenating all pages:
+We now need to tell Prince to generate a PDF, which we shall call `prince-documentation.pdf`, from this list, concatenating all pages:
 
 ```bash
-
-
-
+    $ prince -l list.txt -o prince-documentation.pdf
 ```
 
 But this is not enough yet. 
@@ -1143,10 +1263,10 @@ Prince's [JavaScript Support](js-support.md) is generated... by JavaScript.  To 
 
 Enabling JavaScript is also useful for fixing little glitches in the generated PDF, which usually are being taken care of by the server when viewing the documentation online, in your browser, and for displaying the [table of contents](#table-of-contents), generated from the documentation navigation on your left.
 
+
+
 ```bash
-
-
-
+    $ prince -j -l list.txt -o prince-documentation.pdf
 ```
 
 And that's it!  You now have a PDF of the Prince documentation.
