@@ -674,12 +674,7 @@ Output
 </li>
 </ol>
 
-When the marker position is <code>outside</code>,
-it is rendered outside the <code>li</code> principal box.
-If you want the marker to appear inside the principal box of
-<code>ol</code>,
-make sure to give <code>ol</code> enough left padding
-or <code>li</code> enough left margin.
+When the marker position is `outside`, it is rendered outside the `li` principal box. If you want the marker to appear inside the principal box of `ol`, make sure to give `ol` enough left padding or `li` enough left margin.
 
 #### List marker type
 
