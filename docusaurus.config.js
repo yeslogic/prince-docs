@@ -51,6 +51,7 @@ module.exports = {
     },
     prism: {
         defaultLanguage: 'css',
+        theme: require('prism-react-renderer/themes/duotoneLight'),
     },
   },
   presets: [
