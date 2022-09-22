@@ -29,6 +29,9 @@
 
 /* your custom css */
 
+.alert code {
+  --ifm-code-background: rgba(27,31,35,.05) !important;
+}
 table {
     display: table;
     width: auto;
@@ -102,15 +105,31 @@ dl { padding-bottom: 1em; }
 dd { padding-left: 2em; }
 dl ul { margin-bottom: 0em; }
 
-pre code, code pre {
+code {
+    white-space: pre;
+}
+
+pre code, code pre, .syntax-block code, .grid code {
     white-space: pre-wrap;
 }
-code {
-    background-color: rgba(27,31,35,.05);
-    border-radius: 3px;
-    color: inherit;
+
+#prop-list ul li code {
+    white-space: normal;
 }
-table.property-table, .syntax-block code, .example code {
+
+img {
+    border: 1px solid lightgrey;
+    margin-top: 1em;
+    margin-bottom: 1em;
+}
+img.logo {
+    border: none;
+}
+
+table thead tr th:empty {
+    display: none;
+}
+table.property-table, .syntax-block, .example code {
   border: none;
   background-color: white;
 }
@@ -122,16 +141,13 @@ table.property-table th, table.property-table td {
 }
 table.property-table th {
   white-space: nowrap;
-  text-align: left;
 }
 table.property-table td {
   padding-left: 2.5em;
 }
 .syntax-block {
   margin-bottom: 1em;
-}
-.self-link {
-  visibility: hidden;
+  padding: 0.2em 1em;
 }
 .self-link:after {
   content: " \B6 ";
@@ -148,22 +164,36 @@ table.property-table td {
 #version-nav > summary::-webkit-details-marker {
     display: none;
 }
+#prop-list a, #prop-list a:hover {
+    color: #6e2577 !important;
+    text-decoration: none !important;
+}
 #prop-list summary, #js-support-table summary {
   font-weight: bold;
   padding: 0.7em;
   display: block;
 }
-#prop-list summary .self-link, #js-support-table summary .self-link {
-  opacity: 0.2;
+#prop-list summary .self-link, #js-support-table summary .self-link, .faq .self-link  {
+  opacity: 0;
+  transition: opacity 0.3s;
 }
 p:hover .self-link, #prop-list summary:hover .self-link, #js-support-table summary:hover .self-link {
-  visibility: visible;
+  opacity: 0.2 !important;
 }
 #prop-list details, #js-support-table details {
   border: 1px solid lightgrey;
   border-radius: 10px;
   background-color: #e5f6ee;
   display: block;
+  padding: 0;
+}
+#prop-list > details > div > div {
+    margin-top: 0;
+    border-top: 0;
+    padding-top: 0;
+}
+#prop-list summary::before, #js-support-table summary::before {
+    display: none;
 }
 #prop-list summary:focus, #js-support-table summary:focus {
   outline: none;
@@ -199,6 +229,37 @@ p:hover .self-link, #prop-list summary:hover .self-link, #js-support-table summa
 #prop-list details .hash-link {
     margin-left: 0px;
 }
+#prop-list .programlisting pre {
+    white-space: normal;
+}
+#prop-list summary.dep, span.dep {
+    text-decoration: line-through;
+}
+#prop-list summary.dep, #prop-list summary.dep + div, #prop-list summary.dep + div + div, #prop-list span.dep {
+    opacity: 0.4;
+}
+#prop-list summary#prop---custom-property-name, #prop-list summary#prop---custom-property-name + div .example .syntax-block > code {
+    font-style: italic;
+}
+
+p.note, p.warning {
+    border: 1px solid pink;
+    border-radius: 10px;
+    padding: 10px;
+}
+p.note::before {
+    content: "Note: ";
+    font-weight: bold;
+}
+p.warning::before {
+    content: "Warning: ";
+    color: red;
+    font-weight: bold;
+}
+p.note:only-child {
+    margin-bottom: 0;
+}
+
 #js-support-table details.object {
   background-color: #f2f2f2;
 }
@@ -236,6 +297,7 @@ p:hover .self-link, #prop-list summary:hover .self-link, #js-support-table summa
 }
 #js-support-table .name.level {
   margin-right: 0.5em;
+  font-weight: 500;
 }
 #js-support-table pre {
   background-color: #fff;
@@ -260,10 +322,6 @@ p:hover .self-link, #prop-list summary:hover .self-link, #js-support-table summa
   content: ")";
   font-style: normal;
 }
-#js-support-table .ext .argslist::after {
-  content: ")*";
-  font-style: normal;
-}
 #js-support-table .argslist {
   font-style: italic;
 }
@@ -277,6 +335,9 @@ p:hover .self-link, #prop-list summary:hover .self-link, #js-support-table summa
 #js-support-table .ext .example {
   background-color: #f2f2f2;
 }
+#js-support-table .ext summary code b::after {
+  content: "*";
+}
 #js-support-table .ext .ext {
   padding-top: 0px;
   padding-right: 0px;
@@ -284,86 +345,8 @@ p:hover .self-link, #prop-list summary:hover .self-link, #js-support-table summa
 #js-support-table .url-property::before {
   content: "See the property ";
 }
-#ex-list-marker-position {
-  border: solid 2px darkgreen;
-}
-#ex-list-marker-position li {
-  border: solid 1px black;
-  list-style-position: inside;
-}
-#ex-list-marker-position li+li {
-  border: solid 1px black;
-  list-style-position: outside;
-}
-#ex-list-marker-type li {
-  list-style-type: upper-alpha;
-}
-#ex-list-marker-type li+li {
-  list-style-type: lower-roman;
-}
-#ex-separated-table-borders {
-  border-collapse: separate;
-  border-spacing: 5px;
-  border: solid 3px black;
-}
-#ex-separated-table-borders .border-red, #ex-collapsing-table-borders .border-red {
-  border: solid 1px red;
-}
-#ex-separated-table-borders .border-blue, #ex-collapsing-table-borders .border-blue {
-  border: 2px dashed blue;
-}
-#ex-separated-table-borders .border-green, #ex-collapsing-table-borders .border-green {
-  border: 2px solid green;
-}
-#ex-collapsing-table-borders {
-  border-collapse: collapse;
-  border-spacing: 5px;
-  border: solid 3px black;
-}
-.colspan2 {
-    text-align: center;
-}
-.rowspan2 {
-    vertical-align: middle;
-}
-#ex-prince-wrap-inside-1, #ex-prince-wrap-inside-2 {
-    text-align: center;
-}
-#table-page-regions .background-color-yellow {
-    background-color: #ff8;
-}
-#table-page-regions .background-color-red {
-    background-color: #f88;
-}
-#table-page-regions .background-color-green {
-    background-color: #8f8;
-}
-#table-page-regions .background-color-blue {
-    background-color: #88f;
-}
-sup {
-    vertical-align:super;
-    font-size:smaller;
-}
 dl.faq dt p {
     font-weight: bold;
-}
-p.note, p.warning {
-    border: 1px solid pink;
-    border-radius: 10px;
-    padding: 10px;
-}
-p.note::before {
-    content: "Note: ";
-    font-weight: bold;
-}
-p.warning::before {
-    content: "Warning: ";
-    color: red;
-    font-weight: bold;
-}
-p.note:only-child {
-    margin-bottom: 0;
 }
 a[href*='//']:not([href*='princexml.com'])::after {
   content: " \21D7";
@@ -376,6 +359,51 @@ footer a[href] {
 }
 footer a[href]:hover {
     text-decoration: underline;
+}
+
+.navListItemActive a {
+    font-weight: bold;
+}
+
+.navListItemActive a:hover {
+    padding-left: 0px !important;
+}
+
+ul.toc-headings {
+    padding-left: 0px !important;
+}
+ul.toc-headings li a {
+    padding-left: 15px;
+}
+
+ul.toc-headings li a.active {
+    border-left: 2px solid #e0e0e0;
+    padding-left: 13px;
+}
+
+ul.toc-headings li ul.toc-headings li a {
+    padding-left: 30px;
+}
+
+ul.toc-headings li ul.toc-headings li a.active {
+    border-left: 2px solid #e0e0e0;
+    padding-left: 28px;
+}
+
+.navListItemActive a.active {
+    border-left: 2px solid #e0e0e0;
+}
+
+.toc .toggleNav h4 {
+    font-weight: normal !important;
+}
+
+.toc .toggleNav ul {
+    padding-left: 12px;
+}
+
+.toc .toggleNav ul a:hover {
+    padding-left: 1px;
 }
 
 @media only screen and (min-device-width: 360px) and (max-device-width: 736px) {
@@ -391,4 +419,74 @@ footer a[href]:hover {
 }
 
 @media only screen and (min-width: 1500px) {
+}
+
+@media print {
+    @page {
+        size: A4;
+        margin: 0em 2em 2em;
+        margin-inside: 4em;
+        @bottom-center {
+            content: counter(page);
+        }
+    }
+    @prince-pdf {
+        -prince-pdf-display-doc-title: true;
+    }
+    h1, h2, h3, h4, h5 {
+        break-after: avoid;
+    }
+    h3 + h4 {
+        break-before: avoid !important;
+    }
+    #version-nav, .fixedHeaderContainer, footer, #docsNav, .navBreadcrumb, .arrow, .docs-prevnext, .toggle, #toggle-js, #idx-contens + p, #idx-contens + p + ul {
+        display: none;
+    }
+    #idx {
+        padding-top: 50%;
+    }
+    p, pre {
+        orphans: 2;
+        widows: 2;
+    }
+    p:contains('CSS') + pre, p:contains('HTML') + pre, p:contains('XML') + pre, p:contains('SVG') + pre, p:contains('JavaScript') + pre, p:contains('fonts.css') + pre, p:contains('Output') + ol, p:contains('Output') + table, p:contains('Novel title') + p, p:contains('Textbook page') + p, p:contains('Box decoration') + p, p:contains('Furniture catalogue') + p, p:contains('Printing a big table') + p  {
+        break-before: avoid !important;
+    }
+    pre, p:contains('Output') {
+        break-inside: avoid;
+    }
+    details, p.note, p.warning {
+        box-decoration-break: slice;
+    }
+    a[href]::after {
+        content: " [see page " target-counter(attr(href), page) "]";
+        color: black;
+    }
+    a[href*='//']:not([href*='princexml.com'])::after {
+        content: " [at the URL " attr(href) "]" !important;
+        color: black;
+    }
+    a[href*='first']::after, a[href*='install']::after, a[href*='samples']::after, a[href*='forum']::after, a[href*='contact']::after, a[href*='download']::after, a[href='/books/']::after, a[href*='/howcome/']::after  {
+        content: " [available only online]" !important;
+        color: black;
+    }
+    a[href].hash-link::after, #prop-list details a[href]::after, a[href='https://www.princexml.com/']::after  {
+        content: "" !important;
+    }
+    #docsNav {
+        break-after: page;
+    }
+    #docsNav .navGroup.subNavGroup {
+        break-inside: avoid !important;
+    }
+    #docsNav a[href]::after {
+        content: leader('.') "p. " target-counter(attr(href), page);
+    }
+    #docsNav .toc .toggleNav ul ul {
+        padding-right: 0px;
+    }
+    #docsNav .toc .toggleNav ul li.navListItemActive a {
+        font-weight: normal;
+        color: #717171;
+    }
 }
