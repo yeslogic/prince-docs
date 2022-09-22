@@ -21,7 +21,7 @@ The [API documentation](https://yeslogic.github.io/prince-java-wrapper) lists th
 
 The following code sample demonstrates how to convert a single HTML document into a PDF file:
 
-```java
+```java title="JAVA"
 
 import com.princexml.wrapper.Prince;
 
@@ -58,7 +58,7 @@ Please note that document scripts need to first be enabled with `JavaScript = tr
 
 The following code sample demonstrates how to convert a single HTML document into a PDF file:
 
-```cs
+```cs title="C# / .NET"
 
 using PrinceXML.Wrapper;
 
@@ -91,7 +91,7 @@ Please note that document scripts need to first be enabled with `JavaScript = tr
 
 The following code sample demonstrates how to convert a single HTML document into a PDF file:
 
-```vbnet
+```vbnet title="VB.NET"
 
 ' Instantiate Prince by specifying the full path to the engine executable.
 Dim prn As New PrinceXML.Wrapper.Prince(
@@ -123,7 +123,7 @@ The [API documentation](https://yeslogic.github.io/prince-php-wrapper) lists the
 
 When instantiating the `Prince` class, pass in the full path of the Prince executable to the constructor as a string argument.
 
-```php
+```php title="P"
 
 use Prince\Prince;
 
@@ -177,7 +177,7 @@ If on Linux, substitute the paths with the appropriate UNIX style paths.
 
 Prince can be called from Python using the command-line interface, like this:
 
-```python
+```python title="Python"
 
 import subprocess
 
@@ -187,7 +187,7 @@ subprocess.call(["prince", "foo.xml", "-o", "bar.pdf"])
 
 It is possible to write XML/HTML to Prince directly from the Python script rather than have Prince read it from an external file:
 
-```python
+```python title="Python"
 
 import subprocess
 
@@ -215,7 +215,7 @@ The first filename argument of `-` instructs Prince to read the XML/HTML from it
 
 For Python CGI scripts, the PDF output can be written to the standard output stream so that it is returned to the browser:
 
-```python
+```python title="Python"
 
 import subprocess
 
@@ -240,7 +240,7 @@ Because the second filename argument has been omitted and the XML/HTML is being 
 
 Alternatively, it is possible for the Python script to read the PDF output directly rather than have Prince save it to an external file:
 
-```python
+```python title="Python"
 
 import subprocess
 
@@ -268,7 +268,7 @@ else:
 
 Prince can be called from Perl using the [command-line interface](command-line.md), like this:
 
-```perl
+```perl title="Perl"
 
 system("prince foo.xml -o bar.pdf");
 
@@ -276,7 +276,7 @@ system("prince foo.xml -o bar.pdf");
 
 It is possible to write XML/HTML to Prince directly from the Perl script rather than have Prince read it from an external file:
 
-```perl
+```perl title="Perl"
 
 open(PRINCE, "| prince - -o out.pdf");
 print PRINCE "<html><body><h1>Hello, world!</h1>";
@@ -288,7 +288,7 @@ The first filename argument of `-` instructs Prince to read the XML/HTML from it
 
 For Perl CGI scripts, the PDF output can be written to the standard output stream so that it is returned to the browser:
 
-```perl
+```perl title="Perl"
 
 print "Content-Type: application/pdf\n\n";
 open(PRINCE, "| prince -");
@@ -301,7 +301,7 @@ Because the second filename argument has been omitted and the XML/HTML is being 
 
 Alternatively, it is possible for the Perl script to read the PDF output directly rather than have Prince save it to an external file:
 
-```perl
+```perl title="Perl"
 
 open(PRINCE, "prince foo.xml -o - |");
 # ... Read PDF output from PRINCE file handle.
@@ -328,7 +328,7 @@ we detail here installation procedures for Prince on Docker, Azure, AWS Lambda a
 
 Prince can easily be deployed in Docker images.  On the Docker Hub you can find [the Prince Dockerfiles](https://hub.docker.com/r/yeslogic/prince).  To pull the images, run the Docker command:
 
-```
+```bash
 
 docker pull yeslogic/prince
 
@@ -336,7 +336,7 @@ docker pull yeslogic/prince
 
 The Prince images can be run with the following command:
 
-```
+```bash
 
 docker run --rm -it yeslogic/prince
 
@@ -344,7 +344,7 @@ docker run --rm -it yeslogic/prince
 
 They can be run with a `license.dat` file in the following way:
 
-```
+```bash
 
 docker run --rm -it -v /path/on/host/license.dat:/usr/lib/prince/license/license.dat yeslogic/prince
 
@@ -352,7 +352,7 @@ docker run --rm -it -v /path/on/host/license.dat:/usr/lib/prince/license/license
 
 If, however, you want to run a specific Prince version, rather than the latest, you need to add the version tag to the command:
 
-```
+```bash
 
 docker run --rm -it yeslogic/prince:13.1
 

@@ -156,9 +156,7 @@ The [`Prince.pageCount`](js-support.md#window.Prince.pageCount) property can be 
 
 Prince also offers the possibility to register the function [`Prince.registerPostLayoutFunc(func)`](js-support.md#window.Prince.registerPostLayoutFunc), which is called after layout finished, similar to the current `oncomplete` event. If this function modifies the DOM, Prince will perform layout again on the updated document once the function returns, and before generating the PDF.
 
-JavaScript
-
-```javascript
+```javascript title="Javascript"
 
     Prince.registerPostLayoutFunc(function() {
         var str = '@prince-color Color1 { alternate-color: cmyk(1,0,0,0) }';
@@ -168,9 +166,7 @@ JavaScript
 
 ```
 
-HTML
-
-```html
+```html title="HTML"
 
     <style id='add'></style>
     <p style='color: prince-color(Color1)'>This was black, becomes cyan</p>
@@ -282,7 +278,7 @@ The [`PDF.pages`](js-support.md#window.PDF.pages) array mentioned earlier (see [
 
 _Boxes_ are JavaScript objects with some or all of the following properties:
 
-```
+```javascript
 
 type =          "BODY" |
                 "COLUMN" |

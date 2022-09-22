@@ -8,9 +8,7 @@ This can be convenient when you wish to include characters such as smart quotes,
 
 Here is an example of including smart quotes in an XML document using character entities:
 
-XML
-
-```xml
+```xml title="XML"
     <p>
     These are &#x201C;smart quotes&#x201D; to be precise.
     </p>
@@ -21,9 +19,7 @@ Output
 
 A typical usecase for character entities in CSS is the [`-prince-text-replace`](css-props.md#prop-prince-text-replace) property, which replaces a certain character string with another one. In the sample ["Reconstructed Essay"](sample-docs.html#essay) ([HTML](http://www.princexml.com/howcome/2016/samples/malthus/essay.html) - [PDF](http://www.princexml.com/howcome/2016/samples//malthus/essay.pdf)), the property is used to replace occurrences of "s" with the "long s" to recreate the original printed book.
 
-CSS
-
-```
+```css title="CSS"
     body {
       -prince-text-replace: "s" "\017F";
     }

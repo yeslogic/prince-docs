@@ -42,7 +42,7 @@ Prince allows you to control a number of options that affect how to format pages
 
 CSS properties that affect pages are specified within page _at-rules_ (see [CSS At-rules](css-at-rules.md)). For example, we can use the [`size`](css-props.md#prop-size) property within the [`@page`](css-at-rules.md#at-page) rule to specify the page size (see [Page size](#page-size)).
 
-```
+```css
 
     @page {
         size: A4
@@ -54,7 +54,7 @@ In this section we will show most of the properties that can be specified within
 
 The initial values for CSS properties are defined internally - these are the initial `@page` styles:
 
-```
+```css
 
     @page {
         margin: 54pt;
@@ -77,7 +77,7 @@ The initial values for CSS properties are defined internally - these are the ini
 
 Page size can be specified using the [`size`](css-props.md#prop-size) property in _length_ units or by a page size keyword (see [Page Size Keywords](page-size-keywords.md) for a list), optionally combined with the `portrait` or `landscape` keyword.
 
-```
+```css
 
     /* Use A4 paper */
     @page { size: A4 }
@@ -96,7 +96,7 @@ Page size can be specified using the [`size`](css-props.md#prop-size) property i
 
 Sometimes it can be useful to specify the page dimensions in pixels, for example when creating presentation slides (see the [Presentation slides example](#fig-slides)).
 
-```
+```css
 
     @page {
         size: 1280px 960px;
@@ -110,7 +110,7 @@ Pages, like other block level elements, follow the CSS box model introduced in [
 
 The [`@page`](css-at-rules.md#at-page) rules can only style the page and its margin boxes - it cannot contain style rules to target specific elements, but it can contain at-rules to target the page regions (for a complete list of possible at-rules, see [Page regions](#page-regions)).
 
-```
+```css
 
     @page {
         margin: 2cm;
@@ -120,7 +120,7 @@ The [`@page`](css-at-rules.md#at-page) rules can only style the page and its mar
 
 Prince also supports the `margin-outside` and `margin-inside` properties. These allow you to specify different margins for the inside and outside edges of paper as it is bound into a book. For example it may be necessary to have a larger inside margin (called a _gutter_) so that after some of the margin is used by the binding, the remaining margins are even.
 
-```
+```css
 
     @page {
         margin: 2cm;
@@ -423,9 +423,7 @@ The `page` counter can be reset using the [`counter-reset`](css-props.md#prop-co
 
 <p id="fig-restart-page-numbers">Restarting page numbering</p>
 
-HTML
-
-```html
+```html title="HTML"
 
     <body>
         <div class="front"> cover page, etc, ... </div>
@@ -442,9 +440,7 @@ HTML
 
 ```
 
-CSS
-
-```css
+```css title="CSS"
 
     .contents {
         display: block;
@@ -488,7 +484,7 @@ Pages that don't match either of these names have the default style, which does 
 
 In some documents, particularly those that are unbound such as office documents, it can be useful to show the total number of pages on each page. The total number of pages can be accessed using the `pages` counter. This is a pre-defined counter that is fixed to the total number of pages in the document.
 
-```
+```css
 
     @page {
         @bottom-center {
@@ -509,7 +505,7 @@ Fancy headers
 
 This example demonstrates a more complete headers style. It uses generated content to print page numbers, the chapter number and title and the section number and title using different styles for left and right pages. It also prints an underline under the header.
 
-```
+```css
 
     @page {
         font-family: Times, Serif;
@@ -594,9 +590,7 @@ The main content area is 2.5cm from the page's edge on all sides. On the left an
 
 Generated content in page regions may contain text content copied from the document using the [`string-set`](css-props.md#prop-string-set) property:
 
-CSS
-
-```
+```css title="CSS"
 
     @page {
         @top-center {
@@ -614,7 +608,7 @@ The second argument to the `string()` function is a `page-policy` (see [The opti
 
 For a dictionary, you might want to have a page header that says "a-af", where "a" is the first definition on the page and "af" is the last, so you apply `string-set` for each definition, and then you can select the `first` and `last` one with a page policy in the page header.
 
-```
+```css
 
     @page {
       @top-left { content: string(term, first);}
@@ -627,7 +621,7 @@ The page policy value `first-except` is equivalent to `start`, _unless_ the `str
 
 This can be very useful as a means to repeating the title of a chapter as a page heading in the `@top-center` page region, without duplicating the information on the page where the heading appears in the running text of the page.
 
-```
+```css
 
     @page {
       @top-center { content: string(letter, first-except);}
@@ -646,9 +640,7 @@ Page region content may also be taken from the document itself. Any block-level 
 
 To move the content into a page region, the element needs to be removed from the normal document flow position with the `running()` function of the [`position`](css-props.md#prop-position) property, and inserted into the specified region with the `element()` function of the [`content`](css-props.md#prop-content) property.
 
-CSS
-
-```
+```css title="CSS"
 
     @page {
         @top-center { content: element(header) }
@@ -663,9 +655,7 @@ The rule for the `h1` element moves it to the "header" running element, removing
 
 Prince also provides another interface for creating running headers: the content can be removed from the normal flow with `-prince-flow: static()`, to be placed in a page region with `content: flow()`.
 
-CSS
-
-```
+```css title="CSS"
 
     @page {
         @bottom-center { content: flow(footer) }
@@ -678,7 +668,7 @@ In addition to the standard mechanism, the Prince specific one offers an extra f
 
 Many HTML documents designed for browsers have the following structure:
 
-```html
+```html title="HTML"
 
     <header>
     main content
@@ -848,7 +838,7 @@ Selectors such as `:first`, `:Nth`, `:left` and `:right` also work with named pa
 
 This example only works when a page name is used only once within a document, such as for the preface of a document (documents only have one preface). If you wish to apply a style to the first page of every chapter then you must use the [`-prince-page-group`](css-props.md#prop-prince-page-group) property to create _page groups_:
 
-```
+```css
 
     div.chapter {
         page: chapter;
@@ -935,7 +925,7 @@ This can happen either:
 
 Prince provides the [`-prince-page-group`](css-props.md#prop-prince-page-group) property that can be used to start a new page group. It can be seen in [Fancy headers](#fig-fancyheader) applied to h1 elements in the body of the document.
 
-```
+```css
 
     div.body h1 {
         break-before: right;
@@ -955,7 +945,7 @@ Prince will create page breaks automatically when new content will not fit on a 
 
 The simplest case is when you want to explicitly create a page break. This is typically used at the beginning of a chapter, to start the new chapter on a new page.
 
-```
+```css
 
     h1 {
         break-before: page;
@@ -965,7 +955,7 @@ The simplest case is when you want to explicitly create a page break. This is ty
 
 The property [`break-before`](css-props.md#prop-break-before) is used to force a page break immediately before an `h1` element. New chapters are often started on the _recto_ pages in text books, this is usually the right page:
 
-```
+```css
 
     h1 {
         break-before: right
@@ -979,7 +969,7 @@ Other values are `auto`, `avoid`, `avoid-page`, `avoid-column`, `left`, as well 
 
 The previous example could therefore also have been written in the following, more semantic (and possibly more flexible) way:
 
-```
+```css
 
     h1 {
         break-before: recto
@@ -996,9 +986,7 @@ Two overhead slides for a presentation. The slides use white on black for better
 
 It is necessary to force a page break when creating overhead slides. This can be done by placing the content for each slide in a `<div class="slide">` and using `break-before: page` as shown below. This example shows other styling that may be required to create presentation slides.
 
-CSS
-
-```css
+```css title="CSS"
 
     @page {
         size: 1280px 960px;
@@ -1040,9 +1028,7 @@ CSS
 
 ```
 
-HTML
-
-```html
+```html title="HTML"
 
     <div class="slide">
       <h2>Slide Title</h2>
@@ -1066,7 +1052,7 @@ A rendered slide for this example is shown in [Presentation slides example](#fig
 
 So far we have discussed forcing a page break, however suppressing page breaks is also important. For example, it is poor style to have a page break between a header and the first paragraph of a section. Therefore, the default Prince stylesheet will use the [`break-after`](css-props.md#prop-break-after) property to suppress page breaks immediately after headers:
 
-```
+```css
 
     h1, h2, h3, h4, h5, h6 {
         break-after: avoid
@@ -1078,7 +1064,7 @@ If a heading occurs at the bottom of a page, it may be moved to the next page to
 
 Avoiding page breaks within an element is also important. For example, it is best to avoid breaks within a figure or table. This can be done with the [`break-inside`](css-props.md#prop-break-inside) property:
 
-```
+```css
 
     .figure, table {
         break-inside: avoid
@@ -1105,7 +1091,7 @@ When a page (or column) break occurs within a box (such as a div) its bottom and
 ![The box on the left is completely enclosed by its border (clone); while the box on the right has no border at the bottom where it wraps onto the next page (slice).](assets/samples/box-decoration-break-1.bw.png)
 This figure shows the result of using the [`box-decoration-break`](css-props.md#prop-box-decoration-break) property. On the left the `clone` value is used while on the right `slice` is used. The [PDF](assets/samples/box-decoration-break.pdf) and [HTML](assets/samples/box-decoration-break.html) are available for download.
 
-```
+```css
 
     div.box1 {
         box-decoration-break: clone
@@ -1115,7 +1101,7 @@ This figure shows the result of using the [`box-decoration-break`](css-props.md#
 
 If instead you wish the borders to remain open, as if the box were simply _sliced_ in half, as in the right of [Box decoration break sample](#fig-boxdecorationbreak), then you can set this property to `slice`.
 
-```
+```css
 
     div.box2 {
         box-decoration-break: slice
@@ -1127,7 +1113,7 @@ If instead you wish the borders to remain open, as if the box were simply _slice
 
 Just as breaking a page between a heading and the first paragraph below the heading can look bad, breaking the page after only one or two lines of a paragraph also looks bad. These stray lines are called _orphans_. The minimum number of orphans to allow can be specified with the [`orphans`](css-props.md#prop-orphans) property (the default is 1).
 
-```
+```css
 
     p {
         orphans: 2
@@ -1137,7 +1123,7 @@ Just as breaking a page between a heading and the first paragraph below the head
 
 Likewise the minimum number of lines to move to a new page (_widows_) can be specified with the [`widows`](css-props.md#prop-widows) property (the default is 1).
 
-```
+```css
 
     p {
         widows: 2
@@ -1156,7 +1142,7 @@ Furniture catalogue example
 ![Furniture catalogue with bleed and trim areas for printing and cropping. The background image is larger than the page (but not the paper), by cutting where the crop marks indicate the background image extends right to the edge of the page.](assets/samples/croparea-1.colour.png)
 The furniture catalogue with bleed and trim areas for printing and cropping. Download the [PDF](assets/samples/croparea.pdf) or the [HTML](assets/samples/croparea.html) and [CSS](assets/samples/croparea.css).
 
-```
+```css
 
     @page{
         size: 8.5in 10.5in;

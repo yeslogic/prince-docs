@@ -7,7 +7,7 @@ The initial focus of work is on the features common to all books: making the pag
 
 For the time being, Prince for Books is only available as a a command-line application named `prince-books`. It is used like the standard Prince - see [Command-line Reference](command-line.md) for available options.
 
-```
+```bash
 
 prince-books OPTIONS FILES [-o PDF]
 
@@ -33,18 +33,14 @@ This property would most commonly be used in headings, or perhaps in important p
 
 To make it more likely for Prince for Books to produce this effect, one might put `span` elements around phrases, styling each of these spans with `-prince-wrap-inside: phrase`.
 
-HTML
-
-```html
+```html title="HTML"
 
     <h1>The <span>fulfilment <span>of the law</span></span>
       <span>and <span>of the prophets</span></span></h1>
 
 ```
 
-CSS
-
-```css
+```css title="CSS"
 
     span {
       -prince-wrap-inside: phrase;
@@ -91,7 +87,7 @@ The keyword `fast` can be used for quick web-browers–style line breaking, usef
 
 The base stylesheet that Prince for Books applies to all HTML documents (i.e. the "user-agent style sheet", in CSS terminology) includes the ruleset
 
-```
+```css
 
     h1, h2, h3, h4, h5, h6 {
         -prince-line-break-choices: heading;
@@ -103,9 +99,7 @@ but HTML semantics alone do not distinguish content where the more extreme `-pri
 
 The below example applies `title-lookahead` line-breaking to the book title, chapter titles and part titles, while applying `heading-lookahead` line-breaking to subtitles.
 
-CSS
-
-```
+```css title="CSS"
 
     body[data-type="book"] > h1,
     body[data-type="book"] > heading > h1,
@@ -130,9 +124,7 @@ The property [`-prince-forced-breaks`](css-props.md#prop-prince-forced-breaks) c
 
 The `br` element would usually create a visually forced break, treating that line much as if it were the last line of a paragraph. For example, it would continue to do so in any UA not supporting the property [`-prince-forced-breaks`](css-props.md#prop-prince-forced-breaks) (thus getting in the way of reading the content in some other UA, or using the same source document for web/epub deployment), or if the stylesheet doesn't load. Tweaking line breaks using `-prince-forced-breaks: full` is not intended to be consciously noticeable by readers, so `br` would not be the best approximation in HTML.
 
-CSS
-
-```
+```css title="CSS"
 
     lb { white-space: pre; }
     lb::before { content: "\A"; -prince-forced-breaks: full; }
@@ -145,9 +137,7 @@ Literally using the element name `lb` in the html namespace would make the docum
 
 If multiple editions are to produced from a single source document, then a variation would be
 
-CSS
-
-```
+```css title="CSS"
 
     lb[ed ~= "a"]::before { ... }
 
@@ -155,9 +145,7 @@ CSS
 
 in the stylesheet for edition A (and similarly for the stylesheets of other editions), and
 
-HTML
-
-```html
+```html title="HTML"
 
     <lb ed="a c" />
 
@@ -205,7 +193,7 @@ Alternatives to adjusting a paragraph length include adding extra space around a
 
 Another feature in Prince for Books are the "fractional widows": the [`widows`](css-props.md#prop-widows) property is allowed a value expressed as percentage.
 
-```
+```css
 
     p {
       widows: 50%;

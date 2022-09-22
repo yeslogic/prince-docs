@@ -26,7 +26,7 @@ The transformation into a proper table of contents happens with CSS when Prince 
 
 This is achieved automatically with the `target-counter()` function in the [`content`](css-props.md#prop-content) property, using the `page` counter. The URL is being automatically fetched from the `href` attribute of the hyperlink element `<a>`.
 
-```
+```css
 
     #toc a::after {
       content: target-counter(attr(href), page);
@@ -36,7 +36,7 @@ This is achieved automatically with the `target-counter()` function in the [`con
 
 The page numbers are best styled right-aligned, while the link texts are left-aligned. An easy way to achieve this is with the `leader()` function: it defines a literal string, which expands to fill the available space on the line like justified text, by repeating the string as many times as necessary. The complete CSS entry for a simple table of contents entry thus looks like this:
 
-```
+```css
 
     #toc a::after {
       content: leader('.') target-counter(attr(href), page);
@@ -114,7 +114,7 @@ The basic unit for paged media in print is the page, organized in page spreads: 
 
 You have control on wether to place specific selected and named pages right or left, or _recto_ or _verso_ with the help of `break-before` and `break-after`, each of which takes the values `recto` and `verso` in addition to the traditional values.
 
-```
+```css
 
     h1 {
         break-before: recto;
@@ -130,7 +130,7 @@ Pages can also be specifically targeted and styled with the [`@page`](css-at-rul
 
 Using the values `right` and `left` when placing elements on pages symmetrically arranged around the central gutter is possible, but rather cumbersome, since their placement depends on the placement of the page on a spread. Prince offers the extensions `inside` and `outside` to ease the task.
 
-```
+```css
 
     p {
         margin: 2em;
@@ -148,7 +148,7 @@ This example creates a bigger margin around the central gutter.
 
 So, when you start thinking about the layout box model, Prince offers the properties `margin-inside` and `margin-outside` to help styling.
 
-```
+```css
 
     p { 
         margin: 2em;
@@ -163,7 +163,7 @@ Floats are particularly sensitive to the placement on the page with regards to w
 
 On a paragraph level, the properties [`text-align`](css-props.md#prop-text-align) and [`text-align-last`](css-props.md#prop-text-align-last) similarly take the keywords `inside` and `outside` to help achieving a smooth layout.
 
-```
+```css
 
     @page:verso {
         @top-left { content: counter(page) }
@@ -210,7 +210,7 @@ Tables can also be provided with a table caption by using the `caption` HTML ele
 
 When a table spans across more than one page, the [`-prince-caption-page`](css-props.md#prop-prince-caption-page) property determines whether table captions will be displayed on the first page of a table, or only on the following pages, or repeated on every page that a table appears on. See also [Fancy Table Captions](#fancy-table-captions).
 
-```
+```css
 
     table + p {
         display: table-caption;
@@ -241,9 +241,7 @@ You might define a caption in HTML for the main table caption - to be displayed 
 
 The paragraph functioning as a table caption can be hidden in browsers by using [CSS Media Queries](css-media-queries.md#media-queries).
 
-HTML
-
-```html
+```html title="HTML"
 
     <table>
       <caption>Demo table</caption>
@@ -264,9 +262,7 @@ HTML
 
 ```
 
-CSS
-
-```
+```css title="CSS"
 
     caption {
         caption-side: bottom;
@@ -296,7 +292,7 @@ Each page is structured in [Page regions](paged.md#page-regions) - most page con
 
 A typical case is page numbering, which can easily be obtained with [Generated Content](gen-content.md): the current page number can be printed in a page region with the [`content`](css-props.md#prop-content) property. (See also [Page Numbering](#page-numbering)).
 
-```
+```css
 
     @page {
         @bottom {
@@ -310,9 +306,7 @@ By using [Named pages](paged.md#named-pages), you can style the page numbering o
 
 The title of the book, or the current chapter, can be copyied into the page regions by using the [string-set](css-props.md#prop-string-set) property. For details, please see the [Copying content from the document](paged.md#copying-content-from-the-document) chapter.
 
-CSS
-
-```
+```css title="CSS"
 
     @page {
         @top { content: string(doctitle) }
@@ -345,7 +339,7 @@ A peculiar and interesting use of page headers happens in dictionaries: typicall
 
 The [`string-set`](css-props.md#prop-string-set) property is applied to each definition in the dictionary (the `b:first-child` from the following example), and then the `first` and `last` page policy values are use to select the relevant definition to display in the page header.
 
-```
+```css
 
     @page {
       @top-left { content: string(term, first);}
@@ -359,7 +353,7 @@ This is the crucial set of rules for the [Dictionary](/samples/#dictionary) samp
 
 The dictionary sample is furthermore noticeable for its use of the optional page policy keyword `first-except`: the current letter of the alphabet is displayed on each page heading, _except_ for the page on which the letter appears in the body of the page, starting the new section.
 
-```
+```css
 
     @page {
       @top-center { content: string(letter, first-except);}
@@ -397,7 +391,7 @@ To use a counter, it usually first needs to be initialized with the [`counter-re
 
 Page counters work a bit more simple and usually don't need to be explicitly initialized or incremented.
 
-```
+```css
 
     @page {
       @bottom {
@@ -434,9 +428,7 @@ However, if you want to restart the numbering after the Preface of your book, yo
 
 The page numbers can be referenced with the `target-counter()` function. This provides a convenient mechanism when you want to print out a page reference that on an interactive medium, such as can be seen in a web browser, might be expressed with a hyperlink.
 
-CSS
-
-```
+```css title="CSS"
 
     a[href]::after {
         content: " [See page " target-counter(attr(href), page) "]";
@@ -448,9 +440,7 @@ This will add a cross-reference after every link with the correct page number de
 
 If you are referencing the pages in the Preface, marked with lower roman-style numbers, you need to re-specify the counter style for the target counter - the style is not automatically taken over.
 
-CSS
-
-```
+```css title="CSS"
 
     a[href|="#preface"]::after {
         content: " [See page " target-counter(attr(href), page, lower-roman) "]";
@@ -460,7 +450,7 @@ CSS
 
 In some documents, particularly those that are unbound such as office documents, it can be useful to show the total number of pages on each page. The total number of pages can be accessed by using the `pages` counter. This is a pre-defined counter that is fixed to the total number of pages in the document.
 
-```
+```css
 
     @page {
       @bottom {
@@ -511,7 +501,7 @@ When another foonote call needs to be pointing at this, already existing footnot
 
 This footnote call will be created by using the generated content function `target-counter()` referencing the footnote counter.
 
-```
+```css
 
     content: target-counter(attr(href), footnote);
 
@@ -519,7 +509,7 @@ This footnote call will be created by using the generated content function `targ
 
 When creating regular footnotes, Prince automatically takes care of the styling of the footnote calls, but the manually created ones need to be explicitly styled. The following are the default rules that style a footnote call - here shown with all the rules necessary for creating all the footnote calls:
 
-```
+```css
 
     .fn {
         float: footnote;
@@ -568,7 +558,7 @@ We shall see each approach separately.
 
 A straightforward approach for sidenotes is to position the footnote area to the desired place, instead of leaving it in its default position.
 
-```
+```css
 
     @page {
         @footnote {
@@ -590,7 +580,7 @@ The biggest disadvantage is that the footnotes are not placed to the side of the
 
 The footnote text is floated to the left (or right) and moved out of the way with negative margins.
 
-```
+```css
 
     .footnote {
       float: left;
@@ -666,9 +656,7 @@ The `target-counter()` function can be used to reference the value of a counter 
 
 Used with generated content after a hyperlink, it will add a cross-reference with the correct page number determined automatically.
 
-CSS
-
-```
+```css title="CSS"
 
     a[href]::after {
         content: " [See page " target-counter(attr(href), page) "]"
@@ -680,9 +668,7 @@ This adds something like "\[See page 17]" after each link. Note the use of the f
 
 It can also take an optional counter style, similar to the normal `counter()` function.
 
-CSS
-
-```
+```css title="CSS"
 
     a[href]::after {
         content: " [See chapter "
@@ -696,9 +682,7 @@ This will add a cross-reference after every link with the correct chapter number
 
 The `target-content()` function can be used to reference the text content of the linked element.
 
-CSS
-
-```
+```css title="CSS"
 
     a[href]::after {
         content: " [See '" target-content(attr(href)) "']"
@@ -710,9 +694,7 @@ This will add a cross-reference after every link that includes the text of the e
 
 The `attr()` function, used in the previous examples inside the other functions, can also be used on its own to insert the URL of a remote resource.
 
-CSS
-
-```
+```css title="CSS"
 
     a[href]::after {
         content: " [Located at '" attr(href) "']";
@@ -747,7 +729,7 @@ Two more keywords perform more obscure tasks that might be required in very spec
 
 Several of the values can be combined, to perform more than one magic on images - for details please check the grammar of the [`-prince-image-magic`](css-props.md#prop-prince-image-magic) property.
 
-```
+```css
     img {
         -prince-image-magic: recompress-jpeg(50%) convert-to-jpeg(50%) snap-to-integer-coords;
     }
@@ -856,22 +838,22 @@ The renaming of the file is not essential - the content, not the extension count
 
 Prince determines which language to use for hyphenation with the help of the `:lang()` CSS selector, which in turn checks the `lang` or `xml:lang` attributes of the document:
 
-```
+```css title="CSS"
     :lang(en-GB) {
         -prince-hyphenate-patterns: url("hyph-en-gb.pat");
     }
 ```
-```html
+```html title="HTML"
     <span lang="en-GB">supercalifragilisticexpialidocious</span>
 ```
 Alternatively, link directly to the required remote hyphenation file:
 
-```
+```css title="CSS"
     :lang(en-GB) {
         -prince-hyphenate-patterns: url("http://tug.ctan.org/tex-archive/language/hyph-utf8/tex/generic/hyph-utf8/patterns/txt/hyph-en-gb.pat.txt");
     }
 ```
-```html
+```html title="HTML"
     <span lang="en-GB">supercalifragilisticexpialidocious</span>
 ```
 
@@ -897,7 +879,7 @@ Note that the property [`font-variant`](css-props.md#prop-font-variant) can be u
 
 Another means to enable ligatures is through the [`font-variant`](css-props.md#prop-font-variant) CSS property with the `prince-opentype()` function (see [CSS Functional Expressions](css-functions.md)).  However, care must be taken in which order the features are enabled!  Also, enabling one feature will disable all the default features. To see which OpenType features are enabled by default, see the [OpenType Features in Prince](styling.md#opentype-features-in-prince) section.
 
-```
+```css
     body {
         font-variant-ligatures: historical-ligatures;
     }
@@ -933,7 +915,7 @@ When producing a PDF, it might be desirable to include a watermark, visible on a
 
 In order to repeat it on all pages, the watermark needs to be placed in a [`@page`](css-at-rules.md#at-page) at-rule. We shall place it in the page region `@prince-overlay` (see [Page regions](paged.md#page-regions)) and create the watermark with generated content (see [Generated content in page regions](paged.md#generated-content-in-page-regions)):
 
-```
+```css
     @page {
        @prince-overlay {
           color: rgba(0,0,0,0.8);
@@ -944,7 +926,7 @@ In order to repeat it on all pages, the watermark needs to be placed in a [`@pag
 ```
 The overlay can be styled in all possible ways and it can be aligned in other places than middle center:
 
-```
+```css
     @page {
        @prince-overlay {
           content: "Watermark";
@@ -980,7 +962,7 @@ Printing a big table sideways
 ![Image of a large table printed sideways so that its width fits along the page's length.](assets/samples/rotate-body-2.bw.png)
 This table is too wide to fit on the paper, so we use `-prince-rotate-body` in a *named page* to print it sideways. Download the [PDF](assets/samples/rotate-body.pdf) or the [HTML](assets/samples/rotate-body.html).
 
-```
+```css
     @page big_table {
         -prince-rotate-body: landscape;
         -prince-shrink-to-fit: auto;
@@ -1008,7 +990,7 @@ There are cases, when preparing a table with a large amount of content, that you
 
 The rotation is achieved with `transform: rotate()`. It could be applied directly to the `th` element, but it is impossible to configure the width of the column as we wish it. We shall thus nest a `div` and a `span` element:
 
-```html
+```html title="HTML"
     <th class="rotate">
       <div>
         <span>Column header 1</span>
@@ -1017,7 +999,7 @@ The rotation is achieved with `transform: rotate()`. It could be applied directl
 ```
 The rotation will happen with the following CSS code:
 
-```
+```css title="CSS"
     th.rotate {
       /* Make sure the th is high enough, */
       height: 150px;
@@ -1042,7 +1024,7 @@ The rotation will happen with the following CSS code:
 ```
 A more basic means for rotation, allowing for less fine-tuning, is the use of the [`writing-mode`](css-props.md#prop-writing-mode) CSS property. This option only allows rotation by 90°. It can be very handy when only some table cells with too much content are rotated, so as not to use too much horizontal space. You cannot rotate the table cell directly, so you have to nest one `span` element inside - and then you style it:
 
-```
+```css title="CSS"
     td.rotate > span {
       /* Rotate the content */
       writing-mode: vertical-rl;
@@ -1068,7 +1050,7 @@ The following script adds some useful higher-level functionality, making the `ma
 
 The methods return a box object with properties `x`, `y`, `w` and `h`, giving the position and size of the box in the requested units.
 
-```javascript
+```javascript title="Javascript"
     if (typeof Prince != "undefined") {
         addBoxInfoMethods();
     }

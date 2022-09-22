@@ -4,76 +4,60 @@ title: Command-line Options
 Prince may be called from the command-line with the following arguments:
 
 ```bash
-
     $ prince OPTIONS
         FILES
         [-o PDF]
-
 ```
 
 Please note that on Windows, Prince can be called from the command-line by running the `prince.exe` file found in the `Prince\engine\bin` folder of the Prince installation:
 
 ```powershell
-
     "C:\Program Files (x86)\Prince\engine\bin\prince.exe" OPTIONS
         FILES
         [-o PDF]
-
 ```
 
 ## Examples
 
-```
-
+```bash
 prince file.xml
-
 ```
 
 Convert `file.xml` to `file.pdf`.
 
-```
-
+```bash
 prince doc.html -o out.pdf
-
 ```
 
 Convert `doc.html` to `out.pdf`.
 
-```
-
+```bash
 prince http://example.com -o out.pdf
-
 ```
 
 Convert the `http://example.com` webpage to `out.pdf`. Note that it is necessary to specify the output file when the input is a HTTP or HTTPS URL.
 
-```
-
+```bash
 prince
     -s style1.css
     -s style2.css
     input.xml
     -o output.pdf
-
 ```
 
 Convert `input.xml` to `output.pdf`, applying two user style sheets.
 
-```
-
+```bash
 prince
     doc1.html
     doc2.html
     -o out.pdf
-
 ```
 
 Combine `doc1.html` and `doc2.html` into a single PDF file, `out.pdf`.
 
-```
-
+```bash
 prince doc.html --raster-output=doc_%d.png
-
 ```
 
 Process `doc.html` and rasterize the output to the series of files `doc_1.png`, `doc_2.png`, `doc_3.png` etc.
@@ -90,19 +74,15 @@ It is necessary to specify the output file when the input is a HTTP or HTTPS URL
 
 Any of the `--long` command-line options can either be passed as a single command-line argument with an equals sign (`=`), or as two command-line arguments with space:
 
-```
-
+```bash
 --output=out.pdf
 --output out.pdf
-
 ```
 
 The short command-line options are always passed as two command-line arguments, separated by a space:
 
-```
-
+```bash
 -o out.pdf
-
 ```
 
 If the value of a command-line option contains a space or other command characters, the value has to be written between quotation marks.

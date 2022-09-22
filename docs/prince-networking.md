@@ -3,7 +3,9 @@ title: Prince Networking
 ---
 Prince can process local files or fetch them from remote locations. To do this, a full URL needs to be provided, including the protocol.
 
-`prince http://example.com/path/file.html` -o `out.pdf`
+```bash
+    prince http://example.com/path/file.html -o out.pdf
+```
 
 ## Authentication
 

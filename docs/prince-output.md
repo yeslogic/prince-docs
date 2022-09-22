@@ -139,7 +139,7 @@ Prince supports a wide range of PDF features, including the following:
 
 Prince supports PDF-internal and -external links. HTML hyperlinks are automatically converted. To make an element in XML, or any arbitrary element, a clickable link, the [`-prince-link`](css-props.md#prop-prince-link) CSS property is required.
 
-```
+```css
 
     xref {
         -prince-link: attr( linkend )
@@ -149,7 +149,7 @@ Prince supports PDF-internal and -external links. HTML hyperlinks are automatica
 
 The property [`-prince-pdf-link-type`](css-props.md#prop-prince-pdf-link-type) may be used to control the link type and target, i.e. whether relative links should be embedded in the PDF as web (URL) links or file links (by default they will be resolved against the base URL of the input document) and whether to open the links in the same or a new window. Note however that the optional link target keywords `same-window` and `new-window` only affect links to local PDF files.
 
-```
+```css
 
     a[href] {
         -prince-pdf-link-type: new-window;
@@ -171,17 +171,13 @@ Prince also supports the following PDF-specific fragment identifiers, supported 
 
 Named destinations (`nameddest`) in PDF files have a similar function to HTML IDs: they can be the target anchors for links from other documents. The property [`-prince-pdf-destination`](css-props.md#prop-prince-pdf-destination) is used for creating them.
 
-HTML
-
-```html
+```html title="HTML"
 
     <div class="section" data-sectionid="section1">
 
 ```
 
-CSS
-
-```css
+```css title="CSS"
 
     div.section {
         -prince-pdf-destination: attr( data-sectionid )
@@ -191,9 +187,7 @@ CSS
 
 In order to link to this section, the following syntax is used:
 
-HTML
-
-```html
+```html title="HTML"
 
     <a href="test.pdf#nameddest=section1">...</a>
 
@@ -203,7 +197,7 @@ HTML
 
 Prince supports the `pdf-action:` URL scheme for PDF actions. Typical values are `Print`, `GoBack`, `GoForward`, `NextPage`, `PrevPage`, `FirstPage`, `LastPage`.
 
-```html
+```html title="HTML"
 
     <a href="pdf-action:Print">Print Document</a>
 
@@ -415,7 +409,7 @@ Prince can create PDF bookmarks that link to document content.
 
 PDF bookmarks have numeric levels that place them in a bookmark hierarchy. For example, a bookmark at level 2 can contain nested bookmarks at level 3, or any higher level. The level of a bookmark is controlled using the [`-prince-bookmark-level`](css-props.md#prop-prince-bookmark-level) property, shown here being applied to the XHTML heading elements:
 
-```
+```css
 
     h1 { -prince-bookmark-level: 1 }
     h2 { -prince-bookmark-level: 2 }
@@ -434,9 +428,7 @@ It is possible to control the state of the bookmark, i.e. whether the bookmark i
 
 PDF bookmarks have textual labels that by default are copied from the text content of the element that generated the bookmark. The text of this label may be controlled using the [`-prince-bookmark-label`](css-props.md#prop-prince-bookmark-label) property, shown here being applied to a chapter element that has a title attribute:
 
-CSS
-
-```
+```css title="CSS"
 
     chapter {
         -prince-bookmark-level: 1;
@@ -451,9 +443,7 @@ This property can take any content value, including literal text strings and cou
 
 PDF bookmarks are links that display a particular part of the document when activated. By default, a bookmark will link to the element that generated the bookmark, which is sensible behavior for bookmarks generated from headings or chapter elements. It is also possible to change the target of a bookmark using the [`-prince-bookmark-target`](css-props.md#prop-prince-bookmark-target) property, which takes a URL directly or an attribute containing a URL:
 
-CSS
-
-```
+```css title="CSS"
 
     bookmark { -prince-bookmark-target: url(#intro) }
     bookmark { -prince-bookmark-target: attr(href) }
@@ -482,17 +472,13 @@ Next, the annotation title and content are defined with respectively the [`-prin
 
 <p className="note">Based on the underlying principle of keeping content and style separated, it is good practice to keep the comments in the HTML file, rather than in CSS - therefore we recommend using data attributes, as we show in the following example:</p>
 
-HTML
-
-```html
+```html title="HTML"
 
 <p>This is a sentence with an <span class="annotation" data-title="PDF Annotation Title" data-contents="This is a PDF annotation.">annotation</span>.
 
 ```
 
-CSS
-
-```css
+```css title="CSS"
 
     p#annotation {
         -prince-pdf-annotation-type: text;
@@ -532,9 +518,7 @@ Tagged PDF files have special handling mechanisms for specific tag types. When e
 
 However, in specific cases it is advisable to fine-tune the PDF tags with the [`-prince-pdf-tag-type`](css-props.md#prop-prince-pdf-tag-type) property. In Prince, it is possible to assign PDF tag types to elements in the document through the [`-prince-pdf-tag-type`](css-props.md#prop-prince-pdf-tag-type) property, in order to create XML vocabularies in the PDF.
 
-CSS
-
-```
+```css title="CSS"
 
     ul.toc {
       -prince-pdf-tag-type: TOC;
@@ -545,9 +529,7 @@ CSS
 
 ```
 
-HTML
-
-```html
+```html title="HTML"
 
     <ul class="toc">
       <li>First Chapter</li>
@@ -603,9 +585,7 @@ Bruce Lawson has written an interesting introduction on how to make <a href="htt
 
 Prince creates PDF metadata from the content of the XHTML metadata elements. The content of the `<title>` element is used for the document title, while the `<meta>` element can be used to specify the document author, subject, keywords, date, and generator application:
 
-XML
-
-```xml
+```xml title="XML"
 
     <html>
     <head>

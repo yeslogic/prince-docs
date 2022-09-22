@@ -35,7 +35,7 @@ RGBA colors are equivalent to RGB plus an opacity (or alpha) value between 0 and
 
 CMYK colors can be specified using the `cmyk()` or, alternatively, the equivalent `device-cmyk()` function syntax. An optional fifth value is for the alpha channel, i.e. for opacity.
 
-```
+```css
 
     color: cmyk(1, 0, 0, 0)       // cyan
     color: cmyk(0, 1, 1, 0)       // red
@@ -72,7 +72,7 @@ Prince also supports named spot colors that can be defined with the [`@prince-co
 
 Spot colors can be used with the `prince-color()` function with a specified tint value between 0 and 1, which defaults to 1, or alternatively expressed in percentage. They can also enable overprint:
 
-```
+```css
 
     color: prince-color(MyColor)                  // tint 1.0
     color: prince-color(MyColor, 0.5)             // tint 0.5
@@ -108,7 +108,7 @@ PDF/A and PDF/X files have an output intent that defines the intended output col
 
 The URL specified with the [`--pdf-output-intent`](command-line.md#cl-pdf-output-intent) command-line option or the [`-prince-pdf-output-intent`](css-props.md#prop-prince-pdf-output-intent) property will be resolved relative to the base URL of the style sheet or document in which the rule is, and needs to point to an existing color profile file.
 
-```
+```css
 
     @prince-pdf {
         -prince-pdf-output-intent: url("ISOcoated_v2_eci.icc")
@@ -146,7 +146,7 @@ As CSS defines RGB colors in the sRGB color space, Prince tags those colors with
 
 CMYK colors specified using the `cmyk()` function syntax, or equivalent `device-cmyk()` syntax, represent device-dependent colors, so they will be left as such in the PDF when possible. Device-dependent color is not allowed in PDF/A or PDF/X, so those CMYK colors will be assumed to be either in the output intent color space (if it is CMYK), or else the color space of the fallback CMYK profile. See the command-line option [`--fallback-cmyk-profile`](command-line.md#cl-fallback-cmyk-profile) in the [PDF Output Options](command-line.md#pdf-output-options) section, or the [`-prince-fallback-cmyk-profile`](css-props.md#prop-prince-fallback-cmyk-profile) property.
 
-```bash
+```bash title="Bash"
 
     prince input.html
            --pdf-profile=PDF/A-1b
@@ -155,7 +155,7 @@ CMYK colors specified using the `cmyk()` function syntax, or equivalent `device-
 
 ```
 
-```css
+```css title="CSS"
 
     @prince-pdf {
         -prince-pdf-output-intent: url("sRGB.icc");
@@ -186,7 +186,7 @@ When the value `use-true-black` is used, such an RGB value will be encoded in th
 
 On the other hand, the `use-rich-black` value instructs Prince to keep all RGB colors as RGB in the PDF. A CMYK printer should print RGB colors using a mixture of all four CMYK inks.
 
-```
+```css
 
     @prince-pdf {
         -prince-pdf-color-options: use-rich-black;
@@ -261,9 +261,7 @@ Please note that Prince tries to preserve the ICC color profile embedded in imag
 
 The `img` element is used to include images in XHTML documents.
 
-XML
-
-```xml
+```xml title="XML"
 
     <img src="picture.jpg" alt="A Nice Picture"/>
 
@@ -273,9 +271,7 @@ XML
 
 The `imagedata` element is used to include images in DocBook documents.
 
-XML
-
-```xml
+```xml title="XML"
 
     <mediaobject>
         <imageobject>
@@ -291,17 +287,13 @@ Images can be included in arbitrary XML documents by using the CSS [`content`](c
 
 The [`content`](css-props.md#prop-content) property can specify the image filename directly, or it can take the filename from an attribute of the element to which it has been applied.
 
-CSS
-
-```
+```css title="CSS"
 
     picture { content: url("picture.png") }
 
 ```
 
-XML
-
-```xml
+```xml title="XML"
 
     <para> A nice <picture /> here. </para>
 
@@ -309,17 +301,13 @@ XML
 
 The [`content`](css-props.md#prop-content) property directly specifies the filename of the image that will be used as the content of the `picture` element.
 
-CSS
-
-```
+```css title="CSS"
 
     picture { content: attr("src", url) }
 
 ```
 
-XML
-
-```xml
+```xml title="XML"
 
     <para> A nice <picture src="picture.tiff" /> here. </para>
 
@@ -347,7 +335,7 @@ This property applies only to content images (e.g. replaced elements and generat
 
 CSS properties also control the size of images in print. Unless an explicit size for an image is specified by using the `width` and `height` properties, Prince will determine the intrinsic size from the image resolution (DPI), which can be overridden using the [`-prince-image-resolution`](css-props.md#prop-prince-image-resolution) property:
 
-```
+```css
 
     -prince-image-resolution: 300dpi;        /* set an explicit DPI */
     -prince-image-resolution: normal;        /* 1 image pixel maps to 1px unit */
@@ -453,7 +441,7 @@ The following style properties are supported on SVG elements:
 
 Style properties can be applied using SVG presentation attributes:
 
-```xml
+```svg
 
     <rect fill="yellow" stroke="blue" stroke-width="20"
             width="200" height="100"/>
@@ -462,7 +450,7 @@ Style properties can be applied using SVG presentation attributes:
 
 Or by using CSS properties inside the `style` attribute or element:
 
-```xml
+```svg
 
     <rect style="fill:yellow; stroke:blue; stroke-width:20"
             width="200" height="100"/>
@@ -471,9 +459,7 @@ Or by using CSS properties inside the `style` attribute or element:
 
 Alternatively, style properties can be applied by linking a stylesheet, or an XML stylesheet:
 
-SVG
-
-```xml
+```svg title="SVG"
 
     ...
     <?xml-stylesheet type="text/css" href="style.css"?>
@@ -482,9 +468,7 @@ SVG
 
 ```
 
-CSS
-
-```
+```css title="CSS"
 
     svg rect {
         fill: yellow;
