@@ -1,5 +1,5 @@
 
-var stdAnnotated = {
+const stdAnnotated = {
     NaN: {
         desc: "The special value Not a Number."
     },
@@ -48,6 +48,8 @@ var stdAnnotated = {
     escape: {
         desc: "Computes a new string by replacing certain characters with a hexadecimal escape sequence.",
         returns: "string",
+        example: "escape('20%'))",
+        exampleReturn: '20%25',
         arguments: [
             {name: "string", desc: "String to escape", type: "string"}
         ]
@@ -55,6 +57,8 @@ var stdAnnotated = {
     unescape: {
         desc: "Computes a new string by replacing hexadecimal escape sequences with the characters they represent.",
         returns: "string",
+        example: "unescape('hi%21'))",
+        exampleReturn: 'hi!',
         arguments: [
             {name: "string", desc: "String to unescape", type: "string"}
         ]
@@ -96,7 +100,7 @@ var stdAnnotated = {
         returns: "string"
     },
     valueOf: {
-        desc: "Returns the primitive value an object.",
+        desc: "Returns the primitive value of an object.",
         returns: "primitive value"
     },
     hasOwnProperty: {
@@ -115,7 +119,12 @@ var stdAnnotated = {
         returns: "boolean"
     },
     Object: {
-        create: {},
+        create: {
+          desc: "Creates a new object, using argument as prototype",
+          arguments: [
+            {type: "object", name: "prototype object"}
+          ]
+        },
         defineProperty: {
             desc: "Adds a property to the object and defines certain traits like enumerability.", type: "function",
             arguments: [
@@ -1442,6 +1451,8 @@ var stdAnnotated = {
             {name: "callback", type: "string"},
             {name: "optional extra options", type: "string"},
             ],
+            example: "<script> \nPrince.registerPostLayoutFunc(function() {\n    var str = '@prince-color Color1 { alternate-color: cmyk(1,0,0,0) }';\n    var add = document.getElementById('add');\n    add.appendChild(document.createTextNode(str));\n});\n</script>\n<style id='add'></style>\n<p style='color: prince-color(Color1)'>This was black, becomes cyan</p>",
+            desc: "See <a href='/doc/cookbook/#the-multi-pass-solution'>The \"Multi-Pass\" Solution</a>"
         },
         oncomplete: {
             desc: "The <code>complete</code> event is fired when all layout is finished (and after the last repeated layout, if this was requested), just before the PDF is output, so that it can cancel the PDF output by triggering a fail-safe if necessary, or log information about the PDF like the page count.",
@@ -1452,6 +1463,7 @@ var stdAnnotated = {
                 {name: "name", type: "string"},
                 {name: "function", type: "string"}
             ],
+            example: "function myfunc() {\n  return 'Some generated content text!';\n}\nPrince.addScriptFunc('myfunc', myfunc);",
             desc: "exposes an arbitrary JavaScript function to CSS. See <a href='/doc/gen-content#script-functions'>Script Functions</a>.",
         },
         trackBoxes: {
@@ -1798,69 +1810,4 @@ var stdAnnotated = {
     },
 };
 
-//dump("", window, std);
-
-void function dump(prefix, base, map)
-{
-    for (var i in map) {
-        if (i === "_is_root") continue;
-        try {
-            var val = base[i];
-            if (typeof val === "function")
-            {
-                if (i != val.name)
-                {
-                    val = "function "+prefix+i+"/"+val.length+" (but .name is '"+val.name+"')"
-                }
-                else
-                {
-                    val = "function "+prefix+i+"/"+val.length;
-                }
-            }
-            else
-            {
-                val = prefix+i+": "+val;
-            }
-
-            //console.log(val);
-
-            if (i === "constructor")
-            {
-                if (base[i].prototype !== base)
-                {
-                    throw "constructor/prototype link is broken!";
-                }
-            }
-            else
-            {
-                dump(prefix+i+".", base[i], map[i]);
-            }
-        }
-        catch (x) {
-            //console.log(prefix+i+": "+x);
-        }
-    }
-
-    if ((typeof base === "object" && base !== null) || typeof base === "function")
-    {
-        if (!map._is_root)
-        {
-            var names = Object.getOwnPropertyNames(base);
-
-            for (var i in names)
-            {
-                var name = names[i];
-
-                if (!(typeof base === "function" && (name === "name" || name === "length")) &&
-                    !(base === window && name === "std"))
-                {
-                    if (!(name in map))
-                    {
-                        //console.log("no def for "+prefix+name+"?");
-                    }
-                }
-            }
-        }
-    }
-}("", window, std);
-
+export default stdAnnotated;

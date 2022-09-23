@@ -1,5 +1,5 @@
 
-var std = {
+const std = {
     NaN: {},
     Infinity: {},
     undefined: {},
@@ -1310,69 +1310,4 @@ var std = {
     },
 };
 
-//dump("", window, std);
-
-void function dump(prefix, base, map)
-{
-    for (var i in map) {
-        if (i === "_is_root") continue;
-        try {
-            var val = base[i];
-            if (typeof val === "function")
-            {
-                if (i != val.name)
-                {
-                    val = "function "+prefix+i+"/"+val.length+" (but .name is '"+val.name+"')"
-                }
-                else
-                {
-                    val = "function "+prefix+i+"/"+val.length;
-                }
-            }
-            else
-            {
-                val = prefix+i+": "+val;
-            }
-
-            //console.log(val);
-
-            if (i === "constructor")
-            {
-                if (base[i].prototype !== base)
-                {
-                    throw "constructor/prototype link is broken!";
-                }
-            }
-            else
-            {
-                dump(prefix+i+".", base[i], map[i]);
-            }
-        }
-        catch (x) {
-            //console.log(prefix+i+": "+x);
-        }
-    }
-
-    if ((typeof base === "object" && base !== null) || typeof base === "function")
-    {
-        if (!map._is_root)
-        {
-            var names = Object.getOwnPropertyNames(base);
-
-            for (var i in names)
-            {
-                var name = names[i];
-
-                if (!(typeof base === "function" && (name === "name" || name === "length")) &&
-                    !(base === window && name === "std"))
-                {
-                    if (!(name in map))
-                    {
-                        //console.log("no def for "+prefix+name+"?");
-                    }
-                }
-            }
-        }
-    }
-}("", window, std);
-
+export default std;
