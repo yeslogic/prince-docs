@@ -68,19 +68,18 @@ article p img {
     background-color: #6e2577;
     color: white;
 }
-.navbar__items a {
-    display: inline-block;
-}
 .navbar__item {
     font-size: 14px;
     font-weight: normal;
-}
-.navbar__item:hover {
-    color: #22b573;
+    height: 100%;
+    padding-top: 0.9em;
 }
 .navbar__item:first-child {
     background: white;
     color: #333;
+}
+.navbar__item:hover {
+    color: #22b573;
 }
 .menu__list {
     font-size: 14px;
