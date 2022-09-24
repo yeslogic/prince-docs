@@ -13,10 +13,10 @@ function Home() {
     <Layout
       title={`Prince Documentation`}
       description="Prince Documentation">
-      <header className={clsx('hero hero--primary', styles.heroBanner)}>
+      <header>
         <div className="container">
-          <h1 className="hero__title">{siteConfig.title}</h1>
-          <p className="hero__subtitle">{siteConfig.tagline}</p>
+          <h1 id="idx">{siteConfig.title}</h1>
+          <p>{siteConfig.tagline}</p>
         </div>
       </header>
       <main id="entry">
@@ -31,7 +31,8 @@ function Home() {
             Alternatively, you can <b>choose</b> the User Guide by Prince version.
           </summary>
           <div id="section-nav"><ul>
-            <li class="curr"><a href="/doc/intro-userguide">User Guide for Prince 14 (current)</a></li>
+            <li class="curr"><a href="/doc/intro-userguide">User Guide for Prince 15 (current)</a></li>
+            <li><a href="/doc/14/intro-userguide">User Guide for Prince 14</a></li>
             <li><a href="/doc/13/intro-userguide">User Guide for Prince 13</a></li>
             <li><a href="/doc/12/doc-prince/">User Guide for Prince 12</a></li>
             <li><a href="/doc/11/">User Guide for Prince 11</a></li>

@@ -97,9 +97,28 @@ article p img {
     display: block;
 }
 #entry {
-    max-width: 350px;
+    max-width: 450px;
     margin: 30px auto;
+    text-align: center;
 }
+#entry ul {
+    list-style-type: none;
+}
+
+#idx, #idx + p {
+    margin: 30px auto;
+    max-width: 400px;
+    text-align: center;
+    font-size: 1.5rem;
+}
+#idx {
+    font-size: 32px;
+    font-weight: 600;
+    line-height: 1.25;
+    margin-bottom: 16px;
+    margin-top: 3em;
+}
+
 dl { padding-bottom: 1em; }
 dd { padding-left: 2em; }
 dl ul { margin-bottom: 0em; }
