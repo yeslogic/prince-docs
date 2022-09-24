@@ -112,11 +112,27 @@ article p img {
     font-size: 1.5rem;
 }
 #idx {
-    font-size: 32px;
+    margin-top: 3em;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    color: inherit;
     font-weight: 600;
     line-height: 1.25;
     margin-bottom: 16px;
-    margin-top: 3em;
+    margin-top: 1.5em;
+}
+h1 {
+    font-size: 32px;
+}
+h2 {
+    font-size: 24px;
+}
+h3 {
+    font-size: 20px;
+}
+h3 {
+    font-size: 16px;
 }
 
 dl { padding-bottom: 1em; }
