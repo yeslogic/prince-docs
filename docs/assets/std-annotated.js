@@ -1717,6 +1717,12 @@ var stdAnnotated = {
             ],
             example: "PDF.xmp('xmp-data.xmp')"
         },
+        xmpMetadata: {
+            type: "function",
+            arguments: [
+                {type: "boolean"}
+            ]
+        },
         title: {
             type: "function",
             arguments: [

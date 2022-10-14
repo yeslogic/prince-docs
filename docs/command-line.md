@@ -528,6 +528,9 @@ The command-line may include the options described below:
   <dt id="cl-pdf-xmp"><code>--pdf-xmp=<span class="replaceable">XMP</span></code></dt>
   <dd>Include additional XMP metadata in the PDF.  The argument is an XMP file,
   from which the data is taken.</dd>
+  <dt id="cl-pdf-xmp-metadata"><code>--pdf-xmp-metadata</code></dt>
+  <dd>Enable the XMP representation of HTML metadata even when the PDF profile
+  does not require it.</dd>
 </dl>
 
 ### PDF Encryption Options

@@ -495,6 +495,7 @@ The `pdf options` object includes these fields:
     "pdf-id": <string>,
     "pdf-lang": <string>,
     "pdf-xmp": <URL>,
+    "pdf-xmp-metadata": <bool>,
     "tagged-pdf": "auto" | <bool>,
     "attach": [ <list of attachments> ]
 }
@@ -575,6 +576,7 @@ The following is the full JSON job description:
         "pdf-id": <string>,
         "pdf-lang": <string>,
         "pdf-xmp": <URL>,
+        "pdf-xmp-metadata": <bool>,
         "tagged-pdf": "auto" | <bool>,
         "attach": [ {
             "url": <URL>,

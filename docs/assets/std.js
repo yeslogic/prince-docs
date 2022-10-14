@@ -1293,6 +1293,7 @@ var std = {
         paperTray: {},
         filterResolution: {},
         xmp: {},
+        xmpMetadata: {},
         title: {},
         subject: {},
         author: {},
