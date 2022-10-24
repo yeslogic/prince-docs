@@ -118,6 +118,8 @@ The [`Prince.convertToFile`](js-support.md#window.Prince.convertToFile) and [`Pr
 
 whereby `JSON` is a job description as specified in the [Job description JSON](server-integration.md#job-description-json), while the optional extra job resource arguments are ArrayBuffers or strings that can be referenced from the JSON using the `job-resource:` URLs. See [Prince Control Protocol](server-integration.md#prince-control-protocol).
 
+<p class="note">The Prince jobs methods are only accessible in <a href="/doc/command-line/#cl-shell">Prince shell mode</a>.</p>
+
 #### Failure status
 
 The property [`Prince.failStatus`](js-support.md#window.Prince.failStatus) is a boolean which can be set to trigger an explicit failure status through JavaScript, based on custom criteria. See also [Fail-Safe Options](server-integration.md#fail-safe-options).

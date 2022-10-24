@@ -685,6 +685,10 @@ Rasterization is enabled with the `--raster-output` option below. When this is u
     undesired results, degrading the PDF output.  Please be aware that there can be unforseen side-effects
     when pretending to be somebody else on the web.</p>
   </dd>
+  <dt id="cl-shell"><code>--shell</code></dt>
+  <dd>
+    <p>The Prince shell will read JavaScript from standard input and execute it, basically allowing you to run scripts with Prince, which is handy for testing. It also allows to do conversions with <a href="/doc/javascript/#prince-jobs">the <code>Prince.convertToFile</code> and <code>Prince.convertToBuffer</code> methods</a>, which are only accessible in shell mode.</p>
+  </dd>
   <dt id="cl-capture"><code>--capture <span class="replaceable">DIR</span></code></dt>
   <dt id="cl-replay"><code>--replay <span class="replaceable">DIR</span></code></dt>
   <dd>
