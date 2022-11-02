@@ -373,6 +373,7 @@ ul.toc-headings li ul.toc-headings li a.active {
     p, pre {
         orphans: 2;
         widows: 2;
+        text-align: justify;
     }
     p:contains('CSS') + pre, p:contains('HTML') + pre, p:contains('XML') + pre, p:contains('SVG') + pre, p:contains('JavaScript') + pre, p:contains('fonts.css') + pre, p:contains('Output') + ol, p:contains('Output') + table, p:contains('Novel title') + p, p:contains('Textbook page') + p, p:contains('Box decoration') + p, p:contains('Furniture catalogue') + p, p:contains('Printing a big table') + p  {
         break-before: avoid !important;
