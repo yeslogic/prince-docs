@@ -349,7 +349,7 @@ ul.toc-headings li ul.toc-headings li a.active {
 @media print {
     @page {
         size: A4;
-        margin: 0em 2em 2em;
+        margin: 2em;
         margin-inside: 4em;
         @bottom-center {
             content: counter(page);
@@ -357,12 +357,23 @@ ul.toc-headings li ul.toc-headings li a.active {
     }
     @prince-pdf {
         -prince-pdf-display-doc-title: true;
+        -prince-pdf-page-layout: two-page-right;
     }
-    h1, h2, h3, h4, h5 {
+    .navPusher {
+        padding-top: 0px !important;
+    }
+    h1, h2, h3, h4, h5, tbody {
         break-after: avoid;
+    }
+    h1:contains('Convert HTML to PDF') {
+        break-before: right;
     }
     h3 + h4 {
         break-before: avoid !important;
+    }
+    table#pregions td[rowspan] {
+        writing-mode: horizontal-tb;
+        transform: rotate(-90deg);
     }
     #version-nav, .fixedHeaderContainer, footer, #docsNav, .navBreadcrumb, .arrow, .docs-prevnext, .toggle, #toggle-js, #idx-contens + p, #idx-contens + p + ul {
         display: none;
@@ -401,6 +412,10 @@ ul.toc-headings li ul.toc-headings li a.active {
     }
     #docsNav {
         break-after: page;
+        break-before: right;
+    }
+    #docsNav * {
+        color: black !important;
     }
     #docsNav .navGroup.subNavGroup {
         break-inside: avoid !important;
