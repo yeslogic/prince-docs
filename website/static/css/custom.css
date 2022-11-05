@@ -396,11 +396,11 @@ ul.toc-headings li ul.toc-headings li a.active {
         box-decoration-break: slice;
     }
     a[href]::after {
-        content: " [see page " target-counter(attr(href), page) "]";
+        content: " [p. " target-counter(attr(href), page) "]";
         color: black;
     }
     a[href*='//']:not([href*='princexml.com'])::after {
-        content: " [at the URL " attr(href) "]" !important;
+        content: " [\xa0" attr(href) "\xa0]" !important;
         color: black;
     }
     a[href*='first']::after, a[href*='install']::after, a[href*='samples']::after, a[href*='forum']::after, a[href*='contact']::after, a[href*='download']::after, a[href='/books/']::after, a[href*='/howcome/']::after  {
@@ -421,7 +421,7 @@ ul.toc-headings li ul.toc-headings li a.active {
         break-inside: avoid !important;
     }
     #docsNav a[href]::after {
-        content: leader('.') "p. " target-counter(attr(href), page);
+        content: leader('.') target-counter(attr(href), page);
     }
     #docsNav .toc .toggleNav ul ul {
         padding-right: 0px;
