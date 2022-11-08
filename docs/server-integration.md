@@ -443,6 +443,7 @@ Only the `src` field is required, the rest can be left as defaults.
 Now we can make some simple job descriptions, eg. to convert a single HTML file:
 
 ```json
+job 90
 {
     "input": {
         "src": "/path/to/input.html"
@@ -455,12 +456,15 @@ This can be sent as a single `job` chunk - with the number of bytes of the above
 Or you can convert a HTML document without saving it to a temporary file:
 
 ```json
+job 85
 {
     "input": {
         "src": "job-resource:0"
     },
     "job-resource-count": 1
 }
+dat 19
+/path/to/input.html
 ```
 This requires the `job` chunk to be followed by a `dat` chunk that contains the HTML and then Prince will respond as before.
 
