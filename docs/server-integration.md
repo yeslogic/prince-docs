@@ -351,7 +351,9 @@ Prince also offers a set of [Fail-Safe Options](#fail-safe-options) to prevent t
 `prince --control`  
 The Prince Control Protocol, accessible through the command-line option `--control`, is a synchronous bidirectional protocol that consists of a sequence of "chunks" sent via the standard input and output streams.
 
-Each chunk contains a sequence of bytes with a length and a three letter tag. Here is an example "version" chunk to demonstrate the syntax:
+Each chunk starts with an identifying three-letter *tag* followed by the *length* of the chunk expressed in bytes, followed by the data itself.
+
+Here is an example "version" chunk to demonstrate the syntax:
 
 ```
 ver 15
@@ -399,6 +401,10 @@ Instead of sending the final `end` chunk the caller may choose to submit another
 
 The `job` chunk contains a description of the conversion job represented in JSON format, which can be followed by an optional sequence of `dat` chunks containing file data which is needed by the job, eg. HTML documents, style sheets, PDF attachments, or whatever.
 
+<p class="note">
+Chunks always begin with a line containing a <b>three letter tag</b>, followed by a space and then <b><em>the number of bytes</em></b> in the chunk as a decimal number, followed by a newline, and then the chunk data.
+</p>
+
 The number of `dat` chunks is specified by the `job-resource-count` field in the job description, and these files can be accessed via a special job-resource URL scheme, eg. `job-resource:0` will access the content of the first `dat` chunk, then `job-resource:1`, `job-resource:2`, etc. This allows any number of resources to be provided inline with the request and removes the need to create actual temporary files.
 
 The JSON job description ([here](#job-description-json) you can see the full description) has several nested objects with fields corresponding to Prince options:
@@ -444,7 +450,7 @@ Now we can make some simple job descriptions, eg. to convert a single HTML file:
     "job-resource-count": 0
 }
 ```
-This can be sent as a single `job` chunk and Prince will respond with a `pdf` chunk if the conversion succeeded and a `log` chunk.
+This can be sent as a single `job` chunk - with the number of bytes of the above job description, followed after a newline by the job description itself - and Prince will respond with a `pdf` chunk if the conversion succeeded, and a `log` chunk.
 
 Or you can convert a HTML document without saving it to a temporary file:
 
