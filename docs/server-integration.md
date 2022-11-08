@@ -451,9 +451,9 @@ job 90
     "job-resource-count": 0
 }
 ```
-This can be sent as a single `job` chunk - with the number of bytes of the above job description, followed after a newline by the job description itself - and Prince will respond with a `pdf` chunk if the conversion succeeded, and a `log` chunk.
+This can be sent as a single `job` chunk - with the number of bytes of the job description, followed after a newline by the job description itself - and Prince will respond with a `pdf` chunk if the conversion succeeded, and a `log` chunk.
 
-Or you can convert a HTML document without saving it to a temporary file:
+Or you can convert an HTML document without saving it to a temporary file - it requires the `job` chunk to be followed by a `dat` chunk that contains the HTML and then Prince will respond as before:
 
 ```json
 job 85
@@ -466,7 +466,6 @@ job 85
 dat 19
 /path/to/input.html
 ```
-This requires the `job` chunk to be followed by a `dat` chunk that contains the HTML and then Prince will respond as before.
 
 The `pdf options` object includes these fields:
 
