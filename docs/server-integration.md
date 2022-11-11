@@ -532,7 +532,7 @@ The `metadata options` object includes these fields:
 
 #### Job description JSON
 
-The following is the full JSON job description:
+The following is the full JSON job description - the `input` and `job-resource` fields are mandatory:
 
 ```json
 {
