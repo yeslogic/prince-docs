@@ -31,6 +31,10 @@ jobs:
           rm -rf ./output
           cd ./../..
         shell: bash
+      - name: Install libavif13
+        run: |
+          sudo apt-get update
+          sudo apt-get install libavif13
       - name: Install Prince
         run: |
           curl https://www.princexml.com/download/prince-15-ubuntu22.04-amd64.tar.gz -O
