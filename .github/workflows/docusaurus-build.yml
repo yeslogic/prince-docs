@@ -33,9 +33,9 @@ jobs:
         shell: bash
       - name: Install Prince
         run: |
-          curl https://www.princexml.com/download/prince-14.3-ubuntu22.04-amd64.tar.gz -O
-          tar zxf prince-14.3-ubuntu20.04-amd64.tar.gz
-          cd prince-14.3-ubuntu20.04-amd64
+          curl https://www.princexml.com/download/prince-15-ubuntu22.04-amd64.tar.gz -O
+          tar zxf prince-15-ubuntu22.04-amd64.tar.gz
+          cd prince-15-ubuntu20.04-amd64
           yes "" | sudo ./install.sh
       - name: Make the page region image
         run: |
