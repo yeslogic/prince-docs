@@ -7,7 +7,7 @@ on:
 
 jobs:
   build-docs:
-    runs-on: runs-on: ubuntu-22.04
+    runs-on: ubuntu-22.04
     steps:
       - name: Check out repository code
         uses: actions/checkout@v2
