@@ -176,10 +176,10 @@ The command-line may include the options described below:
     that resource.
   </p>
   </dd>
-  <dt id="cl-fileroot">
+  <dt id="cl-fileroot" class="dep">
     <code>--fileroot=<span class="replaceable">DIR</span></code>
   </dt>
-  <dd>
+  <dd class="dep">
     Specify the root directory for absolute filenames (deprecated).
   </dd>
   <dt id="cl-iframes">
