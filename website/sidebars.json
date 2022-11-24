@@ -1,11 +1,11 @@
 {
   "docs": {
-    "Installation Guide": [
+    "Installation Guide ": [
         "installing",
         "first-doc",
         "help-install"
     ],
-    "User Guide": [
+    "User Guide ": [
         "intro-userguide",
         "styling",
         "paged",
@@ -20,7 +20,7 @@
         "server-integration",
         "prince-for-books"
     ],
-    "Reference Guide": [
+    "Reference Guide ": [
         {
           "type": "subcategory",
           "label": "CSS Support",
