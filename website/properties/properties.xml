@@ -2845,7 +2845,6 @@
         <prop>font-variant-caps</prop>
         <prop>font-variant-ligatures</prop>
         <prop>font-variant-numeric</prop>
-        <prop>font-variant-opentype</prop>
     </shorthand>
     <example>&lt;span style="font-family: SpecialFont; font-variant: prince-opentype(aalt(2))"&gt;&amp;amp;&lt;/span&gt;</example>
     <example>font-variant: prince-opentype(onum, ccmp, liga)</example>
