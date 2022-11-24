@@ -273,6 +273,9 @@ p.note:only-child {
 dl.faq dt p {
     font-weight: bold;
 }
+dt[id*=cl] + dd p:last-child {
+    margin-bottom: 0;
+}
 a[href*='//']:not([href*='princexml.com'])::after {
   content: " \21D7";
   color: lightgrey; }
