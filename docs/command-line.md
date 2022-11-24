@@ -165,8 +165,8 @@ The command-line may include the options described below:
     This option can be used multiple times to specify more than one remapping.
     It cannot be used with <code>--fileroot</code>.
   </p>
-  <p>
-    Note that Prince does not know which file to use when the path maps to a
+  <p class="note">
+    Prince does not know which file to use when the path maps to a
     directory (in other words, an index file).
     If <code>http://www.example.com/</code> is requested, and mapped to
     <code>example-com</code> it does not know whether to open
