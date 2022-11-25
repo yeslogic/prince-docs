@@ -1711,7 +1711,7 @@
                     <function name="target-content">
                         <type>url</type>
                     </function>
-                    <function name="leader" class="ext">
+                    <function name="leader">
                         <choice>
                             <string>...</string>
                             <keyword>dotted</keyword>
@@ -1719,11 +1719,8 @@
                             <keyword>space</keyword>
                         </choice>
                         <optional>
-                            <type>length</type> <!-- [0,∞] -->
+                            <type class="ext">length</type> <!-- [0,∞] -->
                         </optional>
-                        <!-- XXX: Should document that this length is a Prince
-                            extension (or is not in css-content-3 at least).
-                            -->
                     </function>
                     <function name="string">
                         <ident>ident</ident>

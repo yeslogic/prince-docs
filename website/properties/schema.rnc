@@ -109,23 +109,26 @@ two-groupable =
 
 type-value =
     element type {
-	"angle" |
-	"border-style" |
-	"border-width" |
-	"color" |
-	"content" |
-	"counter-style" |
-	"declaration-value" |
-	"dpi" |
-	"integer" |
-	"language" |
-	"length" |
-	"length-percentage" |
-	"number" |
-	"page-policy" |
-	"paper-size" |
-	"urange" |
-	"url"
+        class*,
+        (
+            "angle" |
+            "border-style" |
+            "border-width" |
+            "color" |
+            "content" |
+            "counter-style" |
+            "declaration-value" |
+            "dpi" |
+            "integer" |
+            "language" |
+            "length" |
+            "length-percentage" |
+            "number" |
+            "page-policy" |
+            "paper-size" |
+            "urange" |
+            "url"
+        )
     }
 
 para =

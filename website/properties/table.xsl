@@ -692,8 +692,12 @@ Prince also supports the two special keywords <code>initial</code> and <code>inh
     </a></i>
 </xsl:template>
 
-<xsl:template match="type">
+<xsl:template match="type[not(@class)]">
     <i><xsl:value-of select="."/></i>
+</xsl:template>
+
+<xsl:template match="type[@class='ext']">
+    <span class="ext"><i><xsl:value-of select="."/></i></span>
 </xsl:template>
 
 <xsl:template match="percentage[not(@class)]">
