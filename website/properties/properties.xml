@@ -1747,7 +1747,7 @@
                     <function name="prince-glyph-index" class="ext">
                         <type>number</type>
                     </function>
-                    <function name="prince-expansion-text">
+                    <function name="prince-expansion-text" class="ext">
                         <string>expansion</string>
                         <!-- (Actually, the first argument can be any single
                             textual content item, but the most common case
