@@ -139,7 +139,7 @@ p:hover .self-link, #prop-list summary:hover .self-link, #js-support-table summa
 #prop-list details[open] summary.ext + div, #prop-list details[open] summary.ext + div + div, #js-support-table details[open] summary.ext + div, #js-support-table details[open] summary.ext + div + div {
   border-radius: 0px 0px 10px 10px;
 }
-#prop-list span.ext {
+span.ext {
   background-color: #eee;
 }
 #prop-list details, #js-support-table details {
