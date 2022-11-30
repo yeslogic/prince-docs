@@ -30,8 +30,7 @@ be removed in a future Prince version.
 <p>
 For the values, the grammar draws on the
 <a href="https://www.w3.org/TR/css3-values/">CSS Values and Units Module Level 3</a>
-specification - with the notable exception of the meaning of an asterisk (*), as
-explained above.  A short explanation of the signs:
+specification.  A short explanation of the signs:
 </p>
 
 <p>
@@ -43,12 +42,13 @@ explained above.  A short explanation of the signs:
     <li>A double ampersand (<b>&amp;&amp;</b>) separates two or more <em>components</em>,
     all of which must occur, in any order.</li>
     <li>Square brackets (<b>[ ]</b>) are only used for grouping.</li>
+    <li>An asterisk (<b>*</b>) indicates that the preceding item occurs zero or more times.</li>
     <li>A plus (<b>+</b>) indicates that the preceding item occurs one or more times.</li>
     <li>A question mark (<b>?</b>) indicates that the preceding item is optional (occurs
     zero or one times).</li>
     <li>A hash mark (<b>#</b>) indicates that the preceding item occurs one or more times,
     separated by comma tokens.</li>
-    <li>A pair of numbers in curly braces, separated by two dots (<b>{<i>A</i>..<i>B</i>}</b>)
+    <li>A comma-separated pair of numbers in curly braces (<b>{<i>A</i>,<i>B</i>}</b>)
     indicates that the preceding item occurs at least <i>A</i> and at most <i>B</i>
     times.</li>
 </ul>
@@ -635,12 +635,7 @@ Prince also supports the two special keywords <code>initial</code> and <code>inh
         <xsl:message>Error: repeat must specify min</xsl:message>
     </xsl:when>
     <xsl:when test="@min=0 and not(@max) and not(@sep)">
-        <!-- Use ‘#?’ instead of ‘#*’ to distinguish from ‘*’ as marker
-        for Prince extensions.  If @sep then currently we would use ‘#{0,}’
-        (if @min=0 ever occurred), but we could add a special case and
-        use ‘#?’ if we wanted.
-        -->
-        <xsl:text>?</xsl:text>
+        <xsl:text>*</xsl:text>
     </xsl:when>
     <xsl:when test="@min=1 and not(@max)">
         <xsl:if test="not(@sep)">
@@ -655,8 +650,7 @@ Prince also supports the two special keywords <code>initial</code> and <code>inh
     <xsl:otherwise>
         <xsl:text>{</xsl:text>
         <xsl:value-of select="@min"/>
-        <xsl:text>..</xsl:text>
-        <!-- Note: CSS uses e.g. {1,4} as in regexps rather than {1..4}. -->
+        <xsl:text>,</xsl:text>
         <xsl:value-of select="@max"/>
         <xsl:text>}</xsl:text>
     </xsl:otherwise>
