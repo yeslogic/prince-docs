@@ -2215,6 +2215,19 @@
     <extension/>
     <see><a href="/doc/styling/#floats">Floats</a></see>
     <comments>
+    <p>
+    The <code>float</code> property in Prince functions just as the standard property -
+    but under the hood, the implementation is rather different, to allow for the expanded
+    features of page and column floats.
+    </p>
+
+    <p>
+    In other words, the syntax of the standard property is a subset of the Prince extension
+    shorthands - if you use just the standard float features, there is nothing in your CSS
+    syntax that needs adjustment. The values of the standard <code>float</code> property are
+    now listed in the <code><property name="prince-float-placement"/></code> property.
+    </p>
+
 	<p>
 	Traditionally, floats move in the inline direction, left or right.  Prince extends
     this behavior with page and column floats that move in the block direction, specifying that
