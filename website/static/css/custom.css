@@ -154,6 +154,9 @@ span.ext {
 #prop-list details .hash-link {
     margin-left: 0px;
 }
+#prop-list .property-table code {
+    padding: 0;
+}
 #prop-list .programlisting pre {
     white-space: normal;
 }
