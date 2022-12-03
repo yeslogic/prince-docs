@@ -6396,7 +6396,7 @@ supplier, item { overflow-wrap: normal; }
     <extension/>
     <example>body {
   -prince-text-replace: "s" "\017F"
-                       "\017F\20" "s\20";
+                        "\017F\20" "s\20";
 }</example>
     <see><a href="/doc/characters/">Character Entities</a></see>
     <comments>
