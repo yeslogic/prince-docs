@@ -5895,6 +5895,10 @@ supplier, item { overflow-wrap: normal; }
     Note however that the optional link target keywords <code>same-window</code>
     and <code>new-window</code> only affect links to local PDF files.
     </p>
+    <p>
+    The values <code>auto</code> and <code>file</code> are optional, and are treated
+    as <code>auto</code> if missing.
+    </p>
     </comments>
 </property>
 
