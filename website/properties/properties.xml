@@ -5792,29 +5792,19 @@ supplier, item { overflow-wrap: normal; }
     <name>prince-pdf-event-scripts</name>
     <value>
     <choice>
-        <group>
         <keyword>none</keyword>
-        </group>
-        <group>
         <repeat min="1" sep=",">
             <sequence>
-            <group>
             <choice>
-                <group>
                 <keyword>will-close</keyword>
                 <keyword>will-save</keyword>
                 <keyword>did-save</keyword>
                 <keyword>will-print</keyword>
                 <keyword>did-print</keyword>
-                </group>
             </choice>
-            </group>
-            <group>
                 <string>JavaScript</string>
-            </group>
             </sequence>
         </repeat>
-        </group>
     </choice>
     </value>
     <initial>""</initial>
