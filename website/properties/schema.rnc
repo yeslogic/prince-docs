@@ -81,7 +81,10 @@ value =
     # "||": like a <reorderable> of <optional>'s where at least
     # one must be present.
 
-    element optional { value+ } |
+    element optional {
+        class*,
+        value+
+    } |
     # "?"
 
     element repeat {

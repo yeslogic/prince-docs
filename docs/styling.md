@@ -416,7 +416,9 @@ The directionality of the text is controlled through the [Writing Mode](#writing
 
 Now that you have decided on the basic properties of the text, you can turn your attention to styling the paragraphs. The [`text-align`](css-props.md#prop-text-align) property is used to control how text is aligned within its containing box, while the [`text-indent`](css-props.md#prop-text-indent) property determines the indentation of the first line of text in the element.
 
-If the [`text-align`](css-props.md#prop-text-align) property has a value of `left`, `right` or `center`, the text will be aligned to the left, right or center respectively. The `justify` value instructs Prince to justify text. It is not uncommon, in printed texts, to align text based on whether the text appears on a left or right page. To support this, two new keywords are added to the [`text-align`](css-props.md#prop-text-align) property: `inside` is the same as 'left' on right pages and 'right' on left pages, and `outside` is the same as 'right' on left pages and 'left' on right pages.
+If the [`text-align`](css-props.md#prop-text-align) property (acting as a shorthand for the property [`text-align-last`](css-props.md#prop-text-align-last)) has a value of `left`, `right` or `center`, the text will be aligned to the left, right or center respectively. The `justify` value instructs Prince to justify text.
+
+It is not uncommon, in printed texts, to align text based on whether it appears on a left or right page. To support this, two new keywords are added to the [`text-align`](css-props.md#prop-text-align) property: `inside` is the same as 'left' on right pages and 'right' on left pages, and `outside` is the same as 'right' on left pages and 'left' on right pages.
 
 Prince adds the property [`-prince-text-justify`](css-props.md#prop-prince-text-justify) to define how to treat justified text for CJK languages. The value `prince-cjk` allows space to be inserted between CJK characters when justifying even if there aren't any space characters.
 
@@ -424,8 +426,16 @@ The last line of an element can receive its own alignment style with the [`text-
 
 ```
     p {
-        text-align: justify;
-        text-indent: 5em;
+        text-align-all: justify;
+        text-align-last: right;
+    }
+```
+
+Prince also supports a two-value syntax for `text-align`, where the second (optional) value is a shorthand value for `text-align-last`.  The previous example can thus also be express in the following way:
+
+```
+    p {
+        text-align: justify right;
     }
 ```
 It is also possible to style the first line of a paragraph in a different way - to achieve this, the selector `::first-line` is used.

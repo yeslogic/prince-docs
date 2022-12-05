@@ -6988,32 +6988,12 @@ supplier, item { overflow-wrap: normal; }
 <property>
     <name>text-align</name>
     <value>
-	<choice>
-	    <keyword>start</keyword>
-	    <keyword>end</keyword>
-	    <keyword>left</keyword>
-	    <keyword>right</keyword>
-	    <keyword>inside</keyword>
-	    <keyword>outside</keyword>
-	    <keyword>center</keyword>
-	    <keyword>justify</keyword>
-	    <keyword>justify-all</keyword>
-	    <keyword>match-parent</keyword>
-	    <sequence>
-	        <keyword>justify</keyword>
-		<choice>
-		    <keyword>auto</keyword>
-		    <keyword>start</keyword>
-		    <keyword>end</keyword>
-		    <keyword>left</keyword>
-		    <keyword>right</keyword>
-		    <keyword>inside</keyword>
-		    <keyword>outside</keyword>
-		    <keyword>center</keyword>
-		    <keyword>justify</keyword>
-		</choice>
-	    </sequence>
-	</choice>
+        <sequence>
+            <ref>text-align-all</ref>
+            <optional class="ext">
+                <ref>text-align-last</ref>
+            </optional>
+        </sequence>
     </value>
     <initial>start</initial>
     <applyto>block containers</applyto>
@@ -7022,6 +7002,16 @@ supplier, item { overflow-wrap: normal; }
         <prop>text-align-all</prop>
         <prop>text-align-last</prop>
     </shorthand>
+    <comments>
+    <p>
+    Prince implements a two-value syntax, where the second, optional value allows the last line
+    of an element to receive its own alignment.
+    </p>
+    <p>
+    Please note that while the property <code><property name="text-align-last"/></code> is not
+    a Prince extension, allowing it as a second value is a custom extension.
+    </p>
+    </comments>
     <spec><a href="https://www.w3.org/TR/CSS2/text.html#alignment-prop">CSS 2.1</a></spec>
     <spec><a href="https://www.w3.org/TR/css-text-3/#text-align-property">CSS Text Module Level 3</a></spec>
     <spec><a href="https://figures.spec.whatwg.org/#aligning-text-inside-and-outside-pages">CSS Figures</a></spec>
@@ -7035,8 +7025,8 @@ supplier, item { overflow-wrap: normal; }
 	    <keyword>end</keyword>
 	    <keyword>left</keyword>
 	    <keyword>right</keyword>
-	    <keyword>inside</keyword>
-	    <keyword>outside</keyword>
+	    <keyword class="ext">inside</keyword>
+	    <keyword class="ext">outside</keyword>
 	    <keyword>center</keyword>
 	    <keyword>justify</keyword>
 	</choice>
@@ -7066,8 +7056,8 @@ supplier, item { overflow-wrap: normal; }
 	    <keyword>end</keyword>
 	    <keyword>left</keyword>
 	    <keyword>right</keyword>
-	    <keyword>inside</keyword>
-	    <keyword>outside</keyword>
+	    <keyword class="ext">inside</keyword>
+	    <keyword class="ext">outside</keyword>
 	    <keyword>center</keyword>
 	    <keyword>justify</keyword>
 	</choice>

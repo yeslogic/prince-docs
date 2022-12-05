@@ -676,6 +676,27 @@ Prince also supports the two special keywords <code>initial</code> and <code>inh
     <xsl:text>?</xsl:text>
 </xsl:template>
 
+<xsl:template match="optional[@class='ext']">
+    <xsl:param name="indent"/>
+    <span class="ext">
+        <xsl:choose>
+        <xsl:when test="count(*)=1 and (text|attr|keyword|type|ref|integer|percentage|ident|string)">
+            <xsl:apply-templates select="*">
+            <xsl:with-param name="indent" select="$indent"/>
+            </xsl:apply-templates>
+        </xsl:when>
+        <xsl:otherwise>
+            <xsl:text>[ </xsl:text>
+            <xsl:call-template name="sequence">
+            <xsl:with-param name="indent" select="concat($indent, ' &#xa0;')"/>
+            </xsl:call-template>
+            <xsl:text> ]</xsl:text>
+        </xsl:otherwise>
+        </xsl:choose>
+        <xsl:text>?</xsl:text>
+    </span>
+</xsl:template>
+
 <!-- follows special treatment for certain elements -->
 
 <xsl:template match="ref">
