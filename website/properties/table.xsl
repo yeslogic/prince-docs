@@ -627,7 +627,7 @@ Prince also supports the two special keywords <code>initial</code> and <code>inh
         <xsl:text> ]</xsl:text>
     </xsl:otherwise>
     </xsl:choose>
-    <xsl:if test="@sep">
+    <xsl:if test="@sep and not(@min=@max)">
     <xsl:text>#</xsl:text>
     </xsl:if>
     <xsl:choose>
@@ -657,7 +657,7 @@ Prince also supports the two special keywords <code>initial</code> and <code>inh
     </xsl:choose>
 </xsl:template>
 
-<xsl:template match="optional">
+<xsl:template match="optional[not(@class)]">
     <xsl:param name="indent"/>
     <xsl:choose>
     <xsl:when test="count(*)=1 and (text|attr|keyword|type|ref|integer|percentage|ident|string)">
@@ -701,51 +701,46 @@ Prince also supports the two special keywords <code>initial</code> and <code>inh
 
 <xsl:template match="ref">
     <xsl:variable name="href" select="."/>
-    <i><a href="#prop-{$href}">
-      <xsl:if test="starts-with(., 'prince-')"><xsl:text>-</xsl:text></xsl:if>
-      <xsl:value-of select="."/>
-    </a></i>
+    <a href="#prop-{$href}">&lt;'<i><xsl:if test="starts-with(., 'prince-')"><xsl:text>-</xsl:text></xsl:if><xsl:value-of select="."/></i>'&gt;</a>
 </xsl:template>
 
 <xsl:template match="type[not(@class)]">
-    <i><xsl:value-of select="."/></i>
+    <span>&lt;<i><xsl:value-of select="."/></i>&gt;</span>
 </xsl:template>
 
 <xsl:template match="type[@class='ext']">
-    <span class="ext"><i><xsl:value-of select="."/></i></span>
+    <span class="ext">&lt;<i><xsl:value-of select="."/></i>&gt;</span>
 </xsl:template>
 
 <xsl:template match="percentage[not(@class)]">
-    <i>percent</i>
+    <span>&lt;<i>percent</i>&gt;</span>
 </xsl:template>
 
 <xsl:template match="percentage[@class='ext']">
-    <span class="ext"><i>percent</i></span>
+    <span class="ext">&lt;<i>percent</i>&gt;</span>
 </xsl:template>
 
 <xsl:template match="ident">
-    <i><xsl:value-of select="."/></i>
+    <span>&lt;<i><xsl:value-of select="."/></i>&gt;</span>
 </xsl:template>
 
 <xsl:template match="integer">
-    <i><xsl:value-of select="."/></i>
+    <span>&lt;<i><xsl:value-of select="."/></i>&gt;</span>
 </xsl:template>
 
 <xsl:template match="string">
-    <xsl:text>"</xsl:text>
-    <xsl:value-of select="."/>
-    <xsl:text>"</xsl:text>
+        <span>&lt;<i><xsl:value-of select="."/></i>&gt;</span>
 </xsl:template>
 
 <xsl:template match="url">
     <xsl:text>url(&#xa0;</xsl:text>
-    <i><xsl:value-of select="."/></i>
+        <span>&lt;<i><xsl:value-of select="."/></i>&gt;</span>
     <xsl:text>&#xa0;)</xsl:text>
 </xsl:template>
 
 <xsl:template match="attr">
     <xsl:text>attr(&#xa0;</xsl:text>
-    <i><xsl:value-of select="."/></i>
+        <span>&lt;<i><xsl:value-of select="."/></i>&gt;</span>
     <xsl:text>&#xa0;)</xsl:text>
 </xsl:template>
 
