@@ -556,9 +556,12 @@ This example demonstrates a more complete headers style. It uses generated conte
 ```
 The main content area is 2.5cm from the page's edge on all sides. On the left and right this is a margin of 2.5cm and on the top and bottom it's 2cm of margin and 0.5cm of padding. This places the bottom border of the `@top` page region 0.5cm from the main content area, enough to avoid making it look crowded. The header text has the `vertical-align: bottom` property to ensure that it appears immediately above the border — the border is made to look like an underline. This example uses many properties and page selectors discussed later in this section. This is a small part of a [larger example](https://github.com/yeslogic/prince-samples/tree/master/thesis) in our [Prince samples repository](https://github.com/yeslogic/prince-samples).
 
+Content can also be *copied*, or *removed* from the normal document flow, to place it into the page regions - in the former case, it will receive new styling specific to the page region, in the latter case it will mostly inherit the style of the original location, as described in the following sections.
+
+
 ### Copying content from the document
 
-Generated content in page regions may contain text content copied from the document using the [`string-set`](css-props.md#prop-string-set) property:
+Generated content in page regions may contain text content *copied* from the document using the [`string-set`](css-props.md#prop-string-set) property:
 
 CSS
 
@@ -596,12 +599,12 @@ You can see these examples in full action in the [Dictionary](/samples/#dictiona
 
 ### Taking elements from the document
 
-Page region content may also be taken from the document itself. Any block-level element can be removed from the normal flow and placed in a page region. It will normally inherit from its original position in the document, but does not display there. Please also note the following:
+Page region content may also be taken from the document itself. Any block-level element can be *removed* from the normal flow and placed in a page region. It will normally inherit styling from its original position in the document, but does not display there. Please also note the following:
 
 -   All `margin` properties of an element not in the natural document flow will be ignored.
 -   The first running element that appears on a page will be used on the current page and carried onto following pages, until a new running element is encountered.
 
-To move the content into a page region, the element needs to be removed from the normal document flow position with the `running()` function of the [`position`](css-props.md#prop-position) property, and inserted into the specified region with the `element()` function of the [`content`](css-props.md#prop-content) property.
+To move the content into a page region, the element needs to be *removed* from the normal document flow position with the `running()` function of the [`position`](css-props.md#prop-position) property, and inserted into the specified region with the `element()` function of the [`content`](css-props.md#prop-content) property.
 
 CSS
 
