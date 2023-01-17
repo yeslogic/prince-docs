@@ -726,6 +726,13 @@ Rasterization is enabled with the `--raster-output` option below. When this is u
     For more details, please check the detailed documentation in the separate <a href="/doc/server-integration/#prince-control-protocol">Prince Control Protocol</a>
     chapter.</p>
   </dd>
+  <dt id="cl-job"><code>--job=<span class="replaceable">FILE</span></code></dt>
+  <dd>
+    <p>The Job option allows to specify a Prince job in JSON format.
+    For more details, please check the detailed documentation in the
+    separate <a href="/doc/server-integration/#prince-job-json">Prince Job JSON</a>
+    chapter.</p>
+  </dd>
   <dt id="cl-structured-log"><code>--structured-log=<span class="replaceable">LEVEL</span></code></dt>
   <dd>
     <p>The Structured Log option is a formatting option for Prince's output to stderr.

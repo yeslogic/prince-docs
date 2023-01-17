@@ -358,66 +358,10 @@ Two options are useful for understanding the calls Prince can be controlled with
 
 Prince also offers a set of [Fail-Safe Options](#fail-safe-options) to prevent the creation of a PDF file in case of specific conditions.
 
-### Prince Control Protocol
+First of all, though, we need to understand one important basic concept - the [Prince Job](#prince-job-json), which is the definition of a job, or task assigned to Prince, described in a JSON format.
 
-`prince --control`  
-The Prince Control Protocol, accessible through the command-line option `--control`, is a synchronous bidirectional protocol that consists of a sequence of "chunks" sent via the standard input and output streams.
 
-Each chunk starts with an identifying three-letter *tag* followed by the *length* of the chunk expressed in bytes, followed by the data itself.
-
-Here is an example "version" chunk to demonstrate the syntax:
-
-```
-ver 15
-Prince 20161219
-```
-
-This chunk has a tag `ver` (all tags are three ASCII characters) followed by a space, then the length of the data expressed as a decimal number, then a newline character, then the data itself (15 bytes), then another newline (not part of the data).
-
-This version chunk is emitted by Prince when the control protocol begins and can be used to check the Prince version and confirm that communication is functioning as expected. Prince will then wait for jobs to be submitted.
-
-If a chunk contains no data then the length is zero and the chunk ends with the newline immediately following the length. In fact the length itself may be omitted, making this a perfectly valid chunk:
-
-```
-end
-```
-
-This `end` chunk consists of three letters and a newline character and can be used to terminate the Prince process when there are no further jobs to process.
-
-Currently the control protocol includes the following chunk types sent by Prince:
-
--   `ver`, sent at startup
--   `pdf`, a generated PDF file
--   `log`, the complete output log for the job including all errors and warnings
--   `err`, errors relating to the control protocol itself
-
-And these chunks sent by the caller:
-
--   `job`, the description of a requested conversion job, expressed in JSON
--   `dat`, a file resource needed by the job
--   `end`, to terminate the control connection
-
-A typical interaction looks like this:
-
-```
-Prince: ver
-Caller: job
-Caller: dat
-Caller: dat
-Prince: pdf
-Prince: log
-Caller: end
-```
-
-Instead of sending the final `end` chunk the caller may choose to submit another `job` chunk and continue converting documents. The protocol is synchronous so replies simply match requests in order.
-
-The `job` chunk contains a description of the conversion job represented in JSON format, which can be followed by an optional sequence of `dat` chunks containing file data which is needed by the job, eg. HTML documents, style sheets, PDF attachments, or whatever.
-
-<p class="note">
-Chunks always begin with a line containing a <b>three letter tag</b>, followed by a space and then <b><em>the number of bytes</em></b> in the chunk as a decimal number, followed by a newline, and then the chunk data.
-</p>
-
-The number of `dat` chunks is specified by the `job-resource-count` field in the job description, and these files can be accessed via a special job-resource URL scheme, eg. `job-resource:0` will access the content of the first `dat` chunk, then `job-resource:1`, `job-resource:2`, etc. This allows any number of resources to be provided inline with the request and removes the need to create actual temporary files.
+### Prince Job JSON
 
 The JSON job description ([here](#job-description-json) you can see the full description) has several nested objects with fields corresponding to Prince options:
 
@@ -451,33 +395,6 @@ The `input options` object includes these fields:
 }
 ```
 Only the `src` field is required, the rest can be left as defaults.
-
-Now we can make some simple job descriptions, eg. to convert a single HTML file:
-
-```json
-job 90
-{
-    "input": {
-        "src": "/path/to/input.html"
-    },
-    "job-resource-count": 0
-}
-```
-This can be sent as a single `job` chunk - with the number of bytes of the job description, followed after a newline by the job description itself - and Prince will respond with a `pdf` chunk if the conversion succeeded, and a `log` chunk.
-
-Or you can convert an HTML document without saving it to a temporary file - it requires the `job` chunk to be followed by a `dat` chunk that contains the HTML and then Prince will respond as before:
-
-```json
-job 85
-{
-    "input": {
-        "src": "job-resource:0"
-    },
-    "job-resource-count": 1
-}
-dat 19
-/path/to/input.html
-```
 
 The `pdf options` object includes these fields:
 
@@ -614,6 +531,111 @@ The following is the full JSON job description - the `input` and `job-resource` 
     },
     "job-resource-count": <int>
 }
+```
+
+#### The Job Command-line option
+
+A complicated Prince job can be described in a JSON file, instead of using lots of command-line arguments.
+
+Some things described in the JSON file also do not have equivalent command-line arguments, such as the ability to specify titles for file attachments, or different settings for different input documents, instead of the same settings for all input documents - in short, the JSON description is more flexible.
+
+This JSON description can then be passed to Prince with the Job Command-line option [`--job`](command-line.md#cl-job), in order to have Prince execute the described job.
+
+```bash
+    $ prince --job=myjob.json
+```
+
+Prince also allows for the JSON description to be read from standard input.
+
+<p class="note">If file locations in the JSON file are expressed as <em>relative paths</em>, please note that they are relative <b>to the present working directory</b>, not the path to the JSON file.</p>
+
+### Prince Control Protocol
+
+`prince --control`
+
+The Prince Control Protocol, accessible through the command-line option `--control`, is a synchronous bidirectional protocol that consists of a sequence of "chunks" sent via the standard input and output streams.
+
+Each chunk starts with an identifying three-letter *tag* followed by the *length* of the chunk expressed in bytes, followed by the data itself.
+
+Here is an example "version" chunk to demonstrate the syntax:
+
+```
+ver 15
+Prince 20161219
+```
+
+This chunk has a tag `ver` (all tags are three ASCII characters) followed by a space, then the length of the data expressed as a decimal number, then a newline character, then the data itself (15 bytes), then another newline (not part of the data).
+
+This version chunk is emitted by Prince when the control protocol begins and can be used to check the Prince version and confirm that communication is functioning as expected. Prince will then wait for jobs to be submitted.
+
+If a chunk contains no data then the length is zero and the chunk ends with the newline immediately following the length. In fact the length itself may be omitted, making this a perfectly valid chunk:
+
+```
+end
+```
+
+This `end` chunk consists of three letters and a newline character and can be used to terminate the Prince process when there are no further jobs to process.
+
+Currently the control protocol includes the following chunk types sent by Prince:
+
+-   `ver`, sent at startup
+-   `pdf`, a generated PDF file
+-   `log`, the complete output log for the job including all errors and warnings
+-   `err`, errors relating to the control protocol itself
+
+And these chunks sent by the caller:
+
+-   `job`, the description of a requested conversion job, expressed in JSON
+-   `dat`, a file resource needed by the job
+-   `end`, to terminate the control connection
+
+A typical interaction looks like this:
+
+```
+Prince: ver
+Caller: job
+Caller: dat
+Caller: dat
+Prince: pdf
+Prince: log
+Caller: end
+```
+
+Instead of sending the final `end` chunk the caller may choose to submit another `job` chunk and continue converting documents. The protocol is synchronous so replies simply match requests in order.
+
+The `job` chunk contains a description of the conversion job represented in JSON format (as described [here](#prince-job-json)), which can be followed by an optional sequence of `dat` chunks containing file data which is needed by the job, eg. HTML documents, style sheets, PDF attachments, or whatever.
+
+<p class="note">
+Chunks always begin with a line containing a <b>three letter tag</b>, followed by a space and then <b><em>the number of bytes</em></b> in the chunk as a decimal number, followed by a newline, and then the chunk data.
+</p>
+
+The number of `dat` chunks is specified by the `job-resource-count` field in the job description, and these files can be accessed via a special job-resource URL scheme, eg. `job-resource:0` will access the content of the first `dat` chunk, then `job-resource:1`, `job-resource:2`, etc. This allows any number of resources to be provided inline with the request and removes the need to create actual temporary files.
+
+Now we can make some simple job descriptions, eg. to convert a single HTML file:
+
+```json
+job 90
+{
+    "input": {
+        "src": "/path/to/input.html"
+    },
+    "job-resource-count": 0
+}
+```
+This can be sent as a single `job` chunk - with the number of bytes of the job description, followed after a newline by the job description itself - and Prince will respond with a `pdf` chunk if the conversion succeeded, and a `log` chunk.
+
+Or you can convert an HTML document without saving it to a temporary file - it requires the `job` chunk to be followed by a `dat` chunk that contains the HTML and then Prince will respond as before:
+
+```json
+job 85
+{
+    "input": {
+        "src": "job-resource:0"
+    },
+    "job-resource-count": 1
+}
+dat 19
+/path/to/input.html
 ```
 
 ### Structured Log
