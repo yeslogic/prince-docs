@@ -535,9 +535,11 @@ The following is the full JSON job description - the `input` and `job-resource` 
 
 #### The Job Command-line option
 
-A complicated Prince job can be described in a JSON file, instead of using lots of command-line arguments.
+A complicated Prince job can be described with the JSON format described above, and saved in a file, instead of using lots of command-line arguments.
 
-Some things described in the JSON file also do not have equivalent command-line arguments, such as the ability to specify titles for file attachments, or different settings for different input documents, instead of the same settings for all input documents - in short, the JSON description is more flexible.
+Some things described in such a JSON file also do not have equivalent command-line arguments, such as the ability to specify titles for file attachments, or different settings for different input documents, instead of the same settings for all input documents - in short, the JSON description is more flexible.
+
+<p class="note">If file locations in the JSON file are expressed as <em>relative paths</em>, please note that they are relative <b>to the present working directory</b>, not the path to the JSON file.</p>
 
 This JSON description can then be passed to Prince with the Job Command-line option [`--job`](command-line.md#cl-job), in order to have Prince execute the described job.
 
@@ -547,7 +549,12 @@ This JSON description can then be passed to Prince with the Job Command-line opt
 
 Prince also allows for the JSON description to be read from standard input.
 
-<p class="note">If file locations in the JSON file are expressed as <em>relative paths</em>, please note that they are relative <b>to the present working directory</b>, not the path to the JSON file.</p>
+```bash
+    $ prince --job -
+```
+
+Some Prince command-line options are not compatible with the job option, since they might cause conflicts.  In such a case, Prince will produce an error message.  Other options, however, can be combined with the job option, such as the fail-safe options and input options for network related settings.
+
 
 ### Prince Control Protocol
 
