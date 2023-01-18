@@ -370,10 +370,9 @@ The JSON job description ([here](#job-description-json) you can see the full des
     "input": { <input options> },
     "pdf": { <pdf options> },
     "metadata": { <metadata options> },
-    "job-resource-count": <int>
 }
 ```
-The `input options` and `job-resource-count` are mandatory, the rest are optional and will default to the normal values.
+The `input` field is mandatory, the rest are optional and will default to the normal values.
 
 The `input options` object includes these fields:
 
@@ -395,6 +394,10 @@ The `input options` object includes these fields:
 }
 ```
 Only the `src` field is required, the rest can be left as defaults.
+
+<p class="note">
+URLs must be file names, or HTTP URLs - or, if the user wishes to embed the file inside the job itself, they also can be <code>data:</code> URLs!
+</p>
 
 The `pdf options` object includes these fields:
 
@@ -461,7 +464,7 @@ The `metadata options` object includes these fields:
 
 #### Job description JSON
 
-The following is the full JSON job description - the `input` and `job-resource` fields are mandatory:
+The following is the full JSON job description - the `input` field is mandatory:
 
 ```json
 {
@@ -528,8 +531,7 @@ The following is the full JSON job description - the `input` and `job-resource` 
         "author": <string>,
         "keywords": <string>,
         "creator": <string>,
-    },
-    "job-resource-count": <int>
+    }
 }
 ```
 
@@ -553,7 +555,7 @@ Prince also allows for the JSON description to be read from standard input.
     $ prince --job -
 ```
 
-Some Prince command-line options are not compatible with the job option, since they might cause conflicts.  In such a case, Prince will produce an error message.  Other options, however, can be combined with the job option, such as the fail-safe options and input options for network related settings.
+Some Prince command-line options are not compatible with the job option, since they might cause conflicts.  In such a case, Prince will produce an error message.  Other options, however, can be combined with the job option, such as the fail-safe options and those for network related settings.
 
 
 ### Prince Control Protocol
@@ -610,11 +612,13 @@ Caller: end
 
 Instead of sending the final `end` chunk the caller may choose to submit another `job` chunk and continue converting documents. The protocol is synchronous so replies simply match requests in order.
 
-The `job` chunk contains a description of the conversion job represented in JSON format (as described [here](#prince-job-json)), which can be followed by an optional sequence of `dat` chunks containing file data which is needed by the job, eg. HTML documents, style sheets, PDF attachments, or whatever.
-
 <p class="note">
 Chunks always begin with a line containing a <b>three letter tag</b>, followed by a space and then <b><em>the number of bytes</em></b> in the chunk as a decimal number, followed by a newline, and then the chunk data.
 </p>
+
+The `job` chunk contains a description of the conversion job represented in JSON format, which can be followed by an optional sequence of `dat` chunks containing file data which is needed by the job, eg. HTML documents, style sheets, PDF attachments, or whatever.
+
+The required JSON format is described [here](#prince-job-json) - however, the JSON job description requires one more mandatory field, i.e. the `job-resource-count`, which takes an integer as value. Thus, in this case both the `input` and `job-resource-count` fields are mandatory, the rest are optional and will default to the normal values.
 
 The number of `dat` chunks is specified by the `job-resource-count` field in the job description, and these files can be accessed via a special job-resource URL scheme, eg. `job-resource:0` will access the content of the first `dat` chunk, then `job-resource:1`, `job-resource:2`, etc. This allows any number of resources to be provided inline with the request and removes the need to create actual temporary files.
 
