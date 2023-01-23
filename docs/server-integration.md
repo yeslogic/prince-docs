@@ -618,6 +618,8 @@ Chunks always begin with a line containing a <b>three letter tag</b>, followed b
 
 The `job` chunk contains a description of the conversion job represented in JSON format, which can be followed by an optional sequence of `dat` chunks containing file data which is needed by the job, eg. HTML documents, style sheets, PDF attachments, or whatever.
 
+#### Job Resources
+
 The required JSON format is described [here](#prince-job-json) - however, the JSON job description requires one more mandatory field, i.e. the `job-resource-count`, which takes an integer as value. Thus, in this case both the `input` and `job-resource-count` fields are mandatory, the rest are optional and will default to the normal values.
 
 The number of `dat` chunks is specified by the `job-resource-count` field in the job description, and these files can be accessed via a special job-resource URL scheme, eg. `job-resource:0` will access the content of the first `dat` chunk, then `job-resource:1`, `job-resource:2`, etc. This allows any number of resources to be provided inline with the request and removes the need to create actual temporary files.
