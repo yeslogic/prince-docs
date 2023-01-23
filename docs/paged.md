@@ -335,13 +335,20 @@ The full list of page regions is shown in the following [Page regions](#tab-marg
   <dt>Page-margin boxes</dt>
   <dd><p>Prince will try to create <em>page-margin boxes</em> of the correct sizes. If you
   need to create boxes of specific sizes you may need to use only a single box (eg:
-  <code>@top-center</code>) and use the <a href="/doc/css-props#prop-content"><code>content</code></a> property to place elements with specific sizes in it.</p>
-  <p>Note that in the above <a href="#page-regions">Page regions</a> figure, Prince leaves
+  <code>@top-center</code>) and use the <a href="/doc/css-props#prop-content"><code>content</code></a>
+  property to place elements with specific sizes in it.</p>
+  <p>In the above <a href="#page-regions">Page regions</a> figure, Prince leaves
   space for <code>@top-right</code> and <code>@left-bottom</code> boxes because their
   counterparts (<code>@top-left</code> and <code>@left-top</code> respectively) have been
   defined. This keeps the <code>@top-center</code> and <code>@left-middle</code> centered
   along the top and side of the page respectively.</p>
-  <p>The page-margin boxes <code>@top-center</code>, <code>@top-left</code> or <code>@top-right</code> can be used to create running page headers, and the page-margin boxes <code>@bottom-center</code>, <code>@bottom-left</code> or <code>@bottom-right</code> are useful for page footers (see <a href="/doc/cookbook#page-headers-and-footers">Page Headers and Footers</a>).</p>
+  <p class="note">These page regions, however, only subdivide the space <em>within</em> the
+  page body width, and height, none of them extend into the corners. To target a corner region,
+  the areas ending in <code>-corner</code> need to be used.</p>
+  <p>The page-margin boxes <code>@top-center</code>, <code>@top-left</code> or <code>@top-right</code>
+  can be used to create running page headers, and the page-margin boxes <code>@bottom-center</code>,
+  <code>@bottom-left</code> or <code>@bottom-right</code> are useful for page footers (see
+  <a href="/doc/cookbook#page-headers-and-footers">Page Headers and Footers</a>).</p>
   </dd>
 
   <dt>Page area regions</dt>
