@@ -632,7 +632,7 @@ The first field indicates the type of message, which can be:
 -   `fin|` = final outcome, which can be
     -   `fin|success`, or
     -   `fin|failure`;
--   `dat|name|value` = data messages produced by [`Log.data("name", "value")`](js-support.md#window.Log.data);
+-   <code>dat|&lt;<i>name</i>&gt;|&lt;<i>value</i>&gt;</code> = data messages produced by [<code>Log.data(<i>name</i>, <i>value</i>)</code>](js-support.md#window.Log.data);
 -   `msg|` = messages, which can be any of the following:
     -   `msg|err` = error message;
     -   `msg|wrn` = warning message;
