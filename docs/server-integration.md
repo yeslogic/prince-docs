@@ -653,8 +653,7 @@ dat 19
 
 ### Structured Log
 
-`--structured-log=LEVEL`  
-This option is designed to make it easier to integrate other software with Prince. It takes these values:
+The [structured log command-line options](command-line.md#cl-structured-log) are designed to make it easier to integrate other software with Prince. It is articulated in the following values:
 
 -   `--no-structured-log`
 -   `--structured-log=normal`

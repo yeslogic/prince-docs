@@ -733,10 +733,13 @@ Rasterization is enabled with the `--raster-output` option below. When this is u
     separate <a href="/doc/server-integration/#prince-job-json">Prince Job JSON</a>
     chapter.</p>
   </dd>
+  <dt id="cl-no-structured-log"><code>--no-structured-log</code></dt>
   <dt id="cl-structured-log"><code>--structured-log=<span class="replaceable">LEVEL</span></code></dt>
   <dd>
     <p>The Structured Log option is a formatting option for Prince's output to stderr.
-    For more details, please check the detailed documentation in the separate <a href="/doc/server-integration/#structured-log">Structured Log</a>
+    Allowed level values are <code>normal</code>, <code>quite</code>, <code>progress</code>
+    and <code>buffered</code>. For more details, please check the detailed documentation
+    in the separate <a href="/doc/server-integration/#structured-log">Structured Log</a>
     chapter.</p>
   </dd>
   <dt id="cl-fail-dropped-content"><code>--fail-dropped-content</code></dt>
