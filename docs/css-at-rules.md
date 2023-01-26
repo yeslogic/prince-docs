@@ -72,7 +72,7 @@ The initial values for <code>@page</code> styles are documented in the
 <tr>
 <td><code>@left-top</code> | <code>@left-middle</code> |
 <code>@left-bottom</code></td>
-<td rowspan="7"><a href="/doc/paged#page-regions">Page region</a> at-rules</td>
+<td rowspan="8"><a href="/doc/paged#page-regions">Page region</a> at-rules</td>
 </tr>
 <tr>
 <td><code>@right-top</code> | <code>@right-middle</code> |
@@ -87,13 +87,16 @@ The initial values for <code>@page</code> styles are documented in the
 <code>@bottom-center</code> | <code>@bottom-right</code> | <code>@bottom-right-corner</code></td>
 </tr>
 <tr>
-<td><code>@page-float-top</code> | <code>@page-float-bottom</code> | <code>@prince-overlay</code></td>
+<td><code>@page-float-top</code> | <code>@page-float-bottom</code></td>
+</tr>
+<tr>
+<td><code>@leftnote</code> | <code>@rightnote | @insidenote</code> | <code>@outsidenote</code></td>
 </tr>
 <tr>
 <td><code>@footnote</code></td>
 </tr>
 <tr>
-<td><code>@leftnote</code> | <code>@rightnote | @insidenote</code> | <code>@outsidenote</code></td>
+<td><code>@prince-overlay</code></td>
 </tr>
 <tr>
 <td colspan="2">The <code>@page</code> rule takes the following CSS properties:

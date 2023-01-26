@@ -293,18 +293,6 @@ The full list of page regions is shown in the following [Page regions](#tab-marg
 <td style="background-color: gainsboro">gainsboro</td>
 </tr>
 <tr>
-<td><code>@prince-overlay</code></td>
-<td>center</td>
-<td>middle</td>
-<td style="background: repeating-linear-gradient( -45deg, rgba(255,255,255, 0.1), rgba(255,255,255, 0.1) 10px, rgba(255,0,0, 0.2) 10px, rgba(255,0,0, 0.2) 20px );">stripes</td>
-</tr>
-<tr>
-<td><code>@footnote</code></td>
-<td>left</td>
-<td>middle</td>
-<td style="background-color: aliceblue">aliceblue</td>
-</tr>
-<tr>
 <td><code>@leftnote</code></td>
 <td>left</td>
 <td>middle</td>
@@ -327,6 +315,18 @@ The full list of page regions is shown in the following [Page regions](#tab-marg
 <td>left</td>
 <td>middle</td>
 <td>not shown</td>
+</tr>
+<tr>
+<td><code>@footnote</code></td>
+<td>left</td>
+<td>middle</td>
+<td style="background-color: aliceblue">aliceblue</td>
+</tr>
+<tr>
+<td><code>@prince-overlay</code></td>
+<td>center</td>
+<td>middle</td>
+<td style="background: repeating-linear-gradient( -45deg, rgba(255,255,255, 0.1), rgba(255,255,255, 0.1) 10px, rgba(255,0,0, 0.2) 10px, rgba(255,0,0, 0.2) 20px );">stripes</td>
 </tr>
 </tbody>
 </table>
