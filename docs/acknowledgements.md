@@ -46,7 +46,7 @@ library is used by Prince to load and process TrueType font files.
 
 <dt id="giflib">GIFLIB</dt>
 <dd>
-The <a href="http://giflib.sourceforge.net/">GIFLIB</a>
+The <a href="https://giflib.sourceforge.net/">GIFLIB</a>
 library is used by Prince to load GIF image files.
 </dd>
 
