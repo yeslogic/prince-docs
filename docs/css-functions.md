@@ -16,22 +16,22 @@ In this section you find the documentation for the supported CSS functional expr
 </thead>
 <tbody>
 <tr>
-<td><code>attr( <i>attribute-name</i> <i>type-or-unit</i>? [,&#160;<i>fallback</i>]? )</code></td>
+<td><code>attr( &lt;<i>attribute-name</i>&gt; &lt;<i>type-or-unit</i>&gt;? [,&#160;&lt;<i>fallback</i>&gt;]? )</code></td>
 <td>Retrieves the value of an attribute of the selected element.</td>
 <td></td>
 </tr>
 <tr>
-<td><code>url( <i>url</i> )</code></td>
+<td><code>url( &lt;<i>url</i>&gt; )</code></td>
 <td>Represents a URL, i.e. a pointer to a source.</td>
 <td></td>
 </tr>
 <tr>
-<td><code>calc( <i>expression</i> )</code></td>
+<td><code>calc( &lt;<i>expression</i>&gt; )</code></td>
 <td>Calculates the expression's result, to be used as the value.</td>
 <td></td>
 </tr>
 <tr>
-<td><code>var( <i>custom-property-name</i> [,&#160;<i>fallback</i>]? )</code></td>
+<td><code>var( &lt;<i>custom-property-name</i>&gt; [,&#160;&lt;<i>fallback</i>&gt;]? )</code></td>
 <td>Retrieves the value of a custom property set elsewhere.</td>
 <td><a href="/doc/styling#custom-properties-css-variables">Custom properties (CSS variables)</a></td>
 </tr>
@@ -58,7 +58,7 @@ alpha component.</td>
 <td>Defines hue, saturation and lightness values and the alpha component of a color.</td>
 </tr>
 <tr class="ext">
-<td><code>prince-color( <i>colorname</i>  [,&#160;<i>number</i> |&#160;<i>percentage</i>]? , overprint? )*</code></td>
+<td><code>prince-color( &lt;<i>colorname</i>&gt;  [,&#160;&lt;<i>number</i>&gt; |&#160;&lt;<i>percentage</i>&gt;]? , overprint? )*</code></td>
 <td>Using a spot color defined in the <code><a href="/doc/css-at-rules/#at-prince-color">@prince-color</a></code>
 at-rule. The number or percentage defines the tint. An optional <code>overprint</code>
 keyword instructs Prince whether to overprint the color.
@@ -68,31 +68,31 @@ keyword instructs Prince whether to overprint the color.
 </td>
 </tr>
 <tr class="ext">
-<td><code>prince-overprint( <i>colorname</i> | rgb() | cmyk() | device-cmyk() | hsl() | prince-color() [, [overprint-mode-nonzero | overprint-mode-zero]]? )*</code></td>
+<td><code>prince-overprint( &lt;<i>colorname</i>&gt; | rgb() | cmyk() | device-cmyk() | hsl() | prince-color() [, [overprint-mode-nonzero | overprint-mode-zero]]? )*</code></td>
 <td>Specifies a non-transparent color value to overprint.  If no overprint mode
 is given, it defaults to <code>overprint-mode-nonzero</code>.</td>
 </tr>
 <tr>
-<td><code>linear-gradient([ [ <i>angle</i> | to <i>side-or-corner</i> ] ,]? <i>color-stop</i> [,&#160;<i>color-stop</i>]+)</code></td>
+<td><code>linear-gradient([ [ &lt;<i>angle</i>&gt; | to &lt;<i>side-or-corner</i>&gt; ] ,]? &lt;<i>color-stop</i>&gt; [,&#160;&lt;<i>color-stop</i>&gt;]+)</code></td>
 <td>Creates an image consisting of a progressive transition between two or more
 colors along a straight line.</td>
 <td rowspan="4"><code><a href="/doc/css-props#prop-background-image">background-image</a></code></td>
 </tr>
 <tr>
-<td><code>radial-gradient([ [ <i>shape</i> || <i>size</i> ] [ at <i>position</i> ]?, | at <i>position</i>, ]? <i>color-stop</i> [,&#160;<i>color-stop</i> ]+)</code></td>
+<td><code>radial-gradient([ [ &lt;<i>shape</i>&gt; || &lt;<i>size</i>&gt; ] [ at &lt;<i>position</i>&gt; ]?, | at &lt;<i>position</i>&gt;, ]? &lt;<i>color-stop</i>&gt; [,&#160;&lt;<i>color-stop</i>&gt; ]+)</code></td>
 <td>Creates an image consisting of a progressive transition between two or more
 colors that radiate from an origin point</td>
 </tr>
 <tr>
-<td><code>repeating-linear-gradient([ [ <i>angle</i> | to <i>side-or-corner</i> ] ,]? <i>color-stop</i> [,&#160;<i>color-stop</i>]+)</code></td>
+<td><code>repeating-linear-gradient([ [ &lt;<i>angle</i>&gt; | to &lt;<i>side-or-corner</i>&gt; ] ,]? &lt;<i>color-stop</i>&gt; [,&#160;&lt;<i>color-stop</i>&gt;]+)</code></td>
 <td>Creates an image consisting of repeating linear gradients.</td>
 </tr>
 <tr>
-<td><code>repeating-radial-gradient([ [ <i>shape</i> || <i>size</i> ] [ at <i>position</i> ]?, | at <i>position</i>, ]? <i>color-stop</i> [,&#160;<i>color-stop</i> ]+)</code></td>
+<td><code>repeating-radial-gradient([ [ &lt;<i>shape</i>&gt; || &lt;<i>size</i>&gt; ] [ at &lt;<i>position</i>&gt; ]?, | at &lt;<i>position</i>&gt;, ]? &lt;<i>color-stop</i>&gt; [,&#160;&lt;<i>color-stop</i>&gt; ]+)</code></td>
 <td>Creates an image consisting of repeating radial gradients.</td>
 </tr>
 <tr>
-<td><code>rect( <i>offset</i>, <i>offset</i>, <i>offset</i>, <i>offset</i> )</code></td>
+<td><code>rect( &lt;<i>offset</i>&gt;, &lt;<i>offset</i>&gt;, &lt;<i>offset</i>&gt;, &lt;<i>offset</i>&gt; )</code></td>
 <td>Defines a region in the form of a rectangle.</td>
 <td><code><a href="/doc/css-props#prop-clip">clip</a></code></td>
 </tr>
@@ -103,48 +103,48 @@ different properties.</td>
 <td rowspan="17"><code><a href="/doc/css-props#prop-content">content</a></code> - see also <a href="/doc/gen-content#generated-content-functions">Generated Content Functions</a></td>
 </tr>
 <tr>
-<td><code>element( <i>name</i>, <i>page-policy</i>? )</code></td>
+<td><code>element( &lt;<i>name</i>&gt;, &lt;<i>page-policy</i>&gt;? )</code></td>
 <td>Places an element (which has been removed from the normal flow with the
 <code>running()</code> function) in a page region.  See
 <a href="/doc/paged#taking-elements-from-the-document">Taking elements from the document</a>.</td>
 </tr>
 <tr>
-<td><code>prince-expansion-text( <i>expansion</i>, <i>abbreviation</i> )*</code></td>
+<td><code>prince-expansion-text( &lt;<i>expansion</i>&gt;, &lt;<i>abbreviation</i>&gt; )*</code></td>
 <td>Resolves abbreviations in the targeted element or psedudo-element.</td>
 </tr>
 <tr>
-<td><code>counter( <i>name</i>, <i>counter-style</i>?, <i>page-policy</i>? )</code></td>
+<td><code>counter( &lt;<i>name</i>&gt;, &lt;<i>counter-style</i>&gt;?, &lt;<i>page-policy</i>&gt;? )</code></td>
 <td>Generates a value for the innermost counter.</td>
 </tr>
 <tr>
-<td><code>counters( <i>name</i>, "<i>separator</i>", <i>counter-style</i>?, <i>page-policy</i>? )</code></td>
+<td><code>counters( &lt;<i>name</i>&gt;, "&lt;<i>separator</i>&gt;", &lt;<i>counter-style</i>&gt;?, &lt;<i>page-policy</i>&gt;? )</code></td>
 <td>Concatenates counters on different levels.</td>
 </tr>
 <tr>
-<td><code>target-counter( <i>url</i>, <i>counter</i>, <i>counter-style</i>? )</code></td>
+<td><code>target-counter( &lt;<i>url</i>&gt;, &lt;<i>counter</i>&gt;, &lt;<i>counter-style</i>&gt;? )</code></td>
 <td>Retrieves the value of the innermost counter with a given name at the given URL.
 See <a href="/doc/gen-content#using-target-counter">Using target-counter()</a>.</td>
 </tr>
 <tr>
-<td><code>target-counters( <i>url</i>, <i>counter</i>, "<i>separator</i>", <i>counter-style</i>? )</code></td>
+<td><code>target-counters( &lt;<i>url</i>&gt;, &lt;<i>counter</i>&gt;, "&lt;<i>separator</i>&gt;", &lt;<i>counter-style</i>&gt;? )</code></td>
 <td>Retrieves the value of all counters of a given name from the end of the given
 URL.</td>
 </tr>
 <tr>
-<td><code>target-content( <i>url</i> )</code></td>
+<td><code>target-content( &lt;<i>url</i>&gt; )</code></td>
 <td>References the text content of the linked element.  See <a href="/doc/gen-content#using-target-content">Using target-content()</a>.</td>
 </tr>
 <tr>
-<td><code>leader( ("<i>...</i>" | dotted | solid | space), <i>length</i>? )</code></td>
+<td><code>leader( ("<i>...</i>" | dotted | solid | space), &lt;<i>length</i>&gt;? )</code></td>
 <td>Inserts the given string before the element - useful in tables of content. The optional second argument can be used to specify a minimum width.</td>
 </tr>
 <tr>
-<td><code>string( <i>ident</i>, <i>page-policy</i>? )</code></td>
+<td><code>string( &lt;<i>ident</i>&gt;, &lt;<i>page-policy</i>&gt;? )</code></td>
 <td>Retrieves the value defined with the <code><a href="/doc/css-props#prop-string-set">string-set</a></code>
 property.  See <a href="/doc/paged#copying-content-from-the-document">Copying content from the document</a>.</td>
 </tr>
 <tr>
-<td><code>repeat( <i>string</i>+ )</code></td>
+<td><code>repeat( &lt;<i>string</i>&gt;+ )</code></td>
 <td>Used in counters as a <code>counter-style</code>, it defines a sequentially
 repeated pattern for numbering the items.
 <pre>
@@ -158,7 +158,7 @@ This counter will yield the sequence "x, y, z, xx, yy, zz" etc.
 </td>
 </tr>
 <tr>
-<td><code>symbols( <i>string</i>+ )</code></td>
+<td><code>symbols( &lt;<i>string</i>&gt;+ )</code></td>
 <td>Used in counters as a <code>counter-style</code>, it defines the symbols used
 for numbering the items.
 <pre>
@@ -175,16 +175,16 @@ This counter will yield the sequence "x, y, z, 4, 5, 6" etc.
 <td>Returns the base URL of the current document.</td>
 </tr>
 <tr class="ext">
-<td><code>flow( <i>name</i>, <i>page-policy</i>? ) | prince-flow( <i>name</i>, <i>page-policy</i>? )*</code></td>
+<td><code>flow( &lt;<i>name</i>&gt;, &lt;<i>page-policy</i>&gt;? ) | prince-flow( &lt;<i>name</i>&gt;, &lt;<i>page-policy</i>&gt;? )*</code></td>
 <td>Inserts an element that has previously been removed with the <code>static()</code>
 function.  See <a href="/doc/paged#taking-elements-from-the-document">Taking elements from the document</a>.</td>
 </tr>
 <tr class="ext">
-<td><code>prince-script( <i>ident</i> [, <i>content</i>+]? )*</code></td>
+<td><code>prince-script( &lt;<i>ident</i>&gt; [, &lt;<i>content</i>&gt;+]? )*</code></td>
 <td>Calls arbitrary JavaScript functions in CSS generated content.</td>
 </tr>
 <tr class="ext">
-<td><code>prince-fallback( <i>uri</i> )*[, <i>content</i>+]?</code></td>
+<td><code>prince-fallback( &lt;<i>uri</i>&gt; )*[, &lt;<i>content</i>&gt;+]?</code></td>
 <td>Inserts content fetched from another resource (like the <code>url()</code> function),
 but also has the possibility of specifying a fallback content, in case the loading of the
 URL should fail.  If no comma and <i>content</i> items are provided, the fallback is as
@@ -195,7 +195,7 @@ if <code>content: normal</code> were specified.
 </td>
 </tr>
 <tr class="ext">
-<td><code>prince-glyph-index( <i>int</i> )*</code></td>
+<td><code>prince-glyph-index( &lt;<i>int</i>&gt; )*</code></td>
 <td>Allows to choose a glyph from a font by the index of that glyph in the font.
 <p>Please note that this is very non-portable, as glyph indices are specific to individual
 font versions. But it is a possible escape hatch for people who need a specific
@@ -206,79 +206,79 @@ substitution).</p>
 property, which is more likely to work when changing font.</p></td>
 </tr>
 <tr>
-<td><code>grayscale( <i>number</i> | <i>percent</i> )</code></td>
+<td><code>grayscale( &lt;<i>number</i>&gt; | &lt;<i>percent</i>&gt; )</code></td>
 <td>Converts the input image to grayscale.</td>
 <td rowspan="10"><code><a href="/doc/css-props#prop-filter">filter</a></code></td>
 </tr>
 <tr>
-<td><code>sepia( <i>number</i> | <i>percent</i> )</code></td>
+<td><code>sepia( &lt;<i>number</i>&gt; | &lt;<i>percent</i>&gt; )</code></td>
 <td>Converts the input image to sepia.</td>
 </tr>
 <tr>
-<td><code>saturate( <i>number</i> | <i>percent</i> )</code></td>
+<td><code>saturate( &lt;<i>number</i>&gt; | &lt;<i>percent</i>&gt; )</code></td>
 <td>Saturates the input image.</td>
 </tr>
 <tr>
-<td><code>hue-rotate( <i>angle</i> )</code></td>
+<td><code>hue-rotate( &lt;<i>angle</i>&gt; )</code></td>
 <td>Applies a hue rotation on the input image.</td>
 </tr>
 <tr>
-<td><code>invert( <i>number</i> | <i>percent</i> )</code></td>
+<td><code>invert( &lt;<i>number</i>&gt; | &lt;<i>percent</i>&gt; )</code></td>
 <td>Inverts the samples in the input image.</td>
 </tr>
 <tr>
-<td><code>opacity( <i>number</i> | <i>percent</i> )</code></td>
+<td><code>opacity( &lt;<i>number</i>&gt; | &lt;<i>percent</i>&gt; )</code></td>
 <td>Applies transparency to the input image.</td>
 </tr>
 <tr>
-<td><code>brightness( <i>number</i> | <i>percent</i> )</code></td>
+<td><code>brightness( &lt;<i>number</i>&gt; | &lt;<i>percent</i>&gt; )</code></td>
 <td>Applies a linear multiplier to the input image, making it appear more or less
 bright.</td>
 </tr>
 <tr>
-<td><code>contrast( <i>number</i> | <i>percent</i> )</code></td>
+<td><code>contrast( &lt;<i>number</i>&gt; | &lt;<i>percent</i>&gt; )</code></td>
 <td>Adjusts the contrast of the input image.</td>
 </tr>
 <tr>
-<td><code>blur( <i>length</i> )</code></td>
+<td><code>blur( &lt;<i>length</i>&gt; )</code></td>
 <td>Applies a Gaussian blur to the input image.</td>
 </tr>
 <tr>
-<td><code>drop-shadow( <i>length</i>{1..3}, <i>color</i>? )</code></td>
+<td><code>drop-shadow( &lt;<i>length</i>&gt;{1..3}, &lt;<i>color</i>&gt;? )</code></td>
 <td>Applies a drop shadow effect to the input image.</td>
 </tr>
 
 <tr class="ext">
-<td><code>prince-opentype( [ <i>feature</i> ]+ )*</code></td>
+<td><code>prince-opentype( [ &lt;<i>feature</i>&gt; ]+ )*</code></td>
 <td>Specifies a comma-separated list of OpenType features to be enabled.  For details
 please see the <code><a href="/doc/css-props#prop-font-variant">font-variant</a></code> property and
 <a href="/doc/styling#opentype-features-in-prince">OpenType Features in Prince</a>.</td>
 <td><code><a href="/doc/css-props#prop-font-variant">font-variant</a></code></td>
 </tr>
 <tr>
-<td><code>running( <i>name</i> )</code></td>
+<td><code>running( &lt;<i>name</i>&gt; )</code></td>
 <td>Removes an element from the normal document flow, to make it available for use
 in a page region with the <code>element()</code> function.  See
 <a href="/doc/paged#taking-elements-from-the-document">Taking elements from the document</a>.</td>
 <td><code><a href="/doc/css-props#prop-position">position</a></code></td>
 </tr>
 <tr class="ext">
-<td><code>recompress-jpeg( <i>quality%</i> )*</code></td>
+<td><code>recompress-jpeg( &lt;<i>quality%</i>&gt; )*</code></td>
 <td>Recompresses JPEG images by the indicated percentage to save space.</td>
 <td rowspan="2"><code><a href="/doc/css-props#prop-prince-image-magic">-prince-image-magic</a></code></td>
 </tr>
 <tr class="ext">
-<td><code>convert-to-jpeg( <i>quality%</i> )*</code></td>
+<td><code>convert-to-jpeg( &lt;<i>quality%</i>&gt; )*</code></td>
 <td>Converts non-JPEG images to JPEG.</td>
 </tr>
 <tr class="ext">
-<td><code>static( <i>name</i>, [ start | current ]? )*</code></td>
+<td><code>static( &lt;<i>name</i>&gt;, [ start | current ]? )*</code></td>
 <td>Removes an element from the normal document flow, to make it available for use
 with the <code>flow()</code> function.  See <a href="/doc/paged#taking-elements-from-the-document">Taking elements from the document</a>.</td>
 <td><code><a href="/doc/css-props#prop-prince-flow">-prince-flow</a></code></td>
 </tr>
 <tr class="ext">
-<td><code>command( <i>ident</i> )*</code></td>
+<td><code>command( &lt;<i>ident</i>&gt; )*</code></td>
 <td>Specifies any arbitrary command to be passed to the PDF viewer when the PDF file
 is opened.  The user can supply values that Prince doesn't know about, but the viewer
 does.</td>
@@ -307,52 +307,52 @@ formats.
 by other <code>@font-face</code> rules.  See <a href="/doc/styling#defining-a-font-family">Defining a font family</a>.</td>
 </tr>
 <tr>
-<td><code>rotate( <i>angle</i> )</code></td>
+<td><code>rotate( &lt;<i>angle</i>&gt; )</code></td>
 <td>Rotates an element around a fixed point on the 2D plane.</td>
 <td rowspan="12"><code><a href="/doc/css-props#prop-transform">transform</a></code></td>
 </tr>
 <tr>
-<td><code>matrix( <i>number</i>[, <i>number</i>]{5,5} )</code></td>
+<td><code>matrix( &lt;<i>number</i>&gt;[, &lt;<i>number</i>&gt;]{5,5} )</code></td>
 <td>Describes a homogeneous 2D transformation matrix.</td>
 </tr>
 <tr>
-<td><code>translate( <i>offset</i>[, <i>offset</i>]? )</code></td>
+<td><code>translate( &lt;<i>offset</i>&gt;[, &lt;<i>offset</i>&gt;]? )</code></td>
 <td>Translates an element on the 2D plane.</td>
 </tr>
 <tr>
-<td><code>translatex( <i>offset</i> )</code></td>
+<td><code>translatex( &lt;<i>offset</i>&gt; )</code></td>
 <td>Translates an element horizontally.</td>
 </tr>
 <tr>
-<td><code>translatey( <i>offset</i> )</code></td>
+<td><code>translatey( &lt;<i>offset</i>&gt; )</code></td>
 <td>Translates an element vertically.</td>
 </tr>
 <tr>
-<td><code>translate3d( <i>offset</i>, <i>offset</i>, <i>offset</i> )</code></td>
+<td><code>translate3d( &lt;<i>offset</i>&gt;, &lt;<i>offset</i>&gt;, &lt;<i>offset</i>&gt; )</code></td>
 <td>Translates an element in 3D space.</td>
 </tr>
 <tr>
-<td><code>scale( <i>number</i>[, <i>number</i>]? )</code></td>
+<td><code>scale( &lt;<i>number</i>&gt;[, &lt;<i>number</i>&gt;]? )</code></td>
 <td>Scales an element up or down on the 2D plane.</td>
 </tr>
 <tr>
-<td><code>scalex( <i>number</i> )</code></td>
+<td><code>scalex( &lt;<i>number</i>&gt; )</code></td>
 <td>Scales an element up or down horizontally.</td>
 </tr>
 <tr>
-<td><code>scaley( <i>number</i> )</code></td>
+<td><code>scaley( &lt;<i>number</i>&gt; )</code></td>
 <td>Scales an element up or down vertically.</td>
 </tr>
 <tr>
-<td><code>skew( <i>angle</i>[, <i>angle</i>]? )</code></td>
+<td><code>skew( &lt;<i>angle</i>&gt;[, &lt;<i>angle</i>&gt;]? )</code></td>
 <td>Skews an element on the 2D plane.</td>
 </tr>
 <tr>
-<td><code>skewx( <i>angle</i> )</code></td>
+<td><code>skewx( &lt;<i>angle</i>&gt; )</code></td>
 <td>Skews an element in the horizontal direction.</td>
 </tr>
 <tr>
-<td><code>skewy( <i>angle</i> )</code></td>
+<td><code>skewy( &lt;<i>angle</i>&gt; )</code></td>
 <td>Skews an element in the vertical direction.</td>
 </tr>
 <tr>
