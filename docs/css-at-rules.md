@@ -38,8 +38,8 @@ After the initial at-rules, the following at-rules can appear also in nested for
 
 <table class="grid">
 <tr>
-<th colspan="2" id="at-page"><code>@page [&lt;<i>page-name</i>&gt;] &lt;<i>page-selectors</i>&gt; {
-    &lt;<i>stylesheet</i>&gt;
+<th colspan="2" id="at-page"><code>@page &lt;<i>page-selector-list</i>&gt; {
+    &lt;<i>declaration-list</i>&gt;
 }</code></th>
 </tr>
 <tr>
@@ -150,7 +150,7 @@ Unlike media queries, this uses the classical two-valued logic.</td>
 <table class="grid">
 <tr>
 <th colspan="2" id="at-font-face"><code>@font-face {
-    &lt;<i>font-declarations</i>&gt;
+    &lt;<i>declaration-list</i>&gt;
 }</code></th>
 </tr>
 <tr>
