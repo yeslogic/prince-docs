@@ -4568,7 +4568,7 @@ supplier, item { overflow-wrap: normal; }
     <see><a href="/doc/graphics/#color-management">Color Management</a></see>
     <comments>
     <p>
-    This property is used inside a
+    This descriptor is used inside a
     <a href="/doc/css-at-rules/#at-prince-pdf"><code>@prince-pdf</code></a>
     at-rule to determine a fallback CMYK profile to be used for uncalibrated
     (untagged) CMYK colors or images, if it is not possible to use the output
@@ -5708,7 +5708,7 @@ supplier, item { overflow-wrap: normal; }
 }</example>
     <see><a href="/doc/graphics/#rich-black-and-true-black">Rich black and true black</a></see>
 	<comments>
-		<p>This property may be used to control the encoding of RGB blacks and grays:
+		<p>This descriptor may be used to control the encoding of RGB blacks and grays:
 		when <code>use-true-black</code> is used, they are encoded in the /DeviceGray colorspace
 		in the PDF, instead of /DeviceRGB, whereas <code>use-rich-black</code> disables this behavior
 		and keeps all the colors in RGB. Currently, auto is equivalent to <code>use-true-black</code>.
@@ -5752,7 +5752,7 @@ supplier, item { overflow-wrap: normal; }
     <extension/>
     <comments>
     <p>
-    This property may be used to control whether the document file name or the
+    This descriptor may be used to control whether the document file name or the
     document title is displayed in the PDF.
     </p>
     <p>
@@ -5780,7 +5780,7 @@ supplier, item { overflow-wrap: normal; }
     <extension/>
     <comments>
 	<p>
-	This property may be used inside the
+	This descriptor may be used inside the
     <a href="/doc/css-at-rules/#at-prince-pdf"><code>@prince-pdf</code></a>
     at-rule to set the <code>Duplex</code> property in the
     <code>PDFViewerPreferences</code> dictionary.
@@ -5817,12 +5817,12 @@ supplier, item { overflow-wrap: normal; }
     <see><a href="/doc/prince-output/#pdf-scripts">PDF Scripts</a></see>
     <comments>
 	<p>
-	This property can be used to include JavaScript code that will be
+	This descriptor can be used to include JavaScript code that will be
     executed in the PDF when printing, saving, and closing the PDF,
     known as "Document Action" scripts.
 	</p>
     <p>
-    Starting from Prince 15 this property does not allow for the <code>url()</code>
+    Starting from Prince 15 this descriptor does not allow for the <code>url()</code>
     function as an argument - to provide an external file, the command-line option
     <a href="/doc/command-line/#cl-prince-pdf-event-script"><code>--prince-pdf-event-script</code></a>
     needs to be used instead.
@@ -5935,7 +5935,7 @@ supplier, item { overflow-wrap: normal; }
     <see><a href="/doc/prince-output/#pdf-actions">PDF Actions</a></see>
     <comments>
 	<p>
-	This property specifies a space-separated list of actions to perform when
+	This descriptor specifies a space-separated list of actions to perform when
     the PDF file is opened, like e.g. popping up the print dialog box
     automatically, or setting the default zoom level for PDF documents.  Any
     arbitrary identifier can be specified, although these may be PDF viewer
@@ -5963,7 +5963,7 @@ supplier, item { overflow-wrap: normal; }
     <see><a href="/doc/graphics/#color-management">Color Management</a></see>
     <comments>
     <p>
-    This property is used inside a <a href="/doc/css-at-rules/#at-prince-pdf"><code>@prince-pdf</code></a>
+    This descriptor is used inside a <a href="/doc/css-at-rules/#at-prince-pdf"><code>@prince-pdf</code></a>
     at-rule to select the intended output color space of the generated PDF file.
     </p>
     </comments>
@@ -6055,7 +6055,7 @@ supplier, item { overflow-wrap: normal; }
     <see><a href="/doc/prince-output/#pdf-pages">PDF Pages</a></see>
     <comments>
 	<p>
-	This property can be used to set the default page layout for the PDF
+	This descriptor can be used to set the default page layout for the PDF
 	file when it is opened. For example, whether the PDF pages should be
 	displayed in one or two columns.
 	</p>
@@ -6082,7 +6082,7 @@ supplier, item { overflow-wrap: normal; }
     <see><a href="/doc/prince-output/#pdf-pages">PDF Pages</a></see>
     <comments>
 	<p>
-	This property can be used to set the default page mode for the PDF
+	This descriptor can be used to set the default page mode for the PDF
 	file when it is opened. For example, whether the bookmarks panel should
 	be displayed, and whether the viewer should be fullscreen.
 	</p>
@@ -6107,7 +6107,7 @@ supplier, item { overflow-wrap: normal; }
 	<see><a href="/doc/prince-output/#pdf-printing">PDF Printing</a></see>
     <comments>
 	<p>
-	This property controls the PickTrayByPDFSize flag in generated PDF
+	This descriptor controls the PickTrayByPDFSize flag in generated PDF
 	files, which specifies whether the PDF page size is used to select
     the input paper tray. (See the checkbox in the Acrobat print dialog).
 	</p>
@@ -6132,7 +6132,7 @@ supplier, item { overflow-wrap: normal; }
 	<see><a href="/doc/prince-output/#pdf-printing">PDF Printing</a></see>
     <comments>
 	<p>
-	This property can be used to disable print scaling for the PDF file when
+	This descriptor can be used to disable print scaling for the PDF file when
     it is printed.
 	</p>
     </comments>
@@ -6177,12 +6177,12 @@ supplier, item { overflow-wrap: normal; }
     <see><a href="/doc/prince-output/#pdf-scripts">PDF Scripts</a></see>
     <comments>
     <p>
-    This property can be used to include JavaScript code that will be
+    This descriptor can be used to include JavaScript code that will be
     executed when the PDF file is opened. A common use case is to activate
     the "Print" dialog automatically.
     </p>
     <p>
-    Starting from Prince 15 this property does not allow for the <code>url()</code>
+    Starting from Prince 15 this descriptor does not allow for the <code>url()</code>
     function as an argument - to provide an external file, the command-line option
     <a href="/doc/command-line/#cl-prince-pdf-script"><code>--prince-pdf-script</code></a>
     needs to be used instead.
@@ -6272,7 +6272,7 @@ supplier, item { overflow-wrap: normal; }
 }</example>
     <comments>
 	<p>
-    This property can be used inside a <a href=
+    This descriptor can be used inside a <a href=
     "/doc/css-at-rules/#at-prince-pdf"><code>@prince-pdf</code></a>
     rule to add XMP metadata to a PDF file.  Currently it takes an XMP
     file as input and includes data from the &lt;x:xmpmeta&gt; element
@@ -6280,7 +6280,7 @@ supplier, item { overflow-wrap: normal; }
     Prince generates those itself when it produces the PDF file).
     </p>
     <p class="note">
-    This property requires either a URL pointing to an XMP
+    This descriptor requires either a URL pointing to an XMP
     file, or an encoded <code>data:</code> URL.
     </p>
     </comments>
