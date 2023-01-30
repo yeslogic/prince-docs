@@ -101,7 +101,7 @@ names can be prefixed by <code>min-</code> or <code>max-</code>.</td>
 <th colspan="2"><code>width</code></th>
 </tr>
 <tr>
-<td>Value: <code><i>length</i></code></td>
+<td>Value: <code>&lt;<i>length</i>&gt;</code></td>
 <td rowspan="2">Describes the width of the displayed page.</td>
 </tr>
 <tr>
@@ -111,7 +111,7 @@ names can be prefixed by <code>min-</code> or <code>max-</code>.</td>
 <th colspan="2"><code>height</code></th>
 </tr>
 <tr>
-<td>Value: <code><i>length</i></code></td>
+<td>Value: <code>&lt;<i>length</i>&gt;</code></td>
 <td rowspan="2">Describes the height of the displayed page.</td>
 </tr>
 <tr>
@@ -121,7 +121,7 @@ names can be prefixed by <code>min-</code> or <code>max-</code>.</td>
 <th colspan="2"><code>aspect-ratio</code></th>
 </tr>
 <tr>
-<td>Value: <code><i>length</i></code></td>
+<td>Value: <code>&lt;<i>length</i>&gt;</code></td>
 <td rowspan="2">Describes the ratio of the width to the height of the displayed page.</td>
 </tr>
 <tr>
@@ -146,7 +146,7 @@ names can be prefixed by <code>min-</code> or <code>max-</code>.</td>
 <th colspan="2"><code>resolution</code></th>
 </tr>
 <tr>
-<td>Value: <code><i>resolution</i></code> | <code>infinite</code></td>
+<td>Value: <code>&lt;<i>resolution</i>&gt;</code> | <code>infinite</code></td>
 <td rowspan="2">Describes the resolution of the output device.</td>
 </tr>
 <tr>
@@ -167,7 +167,7 @@ is always <code>false</code> for Prince.</td>
 <th colspan="2"><code>grid</code></th>
 </tr>
 <tr>
-<td>Value: <code><i>boolean</i></code></td>
+<td>Value: <code>&lt;<i>boolean</i>&gt;</code></td>
 <td rowspan="2">Describes whether the output device is grid (1) or bitmap (0). Prince
 is bitmap based, and thus <code>0</code> matches.</td>
 </tr>
@@ -193,7 +193,7 @@ thus only <code>none</code> matches.</td>
 <td>Value: <code>none</code> | <code>scroll</code> | <code>optional-paged</code>
 | <code>paged</code></td>
 <td rowspan="2">Describes the behavior of the device when content overflows the
-initial containing block in the block axis..</td>
+initial containing block in the block axis.</td>
 </tr>
 <tr>
 <td>Type: discrete</td>
@@ -204,7 +204,7 @@ initial containing block in the block axis..</td>
 <tr>
 <td>Value: <code>none</code> | <code>scroll</code></td>
 <td rowspan="2">Describes the behavior of the device when content overflows the
-initial containing block in the inline axis..</td>
+initial containing block in the inline axis.</td>
 </tr>
 <tr>
 <td>Type: discrete</td>
@@ -219,7 +219,7 @@ initial containing block in the inline axis..</td>
 <th colspan="2"><code>color</code></th>
 </tr>
 <tr>
-<td>Value: <code><i>integer</i></code></td>
+<td>Value: <code>&lt;<i>integer</i>&gt;</code></td>
 <td rowspan="2">Describes the number of bits per color component of the output device.
 Prince assumes <code>13</code> color bits.</td>
 </tr>
@@ -230,7 +230,7 @@ Prince assumes <code>13</code> color bits.</td>
 <th colspan="2"><code>color-index</code></th>
 </tr>
 <tr>
-<td>Value: <code><i>integer</i></code></td>
+<td>Value: <code>&lt;<i>integer</i>&gt;</code></td>
 <td rowspan="2">Describes the number of entries in the color lookup table of the
 output device.</td>
 </tr>
@@ -241,7 +241,7 @@ output device.</td>
 <th colspan="2"><code>monochrome</code></th>
 </tr>
 <tr>
-<td>Value: <code><i>integer</i></code></td>
+<td>Value: <code>&lt;<i>integer</i>&gt;</code></td>
 <td rowspan="2">Describes the number of bits per pixel in a monochrome framebuffer.</td>
 </tr>
 <tr>
