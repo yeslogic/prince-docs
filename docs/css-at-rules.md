@@ -38,7 +38,9 @@ After the initial at-rules, the following at-rules can appear also in nested for
 
 <table class="grid">
 <tr>
-<th colspan="2" id="at-page"><code>@page [<i>Name</i>] <i>Selectors</i> { <i>Page-declarations</i> }</code></th>
+<th colspan="2" id="at-page"><code>@page [&lt;<i>page-name</i>&gt;] &lt;<i>page-selectors</i>&gt; {
+    &lt;<i>stylesheet</i>&gt;
+}</code></th>
 </tr>
 <tr>
 <td colspan="2">Modifies margins, orphans, widows and page breaks of a document when
@@ -123,7 +125,9 @@ The initial values for <code>@page</code> styles are documented in the
 
 <table class="grid">
 <tr>
-<th id="at-media"><code>@media <i>Media-query-list</i> { <i>Rules</i> }</code></th>
+<th id="at-media"><code>@media &lt;<i>media-query-list</i>&gt; {
+    &lt;<i>stylesheet</i>&gt;
+}</code></th>
 </tr>
 <tr>
 <td>The rules will apply if the device meets the criteria of the condition defined
@@ -133,7 +137,9 @@ in the media query. See <a href="/doc/css-media-queries">CSS Media Queries</a> f
 
 <table class="grid">
 <tr>
-<th id="at-supports"><code>@supports <i>Condition</i> { <i>Rules</i> }</code></th>
+<th id="at-supports"><code>@supports &lt;<i>supports-condition</i>&gt; {
+    &lt;<i>stylesheet</i>&gt;
+}</code></th>
 </tr>
 <tr>
 <td>Checks whether particular <code>property:value</code> combinations are supported.
@@ -143,7 +149,9 @@ Unlike media queries, this uses the classical two-valued logic.</td>
 
 <table class="grid">
 <tr>
-<th colspan="2" id="at-font-face"><code>@font-face { <i>Font-declarations</i> }</code></th>
+<th colspan="2" id="at-font-face"><code>@font-face {
+    &lt;<i>font-declarations</i>&gt;
+}</code></th>
 </tr>
 <tr>
 <td colspan="2">Links a font family to an actual font.</td>
@@ -179,7 +187,9 @@ which take the same values as the CSS properties with the same name.</td>
 
 <table class="grid">
 <tr>
-<th colspan="2" id="at-prince-color"><code>@prince-color <i>Name</i> { alternate-color: ... }</code></th>
+<th colspan="2" id="at-prince-color"><code>@prince-color &lt;<i>color-name</i>&gt; {
+    alternate-color: &lt;<i>color</i>&gt;
+}</code></th>
 </tr>
 <tr>
 <td colspan="2">Defines a new color name.</td>
@@ -194,7 +204,9 @@ a stylesheet with the <code>prince-color()</code> function.  (See <a href="/doc/
 
 <table class="grid">
 <tr>
-<th colspan="2" id="at-prince-pdf"><code>@prince-pdf <i>Name</i> { <i>Declarations</i> }</code></th>
+<th colspan="2" id="at-prince-pdf"><code>@prince-pdf {
+    &lt;<i>declaration-list</i>&gt;
+}</code></th>
 </tr>
 <tr>
 <td colspan="2">Defines properties relating to PDFs.</td>
