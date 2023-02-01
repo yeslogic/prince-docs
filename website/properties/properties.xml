@@ -6309,6 +6309,9 @@ supplier, item { overflow-wrap: normal; }
 	landscape content on a portrait page, while leaving the headers and
 	footers where they are.
 	</p>
+    <p class="note">
+    The angle value takes multiples of <code>90deg</code>.
+    </p>
     <p>
     Please see the <code><property name="size"/></code> property for determining
     the default orientation of the page.
