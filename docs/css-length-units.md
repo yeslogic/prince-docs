@@ -133,7 +133,7 @@ Furthermore, Prince supports the four angle units `deg`, `grad`, `rad` and `turn
 
 * the CSS [`transform`](css-props.md#prop-transform) property has `rotate` and `skewx`/`skewy` operators;
 * linear gradients have an angle;
-* `hsl`/`hsla` colors have a hue angle;
+* [`hsl`/`hsla` colors](graphics.md#hsla) have a hue angle;
 * the [`hue-rotate` filter](css-props.md#prop-filter) takes an angle;
 * the `@page` [`-prince-rotate-body`](css-props.md#prop-prince-rotate-body) descriptor takes multiples of `90deg`.
 
