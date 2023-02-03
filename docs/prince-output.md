@@ -429,7 +429,7 @@ Next, the annotation title and content are defined with respectively the [`-prin
     }
 ```
 
-<p class="note">Based on the underlying principle of keeping content and style separated, it is good practice to keep the comments in the HTML file, rather than in CSS - therefore we recommend using data attributes, as we show in the following example:</p>
+Based on the underlying principle of keeping content and style separated, it is good practice to keep the comments in the HTML file, rather than in CSS - therefore we recommend using data attributes, as we show in the following example:
 
 HTML
 ```html
@@ -443,6 +443,12 @@ CSS
         -prince-pdf-annotation-title: attr(data-title);
         -prince-pdf-annotation-contents: attr(data-contents);
     }
+```
+
+However, if the HTML file cannot be modified, annotations can also be solely defined in a user style sheet that can be supplied to Prince when generating the PDF - see [Applying Style Sheets in Prince](prince-input.md#applying-style-sheets-in-prince).
+
+```bash
+    $ prince https://css4.pub/2022/tufte/book.html -s my-annotations.css -j -o tufte-book.pdf
 ```
 
 The position of the annotation can be specified with the CSS property [`-prince-pdf-annotation-position`](css-props.md#prop-prince-pdf-annotation-position). The default value is `top left`, taking the element box as the reference.  To take the trim box of the page as a reference, the values `page-left` and `page-right`, as well as `page-top` and `page-bottom` should be used.  Length or percentage values can furthermore be used to fine-tune the position.
