@@ -702,11 +702,13 @@ Rasterization is enabled with the `--raster-output` option below. When this is u
 ### Advanced Options
 
 <dl>
-  <dt id="cl-user-agent"><code>--user-agent <span class="replaceable">USER-AGENT</span></code></dt>
+  <dt id="cl-http-header"><code>--http-header=<span class="replaceable">HEADER</span></code></dt>
+  <dt id="cl-user-agent"><code>--user-agent=<span class="replaceable">USER-AGENT</span></code></dt>
   <dd>
-    <p>A custom user-agent string can be passed to Prince to circumvent user-agent-sniffing that leads to
-    undesired results, degrading the PDF output.  Please be aware that there can be unforseen side-effects
-    when pretending to be somebody else on the web.</p>
+    <p>Custom HTTP headers can be passed to Prince in the format <code>"<i>Header</i>: <i>value</i>"</code>.
+    To send multiple custom headers, use the option multiple times. The User-Agent header has its own
+    command-line option. Please be aware that there can be unforseen side-effects
+    when manipulating HTTP headers, including the User-Agent header.</p>
   </dd>
   <dt id="cl-shell"><code>--shell</code></dt>
   <dd>
