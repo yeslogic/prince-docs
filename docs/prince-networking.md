@@ -68,4 +68,10 @@ The option [`--http-timeout`](command-line.md#cl-http-timeout) can be used to de
 
 Prince can also disable downloading multiple HTTP resources at once with the [`--no-parallel-downloads`](command-line.md#cl-no-parallel-downloads) command-line option.
 
-In extreme cases, a custom user-agent string can be passed to Prince with the [`--user-agent`](command-line.md#cl-user-agent) command-line option in order to circumvent user-agent-sniffing that leads to undesired results, degrading the PDF output.  Please be aware that there can be unforseen side-effects when pretending to be somebody else on the web.
+### Custom HTTP headers
+
+In extreme cases, a custom user-agent string can be passed to Prince with the [`--user-agent`](command-line.md#cl-user-agent) command-line option in order to circumvent user-agent-sniffing that leads to undesired results, degrading the PDF output.
+
+Other custom HTTP headers can be sent to the server with the command-line option [`--http-header`](command-line.md#cl-http-header).  To send multiple custom headers, use the option multiple times.
+
+<p class="note">Please be aware that there can be unforseen side-effects when manipulating HTTP headers, including the User-Agent header.</code>
