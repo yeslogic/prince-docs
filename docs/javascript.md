@@ -26,9 +26,9 @@ Prince supports most of ECMAScript 5th edition (ES5), with the exception of stri
 
 Document JavaScript is not run by default - it needs to be explicitly enabled. See [Applying JavaScript in Prince](prince-input.md#applying-javascript-in-prince) for details.
 
-In addition to normal JavaScript run in the document, Prince allows also for scripts to be passed directly to the PDF, to be executed when the PDF file is opened (by means of the CSS property [`-prince-pdf-script`](css-props.md#prop-prince-pdf-script)), or triggered by specific events (with the CSS property [`-prince-pdf-event-scripts`](css-props.md#prop-prince-pdf-event-scripts)). See [Script Functions](gen-content.md#script-functions) and [PDF Actions](prince-output.md#pdf-actions) for more details.
+In addition to normal JavaScript run in the document, Prince allows also for *JavaScript for Acrobat* to be passed directly to the PDF, to be executed when the PDF file is opened (by means of the CSS property [`-prince-pdf-script`](css-props.md#prop-prince-pdf-script)), or triggered by specific events (with the CSS property [`-prince-pdf-event-scripts`](css-props.md#prop-prince-pdf-event-scripts)). See [PDF Scripts](prince-output.md#pdf-scripts) for more details.  These PDF scripts, known as "Document Action" scripts, will always be run. Note, however, that these scripts are dependent on the PDF viewer, and in many cases might only work in Adobe Acrobat products.
 
-These PDF scripts, known as "Document Action" scripts, will always be run. Note, however, that these scripts are dependent on the PDF viewer, and in many cases might only work in Adobe Acrobat products.
+It is also possible to pass JavaScript to Prince for CSS generated content - see [Script Functions](gen-content.md#script-functions) for details.
 
 A full list of all supported JavaScript objects, methods and properties can be found in the References section, in [JavaScript Support](js-support.md). Here we shall just illustrate a few highlights from Prince's JavaScript support.
 
