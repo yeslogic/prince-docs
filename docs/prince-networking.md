@@ -72,6 +72,6 @@ Prince can also disable downloading multiple HTTP resources at once with the [`-
 
 In extreme cases, a custom user-agent string can be passed to Prince with the [`--user-agent`](command-line.md#cl-user-agent) command-line option in order to circumvent user-agent-sniffing that leads to undesired results, degrading the PDF output.
 
-Other custom HTTP headers can be sent to the server with the command-line option [`--http-header`](command-line.md#cl-http-header).  To send multiple custom headers, use the option multiple times.
+Other custom HTTP headers can be sent to the server with the command-line option [`--http-header`](command-line.md#cl-http-header).  To send multiple custom headers, use the option multiple times.  Note that headers already sent by Prince can be overridden by this command-line option, but cannot be removed.
 
-<p class="note">Please be aware that there can be unforseen side-effects when manipulating HTTP headers, including the User-Agent header.</code>
+<p class="note">Please be aware that there can be unforseen side-effects when manipulating HTTP headers, including the User-Agent header.</p>
