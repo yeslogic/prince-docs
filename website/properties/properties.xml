@@ -7513,6 +7513,12 @@ supplier, item { overflow-wrap: normal; }
 		    <function name="scaley">
 			<type>number</type>
 		    </function>
+		    <function name="skew">
+			<type>angle</type>
+			<optional>
+			    <type>angle</type>
+			</optional>
+		    </function>
 		    <function name="skewx">
 			<type>angle</type>
 		    </function>
