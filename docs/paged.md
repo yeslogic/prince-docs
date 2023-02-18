@@ -357,9 +357,11 @@ The full list of page regions is shown in the following [Page regions](#tab-marg
   and <code>@rightnote</code>), and at the top and bottom of the remaining space are two more
   regions (<code>@page-float-top</code> and <code>@page-float-bottom</code>).  Below all these,
   there is the footnote area.</p>
-  <p>The page region <code>@prince-overlay</code> is a special region, overlaying all of the
-  page area. A typical use is for creating watermarks on all pages of the document (see
-  <a href="/doc/cookbook#watermarks">Watermarks</a>).</p>
+  <p>Note that a padding expressed on the page area lies <em>outside</em> of the page
+  area regions - with the exception of <code>@prince-overlay</code>.</p>
+  <p>The page region <code>@prince-overlay</code> is a special region, overlaying <em>all</em> of the
+  page area, <em>including</em> any padding. A typical use is for creating watermarks on all pages of
+  the document (see <a href="/doc/cookbook#watermarks">Watermarks</a>).</p>
   <p>The page region <code>@footnote</code> is placed by default at the foot of the page area
   and contains the footnotes (see <a href="/doc/styling#footnotes">Footnotes</a>).</p>
   <p> If there are no footnotes on a page, or if the footnote elements are empty, the footnote
