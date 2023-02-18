@@ -5,10 +5,10 @@ on:
 
 jobs:
   build-docs:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-22.04
     steps:
       - name: Check out repository code
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
       - name: Install xsltproc
         run: |
           sudo apt-get update
@@ -31,10 +31,8 @@ jobs:
         shell: bash
       - name: Install Prince
         run: |
-          curl https://www.princexml.com/download/prince-14.3-ubuntu22.04-amd64.tar.gz -O
-          tar zxf prince-14.3-ubuntu20.04-amd64.tar.gz
-          cd prince-14.3-ubuntu20.04-amd64
-          yes "" | sudo ./install.sh
+          curl https://www.princexml.com/download/prince_15-1_ubuntu22.04_amd64.deb -O
+          sudo apt install ./prince_15-1_ubuntu22.04_amd64.deb
       - name: Make the page region image
         run: |
           cd ./website/samples
@@ -43,9 +41,9 @@ jobs:
           cp marginboxes-1.colour.png ../../docs/assets/samples/
           cd ./../..
       - name: Set up Node
-        uses: actions/setup-node@v2
+        uses: actions/setup-node@v3
         with:
-          node-version: '14'
+          node-version: '16'
       - name: Build Docusaurus Docs
         run: |
           cd website
