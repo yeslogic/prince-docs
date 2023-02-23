@@ -152,7 +152,16 @@ Prince supports a wide range of PDF features, including the following:
 
 Prince supports PDF-internal and -external links. HTML hyperlinks are automatically converted. To make an element in XML, or any arbitrary element, a clickable link, the [`-prince-link`](css-props.md#prop-prince-link) CSS property is required.
 
+
+DocBook XML
+
+```xml
+    <xref linkend="ch02"/>
 ```
+
+CSS
+
+```css
     xref {
         -prince-link: attr( linkend )
     }
