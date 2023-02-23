@@ -175,13 +175,13 @@ The property [`-prince-pdf-link-type`](css-props.md#prop-prince-pdf-link-type) m
 ```
 This example is equivalent to `-prince-pdf-link-type: auto new-window` and has only effect for links to local files.
 
-Prince also supports the following PDF-specific fragment identifiers, supported by web browsers, and will use them when generating links to local PDF files.
+Prince also supports the PDF-specific `page` and `nameddest` fragment identifiers, supported by web browsers, and will use them when generating links to local PDF files.
 
 ```html
     <a href="test.pdf#page=2">...</a>
-
     <a href="test.pdf#nameddest=section1">...</a>
 ```
+
 Named destinations (`nameddest`) in PDF files have a similar function to HTML IDs: they can be the target anchors for links from other documents. The property [`-prince-pdf-destination`](css-props.md#prop-prince-pdf-destination) is used for creating them.
 
 HTML
