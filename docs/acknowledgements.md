@@ -88,7 +88,7 @@ library is used by Prince to load TIFF image files.
 
 <dt id="libxml2">libxml2</dt>
 <dd>
-The <a href="http://xmlsoft.org/">libxml2</a>
+The <a href="https://gitlab.gnome.org/GNOME/libxml2/-/wikis/home">libxml2</a>
 library is used by Prince to load XML and HTML documents.
 </dd>
 
