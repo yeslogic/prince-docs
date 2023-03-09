@@ -176,18 +176,18 @@ The full list of page regions is shown in the following [Page regions](#tab-marg
 <table className="grid" id="pregions">
 <thead>
 <tr>
-<th>
-</th><th>Name</th>
+<th> </th>
+<th>Name</th>
 <th colSpan="2">Default alignment</th>
 <th>In figure</th>
 </tr>
 <tr>
-<th>
-</th><th>
-</th><th><code><a href="/doc/css-props#prop-text-align">text-align</a></code></th>
+<th> </th>
+<th> </th>
+<th><code><a href="/doc/css-props#prop-text-align">text-align</a></code></th>
 <th><code><a href="/doc/css-props#prop-vertical-align">vertical-align</a></code></th>
-<th>
-</th></tr>
+<th> </th>
+</tr>
 </thead>
 <tbody>
 <tr>
