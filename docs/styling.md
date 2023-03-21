@@ -967,11 +967,11 @@ When a table spans across more than one page, it might be desirable to have a "r
         <tr> <td>Name</td> <td>Mark</td> <td>Grade</td> </tr>
       </thead>
       <tr> <td>Xuehong</td> <td>95</td> <td>H1</td> </tr>
-      <!-- other rows for other students 
-      
-         Name Mark Grade 
-      
-    --&gt;
+      <!-- other rows for other students -->
+      <tfoot>
+        <tr> <td>Name</td> <td>Mark</td> <td>Grade</td> </tr>
+      </tfoot>
+    </table>
 
 ```
 

@@ -123,7 +123,7 @@ The [API documentation](https://yeslogic.github.io/prince-php-wrapper) lists the
 
 When instantiating the `Prince` class, pass in the full path of the Prince executable to the constructor as a string argument.
 
-```php title="P"
+```php title="PHP"
 
 use Prince\Prince;
 

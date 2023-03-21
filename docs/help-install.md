@@ -127,8 +127,8 @@ Symptom
 
 ```
 
- # "prince" cannot be opened because the developer cannot be verified.
-&gt; macOS cannot verify that this app is free from malware.--&gt;
+> # "prince" cannot be opened because the developer cannot be verified.
+> macOS cannot verify that this app is free from malware.
 
 ```
 
