@@ -1,5 +1,5 @@
 .PHONY: all
-all: valid output properties selflink noroot
+all: valid output properties selflink noroot htmltojsx
 	cp output/css-props.md ../../docs/
 
 valid:
@@ -19,8 +19,12 @@ selflink: process
 
 noroot: selflink
 	xsltproc noroot.xsl output/css-props-out.xml > output/css-props.md
+
+htmltojsx: noroot
+	yarn run htmltojsx $(CURDIR)/output/css-props.md > output/css-props-out.md
+	sed -i "1,3d;/^Done\s/d" output/css-props-out.md
+	head -n -2 output/css-props-out.md > output/css-props.md
 	sed -i '1s;^;---\ntitle: CSS Properties\n---\n\n;' output/css-props.md
-	cat script >> output/css-props.md
 
 .PHONY: clean
 clean:
