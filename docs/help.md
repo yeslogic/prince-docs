@@ -1,7 +1,6 @@
 ---
 title: Help
 ---
-
 <style>
 .navbar__item:first-child {"{"}
     background-color: #7d146c !important;
@@ -34,6 +33,7 @@ The Prince User Guide tries to be exhaustive in explaining how to use the applic
 -   The [forum](//www.princexml.com/forum/) is an excellent place where to find an answer to an issue, or where to ask for help;
 -   You can [contact us](//www.princexml.com/contact/) for support.
 
+
 ## Troubleshooting
 
 We work hard to make Prince work on multiple platforms (Windows, Linux, etc) and with multiple configurations. However things don't always work correctly the first time. You're very welcome to [contact us](//www.princexml.com/contact/) for support or visit our [forum](//www.princexml.com/forum/). However if you are facing a common problem, you may be able to find an explanation and solution below.
@@ -49,13 +49,9 @@ When using the Prince GUI, the output log is printed to the log window on the bo
 ### Image formats
 
 Symptom  
-
 ```bash
-
     prince: ./picture.bmp: warning: Unknown image format
-
 ```
-
 Explanation  
 Prince supports the JPEG, PNG, TIFF, GIF, WebP and AVIF image formats, as well as SVG (see [Images](graphics.md#images)). If you try to format a document that includes images in a format that is not supported by Prince, such as BMP, you may see the above error message from Prince.
 
@@ -75,6 +71,7 @@ These files contain information about the system and environment in which Prince
 </p>
 
 This script is not available on Windows.
+
 
 ## Frequently Asked Questions
 
@@ -142,7 +139,8 @@ This script is not available on Windows.
   <dt><p id="faq-tooltips">How can I create tooltips in the PDF file?
   <a className="self-link" href="#faq-tooltips" /></p></dt>
   <dd><p>PDF tooltips can be enabled with the CSS property <code>-prince-tooltip</code> like this:</p>
-	  <pre><code className="hljs css language-css">{"    "}*<span className="hljs-selector-attr">[title]</span> {"{"} <span className="hljs-attribute">-prince-tooltip</span>: <span className="hljs-built_in">attr</span>(title) {"}"}{"\n"}</code></pre>
+	  <pre><code className="hljs css language-css">    *<span className="hljs-selector-attr">[title]</span> {"{"} <span className="hljs-attribute">-prince-tooltip</span>: <span className="hljs-built_in">attr</span>(title) {"}"}
+</code></pre>
   <p>However, please note that tooltips are not a standard PDF feature, and they
   may only work in Adobe Reader and Adobe Acrobat and may not be visible in other
   PDF viewers, such as web browsers.</p></dd>
@@ -169,9 +167,13 @@ This script is not available on Windows.
   <dd><p>You can specify <code>break-before:left | right</code>
   on the root element of the document.</p>
   <p className="label">CSS</p>
-  <pre><code className="hljs">{"    "}<span className="hljs-selector-tag">body</span><span className="hljs-selector-attr">[start=even]</span> {"{"}{"\n"}{"      "}<span className="hljs-attribute">break-before</span>:left;{"\n"}{"    "}{"}"}{"\n"}</code></pre>
+  <pre><code className="hljs">    <span className="hljs-selector-tag">body</span><span className="hljs-selector-attr">[start=even]</span> {"{"}
+      <span className="hljs-attribute">break-before</span>:left;
+    {"}"}
+</code></pre>
     <p className="label">HTML</p>
-    <pre><code className="hljs css language-html">{"    "}<span className="hljs-tag">&lt;<span className="hljs-name">body</span> <span className="hljs-attr">start</span>=<span className="hljs-string">"even"</span> <span className="hljs-attr">startpage</span>=<span className="hljs-string">"28"</span>&gt;</span>{"\n"}</code></pre>
+    <pre><code className="hljs css language-html">    <span className="hljs-tag">&lt;<span className="hljs-name">body</span> <span className="hljs-attr">start</span>=<span className="hljs-string">"even"</span> <span className="hljs-attr">startpage</span>=<span className="hljs-string">"28"</span>&gt;</span>
+</code></pre>
   </dd>
 
   <dt><p id="faq-js">Does Prince support JavaScript?
@@ -189,7 +191,7 @@ This script is not available on Windows.
   see <a href="/doc/javascript#javascript-in-printed-media">JavaScript in Printed Media</a>.</p>
   <p>However, Prince offers the possibility to register the function <a href="/doc/js-support/#window.Prince.registerPostLayoutFunc"><code>Prince.registerPostLayoutFunc(func)</code></a> after layout has finished and before producing the PDF for possibly triggering a new layout - see <a href="/doc/javascript/#multi-pass-formatting">Multi-Pass formatting</a> for more details.</p></dd>
 
-  <dt><p id="faq-webfonts">Why are Web fonts not loaded? <a className="self-link" href="#faq-webfonts" /></p></dt>
+  <dt><p id="faq-webfonts">Why are Web fonts not loaded? <a className="self-link" href="#faq-webfonts"></a></p></dt>
   <dd><p>Prince supports and loads web fonts.  However, in some specific cases the web fonts served to Prince might
   differ from those served to browsers.  In such cases the command-line options <a href="/doc/command-line/#cl-user-agent"><code>--user-agent</code></a> may be used
   to spoof the user agent string sent to the servers, basically pretending to be a browser.</p>
@@ -205,7 +207,20 @@ This script is not available on Windows.
   the <a href="/doc/command-line#cl-input"><code>--input</code></a>
   command-line option.</p>
   <p>Another option in HTML is to use the <code>iframe</code> element:</p>
-  <pre><code className="hljs css language-html">{"    "}<span className="hljs-tag">&lt;<span className="hljs-name">style</span>&gt;</span>{"\n"}{"    "}@page {"{"}{"\n"}{"      "}@bottom {"{"}{"\n"}{"        "}border: solid red thin;{"\n"}{"        "}content: flow(footer){"\n"}{"      "}{"}"}{"\n"}{"    "}{"}"}{"\n"}{"    "}.footer {"{"}{"\n"}{"      "}flow: static(footer){"\n"}{"    "}{"}"}{"\n"}{"    "}<span className="hljs-tag">&lt;/<span className="hljs-name">style</span>&gt;</span>{"\n"}{"    "}<span className="hljs-tag">&lt;<span className="hljs-name">iframe</span> <span className="hljs-attr">class</span>=<span className="hljs-string">"footer"</span> <span className="hljs-attr">src</span>=<span className="hljs-string">"https://www.google.com"</span>&gt;</span><span className="hljs-tag">&lt;/<span className="hljs-name">iframe</span>&gt;</span>{"\n"}{"    "}<span className="hljs-tag">&lt;<span className="hljs-name">p</span>&gt;</span>Normal content<span className="hljs-tag">&lt;/<span className="hljs-name">p</span>&gt;</span>{"\n"}</code></pre>
+  <pre><code className="hljs css language-html">    <span className="hljs-tag">&lt;<span className="hljs-name">style</span>&gt;</span>
+    @page {"{"}
+      @bottom {"{"}
+        border: solid red thin;
+        content: flow(footer)
+      {"}"}
+    {"}"}
+    .footer {"{"}
+      flow: static(footer)
+    {"}"}
+    <span className="hljs-tag">&lt;/<span className="hljs-name">style</span>&gt;</span>
+    <span className="hljs-tag">&lt;<span className="hljs-name">iframe</span> <span className="hljs-attr">class</span>=<span className="hljs-string">"footer"</span> <span className="hljs-attr">src</span>=<span className="hljs-string">"https://www.google.com"</span>&gt;</span><span className="hljs-tag">&lt;/<span className="hljs-name">iframe</span>&gt;</span>
+    <span className="hljs-tag">&lt;<span className="hljs-name">p</span>&gt;</span>Normal content<span className="hljs-tag">&lt;/<span className="hljs-name">p</span>&gt;</span>
+</code></pre>
   <p>However there may be some subtleties required to get the correct size and
   styling of content within iframe elements.</p>
   <p>Yet another option would be to use JavaScript to issue an XMLHttpRequest,

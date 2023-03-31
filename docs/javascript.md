@@ -1,6 +1,7 @@
 ---
 title: Scripting
 ---
+
 JavaScript can be used to transform documents by generating tables of contents and indices, sorting tables, rendering charts and graphs, and other tasks that go beyond the scope of CSS.
 
 Scripts can access and modify the input document using the W3C standard DOM (Document Object Model). Prince also supports some additional properties and methods described below.
@@ -23,9 +24,9 @@ Prince supports most of ECMAScript 5th edition (ES5), with the exception of stri
 
 Document JavaScript is not run by default - it needs to be explicitly enabled. See [Applying JavaScript in Prince](prince-input.md#applying-javascript-in-prince) for details.
 
-In addition to normal JavaScript run in the document, Prince allows also for scripts to be passed directly to the PDF, to be executed when the PDF file is opened (by means of the CSS property [`-prince-pdf-script`](css-props.md#prop-prince-pdf-script)), or triggered by specific events (with the CSS property [`-prince-pdf-event-scripts`](css-props.md#prop-prince-pdf-event-scripts)). See [Script Functions](gen-content.md#script-functions) and [PDF Actions](prince-output.md#pdf-actions) for more details.
+In addition to normal JavaScript run in the document, Prince allows also for *JavaScript for Acrobat* to be passed directly to the PDF, to be executed when the PDF file is opened (by means of the CSS property [`-prince-pdf-script`](css-props.md#prop-prince-pdf-script)), or triggered by specific events (with the CSS property [`-prince-pdf-event-scripts`](css-props.md#prop-prince-pdf-event-scripts)). See [PDF Scripts](prince-output.md#pdf-scripts) for more details.  These PDF scripts, known as "Document Action" scripts, will always be run. Note, however, that these scripts are dependent on the PDF viewer, and in many cases might only work in Adobe Acrobat products.
 
-These PDF scripts, known as "Document Action" scripts, will always be run. Note, however, that these scripts are dependent on the PDF viewer, and in many cases might only work in Adobe Acrobat products.
+It is also possible to pass JavaScript to Prince for CSS generated content - see [Script Functions](gen-content.md#script-functions) for details.
 
 A full list of all supported JavaScript objects, methods and properties can be found in the References section, in [JavaScript Support](js-support.md). Here we shall just illustrate a few highlights from Prince's JavaScript support.
 
@@ -34,15 +35,12 @@ A full list of all supported JavaScript objects, methods and properties can be f
 The Prince log can be accessed from JavaScript via the [`Log`](js-support.md#window.Log) object (also available as [`Prince.Log`](js-support.md#window.Prince.Log)), which has the following methods:
 
 ```javascript
-
     Log.debug("message")
     Log.info("message")
     Log.warning("message")
     Log.error("message")
     Log.data("name", "value")
-
 ```
-
 <p className="note">
 <code>Log.debug()</code> is only available when the <a href="/doc/command-line#cl-debug"><code>--debug</code></a> command-line option has been specified, while <code>Log.info()</code> is only available when the <a href="/doc/command-line#cl-verbose"><code>--verbose</code></a> command-line option has been specified.
 </p>
@@ -52,11 +50,8 @@ The Prince log can be accessed from JavaScript via the [`Log`](js-support.md#win
 When running Prince from the command-line, the [`console`](js-support.md#window.console) object can be used to write messages directly to the terminal:
 
 ```javascript
-
     console.log("Hello, world!")
-
 ```
-
 <p className="note">
 Console access is only supported when running Prince directly from the command-line, and should not be used when calling Prince through a server wrapper or graphical user interface.
 </p>
@@ -82,7 +77,6 @@ User interface events such as `onclick` are not supported by Prince.
 The [`Prince`](js-support.md#window.Prince) object can be used to control various scripting aspects in Prince.
 
 ```javascript
-
     Prince.addEventListener(type, ...callback, optional extra options)
     Prince.oncomplete
     Prince.addScriptFunc(name, func)
@@ -92,7 +86,6 @@ The [`Prince`](js-support.md#window.Prince) object can be used to control variou
     Prince.failStatus
     Prince.pageCount
     Prince.registerPostLayoutFunc(func)
-
 ```
 
 #### Event tracking
@@ -112,22 +105,18 @@ The [`Prince.addScriptFunc`](js-support.md#window.Prince.addScriptFunc) method e
 The [`Prince.convertToFile`](js-support.md#window.Prince.convertToFile) and [`Prince.convertToBuffer`](js-support.md#window.Prince.convertToBuffer) methods allow you to start new Prince jobs:
 
 ```javascript
-
     convertToFile(JSON, OutputFileName, ...optional extra job resources)
-
 ```
-
--   returns bool indicating success;
+- returns bool indicating success;
 
 ```javascript
-
     convertToBuffer(JSON, ...optional extra job resources)
-
 ```
-
--   returns ArrayBuffer if successful, null if not;
+- returns ArrayBuffer if successful, null if not;
 
 whereby `JSON` is a job description as specified in the [Job description JSON](server-integration.md#job-description-json), while the optional extra job resource arguments are ArrayBuffers or strings that can be referenced from the JSON using the `job-resource:` URLs. See [Prince Control Protocol](server-integration.md#prince-control-protocol).
+
+<p className="note">The Prince jobs methods are only accessible in <a href="/doc/command-line/#cl-shell">Prince shell mode</a>.</p>
 
 #### Failure status
 
@@ -142,55 +131,45 @@ For example, perhaps there should be only one page: you check the page count (se
 The [`Prince.pageCount`](js-support.md#window.Prince.pageCount) property can be accessed after document conversion has finished, then logged as data for the calling process to access:
 
 ```javascript
-
     function logPageCount()
     {
         Log.data("total-page-count", Prince.pageCount);
     }
 
     Prince.addEventListener("complete", logPageCount, false);
-
 ```
 
 #### Multi-Pass formatting
 
 Prince also offers the possibility to register the function [`Prince.registerPostLayoutFunc(func)`](js-support.md#window.Prince.registerPostLayoutFunc), which is called after layout finished, similar to the current `oncomplete` event. If this function modifies the DOM, Prince will perform layout again on the updated document once the function returns, and before generating the PDF.
 
-```javascript title="Javascript"
-
+```javascript title="JavaScript"
     Prince.registerPostLayoutFunc(function() {
         var str = '@prince-color Color1 { alternate-color: cmyk(1,0,0,0) }';
         var add = document.getElementById('add');
         add.appendChild(document.createTextNode(str));
     });
-
 ```
-
-```html title="HTML"
-
+```html title=HTML"
     <style id='add'></style>
     <p style='color: prince-color(Color1)'>This was black, becomes cyan</p>
-
 ```
 
 A post layout function may register itself, or another post layout function, in order to repeat this process multiple times! By default the number of passes is not limited, but in order to prevent endless layout loops you can set a limit by using the [`--max-passes=N`](command-line.md#cl-max-passes) command-line option. For more details see [The "Multi-Pass" Solution](cookbook.md#the-multi-pass-solution).
+
 
 ### The PDF Object
 
 The [`PDF` object](js-support.md#window.PDF) can be used to specify PDF properties and settings, including attaching extra files to the generated PDF, similar to the [`--attach`](command-line.md#cl-attach) command-line argument:
 
 ```javascript
-
     PDF.attachFile(url, description?)
 
     PDF.attachFile("data.xls", "Latest sales figures.");
-
 ```
-
 Other PDF properties, which are set by assignment, include:
 
 ```javascript
-
     PDF.embedFonts = (boolean)
     PDF.subsetFonts = (boolean)
     PDF.artificialFonts = (boolean)
@@ -221,25 +200,19 @@ Other PDF properties, which are set by assignment, include:
     PDF.creator
 
     PDF.lang
-
 ```
-
-There is one more PDF object not mentioned so far: the [`PDF.pages`](js-support.md#window.PDF.pages) object is different from all preceding PDF objects - the latter ones are set before document conversion begins, while the former becomes available only _after_ the `complete` event (see [Event Handling](javascript.md#event-handling)) and returns a list of _boxes_ - see [The Box Tracking API](javascript.md#the-box-tracking-api).
+There is one more PDF object not mentioned so far: the [`PDF.pages`](js-support.md#window.PDF.pages) object is different from all preceding PDF objects - the latter ones are set before document conversion begins, while the former becomes available only *after* the `complete` event (see [Event Handling](javascript.md#event-handling)) and returns a list of *boxes* - see [The Box Tracking API](javascript.md#the-box-tracking-api).
 
 ### The Box Tracking API
 
 The box tracking API must be enabled with [`Prince.trackBoxes`](js-support.md#window.Prince.trackBoxes) before formatting starts.
 
 ```javascript
-
     Prince.trackBoxes = true;
-
 ```
-
-It then becomes available in the `complete` event (see [Event Handling](javascript.md#event-handling)), when you can call the [`getPrinceBoxes()`](js-support.md#window.Element.prototype.getPrinceBoxes) method while iterating through the required DOM elements, to return a list of _boxes_.
+It then becomes available in the `complete` event (see [Event Handling](javascript.md#event-handling)), when you can call the [`getPrinceBoxes()`](js-support.md#window.Element.prototype.getPrinceBoxes) method while iterating through the required DOM elements, to return a list of *boxes*.
 
 ```javascript
-
     Prince.addEventListener("complete", function() {
       var xs = document.getElementsByTagName("ins");
       for (var i = 0; i < xs.length; ++i)
@@ -248,13 +221,12 @@ It then becomes available in the `complete` event (see [Event Handling](javascri
           var boxes = ins.getPrinceBoxes();
         }
     }, false);
-
 ```
 
-The [`PDF.pages`](js-support.md#window.PDF.pages) array mentioned earlier (see [The PDF Object](javascript.md#the-pdf-object)) also is available only after the `complete` event and also returns a list of _boxes_ (see [Page regions](paged.md#page-regions)).
+
+The [`PDF.pages`](js-support.md#window.PDF.pages) array mentioned earlier (see [The PDF Object](javascript.md#the-pdf-object)) also is available only after the `complete` event and also returns a list of *boxes* (see [Page regions](paged.md#page-regions)).
 
 ```javascript
-
     function printbox(str,box) {
       console.log("");
       for (var i in box) {
@@ -273,56 +245,50 @@ The [`PDF.pages`](js-support.md#window.PDF.pages) array mentioned earlier (see [
           printbox("  ",pages[i]);
         }
     }, false);
-
 ```
+*Boxes* are JavaScript objects with some or all of the following properties:
 
-_Boxes_ are JavaScript objects with some or all of the following properties:
+    type =          "BODY" |
+                    "COLUMN" |
+                    "FLEXLINE" |
+                    "FOOTNOTES" |
+                    "FLOATS" |
+                    "BOX" |
+                    "LINE" |
+                    "SPAN" |
+                    "TEXT" |
+                    "SVG" |
+                    "IMAGE"
+    pageNum =       the page of the current box
+    x =             x-coordinate, in pt
+    y =             y-coordinate, in pt (set to zero on some boxes)
+    w =             width, in pt
+    h =             height, in pt (set to zero on some boxes)
+    baseline =      the y-coordinate of the baseline of the box,
+                    ie. the line that the text rests on, in pt -
+                    applies only to inline boxes
+    marginTop
+    marginRight
+    marginBottom
+    marginLeft =    the used values for margins
+    floatPosition = "TOP" | "BOTTOM"
+    children =      array of child boxes
+    parent =        parent box
+    element =       DOM element for box (may be null)
+    pseudo =        pseudo-element name or null
+    text =          string
+    src =           URL string for images
+    style =         CSS style object for box
 
-```javascript
+The `x`, `y`, `w`, `h` and `baseline` measures, defining respectively the x- and y-coordinates and the width and height of the *box*, use the same coordinate system as the PDF, i.e. the box tracking units are measured in points (`pt`) and the origin is the lower left corner of the page.
 
-type =          "BODY" |
-                "COLUMN" |
-                "FLEXLINE" |
-                "FOOTNOTES" |
-                "FLOATS" |
-                "BOX" |
-                "LINE" |
-                "SPAN" |
-                "TEXT" |
-                "SVG" |
-                "IMAGE"
-pageNum =       the page of the current box
-x =             x-coordinate, in pt
-y =             y-coordinate, in pt (set to zero on some boxes)
-w =             width, in pt
-h =             height, in pt (set to zero on some boxes)
-baseline =      the y-coordinate of the baseline of the box,
-                ie. the line that the text rests on, in pt -
-                applies only to inline boxes
-marginTop
-marginRight
-marginBottom
-marginLeft =    the used values for margins
-floatPosition = "TOP" | "BOTTOM"
-children =      array of child boxes
-parent =        parent box
-element =       DOM element for box (may be null)
-pseudo =        pseudo-element name or null
-text =          string
-src =           URL string for images
-style =         CSS style object for box
+The box with the value `BODY` represents the *page area* returned by [`PDF.pages`](js-support.md#window.PDF.pages) (and thus is not necessarily equivalent with the `body` element); the content of the *page-margin boxes* is not included in the tree (see [Page regions](paged.md#page-regions) for the definition of *page area* and *page-margin boxes*).
 
-```
+The properties of a *box* can be queried with the [`BoxInfo()`](js-support.md#window.BoxInfo) method.
 
-The `x`, `y`, `w`, `h` and `baseline` measures, defining respectively the x- and y-coordinates and the width and height of the _box_, use the same coordinate system as the PDF, i.e. the box tracking units are measured in points (`pt`) and the origin is the lower left corner of the page.
+The `marginTop`, `marginRight`, `marginBottom` and `marginLeft` properties return the *used* values for margins.  This can be useful in cases of elements that are being floated to the top or to the bottom of a column, to determine whether the alternative margin will be applied (see [Margins of Page and Column Floats](styling.md#margins-of-page-and-column-floats)).
 
-The box with the value `BODY` represents the _page area_ returned by [`PDF.pages`](js-support.md#window.PDF.pages) (and thus is not necessarily equivalent with the `body` element); the content of the _page-margin boxes_ is not included in the tree (see [Page regions](paged.md#page-regions) for the definition of _page area_ and _page-margin boxes_).
-
-The properties of a _box_ can be queried with the [`BoxInfo()`](js-support.md#window.BoxInfo) method.
-
-The `marginTop`, `marginRight`, `marginBottom` and `marginLeft` properties return the _used_ values for margins.  This can be useful in cases of elements that are being floated to the top or to the bottom of a column, to determine whether the alternative margin will be applied (see [Margins of Page and Column Floats](styling.md#margins-of-page-and-column-floats)).
-
-When elements are snapped to the nearest column or page end (see [Page and Column Floats](styling.md#page-and-column-floats)), the `floatPosition` property tells us whether the element snapped to the top, or to the bottom - please note that it needs to be checked not on the element itself, but on the anonymous (non-element) _parent_ box that gets created to contain all the floats at the top or bottom of a page or column (in just the same fashion as the footnotes area contains all the footnotes).
+When elements are snapped to the nearest column or page end (see [Page and Column Floats](styling.md#page-and-column-floats)), the `floatPosition` property tells us whether the element snapped to the top, or to the bottom - please note that it needs to be checked not on the element itself, but on the anonymous (non-element) *parent* box that gets created to contain all the floats at the top or bottom of a page or column (in just the same fashion as the footnotes area contains all the footnotes).
 
 See also [our nifty script](cookbook.md#how-and-where-is-my-box) to return the position and dimension of the margin box, the border box, the padding box and the content box of an element.
 
@@ -333,8 +299,6 @@ Two further sample applications of the box tracking API can be seen in the [Chan
 The following DOM methods are not supported in Prince:
 
 ```javascript
-
     document.write
     window.setInterval
-
 ```

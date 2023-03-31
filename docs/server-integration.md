@@ -1,6 +1,7 @@
 ---
 title: Server Integration
 ---
+
 Prince can be used server-side to produce PDFs, invoked by a wrapper script. Some care needs to be used in the configuration to make it reliable and secure.
 
 ## Prince Wrappers
@@ -10,6 +11,7 @@ Since different server configurations make use of different scripting languages,
 A useful tool for writing custom wrappers in other languages are the [Advanced Command-Line Options](#advanced-command-line-options).
 
 For details on the usage of each of the wrappers, please consult the following chapters.
+
 
 ### The Java Wrapper
 
@@ -21,8 +23,7 @@ The [API documentation](https://yeslogic.github.io/prince-java-wrapper) lists th
 
 The following code sample demonstrates how to convert a single HTML document into a PDF file:
 
-```java title="JAVA"
-
+```java
 import com.princexml.wrapper.Prince;
 
 Prince prn = new Prince("/usr/bin/prince");
@@ -37,20 +38,19 @@ try {
 } catch (IOException e) {
     e.printStackTrace();
 }
-
 ```
 
-### The C# / .NET Wrapper
+### The C\# / .NET Wrapper
 
-Prince can be called from .NET languages using the [Prince C# / .NET wrapper](/download/wrappers/#wrapper-csharp).
+Prince can be called from .NET languages using the [Prince C\# / .NET wrapper](/download/wrappers/#wrapper-csharp).
 
-The C# wrapper is hosted on the [NuGet gallery](https://www.nuget.org/packages/PrinceXMLWrapper/).
+The C\# wrapper is hosted on the [NuGet gallery](https://www.nuget.org/packages/PrinceXMLWrapper/).
 
-The [API documentation](https://yeslogic.github.io/prince-csharp-wrapper/current/api/PrinceXML.Wrapper.html) lists the C# class methods and explains how to use them.
+The [API documentation](https://yeslogic.github.io/prince-csharp-wrapper/current/api/PrinceXML.Wrapper.html) lists the C\# class methods and explains how to use them.
 
-#### Using Prince with C#
+#### Using Prince with C\#
 
-To use the Prince .NET wrapper in C#, add it as a dependency to your Visual Studio project.
+To use the Prince .NET wrapper in C\#, add it as a dependency to your Visual Studio project.
 
 To convert HTML or XML files into PDF, instantiate a Prince object with the full path to the Prince engine executable file. Once this is done, you can apply style sheets and scripts, or configure other properties by calling the appropriate methods. Finally, you can call one of the `Convert` methods to generate a PDF file.
 
@@ -58,8 +58,7 @@ Please note that document scripts need to first be enabled with `JavaScript = tr
 
 The following code sample demonstrates how to convert a single HTML document into a PDF file:
 
-```cs title="C# / .NET"
-
+```cs
 using PrinceXML.Wrapper;
 
 // Instantiate Prince by specifying the full path to the engine executable.
@@ -78,12 +77,11 @@ prn.JavaScript = true;
 
 // Convert a HTML document into a PDF file.
 prn.Convert("C:\\docs\\test1.html", "C:\\docs\\pdf\\test1.pdf");
-
 ```
 
 #### Using Prince with VB.NET
 
-To use the Prince [The C# / .NET Wrapper](#the-c--net-wrapper) in VB.NET, add it as a dependency to your Visual Studio project.
+To use the Prince [The C\# / .NET Wrapper](#the-c--net-wrapper) in VB.NET, add it as a dependency to your Visual Studio project.
 
 To convert HTML or XML files into PDF, instantiate a Prince object with the full path to the Prince engine executable file. Once this is done, you can apply style sheets and scripts, or configure other properties by calling the appropriate methods. Finally, you can call one of the `Convert` methods to generate a PDF file.
 
@@ -91,8 +89,7 @@ Please note that document scripts need to first be enabled with `JavaScript = tr
 
 The following code sample demonstrates how to convert a single HTML document into a PDF file:
 
-```vbnet title="VB.NET"
-
+```vbnet
 ' Instantiate Prince by specifying the full path to the engine executable.
 Dim prn As New PrinceXML.Wrapper.Prince(
     "C:\Program Files\Prince\engine\bin\prince.exe")
@@ -110,7 +107,6 @@ prn.JavaScript = true
 
 ' Convert a HTML document into a PDF file.
 prn.Convert("C:\docs\test1.html", "C:\docs\pdf\test1.pdf")
-
 ```
 
 ### The PHP Wrapper
@@ -123,8 +119,7 @@ The [API documentation](https://yeslogic.github.io/prince-php-wrapper) lists the
 
 When instantiating the `Prince` class, pass in the full path of the Prince executable to the constructor as a string argument.
 
-```php title="PHP"
-
+```php
 use Prince\Prince;
 
 $prince = new Prince('/usr/bin/prince');
@@ -135,7 +130,6 @@ $prince->addScript('/path/to/script.js');
 $prince->setJavaScript(true);
 
 $prince->convertFile('/path/to/file.html');
-
 ```
 
 ### Using Prince with ColdFusion
@@ -153,7 +147,6 @@ Place the JAR file in a directory of your choice then start ColdFusion Administr
 If this is done correctly, ColdFusion should know where to find the Java wrapper class. The following is some sample CFML code showing how to use it:
 
 ```
-
 <cfscript>
     pr = CreateObject("java", "com.princexml.wrapper.Prince");
 
@@ -168,7 +161,6 @@ If this is done correctly, ColdFusion should know where to find the Java wrapper
     else
         WriteOutput("Unsuccessful");
 </cfscript>
-
 ```
 
 If on Linux, substitute the paths with the appropriate UNIX style paths.
@@ -177,18 +169,14 @@ If on Linux, substitute the paths with the appropriate UNIX style paths.
 
 Prince can be called from Python using the command-line interface, like this:
 
-```python title="Python"
-
+```python
 import subprocess
 
 subprocess.call(["prince", "foo.xml", "-o", "bar.pdf"])
-
 ```
-
 It is possible to write XML/HTML to Prince directly from the Python script rather than have Prince read it from an external file:
 
-```python title="Python"
-
+```python
 import subprocess
 
 p = subprocess.Popen(
@@ -208,15 +196,12 @@ if p.returncode:
 else:
     # Handle `outs`.
     pass
-
 ```
-
 The first filename argument of `-` instructs Prince to read the XML/HTML from its standard input stream rather than from a file.
 
 For Python CGI scripts, the PDF output can be written to the standard output stream so that it is returned to the browser:
 
-```python title="Python"
-
+```python
 import subprocess
 
 p = subprocess.Popen(
@@ -233,15 +218,12 @@ _outs, errs = p.communicate("""
 if p.returncode:
     # Handle `errs`.
     pass
-
 ```
-
 Because the second filename argument has been omitted and the XML/HTML is being read from standard input, the PDF will be written to standard output. Be careful to redirect the output of this script if you try running it from the terminal.
 
 Alternatively, it is possible for the Python script to read the PDF output directly rather than have Prince save it to an external file:
 
-```python title="Python"
-
+```python
 import subprocess
 
 p = subprocess.Popen(
@@ -261,52 +243,40 @@ if p.returncode:
 else:
     pdf = outs
     print("PDF is " + str(len(pdf)) + " bytes in size")
-
 ```
 
 ### Using Prince with Perl
 
 Prince can be called from Perl using the [command-line interface](command-line.md), like this:
 
-```perl title="Perl"
-
+```perl
 system("prince foo.xml -o bar.pdf");
-
 ```
-
 It is possible to write XML/HTML to Prince directly from the Perl script rather than have Prince read it from an external file:
 
-```perl title="Perl"
-
+```perl
 open(PRINCE, "| prince - -o out.pdf");
-print PRINCE "<html><body><h1>Hello, world!</h1>";
+print PRINCE "<html><body><h1>Hello, world!</h1></body></html>";
 close(PRINCE);
-
 ```
-
 The first filename argument of `-` instructs Prince to read the XML/HTML from its standard input stream rather than from a file.
 
 For Perl CGI scripts, the PDF output can be written to the standard output stream so that it is returned to the browser:
 
-```perl title="Perl"
-
+```perl
 print "Content-Type: application/pdf\n\n";
 open(PRINCE, "| prince -");
-print PRINCE "<html><body><h1>Hello, world!</h1>";
+print PRINCE "<html><body><h1>Hello, world!</h1></body></html>";
 close(PRINCE);
-
 ```
-
 Because the second filename argument has been omitted and the XML/HTML is being read from standard input, the PDF will be written to standard output. Be careful to redirect the output of this script if you try running it from the terminal.
 
 Alternatively, it is possible for the Perl script to read the PDF output directly rather than have Prince save it to an external file:
 
-```perl title="Perl"
-
+```perl
 open(PRINCE, "prince foo.xml -o - |");
 # ... Read PDF output from PRINCE file handle.
 close(PRINCE);
-
 ```
 
 ### Third-Party Wrappers
@@ -319,6 +289,7 @@ Ruby on Rails
 Node.js  
 [Node API for executing XML/HTML to PDF renderer PrinceXML via `prince` CLI](https://www.npmjs.com/package/prince)
 
+
 ## Prince In Cloud Computing
 
 Prince can easily be deployed on many different cloud computing platforms and solutions.  As example deployments,
@@ -328,34 +299,26 @@ we detail here installation procedures for Prince on Docker, Azure, AWS Lambda a
 
 Prince can easily be deployed in Docker images.  On the Docker Hub you can find [the Prince Dockerfiles](https://hub.docker.com/r/yeslogic/prince).  To pull the images, run the Docker command:
 
-```bash
-
+```
 docker pull yeslogic/prince
-
 ```
 
 The Prince images can be run with the following command:
 
-```bash
-
+```
 docker run --rm -it yeslogic/prince
-
 ```
 
 They can be run with a `license.dat` file in the following way:
 
-```bash
-
+```
 docker run --rm -it -v /path/on/host/license.dat:/usr/lib/prince/license/license.dat yeslogic/prince
-
 ```
 
 If, however, you want to run a specific Prince version, rather than the latest, you need to add the version tag to the command:
 
-```bash
-
+```
 docker run --rm -it yeslogic/prince:13.1
-
 ```
 
 ### Prince on Microsoft Azure
@@ -370,6 +333,8 @@ Setting up Prince on AWS Lambda is not much more difficult than setting it up fo
 
 Prince can easily be installed also on Amazon's EC2 platform - Bruce Lawson provides an in-depth article on how to [set up Prince on EC2](https://medium.com/@bruce_39084/setting-up-prince-on-ec2-with-php-f1604db5d754) with PHP.
 
+
+
 ## Advanced Command-Line Options
 
 Prince can also be called from the command-line with some special options for fine-tuning the creation of PDF files.
@@ -378,88 +343,27 @@ Two options are useful for understanding the calls Prince can be controlled with
 
 Prince also offers a set of [Fail-Safe Options](#fail-safe-options) to prevent the creation of a PDF file in case of specific conditions.
 
-### Prince Control Protocol
+First of all, though, we need to understand one important basic concept - the [Prince Job](#prince-job-json), which is the definition of a job, or task assigned to Prince, described in a JSON format.
 
-`prince --control`  
-The Prince Control Protocol, accessible through the command-line option `--control`, is a synchronous bidirectional protocol that consists of a sequence of "chunks" sent via the standard input and output streams.
 
-Each chunk contains a sequence of bytes with a length and a three letter tag. Here is an example "version" chunk to demonstrate the syntax:
-
-```
-
-ver 15
-Prince 20161219
-
-```
-
-This chunk has a tag `ver` (all tags are three ASCII characters) followed by a space, then the length of the data expressed as a decimal number, then a newline character, then the data itself (15 bytes), then another newline (not part of the data).
-
-This version chunk is emitted by Prince when the control protocol begins and can be used to check the Prince version and confirm that communication is functioning as expected. Prince will then wait for jobs to be submitted.
-
-If a chunk contains no data then the length is zero and the chunk ends with the newline immediately following the length. In fact the length itself may be omitted, making this a perfectly valid chunk:
-
-```
-
-end
-
-```
-
-This `end` chunk consists of three letters and a newline character and can be used to terminate the Prince process when there are no further jobs to process.
-
-Currently the control protocol includes the following chunk types sent by Prince:
-
--   `ver`, sent at startup
--   `pdf`, a generated PDF file
--   `log`, the complete output log for the job including all errors and warnings
--   `err`, errors relating to the control protocol itself
-
-And these chunks sent by the caller:
-
--   `job`, the description of a requested conversion job, expressed in JSON
--   `dat`, a file resource needed by the job
--   `end`, to terminate the control connection
-
-A typical interaction looks like this:
-
-```
-
-Prince: ver
-Caller: job
-Caller: dat
-Caller: dat
-Prince: pdf
-Prince: log
-Caller: end
-
-```
-
-Instead of sending the final `end` chunk the caller may choose to submit another `job` chunk and continue converting documents. The protocol is synchronous so replies simply match requests in order.
-
-The `job` chunk contains a description of the conversion job represented in JSON format, which can be followed by an optional sequence of `dat` chunks containing file data which is needed by the job, eg. HTML documents, style sheets, PDF attachments, or whatever.
-
-The number of `dat` chunks is specified by the `job-resource-count` field in the job description, and these files can be accessed via a special job-resource URL scheme, eg. `job-resource:0` will access the content of the first `dat` chunk, then `job-resource:1`, `job-resource:2`, etc. This allows any number of resources to be provided inline with the request and removes the need to create actual temporary files.
+### Prince Job JSON
 
 The JSON job description ([here](#job-description-json) you can see the full description) has several nested objects with fields corresponding to Prince options:
 
 ```json
-
 {
-    "input": { <input options> },
+  * "input": { <input options> },
     "pdf": { <pdf options> },
     "metadata": { <metadata options> },
-    "job-resource-count": <int>
 }
-
 ```
-
-The `input options` and `job-resource-count` are mandatory, the rest are optional and will default to the normal values.
+The `input` field is mandatory (marked with an asterisk), the rest are optional and will default to the normal values.
 
 The `input options` object includes these fields:
 
 ```json
-
 {
-    "src": <single URL or list of URLs>,
+  * "src": <single URL or list of URLs>,
     "type": <string>,
     "base": <string>,
     "media": <string>,
@@ -473,45 +377,16 @@ The `input options` object includes these fields:
     "xinclude": <bool>,
     "xml-external-entities": <bool>
 }
-
 ```
+Only the `src` field is required (marked with an asterisk), the rest can be left as defaults.
 
-Only the `src` field is required, the rest can be left as defaults.
-
-Now we can make some simple job descriptions, eg. to convert a single HTML file:
-
-```json
-
-{
-    "input": {
-        "src": "/path/to/input.html"
-    },
-    "job-resource-count": 0
-}
-
-```
-
-This can be sent as a single `job` chunk and Prince will respond with a `pdf` chunk if the conversion succeeded and a `log` chunk.
-
-Or you can convert a HTML document without saving it to a temporary file:
-
-```json
-
-{
-    "input": {
-        "src": "job-resource:0"
-    },
-    "job-resource-count": 1
-}
-
-```
-
-This requires the `job` chunk to be followed by a `dat` chunk that contains the HTML and then Prince will respond as before.
+<p className="note">
+URLs must be file names, or HTTP URLs - or, if the user wishes to embed the file inside the job itself, they also can be <code>data:</code> URLs!
+</p>
 
 The `pdf options` object includes these fields:
 
 ```json
-
 {
     "color-options": "auto" | "use-true-black" | "use-rich-black",
     "embed-fonts": <bool>,
@@ -546,28 +421,23 @@ The `pdf options` object includes these fields:
     "pdf-id": <string>,
     "pdf-lang": <string>,
     "pdf-xmp": <URL>,
+    "pdf-xmp-metadata": <bool>,
     "tagged-pdf": "auto" | <bool>,
     "attach": [ <list of attachments> ]
 }
-
 ```
-
 Each attachment is a &lt;URL&gt; (string) or an object:
 
 ```json
-
 {
     "url": <URL>,
     "filename": <string>,
     "description": <string>
 }
-
 ```
-
 The `metadata options` object includes these fields:
 
 ```json
-
 {
     "title": <string>,
     "subject": <string>,
@@ -575,18 +445,16 @@ The `metadata options` object includes these fields:
     "keywords": <string>,
     "creator": <string>,
 }
-
 ```
 
 #### Job description JSON
 
-The following is the full JSON job description:
+The following is the full JSON job description - the mandatory `input` and `src` fields are marked with an asterisk:
 
 ```json
-
 {
-    "input": {
-        "src": <single URL or list of URLs>,
+  * "input": {
+      * "src": <single URL or list of URLs>,
         "type": <string>,
         "base": <string>,
         "media": <string>,
@@ -634,6 +502,7 @@ The following is the full JSON job description:
         "pdf-id": <string>,
         "pdf-lang": <string>,
         "pdf-xmp": <URL>,
+        "pdf-xmp-metadata": <bool>,
         "tagged-pdf": "auto" | <bool>,
         "attach": [ {
             "url": <URL>,
@@ -647,16 +516,129 @@ The following is the full JSON job description:
         "author": <string>,
         "keywords": <string>,
         "creator": <string>,
-    },
-    "job-resource-count": <int>
+    }
 }
+```
 
+#### The Job Command-line option
+
+A complicated Prince job can be described with the JSON format described above, and saved in a file, instead of using lots of command-line arguments.
+
+Some things described in such a JSON file also do not have equivalent command-line arguments, such as the ability to specify titles for file attachments, or different settings for different input documents, instead of the same settings for all input documents - in short, the JSON description is more flexible.
+
+<p className="note">If file locations in the JSON file are expressed as <em>relative paths</em>, please note that they are relative <b>to the present working directory</b>, not the path to the JSON file.</p>
+
+This JSON description can then be passed to Prince with the Job Command-line option [`--job`](command-line.md#cl-job), in order to have Prince execute the described job.
+
+```bash
+    $ prince --job=myjob.json
+```
+
+Prince also allows for the JSON description to be read from standard input.
+
+```bash
+    $ prince --job -
+```
+
+Some Prince command-line options are not compatible with the job option, since they might cause conflicts.  In such a case, Prince will produce an error message.  Other options, however, can be combined with the job option, such as the fail-safe options and those for network related settings.
+
+
+### Prince Control Protocol
+
+`prince --control`
+
+The Prince Control Protocol, accessible through the command-line option `--control`, is a synchronous bidirectional protocol that consists of a sequence of "chunks" sent via the standard input and output streams.
+
+Each chunk starts with an identifying three-letter *tag* followed by the *length* of the chunk expressed in bytes, followed by the data itself.
+
+Here is an example "version" chunk to demonstrate the syntax:
+
+```
+ver 15
+Prince 20161219
+```
+
+This chunk has a tag `ver` (all tags are three ASCII characters) followed by a space, then the length of the data expressed as a decimal number, then a newline character, then the data itself (15 bytes), then another newline (not part of the data).
+
+This version chunk is emitted by Prince when the control protocol begins and can be used to check the Prince version and confirm that communication is functioning as expected. Prince will then wait for jobs to be submitted.
+
+If a chunk contains no data then the length is zero and the chunk ends with the newline immediately following the length. In fact the length itself may be omitted, making this a perfectly valid chunk:
+
+```
+end
+```
+
+This `end` chunk consists of three letters and a newline character and can be used to terminate the Prince process when there are no further jobs to process.
+
+Currently the control protocol includes the following chunk types sent by Prince:
+
+-   `ver`, sent at startup
+-   `pdf`, a generated PDF file
+-   `log`, the complete output log for the job including all errors and warnings
+-   `err`, errors relating to the control protocol itself
+
+And these chunks sent by the caller:
+
+-   `job`, the description of a requested conversion job, expressed in JSON
+-   `dat`, a file resource needed by the job
+-   `end`, to terminate the control connection
+
+A typical interaction looks like this:
+
+```
+Prince: ver
+Caller: job
+Caller: dat
+Caller: dat
+Prince: pdf
+Prince: log
+Caller: end
+```
+
+Instead of sending the final `end` chunk the caller may choose to submit another `job` chunk and continue converting documents. The protocol is synchronous so replies simply match requests in order.
+
+<p className="note">
+Chunks always begin with a line containing a <b>three letter tag</b>, followed by a space and then <b><em>the number of bytes</em></b> in the chunk as a decimal number, followed by a newline, and then the chunk data.
+</p>
+
+The `job` chunk contains a description of the conversion job represented in JSON format, which can be followed by an optional sequence of `dat` chunks containing file data which is needed by the job, eg. HTML documents, style sheets, PDF attachments, or whatever.
+
+#### Job Resources
+
+The required JSON format is described [here](#prince-job-json) - however, the JSON job description requires one more mandatory field, i.e. the `job-resource-count`, which takes an integer as value. Thus, in this case both the `input` and `job-resource-count` fields are mandatory, the rest are optional and will default to the normal values.
+
+The number of `dat` chunks is specified by the `job-resource-count` field in the job description, and these files can be accessed via a special job-resource URL scheme, eg. `job-resource:0` will access the content of the first `dat` chunk, then `job-resource:1`, `job-resource:2`, etc. This allows any number of resources to be provided inline with the request and removes the need to create actual temporary files.
+
+Now we can make some simple job descriptions, eg. to convert a single HTML file:
+
+```json
+job 90
+{
+    "input": {
+        "src": "/path/to/input.html"
+    },
+    "job-resource-count": 0
+}
+```
+This can be sent as a single `job` chunk - with the number of bytes of the job description, followed after a newline by the job description itself - and Prince will respond with a `pdf` chunk if the conversion succeeded, and a `log` chunk.
+
+Or you can convert an HTML document without saving it to a temporary file - it requires the `job` chunk to be followed by a `dat` chunk that contains the HTML and then Prince will respond as before:
+
+```json
+job 85
+{
+    "input": {
+        "src": "job-resource:0"
+    },
+    "job-resource-count": 1
+}
+dat 19
+/path/to/input.html
 ```
 
 ### Structured Log
 
-`--structured-log=LEVEL`  
-This option is designed to make it easier to integrate other software with Prince. It takes these values:
+The [structured log command-line options](command-line.md#cl-structured-log) are designed to make it easier to integrate other software with Prince. It is articulated in the following values:
 
 -   `--no-structured-log`
 -   `--structured-log=normal`
@@ -667,11 +649,9 @@ This option is designed to make it easier to integrate other software with Princ
 The default is `--no-structured-log`, in which case error and warning messages will be written to the terminal (stderr stream) as they occur in a human readable format, eg.
 
 ```
-
 prince: foo.html: error: can't open input file: No such file or directory
 prince: foo.html: error: could not load input file
 prince: error: failed to load all input documents
-
 ```
 
 Specifying `--structured-log=normal` writes the log messages in an alternate format with fields separated by `|` characters, in order to make it easier to parse by other software.
@@ -683,9 +663,8 @@ The first field indicates the type of message, which can be:
 -   `fin|` = final outcome, which can be
     -   `fin|success`, or
     -   `fin|failure`;
--   `dat|name|value` = data messages produced by [`Log.data("name", "value")`](js-support.md#window.Log.data);
+-   <code>dat|&lt;<i>name</i>&gt;|&lt;<i>value</i>&gt;</code> = data messages produced by [<code>Log.data(<i>name</i>, <i>value</i>)</code>](js-support.md#window.Log.data);
 -   `msg|` = messages, which can be any of the following:
-
     -   `msg|err` = error message;
     -   `msg|wrn` = warning message;
     -   `msg|inf` = information message;
@@ -695,22 +674,18 @@ The first field indicates the type of message, which can be:
     and always followed by source location and the message itself.
 
 ```
-
 msg|err|foo.html|can't open input file: No such file or directory
 msg|err|foo.html|could not load input file
 msg|err||failed to load all input documents
 fin|failure
-
 ```
 
 The last `msg|err` message has an empty source location field.
 
-Specifying `--structured-log=quiet` suppresses _all_ log messages, except for the final `fin` message, indicating success or failure:
+Specifying `--structured-log=quiet` suppresses *all* log messages, except for the final `fin` message, indicating success or failure:
 
 ```
-
 fin|failure
-
 ```
 
 This allows other software to read the stdout stream from Prince containing the PDF file in its entirety, then read the final status from the stderr stream, without worrying about blocking due to deadlocks.
@@ -718,13 +693,11 @@ This allows other software to read the stdout stream from Prince containing the 
 Specifying `--structured-log=progress` prints percentage log messages for use in GUI applications:
 
 ```
-
 prg|94
 prg|96
 prg|99
 prg|100
 fin|success
-
 ```
 
 Specifying `--structured-log=buffered` is the same as `normal`, but all log messages will be delayed until after the full PDF has been written to the stdout stream, again so that other software can read from stdout and then read the log from stderr without deadlocking.
@@ -765,6 +738,7 @@ Usually Prince will try hard to solve any unexpected issues that arise, prioriti
 
 The JavaScript property [`Prince.failStatus`](js-support.md#window.Prince.failStatus) can also be used to trigger an explicit failure status based on custom criteria. See also under [Failure status](javascript.md#failure-status).
 
+
 ## Security
 
 When you control the input, Prince produces the expected output - you are dealing with trusted input with no (intentionally) malicious code.
@@ -793,13 +767,13 @@ The XML standard allows for external entities, which can access local or remote 
 
 XInclude is a generic mechanism for including XML or non-XML data in XML files. It needs to be enabled with the command-line option [`--xinclude`](command-line.md#cl-xinclude) - see [XML Inclusions (XInclude)](prince-input.md#xml-inclusions-xinclude) for more details.
 
-It is highly recommended to _never_ enable XML external entities or XInclude when dealing with untrusted data! These options are not enabled by default.
+It is highly recommended to *never* enable XML external entities or XInclude when dealing with untrusted data! These options are not enabled by default.
 
 Please also note that, even when enabled, external entities and XIncludes are never processed anywhere but in the main document.  This means that they would not be processed in SVG images included in a document (but they would be processed, if enabled, if the main document were an SVG image).
 
 ### Local Files
 
-However, XML external entities and XInclude are not the only way for accessing local files.  Any image, CSS or JavaScript file in an HTML file can point to a local resource!  This can potentially lead to exposing resources that need to be kept confidential: be aware that the URLs are accessed while Prince is running and the _content_ is embedded in the PDFs, not just the URLs themselves!
+However, XML external entities and XInclude are not the only way for accessing local files.  Any image, CSS or JavaScript file in an HTML file can point to a local resource!  This can potentially lead to exposing resources that need to be kept confidential: be aware that the URLs are accessed while Prince is running and the *content* is embedded in the PDFs, not just the URLs themselves!
 
 <p className="warning">
 It is important to know that by default, Prince <em>does</em> have access to local files.
@@ -820,6 +794,9 @@ A more comprehensive hardening practice is to run Prince in a chroot, a jail, a 
 As a general rule, consider that, in order to function best, Prince will need to have access not only to several shared libraries, but also to fonts, and possibly SSL certificates.
 
 For ease of use, Prince offers its own, maintained [Docker Images](https://hub.docker.com/r/yeslogic/prince).  See also [Prince In Cloud Computing](#prince-in-cloud-computing) for more installation guides in cloud containers.
+
+
+
 
 ## Performance
 

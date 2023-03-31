@@ -1,6 +1,7 @@
 ---
 title: Length & Angle Units
 ---
+
 Prince supports the following length and angle units:
 
 ## Absolute Length Units
@@ -61,9 +62,9 @@ The font length units are relative to the [`font-size`](css-props.md#prop-font-s
 
 ## Viewport Length Units
 
-The viewport length units are relative to the [`@page` area](css-at-rules.md#at-page): the unit `vw` is equal to 1% of the width of the _page area_, i.e. the [page size minus the margin area](paged.md#page-regions) (and minus border and padding), while the unit `vh` is equal to 1% of its height.
+The viewport length units are relative to the [`@page` area](css-at-rules.md#at-page): the unit `vw` is equal to 1% of the width of the *page area*, i.e. the [page size minus the margin area](paged.md#page-regions) (and minus border and padding), while the unit `vh` is equal to 1% of its height.
 
-The values `pvw` and `pvh` are equal to respectively 1% of the width and height of the _entire page_, as defined by the [page size](paged.md#page-size).
+The values `pvw` and `pvh` are equal to respectively 1% of the width and height of the *entire page*, as defined by the [page size](paged.md#page-size).
 
 Please note that these values cannot be used with elements for which a viewport, such as the root element, has not been established.
 
@@ -107,7 +108,7 @@ Please note that these values cannot be used with elements for which a viewport,
 
 ## Pixel Unit
 
-The pixel unit is relative to the de-facto standard of `96dpi` (or rather, 96 _pixel_ per inch) for compatibility with browsers.
+The pixel unit is relative to the de-facto standard of `96dpi` (or rather, 96 *pixel* per inch) for compatibility with browsers.
 
 <table className="grid">
 <tbody><tr>
@@ -119,12 +120,15 @@ The pixel unit is relative to the de-facto standard of `96dpi` (or rather, 96 _p
 </tr>
 </tbody></table>
 
+
+
 ## Angle Units
 
 Furthermore, Prince supports the four angle units `deg`, `grad`, `rad` and `turn` on the following properties:
 
--   the CSS `transform` property has `rotate` and `skew` operators;
--   linear gradients have an angle;
--   `hsl`/`hsla` colors have a hue angle;
--   the `hue-rotate` filter takes an angle;
--   the @page `-prince-rotate-body` property takes multiples of `90deg`.
+* the CSS [`transform`](css-props.md#prop-transform) property has `rotate`, `skew` and `skewx`/`skewy` operators;
+* linear gradients have an angle;
+* [`hsl`/`hsla` colors](graphics.md#hsla) have a hue angle;
+* the [`hue-rotate` filter](css-props.md#prop-filter) takes an angle;
+* the `@page` [`-prince-rotate-body`](css-props.md#prop-prince-rotate-body) descriptor takes multiples of `90deg`.
+

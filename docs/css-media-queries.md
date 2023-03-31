@@ -1,6 +1,7 @@
 ---
 title: CSS Media Queries
 ---
+
 Below are all of the media queries supported by Prince. For their precise definition please refer to the [Media Queries Level 4](https://www.w3.org/TR/mediaqueries-4/) specification.
 
 Media queries test how Prince is configured, rather than how the document is styled. The configuration of Prince often depends on the command-line arguments passed to it.
@@ -88,6 +89,7 @@ names can be prefixed by <code>min-</code> or <code>max-</code>.</td>
 </tr>
 </tbody></table>
 
+
 ### Dimension Media Features
 
 <table className="grid">
@@ -95,8 +97,8 @@ names can be prefixed by <code>min-</code> or <code>max-</code>.</td>
 <th colSpan="2"><code>width</code></th>
 </tr>
 <tr>
-<td>Value: <code><i>length</i></code></td>
-<td rowSpan={2}>Describes the width of the displayed page.</td>
+<td>Value: <code>&lt;<i>length</i>&gt;</code></td>
+<td rowspan="2">Describes the width of the displayed page.</td>
 </tr>
 <tr>
 <td>Type: range</td>
@@ -105,8 +107,8 @@ names can be prefixed by <code>min-</code> or <code>max-</code>.</td>
 <th colSpan="2"><code>height</code></th>
 </tr>
 <tr>
-<td>Value: <code><i>length</i></code></td>
-<td rowSpan={2}>Describes the height of the displayed page.</td>
+<td>Value: <code>&lt;<i>length</i>&gt;</code></td>
+<td rowspan="2">Describes the height of the displayed page.</td>
 </tr>
 <tr>
 <td>Type: range</td>
@@ -115,8 +117,8 @@ names can be prefixed by <code>min-</code> or <code>max-</code>.</td>
 <th colSpan="2"><code>aspect-ratio</code></th>
 </tr>
 <tr>
-<td>Value: <code><i>length</i></code></td>
-<td rowSpan={2}>Describes the ratio of the width to the height of the displayed page.</td>
+<td>Value: <code>&lt;<i>length</i>&gt;</code></td>
+<td rowspan="2">Describes the ratio of the width to the height of the displayed page.</td>
 </tr>
 <tr>
 <td>Type: range</td>
@@ -126,7 +128,7 @@ names can be prefixed by <code>min-</code> or <code>max-</code>.</td>
 </tr>
 <tr>
 <td>Value: <code>portrait</code> | <code>landscape</code></td>
-<td rowSpan={2}>Describes the width of the displayed page.</td>
+<td rowspan="2">Describes the width of the displayed page.</td>
 </tr>
 <tr>
 <td>Type: discrete</td>
@@ -140,8 +142,8 @@ names can be prefixed by <code>min-</code> or <code>max-</code>.</td>
 <th colSpan="2"><code>resolution</code></th>
 </tr>
 <tr>
-<td>Value: <code><i>resolution</i></code> | <code>infinite</code></td>
-<td rowSpan={2}>Describes the resolution of the output device.</td>
+<td>Value: <code>&lt;<i>resolution</i>&gt;</code> | <code>infinite</code></td>
+<td rowspan="2">Describes the resolution of the output device.</td>
 </tr>
 <tr>
 <td>Type: range</td>
@@ -151,7 +153,7 @@ names can be prefixed by <code>min-</code> or <code>max-</code>.</td>
 </tr>
 <tr>
 <td>Value: <code>interlace</code> | <code>progressive</code></td>
-<td rowSpan={2}>Describes the scanning process of the output device. This feature
+<td rowspan="2">Describes the scanning process of the output device. This feature
 is always <code>false</code> for Prince.</td>
 </tr>
 <tr>
@@ -161,8 +163,8 @@ is always <code>false</code> for Prince.</td>
 <th colSpan="2"><code>grid</code></th>
 </tr>
 <tr>
-<td>Value: <code><i>boolean</i></code></td>
-<td rowSpan={2}>Describes whether the output device is grid (1) or bitmap (0). Prince
+<td>Value: <code>&lt;<i>boolean</i>&gt;</code></td>
+<td rowspan="2">Describes whether the output device is grid (1) or bitmap (0). Prince
 is bitmap based, and thus <code>0</code> matches.</td>
 </tr>
 <tr>
@@ -173,7 +175,7 @@ is bitmap based, and thus <code>0</code> matches.</td>
 </tr>
 <tr>
 <td>Value: <code>none</code> | <code>slow</code> | fast</td>
-<td rowSpan={2}>Describes the ability of the output device to modify the appearance
+<td rowspan="2">Describes the ability of the output device to modify the appearance
 of the content once it has been rendered. In Prince the layout cannot be updated, and
 thus only <code>none</code> matches.</td>
 </tr>
@@ -186,8 +188,8 @@ thus only <code>none</code> matches.</td>
 <tr>
 <td>Value: <code>none</code> | <code>scroll</code> | <code>optional-paged</code>
 | <code>paged</code></td>
-<td rowSpan={2}>Describes the behavior of the device when content overflows the
-initial containing block in the block axis..</td>
+<td rowspan="2">Describes the behavior of the device when content overflows the
+initial containing block in the block axis.</td>
 </tr>
 <tr>
 <td>Type: discrete</td>
@@ -197,13 +199,14 @@ initial containing block in the block axis..</td>
 </tr>
 <tr>
 <td>Value: <code>none</code> | <code>scroll</code></td>
-<td rowSpan={2}>Describes the behavior of the device when content overflows the
-initial containing block in the inline axis..</td>
+<td rowspan="2">Describes the behavior of the device when content overflows the
+initial containing block in the inline axis.</td>
 </tr>
 <tr>
 <td>Type: discrete</td>
 </tr>
 </tbody></table>
+
 
 ### Color Media Features
 
@@ -212,8 +215,8 @@ initial containing block in the inline axis..</td>
 <th colSpan="2"><code>color</code></th>
 </tr>
 <tr>
-<td>Value: <code><i>integer</i></code></td>
-<td rowSpan={2}>Describes the number of bits per color component of the output device.
+<td>Value: <code>&lt;<i>integer</i>&gt;</code></td>
+<td rowspan="2">Describes the number of bits per color component of the output device.
 Prince assumes <code>13</code> color bits.</td>
 </tr>
 <tr>
@@ -223,8 +226,8 @@ Prince assumes <code>13</code> color bits.</td>
 <th colSpan="2"><code>color-index</code></th>
 </tr>
 <tr>
-<td>Value: <code><i>integer</i></code></td>
-<td rowSpan={2}>Describes the number of entries in the color lookup table of the
+<td>Value: <code>&lt;<i>integer</i>&gt;</code></td>
+<td rowspan="2">Describes the number of entries in the color lookup table of the
 output device.</td>
 </tr>
 <tr>
@@ -234,8 +237,8 @@ output device.</td>
 <th colSpan="2"><code>monochrome</code></th>
 </tr>
 <tr>
-<td>Value: <code><i>integer</i></code></td>
-<td rowSpan={2}>Describes the number of bits per pixel in a monochrome framebuffer.</td>
+<td>Value: <code>&lt;<i>integer</i>&gt;</code></td>
+<td rowspan="2">Describes the number of bits per pixel in a monochrome framebuffer.</td>
 </tr>
 <tr>
 <td>Type: range</td>
@@ -245,12 +248,13 @@ output device.</td>
 </tr>
 <tr>
 <td>Value: <code>srgb</code> | <code>p3</code> | <code>rec2020</code></td>
-<td rowSpan={2}>Describes the approximate range of colors that are supported by the output device.</td>
+<td rowspan="2">Describes the approximate range of colors that are supported by the output device.</td>
 </tr>
 <tr>
 <td>Type: discrete</td>
 </tr>
 </tbody></table>
+
 
 ### Interaction Media Features
 
@@ -260,7 +264,7 @@ output device.</td>
 </tr>
 <tr>
 <td>Value: <code>none</code> | <code>coarse</code> | <code>fine</code></td>
-<td rowSpan={2}>Describes the presence and accuracy of pointing devices. Prince assumes
+<td rowspan="2">Describes the presence and accuracy of pointing devices. Prince assumes
 <code>none</code>.</td>
 </tr>
 <tr>
@@ -271,7 +275,7 @@ output device.</td>
 </tr>
 <tr>
 <td>Value: <code>none</code> | <code>hover</code></td>
-<td rowSpan={2}>Describes the user's ability to hover over elements on the page. Prince
+<td rowspan="2">Describes the user's ability to hover over elements on the page. Prince
 assumes <code>none</code>.</td>
 </tr>
 <tr>
@@ -287,7 +291,7 @@ assumes <code>none</code>.</td>
 </tr>
 <tr>
 <td>Value: <code>none</code> | <code>initial-only</code> | <code>enabled</code></td>
-<td rowSpan={2}>Describes whether scripting languages, such as JavaScript, are supported.
+<td rowspan="2">Describes whether scripting languages, such as JavaScript, are supported.
 Prince assumes <code>none</code> or <code>initial-only</code>, depending on its configuration.</td>
 </tr>
 <tr>

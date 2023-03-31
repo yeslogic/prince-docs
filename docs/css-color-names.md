@@ -1,7 +1,9 @@
 ---
 title: Color Names
 ---
+
 CSS offers several ways of defining colors - either by keyword, or by numerical specification expressed as RGB, RGBA, CMYK, HSL or HSLA colors. For more details, please see the chapter on [Color](graphics.md#color).
+
 
 ## Color Keywords
 

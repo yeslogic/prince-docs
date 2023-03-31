@@ -1,10 +1,11 @@
 ---
 title: Prince Networking
 ---
+
 Prince can process local files or fetch them from remote locations. To do this, a full URL needs to be provided, including the protocol.
 
 ```bash
-    prince http://example.com/path/file.html -o out.pdf
+    $ prince http://example.com/path/file.html -o out.pdf
 ```
 
 ## Authentication
@@ -31,6 +32,8 @@ The option [`--insecure`](command-line.md#cl-insecure) disables SSL verification
 
 Prince makes use of the libcurl library to process network locations - see [Acknowledgments](acknowledgements.md). Please note that command-line options are passed to curl as-is. On some systems curl might use a library other than OpenSSL to handle SSL - in those cases the SSL-related command-line options might behave in a slightly different way. In case of doubt, please check your own curl documentation.
 
+
+
 ### Client Certificates
 
 Client certificates are supported on Linux with several command-line options. The [`--ssl-cert`](command-line.md#cl-ssl-cert) option specifies an SSL client certificate file, while the [`--ssl-cert-type`](command-line.md#cl-ssl-cert-type) option defines the SSL client certificate file type (PEM, DER) - the default is PEM. The option [`--ssl-key`](command-line.md#cl-ssl-key) specifies an SSL private key file and [`--ssl-key-type`](command-line.md#cl-ssl-key-type) is used to define the SSL private key file type (PEM, DER) - the default is PEM. Last but not least, [`--ssl-key-password`](command-line.md#cl-ssl-key-password) indicates the passphrase for the private key.
@@ -49,4 +52,10 @@ The option [`--http-timeout`](command-line.md#cl-http-timeout) can be used to de
 
 Prince can also disable downloading multiple HTTP resources at once with the [`--no-parallel-downloads`](command-line.md#cl-no-parallel-downloads) command-line option.
 
-In extreme cases, a custom user-agent string can be passed to Prince with the [`--user-agent`](command-line.md#cl-user-agent) command-line option in order to circumvent user-agent-sniffing that leads to undesired results, degrading the PDF output.  Please be aware that there can be unforseen side-effects when pretending to be somebody else on the web.
+### Custom HTTP headers
+
+In extreme cases, a custom user-agent string can be passed to Prince with the [`--user-agent`](command-line.md#cl-user-agent) command-line option in order to circumvent user-agent-sniffing that leads to undesired results, degrading the PDF output.
+
+Other custom HTTP headers can be sent to the server with the command-line option [`--http-header`](command-line.md#cl-http-header).  To send multiple custom headers, use the option multiple times.  Note that headers already sent by Prince can be overridden by this command-line option, but cannot be removed.
+
+<p className="note">Please be aware that there can be unforseen side-effects when manipulating HTTP headers, including the User-Agent header.</p>

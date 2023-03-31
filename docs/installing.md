@@ -1,6 +1,7 @@
 ---
 title: Getting Started
 ---
+
 Let's get started with Prince. We will download and install the software and use it to generate a PDF from a very simple document with a very basic stylesheet. This chapter will get you up and running with Prince as quickly as possible.
 
 Readers should already be familiar with HTML and CSS - many good tutorials are available on the topic. Familiarity with your computer's command line interface is desirable but not essential. Because the chapter is aimed at getting started as quickly as possible we may skip some explanations, don't worry as these will be covered later in the manual.
@@ -16,7 +17,6 @@ Prince is provided under the terms of the [Prince End-User License Agreement](/l
 ### Installing Prince on Windows
 
 1.  Download your installation package from the [Download Page](/download/).
-
 2.  After downloading and attempting to run the installer you might see a confirmation screen like this. Click "run". Note that the filename for the installer may be different than the one shown in the picture.
 
     Run installer confirmation
@@ -60,47 +60,29 @@ For information about using Prince from PHP, Java, .NET, and other server framew
 To install Prince on MacOS, please run the `install.sh` shell script contained in the package downloaded to your computer from the [download page](/download/). This will involve the following procedure:
 
 1.  Open the Terminal application.
-
 2.  Change to the download directory and unpack the downloaded file.
-
-    ```
-
+    ```bash
     $ cd download_directory
     $ tar xvf prince-package-macos.zip
-
     ```
-
 3.  Change to the extracted directory.
-
+    ```bash
+     $ cd prince-package-macos
     ```
-
-    $ cd prince-package-macos
-
-    ```
-
 4.  Run the installation shell script.
-
-    ```
-
+    ```bash
     $ ./install.sh
-
     ```
-
 5.  Follow the prompts to install Prince. Please note that you will need to be logged in as root if you wish to install Prince into a system directory such as `/usr/local`, which is the default value. This can be accomplished by running the installation script using `sudo`, which will prompt you for your password:
-
-    ```
-
+    ```bash
     $ sudo ./install.sh
     Password: .....
-
     ```
 
 If you chose a non-standard location you may need to add the `bin/` subdirectory to your `PATH` environment variable. There are many different types of command interpreters (also called shells), we cannot possibly document all of them. However for Bourne-style shells (the most common type) the command might look like this:
 
-```
-
+```bash
 $ export PATH=/usr/local/myPrinceDir/bin:$PATH
-
 ```
 
 You will need to add the appropriate command to your shell's configuration or startup file. See your distribution or shell's documentation for how to do this.
@@ -115,10 +97,8 @@ For information about using Prince from PHP, Java, .NET, and other server framew
 
 Prince is installed using the terminal. The installation package can be downloaded from the [Download Page](/download/). Then open a terminal window and change to the directory that you downloaded or copied the installation package to. The `$` symbol represents the command prompt and the text that follows is the command, you should not type in the `$` symbol.
 
-```
-
+```bash
 $ cd download_directory
-
 ```
 
 Depending on your distribution and the package that you downloaded you may be able to install Price using the tools provided by your distribution.
@@ -127,8 +107,7 @@ Depending on your distribution and the package that you downloaded you may be ab
 
 On Debian and Ubuntu Linux you can use `gdebi` to install Prince and its dependencies. `gdebi` will automatically download and install any package dependencies, therefore it is often easier to use `gdebi` than `dpkg` which will not automatically install dependencies. If you're not logged in as root (and you shouldn't be), then you can use `sudo` to run the `gdebi` command as root.
 
-```
-
+```bash
 $ sudo gdebi prince_package_debian_amd64.deb
 Reading package lists... Done
 Building dependency tree
@@ -145,31 +124,25 @@ Preparing to unpack prince_package_debian_amd64.deb ...
 Unpacking prince ...
 Setting up prince ...
 Processing triggers for man-db ...
-
 ```
 
 If `gdebi` is not already installed then you can install it using `aptitude` as follows. `aptitude` cannot be used to install Prince itself as Prince is not available in a Debian repository.
 
-```
-
+```bash
 $ sudo aptitude install gdebi
-
 ```
 
 #### CentOS and Redhat
 
 On RPM based systems, such as CentOS or Redhat Enterprise Linux, you should use the `yum` tool to install Prince. If you're not logged in as root (and you shouldn't be), then you can use `sudo` to run the `yum` command as root.
 
-```
-
+```bash
 $ sudo yum install prince-package.centos.x86_64.rpm
-
 ```
 
 We have not shown all of `yum`'s output here as there is a lot of it. The process should prompt you before installation, which will look similar to:
 
-```
-
+```bash
 ================================================================================
  Package        Arch    Version            Repository                      Size
 ================================================================================
@@ -193,13 +166,11 @@ Total download size: 1.5 M
 Installed size: 18 M
 Is this ok [y/N]: y
 Downloading Packages:
-
 ```
 
 The process will then end with messages similar to:
 
-```
-
+```bash
 Installed:
   prince.x86_64 0:version
 
@@ -210,7 +181,6 @@ Dependency Installed:
   libtiff.x86_64 0:3.9.4-10.el6_5
 
 Complete!
-
 ```
 
 Prince is now ready to use. [Your First Document](first-doc.md#first-doc) will walk you through generating your first PDF document.
@@ -219,7 +189,7 @@ For information about using Prince from PHP, Java, .NET, and other server framew
 
 #### Tarballs - Alpine Linux, FreeBSD and Generic Linux
 
-Prince can be installed on Alpine Linux and FreeBSD from a _tarball_ (a `.tar.gz` file). The tarball packages can also be used on Linux when there is no `.deb` or `.rpm` package for your system or the package for your system didn't work for some reason. In these cases this section contains the relevant installation instructions.
+Prince can be installed on Alpine Linux and FreeBSD from a *tarball* (a `.tar.gz` file). The tarball packages can also be used on Linux when there is no `.deb` or `.rpm` package for your system or the package for your system didn't work for some reason. In these cases this section contains the relevant installation instructions.
 
 Start by choosing the tarball that is the closest match for your system, take care to match operating system (Linux vs FreeBSD) and architecture (Intel or ARM).
 
@@ -231,8 +201,7 @@ The `bin/prince` script in the installation directory (see [Linux and FreeBSD in
 
 To install Prince from a tarball enter these commands.
 
-```
-
+```bash
 $ tar xzf prince-package-freebsd-amd64.tar.gz 
 $ cd prince-package-freebsd-amd64 
 $ sudo ./install.sh 
@@ -250,7 +219,6 @@ Installing files...
 Installation complete.
     Thank you for choosing Prince, we hope you find it useful.
     Please visit https://www.princexml.com for updates and development news.
-
 ```
 
 1.  Start by unpacking the package. Note that the package name may be different than the example shown here. This will create a new directory containing the Prince files.
@@ -263,10 +231,8 @@ Installation complete.
 
 If you chose a non-standard location you may need to add the `bin/` subdirectory to your `PATH` environment variable. There are many different types of command interpreters (also called shells), we cannot possibly document all of them. However for borne-style shells (the most common type) the command might look like this:
 
-```
-
+```bash
 export PATH=/usr/local/prince10/bin:$PATH
-
 ```
 
 You will need to add the appropriate command to your shell's configuration or startup file. See your operating system's or shell's documentation for how to do this.
@@ -305,14 +271,12 @@ On Windows you can install a license by following these steps:
 
 On other systems copy the `license.dat` file into the `lib/prince/license` directory of the Prince installation (see [Installation Layout](#installation-layout)). For example, if Prince was installed into the default `/usr/local` directory, the license file should be copied to `/usr/local/lib/prince/license/license.dat`
 
-```
-
+```bash
 $ cp license.dat /usr/local/lib/prince/license/license.dat
 $ prince --version
 Prince 10 rev 3
 Copyright 2002-2015 YesLogic Pty. Ltd.
 Test License
-
 ```
 
 Remember to backup your license file in case you want to reinstall Prince in the future.
@@ -332,9 +296,9 @@ On 64-bit Windows, the Prince GUI is a 32-bit program, but the formatting engine
 
 In the subfolder `engine` are all resource files:
 
-| Folder           | Function                                                                        |
-| ---------------- | ------------------------------------------------------------------------------- |
-| `bin`     | The Prince core (`prince.exe`)                                           |
+| Folder    | Function                                                                        |
+|-----------|---------------------------------------------------------------------------------|
+| `bin`     | The Prince core (`prince.exe`)                                                  |
 | `contrib` | Licenses for open source libraries used by Prince                               |
 | `dict`    | LibThai dictionary, used by Prince to handle word breaking in the Thai language |
 | `dtd`     | Document Type Definitions (DTDs) for XML languages understood by Prince         |
@@ -355,18 +319,18 @@ Prince installs its files by default to `/usr/local` on MacOS:
 
 In the resource directory are all resource files:
 
-| Folder           | Function                                                                                                        |
-| ---------------- | --------------------------------------------------------------------------------------------------------------- |
+| Folder    | Function                                                                                          |
+|-----------|---------------------------------------------------------------------------------------------------|
 | `bin`     | The Prince core (the `prince` binary executable) and (as of Prince 11.3) the `princedebug` script |
-| `dict`    | LibThai dictionary, used by Prince to handle word breaking in the Thai language                                 |
-| `dtd`     | Document Type Definitions (DTDs) for XML languages understood by Prince                                         |
-| `etc`     | The CA certificate bundle used for retrieving documents over HTTPS                                              |
-| `hyph`    | The hyphenation dictionaries for common languages                                                               |
-| `icc`     | ICC color profiles                                                                                              |
-| `lib`     | Shared libraries required by Prince                                                                             |
-| `license` | The Prince license file                                                                                         |
-| `math`    | MathML resource files                                                                                           |
-| `style`   | The default CSS style sheets                                                                                    |
+| `dict`    | LibThai dictionary, used by Prince to handle word breaking in the Thai language                   |
+| `dtd`     | Document Type Definitions (DTDs) for XML languages understood by Prince                           |
+| `etc`     | The CA certificate bundle used for retrieving documents over HTTPS                                |
+| `hyph`    | The hyphenation dictionaries for common languages                                                 |
+| `icc`     | ICC color profiles                                                                                |
+| `lib`     | Shared libraries required by Prince                                                               |
+| `license` | The Prince license file                                                                           |
+| `math`    | MathML resource files                                                                             |
+| `style`   | The default CSS style sheets                                                                      |
 
 ### Linux and FreeBSD installation layout
 
@@ -377,15 +341,15 @@ Prince installs its files by default to `/usr` on Linux and FreeBSD:
 
 In the resource directory are all resource files:
 
-| Folder           | Function                                                                                                        |
-| ---------------- | --------------------------------------------------------------------------------------------------------------- |
+| Folder    | Function                                                                                          |
+|-----------|---------------------------------------------------------------------------------------------------|
 | `bin`     | The Prince core (the `prince` binary executable) and (as of Prince 11.3) the `princedebug` script |
-| `dict`    | LibThai dictionary, used by Prince to handle word breaking in the Thai language                                 |
-| `dtd`     | Document Type Definitions (DTDs) for XML languages understood by Prince                                         |
-| `etc`     | The CA certificate bundle used for retrieving documents over HTTPS                                              |
-| `hyph`    | The hyphenation dictionaries for common languages                                                               |
-| `icc`     | ICC color profiles                                                                                              |
-| `lib`     | Shared libraries required by Prince                                                                             |
-| `license` | The Prince license file                                                                                         |
-| `math`    | MathML resource files                                                                                           |
-| `style`   | The default CSS style sheets                                                                                    |
+| `dict`    | LibThai dictionary, used by Prince to handle word breaking in the Thai language                   |
+| `dtd`     | Document Type Definitions (DTDs) for XML languages understood by Prince                           |
+| `etc`     | The CA certificate bundle used for retrieving documents over HTTPS                                |
+| `hyph`    | The hyphenation dictionaries for common languages                                                 |
+| `icc`     | ICC color profiles                                                                                |
+| `lib`     | Shared libraries required by Prince                                                               |
+| `license` | The Prince license file                                                                           |
+| `math`    | MathML resource files                                                                             |
+| `style`   | The default CSS style sheets                                                                      |

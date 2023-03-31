@@ -1,6 +1,7 @@
 ---
 title: CSS Selectors
 ---
+
 Below are the CSS selectors supported by Prince. For their precise definition please refer to the CSS specification - Prince largely implements [Selectors Level 4](https://www.w3.org/TR/selectors4/).
 
 ## Terminology and Definitions
@@ -201,6 +202,7 @@ whose value contains <code>val</code>.</td>
 </tr>
 </tbody></table>
 
+
 ## Linguistic Pseudo-classes
 
 <table className="grid">
@@ -213,6 +215,7 @@ whose value contains <code>val</code>.</td>
 language <code>C</code>.</td>
 </tr>
 </tbody></table>
+
 
 ## Input Pseudo-classes
 
@@ -248,6 +251,7 @@ such as radio and checkbox elements that are selected by the user.</td>
 </tr>
 </tbody></table>
 
+
 ## Location Pseudo-classes
 
 <table className="grid">
@@ -273,6 +277,7 @@ in conjunction with <code>:has()</code>, meaning that <code>:scope</code> matche
 the element that <code>:has()</code> is applied to.</td>
 </tr>
 </tbody></table>
+
 
 ## Tree-Structural pseudo-classes
 
@@ -353,6 +358,7 @@ siblings with the same namespace and type.</td>
 </tr>
 </tbody></table>
 
+
 ## Combinators
 
 <table className="grid">
@@ -361,16 +367,16 @@ siblings with the same namespace and type.</td>
 </tr>
 <tr>
 <td><code>E F</code></td>
-<td rowSpan={2}>An <code>F</code> element descendant of an <code>E</code> element.</td>
+<td rowspan="2">An <code>F</code> element descendant of an <code>E</code> element.</td>
 </tr>
 <tr>
-<td><code>E &gt;&gt; F</code></td>
+<td><code>E >> F</code></td>
 </tr>
 <tr>
 <th colSpan="2">Child combinator</th>
 </tr>
 <tr>
-<td><code>E &gt; F</code></td>
+<td><code>E > F</code></td>
 <td>An <code>F</code> element child of an <code>E</code> element.</td>
 </tr>
 <tr>
@@ -388,6 +394,7 @@ siblings with the same namespace and type.</td>
 <td>An <code>F</code> element preceded by an <code>E</code> element.</td>
 </tr>
 </tbody></table>
+
 
 ## Tree-Abiding Pseudo-element Selectors
 
@@ -414,6 +421,7 @@ element's actual content.</td>
 </tr>
 </tbody></table>
 
+
 ## Typographic Pseudo-element Selectors
 
 <table className="grid">
@@ -434,6 +442,7 @@ originating element, if it is not preceded by other content.</td>
 </tr>
 </tbody></table>
 
+
 ## Footnote Pseudo-element Selectors
 
 <table className="grid">
@@ -452,6 +461,7 @@ originating element, if it is not preceded by other content.</td>
 <td>Represents the footnote markers placed in front of the actual footnote text.</td>
 </tr>
 </tbody></table>
+
 
 ## Page Selectors
 

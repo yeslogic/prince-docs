@@ -1,6 +1,7 @@
 ---
 title: CSS At-rules
 ---
+
 In this section you find the documentation for the supported CSS at-rules.
 
 Prince accepts `@-prince` as a vendor prefix for Prince-specific at-rules to comply with validators - eg. `@-prince-pdf` and `@-prince-color`.
@@ -46,7 +47,7 @@ The initial values for <code>@page</code> styles are documented in the
 </tr>
 <tr>
 <td><code>:left</code></td>
-<td rowSpan={7}>Page pseudo-classes</td>
+<td rowSpan="7">Page pseudo-classes</td>
 </tr>
 <tr>
 <td><code>:right</code></td>
@@ -69,7 +70,7 @@ The initial values for <code>@page</code> styles are documented in the
 <tr>
 <td><code>@left-top</code> | <code>@left-middle</code> |
 <code>@left-bottom</code></td>
-<td rowSpan={7}><a href="/doc/paged#page-regions">Page region</a> at-rules</td>
+<td rowSpan="8"><a href="/doc/paged#page-regions">Page region</a> at-rules</td>
 </tr>
 <tr>
 <td><code>@right-top</code> | <code>@right-middle</code> |
@@ -84,13 +85,16 @@ The initial values for <code>@page</code> styles are documented in the
 <code>@bottom-center</code> | <code>@bottom-right</code> | <code>@bottom-right-corner</code></td>
 </tr>
 <tr>
-<td><code>@page-float-top</code> | <code>@page-float-bottom</code> | <code>@prince-overlay</code></td>
+<td><code>@page-float-top</code> | <code>@page-float-bottom</code></td>
+</tr>
+<tr>
+<td><code>@leftnote</code> | <code>@rightnote | @insidenote</code> | <code>@outsidenote</code></td>
 </tr>
 <tr>
 <td><code>@footnote</code></td>
 </tr>
 <tr>
-<td><code>@leftnote</code> | <code>@rightnote | @insidenote</code> | <code>@outsidenote</code></td>
+<td><code>@prince-overlay</code></td>
 </tr>
 <tr>
 <td colSpan="2">The <code>@page</code> rule takes the following CSS properties:
@@ -127,7 +131,9 @@ in the media query. See <a href="/doc/css-media-queries">CSS Media Queries</a> f
 
 <table className="grid">
 <tbody><tr>
-<th id="at-supports"><code>@supports <i>Condition</i> {"{"} <i>Rules</i> {"}"}</code></th>
+<th id="at-supports"><code>@supports &lt;<i>supports-condition</i>&gt; {"{"}
+    &lt;<i>stylesheet</i>&gt;
+{"}"}</code></th>
 </tr>
 <tr>
 <td>Checks whether particular <code>property:value</code> combinations are supported.
@@ -137,7 +143,9 @@ Unlike media queries, this uses the classical two-valued logic.</td>
 
 <table className="grid">
 <tbody><tr>
-<th colSpan="2" id="at-font-face"><code>@font-face {"{"} <i>Font-declarations</i> {"}"}</code></th>
+<th colSpan="2" id="at-font-face"><code>@font-face {"{"}
+    &lt;<i>declaration-list</i>&gt;
+{"}"}</code></th>
 </tr>
 <tr>
 <td colSpan="2">Links a font family to an actual font.</td>
@@ -173,7 +181,9 @@ which take the same values as the CSS properties with the same name.</td>
 
 <table className="grid">
 <tbody><tr>
-<th colSpan="2" id="at-prince-color"><code>@prince-color <i>Name</i> {"{"} alternate-color: ... {"}"}</code></th>
+<th colSpan="2" id="at-prince-color"><code>@prince-color &lt;<i>color-name</i>&gt; {"{"}
+    alternate-color: &lt;<i>color</i>&gt;
+{"}"}</code></th>
 </tr>
 <tr>
 <td colSpan="2">Defines a new color name.</td>
@@ -188,13 +198,15 @@ a stylesheet with the <code>prince-color()</code> function.  (See <a href="/doc/
 
 <table className="grid">
 <tbody><tr>
-<th colSpan="2" id="at-prince-pdf"><code>@prince-pdf <i>Name</i> {"{"} <i>Declarations</i> {"}"}</code></th>
+<th colspan="2" id="at-prince-pdf"><code>@prince-pdf {"{"}
+    &lt;<i>declaration-list</i>&gt;
+{"}"}</code></th>
 </tr>
 <tr>
-<td colSpan="2">Defines properties relating to PDFs.</td>
+<td colspan="2">Defines properties relating to PDFs.</td>
 </tr>
 <tr>
-<td colSpan="2">The <code>@prince-pdf</code> rule takes the following CSS properties:
+<td colspan="2">The <code>@prince-pdf</code> rule takes the following CSS descriptors:
 <code><a href="/doc/css-props#prop-prince-fallback-cmyk-profile">-prince-fallback-cmyk-profile</a></code> |
 <code><a href="/doc/css-props#prop-prince-filter-resolution">-prince-filter-resolution</a></code> |
 <code><a href="/doc/css-props#prop-prince-pdf-color-conversion">-prince-pdf-color-conversion</a></code> |

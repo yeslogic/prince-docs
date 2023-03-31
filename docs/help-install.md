@@ -1,6 +1,7 @@
 ---
 title: Help
 ---
+
 The Prince Installation Guide tries to be exhaustive in explaining how to install the application. However, there might always be something not answered in the documentation, or something not working as expected. There are a couple of ways to get help to solve the problems:
 
 -   The [Troubleshooting](#troubleshooting) section addresses possible common issues after installing and starting to use Prince;
@@ -16,12 +17,10 @@ We work hard to make Prince work on multiple platforms (Windows, Linux, etc) and
 
 Symptom  
 
-```
-
+```bash
 prince: page 1: warning: no font for
       Aegean Numbers character U+10123,
       fallback to '?'
-
 ```
 
 Explanation  
@@ -29,10 +28,8 @@ Prince tries to tell you which page the missing glyph appeared on, what type of 
 
 Symptom  
 
-```
-
+```bash
 prince: internal error: no available fonts
-
 ```
 
 Explanation  
@@ -51,10 +48,8 @@ This problem may be a symptom of the [Fontconfig](#fontconfig).
 
 Symptom  
 
-```
-
+```bash
 Fontconfig error: Cannot load default config file
-
 ```
 
 Explanation  
@@ -63,7 +58,7 @@ Prince uses the [Fontconfig](https://www.fontconfig.org) library on Linux system
 Some older Linux distributions do not come with fontconfig and this may cause the above error. This error will usually be followed by errors relating to [Missing glyphs or fonts](#missing-glyphs-or-fonts) that cannot be found due to the absence of Fontconfig.
 
 Solution 1  
-install Fontconfig (see your operating system's documentation).
+Install Fontconfig (see your operating system's documentation).
 
 Solution 2  
 Redefine the CSS generic font families to use TrueType fonts that are specified directly by their filenames, avoiding the need to use Fontconfig at all. In extreme cases it might be advisable to disable system fonts completely with the [`--no-system-fonts`](command-line.md#cl-no-system-fonts) command-line option. See [Fonts](styling.md#fonts) and [Redefining the generic font families](styling.md#redefining-the-generic-font-families).
@@ -72,20 +67,16 @@ Redefine the CSS generic font families to use TrueType fonts that are specified 
 
 Symptom (Linux)  
 
-```
-
+```bash
 /usr/local/stow/prince-9/lib/prince/bin/prince: error while loading shared
-libraries: libtiff.so.4: cannot open shared object file: No such file or
-directory
-
+  libraries: libtiff.so.4: cannot open shared object file: No such file or
+  directory
 ```
 
 Symptom (FreeBSD)  
 
-```
-
+```bash
 Shared object "libxml2.so.2" not found, required by "prince"
-
 ```
 
 Explanation  
@@ -101,10 +92,8 @@ Prince is just using the system shared object loader for most libraries, so the 
 
 Symptom  
 
-```
-
+```bash
 -bash: prince: command not found
-
 ```
 
 Explanation  
@@ -113,10 +102,8 @@ The command interpreter (`bash`) does not know how to find the `prince` executab
 Solution  
 Add Prince's `bin/` subdirectory to your `PATH` and ensure that these changes are saved for future shell sessions. If Prince is installed in `/opt/prince10`, then add `/opt/prince10/bin` to `PATH`. There are many different types of command interpreters (also called shells) and we cannot possibly document all of them. The appropriate command for borne-style shells (the most common type) is usually:
 
-```
-
+```bash
 export PATH=/opt/prince10/bin:$PATH
-
 ```
 
 This should be added to your command interpreter's configuration. For more information see your operating system's documentation.
@@ -125,11 +112,9 @@ This should be added to your command interpreter's configuration. For more infor
 
 Symptom  
 
-```
-
+```bash
 > # "prince" cannot be opened because the developer cannot be verified.
 > macOS cannot verify that this app is free from malware.
-
 ```
 
 Explanation  
@@ -142,36 +127,35 @@ Starting with Prince 13.6, the Prince binaries are signed and do not trigger war
 
 Alternatively, you can run the following commands from Terminal to first remove any quarantine attribute applied by Safari when downloading `prince`, and then manually add a SecAssessment system policy label to the executable:
 
-```
-
+```bash
 $ xattr -d -r com.apple.quarantine /usr/local/bin/prince
 $ spctl --add --label "Approved" /usr/local/bin/prince
-
 ```
 
 Doing this will change the system alert to a system prompt to confirm running the executable.  For more information and possible further workarounds see also [this forum thread](https://www.princexml.com/forum/topic/4255/macos-catalina-prince-cannot-be-opened-because-the-developer).
 
+
 ## Frequently Asked Questions
 
-<dl className="faq">
+<dl class="faq">
   <dt id="faq-win64"><p>Why does Prince on 64-bit Windows install
   into the 32-bit compatibility directory <code>%ProgramFiles(x86)%</code>?
-  <a href="#faq-win64" className="self-link" /></p></dt>
+  <a href="#faq-win64" class="self-link"></a></p></dt>
   <dd><p>The Prince GUI is still a 32-bit program, but the formatting engine
   is 64-bit.</p></dd>
 
   <dt id="faq-win-no-ui"><p>How can I run Prince on Windows without showing the UI?
-  <a href="#faq-win-no-ui" className="self-link" /></p></dt>
+  <a href="#faq-win-no-ui" class="self-link"></a></p></dt>
   <dd><p>On Linux, you typically run Prince with the following command:</p>
-  <pre><code className="hljs">{"    "}prince file.xml -o file.pdf</code></pre>
+  <pre><code class="hljs">    prince file.xml -o file.pdf</code></pre>
   <p>On Windows, you replace the name of the executable with
   <code>Prince\engine\bin\prince.exe</code> in the installation directory
   (see <a href="/doc/installing/#windows-installation-layout">Windows installation layout</a>),
   which is the command-line program. See also <a href="/doc/command-line/">Command-line Reference</a>.</p>
-  <pre><code className="hljs">{"    "}"C:\Program Files (x86)\Prince\engine\bin\prince.exe" file.xml -o file.pdf</code></pre></dd>
+  <pre><code class="hljs">    "C:\Program Files (x86)\Prince\engine\bin\prince.exe" file.xml -o file.pdf</code></pre></dd>
 
   <dt id="faq-install-cloud"><p>Can I install Prince on cloud services or
-  containers (Azure, AWS, Docker)? <a href="#faq-install-cloud" className="self-link" /></p></dt>
+  containers (Azure, AWS, Docker)? <a href="#faq-install-cloud" class="self-link"></a></p></dt>
   <dd><p>Prince can be installed on the <a href="/doc/installing/#installing-prince">supported operating systems</a> -
   also when they are running in cloud or container services. On Linux, some
   environments might not provide for all dependencies - you can address this
@@ -187,7 +171,7 @@ Doing this will change the system alert to a system prompt to confirm running th
   for a description of an installation on Azure.</p></dd>
 
   <dt id="faq-install-books"><p>How do I install Prince for Books?
-  <a href="#faq-install-books" className="self-link" /></p></dt>
+  <a href="#faq-install-books" class="self-link"></a></p></dt>
   <dd><p><a href="/doc/prince-for-books/">Prince for Books</a> is available
   in package bundles only - to install it, the files need to be copied into
   place (Windows), or an installation script needs to be run (on Linux and MacOS).
@@ -195,7 +179,7 @@ Doing this will change the system alert to a system prompt to confirm running th
   the executable to run is called <code>prince-books</code>.</p></dd>
 
   <dt id="faq-install-wrappers"><p>How do I install the Prince wrappers?
-  <a href="#faq-install-wrappers" className="self-link" /></p></dt>
+  <a href="#faq-install-wrappers" class="self-link"></a></p></dt>
   <dd><p>The <a href="/doc/server-integration/#prince-wrappers">Prince Wrappers</a> come in
   different languages, and each one has a different installation procedure.
   Mostly they are explained in the documentation for each of the

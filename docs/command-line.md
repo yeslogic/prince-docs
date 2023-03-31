@@ -1,6 +1,7 @@
 ---
 title: Command-line Options
 ---
+
 Prince may be called from the command-line with the following arguments:
 
 ```bash
@@ -61,6 +62,7 @@ prince doc.html --raster-output=doc_%d.png
 ```
 
 Process `doc.html` and rasterize the output to the series of files `doc_1.png`, `doc_2.png`, `doc_3.png` etc.
+
 
 ## Specifying input and output
 
@@ -183,8 +185,8 @@ The command-line may include the options described below:
     This option can be used multiple times to specify more than one remapping.
     It cannot be used with <code>--fileroot</code>.
   </p>
-  <p>
-    Note that Prince does not know which file to use when the path maps to a
+  <p className="note">
+    Prince does not know which file to use when the path maps to a
     directory (in other words, an index file).
     If <code>http://www.example.com/</code> is requested, and mapped to
     <code>example-com</code> it does not know whether to open
@@ -194,10 +196,10 @@ The command-line may include the options described below:
     that resource.
   </p>
   </dd>
-  <dt id="cl-fileroot">
+  <dt id="cl-fileroot" className="dep">
     <code>--fileroot=<span className="replaceable">DIR</span></code>
   </dt>
-  <dd>
+  <dd className="dep">
     Specify the root directory for absolute filenames (deprecated).
   </dd>
   <dt id="cl-iframes">
@@ -546,6 +548,9 @@ The command-line may include the options described below:
   <dt id="cl-pdf-xmp"><code>--pdf-xmp=<span className="replaceable">XMP</span></code></dt>
   <dd>Include additional XMP metadata in the PDF.  The argument is an XMP file,
   from which the data is taken.</dd>
+  <dt id="cl-pdf-xmp-metadata"><code>--pdf-xmp-metadata</code></dt>
+  <dd>Enable the XMP representation of HTML metadata even when the PDF profile
+  does not require it.</dd>
 </dl>
 
 ### PDF Encryption Options
@@ -694,11 +699,17 @@ Rasterization is enabled with the `--raster-output` option below. When this is u
 ### Advanced Options
 
 <dl>
-  <dt id="cl-user-agent"><code>--user-agent <span className="replaceable">USER-AGENT</span></code></dt>
+  <dt id="cl-http-header"><code>--http-header=<span className="replaceable">HEADER</span></code></dt>
+  <dt id="cl-user-agent"><code>--user-agent=<span className="replaceable">USER-AGENT</span></code></dt>
   <dd>
-    <p>A custom user-agent string can be passed to Prince to circumvent user-agent-sniffing that leads to
-    undesired results, degrading the PDF output.  Please be aware that there can be unforseen side-effects
-    when pretending to be somebody else on the web.</p>
+    <p>Custom HTTP headers can be passed to Prince in the format <code>"<i>Header</i>: <i>value</i>"</code>.
+    To send multiple custom headers, use the option multiple times. The User-Agent header has its own
+    command-line option. Please be aware that there can be unforseen side-effects
+    when manipulating HTTP headers, including the User-Agent header.</p>
+  </dd>
+  <dt id="cl-shell"><code>--shell</code></dt>
+  <dd>
+    <p>The Prince shell will read JavaScript from standard input and execute it, basically allowing you to run scripts with Prince, which is handy for testing. It also allows to do conversions with <a href="/doc/javascript/#prince-jobs">the <code>Prince.convertToFile</code> and <code>Prince.convertToBuffer</code> methods</a>, which are only accessible in shell mode.</p>
   </dd>
   <dt id="cl-capture"><code>--capture <span className="replaceable">DIR</span></code></dt>
   <dt id="cl-replay"><code>--replay <span className="replaceable">DIR</span></code></dt>
@@ -714,10 +725,20 @@ Rasterization is enabled with the `--raster-output` option below. When this is u
     For more details, please check the detailed documentation in the separate <a href="/doc/server-integration/#prince-control-protocol">Prince Control Protocol</a>
     chapter.</p>
   </dd>
+  <dt id="cl-job"><code>--job=<span className="replaceable">FILE</span></code></dt>
+  <dd>
+    <p>The Job option allows to specify a Prince job in JSON format.
+    For more details, please check the detailed documentation in the
+    separate <a href="/doc/server-integration/#prince-job-json">Prince Job JSON</a>
+    chapter.</p>
+  </dd>
+  <dt id="cl-no-structured-log"><code>--no-structured-log</code></dt>
   <dt id="cl-structured-log"><code>--structured-log=<span className="replaceable">LEVEL</span></code></dt>
   <dd>
     <p>The Structured Log option is a formatting option for Prince's output to stderr.
-    For more details, please check the detailed documentation in the separate <a href="/doc/server-integration/#structured-log">Structured Log</a>
+    Allowed level values are <code>normal</code>, <code>quite</code>, <code>progress</code>
+    and <code>buffered</code>. For more details, please check the detailed documentation
+    in the separate <a href="/doc/server-integration/#structured-log">Structured Log</a>
     chapter.</p>
   </dd>
   <dt id="cl-fail-dropped-content"><code>--fail-dropped-content</code></dt>

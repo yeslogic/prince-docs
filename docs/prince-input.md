@@ -1,6 +1,7 @@
 ---
 title: Prince Input
 ---
+
 Prince takes HTML or XML files as input, and converts them to PDF files. Additionally, CSS style sheets can be provided for styling the documents, and JavaScript files can be used for additional manipulation of the input.
 
 See the sections [Applying Style Sheets in Prince](#applying-style-sheets-in-prince), [Applying JavaScript in Prince](#applying-javascript-in-prince) and [XML Input](#xml-input) for details.
@@ -15,22 +16,20 @@ Input files can either be local files, or remote files that will be fetched over
 
 Last but not least, it is good practice familiarizing yourself with the security implications of HTML, XML, CSS or JavaScript files provided by users we do not have total control over - please see the chapter on [Security](server-integration.md#security).
 
+
 ## Applying Style Sheets in Prince
 
 Prince can apply style sheets from three different sources:
 
 User style sheets  
-
 -   specified from the command line interface or the GUI
 
 Author style sheets  
-
 -   referenced from HTML using &lt;link rel="stylesheet" ... /&gt;
 -   specified in HTML using the &lt;style&gt; element
 -   referenced from XML documents using the `xml-stylesheet` processing instruction
 
 Default style sheets  
-
 -   applied automatically depending on the type of the document being formatted
 
 Prince also offers a mechanism to disable some of the style sheets: the command-line option [`--no-author-style`](command-line.md#cl-no-author-style) disables author style sheets, while [`--no-default-style`](command-line.md#cl-no-default-style) disables default style sheets.
@@ -39,41 +38,32 @@ Prince also offers a mechanism to disable some of the style sheets: the command-
 
 Style sheets may import other style sheets using [`@import`](css-at-rules.md#at-import) rules. These rules must occur before any other rules or declarations in the style sheet, and have the effect of importing all the rules and declarations from the specified style sheet. See [CSS At-rules](css-at-rules.md).
 
-```
-
+```css
     @import "base.css";
     @import "custom.css";
 
     /* more declarations */
-
 ```
-
 ### Conflicting Declarations
 
 Multiple style sheets can be applied and in some cases declarations from different style sheets may conflict. For example, one style sheet might specify that heading elements should use the Times New Roman font, while a different style sheet might specify that heading elements should use the Arial font:
 
 First style sheet:
 
-```
-
+```css
     h1 {
         font-family: "Times New Roman";
         font-size: 24pt;
     }
-
 ```
-
 Second style sheet:
 
-```
-
+```css
     h1 {
         font-family: "Arial";
         color: red
     }
-
 ```
-
 In the above example, the `font-family` declarations conflict, and only one can possibly be applied. However, the `font-size` and `color` declarations do not conflict, and thus both will be applied to the `h1` element.
 
 ### Priority Determination
@@ -95,9 +85,10 @@ If the conflicting declarations have the same origin and importance, the priorit
 3.  Attribute, Class and Pseudo-class selectors
 4.  ID selectors, eg. "`#id`" (highest priority)
 
-If the conflicting declarations have the same specificity, the declaration that occurs _last_ in the style sheet has the _highest_ priority.
+If the conflicting declarations have the same specificity, the declaration that occurs *last* in the style sheet has the *highest* priority.
 
-If the declarations are from different style sheets, the declaration that occurs in the _last_ style sheet to be specified has the _highest_ priority. This is based on the order that style sheets are specified on the command line and also on the order that `xml-stylesheet` processing instructions occur in the document.
+If the declarations are from different style sheets, the declaration that occurs in the *last* style sheet to be specified has the *highest* priority. This is based on the order that style sheets are specified on the command line and also on the order that `xml-stylesheet` processing instructions occur in the document.
+
 
 ## Applying JavaScript in Prince
 
@@ -108,6 +99,7 @@ External scripts can be run by specifying one or more [`--script=FILE`](command-
 JavaScript functions can also be called from CSS generated content, by using the `prince-script()` syntax for referencing [Script Functions](gen-content.md#script-functions). Please note that scripts contained in the `prince-script()` function are treated as document scripts, and hence need to be explicitly enabled.
 
 Prince also supports PDF scripts, known as "Document Action" scripts - see [PDF Actions](prince-output.md#pdf-actions). They get included in documents through CSS, too, but will always be run. Note, however, that these scripts are dependent on the PDF viewer, and in many cases might only work in Adobe Acrobat products.
+
 
 ## XML Input
 
@@ -164,7 +156,6 @@ Also note that XInclude only applies to XML files. To apply it to HTML files, th
 Here is an example of a book written in XHTML in which each chapter has been placed in a separate XML document for convenient editing and then included in the main document using XInclude:
 
 ```html
-
     <html xmlns:xi="https://www.w3.org/2001/XInclude">
     <head>
     <title>Book Title</title>
@@ -175,9 +166,7 @@ Here is an example of a book written in XHTML in which each chapter has been pla
     <xi:include href="chap3.xml"/>
     </body>
     </html>
-
 ```
-
 (Note that the XInclude namespace was defined on the root element and bound to the `xi` prefix to save space by avoiding the need to declare the namespace on every inclusion).
 
 #### Including text files
@@ -185,11 +174,8 @@ Here is an example of a book written in XHTML in which each chapter has been pla
 XInclude can also be used to include text files into XML documents:
 
 ```xml
-
     <xi:include href="file.txt" parse="text"/>
-
 ```
-
 This is a convenient way of including files containing arbitrary non-XML text, such as emails, database reports or program source code. It also allows the inclusion of external XML content as "unparsed text", as if all the markup had been explicitly escaped with character entities or placed in a CDATA section.
 
 #### Fallback
@@ -197,13 +183,10 @@ This is a convenient way of including files containing arbitrary non-XML text, s
 It is possible to specify fallback content that should be used if an included file cannot be loaded. The fallback content can be arbitrary XML and may even contain additional inclusions.
 
 ```xml
-
     <xi:include href="report.md">
         <xi:fallback>
         <p>No report is available</p>
         </xi:fallback>
     </xi:include>
-
 ```
-
 If the `report.md` file cannot be loaded then the paragraph saying "No report is available" will be included in the document instead.

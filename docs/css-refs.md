@@ -1,6 +1,7 @@
 ---
 title: Supported CSS Specifications
 ---
+
 Prince supports, fully or partially, the following CSS specifications:
 
 <table className="grid">

@@ -1,6 +1,7 @@
 ---
 title: Your First Document
 ---
+
 In this section we will process a very simple document. We've chosen a document that fits HTML's heading and paragraph structure naturally: a lab report. The lab report will have a title, an author and date, several headings (Aim, Hypothesis, Method, Results and Conclusion). It does not include a table of results, graphics or diagrams: it is a very simple lab report.
 
 ## The lab report
@@ -8,7 +9,6 @@ In this section we will process a very simple document. We've chosen a document 
 The report itself is very basic, the HTML source is shown below. You can save the HTML to a file named lab_report.html or download it [here](/doc/assets/samples/lab_report.html).
 
 ```html
-
     <!DOCTYPE html>
     <html lang="en">
     <head>
@@ -81,9 +81,7 @@ The report itself is very basic, the HTML source is shown below. You can save th
 
     </body>
     </html>
-
 ```
-
 The report is written using very familiar HTML5 tags. Headings (`h1`, `h2` and `h3`), paragraphs (`p`) and lists (`ul`, `li`) are used for the report's structure, the `code` tag is used to identify code and `pre` is used to identify pre-formatted text.
 
 All user agents, including Prince, associate default styles with all of these tags. Without any explicit styles Prince will format this document in a reasonable and familiar way, similar to most web browsers. The major difference between Prince and a web browser is that Prince needs to create discrete pages, a web browser will format the document as a continuous flow. See [Paged Media](paged.md#paged) for more information.
@@ -97,10 +95,8 @@ Process the document using the command line `prince` command:
 ![The unstyled lab report](assets/samples/lab_report-1.bw.png)
 The unstyled lab report. Download the PDF [here](assets/samples/lab_report.pdf).
 
-```
-
+```bash
 $ prince lab_report.html
-
 ```
 
 This will create a `lab_report.pdf` file in the current directory. If it did not, the [Troubleshooting](help-install.md#troubleshooting) section may be useful. When you open the document in a PDF viewer you should see something like [Unstyled lab report](#fig.lab-report.unstyled). Prince has applied a default stylesheet to the document. A different default stylesheet is used depending upon the document's type (HTML or Docbook XML) see [XML Input](prince-input.md#xml-input). The default stylesheet may be overridden by other stylesheets, more on that in [Applying Style Sheets in Prince](prince-input.md#applying-style-sheets-in-prince).
@@ -118,14 +114,11 @@ We can now make the report look better by adding our own styles. It is good prac
 
 Let's start by creating and opening a new file named `lab_report.css`, First we can specify a sans-serif font for the document:
 
-```
-
+```css
     body {
         font-family: sans-serif;
     }
-
 ```
-
 The default is a font with serifs, a sans-serif font is easier to read on a computer screen while a serif font is easier to read when printed out. See [Text formatting](styling.md#text-formatting) and the [`font-family`](css-props.md#prop-font-family) property.
 
 Next, let's center the title and subtitle and decrease the font size of the subtitle:
@@ -135,8 +128,7 @@ Next, let's center the title and subtitle and decrease the font size of the subt
 ![The styled lab report](assets/samples/lab_report-styled-1.colour.png)
 The styled lab report, download the [here](assets/samples/lab_report-styled.pdf).
 
-```
-
+```css
     h1, h2.subtitle {
         text-align: center;
     }
@@ -144,15 +136,12 @@ The styled lab report, download the [here](assets/samples/lab_report-styled.pdf)
     h2.subtitle {
         font-size: 14pt;
     }
-
 ```
-
 Note that we use the `.class` syntax to style only the subtitle, which is a `h2` with the subtitle class, without affecting the other `h2` elements in the document. See the section on [CSS Selectors](css-selectors.md) for more information. Information about alignment (such as centered text) can be found in the [Paragraph formatting](styling.md#paragraph-formatting) section.
 
 Finally we will make the "Hello World!" paragraph stand out. This paragraph is identified by an `id` attribute so we can use the `#id` syntax in the CSS selector.
 
-```
-
+```css
     #hello {
         color: red;
         text-align: center;
@@ -160,19 +149,15 @@ Finally we will make the "Hello World!" paragraph stand out. This paragraph is i
         font-style: italic;
         font-family: serif;
     }
-
 ```
-
 Okay, that's getting unnecessary, however we can see just how easy it is to apply styles to our document. You can download the complete CSS file here: [`lab_report.css`](samples/lab_report.css).
 
 There are many ways to apply a stylesheet to a document, for this tutorial we will show only three. For information about the ways that styles can be applied and style precedence see [Applying Style Sheets in Prince](prince-input.md#applying-style-sheets-in-prince).
 
 Using the `-s` command line option:  
 
-```
-
+```bash
 $ prince -s lab_report.css lab_report.html
-
 ```
 
 Using the GUI  
@@ -182,7 +167,6 @@ By creating a link from the HTML `link` tag.
 Place the tag within the `head` tag of the document. For example:
 
 ```html
-
     <!DOCTYPE html>
     <html>
     <head>
@@ -191,9 +175,7 @@ Place the tag within the `head` tag of the document. For example:
     </head>
     <body>
     ...
-
 ```
-
 You will need to re-run Prince for these changes to take effect.
 
 After applying the style as above, Prince should generate something similar to [Styled lab report](#fig.lab-report-styled). You can download the generated PDF file here: [`lab_report-styled.pdf`](assets/samples/lab_report-styled.pdf).
