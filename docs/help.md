@@ -3,11 +3,11 @@ title: Help
 ---
 <style>
 .navbar__item:first-child {"{"}
-    background-color: #7d146c !important;
+    background-color: #6e2577 !important;
     color: rgba(255, 255, 255, 0.8) !important;
 {"}"}
 .navbar__item:first-child:hover {"{"}
-        background-color: #7d146c !important;
+        background-color: #6e2577 !important;
 {"}"}
 .navbar__item:nth-child(2) {"{"}
     background-color: #fff !important;
