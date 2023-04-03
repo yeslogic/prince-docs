@@ -1,5 +1,5 @@
 ---
-title: Help
+title: Installation Help
 ---
 
 The Prince Installation Guide tries to be exhaustive in explaining how to install the application. However, there might always be something not answered in the documentation, or something not working as expected. There are a couple of ways to get help to solve the problems:
