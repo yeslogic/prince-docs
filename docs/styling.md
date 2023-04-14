@@ -155,7 +155,7 @@ The following table shows the default fonts for the main languages on Windows, M
 <td>Mangal</td>
 </tr>
 <tr>
-<td rowspan="5">MacOS</td>
+<td rowSpan="5">MacOS</td>
 <td>Latin</td>
 <td>Times New Roman</td>
 </tr>
@@ -310,7 +310,7 @@ The following table shows the default fonts for the main languages on Windows, M
 <tr>
 <td rowSpan="12"><code>monospace</code></td>
 <td>Windows</td>
-<td colSpan="2" rowspan="2">Courier New</td>
+<td colSpan="2" rowSpan="2">Courier New</td>
 </tr>
 <tr>
 <td>MacOS</td>
@@ -772,7 +772,8 @@ When the [`border-collapse`](css-props.md#prop-border-collapse) property is set 
 ```
 Output
 
-<table style={{borderCollapse: "separate", borderSpacing: "5px", border: "solid 3px black;"}}>
+<table style={{borderCollapse: "separate", borderSpacing: "5px", border: "solid 3px black"}}>
+<tbody>
 <tr>
     <td style={{border: "solid 1px red"}}> A </td>
     <td style={{border: "solid 1px red"}}> B </td>
@@ -788,6 +789,7 @@ Output
     <td style={{border: "solid 1px red"}}> H </td>
     <td style={{border: "solid 1px red"}}> I </td>
 </tr>
+</tbody>
 </table>
 
 Note that by default,
@@ -811,7 +813,8 @@ When the CSS property [`border-collapse`](css-props.md#prop-border-collapse) is 
 ```
 Output
 
-<table style={{borderCollapse: "collapse", borderSpacing: "5px", border: "solid 3px black;"}}>
+<table style={{borderCollapse: "collapse", borderSpacing: "5px", border: "solid 3px black"}}>
+<tbody>
 <tr>
     <td style={{border: "solid 1px red"}}> A </td>
     <td style={{border: "solid 1px red"}}> B </td>
@@ -827,6 +830,7 @@ Output
     <td style={{border: "solid 1px red"}}> H </td>
     <td style={{border: "solid 1px red"}}> I </td>
 </tr>
+</tbody>
 </table>
 
 Note that the [`border-spacing`](css-props.md#prop-border-spacing) property is not used
@@ -855,12 +859,17 @@ Prince table cells that span multiple columns using the [`table-column-span`](cs
 Output
 
 <table className="colspan">
+<tbody>
 <tr>
-<td>A</td> <td className="colSpan2" colspan="2">B</td>
+    <td>A</td>
+    <td className="colSpan2" colSpan="2">B</td>
 </tr>
 <tr>
-<td>C</td> <td>D</td> <td>E</td>
+    <td>C</td>
+    <td>D</td>
+    <td>E</td>
 </tr>
+</tbody>
 </table>
 
 
@@ -877,12 +886,17 @@ Prince supports table cells that span multiple rows using the [`table-row-span`]
 Output
 
 <table className="rowspan">
+<tbody>
 <tr>
-<td className="rowspan2" rowSpan="2" style={{verticalAlign: "middle"}}>A</td> <td>B</td> <td>C</td>
+    <td className="rowspan2" rowSpan="2" style={{verticalAlign: "middle"}}>A</td>
+    <td>B</td>
+    <td>C</td>
 </tr>
 <tr>
-<td>D</td> <td>E</td>
+    <td>D</td>
+    <td>E</td>
 </tr>
+</tbody>
 </table>
 
 
@@ -908,9 +922,11 @@ If you want to number table rows in a table, but there are just too many rows to
 Output
 
 <table>
+<tbody>
 <tr><td className="counter">1</td><td>The First Table Row</td></tr>
 <tr><td className="counter">2</td><td>The Second Table Row</td></tr>
 <tr><td className="counter">3</td><td>The Third Table Row</td></tr>
+</tbody>
 </table>
 
 
