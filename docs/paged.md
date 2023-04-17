@@ -7,36 +7,36 @@ Prince produces PDFs - which are a prominent example of paged media. There are a
 <dl>
   <dt>Pagination</dt>
   <dd><p>The major difference between formatting for the web and for PDF/Print is that
-  PDF is paginated, i.e. the content is placed on discrete pages.  Pages have a defined
-  <a href="/doc/paged#page-size">size</a> and content can be laid out in a specific
+  PDF is paginated, i.e. the content is placed on discrete pages.  Pages have a
+  defined <a href="/doc/paged#page-size">size</a> and content can be laid out in a specific
   pattern making use of predefined <a href="/doc/paged#page-regions">page regions</a>.
   Elements can not only be floated right and left, but they can also be floated to
   the top and bottom of the page, or of a column, or the float even can be
   deferred to the next page (see <a href="/doc/styling#prince-extensions-to-floats">Prince extensions to floats</a>).
-  Pages can be <a href="/doc/paged#selecting-pages">selected</a> and
-  <a href="/doc/paged#named-pages">named</a>, which allows for specific treatment of
-  certain pages.  Also, it is important to have an understanding of
-  <a href="/doc/paged#controlling-pagination">pagination</a>: content might not fit
-  on a page and might spill over into the next page, or it might be necessary
+  Pages can be <a href="/doc/paged#selecting-pages">selected</a> and <a href="/doc/paged#named-pages">named</a>, 
+  which allows for specific treatment of certain pages.  Also, it is important to have an understanding
+  of <a href="/doc/paged#controlling-pagination">pagination</a>: 
+  content might not fit on a page and might spill over into the next page, or it might be necessary
   to move it to the next page in order to avoid creating gaps (see
   also <a href="/doc/styling#conditional-modifiers">Conditional modifiers</a>).</p></dd>
 
   <dt>Page spreads</dt>
-  <dd><p>A basic unit for paged media in print is the page spread: the left page, called
-  <i>verso</i> in a left-to-right script (see <a href="/doc/styling#writing-mode">Writing Mode</a>), and
-  the right page, called <i>recto</i>, are of the same size and typically are
+  <dd><p>A basic unit for paged media in print is the page spread: the left page,
+  called <i>verso</i> in a left-to-right script (see <a href="/doc/styling#writing-mode">Writing Mode</a>),
+  and the right page, called <i>recto</i>, are of the same size and typically are
   symmetrical to each other and are centered on the gutter.  Selected and named
   pages can be placed <i>recto</i> or <i>verso</i>, and Prince expands several
-  properties and the <a href="/doc/css-at-rules#at-page"><code>@page</code></a>
-  at-rule pseudo-classes with the values <code>verso</code> and <code>recto</code>, or
-  <code>inside</code> and <code>outside</code>, referring to the layout on each
+  properties and the <a href="/doc/css-at-rules#at-page"><code>@page</code></a> at-rule
+  pseudo-classes with the values <code>verso</code> and <code>recto</code>,
+  or <code>inside</code> and <code>outside</code>, referring to the layout on each
   page of the spread.</p></dd>
 
   <dt>Non-interactive</dt>
   <dd><p>Last but not least, paged media intended for print is non-interactive by nature.
   All CSS properties referring to user interaction make no sense, scripting cannot
   be interactive and scripts need to run before layout is finished.  But for these
-  details and scripting after layout please check the section on <a href="/doc/javascript#javascript-in-printed-media">JavaScript in Printed Media</a>.</p></dd>
+  details and scripting after layout please check the section
+  on <a href="/doc/javascript#javascript-in-printed-media">JavaScript in Printed Media</a>.</p></dd>
 </dl>
 
 Prince allows you to control a number of options that affect how to format pages, from straight-forward options such as [page size](#page-size), to [page style](#page-style), [page regions](#page-regions) like headers and footers, [pagination control](#controlling-pagination) and [page numbering](gen-content.md#counters-and-numbering).
@@ -334,9 +334,9 @@ The full list of page regions is shown in the following [Page regions](#tab-marg
 <dl>
   <dt>Page-margin boxes</dt>
   <dd><p>Prince will try to create <em>page-margin boxes</em> of the correct sizes. If you
-  need to create boxes of specific sizes you may need to use only a single box (eg:
-  <code>@top-center</code>) and use the <a href="/doc/css-props#prop-content"><code>content</code></a>
-  property to place elements with specific sizes in it.</p>
+  need to create boxes of specific sizes you may need to use only a single box
+  (eg: <code>@top-center</code>) and use the <a href="/doc/css-props#prop-content"><code>content</code></a> property
+  to place elements with specific sizes in it.</p>
   <p>In the above <a href="#page-regions">Page regions</a> figure, Prince leaves
   space for <code>@top-right</code> and <code>@left-bottom</code> boxes because their
   counterparts (<code>@top-left</code> and <code>@left-top</code> respectively) have been
@@ -345,16 +345,16 @@ The full list of page regions is shown in the following [Page regions](#tab-marg
   <p className="note">These page regions, however, only subdivide the space <em>within</em> the
   page body width, and height, none of them extend into the corners. To target a corner region,
   the areas ending in <code>-corner</code> need to be used.</p>
-  <p>The page-margin boxes <code>@top-center</code>, <code>@top-left</code> or <code>@top-right</code>
-  can be used to create running page headers, and the page-margin boxes <code>@bottom-center</code>,
-  <code>@bottom-left</code> or <code>@bottom-right</code> are useful for page footers (see
-  <a href="/doc/cookbook#page-headers-and-footers">Page Headers and Footers</a>).</p>
+  <p>The page-margin boxes <code>@top-center</code>, <code>@top-left</code> or <code>@top-right</code> can
+  be used to create running page headers, and the page-margin
+  boxes <code>@bottom-center</code>, <code>@bottom-left</code> or <code>@bottom-right</code> are
+  useful for page footers (see <a href="/doc/cookbook#page-headers-and-footers">Page Headers and Footers</a>).</p>
   </dd>
 
   <dt>Page area regions</dt>
   <dd><p>The <em>page area</em> itself has a few special regions that can be addressed with
-  specific at-rules: to the left and right are two sidenote regions (<code>@leftnote</code>
-  and <code>@rightnote</code>), and at the top and bottom of the remaining space are two more
+  specific at-rules: to the left and right are two sidenote regions
+  (<code>@leftnote</code> and <code>@rightnote</code>), and at the top and bottom of the remaining space are two more
   regions (<code>@page-float-top</code> and <code>@page-float-bottom</code>).  Below all these,
   there is the footnote area.</p>
   <p>Note that a padding expressed on the page area lies <em>outside</em> of the page
@@ -374,8 +374,8 @@ The full list of page regions is shown in the following [Page regions](#tab-marg
   of footnotes</a>). All other page regions cannot be moved - their position is defined by the
   page margins, or their position in the page area.</p>
   <p>The <code>@leftnote</code> and <code>@rightnote</code> areas for sidenotes are placed
-  left and right of the page area and contain the sidenotes (see
-  <a href="/doc/styling#sidenotes">Sidenotes</a>).  For page spreads, there are also at-rules
+  left and right of the page area and contain the sidenotes
+  (see <a href="/doc/styling#sidenotes">Sidenotes</a>).  For page spreads, there are also at-rules
   for <code>@outsidenote</code> and <code>@insidenote</code>.  The sidenote areas need a width
   to be defined.</p>
   </dd>
