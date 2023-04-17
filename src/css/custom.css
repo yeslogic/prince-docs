@@ -141,6 +141,10 @@ dl ul { margin-bottom: 0em; }
 
 code {
     white-space: pre;
+    padding: 0;
+    vertical-align: baseline;
+    border: 0;
+    outline: 0.1rem solid rgba(0,0,0,0.1)
 }
 
 pre code, code pre, .syntax-block code, .grid code {
