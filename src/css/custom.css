@@ -151,6 +151,10 @@ pre code, code pre, .syntax-block code, .grid code {
     white-space: pre-wrap;
 }
 
+#prop-list code, #js-support-table code {
+    outline: none;
+}
+
 #prop-list ul li code {
     white-space: normal;
 }

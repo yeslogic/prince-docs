@@ -56,7 +56,6 @@ function JavascriptSupportItem({
   return (
     <details className={clsx("level", { ext })} open={open}>
       <summary id={pathStr}>
-        <code>
           <b className="name">{name}</b>
           {(type === "function" || theAnnotation.arguments) && (
             <span className="argslist">
@@ -65,7 +64,6 @@ function JavascriptSupportItem({
                 : null}
             </span>
           )}
-        </code>
         <a href={`#${pathStr}`} className="self-link"></a>
       </summary>
       <div>
