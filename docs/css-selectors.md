@@ -367,7 +367,7 @@ siblings with the same namespace and type.</td>
 </tr>
 <tr>
 <td><code>E F</code></td>
-<td rowspan="2">An <code>F</code> element descendant of an <code>E</code> element.</td>
+<td rowSpan="2">An <code>F</code> element descendant of an <code>E</code> element.</td>
 </tr>
 <tr>
 <td><code>E >> F</code></td>

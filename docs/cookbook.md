@@ -687,6 +687,7 @@ Prince uses the hyphenation patterns from the CTAN archive - the full archive is
 Hyphenation patterns for the following languages are provided:
 
 <table className="grid">
+<tbody>
   <tr>
     <td>da</td>
     <td>Danish</td>
@@ -743,6 +744,7 @@ Hyphenation patterns for the following languages are provided:
     <td>sv</td>
     <td>Swedish</td>
   </tr>
+</tbody>
 </table>
 
 A special case is Thai hyphenation, supported thanks to the [LibThai](https://linux.thai.net/projects/libthai) package.

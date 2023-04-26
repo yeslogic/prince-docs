@@ -181,7 +181,7 @@ The full list of page regions is shown in the following [Page regions](#tab-marg
 </tbody>
 <tbody>
 <tr>
-<td rowspan="16">Page-margin boxes</td>
+<td rowSpan="16">Page-margin boxes</td>
 <td><code>@top-left</code></td>
 <td>left</td>
 <td>middle</td>
@@ -280,7 +280,7 @@ The full list of page regions is shown in the following [Page regions](#tab-marg
 </tbody>
 <tbody>
 <tr>
-<td rowspan="8">Page area regions</td>
+<td rowSpan="8">Page area regions</td>
 <td><code>@page-float-top</code></td>
 <td>center</td>
 <td>top</td>
@@ -326,7 +326,7 @@ The full list of page regions is shown in the following [Page regions](#tab-marg
 <td><code>@prince-overlay</code></td>
 <td>center</td>
 <td>middle</td>
-<td style={{background: "repeating-linear-gradient( -45deg, rgba(255,255,255, 0.1), rgba(255,255,255, 0.1) 10px, rgba(255,0,0, 0.2) 10px, rgba(255,0,0, 0.2) 20px );"}}>stripes</td>
+<td style={{background: "repeating-linear-gradient( -45deg, rgba(255,255,255, 0.1), rgba(255,255,255, 0.1) 10px, rgba(255,0,0, 0.2) 10px, rgba(255,0,0, 0.2) 20px )"}}>stripes</td>
 </tr>
 </tbody>
 </table>

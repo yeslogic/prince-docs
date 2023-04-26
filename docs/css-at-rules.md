@@ -198,15 +198,15 @@ a stylesheet with the <code>prince-color()</code> function.  (See <a href="/doc/
 
 <table className="grid">
 <tbody><tr>
-<th colspan="2" id="at-prince-pdf"><code>@prince-pdf {"{"}
+<th colSpan="2" id="at-prince-pdf"><code>@prince-pdf {"{"}
     &lt;<i>declaration-list</i>&gt;
 {"}"}</code></th>
 </tr>
 <tr>
-<td colspan="2">Defines properties relating to PDFs.</td>
+<td colSpan="2">Defines properties relating to PDFs.</td>
 </tr>
 <tr>
-<td colspan="2">The <code>@prince-pdf</code> rule takes the following CSS descriptors:
+<td colSpan="2">The <code>@prince-pdf</code> rule takes the following CSS descriptors:
 <code><a href="/doc/css-props#prop-prince-fallback-cmyk-profile">-prince-fallback-cmyk-profile</a></code> |
 <code><a href="/doc/css-props#prop-prince-filter-resolution">-prince-filter-resolution</a></code> |
 <code><a href="/doc/css-props#prop-prince-pdf-color-conversion">-prince-pdf-color-conversion</a></code> |
