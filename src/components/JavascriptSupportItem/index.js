@@ -75,28 +75,28 @@ function JavascriptSupportItem({
           ></div>
         )}
         {theAnnotation.arguments && (
-          <ul class="arguments">
+          <ul className="arguments">
             {theAnnotation.arguments.map((item) => (
-              <li class="argument">
+              <li className="argument">
                 <div></div>
-                <div class="name level">{item.name}</div>
-                <div class="type">{item.type}</div>
-                <div class="desc">{item.desc}</div>
+                <div className="name level">{item.name}</div>
+                <div className="type">{item.type}</div>
+                <div className="desc">{item.desc}</div>
               </li>
             ))}
           </ul>
         )}
         {theAnnotation.returns && (
-          <div class="returns level" dangerouslySetInnerHTML={{__html:theAnnotation.returns}}></div>
+          <div className="returns level" dangerouslySetInnerHTML={{__html:theAnnotation.returns}}></div>
         )}
 
         {theAnnotation.example && (
-          <div class="example">
-            <div class="programlisting">
-              <pre class="example level">
+          <div className="example">
+            <div className="programlisting">
+              <pre className="example level">
                 {theAnnotation.example}
                 {theAnnotation.exampleReturn && (
-                  <div class="example-return">
+                  <div className="example-return">
                     {JSON.stringify(theAnnotation.exampleReturn)}
                   </div>
                 )}
