@@ -5,5 +5,5 @@ all :
 
 .PHONY : clean
 clean :
-	(cd properties; make clean)
-	(cd samples; make clean)
+	(cd src/properties; make clean)
+	(cd src/samples; make clean)

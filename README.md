@@ -9,7 +9,7 @@ located in `./website/properties`.
 
 The properties need a special, preliminary step to be created, before creating
 the Docusaurus documentation - you first need to run `make` in the
-`./website/properties` folder.
+`./src/properties` folder.
 
 There are some little requirements for this:
 * The [Jing](https://relaxng.org/jclark/jing.html) RELAX NG validator
@@ -19,7 +19,7 @@ There are some little requirements for this:
 (Hint: If *really* need be, you could do without Jing, just fix your Makefile.)
 
 Also the rasterized Page Region image is generated outside of the Docusaurus
-framework - you first need to run `make` in the `./website/samples` folder.
+framework - you first need to run `make` in the `./src/samples` folder.
 Having Prince installed is a requirement.
 
 Both makefiles are called from the Makefile in the root folder. To start
