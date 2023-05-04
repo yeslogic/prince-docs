@@ -5,7 +5,7 @@ built with the [Docusaurus v2](https://docusaurus.io/) framework.
 
 The CSS properties are however stored *outside* of the Docusaurus framework,
 in order to preserve the XML format for the properties' documentation, which is
-located in `./website/properties`.
+located in `./src/properties`.
 
 The properties need a special, preliminary step to be created, before creating
 the Docusaurus documentation - you first need to run `make` in the
