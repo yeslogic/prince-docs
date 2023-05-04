@@ -1,33 +1,31 @@
-# Website
+# Prince Documentation
 
-This website is built using [Docusaurus 2](https://docusaurus.io/), a modern static website generator.
+This is the repository of the [Prince documentation](https://www.princexml.com/doc/),
+built with the [Docusaurus v2](https://docusaurus.io/) framework.
 
-## Installation
+The CSS properties are however stored *outside* of the Docusaurus framework,
+in order to preserve the XML format for the properties' documentation, which is
+located in `./website/properties`.
 
-```console
-yarn install
+The properties need a special, preliminary step to be created, before creating
+the Docusaurus documentation - you first need to run `make` in the
+`./website/properties` folder.
+
+There are some little requirements for this:
+* The [Jing](https://relaxng.org/jclark/jing.html) RELAX NG validator
+* Python
+* the xsltproc XSLT processor
+
+(Hint: If *really* need be, you could do without Jing, just fix your Makefile.)
+
+Also the rasterized Page Region image is generated outside of the Docusaurus
+framework - you first need to run `make` in the `./website/samples` folder.
+Having Prince installed is a requirement.
+
+Both makefiles are called from the Makefile in the root folder. To start
+the fully set up documentation, instead of just `yarn run start`, you run
+the following command from the root folder:
+
 ```
-
-## Local Development
-
-```console
-yarn start
+    $ make && yarn run start
 ```
-
-This command starts a local development server and opens up a browser window. Most changes are reflected live without having to restart the server.
-
-## Build
-
-```console
-yarn build
-```
-
-This command generates static content into the `build` directory and can be served using any static contents hosting service.
-
-## Deployment
-
-```console
-GIT_USER=<Your GitHub username> USE_SSH=true yarn deploy
-```
-
-If you are using GitHub pages for hosting, this command is a convenient way to build the website and push to the `gh-pages` branch.
