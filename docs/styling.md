@@ -410,7 +410,7 @@ The directionality of the text is controlled through the [Writing Mode](#writing
 
 Now that you have decided on the basic properties of the text, you can turn your attention to styling the paragraphs. The [`text-align`](css-props.md#prop-text-align) property is used to control how text is aligned within its containing box, while the [`text-indent`](css-props.md#prop-text-indent) property determines the indentation of the first line of text in the element.
 
-If the [`text-align`](css-props.md#prop-text-align) property (acting as a shorthand for the property [`text-align-last`](css-props.md#prop-text-align-last)) has a value of `left`, `right` or `center`, the text will be aligned to the left, right or center respectively. The `justify` value instructs Prince to justify text.
+If the [`text-align`](css-props.md#prop-text-align) property (acting under the hood as a shorthand for the property [`text-align-all`](css-props.md#prop-text-align-all)) has a value of `left`, `right` or `center`, the text will be aligned to the left, right or center respectively. The `justify` value instructs Prince to justify text.
 
 It is not uncommon, in printed texts, to align text based on whether it appears on a left or right page. To support this, two new keywords are added to the [`text-align`](css-props.md#prop-text-align) property: `inside` is the same as 'left' on right pages and 'right' on left pages, and `outside` is the same as 'right' on left pages and 'left' on right pages.
 
