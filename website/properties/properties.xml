@@ -8037,13 +8037,16 @@ blockquote { margin: 1rem; -prince-resize-options: -1rem; }
 	<choice>
 	    <keyword>normal</keyword>
 	    <keyword>embed</keyword>
+	    <keyword>isolate</keyword>
 	    <keyword>bidi-override</keyword>
+	    <keyword>isolate-override</keyword>
 	</choice>
     </value>
     <initial>normal</initial>
     <applyto>all elements</applyto>
     <inherit>no</inherit>
     <spec><a href="https://www.w3.org/TR/CSS2/visuren.html#propdef-unicode-bidi">CSS 2.1</a></spec>
+    <spec><a href="https://www.w3.org/TR/css-writing-modes-3/#unicode-bidi">CSS Writing Modes Level 3</a></spec>
 </property>
 
 <property>

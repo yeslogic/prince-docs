@@ -117,7 +117,7 @@ does not recognize <code>transform-box</code>. Prince does not allow perspective
 </tr>
 <tr>
 <td><a href="https://www.w3.org/TR/css-writing-modes-3/">CSS Writing Modes Level 3</a></td>
-<td>Prince partially implements <code>writing-mode</code>.</td>
+<td>Prince partially implements <code>writing-mode</code> and <code>unicode-bidi</code>.</td>
 </tr>
 <tr>
 <td><a href="https://www.w3.org/TR/css-namespaces-3/">CSS Namespaces Module Level 3</a></td>
