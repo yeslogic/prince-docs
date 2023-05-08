@@ -21,7 +21,7 @@ Prince for Books can be installed without problem alongside a normal Prince inst
 Line breaking
 -------------
 
-Prince for Books introduces a few new CSS properties to try handling line breaks in a more granular way, and additionally, it tries harder to avoid a hyphen at the end of a page and at the end of the last full line, as well as for ragged text (i.e. for left-aligned or centered text). It also tries to avoid a short last line, especially if it is shorter than the value of `text-indent`.
+Prince for Books supports everything supported by the standard Prince version. On top of that, it also introduces a few new CSS properties to try handling line breaks in a more granular way, and additionally, it tries harder to avoid a hyphen at the end of a page and at the end of the last full line, as well as for ragged text (i.e. for left-aligned or centered text). It also tries to avoid a short last line, especially if it is shorter than the value of `text-indent`.
 
 ### The property `-prince-wrap-inside`
 
