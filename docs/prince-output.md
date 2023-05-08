@@ -559,7 +559,17 @@ The default value `auto` leaves the tag assignment to Prince.
 
 The special value `none` can be used to make specific elements (such as e.g. wrapper span or block elements) transparent in a tagged PDF structure tree.
 
-PDF tags can be given a custom title with the [`-prince-pdf-tag-title`](css-props.md#prop-prince-pdf-tag-title) property.
+PDF tags can be given a custom title with the [`-prince-pdf-tag-title`](css-props.md#prop-prince-pdf-tag-title) property.  We could expand on the previous example, specifying the following:
+
+CSS
+
+```
+    ul.toc {
+      -prince-pdf-tag-type: TOC;
+      -prince-pdf-tag-title: "Table of Contents";
+    }
+```
+
 
 <p class="note">
 Bruce Lawson has written an interesting introduction on how to make <a href="https://medium.com/@bruce_39084/making-accessible-tagged-pdfs-with-prince-ad7fd7a48711">accessible tagged PDFs with Prince</a> - all you need to know about PDF tags and Prince!
