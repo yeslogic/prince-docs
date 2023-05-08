@@ -12,7 +12,7 @@ the Docusaurus documentation - you first need to run `make` in the
 `./website/properties` folder.
 
 There are some little requirements for this:
-* The [Jing](https://relaxng.org/jclark/jing.html) RELAX NG validator
+* The [Jing](https://github.com/relaxng/jing-trang) RELAX NG validator
 * Python
 * the xsltproc XSLT processor
 
