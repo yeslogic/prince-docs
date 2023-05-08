@@ -6401,7 +6401,7 @@ supplier, item { overflow-wrap: normal; }
         <attr>target-attr</attr>
     </choice>
     </value>
-    <initial>""</initial>
+    <initial>none</initial>
     <applyto>all elements</applyto>
     <inherit>n/a</inherit>
     <extension/>
