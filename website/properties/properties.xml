@@ -6393,6 +6393,31 @@ supplier, item { overflow-wrap: normal; }
 </property>
 
 <property>
+    <name>prince-pdf-tag-title</name>
+    <value>
+    <choice>
+        <keyword>none</keyword>
+        <string>string</string>
+        <attr>target-attr</attr>
+    </choice>
+    </value>
+    <initial>""</initial>
+    <applyto>all elements</applyto>
+    <inherit>n/a</inherit>
+    <extension/>
+    <example>ul.toc {
+  -prince-pdf-tag-type: TOC;
+  -prince-pdf-tag-title: "Table of Contents";
+}</example>
+    <see><a href="/doc/prince-output/#pdf-tags">PDF Tags</a></see>
+    <comments>
+    <p>
+    This property is used to add a custom title to PDF tags.
+    </p>
+    </comments>
+</property>
+
+<property>
     <name>prince-pdf-tag-type</name>
     <value>
     <choice>
