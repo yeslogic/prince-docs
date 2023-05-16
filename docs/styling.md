@@ -784,7 +784,7 @@ CSS
 ```
 Output
 
-<table style="border-collapse: separate; border-spacing: 5px; border: solid 3px black;">
+<table class="table-example" style="border-collapse: separate; border-spacing: 5px; border: solid 3px black;">
 <tr>
     <td style="border: solid 1px red"> A </td>
     <td style="border: solid 1px red"> B </td>
@@ -824,7 +824,7 @@ CSS
 ```
 Output
 
-<table style="border-collapse: collapse; border-spacing: 5px; border: solid 3px black;">
+<table class="table-example" style="border-collapse: collapse; border-spacing: 5px; border: solid 3px black;">
 <tr>
     <td style="border: solid 1px red"> A </td>
     <td style="border: solid 1px red"> B </td>
@@ -869,7 +869,7 @@ XML
 ```
 Output
 
-<table class="colspan">
+<table class="table-example" class="colspan">
 <tr>
 <td>A</td> <td class="colspan2" colspan="2">B</td>
 </tr>
@@ -893,7 +893,7 @@ XML
 ```
 Output
 
-<table class="rowspan">
+<table class="table-example" class="rowspan">
 <tr>
 <td class="rowspan2" rowspan="2" style="vertical-align: middle">A</td> <td>B</td> <td>C</td>
 </tr>
@@ -926,7 +926,7 @@ HTML
 ```
 Output
 
-<table>
+<table class="table-example">
 <tr><td class="counter">1</td><td>The First Table Row</td></tr>
 <tr><td class="counter">2</td><td>The Second Table Row</td></tr>
 <tr><td class="counter">3</td><td>The Third Table Row</td></tr>

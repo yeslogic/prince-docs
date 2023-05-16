@@ -403,6 +403,15 @@ ul.toc-headings li ul.toc-headings li a.active {
     pre, p:contains('Output') {
         break-inside: avoid;
     }
+    .table-example, tr, summary + div div {
+        break-inside: avoid;
+    }
+    summary + div div div:contains('Comments') {
+        break-inside: auto !important;
+    }
+    summary {
+        break-after: avoid;
+    }
     details, p.note, p.warning {
         box-decoration-break: slice;
     }
