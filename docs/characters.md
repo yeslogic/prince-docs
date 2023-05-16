@@ -143,54 +143,54 @@ Accents
 
 | XML       | CSS     | Character | Name         |
 |-----------|---------|-----------|--------------|
-| &\#x60;   | \\x60   | `         | grave        |
-| &\#xB4;   | \\xB4   | ´         | acute        |
-| &\#x02D8; | \\x02D8 | ˘         | breve        |
-| &\#x02C7; | \\x02C7 | ˇ         | caron        |
-| &\#xB8;   | \\xB8   | ¸         | cedilla      |
-| &\#x5E;   | \\x5E   | ^         | circumflex   |
-| &\#xA8;   | \\xA8   | ¨         | dieresis     |
-| &\#x02D9; | \\x02D9 | ˙         | dot accent   |
-| &\#x02DD; | \\x02DD | ˝         | double acute |
-| &\#xAF;   | \\xAF   | ¯         | macron       |
-| &\#x02DB; | \\x02DB | ˛         | ogonek       |
-| &\#x02DA; | \\x02DA | ˚         | ring         |
-| &\#x02DC; | \\x02DC | ˜         | tilde        |
+| &\#x60;   | \\60   | `         | grave        |
+| &\#xB4;   | \\B4   | ´         | acute        |
+| &\#x02D8; | \\02D8 | ˘         | breve        |
+| &\#x02C7; | \\02C7 | ˇ         | caron        |
+| &\#xB8;   | \\B8   | ¸         | cedilla      |
+| &\#x5E;   | \\5E   | ^         | circumflex   |
+| &\#xA8;   | \\A8   | ¨         | dieresis     |
+| &\#x02D9; | \\02D9 | ˙         | dot accent   |
+| &\#x02DD; | \\02DD | ˝         | double acute |
+| &\#xAF;   | \\AF   | ¯         | macron       |
+| &\#x02DB; | \\02DB | ˛         | ogonek       |
+| &\#x02DA; | \\02DA | ˚         | ring         |
+| &\#x02DC; | \\02DC | ˜         | tilde        |
 
 Special Space Characters
 ------------------------
 
 | XML       | CSS     | Character                          | Name                      |
 |-----------|---------|------------------------------------|---------------------------|
-| &\#x20;   | \\x20   | <span>foo</span> <span>bar</span>  | space                     |
-| &\#xa0;   | \\xa0   | <span>foo</span> <span>bar</span>  | no-break space            |
-| &\#x2008; | \\x2008 | <span>foo</span> <span>bar</span>  | punctuation space         |
-| &\#x2009; | \\x2009 | <span>foo</span> <span>bar</span>  | thin space                |
-| &\#x200a; | \\x200a | <span>foo</span> <span>bar</span>  | hair space                |
-| &\#x200b; | \\x200b | <span>foo</span>​<span>bar</span>  | zero width space          |
-| &\#x202f; | \\x202f | <span>foo</span> <span>bar</span>  | narrow no-break space     |
-| &\#x205f; | \\x205f | <span>foo</span> <span>bar</span>  | medium mathematical space |
-| &\#xfeff; | \\xfeff | <span>foo</span>﻿<span>bar</span>  | zero width no-break space |
-| &\#x1680; | \\x1680 | <span>foo</span> <span>bar</span>  | ogham space mark          |
-| &\#x2000; | \\x2000 | <span>foo</span> <span>bar</span>  | en quad                   |
-| &\#x2001; | \\x2001 | <span>foo</span> <span>bar</span>  | em quad                   |
-| &\#x2002; | \\x2002 | <span>foo</span> <span>bar</span>  | en space                  |
-| &\#x2003; | \\x2003 | <span>foo</span> <span>bar</span>  | em space                  |
-| &\#x3000; | \\x3000 | <span>foo</span>　<span>bar</span> | ideographic space         |
+| &\#x20;   | \\20   | <span>foo</span> <span>bar</span>  | space                     |
+| &\#xa0;   | \\a0   | <span>foo</span> <span>bar</span>  | no-break space            |
+| &\#x2008; | \\2008 | <span>foo</span> <span>bar</span>  | punctuation space         |
+| &\#x2009; | \\2009 | <span>foo</span> <span>bar</span>  | thin space                |
+| &\#x200a; | \\200a | <span>foo</span> <span>bar</span>  | hair space                |
+| &\#x200b; | \\200b | <span>foo</span>​<span>bar</span>  | zero width space          |
+| &\#x202f; | \\202f | <span>foo</span> <span>bar</span>  | narrow no-break space     |
+| &\#x205f; | \\205f | <span>foo</span> <span>bar</span>  | medium mathematical space |
+| &\#xfeff; | \\feff | <span>foo</span>﻿<span>bar</span>  | zero width no-break space |
+| &\#x1680; | \\1680 | <span>foo</span> <span>bar</span>  | ogham space mark          |
+| &\#x2000; | \\2000 | <span>foo</span> <span>bar</span>  | en quad                   |
+| &\#x2001; | \\2001 | <span>foo</span> <span>bar</span>  | em quad                   |
+| &\#x2002; | \\2002 | <span>foo</span> <span>bar</span>  | en space                  |
+| &\#x2003; | \\2003 | <span>foo</span> <span>bar</span>  | em space                  |
+| &\#x3000; | \\3000 | <span>foo</span>　<span>bar</span> | ideographic space         |
 
 Miscellaneous
 -------------
 
 | XML       | CSS     | Character | Name        |
 |-----------|---------|-----------|-------------|
-| &\#x2026; | \\x2026 | …         | ellipsis    |
-| &\#x2014; | \\x2014 | —         | em dash     |
-| &\#x2013; | \\x2013 | –         | en dash     |
-| &\#xFB01; | \\xFB01 | ﬁ         | fi ligature |
-| &\#xFB02; | \\xFB02 | ﬂ         | fl ligature |
-| &\#xC6;   | \\xC6   | Æ         | AE          |
-| &\#xE6;   | \\xE6   | æ         | ae          |
-| &\#x0152; | \\x0152 | Œ         | OE          |
-| &\#x0153; | \\x0153 | œ         | oe          |
-| &\#xDF;   | \\xDF   | ß         | sharp s     |
+| &\#x2026; | \\2026 | …         | ellipsis    |
+| &\#x2014; | \\2014 | —         | em dash     |
+| &\#x2013; | \\2013 | –         | en dash     |
+| &\#xFB01; | \\FB01 | ﬁ         | fi ligature |
+| &\#xFB02; | \\FB02 | ﬂ         | fl ligature |
+| &\#xC6;   | \\C6   | Æ         | AE          |
+| &\#xE6;   | \\E6   | æ         | ae          |
+| &\#x0152; | \\0152 | Œ         | OE          |
+| &\#x0153; | \\0153 | œ         | oe          |
+| &\#xDF;   | \\DF   | ß         | sharp s     |
 
