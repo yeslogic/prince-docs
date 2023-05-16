@@ -224,6 +224,13 @@ Linguistic Pseudo-classes
 
 <table class="grid">
 <tr>
+<th colspan="2">The directionality pseudo-class</th>
+</tr>
+<tr>
+<td><code>E:dir(<i>C</i>)</code></td>
+<td>The directionality pseudo-class selects an element <code>E</code> based on its directionality as determined by the document language, using a combination of the <code>dir</code> attribute, the surrounding text, and other factors - it does not select based on stylistic states, but uses the user agent's knowledge of the document's semantics.</td>
+</tr>
+<tr>
 <th colspan="2">The language pseudo-class</th>
 </tr>
 <tr>
