@@ -379,17 +379,27 @@ The following table shows examples of the various counter styles:
 <td>upper-serbian</td>
 <td>&#x410;, &#x411;, &#x412;, &#x413;, &#x414;, &#x402;, &#x415;, &#x2026;</td>
 </tr>
+</table>
+
+Two special functional expressions offer a more free approach to counters, by allowing for a custom sequence to be defined: `symbols()` and `repeat()`.  Once all defined symbols are used, the former continues its counting with decimal style, while the latter increases the counters by duplicating, triplicating, etc., the symbols.
+
+<table>
 <tr>
-<td>repeat(x, y, z)</td>
-<td>x, y, z, xx, yy, zz, xxx, yyy, &#x2026;</td>
+<td>symbols(*, †, ‡)</td>
+<td>*, †, ‡, 4, 5, 6, &#x2026;</td>
 </tr>
 <tr>
-<td>symbols(x, y, z)</td>
-<td>x, y, z, 4, 5, 6, &#x2026;</td>
+<td>repeat(*, †, ‡)</td>
+<td>*, †, ‡, **, ††, ‡‡, ***, †††, ‡‡‡, &#x2026;</td>
 </tr>
 </table>
 
-See also [User-defined counter styles](#user-defined-counter-styles) for custom counters.
+<p class="note">
+When using the <code>symbols()</code> function it is advisable to define all the smybols needed for your counters - the fallback to decimal-style counters is mainly thought for debugging reasons.
+</p>
+
+[User-defined counter styles](#user-defined-counter-styles) for custom counters can also be created with the help of [Script Functions](#script-functions).
+
 
 ## Cross-references
 
