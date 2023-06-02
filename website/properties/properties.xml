@@ -7716,6 +7716,7 @@ supplier, item { overflow-wrap: normal; }
 	    <keyword>isolate</keyword>
 	    <keyword>bidi-override</keyword>
 	    <keyword>isolate-override</keyword>
+	    <keyword>plaintext</keyword>
 	</choice>
     </value>
     <initial>normal</initial>
