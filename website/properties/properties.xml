@@ -8065,6 +8065,7 @@ blockquote { margin: 1rem; -prince-resize-options: -1rem; }
 	    <keyword>isolate</keyword>
 	    <keyword>bidi-override</keyword>
 	    <keyword>isolate-override</keyword>
+	    <keyword>plaintext</keyword>
 	</choice>
     </value>
     <initial>normal</initial>
