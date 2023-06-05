@@ -633,6 +633,8 @@ If only one term is given, then the second component is assumed to be `center`. 
 
 If both values are given as keywords, order doesn't matter; but if two coordinates are given and either coordinate is a length or percentage, then the horizontal component must come first: so `top 50%` is not valid, but `top` and `top center` and `50% top` are all valid and equivalent.
 
+Please note that the optional third length value is only supported if the value is zero - Prince thus effectively only supports offsets on the X and Y axes.
+
 
 ### Lists
 

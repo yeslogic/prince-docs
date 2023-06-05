@@ -7949,45 +7949,65 @@ blockquote { margin: 1rem; -prince-resize-options: -1rem; }
 
 <property>
     <name>transform-origin</name>
-    <!-- Here, we can either give an exact but long syntax,
-      or a short syntax that leaves the prose to express some
-      additional constraints on validity. -->
-
-    <!-- Begin version using short but over-permissive syntax. -->
     <value>
-	<repeat min="1" max="2">
-	    <choice>
-		<keyword>center</keyword>
-		<keyword>left</keyword>
-		<keyword>right</keyword>
-		<keyword>top</keyword>
-		<keyword>bottom</keyword>
-		<type>length-percentage</type>
-	    </choice>
-	</repeat>
+	<choice>
+      <group>
+        <choice>
+          <group>
+            <keyword>center</keyword>
+            <keyword>left</keyword>
+            <keyword>right</keyword>
+            <keyword>top</keyword>
+            <keyword>bottom</keyword>
+            <type>length-percentage</type>
+          </group>
+        </choice>
+      </group>
+      <group>
+	    <sequence>
+		<choice>
+		    <keyword>left</keyword>
+		    <keyword>center</keyword>
+		    <keyword>right</keyword>
+		    <type>length-percentage</type>
+		</choice>
+		<choice>
+		    <keyword>top</keyword>
+		    <keyword>center</keyword>
+		    <keyword>bottom</keyword>
+		    <type>length-percentage</type>
+		</choice>
+        <optional>
+            <type>length</type>
+        </optional>
+	    </sequence>
+      </group>
+      <group>
+        <sequence>
+	    <reorderable>
+		<choice>
+		    <keyword>center</keyword>
+		    <keyword>left</keyword>
+		    <keyword>right</keyword>
+		</choice>
+		<choice>
+		    <keyword>center</keyword>
+		    <keyword>top</keyword>
+		    <keyword>bottom</keyword>
+		</choice>
+	    </reorderable>
+        <optional>
+            <type>length</type>
+        </optional>
+        </sequence>
+      </group>
+	</choice>
     </value>
     <initial>50% 50%</initial>
     <applyto>transformable elements</applyto>
     <inherit>no</inherit>
+    <see><a href="/doc/styling/#transformations">Transformations</a></see>
     <comments>
-    <!-- Removing this slightly confusing comment, rather using the more
-    synthetic yet clearer comment from the long syntax.
-
-    <p>If two terms are given, then usually the first term must give the horizontal component,
-	and the second must give the vertical.</p>
-
-	<p>(The only exception is that if both terms are given as keywords,
-	then the order may be swapped:
-	so <code>center left</code>
-	and <code>left center</code>
-	and <code>0% center</code>
-	and <code>left 50%</code>
-	are all legal and equivalent to each other,
-	whereas <code>50% left</code> is not a legal value.)</p>
-
-	<p>If only one term is given, then the second component is assumed to be <code>center</code>.
-	(In particular, if only a percentage or length is given, then it is assumed to be the
-	horizontal coordinate.)</p>-->
     <p>If only one term is given, then the second is assumed to be <code>center</code>.
     In particular, if only a percentage or length is given, then it is assumed to be the
     horizontal coordinate.</p>
@@ -7997,67 +8017,13 @@ blockquote { margin: 1rem; -prince-resize-options: -1rem; }
     coordinate is a length or percentage, then the horizontal component must come
     first: so <code>top 50%</code> is not valid, but <code>top</code> and
     <code>top center</code> and <code>50% top</code> are all valid and equivalent.</p>
+
+    <p>
+    Please note that the optional third length value is only supported if the value is zero -
+    Prince thus effectively only supports offsets on the X and Y axes.
+    </p>
     </comments>
     <spec><a href="https://www.w3.org/TR/css-transforms-1/#transform-origin-property">CSS Transforms Module Level 1</a></spec>
-    <!-- End version using short but over-permissive syntax. -->
-
-    <!-- Begin version using exact but long syntax. -->
-    <!--
-    <value>
-	<choice>
-	    <keyword>center</keyword>
-	    <keyword>left</keyword>
-	    <keyword>right</keyword>
-	    <keyword>top</keyword>
-	    <keyword>bottom</keyword>
-	    <percentage/>
-	    <type>length</type>
-	    <sequence>
-		<choice>
-		    <keyword>left</keyword>
-		    <keyword>center</keyword>
-		    <keyword>right</keyword>
-		    <percentage/>
-		    <type>length</type>
-		</choice>
-		<choice>
-		    <keyword>top</keyword>
-		    <keyword>center</keyword>
-		    <keyword>bottom</keyword>
-		    <percentage/>
-		    <type>length</type>
-		</choice>
-	    </sequence>
-	    <reorderable>
-		<choice>
-		    <keyword>left</keyword>
-		    <keyword>center</keyword>
-		    <keyword>right</keyword>
-		</choice>
-		<choice>
-		    <keyword>top</keyword>
-		    <keyword>center</keyword>
-		    <keyword>bottom</keyword>
-		</choice>
-	    </reorderable>
-	</choice>
-    </value>
-    <initial>50% 50%</initial>
-    <inherit>no</inherit>
-    <comments>
-	<p>(The long syntax is just expressing that either one or two coordinates can be
-	given, and that if both values are given as keywords then order doesn't matter,
-	but if two coordinates are given and either coordinate is a length or
-	percentage, then the horizontal component must come first: so <code>top 50%</code> is
-	not valid, but <code>top</code> and <code>top center</code> and <code>50% top</code> are all valid and equivalent.)</p>
-
-	<p>If only one term is given, then the second is assumed to be <code>center</code>.
-	(In particular, if only a percentage or length is given, then it is assumed to be the
-	horizontal coordinate.)</p>
-    </comments>
-    -->
-    <!-- End version using exact but long syntax. -->
-
 </property>
 
 <property>
