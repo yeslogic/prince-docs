@@ -625,7 +625,7 @@ The function `translate()` moves an element along a vertical and/or horizontal a
 
 The function `scale()` affects the size of the element - note that this also alters other properties of an element, such as its [`font-size`](css-props.md#prop-font-size), [`padding`](css-props.md#prop-padding), [`height`](css-props.md#prop-height) and [`width`](css-props.md#prop-width). The functions `scalex()` and `scaley()` transform the element in one dimension only.
 
-The functions `skewx()` and `skewy()` tilt an element to the left or right. There is no shorthand form.
+The functions `skewx()` and `skewy()` can be used to respectively perform a 2D skew along the X and the Y axis.  The function `skew()` specifies a 2D skew for the X and Y axes - note, however, that the behaviour is different from applying both `skewx()` and `skewy()`, and the `skew()` function exists for compatibility reasons: it should not be used in new content.
 
 The origin for the transformations, i.e. the point around which a transformation is applied, can be set with the [`transform-origin`](css-props.md#prop-transform-origin) property.
 
