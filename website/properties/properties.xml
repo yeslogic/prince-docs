@@ -7551,7 +7551,7 @@ supplier, item { overflow-wrap: normal; }
 		    <function name="scaley">
 			<type>number</type>
 		    </function>
-		    <function name="skew">
+		    <function name="skew" class="dep">
 			<type>angle</type>
 			<optional>
 			    <type>angle</type>
@@ -7578,6 +7578,7 @@ supplier, item { overflow-wrap: normal; }
     <initial>none</initial>
     <applyto>transformable elements</applyto>
     <inherit>no</inherit>
+    <see><a href="/doc/styling/#transformations">Transformations</a></see>
     <comments>
     <p>
     Please note that the function <code>translate3d()</code> is supported if the
@@ -7586,6 +7587,9 @@ supplier, item { overflow-wrap: normal; }
     <p>
     Also note that this property currently does not affect SVG elements - they
     need to use their own <code>transform</code> attribute instead.
+    </p>
+    <p class="note">
+    The function <code>skew()</code> exists for compatibility reasons, and should not be used in new content.
     </p>
     </comments>
     <spec><a href="https://www.w3.org/TR/css-transforms-1/#transform-property">CSS Transforms Module Level 1</a></spec>
