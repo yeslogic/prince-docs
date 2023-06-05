@@ -22,7 +22,11 @@ Prince supports the Web Open Font (WOFF/WOFF2), TrueType and OpenType (with TTF 
 
 To define the font, or the fonts to be used in a document, the [`font-family`](css-props.md#prop-font-family) property is used. Prince will try to use the specified font, and should glyphs be missing, it will silently fall back to the next font in the cascade - typically a [generic font family](#generic-font-families).
 
-To prevent this font switching mechanism and force Prince to only use the defined font, the special keyword `prince-no-fallback` is available: it triggers a warning if any glyphs are not found in the specified font, instead of switching to another one.
+<p class="note">
+If a paragraph or the entire document are mostly in a specific language, it might help to specify a font suitable for that language, in order to avoid most of the unexpected consequences of this font switching mechanism.
+</p>
+
+To prevent this font switching mechanism altogether, and force Prince to only use the defined font, the special keyword `prince-no-fallback` is available: it triggers a warning if any glyphs are not found in the specified font, instead of switching to another one.
 
 ```
     h1 { font-family: MyFont, prince-no-fallback; }
