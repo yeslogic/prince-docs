@@ -77,9 +77,8 @@ each selector of the list.</td>
 <th colspan="2">The Matches-Any Pseudo-class</th>
 </tr>
 <tr>
-<td><code>E:matches(<i>s1</i>, <i>s2</i>)</code></td>
-<td>The matches-any pseudo-class represents an element <code>E</code> that is
-represented by the list of compound selectors it takes as argument.</td>
+<td><code>:is( &lt;<i>forgiving-selector-list</i>&gt; )</code></td>
+<td>The matches-any pseudo-class represents any element that is represented by the list of compound selectors it takes as argument.</td>
 </tr>
 <tr>
 <th colspan="2">The Negation Pseudo-class</th>
