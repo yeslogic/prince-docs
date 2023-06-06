@@ -81,29 +81,25 @@ each selector of the list.</td>
 <td>The matches-any pseudo-class represents any element that is represented by the list of compound selectors it takes as argument.</td>
 </tr>
 <tr>
-<th colspan="2">The Negation Pseudo-class</th>
+<th colspan="2">The Negation (Matches-None) Pseudo-class</th>
 </tr>
 <tr>
-<td><code>E:not(<i>s1</i>, <i>s2</i>)</code></td>
-<td>The negation pseudo-class represents an element <code>E</code> that is not
-represented by the list of compound selectors it takes as argument.</td>
+<td><code>:not( &lt;<i>complex-real-selector-list</i>&gt; )</code></td>
+<td>The negation pseudo-class represents an element that is <em>not</em> represented by the list of compound selectors it takes as argument.</td>
 </tr>
 <tr>
 <th colspan="2">The Relational Pseudo-class</th>
 </tr>
 <tr>
-<td><code>E:has(<i>rs1</i>, <i>rs2</i>)</code></td>
-<td>The relational pseudo-class represents an element <code>E</code>, if either
-of the relative selectors <code>rs1</code> or <code>rs2</code>, when evaluated
-with <code>E</code> as the <code>:scope</code> element, match an element.</td>
+<td><code>:has( &lt;<i>relative-selector-list</i>&gt; )</code></td>
+<td>The relational pseudo-class represents an element, if either of the relative selectors in the list, when evaluated with the element as the <code>:scope</code> element, match an element.</td>
 </tr>
 <tr>
 <th colspan="2">The Contains Pseudo-class</th>
 </tr>
 <tr>
-<td><code>E:contains(<i>foo</i>)</code></td>
-<td>The contains pseudo-class represents an element <code>E</code> containing the
-text <code>foo</code>.</td>
+<td><code>:contains(<i>foo</i>)</code></td>
+<td>The contains pseudo-class represents an element containing the text <code>foo</code>.</td>
 </tr>
 </table>
 
