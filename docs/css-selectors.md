@@ -199,16 +199,16 @@ whose value contains <code>val</code>.</td>
 <th colspan="2">Class selectors</th>
 </tr>
 <tr>
-<td><code>E.val</code></td>
-<td>A class selector representing an element <code>E</code> with a class identifier
+<td><code>.val</code></td>
+<td>A class selector representing a class identifier
 <code>val</code>.</td>
 </tr>
 <tr>
 <th colspan="2">ID selectors</th>
 </tr>
 <tr>
-<td><code>E#val</code></td>
-<td>An ID selector representing an element <code>E</code> with an ID identifier
+<td><code>#val</code></td>
+<td>An ID selector representing an ID identifier
 <code>val</code>.</td>
 </tr>
 </table>
@@ -222,15 +222,15 @@ Linguistic Pseudo-classes
 <th colspan="2">The directionality pseudo-class</th>
 </tr>
 <tr>
-<td><code>E:dir(<i>C</i>)</code></td>
-<td>The directionality pseudo-class selects an element <code>E</code> based on its directionality as determined by the document language, using a combination of the <code>dir</code> attribute, the surrounding text, and other factors - it does not select based on stylistic states, but uses the user agent's knowledge of the document's semantics.</td>
+<td><code>:dir(<i>C</i>)</code></td>
+<td>The directionality pseudo-class selects an element based on its directionality as determined by the document language, using a combination of the <code>dir</code> attribute, the surrounding text, and other factors - it does not select based on stylistic states, but uses the user agent's knowledge of the document's semantics.</td>
 </tr>
 <tr>
 <th colspan="2">The language pseudo-class</th>
 </tr>
 <tr>
-<td><code>E:lang(<i>C</i>)</code></td>
-<td>The language pseudo-class represents an element <code>E</code> that is in the
+<td><code>:lang(<i>C</i>)</code></td>
+<td>The language pseudo-class represents an element that is in the
 language <code>C</code>.</td>
 </tr>
 </table>
@@ -280,19 +280,19 @@ Location Pseudo-classes
 <th colspan="2">The link pseudo-classes</th>
 </tr>
 <tr>
-<td><code>E:link</code></td>
+<td><code>:link</code></td>
 <td>The <code>:link</code> pseudo-class applies to links that have not yet been visited.</td>
 </tr>
 <tr>
-<td><code>E:visited</code></td>
+<td><code>:visited</code></td>
 <td>The <code>:visited</code> pseudo-class applies to visited links.</td>
 </tr>
 <tr>
 <th colspan="2">The contextual reference element pseudo-class</th>
 </tr>
 <tr>
-<td><code>E:scope</code></td>
-<td>The contextual reference element pseudo-class represents an element <code>E</code>
+<td><code>:scope</code></td>
+<td>The contextual reference element pseudo-class represents an element
 being a designated contextual reference element. <code>:scope</code> is supported
 in conjunction with <code>:has()</code>, meaning that <code>:scope</code> matches
 the element that <code>:has()</code> is applied to.</td>
