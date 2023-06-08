@@ -768,6 +768,18 @@ Prince also supports the two special keywords <code>initial</code> and <code>inh
     <xsl:text>&#xa0;)</xsl:text></span>
 </xsl:template>
 
+<xsl:template match="function[@class='dep']">
+    <span class="dep"><xsl:value-of select="@name"/>
+    <xsl:text>(&#xa0;</xsl:text>
+    <xsl:for-each select="*">
+    <xsl:apply-templates select="."/>
+    <xsl:if test="position()!=last()">
+        <xsl:text>, </xsl:text>
+    </xsl:if>
+    </xsl:for-each>
+    <xsl:text>&#xa0;)</xsl:text></span>
+</xsl:template>
+
 <xsl:template match="keyword[not(@class)]">
     <xsl:value-of select="."/>
 </xsl:template>
