@@ -284,7 +284,14 @@ Location Pseudo-classes
 
 <table class="grid">
 <tr>
-<th colspan="2">The link pseudo-classes</th>
+<th colspan="2">The Hyperlink Pseudo-classes</th>
+</tr>
+<tr>
+<td><code style="white-space: nowrap;">:any-link</code></td>
+<td>The <code>:any-link</code> pseudo-class applies to an element that acts as the source anchor of a hyperlink, such as any <code>&lt;a&gt;</code> or <code>&lt;area&gt;</code> elements with an <code>href</code> attribute.</td>
+</tr>
+<tr>
+<th colspan="2">The Link History Pseudo-classes</th>
 </tr>
 <tr>
 <td><code>:link</code></td>
