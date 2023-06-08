@@ -88,6 +88,13 @@ each selector of the list.</td>
 <td>The negation pseudo-class represents an element that is <em>not</em> represented by the list of compound selectors it takes as argument.</td>
 </tr>
 <tr>
+<th colspan="2">The Specificity-adjustment Pseudo-class</th>
+</tr>
+<tr>
+<td><code>:where( &lt;<i>forgiving-selector-list</i>&gt; )</code></td>
+<td>The specificity-adjustment pseudo-class has the same syntax as the matches-any pseudo-class selector <code>:is()</code>, but neither the selector itself, nor any of its arguments contribute to the specificity of the selector, the specificity always being zero.</td>
+</tr>
+<tr>
 <th colspan="2">The Relational Pseudo-class</th>
 </tr>
 <tr>
