@@ -295,11 +295,11 @@ Location Pseudo-classes
 </tr>
 <tr>
 <td><code>:link</code></td>
-<td>The <code>:link</code> pseudo-class applies to links that have not yet been visited.</td>
+<td>The <code>:link</code> pseudo-class applies to hyperlinks that have not yet been visited.</td>
 </tr>
 <tr>
 <td><code>:visited</code></td>
-<td>The <code>:visited</code> pseudo-class applies to visited links.</td>
+<td>The <code>:visited</code> pseudo-class applies to visited hyperlinks.</td>
 </tr>
 <tr>
 <th colspan="2">The contextual reference element pseudo-class</th>
