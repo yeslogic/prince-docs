@@ -108,7 +108,7 @@ programming language.
 <dt id="openssl-nss">OpenSSL and NSS</dt>
 <dd>
 The <a href="https://www.openssl.org/">OpenSSL</a> and
-<a href="https://developer.mozilla.org/en-US/docs/Mozilla/Projects/NSS">NSS</a>
+<a href="https://firefox-source-docs.mozilla.org/security/nss/index.html">NSS</a>
 libraries are used by Prince to load resources from secure HTTPS URLs.
 </dd>
 
