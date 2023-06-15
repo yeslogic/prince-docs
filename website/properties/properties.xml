@@ -2281,9 +2281,6 @@
         <prop>prince-float-reference</prop>
         <prop>prince-float-placement</prop>
         <prop>prince-float-modifier</prop>
-        <!-- XXX: Add prefix to each property here, in <value> and in the <ul>
-            below once the aliasings have been added.
-        -->
     </shorthand>
     <extension/>
     <see><a href="/doc/styling/#floats">Floats</a></see>
@@ -2334,10 +2331,6 @@
     <spec><a href="https://drafts.csswg.org/css-page-floats/">CSS Page Floats</a></spec>
     <aliastarget>prince-float</aliastarget>
 </property>
-
-<!-- todo: Document prince-float, which is prefixed because it's a shorthand for
-	prince-float-reference prince-float-placement prince-float-modifier.
-	-->
 
 <property>
     <name>float-defer-column</name>
