@@ -271,10 +271,20 @@ The [`PDF.pages`](js-support.md#window.PDF.pages) array mentioned earlier (see [
     baseline =      the y-coordinate of the baseline of the box,
                     ie. the line that the text rests on, in pt -
                     applies only to inline boxes
+
     marginTop
     marginRight
     marginBottom
     marginLeft =    the used values for margins
+    paddingTop
+    paddingRight
+    paddingBottom
+    paddingLeft =   the used values for paddings
+    borderTop
+    borderRight
+    borderBottom
+    borderLeft =    the used values for borders
+
     floatPosition = "TOP" | "BOTTOM"
     children =      array of child boxes
     parent =        parent box
