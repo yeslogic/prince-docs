@@ -311,7 +311,7 @@ The `--pdf-forms` command-line option is a shorthand for applying the CSS proper
 
 ```css
 form input, form select option {
-    -prince-pdf-form: enabled;
+    -prince-pdf-form: enable;
 }
 ```
 
