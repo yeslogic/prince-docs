@@ -52,9 +52,8 @@ rgb( [&lt;<i>number</i>&gt;]{3} [/&#160;[&lt;<i>alpha-value</i>&gt;]? )</code></
 <td rowspan="6">all <code><i><a href="/doc/graphics#color">color</a></i></code> values</td>
 </tr>
 <tr>
-<td><code>cmyk(C,M,Y,K[,A])</code> |&#160;<code>device-cmyk(C,M,Y,K[,A])</code></td>
-<td>Defines cyan, magenta, yellow and black values of a color, as well as the optional
-alpha component.</td>
+<td><code>device-cmyk( [&lt;<i>number</i>&gt; | &lt;<i>percentage</i>&gt;]{4} [/&#160;&lt;<i>alpha-value</i>&gt;]? )</code></td>
+<td>The arguments of the <code>device-cmyk()</code> function specify the cyan, magenta, yellow, and black components, in this order, as a number between 0 and 1, or a percentage between 0% and 100%. The fifth argument specifies the alpha channel of the color - if omitted, it defaults to 100%. For legacy reasons, <code>device-cmyk()</code> also supports the legacy color syntax, in which the values are separated by commas. Also a legacy <code>cmyk()</code> function exists, with an identical grammar and behavior to <code>device-cmyk()</code>.</td>
 </tr>
 <tr>
 <td><code>hsl( [&lt;<i>hue</i>&gt;] [&lt;<i>percentage</i>&gt;] [&lt;<i>percentage</i>&gt;] [/&#160;[&lt;<i>alpha-value</i>&gt;]? )</code></td>
