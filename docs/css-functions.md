@@ -46,13 +46,10 @@ In this section you find the documentation for the supported CSS functional expr
 <td><a href="/doc/styling#custom-properties-css-variables">Custom properties (CSS variables)</a></td>
 </tr>
 <tr>
-<td><code>rgb(R,G,B)</code></td>
-<td>Defines red, green and blue values of a color.</td>
-<td rowspan="7">all <code><i><a href="/doc/graphics#color">color</a></i></code> values</td>
-</tr>
-<tr>
-<td><code>rgba(R,G,B,A)</code></td>
-<td>Defines red, green and blue values and the alpha component of a color.</td>
+<td><code>rgb( [&lt;<i>percentage</i>&gt;]{3} [/&#160;[&lt;<i>alpha-value</i>&gt;]? ) |
+rgb( [&lt;<i>number</i>&gt;]{3} [/&#160;[&lt;<i>alpha-value</i>&gt;]? )</code></td>
+<td>Defines red, green and blue values of a color. The final argument specifies the alpha value of the color - if omitted, it defaults to 100%. For legacy reasons, <code>rgb()</code> also supports the legacy color syntax, in which the values are separated by commas. Also a legacy <code>rgba()</code> function exists, with an identical grammar and behavior to <code>rgb()</code>.</td>
+<td rowspan="6">all <code><i><a href="/doc/graphics#color">color</a></i></code> values</td>
 </tr>
 <tr>
 <td><code>cmyk(C,M,Y,K[,A])</code> |&#160;<code>device-cmyk(C,M,Y,K[,A])</code></td>
@@ -60,12 +57,12 @@ In this section you find the documentation for the supported CSS functional expr
 alpha component.</td>
 </tr>
 <tr>
-<td><code>hsl(H,S,L)</code></td>
-<td>Defines hue, saturation and lightness values of a color.</td>
+<td><code>hsl( [&lt;<i>hue</i>&gt;] [&lt;<i>percentage</i>&gt;] [&lt;<i>percentage</i>&gt;] [/&#160;[&lt;<i>alpha-value</i>&gt;]? )</code></td>
+<td>Defines hue, saturation and lightness values of a color. The final argument specifies the alpha channel of the color - if omitted, it defaults to 100%. For legacy reasons, <code>hsl()</code> also supports the legacy color syntax, in which the values are separated by commas. Also a legacy <code>hsla()</code> function exists, with an identical grammar and behavior to <code>hsl()</code>.</td>
 </tr>
 <tr>
-<td><code>hsla(H,S,L,A)</code></td>
-<td>Defines hue, saturation and lightness values and the alpha component of a color.</td>
+<td><code>hwb( [&lt;<i>hue</i>&gt;] [&lt;<i>percentage</i>&gt;] [&lt;<i>percentage</i>&gt;] [/&#160;[&lt;<i>alpha-value</i>&gt;]? )</code></td>
+<td>Defines hue, whiteness and blackness values of a color. The final argument specifies the alpha channel of the color - if omitted, it defaults to 100%. This function is new, thus <code>hwb()</code> does <em>not</em> support a legacy color syntax that separates all of its arguments with commas - using commas inside <code>hwb()</code> is an error.</td>
 </tr>
 <tr class="ext">
 <td><code>prince-color( &lt;<i>colorname</i>&gt;  [,&#160;&lt;<i>number</i>&gt; |&#160;&lt;<i>percentage</i>&gt;]? , overprint? )*</code></td>
