@@ -48,9 +48,7 @@ properties.</td>
 <tr>
 <td><a href="https://www.w3.org/TR/css-color-3/">CSS Color Module Level 3</a></td>
 <td>Prince supports <code>opacity</code>. It supports some of the extensions of the
-<code>color</code> property. <code>rgba()</code> is supported in builds after
-Prince 11, <code>hsl()</code> and <code>hsla()</code> are supported as
-of Prince 12.1 .</td>
+<code>color</code> property.</td>
 </tr>
 <tr>
 <td><a href="https://www.w3.org/TR/css-content-3/">CSS Generated Content Module Level 3</a></td>
@@ -136,6 +134,10 @@ and <a href="/doc/css-at-rules/#at-supports"><code>@supports</code></a> at-rules
 <th colspan="2">CSS Level 4</th>
 </tr>
 <tr>
+<td><a href="https://www.w3.org/TR/css-color-4/">CSS Color Module Level 4</a></td>
+<td>Prince supports the syntax for <code>rgb()</code> and <code>hsl()</code>, as well as the <code>hwb()</code> color function - except for the value <code>none</code>.</td>
+</tr>
+<tr>
 <td><a href="https://www.w3.org/TR/css-flexbox-1/">CSS Flexible Box Layout Module Level 1</a></td>
 <td>Prince supports this module as of Prince 12, with the exception of
   page breaking/fragmentation, <code>break-before</code>/<code>-after</code>,
@@ -164,6 +166,13 @@ and <a href="/doc/css-at-rules/#at-supports"><code>@supports</code></a> at-rules
 <tr>
 <td><a href="https://www.w3.org/TR/css-variables-1/">CSS Custom Properties for Cascading Variables Module Level 1</a></td>
 <td>Prince supports this module.</td>
+</tr>
+<tr>
+<th colspan="2">CSS Level 5</th>
+</tr>
+<tr>
+<td><a href="https://www.w3.org/TR/css-color-5/">CSS Color Module Level 5</a></td>
+<td>Prince supports the <code>device-cmyk()</code> function from this module.</td>
 </tr>
 <tr>
 <th colspan="2">Living Standards</th>
