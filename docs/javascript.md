@@ -160,7 +160,7 @@ Prince also offers the possibility to register the function [`Prince.registerPos
 JavaScript
 ```javascript
     Prince.registerPostLayoutFunc(function() {
-        var str = '@prince-color Color1 { alternate-color: cmyk(1,0,0,0) }';
+        var str = '@prince-color Color1 { alternate-color: device-cmyk(1 0 0 0) }';
         var add = document.getElementById('add');
         add.appendChild(document.createTextNode(str));
     });
