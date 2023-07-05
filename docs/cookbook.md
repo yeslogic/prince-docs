@@ -875,7 +875,7 @@ In order to repeat it on all pages, the watermark needs to be placed in a [`@pag
 ```
     @page {
        @prince-overlay {
-          color: rgba(0,0,0,0.8);
+          color: rgb(0 0 0 / 0.8);
           content: "Watermark";
           font-size: 20pt;
        }

@@ -95,7 +95,7 @@
 	<applyto>@prince-color at-rule</applyto>
 	<inherit>n/a</inherit>
 	<extension/>
-	<example>@prince-color  TestColor { alternate-color: cmyk(1, 0, 0, 0) }
+	<example>@prince-color  TestColor { alternate-color: cmyk(1 0 0 0) }
 	color: prince-color(TestColor)</example>
     <see><a href="/doc/graphics/#spot-colors">Spot colors</a></see>
     <comments>
