@@ -28,14 +28,14 @@ Prince follows the CSS Level 4 syntax for the color functions.  However, for leg
 
 ### RGB(A)
 
-To use an RGB color in CSS, it can be expressed either as a value in hexadecimal notation, as an `rgb()` function or as a named color. For example, red can be specified in three ways:
+To use an RGB color in CSS, it can be expressed either as a value in hexadecimal notation, as a named color, or as an `rgb()` function. For example, red can be specified in three ways:
 
 ```css
     color: #ff0000
-    color: rgb(255 0 0)
     color: red
+    color: rgb(255 0 0)
 ```
-A fourth, optional value is for opacity (or alpha), and takes a value between 0 and 1, or between 0% and 100%. When the opacity is 0 the color is transparent, and when the opacity is 1, or 100%, the color is fully opaque. If the fourth value is omitted, it is assumed to be 100%.
+A fourth, optional value for the `rgb()` function is for opacity (or alpha), and takes a value between 0 and 1, or between 0% and 100%. When the opacity is 0 the color is transparent, and when the opacity is 1, or 100%, the color is fully opaque. If the fourth value is omitted, it is assumed to be 100%.
 
 ```css
     color: rgb(255 0 0 / 1)    // red
@@ -45,7 +45,7 @@ A fourth, optional value is for opacity (or alpha), and takes a value between 0 
 
 ### CMYK
 
-CMYK colors can be specified using the `device-cmyk()` function syntax. An optional fifth value is for the alpha channel, i.e. for opacity.
+CMYK colors can be specified using the `device-cmyk()` function syntax. An optional fifth value is for the alpha channel, i.e. for opacity, and functions just as the alpha channel for the `rgb()` function. If the fifth value is omitted, it is assumed to be 100%, or fully opaque.
 
 ```
     color: device-cmyk(1 0 0 0)        // cyan
@@ -53,6 +53,9 @@ CMYK colors can be specified using the `device-cmyk()` function syntax. An optio
     color: device-cmyk(0 0 0 1)        // black
     color: device-cmyk(0 1 1 0 / 0.1)  // translucent red
 ```
+
+Prince also supports the legacy alias `cmyk()` function.
+
 ### HSL(A)
 
 HSL (Hue-Saturation-Lightness) color values can be specified with the `hsl()` function. HSL takes three values:
