@@ -68,9 +68,22 @@ An alpha channel for opacity can be added with a fourth value for alpha - when t
 
 The advantage of HSL over RGB is that it is much more intuitive to use and easier to create sets of matching colors (by keeping the same hue and varying the lightness and saturation values).
 
+```css
+    color: hsl(0 100% 50%)    // red
+    color: hsl(120 100% 50%)  // green
+    color: hsl(240 100% 50%)  // blue
+```
+
+
 ### HWB
 
-HWB (Hue-Whiteness-Blackness) color values are expressed in a similar way to HSL colors, but in a way which often is even more intuitive for humans to work with. They are expressed with the `hwb()` function.
+HWB (Hue-Whiteness-Blackness) color values are expressed in a similar way to HSL colors, but in a way which often is even more intuitive for humans to work with. They are expressed with the `hwb()` function. HWB takes three values: a hue value, equal to that of HSL, and then a percentage of whiteness and blackness to mix into that hue.
+
+```css
+    color: hwb(0 0% 0%)    // red
+    color: hwb(120 0% 0%)  // green
+    color: hwb(240 0% 0%)  // blue
+```
 
 
 ### Spot colors
