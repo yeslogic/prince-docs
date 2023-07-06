@@ -23,7 +23,7 @@ Prince supports RGB(A), CMYK, HSL(A), HWB, and named spot colors. For Prince's c
 
 Prince understands CSS [basic color keywords](css-color-names.md#basic-color-keywords) as well as the list of [extended color keywords](css-color-names.md#extended-color-keywords) from the [CSS Color Module Level 4](https://www.w3.org/TR/css-color-4/#named-colors). It also supports the keywords `transparent` and `currentColor`.
 
-Prince follows the CSS Level 4 syntax for the color functions.  However, for legacy reasons Prince also understands the legacy comma-separated values of the legacy color syntax.
+Prince follows the CSS Level 4 syntax for the color functions.  However, for legacy reasons Prince also understands the legacy comma-separated values of the legacy color syntax.  Also the legacy functions `rgba()` and `hsla()` are still supported.
 
 
 ### RGB(A)
