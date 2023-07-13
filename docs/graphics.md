@@ -23,7 +23,7 @@ Prince supports RGB(A), CMYK, HSL(A), HWB, and named spot colors. For Prince's c
 
 Prince understands CSS [basic color keywords](css-color-names.md#basic-color-keywords) as well as the list of [extended color keywords](css-color-names.md#extended-color-keywords) from the [CSS Color Module Level 4](https://www.w3.org/TR/css-color-4/#named-colors). It also supports the keywords `transparent` and `currentColor`.
 
-Prince follows the CSS Level 4 syntax for the color functions.  However, for legacy reasons Prince also understands the legacy comma-separated values of the legacy color syntax.  Also the legacy functions `rgba()` and `hsla()` are still supported.
+Prince follows the [CSS Color Module Level 4](https://www.w3.org/TR/css-color-4/) syntax for the color functions.  However, for legacy reasons Prince also understands the legacy comma-separated values of the legacy color syntax.  Also the legacy functions `rgba()` and `hsla()` are still supported.
 
 
 ### RGB(A)
@@ -155,11 +155,11 @@ PDF/A requires that all colors to be device-independent, or else characterized b
 
 ### Color Management in Prince
 
-Prince supports RGB, RGBA, HSL, HSLA, CMYK, and named spot colors. For Prince's color handling, please see the [Color](#color) section.
+Prince supports RGB(A), CMYK, HSL(A), HWB, and named spot colors. For Prince's color handling, please see the [Color](#color) section.
 
 As CSS defines RGB colors in the sRGB color space, Prince tags those colors with an sRGB ICC profile in the PDF output. See also the section on [Rich black and true black](#rich-black-and-true-black) below.
 
-CMYK colors specified using the `cmyk()` function syntax, or equivalent `device-cmyk()` syntax, represent device-dependent colors, so they will be left as such in the PDF when possible. Device-dependent color is not allowed in PDF/A or PDF/X, so those CMYK colors will be assumed to be either in the output intent color space (if it is CMYK), or else the color space of the fallback CMYK profile. See the command-line option [`--fallback-cmyk-profile`](command-line.md#cl-fallback-cmyk-profile) in the [PDF Output Options](command-line.md#pdf-output-options) section, or the [`-prince-fallback-cmyk-profile`](css-props.md#prop-prince-fallback-cmyk-profile) property.
+CMYK colors specified using the `device-cmyk()` function syntax represent device-dependent colors, so they will be left as such in the PDF when possible. Device-dependent color is not allowed in PDF/A or PDF/X, so those CMYK colors will be assumed to be either in the output intent color space (if it is CMYK), or else the color space of the fallback CMYK profile. See the command-line option [`--fallback-cmyk-profile`](command-line.md#cl-fallback-cmyk-profile) in the [PDF Output Options](command-line.md#pdf-output-options) section, or the [`-prince-fallback-cmyk-profile`](css-props.md#prop-prince-fallback-cmyk-profile) property.
 ```bash
     prince input.html
            --pdf-profile=PDF/A-1b
