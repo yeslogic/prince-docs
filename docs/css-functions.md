@@ -74,7 +74,7 @@ keyword instructs Prince whether to overprint the color.
 </td>
 </tr>
 <tr class="ext">
-<td><code>prince-overprint( &lt;<i>colorname</i>&gt; | rgb() | cmyk() | device-cmyk() | hsl() | prince-color() [, [overprint-mode-nonzero | overprint-mode-zero]]? )*</code></td>
+<td><code>prince-overprint( &lt;<i>colorname</i>&gt; | rgb() | device-cmyk() | hsl() | hwb() | prince-color() [, [overprint-mode-nonzero | overprint-mode-zero]]? )*</code></td>
 <td>Specifies a non-transparent color value to overprint.  If no overprint mode
 is given, it defaults to <code>overprint-mode-nonzero</code>.</td>
 </tr>
