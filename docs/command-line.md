@@ -112,6 +112,10 @@ The command-line may include the options described below:
     <dd>
     Pass the license key on the command line. The <code>&lt;signature&gt;</code> element from your license file needs to be deleted, and its value can then be passed as the value of this command-line option. It is handy when you don't want to ship a product with the license key.
     </dd>
+    <dt id="cl-show-license"><code>--show-license</code></dt>
+    <dd>
+    Show information about the license used by Prince.
+    </dd>
 </dl>
 
 ### Logging Options
