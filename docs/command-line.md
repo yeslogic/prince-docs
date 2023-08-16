@@ -96,6 +96,10 @@ The command-line may include the options described below:
     <dd>
     Pass the license key on the command line.
     </dd>
+    <dt id="cl-show-license"><code>--show-license</code></dt>
+    <dd>
+    Show information about the license used by Prince.
+    </dd>
 </dl>
 
 ### Logging Options
