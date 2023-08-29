@@ -20,6 +20,9 @@ The following table shows supported JavaScript objects, methods and properties. 
 
 \* objects, methods and properties marked with an asterisk and a darker background color shade are Prince extensions.
 
+Objects, methods and properties <span class="dep">with a line-through</span> are deprecated, support might
+be removed in a future Prince version.
+
 <a href="#" id="toggle-js" onclick="javascript:toggleAllDetails('js'); return false;">Toggle (open/close) all properties</a>
 
 <div class="js-overview level" id="js-support-table"></div>
@@ -53,6 +56,9 @@ function buildSubTree(objReferenceList, objAnnotations, rootElm, actualParentObj
         thisDiv.className = 'level';
         if(annotations && annotations.ext) {
             thisDiv.className += ' ext';
+        }
+        if(annotations && annotations.dep) {
+            thisDiv.className += ' dep';
         }
         if(thisDiv && hasChildren){
             buildSubTree(obj, annotations, thisDiv.appendChild(document.createElement('div')), theRealThing, parentDescs.concat([prop]));
