@@ -990,6 +990,7 @@ var stdAnnotated = {
             textUnderline: { url: "property" },
             textUnderlineColor: { url: "property" },
             textUnderlineStyle: { url: "property" },
+            textUnderlinePosition: { url: "property" },
             top: { url: "property" },
             transform: { url: "property" },
             transformOrigin: { url: "property" },
