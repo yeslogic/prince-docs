@@ -166,7 +166,7 @@ span.ext {
 #prop-list .programlisting pre {
     white-space: normal;
 }
-#prop-list summary.dep, span.dep {
+#prop-list summary.dep, span.dep, #js-support-table .dep summary {
     text-decoration: line-through;
 }
 #prop-list summary.dep, #prop-list summary.dep + div, #prop-list summary.dep + div + div, #prop-list span.dep, .dep {
