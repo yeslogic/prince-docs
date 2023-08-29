@@ -855,6 +855,7 @@ var std = {
             textTransform: {},
             textUnderline: {},
             textUnderlineColor: {},
+            textUnderlinePosition: {},
             textUnderlineStyle: {},
             top: {},
             transform: {},
