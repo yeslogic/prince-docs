@@ -870,10 +870,10 @@ var std = {
             wordSpacing: {},
             writingMode: {},
             zIndex: {},
-            getPropertyValue: {},
-            removeProperty: {},
             setProperty: {},
-            setPropertyValue: {}
+            removeProperty: {},
+            setPropertyValue: {},
+            getPropertyValue: {}
         }
     },
     DOMException: {

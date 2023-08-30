@@ -1004,10 +1004,10 @@ var stdAnnotated = {
             wordSpacing: { url: "property" },
             writingMode: { url: "property" },
             zIndex: { url: "property" },
-            getPropertyValue: {},
-            removeProperty: {},
             setProperty: {},
-            setPropertyValue: {}
+            removeProperty: {},
+            setPropertyValue: {},
+            getPropertyValue: {}
         }
     },
     DOMException: {
