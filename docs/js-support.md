@@ -188,8 +188,10 @@ var id = 'toggle-' + t;
 var a = document.getElementById(id);
 if ( a.hasAttribute('open') == false ) {
 for (i=0; i < d.length; i++) {
-  d[i].setAttribute('open','');
-  a.setAttribute('open','');
+  if ( d[i].classList.contains('dep') == false ) {
+    d[i].setAttribute('open','');
+    a.setAttribute('open','');
+  }
 }}
 else if ( a.hasAttribute('open') == true ) {
 for (i=0; i < d.length; i++) {
