@@ -663,9 +663,9 @@ Image Magic
 
 The [`-prince-image-magic`](css-props.md#prop-prince-image-magic) property performs various image-related, Prince-specific tasks that do not fit into other existing CSS properties. It applies magic to images!
 
-To reduce the PDF file size, JPEG images can be recompressed at a lower quality level by using the function `recompress-jpeg(quality%)` with the required quality percentage as argument.
+To reduce the PDF file size, JPEG images can be recompressed at a lower quality level by using the function <code>recompress-jpeg( &lt;<i>quality%</i>&gt; )</code> with the required quality percentage as argument.
 
-PNG images can be converted to JPEG images with the keyword `convert-to-jpeg` (using the default compression rate), or they can also be converted to JPEG with the required compression rate as argument with the function `convert-to-jpeg(quality%)`.
+PNG images can be converted to JPEG images with the keyword `convert-to-jpeg` (using the default compression rate), or they can also be converted to JPEG with the required compression rate as argument with the function <code>convert-to-jpeg( &lt;<i>quality%</i>&gt; )</code>.
 
 Prince usually strips unnecessary metadata from JPEG images to help contain size. But it might happen that you need that extra data, possibly for further downstream processing. The keyword `jpeg-verbatim` inhibtis this stripping and includes the images without modification in the PDF file.
 

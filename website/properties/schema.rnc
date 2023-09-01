@@ -154,11 +154,12 @@ html-list-item =
     element li { html-inline* }
 
 html-phrase = element em { html-text } |
+    element i { html-text } |
     element strong { html-text } |
     element sup { attribute style { text }, html-text }
 
 html-text =
-    element code { html-text } |
+    element code { html-inline* } |
     text
 
 reference =

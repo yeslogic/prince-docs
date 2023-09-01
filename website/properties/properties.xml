@@ -4943,12 +4943,12 @@ supplier, item { overflow-wrap: normal; }
     embedded in the PDF file.
     </p>
     <p>
-    When <code>recompress-jpeg(quality%)</code> is specified for this property, Prince
+    When <code>recompress-jpeg( &lt;<i>quality%</i>&gt; )</code> is specified for this property, Prince
     will recompress JPEG images to the specified percentage to save space when
     embedding them in the PDF output.
     </p>
     <p>
-    The <code>convert-to-jpeg</code> keyword or the <code>convert-to-jpeg(quality%)</code>
+    The <code>convert-to-jpeg</code> keyword or the <code>convert-to-jpeg( &lt;<i>quality%</i>&gt; )</code>
     function convert non-JPEG images to JPEG, so that they take less space (but may look blurry).
     </p>
     <p class="note">
