@@ -101,6 +101,7 @@ var std = {
         fromCharCode: {},
         fromCodePoint: {},
         CodePointAt: {},
+        raw: {},
         prototype: {
             constructor: {},
             length: {},
