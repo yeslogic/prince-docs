@@ -279,6 +279,9 @@ p.note:only-child {
 #js-support-table .url-property::before {
   content: "See the property ";
 }
+#js-support-table .url-property::after {
+  content: ".";
+}
 dl.faq dt p {
     font-weight: bold;
 }

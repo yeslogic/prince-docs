@@ -675,7 +675,7 @@ var stdAnnotated = {
             hasAttribute: {},
             hasAttributeNS: {},
             getPrinceBoxes: {
-                returns: "A list of JavaScript objects called <a href='/doc/javascript#the-box-tracking-api'>boxes</a>",
+                returns: "A list of JavaScript objects called <a href='/doc/javascript#the-box-tracking-api'>boxes</a>.",
                 ext: "ext"
             }
         }
@@ -1364,7 +1364,7 @@ var stdAnnotated = {
     BoxInfo: {
         ext: "ext",
         type: "function",
-        returns: "The properties of a box, can be accessed after document conversion has finished - see <a href='/doc/javascript#the-box-tracking-api'>The Box Tracking API</a>",
+        returns: "The properties of a box, can be accessed after document conversion has finished - see <a href='/doc/javascript#the-box-tracking-api'>The Box Tracking API</a>.",
         prototype: {
             type: {
                 type: "function",
@@ -1444,7 +1444,7 @@ var stdAnnotated = {
     Prince: {
         type: "object",
         ext: "ext",
-        desc: "See <a href='/doc/javascript#the-prince-object'>The Prince Object</a>",
+        desc: "See <a href='/doc/javascript#the-prince-object'>The Prince Object</a>.",
         addEventListener: {
             type: "function",
             desc: "can be called to listen to the <code>complete</code> event on the Prince object. See <a href='/doc/javascript#event-handling'>Event Handling</a>.",
@@ -1467,7 +1467,7 @@ var stdAnnotated = {
         },
         trackBoxes: {
             type: "function",
-            desc: "See <a href='/doc/javascript#the-box-tracking-api'>The Box Tracking API</a>",
+            desc: "See <a href='/doc/javascript#the-box-tracking-api'>The Box Tracking API</a>.",
             arguments: [
                 {type: "boolean"}
             ]
@@ -1494,14 +1494,14 @@ var stdAnnotated = {
 		},
         pageCount: {
             type: "function",
-            returns: "Total number of document pages, can be accessed after document conversion has finished"
+            returns: "Total number of document pages, can be accessed after document conversion has finished."
         },
         registerPostLayoutFunc: {
             type: "function",
             arguments: [
                 {name: "function", type: "string"}
             ],
-            desc: "See <a href='/doc/javascript#multi-pass-formatting'>Multi-Pass formatting</a>"
+            desc: "See <a href='/doc/javascript#multi-pass-formatting'>Multi-Pass formatting</a>."
         },
         Log: {
             type: "object",
@@ -1545,7 +1545,7 @@ var stdAnnotated = {
     PDF: {
         type: "object",
         ext: "ext",
-        desc: "See <a href='/doc/javascript#the-pdf-object'>The PDF Object</a>",
+        desc: "See <a href='/doc/javascript#the-pdf-object'>The PDF Object</a>.",
         attachFile: {
             type: "function",
             arguments: [
@@ -1772,7 +1772,7 @@ var stdAnnotated = {
         },
         pages: {
             type: "array",
-            returns: "A list of page boxes, can be accessed after document conversion has finished"
+            returns: "A list of page boxes, can be accessed after document conversion has finished."
         }
     },
     Log: {
