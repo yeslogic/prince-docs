@@ -89,7 +89,7 @@ value =
 
     element repeat {
 	attribute min { xsd:integer },
-	attribute max { xsd:integer } ?,
+	attribute max { xsd:integer | "∞" } ?,
 	attribute sep { "," } ?,
 	value+
     } |
