@@ -1579,16 +1579,18 @@
     <name>column-gap</name>
     <value>
     <choice>
-        <type>length</type>
-        <percentage/>
         <keyword>normal</keyword>
+        <repeat min="0" max="∞">
+            <type>length-percentage</type>
+        </repeat>
     </choice>
     </value>
     <initial>normal</initial>
-    <applyto>multicol elements</applyto>
+    <applyto>multi-column elements, flex containers</applyto>
     <inherit>no</inherit>
     <see><a href="/doc/styling/#columns">Columns</a></see>
-    <spec><a href="https://www.w3.org/TR/css3-multicol/#column-gap">CSS Multi-column Layout Module</a></spec>
+    <see><a href="/doc/styling/#flex-layout">Flex Layout</a></see>
+    <spec><a href="https://www.w3.org/TR/css-align-3/#column-row-gap">CSS Box Alignment Module Level 3</a></spec>
 </property>
 
 <property>
@@ -3128,6 +3130,26 @@
 	property see the documentation for <a href="/doc/styling/#footnotes">Footnotes</a>.
 	</p>
     </comments>
+</property>
+
+<property>
+    <name>gap</name>
+    <value>
+        <ref>row-gap</ref>
+        <optional>
+            <ref>column-gap</ref>
+        </optional>
+    </value>
+    <initial>normal</initial>
+    <applyto>multi-column elements, flex containers</applyto>
+    <inherit>no</inherit>
+    <shorthand>
+	<prop>row-gap</prop>
+	<prop>column-gap</prop>
+    </shorthand>
+    <see><a href="/doc/styling/#columns">Columns</a></see>
+    <see><a href="/doc/styling/#flex-layout">Flex Layout</a></see>
+    <spec><a href="https://drafts.csswg.org/css-align/#gap-shorthand">CSS Box Alignment Module Level 3</a></spec>
 </property>
 
 <property>
@@ -6928,6 +6950,24 @@ blockquote { margin: 1rem; -prince-resize-options: -1rem; }
 	</p>
     </comments>
     <spec><a href="https://www.w3.org/TR/CSS2/visuren.html#propdef-right">CSS 2.1</a></spec>
+</property>
+
+<property>
+    <name>row-gap</name>
+    <value>
+    <choice>
+        <keyword>normal</keyword>
+        <repeat min="0" max="∞">
+            <type>length-percentage</type>
+        </repeat>
+    </choice>
+    </value>
+    <initial>normal</initial>
+    <applyto>multi-column elements, flex containers</applyto>
+    <inherit>no</inherit>
+    <see><a href="/doc/styling/#columns">Columns</a></see>
+    <see><a href="/doc/styling/#flex-layout">Flex Layout</a></see>
+    <spec><a href="https://www.w3.org/TR/css-align-3/#column-row-gap">CSS Box Alignment Module Level 3</a></spec>
 </property>
 
 <property>
