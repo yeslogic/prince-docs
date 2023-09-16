@@ -6963,9 +6963,8 @@ blockquote { margin: 1rem; -prince-resize-options: -1rem; }
     </choice>
     </value>
     <initial>normal</initial>
-    <applyto>multi-column elements, flex containers</applyto>
+    <applyto>flex containers</applyto>
     <inherit>no</inherit>
-    <see><a href="/doc/styling/#columns">Columns</a></see>
     <see><a href="/doc/styling/#flex-layout">Flex Layout</a></see>
     <spec><a href="https://www.w3.org/TR/css-align-3/#column-row-gap">CSS Box Alignment Module Level 3</a></spec>
 </property>
