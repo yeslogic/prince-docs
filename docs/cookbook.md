@@ -18,6 +18,8 @@ title: Prince Tips and Tricks
 
 The reipces are grouped in two main blocks, the first one containing recipes that only require CSS, the second one making use of JavaScript features to achieve the desired effect.
 
+On a separate site we collect more [quick guides to making beautiful PDF documents from HTML and CSS](https://css4.pub/).
+
 CSS
 ------
 
