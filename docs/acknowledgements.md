@@ -1,5 +1,5 @@
 ---
-title: Acknowledgments
+title: Acknowledgements
 ---
 
 Prince uses the following open source projects:
@@ -50,7 +50,14 @@ The <a href="https://giflib.sourceforge.net/">GIFLIB</a>
 library is used by Prince to load GIF image files.
 </dd>
 
-<dt id="jpeglib">libjpeg<i>-turbo</i></dt>
+<dt id="libavif-aom">libavif and aom</dt>
+<dd>
+The <a href="https://github.com/AOMediaCodec/libavif">libavif</a> and
+<a href="https://aomedia.googlesource.com/aom/">aom</a> libraries are
+used by Prince to load AVIF image files.
+</dd>
+
+<dt id="libjpeg">libjpeg<i>-turbo</i></dt>
 <dd>
 The <a href="https://libjpeg-turbo.org/">libjpeg<i>-turbo</i></a>
 library is used by Prince to load JPEG image files.
@@ -86,6 +93,12 @@ The <a href="http://www.libtiff.org/">libtiff</a>
 library is used by Prince to load TIFF image files.
 </dd>
 
+<dt id="libwebp">libwebp</dt>
+<dd>
+The <a href="https://developers.google.com/speed/webp">libwebp</a>
+library is used by Prince to load WebP image files.
+</dd>
+
 <dt id="libxml2">libxml2</dt>
 <dd>
 The <a href="https://gitlab.gnome.org/GNOME/libxml2/-/wikis/home">libxml2</a>
@@ -119,3 +132,59 @@ library is used by Prince to perform compression of PDF files.
 </dd>
 
 </dl>
+
+Prince also uses the following [Rust crates](https://crates.io/):
+
+* alloc-no-stdlib
+* alloc-stdlib
+* bitflags
+* bitreader
+* brotli-decompressor
+* byteorder
+* cfg-if
+* const-cstr
+* core-foundation
+* core-foundation-sys
+* core-graphics
+* core-text
+* crc32fast
+* either
+* encoding_rs
+* flate2
+* fontconfig
+* foreign-types
+* foreign-types-shared
+* glyph-names
+* Inflector
+* itertools
+* lazy_static
+* libc
+* libz-sys
+* log
+* matches
+* num-traits
+* ouroboros
+* ouroboros_macro
+* pathfinder_geometry
+* pathfinder_simd
+* proc-macro2
+* proc-macro-error
+* proc-macro-error-attr
+* quote
+* rust
+* rustc-hash
+* stable_deref_trait
+* syn
+* tinyvec
+* tinyvec_macros
+* ucd-trie
+* unicode-bidi
+* unicode-canonical-combining-class
+* unicode-case-mapping
+* unicode-general-category
+* unicode-joining-type
+* unicode-linebreak
+* unicode-xid
+* winapi
+* yeslogic-fontconfig-sys
+* yeslogic-unicode-script
