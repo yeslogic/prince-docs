@@ -3643,7 +3643,7 @@
     </p>
 
     <p>
-    Unlike the margin property, it does not take percentage values.
+    Unlike the <code>margin</code> property, it does not take percentage values.
     </p>
     </comments>
     <aliastarget>prince-margin-alt</aliastarget>
@@ -4810,7 +4810,7 @@ supplier, item { overflow-wrap: normal; }
     rasterizing to images for applying CSS and SVG filters.
     </p>
 
-    <p>If ‘<code>auto</code>’ then the value is either that given by the
+    <p>If <code>auto</code> then the value is either that given by the
     <code>--raster-dpi</code> command-line option or the
     <code>prince-filter-resolution</code> descriptor of
     <code>@prince-pdf</code> (see below).
@@ -4971,7 +4971,7 @@ supplier, item { overflow-wrap: normal; }
 	where lines ended by <code>-prince-forced-breaks:full</code> are subject to
 	justification like most other lines.</p>
 
-	<p>(Limitation: At the time of writing, this property only affects justified text.)</p>
+	<p class="note">At the time of writing, this property only affects justified text.</p>
 
     <p>This property only applies to <a href="/doc/prince-for-books/">Prince for Books</a>.</p>
     </comments>
@@ -5537,7 +5537,7 @@ supplier, item { overflow-wrap: normal; }
 	    viewed with facing pages.
 	    -->
 
-	<p>‘<code>prefer-fill</code>’ means to ignore the length of the facing
+	<p>The value <code>prefer-fill</code> means to ignore the length of the facing
 	page.  Pages can still be under-full in order to satisfy pagination
 	constraints such as
 	<code><property name="widows"/></code>,
@@ -5548,7 +5548,7 @@ supplier, item { overflow-wrap: normal; }
 	possibly resulting in one page being longer than its facing page.
 	</p>
 
-	<p>With ‘<code>prefer-balance</code>’, Prince will sometimes end a page
+	<p>With <code>prefer-balance</code>, Prince will sometimes end a page
 	one line shorter than usual, if this is needed to make the two pages be
 	approximately balanced.
 	</p>
@@ -5573,7 +5573,7 @@ supplier, item { overflow-wrap: normal; }
     <comments>
 	<p>
 	This property determines whether the first page of this element
-	matches the :first page class selector.
+	matches the <code>:first</code> page class selector.
 	</p>
     </comments>
     <aliastarget>page-group</aliastarget>
@@ -5922,9 +5922,9 @@ supplier, item { overflow-wrap: normal; }
     <see><a href="/doc/graphics/#rich-black-and-true-black">Rich black and true black</a></see>
 	<comments>
 		<p>This descriptor may be used to control the encoding of RGB blacks and grays:
-		when <code>use-true-black</code> is used, they are encoded in the /DeviceGray colorspace
-		in the PDF, instead of /DeviceRGB, whereas <code>use-rich-black</code> disables this behavior
-		and keeps all the colors in RGB. Currently, auto is equivalent to <code>use-true-black</code>.
+		when <code>use-true-black</code> is used, they are encoded in the <code>/DeviceGray</code> colorspace
+		in the PDF, instead of <code>/DeviceRGB</code>, whereas <code>use-rich-black</code> disables this behavior
+		and keeps all the colors in RGB. Currently, <code>auto</code> is equivalent to <code>use-true-black</code>.
 		</p>
     </comments>
 </property>
@@ -6320,7 +6320,7 @@ supplier, item { overflow-wrap: normal; }
 	<see><a href="/doc/prince-output/#pdf-printing">PDF Printing</a></see>
     <comments>
 	<p>
-	This descriptor controls the PickTrayByPDFSize flag in generated PDF
+	This descriptor controls the <code>PickTrayByPDFSize</code> flag in generated PDF
 	files, which specifies whether the PDF page size is used to select
     the input paper tray. (See the checkbox in the Acrobat print dialog).
 	</p>
@@ -6513,7 +6513,7 @@ supplier, item { overflow-wrap: normal; }
     This descriptor can be used inside a <a href=
     "/doc/css-at-rules/#at-prince-pdf"><code>@prince-pdf</code></a>
     rule to add XMP metadata to a PDF file.  Currently it takes an XMP
-    file as input and includes data from the &lt;x:xmpmeta&gt; element
+    file as input and includes data from the <code>&lt;x:xmpmeta&gt;</code> element
     and its contents (the xpacket processing instructions are ignored, as
     Prince generates those itself when it produces the PDF file).
     </p>
@@ -8096,7 +8096,7 @@ blockquote { margin: 1rem; -prince-resize-options: -1rem; }
     <a href="/doc/css-at-rules/#at-font-face"><code>@font-face</code></a> at-rule,
     defines the set of Unicode codepoints that may be supported by the font face
     for which it is declared.  The descriptor value is a comma-delimited list of
-    Unicode range (&lt;urange&gt;) values.  The union of these ranges defines the
+    Unicode range (<code>&lt;<i>urange</i>&gt;</code>) values.  The union of these ranges defines the
     set of codepoints that serves as a hint for user agents when deciding whether
     or not to download a font resource needed for the test content of a particular
     page.
