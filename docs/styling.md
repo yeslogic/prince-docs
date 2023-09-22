@@ -379,7 +379,10 @@ fonts.css
         src: url("/usr/share/fonts/truetype/msttcorefonts/trebucbi.ttf")
     }
 ```
-Prince can be instructed not to use system fonts with the [`--no-system-fonts`](command-line.md#cl-no-system-fonts) command-line option. Only fonts defined with [`@font-face`](css-at-rules.md#at-font-face) rules in CSS will be available.
+
+A low-level mechanism to fine-tune the set of Unicode codepoints that may be supported by the font face for which it is declared is provided through the [`unicode-range`](css-props.md#prop-unicode-range) CSS descriptor. Its value is a comma-delimited list of Unicode range values. The union of these ranges defines the set of codepoints that serves as a hint for user agents when deciding whether or not to download a font resource needed for the test content of a particular page.
+
+Finally, Prince can be instructed not to use system fonts with the [`--no-system-fonts`](command-line.md#cl-no-system-fonts) command-line option. Only fonts defined with [`@font-face`](css-at-rules.md#at-font-face) rules in CSS will be available.
 
 
 Layout
