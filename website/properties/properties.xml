@@ -7706,7 +7706,7 @@ supplier, item { overflow-wrap: normal; }
     page.
     </p>
     </comments>
-    <spec><a href="https://drafts.csswg.org/css-fonts-3/#descdef-font-face-unicode-range">CSS Fonts Module Level 3</a></spec>
+    <spec><a href="https://www.w3.org/TR/css-fonts-3/#unicode-range-desc">CSS Fonts Module Level 3</a></spec>
 </property>
 
 <property>
