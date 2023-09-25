@@ -37,6 +37,10 @@
 	<name>align-content</name>
 	<value>
 	  <choice>
+        <keyword>normal</keyword>
+        <keyword>start</keyword>
+        <keyword>end</keyword>
+        <keyword>space-evenly</keyword>
 	    <keyword>flex-start</keyword>
 	    <keyword>flex-end</keyword>
 	    <keyword>center</keyword>
@@ -45,27 +49,32 @@
 	    <keyword>stretch</keyword>
 	  </choice>
 	</value>
-	<initial>stretch</initial>
+	<initial>normal</initial>
     <applyto>multi-line flex containers</applyto>
 	<inherit>no</inherit>
-    <spec><a href="https://www.w3.org/TR/css-flexbox-1/#align-content-property">CSS Flexible Box Layout Module Level 1</a></spec>
+    <spec><a href="https://www.w3.org/TR/css-align-3/#align-justify-content">CSS Box Alignment Module Level 3</a></spec>
 </property>
 
 <property>
 	<name>align-items</name>
 	<value>
 	  <choice>
+	    <keyword>normal</keyword>
+	    <keyword>stretch</keyword>
+	    <keyword>start</keyword>
+	    <keyword>end</keyword>
+	    <keyword>self-start</keyword>
+	    <keyword>self-end</keyword>
 	    <keyword>flex-start</keyword>
 	    <keyword>flex-end</keyword>
 	    <keyword>center</keyword>
 	    <keyword>baseline</keyword>
-	    <keyword>stretch</keyword>
 	  </choice>
 	</value>
-	<initial>stretch</initial>
+	<initial>normal</initial>
     <applyto>flex containers</applyto>
 	<inherit>no</inherit>
-    <spec><a href="https://www.w3.org/TR/css-flexbox-1/#align-items-property">CSS Flexible Box Layout Module Level 1</a></spec>
+    <spec><a href="https://www.w3.org/TR/css-align-3/#align-items-property">CSS Box Alignment Module Level 3</a></spec>
 </property>
 
 <property>
@@ -73,17 +82,22 @@
 	<value>
 	  <choice>
 	    <keyword>auto</keyword>
+	    <keyword>normal</keyword>
+	    <keyword>stretch</keyword>
+	    <keyword>start</keyword>
+	    <keyword>end</keyword>
+	    <keyword>self-start</keyword>
+	    <keyword>self-end</keyword>
 	    <keyword>flex-start</keyword>
 	    <keyword>flex-end</keyword>
 	    <keyword>center</keyword>
 	    <keyword>baseline</keyword>
-	    <keyword>stretch</keyword>
 	  </choice>
 	</value>
 	<initial>auto</initial>
     <applyto>flex items</applyto>
 	<inherit>no</inherit>
-    <spec><a href="https://www.w3.org/TR/css-flexbox-1/#align-items-property">CSS Flexible Box Layout Module Level 1</a></spec>
+    <spec><a href="https://www.w3.org/TR/css-align-3/#align-self-property">CSS Box Alignment Module Level 3</a></spec>
 </property>
 
 <property>
@@ -3308,6 +3322,11 @@
 	<name>justify-content</name>
 	<value>
 	  <choice>
+	    <keyword>normal</keyword>
+	    <keyword>start</keyword>
+	    <keyword>end</keyword>
+	    <keyword>self-start</keyword>
+	    <keyword>self-end</keyword>
 	    <keyword>flex-start</keyword>
 	    <keyword>flex-end</keyword>
 	    <keyword>center</keyword>
@@ -3315,10 +3334,10 @@
 	    <keyword>space-around</keyword>
 	  </choice>
 	</value>
-	<initial>flex-start</initial>
+	<initial>normal</initial>
     <applyto>flex containers</applyto>
 	<inherit>no</inherit>
-    <spec><a href="https://www.w3.org/TR/css-flexbox-1/#justify-content-property">CSS Flexible Box Layout Module Level 1</a></spec>
+    <spec><a href="https://www.w3.org/TR/css-align-3/#align-justify-content">CSS Box Alignment Module Level 3</a></spec>
 </property>
 
 <!-- XXX: Consider documenting 'inset-inside' & 'inset-outside', which are like
@@ -4428,6 +4447,25 @@ supplier, item { overflow-wrap: normal; }
 <property>
     <name>page-group</name>
     <alias>prince-page-group</alias>
+</property>
+
+<property>
+    <name>place-content</name>
+    <value>
+        <ref>align-content</ref>
+        <optional>
+            <ref>justify-content</ref>
+        </optional>
+    </value>
+    <initial>normal</initial>
+    <applyto>flex containers</applyto>
+    <inherit>no</inherit>
+    <shorthand>
+	<prop>align-content</prop>
+	<prop>justify-content</prop>
+    </shorthand>
+    <see><a href="/doc/styling/#flex-layout">Flex Layout</a></see>
+    <spec><a href="https://www.w3.org/TR/css-align-3/#place-content">CSS Box Alignment Module Level 3</a></spec>
 </property>
 
 <property>
