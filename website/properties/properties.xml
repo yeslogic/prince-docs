@@ -1537,9 +1537,7 @@
     <value>
     <choice>
         <keyword>normal</keyword>
-        <repeat min="0" max="∞">
-            <type>length-percentage</type>
-        </repeat>
+        <type>length-percentage</type>
     </choice>
     </value>
     <initial>normal</initial>
@@ -6643,9 +6641,7 @@ supplier, item { overflow-wrap: normal; }
     <value>
     <choice>
         <keyword>normal</keyword>
-        <repeat min="0" max="∞">
-            <type>length-percentage</type>
-        </repeat>
+        <type>length-percentage</type>
     </choice>
     </value>
     <initial>normal</initial>
