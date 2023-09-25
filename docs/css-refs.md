@@ -35,6 +35,10 @@ for some fonts.</td>
 <th colspan="2">CSS Level 3</th>
 </tr>
 <tr>
+<td><a href="https://www.w3.org/TR/css-align-3/">CSS Box Alignment Module Level 3</a></td>
+<td>Prince supports the new properties and values relating to flex layout.</td>
+</tr>
+<tr>
 <td><a href="https://www.w3.org/TR/css-backgrounds-3/">CSS Backgrounds and Borders Module Level 3</a></td>
 <td>Prince does not support <code>box-shadow</code> and the <code>border-image</code>
 properties.</td>
