@@ -52,6 +52,7 @@
 	<initial>normal</initial>
     <applyto>multi-line flex containers</applyto>
 	<inherit>no</inherit>
+    <see><a href="/doc/styling/#flex-layout">Flex Layout</a></see>
     <spec><a href="https://www.w3.org/TR/css-align-3/#align-justify-content">CSS Box Alignment Module Level 3</a></spec>
 </property>
 
@@ -74,6 +75,7 @@
 	<initial>normal</initial>
     <applyto>flex containers</applyto>
 	<inherit>no</inherit>
+    <see><a href="/doc/styling/#flex-layout">Flex Layout</a></see>
     <spec><a href="https://www.w3.org/TR/css-align-3/#align-items-property">CSS Box Alignment Module Level 3</a></spec>
 </property>
 
@@ -97,6 +99,7 @@
 	<initial>auto</initial>
     <applyto>flex items</applyto>
 	<inherit>no</inherit>
+    <see><a href="/doc/styling/#flex-layout">Flex Layout</a></see>
     <spec><a href="https://www.w3.org/TR/css-align-3/#align-self-property">CSS Box Alignment Module Level 3</a></spec>
 </property>
 
@@ -2130,6 +2133,7 @@
 	<prop>flex-shrink</prop>
 	<prop>flex-basis</prop>
     </shorthand>
+    <see><a href="/doc/styling/#flex-layout">Flex Layout</a></see>
     <spec><a href="https://www.w3.org/TR/css-flexbox-1/#flex-property">CSS Flexible Box Layout Module Level 1</a></spec>
 </property>
 
@@ -2145,6 +2149,7 @@
 	<initial>auto</initial>
     <applyto>flex containers</applyto>
 	<inherit>no</inherit>
+    <see><a href="/doc/styling/#flex-layout">Flex Layout</a></see>
     <spec><a href="https://www.w3.org/TR/css-flexbox-1/#flex-basis-property">CSS Flexible Box Layout Module Level 1</a></spec>
 </property>
 
@@ -2161,6 +2166,7 @@
 	<initial>row</initial>
     <applyto>flex containers</applyto>
 	<inherit>no</inherit>
+    <see><a href="/doc/styling/#flex-layout">Flex Layout</a></see>
     <spec><a href="https://www.w3.org/TR/css-flexbox-1/#flex-direction-property">CSS Flexible Box Layout Module Level 1</a></spec>
 </property>
 
@@ -2172,6 +2178,7 @@
 	<initial>0</initial>
     <applyto>flex items</applyto>
 	<inherit>no</inherit>
+    <see><a href="/doc/styling/#flex-layout">Flex Layout</a></see>
     <spec><a href="https://www.w3.org/TR/css-flexbox-1/#flex-grow-property">CSS Flexible Box Layout Module Level 1</a></spec>
 </property>
 
@@ -2183,6 +2190,7 @@
 	<initial>1</initial>
     <applyto>flex items</applyto>
 	<inherit>no</inherit>
+    <see><a href="/doc/styling/#flex-layout">Flex Layout</a></see>
     <spec><a href="https://www.w3.org/TR/css-flexbox-1/#flex-shrink-property">CSS Flexible Box Layout Module Level 1</a></spec>
 </property>
 
@@ -2198,6 +2206,7 @@
 	<initial>nowrap</initial>
     <applyto>flex containers</applyto>
 	<inherit>no</inherit>
+    <see><a href="/doc/styling/#flex-layout">Flex Layout</a></see>
     <spec><a href="https://www.w3.org/TR/css-flexbox-1/#flex-wrap-property">CSS Flexible Box Layout Module Level 1</a></spec>
 </property>
 
@@ -2216,6 +2225,7 @@
 	<prop>flex-direction</prop>
 	<prop>flex-wrap</prop>
     </shorthand>
+    <see><a href="/doc/styling/#flex-layout">Flex Layout</a></see>
     <spec><a href="https://www.w3.org/TR/css-flexbox-1/#flex-flow-property">CSS Flexible Box Layout Module Level 1</a></spec>
 </property>
 
@@ -3275,6 +3285,7 @@
 	<initial>normal</initial>
     <applyto>flex containers</applyto>
 	<inherit>no</inherit>
+    <see><a href="/doc/styling/#flex-layout">Flex Layout</a></see>
     <spec><a href="https://www.w3.org/TR/css-align-3/#align-justify-content">CSS Box Alignment Module Level 3</a></spec>
 </property>
 
@@ -4033,6 +4044,7 @@
 	<initial>0</initial>
     <applyto>flex items and absolutely-positioned children of flex containers</applyto>
 	<inherit>no</inherit>
+    <see><a href="/doc/styling/#flex-layout">Flex Layout</a></see>
     <spec><a href="https://www.w3.org/TR/css-flexbox-1/#order-property">CSS Flexible Box Layout Module Level 1</a></spec>
 </property>
 
