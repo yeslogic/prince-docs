@@ -1533,7 +1533,9 @@ Next, the direction of the flex layout can be defined by means of the [`flex-dir
 ```
 The property [`justify-content`](css-props.md#prop-justify-content) defines the alignment of the content along the main axis - extra free space can be distributed in various ways after or before the content, or in specific ways between the flex items. The alignment along the cross axis is controlled with the [`align-items`](css-props.md#prop-align-items) property. In case there are multiple item lines in a flex container, the alignment of the lines can be controlled with the [`align-content`](css-props.md#prop-align-content) property. If there is only one line, the property has no effect.
 
-The [`gap`](css-props.md#prop-gap), [`column-gap`](css-props.md#prop-column-gap) and [`row-gap`](css-props.md#prop-row-gap) properties control the space between flex items - note that they apply only to the space *between items*, not between the items and the outer edge. Also, they sort of define a *minimum* gap between the items: they only apply in the case that the naturally occurring gap would end up *smaller* than the defined value, if it is bigger they have no effect.
+The properties [`align-content`](css-props.md#prop-align-content) and [`justify-content`](css-props.md#prop-justify-content) can be expressed through the shorthand property [`place-content`](css-props.md#prop-place-content).
+
+The properties [`column-gap`](css-props.md#prop-column-gap) and [`row-gap`](css-props.md#prop-row-gap), and the shorthand property [`gap`](css-props.md#prop-gap), control the space between flex items - note that they apply only to the space *between items*, not between the items and the outer edge. Also, they sort of define a *minimum* gap between the items: they only apply in the case that the naturally occurring gap would end up *smaller* than the defined value, if it is bigger they have no effect.
 
 <p class="note">The <code>gap</code> and <code>column-gap</code> properties also work in a <a href="#columns">multi-column layout</a>.</p>
 
