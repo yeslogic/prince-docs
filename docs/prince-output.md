@@ -241,6 +241,12 @@ Just as with the previous property, scripts need to be provided inline.
 ```
 Please note that starting from Prince 15, these CSS properties will not longer allow for the `url()` function as an argument - to provide an external file, the command-line options [`--prince-pdf-script`](command-line.md#cl-prince-pdf-script) and [`--prince-pdf-event-script`](command-line.md#cl-prince-pdf-event-script) need to be used instead.
 
+The [`--prince-pdf-script`](command-line.md#cl-prince-pdf-script) command-line option can be set multiple times, and all scripts passed will be run.
+
+PDF scripts can also be passed to Prince by means of a [JSON job description](server-integration.md#prince-job-json), which also allows for multiple scripts being passed to Prince.
+
+<p class="note">The JavaScript method <a href="/doc/js-support/#window.PDF.script">PDF.script</a>, when used as a getter, returns a string if exactly one script string literal was provided (via the command line, the CSS property or the job description), but returns null when multiple scripts are specified. When used as a setter, it only allows to set a single script.</p>
+
 ### PDF Pages
 
 Prince allows for some degree of control on the pages and the page layout in a PDF file. The CSS property [`-prince-pdf-page-label`](css-props.md#prop-prince-pdf-page-label) can be used to set the page label that will be displayed in the PDF viewer. It can be used to instruct the PDF viewer to display the page label in the ToC in a particular way.
