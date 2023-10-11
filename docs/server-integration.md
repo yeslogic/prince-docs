@@ -425,7 +425,7 @@ The `pdf options` object includes these fields:
     "pdf-output-intent": <URL>,
     "fallback-cmyk-profile": <URL>,
     "color-conversion": "none" | "output-intent" | "full",
-    "pdf-script": <string> | {"url": <URL>},
+    "pdf-script": [ <list of pdf-script> ] | [ <string> | {"url": <URL>} ],
     "pdf-event-scripts": {
         "will-close": <string> | {"url": <URL>},
         "will-save": <string> | {"url": <URL>},
@@ -506,7 +506,7 @@ The following is the full JSON job description - the mandatory `input` and `src`
         "pdf-output-intent": <URL>,
         "fallback-cmyk-profile": <URL>,
         "color-conversion": "none" | "output-intent" | "full",
-        "pdf-script": <string> | {"url": <URL>},
+        "pdf-script": [ <list of pdf-script> ] | [ <string> | {"url": <URL>} ],
         "pdf-event-scripts": {
             "will-close": <string> | {"url": <URL>},
             "will-save": <string> | {"url": <URL>},
