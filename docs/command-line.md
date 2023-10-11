@@ -395,7 +395,7 @@ The command-line may include the options described below:
   </dd>
   <dt id="cl-prince-pdf-script"><code>--prince-pdf-script=<span class="replaceable">FILE</span></code></dt>
   <dd>
-    Include a PDF script file to run when the PDF is opened.
+    Include a PDF script file to run when the PDF is opened.  This is an accumulating option, and can be set multiple times.
   </dd>
   <dt id="cl-prince-pdf-event-script"><code>--prince-pdf-event-script=<span class="replaceable">EVENT</span>:<span class="replaceable">FILE</span></code></dt>
   <dd>
