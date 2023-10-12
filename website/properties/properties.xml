@@ -110,24 +110,8 @@
 <property>
     <name>background</name>
     <value>
-	<repeat sep="," min="1">
+    <repeat min="1" sep=",">
 	    <multiple>
-		<!-- This no longer tightly describes gramatically valid values
-		    now that these properties accept comma-separated lists:
-		    the children of <multiple/> need to be just the individual
-		    comma-separated items within the referenced property
-		    values.  The easiest way to fix this would be to use
-		    <type>bg-image</type> etc., referencing the css-backgrounds-3
-		    definitions of those types; except that our syntax
-		    for these items doesn't yet (as at 2015-05) match
-		    css-backgrounds-3.  So for now we'll use these property
-		    references, which at least are accurate in the sense of
-		    including all valid values, even if the result also
-		    includes invalid values.
-
-		    (Similarly, the below wrongly allows 'background-color'
-		    values before the last comma.)
-		-->
 		<group>
 		    <ref>background-image</ref>
 		</group>
@@ -167,7 +151,7 @@
 		    <ref>background-color</ref>
 		</group>
 	    </multiple>
-	</repeat>
+    </repeat>
     </value>
     <initial>transparent</initial>
     <applyto>all elements</applyto>
@@ -182,12 +166,32 @@
 	<prop>background-clip</prop>
 	<prop>background-color</prop>
     </shorthand>
+    <comments>
+    <p>
+    However, a few issues need to be noted:
+    </p>
+    <p>
+    Each comma-separated iteration of a background declaration defines one
+    background layer - but <code>background-color</code> is <em>only allowed
+    in the last layer</em>.
+    </p>
+    <p>
+    Several properties allow for comma-separated value lists - however, when
+    used in the <code>background</code> shorthand property, only <em>one
+    value for each layer is allowed</em>.
+    </p>
+    <p>
+    Also, Prince requires <code>background-origin</code> and
+    <code>background-clip</code> to be adjacent.
+    </p>
+    </comments>
     <spec><a href="https://www.w3.org/TR/css-backgrounds-3/#the-background">CSS Backgrounds and Borders Module Level 3</a></spec>
 </property>
 
 <property>
     <name>background-attachment</name>
     <value>
+    <repeat min="1" sep=",">
 	<choice>
 	    <keyword>scroll</keyword>
         <sequence>
@@ -197,6 +201,7 @@
             </optional>
         </sequence>
 	</choice>
+    </repeat>
     </value>
     <initial>scroll</initial>
     <applyto>all elements</applyto>
@@ -243,11 +248,13 @@
 <property>
     <name>background-clip</name>
     <value>
+    <repeat min="1" sep=",">
 	<choice>
 	    <keyword>content-box</keyword>
 	    <keyword>padding-box</keyword>
 	    <keyword>border-box</keyword>
 	</choice>
+    </repeat>
     </value>
     <initial>border-box</initial>
     <applyto>all elements</applyto>
@@ -258,6 +265,7 @@
 <property>
     <name>background-image</name>
     <value>
+    <repeat min="1" sep=",">
 	<choice>
 	    <keyword>none</keyword>
 	    <url>filename</url>
@@ -274,6 +282,7 @@
 		<text>...</text>
 	    </function>
 	</choice>
+    </repeat>
     </value>
     <initial>none</initial>
     <applyto>all elements</applyto>
@@ -289,11 +298,13 @@
 <property>
     <name>background-origin</name>
     <value>
+    <repeat min="1" sep=",">
 	<choice>
 	    <keyword>content-box</keyword>
 	    <keyword>padding-box</keyword>
 	    <keyword>border-box</keyword>
 	</choice>
+    </repeat>
     </value>
     <initial>padding-box</initial>
     <applyto>all elements</applyto>
@@ -304,6 +315,7 @@
 <property>
     <name>background-position</name>
     <value>
+    <repeat min="1" sep=",">
       <choice>
         <group>
         <choice>
@@ -378,6 +390,7 @@
         </reorderable>
         </group>
 	  </choice>
+    </repeat>
     </value>
     <initial>top left</initial>
     <applyto>all elements</applyto>
