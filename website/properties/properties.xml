@@ -4854,13 +4854,14 @@ supplier, item { overflow-wrap: normal; }
     <see><a href="/doc/graphics/#filters">Filters</a></see>
     <comments>
     <p>
-    This property is used to specify the resolution used when
-    rasterizing to images for applying CSS and SVG filters.
+    As a property, <code>-prince-filter-resolution</code> can be
+    applied to all elements and is used to specify the resolution
+    used when rasterizing to images for applying CSS and SVG filters.
     </p>
 
-    <p>If <code>auto</code> then the value is either that given by the
-    <code>--raster-dpi</code> command-line option or the
-    <code>prince-filter-resolution</code> descriptor of
+    <p>If the value <code>auto</code> is specified, then the value
+    is either that given by the <code>--raster-dpi</code> command-line
+    option, or the <code>-prince-filter-resolution</code> descriptor of
     <code>@prince-pdf</code> (see below).
     </p>
     </comments>
@@ -4872,10 +4873,11 @@ supplier, item { overflow-wrap: normal; }
     <inherit2>n/a</inherit2>
     <see2><a href="/doc/graphics/#filters">Filters</a></see2>
     <comments2>
-    <p>This descriptor provides a default resolution to be used for
-    rasterizing to images for applying CSS and SVG filters,
-    for elements whose <code><property name="prince-filter-resolution"/></code>
-    property has its initial ‘<code>auto</code>’ value.
+    <p>
+    As a descriptor in a <code>@prince-pdf</code> at-rule, <code>-prince-filter-resolution</code>
+    provides a default resolution to be used for rasterizing to images for applying CSS and SVG
+    filters, for elements whose <code><property name="prince-filter-resolution"/></code>
+    property has its initial <code>auto</code> value.
     </p>
     </comments2>
 </property>
