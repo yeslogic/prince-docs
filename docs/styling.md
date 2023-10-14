@@ -584,13 +584,13 @@ The special value `none`, which removes the content from the document, is very u
 
 ### Position
 
-Elements can be positioned in various ways with the [`position`](css-props.md#prop-position) CSS property: `static`, `relative`, `absolute`, `fixed`, as well as <code>running( <i>name</i> )</code>.
+Elements can be positioned in various ways with the [`position`](css-props.md#prop-position) CSS property, which can take the values `static`, `relative`, `absolute`, `fixed`, as well as <code>running( <i>name</i> )</code>.
 
 The keyword `static` is the default value, and simply places the element in its natural place in the document flow.
 
 The keyword `relative` does basically the same, except that it furthermore allows to alter the position, relative to where it appears in its natural place, while the keyword `absolute` places the element in an absolute position relative to the *page area* (see [Page regions](paged.md#page-regions)).  The element needs then to be moved into its chosen place: the properties [`top`](css-props.md#prop-top), [`bottom`](css-props.md#prop-bottom), [`left`](css-props.md#prop-left) and [`right`](css-props.md#prop-right) can be used to move the element, respectively adding a "buffer" space at the top, bottom, left or right of the element.
 
-Prince adds two further values to this, in order to handle common positioning tasks in page spreads, namely [`inset-inside`](css-props.md#prop-inset-inside) and [`inset-outside`](css-props.md#prop-inset-outside), adding the "buffer" space respectively inside or outside the page of a page spread (see also [Paged Media](paged.md)).
+Prince adds two further properties, in order to handle common positioning tasks in page spreads, namely [`inset-inside`](css-props.md#prop-inset-inside) and [`inset-outside`](css-props.md#prop-inset-outside), adding the "buffer" space respectively inside or outside the page of a page spread (see also [Paged Media](paged.md)).
 
 The functional expression <code>running( <i>name</i> )</code> is used for moving an element from the natural document flow into a specific [page region](paged.md#page-regions), and is explained in detail in the chapter [Taking elements from the document](paged.md#taking-elements-from-the-document).
 
