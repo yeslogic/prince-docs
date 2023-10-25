@@ -34,6 +34,25 @@
 </property>
 
 <property>
+	<name>accent-color</name>
+	<value>
+	  <choice>
+        <keyword>auto</keyword>
+        <type>color</type>
+	  </choice>
+	</value>
+	<initial>auto</initial>
+    <applyto>radio and checkbox form controls</applyto>
+	<inherit>yes</inherit>
+    <comments>
+    <p class="note">
+    Prince only applies the <code>accent-color</code> property to PDF radio and checkbox form controls.
+    </p>
+    </comments>
+    <spec><a href="https://www.w3.org/TR/css-ui-4/#widget-accent">CSS Basic User Interface Module Level 4</a></spec>
+</property>
+
+<property>
 	<name>align-content</name>
 	<value>
 	  <choice>
