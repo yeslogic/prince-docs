@@ -113,8 +113,9 @@ The initial values for <code>@page</code> styles are documented in the
 <td><code>@prince-overlay</code></td>
 </tr>
 <tr>
-<td colspan="2">The <code>@page</code> rule takes the following CSS properties:
-<code><a href="/doc/css-props#prop-background-attachment">background-attachment</a></code> |
+<td colspan="2">The <code>@page</code> rule takes CSS properties to style the margins, borders, padding and background.
+It equally takes color, font and font-height properties that are inherited by the page-margin boxes - note that they
+are not. inherited by the page area content.  It also takes the following CSS properties:
 <code><a href="/doc/css-props#prop-bleed">bleed</a></code> |
 <code><a href="/doc/css-props#prop-marks">marks</a></code> |
 <code><a href="/doc/css-props#prop-prince-mark-length">-prince-mark-length</a></code> |
