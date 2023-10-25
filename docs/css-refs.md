@@ -160,6 +160,10 @@ and <a href="/doc/css-at-rules/#at-supports"><code>@supports</code></a> at-rules
 <td>Prince supports the new <code>supports()</code> condition for the <code>@import</code> rule.</td>
 </tr>
 <tr>
+<td><a href="https://www.w3.org/TR/css-ui-4/#widget-accent">CSS Basic User Interface Module Level 4</a></td>
+<td>Prince supports the <code>accent-color</code> property for PDF radio and checkbox form controls.</td>
+</tr>
+<tr>
 <td><a href="https://drafts.csswg.org/css-backgrounds-4/">CSS Backgrounds and Borders Module Level 4</a></td>
 <td>Prince recognizes the <code>border-clip</code> property, but takes a different syntax.</td>
 </tr>
