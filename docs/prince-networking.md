@@ -29,7 +29,7 @@ The command-line option [`--ssl-cacert`](command-line.md#cl-ssl-cacert) specifie
 
 The command-line option [`--ssl-version`](command-line.md#cl-ssl-version) sets the minimum version of SSL to allow. It may be one of: `default`, `tlsv1`, `tlsv1.0`, `tlsv1.1`, `tlsv1.2` or `tlsv1.3`. The value `default` lets libcurl choose.
 
-Prince on Windows allows for fine-tuning SSL certificate revocation checks: it can ignore certificate revocation checks that fail due to missing or offline distribution points for the revocation check lists with [`--ssl-revoke-best-effort`](command-line.md#cl-ssl-revoke-best-effort), or it can outright disable them with [`--ssl-no-revoke`](command-line.md#cl-ssl-no-revoke).
+Prince on Windows allows for fine-tuning SSL certificate revocation checks: by default Prince ignores certificate revocation checks that fail due to missing or offline distribution points for the revocation check lists, but this behaviour can be disabled with [`--no-ssl-revoke-best-effort`](command-line.md#cl-no-ssl-revoke-best-effort). Alternatively, it can outright disable certificate revocation checks with [`--ssl-no-revoke`](command-line.md#cl-ssl-no-revoke).
 
 The option [`--insecure`](command-line.md#cl-insecure) disables SSL verification altogether. Please note that using this option is not recommended!  As the name already suggests, all secure connections are downgraded to insecure.
 

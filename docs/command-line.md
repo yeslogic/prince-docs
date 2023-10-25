@@ -332,10 +332,10 @@ The command-line may include the options described below:
   Disable certificate revocation checks.
   This option only has effect on Windows.
   </dd>
-  <dt id="cl-ssl-revoke-best-effort"><code>--ssl-revoke-best-effort</code></dt>
+  <dt id="cl-no-ssl-revoke-best-effort"><code>--no-ssl-revoke-best-effort</code></dt>
   <dd>
-  Ignore certificate revocation checks that fail due to missing or offline
-  distribution points for the revocation check lists.
+  Disable the default behaviour of ignoring certificate revocation checks that fail due
+  to missing or offline distribution points for the revocation check lists.
   This option only has effect on Windows.
   </dd>
   <dt id="cl-insecure"><code>--insecure</code></dt>
