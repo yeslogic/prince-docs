@@ -7067,8 +7067,12 @@ blockquote { margin: 1rem; -prince-resize-options: -1rem; }
 	<p>
     This CSS at-rule descriptor, used with the
     <a href="/doc/css-at-rules/#at-page"><code>@page</code></a> at-rule, defines
-    the size and orientation of the page.  Please see also the
-    <code><property name="prince-rotate-body"/></code> property to control the
+    the size and orientation of the page.  Please note that the <code>portrait</code>
+    keyword makes the height the largest dimension, while the <code>landscape</code>
+    keyword makes the width the largest dimension. This is a Prince-specific quirk.
+    </p>
+    <p>
+    See also the <code><property name="prince-rotate-body"/></code> property to control the
     orientation of selected pages.
     </p>
     </comments>
