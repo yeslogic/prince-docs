@@ -86,6 +86,9 @@ The initial values for CSS properties are defined internally - these are the ini
 
 Page size can be specified using the [`size`](css-props.md#prop-size) property in *length* units or by a page size keyword (see [Page Size Keywords](page-size-keywords.md) for a list), optionally combined with the `portrait` or `landscape` keyword.
 
+<p class="note">
+The <code>portrait</code> keyword makes the height the largest dimension, while the <code>landscape</code> keyword makes the width the largest dimension. This is a Prince-specific quirk.
+</p>
 
 ```
     /* Use A4 paper */
