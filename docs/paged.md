@@ -136,7 +136,7 @@ This is used in [Fancy headers](#fig-fancyheader).
 
 ![A page with content in some of its page regions.](assets/samples/marginboxes-1.colour.png)
 
-Most content appears inside the *page area* of one or more pages - in the above figure the *page area* is marked with a solid black border.  Surrounding the page area is the margin area, defined by the [margins set with `@page` rules](#page-style), which contains the *page-margin boxes*.  Other special areas, i.e. the *page area regions*, are overlaying the page area, or are placed at its left, or right side, or at its top, or bottom.  Collectively, they are known as the *page regions*.
+Most content appears inside the *page area* of one or more pages - in the above figure the *page area* is marked with a solid black border.  Surrounding the page area is the margin area, defined by the [margins set with `@page` rules](#page-style), which contains the *page-margin boxes*.  Other special areas are overlaying the page area, or are placed at its left, or right side, or at its top, or bottom.  Collectively, they are known as the *page area regions*.
 
 The figure above shows the position of some *page-margin boxes*, which can be used for creating running page headers and footers, as well as some common regions in the main *page area*.
 
