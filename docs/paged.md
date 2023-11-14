@@ -18,7 +18,7 @@ Prince produces PDFs - which are a prominent example of paged media. There are a
 
 <dl>
   <dt>Pagination</dt>
-  <dd><p>The major difference between formatting for the web and for PDF/Print is that
+  <dd><p>The major difference between formatting for the web and for PDF is that
   PDF is paginated, i.e. the content is placed on discrete pages.  Pages have a defined
   <a href="/doc/paged#page-size">size</a> and content can be laid out in a specific
   pattern making use of predefined <a href="/doc/paged#page-regions">page regions</a>.
@@ -45,10 +45,15 @@ Prince produces PDFs - which are a prominent example of paged media. There are a
   page of the spread.</p></dd>
 
   <dt>Non-interactive</dt>
-  <dd><p>Last but not least, paged media intended for print is non-interactive by nature.
-  All CSS properties referring to user interaction make no sense, scripting cannot
+  <dd><p>Last but not least, paged media intended for print is non-interactive by nature:
+  all CSS properties referring to user interaction make no sense, scripting cannot
   be interactive and scripts need to run before layout is finished.  But for these
-  details and scripting after layout please check the section on <a href="/doc/javascript#javascript-in-printed-media">JavaScript in Printed Media</a>.</p></dd>
+  details and scripting after layout please check the section on <a href="/doc/javascript#javascript-in-printed-media">JavaScript in Printed Media</a>.</p>
+  <p>Prince, however, also produces PDFs <a href="prince-output/#pdf-versions-and-profiles">not primarily intended for print</a> -
+  <a href="prince-output/#pdf-forms">forms</a>, <a href="prince-output/#pdf-bookmarks">bookmarks</a>,
+  <a href="prince-output/#pdf-links">links</a> and other <a href="prince-output/#pdf-features">features</a>
+  can be used in this case.</p>
+  </dd>
 </dl>
 
 Prince allows you to control a number of options that affect how to format pages, from straight-forward options such as [page size](#page-size), to [page style](#page-style), [page regions](#page-regions) like headers and footers, [pagination control](#controlling-pagination) and [page numbering](gen-content.md#counters-and-numbering).
