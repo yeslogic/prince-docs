@@ -344,6 +344,8 @@ form input, form select option {
 
 In case of conflict, the property has the final say: the command-line option only determines whether the default value `auto` will be treated as `enable` or `disable`.
 
+The property [-prince-pdf-form-field-font-size](css-props.md#prop-prince-pdf-form-field-font-size) allows text inputs in PDF forms to automatically size the text to fit the available space by using the `auto` keyword.
+
 
 ### PDF Printing
 

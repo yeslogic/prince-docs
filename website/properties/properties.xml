@@ -6141,6 +6141,26 @@ supplier, item { overflow-wrap: normal; }
 </property>
 
 <property>
+    <name>prince-pdf-form-field-font-size</name>
+    <value>
+    <choice>
+            <keyword>normal</keyword>
+            <keyword>auto</keyword>
+    </choice>
+    </value>
+    <initial>normal</initial>
+    <applyto>all text input form elements</applyto>
+    <inherit>no</inherit>
+    <extension/>
+    <see><a href="/doc/prince-output/#pdf-forms">PDF Forms</a></see>
+    <comments>
+	<p>
+	This property allows text inputs in PDF forms to automatically size the text to fit the available space by using the <code>auto</code> keyword.
+	</p>
+    </comments>
+</property>
+
+<property>
     <name>prince-pdf-link-type</name>
     <value>
     <choice>
