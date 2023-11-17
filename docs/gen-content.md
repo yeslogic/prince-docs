@@ -52,7 +52,7 @@ CSS
       content: leader('.') "p. " target-counter(attr(href), page);
     }
 ```
-The above example will generate something looking like "Chapter 1..................p. 5", assuming that chapter 1 indeed starts on page 5!  See below for the two other functions appearing in this example, namely `target-counter()` and `attr()`.
+The above example will generate something looking like "Chapter 1..................p. 5", assuming that chapter 1 indeed starts on page 5!  See [below](#using-target-counter) for the two other functions appearing in this example, namely `target-counter()` and `attr()`.
 
 The properties can also insert external content fetched from another resource. This can be done with the following functions:
 
