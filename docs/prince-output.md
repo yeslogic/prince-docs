@@ -346,6 +346,8 @@ In case of conflict, the property has the final say: the command-line option onl
 
 The property [-prince-pdf-form-field-font-size](css-props.md#prop-prince-pdf-form-field-font-size) allows text inputs in PDF forms to automatically size the text to fit the available space by using the `auto` keyword.
 
+Prince also supports <code>&lt;input type="prince-pdf-signature"&gt;</code> to create signature fields in PDF forms.
+
 
 ### PDF Printing
 
