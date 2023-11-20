@@ -153,30 +153,10 @@ Prince also supports the two special keywords <code>initial</code> and <code>inh
         <td>
           <xsl:choose>
             <xsl:when test="alias">
-              <xsl:choose>
-                <xsl:when test="/properties/property[name=$alias]/inherit='yes'">
-                  yes
-                </xsl:when>
-                <xsl:when test="/properties/property[name=$alias]/inherit='no'">
-                  no
-                </xsl:when>
-                <xsl:when test="/properties/property[name=$alias]/inherit='n/a'">
-                  n/a
-                </xsl:when>
-              </xsl:choose>
+              <xsl:apply-templates select="/properties/property[name=$alias]/inherit"/>
             </xsl:when>
             <xsl:otherwise>
-              <xsl:choose>
-                <xsl:when test="inherit='yes'">
-                  yes
-                </xsl:when>
-                <xsl:when test="inherit='no'">
-                  no
-                </xsl:when>
-                <xsl:when test="inherit='n/a'">
-                  n/a
-                </xsl:when>
-              </xsl:choose>
+              <xsl:apply-templates select="inherit"/>
             </xsl:otherwise>
           </xsl:choose>
         </td>
@@ -364,14 +344,7 @@ Prince also supports the two special keywords <code>initial</code> and <code>inh
           Inherited
         </th>
         <td>
-          <xsl:choose>
-            <xsl:when test="inherit2='yes'">
-              yes
-            </xsl:when>
-            <xsl:when test="inherit2='no'">
-              no
-            </xsl:when>
-          </xsl:choose>
+          <xsl:apply-templates select="inherit2"/>
         </td>
       </tr>
     </table>
@@ -428,7 +401,7 @@ Prince also supports the two special keywords <code>initial</code> and <code>inh
 
 </xsl:template>
 
-<xsl:template match="initial|initial2">
+<xsl:template match="initial|initial2|inherit|inherit2">
       <xsl:value-of select="."/>
 </xsl:template>
 
@@ -614,7 +587,7 @@ Prince also supports the two special keywords <code>initial</code> and <code>inh
 <xsl:template match="repeat">
     <xsl:param name="indent"/>
     <xsl:choose>
-    <xsl:when test="type and count(*)+count(text()[normalize-space(.)!=''])=1">
+    <xsl:when test="ref or type and count(*)+count(text()[normalize-space(.)!=''])=1">
         <xsl:apply-templates select="*">
         <xsl:with-param name="indent" select="$indent"/>
         </xsl:apply-templates>

@@ -18,7 +18,7 @@ property =
 		element value { value+ },
 		element initial { text },
 		element applyto { text },
-		element inherit { "no" | "yes" | "n/a" },
+		element inherit { text },
 		element shorthand {
 		    element prop { text }+
 		} ?,
@@ -32,7 +32,7 @@ property =
 		element value2 { value+ }?,
 		element initial2 { text }?,
 		element applyto2 { text }?,
-		element inherit2 { "no" | "yes" | "n/a" }?,
+		element inherit2 { text }?,
 		element example2 { text }*,
 		element see2 { reference | html-link }*,
 		element comments2 { para+ } ?
