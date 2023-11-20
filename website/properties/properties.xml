@@ -3640,12 +3640,10 @@
     <applyto>all elements, except elements with table display types other than table-caption, table and inline-table</applyto>
     <inherit>no</inherit>
     <shorthand>
-	<prop>margin-bottom</prop>
-	<prop>margin-inside</prop>
-	<prop>margin-left</prop>
-	<prop>margin-outside</prop>
-	<prop>margin-right</prop>
 	<prop>margin-top</prop>
+	<prop>margin-right</prop>
+	<prop>margin-bottom</prop>
+	<prop>margin-left</prop>
     </shorthand>
     <see><a href="/doc/styling/#margin">Margin</a></see>
     <spec><a href="https://www.w3.org/TR/CSS2/box.html#margin-properties">CSS 2.1</a></spec>
