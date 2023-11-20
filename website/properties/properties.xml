@@ -3302,6 +3302,30 @@
 </property>
 
 <property>
+    <name>inset</name>
+    <value>
+	<repeat min="1" max="4">
+        <ref>top</ref>
+	</repeat>
+    </value>
+    <initial>auto</initial>
+    <applyto>positioned elements</applyto>
+    <inherit>no</inherit>
+    <shorthand>
+        <prop>top</prop>
+        <prop>right</prop>
+        <prop>bottom</prop>
+        <prop>left</prop>
+    </shorthand>
+    <comments>
+	<p>
+	This property has the same multi-value syntax of the <code><property name="margin"/></code> shorthand.
+	</p>
+    </comments>
+    <spec><a href="https://www.w3.org/TR/css-logical-1/#propdef-inset">CSS Logical Properties and Values Level 1</a></spec>
+</property>
+
+<property>
     <name>inset-inside</name>
     <value>
 	<choice>
