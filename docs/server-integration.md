@@ -723,13 +723,16 @@ By omitting log messages, or by delaying them until after the PDF is written, th
 
 ### Fail-Safe Options
 
-Prince offers eight Fail-Safe Options:
+Prince offers nine Fail-Safe Options:
 
 `--fail-dropped-content`  
 Fail if any content is dropped, e.g. due to a specified attachment which needs to be dropped because the chosen PDF profile does not support attachments, or due to a layout problem, where Prince cannot pack a block on the page for some reason and is forced to discard it.
 
 `--fail-missing-resources`  
 Fail if any resources cannot be loaded, e.g. due to network problems.
+
+`--fail-incorrect-references`  
+Fail if any cross-references might be incorrect, which might e.g. happen when a tight-fitting line pushes content to the next page, which in turn changes the original line and thus reverts the page breaks introduced, creating a loop.
 
 `--fail-stripped-transparency`  
 Fail if transparent images are used with a PDF profile that does not support opacity.
