@@ -7717,6 +7717,25 @@ blockquote { margin: 1rem; -prince-resize-options: -1rem; }
     <spec><a href="https://www.w3.org/TR/css-text-decor-3/#text-decoration-style-property">CSS Text Decoration Module Level 3</a></spec>
 </property>
 
+<property>
+    <name>text-decoration-thickness</name>
+    <value>
+    <choice>
+      <keyword>auto</keyword>
+      <keyword>from-font</keyword>
+      <type>length-percentage</type>
+    </choice>
+    </value>
+    <initial>solid</initial>
+    <applyto>all elements</applyto>
+    <inherit>no</inherit>
+    <see><a href="/doc/styling/#text-formatting">Text formatting</a></see>
+    <comments>
+    <p></p>
+    </comments>
+    <spec><a href="https://drafts.csswg.org/css-text-decor-4/#text-decoration-width-property">CSS Text Decoration Module Level 4 Draft</a></spec>
+</property>
+
 <!--
 <property>
     <name>text-height</name>
@@ -7948,6 +7967,21 @@ blockquote { margin: 1rem; -prince-resize-options: -1rem; }
     <inherit>no</inherit>
     <deprecated/>
     <see><a href="/doc/graphics/#color">Color</a></see>
+</property>
+
+<property>
+    <name>text-underline-offset</name>
+    <value>
+    <choice>
+      <keyword>auto</keyword>
+      <type>length-percentage</type>
+    </choice>
+    </value>
+    <initial>auto</initial>
+    <applyto>all elements</applyto>
+    <inherit>yes</inherit>
+    <see><a href="/doc/styling/#text-formatting">Text formatting</a></see>
+    <spec><a href="https://www.w3.org/TR/css-text-decor-4/#underline-offset">CSS Text Decoration Module Level 4</a></spec>
 </property>
 
 <property>
