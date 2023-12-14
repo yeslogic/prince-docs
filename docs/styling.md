@@ -421,7 +421,13 @@ Next up you should decide whether to give it some [`color`](css-props.md#prop-co
         color: blue;
     }
 ```
-Special formatting can be achieved through the [`font-style`](css-props.md#prop-font-style), [`font-weight`](css-props.md#prop-font-weight) or [`font-variant`](css-props.md#prop-font-variant) properties - all of which can also be set with the shorthand property [`font`](css-props.md#prop-font). For special effects one can use the properties [`text-transform`](css-props.md#prop-text-transform), [`text-decoration`](css-props.md#prop-text-decoration) - or even [`text-shadow`](css-props.md#prop-text-shadow).
+Special formatting can be achieved through the [`font-style`](css-props.md#prop-font-style), [`font-weight`](css-props.md#prop-font-weight) or [`font-variant`](css-props.md#prop-font-variant) properties - all of which can also be set with the shorthand property [`font`](css-props.md#prop-font).
+
+The property [`text-transform`](css-props.md#prop-text-transform) allows to display a text in lowercase, uppercase, or capitalized.
+
+A text can also be decorated with various styles and shapes of lines: the property [`text-decoration`](css-props.md#prop-text-decoration), a shorthand for defining various aspects of the decoration, such as color or style, allows a line to be placed below, above, or through a text. The thickness of the line can be fine-tuned with [text-decoration-thickness](css-props.md#prop-text-decoration-thickness), while the placement of an underline can be determined with [text-underline-position](css-props.md#prop-text-underline-position).
+
+Last but not least, the property [`text-shadow`](css-props.md#prop-text-shadow) allows for adding a special effect to the text.
 
 It is also possible to style the vertical alignment of text in an inline box with the [`vertical-align`](css-props.md#prop-vertical-align) property. The value `baseline` is the default, `sub` and `super` align the baseline of the element with the subscript-baseline or superscript-baseline of its parent respectively. The `text-top` and `text-bottom` values align the top of the element with the top or bottom of the parent's font, while `middle` aligns the middle of the element with the baseline plus half the x-height of the parent.
 
