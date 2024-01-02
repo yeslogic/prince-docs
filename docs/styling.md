@@ -427,7 +427,7 @@ The property [`text-transform`](css-props.md#prop-text-transform) allows to disp
 
 A text can also be decorated with various styles and shapes of lines: the property [`text-decoration`](css-props.md#prop-text-decoration), a shorthand for defining various aspects of the decoration, such as color or style, allows a line to be placed below, above, or through a text. The thickness of the line can be fine-tuned with [text-decoration-thickness](css-props.md#prop-text-decoration-thickness), while the placement of an underline can be determined with [text-underline-position](css-props.md#prop-text-underline-position).
 
-Last but not least, the property [`text-shadow`](css-props.md#prop-text-shadow) allows for adding a special effect to the text.
+Last but not least, the property [`text-shadow`](css-props.md#prop-text-shadow) allows for adding special shadow effects to the text and all its decorations. The shadows are painted front-to-back, i.e. the first shadow is painted on top of the subsequent ones, but never overlaying the text itself.
 
 It is also possible to style the vertical alignment of text in an inline box with the [`vertical-align`](css-props.md#prop-vertical-align) property. The value `baseline` is the default, `sub` and `super` align the baseline of the element with the subscript-baseline or superscript-baseline of its parent respectively. The `text-top` and `text-bottom` values align the top of the element with the top or bottom of the parent's font, while `middle` aligns the middle of the element with the baseline plus half the x-height of the parent.
 
