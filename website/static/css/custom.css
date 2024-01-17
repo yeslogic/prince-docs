@@ -23,16 +23,20 @@ table#pregions td[rowspan] {
     height: 50px !important;
     padding: 0px;
 }
+.headerWrapper {
+    width: 1150px;
+    padding: 0;
+}
 .headerWrapper, .headerWrapper header, .headerWrapper header a, .navigationWrapper, .slidingNav {
     height: 50px !important;
 }
 .headerWrapper header a {
     padding: 8px 0px;
 }
-.navigationSlider .slidingNav ul li:first-child, .navigationSlider .slidingNav ul li:first-child > a:hover, .navigationSlider .slidingNav ul li.siteNavGroupActive > a {
+.navigationSlider .slidingNav ul li:nth-child(3), .navigationSlider .slidingNav ul li:nth-child(3) > a:hover, .navigationSlider .slidingNav ul li.siteNavGroupActive > a {
     background-color: #fff !important;
 }
-.nav-site li:first-child a {
+.nav-site li:nth-child(3) a {
     color: #333 !important;
 }
 .nav-site li a:hover {

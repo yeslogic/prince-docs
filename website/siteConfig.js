@@ -37,9 +37,11 @@ const siteConfig = {
 
   // For no header links in the top nav bar -> headerLinks: [],
   headerLinks: [
+    {href: '/purchase/', label: 'Buy Prince'},
+    {href: '/samples/', label: 'Samples'},
     {href: '/doc/', label: 'Documentation'},
-    {href: '/doc/help', label: 'Help'},
-    {href: '/doc/releases', label: 'Release Notes'},
+    {href: '/doc/help/', label: 'Help'},
+//    {href: '/doc/releases', label: 'Release Notes'},
 //    {page: 'roadmap', label: 'Roadmap'},
     {search: true},
   ],
