@@ -2,31 +2,14 @@
 title: Help
 ---
 <style>
-.navigationSlider .slidingNav ul li:nth-child(3) {
-    background-color: #7d146c !important;
-}
-.navigationSlider .slidingNav ul li:nth-child(3) a {
-        color: rgba(255, 255, 255, 0.8) !important;
-}
-.navigationSlider .slidingNav ul li:nth-child(3) a:hover {
-        background-color: #7d146c !important;
-}
 .navigationSlider .slidingNav ul li:nth-child(4) {
     background-color: #fff !important;
 }
 .navigationSlider .slidingNav ul li:nth-child(4) a {
     color: #333 !important;
 }
-.navigationSlider .slidingNav ul li:nth-child(4) a:hover {
-    background-color: #fff !important;
-}
 .navigationSlider .slidingNav ul li a:hover {
     color: #22b573 !important;
-}
-@media only screen and (max-width: 1023px) {
-    .navigationSlider .slidingNav ul li:nth-child(3) {
-        background-color: #3b5668 !important;
-    }
 }
 </style>
 

@@ -1,7 +1,17 @@
 ---
 title: CSS Functional Expressions
 ---
-
+<style>
+.navigationSlider .slidingNav ul li:nth-child(3), .navigationSlider .slidingNav ul li:nth-child(3) > a:hover, .navigationSlider .slidingNav ul li.siteNavGroupActive > a {
+    background-color: #fff;
+}
+.nav-site li:nth-child(3) a {
+    color: #333 !important;
+}
+.nav-site li:nth-child(3) a:hover {
+    color: #22b573 !important;;
+}
+</style>
 In this section you find the documentation for the supported CSS functional expressions. For additional details, make sure to also check the linked properties that use the functions.
 
 \* functions marked with an asterisk are Prince extensions.

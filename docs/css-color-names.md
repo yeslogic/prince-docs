@@ -2,6 +2,18 @@
 title: Color Names
 ---
 
+<style>
+.navigationSlider .slidingNav ul li:nth-child(3), .navigationSlider .slidingNav ul li:nth-child(3) > a:hover, .navigationSlider .slidingNav ul li.siteNavGroupActive > a {
+    background-color: #fff;
+}
+.nav-site li:nth-child(3) a {
+    color: #333 !important;
+}
+.nav-site li:nth-child(3) a:hover {
+    color: #22b573 !important;;
+}
+</style>
+
 CSS offers several ways of defining colors - either by keyword, or by numerical specification expressed as RGB(A), CMYK, HSL(A), or HWB colors. For more details, please see the chapter on [Color](graphics.md#color).
 
 
