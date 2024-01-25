@@ -34,11 +34,15 @@ table#pregions td[rowspan] {
 .headerWrapper header a {
     padding: 8px 0px;
 }
-.navigationSlider .slidingNav ul li:nth-child(3), .navigationSlider .slidingNav ul li:nth-child(3) > a:hover, .navigationSlider .slidingNav ul li.siteNavGroupActive > a {
-    background-color: #fff !important;
+.navigationSlider .slidingNav ul li a {
+    color: #fff;
+    padding: 0px 20px;
+    font-size: 14px;
+    font-weight: 400;
+    font-family: Lato, Verdana, sans-serif;
 }
-.nav-site li:nth-child(3) a {
-    color: #333 !important;
+.navigationSlider .slidingNav ul li a:hover {
+    background-color: inherit;
 }
 .nav-site li a:hover {
     color: #22b573 !important;
