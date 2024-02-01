@@ -220,6 +220,13 @@ The command-line may include the options described below:
   <dd>
     Enable XML external entities (XXE).
   </dd>
+  <dt id="cl-xml-parse huge">
+    <code>--xml-parse huge</code>
+  </dt>
+  <dd>
+    Enable loading very large XML documents. This option is only for Linux with
+    libxml2 older than version 2.11.0.
+  </dd>
   <dt id="cl-no-local-files">
     <code>--no-local-files</code>
   </dt>
