@@ -28,7 +28,7 @@ Prince applies default styles to all (X)HTML documents - these style rules can b
 Fonts
 -----
 
-Prince supports the Web Open Font (WOFF/WOFF2), TrueType and OpenType (with TTF or CFF outlines, SVG, and CBLC/CBDT or sbix colour bitmaps) font formats, as well as the TTC and WOFF2 font collections.
+Prince supports the Web Open Font (WOFF/WOFF2), TrueType and OpenType (with TTF or CFF outlines, SVG, CBLC/CBDT or sbix colour bitmaps, and variable) font formats, as well as the TTC and WOFF2 font collections.
 
 ### Defining a font family
 
