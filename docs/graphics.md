@@ -2,7 +2,19 @@
 title: Graphics
 ---
 
-Prince supports a wide range of graphic features, treated in more detail in the following sections. RGB, RGBA, HSL, HSLA, CMYK, and named spot colors are supported, and so is color management. Bitmap images and SVG are supported.
+<style>
+.navigationSlider .slidingNav ul li:nth-child(3), .navigationSlider .slidingNav ul li:nth-child(3) > a:hover, .navigationSlider .slidingNav ul li.siteNavGroupActive > a {
+    background-color: #fff;
+}
+.nav-site li:nth-child(3) a {
+    color: #333 !important;
+}
+.nav-site li:nth-child(3) a:hover {
+    color: #22b573 !important;;
+}
+</style>
+
+Prince supports a wide range of graphic features, treated in more detail in the following sections. RGB(A), CMYK, HSL(A), HWB, and named spot colors are supported, and so is color management. Bitmap images and SVG are supported.
 
 Color
 -----

@@ -2,7 +2,19 @@
 title: Paged Media
 ---
 
-Prince produces PDFs - which are a prominent example of paged media. There are a few differences that are crucial to keep in mind when preparing a document for paged media intended for print:
+<style>
+.navigationSlider .slidingNav ul li:nth-child(3), .navigationSlider .slidingNav ul li:nth-child(3) > a:hover, .navigationSlider .slidingNav ul li.siteNavGroupActive > a {
+    background-color: #fff;
+}
+.nav-site li:nth-child(3) a {
+    color: #333 !important;
+}
+.nav-site li:nth-child(3) a:hover {
+    color: #22b573 !important;;
+}
+</style>
+
+Prince produces PDFs - which are a prominent example of paged media. There are a few points that are crucial to keep in mind when preparing a document for paged media, specially if intended for print:
 
 <dl>
   <dt>Pagination</dt>

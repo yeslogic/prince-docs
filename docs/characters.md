@@ -2,6 +2,18 @@
 title: Character Entities
 ---
 
+<style>
+.navigationSlider .slidingNav ul li:nth-child(3), .navigationSlider .slidingNav ul li:nth-child(3) > a:hover, .navigationSlider .slidingNav ul li.siteNavGroupActive > a {
+    background-color: #fff;
+}
+.nav-site li:nth-child(3) a {
+    color: #333 !important;
+}
+.nav-site li:nth-child(3) a:hover {
+    color: #22b573 !important;;
+}
+</style>
+
 Character entities are a method of including arbitrary characters in XML documents by referencing their UNICODE number rather than writing them directly. CSS has a similar mechanism to include special characters.
 
 This can be convenient when you wish to include characters such as smart quotes, symbols or mathematical operators that do not exist in the character encoding that you are using for your XML documents (such as ASCII or ISO-8859-1 "Latin-1"), or when you want to insert some of these characters into the final layout by means of CSS.

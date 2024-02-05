@@ -2,6 +2,18 @@
 title: Prince Output
 ---
 
+<style>
+.navigationSlider .slidingNav ul li:nth-child(3), .navigationSlider .slidingNav ul li:nth-child(3) > a:hover, .navigationSlider .slidingNav ul li.siteNavGroupActive > a {
+    background-color: #fff;
+}
+.nav-site li:nth-child(3) a {
+    color: #333 !important;
+}
+.nav-site li:nth-child(3) a:hover {
+    color: #22b573 !important;;
+}
+</style>
+
 Prince produces PDF files that are compatible with Adobe Acrobat and other PDF viewers. The output can be controlled in several different ways, addressing different aspects of the resulting files.
 
 For the error and warning output log, please see [Output log](help.md#output-log).

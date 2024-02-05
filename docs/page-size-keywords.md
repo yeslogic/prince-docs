@@ -2,6 +2,18 @@
 title: Page Size Keywords
 ---
 
+<style>
+.navigationSlider .slidingNav ul li:nth-child(3), .navigationSlider .slidingNav ul li:nth-child(3) > a:hover, .navigationSlider .slidingNav ul li.siteNavGroupActive > a {
+    background-color: #fff;
+}
+.nav-site li:nth-child(3) a {
+    color: #333 !important;
+}
+.nav-site li:nth-child(3) a:hover {
+    color: #22b573 !important;;
+}
+</style>
+
 Prince supports the following page size keywords.
 
 Keywords are *not* case sensitive, thus "A4" and "a4" are equivalent.
