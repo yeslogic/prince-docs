@@ -36,6 +36,7 @@ table#pregions td[rowspan] {
 }
 .navigationSlider .slidingNav ul li a {
     color: #fff;
+    background-color: inherit;
     padding: 0px 20px;
     font-size: 14px;
     font-weight: 400;
