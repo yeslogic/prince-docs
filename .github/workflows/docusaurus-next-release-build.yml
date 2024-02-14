@@ -31,8 +31,8 @@ jobs:
         shell: bash
       - name: Install Prince
         run: |
-          curl https://www.princexml.com/download/prince_15.2-1_ubuntu22.04_amd64.deb -O
-          sudo apt install ./prince_15.2-1_ubuntu22.04_amd64.deb
+          curl https://www.princexml.com/download/prince_15.3-1_ubuntu22.04_amd64.deb -O
+          sudo apt install ./prince_15.3-1_ubuntu22.04_amd64.deb
       - name: Make the page region image
         run: |
           cd ./website/samples
