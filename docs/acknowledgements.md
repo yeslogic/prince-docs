@@ -27,7 +27,7 @@ library is used by the Mercury runtime for garbage collection.
 <dt id="cairo-pixman">Cairo and Pixman</dt>
 <dd>
 The <a href="https://www.cairographics.org/">Cairo</a>
-and <a href="http://www.pixman.org/">Pixman</a>
+and <a href="https://www.pixman.org/">Pixman</a>
 libraries are used by Prince for rasterization.
 </dd>
 
@@ -35,7 +35,7 @@ libraries are used by Prince for rasterization.
 <dd>
 Prince uses the
 hyphenation pattern files from the
-<a href="http://tug.ctan.org/tex-archive/language/hyph-utf8/tex/generic/hyph-utf8/patterns/txt/">CTAN archive</a>.
+<a href="https://ctan.org/tex-archive/language/hyph-utf8/tex/generic/hyph-utf8/patterns/txt//">CTAN archive</a>.
 </dd>
 
 <dt id="datrie">datrie</dt>
@@ -89,7 +89,7 @@ library is used by Prince for OpenMP support.
 
 <dt id="libpng">libpng</dt>
 <dd>
-The <a href="http://libpng.org/pub/png/libpng.html">libpng</a>
+The <a href="https://libpng.sourceforge.io/index.html">libpng</a>
 library is used by Prince to load PNG image files.
 </dd>
 
@@ -101,7 +101,7 @@ library is used by Prince to handle word breaking in the Thai language.
 
 <dt id="libtiff">libtiff</dt>
 <dd>
-The <a href="http://www.libtiff.org/">libtiff</a>
+The <a href="https://libtiff.gitlab.io/libtiff/">libtiff</a>
 library is used by Prince to load TIFF image files.
 </dd>
 
