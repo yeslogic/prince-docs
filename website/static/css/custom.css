@@ -108,6 +108,9 @@ table.property-table td {
 #version-nav > summary::-webkit-details-marker {
     display: none;
 }
+#prop-list summary, #js-support-table summary, dt[id], th[id] {
+    scroll-margin-top: 60px;
+}
 #prop-list summary, #js-support-table summary {
   font-weight: bold;
   padding: 0.7em;
@@ -355,7 +358,11 @@ ul.toc-headings li ul.toc-headings li a.active {
 @media only screen and (min-device-width: 360px) and (max-device-width: 736px) {
 }
 
-@media only screen and (min-width: 1024px) {
+@media only screen and (max-width: 1024px) {
+    #prop-list summary, #js-support-table summary, dt[id], th[id] {
+        scroll-margin-top: 158px;
+    }
+
 }
 
 @media only screen and (max-width: 1023px) {
