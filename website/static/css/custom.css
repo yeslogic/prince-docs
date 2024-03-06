@@ -34,7 +34,8 @@ table#pregions td[rowspan] {
 .headerWrapper header a {
     padding: 8px 0px;
 }
-.navigationSlider .slidingNav ul li a {
+.navigationSlider .slidingNav ul li a,
+.navigationSlider .slidingNav ul li > a:focus {
     color: #fff;
     background-color: inherit;
     padding: 0px 20px;
