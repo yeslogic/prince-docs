@@ -203,23 +203,23 @@ The following table shows the default fonts for the main languages on Windows, M
 </tr>
 <tr>
 <td>Chinese, simplified</td>
-<td>AR PL UMing CN, AR PL SungtiL GB</td>
+<td>AR PL UMing CN, AR PL SungtiL GB, Noto CJK</td>
 </tr>
 <tr>
 <td>Chinese, traditional (TW)</td>
-<td>AR PL UMing TW, AR PL Mingti2L Big5</td>
+<td>AR PL UMing TW, AR PL Mingti2L Big5, Noto CJK</td>
 </tr>
 <tr>
 <td>Chinese, traditional (HK)</td>
-<td>AR PL UMing HK, AR PL Mingti2L Big5</td>
+<td>AR PL UMing HK, AR PL Mingti2L Big5, Noto CJK</td>
 </tr>
 <tr>
 <td>Japanese</td>
-<td>Kochi Mincho, IPAMincho, TakaoMincho</td>
+<td>Kochi Mincho, IPAMincho, TakaoMincho, Noto CJK</td>
 </tr>
 <tr>
 <td>Korean</td>
-<td>UnBatang, Baekmuk Batang</td>
+<td>UnBatang, Baekmuk Batang, Noto CJK</td>
 </tr>
 <tr>
 <td>Devanagari / Hindi</td>
@@ -310,23 +310,23 @@ The following table shows the default fonts for the main languages on Windows, M
 </tr>
 <tr>
 <td>Chinese, simplified</td>
-<td>AR PL UKai CN, AR PL KaitiM GB</td>
+<td>AR PL UKai CN, AR PL KaitiM GB, Noto CJK</td>
 </tr>
 <tr>
 <td>Chinese, traditional (TW)</td>
-<td>AR PL UKai TW, AR PL KaitiM Big5</td>
+<td>AR PL UKai TW, AR PL KaitiM Big5, Noto CJK</td>
 </tr>
 <tr>
 <td>Chinese, traditional (HK)</td>
-<td>AR PL UKai HK, AR PL KaitiM Big5</td>
+<td>AR PL UKai HK, AR PL KaitiM Big5, Noto CJK</td>
 </tr>
 <tr>
 <td>Japanese</td>
-<td>Kochi Gothic, IPAGothic, TakaoGothic</td>
+<td>Kochi Gothic, IPAGothic, TakaoGothic, Noto CJK</td>
 </tr>
 <tr>
 <td>Korean</td>
-<td>UnDotum, Baekmuk Gulim</td>
+<td>UnDotum, Baekmuk Gulim, Noto CJK</td>
 </tr>
 <tr>
 <td rowspan="12"><code>monospace</code></td>
