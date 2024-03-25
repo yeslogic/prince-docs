@@ -582,6 +582,7 @@ var stdAnnotated = {
             lastChild: {},
             previousSibling: {},
             nextSibling: {},
+            parentElement: {},
             parentNode: {},
             removeChild: {},
             appendChild: {},
