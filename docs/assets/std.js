@@ -451,6 +451,7 @@ var std = {
             lastChild: {},
             previousSibling: {},
             nextSibling: {},
+            parentElement: {},
             parentNode: {},
             removeChild: {},
             appendChild: {},
