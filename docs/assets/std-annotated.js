@@ -602,6 +602,7 @@ var stdAnnotated = {
             firstElementChild: {},
             lastElementChild: {},
             childElementCount: {},
+            readyState: {},
             getElementsByTagName: {},
             getElementsByTagNameNS: {},
             getElementsByClassName: {},
