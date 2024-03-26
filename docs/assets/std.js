@@ -471,6 +471,7 @@ var std = {
             firstElementChild: {},
             lastElementChild: {},
             childElementCount: {},
+            readyState: {},
             getElementsByTagName: {},
             getElementsByTagNameNS: {},
             getElementsByClassName: {},
