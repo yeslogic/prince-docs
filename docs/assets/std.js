@@ -314,6 +314,7 @@ var std = {
         info: {},
         warn: {}
     },
+    frames: {},
     // Typed Arrays
     ArrayBuffer: {
         prototype: {
