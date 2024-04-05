@@ -445,6 +445,7 @@ var stdAnnotated = {
         info: {},
         warn: {}
     },
+    frames: {},
     // Typed Arrays
     ArrayBuffer: {
         prototype: {
