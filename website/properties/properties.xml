@@ -6537,7 +6537,7 @@ supplier, item { overflow-wrap: normal; }
     <inherit>n/a</inherit>
     <extension/>
     <example>@prince-pdf {
-	prince-pdf-role-map:
+	-prince-pdf-role-map:
 	    "Chapter" Sect,
 	    "H7" P,
 	    "Italic" "I",
