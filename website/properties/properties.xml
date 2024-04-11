@@ -6663,6 +6663,7 @@ supplier, item { overflow-wrap: normal; }
         <keyword>Note</keyword>
         <keyword>Reference</keyword>
         <keyword>none</keyword>
+        <string>role-map-ident</string>
     </choice>
     </value>
     <initial>auto</initial>
@@ -6675,6 +6676,9 @@ supplier, item { overflow-wrap: normal; }
 .toc li {
   -prince-pdf-tag-type: TOCI;
 }</example>
+    <example>div.chapter {
+    -prince-pdf-tag-type: "Chapter";
+}</example>
     <see><a href="/doc/prince-output/#pdf-tags">PDF Tags</a></see>
     <comments>
     <p>
@@ -6683,6 +6687,9 @@ supplier, item { overflow-wrap: normal; }
     </p>
     <p>
     The special value <code>none</code> can be used to make specific elements (such as e.g. wrapper span or block elements) transparent in a tagged PDF structure tree.
+    </p>
+    <p>
+    The string value points to a role map identifier declared in the property <code><property name="prince-pdf-role-map"/></code>.
     </p>
     </comments>
 </property>
