@@ -6502,6 +6502,7 @@ supplier, item { overflow-wrap: normal; }
             <keyword>Caption</keyword>
             <keyword>TOC</keyword>
             <keyword>TOCI</keyword>
+            <keyword>NonStruct</keyword>
             <keyword>P</keyword>
             <keyword>H1</keyword>
             <keyword>H2</keyword>

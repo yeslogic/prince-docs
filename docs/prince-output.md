@@ -543,6 +543,7 @@ The possible values are the following PDF tag types:
 -   `Caption`
 -   `TOC`
 -   `TOCI`
+-   `NonStruct`
 -   `P`
 -   `H1`
 -   `H2`
