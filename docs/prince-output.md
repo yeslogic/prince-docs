@@ -573,7 +573,25 @@ The default value `auto` leaves the tag assignment to Prince.
 
 The special value `none` can be used to make specific elements (such as e.g. wrapper span or block elements) transparent in a tagged PDF structure tree.
 
-PDF tags can be given a custom title with the [`-prince-pdf-tag-title`](css-props.md#prop-prince-pdf-tag-title) property.  We could expand on the previous example, specifying the following:
+Prince allows to expand the tag assignment by providing a mechanism for custom role map declarations with the CSS property [`-prince-pdf-role-map`](css-props.md#prop-prince-pdf-role-map). The custom tag types thus declared, can then be used by the [`-prince-pdf-tag-type`](css-props.md#prop-prince-pdf-tag-type) property.
+
+CSS
+
+```
+    @prince-pdf {
+      -prince-pdf-role-map:
+        "Chapter" Sect,
+        "H7" P,
+        "Italic" "I",
+        "I" Span;
+    }
+
+    div.chapter {
+      -prince-pdf-tag-type: "Chapter";
+    }
+```
+
+PDF tags can also be given a custom title with the [`-prince-pdf-tag-title`](css-props.md#prop-prince-pdf-tag-title) property.  We could expand on the previous example, specifying the following:
 
 CSS
 
