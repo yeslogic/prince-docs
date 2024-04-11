@@ -6487,6 +6487,86 @@ supplier, item { overflow-wrap: normal; }
 </property>
 
 <property>
+    <name>prince-pdf-role-map</name>
+    <value>
+    <repeat min="1" sep=",">
+    <sequence>
+        <ident>ident</ident>
+        <choice>
+            <keyword>Part</keyword>
+            <keyword>Art</keyword>
+            <keyword>Sect</keyword>
+            <keyword>Div</keyword>
+            <keyword>Index</keyword>
+            <keyword>BlockQuote</keyword>
+            <keyword>Caption</keyword>
+            <keyword>TOC</keyword>
+            <keyword>TOCI</keyword>
+            <keyword>P</keyword>
+            <keyword>H1</keyword>
+            <keyword>H2</keyword>
+            <keyword>H3</keyword>
+            <keyword>H4</keyword>
+            <keyword>H5</keyword>
+            <keyword>H6</keyword>
+            <keyword>OL</keyword>
+            <keyword>UL</keyword>
+            <keyword>LI</keyword>
+            <keyword>Lbl</keyword>
+            <keyword>DL</keyword>
+            <keyword>DL-Div</keyword>
+            <keyword>DT</keyword>
+            <keyword>DD</keyword>
+            <keyword>Span</keyword>
+            <keyword>Quote</keyword>
+            <keyword>Table</keyword>
+            <keyword>BibEntry</keyword>
+            <keyword>Code</keyword>
+            <keyword>Figure</keyword>
+            <keyword>Formula</keyword>
+            <keyword>Artifact</keyword>
+            <keyword>Note</keyword>
+            <keyword>Reference</keyword>
+            <string>custom-tag-type</string>
+        </choice>
+    </sequence>
+    </repeat>
+    </value>
+    <initial>""</initial>
+    <applyto>@prince-pdf at-rule</applyto>
+    <inherit>n/a</inherit>
+    <extension/>
+    <example>@prince-pdf {
+	prince-pdf-role-map:
+	    "Chapter" Sect,
+	    "H7" P,
+	    "Italic" "I",
+	    "I" Span;
+    }</example>
+	<see><a href="/doc/prince-output/#pdf-tags">PDF Tags</a></see>
+    <comments>
+    <p>
+    This property declares a role map for any custom tag type, thus expanding the roles declared by the property <code><property name="prince-pdf-tag-type"/></code>.
+    </p>
+    <p>
+    Each <code><i>custom-tag-type</i></code> string in the role map represents a custom structure type name. The following strings cannot be used as custom structure type names:
+    </p>
+    <ul>
+      <li>an empty string;</li>
+      <li>the string "Artifact";</li>
+      <li>any of the names accepted by <code><property name="prince-pdf-tag-type"/></code>;</li>
+      <li>any standard PDF structure type names.</li>
+    </ul>
+    <p>
+    Custom structure types in the role map must directly or indirectly map to one of the structure types accepted by <code><property name="prince-pdf-tag-type"/></code>, otherwise it will be discarded.
+    </p>
+    <p>
+    The custom structure type declared in the <code>prince-pdf-role-map</code> property may be used in <code><property name="prince-pdf-tag-type"/></code>.
+    </p>
+    </comments>
+</property>
+
+<property>
     <name>prince-pdf-script</name>
     <value>
         <string>JavaScript</string>
