@@ -503,6 +503,10 @@ The command-line may include the options described below:
     <a href="/doc/css-at-rules/#at-font-face"><code>@font-face</code></a>
     rules in CSS will be available.
   </dd>
+  <dt id="cl-no-rename-duplicate-fonts"><code>--no-rename-duplicate-fonts</code></dt>
+  <dd>
+    Disable renaming fonts with the same name (normally done to avoid a warning from Adobe Preflight).
+  </dd>
   <dt id="cl-force-identity-encoding"><code>--force-identity-encoding</code></dt>
   <dd>
 	Ensure that all fonts are encoded in the PDF using their identity encoding
