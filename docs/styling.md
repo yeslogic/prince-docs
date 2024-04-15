@@ -153,109 +153,109 @@ The following table shows the default fonts for the main languages on Windows, M
 <td rowspan="28"><code>serif</code></td>
 <td rowspan="5">Windows</td>
 <td>Latin</td>
-<td>Times New Roman</td>
+<td>Times New Roman, Noto Serif</td>
 </tr>
 <tr>
 <td>Chinese</td>
-<td>MingLiU, Microsoft YaHei, SimSun</td>
+<td>MingLiU, Microsoft YaHei, SimSun, Noto Serif</td>
 </tr>
 <tr>
 <td>Japanese</td>
-<td>MS Mincho, Yu Gothic</td>
+<td>MS Mincho, Yu Gothic, Noto Serif</td>
 </tr>
 <tr>
 <td>Korean</td>
-<td>Batang, Malgun Gothic</td>
+<td>Batang, Malgun Gothic, Noto Serif</td>
 </tr>
 <tr>
 <td>Devanagari / Hindi</td>
-<td>Mangal</td>
+<td>Mangal, Noto Serif</td>
 </tr>
 <tr>
 <td rowspan="5">MacOS</td>
 <td>Latin</td>
-<td>Times New Roman</td>
+<td>Times New Roman, Noto Serif</td>
 </tr>
 <tr>
 <td>Chinese</td>
-<td>LiSong Pro</td>
+<td>LiSong Pro, Noto Serif</td>
 </tr>
 <tr>
 <td>Japanese</td>
-<td>Hiragino Mincho ProN</td>
+<td>Hiragino Mincho ProN, Noto Serif</td>
 </tr>
 <tr>
 <td>Korean</td>
-<td>AppleMyungjo</td>
+<td>AppleMyungjo, Noto Serif</td>
 </tr>
 <tr>
 <td>Devanagari / Hindi</td>
-<td>Devanagari MT</td>
+<td>Devanagari MT, Noto Serif</td>
 </tr>
 <tr>
 <td rowspan="18">Linux</td>
 <td>Latin, Greek, Cyrillic</td>
-<td>Times New Roman, DejaVu Serif, DejaVu LGC Serif, Liberation Serif</td>
+<td>Times New Roman, DejaVu Serif, DejaVu LGC Serif, Liberation Serif, Noto Serif</td>
 </tr>
 <tr>
 <td>Chinese, simplified</td>
-<td>AR PL UMing CN, AR PL SungtiL GB</td>
+<td>AR PL UMing CN, AR PL SungtiL GB, Noto Serif</td>
 </tr>
 <tr>
 <td>Chinese, traditional (TW)</td>
-<td>AR PL UMing TW, AR PL Mingti2L Big5</td>
+<td>AR PL UMing TW, AR PL Mingti2L Big5, Noto Serif</td>
 </tr>
 <tr>
 <td>Chinese, traditional (HK)</td>
-<td>AR PL UMing HK, AR PL Mingti2L Big5</td>
+<td>AR PL UMing HK, AR PL Mingti2L Big5, Noto Serif</td>
 </tr>
 <tr>
 <td>Japanese</td>
-<td>Kochi Mincho, IPAMincho, TakaoMincho</td>
+<td>Kochi Mincho, IPAMincho, TakaoMincho, Noto Serif</td>
 </tr>
 <tr>
 <td>Korean</td>
-<td>UnBatang, Baekmuk Batang</td>
+<td>UnBatang, Baekmuk Batang, Noto Serif</td>
 </tr>
 <tr>
 <td>Devanagari / Hindi</td>
-<td>Lohit Devanagari</td>
+<td>Lohit Devanagari, Noto Serif</td>
 </tr>
 <tr>
 <td>Bengali</td>
-<td>Lohit Bengali, Ani, Mukti Narrow</td>
+<td>Lohit Bengali, Ani, Mukti Narrow, Noto Serif</td>
 </tr>
 <tr>
 <td>Gurmukhi/Punjabi</td>
-<td>Lohit Punjabi</td>
+<td>Lohit Punjabi, Noto Serif</td>
 </tr>
 <tr>
 <td>Gujarati</td>
-<td>Lohit Gujarati</td>
+<td>Lohit Gujarati, Noto Serif</td>
 </tr>
 <tr>
 <td>Tamil</td>
-<td>Lohit Tamil</td>
+<td>Lohit Tamil, Noto Serif</td>
 </tr>
 <tr>
 <td>Telugu</td>
-<td>Lohit Telugu</td>
+<td>Lohit Telugu, Noto Serif</td>
 </tr>
 <tr>
 <td>Kannada</td>
-<td>Lohit Kannada</td>
+<td>Lohit Kannada, Noto Serif</td>
 </tr>
 <tr>
 <td>Malayalam</td>
-<td>Lohit Malayalam</td>
+<td>Lohit Malayalam, Noto Serif</td>
 </tr>
 <tr>
 <td>Oriya</td>
-<td>Lohit Oriya</td>
+<td>Lohit Oriya, Noto Serif</td>
 </tr>
 <tr>
 <td>Thai</td>
-<td>Garuda</td>
+<td>Garuda, Noto Serif</td>
 </tr>
 <tr>
 <td>Emoji</td>
@@ -269,60 +269,60 @@ The following table shows the default fonts for the main languages on Windows, M
 <td rowspan="14"><code>sans-serif</code></td>
 <td rowspan="4">Windows</td>
 <td>Latin</td>
-<td rowspan="2">Arial</td>
+<td rowspan="2">Arial, Noto Sans</td>
 </tr>
 <tr>
 <td>Chinese</td>
 </tr>
 <tr>
 <td>Japanese</td>
-<td>MS Gothic</td>
+<td>MS Gothic, Noto Sans</td>
 </tr>
 <tr>
 <td>Korean</td>
-<td>Dotum</td>
+<td>Dotum, Noto Sans</td>
 </tr>
 <tr>
 <td rowspan="4">MacOS</td>
 <td>Latin</td>
-<td>Arial</td>
+<td>Arial, Noto Sans</td>
 </tr>
 <tr>
 <td>Chinese</td>
-<td>LiHei Pro</td>
+<td>LiHei Pro, Noto Sans</td>
 </tr>
 <tr>
 <td>Japanese</td>
-<td>Hiragino Kaku Gothic ProN</td>
+<td>Hiragino Kaku Gothic ProN, Noto Sans</td>
 </tr>
 <tr>
 <td>Korean</td>
-<td>Apple SD Gothic Neo, Apple Gothic</td>
+<td>Apple SD Gothic Neo, Apple Gothic, Noto Sans</td>
 </tr>
 <tr>
 <td rowspan="6">Linux</td>
 <td>Latin, Greek, Cyrillic</td>
-<td>Arial, DejaVu Sans, DejaVu LGC Sans, Liberation Sans</td>
+<td>Arial, DejaVu Sans, DejaVu LGC Sans, Liberation Sans, Noto Sans</td>
 </tr>
 <tr>
 <td>Chinese, simplified</td>
-<td>AR PL UKai CN, AR PL KaitiM GB</td>
+<td>AR PL UKai CN, AR PL KaitiM GB, Noto Sans</td>
 </tr>
 <tr>
 <td>Chinese, traditional (TW)</td>
-<td>AR PL UKai TW, AR PL KaitiM Big5</td>
+<td>AR PL UKai TW, AR PL KaitiM Big5, Noto Sans</td>
 </tr>
 <tr>
 <td>Chinese, traditional (HK)</td>
-<td>AR PL UKai HK, AR PL KaitiM Big5</td>
+<td>AR PL UKai HK, AR PL KaitiM Big5, Noto Sans</td>
 </tr>
 <tr>
 <td>Japanese</td>
-<td>Kochi Gothic, IPAGothic, TakaoGothic</td>
+<td>Kochi Gothic, IPAGothic, TakaoGothic, Noto Sans</td>
 </tr>
 <tr>
 <td>Korean</td>
-<td>UnDotum, Baekmuk Gulim</td>
+<td>UnDotum, Baekmuk Gulim, Noto Sans</td>
 </tr>
 <tr>
 <td rowspan="12"><code>monospace</code></td>
