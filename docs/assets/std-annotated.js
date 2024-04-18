@@ -115,6 +115,7 @@ var stdAnnotated = {
         returns: "boolean"
     },
     Object: {
+        assign: {},
         create: {},
         defineProperty: {
             desc: "Adds a property to the object and defines certain traits like enumerability.", type: "function",
@@ -127,6 +128,7 @@ var stdAnnotated = {
         },
         defineProperties: {},
         freeze: {},
+        is: {},
         isExtensible: {},
         isFrozen: {},
         isSealed: {},
