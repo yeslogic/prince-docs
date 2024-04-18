@@ -154,8 +154,8 @@ The following table shows the default fonts for the main languages on Windows, M
 </thead>
 <tbody>
 <tr>
-<td rowspan="28"><code>serif</code></td>
-<td rowspan="5">Windows</td>
+<td rowspan="31"><code>serif</code></td>
+<td rowspan="6">Windows</td>
 <td>Latin</td>
 <td>Times New Roman, Noto Serif</td>
 </tr>
@@ -176,7 +176,11 @@ The following table shows the default fonts for the main languages on Windows, M
 <td>Mangal, Noto Serif</td>
 </tr>
 <tr>
-<td rowspan="5">MacOS</td>
+<td>Khmer</td>
+<td>Leelawadee UI, Khmer UI, Noto Serif</td>
+</tr>
+<tr>
+<td rowspan="6">MacOS</td>
 <td>Latin</td>
 <td>Times New Roman, Noto Serif</td>
 </tr>
@@ -197,7 +201,11 @@ The following table shows the default fonts for the main languages on Windows, M
 <td>Devanagari MT, Noto Serif</td>
 </tr>
 <tr>
-<td rowspan="18">Linux</td>
+<td>Khmer</td>
+<td>Khmer MN, Noto Serif</td>
+</tr>
+<tr>
+<td rowspan="19">Linux</td>
 <td>Latin, Greek, Cyrillic</td>
 <td>Times New Roman, DejaVu Serif, DejaVu LGC Serif, Liberation Serif, Noto Serif</td>
 </tr>
@@ -262,6 +270,10 @@ The following table shows the default fonts for the main languages on Windows, M
 <td>Garuda, Noto Serif</td>
 </tr>
 <tr>
+<td>Khmer</td>
+<td>Khmer OS, Noto Serif</td>
+</tr>
+<tr>
 <td>Emoji</td>
 <td>JoyPixels, Noto Color Emoji</td>
 </tr>
@@ -270,8 +282,8 @@ The following table shows the default fonts for the main languages on Windows, M
 <td>OpenSymbol, DejaVu Sans</td>
 </tr>
 <tr>
-<td rowspan="14"><code>sans-serif</code></td>
-<td rowspan="4">Windows</td>
+<td rowspan="17"><code>sans-serif</code></td>
+<td rowspan="5">Windows</td>
 <td>Latin</td>
 <td rowspan="2">Arial, Noto Sans</td>
 </tr>
@@ -287,7 +299,11 @@ The following table shows the default fonts for the main languages on Windows, M
 <td>Dotum, Noto Sans</td>
 </tr>
 <tr>
-<td rowspan="4">MacOS</td>
+<td>Khmer</td>
+<td>Noto Sans</td>
+</tr>
+<tr>
+<td rowspan="5">MacOS</td>
 <td>Latin</td>
 <td>Arial, Noto Sans</td>
 </tr>
@@ -304,7 +320,11 @@ The following table shows the default fonts for the main languages on Windows, M
 <td>Apple SD Gothic Neo, Apple Gothic, Noto Sans</td>
 </tr>
 <tr>
-<td rowspan="6">Linux</td>
+<td>Khmer</td>
+<td>Khmer Sangam MN, Noto Sans</td>
+</tr>
+<tr>
+<td rowspan="7">Linux</td>
 <td>Latin, Greek, Cyrillic</td>
 <td>Arial, DejaVu Sans, DejaVu LGC Sans, Liberation Sans, Noto Sans</td>
 </tr>
@@ -327,6 +347,10 @@ The following table shows the default fonts for the main languages on Windows, M
 <tr>
 <td>Korean</td>
 <td>UnDotum, Baekmuk Gulim, Noto Sans</td>
+</tr>
+<tr>
+<td>Khmer</td>
+<td>Noto Sans</td>
 </tr>
 <tr>
 <td rowspan="12"><code>monospace</code></td>
