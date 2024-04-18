@@ -252,7 +252,8 @@ var std = {
         prototype: {
             constructor: {},
             name: {},
-            message: {}
+            message: {},
+            stack: {}
         }
     },
     RangeError: {
