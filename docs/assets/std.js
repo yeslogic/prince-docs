@@ -21,10 +21,12 @@ var std = {
     isPrototypeOf: {},
     propertyIsEnumerable: {},
     Object: {
+        assign: {},
         create: {},
         defineProperty: {},
         defineProperties: {},
         freeze: {},
+        is: {},
         isExtensible: {},
         isFrozen: {},
         isSealed: {},
