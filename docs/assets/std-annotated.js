@@ -383,7 +383,8 @@ var stdAnnotated = {
         prototype: {
             constructor: {},
             name: {},
-            message: {}
+            message: {},
+            stack: {}
         }
     },
     RangeError: {
