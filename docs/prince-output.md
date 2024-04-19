@@ -551,10 +551,10 @@ The possible values are the following PDF tag types:
 -   `H4`
 -   `H5`
 -   `H6`
--   `OL`
--   `UL`
+-   `L`
 -   `LI`
 -   `Lbl`
+-   `LBody`
 -   `DL`
 -   `DL-Div`
 -   `DT`
