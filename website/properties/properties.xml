@@ -1751,35 +1751,38 @@
                             Should that variant be documented?
                             -->
                         <repeat min="0">
-                            <type>content</type>
+                            <type>text-content</type>
                         </repeat>
                     </function>
                     <function name="prince-glyph-index" class="ext">
-                        <type>number</type>
+                        <type>integer</type>
                     </function>
                     <function name="prince-expansion-text" class="ext">
                         <string>expansion</string>
                         <!-- (Actually, the first argument can be any single
                             textual content item, but the most common case
                             is either a string literal or attr().) -->
-                        <type>content</type>
+                        <type>text-content</type>
                     </function>
-                    <sequence>
-                        <function name="prince-fallback" class="ext">
-                            <type>url</type>
-                        </function>
-                        <optional>
-                            <text>,</text>
-                            <repeat min="1">
-                                <type>content</type>
-                            </repeat>
-                        </optional>
-                    </sequence>
                     <function name="element">
                         <ident>name</ident>
+                        <optional>
+                            <type>page-policy</type>
+                        </optional>
                     </function>
                 </choice>
             </repeat>
+            <sequence>
+                <function name="prince-fallback" class="ext">
+                    <type>url</type>
+                </function>
+                <optional>
+                    <text>,</text>
+                    <repeat min="1">
+                        <type>content</type>
+                    </repeat>
+                </optional>
+            </sequence>
         </choice>
     </value>
     <initial>normal</initial>
