@@ -32,11 +32,16 @@ Prince applies default styles to all (X)HTML documents - these style rules can b
 Fonts
 -----
 
-Prince supports the Web Open Font (WOFF/WOFF2), TrueType, and OpenType with TTF, CFF, or CFF2 outlines (such as the Adobe Source fonts), SVG, CBLC/CBDT or sbix colour bitmaps, and variable font formats, as well as the TTC and WOFF2 font collections.
+Fonts are at the basis of displaying text.  Fonts are grouped in Font Families, or typefaces, which are employed to style the text in a specific way.
+
+Prince supports multiple font formats, including TrueType and OpenType font formats - with TTF, CFF, or CFF2 outlines (such as the Adobe Source fonts), SVG, CBLC/CBDT, or sbix colour bitmaps, and Font Variations, commonly known as Variable Fonts.
+
+Prince supports also the Web Open Font format (WOFF/WOFF2), and TTC and WOFF2 font collections.
+
 
 ### Defining a font family
 
-To define the font, or the fonts to be used in a document, the [`font-family`](css-props.md#prop-font-family) property is used. Prince will try to use the specified font, and should glyphs be missing, it will silently fall back to the next font in the cascade - typically a [generic font family](#generic-font-families).
+To define the font family to be used in a document, the [`font-family`](css-props.md#prop-font-family) property is used. Prince will try to use the specified font family, and should glyphs be missing, it will silently fall back to the next font in the cascade - typically a [generic font family](#generic-font-families).
 
 <p class="note">
 If a paragraph or the entire document are mostly in a specific language, it might help to specify a font suitable for that language, in order to avoid most of the unexpected consequences of this font switching mechanism.
