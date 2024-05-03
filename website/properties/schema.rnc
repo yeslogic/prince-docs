@@ -126,6 +126,7 @@ type-value =
             "language" |
             "length" |
             "length-percentage" |
+            "min-width" |
             "number" |
             "page-policy" |
             "paper-size" |
