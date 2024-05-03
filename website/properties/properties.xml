@@ -1825,7 +1825,7 @@
                             <keyword>space</keyword>
                         </choice>
                         <optional>
-                            <type class="ext">length</type> <!-- [0,∞] -->
+                            <type class="ext">min-width</type> <!-- [0,∞] -->
                         </optional>
                     </function>
                     <function name="string">
