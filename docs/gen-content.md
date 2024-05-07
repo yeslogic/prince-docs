@@ -120,6 +120,15 @@ Last but not least, Prince supports arbitrary JavaScript functions to be called 
 
 A special function is <code>prince-glyph-index(<i>int</i>)</code>, which allows to choose a glyph from a font by the index of that glyph in the font. Note that this is very non-portable, as glyph indices are specific to individual font versions. But it is a possible escape hatch for people who need a specific glyph and don't have any other way of accessing it (by Unicode character or OpenType substitution).
 
+The `string()`, `counter()`, and `counters()` functions, as well as a literal string, can also be used to define alternate text content for images or graphic elements used in the `content` property to provide accessible PDF documents.
+
+```css
+    .warning::before {
+      content: "⚠" / "Warning!";
+    }
+```
+
+
 ### The optional `page-policy` value
 
 The generated content functions `element()`, `counter()`, `counters()`, `string()` and `flow()`, have a second, optional argument, namely `page-policy`, which can be one of the following:

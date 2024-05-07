@@ -1776,6 +1776,7 @@
                     <type>page-policy</type>
                 </optional>
             </function>
+            <sequence>
             <repeat min="1">
                 <choice>
                     <string>string</string>
@@ -1865,6 +1866,40 @@
                     </function>
                 </choice>
             </repeat>
+            <optional>
+                <text>/</text>
+                <repeat min="1">
+                  <choice>
+                    <string>string</string>
+                    <function name="string">
+                        <ident>ident</ident>
+                        <optional>
+                            <type>page-policy</type>
+                        </optional>
+                    </function>
+                    <function name="counter">
+                        <ident>name</ident>
+                        <optional>
+                            <type>counter-style</type>
+                        </optional>
+                        <optional>
+                            <type>page-policy</type>
+                        </optional>
+                    </function>
+                    <function name="counters">
+                        <ident>name</ident>
+                        <string>separator</string>
+                        <optional>
+                            <type>counter-style</type>
+                        </optional>
+                        <optional>
+                            <type>page-policy</type>
+                        </optional>
+                    </function>
+                  </choice>
+                </repeat>
+            </optional>
+            </sequence>
             <sequence>
                 <function name="prince-fallback" class="ext">
                     <type>url</type>
