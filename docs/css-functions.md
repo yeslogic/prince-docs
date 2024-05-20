@@ -146,7 +146,7 @@ URL.</td>
 <td>References the text content of the linked element.  See <a href="/doc/gen-content#using-target-content">Using target-content()</a>.</td>
 </tr>
 <tr>
-<td><code>leader( ("<i>...</i>" | dotted | solid | space), &lt;<i>length</i>&gt;? )</code></td>
+<td><code>leader( ("<i>...</i>" | dotted | solid | space), &lt;<i>min-width</i>&gt;? )</code></td>
 <td>Inserts the given string before the element - useful in tables of content. The optional second argument can be used to specify a minimum width.</td>
 </tr>
 <tr>
