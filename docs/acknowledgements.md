@@ -39,7 +39,7 @@ libraries are used by Prince for rasterization.
 <dd>
 Prince uses the
 hyphenation pattern files from the
-<a href="https://ctan.org/tex-archive/language/hyph-utf8/tex/generic/hyph-utf8/patterns/txt//">CTAN archive</a>.
+<a href="https://ctan.org/tex-archive/language/hyph-utf8/tex/generic/hyph-utf8/patterns/txt">CTAN archive</a>.
 </dd>
 
 <dt id="datrie">datrie</dt>
