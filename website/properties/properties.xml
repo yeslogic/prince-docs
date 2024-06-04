@@ -1987,6 +1987,29 @@
 </property>
 
 <property>
+    <name>counter-set</name>
+    <value>
+	<choice>
+	    <keyword>none</keyword>
+	    <repeat min="1">
+		  <ident>name</ident>
+		  <optional><integer>number</integer></optional>
+	    </repeat>
+	</choice>
+    </value>
+    <initial>none</initial>
+    <applyto>all elements, @page at-rule</applyto>
+    <inherit>no</inherit>
+    <comments>
+	<p>
+	For information about the use of the <code>counter-set</code>
+	property see the documentation for <a href="/doc/gen-content/#counters-and-numbering">Counters and Numbering</a>.
+	</p>
+    </comments>
+    <spec><a href="https://drafts.csswg.org/css-lists/#propdef-counter-set">CSS Lists and Counters Module Level 3</a></spec>
+</property>
+
+<property>
     <name>direction</name>
     <value>
 	<choice>
