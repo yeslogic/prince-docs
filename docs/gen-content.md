@@ -180,9 +180,11 @@ Unless the resetting of a counter creates a nested counter, the scope of the cou
 
 The [`counter-increment`](css-props.md#prop-counter-increment) property applies to any element and increments or decrements one or more counters by the specified values, or by one if no value is specified.
 
-The [`counter-increment`](css-props.md#prop-counter-increment) and [`counter-reset`](css-props.md#prop-counter-reset) properties are ignored on elements whose [`display`](css-props.md#prop-display) property has the value `none`.
+The [`counter-set`](css-props.md#prop-counter-set) property applies to any element and sets the value of the named counter to the specified value, or to "0" if no value is specified.
 
-Note that the `counter-increment` and `counter-reset` properties can also be used in `@page` at-rules to create counters that track the page number, for example to number the pages within each chapter separately from the normal `page` and `pages` counters.
+The [`counter-increment`](css-props.md#prop-counter-increment), [`counter-set`](css-props.md#prop-counter-set), and [`counter-reset`](css-props.md#prop-counter-reset) properties are ignored on elements whose [`display`](css-props.md#prop-display) property has the value `none`.
+
+Note that the `counter-increment`, `counter-set`, and `counter-reset` properties can also be used in `@page` at-rules to create counters that track the page number, for example to number the pages within each chapter separately from the normal `page` and `pages` counters.
 
 ### Displaying counters
 
