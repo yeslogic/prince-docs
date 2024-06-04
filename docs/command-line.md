@@ -709,6 +709,10 @@ Rasterization is enabled with the `--raster-output` option below. When this is u
   <dd>
     Scan font files and create a CSS file.
   </dd>
+  <dt id="cl-font-specimen"><code>--font-specimen <span class="replaceable">FONT</span></code></dt>
+  <dd>
+    Create a sample PDF for the specified font, where <code>FONT</code> indicates a path (or URL) to a font file.
+  </dd>
 </dl>
 
 ### Advanced Options
