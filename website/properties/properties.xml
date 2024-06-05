@@ -2006,7 +2006,7 @@
 	property see the documentation for <a href="/doc/gen-content/#counters-and-numbering">Counters and Numbering</a>.
 	</p>
     </comments>
-    <spec><a href="https://drafts.csswg.org/css-lists/#propdef-counter-set">CSS Lists and Counters Module Level 3</a></spec>
+    <spec><a href="https://www.w3.org/TR/css-lists-3/#propdef-counter-set">CSS Lists and Counters Module Level 3</a></spec>
 </property>
 
 <property>
