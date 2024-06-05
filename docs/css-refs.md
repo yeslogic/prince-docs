@@ -74,7 +74,7 @@ function.</td>
 </tr>
 <tr>
 <td><a href="https://www.w3.org/TR/css-lists-3/">CSS Lists and Counters Module Level 3</a></td>
-<td>Prince does not support the <code>marker-side</code> and <code>counter-set</code> properties.</td>
+<td>Prince does not support the <code>marker-side</code> property.</td>
 </tr>
 <tr>
 <td><a href="https://www.w3.org/TR/css-gcpm-3/">CSS Generated Content for Paged Media Module</a></td>
