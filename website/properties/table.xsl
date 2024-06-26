@@ -709,51 +709,51 @@ Prince also supports the two special keywords <code>initial</code> and <code>inh
 </xsl:template>
 
 <xsl:template match="url">
-    <xsl:text>url(&#xa0;</xsl:text>
+    <xsl:text>url(</xsl:text>
         <span>&lt;<i><xsl:value-of select="."/></i>&gt;</span>
-    <xsl:text>&#xa0;)</xsl:text>
+    <xsl:text>)</xsl:text>
 </xsl:template>
 
 <xsl:template match="attr">
-    <xsl:text>attr(&#xa0;</xsl:text>
+    <xsl:text>attr(</xsl:text>
         <span>&lt;<i><xsl:value-of select="."/></i>&gt;</span>
-    <xsl:text>&#xa0;)</xsl:text>
+    <xsl:text>)</xsl:text>
 </xsl:template>
 
 <xsl:template match="function[not(@class)]">
     <xsl:value-of select="@name"/>
-    <xsl:text>(&#xa0;</xsl:text>
+    <xsl:text>(</xsl:text>
     <xsl:for-each select="*">
     <xsl:apply-templates select="."/>
     <xsl:if test="position()!=last()">
         <xsl:text>, </xsl:text>
     </xsl:if>
     </xsl:for-each>
-    <xsl:text>&#xa0;)</xsl:text>
+    <xsl:text>)</xsl:text>
 </xsl:template>
 
 <xsl:template match="function[@class='ext']">
     <span class="ext"><xsl:value-of select="@name"/>
-    <xsl:text>(&#xa0;</xsl:text>
+    <xsl:text>(</xsl:text>
     <xsl:for-each select="*">
     <xsl:apply-templates select="."/>
     <xsl:if test="position()!=last()">
         <xsl:text>, </xsl:text>
     </xsl:if>
     </xsl:for-each>
-    <xsl:text>&#xa0;)</xsl:text></span>
+    <xsl:text>)</xsl:text></span>
 </xsl:template>
 
 <xsl:template match="function[@class='dep']">
     <span class="dep"><xsl:value-of select="@name"/>
-    <xsl:text>(&#xa0;</xsl:text>
+    <xsl:text>(</xsl:text>
     <xsl:for-each select="*">
     <xsl:apply-templates select="."/>
     <xsl:if test="position()!=last()">
         <xsl:text>, </xsl:text>
     </xsl:if>
     </xsl:for-each>
-    <xsl:text>&#xa0;)</xsl:text></span>
+    <xsl:text>)</xsl:text></span>
 </xsl:template>
 
 <xsl:template match="keyword[not(@class)]">
