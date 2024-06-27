@@ -5988,7 +5988,6 @@ supplier, item { overflow-wrap: normal; }
             <sequence>
                 <choice>
                     <keyword>output-intent</keyword>
-                    <keyword class="dep">full</keyword>
                     <sequence>
                         <url>color-profile</url>
                         <optional>
@@ -6027,9 +6026,6 @@ supplier, item { overflow-wrap: normal; }
     like the
     <a href="/doc/command-line/#cl-convert-colors"><code>--convert-colors</code></a>
     command-line option - the colors are converted to the output intent color profile.
-    </p>
-    <p class="note">
-    The value <code>full</code> is a deprecated synonym for <code>output-intent</code>.
     </p>
     <p>
     The <code>url()</code> function allows for an ICC color profile to convert
