@@ -5962,6 +5962,7 @@ supplier, item { overflow-wrap: normal; }
         <choice>
             <keyword>auto</keyword>
             <keyword>none</keyword>
+            <keyword>cmyk-grayscale</keyword>
         </choice>
     </value>
     <initial>auto</initial>
@@ -5976,6 +5977,11 @@ supplier, item { overflow-wrap: normal; }
     can be used to prevent color conversion for individual elements if the
     document itself is converted.
     </p>
+    <p>
+    The keyword <code>cmyk-grayscale</code> converts color to grayscale, but
+    leaves the resulting colors still in the CMYK colorpsace - just using
+    the "K" black channel.
+    </p>
     <p class="note">
     The same property, used as a descriptor in the <code>@prince-pdf</code>
     at-rule, has a different syntax - see <a href="#prop-prince-pdf-color-conversion-syntax2">below</a>.
@@ -5984,29 +5990,42 @@ supplier, item { overflow-wrap: normal; }
 
     <value2>
         <choice>
+          <group>
             <keyword>none</keyword>
+          </group>
+          <group>
             <sequence>
-                <choice>
-                    <keyword>output-intent</keyword>
-                    <sequence>
-                        <url>color-profile</url>
-                        <optional>
-                            <keyword>no-embed</keyword>
-                        </optional>
-                    </sequence>
-                </choice>
-                <optional>
-                    <choice>
-                        <keyword>absolute-colorimetric</keyword>
-                        <keyword>relative-colorimetric</keyword>
-                        <keyword>relative-colorimetric-bpc</keyword>
-                        <keyword>perceptual</keyword>
-                        <keyword>perceptual-bpc</keyword>
-                        <keyword>saturation</keyword>
-                        <keyword>saturation-bpc</keyword>
-                    </choice>
-                </optional>
+              <keyword>output-intent</keyword>
+              <optional>
+                <multiple>
+                  <optional>
+                    <type>rendering-intent</type>
+                  </optional>
+                  <optional>
+                    <keyword>cmyk-grayscale</keyword>
+                  </optional>
+                </multiple>
+              </optional>
             </sequence>
+          </group>
+          <group>
+            <sequence>
+              <url>color-profile</url>
+              <optional>
+                <multiple>
+                  <optional>
+                    <type>rendering-intent</type>
+                  </optional>
+                  <optional>
+                    <keyword>cmyk-grayscale</keyword>
+                  </optional>
+                  <optional>
+                    <keyword>no-embed</keyword>
+                  </optional>
+                </multiple>
+              </optional>
+            </sequence>
+          </group>
         </choice>
     </value2>
     <initial2>output-intent</initial2>
@@ -6022,21 +6041,35 @@ supplier, item { overflow-wrap: normal; }
     color profile of choice.
     </p>
     <p>
+    The <code>rendering-intent</code> resolves to either one of:
+    </p>
+    <ul>
+      <li><code>absolute-colorimetric</code></li>
+      <li><code>relative-colorimetric</code></li>
+      <li><code>relative-colorimetric-bpc</code></li>
+      <li><code>perceptual</code></li>
+      <li><code>perceptual-bpc</code></li>
+      <li><code>saturation</code></li>
+      <li><code>saturation-bpc</code></li>
+    </ul>
+    <p>
     When used with the default value <code>output-intent</code>, it functions
     like the
     <a href="/doc/command-line/#cl-convert-colors"><code>--convert-colors</code></a>
     command-line option - the colors are converted to the output intent color profile.
     </p>
     <p>
-    The <code>url()</code> function allows for an ICC color profile to convert
-    to, different from the output-intent.
+    The keyword <code>cmyk-grayscale</code> converts color to grayscale, but
+    leaves the resulting colors still in the CMYK colorpsace - just using
+    the "K" black channel.
     </p>
     <p>
-    Prince allows for the additional <code>no-embed</code> keyword, which
-    causes the color conversion target ICC profile to not be embedded in the
-    output PDF, unless required by the PDF profile.  The converted colors will
-    be left device dependent or else implicitly mapped to the output intent color
-    space.
+    The <code>url()</code> function allows for an ICC color profile to convert
+    to, different from the output-intent.  Prince allows for the additional
+    <code>no-embed</code> keyword, which causes the color conversion target ICC
+    profile to not be embedded in the output PDF, unless required by the PDF
+    profile.  The converted colors will be left device dependent or else implicitly
+    mapped to the output intent color space.
     </p>
     <p>
     The optional second argument comprises the rendering intent: Black point compensation (“BPC”) will most commonly be used with a relative-colorimetric rendering intent.  Prince however also accepts black point compensation with perceptual and saturation rendering intents because “there are atypical profiles [...] in which BPC may actually be beneficial for Perceptual or Saturation processing” (quoted from the in-depth analysis <a href="https://www.color.org/WP40-Black_Point_Compensation_2010-07-27.pdf">Black-point compensation: theory and application</a>).

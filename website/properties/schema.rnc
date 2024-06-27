@@ -130,6 +130,7 @@ type-value =
             "number" |
             "page-policy" |
             "paper-size" |
+            "rendering-intent" |
             "text-content" |
             "urange" |
             "url"
