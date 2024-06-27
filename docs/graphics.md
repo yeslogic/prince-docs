@@ -184,9 +184,22 @@ Prince will convert all the colors in a document to a single color space if the 
 
 Prince automatically converts colors to the output intent color space only when producing PDF/X-1a files. Files in any of the other profiles need also the [`--convert-colors`](command-line.md#cl-convert-colors) command-line option or the [`-prince-pdf-color-conversion`](css-props.md#prop-prince-pdf-color-conversion) property if colors are to be converted.
 
-When used as a descriptor in a [`@prince-pdf`](css-at-rules.md#at-prince-pdf) at-rule, the [`-prince-pdf-color-conversion`](css-props.md#prop-prince-pdf-color-conversion-syntax2) descriptor also takes an optional second argument to define the rendering intent, or to cause the target ICC profile to not be embedded in the output PDF, unless required by the PDF profile.  For details, please see the entry for [the `-prince-pdf-color-conversion` descriptor](css-props.md#prop-prince-pdf-color-conversion-syntax2).
+[`-prince-pdf-color-conversion`](css-props.md#prop-prince-pdf-color-conversion), both as a property or as a descriptor inside the `@prince-pdf` at-rule, offers also the possibility to convert color to grayscale, but leaving the resulting colors still in the CMYK colorpsace - just using the "K" black channel.  This is achieved with the keyword `cmyk-grayscale` as a second argument.  It has no effect if the target color space is not CMYK.
 
-Prince however also allows to use [`-prince-pdf-color-conversion`](css-props.md#prop-prince-pdf-color-conversion) as a property, applied to individual elements.  In this case, the value `auto` is the default and will enable color conversion for this element, if color conversion is enabled at the top level in the [`@prince-pdf`](css-at-rules.md#at-prince-pdf) at-rule or with the command-line argument.  The value `none` allows color conversion to be disabled for that element and its descendants.
+
+When used as a descriptor in a [`@prince-pdf`](css-at-rules.md#at-prince-pdf) at-rule, [`-prince-pdf-color-conversion`](css-props.md#prop-prince-pdf-color-conversion-syntax2) also takes an optional second argument to define the rendering intent, or to cause the target ICC profile to not be embedded in the output PDF, unless required by the PDF profile.  The optional rendering intent takes any of the following values:
+
+* absolute-colorimetric
+* relative-colorimetric
+* relative-colorimetric-bpc
+* perceptual
+* perceptual-bpc
+* saturation
+* saturation-bpc
+
+For further details, please see the entry for [the `-prince-pdf-color-conversion` descriptor](css-props.md#prop-prince-pdf-color-conversion-syntax2).
+
+Prince however also allows to use [`-prince-pdf-color-conversion`](css-props.md#prop-prince-pdf-color-conversion) as a property, applied to individual elements.  In this case, the value `auto` is the default and will enable color conversion for this element, if color conversion is enabled at the top level in the [`@prince-pdf`](css-at-rules.md#at-prince-pdf) at-rule or with the command-line argument.  The value `none` allows color conversion to be disabled for that element and its descendants, thus allowing for selective color conversion.
 
 ### Rich black and true black
 
