@@ -2031,6 +2031,8 @@
 	    <keyword>block</keyword>
 	    <keyword>flex</keyword>
 	    <keyword>inline-flex</keyword>
+	    <keyword>grid</keyword>
+	    <keyword>inline-grid</keyword>
 	    <keyword>none</keyword>
 	    <keyword>list-item</keyword>
 	    <keyword>run-in</keyword>
