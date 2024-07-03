@@ -141,6 +141,21 @@ The pixel unit is relative to the de-facto standard of `96dpi` (or rather, 96 *p
 </table>
 
 
+Fractional Length Unit
+----------------------
+
+CSS grids require a flexible length, expressed as a fraction of the leftover space in a grid container.
+
+<table class="grid">
+<tr>
+<th colspan="2">Fractional length unit</th>
+</tr>
+<tr>
+<td class="example"><code>fr</code></td>
+<td>fraction of the leftover space in the grid container</td>
+</tr>
+</table>
+
 
 Angle Units
 -----------
