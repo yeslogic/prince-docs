@@ -3452,13 +3452,9 @@
     <spec><a href="https://www.w3.org/TR/css-align-3/#align-justify-content">CSS Box Alignment Module Level 3</a></spec>
 </property>
 
-<!-- XXX: Consider documenting 'inset-inside' & 'inset-outside', which are like
-    'margin-inside/-outside' for 'left' & 'right': i.e. 'auto' means use 'left'
-    or 'right' as appropriate, or if length-percentage then behave as if 'left'
-    or 'right' had the given length-percentage.
+<property>
 
-    (The name "inset" matches the choice for the css-logical-props names.)
-    -->
+<property>
 
 <property>
     <name>left</name>
