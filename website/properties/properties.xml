@@ -2055,6 +2055,7 @@
     <see><a href="/doc/styling/#display">Display</a></see>
     <spec><a href="https://www.w3.org/TR/CSS2/visuren.html#display-prop">CSS 2.1</a></spec>
     <spec><a href="https://www.w3.org/TR/css-flexbox-1/#flex-containers">CSS Flexible Box Layout Module Level 1</a></spec>
+    <spec><a href="https://www.w3.org/TR/css-grid-1/#grid-containers">CSS Grid Layout Module Level 1</a></spec>
 </property>
 
 <property>
@@ -3254,6 +3255,316 @@
 </property>
 
 <property>
+    <name>grid</name>
+    <value>
+      <choice>
+        <ref>grid-template</ref>
+        <sequence>
+          <ref>grid-template-rows</ref>
+          <text>/</text>
+          <reorderable>
+            <keyword>auto-flow</keyword>
+            <optional>
+              <keyword>dense</keyword>
+            </optional>
+          </reorderable>
+          <optional>
+            <ref>grid-auto-columns</ref>
+          </optional>
+        </sequence>
+        <sequence>
+          <reorderable>
+            <keyword>auto-flow</keyword>
+            <optional>
+              <keyword>dense</keyword>
+            </optional>
+          </reorderable>
+          <optional>
+            <ref>grid-auto-rows</ref>
+          </optional>
+          <text>/</text>
+          <ref>grid-template-columns</ref>
+        </sequence>
+      </choice>
+    </value>
+    <initial>none</initial>
+    <applyto>grid containers</applyto>
+    <inherit>no</inherit>
+    <see><a href="/doc/styling/#grid-layout">Grid Layout</a></see>
+    <spec><a href="https://www.w3.org/TR/css-grid-1/#grid-shorthand">CSS Grid Layout Module Level 1</a></spec>
+</property>
+
+<property>
+    <name>grid-auto-columns</name>
+    <value>
+      <repeat min="1">
+        <type>track-size</type>
+      </repeat>
+    </value>
+    <initial>auto</initial>
+    <applyto>grid containers</applyto>
+    <inherit>no</inherit>
+    <see><a href="/doc/styling/#grid-layout">Grid Layout</a></see>
+    <spec><a href="https://www.w3.org/TR/css-grid-1/#auto-tracks">CSS Grid Layout Module Level 1</a></spec>
+</property>
+
+<property>
+    <name>grid-auto-flow</name>
+    <value>
+      <multiple>
+        <choice>
+          <keyword>row</keyword>
+          <keyword>column</keyword>
+        </choice>
+        <keyword>dense</keyword>
+      </multiple>
+    </value>
+    <initial>row</initial>
+    <applyto>grid containers</applyto>
+    <inherit>no</inherit>
+    <see><a href="/doc/styling/#grid-layout">Grid Layout</a></see>
+    <spec><a href="https://www.w3.org/TR/css-grid-1/#grid-auto-flow-property">CSS Grid Layout Module Level 1</a></spec>
+</property>
+
+<property>
+    <name>grid-auto-rows</name>
+    <value>
+      <repeat min="1">
+        <type>track-size</type>
+      </repeat>
+    </value>
+    <initial>auto</initial>
+    <applyto>grid containers</applyto>
+    <inherit>no</inherit>
+    <see><a href="/doc/styling/#grid-layout">Grid Layout</a></see>
+    <spec><a href="https://www.w3.org/TR/css-grid-1/#auto-tracks">CSS Grid Layout Module Level 1</a></spec>
+</property>
+
+<property>
+    <name>grid-area</name>
+    <value>
+      <type>grid-line</type>
+      <repeat min="0" max="3">
+        <text>/</text>
+        <type>grid-line</type>
+      </repeat>
+    </value>
+    <initial>auto</initial>
+    <applyto>grid containers</applyto>
+    <inherit>no</inherit>
+    <see><a href="/doc/styling/#grid-layout">Grid Layout</a></see>
+    <spec><a href="https://www.w3.org/TR/css-grid-1/#placement-shorthands">CSS Grid Layout Module Level 1</a></spec>
+</property>
+
+<property>
+    <name>grid-column</name>
+    <value>
+      <type>grid-line</type>
+      <optional>
+        <text>/</text>
+        <type>grid-line</type>
+      </optional>
+    </value>
+    <initial>auto</initial>
+    <applyto>grid containers</applyto>
+    <inherit>no</inherit>
+    <see><a href="/doc/styling/#grid-layout">Grid Layout</a></see>
+    <spec><a href="https://www.w3.org/TR/css-grid-1/#placement-shorthands">CSS Grid Layout Module Level 1</a></spec>
+</property>
+
+<property>
+    <name>grid-column-end</name>
+    <value>
+      <type>grid-line</type>
+    </value>
+    <initial>auto</initial>
+    <applyto>grid containers</applyto>
+    <inherit>no</inherit>
+    <see><a href="/doc/styling/#grid-layout">Grid Layout</a></see>
+    <spec><a href="https://www.w3.org/TR/css-grid-1/#line-placement">CSS Grid Layout Module Level 1</a></spec>
+</property>
+
+<property>
+    <name>grid-column-start</name>
+    <value>
+      <type>grid-line</type>
+    </value>
+    <initial>auto</initial>
+    <applyto>grid containers</applyto>
+    <inherit>no</inherit>
+    <see><a href="/doc/styling/#grid-layout">Grid Layout</a></see>
+    <spec><a href="https://www.w3.org/TR/css-grid-1/#line-placement">CSS Grid Layout Module Level 1</a></spec>
+</property>
+
+<property>
+    <name>grid-row</name>
+    <value>
+      <type>grid-line</type>
+      <optional>
+        <text>/</text>
+        <type>grid-line</type>
+      </optional>
+    </value>
+    <initial>auto</initial>
+    <applyto>grid containers</applyto>
+    <inherit>no</inherit>
+    <see><a href="/doc/styling/#grid-layout">Grid Layout</a></see>
+    <spec><a href="https://www.w3.org/TR/css-grid-1/#placement-shorthands">CSS Grid Layout Module Level 1</a></spec>
+</property>
+
+<property>
+    <name>grid-row-end</name>
+    <value>
+      <type>grid-line</type>
+    </value>
+    <initial>auto</initial>
+    <applyto>grid containers</applyto>
+    <inherit>no</inherit>
+    <see><a href="/doc/styling/#grid-layout">Grid Layout</a></see>
+    <spec><a href="https://www.w3.org/TR/css-grid-1/#line-placement">CSS Grid Layout Module Level 1</a></spec>
+</property>
+
+<property>
+    <name>grid-row-start</name>
+    <value>
+      <type>grid-line</type>
+    </value>
+    <initial>auto</initial>
+    <applyto>grid containers</applyto>
+    <inherit>no</inherit>
+    <see><a href="/doc/styling/#grid-layout">Grid Layout</a></see>
+    <spec><a href="https://www.w3.org/TR/css-grid-1/#line-placement">CSS Grid Layout Module Level 1</a></spec>
+</property>
+
+<property>
+    <name>grid-template</name>
+    <value>
+      <choice>
+        <keyword>none</keyword>
+        <sequence>
+          <ref>grid-template-rows</ref>
+          <text>/</text>
+          <ref>grid-template-columns</ref>
+        </sequence>
+        <repeat min="1">
+          <optional>
+            <ident>line-names</ident>
+          </optional>
+          <string>string</string>
+          <optional>
+            <type>track-size</type>
+          </optional>
+          <optional>
+            <ident>line-names</ident>
+          </optional>
+        </repeat>
+      </choice>
+      <optional>
+        <text>/</text>
+        <type>explicit-track-list</type>
+      </optional>
+    </value>
+    <initial>none</initial>
+    <applyto>grid containers</applyto>
+    <inherit>no</inherit>
+    <see><a href="/doc/styling/#grid-layout">Grid Layout</a></see>
+    <spec><a href="https://www.w3.org/TR/css-grid-1/#grid-template-areas-property">CSS Grid Layout Module Level 1</a></spec>
+</property>
+
+<property>
+    <name>grid-template-areas</name>
+    <value>
+      <choice>
+        <keyword>none</keyword>
+        <repeat min="1">
+          <string>string</string>
+        </repeat>
+      </choice>
+    </value>
+    <initial>none</initial>
+    <applyto>grid containers</applyto>
+    <inherit>no</inherit>
+    <see><a href="/doc/styling/#grid-layout">Grid Layout</a></see>
+    <spec><a href="https://www.w3.org/TR/css-grid-1/#grid-template-areas-property">CSS Grid Layout Module Level 1</a></spec>
+</property>
+
+<property>
+    <name>grid-template-columns</name>
+    <value>
+      <choice>
+        <keyword>none</keyword>
+        <type>track-list</type>
+      </choice>
+    </value>
+    <initial>none</initial>
+    <applyto>grid containers</applyto>
+    <inherit>no</inherit>
+    <see><a href="/doc/styling/#grid-layout">Grid Layout</a></see>
+    <comments>
+    <p>
+    The simple grammar given above should be read with the following definitions:
+    </p>
+    <p>
+    <code>   &lt;<i>track-list</i>&gt; = [ &lt;<i>line-names</i>&gt;? [ &lt;<i>track-size</i>&gt; | &lt;<i>track-repeat</i>&gt; ]]+ &lt;<i>line-names</i>&gt;?
+    &lt;<i>track-repeat</i>&gt; = repeat([ &lt;<i>integer</i>[1,∞]&gt; | auto-fill ], &lt;<i>track-list</i>&gt;)
+    &lt;<i>track-size</i>&gt; = &lt;<i>track-breadth</i>&gt; | minmax(&lt;<i>track-breadth</i>&gt;, &lt;<i>track-breadth</i>&gt;)
+    &lt;<i>track-breadth</i>&gt; = &lt;<i>length-percentage</i>&gt; | &lt;<i>flex</i>&gt; | min-content | max-content | auto</code>
+    </p>
+    <p>
+    The following restrictions apply:
+    </p>
+    <ul>
+    <li>the <code>repeat()</code> function can't be nested;</li>
+    <li>you can have at most one <code>auto-fill</code>;</li>
+    <li>if you use <code>auto-fill</code> then all track sizes have to be fixed, i.e. not intrinsic or flexible;</li>
+    <li>the left argument of the <code>minmax()</code> function cannott be a <code>&lt;<i>flex</i>&gt;</code>.</li>
+    </ul>
+    <p>
+    For further details, and a more formal grammar, please consult the <a href="https://www.w3.org/TR/css-grid-1/#track-sizing">CSS Grid Layout Module Level 1</a> specification.
+    </p>
+    </comments>
+    <spec><a href="https://www.w3.org/TR/css-grid-1/#track-sizing">CSS Grid Layout Module Level 1</a></spec>
+</property>
+
+<property>
+    <name>grid-template-rows</name>
+    <value>
+      <choice>
+        <keyword>none</keyword>
+        <type>track-list</type>
+      </choice>
+    </value>
+    <initial>none</initial>
+    <applyto>grid containers</applyto>
+    <inherit>no</inherit>
+    <see><a href="/doc/styling/#grid-layout">Grid Layout</a></see>
+    <comments>
+    <p>
+    The simple grammar given above should be read with the following definitions:
+    </p>
+    <p>
+    <code>   &lt;<i>track-list</i>&gt; = [ &lt;<i>line-names</i>&gt;? [ &lt;<i>track-size</i>&gt; | &lt;<i>track-repeat</i>&gt; ]]+ &lt;<i>line-names</i>&gt;?
+    &lt;<i>track-repeat</i>&gt; = repeat([ &lt;<i>integer</i>[1,∞]&gt; | auto-fill ], &lt;<i>track-list</i>&gt;)
+    &lt;<i>track-size</i>&gt; = &lt;<i>track-breadth</i>&gt; | minmax(&lt;<i>track-breadth</i>&gt;, &lt;<i>track-breadth</i>&gt;)
+    &lt;<i>track-breadth</i>&gt; = &lt;<i>length-percentage</i>&gt; | &lt;<i>flex</i>&gt; | min-content | max-content | auto</code>
+    </p>
+    <p>
+    The following restrictions apply:
+    </p>
+    <ul>
+    <li>the <code>repeat()</code> function can't be nested;</li>
+    <li>you can have at most one <code>auto-fill</code>;</li>
+    <li>if you use <code>auto-fill</code> then all track sizes have to be fixed, i.e. not intrinsic or flexible;</li>
+    <li>the left argument of the <code>minmax()</code> function cannott be a <code>&lt;<i>flex</i>&gt;</code>.</li>
+    </ul>
+    <p>
+    For further details, and a more formal grammar, please consult the <a href="https://www.w3.org/TR/css-grid-1/#track-sizing">CSS Grid Layout Module Level 1</a> specification.
+    </p>
+    </comments>
+    <spec><a href="https://www.w3.org/TR/css-grid-1/#track-sizing">CSS Grid Layout Module Level 1</a></spec>
+</property>
+
+<property>
     <name>height</name>
     <value>
 	<choice>
@@ -3449,12 +3760,95 @@
     <applyto>flex containers</applyto>
 	<inherit>no</inherit>
     <see><a href="/doc/styling/#flex-layout">Flex Layout</a></see>
+    <see><a href="/doc/styling/#grid-layout">Grid Layout</a></see>
     <spec><a href="https://www.w3.org/TR/css-align-3/#align-justify-content">CSS Box Alignment Module Level 3</a></spec>
 </property>
 
 <property>
+	<name>justify-items</name>
+	<value>
+	  <choice>
+	    <keyword>normal</keyword>
+	    <keyword>stretch</keyword>
+	    <keyword>baseline</keyword>
+	    <keyword>first</keyword>
+	    <keyword>last</keyword>
+        <sequence>
+          <optional>
+            <choice>
+              <keyword>safe</keyword>
+              <keyword>unsafe</keyword>
+            </choice>
+          </optional>
+          <choice>
+            <keyword>center</keyword>
+            <keyword>end</keyword>
+            <keyword>flex-end</keyword>
+            <keyword>flex-start</keyword>
+            <keyword>self-end</keyword>
+            <keyword>self-start</keyword>
+            <keyword>start</keyword>
+            <keyword>left</keyword>
+            <keyword>right</keyword>
+          </choice>
+        </sequence>
+        <keyword>legacy</keyword>
+        <reorderable>
+          <keyword>legacy</keyword>
+          <choice>
+            <keyword>left</keyword>
+            <keyword>right</keyword>
+            <keyword>center</keyword>
+          </choice>
+        </reorderable>
+	  </choice>
+	</value>
+	<initial>legacy</initial>
+    <applyto>flex containers</applyto>
+	<inherit>no</inherit>
+    <see><a href="/doc/styling/#flex-layout">Flex Layout</a></see>
+    <see><a href="/doc/styling/#grid-layout">Grid Layout</a></see>
+    <spec><a href="https://www.w3.org/TR/css-align-3/#justify-items-property">CSS Box Alignment Module Level 3</a></spec>
+</property>
 
 <property>
+	<name>justify-self</name>
+	<value>
+	  <choice>
+	    <keyword>auto</keyword>
+	    <keyword>normal</keyword>
+	    <keyword>stretch</keyword>
+	    <keyword>baseline</keyword>
+	    <keyword>first</keyword>
+	    <keyword>last</keyword>
+        <sequence>
+          <optional>
+            <choice>
+              <keyword>safe</keyword>
+              <keyword>unsafe</keyword>
+            </choice>
+          </optional>
+          <choice>
+            <keyword>center</keyword>
+            <keyword>end</keyword>
+            <keyword>flex-end</keyword>
+            <keyword>flex-start</keyword>
+            <keyword>self-end</keyword>
+            <keyword>self-start</keyword>
+            <keyword>start</keyword>
+            <keyword>left</keyword>
+            <keyword>right</keyword>
+          </choice>
+        </sequence>
+	  </choice>
+	</value>
+	<initial>normal</initial>
+    <applyto>flex containers</applyto>
+	<inherit>no</inherit>
+    <see><a href="/doc/styling/#flex-layout">Flex Layout</a></see>
+    <see><a href="/doc/styling/#grid-layout">Grid Layout</a></see>
+    <spec><a href="https://www.w3.org/TR/css-align-3/#justify-self-property">CSS Box Alignment Module Level 3</a></spec>
+</property>
 
 <property>
     <name>left</name>
@@ -4204,10 +4598,11 @@
 	  <type>integer</type>
 	</value>
 	<initial>0</initial>
-    <applyto>flex items and absolutely-positioned children of flex containers</applyto>
+    <applyto>flex items and absolutely-positioned children of flex containers, grid items</applyto>
 	<inherit>no</inherit>
     <see><a href="/doc/styling/#flex-layout">Flex Layout</a></see>
     <spec><a href="https://www.w3.org/TR/css-flexbox-1/#order-property">CSS Flexible Box Layout Module Level 1</a></spec>
+    <spec><a href="https://www.w3.org/TR/css-grid-1/#order-property">CSS Grid Layout Module Level 1</a></spec>
 </property>
 
 <property>
@@ -7247,6 +7642,7 @@ blockquote { margin: 1rem; -prince-resize-options: -1rem; }
     <applyto>flex containers</applyto>
     <inherit>no</inherit>
     <see><a href="/doc/styling/#flex-layout">Flex Layout</a></see>
+    <see><a href="/doc/styling/#grid-layout">Grid Layout</a></see>
     <spec><a href="https://www.w3.org/TR/css-align-3/#column-row-gap">CSS Box Alignment Module Level 3</a></spec>
 </property>
 

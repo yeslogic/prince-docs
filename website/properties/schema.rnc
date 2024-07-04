@@ -122,6 +122,9 @@ type-value =
             "counter-style" |
             "declaration-value" |
             "dpi" |
+            "explicit-track-list" |
+            "flex" |
+            "grid-line" |
             "integer" |
             "language" |
             "length" |
@@ -132,6 +135,8 @@ type-value =
             "paper-size" |
             "rendering-intent" |
             "text-content" |
+            "track-list" |
+            "track-size" |
             "urange" |
             "url"
         )

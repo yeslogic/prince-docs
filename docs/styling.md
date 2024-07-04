@@ -1611,6 +1611,26 @@ Percentage values of margins and paddings of flex items are resolved by Prince a
 </p>
 
 
+### Grid Layout
+
+The CSS Grid Layout is a two-dimensional grid-based layout system, initiated by declaring `display: grid`, or `display: inline-grid`.
+
+The column and row sizes of the grid template are declared with the CSS properties [`grid-template-columns`](css-props.md#prop-grid-template-columns) and [`grid-template-rows`](css-props.md#prop-grid-template-rows), and the elements are then placed into the grid with the properties [`grid-column`](css-props.md#prop-grid-column) and [`grid-row`](css-props.md#prop-grid-row).  Alternatively, the grid template can be defined by using the property [`grid-template-areas`](css-props.md#prop-grid-template-areas) to reference the names of the grid areas specified on elements with the property [`grid-area`](css-props.md#prop-grid-area).
+
+A shorthand for setting the `grid-template-rows`, `grid-template-columns`, and `grid-template-areas` properties is [`grid-template`](css-props.md#prop-grid-template).  However, this does not reset the implicit grid properties - it is recommended to use the shorthand property [`grid`](css-props.md#prop-grid) instead.
+
+Elements can be placed on the grid template also by defining on where the element starts, and where it ends - by using the properties [`grid-column-start`](css-props.md#prop-grid-column-start), [`grid-column-end`](css-props.md#prop-grid-column-end), [`grid-row-start`](css-props.md#prop-grid-row-start), and [`grid-row-end`](css-props.md#prop-grid-row-end).  The respective shorthand properties for this are [`grid-column`](css-props.md#prop-grid-column) and [`grid-row`](css-props.md#prop-grid-row).
+
+The distance between the grid rows, and between the grid columns can be declared with the properties [`column-gap`](css-props.md#prop-column-gap) (already used for styling the distance between [columns](#columns)), and [`row-gap`](css-props.md#prop-row-gap).  The shorthand property for declaring both in one statement is [`gap`](css-props.md#prop-gap).
+
+Grid items can be aligned along the row axis with the property [`justify-items`](css-props.md#prop-justify-items), and along the column axis with [`align-items`](css-props.md#prop-align-items).  The grid iteself can be aligned in the grid container by using the properties [`justify-content`](css-props.md#prop-justify-content) and [`align-content`](css-props.md#prop-align-content).
+
+Grid items can be aligned inside a grid cell with [`justify-self`](css-props.md#prop-justify-self) and [`align-self`](css-props.md#prop-align-self).
+
+The size of automatically generated columns or rows can be fine-tuned with the properties [`grid-auto-columns`](css-props.md#prop-grid-auto-columns) and [`grid-auto-rows`](css-props.md#prop-grid-auto-rows), and in a similar fashion the way grid items are automatically placed on a grid can be controlled with [`grid-auto-flow`](css-props.md#prop-grid-auto-flow).
+
+
+
 ### Custom properties (CSS variables)
 
 Complex designs often have very large amounts of CSS with a lot of repeated values. The same color might for example be used in hundreds of different places, requiring a global search-and-replace if that color needs to be changed. Prince supports [custom properties](css-props.md#prop---custom-property-name), which allow a value to be stored in one place, then be referenced in all other places.
