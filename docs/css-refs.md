@@ -40,7 +40,7 @@ for some fonts.</td>
 </tr>
 <tr>
 <td><a href="https://www.w3.org/TR/css-align-3/">CSS Box Alignment Module Level 3</a></td>
-<td>Prince supports the new properties and values relating to flex layout.</td>
+<td>Prince supports the new properties and values relating to flex and grid layout.</td>
 </tr>
 <tr>
 <td><a href="https://www.w3.org/TR/css-backgrounds-3/">CSS Backgrounds and Borders Module Level 3</a></td>
@@ -150,6 +150,11 @@ and <a href="/doc/css-at-rules/#at-supports"><code>@supports</code></a> at-rules
 <td>Prince supports this module as of Prince 12, with the exception of
   page breaking/fragmentation, <code>break-before</code>/<code>-after</code>,
   <code>visibility: collapse</code> and vertical writing.</td>
+</tr>
+<tr>
+<td><a href="https://www.w3.org/TR/css-grid-1/">CSS Grid Layout Module Level 1</a></td>
+<td>Prince supports this module, with the exception of
+  baseline alignment, collapsing auto-fit tracks, and fit-content sizing.</td>
 </tr>
 <tr>
 <td><a href="https://www.w3.org/TR/selectors-4/">Selectors Level 4</a></td>
