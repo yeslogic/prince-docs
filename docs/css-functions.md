@@ -32,7 +32,7 @@ In this section you find the documentation for the supported CSS functional expr
 <tbody>
 <tr>
 <td><code>attr( &lt;<i>attribute-name</i>&gt; &lt;<i>type-or-unit</i>&gt;? [,&#160;&lt;<i>fallback</i>&gt;]? )</code></td>
-<td>Retrieves the value of an attribute of the selected element.</td>
+<td>Retrieves the value of an attribute of the selected element. Please note that for the optional second argument also the Prince-specific attribute type <code>idref</code> is supported, which treats the attribute value of the first argument as if it were an IDREF - essentially converting it to a URL by prepending a hash mark.</td>
 <td></td>
 </tr>
 <tr>
