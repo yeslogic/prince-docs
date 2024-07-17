@@ -167,9 +167,12 @@ CSS
 
 ```css
     xref {
-        -prince-link: attr( linkend )
+        -prince-link: attr(linkend idref)
     }
 ```
+
+In this example we see the `idref` attribute type, a Prince-specific extension which treats the attribute value specified with the first argument to the `attr()` function as if it were an IDREF - essentially converting it to a URL by prepending a hash mark.
+
 The property [`-prince-pdf-link-type`](css-props.md#prop-prince-pdf-link-type) may be used to control the link type and target, i.e. whether relative links should be embedded in the PDF as web (URL) links or file links (by default they will be resolved against the base URL of the input document) and whether to open the links in the same or a new window. Note however that the optional link target keywords `same-window` and `new-window` only affect links to local PDF files.
 
 ```
