@@ -154,7 +154,9 @@ Prince supports a wide range of PDF features, including the following:
 
 ### PDF Links
 
-Prince supports PDF-internal and -external links. HTML hyperlinks are automatically converted. To make an element in XML, or any arbitrary element, a clickable link, the [`-prince-link`](css-props.md#prop-prince-link) CSS property is required.
+Prince supports PDF-internal and -external links. HTML hyperlinks are automatically converted.
+
+To make an element in XML, or any arbitrary element, a clickable link, the [`-prince-link`](css-props.md#prop-prince-link) CSS property is required.  If the element already offers an IDREF, i.e. a URL, in its attribute, the `url()` function indicates the target of the link.
 
 
 DocBook XML
@@ -171,7 +173,7 @@ CSS
     }
 ```
 
-In this example we see the `idref` attribute type, a Prince-specific extension which treats the attribute value specified with the first argument to the `attr()` function as if it were an IDREF - essentially converting it to a URL by prepending a hash mark.
+If, as in this example, we have a value wich is not a URL (as is common in XML documents), the `idref` attribute type can be used as a second argument - a Prince-specific extension which treats the attribute value specified with the first argument to the `attr()` function as if it were an IDREF, essentially converting it to a URL by prepending a hash mark.
 
 The property [`-prince-pdf-link-type`](css-props.md#prop-prince-pdf-link-type) may be used to control the link type and target, i.e. whether relative links should be embedded in the PDF as web (URL) links or file links (by default they will be resolved against the base URL of the input document) and whether to open the links in the same or a new window. Note however that the optional link target keywords `same-window` and `new-window` only affect links to local PDF files.
 
