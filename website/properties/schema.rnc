@@ -115,6 +115,7 @@ type-value =
         class*,
         (
             "angle" |
+            "attr-type" |
             "border-style" |
             "border-width" |
             "color" |
@@ -123,6 +124,7 @@ type-value =
             "declaration-value" |
             "dpi" |
             "explicit-track-list" |
+            "fallback" |
             "flex" |
             "grid-line" |
             "integer" |
