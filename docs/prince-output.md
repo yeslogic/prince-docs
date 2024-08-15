@@ -403,7 +403,32 @@ Font embedding can be disabled if necessary, for example if Prince is being used
 
 Prince supports adding files to PDF documents as attachments - but please note that not all PDF profiles allow for attachments (see [PDF Versions and Profiles](#pdf-versions-and-profiles) for details).
 
-The main mechanisms for doing so are the JavaScript function [`PDF.attachFile`](js-support.md#window.PDF.attachFile) and the command-line option [`--attach`](command-line.md#cl-attach). Additionally, the job description JSON format, used by the [Prince Control Protocol](server-integration.md#prince-control-protocol), can be used to provid an attachment "inline" through the Java/C\# APIs (see [Prince Wrappers](server-integration.md#prince-wrappers)) instead of as a separate file on the filesystem. See [Prince Control Protocol](server-integration.md#prince-control-protocol) for details on the job description JSON format.
+The main mechanisms for doing so are the JavaScript function [`PDF.attachFile`](js-support.md#window.PDF.attachFile) and the command-line option [`--attach`](command-line.md#cl-attach). Additionally, the [job description JSON format](server-integration.md#prince-job-json), used by the [Prince Control Protocol](server-integration.md#prince-control-protocol), can be used to provid an attachment "inline" through the Java/C\# APIs (see [Prince Wrappers](server-integration.md#prince-wrappers)) instead of as a separate file on the filesystem. See [Prince Control Protocol](server-integration.md#prince-control-protocol) for details on the job description JSON format.
+
+Attachments in the job description include a key to specify the AFRelationship key of the attachment in the PDF.  The value of `relationship` must be one of the names defined in PDF 2.0:
+
+    Source
+    Data
+    Alternative
+    Supplement
+    EncryptedPayload
+    FormData
+    Schema
+    Unspecified
+
+or a second-class name according to the following definition: "all names that begin with 4 characters including or followed by a LOW LINE (5fh) or COLON (3Ah) in either the key or value of a dictionary entry are second-class names."
+
+The command-line options
+
+    --attach-data
+    --attach-source
+    --attach-alternative
+    --attach-supplement
+    --attach-unspecified
+
+give users a way to add file attachments on the command line, while specifying the AFRelationship value for those attachments.  These options are all equivalent to the command-line option [`--attach`](command-line.md#cl-attach), but will specify a different AFRelationship value for the attachment.
+
+These options are mostly needed for Factur-X invoices, a new invoicing standard that is becoming mandatory in Europe and involves attaching an XMP metadata file to PDF documents.
 
 
 ### PDF Bookmarks

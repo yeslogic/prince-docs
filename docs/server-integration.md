@@ -451,9 +451,28 @@ Each attachment is a &lt;URL&gt; (string) or an object:
 {
     "url": <URL>,
     "filename": <string>,
-    "description": <string>
+    "description": <string>,
+    "relationship": <string>
 }
 ```
+
+The value of `relationship` must be one of the names defined in PDF 2.0:
+
+    Source
+    Data
+    Alternative
+    Supplement
+    EncryptedPayload
+    FormData
+    Schema
+    Unspecified
+
+or a second-class name according to the following definition:
+"all names that begin with 4 characters including or followed
+by a LOW LINE (5fh) or COLON (3Ah) in either the key or value
+of a dictionary entry are second-class names."
+
+
 The `metadata options` object includes these fields:
 
 ```json
@@ -526,7 +545,8 @@ The following is the full JSON job description - the mandatory `input` and `src`
         "attach": [ {
             "url": <URL>,
             "filename": <string>,
-            "description": <string>
+            "description": <string>,
+            "relationship": <string>
         } ]
     },
     "metadata": {
