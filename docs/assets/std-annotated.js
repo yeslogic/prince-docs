@@ -1564,10 +1564,11 @@ var stdAnnotated = {
             type: "function",
             arguments: [
             {name: "URL", type: "string"},
-            {name: "description", type: "string"},
-            {name: "filename", type: "string", desc: "Optional third argument to specify the filename to be displayed for the attachment in the PDF."}
+            {name: "description", type: "string", desc: "Optional second argument to describe the attachment."},
+            {name: "filename", type: "string", desc: "Optional third argument to specify the filename to be displayed for the attachment in the PDF."},
+            {name: "relationship", type: "string", desc: "Optional fourth argument to specify the AFRelationship value of the attachment."}
             ],
-            example: "PDF.attachFile('data.xls', 'Latest sales figures.', 'Data')"
+            example: "PDF.attachFile('data.xls', 'Latest sales figures.', 'SalesFigures', 'Data')"
         },
         colorOptions: {
             type: "function",

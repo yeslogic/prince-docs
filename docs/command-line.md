@@ -485,6 +485,36 @@ The command-line may include the options described below:
   <dd>
     Attach a file to the PDF.
   </dd>
+  <dt id="cl-attach-data">
+    <code>--attach-data=<span class="replaceable">FILE</span></code>
+  </dt>
+  <dd>
+    The file attached to the PDF is of the relationship type <code>Data</code>.
+  </dd>
+  <dt id="cl-attach-source">
+    <code>--attach-source=<span class="replaceable">FILE</span></code>
+  </dt>
+  <dd>
+    The file attached to the PDF is of the relationship type <code>Source</code>.
+  </dd>
+  <dt id="cl-attach-alternative">
+    <code>--attach-alternative=<span class="replaceable">FILE</span></code>
+  </dt>
+  <dd>
+    The file attached to the PDF is of the relationship type <code>Alternative</code>.
+  </dd>
+  <dt id="cl-attach-supplement">
+    <code>--attach-supplement=<span class="replaceable">FILE</span></code>
+  </dt>
+  <dd>
+    The file attached to the PDF is of the relationship type <code>Supplement</code>.
+  </dd>
+  <dt id="cl-attach-unspecified">
+    <code>--attach-unspecified=<span class="replaceable">FILE</span></code>
+  </dt>
+  <dd>
+    The file attached to the PDF is of the relationship type <code>Unspecified</code>.
+  </dd>
   <dt id="cl-no-artificial-fonts"><code>--no-artificial-fonts</code></dt>
   <dd>
     Disable synthesis of missing bold/italic fonts.
