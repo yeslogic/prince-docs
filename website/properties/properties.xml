@@ -1162,15 +1162,20 @@
     <value>
 	<choice>
         <keyword>auto</keyword>
-        <keyword>avoid</keyword>
-        <keyword>avoid-page</keyword>
-        <keyword>avoid-column</keyword>
+        <sequence>
+            <optional><keyword class="ext">-prince-prefer</keyword></optional>
+            <choice>
+                <keyword>avoid</keyword>
+                <keyword>avoid-page</keyword>
+                <keyword>avoid-column</keyword>
+            </choice>
+        </sequence>
+        <keyword>column</keyword>
         <keyword>page</keyword>
         <keyword>left</keyword>
         <keyword>right</keyword>
         <keyword>recto</keyword>
         <keyword>verso</keyword>
-        <keyword>column</keyword>
 	</choice>
     </value>
     <initial>auto</initial>
@@ -1186,6 +1191,27 @@
     as simply <code>avoid</code>: it is not possible to avoid page breaks without
     also avoiding column breaks.
     </p>
+
+    <p>
+    For <code>avoid*</code> values not preceded by <code>-prince-prefer</code>,
+    content before the avoided break will be pushed to the next column or page
+    if necessary to avoid breaking there.
+    </p>
+
+    <p>
+    The keyword <code>-prince-prefer</code> is only accepted by
+    <a href="/doc/prince-for-books/">Prince for Books</a>.
+    If an <code>avoid*</code> value is preceded by <code>-prince-prefer</code>,
+    then Prince for Books will try to avoid breaking there,
+    but not at the cost of introducing an obvious gap at the end of the
+    previous column or page:
+    it will only use whatever flexibility has been granted with
+    <code><property name="prince-change-line-breaks-for-pagination"/></code>,
+    <code><property name="prince-spread-length-options"/></code>
+    or
+    <code><property name="prince-resize-options"/></code>.
+    </p>
+
     <p>
     See the documentation for <a href="/doc/paged/#page-breaks">Page breaks</a> for more details.
     </p>
@@ -1198,9 +1224,14 @@
     <value>
 	<choice>
         <keyword>auto</keyword>
-        <keyword>avoid</keyword>
-        <keyword>avoid-page</keyword>
-        <keyword>avoid-column</keyword>
+        <sequence>
+            <optional><keyword class="ext">-prince-prefer</keyword></optional>
+            <choice>
+                <keyword>avoid</keyword>
+                <keyword>avoid-page</keyword>
+                <keyword>avoid-column</keyword>
+            </choice>
+        </sequence>
         <keyword>page</keyword>
         <keyword>left</keyword>
         <keyword>right</keyword>
@@ -1222,6 +1253,27 @@
     as simply <code>avoid</code>: it is not possible to avoid page breaks without
     also avoiding column breaks.
     </p>
+
+    <p>
+    For <code>avoid*</code> values not preceded by <code>-prince-prefer</code>,
+    content before the avoided break will be pushed to the next column or page
+    if necessary to avoid breaking there.
+    </p>
+
+    <p>
+    The keyword <code>-prince-prefer</code> is only accepted by
+    <a href="/doc/prince-for-books/">Prince for Books</a>.
+    If an <code>avoid*</code> value is preceded by <code>-prince-prefer</code>,
+    then Prince for Books will try to avoid breaking there,
+    but not at the cost of introducing an obvious gap at the end of the
+    previous column or page:
+    it will only use whatever flexibility has been granted with
+    <code><property name="prince-change-line-breaks-for-pagination"/></code>,
+    <code><property name="prince-spread-length-options"/></code>
+    or
+    <code><property name="prince-resize-options"/></code>.
+    </p>
+
     <p>
     See the documentation for <a href="/doc/paged/#page-breaks">Page breaks</a> for more details.
     </p>
@@ -1234,9 +1286,14 @@
     <value>
 	<choice>
 	    <keyword>auto</keyword>
-	    <keyword>avoid</keyword>
-        <keyword>avoid-page</keyword>
-        <keyword>avoid-column</keyword>
+            <sequence>
+                <optional><keyword class="ext">-prince-prefer</keyword></optional>
+                <choice>
+                    <keyword>avoid</keyword>
+                    <keyword>avoid-page</keyword>
+                    <keyword>avoid-column</keyword>
+                </choice>
+            </sequence>
 	</choice>
     </value>
     <initial>auto</initial>
@@ -3311,6 +3368,11 @@
 
 <property>
     <name>line-stacking-strategy</name>
+    <alias>prince-line-stacking-strategy</alias>
+</property>
+
+<property>
+    <name>prince-line-stacking-strategy</name>
     <value>
 	<choice>
 	    <keyword>inline-line-height</keyword>
@@ -4010,10 +4072,23 @@
 <property>
     <name>orphans</name>
     <value>
-	<type>integer</type>
+    <choice>
+        <sequence>
+            <type>integer</type>
+            <optional>
+                <text>,</text>
+                <keyword class="ext">-prince-prefer</keyword>
+                <type class="ext">integer</type>
+            </optional>
+        </sequence>
+        <sequence>
+            <keyword class="ext">-prince-prefer</keyword>
+            <type class="ext">integer</type>
+        </sequence>
+    </choice>
     </value>
     <initial>1</initial>
-    <applyto>block container elements</applyto>
+    <applyto>“paragraphs”: block container boxes that establish an inline formatting context</applyto>
     <inherit>yes</inherit>
     <see><a href="/doc/paged/#widows-and-orphans">Widows and orphans</a></see>
     <see><code><property name="widows"/></code></see>
@@ -4210,6 +4285,26 @@ supplier, item { overflow-wrap: normal; }
 	should be placed on. See the documentation for <a href="/doc/paged/#selecting-pages">Selecting pages</a>
 	for more details.
 	</p>
+
+        <p>
+        For an integer not preceded by <code>-prince-prefer</code>,
+        the paragraph will be pushed forward to the start of a new page or column
+        if necessary to ensure the given number of lines are together.
+        </p>
+
+        <p>
+        Values involving <code>-prince-prefer</code> are only accepted by
+        <a href="/doc/prince-for-books/">Prince for Books</a>.
+        An integer preceded by <code>-prince-prefer</code>
+        is a request that Prince for Books will try to satisfy,
+        but not at the cost of introducing an obvious gap at the end of the
+        previous column or page:
+        it will only use whatever flexibility has been granted with
+        <code><property name="prince-change-line-breaks-for-pagination"/></code>,
+        <code><property name="prince-spread-length-options"/></code>
+        or
+        <code><property name="prince-resize-options"/></code>.
+        </p>
     </comments>
     <spec><a href="https://www.w3.org/TR/css3-page/#using-named-pages">CSS Paged Media Module Level 3</a></spec>
 </property>
@@ -4235,11 +4330,16 @@ supplier, item { overflow-wrap: normal; }
     <comments>
     <p>
     This property can be used to force or suppress page breaks after an
-    element.  Prince expands the property with the values <code>verso</code> and
-    <code>recto</code>.
+    element.
     </p>
+    <!-- [More specifically, css-break-3 defines page-break-before/after/inside
+        to be "legacy shorthands".  Below I'm intentionally using css-cascade-4
+        language that *use* of the property is deprecated rather than saying
+        that the property itself is deprecated: i.e. with less implication that
+        the property is expected to be removed any time soon.]
+        -->
     <p class="note">
-    This property is deprecated.  Use the property <code><property name="break-after"/></code>
+    Use of this property is deprecated.  Use the property <code><property name="break-after"/></code>
     instead.  See the documentation for <a href="/doc/paged/#page-breaks">Page breaks</a> for more details.
     </p>
     </comments>
@@ -4271,7 +4371,7 @@ supplier, item { overflow-wrap: normal; }
     <code>recto</code>.
     </p>
     <p class="note">
-    This property is deprecated.  Use the property <code><property name="break-before"/></code>
+    Use of this property is deprecated.  Use the property <code><property name="break-before"/></code>
     instead.  See the documentation for <a href="/doc/paged/#page-breaks">Page breaks</a> for more details.
     </p>
     </comments>
@@ -4297,7 +4397,7 @@ supplier, item { overflow-wrap: normal; }
     element.
     </p>
     <p class="note">
-    This property is deprecated.  Use the property <code><property name="break-inside"/></code>
+    Use of this property is deprecated.  Use the property <code><property name="break-inside"/></code>
     instead.  See the documentation for <a href="/doc/paged/#page-breaks">Page breaks</a> for more details.
     </p>
     </comments>
@@ -4400,6 +4500,41 @@ supplier, item { overflow-wrap: normal; }
     </p>
     </comments>
     <aliastarget>background-image-resolution</aliastarget>
+</property>
+
+<property>
+    <name>prince-baseline-grid</name>
+    <value>
+        <choice>
+            <keyword>auto</keyword>
+            <keyword>new</keyword>
+            <keyword>none</keyword>
+        </choice>
+    </value>
+    <initial>auto</initial>
+    <applyto>block-level boxes</applyto>
+    <inherit>no</inherit>
+    <extention/>
+    <comments>
+    <p>Prince does not yet support constraining an element’s baselines to lie on a grid.
+    In the meantime, this property suffices for common cases:
+    if its value is <code>none</code>
+    then space is added around the box to make its border box occupy
+    a whole number of grid lines.</p>
+
+    <p>The grid line spacing is established by the closest ancestor
+    whose <code>-prince-baseline-grid</code> is <code>new</code>.</p>
+
+    <p>Space is added at the place indicated by <code><property name="prince-resize-adjust"/></code>.</p>
+
+    <p>Note that the value <code>none</code> currently forces the box to 
+    “establish a new formatting context”: i.e. its margins will not collapse with
+    the margins of its children, even if it has no borders and padding.</p>
+
+    <p>The usual way that this property would be used is
+    to set it to <code>new</code> on the root element,
+    and to set it to <code>none</code> on headings, blockquotes and tables.</p>
+    </comments>
 </property>
 
 <property>
@@ -4541,6 +4676,38 @@ supplier, item { overflow-wrap: normal; }
 <property>
     <name>prince-clear</name>
     <alias>clear</alias>
+</property>
+
+<property>
+    <name>prince-change-line-breaks-for-pagination</name>
+    <value>
+        <choice>
+            <keyword>no</keyword>
+            <keyword>yes</keyword>
+        </choice>
+    </value>
+    <initial>no</initial>
+    <applyto>paragraphs: block containers that establish an inline formatting context</applyto>
+    <inherit>yes</inherit>
+    <extension/>
+    <example>:root {
+    -prince-change-line-breaks-for-pagination: yes;
+}</example>
+    <comments>
+        <p>
+        With the initial value of ‘<code>no</code>’, the paragraph’s line breaks
+        are the “galley layout”: chosen without concern for avoiding undesirable
+        page breaks.
+        </p>
+
+        <p>
+        If set to ‘<code>yes</code>’, the line breaks can be affected by pagination
+        considerations, such as avoiding hyphenating a word across a page turn,
+        or changing the number of lines occupied by the paragraph in order to
+        avoid a later undesirable page break without leaving an obvious gap
+        at the end of a page.
+        </p>
+    </comments>
 </property>
 
 <property>
@@ -5253,6 +5420,8 @@ supplier, item { overflow-wrap: normal; }
 	</p>
     </comments>
 </property>
+
+<!-- fixme: Add min-start-length & min-end-length once they've been included in a release. -->
 
 <property>
     <name>prince-n-lines</name>
@@ -6306,6 +6475,109 @@ supplier, item { overflow-wrap: normal; }
 </property>
 
 <property>
+    <name>prince-resize-adjust</name>
+    <value>
+        <choice>
+            <keyword>margin</keyword>
+            <keyword>margin-start</keyword>
+            <keyword>margin-end</keyword>
+            <keyword>padding</keyword>
+            <keyword>padding-start</keyword>
+            <keyword>padding-end</keyword>
+        </choice>
+    </value>
+    <comments>
+    <p>
+    This property controls where space is added for either
+    <code><property name="prince-baseline-grid"/></code>
+    or
+    <code><property name="prince-resize-options"/></code>.
+    </p>
+
+    <p>The <code>*-start</code> values adjust space before the box’s content,
+    <code>*-end</code> values adjust space after the box’s content,
+    while the plain <code>margin</code> and <code>padding</code>
+    values add half of the space adjustment before and half after.</p>
+
+    <p>[In particular, if a box is split across more than one page,
+    then the adjustment is applied only before the first fragment of that box
+    and/or after the last fragment of that box.]</p>
+
+    <p>The <code>padding*</code> values adjust space inside the border (if any),
+    while the <code>margin*</code> values adjust space outside of the border.</p>
+
+    <p>For the <code>margin*</code> values, there is a difference in behaviour between 
+    whether the adjustment is for baseline grid or for pagination flexibility:
+    <code>-prince-resize-options</code> literally changes the used value of the
+    <code><property name="margin"/></code> properties, so is subject to
+    <a href="https://www.w3.org/TR/CSS2/#collapsing-margins">margin collapsing</a>
+    <!-- fixme: Check whether the non-dev version still wants box.html in the URI. -->
+    and
+    <a href="https://www.w3.org/TR/css-break-3/#break-margins">margin truncation</a>,
+    and consequently might not affect the resulting collapsed &amp; truncated margin
+    by the full amount.</p>
+
+    <p>Whereas baseline grid alignment must add space somewhere,
+    so it might best be described as adding space outside of the border rather
+    than exactly increasing the used value of <code>margin</code> properties:
+    this extra space is not truncated if it occurs immediately after a page break;
+    and if space needs to be added to the last fragment of a box split split across
+    more than one page, then space can be added at padding-end or margin-end
+    even if <code>-prince-resize-adjust</code> is <code>padding-start</code>
+    or <code>margin-start</code> respectively.</p>
+    </comments>
+</property>
+
+<property>
+    <name>prince-resize-options</name>
+    <value>
+        <choice>
+            <keyword>none</keyword>
+            <repeat min="1">
+                <type>length</type>
+            </repeat>
+        </choice>
+    </value>
+    <initial>none</initial>
+    <applyto>block-level boxes</applyto>
+    <inherit>no</inherit>
+    <extension/>
+    <example>.chapter&gt;h2 { -prince-resize-options: 1rem; -prince-resize-adjust: padding; }
+blockquote { margin: 1rem; -prince-resize-options: -1rem; }
+@footnotes { -prince-resize-options: 1rem, 2rem; }</example>
+    <comments>
+        <p>
+        This property allows Prince to add or remove space around a block-level box
+        in order to influence where unforced page breaks fall within the text,
+        or to avoid an obvious gap at the end of a page.
+        </p>
+
+        <p>
+        Where space is changed is specified by the
+        <code><property name="prince-resize-adjust"/></code> property.
+        </p>
+
+        <p>
+        Unlike the current implementation of baseline grid in Prince for Books,
+        the adjustment is made to the used value of the margin or padding:
+        for example, the adjustment is affected by
+        <a href="https://www.w3.org/TR/CSS2/#collapsing-margins">margin collapsing</a>
+        and
+        <a href="https://www.w3.org/TR/css-break-3/#break-margins">margin truncation</a>.
+        If you wish to avoid margin truncation then consider setting
+        <code><property name="prince-resize-adjust"/></code>
+        to change padding rather than margin.
+        </p>
+
+        <p>
+        If more than one length is given, then earlier lengths are preferred over
+        later lengths: e.g. ‘1rlh, -1rlh’ means that it is better to add space
+        than to remove space.
+        </p>
+    </comments>
+</property>
+
+<property>
     <name>prince-rotate-body</name>
     <value>
 	<choice>
@@ -6385,6 +6657,56 @@ supplier, item { overflow-wrap: normal; }
 	down in size to fit the paper width.
 	</p>
     <p class="note">The scaling is calculated on the content's <em>width</em>, and not its height.</p>
+    </comments>
+</property>
+
+<property>
+    <name>prince-spread-length-options</name>
+    <value>
+        <choice>
+            <keyword>none</keyword>
+            <sequence>
+                <choice>
+                    <keyword>shorten</keyword>
+                    <keyword>lengthen</keyword>
+                </choice>
+                <optional><type>length</type></optional>
+            </sequence>
+        </choice>
+    </value>
+    <initial>none</initial>
+    <applyto>@page at-rule</applyto>
+    <inherit>n/a</inherit>
+    <extension/>
+    <example>@page { -prince-spread-length-options: shorten; }</example>
+    <comments>
+        <p>
+        This property allows Prince for Books to reduce (or increase)
+        the page content box height of a page and its facing page
+        by the same amount, in order to influence where within the
+        text unforced page breaks fall.
+        </p>
+
+        <p>
+        The page padding/border/margin does not change,
+        nor does the page footer move.
+        (Keep this in mind when styling page footers
+        if you set this property to allow lengthening the page content area.)
+        </p>
+
+        <p>
+        Aside: This pagination technique is fairly common in
+        novels written in English (about 50% of books not using feathering,
+        and a smaller percentage of books that do use feathering);
+        but is much rarer in novels in other languages.
+        It is of course more common in some other types of book,
+        such as those with space between paragraphs.
+        Of novels in English that do change spread length,
+        most only shorten, a few only lengthen,
+        and a few shorten some spreads while lengthening others
+        (so long as a shortened and a lengthened spread aren't directly
+        adjacent to each other).
+        </p>
     </comments>
 </property>
 
@@ -6537,8 +6859,6 @@ supplier, item { overflow-wrap: normal; }
 	line to be unusually loose;
 	but <em>not</em> if either line would become <em>truly exceptionally</em> tightly
 	or loosely spaced.</p>
-
-	<p>(Limitation: At the time of writing, <code>-prince-wrap-inside</code> only affects justified text.)</p>
 
     <p>This property only applies to <a href="/doc/prince-for-books/">Prince for Books</a>.</p>
     </comments>
@@ -7794,12 +8114,40 @@ supplier, item { overflow-wrap: normal; }
     <name>widows</name>
     <value>
     <choice>
-        <type>integer</type>
-        <percentage class="ext"/>
+        <sequence>
+            <choice>
+                <type>integer</type>
+                <sequence>
+                    <percentage class="ext"/>
+                    <keyword class="ext">-prince-full</keyword>
+                </sequence>
+            </choice>
+            <optional>
+                <text>,</text>
+                <keyword class="ext">-prince-prefer</keyword>
+                <choice>
+                    <type class="ext">integer</type>
+                    <sequence>
+                        <percentage class="ext"/>
+                        <keyword class="ext">-prince-full</keyword>
+                    </sequence>
+                </choice>
+            </optional>
+        </sequence>
+        <sequence>
+            <keyword class="ext">-prince-prefer</keyword>
+            <choice>
+                <type class="ext">integer</type>
+                <sequence>
+                    <percentage class="ext"/>
+                    <keyword class="ext">-prince-full</keyword>
+                </sequence>
+            </choice>
+        </sequence>
     </choice>
     </value>
     <initial>1</initial>
-    <applyto>block container elements</applyto>
+    <applyto>“paragraphs”: block container boxes that establish an inline formatting context</applyto>
     <inherit>yes</inherit>
     <see><a href="/doc/paged/#widows-and-orphans">Widows and orphans</a></see>
     <see><a href="/doc/prince-for-books/">Prince for Books</a></see>
@@ -7809,8 +8157,9 @@ supplier, item { overflow-wrap: normal; }
 	<p>
 	If a paragraph is split over two pages or columns, this property
 	determines the minimum number of lines that must be left at the top of
-	the second page or column.
+	the page or column at the end of the paragraph.
 	</p>
+
     <p>
     The percentage value only applies to <a href="/doc/prince-for-books/">Prince for Books</a>, and indicates
     that one widow line is accepted, as long as the line width is at least the
@@ -7821,6 +8170,26 @@ supplier, item { overflow-wrap: normal; }
 
     <p>
     Please note that the initial value has been changed from <code>2</code> to <code>1</code>.
+    </p>
+
+    <p>
+    For an amount not preceded by <code>-prince-prefer</code>,
+    lines will be brought forward from the previous page or column
+    if necessary to ensure the given number of lines are together.
+    </p>
+
+    <p>
+    Values involving <code>-prince-prefer</code> are only accepted by
+    <a href="/doc/prince-for-books/">Prince for Books</a>.
+    An amount preceded by <code>-prince-prefer</code>
+    is a request that Prince for Books will try to satisfy,
+    but not at the cost of introducing an obvious gap at the end of the
+    previous column or page:
+    it will only use whatever flexibility has been granted with
+    <code><property name="prince-change-line-breaks-for-pagination"/></code>,
+    <code><property name="prince-spread-length-options"/></code>
+    or
+    <code><property name="prince-resize-options"/></code>.
     </p>
     </comments>
     <spec><a href="https://www.w3.org/TR/CSS2/page.html#break-inside">CSS 2.1</a></spec>
