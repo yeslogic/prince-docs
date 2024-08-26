@@ -6490,6 +6490,9 @@ supplier, item { overflow-wrap: normal; }
             <keyword>padding-end</keyword>
         </choice>
     </value>
+    <initial>margin</initial>
+    <applyto>block-level boxes</applyto>
+    <inherit>no</inherit>
     <comments>
     <p>
     This property controls where space is added for either
