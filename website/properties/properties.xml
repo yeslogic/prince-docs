@@ -4514,7 +4514,7 @@ supplier, item { overflow-wrap: normal; }
     <initial>auto</initial>
     <applyto>block-level boxes</applyto>
     <inherit>no</inherit>
-    <extention/>
+    <extension/>
     <comments>
     <p>Prince does not yet support constraining an element’s baselines to lie on a grid.
     In the meantime, this property suffices for common cases:
