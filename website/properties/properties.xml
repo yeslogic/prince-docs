@@ -4527,13 +4527,15 @@ supplier, item { overflow-wrap: normal; }
 
     <p>Space is added at the place indicated by <code><property name="prince-resize-adjust"/></code>.</p>
 
-    <p>Note that the value <code>none</code> currently forces the box to 
+    <p>Note that the value <code>none</code> currently forces the box to
     “establish a new formatting context”: i.e. its margins will not collapse with
     the margins of its children, even if it has no borders and padding.</p>
 
     <p>The usual way that this property would be used is
     to set it to <code>new</code> on the root element,
     and to set it to <code>none</code> on headings, blockquotes and tables.</p>
+
+    <p>This property only applies to <a href="/doc/prince-for-books/">Prince for Books</a>.</p>
     </comments>
 </property>
 
@@ -4707,6 +4709,8 @@ supplier, item { overflow-wrap: normal; }
         avoid a later undesirable page break without leaving an obvious gap
         at the end of a page.
         </p>
+
+        <p>This property only applies to <a href="/doc/prince-for-books/">Prince for Books</a>.</p>
     </comments>
 </property>
 
@@ -6499,14 +6503,14 @@ supplier, item { overflow-wrap: normal; }
     while the plain <code>margin</code> and <code>padding</code>
     values add half of the space adjustment before and half after.</p>
 
-    <p>[In particular, if a box is split across more than one page,
+    <p>In particular, if a box is split across more than one page,
     then the adjustment is applied only before the first fragment of that box
-    and/or after the last fragment of that box.]</p>
+    and/or after the last fragment of that box.</p>
 
     <p>The <code>padding*</code> values adjust space inside the border (if any),
     while the <code>margin*</code> values adjust space outside of the border.</p>
 
-    <p>For the <code>margin*</code> values, there is a difference in behaviour between 
+    <p>For the <code>margin*</code> values, there is a difference in behaviour between
     whether the adjustment is for baseline grid or for pagination flexibility:
     <code>-prince-resize-options</code> literally changes the used value of the
     <code><property name="margin"/></code> properties, so is subject to
@@ -6525,6 +6529,8 @@ supplier, item { overflow-wrap: normal; }
     more than one page, then space can be added at padding-end or margin-end
     even if <code>-prince-resize-adjust</code> is <code>padding-start</code>
     or <code>margin-start</code> respectively.</p>
+
+    <p>This property only applies to <a href="/doc/prince-for-books/">Prince for Books</a>.</p>
     </comments>
 </property>
 
@@ -6547,7 +6553,7 @@ blockquote { margin: 1rem; -prince-resize-options: -1rem; }
 @footnotes { -prince-resize-options: 1rem, 2rem; }</example>
     <comments>
         <p>
-        This property allows Prince to add or remove space around a block-level box
+        This property allows Prince for Books to add or remove space around a block-level box
         in order to influence where unforced page breaks fall within the text,
         or to avoid an obvious gap at the end of a page.
         </p>
@@ -6574,6 +6580,8 @@ blockquote { margin: 1rem; -prince-resize-options: -1rem; }
         later lengths: e.g. ‘1rlh, -1rlh’ means that it is better to add space
         than to remove space.
         </p>
+
+        <p>This property only applies to <a href="/doc/prince-for-books/">Prince for Books</a>.</p>
     </comments>
 </property>
 
@@ -6707,6 +6715,8 @@ blockquote { margin: 1rem; -prince-resize-options: -1rem; }
         (so long as a shortened and a lengthened spread aren't directly
         adjacent to each other).
         </p>
+
+        <p>This property only applies to <a href="/doc/prince-for-books/">Prince for Books</a>.</p>
     </comments>
 </property>
 
