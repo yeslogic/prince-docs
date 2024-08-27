@@ -6507,6 +6507,13 @@ supplier, item { overflow-wrap: normal; }
     while the plain <code>margin</code> and <code>padding</code>
     values add half of the space adjustment before and half after.</p>
 
+    <p class="note">
+    The initial value is <code>margin</code>, i.e. the requested adjustment
+    is devided equally between top and bottom margin. However, for
+    <code>@footnotes</code> region, Prince by default sets this property
+    to <code>margin-top</code>.
+    </p>
+
     <p>In particular, if a box is split across more than one page,
     then the adjustment is applied only before the first fragment of that box
     and/or after the last fragment of that box.</p>
