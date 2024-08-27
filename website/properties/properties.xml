@@ -6519,7 +6519,6 @@ supplier, item { overflow-wrap: normal; }
     <code>-prince-resize-options</code> literally changes the used value of the
     <code><property name="margin"/></code> properties, so is subject to
     <a href="https://www.w3.org/TR/CSS2/#collapsing-margins">margin collapsing</a>
-    <!-- fixme: Check whether the non-dev version still wants box.html in the URI. -->
     and
     <a href="https://www.w3.org/TR/css-break-3/#break-margins">margin truncation</a>,
     and consequently might not affect the resulting collapsed &amp; truncated margin
