@@ -6493,6 +6493,7 @@ supplier, item { overflow-wrap: normal; }
     <initial>margin</initial>
     <applyto>block-level boxes</applyto>
     <inherit>no</inherit>
+    <extension/>
     <comments>
     <p>
     This property controls where space is added for either
