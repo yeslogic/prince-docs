@@ -14,9 +14,15 @@ title: Prince for Books
 }
 </style>
 
-Prince for Books is a new venture that allows us to spend more time on features particularly sought by publishers.
+Prince for Books is a project that allows us to spend more time on features particularly sought by publishers.
 
-The initial focus of work is on the features common to all books: making the pagination and line-breaking choices expected of books, by featuring a few extensions to CSS and fine-tuned algorithms.
+The initial focus of work is on features common to all books: making the page-breaking and line-breaking choices expected of books, by featuring a few extensions to CSS and fine-tuned algorithms.
+
+Prince for Books supports everything supported by the standard Prince version.  On top of that, it also introduces a few new CSS properties in order to handle line breaks and page spreads in a more granular way.  It also tries harder to avoid ragged text (i.e. for left-aligned or centered text), and  tries to avoid a short last line, especially if it is shorter than the value of `text-indent`.
+
+<p class="note">
+Prince for Books is updated to the <a href="/latest/">Latest Builds</a> at irregular intervals, which may result in Prince for Books being <em>ahead</em> of the current Prince release. This documentation reflects the <a href="/books/">Prince for Books 20240704</a> release, which is based on the 20240704 Latest Build.
+</p>
 
 For the time being, Prince for Books is only available as a a command-line application named `prince-books`. It is used like the standard Prince - see [Command-line Reference](command-line.md) for available options.
 
@@ -30,12 +36,28 @@ To download it, head over to the [Prince for Books download page](/books/). It i
 Prince for Books can be installed without problem alongside a normal Prince installation - the executable to run is called <code>prince-books</code>, which is also the name of the location for all resource files.
 </p>
 
+Pagination goals
+----------------
+
+Pagination goals are important to clearly define the range within which fine-tuning is applied.  The pagination goals are given by specifying where page breaks should be avoided, with the CSS properties `widows`, `orphans` or `break-before`/`-after`/`-inside`.
+
+Prince for Books allows a value of a CSS property used to define pagination goals to be optionally preceded by the keyword `-prince-prefer`, which turns the requirement into a mere _preference_.  This means that Prince for Books will generally honor the property value, but it will never add an obvious gap at the end of a page to satisfy that request.
+
+CSS
+
+```css
+    p {
+      widows: -prince-prefer 3;
+    }
+```
+
+
 Line breaking
 -------------
 
-Prince for Books supports everything supported by the standard Prince version. On top of that, it also introduces a few new CSS properties to try handling line breaks in a more granular way, and additionally, it tries harder to avoid a hyphen at the end of a page and at the end of the last full line, as well as for ragged text (i.e. for left-aligned or centered text). It also tries to avoid a short last line, especially if it is shorter than the value of `text-indent`.
+Prince for Books introduces a few new CSS properties to try handling line breaks in a more granular way.
 
-### The property `-prince-wrap-inside`
+#### The property `-prince-wrap-inside`
 
 The property [`-prince-wrap-inside`](css-props.md#prop-prince-wrap-inside) offers a way to instruct Prince how to break text: the keyword `phrase` is for marking up a phrase that one would weakly prefer to keep on a single line. It adds to Prince's perceived cost of breaking within that phrase, but only a small cost, comparable to the cost of hyphenating a compound adjective such as ‘midyear’.
 
@@ -69,7 +91,7 @@ If however the final available space were narrower than the required space, Prin
 of the law and<br/>
 of the prophets</p>
 
-### The property `-prince-line-break-choices`
+#### The property `-prince-line-break-choices`
 
 Another property for fine-tuning the line breaking behaviour is [`-prince-line-break-choices`](css-props.md#prop-prince-line-break-choices).
 
@@ -124,7 +146,7 @@ CSS
 ```
 HTMLBook uses a slightly non-standard representation of subtitles: not using `hgroup`, and using `p` elements rather than the heading elements `h1` to `h6`.
 
-### The property `-prince-forced-breaks`
+#### The property `-prince-forced-breaks`
 
 The property [`-prince-forced-breaks`](css-props.md#prop-prince-forced-breaks) controls whether a line ended by a "preserved newline" (such as introduced by `<br>`) should preferably appear to be a normal full line (as if ended only by normal line wrapping), or whether being shorter than a normal full line is actually preferable, for example to mark a deliberate break.
 
@@ -158,14 +180,27 @@ in the document where a line break should be forced only in editions A and C.
 
 The difference is particularly marked in justified text, where lines ended by `-prince-forced-breaks: full` are subject to justification like most other lines.
 
-Spread Balancing
+### Pagination fine-tuning
+
+Prince can furthermore adapt line breaks to either change the number of lines occupied by a paragraph ("make a line" or "save a line", in proofreaders' lingo), or to avoid hyphenating a word across a page boundary, by setting the CSS property [`-prince-change-line-breaks-for-pagination`](css-props.md#prop-prince-change-line-breaks-for-pagination).
+
+Starting from the 20240704 release, Prince for Books defaults to a so-called "galley layout" of paragraphs, i.e. it no longer avoids hyphenating across a page boundary (or makes any other pagination-directed change) unless `-prince-change-line-breaks-for-pagination` for that paragraph is set to `yes`.
+
+The CSS property [`-prince-resize-options`](css-props.md#prop-prince-resize-options) allows Prince to add or remove space around an element, or around a [footnote region](styling.md#footnotes), in order to influence where unforced page breaks fall within the text, or to avoid an obvious gap at the end of a page.  Where exactly space is resized is specified by the [`-prince-resize-adjust`](css-props.md#prop-prince-resize-adjust) property.
+
+Note that each element is considered more or less independently of the others: Prince does not yet allow coordinating changes within a page or spread. Be careful about applying this resizing to headings, if some pages have multiple headings.
+
+Finally, the property [`-prince-spread-length-options`](css-props.md#prop-prince-spread-length-options) allows Prince to "run a spread short", or long - i.e. to leave less, or more, space for content on a page and its facing page.
+
+
+Spread balancing
 ----------------
 
 A prominent new feature is the concept of "spread balancing": Prince for Books can try to ensure that the content on two-page spreads is the same height. Due to the `widows` and `orphans` properties (see [Widows and orphans](paged.md#widows-and-orphans)) it is possible for one page to have fewer lines than the other, and this unevenness looks upsetting.
 
 Prince for Books also tries to reduce the number of uneven spreads.
 
-### The property `-prince-page-fill`
+#### The property `-prince-page-fill`
 
 The property [`-prince-page-fill`](css-props.md#prop-prince-page-fill) is used to tweak the page balancing mechanism.
 
@@ -175,7 +210,7 @@ Prince also includes the bottom margin in the evaluation for balancing, allowing
 
 To turn off the balancing mechanism, use the value `prefer-fill`.
 
-### The property `-prince-n-lines`
+#### The property `-prince-n-lines`
 
 Another way to address page balancing is by using the property [`-prince-n-lines`](css-props.md#prop-prince-n-lines). It is for use in the pagination phase of typesetting, for ensuring that page ends are even while avoiding widows and other awkward breaks.
 
@@ -193,7 +228,7 @@ A simple integer value is the least convenient value to use (since choosing the 
 
 Alternatives to adjusting a paragraph length include adding extra space around a heading, an image or at the start of a chapter.
 
-### Fractional Widows
+#### Fractional Widows
 
 Another feature in Prince for Books are the "fractional widows": the [`widows`](css-props.md#prop-widows) property is allowed a value expressed as percentage.
 
