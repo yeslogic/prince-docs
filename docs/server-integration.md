@@ -473,6 +473,16 @@ by a LOW LINE (5fh) or COLON (3Ah) in either the key or value
 of a dictionary entry are second-class names."
 
 
+```json
+{
+    "url": "/path/to/xmp1.xml",
+    "filename": "xmp1.txt",
+    "description": "Some XMP metadata",
+    "relationship": "Data"
+}
+```
+
+
 The `metadata options` object includes these fields:
 
 ```json
