@@ -418,6 +418,17 @@ Attachments in the job description include a key to specify the AFRelationship k
 
 or a second-class name according to the following definition: "all names that begin with 4 characters including or followed by a LOW LINE (5fh) or COLON (3Ah) in either the key or value of a dictionary entry are second-class names."
 
+When in use, the attachment definition might look like the following example:
+
+```json
+{
+    "url": "/path/to/xmp1.xml",
+    "filename": "xmp1.txt",
+    "description": "Some XMP metadata",
+    "relationship": "Data"
+}
+```
+
 The command-line options
 
     --attach-data
