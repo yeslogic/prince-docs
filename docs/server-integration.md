@@ -456,7 +456,7 @@ Each attachment is a &lt;URL&gt; (string) or an object:
 }
 ```
 
-The value of `relationship` must be one of the names defined in PDF 2.0:
+The value of `relationship` must be one of the AFRelationship keys defined in PDF 2.0:
 
     Source
     Data
@@ -472,6 +472,7 @@ or a second-class name according to the following definition:
 by a LOW LINE (5fh) or COLON (3Ah) in either the key or value
 of a dictionary entry are second-class names."
 
+When in use, the attachment definition might look like the following example:
 
 ```json
 {
@@ -481,7 +482,6 @@ of a dictionary entry are second-class names."
     "relationship": "Data"
 }
 ```
-
 
 The `metadata options` object includes these fields:
 
