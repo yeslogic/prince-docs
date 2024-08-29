@@ -439,7 +439,7 @@ The command-line options
 
 give users a way to add file attachments on the command line, while specifying the AFRelationship value for those attachments.  These options are all equivalent to the command-line option [`--attach`](command-line.md#cl-attach), but will specify a different AFRelationship value for the attachment.
 
-These options are mostly needed for Factur-X invoices, a new invoicing standard that is becoming mandatory in Europe and involves attaching an XMP metadata file to PDF documents.
+These options are mostly needed for Factur-X/ZUGFeRD invoices, a new invoicing standard that is becoming mandatory in Europe and involves attaching an XMP metadata file to PDF documents.
 
 
 ### PDF Bookmarks
