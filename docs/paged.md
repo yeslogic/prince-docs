@@ -888,7 +888,7 @@ Prince provides the [`-prince-page-group`](css-props.md#prop-prince-page-group) 
 
 ## Controlling pagination
 
-Prince will create page breaks automatically when new content will not fit on a page. Sometimes it is useful or necessary to control where page breaks should and should not be used. There are two ways to do this, and both are useful in different circumstances: page breaks can be added or prohibited with the [Page breaks](#page-breaks) properties, and you can control where, within a paragraph, a page break may occur with the [Widows and orphans](#widows-and-orphans) properties.
+Prince will create page breaks automatically when new content will not fit on a page. Controlling where page breaks should be avoided is referred to as _defining pagination goals_. There are two ways to do this, and both are useful in different circumstances: page breaks can be added or prohibited with [Page breaks](#page-breaks) properties, and you can control where, within a paragraph, a page break may occur with the [Widows and orphans](#widows-and-orphans) properties.
 
 ### Page breaks
 
