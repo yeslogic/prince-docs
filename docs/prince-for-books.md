@@ -51,6 +51,12 @@ CSS
     }
 ```
 
+Pagination flexibility is used to achieve the following page-breaking goals:
+
+* Honoring the `-prince-prefer` portion of the properties `widows`, `orphans`, and `break-before`/`-after`/`-inside`;
+* Avoiding a short gap at the end of a page resulting from satisfying the rules defined by above properties without the `-prince-prefer` keyword;
+* Avoiding hyphenating at the end of a page or column.
+
 
 Line breaking
 -------------
