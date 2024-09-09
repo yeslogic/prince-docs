@@ -149,3 +149,27 @@ Furthermore, Prince supports the four angle units `deg`, `grad`, `rad` and `turn
 * the [`hue-rotate` filter](css-props.md#prop-filter) takes an angle;
 * the `@page` [`-prince-rotate-body`](css-props.md#prop-prince-rotate-body) descriptor takes multiples of `90deg`.
 
+
+Line Height Units
+-----------------
+
+Only supported by [Prince for Books](prince-for-books.md) are line height units.
+
+<p class="note">
+If <code>line-height</code> is set to <code>normal</code>, then these units currently
+use the approximation of <code>1.2</code> instead of using the exact font-metrics.
+</p>
+
+<table class="grid">
+<tr>
+<th colspan="2">Line height units</th>
+</tr>
+<tr>
+<td class="example"><code>lh</code></td>
+<td>line height of the element</td>
+</tr>
+<tr>
+<td class="example"><code>rlh</code></td>
+<td>line height of the root element</td>
+</tr>
+</table>

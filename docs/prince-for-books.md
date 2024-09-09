@@ -18,7 +18,7 @@ Prince for Books is a project that allows us to spend more time on features part
 
 The initial focus of work is on features common to all books: making the page-breaking and line-breaking choices expected of books, by featuring a few extensions to CSS and fine-tuned algorithms.
 
-Prince for Books supports everything supported by the standard Prince version.  On top of that, it also introduces a few new CSS properties in order to handle line breaks and page spreads in a more granular way.  It also tries harder to avoid ragged text (i.e. for left-aligned or centered text), and  tries to avoid a short last line, especially if it is shorter than the value of `text-indent`.
+Prince for Books supports everything supported by the standard Prince version.  On top of that, it supports [Line Height Units](css-length-units.md#line-height-units), and also introduces a few new CSS properties in order to handle line breaks and page spreads in a more granular way.  It also tries harder to avoid ragged text (i.e. for left-aligned or centered text), and  tries to avoid a short last line, especially if it is shorter than the value of `text-indent`.
 
 <p class="note">
 Prince for Books is updated to the <a href="/latest/">Latest Builds</a> at irregular intervals, which may result in Prince for Books being <em>ahead</em> of the current Prince release. This documentation reflects the <a href="/books/">Prince for Books 20240704</a> release, which is based on the 20240704 Latest Build.
