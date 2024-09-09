@@ -4099,8 +4099,8 @@
 	of the first page or column.
 	</p>
 
-    <p>
-    Please note that the initial value has been changed from <code>2</code> to <code>1</code>.
+    <p class="note">
+    The initial value has been changed from <code>2</code> to <code>1</code>.
     </p>
     </comments>
     <spec><a href="https://www.w3.org/TR/CSS2/page.html#break-inside">CSS 2.1</a></spec>
@@ -8189,8 +8189,8 @@ blockquote { margin: 1rem; -prince-resize-options: -1rem; }
     see <a href="/doc/prince-for-books/#fractional-widows">Fractional Widows</a>.
     </p>
 
-    <p>
-    Please note that the initial value has been changed from <code>2</code> to <code>1</code>.
+    <p class="note">
+    The initial value has been changed from <code>2</code> to <code>1</code>.
     </p>
 
     <p>
