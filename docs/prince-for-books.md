@@ -230,11 +230,11 @@ Alternatives to adjusting a paragraph length include adding extra space around a
 
 #### Fractional Widows
 
-Another feature in Prince for Books are the "fractional widows": the [`widows`](css-props.md#prop-widows) property is allowed a value expressed as percentage.
+Another feature in Prince for Books are the "fractional widows": the [`widows`](css-props.md#prop-widows) property is allowed a value expressed as percentage, followed by the keyword `-prince-full`.
 
 ```
     p {
-      widows: 50%;
+      widows: 50% -prince-full;
     }
 ```
 This indicates that one widow line is accepted, as long as the line width is at least the given percentage value of the available page width, to avoid the worst case of having a widow line that is only one or two words long.
