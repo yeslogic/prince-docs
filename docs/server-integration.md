@@ -452,7 +452,8 @@ Each attachment is a &lt;URL&gt; (string) or an object:
     "url": <URL>,
     "filename": <string>,
     "description": <string>,
-    "relationship": <string>
+    "relationship": <string>,
+    "mime-type": <string>
 }
 ```
 
@@ -472,14 +473,17 @@ or a second-class name according to the following definition:
 by a LOW LINE (5fh) or COLON (3Ah) in either the key or value
 of a dictionary entry are second-class names."
 
+The MIME type for an attachment is generally autodetected, based on file extension as defined in the `mime-types.txt` mapping file.  However, there can be cases when a manual override is desired - it can be set with the `mime-type` field.
+
 When in use, the attachment definition might look like the following example:
 
 ```json
 {
     "url": "/path/to/xmp1.xml",
-    "filename": "xmp1.txt",
+    "filename": "xmp1.xml",
     "description": "Some XMP metadata",
-    "relationship": "Data"
+    "relationship": "Data",
+    "mime-type": "text/xml"
 }
 ```
 
@@ -556,7 +560,8 @@ The following is the full JSON job description - the mandatory `input` and `src`
             "url": <URL>,
             "filename": <string>,
             "description": <string>,
-            "relationship": <string>
+            "relationship": <string>,
+            "mime-type": <string>
         } ]
     },
     "metadata": {
