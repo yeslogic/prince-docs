@@ -304,19 +304,19 @@ On 64-bit Windows, the Prince GUI is a 32-bit program, but the formatting engine
 
 In the subfolder `engine` are all resource files:
 
-| Folder    | Function                                                                        |
-|-----------|---------------------------------------------------------------------------------|
-| `bin`     | The Prince core (`prince.exe`)                                                  |
-| `contrib` | Licenses for open source libraries used by Prince                               |
-| `dict`    | LibThai dictionary, used by Prince to handle word breaking in the Thai language |
-| `dtd`     | Document Type Definitions (DTDs) for XML languages understood by Prince         |
-| `etc`     | The CA certificate bundle used for retrieving documents over HTTPS              |
-| `hyph`    | The hyphenation dictionaries for common languages                               |
-| `icc`     | ICC color profiles                                                              |
-| `lib`     | Shared libraries required by Prince                                             |
-| `license` | The Prince license file                                                         |
-| `math`    | MathML resource files                                                           |
-| `style`   | The default CSS style sheets                                                    |
+| Folder    | Function                                                                                    |
+|-----------|---------------------------------------------------------------------------------------------|
+| `bin`     | The Prince core (`prince.exe`)                                                              |
+| `contrib` | Licenses for open source libraries used by Prince                                           |
+| `dict`    | LibThai dictionary, used by Prince to handle word breaking in the Thai language             |
+| `dtd`     | Document Type Definitions (DTDs) for XML languages understood by Prince                     |
+| `etc`     | CA certificate bundle, used for HTTPS; and MIME type mapping file, used for PDF attachments |
+| `hyph`    | The hyphenation dictionaries for common languages                                           |
+| `icc`     | ICC color profiles                                                                          |
+| `lib`     | Shared libraries required by Prince                                                         |
+| `license` | The Prince license file                                                                     |
+| `math`    | MathML resource files                                                                       |
+| `style`   | The default CSS style sheets                                                                |
 
 ### MacOS installation layout
 
@@ -332,7 +332,7 @@ In the resource directory are all resource files:
 | `bin`     | The Prince core (the `prince` binary executable) and (as of Prince 11.3) the `princedebug` script |
 | `dict`    | LibThai dictionary, used by Prince to handle word breaking in the Thai language                   |
 | `dtd`     | Document Type Definitions (DTDs) for XML languages understood by Prince                           |
-| `etc`     | The CA certificate bundle used for retrieving documents over HTTPS                                |
+| `etc`     | CA certificate bundle, used for HTTPS; and MIME type mapping file, used for PDF attachments       |
 | `hyph`    | The hyphenation dictionaries for common languages                                                 |
 | `icc`     | ICC color profiles                                                                                |
 | `lib`     | Shared libraries required by Prince                                                               |
@@ -354,7 +354,7 @@ In the resource directory are all resource files:
 | `bin`     | The Prince core (the `prince` binary executable) and (as of Prince 11.3) the `princedebug` script |
 | `dict`    | LibThai dictionary, used by Prince to handle word breaking in the Thai language                   |
 | `dtd`     | Document Type Definitions (DTDs) for XML languages understood by Prince                           |
-| `etc`     | The CA certificate bundle used for retrieving documents over HTTPS                                |
+| `etc`     | CA certificate bundle, used for HTTPS; and MIME type mapping file, used for PDF attachments       |
 | `hyph`    | The hyphenation dictionaries for common languages                                                 |
 | `icc`     | ICC color profiles                                                                                |
 | `lib`     | Shared libraries required by Prince                                                               |

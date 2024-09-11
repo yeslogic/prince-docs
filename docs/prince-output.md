@@ -418,14 +418,17 @@ Attachments in the job description include a key to specify the AFRelationship k
 
 or a second-class name according to the following definition: "all names that begin with 4 characters including or followed by a LOW LINE (5fh) or COLON (3Ah) in either the key or value of a dictionary entry are second-class names."
 
+The MIME type for an attachment is generally autodetected, based on file extension as defined in the `mime-types.txt` mapping file.  However, there can be cases when a manual override is desired - it can be set with the `mime-type` field.
+
 When in use, the attachment definition might look like the following example:
 
 ```json
 {
     "url": "/path/to/xmp1.xml",
-    "filename": "xmp1.txt",
+    "filename": "xmp1.xml",
     "description": "Some XMP metadata",
-    "relationship": "Data"
+    "relationship": "Data",
+    "mime-type": "text/xml"
 }
 ```
 
