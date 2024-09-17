@@ -57,6 +57,37 @@ Pagination flexibility is used to achieve the following page-breaking goals:
 * Avoiding a short gap at the end of a page resulting from satisfying the rules defined by above properties without the `-prince-prefer` keyword;
 * Avoiding hyphenating at the end of a page or column.
 
+The properties `widows` and `orphans` additionally take a second, optional, comma-separated value expressed with the additional keyword `-prince-prefer`. This is useful in case the _preference_, expressed with the additional keyword, is a bigger amount than the hard _requirement_ expressed in the first value.
+
+CSS
+
+```css
+    p {
+      widows: 2, -prince-prefer 3;
+    }
+```
+
+The first value is a requirement strong enough that lines can be push from the previous page if necessary, while the second value with the `-prince-prefer` keyword is merely a preference that tries to be achieved, if possible, by only using the pagination flexibility that has been granted.
+
+Another feature in Prince for Books are the so-called "fractional widows": the [`widows`](css-props.md#prop-widows) property is allowed a value expressed as percentage, followed by the keyword `-prince-full`.
+
+CSS
+
+```css
+    p {
+      widows: 50% -prince-full;
+    }
+```
+This indicates that one widow line is accepted, as long as the line width is at least the given percentage value of the available page width, to avoid the worst case of having a widow line that is only one or two words long.
+
+CSS
+
+```css
+    p {
+      widows: 50% -prince-full, -prince-prefer 70% -prince-full;
+    }
+```
+
 
 Line breaking
 -------------
@@ -233,15 +264,3 @@ The value `change` means to make the paragraph either a line longer or shorter, 
 A simple integer value is the least convenient value to use (since choosing the desired number requires counting the existing number of lines, and since this property is most commonly used on long paragraphs). Its value lies in the fact that the result is not subject to variation in "the number of lines that the paragraph would otherwise have had", as can occur if this paragraph spans a page end, and a subsequent styling change causes some earlier content to changes in size, affecting what is the last line before the break, and if this in turn affects line-breaking decisions made to avoid having a hyphenation at the end of a page.
 
 Alternatives to adjusting a paragraph length include adding extra space around a heading, an image or at the start of a chapter.
-
-#### Fractional Widows
-
-Another feature in Prince for Books are the "fractional widows": the [`widows`](css-props.md#prop-widows) property is allowed a value expressed as percentage, followed by the keyword `-prince-full`.
-
-```
-    p {
-      widows: 50% -prince-full;
-    }
-```
-This indicates that one widow line is accepted, as long as the line width is at least the given percentage value of the available page width, to avoid the worst case of having a widow line that is only one or two words long.
-

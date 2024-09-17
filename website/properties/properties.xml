@@ -4098,9 +4098,15 @@
 	determines the minimum number of lines that must be left at the bottom
 	of the first page or column.
 	</p>
-
     <p class="note">
     The initial value has been changed from <code>2</code> to <code>1</code>.
+    </p>
+    <p>
+    In Prince for Books the property can take a second, optional, comma-separated
+    value expressed with the additional keyword <i>-prince-prefer</i>. It is
+    useful in case the <em>preference</em>, expressed with the additional
+    keyword, is a bigger amount than the hard <em>requirement</em> expressed
+    in the first value.
     </p>
     </comments>
     <spec><a href="https://www.w3.org/TR/CSS2/page.html#break-inside">CSS 2.1</a></spec>
@@ -8180,28 +8186,26 @@ blockquote { margin: 1rem; -prince-resize-options: -1rem; }
 	the page or column at the end of the paragraph.
 	</p>
 
-    <p>
-    The percentage value only applies to <a href="/doc/prince-for-books/">Prince for Books</a>, and indicates
-    that one widow line is accepted, as long as the line width is at least the
-    given percentage value of the available page width, to avoid the worst case
-    of having a widow line that is only one or two words long.  It is followed
-    by the keyword <code>-prince-full</code>.  For more details
-    see <a href="/doc/prince-for-books/#fractional-widows">Fractional Widows</a>.
-    </p>
-
     <p class="note">
     The initial value has been changed from <code>2</code> to <code>1</code>.
     </p>
 
     <p>
-    For an amount not preceded by <code>-prince-prefer</code>,
-    lines will be brought forward from the previous page or column
-    if necessary to ensure the given number of lines are together.
+    The following additional features only apply to Prince for Books.
     </p>
 
     <p>
-    Values involving <code>-prince-prefer</code> are only accepted by
-    <a href="/doc/prince-for-books/">Prince for Books</a>.
+    Prince for Books also supports a percentage value followed by the keyword
+    <code>-prince-full</code>, which indicates that one widow line is accepted,
+    as long as the line width is at least the given percentage value of the
+    available page width, to avoid the worst case of having a widow line that
+    is only one or two words long.  For more details see
+    <a href="/doc/prince-for-books/#fractional-widows">Fractional Widows</a>.
+    </p>
+
+    <p>
+    In Prince for Books a value can be preceded by the keyword <code>-prince-prefer</code>,
+    which turns the requirement into a <em>preference</em>.
     An amount preceded by <code>-prince-prefer</code>
     is a request that Prince for Books will try to satisfy,
     but not at the cost of introducing an obvious gap at the end of the
@@ -8211,6 +8215,14 @@ blockquote { margin: 1rem; -prince-resize-options: -1rem; }
     <code><property name="prince-spread-length-options"/></code>
     or
     <code><property name="prince-resize-options"/></code>.
+    </p>
+
+    <p>
+    The property additionally can take a second, optional, comma-separated
+    value expressed with the additional keyword <i>-prince-prefer</i>. It is
+    useful in case the <em>preference</em>, expressed with the additional
+    keyword, is a bigger amount than the hard <em>requirement</em> expressed
+    in the first value.
     </p>
     </comments>
     <spec><a href="https://www.w3.org/TR/CSS2/page.html#break-inside">CSS 2.1</a></spec>
