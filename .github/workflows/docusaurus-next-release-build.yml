@@ -33,6 +33,9 @@ jobs:
         run: |
           curl https://www.princexml.com/download/prince_15.4-1_ubuntu24.04_amd64.deb -O
           sudo apt install ./prince_15.4-1_ubuntu24.04_amd64.deb
+      - name: Install ImageMagick
+        run: |
+          sudo apt install imagemagick
       - name: Make the page region image
         run: |
           cd ./website/samples
