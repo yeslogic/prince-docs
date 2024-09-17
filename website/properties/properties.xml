@@ -8933,7 +8933,7 @@ blockquote { margin: 1rem; -prince-resize-options: -1rem; }
     <inherit>yes</inherit>
     <see><a href="/doc/paged/#widows-and-orphans">Widows and orphans</a></see>
     <see><a href="/doc/prince-for-books/">Prince for Books</a></see>
-    <see><a href="/doc/prince-for-books/#fractional-widows">Fractional Widows</a></see>
+    <see><a href="/doc/prince-for-books/#pagination-goals">Pagination goals</a></see>
     <see><code><property name="orphans"/></code></see>
     <comments>
 	<p>
@@ -8956,7 +8956,7 @@ blockquote { margin: 1rem; -prince-resize-options: -1rem; }
     as long as the line width is at least the given percentage value of the
     available page width, to avoid the worst case of having a widow line that
     is only one or two words long.  For more details see
-    <a href="/doc/prince-for-books/#fractional-widows">Fractional Widows</a>.
+    <a href="/doc/prince-for-books/#pagination-goals">Pagination goals</a>.
     </p>
 
     <p>
