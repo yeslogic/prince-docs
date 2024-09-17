@@ -8975,7 +8975,7 @@ blockquote { margin: 1rem; -prince-resize-options: -1rem; }
 
     <p>
     The property additionally can take a second, optional, comma-separated
-    value expressed with the additional keyword <i>-prince-prefer</i>. It is
+    value expressed with the additional keyword <code>-prince-prefer</code>. It is
     useful in case the <em>preference</em>, expressed with the additional
     keyword, is a bigger amount than the hard <em>requirement</em> expressed
     in the first value.
