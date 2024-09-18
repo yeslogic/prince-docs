@@ -4650,6 +4650,91 @@
 </property>
 
 <property>
+    <name>outline</name>
+    <value>
+    <multiple>
+      <ref>outline-color</ref>
+      <ref>outline-style</ref>
+      <ref>outline-width</ref>
+    </multiple>
+    </value>
+    <initial>see individual properties</initial>
+    <applyto>all elements</applyto>
+    <inherit>no</inherit>
+    <shorthand>
+      <prop>outline-color</prop>
+      <prop>outline-style</prop>
+      <prop>outline-width</prop>
+    </shorthand>
+    <spec><a href="https://www.w3.org/TR/css-ui-4/#outline">CSS Basic User Interface Module Level 4</a></spec>
+</property>
+
+<property>
+    <name>outline-color</name>
+    <value>
+    <choice>
+      <type>color</type>
+      <keyword>invert</keyword>
+    </choice>
+    </value>
+    <initial>invert</initial>
+    <applyto>all elements</applyto>
+    <inherit>no</inherit>
+    <spec><a href="https://www.w3.org/TR/css-ui-4/#outline-color">CSS Basic User Interface Module Level 4</a></spec>
+</property>
+
+<property>
+    <name>outline-offset</name>
+    <value>
+      <type>length</type>
+    </value>
+    <initial>0</initial>
+    <applyto>all elements</applyto>
+    <inherit>no</inherit>
+    <spec><a href="https://www.w3.org/TR/css-ui-4/#outline-offset">CSS Basic User Interface Module Level 4</a></spec>
+</property>
+
+<property>
+    <name>outline-style</name>
+    <value>
+    <choice>
+      <keyword>none</keyword>
+      <keyword>auto</keyword>
+      <keyword>dotted</keyword>
+      <keyword>dashed</keyword>
+      <keyword>solid</keyword>
+      <keyword>double</keyword>
+      <keyword>groove</keyword>
+      <keyword>ridge</keyword>
+      <keyword>inset</keyword>
+      <keyword>outset</keyword>
+    </choice>
+    </value>
+    <initial>none</initial>
+    <applyto>all elements</applyto>
+    <inherit>no</inherit>
+    <spec><a href="https://www.w3.org/TR/css-ui-4/#outline-style">CSS Basic User Interface Module Level 4</a></spec>
+</property>
+
+<property>
+    <name>outline-width</name>
+    <value>
+    <choice>
+      <repeat min="0">
+        <type>length</type>
+      </repeat>
+      <keyword>thin</keyword>
+      <keyword>medium</keyword>
+      <keyword>thick</keyword>
+    </choice>
+    </value>
+    <initial>medium</initial>
+    <applyto>all elements</applyto>
+    <inherit>no</inherit>
+    <spec><a href="https://www.w3.org/TR/css-ui-4/#outline-width">CSS Basic User Interface Module Level 4</a></spec>
+</property>
+
+<property>
     <name>overflow</name>
     <value>
         <choice>
