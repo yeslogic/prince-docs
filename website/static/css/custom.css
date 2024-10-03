@@ -447,7 +447,7 @@ ul.toc-headings li ul.toc-headings li a.active {
         content: " [\a0" attr(href) "\a0]" !important;
         color: black;
     }
-    a[href*='first']::after, a[href*='install']::after, a[href*='samples']::after, a[href*='forum']::after, a[href*='contact']::after, a[href*='download']::after, a[href='/books/']::after, a[href*='/howcome/']::after  {
+    a[href*='first']::after, a[href*='install']::after, a[href*='samples']::after, a[href*='forum']::after, a[href*='contact']::after, a[href*='download']::after, a[href*='latest']::after, a[href='/books/']::after, a[href*='/howcome/']::after  {
         content: " [available only online]" !important;
         color: black;
     }

@@ -53,9 +53,9 @@ Prince produces PDFs - which are a prominent example of paged media. There are a
   all CSS properties referring to user interaction make no sense, scripting cannot
   be interactive and scripts need to run before layout is finished.  But for these
   details and scripting after layout please check the section on <a href="/doc/javascript#javascript-in-printed-media">JavaScript in Printed Media</a>.</p>
-  <p>Prince, however, also produces PDFs <a href="prince-output/#pdf-versions-and-profiles">not primarily intended for print</a> -
-  <a href="prince-output/#pdf-forms">forms</a>, <a href="prince-output/#pdf-bookmarks">bookmarks</a>,
-  <a href="prince-output/#pdf-links">links</a> and other <a href="prince-output/#pdf-features">features</a>
+  <p>Prince, however, also produces PDFs <a href="/doc/prince-output/#pdf-versions-and-profiles">not primarily intended for print</a> -
+  <a href="/doc/prince-output/#pdf-forms">forms</a>, <a href="/doc/prince-output/#pdf-bookmarks">bookmarks</a>,
+  <a href="/doc/prince-output/#pdf-links">links</a> and other <a href="/doc/prince-output/#pdf-features">features</a>
   can be used in this case.</p>
   </dd>
 </dl>
