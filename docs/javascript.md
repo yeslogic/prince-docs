@@ -82,7 +82,7 @@ These load events can be captured by setting the `onload` attribute on the `body
 
 When document conversion has finished, Prince will fire the `complete` event on the `Prince` object. This event can be captured by calling [`Prince.addEventListener`](js-support.md#window.Prince.addEventListener), or by setting the [`Prince.oncomplete`](js-support.md#window.Prince.oncomplete) property, and is useful for logging document statistics.
 
-When the [`readyState`](js-support.md#window.Document.readyState) attribute of a document changes, the `readystatechange` event is fired.
+When the [`readyState`](js-support.md#window.Document.prototype.readyState) attribute of a document changes, the `readystatechange` event is fired.
 
 Prince also offers the possibility to register the function [`Prince.registerPostLayoutFunc(func)`](js-support.md#window.Prince.registerPostLayoutFunc) after layout has finished for possibly triggering a new layout - see [Multi-Pass formatting](#multi-pass-formatting) for more details.
 
