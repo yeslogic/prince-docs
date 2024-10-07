@@ -110,7 +110,7 @@ The command-line may include the options described below:
     </dd>
     <dt id="cl-license-key"><code>--license-key=<span class="replaceable">KEY</span></code></dt>
     <dd>
-    Pass the license key on the command line. The <code>&lt;signature&gt;</code> element from your license file needs to be deleted, and its value can then be passed as the value of this command-line option. It is handy when you don't want to ship a product with the license key.
+    Pass the license key on the command line - this is useful if you don't want to ship a product with the license key. The contents of the <code>&lt;signature&gt;</code> element must be deleted from your license file, and its value can then be passed as the value of this command-line option - but leave an empty <code>&lt;signature&gt;</code> element in place.
     </dd>
 </dl>
 

@@ -778,6 +778,10 @@ As a general rule, consider that, in order to function best, Prince will need to
 For ease of use, Prince offers its own, maintained [Docker Images](https://hub.docker.com/r/yeslogic/prince).  See also [Prince In Cloud Computing](#prince-in-cloud-computing) for more installation guides in cloud containers.
 
 
+### License Files in Distributed Products
+
+When creating a product for distribution, it might be that you do not want to ship a license file with the distribution - but nevertheless be able to run Prince with a license file when necessary.  In this case the command-line option [`--license-key`](command-line.md#cl-license-key) might come in handy.  The contents of the `<signature>` element must be deleted from your license file, and its value can then be passed as the value of this command-line option - but leave an empty `<signature>` element in place.
+
 
 
 Performance
