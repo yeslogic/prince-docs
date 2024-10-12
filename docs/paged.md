@@ -149,6 +149,8 @@ Most content appears inside the *page area* of one or more pages - in the above 
 
 The figure above shows the position of some *page-margin boxes*, which can be used for creating running page headers and footers, as well as some common regions in the main *page area*.
 
+The HTML and CSS that create the above image can be found in the [Prince Tips and Tricks](cookbook.md#page-regions) cookbook.
+
 The [`@page`](css-at-rules.md#at-page) background is lightgrey and the `body`'s, i.e. the *page area*'s background, is white.
 
 ```css

@@ -114,6 +114,149 @@ On a paragraph level, the properties [`text-align`](css-props.md#prop-text-align
 This style snippet could be part of the stylesheet for a little booklet - it displays the page number in the upper outside corners, the book title in the upper inside of the left, or *verso* page, and the chapter title in the upper inside of the right, or *recto* page. Chapter headings are aligned to the outside of the page spreads, while any image in the book is floated close to the central gutter.
 
 
+### Page Regions
+
+<dl class="ingredients">
+  <dt>You need</dt>
+  <dd><a href="/doc/paged#page-regions">Page regions</a></dd>
+  <dd><a href="/doc/gen-content">Generated Content</a></dd>
+</dl>
+
+A basic concept in preparing a page is the organisation of the available space in main content, known as the _page area_, and additional content arranged in _page area regions_ and _page-margin boxes_ - for a full explanation, please refer to the [page regions](paged.md/#page-regions) chapter.  In that chapter you can see an image with all available regions and boxes depicted.
+
+That image is created by Prince only with the help of HTML and CSS.  Here is the code producing that image:
+
+```html
+    <html>
+        <head>
+            <title>Page regions</title>
+            <style>
+            @page {
+                size: a4;
+                border: 8px black solid;
+                padding: 0cm;
+                margin: 4cm;
+                background-color: lightgrey;
+                font-size: 22pt;
+                font-family: sans-serif;
+                @top-center {
+                    content: "@top-center";
+                    background-color: lemonchiffon;
+                }
+                @bottom-center {
+                    content: "@bottom-center";
+                    background-color: lemonchiffon;
+                }
+                @left-middle {
+                    content: "@left-middle";
+                    background-color: lightcoral;
+                }
+                @right-middle {
+                    content: "@right-middle";
+                    background-color: lightcoral;
+                }
+                @top-left {
+                    content: "@top-left";
+                    background-color: lightgreen;
+                }
+                @left-top {
+                    content: "@left-top";
+                    background-color: lightgreen;
+                }
+                @top-right-corner {
+                    content: "@top-right-corner";
+                    font-size: 15pt;
+                    background-color: cornflowerblue;
+                }
+                @leftnote {
+                    width: 10vw;
+                    background-color: pink;
+                }
+                @rightnote {
+                    width: 10vw;
+                    background-color: thistle;
+                }
+                @footnote {
+                    background-color: aliceblue;
+                }
+                @prince-overlay {
+                    background: repeating-linear-gradient(
+                        -45deg,
+                        rgba(255,255,255, 0.1),
+                        rgba(255,255,255, 0.1) 20px,
+                        rgba(255,0,0, 0.2) 20px,
+                        rgba(255,0,0, 0.2) 40px
+                    );
+                    color: rgba(255,0,0, 0.6);
+                    content: "@prince-overlay";
+                }
+                @page-float-top {
+                    background-color: lightblue;
+                }
+                @page-float-bottom {
+                    background-color: gainsboro;
+                }
+            }
+            body {
+                background-color: white;
+                padding: 0.2cm;
+                font-size: 48pt;
+                text-align: center;
+                font-family: sans-serif;
+            }
+            p {
+                font-weight: bold;
+            }
+            #footnote {
+                float: footnote;
+                font-size: 22pt;
+                font-weight: normal;
+            }
+            #leftnote {
+                float: leftnote align-bottom;
+                font-size: 22pt;
+                transform: rotate(-90deg);
+                margin-bottom: -6em;
+                font-weight: normal;
+            }
+            #rightnote {
+                float: rightnote;
+                font-size: 22pt;
+                transform: rotate(90deg);
+                padding-left: 9vw;
+                font-weight: normal;
+            }
+            #pagefloattop {
+                float: top;
+                font-weight: normal;
+                font-size: 22pt;
+                font-style: italic;
+            }
+            #pagefloatbottom {
+                float: bottom;
+                font-weight: normal;
+                font-size: 22pt;
+                font-style: italic;
+            }
+            *::footnote-call, *::footnote-marker {
+                content: "";
+            }
+            </style>
+        </head>
+        <body>
+            <p>Page area
+                <span id="footnote">@footnote</span>
+                <span id="leftnote">@leftnote</span>
+                <span id="rightnote">@rightnote</span>
+            </p>
+            <p id="pagefloattop">@page-float-top</p>
+            <p id="pagefloatbottom">@page-float-bottom</p>
+        </body>
+    </html>
+```
+
+Note that the page-margin boxes and `@prinec-overlay` take CSS generated content, while the page area regions only move elements from HTML into the designed region.
+
 ### Page Headers and Footers
 
 <dl class="ingredients">
