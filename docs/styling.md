@@ -146,7 +146,7 @@ Prince maps the CSS generic font families to the Microsoft Core Fonts. The Micro
 
 <p class="note">Instructions for installing fonts on Linux greatly depend on the distribution you are running - we recommend checking the documentation for your own distro.  Here are links to fonts documentation for <a href="https://wiki.ubuntu.com/Fonts">Ubuntu</a>, <a href="https://en.opensuse.org/Fonts">openSuse</a>, <a href="https://wiki.debian.org/Fonts">Debian</a>, and <a href="https://wiki.alpinelinux.org/wiki/Fonts">Alpine Linux</a>.</p>
 
-The following table shows the default fonts for the main languages on Windows, MacOS and Linux.
+The following table shows the default fonts for the main supported languages on Windows, MacOS and Linux.
 
 <table class="grid">
 <thead>
@@ -159,8 +159,8 @@ The following table shows the default fonts for the main languages on Windows, M
 </thead>
 <tbody>
 <tr>
-<td rowspan="31"><code>serif</code></td>
-<td rowspan="6">Windows</td>
+<td rowspan="34"><code>serif</code></td>
+<td rowspan="7">Windows</td>
 <td>Latin</td>
 <td>Times New Roman, Noto Serif</td>
 </tr>
@@ -185,7 +185,11 @@ The following table shows the default fonts for the main languages on Windows, M
 <td>Leelawadee UI, Khmer UI, Noto Serif</td>
 </tr>
 <tr>
-<td rowspan="6">MacOS</td>
+<td>Myanmar (Burmese)</td>
+<td>Myanmar Text, Noto Serif</td>
+</tr>
+<tr>
+<td rowspan="7">MacOS</td>
 <td>Latin</td>
 <td>Times New Roman, Noto Serif</td>
 </tr>
@@ -210,7 +214,11 @@ The following table shows the default fonts for the main languages on Windows, M
 <td>Khmer MN, Noto Serif</td>
 </tr>
 <tr>
-<td rowspan="19">Linux</td>
+<td>Myanmar (Burmese)</td>
+<td>Myanmar Sangam MN, Noto Serif</td>
+</tr>
+<tr>
+<td rowspan="20">Linux</td>
 <td>Latin, Greek, Cyrillic</td>
 <td>Times New Roman, DejaVu Serif, DejaVu LGC Serif, Liberation Serif, Noto Serif</td>
 </tr>
@@ -279,6 +287,10 @@ The following table shows the default fonts for the main languages on Windows, M
 <td>Khmer OS, Noto Serif</td>
 </tr>
 <tr>
+<td>Myanmar (Burmese)</td>
+<td>Noto Serif, Padauk, Myanmar Sagar, Noto Sans</td>
+</tr>
+<tr>
 <td>Emoji</td>
 <td>JoyPixels, Noto Color Emoji</td>
 </tr>
@@ -287,8 +299,8 @@ The following table shows the default fonts for the main languages on Windows, M
 <td>OpenSymbol, DejaVu Sans</td>
 </tr>
 <tr>
-<td rowspan="17"><code>sans-serif</code></td>
-<td rowspan="5">Windows</td>
+<td rowspan="20"><code>sans-serif</code></td>
+<td rowspan="6">Windows</td>
 <td>Latin</td>
 <td rowspan="2">Arial, Noto Sans</td>
 </tr>
@@ -308,7 +320,11 @@ The following table shows the default fonts for the main languages on Windows, M
 <td>Noto Sans</td>
 </tr>
 <tr>
-<td rowspan="5">MacOS</td>
+<td>Myanmar (Burmese)</td>
+<td>Myanmar Text, Padauk, Myanmar Sagar, Noto Sans</td>
+</tr>
+<tr>
+<td rowspan="6">MacOS</td>
 <td>Latin</td>
 <td>Arial, Noto Sans</td>
 </tr>
@@ -329,7 +345,11 @@ The following table shows the default fonts for the main languages on Windows, M
 <td>Khmer Sangam MN, Noto Sans</td>
 </tr>
 <tr>
-<td rowspan="7">Linux</td>
+<td>Myanmar (Burmese)</td>
+<td>Myanmar Sangam MN, Padauk, Myanmar Sagar, Noto Sans</td>
+</tr>
+<tr>
+<td rowspan="8">Linux</td>
 <td>Latin, Greek, Cyrillic</td>
 <td>Arial, DejaVu Sans, DejaVu LGC Sans, Liberation Sans, Noto Sans</td>
 </tr>
@@ -356,6 +376,10 @@ The following table shows the default fonts for the main languages on Windows, M
 <tr>
 <td>Khmer</td>
 <td>Noto Sans</td>
+</tr>
+<tr>
+<td>Myanmar (Burmese)</td>
+<td>Padauk, Myanmar Sagar, Noto Sans</td>
 </tr>
 <tr>
 <td rowspan="12"><code>monospace</code></td>
