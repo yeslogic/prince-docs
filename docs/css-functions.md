@@ -46,6 +46,11 @@ In this section you find the documentation for the supported CSS functional expr
 <td></td>
 </tr>
 <tr>
+<td><code>round( &lt;<i>rounding-strategy</i>&gt;?, A, B? )</code></td>
+<td>Calculates the value of A, rounded according to the (optional) rounding strategy to the nearest integer multiple of B, either above or below A.</td>
+<td></td>
+</tr>
+<tr>
 <td><code>var( &lt;<i>custom-property-name</i>&gt; [,&#160;&lt;<i>fallback</i>&gt;]? )</code></td>
 <td>Retrieves the value of a custom property set elsewhere.</td>
 <td><a href="/doc/styling#custom-properties-css-variables">Custom properties (CSS variables)</a></td>
