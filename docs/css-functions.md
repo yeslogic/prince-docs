@@ -51,6 +51,16 @@ In this section you find the documentation for the supported CSS functional expr
 <td></td>
 </tr>
 <tr>
+<td><code>mod( A, B )</code></td>
+<td>Calculates the difference between A and the nearest integer multiple of B, either above or below A - the result will either be zero or share the sign of B.</td>
+<td></td>
+</tr>
+<tr>
+<td><code>rem( A, B )</code></td>
+<td>Calculates the difference between A and the nearest integer multiple of B, either above or below A - if A and B are on opposite sides of zero, the value will be placed between zero and -B.</td>
+<td></td>
+</tr>
+<tr>
 <td><code>var( &lt;<i>custom-property-name</i>&gt; [,&#160;&lt;<i>fallback</i>&gt;]? )</code></td>
 <td>Retrieves the value of a custom property set elsewhere.</td>
 <td><a href="/doc/styling#custom-properties-css-variables">Custom properties (CSS variables)</a></td>
