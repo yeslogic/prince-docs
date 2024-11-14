@@ -512,10 +512,48 @@ Page Selectors
 
 <table class="grid">
 <tr>
-<th colspan="2">The <code>nth(<i>N</i>)</code> selector</th>
+<th colspan="2">The <code>:first</code> and <code>:nth</code> page selectors</th>
 </tr>
 <tr>
-<td><code>nth(<i>N</i>)</code></td>
+<td><code>:first</code></td>
+<td>Represents first page of the document.</td>
+</tr>
+<tr>
+<td><code>:nth(<i>N</i>)</code></td>
 <td>Represents the <i>N</i>th page of the document: <code>@page:nth(42) {...}</code></td>
+</tr>
+<tr>
+<td><code>:first-of-group</code></td>
+<td>Represents the first page of a <a href="/doc/paged/#page-groups">page group</a>.</td>
+</tr>
+<tr>
+<td><code>:nth-of-group(<i>N</i>)</code></td>
+<td>Represents the <i>N</i>th page of a <a href="/doc/paged/#page-groups">page group</a>.</td>
+</tr>
+<tr>
+<th colspan="2">Page spread selectors</th>
+</tr>
+<tr>
+<td><code>:left</code></td>
+<td>Represents a left page in a page spread.</td>
+</tr>
+<tr>
+<td><code>:right</code></td>
+<td>Represents a right page in a page spread.</td>
+</tr>
+<tr>
+<td><code>:recto</code></td>
+<td>Represents a page in a page spread - in a left-to-right script it selects the right-hand side of a spread, while in a right-to-left script it selects the left-hand side of a spread.</td>
+</tr>
+<tr>
+<td><code>:verso</code></td>
+<td>Represents a page in a page spread - in a left-to-right script it selects the left-hand side of a spread, while in a right-to-left script it selects the right-hand side of a spread.</td>
+</tr>
+<tr>
+<th colspan="2">The blank page selector</th>
+</tr>
+<tr>
+<td><code>:blank</code></td>
+<td>Represents <a href="/doc/paged/#blank-pages">blank pages</a> in the document.</td>
 </tr>
 </table>

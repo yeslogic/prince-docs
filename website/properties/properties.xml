@@ -6210,7 +6210,7 @@ supplier, item { overflow-wrap: normal; }
     <comments>
 	<p>
 	This property determines whether the first page of this element
-	matches the <code>:first</code> page class selector.
+	matches the <code>:first-of-group</code> page class selector.
 	</p>
     </comments>
     <aliastarget>page-group</aliastarget>

@@ -689,9 +689,33 @@ It can be achieved by using JavaScript to move the element, but the simple `star
 
 The `element()` and `flow()` functions replace the entire margin box, and cannot be combined with other content. If you just want to capture some text from the document, use named strings instead (see [Copying content from the document](#copying-content-from-the-document)) - they can be combined with other content.
 
+
+
 ## Selecting pages
 
 It is often necessary to apply styles to some pages, but not others. Either applying them to only some pages, or on every page *except* selected pages. CSS and Prince provide a number of *page selectors* for choosing which pages a rule applies to.
+
+The first page of a document is selected by the `:first` CSS selector.  Other pages can be selected by using the `:nth()` selector.
+
+```css
+    @page:nth(42) {
+    }
+```
+
+To select not the first page of the whole document, but the first page of each chapter, the selector `:first-of-group` needs to be used. In the same way, a selector `:nth-of-group()` exists.
+
+```css
+    @page chapter:first-of-group {
+    }
+```
+
+The `:left` and `:right` page selectors can be used to style left and right pages in a bound book differently. This is often used in text books to place the page number on the outside top corners of pages.
+
+Alternatively, the `:recto` and `:verso` selectors can be used, with the advantage of being independent of directionality of the script: in a left-to-right script, `:recto` is the right-hand side of a spread, and `:verso` is the left-hand side, while in a right-to-left script these values are inverted: `:recto` defines the left-hand side of a spread, and `:verso` defines the right-hand side. See also [Writing Mode](styling.md#writing-mode).
+
+Finally, the `:blank` selector can be used to style blank pages.
+
+We shall now see a few examples.
 
 In a novel it is useful to print a page number at the bottom of every page, *except* for some pages such as the title page. In this example the [`@page`](css-at-rules.md#at-page) rule is applied to all pages. Then the `@page:first` rule, which is more specific, removes the footer from the first page. See [Page regions](#page-regions) and [Generated Content](gen-content.md).
 
@@ -736,11 +760,7 @@ A title page example showing use of `@page:first`. Download the [PDF](assets/sam
 ```
 In this example the [`@page`](css-at-rules.md#at-page) rule specifies styles that apply to all pages: Then the `@page:first` rule overrides this for the first page only. It resets the [`content`](css-props.md#prop-content) property for the footer and increases the top margin, printing the title of the novel in a reasonable place on the page (see [Page style](#page-style)). This example also uses the [`break-before`](css-props.md#prop-break-before) property to force a page break (see [Page breaks](#page-breaks)).
 
-When using the `:first` page selector to choose the first page in each chapter (such as in [Fancy headers](#fig-fancyheader)) it may be necessary to add `-prince-page-group: start` to the first element in each chapter (such as `h1`). See [Page groups](#page-groups).
-
-The `:left` and `:right` page selectors can be used to style left and right pages in a bound book differently. This is often used in text books to place the page number on the outside top corners of pages.
-
-Alternatively, the `:recto` and `:verso` selectors can be used, with the advantage of being independent of directionality of the script: in a left-to-right script, `:recto` is the right-hand side of a spread, and `:verso` is the left-hand side, while in a right-to-left script these values are inverted: `:recto` defines the left-hand side of a spread, and `:verso` defines the right-hand side. See also [Writing Mode](styling.md#writing-mode).
+In order to choose the first page in each chapter (such as in [Fancy headers](#fig-fancyheader)) the selector `:first-of-group` needs to be used, and it may be necessary to add `-prince-page-group: start` to the first element in each chapter (such as `h1`). See [Page groups](#page-groups).
 
 <p id="fig-textbook">Textbook page numbers example</p>
 
@@ -803,7 +823,7 @@ More than one element can *belong* to the same name, in other words, page names 
 
 Prince will create a page break between elements belonging to different named pages, including elements without a named page. So in [Restarting page numbering](#fig-restart-page-numbers), a page break will be inserted after the the table of contents, because the next element has the page name main rather than table-of-contents.
 
-Selectors such as `:first`, `:Nth`, `:left` and `:right` also work with named pages. For example:
+Selectors such as `:first-of-group`, `:nth-of-group()`, `:left` and `:right` also work with named pages. For example:
 
 ```css
     @page preface {
@@ -811,7 +831,7 @@ Selectors such as `:first`, `:Nth`, `:left` and `:right` also work with named pa
             content: counter(page, lower-alpha)
         }
     }
-    @page preface:first {
+    @page preface:first-of-group {
         @bottom-center {
             content: normal;
         }
@@ -830,13 +850,13 @@ This example only works when a page name is used only once within a document, su
             content: counter(page);
         }
     }
-    @page chapter:first {
+    @page chapter:first-of-group {
         @bottom-center {
             content: normal;
         }
     }
 ```
-The property `-prince-page-group: start` instructs Prince to start a new page group. This is necessary for the `div.chapter:first` selector to match the first page of each chapter, instead of only the first page in the first chapter. See [Page groups](#page-groups).
+The property `-prince-page-group: start` instructs Prince to start a new page group. This is necessary for the `div.chapter:first-of-group` selector to match the first page of each chapter, instead of only the first page in the first chapter. See [Page groups](#page-groups).
 
 ### Blank pages
 
@@ -888,7 +908,7 @@ It is not always desirable to have no content on blank pages. Sometimes otherwis
 
 ### Page groups
 
-When consecutive elements belong to the same named page but logically separate structures (such as individual chapters) Prince combines them into one *page group*. This causes it to apply the `:first` page selector to the first page of the whole page group only (the first page of chapter 1). Instead we usually want `:first` applied to the first page of each chapter.
+When consecutive elements belong to the same named page but logically separate structures (such as individual chapters) Prince combines them into one *page group*. This causes it to apply the `:first-of-group` page selector to the first page of the whole page group only (the first page of chapter 1). Instead we usually want `:first-of-group` applied to the first page of each chapter.
 
 This can happen either:
 
