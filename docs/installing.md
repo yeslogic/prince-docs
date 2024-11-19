@@ -31,7 +31,7 @@ Prince is available for Windows, MacOS, Linux (multiple distributions) and FreeB
 
 Prince is provided under the terms of the [Prince End-User License Agreement](/license/).
 
-### Installing Prince on Windows
+### ... on Windows
 
 1.  Download your installation package from the [Download Page](/download/).
 2.  After downloading and attempting to run the installer you might see a confirmation screen like this. Click "run". Note that the filename for the installer may be different than the one shown in the picture.
@@ -68,7 +68,7 @@ Prince is provided under the terms of the [Prince End-User License Agreement](/l
 
 For the layout of a Prince installation on Windows, see the [Windows installation layout](#windows-installation-layout) section.
 
-### Installing Prince on MacOS
+### ... on MacOS
 
 To install Prince on MacOS, please run the `install.sh` shell script contained in the package downloaded to your computer from the [download page](/download/). This will involve the following procedure:
 
@@ -100,7 +100,7 @@ You will need to add the appropriate command to your shell's configuration or st
 
 For the layout of a Prince installation on MacOS, see the [MacOS installation layout](#macos-installation-layout) section.
 
-### Installing Prince on Linux/FreeBSD
+### ... on Linux/FreeBSD
 
 Prince is installed using the terminal. The installation package can be downloaded from the [Download Page](/download/). Then open a terminal window and change to the directory that you downloaded or copied the installation package to. The `$` symbol represents the command prompt and the text that follows is the command, you should not type in the `$` symbol.
 
@@ -258,7 +258,7 @@ Installing a license file
 
 If you've purchased Prince you can install your license file (which you will receive via e-mail) to remove the watermark on generated documents. This section will explain how to install the license file. If instead you're using the free version of Prince then you don't need to install a license file.
 
-### Installing a license file on Windows
+### ... on Windows
 
 On Windows you can install a license by following these steps:
 
@@ -280,7 +280,7 @@ On Windows you can install a license by following these steps:
 
     ![Image showing the license window with a license selected but not yet installed.](assets/images/gui_05.png)
 
-### Installing a license file on other systems
+### ... on other systems
 
 On other systems copy the `license.dat` file into the `lib/prince/license` directory of the Prince installation (see [Installation Layout](#installation-layout)). For example, if Prince was installed into the default `/usr/local` directory, the license file should be copied to `/usr/local/lib/prince/license/license.dat`
 
@@ -298,7 +298,7 @@ Installation Layout
 
 This section details where Prince installs its files in the various supported operating systems.
 
-### Windows installation layout
+### ... on Windows
 
 Prince installs its files to `%ProgramFiles%` on 32-bit Windows, and to `%ProgramFiles(x86)%` on 64-bit Windows.
 
@@ -323,7 +323,7 @@ In the subfolder `engine` are all resource files:
 | `math`    | MathML resource files                                                                       |
 | `style`   | The default CSS style sheets                                                                |
 
-### MacOS installation layout
+### ... on MacOS
 
 Prince installs its files by default to `/usr/local` on MacOS:
 
@@ -345,7 +345,7 @@ In the resource directory are all resource files:
 | `math`    | MathML resource files                                                                             |
 | `style`   | The default CSS style sheets                                                                      |
 
-### Linux and FreeBSD installation layout
+### ... on Linux and FreeBSD
 
 Prince installs its files by default to `/usr` on Linux and FreeBSD:
 
