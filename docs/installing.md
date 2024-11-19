@@ -66,11 +66,7 @@ Prince is provided under the terms of the [Prince End-User License Agreement](/l
 
     ![The installer's completion screen](assets/images/install_05.png)
 
-To run Prince on Windows, you typically double-click on the Prince icon created during installation. You can also run only the binary, without the GUI, like on all other systems - for details please see the [Command-line Reference](command-line.md#command-line).
-
 For the layout of a Prince installation on Windows, see the [Windows installation layout](#windows-installation-layout) section.
-
-For information about using Prince from PHP, Java, .NET, and other server frameworks you will need to install one or more [Prince wrappers](/doc/server-integration/#prince-wrappers). See [Server Integration](server-integration.md) for installation and usage information.
 
 ### Installing Prince on MacOS
 
@@ -102,11 +98,7 @@ If you chose a non-standard location you may need to add the `bin/` subdirectory
 
 You will need to add the appropriate command to your shell's configuration or startup file. See your distribution or shell's documentation for how to do this.
 
-Prince is now ready to use - to run Prince on MacOS, enter the `prince` command on the command line - for details please see the [Command-line Reference](command-line.md#command-line). [Your First Document](first-doc.md#first-doc) will walk you through generating your first PDF document.
-
 For the layout of a Prince installation on MacOS, see the [MacOS installation layout](#macos-installation-layout) section.
-
-For information about using Prince from PHP, Java, .NET, and other server frameworks you will need to install one or more [Prince wrappers](/doc/server-integration/#prince-wrappers). See [Server Integration](server-integration.md) for installation and usage information.
 
 ### Installing Prince on Linux/FreeBSD
 
@@ -192,9 +184,7 @@ The process will then end with messages similar to:
 
     Complete!
 
-Prince is now ready to use. [Your First Document](first-doc.md#first-doc) will walk you through generating your first PDF document.
-
-For information about using Prince from PHP, Java, .NET, and other server frameworks you will need to install one or more [Prince wrappers](/doc/server-integration/#prince-wrappers). See [Server Integration](server-integration.md) for installation and usage information.
+For the layout of a Prince installation on Linux, see the [Linux installation layout](#linux-and-freebsd-installation-layout) section.
 
 #### Tarballs - Alpine Linux, FreeBSD and Generic Linux
 
@@ -244,9 +234,24 @@ If you chose a non-standard location you may need to add the `bin/` subdirectory
 
 You will need to add the appropriate command to your shell's configuration or startup file. See your operating system's or shell's documentation for how to do this.
 
-Prince is now ready to use. [Your First Document](first-doc.md#first-doc) will walk you through generating your first PDF document.
+For the default layout of a Prince installation on Linux and FreeBSD, see the [Linux and FreeBSD installation layout](#linux-and-freebsd-installation-layout) section.
+
+
+Running Prince
+--------------
+
+Once Prince is intalled, it can be run as a command-line application.
+
+    $ prince file.html
+
+[Several options](command-line.md) allow to fine-tune input and output.
+
+Additionally, on Windows Prince can be run as a GUI application by double-clicking on the Prince icon created during installation.
+
+Prince is now ready to use - [Your First Document](first-doc.md#first-doc) will walk you through generating your first PDF document.
 
 For information about using Prince from PHP, Java, .NET, and other server frameworks you will need to install one or more [Prince wrappers](/doc/server-integration/#prince-wrappers). See [Server Integration](server-integration.md) for installation and usage information.
+
 
 Installing a license file
 -------------------------
