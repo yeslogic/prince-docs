@@ -402,8 +402,9 @@ The full list of page regions is shown in the following [Page regions](#tab-marg
   <p>The <code>@leftnote</code> and <code>@rightnote</code> areas for sidenotes are placed
   left and right of the page area and contain the sidenotes (see
   <a href="/doc/styling#sidenotes">Sidenotes</a>).  For page spreads, there are also at-rules
-  for <code>@outsidenote</code> and <code>@insidenote</code>.  The sidenote areas need a width
-  to be defined.</p>
+  for <code>@outsidenote</code> and <code>@insidenote</code>, which are placed respectively on
+  the outside or inside edges of each of the two page areas in a page spread.  The sidenote areas
+  need a width to be defined.</p>
   </dd>
 </dl>
 
@@ -693,7 +694,7 @@ The `element()` and `flow()` functions replace the entire margin box, and cannot
 
 ## Selecting pages
 
-It is often necessary to apply styles to some pages, but not others. Either applying them to only some pages, or on every page *except* selected pages. CSS and Prince provide a number of *page selectors* for choosing which pages a rule applies to.
+It is often necessary to apply styles to some pages, but not others. Either applying them to only some pages, or on every page *except* selected pages. CSS and Prince provide [a number of *page selectors*](css-selectors.md#page-selectors) for choosing which pages a rule applies to.
 
 The first page of a document is selected by the `:first` CSS selector.  Other pages can be selected by using the `:nth()` selector.
 
