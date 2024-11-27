@@ -7174,6 +7174,29 @@ supplier, item { overflow-wrap: normal; }
 </property>
 
 <property>
+    <name>prince-pdf-tagged</name>
+    <value>
+    <choice>
+        <keyword>auto</keyword>
+        <keyword>enable</keyword>
+    </choice>
+    </value>
+    <initial>auto</initial>
+    <applyto>@prince-pdf at-rule</applyto>
+    <inherit>n/a</inherit>
+    <extension/>
+    <example>@prince-pdf {
+    -prince-pdf-tagged: enable;
+}</example>
+    <see><a href="/doc/prince-output/#pdf-tags">PDF Tags</a></see>
+    <comments>
+    <p>
+    This property is used to enable tagged PDF.
+    </p>
+    </comments>
+</property>
+
+<property>
     <name>prince-pdf-tag-title</name>
     <value>
     <choice>
