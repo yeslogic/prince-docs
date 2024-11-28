@@ -70,7 +70,7 @@ PDF 1.7 (ISO 32000-1:2008)
 -   if the [`-prince-pdf-paper-tray`](css-props.md#prop-prince-pdf-paper-tray) property is set, or
 -   if the [`-prince-pdf-duplex`](css-props.md#prop-prince-pdf-duplex) property is set.
 
-To enable tagged PDF without using one of the profiles that already imply it, the command-line option [`--tagged-pdf`](command-line.md#cl-tagged-pdf) can be used.
+The PDF/A-[123]a profiles and the PDF/UA-1 profile require tagged PDF, and will automatically enable it.  To enable tagged PDF without using one of the profiles that already imply it, the command-line option [`--tagged-pdf`](command-line.md#cl-tagged-pdf) can be used.
 
 Prince supports PDF object streams to reduce the size of tagged PDFs. This can be disabled by the command-line argument [`--no-object-streams`](command-line.md#cl-no-object-streams) or from JavaScript via the [`PDF.objectStreams`](js-support.md#window.PDF.objectStreams) boolean property.
 
@@ -556,7 +556,7 @@ Please also consult [A quick guide to PDF comments in Prince](https://css4.pub/2
 
 Tagged PDF files have special handling mechanisms for specific tag types.
 
-Tagged PDF is automatically enabled when the PDF profiles requesting it are chosen. Alternatively, tagged PDF files can be enabled with the command line option [`--tagged-pdf`](command-line.md#cl-tagged-pdf), or the CSS property [`-prince-pdf-tagged`](css-props.md#prop-prince-pdf-tagged). Prince will then automatically assign default values to certain HTML elements, which can be seen in the default `html.css` style sheet (see [Installation Layout](installing.md#installation-layout)).
+Tagged PDF is automatically enabled when the PDF/A-[123]a profiles or the PDF/UA-1 profile are chosen. Alternatively, tagged PDF files can be manually enabled with the command line option [`--tagged-pdf`](command-line.md#cl-tagged-pdf), or the CSS property [`-prince-pdf-tagged`](css-props.md#prop-prince-pdf-tagged). Prince will then automatically assign default values to certain HTML elements, which can be seen in the default `html.css` style sheet (see [Installation Layout](installing.md#installation-layout)).
 
 However, in specific cases it is advisable to fine-tune the PDF tags with the [`-prince-pdf-tag-type`](css-props.md#prop-prince-pdf-tag-type) property. In Prince, it is possible to assign PDF tag types to elements in the document through the [`-prince-pdf-tag-type`](css-props.md#prop-prince-pdf-tag-type) property, in order to create XML vocabularies in the PDF.
 
