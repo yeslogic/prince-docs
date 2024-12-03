@@ -55,11 +55,12 @@ Prince supports also the creation of files with the following combined profiles:
 |PDF/A-2a+PDF/UA-1|
 |PDF/A-3a+PDF/UA-1|
 
-Prince also uses:
+
+Unless some features are required by a specific PDF profile and version (such as tagged PDF required by PDF/A-1a with PDF version 1.4), Prince also uses:
 
 PDF 1.5  
 -   if object streams are enabled, or
--   if tagged PDF is enabled, or
+-   if tagged PDF is manually enabled, or
 -   if 16-bit images are included in the PDF;
 
 PDF 1.6  
