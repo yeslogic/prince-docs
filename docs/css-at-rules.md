@@ -246,6 +246,7 @@ a stylesheet with the <code>prince-color()</code> function.  (See <a href="/doc/
 <code><a href="/doc/css-props#prop-prince-pdf-print-scaling">-prince-pdf-print-scaling</a></code> |
 <code><a href="/doc/css-props#prop-prince-pdf-profile">-prince-pdf-profile</a></code> |
 <code><a href="/doc/css-props#prop-prince-pdf-script">-prince-pdf-script</a></code> |
+<code><a href="/doc/css-props#prop-prince-pdf-tagged">-prince-pdf-tagged</a></code> |
 <code><a href="/doc/css-props#prop-prince-pdf-xmp">-prince-pdf-xmp</a></code></td>
 </tr>
 </table>
