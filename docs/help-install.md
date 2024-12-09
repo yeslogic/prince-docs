@@ -87,7 +87,7 @@ Symptom (FreeBSD)
     Shared object "libxml2.so.2" not found, required by "prince"
 
 Explanation  
-Prince uses some third-party shared libraries, these are used for things such as decoding TIFF, PNG or JPEG files and finding and loading fonts. If one or more of these shared libraries cannot be found on your system then Prince will not run. This can occur if Prince was installed from a tarball (see [Tarballs - Alpine Linux, FreeBSD and Generic Linux](installing.md#install-generic)).
+Prince uses some third-party shared libraries, these are used for things such as decoding TIFF, PNG or JPEG files and finding and loading fonts. If one or more of these shared libraries cannot be found on your system then Prince will not run. This can occur if Prince was installed from a tarball (see [Tarballs - Alpine Linux, FreeBSD and Generic Linux](installing.md#tarballs---alpine-linux-freebsd-and-generic-linux)).
 
 Solution 1  
 Install the missing library software. [Acknowledgments](acknowledgements.md#acknowledgments) provides a list of the libraries that Prince uses. It is recommended to install them through your operating system's package management tool, see your operating system's documentation for more information.
@@ -153,7 +153,7 @@ Frequently Asked Questions
   <pre><code class="hljs">    prince file.xml -o file.pdf</code></pre>
   <p>On Windows, you replace the name of the executable with
   <code>Prince\engine\bin\prince.exe</code> in the installation directory
-  (see <a href="/doc/installing/#windows-installation-layout">Windows installation layout</a>),
+  (see <a href="/doc/installing/#-on-windows-2">Windows installation layout</a>),
   which is the command-line program. See also <a href="/doc/command-line/">Command-line Reference</a>.</p>
   <pre><code class="hljs">    "C:\Program Files (x86)\Prince\engine\bin\prince.exe" file.xml -o file.pdf</code></pre></dd>
 
