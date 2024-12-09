@@ -1126,13 +1126,12 @@
 	    <keyword>clone</keyword>
 	</choice>
     </value>
-    <initial>clone</initial>
+    <initial>slice</initial>
     <applyto>block elements and tables</applyto>
     <inherit>no</inherit>
     <comments>
 	<p>
-    This property is only supported on block elements and tables.  Also note that
-    Prince defaults to <code>clone</code>.
+    This property is only supported on block elements and tables.
     </p>
     </comments>
     <spec><a href="https://www.w3.org/TR/css-break-3/#break-decoration">CSS Fragmentation Module Level 3</a></spec>
