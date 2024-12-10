@@ -100,6 +100,7 @@ const siteConfig = {
   onPageNav: 'separate',
   // No .html extensions for paths.
   cleanUrl: true,
+  // When archiving a version append version number to docsURL - 'doc/15'
   docsUrl: 'doc',
   disableHeaderTitle: true,
 
