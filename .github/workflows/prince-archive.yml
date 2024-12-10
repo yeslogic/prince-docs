@@ -4,19 +4,23 @@ on:
   workflow_dispatch:
 
 env:
-  # set DOCS_URL to docsUrl from siteConfig
+  # Set DOCS_URL to docsUrl from siteConfig. For archiving Prince 15 that is:
   DOCS_URL: doc/15
 
 jobs:
   build-docs:
-    runs-on: ubuntu-22.04
+    runs-on: ubuntu-24.04
     steps:
       - name: Check out repository code
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
       - name: Set up Node
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v4
         with:
-          node-version: '16'
+          node-version: '18'
+      - name: Install xsltproc
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y xsltproc
       - name: Make the properties
         run: |
           cd ./website/properties
@@ -27,12 +31,19 @@ jobs:
           ./docs-process.py output/css-props-out.xml output/css-props.xml
           ./docs_selflink.py output/css-props-out.xml
           xsltproc noroot.xsl output/css-props-out.xml > output/css-props.md
-          sed -i '1s;^;---\ntitle: CSS Properties\n---\n\n;' output/css-props.md
+          sed -i '1s;^;---\ntitle: CSS Properties\n---\n\n<style>\n.navigationSlider .slidingNav ul li:nth-child(3), .navigationSlider .slidingNav ul li:nth-child(3) > a:hover, .navigationSlider .slidingNav ul li.siteNavGroupActive > a { background-color: #fff }\n .nav-site li:nth-child(3) a { color: #333 !important }\n .nav-site li:nth-child(3) a:hover { color: #22b573 !important }\n </style>;' output/css-props.md
           cat script >> output/css-props.md
           cp output/css-props.md ../../docs/
           rm -rf ./output
           cd ./../..
         shell: bash
+      - name: Install Prince
+        run: |
+          curl https://www.princexml.com/download/prince_15.4-1_ubuntu24.04_amd64.deb -O
+          sudo apt install ./prince_15.4-1_ubuntu24.04_amd64.deb
+      - name: Install ImageMagick
+        run: |
+          sudo apt install imagemagick
       - name: Make the page region image
         run: |
           cd ./website/samples
