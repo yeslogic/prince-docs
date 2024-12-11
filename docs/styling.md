@@ -1148,6 +1148,21 @@ The following example instructs Prince to make the `h1` heading element span all
 Please note that starting with Prince 14, Prince treats a non-multi-column layout as a *single column layout*.
 
 
+### Fragmentation
+
+Tables, columns, or other block elements may be too large to fit on the page or in the column - in which case a page or column break occurs in the element.  The property [box-decoration-break](css-props.md#prop-box-decoration-break) determines how the decoration of the box, such as borders, padding, margin, and background, behave - that is, whether they are *cloned* after the break (each fragment is rendered independently, with the specified border, padding, and margin wrapping around each fragment), or whether the element is rendered as if it were not fragmented, and then *sliced* into pieces for each page or column.
+
+<p class="note">
+The Prince box-breaking behavior predates the introduction of the <a href="css-props/#prop-box-decoration-break">box-decoration-break</a> CSS property, defaulting to repeating borders when breaking a box, so that each fragment had a top and bottom border. When the property was introduced, Prince kept the default value as <code>clone</code>. Starting with Prince 16, the default value was changed to <code>slice</code> to reflect browser behavior and CSS specifications. To retain the old behavior, it must now be explicitly declared.
+</p>
+
+```css
+    .info-box {
+        border: 1px solid black;
+        box-decoration-break: clone;
+    }
+```
+
 ### Floats
 
 When printed texts contain images, the text is usually laid out to wrap around those images. To accomplish the same with CSS, the images are floated - either to the left or right of text, or at times even to the top or to the bottom of a column. The [`float`](css-props.md#prop-float) property does just this - it floats an element, allowing the content of other elements to flow around it.
