@@ -46,6 +46,21 @@ In this section you find the documentation for the supported CSS functional expr
 <td></td>
 </tr>
 <tr>
+<td><code>min( &lt;<i>expression</i>&gt; [, &lt;<i>expression</i>&gt;]* )</code></td>
+<td>Calculates the one or more comma-separated expressions, and represents the smallest of them.</td>
+<td></td>
+</tr>
+<tr>
+<td><code>max( &lt;<i>expression</i>&gt; [, &lt;<i>expression</i>&gt;]* )</code></td>
+<td>Calculates the one or more comma-separated expressions, and represents the largest of them.</td>
+<td></td>
+</tr>
+<tr>
+<td><code>clamp( &lt;<i>min-expression</i>&gt;, &lt;<i>expression</i>&gt;, &lt;<i>max-expression</i>&gt; )</code></td>
+<td>Calculates the three comma-separated expressions and represents its central value, clamped according to its min and max calculations.</td>
+<td></td>
+</tr>
+<tr>
 <td><code>round( &lt;<i>rounding-strategy</i>&gt;?, A, B? )</code></td>
 <td>Calculates the value of A, rounded according to the (optional) rounding strategy to the nearest integer multiple of B, either above or below A.</td>
 <td></td>
