@@ -81,6 +81,24 @@ However, note that the command-line option `--media` can be used to set a media 
 </tr>
 </table>
 
+Prince allows for arbitrary media types, other than those from the spec - you could e.g. style for an alternative print media type optimized for screen display (rather than physical print on paper), and call for it with the command-line option `--media`:
+
+Command line
+
+```bash
+    prince --media=print-for-screen file.html
+```
+
+CSS
+
+```css
+    @media print-for-screen {
+        ...
+    }
+```
+
+However, it is not recommended to use non-standard media types. In most cases a valid and more solid alternative approach would be to query for media features.
+
 Media Features
 --------------
 
