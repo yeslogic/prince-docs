@@ -713,6 +713,10 @@ A list item has two parts: `marker` and `content`.
 
 The `content` part is rendered inside the list item's border box, and is styled the same way as a normal block, such as `div` or `p` element.
 
+<p class="note">
+Prince, up to version 15, indented lists by setting a non-zero <em>margin</em> on <code>ol</code> and <code>ul</code> elements. However, browsers indent lists by setting a non-zero <em>padding</em>.  Starting with version 16, Prince follows browser behavior for consistency. This may affect documents previously designed for Prince with this inconsistency in mind.
+</p>
+
 The `marker` positioning is determined by the [`list-style-position`](css-props.md#prop-list-style-position) property and is styled using the `::marker` pseudo-element.
 
 #### List markers
