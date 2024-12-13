@@ -710,6 +710,10 @@ To select not the first page of the whole document, but the first page of each c
     }
 ```
 
+<p class="note">
+Up to Prince version 15, the <code>@page:first</code> and <code>@page:nth()</code> selectors, when used together with the CSS property <code>-prince-page-group: start</code> in a page group, would select the first, or the nth page <em>of the page group</em>, respectively. Starting with Prince 16, these selectors <em>always</em> select the first and nth page <em>of the whole document</em>.  To select the first or nth page of a page group, use the selectors <code>@page:first-of-group</code> and <code>@page:nth-of-group()</code>.
+</p>
+
 The `:left` and `:right` page selectors can be used to style left and right pages in a bound book differently. This is often used in text books to place the page number on the outside top corners of pages.
 
 Alternatively, the `:recto` and `:verso` selectors can be used, with the advantage of being independent of directionality of the script: in a left-to-right script, `:recto` is the right-hand side of a spread, and `:verso` is the left-hand side, while in a right-to-left script these values are inverted: `:recto` defines the left-hand side of a spread, and `:verso` defines the right-hand side. See also [Writing Mode](styling.md#writing-mode).
