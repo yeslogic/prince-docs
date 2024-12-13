@@ -105,7 +105,7 @@ Media Features
 A media feature is a more fine-grained way of targeting a specific user-agent. Media features use the same syntax as CSS properties. However, there are some differences between the two:
 
 -   Properties provide information about how to present a document; media features describe requirements of the output device.
--   Media features are wrapped in parentheses and combined with the keyword `and`.
+-   Media features are wrapped in parentheses, and can be combined into more articulated media conditions.
 -   A media feature may be given with only its name to evaluate the feature in a boolean context.
 -   Media features with "range" type may be expressed with standard mathematical comparison operators.
 -   Properties sometimes accept complex values, while media features only accept single values.
