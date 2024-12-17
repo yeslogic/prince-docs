@@ -5632,7 +5632,7 @@ supplier, item { overflow-wrap: normal; }
     selected automatically, based on the current language.
     </p>
     <p>
-    The <code>url()</code> argument can take local paths or remote HTTP URLs as argument.
+    The <code>url()</code> argument can take local paths, remote HTTP or HTTPS URLs, or <code>data:</code> URIs as argument.
     </p>
     </comments>
     <aliastarget>hyphenate-patterns</aliastarget>
