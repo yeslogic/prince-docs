@@ -37,7 +37,7 @@ In this section you find the documentation for the supported CSS functional expr
 </tr>
 <tr>
 <td><code>url( &lt;<i>url</i>&gt; )</code></td>
-<td>Represents a URL, i.e. a pointer to a source.</td>
+<td>Represents a URL, i.e. a pointer to a source. This can be HTTP, HTTPS, or even a <code>data:</code> URI.</td>
 <td></td>
 </tr>
 <tr>
