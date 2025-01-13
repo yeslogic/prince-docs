@@ -31,6 +31,9 @@ The <span class="dep">properties with a line-through</span> are deprecated prope
 be removed in a future Prince version.
 </p>
 <p>
+When a property is also used as a CSS descriptor in an at-rule, a second syntax is provided.
+</p>
+<p>
 For the values, the grammar draws on the
 <a href="https://www.w3.org/TR/css3-values/">CSS Values and Units Module Level 3</a>
 specification.  A short explanation of the signs:
@@ -307,7 +310,7 @@ Prince also supports the two special keywords <code>initial</code> and <code>inh
   <xsl:if test="value2">
   <div>
     <div>
-    <div id="prop-{$propid}-syntax2">Syntax</div>
+    <div id="prop-{$propid}-syntax2">Syntax descriptor</div>
     <div class="example">
     <div class="syntax-block">
     <code>

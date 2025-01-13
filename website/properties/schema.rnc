@@ -35,7 +35,8 @@ property =
 		element inherit2 { text }?,
 		element example2 { text }*,
 		element see2 { reference | html-link }*,
-		element comments2 { para+ } ?
+		element comments2 { para+ } ?,
+        element spec2 { html-link | "n/a" }*
 		)
 	|
 	    element alias { text }
