@@ -2928,8 +2928,6 @@
 	    <keyword>expanded</keyword>
 	    <keyword>extra-expanded</keyword>
 	    <keyword>ultra-expanded</keyword>
-	    <keyword>wider</keyword>
-	    <keyword>narrower</keyword>
 	    <!-- Now that we expanded this to include percentage, we should change
 	        the syntax of 'font' not to ref this property's syntax.
 	        -->
