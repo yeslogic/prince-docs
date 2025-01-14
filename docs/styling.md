@@ -140,6 +140,23 @@ It is possible to also enable other OpenType features, not covered by the previo
 It is a very powerful tool, but care must be taken in which order the features are enabled!  All required features need to be explicitly enabled: please note that enabling one feature will disable all the default features.
 
 
+### Variable fonts
+
+The OpenType font specification also includes so-called variable fonts including many different variations of the font packed into a single file, instead of providing a separate file for every font width, weight, or style.  In this way a single `@font-face` reference is needed, greatly reducing the complexity of the style sheet, as well as the size of the fetched font files.  The `font-weight`, `font-stretch`, and `font-style` descriptors allow for the definition of ranges that will be valid values in the stylesheet.
+
+```css
+    @font-face {
+        font-family: "MyVariableFont";
+        src: url("/path/to/variable/fonts/variable-font.woff2") format(woff2) tech(variations);
+        font-weight: 125 950
+        font-stretch: 75% 125%
+        font-style: oblique 0deg 14deg;
+    }
+```
+
+Prince also allows for low-level fine-tuning with the CSS property [`font-variation-settings`](css-props.md#prop-font-variation-settings). Whenever possible, authors should use this property only for special cases where its use is the only way to access a specific font variation not accessible through other CSS properties.
+
+
 ### Generic font families
 
 Prince maps the CSS generic font families to the Microsoft Core Fonts. The Microsoft Core Fonts are pre-installed on Windows and MacOS systems but not on Linux systems. To use them on Linux you must install the [msttcorefonts](http://corefonts.sourceforge.net) package, which is available for most Linux distributions.
@@ -448,8 +465,6 @@ fonts.css
         src: url("/usr/share/fonts/truetype/msttcorefonts/trebucbi.ttf")
     }
 ```
-
-Please note that Prince also supports OpenType variable fonts - the above example can thus be simplified, since the different font weights and styles can be packed into one font file. Not only is the complexity of the style sheet reduced, but also the size of fetched font files is greatly reduced.
 
 A low-level mechanism to fine-tune the set of Unicode codepoints that may be supported by the font face for which it is declared is provided through the [`unicode-range`](css-props.md#prop-unicode-range) CSS descriptor. Its value is a comma-delimited list of Unicode range values. The union of these ranges defines the set of codepoints that serves as a hint for user agents when deciding whether or not to download a font resource needed for the test content of a particular page.
 

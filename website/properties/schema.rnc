@@ -127,6 +127,7 @@ type-value =
             "explicit-track-list" |
             "fallback" |
             "flex" |
+            "font-stretch" |
             "grid-line" |
             "integer" |
             "language" |
@@ -134,6 +135,7 @@ type-value =
             "length-percentage" |
             "min-width" |
             "number" |
+            "opentype-tag" |
             "page-policy" |
             "paper-size" |
             "rendering-intent" |

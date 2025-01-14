@@ -2918,24 +2918,25 @@
     <name>font-stretch</name>
     <value>
 	<choice>
+	    <keyword>normal</keyword>
+        <percentage/>
 	    <keyword>ultra-condensed</keyword>
 	    <keyword>extra-condensed</keyword>
 	    <keyword>condensed</keyword>
 	    <keyword>semi-condensed</keyword>
-	    <keyword>normal</keyword>
 	    <keyword>semi-expanded</keyword>
 	    <keyword>expanded</keyword>
 	    <keyword>extra-expanded</keyword>
 	    <keyword>ultra-expanded</keyword>
 	    <keyword>wider</keyword>
 	    <keyword>narrower</keyword>
-	    <!-- Once we expand this to include percentage, remember to change
+	    <!-- Now that we expanded this to include percentage, we should change
 	        the syntax of 'font' not to ref this property's syntax.
 	        -->
 	</choice>
     </value>
     <initial>normal</initial>
-    <applyto>all elements, @font-face at-rule</applyto>
+    <applyto>all elements</applyto>
     <inherit>yes</inherit>
     <see><a href="/doc/styling/#text-formatting">Text formatting</a></see>
     <comments>
@@ -2944,7 +2945,18 @@
 	fonts on Windows.
 	</p>
     </comments>
-    <spec><a href="https://www.w3.org/TR/css-fonts-3/#font-stretch-prop">CSS Fonts Module Level 3</a></spec>
+    <spec><a href="https://www.w3.org/TR/css-fonts-4/#propdef-font-width">CSS Fonts Module Level 4</a></spec>
+    <value2>
+    <choice>
+        <keyword>auto</keyword>
+        <repeat min="1" max="2">
+            <type>font-stretch</type>
+        </repeat>
+    </choice>
+    </value2>
+    <initial2>auto</initial2>
+    <applyto2>@font-face at-rule</applyto2>
+        <spec2><a href="https://www.w3.org/TR/css-fonts-4/#descdef-font-face-font-width">CSS Fonts Module Level 4</a></spec2>
 </property>
 
 <property>
@@ -2953,14 +2965,38 @@
 	<choice>
 	    <keyword>normal</keyword>
 	    <keyword>italic</keyword>
-	    <keyword>oblique</keyword>
+        <sequence>
+            <keyword>oblique</keyword>
+            <optional>
+                <type>angle</type>
+            </optional>
+        </sequence>
 	</choice>
     </value>
     <initial>normal</initial>
-    <applyto>all elements, @font-face at-rule</applyto>
+    <applyto>all elements</applyto>
     <inherit>yes</inherit>
     <see><a href="/doc/styling/#text-formatting">Text formatting</a></see>
     <spec><a href="https://www.w3.org/TR/CSS2/fonts.html#propdef-font-style">CSS 2.1</a></spec>
+    <spec><a href="https://www.w3.org/TR/css-fonts-4/#propdef-font-style">CSS Fonts Module Level 4</a></spec>
+    <value2>
+	<choice>
+        <keyword>auto</keyword>
+	    <keyword>normal</keyword>
+	    <keyword>italic</keyword>
+        <sequence>
+            <keyword>oblique</keyword>
+            <optional>
+                <repeat min="1" max="2">
+                    <type>angle</type>
+                </repeat>
+            </optional>
+        </sequence>
+	</choice>
+    </value2>
+    <initial2>auto</initial2>
+    <applyto2>@font-face at-rule</applyto2>
+    <spec2><a href="https://www.w3.org/TR/css-fonts-4/#propdef-font-style">CSS Fonts Module Level 4</a></spec2>
 </property>
 
 <property>
@@ -3178,6 +3214,24 @@
 </property>
 
 <property>
+    <name>font-variation-settings</name>
+    <value>
+	<choice>
+	    <keyword>normal</keyword>
+        <repeat min="1" sep=",">
+            <type>opentype-tag</type>
+            <type>number</type>
+        </repeat>
+	</choice>
+    </value>
+    <initial>normal</initial>
+    <applyto>all elements and text, @font-face at-rule</applyto>
+    <inherit>yes</inherit>
+    <see><a href="/doc/styling/#text-formatting">Text formatting</a></see>
+    <spec><a href="https://www.w3.org/TR/css-fonts-4/#propdef-font-variation-settings">CSS Fonts Module Level 4</a></spec>
+</property>
+
+<property>
     <name>font-weight</name>
     <value>
 	<choice>
@@ -3190,11 +3244,26 @@
 	</choice>
     </value>
     <initial>normal</initial>
-    <applyto>all elements, @font-face at-rule</applyto>
+    <applyto>all elements</applyto>
     <inherit>yes</inherit>
     <see><a href="/doc/styling/#text-formatting">Text formatting</a></see>
     <spec><a href="https://www.w3.org/TR/CSS2/fonts.html#propdef-font-weight">CSS 2.1</a></spec>
-    <spec><a href="https://www.w3.org/TR/css-fonts-4/#propdef-font-weight">css-text-4</a></spec>
+    <spec><a href="https://www.w3.org/TR/css-fonts-4/#propdef-font-weight">CSS Fonts Module Level 4</a></spec>
+    <value2>
+    <choice>
+        <keyword>auto</keyword>
+        <repeat min="1" max="2">
+            <choice>
+                <keyword>normal</keyword>
+                <keyword>bold</keyword>
+                <type>number</type>
+            </choice>
+        </repeat>
+    </choice>
+    </value2>
+    <initial2>auto</initial2>
+    <applyto2>@font-face at-rule</applyto2>
+    <spec2><a href="https://www.w3.org/TR/css-fonts-4/#descdef-font-face-font-weight">CSS Fonts Module Level 4</a></spec2>
 </property>
 
 <property>
@@ -7830,6 +7899,13 @@ blockquote { margin: 1rem; -prince-resize-options: -1rem; }
             </repeat>
         </function>
         </optional>
+        <optional>
+        <function name="tech">
+            <repeat min="1">
+                <string>font-tech</string>
+            </repeat>
+        </function>
+        </optional>
         </sequence>
         <function name="local">
             <ident>name</ident>
@@ -7861,10 +7937,23 @@ blockquote { margin: 1rem; -prince-resize-options: -1rem; }
     rule to be valid.
     </p>
     <p>
-    Prince supports WOFF (Web Open Font Format), TrueType and OpenType font formats,
-    expressed respectively by the <code>woff</code>, <code>truetype</code> and
-    <code>opentype</code> format hints with the optional <code>format()</code>
+    Prince supports multiple font formats, including TrueType and OpenType font formats - with
+    TTF, CFF, or CFF2 outlines (such as the Adobe Source fonts), SVG, CBLC/CBDT, or sbix colour
+    bitmaps, and Font Variations, commonly known as Variable Fonts.
+    </p>
+    <p>
+    Prince supports also the Web Open Font format (WOFF/WOFF2), and TTC and WOFF2 font collections.
+    </p>
+    <p>
+    These are expressed by the <code>collection</code>, <code>embedded-opentype</code>,
+    <code>opentype</code>, <code>svg</code>, <code>truetype</code>, <code>woff</code>,
+    and <code>woff2</code> format hints with the optional <code>format()</code>
     function.
+    </p>
+    <p>
+    Font technologies are expressed with the <code>tech()</code> function, which takes the values
+    <code>features-opentype</code>, <code>color-svg</code>, <code>color-sbix</code>,
+    <code>color-cbdt</code>, or <code>variations</code>.
     </p>
     <p>
     The <code>local()</code> function searches for locally installed system
