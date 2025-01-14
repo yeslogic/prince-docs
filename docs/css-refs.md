@@ -142,6 +142,10 @@ and <a href="/doc/css-at-rules/#at-supports"><code>@supports</code></a> at-rules
 <th colspan="2">CSS Level 4</th>
 </tr>
 <tr>
+<td><a href="https://www.w3.org/TR/css-fonts-4/">CSS Fonts Module Level 4</a></td>
+<td>Beyond the definitions in CSS 2.1 and CSS Fonts Module Level 4, Prince supports Font Variations (Variable Fonts).</td>
+</tr>
+<tr>
 <td><a href="https://www.w3.org/TR/css-color-4/">CSS Color Module Level 4</a></td>
 <td>Prince supports the syntax for <code>rgb()</code> and <code>hsl()</code>, as well as the <code>hwb()</code> color function - except for the value <code>none</code>.</td>
 </tr>
