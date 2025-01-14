@@ -2937,6 +2937,7 @@
     <applyto>all elements</applyto>
     <inherit>yes</inherit>
     <see><a href="/doc/styling/#text-formatting">Text formatting</a></see>
+    <see><a href="/doc/styling/#variable-fonts">Variable fonts</a></see>
     <comments>
 	<p>
 	The <code>font-stretch</code> property is not supported for system
@@ -2975,6 +2976,7 @@
     <applyto>all elements</applyto>
     <inherit>yes</inherit>
     <see><a href="/doc/styling/#text-formatting">Text formatting</a></see>
+    <see><a href="/doc/styling/#variable-fonts">Variable fonts</a></see>
     <spec><a href="https://www.w3.org/TR/CSS2/fonts.html#propdef-font-style">CSS 2.1</a></spec>
     <spec><a href="https://www.w3.org/TR/css-fonts-4/#propdef-font-style">CSS Fonts Module Level 4</a></spec>
     <value2>
@@ -3225,7 +3227,7 @@
     <initial>normal</initial>
     <applyto>all elements and text, @font-face at-rule</applyto>
     <inherit>yes</inherit>
-    <see><a href="/doc/styling/#text-formatting">Text formatting</a></see>
+    <see><a href="/doc/styling/#variable-fonts">Variable fonts</a></see>
     <spec><a href="https://www.w3.org/TR/css-fonts-4/#propdef-font-variation-settings">CSS Fonts Module Level 4</a></spec>
 </property>
 
@@ -3245,6 +3247,7 @@
     <applyto>all elements</applyto>
     <inherit>yes</inherit>
     <see><a href="/doc/styling/#text-formatting">Text formatting</a></see>
+    <see><a href="/doc/styling/#variable-fonts">Variable fonts</a></see>
     <spec><a href="https://www.w3.org/TR/CSS2/fonts.html#propdef-font-weight">CSS 2.1</a></spec>
     <spec><a href="https://www.w3.org/TR/css-fonts-4/#propdef-font-weight">CSS Fonts Module Level 4</a></spec>
     <value2>
