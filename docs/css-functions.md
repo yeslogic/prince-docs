@@ -326,9 +326,8 @@ does.</td>
 <td><code><a href="/doc/css-props#prop-prince-pdf-open-action">-prince-pdf-open-action</a></code></td>
 </tr>
 <tr>
-<td><code>format()</code></td>
-<td>Contains a comma-separated list of format strings that denote well-known font
-formats.
+<td><code>format( &lt;<i>string</i>&gt; | collection | embedded-opentype | opentype | svg | truetype | woff | woff2 )</code></td>
+<td>Provides a hint on the font format.
 <pre>
 <code class="hljs"><span class="hljs-keyword">@font-face</span> {
   <span class="hljs-attribute">font-family</span>: bodytext;
@@ -336,10 +335,14 @@ formats.
 }</code>
 </pre>
 </td>
-<td rowspan="3"><code><a href="/doc/css-props#prop-src">src</a></code></td>
+<td rowspan="4"><code><a href="/doc/css-props#prop-src">src</a></code></td>
 </tr>
 <tr>
-<td><code>local()</code></td>
+<td><code>tech( features-opentype | color-svg | color-sbix | color-cbdt | variations )</code></td>
+<td>Provides a hint on the font technology.</td>
+</tr>
+<tr>
+<td><code>local( &lt;<i>font-face-name</i>&gt; )</code></td>
 <td>Searches for locally installed system fonts.</td>
 </tr>
 <tr class="ext">
