@@ -61,7 +61,7 @@ The `src` descriptor can define the resource with a `url()` function - an option
     @font-face {
       font-family: MyFont;
       src: prince-lookup("MyFont"),
-           url("http://example.com/MyFont.ttf") format("truetype");
+           url("http://example.com/MyFont.ttf") format(truetype);
     }
 ```
 In this example we are defining a new font face, called `MyFont`. We instruct Prince to check if the MyFont truetype font is installed locally or already defined by another @font-face rule, and, all failing, to download it from a remote location.
