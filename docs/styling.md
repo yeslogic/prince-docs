@@ -108,7 +108,7 @@ Prince supports OpenType features, and enables certain ones by default in specif
 </tfoot>
 </table>
 
-Microsoft has a list of the OpenType feature names [here](https://www.microsoft.com/typography/otspec/featurelist.htm).
+Microsoft has a list of the OpenType feature names [here](https://learn.microsoft.com/en-gb/typography/opentype/spec/featurelist).
 
 In order to enable specific OpenType features, or specific font variants, the following properties can be used:
 
