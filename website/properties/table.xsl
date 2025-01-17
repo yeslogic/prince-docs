@@ -31,7 +31,7 @@ The <span class="dep">properties with a line-through</span> are deprecated prope
 be removed in a future Prince version.
 </p>
 <p>
-When a property is also used as a CSS descriptor in an at-rule, a second syntax is provided.
+When a property is also used as a CSS descriptor in an at-rule, and the syntax is different from that of the property, a second syntax is provided.
 </p>
 <p>
 For the values, the grammar draws on the
