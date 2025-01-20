@@ -28,12 +28,10 @@ Prince supports, fully or partially, the following CSS specifications:
 <td><a href="https://www.w3.org/TR/CSS2/">CSS 2.1</a></td>
 <td>Prince supports the specification, with few exceptions: Prince does not support
 the <code>quotes</code> property or the <code>open-quote</code> and <code>close-quote</code>
-values. Prince does not support properties that apply only to interactive media. Note
-that this includes <code>outline</code> and its <code>outline-*</code> subproperties.
-For similar reasons, Prince does not support <code>visibility: collapse</code>. Prince
-does not support the <code>armenian</code> or <code>georgian</code> list styles. Prince
-treats <code>1ex</code> equivalently to <code>0.5em</code>, which might not be correct
-for some fonts.</td>
+values. Prince does not support properties that apply only to interactive media. Prince does
+not support <code>visibility: collapse</code>, nor the <code>armenian</code> or
+<code>georgian</code> list styles. Prince treats <code>1ex</code> equivalently to
+<code>0.5em</code>, which might not be correct for some fonts.</td>
 </tr>
 <tr>
 <th colspan="2">CSS Level 3</th>
@@ -44,8 +42,7 @@ for some fonts.</td>
 </tr>
 <tr>
 <td><a href="https://www.w3.org/TR/css-backgrounds-3/">CSS Backgrounds and Borders Module Level 3</a></td>
-<td>Prince does not support <code>box-shadow</code> and the <code>border-image</code>
-properties.</td>
+<td>Prince does not support the <code>border-image</code> property.</td>
 </tr>
 <tr>
 <td><a href="https://www.w3.org/TR/css-break-3/">CSS Fragmentation Module Level 3</a></td>
@@ -152,8 +149,7 @@ and <a href="/doc/css-at-rules/#at-supports"><code>@supports</code></a> at-rules
 <tr>
 <td><a href="https://www.w3.org/TR/css-flexbox-1/">CSS Flexible Box Layout Module Level 1</a></td>
 <td>Prince supports this module as of Prince 12, with the exception of
-  page breaking/fragmentation, <code>break-before</code>/<code>-after</code>,
-  <code>visibility: collapse</code> and vertical writing.</td>
+  page breaking/fragmentation, <code>visibility: collapse</code> and vertical writing.</td>
 </tr>
 <tr>
 <td><a href="https://www.w3.org/TR/css-grid-1/">CSS Grid Layout Module Level 1</a></td>
