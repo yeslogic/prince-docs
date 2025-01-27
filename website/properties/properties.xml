@@ -135,9 +135,9 @@
 	color: prince-color(TestColor)</example>
     <see><a href="/doc/graphics/#spot-colors">Spot colors</a></see>
     <comments>
-    <p>This descriptor takes an RGB or CMYK color in any of the valid notations for
-    RGB and CMYK colors, that will be used to display the color being defined, when
-    the named color is not available.  Please note that it cannot be RGBA or CMYKA.</p>
+    <p>This descriptor takes a color in any of the valid notations for RGB, HSL,
+    HWB, or CMYK colors, that will be used to display the color being defined, when
+    the named color is not available.  Please note that it cannot have opacity.</p>
 
     <p>A color value must be specified for the rule to be valid.</p>
 	</comments>
