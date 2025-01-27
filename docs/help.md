@@ -7,14 +7,14 @@ title: Help
 <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
 
 <style>
-.navigationSlider .slidingNav ul li:nth-child(4) {
-    background-color: #fff !important;
+.nav-site li:nth-child(3) a {
+    color: #fff !important;
 }
-.navigationSlider .slidingNav ul li:nth-child(4) a {
-    color: #333 !important;
+.nav-site li:nth-child(3) a:hover {
+    color: #ffa046 !important;
 }
-.navigationSlider .slidingNav ul li a:hover {
-    color: #22b573 !important;
+.nav-site li:nth-child(4) a {
+    color: #ffa046 !important;
 }
 </style>
 

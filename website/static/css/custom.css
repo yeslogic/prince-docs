@@ -5,7 +5,6 @@ table {
     display: table;
     width: auto;
 }
-
 table#pregions td[rowspan] {
     writing-mode: vertical-rl;
     text-align: center;
@@ -14,32 +13,65 @@ table#pregions td[rowspan] {
     padding: 10px;
 }
 
-.fixedHeaderContainer header img {
-    margin-right: 30px;
+header {
+    height: 70px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    box-sizing: border-box;
+    a:has(img) {
+        margin-right: 30px;
+        width: 120px;
+        height: unset !important;
+    }
+    a {
+        padding: 8px 0px;
+        transition: 0.4s !important;
+    }
 }
+
+header ul li, .slidingNav, .nav-site, .nav-site li a {
+    display: flex;
+    height: 100% !important;
+    align-items: center;
+}
+
 .fixedHeaderContainer {
     font-family: Lato, Verdana, sans-serif;
-    font-size: 14px;
-    height: 50px !important;
+    font-size: 16px;
+    height: 70px !important;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    box-sizing: border-box;
     padding: 0px;
     background-image: linear-gradient(110deg,#640c5c,#141429 52.3411106%,#732269);
+    box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.3);
 }
 .headerWrapper {
     width: 1150px;
-    padding: 0;
+    padding: 0px 25px;
 }
-.headerWrapper, .headerWrapper header, .headerWrapper header a, .navigationWrapper, .slidingNav {
-    height: 50px !important;
+.navigationWrapper, .slidingNav {
+    height: 70px !important;
 }
-.headerWrapper header a {
-    padding: 8px 0px;
+
+.nav-site li:nth-child(3) a {
+    color: #ffa046 !important;
 }
+
+.navSearchWrapper input#search_input_react {
+    width: 130px;
+}
+
 .navigationSlider .slidingNav ul li a,
 .navigationSlider .slidingNav ul li > a:focus {
     color: #fff;
     background-color: inherit;
     padding: 0px 20px;
-    font-size: 14px;
+    font-size: 16px;
     font-weight: 400;
     font-family: Lato, Verdana, sans-serif;
 }
@@ -47,7 +79,7 @@ table#pregions td[rowspan] {
     background-color: inherit;
 }
 .nav-site li a:hover {
-    color: #22b573 !important;
+    color: #ffa046 !important;
 }
 
 dl { padding-bottom: 1em; }
@@ -113,7 +145,7 @@ table.property-table td {
     display: none;
 }
 #prop-list summary, #js-support-table summary, dt[id], th[id] {
-    scroll-margin-top: 60px;
+    scroll-margin-top: 80px;
 }
 #prop-list summary, #js-support-table summary {
   font-weight: bold;
@@ -201,94 +233,97 @@ p.note:only-child {
     margin-bottom: 0;
 }
 
-#js-support-table details.object {
-  background-color: #f2f2f2;
-}
 #js-support-table {
-  padding: 0px;
-  margin-bottom: 1em;
+    padding: 0px;
+    margin-bottom: 1em;
+    details.object {
+        background-color: #f2f2f2;
+    }
+    .type {
+        font-style: italic;
+        display: inline;
+        &:after {
+            content: " – ";
+        }
+    }
+    .returns {
+        font-style: italic;
+        &:before {
+            content: "Returns: ";
+        }
+    }
+    .desc {
+        display: inline;
+        min-width: 40%;
+    }
+    li.argument {
+        display: block;
+    }
+    ul, li {
+        margin: 0;
+        padding: 0;
+    }
+    .name {
+        font-weight: bold;
+        display: inline;
+    }
+    .name.level {
+        margin-right: 0.5em;
+        font-weight: 500;
+    }
+    pre {
+        background-color: #fff;
+    }
+    .example {
+        padding: 5px;
+        pre {
+            white-space: pre-wrap;
+        }
+    }
+    .example-return {
+        display: block;
+        &:before {
+            content: " // returns: ";
+        }
+    }
+    .argslist {
+        font-style: italic;
+        &:before {
+            content: "(";
+            font-style: normal;
+        }
+        &:after {
+            content: ")";
+            font-style: normal;
+        }
+    }
+    .ext {
+        background-color: #dcede6 !important;
+        border-color: #22b573;
+        .level {
+            background-color: inherit;
+        }
+        .example {
+            background-color: #f2f2f2;
+        }
+        summary code b:after {
+            content: "*";
+        }
+        .ext {
+            padding-top: 0px;
+            padding-right: 0px;
+        }
+    }
+    .url-property {
+        &:before {
+            content: "See the property ";
+        }
+        &:after {
+            content: ".";
+        }
+    }
 }
-#js-support-table .type {
-  font-style: italic;
-  display: inline;
-}
-#js-support-table .type::after {
-  content: " – ";
-}
-#js-support-table .returns {
-  font-style: italic;
-}
-#js-support-table .returns::before {
-  content: "Returns: ";
-}
-#js-support-table .desc {
-  display: inline;
-  min-width: 40%;
-}
-#js-support-table li.argument {
-  display: block;
-}
-#js-support-table ul, #js-support-table li {
-  margin: 0;
-  padding: 0;
-}
-#js-support-table .name {
-  font-weight: bold;
-  display: inline;
-}
-#js-support-table .name.level {
-  margin-right: 0.5em;
-  font-weight: 500;
-}
-#js-support-table pre {
-  background-color: #fff;
-}
-#js-support-table .example {
-  padding: 5px;
-}
-#js-support-table .example pre {
-  white-space: pre-wrap;
-}
-#js-support-table .example-return {
-  display: block;
-}
-#js-support-table .example-return::before {
-  content: " // returns: ";
-}
-#js-support-table .argslist::before {
-  content: "(";
-  font-style: normal;
-}
-#js-support-table .argslist::after {
-  content: ")";
-  font-style: normal;
-}
-#js-support-table .argslist {
-  font-style: italic;
-}
-#js-support-table .ext {
-  background-color: #dcede6 !important;
-  border-color: #22b573;
-}
-#js-support-table .ext .level {
-  background-color: inherit;
-}
-#js-support-table .ext .example {
-  background-color: #f2f2f2;
-}
-#js-support-table .ext summary code b::after {
-  content: "*";
-}
-#js-support-table .ext .ext {
-  padding-top: 0px;
-  padding-right: 0px;
-}
-#js-support-table .url-property::before {
-  content: "See the property ";
-}
-#js-support-table .url-property::after {
-  content: ".";
-}
+
 dl.faq dt p {
     font-weight: bold;
 }
@@ -316,47 +351,47 @@ div.algolia-docsearch-suggestion--category-header {
 
 .navListItemActive a {
     font-weight: bold;
-}
-
-.navListItemActive a:hover {
-    padding-left: 0px !important;
+    &:hover {
+        padding-left: 0px !important;
+    }
 }
 
 ul.toc-headings {
     padding-left: 0px !important;
-}
-ul.toc-headings li a {
-    padding-left: 15px;
-}
-
-ul.toc-headings li a.active {
-    border-left: 2px solid #e0e0e0;
-    padding-left: 13px;
-}
-
-ul.toc-headings li ul.toc-headings li a {
-    padding-left: 30px;
-}
-
-ul.toc-headings li ul.toc-headings li a.active {
-    border-left: 2px solid #e0e0e0;
-    padding-left: 28px;
+    li  {
+        a {
+            padding-left: 15px;
+        }
+        a.active {
+            border-left: 2px solid #e0e0e0;
+            padding-left: 13px;
+        }
+        ul.toc-headings li {
+            a {
+                padding-left: 30px;
+            }
+            a.active {
+                border-left: 2px solid #e0e0e0;
+                padding-left: 28px;
+            }
+        }
+    }
 }
 
 .navListItemActive a.active {
     border-left: 2px solid #e0e0e0;
 }
 
-.toc .toggleNav h4 {
-    font-weight: normal !important;
-}
-
-.toc .toggleNav ul {
-    padding-left: 12px;
-}
-
-.toc .toggleNav ul a:hover {
-    padding-left: 1px;
+.toc .toggleNav {
+    h4 {
+        font-weight: normal !important;
+    }
+    ul {
+        padding-left: 12px;
+        a:hover {
+            padding-left: 1px;
+        }
+    }
 }
 
 @media only screen and (min-device-width: 360px) and (max-device-width: 736px) {
@@ -366,9 +401,25 @@ ul.toc-headings li ul.toc-headings li a.active {
     #prop-list summary, #js-support-table summary, dt[id], th[id] {
         scroll-margin-top: 158px;
     }
-
+    .fixedHeaderContainer, header {
+        height: 50px !important;
+    }
+    header ul li, .slidingNav, .nav-site, .nav-site li a {
+        height: 50px !important;
+    }
+    .navigationSlider .slidingNav ul {
+        margin-top: 115px;
+    }
+    .navSearchWrapper {
+        display: inline-block;
+        input#search_input_react {
+            width: 100%;
+        }
+        &:before, &:after {
+            top: 30%;
+        }
+    }
 }
-
 @media only screen and (max-width: 1023px) {
 }
 

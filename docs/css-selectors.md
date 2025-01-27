@@ -6,18 +6,6 @@ title: CSS Selectors
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
 
-<style>
-.navigationSlider .slidingNav ul li:nth-child(3), .navigationSlider .slidingNav ul li:nth-child(3) > a:hover, .navigationSlider .slidingNav ul li.siteNavGroupActive > a {
-    background-color: #fff;
-}
-.nav-site li:nth-child(3) a {
-    color: #333 !important;
-}
-.nav-site li:nth-child(3) a:hover {
-    color: #22b573 !important;;
-}
-</style>
-
 Below are the CSS selectors supported by Prince. For their precise definition please refer to the CSS specification - Prince largely implements [Selectors Level 4](https://www.w3.org/TR/selectors4/).
 
 Terminology and Definitions
