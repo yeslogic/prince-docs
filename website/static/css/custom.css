@@ -30,6 +30,9 @@ header {
         transition: 0.4s !important;
     }
 }
+.postHeader {
+    justify-content: normal;
+}
 
 header ul li, .slidingNav, .nav-site, .nav-site li a {
     display: flex;
