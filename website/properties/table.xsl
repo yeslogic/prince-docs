@@ -22,9 +22,8 @@ For their precise definitions please refer to the CSS specifications.
 The properties marked with an asterisk (<b>*</b>) and a darker background color shade are
 Prince extensions, while the extension values of a standard property are
 highlighted with a <span class="ext">light grey background</span>.
-Besides the standard <code>-prince-</code> prefix, Prince also accepts
-<code>prince-</code> as a vendor prefix for Prince-specific
-CSS properties.
+Prince uses <code>-prince-</code> as a vendor prefix for Prince-specific extensions to the
+standard CSS properties.
 </p>
 <p id="dep-props">
 The <span class="dep">properties with a line-through</span> are deprecated properties, support might

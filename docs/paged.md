@@ -69,7 +69,7 @@ The initial values for CSS properties are defined internally - these are the ini
         marks: none;
         -prince-mark-length: 24pt;
         -prince-mark-width: 0.1pt;
-        -prince-mark-offset: auto /* equal to prince-bleed */ ;
+        -prince-mark-offset: auto /* equal to -prince-bleed */ ;
         size: Letter;
         -prince-pdf-page-colorspace: auto;
         -prince-pdf-page-label: auto;

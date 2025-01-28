@@ -92,7 +92,7 @@ dl ul { margin-bottom: 0em; }
 code, pre code, code pre, .syntax-block code, .grid code {
     white-space: pre-wrap;
 }
-a[href*="prop-prince"] code {
+a[href*="prop-prince"] code, #ext-props code {
     white-space: nowrap;
 }
 
