@@ -93,15 +93,15 @@ const siteConfig = {
   // Add custom scripts here that would be placed in <script> tags.
   // Please make sure, when bulding a version to be archived, to change
   // the call for scripts with
-  // scripts: ['/js/print.js', '/js/warning.js'],
-  scripts: ['/js/print.js'],
+  scripts: ['/js/print.js', '/js/warning.js'],
+  // scripts: ['/js/print.js'],
 
   // On page navigation for the current documentation page.
   onPageNav: 'separate',
   // No .html extensions for paths.
   cleanUrl: true,
   // When archiving a version append version number to docsURL - 'doc/15'
-  docsUrl: 'doc',
+  docsUrl: 'doc/15',
   disableHeaderTitle: true,
 
   // Open Graph and Twitter card images.
