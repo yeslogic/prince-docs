@@ -4,7 +4,7 @@ title: Generated Content
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,100..900;1,100..900&amp;display=swap" rel="stylesheet"/>
 
 Generated content is text and other content that is not found in the original input document, but is added to the output from a style sheet using the CSS [`content`](css-props.md#prop-content) property. Useful applications of this property include [Page regions](paged.md#page-regions), [List markers](styling.md#list-markers) or [Footnotes](styling.md#footnotes).
 

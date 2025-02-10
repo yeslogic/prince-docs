@@ -1,5 +1,18 @@
 /* your custom css */
 
+html, body {
+    font-family: Public Sans, Arial, sans-serif !important;
+}
+h1 {
+    font-size: 2em;
+}
+h2 {
+    font-size: 1.5em;
+}
+h1, h2, h3 {
+    font-weight: normal;
+}
+
 /* first, we reset unnecessary default table styling */
 table {
     display: table;
@@ -41,7 +54,7 @@ header ul li, .slidingNav, .nav-site, .nav-site li a {
 }
 
 .fixedHeaderContainer {
-    font-family: Lato, Verdana, sans-serif;
+    font-family: Public Sans, Arial, sans-serif;
     font-size: 16px;
     height: 70px !important;
     display: flex;
@@ -76,7 +89,7 @@ header ul li, .slidingNav, .nav-site, .nav-site li a {
     padding: 0px 20px;
     font-size: 16px;
     font-weight: 400;
-    font-family: Lato, Verdana, sans-serif;
+    font-family: Public Sans, Arial, sans-serif;
 }
 .navigationSlider .slidingNav ul li a:hover {
     background-color: inherit;

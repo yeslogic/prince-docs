@@ -4,7 +4,7 @@ title: Prince Tips and Tricks
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,100..900;1,100..900&amp;display=swap" rel="stylesheet"/>
 
 …aka the Prince Cookbook, collects recipes to achieve certain common or complex tasks useful when preparing a document for printing. Each recipe shows the required features in a "You need" ingredients list and provides a step-by-step explanation to guide you to the required goal.
 
