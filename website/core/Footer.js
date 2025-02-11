@@ -26,8 +26,8 @@ class Footer extends React.Component {
     return (
       <footer className="nav-footer" id="footer">
         <section className="copyright">
-          <div className="about-contact"><a href="/company/">About us</a> | <a href="/privacy/">Privacy Policy</a> | <a href="/contact/">Contact</a></div>
-          <div className="copyright">{this.props.config.copyright}</div>
+          <div className="footer-logo"><img src={this.props.config.baseUrl + this.props.config.footerIcon} alt="Prince" /><br />{this.props.config.copyright}</div>
+          <div className="about-contact"><a href="/company/">About Us</a> <a href="/privacy/">Privacy Policy</a> <a href="/contact/">Contact Us</a></div>
         </section>
       </footer>
     );

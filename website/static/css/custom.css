@@ -340,6 +340,36 @@ p.note:only-child {
     }
 }
 
+.nav-footer {
+    background: #f2f2f2;
+    border-top: solid 1px #ccc;
+    font-size: 17px;
+    line-height: 1.5em;
+    padding: 40px 25px 80px;
+    a, .about-contact, .copyright {
+        color: #666;
+        max-width: 1150px;
+        margin: auto;
+
+    }
+    a {
+        padding: 0px 7px;
+        line-height: 30px;
+    }
+    .about-contact {
+        float: right;
+    }
+    div.copyright, div.footer-logo {
+        float: left;
+        font-size: 14px;
+        text-align: left;
+        img {
+            margin: 0;
+            border: none;
+        }
+    }
+}
+
 dl.faq dt p {
     font-weight: bold;
 }
@@ -351,9 +381,6 @@ a[href*='//']:not([href*='princexml.com'])::after {
   color: lightgrey; }
 footer a[href*='//']:not([href*='princexml.com'])::after {
     content: "";
-}
-footer a[href] {
-    color: rgba(255, 255, 255, 0.4);
 }
 footer a[href]:hover {
     text-decoration: underline;
