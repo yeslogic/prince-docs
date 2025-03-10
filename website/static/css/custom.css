@@ -341,8 +341,8 @@ p.note:only-child {
 }
 
 .nav-footer {
-    background: #f2f2f2;
-    border-top: solid 1px #ccc;
+    background: #f8f5fc;
+    border-top: solid 1px #ddd;
     font-size: 17px;
     line-height: 1.5em;
     padding: 40px 25px 80px;
@@ -363,6 +363,7 @@ p.note:only-child {
         float: left;
         font-size: 14px;
         text-align: left;
+        color: #333;
         img {
             margin: 0;
             border: none;
