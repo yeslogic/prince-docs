@@ -2,6 +2,10 @@
 title: Command-line Options
 ---
 
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,100..900;1,100..900&amp;display=swap" rel="stylesheet"/>
+
 Prince may be called from the command-line with the following arguments:
 
 ```bash
@@ -17,50 +21,38 @@ Please note that on Windows, Prince can be called from the command-line by runni
         FILES
         [-o PDF]
 ```
-
 ## Examples
 
 ```bash
-prince file.xml
+    $ prince file.xml
 ```
-
 Convert `file.xml` to `file.pdf`.
-
 ```bash
-prince doc.html -o out.pdf
+    $ prince doc.html -o out.pdf
 ```
-
 Convert `doc.html` to `out.pdf`.
-
 ```bash
-prince http://example.com -o out.pdf
+    $ prince http://example.com -o out.pdf
 ```
-
 Convert the `http://example.com` webpage to `out.pdf`. Note that it is necessary to specify the output file when the input is a HTTP or HTTPS URL.
-
 ```bash
-prince
-    -s style1.css
-    -s style2.css
-    input.xml
-    -o output.pdf
+    $ prince
+        -s style1.css
+        -s style2.css
+        input.xml
+        -o output.pdf
 ```
-
 Convert `input.xml` to `output.pdf`, applying two user style sheets.
-
 ```bash
-prince
-    doc1.html
-    doc2.html
-    -o out.pdf
+    $ prince
+        doc1.html
+        doc2.html
+        -o out.pdf
 ```
-
 Combine `doc1.html` and `doc2.html` into a single PDF file, `out.pdf`.
-
 ```bash
-prince doc.html --raster-output=doc_%d.png
+    prince doc.html --raster-output=doc_%d.png
 ```
-
 Process `doc.html` and rasterize the output to the series of files `doc_1.png`, `doc_2.png`, `doc_3.png` etc.
 
 
@@ -76,16 +68,12 @@ It is necessary to specify the output file when the input is a HTTP or HTTPS URL
 
 Any of the `--long` command-line options can either be passed as a single command-line argument with an equals sign (`=`), or as two command-line arguments with space:
 
-```bash
---output=out.pdf
---output out.pdf
-```
+    --output=out.pdf
+    --output out.pdf
 
 The short command-line options are always passed as two command-line arguments, separated by a space:
 
-```bash
--o out.pdf
-```
+    -o out.pdf
 
 If the value of a command-line option contains a space or other command characters, the value has to be written between quotation marks.
 
@@ -112,9 +100,17 @@ The command-line may include the options described below:
     <dd>
     Display credits and acknowledgments.
     </dd>
+    <dt id="cl-license-file"><code>--license-file=<span className="replaceable">FILE</span></code></dt>
+    <dd>
+    Pass a license file which is not in the standard location.
+    </dd>
     <dt id="cl-license-key"><code>--license-key=<span className="replaceable">KEY</span></code></dt>
     <dd>
-    Pass the license key on the command line.
+    Pass the license key on the command line - this is useful if you don't want to ship a product with the license key. The contents of the <code>&lt;signature&gt;</code> element must be deleted from your license file, and its value can then be passed as the value of this command-line option - but leave an empty <code>&lt;signature&gt;</code> element in place.
+    </dd>
+    <dt id="cl-show-license"><code>--show-license</code></dt>
+    <dd>
+    Show information about the license used by Prince.
     </dd>
 </dl>
 
@@ -223,6 +219,13 @@ The command-line may include the options described below:
   </dt>
   <dd>
     Enable XML external entities (XXE).
+  </dd>
+  <dt id="cl-xml-parse-huge">
+    <code>--xml-parse-huge</code>
+  </dt>
+  <dd>
+    Enable loading very large XML documents. This option is only for Linux with
+    libxml2 older than version 2.11.0.
   </dd>
   <dt id="cl-no-local-files">
     <code>--no-local-files</code>
@@ -352,10 +355,10 @@ The command-line may include the options described below:
   Disable certificate revocation checks.
   This option only has effect on Windows.
   </dd>
-  <dt id="cl-ssl-revoke-best-effort"><code>--ssl-revoke-best-effort</code></dt>
+  <dt id="cl-no-ssl-revoke-best-effort"><code>--no-ssl-revoke-best-effort</code></dt>
   <dd>
-  Ignore certificate revocation checks that fail due to missing or offline
-  distribution points for the revocation check lists.
+  Disable the default behaviour of ignoring certificate revocation checks that fail due
+  to missing or offline distribution points for the revocation check lists.
   This option only has effect on Windows.
   </dd>
   <dt id="cl-insecure"><code>--insecure</code></dt>
@@ -388,7 +391,7 @@ The command-line may include the options described below:
   </dd>
   <dt id="cl-prince-pdf-script"><code>--prince-pdf-script=<span className="replaceable">FILE</span></code></dt>
   <dd>
-    Include a PDF script file to run when the PDF is opened.
+    Include a PDF script file to run when the PDF is opened.  This is an accumulating option, and can be set multiple times.
   </dd>
   <dt id="cl-prince-pdf-event-script"><code>--prince-pdf-event-script=<span className="replaceable">EVENT</span>:<span className="replaceable">FILE</span></code></dt>
   <dd>
@@ -474,6 +477,36 @@ The command-line may include the options described below:
   <dd>
     Attach a file to the PDF.
   </dd>
+  <dt id="cl-attach-data">
+    <code>--attach-data=<span className="replaceable">FILE</span></code>
+  </dt>
+  <dd>
+    Attach a file to the PDF with the AFRelationship key set to <code>Data</code>.
+  </dd>
+  <dt id="cl-attach-source">
+    <code>--attach-source=<span className="replaceable">FILE</span></code>
+  </dt>
+  <dd>
+    Attach a file to the PDF with the AFRelationship key set to <code>Source</code>.
+  </dd>
+  <dt id="cl-attach-alternative">
+    <code>--attach-alternative=<span className="replaceable">FILE</span></code>
+  </dt>
+  <dd>
+    Attach a file to the PDF with the AFRelationship key set to <code>Alternative</code>.
+  </dd>
+  <dt id="cl-attach-supplement">
+    <code>--attach-supplement=<span className="replaceable">FILE</span></code>
+  </dt>
+  <dd>
+    Attach a file to the PDF with the AFRelationship key set to <code>Supplement</code>.
+  </dd>
+  <dt id="cl-attach-unspecified">
+    <code>--attach-unspecified=<span className="replaceable">FILE</span></code>
+  </dt>
+  <dd>
+    Attach a file to the PDF with the AFRelationship key set to <code>Unspecified</code>.
+  </dd>
   <dt id="cl-no-artificial-fonts"><code>--no-artificial-fonts</code></dt>
   <dd>
     Disable synthesis of missing bold/italic fonts.
@@ -491,6 +524,10 @@ The command-line may include the options described below:
     Disable system fonts in PDF output.  Only fonts defined with
     <a href="/doc/css-at-rules/#at-font-face"><code>@font-face</code></a>
     rules in CSS will be available.
+  </dd>
+  <dt id="cl-no-rename-duplicate-fonts"><code>--no-rename-duplicate-fonts</code></dt>
+  <dd>
+    Disable renaming fonts with the same name (normally done to avoid a warning from Adobe Preflight).
   </dd>
   <dt id="cl-force-identity-encoding"><code>--force-identity-encoding</code></dt>
   <dd>
@@ -694,6 +731,10 @@ Rasterization is enabled with the `--raster-output` option below. When this is u
   <dd>
     Scan font files and create a CSS file.
   </dd>
+  <dt id="cl-font-specimen"><code>--font-specimen <span className="replaceable">FONT</span></code></dt>
+  <dd>
+    Create a sample PDF for the specified font, where <code>FONT</code> indicates a path (or URL) to a font file.
+  </dd>
 </dl>
 
 ### Advanced Options
@@ -743,6 +784,7 @@ Rasterization is enabled with the `--raster-output` option below. When this is u
   </dd>
   <dt id="cl-fail-dropped-content"><code>--fail-dropped-content</code></dt>
   <dt id="cl-fail-missing-resources"><code>--fail-missing-resources</code></dt>
+  <dt id="cl-fail-incorrect-references"><code>--fail-incorrect-references</code></dt>
   <dt id="cl-fail-stripped-transparency"><code>--fail-stripped-transparency</code></dt>
   <dt id="cl-fail-missing-glyphs"><code>--fail-missing-glyphs</code></dt>
   <dt id="cl-fail-pdf-profile-error"><code>--fail-pdf-profile-error</code></dt>
@@ -750,7 +792,7 @@ Rasterization is enabled with the `--raster-output` option below. When this is u
   <dt id="cl-fail-invalid-license"><code>--fail-invalid-license</code></dt>
   <dt id="cl-fail-safe"><code>--fail-safe</code></dt>
   <dd>
-    <p>These eight Fail-Safe Options abort the creation of a PDF when one of
+    <p>These nine Fail-Safe Options abort the creation of a PDF when one of
     the conditions is met - the last one enabling all of the previous ones.  For more details, please check the detailed
     documentation in the separate <a href="/doc/server-integration/#fail-safe-options">Fail-Safe Options</a> chapter.</p>
   </dd>

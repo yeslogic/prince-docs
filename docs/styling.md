@@ -2,6 +2,10 @@
 title: Styling
 ---
 
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,100..900;1,100..900&amp;display=swap" rel="stylesheet"/>
+
 When preparing a document with HTML and CSS, you need to first create the content - but then you need to style it to make it visually appealing. You can choose which fonts to use, how to format your text and your paragraphs, choose the layout for your page, give your text, background and style some color, insert images - and much more!
 
 In the following sections you can find detailed information on how to achieve this with Prince.
@@ -15,13 +19,22 @@ Prince applies default styles to all (X)HTML documents - these style rules can b
 
 ## Fonts
 
-Prince supports the Web Open Font (WOFF/WOFF2), TrueType and OpenType (with TTF or CFF outlines, SVG, and CBLC/CBDT or sbix colour bitmaps) font formats, as well as the TTC and WOFF2 font collections.
+Fonts are at the basis of displaying text.  Fonts are grouped in Font Families, or typefaces, which are employed to style the text in a specific way.
+
+Prince supports multiple font formats, including TrueType and OpenType font formats - with TTF, CFF, or CFF2 outlines (such as the Adobe Source fonts), SVG, CBLC/CBDT, or sbix colour bitmaps, and Font Variations, commonly known as Variable Fonts.
+
+Prince supports also the Web Open Font format (WOFF/WOFF2), and TTC and WOFF2 font collections.
+
 
 ### Defining a font family
 
-To define the font, or the fonts to be used in a document, the [`font-family`](css-props.md#prop-font-family) property is used. Prince will try to use the specified font, and should glyphs be missing, it will silently fall back to the next font in the cascade - typically a [generic font family](#generic-font-families).
+To define the font family to be used in a document, the [`font-family`](css-props.md#prop-font-family) property is used. Prince will try to use the specified font family, and should glyphs be missing, it will silently fall back to the next font in the cascade - typically a [generic font family](#generic-font-families).
 
-To prevent this font switching mechanism and force Prince to only use the defined font, the special keyword `prince-no-fallback` is available: it triggers a warning if any glyphs are not found in the specified font, instead of switching to another one.
+<p className="note">
+If a paragraph or the entire document are mostly in a specific language, it might help to specify a font suitable for that language, in order to avoid most of the unexpected consequences of this font switching mechanism.
+</p>
+
+To prevent this font switching mechanism altogether, and force Prince to only use the defined font, the special keyword `prince-no-fallback` is available: it triggers a warning if any glyphs are not found in the specified font, instead of switching to another one.
 
 ```css
     h1 { font-family: MyFont, prince-no-fallback; }
@@ -35,7 +48,7 @@ The `src` descriptor can define the resource with a `url()` function - an option
     @font-face {
       font-family: MyFont;
       src: prince-lookup("MyFont"),
-           url("http://example.com/MyFont.ttf") format("truetype");
+           url("http://example.com/MyFont.ttf") format(truetype);
     }
 ```
 In this example we are defining a new font face, called `MyFont`. We instruct Prince to check if the MyFont truetype font is installed locally or already defined by another @font-face rule, and, all failing, to download it from a remote location.
@@ -82,7 +95,7 @@ Prince supports OpenType features, and enables certain ones by default in specif
 </tfoot>
 </table>
 
-Microsoft has a list of the OpenType feature names [here](https://www.microsoft.com/typography/otspec/featurelist.htm).
+Microsoft has a list of the OpenType feature names [here](https://learn.microsoft.com/en-gb/typography/opentype/spec/featurelist).
 
 In order to enable specific OpenType features, or specific font variants, the following properties can be used:
 
@@ -92,7 +105,7 @@ In order to enable specific OpenType features, or specific font variants, the fo
 
 Note that the [`font-variant`](css-props.md#prop-font-variant) CSS property can be used as a shorthand for these properties.
 
-```
+```css
     font-variant: historical-ligatures all-small-caps oldstyle-nums;
 ```
 
@@ -114,13 +127,30 @@ It is possible to also enable other OpenType features, not covered by the previo
 It is a very powerful tool, but care must be taken in which order the features are enabled!  All required features need to be explicitly enabled: please note that enabling one feature will disable all the default features.
 
 
+### Variable fonts
+
+The OpenType font specification also includes so-called variable fonts including many different variations of the font packed into a single file, instead of providing a separate file for every font width, weight, or style.  In this way a single `@font-face` reference is needed, greatly reducing the complexity of the style sheet, as well as the size of the fetched font files.  The `font-weight`, `font-stretch`, and `font-style` descriptors allow for the definition of ranges that will be valid values in the stylesheet.
+
+```css
+    @font-face {
+        font-family: "MyVariableFont";
+        src: url("/path/to/variable/fonts/variable-font.woff2") format(woff2) tech(variations);
+        font-weight: 125 950
+        font-stretch: 75% 125%
+        font-style: oblique 0deg 14deg;
+    }
+```
+
+Prince also allows for low-level fine-tuning with the CSS property [`font-variation-settings`](css-props.md#prop-font-variation-settings). Whenever possible, authors should use this property only for special cases where its use is the only way to access a specific font variation not accessible through other CSS properties.
+
+
 ### Generic font families
 
 Prince maps the CSS generic font families to the Microsoft Core Fonts. The Microsoft Core Fonts are pre-installed on Windows and MacOS systems but not on Linux systems. To use them on Linux you must install the [msttcorefonts](http://corefonts.sourceforge.net) package, which is available for most Linux distributions.
 
 <p className="note">Instructions for installing fonts on Linux greatly depend on the distribution you are running - we recommend checking the documentation for your own distro.  Here are links to fonts documentation for <a href="https://wiki.ubuntu.com/Fonts">Ubuntu</a>, <a href="https://en.opensuse.org/Fonts">openSuse</a>, <a href="https://wiki.debian.org/Fonts">Debian</a>, and <a href="https://wiki.alpinelinux.org/wiki/Fonts">Alpine Linux</a>.</p>
 
-The following table shows the default fonts for the main languages on Windows, MacOS and Linux.
+The following table shows the default fonts for the main supported languages on Windows, MacOS and Linux.
 
 <table className="grid">
 <thead>
@@ -133,112 +163,136 @@ The following table shows the default fonts for the main languages on Windows, M
 </thead>
 <tbody>
 <tr>
-<td rowSpan="28"><code>serif</code></td>
-<td rowSpan="5">Windows</td>
+<td rowSpan="34"><code>serif</code></td>
+<td rowSpan="7">Windows</td>
 <td>Latin</td>
-<td>Times New Roman</td>
+<td>Times New Roman, Noto Serif</td>
 </tr>
 <tr>
 <td>Chinese</td>
-<td>MingLiU, Microsoft YaHei, SimSun</td>
+<td>MingLiU, Microsoft YaHei, SimSun, Noto Serif</td>
 </tr>
 <tr>
 <td>Japanese</td>
-<td>MS Mincho, Yu Gothic</td>
+<td>MS Mincho, Yu Gothic, Noto Serif</td>
 </tr>
 <tr>
 <td>Korean</td>
-<td>Batang, Malgun Gothic</td>
+<td>Batang, Malgun Gothic, Noto Serif</td>
 </tr>
 <tr>
 <td>Devanagari / Hindi</td>
-<td>Mangal</td>
+<td>Mangal, Noto Serif</td>
 </tr>
 <tr>
-<td rowSpan="5">MacOS</td>
+<td>Khmer</td>
+<td>Leelawadee UI, Khmer UI, Noto Serif</td>
+</tr>
+<tr>
+<td>Myanmar (Burmese)</td>
+<td>Myanmar Text, Noto Serif</td>
+</tr>
+<tr>
+<td rowSpan="7">MacOS</td>
 <td>Latin</td>
-<td>Times New Roman</td>
+<td>Times New Roman, Noto Serif</td>
 </tr>
 <tr>
 <td>Chinese</td>
-<td>LiSong Pro</td>
+<td>LiSong Pro, Noto Serif</td>
 </tr>
 <tr>
 <td>Japanese</td>
-<td>Hiragino Mincho ProN</td>
+<td>Hiragino Mincho ProN, Noto Serif</td>
 </tr>
 <tr>
 <td>Korean</td>
-<td>AppleMyungjo</td>
+<td>AppleMyungjo, Noto Serif</td>
 </tr>
 <tr>
 <td>Devanagari / Hindi</td>
-<td>Devanagari MT</td>
+<td>Devanagari MT, Noto Serif</td>
 </tr>
 <tr>
-<td rowSpan="18">Linux</td>
+<td>Khmer</td>
+<td>Khmer MN, Noto Serif</td>
+</tr>
+<tr>
+<td>Myanmar (Burmese)</td>
+<td>Myanmar Sangam MN, Noto Serif</td>
+</tr>
+<tr>
+<td rowSpan="20">Linux</td>
 <td>Latin, Greek, Cyrillic</td>
-<td>Times New Roman, DejaVu Serif, DejaVu LGC Serif, Liberation Serif</td>
+<td>Times New Roman, DejaVu Serif, DejaVu LGC Serif, Liberation Serif, Noto Serif</td>
 </tr>
 <tr>
 <td>Chinese, simplified</td>
-<td>AR PL UMing CN, AR PL SungtiL GB</td>
+<td>AR PL UMing CN, AR PL SungtiL GB, Noto Serif</td>
 </tr>
 <tr>
 <td>Chinese, traditional (TW)</td>
-<td>AR PL UMing TW, AR PL Mingti2L Big5</td>
+<td>AR PL UMing TW, AR PL Mingti2L Big5, Noto Serif</td>
 </tr>
 <tr>
 <td>Chinese, traditional (HK)</td>
-<td>AR PL UMing HK, AR PL Mingti2L Big5</td>
+<td>AR PL UMing HK, AR PL Mingti2L Big5, Noto Serif</td>
 </tr>
 <tr>
 <td>Japanese</td>
-<td>Kochi Mincho, IPAMincho, TakaoMincho</td>
+<td>Kochi Mincho, IPAMincho, TakaoMincho, Noto Serif</td>
 </tr>
 <tr>
 <td>Korean</td>
-<td>UnBatang, Baekmuk Batang</td>
+<td>UnBatang, Baekmuk Batang, Noto Serif</td>
 </tr>
 <tr>
 <td>Devanagari / Hindi</td>
-<td>Lohit Devanagari</td>
+<td>Lohit Devanagari, Noto Serif</td>
 </tr>
 <tr>
 <td>Bengali</td>
-<td>Lohit Bengali, Ani, Mukti Narrow</td>
+<td>Lohit Bengali, Ani, Mukti Narrow, Noto Serif</td>
 </tr>
 <tr>
 <td>Gurmukhi/Punjabi</td>
-<td>Lohit Punjabi</td>
+<td>Lohit Punjabi, Noto Serif</td>
 </tr>
 <tr>
 <td>Gujarati</td>
-<td>Lohit Gujarati</td>
+<td>Lohit Gujarati, Noto Serif</td>
 </tr>
 <tr>
 <td>Tamil</td>
-<td>Lohit Tamil</td>
+<td>Lohit Tamil, Noto Serif</td>
 </tr>
 <tr>
 <td>Telugu</td>
-<td>Lohit Telugu</td>
+<td>Lohit Telugu, Noto Serif</td>
 </tr>
 <tr>
 <td>Kannada</td>
-<td>Lohit Kannada</td>
+<td>Lohit Kannada, Noto Serif</td>
 </tr>
 <tr>
 <td>Malayalam</td>
-<td>Lohit Malayalam</td>
+<td>Lohit Malayalam, Noto Serif</td>
 </tr>
 <tr>
 <td>Oriya</td>
-<td>Lohit Oriya</td>
+<td>Lohit Oriya, Noto Serif</td>
 </tr>
 <tr>
 <td>Thai</td>
-<td>Garuda</td>
+<td>Garuda, Noto Serif</td>
+</tr>
+<tr>
+<td>Khmer</td>
+<td>Khmer OS, Noto Serif</td>
+</tr>
+<tr>
+<td>Myanmar (Burmese)</td>
+<td>Noto Serif, Padauk, Myanmar Sagar, Noto Sans</td>
 </tr>
 <tr>
 <td>Emoji</td>
@@ -249,63 +303,87 @@ The following table shows the default fonts for the main languages on Windows, M
 <td>OpenSymbol, DejaVu Sans</td>
 </tr>
 <tr>
-<td rowSpan="14"><code>sans-serif</code></td>
-<td rowSpan="4">Windows</td>
+<td rowSpan="20"><code>sans-serif</code></td>
+<td rowSpan="6">Windows</td>
 <td>Latin</td>
-<td rowSpan="2">Arial</td>
+<td rowSpan="2">Arial, Noto Sans</td>
 </tr>
 <tr>
 <td>Chinese</td>
 </tr>
 <tr>
 <td>Japanese</td>
-<td>MS Gothic</td>
+<td>MS Gothic, Noto Sans</td>
 </tr>
 <tr>
 <td>Korean</td>
-<td>Dotum</td>
+<td>Dotum, Noto Sans</td>
 </tr>
 <tr>
-<td rowSpan="4">MacOS</td>
+<td>Khmer</td>
+<td>Noto Sans</td>
+</tr>
+<tr>
+<td>Myanmar (Burmese)</td>
+<td>Myanmar Text, Padauk, Myanmar Sagar, Noto Sans</td>
+</tr>
+<tr>
+<td rowSpan="6">MacOS</td>
 <td>Latin</td>
-<td>Arial</td>
+<td>Arial, Noto Sans</td>
 </tr>
 <tr>
 <td>Chinese</td>
-<td>LiHei Pro</td>
+<td>LiHei Pro, Noto Sans</td>
 </tr>
 <tr>
 <td>Japanese</td>
-<td>Hiragino Kaku Gothic ProN</td>
+<td>Hiragino Kaku Gothic ProN, Noto Sans</td>
 </tr>
 <tr>
 <td>Korean</td>
-<td>Apple SD Gothic Neo, Apple Gothic</td>
+<td>Apple SD Gothic Neo, Apple Gothic, Noto Sans</td>
 </tr>
 <tr>
-<td rowSpan="6">Linux</td>
+<td>Khmer</td>
+<td>Khmer Sangam MN, Noto Sans</td>
+</tr>
+<tr>
+<td>Myanmar (Burmese)</td>
+<td>Myanmar Sangam MN, Padauk, Myanmar Sagar, Noto Sans</td>
+</tr>
+<tr>
+<td rowSpan="8">Linux</td>
 <td>Latin, Greek, Cyrillic</td>
-<td>Arial, DejaVu Sans, DejaVu LGC Sans, Liberation Sans</td>
+<td>Arial, DejaVu Sans, DejaVu LGC Sans, Liberation Sans, Noto Sans</td>
 </tr>
 <tr>
 <td>Chinese, simplified</td>
-<td>AR PL UKai CN, AR PL KaitiM GB</td>
+<td>AR PL UKai CN, AR PL KaitiM GB, Noto Sans</td>
 </tr>
 <tr>
 <td>Chinese, traditional (TW)</td>
-<td>AR PL UKai TW, AR PL KaitiM Big5</td>
+<td>AR PL UKai TW, AR PL KaitiM Big5, Noto Sans</td>
 </tr>
 <tr>
 <td>Chinese, traditional (HK)</td>
-<td>AR PL UKai HK, AR PL KaitiM Big5</td>
+<td>AR PL UKai HK, AR PL KaitiM Big5, Noto Sans</td>
 </tr>
 <tr>
 <td>Japanese</td>
-<td>Kochi Gothic, IPAGothic, TakaoGothic</td>
+<td>Kochi Gothic, IPAGothic, TakaoGothic, Noto Sans</td>
 </tr>
 <tr>
 <td>Korean</td>
-<td>UnDotum, Baekmuk Gulim</td>
+<td>UnDotum, Baekmuk Gulim, Noto Sans</td>
+</tr>
+<tr>
+<td>Khmer</td>
+<td>Noto Sans</td>
+</tr>
+<tr>
+<td>Myanmar (Burmese)</td>
+<td>Padauk, Myanmar Sagar, Noto Sans</td>
 </tr>
 <tr>
 <td rowSpan="12"><code>monospace</code></td>
@@ -370,7 +448,10 @@ It is also possible to map the generic font families to local fonts specified by
         src: url("/usr/share/fonts/truetype/msttcorefonts/trebucbi.ttf")
     }
 ```
-Prince can be instructed not to use system fonts with the [`--no-system-fonts`](command-line.md#cl-no-system-fonts) command-line option. Only fonts defined with [`@font-face`](css-at-rules.md#at-font-face) rules in CSS will be available.
+
+A low-level mechanism to fine-tune the set of Unicode codepoints that may be supported by the font face for which it is declared is provided through the [`unicode-range`](css-props.md#prop-unicode-range) CSS descriptor. Its value is a comma-delimited list of Unicode range values. The union of these ranges defines the set of codepoints that serves as a hint for user agents when deciding whether or not to download a font resource needed for the test content of a particular page.
+
+Finally, Prince can be instructed not to use system fonts with the [`--no-system-fonts`](command-line.md#cl-no-system-fonts) command-line option. Only fonts defined with [`@font-face`](css-at-rules.md#at-font-face) rules in CSS will be available.
 
 
 ## Layout
@@ -396,7 +477,13 @@ Next up you should decide whether to give it some [`color`](css-props.md#prop-co
         color: blue;
     }
 ```
-Special formatting can be achieved through the [`font-style`](css-props.md#prop-font-style), [`font-weight`](css-props.md#prop-font-weight) or [`font-variant`](css-props.md#prop-font-variant) properties - all of which can also be set with the shorthand property [`font`](css-props.md#prop-font). For special effects one can use the properties [`text-transform`](css-props.md#prop-text-transform), [`text-decoration`](css-props.md#prop-text-decoration) - or even [`text-shadow`](css-props.md#prop-text-shadow).
+Special formatting can be achieved through the [`font-style`](css-props.md#prop-font-style), [`font-weight`](css-props.md#prop-font-weight) or [`font-variant`](css-props.md#prop-font-variant) properties - all of which can also be set with the shorthand property [`font`](css-props.md#prop-font).
+
+The property [`text-transform`](css-props.md#prop-text-transform) allows to display a text in lowercase, uppercase, or capitalized.
+
+A text can also be decorated with various styles and shapes of lines: the property [`text-decoration`](css-props.md#prop-text-decoration), a shorthand for defining various aspects of the decoration, such as color or style, allows a line to be placed below, above, or through a text. The thickness of the line can be fine-tuned with [text-decoration-thickness](css-props.md#prop-text-decoration-thickness), while the placement of an underline can be determined with [text-underline-position](css-props.md#prop-text-underline-position).
+
+Last but not least, the property [`text-shadow`](css-props.md#prop-text-shadow) allows for adding special shadow effects to the text and all its decorations. The shadows are painted front-to-back, i.e. the first shadow is painted on top of the subsequent ones, but never overlaying the text itself.
 
 It is also possible to style the vertical alignment of text in an inline box with the [`vertical-align`](css-props.md#prop-vertical-align) property. The value `baseline` is the default, `sub` and `super` align the baseline of the element with the subscript-baseline or superscript-baseline of its parent respectively. The `text-top` and `text-bottom` values align the top of the element with the top or bottom of the parent's font, while `middle` aligns the middle of the element with the baseline plus half the x-height of the parent.
 
@@ -405,6 +492,29 @@ In order to determine how compact the text should be displayed, the `letter-spac
 In a similar fashion, the property [`word-spacing`](css-props.md#prop-word-spacing) can be used to determine the distance between words.
 
 The directionality of the text is controlled through the [Writing Mode](#writing-mode).
+
+### Writing Mode
+
+In (X)HTML, the language of a document, or of an element, is defined by the `lang` or `xml:lang` attributes - where this is not available (such as in CSS generated content in [Before and After pseudo-elements](gen-content.md#before-and-after-pseudo-elements), or in [page margin boxes](paged.md#page-regions)), Prince provides the CSS property [`-prince-lang`](css-props.md#prop-prince-lang) (see also [OpenType Features in Prince](#opentype-features-in-prince) for the impact this has on language-specific OpenType shaping).  Elements can be selected for styling based on their language, with the `:lang()` CSS pseudo-class (see [Linguistic Pseudo-classes](css-selectors.md#linguistic-pseudo-classes)).
+
+To control the rendering of the text, the following CSS properties can be used:
+- the [`direction`](css-props.md#prop-direction) property defines the inline direction of the script, that is left-to-right (like e.g. Latin or Indic scripts) or right-to-left (like e.g. Arabic and Hebrew scripts);
+- the [`writing-mode`](css-props.md#prop-writing-mode) property, on the other hand, describes the block direction of the script, namely whether the text should be laid out horizontally, top-to-bottom (like e.g. Latin or Arabic scripts), or vertically, right-to-left (like e.g. Chinese scripts). The default value is `horizontal-tb`, which means horizontal, top-to-bottom.
+
+Together, they define the text directionality, i.e. the direction the script is to be read - which in CSS is known as the writing mode.
+
+Prince sets the PDF direction based on the direction and writing mode of the document root element to support right-to-left books.
+
+Changing the writing mode of a document, that is, the inline or block direction, not only changes the direction of the script, but also affects several other aspects of the printed document.
+
+The page selector pseudo-classes `:recto` and `:verso` (see [Selecting pages](paged.md#selecting-pages)) are relative to the direction of the script. In a left-to-right script, `:recto` is the right-hand side of a spread, and `:verso` is the left-hand side, while in a right-to-left script these values are inverted: `:recto` defines the left-hand side of a spread, and `:verso` defines the right-hand side. See also [Selecting pages](paged.md#selecting-pages).
+
+Columns (see the chapter on [Columns](#columns)) change their orientation when the writing mode is changed - the [`writing-mode`](css-props.md#prop-writing-mode) value `vertical-rl` arranges the columns *horizontally*, top-to-bottom.
+
+This can be used to rotate content - see [Printing wide content sideways](cookbook.md#printing-wide-content-sideways) and [Rotating content in table cells](cookbook.md#rotating-content-in-table-cells).
+
+Prince also supports the `:dir()` CSS pseudo-class (see [Linguistic Pseudo-classes](css-selectors.md#linguistic-pseudo-classes)) to style elements based on the *directionality*, as determined by the document language, using a combination of the `dir` attribute, the surrounding text, and other factors - it does not select based on stylistic states, such as those defined with the `direction` CSS property, but uses the rather complex [user agent's knowledge of the document's semantics](https://html.spec.whatwg.org/multipage/dom.html#the-directionality).
+
 
 ### Paragraph formatting
 
@@ -470,25 +580,6 @@ The property [`overflow-wrap`](css-props.md#prop-overflow-wrap) controls wrappin
 Prince does not support [`word-break:`](css-props.md#prop-word-break)`break-word` to achieve a similar effect - use `word-break: break-all`, or [`overflow-wrap:`](css-props.md#prop-overflow-wrap)`break-word` instead.
 
 
-### Writing Mode
-
-A writing mode describes the directionality of a script, i.e. it describes the direction the script is to be read. In (X)HTML, the language of a document, or of an element, is defined by the `lang` or `xml:lang` attributes - where this is not available (such as in CSS generated content in [Before and After pseudo-elements](gen-content.md#before-and-after-pseudo-elements), or in [page margin boxes](paged.md#page-regions)), Prince provides the CSS property [`-prince-lang`](css-props.md#prop-prince-lang) (see also [OpenType Features in Prince](#opentype-features-in-prince) for the impact this has on language-specific OpenType shaping).
-
-To control the rendering of the text, a couple of specific CSS properties can be used: the [`direction`](css-props.md#prop-direction) property defines the inline direction of the script, that is left-to-right (like e.g. Latin or Indic scripts) or right-to-left (like e.g. Arabic and Hebrew scripts).
-
-The [`writing-mode`](css-props.md#prop-writing-mode) property, on the other hand, describes the block direction of the script, namely whether the text should be laid out horizontally, top-to-bottom (like e.g. Latin or Arabic scripts), or vertically, right-to-left (like e.g. Chinese scripts). The default value is `horizontal-tb`, which means horizontal, top-to-bottom.
-
-Prince sets the PDF direction based on the direction and writing mode of the document root element to support right-to-left books.
-
-Changing the writing mode of a document, that is, the inline or block direction, not only changes the direction of the script, but also affects several other aspects of the printed document.
-
-The page selector pseudo-classes `:recto` and `:verso` (see [Selecting pages](paged.md#selecting-pages)) are relative to the direction of the script. In a left-to-right script, `:recto` is the right-hand side of a spread, and `:verso` is the left-hand side, while in a right-to-left script these values are inverted: `:recto` defines the left-hand side of a spread, and `:verso` defines the right-hand side. See also [Selecting pages](paged.md#selecting-pages).
-
-Columns (see the chapter on [Columns](#columns)) change their orientation when the writing mode is changed - the [`writing-mode`](css-props.md#prop-writing-mode) value `vertical-rl` arranges the columns *horizontally*, top-to-bottom.
-
-This can be used to rotate content - see [Printing wide content sideways](cookbook.md#printing-wide-content-sideways) and [Rotating content in table cells](cookbook.md#rotating-content-in-table-cells).
-
-
 ### Box Model
 
 All HTML elements follow the CSS box model. Their `margin`, `border`, `padding` and `background` can all be styled - and they can even cast a shadow with the property [`box-shadow`](css-props.md#prop-box-shadow).
@@ -541,6 +632,12 @@ The background of an element can be styled with the [`background-color`](css-pro
 
 Various standard properties are available to position the background, to clip it or to determine whether, and how it should be repeated. Prince extends control on the background with the [`-prince-background-image-resolution`](css-props.md#prop-prince-background-image-resolution) property, used to control image size in print (see [Image Size](graphics.md#image-size)), and with the `bleed` modifier of the [`background-attachment`](css-props.md#prop-background-attachment) property, which, when used together with `background-size: cover`, allows a background image to cover the entire page bleed area (see [Trimming marks](paged.md#trimming-marks)).
 
+#### Outline
+
+Outline is a line outside of the `border` of an element. Unlike the other areas of a box, it does not take up any space, and thus does not affect the layout in any way.
+
+It is possible to change its color, style, and width with, respectively, the properties [`outline-color`](css-props.md#prop-outline-color), [`outline-style`](css-props.md#prop-outline-style), and [`outline-width`](css-props.md#prop-outline-width), or with the shorthand property [`outline`](css-props.md#prop-outline).  The distance from the border can be defined with the property [`outline-offset`](css-props.md#prop-outline-offset).  Just as for borders, rounded corners can be styled with the [`border-radius`](css-props.md#prop-border-radius) property.
+
 
 ### Display
 
@@ -571,13 +668,13 @@ The special value `none`, which removes the content from the document, is very u
 
 ### Position
 
-Elements can be positioned in various ways with the [`position`](css-props.md#prop-position) CSS property: `static`, `relative`, `absolute`, `fixed`, as well as <code>running( <i>name</i> )</code>.
+Elements can be positioned in various ways with the [`position`](css-props.md#prop-position) CSS property, which can take the values `static`, `relative`, `absolute`, `fixed`, as well as <code>running( <i>name</i> )</code>.
 
 The keyword `static` is the default value, and simply places the element in its natural place in the document flow.
 
-The keyword `relative` does basically the same, except that it furthermore allows to alter the position, relative to where it appears in its natural place, while the keyword `absolute` places the element in an absolute position relative to the *page area* (see [Page regions](paged.md#page-regions)).  The element needs then to be moved into its chosen place: the properties [`top`](css-props.md#prop-top), [`bottom`](css-props.md#prop-bottom), [`left`](css-props.md#prop-left) and [`right`](css-props.md#prop-right) can be used to move the element, respectively adding a "buffer" space at the top, bottom, left or right of the element.
+The keyword `relative` does basically the same, except that it furthermore allows to alter the position, relative to where it appears in its natural place, while the keyword `absolute` places the element in an absolute position relative to the *page area* (see [Page regions](paged.md#page-regions)).  The element needs then to be moved into its chosen place: the properties [`top`](css-props.md#prop-top), [`bottom`](css-props.md#prop-bottom), [`left`](css-props.md#prop-left) and [`right`](css-props.md#prop-right) can be used to move the element, respectively adding a "buffer" space at the top, bottom, left or right of the element. The property [`inset`](css-props.md#prop-inset) can be used as a shorthand - it has the same multi-value syntax of the [`margin`](#margin) shorthand property.
 
-Prince adds two further values to this, in order to handle common positioning tasks in page spreads, namely [`inset-inside`](css-props.md#prop-inset-inside) and [`inset-outside`](css-props.md#prop-inset-outside), adding the "buffer" space respectively inside or outside the page of a page spread (see also [Paged Media](paged.md)).
+Prince adds two further properties, in order to handle common positioning tasks in page spreads, namely [`inset-inside`](css-props.md#prop-inset-inside) and [`inset-outside`](css-props.md#prop-inset-outside), adding the "buffer" space respectively inside or outside the page of a page spread (see also [Paged Media](paged.md)).
 
 The functional expression <code>running( <i>name</i> )</code> is used for moving an element from the natural document flow into a specific [page region](paged.md#page-regions), and is explained in detail in the chapter [Taking elements from the document](paged.md#taking-elements-from-the-document).
 
@@ -596,13 +693,15 @@ The function `translate()` moves an element along a vertical and/or horizontal a
 
 The function `scale()` affects the size of the element - note that this also alters other properties of an element, such as its [`font-size`](css-props.md#prop-font-size), [`padding`](css-props.md#prop-padding), [`height`](css-props.md#prop-height) and [`width`](css-props.md#prop-width). The functions `scalex()` and `scaley()` transform the element in one dimension only.
 
-The functions `skewx()` and `skewy()` tilt an element to the left or right. There is no shorthand form.
+The functions `skewx()` and `skewy()` can be used to respectively perform a 2D skew along the X and the Y axis.  The function `skew()` specifies a 2D skew for the X and Y axes - note, however, that the behaviour is different from applying both `skewx()` and `skewy()`, and the `skew()` function exists for compatibility reasons: it should not be used in new content.
 
 The origin for the transformations, i.e. the point around which a transformation is applied, can be set with the [`transform-origin`](css-props.md#prop-transform-origin) property.
 
 If only one term is given, then the second component is assumed to be `center`. In particular, if only a percentage or length is given, then it is assumed to be the horizontal coordinate.
 
 If both values are given as keywords, order doesn't matter; but if two coordinates are given and either coordinate is a length or percentage, then the horizontal component must come first: so `top 50%` is not valid, but `top` and `top center` and `50% top` are all valid and equivalent.
+
+Please note that the optional third length value is only supported if the value is zero - Prince thus effectively only supports offsets on the X and Y axes.
 
 
 ### Lists
@@ -611,13 +710,17 @@ A list item has two parts: `marker` and `content`.
 
 The `content` part is rendered inside the list item's border box, and is styled the same way as a normal block, such as `div` or `p` element.
 
+<p className="note">
+Prince, up to version 15, indented lists by setting a non-zero <em>margin</em> on <code>ol</code> and <code>ul</code> elements. However, browsers indent lists by setting a non-zero <em>padding</em>.  Starting with version 16, Prince follows browser behavior for consistency. This may affect documents previously designed for Prince with this inconsistency in mind.
+</p>
+
 The `marker` positioning is determined by the [`list-style-position`](css-props.md#prop-list-style-position) property and is styled using the `::marker` pseudo-element.
 
 #### List markers
 
 The [`content`](css-props.md#prop-content) property can be applied to the `::marker` pseudo-element to specify a custom marker for list items.
 
-```css
+```css title="CSS"
     li::marker { content: "No. " counter(list-item) }
 ```
 #### List marker position
@@ -742,7 +845,7 @@ The *fixed table layout* algorithm is used in the following situations:
 -   when the table [`table-layout`](css-props.md#prop-table-layout) property has a value `fixed`, and
 -   the value of [`width`](css-props.md#prop-width) property is not `auto`
 
-```css
+```
     table {
         table-layout: fixed;
         width: 90%
@@ -772,8 +875,7 @@ When the [`border-collapse`](css-props.md#prop-border-collapse) property is set 
 ```
 Output
 
-<table style={{borderCollapse: "separate", borderSpacing: "5px", border: "solid 3px black"}}>
-<tbody>
+<table className="table-example" style={{borderCollapse: "separate", borderSpacing: "5px", border: "solid 3px black"}}>
 <tr>
     <td style={{border: "solid 1px red"}}> A </td>
     <td style={{border: "solid 1px red"}}> B </td>
@@ -789,7 +891,6 @@ Output
     <td style={{border: "solid 1px red"}}> H </td>
     <td style={{border: "solid 1px red"}}> I </td>
 </tr>
-</tbody>
 </table>
 
 Note that by default,
@@ -813,8 +914,7 @@ When the CSS property [`border-collapse`](css-props.md#prop-border-collapse) is 
 ```
 Output
 
-<table style={{borderCollapse: "collapse", borderSpacing: "5px", border: "solid 3px black"}}>
-<tbody>
+<table className="table-example" style={{borderCollapse: "collapse", borderSpacing: "5px", border: "solid 3px black"}}>
 <tr>
     <td style={{border: "solid 1px red"}}> A </td>
     <td style={{border: "solid 1px red"}}> B </td>
@@ -830,7 +930,6 @@ Output
     <td style={{border: "solid 1px red"}}> H </td>
     <td style={{border: "solid 1px red"}}> I </td>
 </tr>
-</tbody>
 </table>
 
 Note that the [`border-spacing`](css-props.md#prop-border-spacing) property is not used
@@ -858,18 +957,13 @@ Prince table cells that span multiple columns using the [`table-column-span`](cs
 ```
 Output
 
-<table className="colspan">
-<tbody>
+<table className="colSpan">
 <tr>
-    <td>A</td>
-    <td className="colSpan2" colSpan="2">B</td>
+<td>A</td> <td className="colSpan2" colSpan="2">B</td>
 </tr>
 <tr>
-    <td>C</td>
-    <td>D</td>
-    <td>E</td>
+<td>C</td> <td>D</td> <td>E</td>
 </tr>
-</tbody>
 </table>
 
 
@@ -878,25 +972,20 @@ Output
 Prince supports table cells that span multiple rows using the [`table-row-span`](css-props.md#prop-table-row-span) CSS property, which takes an integer value and is set to 1 by default.
 
 ```css title="CSS"
-    td.rowspan2 { table-row-span: 2 }
+    td.rowSpan2 { table-row-span: 2 }
 ```
 ```xml title="XML"
-    <td class="rowspan2"> A </td>
+    <td className="rowSpan2"> A </td>
 ```
 Output
 
-<table className="rowspan">
-<tbody>
+<table className="table-example" className="rowSpan">
 <tr>
-    <td className="rowspan2" rowSpan="2" style={{verticalAlign: "middle"}}>A</td>
-    <td>B</td>
-    <td>C</td>
+<td className="rowSpan2" rowSpan="2" style={{verticalAlign: "middle"}}>A</td> <td>B</td> <td>C</td>
 </tr>
 <tr>
-    <td>D</td>
-    <td>E</td>
+<td>D</td> <td>E</td>
 </tr>
-</tbody>
 </table>
 
 
@@ -921,12 +1010,10 @@ If you want to number table rows in a table, but there are just too many rows to
 ```
 Output
 
-<table>
-<tbody>
+<table className="table-example">
 <tr><td className="counter">1</td><td>The First Table Row</td></tr>
 <tr><td className="counter">2</td><td>The Second Table Row</td></tr>
 <tr><td className="counter">3</td><td>The Third Table Row</td></tr>
-</tbody>
 </table>
 
 
@@ -1046,6 +1133,21 @@ The following example instructs Prince to make the `h1` heading element span all
 Please note that starting with Prince 14, Prince treats a non-multi-column layout as a *single column layout*.
 
 
+### Fragmentation
+
+Tables, columns, or other block elements may be too large to fit on the page or in the column - in which case a page or column break occurs in the element.  The property [box-decoration-break](css-props.md#prop-box-decoration-break) determines how the decoration of the box, such as borders, padding, margin, and background, behave - that is, whether they are *cloned* after the break (each fragment is rendered independently, with the specified border, padding, and margin wrapping around each fragment), or whether the element is rendered as if it were not fragmented, and then *sliced* into pieces for each page or column.
+
+<p className="note">
+The Prince box-breaking behavior predates the introduction of the <a href="css-props/#prop-box-decoration-break">box-decoration-break</a> CSS property, defaulting to repeating borders when breaking a box, so that each fragment had a top and bottom border. When the property was introduced, Prince kept the default value as <code>clone</code>. Starting with Prince 16, the default value was changed to <code>slice</code> to reflect browser behavior and CSS specifications. To retain the old behavior, it must now be explicitly declared.
+</p>
+
+```css
+    .info-box {
+        border: 1px solid black;
+        box-decoration-break: clone;
+    }
+```
+
 ### Floats
 
 When printed texts contain images, the text is usually laid out to wrap around those images. To accomplish the same with CSS, the images are floated - either to the left or right of text, or at times even to the top or to the bottom of a column. The [`float`](css-props.md#prop-float) property does just this - it floats an element, allowing the content of other elements to flow around it.
@@ -1164,7 +1266,7 @@ However, there is an important difference: an image with `column-span: all` will
 
 Floating elements can sometimes appear in a different order than the source order - to exactly control the order, Prince provides the property [`-prince-float-policy`](css-props.md#prop-prince-float-policy).  The value `in-order` tells Prince to always show the floated elements in the order in which they were defined in the source, while the value `normal` makes them appear in the processing order.
 
-The following example will float both figures to the bottom, and the figure with class `one` will float *above* the one with class `two`:
+The following example will float both figures to the bottom, and the figure with className `one` will float *above* the one with className `two`:
 
 ```html title="HTML"
     <figure class="one"></figure>
@@ -1177,7 +1279,7 @@ The following example will float both figures to the bottom, and the figure with
     }
 ```
 
-Would the `in-order` directive have been omitted, the figure with class `two` would have been floated above the one with class `one`.
+Would the `in-order` directive have been omitted, the figure with className `two` would have been floated above the one with className `one`.
 
 ##### Dropping Excess Floats
 
@@ -1281,11 +1383,12 @@ Please also see the examples for [clearing page floats](https://www.princexml.co
 
 Prince supports footnotes using the [`float`](css-props.md#prop-float) property. If an element has the property `float: footnote` then it will be floated into the footnote area of the page and a reference will be placed in the text.
 
-This example shows some simple footnotes, the `.fn` class is used to create footnotes:
+This example shows some simple footnotes, the `.fn` className is used to create footnotes:
 
 Footnotes example
 
 ![Footnotes example.](assets/images/footnotes.png)
+
 
 ```css title="CSS"
     .fn {
@@ -1495,6 +1598,12 @@ Next, the direction of the flex layout can be defined by means of the [`flex-dir
 ```
 The property [`justify-content`](css-props.md#prop-justify-content) defines the alignment of the content along the main axis - extra free space can be distributed in various ways after or before the content, or in specific ways between the flex items. The alignment along the cross axis is controlled with the [`align-items`](css-props.md#prop-align-items) property. In case there are multiple item lines in a flex container, the alignment of the lines can be controlled with the [`align-content`](css-props.md#prop-align-content) property. If there is only one line, the property has no effect.
 
+The properties [`align-content`](css-props.md#prop-align-content) and [`justify-content`](css-props.md#prop-justify-content) can be expressed through the shorthand property [`place-content`](css-props.md#prop-place-content).
+
+The properties [`column-gap`](css-props.md#prop-column-gap) and [`row-gap`](css-props.md#prop-row-gap), and the shorthand property [`gap`](css-props.md#prop-gap), control the space between flex items - note that they apply only to the space *between items*, not between the items and the outer edge. Also, they sort of define a *minimum* gap between the items: they only apply in the case that the naturally occurring gap would end up *smaller* than the defined value, if it is bigger they have no effect.
+
+<p className="note">The <code>gap</code> and <code>column-gap</code> properties also work in a <a href="#columns">multi-column layout</a>.</p>
+
 #### Flex Items
 
 By default, items are placed in the source order inside a flex container, but with the [`order`](css-props.md#prop-order) property it can be modified!
@@ -1526,11 +1635,31 @@ Percentage values of margins and paddings of flex items are resolved by Prince a
 </p>
 
 
+### Grid Layout
+
+The CSS Grid Layout is a two-dimensional grid-based layout system, initiated by declaring `display: grid`, or `display: inline-grid`.
+
+The column and row sizes of the grid template are declared with the CSS properties [`grid-template-columns`](css-props.md#prop-grid-template-columns) and [`grid-template-rows`](css-props.md#prop-grid-template-rows), and the elements are then placed into the grid with the properties [`grid-column`](css-props.md#prop-grid-column) and [`grid-row`](css-props.md#prop-grid-row).  Alternatively, the grid template can be defined by using the property [`grid-template-areas`](css-props.md#prop-grid-template-areas) to reference the names of the grid areas specified on elements with the property [`grid-area`](css-props.md#prop-grid-area).
+
+A shorthand for setting the `grid-template-rows`, `grid-template-columns`, and `grid-template-areas` properties is [`grid-template`](css-props.md#prop-grid-template).  However, this does not reset the implicit grid properties - it is recommended to use the shorthand property [`grid`](css-props.md#prop-grid) instead.
+
+Elements can be placed on the grid template also by defining on where the element starts, and where it ends - by using the properties [`grid-column-start`](css-props.md#prop-grid-column-start), [`grid-column-end`](css-props.md#prop-grid-column-end), [`grid-row-start`](css-props.md#prop-grid-row-start), and [`grid-row-end`](css-props.md#prop-grid-row-end).  The respective shorthand properties for this are [`grid-column`](css-props.md#prop-grid-column) and [`grid-row`](css-props.md#prop-grid-row).
+
+The distance between the grid rows, and between the grid columns can be declared with the properties [`column-gap`](css-props.md#prop-column-gap) (already used for styling the distance between [columns](#columns)), and [`row-gap`](css-props.md#prop-row-gap).  The shorthand property for declaring both in one statement is [`gap`](css-props.md#prop-gap).
+
+Grid items can be aligned along the row axis with the property [`justify-items`](css-props.md#prop-justify-items), and along the column axis with [`align-items`](css-props.md#prop-align-items).  The grid iteself can be aligned in the grid container by using the properties [`justify-content`](css-props.md#prop-justify-content) and [`align-content`](css-props.md#prop-align-content).
+
+Grid items can be aligned inside a grid cell with [`justify-self`](css-props.md#prop-justify-self) and [`align-self`](css-props.md#prop-align-self).
+
+The size of automatically generated columns or rows can be fine-tuned with the properties [`grid-auto-columns`](css-props.md#prop-grid-auto-columns) and [`grid-auto-rows`](css-props.md#prop-grid-auto-rows), and in a similar fashion the way grid items are automatically placed on a grid can be controlled with [`grid-auto-flow`](css-props.md#prop-grid-auto-flow).
+
+
+
 ### Custom properties (CSS variables)
 
 Complex designs often have very large amounts of CSS with a lot of repeated values. The same color might for example be used in hundreds of different places, requiring a global search-and-replace if that color needs to be changed. Prince supports [custom properties](css-props.md#prop---custom-property-name), which allow a value to be stored in one place, then be referenced in all other places.
 
-The custom properties are set by using the custom property notation, which requires the use of two dashes ([`--`](css-props.md#prop---custom-property-name)) before the custom property name - a good approach is to set this property on the `:root` pseudo-class (see [Tree-Structural pseudo-classes](css-selectors.md#tree-structural-pseudo-classes)). It is then accessed in other places by using the `var()` function (see [CSS Functional Expressions](css-functions.md)).
+The custom properties are set by using the custom property notation, which requires the use of two dashes (<a href="/doc/css-props/#prop---custom-property-name"><code>-&#xfeff;-</code></a>) before the custom property name - a good approach is to set this property on the `:root` pseudo-class (see [Tree-Structural pseudo-classes](css-selectors.md#tree-structural-pseudo-classes)). It is then accessed in other places by using the `var()` function (see [CSS Functional Expressions](css-functions.md)).
 
 Unlike other CSS properties, custom property names are case-sensitive.
 

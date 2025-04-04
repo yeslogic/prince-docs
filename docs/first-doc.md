@@ -2,11 +2,15 @@
 title: Your First Document
 ---
 
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,100..900;1,100..900&amp;display=swap" rel="stylesheet"/>
+
 In this section we will process a very simple document. We've chosen a document that fits HTML's heading and paragraph structure naturally: a lab report. The lab report will have a title, an author and date, several headings (Aim, Hypothesis, Method, Results and Conclusion). It does not include a table of results, graphics or diagrams: it is a very simple lab report.
 
 ## The lab report
 
-The report itself is very basic, the HTML source is shown below. You can save the HTML to a file named lab_report.html or download it [here](/doc/assets/samples/lab_report.html).
+The report itself is very basic, the HTML source is shown below. You can save the HTML to a file named lab\_report.html or download it [here](/doc/assets/samples/lab_report.html).
 
 ```html
     <!DOCTYPE html>
@@ -96,7 +100,7 @@ Process the document using the command line `prince` command:
 The unstyled lab report. Download the PDF [here](assets/samples/lab_report.pdf).
 
 ```bash
-$ prince lab_report.html
+    $ prince lab_report.html
 ```
 
 This will create a `lab_report.pdf` file in the current directory. If it did not, the [Troubleshooting](help-install.md#troubleshooting) section may be useful. When you open the document in a PDF viewer you should see something like [Unstyled lab report](#fig.lab-report.unstyled). Prince has applied a default stylesheet to the document. A different default stylesheet is used depending upon the document's type (HTML or Docbook XML) see [XML Input](prince-input.md#xml-input). The default stylesheet may be overridden by other stylesheets, more on that in [Applying Style Sheets in Prince](prince-input.md#applying-style-sheets-in-prince).
@@ -155,9 +159,8 @@ Okay, that's getting unnecessary, however we can see just how easy it is to appl
 There are many ways to apply a stylesheet to a document, for this tutorial we will show only three. For information about the ways that styles can be applied and style precedence see [Applying Style Sheets in Prince](prince-input.md#applying-style-sheets-in-prince).
 
 Using the `-s` command line option:  
-
 ```bash
-$ prince -s lab_report.css lab_report.html
+    $ prince -s lab_report.css lab_report.html
 ```
 
 Using the GUI  

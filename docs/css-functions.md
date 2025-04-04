@@ -2,6 +2,10 @@
 title: CSS Functional Expressions
 ---
 
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,100..900;1,100..900&amp;display=swap" rel="stylesheet"/>
+
 In this section you find the documentation for the supported CSS functional expressions. For additional details, make sure to also check the linked properties that use the functions.
 
 \* functions marked with an asterisk are Prince extensions.
@@ -16,13 +20,13 @@ In this section you find the documentation for the supported CSS functional expr
 </thead>
 <tbody>
 <tr>
-<td><code>attr( &lt;<i>attribute-name</i>&gt; &lt;<i>type-or-unit</i>&gt;? [,&#160;&lt;<i>fallback</i>&gt;]? )</code></td>
-<td>Retrieves the value of an attribute of the selected element.</td>
+<td><code>attr( &lt;<i>attr-name</i>&gt; &lt;<i>attr-type</i>&gt;? [,&#160;&lt;<i>fallback</i>&gt;]? )</code></td>
+<td>Retrieves the value of an attribute of the selected element. Please note that for the optional second argument also the Prince-specific attribute type <code>idref</code> is supported, which treats the attribute value of the first argument as if it were an IDREF - essentially converting it to a URL by prepending a hash mark.</td>
 <td></td>
 </tr>
 <tr>
 <td><code>url( &lt;<i>url</i>&gt; )</code></td>
-<td>Represents a URL, i.e. a pointer to a source.</td>
+<td>Represents a URL, i.e. a pointer to a source. This can be HTTP, HTTPS, or even a <code>data:</code> URI.</td>
 <td></td>
 </tr>
 <tr>
@@ -31,31 +35,57 @@ In this section you find the documentation for the supported CSS functional expr
 <td></td>
 </tr>
 <tr>
+<td><code>min( &lt;<i>expression</i>&gt; [, &lt;<i>expression</i>&gt;]* )</code></td>
+<td>Calculates the one or more comma-separated expressions, and represents the smallest of them.</td>
+<td></td>
+</tr>
+<tr>
+<td><code>max( &lt;<i>expression</i>&gt; [, &lt;<i>expression</i>&gt;]* )</code></td>
+<td>Calculates the one or more comma-separated expressions, and represents the largest of them.</td>
+<td></td>
+</tr>
+<tr>
+<td><code>clamp( &lt;<i>min-expression</i>&gt;, &lt;<i>expression</i>&gt;, &lt;<i>max-expression</i>&gt; )</code></td>
+<td>Calculates the three comma-separated expressions and represents its central value, clamped according to its min and max calculations.</td>
+<td></td>
+</tr>
+<tr>
+<td><code>round( &lt;<i>rounding-strategy</i>&gt;?, A, B? )</code></td>
+<td>Calculates the value of A, rounded according to the (optional) rounding strategy to the nearest integer multiple of B, either above or below A.</td>
+<td></td>
+</tr>
+<tr>
+<td><code>mod( A, B )</code></td>
+<td>Calculates the difference between A and the nearest integer multiple of B, either above or below A - the result will either be zero or share the sign of B.</td>
+<td></td>
+</tr>
+<tr>
+<td><code>rem( A, B )</code></td>
+<td>Calculates the difference between A and the nearest integer multiple of B, either above or below A - if A and B are on opposite sides of zero, the value will be placed between zero and -B.</td>
+<td></td>
+</tr>
+<tr>
 <td><code>var( &lt;<i>custom-property-name</i>&gt; [,&#160;&lt;<i>fallback</i>&gt;]? )</code></td>
 <td>Retrieves the value of a custom property set elsewhere.</td>
 <td><a href="/doc/styling#custom-properties-css-variables">Custom properties (CSS variables)</a></td>
 </tr>
 <tr>
-<td><code>rgb(R,G,B)</code></td>
-<td>Defines red, green and blue values of a color.</td>
-<td rowSpan="7">all <code><i><a href="/doc/graphics#color">color</a></i></code> values</td>
+<td><code>rgb( [&lt;<i>percentage</i>&gt;]{"{"}3{"}"} [/&#160;[&lt;<i>alpha-value</i>&gt;]? ) |
+rgb( [&lt;<i>number</i>&gt;]{"{"}3{"}"} [/&#160;[&lt;<i>alpha-value</i>&gt;]? )</code></td>
+<td>Defines red, green and blue values of a color. The final argument specifies the alpha value of the color - if omitted, it defaults to 100%. For legacy reasons, <code>rgb()</code> also supports the legacy color syntax, in which the values are separated by commas. Also a legacy <code>rgba()</code> function exists, with an identical grammar and behavior to <code>rgb()</code>.</td>
+<td rowSpan="6">all <code><i><a href="/doc/graphics#color">color</a></i></code> values</td>
 </tr>
 <tr>
-<td><code>rgba(R,G,B,A)</code></td>
-<td>Defines red, green and blue values and the alpha component of a color.</td>
+<td><code>device-cmyk( [&lt;<i>number</i>&gt; | &lt;<i>percentage</i>&gt;]{"{"}4{"}"} [/&#160;&lt;<i>alpha-value</i>&gt;]? )</code></td>
+<td>The arguments of the <code>device-cmyk()</code> function specify the cyan, magenta, yellow, and black components, in this order, as a number between 0 and 1, or a percentage between 0% and 100%. The fifth argument specifies the alpha channel of the color - if omitted, it defaults to 100%. For legacy reasons, <code>device-cmyk()</code> also supports the legacy color syntax, in which the values are separated by commas. Also a legacy <code>cmyk()</code> function exists, with an identical grammar and behavior to <code>device-cmyk()</code>.</td>
 </tr>
 <tr>
-<td><code>cmyk(C,M,Y,K[,A])</code> |&#160;<code>device-cmyk(C,M,Y,K[,A])</code></td>
-<td>Defines cyan, magenta, yellow and black values of a color, as well as the optional
-alpha component.</td>
+<td><code>hsl( [&lt;<i>hue</i>&gt;] [&lt;<i>percentage</i>&gt;] [&lt;<i>percentage</i>&gt;] [/&#160;[&lt;<i>alpha-value</i>&gt;]? )</code></td>
+<td>Defines hue, saturation and lightness values of a color. The final argument specifies the alpha channel of the color - if omitted, it defaults to 100%. For legacy reasons, <code>hsl()</code> also supports the legacy color syntax, in which the values are separated by commas. Also a legacy <code>hsla()</code> function exists, with an identical grammar and behavior to <code>hsl()</code>.</td>
 </tr>
 <tr>
-<td><code>hsl(H,S,L)</code></td>
-<td>Defines hue, saturation and lightness values of a color.</td>
-</tr>
-<tr>
-<td><code>hsla(H,S,L,A)</code></td>
-<td>Defines hue, saturation and lightness values and the alpha component of a color.</td>
+<td><code>hwb( [&lt;<i>hue</i>&gt;] [&lt;<i>percentage</i>&gt;] [&lt;<i>percentage</i>&gt;] [/&#160;[&lt;<i>alpha-value</i>&gt;]? )</code></td>
+<td>Defines hue, whiteness and blackness values of a color. The final argument specifies the alpha channel of the color - if omitted, it defaults to 100%. This function is new, thus <code>hwb()</code> does <em>not</em> support a legacy color syntax that separates all of its arguments with commas - using commas inside <code>hwb()</code> is an error.</td>
 </tr>
 <tr className="ext">
 <td><code>prince-color( &lt;<i>colorname</i>&gt;  [,&#160;&lt;<i>number</i>&gt; |&#160;&lt;<i>percentage</i>&gt;]? , overprint? )*</code></td>
@@ -68,7 +98,7 @@ keyword instructs Prince whether to overprint the color.
 </td>
 </tr>
 <tr className="ext">
-<td><code>prince-overprint( &lt;<i>colorname</i>&gt; | rgb() | cmyk() | device-cmyk() | hsl() | prince-color() [, [overprint-mode-nonzero | overprint-mode-zero]]? )*</code></td>
+<td><code>prince-overprint( &lt;<i>colorname</i>&gt; | rgb() | device-cmyk() | hsl() | hwb() | prince-color() [, [overprint-mode-nonzero | overprint-mode-zero]]? )*</code></td>
 <td>Specifies a non-transparent color value to overprint.  If no overprint mode
 is given, it defaults to <code>overprint-mode-nonzero</code>.</td>
 </tr>
@@ -135,7 +165,7 @@ URL.</td>
 <td>References the text content of the linked element.  See <a href="/doc/gen-content#using-target-content">Using target-content()</a>.</td>
 </tr>
 <tr>
-<td><code>leader( ("<i>...</i>" | dotted | solid | space), &lt;<i>length</i>&gt;? )</code></td>
+<td><code>leader( ("<i>...</i>" | dotted | solid | space), &lt;<i>min-width</i>&gt;? )</code></td>
 <td>Inserts the given string before the element - useful in tables of content. The optional second argument can be used to specify a minimum width.</td>
 </tr>
 <tr>
@@ -282,9 +312,8 @@ does.</td>
 <td><code><a href="/doc/css-props#prop-prince-pdf-open-action">-prince-pdf-open-action</a></code></td>
 </tr>
 <tr>
-<td><code>format()</code></td>
-<td>Contains a comma-separated list of format strings that denote well-known font
-formats.
+<td><code>format( &lt;<i>string</i>&gt; | collection | embedded-opentype | opentype | svg | truetype | woff | woff2 )</code></td>
+<td>Provides a hint on the font format.
 <pre>
 <code className="hljs"><span className="hljs-keyword">@font-face</span> {"{"}
   <span className="hljs-attribute">font-family</span>: bodytext;
@@ -292,10 +321,14 @@ formats.
 {"}"}</code>
 </pre>
 </td>
-<td rowSpan="3"><code><a href="/doc/css-props#prop-src">src</a></code></td>
+<td rowSpan="4"><code><a href="/doc/css-props#prop-src">src</a></code></td>
 </tr>
 <tr>
-<td><code>local()</code></td>
+<td><code>tech( features-opentype | color-svg | color-sbix | color-cbdt | variations )</code></td>
+<td>Provides a hint on the font technology.</td>
+</tr>
+<tr>
+<td><code>local( &lt;<i>font-face-name</i>&gt; )</code></td>
 <td>Searches for locally installed system fonts.</td>
 </tr>
 <tr className="ext">
@@ -309,7 +342,7 @@ by other <code>@font-face</code> rules.  See <a href="/doc/styling#defining-a-fo
 <td rowSpan="12"><code><a href="/doc/css-props#prop-transform">transform</a></code></td>
 </tr>
 <tr>
-<td><code>matrix( &lt;<i>number</i>&gt;[, &lt;<i>number</i>&gt;]{5,5} )</code></td>
+<td><code>matrix( &lt;<i>number</i>&gt;[, &lt;<i>number</i>&gt;]{"{"}5,5{"}"} )</code></td>
 <td>Describes a homogeneous 2D transformation matrix.</td>
 </tr>
 <tr>

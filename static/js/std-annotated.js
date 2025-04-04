@@ -48,8 +48,6 @@ const stdAnnotated = {
     escape: {
         desc: "Computes a new string by replacing certain characters with a hexadecimal escape sequence.",
         returns: "string",
-        example: "escape('20%'))",
-        exampleReturn: '20%25',
         arguments: [
             {name: "string", desc: "String to escape", type: "string"}
         ]
@@ -57,8 +55,6 @@ const stdAnnotated = {
     unescape: {
         desc: "Computes a new string by replacing hexadecimal escape sequences with the characters they represent.",
         returns: "string",
-        example: "unescape('hi%21'))",
-        exampleReturn: 'hi!',
         arguments: [
             {name: "string", desc: "String to unescape", type: "string"}
         ]
@@ -100,7 +96,7 @@ const stdAnnotated = {
         returns: "string"
     },
     valueOf: {
-        desc: "Returns the primitive value of an object.",
+        desc: "Returns the primitive value an object.",
         returns: "primitive value"
     },
     hasOwnProperty: {
@@ -119,12 +115,8 @@ const stdAnnotated = {
         returns: "boolean"
     },
     Object: {
-        create: {
-          desc: "Creates a new object, using argument as prototype",
-          arguments: [
-            {type: "object", name: "prototype object"}
-          ]
-        },
+        assign: {},
+        create: {},
         defineProperty: {
             desc: "Adds a property to the object and defines certain traits like enumerability.", type: "function",
             arguments: [
@@ -135,11 +127,18 @@ const stdAnnotated = {
             example: "Object.defineProperty(Array.prototype, 'myProp',\n  {enumerable: false})"
         },
         defineProperties: {},
+        freeze: {},
+        is: {},
+        isExtensible: {},
+        isFrozen: {},
+        isSealed: {},
         keys: {},
         getOwnPropertyDescriptor: {},
         getOwnPropertyNames: {},
         getOwnPropertySymbols: {},
         getPrototypeOf: {},
+        preventExtensions: {},
+        seal: {},
         setPrototypeOf: {},
         prototype: {
             constructor: {},
@@ -241,6 +240,7 @@ const stdAnnotated = {
         fromCharCode: {},
         fromCodePoint: {},
         CodePointAt: {},
+        raw: {},
         prototype: {
             constructor: {},
             length: {},
@@ -249,6 +249,7 @@ const stdAnnotated = {
             charAt: {},
             charCodeAt: {},
             concat: {},
+            includes: {},
             indexOf: {},
             lastIndexOf: {},
             localeCompare: {},
@@ -258,11 +259,14 @@ const stdAnnotated = {
             toUpperCase: {},
             toLocaleUpperCase: {},
             match: {},
+            repeat: {},
             replace: {},
             search: {},
             slice: {},
+            startsWith: {},
+            endsWith: {},
             substring: {},
-            substr: {},
+            substr: { dep: "dep"},
             trim: {}
         }
     },
@@ -381,7 +385,8 @@ const stdAnnotated = {
         prototype: {
             constructor: {},
             name: {},
-            message: {}
+            message: {},
+            stack: {}
         }
     },
     RangeError: {
@@ -443,6 +448,7 @@ const stdAnnotated = {
         info: {},
         warn: {}
     },
+    frames: {},
     // Typed Arrays
     ArrayBuffer: {
         prototype: {
@@ -586,6 +592,7 @@ const stdAnnotated = {
             lastChild: {},
             previousSibling: {},
             nextSibling: {},
+            parentElement: {},
             parentNode: {},
             removeChild: {},
             appendChild: {},
@@ -605,6 +612,7 @@ const stdAnnotated = {
             firstElementChild: {},
             lastElementChild: {},
             childElementCount: {},
+            readyState: {},
             getElementsByTagName: {},
             getElementsByTagNameNS: {},
             getElementsByClassName: {},
@@ -657,6 +665,11 @@ const stdAnnotated = {
             getElementsByTagName: {},
             getElementsByTagNameNS: {},
             getElementsByClassName: {},
+            before: {},
+            after: {},
+            append: {},
+            remove: {},
+            replaceWith: {},
             matches: {},
             querySelector: {},
             querySelectorAll: {},
@@ -674,7 +687,7 @@ const stdAnnotated = {
             hasAttribute: {},
             hasAttributeNS: {},
             getPrinceBoxes: {
-                returns: "A list of JavaScript objects called <a href='/doc/javascript#the-box-tracking-api'>boxes</a>",
+                returns: "A list of JavaScript objects called <a href='/doc/javascript#the-box-tracking-api'>boxes</a>.",
                 ext: "ext"
             }
         }
@@ -804,8 +817,8 @@ const stdAnnotated = {
             color: { url: "property" },
             colorInterpolation: { url: "property" },
             colorInterpolationFilters: { url: "property" },
-            columnBreakAfter: { url: "property" },
-            columnBreakBefore: { url: "property" },
+            columnBreakAfter: { url: "property", dep: "dep" },
+            columnBreakBefore: { url: "property", dep: "dep" },
             columnCount: { url: "property" },
             columnFill: { url: "property" },
             columnGap: { url: "property" },
@@ -854,6 +867,7 @@ const stdAnnotated = {
             fontWeight: { url: "property" },
             footnoteDisplay: { url: "property" },
             footnoteStylePosition: { url: "property" },
+            gap: { url: "property" },
             height: { url: "property" },
             hyphenateAfter: { ext: "ext", url: "property" },
             hyphenateBefore: { ext: "ext", url: "property" },
@@ -903,9 +917,9 @@ const stdAnnotated = {
             paddingRight: { url: "property" },
             paddingTop: { url: "property" },
             page: { url: "property" },
-            pageBreakAfter: { url: "property" },
-            pageBreakBefore: { url: "property" },
-            pageBreakInside: { url: "property" },
+            pageBreakAfter: { url: "property", dep: "dep" },
+            pageBreakBefore: { url: "property", dep: "dep" },
+            pageBreakInside: { url: "property", dep: "dep" },
             pageGroup: { ext: "ext", url: "property" },
             position: { url: "property" },
             princeBackgroundImageResolution: { ext: "ext", url: "property" },
@@ -956,6 +970,7 @@ const stdAnnotated = {
             princeTextReplace: { ext: "ext", url: "property" },
             princeTooltip: { ext: "ext", url: "property" },
             right: { url: "property" },
+            rowGap: { url: "property" },
             stopColor: { url: "property" },
             stopOpacity: { url: "property" },
             stringSet: { url: "property" },
@@ -979,17 +994,18 @@ const stdAnnotated = {
             textDecoration: { url: "property" },
             textIndent: { url: "property" },
             textJustify: { ext: "ext", url: "property" },
-            textLineThrough: { url: "property" },
-            textLineThroughColor: { url: "property" },
-            textLineThroughStyle: { url: "property" },
+            textLineThrough: { url: "property", dep: "dep" },
+            textLineThroughColor: { url: "property", dep: "dep" },
+            textLineThroughStyle: { url: "property", dep: "dep" },
             textOverflow: { url: "property" },
-            textOverline: { url: "property" },
-            textOverlineColor: { url: "property" },
-            textOverlineStyle: { url: "property" },
+            textOverline: { url: "property", dep: "dep" },
+            textOverlineColor: { url: "property", dep: "dep" },
+            textOverlineStyle: { url: "property", dep: "dep" },
             textTransform: { url: "property" },
-            textUnderline: { url: "property" },
-            textUnderlineColor: { url: "property" },
-            textUnderlineStyle: { url: "property" },
+            textUnderline: { url: "property", dep: "dep" },
+            textUnderlineColor: { url: "property", dep: "dep" },
+            textUnderlinePosition: { url: "property" },
+            textUnderlineStyle: { url: "property", dep: "dep" },
             top: { url: "property" },
             transform: { url: "property" },
             transformOrigin: { url: "property" },
@@ -1003,10 +1019,10 @@ const stdAnnotated = {
             wordSpacing: { url: "property" },
             writingMode: { url: "property" },
             zIndex: { url: "property" },
-            getPropertyValue: {},
-            removeProperty: {},
             setProperty: {},
-            setPropertyValue: {}
+            removeProperty: {},
+            setPropertyValue: {},
+            getPropertyValue: {}
         }
     },
     DOMException: {
@@ -1362,7 +1378,7 @@ const stdAnnotated = {
     BoxInfo: {
         ext: "ext",
         type: "function",
-        returns: "The properties of a box, can be accessed after document conversion has finished - see <a href='/doc/javascript#the-box-tracking-api'>The Box Tracking API</a>",
+        returns: "The properties of a box, can be accessed after document conversion has finished - see <a href='/doc/javascript#the-box-tracking-api'>The Box Tracking API</a>.",
         prototype: {
             type: {
                 type: "function",
@@ -1442,7 +1458,7 @@ const stdAnnotated = {
     Prince: {
         type: "object",
         ext: "ext",
-        desc: "See <a href='/doc/javascript#the-prince-object'>The Prince Object</a>",
+        desc: "See <a href='/doc/javascript#the-prince-object'>The Prince Object</a>.",
         addEventListener: {
             type: "function",
             desc: "can be called to listen to the <code>complete</code> event on the Prince object. See <a href='/doc/javascript#event-handling'>Event Handling</a>.",
@@ -1451,8 +1467,6 @@ const stdAnnotated = {
             {name: "callback", type: "string"},
             {name: "optional extra options", type: "string"},
             ],
-            example: "<script> \nPrince.registerPostLayoutFunc(function() {\n    var str = '@prince-color Color1 { alternate-color: cmyk(1,0,0,0) }';\n    var add = document.getElementById('add');\n    add.appendChild(document.createTextNode(str));\n});\n</script>\n<style id='add'></style>\n<p style='color: prince-color(Color1)'>This was black, becomes cyan</p>",
-            desc: "See <a href='/doc/cookbook/#the-multi-pass-solution'>The \"Multi-Pass\" Solution</a>"
         },
         oncomplete: {
             desc: "The <code>complete</code> event is fired when all layout is finished (and after the last repeated layout, if this was requested), just before the PDF is output, so that it can cancel the PDF output by triggering a fail-safe if necessary, or log information about the PDF like the page count.",
@@ -1463,12 +1477,11 @@ const stdAnnotated = {
                 {name: "name", type: "string"},
                 {name: "function", type: "string"}
             ],
-            example: "function myfunc() {\n  return 'Some generated content text!';\n}\nPrince.addScriptFunc('myfunc', myfunc);",
             desc: "exposes an arbitrary JavaScript function to CSS. See <a href='/doc/gen-content#script-functions'>Script Functions</a>.",
         },
         trackBoxes: {
             type: "function",
-            desc: "See <a href='/doc/javascript#the-box-tracking-api'>The Box Tracking API</a>",
+            desc: "See <a href='/doc/javascript#the-box-tracking-api'>The Box Tracking API</a>.",
             arguments: [
                 {type: "boolean"}
             ]
@@ -1495,14 +1508,14 @@ const stdAnnotated = {
 		},
         pageCount: {
             type: "function",
-            returns: "Total number of document pages, can be accessed after document conversion has finished"
+            returns: "Total number of document pages, can be accessed after document conversion has finished."
         },
         registerPostLayoutFunc: {
             type: "function",
             arguments: [
                 {name: "function", type: "string"}
             ],
-            desc: "See <a href='/doc/javascript#multi-pass-formatting'>Multi-Pass formatting</a>"
+            desc: "See <a href='/doc/javascript#multi-pass-formatting'>Multi-Pass formatting</a>."
         },
         Log: {
             type: "object",
@@ -1546,15 +1559,16 @@ const stdAnnotated = {
     PDF: {
         type: "object",
         ext: "ext",
-        desc: "See <a href='/doc/javascript#the-pdf-object'>The PDF Object</a>",
+        desc: "See <a href='/doc/javascript#the-pdf-object'>The PDF Object</a>.",
         attachFile: {
             type: "function",
             arguments: [
             {name: "URL", type: "string"},
-            {name: "description", type: "string"},
-            {name: "filename", type: "string", desc: "Optional third argument to specify the filename to be displayed for the attachment in the PDF."}
+            {name: "description", type: "string", desc: "Optional second argument to describe the attachment."},
+            {name: "filename", type: "string", desc: "Optional third argument to specify the filename to be displayed for the attachment in the PDF."},
+            {name: "relationship", type: "string", desc: "Optional fourth argument to specify the AFRelationship value of the attachment."}
             ],
-            example: "PDF.attachFile('data.xls', 'Latest sales figures.', 'Data')"
+            example: "PDF.attachFile('data.xls', 'Latest sales figures.', 'SalesFigures', 'Data')"
         },
         colorOptions: {
             type: "function",
@@ -1729,6 +1743,12 @@ const stdAnnotated = {
             ],
             example: "PDF.xmp('xmp-data.xmp')"
         },
+        xmpMetadata: {
+            type: "function",
+            arguments: [
+                {type: "boolean"}
+            ]
+        },
         title: {
             type: "function",
             arguments: [
@@ -1767,7 +1787,7 @@ const stdAnnotated = {
         },
         pages: {
             type: "array",
-            returns: "A list of page boxes, can be accessed after document conversion has finished"
+            returns: "A list of page boxes, can be accessed after document conversion has finished."
         }
     },
     Log: {

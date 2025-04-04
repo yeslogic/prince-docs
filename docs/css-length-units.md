@@ -2,6 +2,10 @@
 title: Length & Angle Units
 ---
 
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,100..900;1,100..900&amp;display=swap" rel="stylesheet"/>
+
 Prince supports the following length and angle units:
 
 ## Absolute Length Units
@@ -9,7 +13,7 @@ Prince supports the following length and angle units:
 The absolute length units correspond to exact distances in the PDF file.
 
 <table className="grid">
-<tbody><tr>
+<tr>
 <th colSpan="2">Absolute length units</th>
 </tr>
 <tr>
@@ -36,14 +40,14 @@ The absolute length units correspond to exact distances in the PDF file.
 <td className="example"><code>pt</code></td>
 <td>points</td>
 </tr>
-</tbody></table>
+</table>
 
 ## Font Length Units
 
 The font length units are relative to the [`font-size`](css-props.md#prop-font-size) property.
 
 <table className="grid">
-<tbody><tr>
+<tr>
 <th colSpan="2">Font length units</th>
 </tr>
 <tr>
@@ -58,7 +62,7 @@ The font length units are relative to the [`font-size`](css-props.md#prop-font-s
 <td className="example"><code>ex</code></td>
 <td>x-height of the element's font</td>
 </tr>
-</tbody></table>
+</table>
 
 ## Viewport Length Units
 
@@ -69,7 +73,7 @@ The values `pvw` and `pvh` are equal to respectively 1% of the width and height 
 Please note that these values cannot be used with elements for which a viewport, such as the root element, has not been established.
 
 <table className="grid">
-<tbody><tr>
+<tr>
 <th colSpan="2">Viewport length Units</th>
 </tr>
 <tr>
@@ -104,22 +108,36 @@ Please note that these values cannot be used with elements for which a viewport,
 <td className="example"><code>pvmax</code></td>
 <td>the larger length of <code>pvw</code> or <code>pvh</code></td>
 </tr>
-</tbody></table>
+</table>
 
 ## Pixel Unit
 
 The pixel unit is relative to the de-facto standard of `96dpi` (or rather, 96 *pixel* per inch) for compatibility with browsers.
 
 <table className="grid">
-<tbody><tr>
+<tr>
 <th colSpan="2">Pixel unit</th>
 </tr>
 <tr>
 <td className="example"><code>px</code></td>
 <td>pixel</td>
 </tr>
-</tbody></table>
+</table>
 
+
+## Fractional Length Unit
+
+CSS grids require a flexible length, expressed as a fraction of the leftover space in a grid container.
+
+<table className="grid">
+<tr>
+<th colSpan="2">Fractional length unit</th>
+</tr>
+<tr>
+<td className="example"><code>fr</code></td>
+<td>fraction of the leftover space in the grid container</td>
+</tr>
+</table>
 
 
 ## Angle Units
@@ -128,7 +146,30 @@ Furthermore, Prince supports the four angle units `deg`, `grad`, `rad` and `turn
 
 * the CSS [`transform`](css-props.md#prop-transform) property has `rotate`, `skew` and `skewx`/`skewy` operators;
 * linear gradients have an angle;
-* [`hsl`/`hsla` colors](graphics.md#hsla) have a hue angle;
+* [HSL colors](graphics.md#hsla) have a hue angle;
 * the [`hue-rotate` filter](css-props.md#prop-filter) takes an angle;
 * the `@page` [`-prince-rotate-body`](css-props.md#prop-prince-rotate-body) descriptor takes multiples of `90deg`.
 
+
+## Line Height Units
+
+Only supported by [Prince for Books](prince-for-books.md) are line height units.
+
+<p className="note">
+If <code>line-height</code> is set to <code>normal</code>, then these units currently
+use the approximation of <code>1.2</code> instead of using the exact font-metrics.
+</p>
+
+<table className="grid">
+<tr>
+<th colSpan="2">Line height units</th>
+</tr>
+<tr>
+<td className="example"><code>lh</code></td>
+<td>line height of the element</td>
+</tr>
+<tr>
+<td className="example"><code>rlh</code></td>
+<td>line height of the root element</td>
+</tr>
+</table>

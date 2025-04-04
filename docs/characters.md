@@ -2,6 +2,10 @@
 title: Character Entities
 ---
 
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,100..900;1,100..900&amp;display=swap" rel="stylesheet"/>
+
 Character entities are a method of including arbitrary characters in XML documents by referencing their UNICODE number rather than writing them directly. CSS has a similar mechanism to include special characters.
 
 This can be convenient when you wish to include characters such as smart quotes, symbols or mathematical operators that do not exist in the character encoding that you are using for your XML documents (such as ASCII or ISO-8859-1 "Latin-1"), or when you want to insert some of these characters into the final layout by means of CSS.
@@ -13,21 +17,21 @@ Here is an example of including smart quotes in an XML document using character 
     These are &#x201C;smart quotes&#x201D; to be precise.
     </p>
 ```
-Output
 
+```text  title="Output"
     These are “smart quotes” to be precise.
+```
 
 A typical usecase for character entities in CSS is the [`-prince-text-replace`](css-props.md#prop-prince-text-replace) property, which replaces a certain character string with another one. In the sample ["Reconstructed Essay"](/samples/#essay) ([HTML](https://www.princexml.com/howcome/2016/samples/malthus/essay.html) - [PDF](https://www.princexml.com/howcome/2016/samples//malthus/essay.pdf)), the property is used to replace occurrences of "s" with the "long s" to recreate the original printed book.
 
-```css title="CSS"
+```css
     body {
       -prince-text-replace: "s" "\017F";
     }
 ```
 The tables below are a quick reference for some commonly requested UNICODE characters, expressed in XML and CSS notation; for everything else please consult the [UNICODE code charts](https://www.unicode.org/charts/).
 
-Accented Letters
-----------------
+## Accented Letters
 
 | XML       | CSS    | Character | Name         |
 |-----------|--------|-----------|--------------|
@@ -87,8 +91,7 @@ Accented Letters
 | &\#xFC;   | \\FC   | ü         | u dieresis   |
 | &\#xFF;   | \\FF   | ÿ         | y dieresis   |
 
-Symbols
--------
+## Symbols
 
 | XML       | CSS    | Character | Name                 |
 |-----------|--------|-----------|----------------------|
@@ -118,8 +121,7 @@ Symbols
 | &\#x2122; | \\2122 | ™         | trademark            |
 | &\#xA5;   | \\A5   | ¥         | yen                  |
 
-Quotes
-------
+## Quotes
 
 | XML       | CSS    | Character | Name                   |
 |-----------|--------|-----------|------------------------|
@@ -134,59 +136,55 @@ Quotes
 | &\#x201A; | \\201A | ‚         | base single quote      |
 | &\#x201E; | \\201E | „         | base double quote      |
 
-Accents
--------
+## Accents
 
 | XML       | CSS     | Character | Name         |
 |-----------|---------|-----------|--------------|
-| &\#x60;   | \\x60   | `         | grave        |
-| &\#xB4;   | \\xB4   | ´         | acute        |
-| &\#x02D8; | \\x02D8 | ˘         | breve        |
-| &\#x02C7; | \\x02C7 | ˇ         | caron        |
-| &\#xB8;   | \\xB8   | ¸         | cedilla      |
-| &\#x5E;   | \\x5E   | ^         | circumflex   |
-| &\#xA8;   | \\xA8   | ¨         | dieresis     |
-| &\#x02D9; | \\x02D9 | ˙         | dot accent   |
-| &\#x02DD; | \\x02DD | ˝         | double acute |
-| &\#xAF;   | \\xAF   | ¯         | macron       |
-| &\#x02DB; | \\x02DB | ˛         | ogonek       |
-| &\#x02DA; | \\x02DA | ˚         | ring         |
-| &\#x02DC; | \\x02DC | ˜         | tilde        |
+| &\#x60;   | \\60   | `         | grave        |
+| &\#xB4;   | \\B4   | ´         | acute        |
+| &\#x02D8; | \\02D8 | ˘         | breve        |
+| &\#x02C7; | \\02C7 | ˇ         | caron        |
+| &\#xB8;   | \\B8   | ¸         | cedilla      |
+| &\#x5E;   | \\5E   | ^         | circumflex   |
+| &\#xA8;   | \\A8   | ¨         | dieresis     |
+| &\#x02D9; | \\02D9 | ˙         | dot accent   |
+| &\#x02DD; | \\02DD | ˝         | double acute |
+| &\#xAF;   | \\AF   | ¯         | macron       |
+| &\#x02DB; | \\02DB | ˛         | ogonek       |
+| &\#x02DA; | \\02DA | ˚         | ring         |
+| &\#x02DC; | \\02DC | ˜         | tilde        |
 
-Special Space Characters
-------------------------
+## Special Space Characters
 
 | XML       | CSS     | Character                          | Name                      |
 |-----------|---------|------------------------------------|---------------------------|
-| &\#x20;   | \\x20   | <span>foo</span> <span>bar</span>  | space                     |
-| &\#xa0;   | \\xa0   | <span>foo</span> <span>bar</span>  | no-break space            |
-| &\#x2008; | \\x2008 | <span>foo</span> <span>bar</span>  | punctuation space         |
-| &\#x2009; | \\x2009 | <span>foo</span> <span>bar</span>  | thin space                |
-| &\#x200a; | \\x200a | <span>foo</span> <span>bar</span>  | hair space                |
-| &\#x200b; | \\x200b | <span>foo</span>​<span>bar</span>  | zero width space          |
-| &\#x202f; | \\x202f | <span>foo</span> <span>bar</span>  | narrow no-break space     |
-| &\#x205f; | \\x205f | <span>foo</span> <span>bar</span>  | medium mathematical space |
-| &\#xfeff; | \\xfeff | <span>foo</span>﻿<span>bar</span>  | zero width no-break space |
-| &\#x1680; | \\x1680 | <span>foo</span> <span>bar</span>  | ogham space mark          |
-| &\#x2000; | \\x2000 | <span>foo</span> <span>bar</span>  | en quad                   |
-| &\#x2001; | \\x2001 | <span>foo</span> <span>bar</span>  | em quad                   |
-| &\#x2002; | \\x2002 | <span>foo</span> <span>bar</span>  | en space                  |
-| &\#x2003; | \\x2003 | <span>foo</span> <span>bar</span>  | em space                  |
-| &\#x3000; | \\x3000 | <span>foo</span>　<span>bar</span> | ideographic space         |
+| &\#x20;   | \\20   | <span>foo</span> <span>bar</span>  | space                     |
+| &\#xa0;   | \\a0   | <span>foo</span> <span>bar</span>  | no-break space            |
+| &\#x2008; | \\2008 | <span>foo</span> <span>bar</span>  | punctuation space         |
+| &\#x2009; | \\2009 | <span>foo</span> <span>bar</span>  | thin space                |
+| &\#x200a; | \\200a | <span>foo</span> <span>bar</span>  | hair space                |
+| &\#x200b; | \\200b | <span>foo</span>​<span>bar</span>  | zero width space          |
+| &\#x202f; | \\202f | <span>foo</span> <span>bar</span>  | narrow no-break space     |
+| &\#x205f; | \\205f | <span>foo</span> <span>bar</span>  | medium mathematical space |
+| &\#xfeff; | \\feff | <span>foo</span>﻿<span>bar</span>  | zero width no-break space |
+| &\#x1680; | \\1680 | <span>foo</span> <span>bar</span>  | ogham space mark          |
+| &\#x2000; | \\2000 | <span>foo</span> <span>bar</span>  | en quad                   |
+| &\#x2001; | \\2001 | <span>foo</span> <span>bar</span>  | em quad                   |
+| &\#x2002; | \\2002 | <span>foo</span> <span>bar</span>  | en space                  |
+| &\#x2003; | \\2003 | <span>foo</span> <span>bar</span>  | em space                  |
+| &\#x3000; | \\3000 | <span>foo</span>　<span>bar</span> | ideographic space         |
 
-Miscellaneous
--------------
+## Miscellaneous
 
 | XML       | CSS     | Character | Name        |
 |-----------|---------|-----------|-------------|
-| &\#x2026; | \\x2026 | …         | ellipsis    |
-| &\#x2014; | \\x2014 | —         | em dash     |
-| &\#x2013; | \\x2013 | –         | en dash     |
-| &\#xFB01; | \\xFB01 | ﬁ         | fi ligature |
-| &\#xFB02; | \\xFB02 | ﬂ         | fl ligature |
-| &\#xC6;   | \\xC6   | Æ         | AE          |
-| &\#xE6;   | \\xE6   | æ         | ae          |
-| &\#x0152; | \\x0152 | Œ         | OE          |
-| &\#x0153; | \\x0153 | œ         | oe          |
-| &\#xDF;   | \\xDF   | ß         | sharp s     |
-
+| &\#x2026; | \\2026 | …         | ellipsis    |
+| &\#x2014; | \\2014 | —         | em dash     |
+| &\#x2013; | \\2013 | –         | en dash     |
+| &\#xFB01; | \\FB01 | ﬁ         | fi ligature |
+| &\#xFB02; | \\FB02 | ﬂ         | fl ligature |
+| &\#xC6;   | \\C6   | Æ         | AE          |
+| &\#xE6;   | \\E6   | æ         | ae          |
+| &\#x0152; | \\0152 | Œ         | OE          |
+| &\#x0153; | \\0153 | œ         | oe          |
+| &\#xDF;   | \\DF   | ß         | sharp s     |

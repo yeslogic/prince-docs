@@ -2,6 +2,10 @@
 title: Prince Input
 ---
 
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,100..900;1,100..900&amp;display=swap" rel="stylesheet"/>
+
 Prince takes HTML or XML files as input, and converts them to PDF files. Additionally, CSS style sheets can be provided for styling the documents, and JavaScript files can be used for additional manipulation of the input.
 
 See the sections [Applying Style Sheets in Prince](#applying-style-sheets-in-prince), [Applying JavaScript in Prince](#applying-javascript-in-prince) and [XML Input](#xml-input) for details.
@@ -119,9 +123,10 @@ Prince supports the `xml:lang` attribute, which is used to indicate the language
 
 Prince supports the `xml:id` attribute, which is used to give elements a unique identifier. This identifier can be used when creating links and cross-references; it also allows elements to be selected using the CSS ID selector.
 
-#### `xml:base`
+<p className="note">
+Prince does not support the <code>xml:base</code> attribute, therefore hyperlinks must be absolute URLs or relative to the document path.
+</p>
 
-Prince does not support the `xml:base` attribute, therefore hyperlinks must be absolute URLs or relative to the document path.
 
 ### XML Styling
 
@@ -139,7 +144,9 @@ Prince supports a rich subset of SVG 1.1, including basic shapes, paths, text an
 Any other XML  
 No default style sheets will be used, so style sheets will need to be specified by the user or referenced from the document in order for Prince to apply style to the document - see [Applying Style Sheets in Prince](#applying-style-sheets-in-prince).
 
+<p className="note">
 Prince does not support XSLT. External XSLT processors can be used and the resulting document can be passed to Prince.
+</p>
 
 ### XML Inclusions (XInclude)
 

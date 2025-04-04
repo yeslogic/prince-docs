@@ -21,14 +21,22 @@ const std = {
     isPrototypeOf: {},
     propertyIsEnumerable: {},
     Object: {
+        assign: {},
         create: {},
         defineProperty: {},
         defineProperties: {},
+        freeze: {},
+        is: {},
+        isExtensible: {},
+        isFrozen: {},
+        isSealed: {},
         keys: {},
         getOwnPropertyDescriptor: {},
         getOwnPropertyNames: {},
         getOwnPropertySymbols: {},
         getPrototypeOf: {},
+        preventExtensions: {},
+        seal: {},
         setPrototypeOf: {},
         prototype: {
             constructor: {},
@@ -101,6 +109,7 @@ const std = {
         fromCharCode: {},
         fromCodePoint: {},
         CodePointAt: {},
+        raw: {},
         prototype: {
             constructor: {},
             length: {},
@@ -109,6 +118,7 @@ const std = {
             charAt: {},
             charCodeAt: {},
             concat: {},
+            includes: {},
             indexOf: {},
             lastIndexOf: {},
             localeCompare: {},
@@ -118,9 +128,12 @@ const std = {
             toUpperCase: {},
             toLocaleUpperCase: {},
             match: {},
+            repeat: {},
             replace: {},
             search: {},
             slice: {},
+            startsWith: {},
+            endsWith: {},
             substring: {},
             substr: {},
             trim: {}
@@ -241,7 +254,8 @@ const std = {
         prototype: {
             constructor: {},
             name: {},
-            message: {}
+            message: {},
+            stack: {}
         }
     },
     RangeError: {
@@ -303,6 +317,7 @@ const std = {
         info: {},
         warn: {}
     },
+    frames: {},
     // Typed Arrays
     ArrayBuffer: {
         prototype: {
@@ -446,6 +461,7 @@ const std = {
             lastChild: {},
             previousSibling: {},
             nextSibling: {},
+            parentElement: {},
             parentNode: {},
             removeChild: {},
             appendChild: {},
@@ -465,6 +481,7 @@ const std = {
             firstElementChild: {},
             lastElementChild: {},
             childElementCount: {},
+            readyState: {},
             getElementsByTagName: {},
             getElementsByTagNameNS: {},
             getElementsByClassName: {},
@@ -517,6 +534,11 @@ const std = {
             getElementsByTagName: {},
             getElementsByTagNameNS: {},
             getElementsByClassName: {},
+            before: {},
+            after: {},
+            append: {},
+            remove: {},
+            replaceWith: {},
             matches: {},
             querySelector: {},
             querySelectorAll: {},
@@ -711,6 +733,7 @@ const std = {
             fontWeight: {},
             footnoteDisplay: {},
             footnoteStylePosition: {},
+            gap: {},
             height: {},
             hyphenateAfter: {},
             hyphenateBefore: {},
@@ -813,6 +836,7 @@ const std = {
             princeTextReplace: {},
             princeTooltip: {},
             right: {},
+            rowGap: {},
             stopColor: {},
             stopOpacity: {},
             stringSet: {},
@@ -846,6 +870,7 @@ const std = {
             textTransform: {},
             textUnderline: {},
             textUnderlineColor: {},
+            textUnderlinePosition: {},
             textUnderlineStyle: {},
             top: {},
             transform: {},
@@ -860,10 +885,10 @@ const std = {
             wordSpacing: {},
             writingMode: {},
             zIndex: {},
-            getPropertyValue: {},
-            removeProperty: {},
             setProperty: {},
-            setPropertyValue: {}
+            removeProperty: {},
+            setPropertyValue: {},
+            getPropertyValue: {}
         }
     },
     DOMException: {
@@ -1293,6 +1318,7 @@ const std = {
         paperTray: {},
         filterResolution: {},
         xmp: {},
+        xmpMetadata: {},
         title: {},
         subject: {},
         author: {},

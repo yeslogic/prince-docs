@@ -2,43 +2,53 @@
 title: Graphics
 ---
 
-Prince supports a wide range of graphic features, treated in more detail in the following sections. RGB, RGBA, HSL, HSLA, CMYK, and named spot colors are supported, and so is color management. Bitmap images and SVG are supported.
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,100..900;1,100..900&amp;display=swap" rel="stylesheet"/>
 
-## Color
+Prince supports a wide range of graphic features, treated in more detail in the following sections. RGB(A), CMYK, HSL(A), HWB, and named spot colors are supported, and so is color management. Bitmap images and SVG are supported.
 
-Prince supports RGB, RGBA, CMYK, HSL, HSLA and named spot colors. For Prince's color management, please see the [Color Management](#color-management) section.
+Color
+-----
+
+Prince supports RGB(A), CMYK, HSL(A), HWB, and named spot colors. For Prince's color management, please see the [Color Management](#color-management) section.
 
 Prince understands CSS [basic color keywords](css-color-names.md#basic-color-keywords) as well as the list of [extended color keywords](css-color-names.md#extended-color-keywords) from the [CSS Color Module Level 4](https://www.w3.org/TR/css-color-4/#named-colors). It also supports the keywords `transparent` and `currentColor`.
 
+Prince follows the [CSS Color Module Level 4](https://www.w3.org/TR/css-color-4/) syntax for the color functions.  However, for legacy reasons Prince also understands the legacy comma-separated values of the legacy color syntax.  Also the legacy functions `rgba()` and `hsla()` are still supported.
+
+
 ### RGB(A)
 
-To use an RGB color in CSS, it can be expressed either as a value in hexadecimal notation, as an `rgb()` function or as a named color. For example, red can be specified in three ways:
+To use an RGB color in CSS, it can be expressed either as a value in hexadecimal notation, as a named color, or as an `rgb()` function. For example, red can be specified in three ways:
 
 ```css
     color: #ff0000
-    color: rgb(255, 0, 0)
     color: red
+    color: rgb(255 0 0)
 ```
-RGBA colors are equivalent to RGB plus an opacity (or alpha) value between 0 and 1. When the opacity is 0 the color is transparent, and when the opacity is 1 the color is identical to the RGB color. RGBA colors are expressed as an `rgba()` function.
+A fourth, optional value for the `rgb()` function is for opacity (or alpha), and takes a value between 0 and 1, or between 0% and 100%. When the opacity is 0 the color is transparent, and when the opacity is 1, or 100%, the color is fully opaque. If the fourth value is omitted, it is assumed to be 100%.
 
 ```css
-    color: rgba(255, 0, 0, 1)    // red
-    color: rgba(255, 0, 0, 0.5)  // translucent red
-    color: rgba(255, 0, 0, 0)    // fully transparent
+    color: rgb(255 0 0 / 1)    // red
+    color: rgb(255 0 0 / 0.5)  // translucent red
+    color: rgb(255 0 0 / 0)    // fully transparent
 ```
+
 ### CMYK
 
-CMYK colors can be specified using the `cmyk()` or, alternatively, the equivalent `device-cmyk()` function syntax. An optional fifth value is for the alpha channel, i.e. for opacity.
+CMYK colors can be specified using the `device-cmyk()` function syntax. An optional fifth value is for the alpha channel, i.e. for opacity, and functions just as the alpha channel for the `rgb()` function. If the fifth value is omitted, it is assumed to be 100%, or fully opaque.
 
 ```css
-    color: cmyk(1, 0, 0, 0)       // cyan
-    color: cmyk(0, 1, 1, 0)       // red
-    color: cmyk(0, 0, 0, 1)       // black
-    color: cmyk(0, 1, 1, 0, 0.1)  // translucent red
+    color: device-cmyk(1 0 0 0)        // cyan
+    color: device-cmyk(0 1 1 0)        // red
+    color: device-cmyk(0 0 0 1)        // black
+    color: device-cmyk(0 1 1 0 / 0.1)  // translucent red
 ```
-### HSL(A)
 
-HSL(A) colors are supported as of Prince 12.1 .
+Prince also supports the legacy alias `cmyk()` function.
+
+### HSL(A)
 
 HSL (Hue-Saturation-Lightness) color values can be specified with the `hsl()` function. HSL takes three values:
 
@@ -46,17 +56,35 @@ HSL (Hue-Saturation-Lightness) color values can be specified with the `hsl()` fu
 -   Saturation is a percentage value, and
 -   Lightness is also a percentage.
 
-Just as with RGB values expressed with the `rgb()` function an alpha channel for opacity can be added with the `rgba()` function, so also for HSL color values an alpha channel can be expressed with the `hsla()` function, which adds a fourth value for alpha - when the opacity is 0 the color is transparent, and when the opacity is 1 the color is identical to the HSL color.
+An alpha channel for opacity can be added with a fourth value for alpha - when the opacity is 0 the color is transparent, and when the opacity is 1 the color is identical to the HSL color.
 
 The advantage of HSL over RGB is that it is much more intuitive to use and easier to create sets of matching colors (by keeping the same hue and varying the lightness and saturation values).
 
+```css
+    color: hsl(0 100% 50%)    // red
+    color: hsl(120 100% 50%)  // green
+    color: hsl(240 100% 50%)  // blue
+```
+
+
+### HWB
+
+HWB (Hue-Whiteness-Blackness) color values are expressed in a similar way to HSL colors, but in a way which often is even more intuitive for humans to work with. They are expressed with the `hwb()` function. HWB takes three values: a hue value, equal to that of HSL, and then a percentage of whiteness and blackness to mix into that hue.
+
+```css
+    color: hwb(0 0% 0%)    // red
+    color: hwb(120 0% 0%)  // green
+    color: hwb(240 0% 0%)  // blue
+```
+
+
 ### Spot colors
 
-Prince also supports named spot colors that can be defined with the [`@prince-color`](css-at-rules.md#at-prince-color) rule. An alternate color must also be specified with the [`alternate-color`](css-props.md#prop-alternate-color) descriptor, using any of the valid notations for RGB, HSL or CMYK colors. This will be used in situations where the named color is not available, such as when viewing the generated PDF file on a display. Please note that [`alternate-color`](css-props.md#prop-alternate-color) cannot be RGBA, HSLA or CMYKA.
+Prince also supports named spot colors that can be defined with the [`@prince-color`](css-at-rules.md#at-prince-color) rule. An alternate color must also be specified with the [`alternate-color`](css-props.md#prop-alternate-color) descriptor, using any of the valid notations for RGB, HSL, HWB, or CMYK colors. This will be used in situations where the named color is not available, such as when viewing the generated PDF file on a display. Please note that [`alternate-color`](css-props.md#prop-alternate-color) cannot have opacity.
 
 ```css
     @prince-color MyColor {
-        alternate-color: rgb(255,0,0)
+        alternate-color: rgb(255 0 0)
     }
 ```
 Spot colors can be used with the `prince-color()` function with a specified tint value between 0 and 1, which defaults to 1, or alternatively expressed in percentage. They can also enable overprint:
@@ -71,10 +99,11 @@ Another way to enable overprint is by using the `prince-overprint()` function, w
 
 ```css
     color: prince-overprint(red);
-    color: prince-overprint(cmyk(0,1,1,0));
+    color: prince-overprint(device-cmyk(0 1 1 0));
 ```
 
-## Color Management
+Color Management
+----------------
 
 ### Introduction
 
@@ -118,18 +147,18 @@ PDF/A requires that all colors to be device-independent, or else characterized b
 
 ### Color Management in Prince
 
-Prince supports RGB, RGBA, HSL, HSLA, CMYK, and named spot colors. For Prince's color handling, please see the [Color](#color) section.
+Prince supports RGB(A), CMYK, HSL(A), HWB, and named spot colors. For Prince's color handling, please see the [Color](#color) section.
 
 As CSS defines RGB colors in the sRGB color space, Prince tags those colors with an sRGB ICC profile in the PDF output. See also the section on [Rich black and true black](#rich-black-and-true-black) below.
 
-CMYK colors specified using the `cmyk()` function syntax, or equivalent `device-cmyk()` syntax, represent device-dependent colors, so they will be left as such in the PDF when possible. Device-dependent color is not allowed in PDF/A or PDF/X, so those CMYK colors will be assumed to be either in the output intent color space (if it is CMYK), or else the color space of the fallback CMYK profile. See the command-line option [`--fallback-cmyk-profile`](command-line.md#cl-fallback-cmyk-profile) in the [PDF Output Options](command-line.md#pdf-output-options) section, or the [`-prince-fallback-cmyk-profile`](css-props.md#prop-prince-fallback-cmyk-profile) property.
+CMYK colors specified using the `device-cmyk()` function syntax represent device-dependent colors, so they will be left as such in the PDF when possible. Device-dependent color is not allowed in PDF/A or PDF/X, so those CMYK colors will be assumed to be either in the output intent color space (if it is CMYK), or else the color space of the fallback CMYK profile. See the command-line option [`--fallback-cmyk-profile`](command-line.md#cl-fallback-cmyk-profile) in the [PDF Output Options](command-line.md#pdf-output-options) section, or the [`-prince-fallback-cmyk-profile`](css-props.md#prop-prince-fallback-cmyk-profile) property.
 ```bash title="Bash"
     prince input.html
            --pdf-profile=PDF/A-1b
            --pdf-output-intent=sRGB.icc
            --fallback-cmyk-profile=ISOcoated_v2_eci.icc
 ```
-```css
+```css title="CSS"
     @prince-pdf {
         -prince-pdf-output-intent: url("sRGB.icc");
         -prince-fallback-cmyk-profile: url("ISOcoated_v2_eci.icc");
@@ -143,9 +172,28 @@ Prince will convert all the colors in a document to a single color space if the 
 
 Prince automatically converts colors to the output intent color space only when producing PDF/X-1a files. Files in any of the other profiles need also the [`--convert-colors`](command-line.md#cl-convert-colors) command-line option or the [`-prince-pdf-color-conversion`](css-props.md#prop-prince-pdf-color-conversion) property if colors are to be converted.
 
-When used as a descriptor in a [`@prince-pdf`](css-at-rules.md#at-prince-pdf) at-rule, the [`-prince-pdf-color-conversion`](css-props.md#prop-prince-pdf-color-conversion-syntax2) descriptor also takes an optional second argument to define the rendering intent, or to cause the target ICC profile to not be embedded in the output PDF, unless required by the PDF profile.  For details, please see the entry for [the `-prince-pdf-color-conversion` descriptor](css-props.md#prop-prince-pdf-color-conversion-syntax2).
+[`-prince-pdf-color-conversion`](css-props.md#prop-prince-pdf-color-conversion), both as a property or as a descriptor inside the `@prince-pdf` at-rule, offers also the possibility to convert color to grayscale, but leaving the resulting colors still in the CMYK colorpsace - just using the "K" black channel.  This is achieved with the keyword `cmyk-grayscale` as a second argument.  It has no effect if the target color space is not CMYK.
 
-Prince however also allows to use [`-prince-pdf-color-conversion`](css-props.md#prop-prince-pdf-color-conversion) as a property, applied to individual elements.  In this case, the value `auto` is the default and will enable color conversion for this element, if color conversion is enabled at the top level in the [`@prince-pdf`](css-at-rules.md#at-prince-pdf) at-rule or with the command-line argument.  The value `none` allows color conversion to be disabled for that element and its descendants.
+```css
+    @prince-pdf {
+        -prince-pdf-output-intent: url(SomeProfile.icc);
+        -prince-pdf-color-conversion: output-intent cmyk-grayscale;
+    }
+```
+
+When used as a descriptor in a [`@prince-pdf`](css-at-rules.md#at-prince-pdf) at-rule, [`-prince-pdf-color-conversion`](css-props.md#prop-prince-pdf-color-conversion-syntax2) also takes an optional second argument to define the rendering intent, or to cause the target ICC profile to not be embedded in the output PDF, unless required by the PDF profile.  The optional rendering intent takes any of the following values:
+
+* absolute-colorimetric
+* relative-colorimetric
+* relative-colorimetric-bpc
+* perceptual
+* perceptual-bpc
+* saturation
+* saturation-bpc
+
+For further details, please see the entry for [the `-prince-pdf-color-conversion` descriptor](css-props.md#prop-prince-pdf-color-conversion-syntax2).
+
+Prince however also allows to use [`-prince-pdf-color-conversion`](css-props.md#prop-prince-pdf-color-conversion) as a property, applied to individual elements.  In this case, the value `auto` is the default and will enable color conversion for this element, if color conversion is enabled at the top level in the [`@prince-pdf`](css-at-rules.md#at-prince-pdf) at-rule or with the command-line argument.  The value `none` allows color conversion to be disabled for that element and its descendants, thus allowing for selective color conversion.
 
 ### Rich black and true black
 
@@ -169,7 +217,8 @@ Color conversion takes into account the `use-true-black` value when converting C
 The property [`-prince-pdf-page-colorspace`](css-props.md#prop-prince-pdf-page-colorspace) controls the color space of pages in the PDF file. It affects the compositing of transparent content onto the page by selecting the color space in which compositing is performed. Prince currently defaults to the RGB color space. It may be useful to set this property to avoid converting the colors of transparent content before it is composited onto the page, possibly resulting in distorted colors.
 
 
-## Filters
+Filters
+-------
 
 The [`filter`](css-props.md#prop-filter) property provides graphical effects like blurring, saturating or color shifting an element. Filters can be used alone, or combined in any way. However, the order in which filters are applied matters - applying `grayscale()` after any other filter will result in a gray result.
 
@@ -215,7 +264,8 @@ This filter takes the URL of an SVG filter. An anchor can be used to reference a
 The resolution used when rasterizing to images for applying CSS and SVG filters is controlled through the [`-prince-filter-resolution`](css-props.md#prop-prince-filter-resolution) property. The default value is `96dpi` for compatibility with web browsers.
 
 
-## Images
+Images
+------
 
 Prince supports the JPEG, PNG, TIFF, GIF, WebP and AVIF image formats, as well as [Scalable Vector Graphics (SVG)](#scalable-vector-graphics-svg).
 
@@ -231,14 +281,14 @@ Please note that Prince tries to preserve the ICC color profile embedded in imag
 
 The `img` element is used to include images in XHTML documents.
 
-```xml title="XHTML"
+```xml title="XML"
     <img src="picture.jpg" alt="A Nice Picture"/>
 ```
 ### Images in DocBook
 
 The `imagedata` element is used to include images in DocBook documents.
 
-```xml title="DocBook"
+```xml title="XML"
     <mediaobject>
         <imageobject>
           <imagedata fileref="picture.jpg"/>
@@ -306,7 +356,8 @@ Please note that specifying [`-prince-image-resolution`](css-props.md#prop-princ
 To reduce the PDF file size, JPEG images can be recompressed at a lower quality level, or PNG images be converted to JPEG, with the [`-prince-image-magic`](css-props.md#prop-prince-image-magic) property. See also [Image Magic](cookbook.md#image-magic).
 
 
-## Scalable Vector Graphics (SVG)
+Scalable Vector Graphics (SVG)
+------------------------------
 
 SVG can be included in any XML document simply by adding a `svg` element.
 
@@ -418,18 +469,19 @@ Alternatively, style properties can be applied by linking a stylesheet, or an XM
     }
 ```
 
-## Rasterization
+Rasterization
+-------------
 
 Prince allows for the output of a rasterized image rather than, or in addition to a PDF output. This produces a JPEG or PNG image of the content, which can be convenient when e.g. planning to use it as a quick preview or thumbnail of the PDF content to display on a website, as can e.g. be seen in the [Sample Documents](/samples/) section on this website.
 
 Rasterization is enabled with the [`--raster-output`](command-line.md#cl-raster-output) command-line option, which also defines the template of the file naming. The output format can be chosen either based on the extension of the file name, or by explicitly indicating it.
 
-```bash title="Bash"
+```bash
       prince doc.html --raster-output=page_%02d.png
 ```
 Furthermore the range of pages to rasterize and the resolution of the raster output can be tweaked in order to determine the number of pages in rasterized format, and the size of the images.
 
-```bash title="Bash"
+```bash
       prince doc.html --raster-output=title-thumbnail.jpg --raster-pages=first --raster-dpi=24
 ```
 Please note that when creating a JPEG image output, the default quality parameter given
@@ -439,3 +491,4 @@ use the command-line option [`--raster-jpeg-quality`](command-line.md#cl-raster-
 If you want to rasterize the HTML to an image format that supports transparency (PNG, not JPEG) and have a transparent background, in order to composite it with something else later, the command-line option [`--raster-background`](command-line.md#cl-raster-background) can be used with the value `transparent`.
 
 A full list of rasterization possibilities can be found in the [Raster Output Options](command-line.md#raster-output-options) section.
+

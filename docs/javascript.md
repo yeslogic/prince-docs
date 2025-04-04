@@ -2,6 +2,10 @@
 title: Scripting
 ---
 
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,100..900;1,100..900&amp;display=swap" rel="stylesheet"/>
+
 JavaScript can be used to transform documents by generating tables of contents and indices, sorting tables, rendering charts and graphs, and other tasks that go beyond the scope of CSS.
 
 Scripts can access and modify the input document using the W3C standard DOM (Document Object Model). Prince also supports some additional properties and methods described below.
@@ -63,6 +67,8 @@ When the document has been fully parsed and is ready for processing, Prince will
 These load events can be captured by setting the `onload` attribute on the `body` element in HTML documents, or by setting the `window.onload` property or calling [`window.addEventListener`](js-support.md#window.addEventListener).
 
 When document conversion has finished, Prince will fire the `complete` event on the `Prince` object. This event can be captured by calling [`Prince.addEventListener`](js-support.md#window.Prince.addEventListener), or by setting the [`Prince.oncomplete`](js-support.md#window.Prince.oncomplete) property, and is useful for logging document statistics.
+
+When the [`readyState`](js-support.md#window.Document.prototype.readyState) attribute of a document changes, the `readystatechange` event is fired.
 
 Prince also offers the possibility to register the function [`Prince.registerPostLayoutFunc(func)`](js-support.md#window.Prince.registerPostLayoutFunc) after layout has finished for possibly triggering a new layout - see [Multi-Pass formatting](#multi-pass-formatting) for more details.
 
@@ -145,12 +151,12 @@ Prince also offers the possibility to register the function [`Prince.registerPos
 
 ```javascript title="JavaScript"
     Prince.registerPostLayoutFunc(function() {
-        var str = '@prince-color Color1 { alternate-color: cmyk(1,0,0,0) }';
+        var str = '@prince-color Color1 { alternate-color: device-cmyk(1 0 0 0) }';
         var add = document.getElementById('add');
         add.appendChild(document.createTextNode(str));
     });
 ```
-```html title=HTML"
+```html title="HTML"
     <style id='add'></style>
     <p style='color: prince-color(Color1)'>This was black, becomes cyan</p>
 ```
@@ -248,6 +254,7 @@ The [`PDF.pages`](js-support.md#window.PDF.pages) array mentioned earlier (see [
 ```
 *Boxes* are JavaScript objects with some or all of the following properties:
 
+```
     type =          "BODY" |
                     "COLUMN" |
                     "FLEXLINE" |
@@ -267,10 +274,20 @@ The [`PDF.pages`](js-support.md#window.PDF.pages) array mentioned earlier (see [
     baseline =      the y-coordinate of the baseline of the box,
                     ie. the line that the text rests on, in pt -
                     applies only to inline boxes
+
     marginTop
     marginRight
     marginBottom
     marginLeft =    the used values for margins
+    paddingTop
+    paddingRight
+    paddingBottom
+    paddingLeft =   the used values for paddings
+    borderTop
+    borderRight
+    borderBottom
+    borderLeft =    the used values for borders
+
     floatPosition = "TOP" | "BOTTOM"
     children =      array of child boxes
     parent =        parent box
@@ -279,6 +296,7 @@ The [`PDF.pages`](js-support.md#window.PDF.pages) array mentioned earlier (see [
     text =          string
     src =           URL string for images
     style =         CSS style object for box
+```
 
 The `x`, `y`, `w`, `h` and `baseline` measures, defining respectively the x- and y-coordinates and the width and height of the *box*, use the same coordinate system as the PDF, i.e. the box tracking units are measured in points (`pt`) and the origin is the lower left corner of the page.
 

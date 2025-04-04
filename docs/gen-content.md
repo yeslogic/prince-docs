@@ -2,6 +2,10 @@
 title: Generated Content
 ---
 
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,100..900;1,100..900&amp;display=swap" rel="stylesheet"/>
+
 Generated content is text and other content that is not found in the original input document, but is added to the output from a style sheet using the CSS [`content`](css-props.md#prop-content) property. Useful applications of this property include [Page regions](paged.md#page-regions), [List markers](styling.md#list-markers) or [Footnotes](styling.md#footnotes).
 
 ## Generated Content Functions
@@ -36,7 +40,7 @@ A literal string can also be passed as an argument to the `leader()` function, w
       content: leader('.') "p. " target-counter(attr(href), page);
     }
 ```
-The above example will generate something looking like "Chapter 1..................p. 5", assuming that chapter 1 indeed starts on page 5!  See below for the two other functions appearing in this example, namely `target-counter()` and `attr()`.
+The above example will generate something looking like "Chapter 1..................p. 5", assuming that chapter 1 indeed starts on page 5!  See [below](#using-target-counter) for the two other functions appearing in this example, namely `target-counter()` and `attr()`.
 
 The properties can also insert external content fetched from another resource. This can be done with the following functions:
 
@@ -100,6 +104,15 @@ Last but not least, Prince supports arbitrary JavaScript functions to be called 
 
 A special function is <code>prince-glyph-index(<i>int</i>)</code>, which allows to choose a glyph from a font by the index of that glyph in the font. Note that this is very non-portable, as glyph indices are specific to individual font versions. But it is a possible escape hatch for people who need a specific glyph and don't have any other way of accessing it (by Unicode character or OpenType substitution).
 
+The `string()`, `counter()`, and `counters()` functions, as well as a literal string, can also be used to define alternate text content for images or graphic elements used in the `content` property to provide accessible PDF documents.
+
+```css
+    .warning::before {
+      content: "⚠" / "Warning!";
+    }
+```
+
+
 ### The optional `page-policy` value
 
 The generated content functions `element()`, `counter()`, `counters()`, `string()` and `flow()`, have a second, optional argument, namely `page-policy`, which can be one of the following:
@@ -124,7 +137,7 @@ For a good example of its use, please see [Copying content from the document](pa
 
 The [`content`](css-props.md#prop-content) property can be applied to the `::before` and `::after` pseudo-elements to add generated content before or after an element. For example, adding section numbers in front of headings or including quotation marks around a block of text.
 
-```css
+```css title="CSS"
     h1::before, h1::after { content: "***" }
 ```
 This will place three asterisks before and after `h1` elements.
@@ -137,7 +150,7 @@ Counters are the mechanism provided by CSS to perform numbering. They can be use
 
 To use a counter, it first needs to be initialized with the [`counter-reset`](css-props.md#prop-counter-reset) property, which can be applied to any element and initializes one or more counters to the specified values, or to zero if no value is specified. The property can be used to reset a counter by re-initializing it.  It can also be used to initialize a page number to something different than its default value.
 
-```css
+```css  title="CSS"
     body { counter-reset: page 86; }
 ```
 
@@ -147,9 +160,11 @@ Unless the resetting of a counter creates a nested counter, the scope of the cou
 
 The [`counter-increment`](css-props.md#prop-counter-increment) property applies to any element and increments or decrements one or more counters by the specified values, or by one if no value is specified.
 
-The [`counter-increment`](css-props.md#prop-counter-increment) and [`counter-reset`](css-props.md#prop-counter-reset) properties are ignored on elements whose [`display`](css-props.md#prop-display) property has the value `none`.
+The [`counter-set`](css-props.md#prop-counter-set) property applies to any element and sets the value of the named counter to the specified value, or to "0" if no value is specified.
 
-Note that the `counter-increment` and `counter-reset` properties can also be used in `@page` at-rules to create counters that track the page number, for example to number the pages within each chapter separately from the normal `page` and `pages` counters.
+The [`counter-increment`](css-props.md#prop-counter-increment), [`counter-set`](css-props.md#prop-counter-set), and [`counter-reset`](css-props.md#prop-counter-reset) properties are ignored on elements whose [`display`](css-props.md#prop-display) property has the value `none`.
+
+Note that the `counter-increment`, `counter-set`, and `counter-reset` properties can also be used in `@page` at-rules to create counters that track the page number, for example to number the pages within each chapter separately from the normal `page` and `pages` counters.
 
 ### Displaying counters
 
@@ -159,7 +174,7 @@ The `counter()` function generates a value for the innermost counter, formatted 
 
 The `counters()` function concatenates counters on different levels, separated with the separator string and formatted in the optional counter style (decimal by default - see [Counter styles](#counter-styles)).
 
-```css
+```css  title="CSS"
     div.example1 { counter-reset: h3 h4 }
     div.example1 h3 { counter-increment: h3 }
     div.example1 h4 { counter-increment: h4 }
@@ -170,7 +185,7 @@ The `counters()` function concatenates counters on different levels, separated w
 ```
 This creates two counters inside the scope of a `div` element. All `h3` and `h4` heading elements will be numbered starting from 1 and the counter number will be placed before the heading text.
 
-```css
+```css title="CSS"
     div.example2 { counter-reset: h3 }
     div.example2 h3 {
         counter-increment: h3;
@@ -190,7 +205,7 @@ If a counter is reset on an element and the same counter has also been reset on 
 
 For example, a nested XHTML list with a `ul` element inside a `li` inside another `ul` creates a nested `list-item` counter.
 
-```css
+```css title="CSS"
     ol { counter-reset: list-item }
     li { counter-increment: list-item }
     li::marker {
@@ -203,7 +218,7 @@ For example, a nested XHTML list with a `ul` element inside a `li` inside anothe
 
 Counter values are displayed as decimal numbers by default, but they may be displayed using other styles such as roman numerals or consecutive letters of the alphabet.
 
-```css
+```css title="CSS"
     chapter { counter-increment: chapter-num }
 
     chapter::before {
@@ -215,7 +230,7 @@ This rule will generate text such as "Chapter IV" before each chapter, with the 
 The following table shows examples of the various counter styles:
 
 <table className="grid">
-<tbody><tr>
+<tr>
 <td>decimal</td>
 <td>1, 2, 3, &#x2026; 9, 10, 11, &#x2026;</td>
 </tr>
@@ -351,17 +366,27 @@ The following table shows examples of the various counter styles:
 <td>upper-serbian</td>
 <td>&#x410;, &#x411;, &#x412;, &#x413;, &#x414;, &#x402;, &#x415;, &#x2026;</td>
 </tr>
-<tr>
-<td>repeat(x, y, z)</td>
-<td>x, y, z, xx, yy, zz, xxx, yyy, &#x2026;</td>
-</tr>
-<tr>
-<td>symbols(x, y, z)</td>
-<td>x, y, z, 4, 5, 6, &#x2026;</td>
-</tr>
-</tbody></table>
+</table>
 
-See also [User-defined counter styles](#user-defined-counter-styles) for custom counters.
+Two special functional expressions offer a more free approach to counters, by allowing for a custom sequence to be defined: `symbols()` and `repeat()`.  Once all defined symbols are used, the former continues its counting with decimal style, while the latter increases the counters by duplicating, triplicating, etc., the symbols.
+
+<table>
+<tr>
+<td>symbols(*, †, ‡)</td>
+<td>*, †, ‡, 4, 5, 6, &#x2026;</td>
+</tr>
+<tr>
+<td>repeat(*, †, ‡)</td>
+<td>*, †, ‡, **, ††, ‡‡, ***, †††, ‡‡‡, &#x2026;</td>
+</tr>
+</table>
+
+<p className="note">
+When using the <code>symbols()</code> function it is advisable to define all the smybols needed for your counters - the fallback to decimal-style counters is mainly thought for debugging reasons.
+</p>
+
+[User-defined counter styles](#user-defined-counter-styles) for custom counters can also be created with the help of [Script Functions](#script-functions).
+
 
 ## Cross-references
 
@@ -371,7 +396,7 @@ Prince supports cross-references using generated content with two special functi
 
 The `target-counter()` function can be used with the [`content`](css-props.md#prop-content) property to reference the value of a counter at a linked element.
 
-```css
+```css title="CSS"
     a[href]::after {
         content: " [See page " target-counter(attr(href), page) "]"
     }
@@ -382,7 +407,7 @@ The `target-counter()` function can specify any counter, allowing cross-referenc
 
 The `target-counter()` function can also take an optional counter style, similar to the normal counter function.
 
-```css
+```css title="CSS"
     a[href]::after {
         content: " [See chapter "
              target-counter(attr(href), chapter, upper-roman)
@@ -395,7 +420,7 @@ This will add a cross-reference after every link with the correct chapter number
 
 The `target-content()` function can be used with the [`content`](css-props.md#prop-content) property to reference the text content of a linked element.
 
-```css
+```css title="CSS"
     a[href]::after {
         content: " [See '" target-content(attr(href)) "']"
     }
@@ -408,13 +433,12 @@ Prince supports arbitrary JavaScript functions to be called from CSS generated c
 
 Please note that Prince is not running JavaScript by default - it needs to be explicitly enabled. See [Applying JavaScript in Prince](prince-input.md#applying-javascript-in-prince).
 
-```css
+```css title="CSS"
     p::after {
         content: prince-script(myfunc)
     }
 ```
-
-```javascript
+```javascript title="JavaScript"
     function myfunc()
     {
         return "Some generated content text!";
@@ -426,15 +450,14 @@ Please note that Prince is not running JavaScript by default - it needs to be ex
 
 JavaScript functions have access to the current date and time, which can be added to the document using `prince-script()` in generated content.
 
-```css
+```css title="CSS"
     @page {
         @top {
         content: prince-script(datestamp)
         }
     }
 ```
-
-```javascript
+```javascript title="JavaScript"
     Prince.addScriptFunc("datestamp", function() {
         return (new Date()).toString();
     });
@@ -443,13 +466,12 @@ JavaScript functions have access to the current date and time, which can be adde
 
 The JavaScript functions used with `prince-script()` can take arguments that are themselves generated content. This allows functions to operate on counter values and implement new counter styles.
 
-```css
+```css title="CSS"
     li::marker {
         content: prince-script(mycounterstyle, counter(list-item))
     }
 ```
-
-```javascript
+```javascript title="JavaScript"
     Prince.addScriptFunc("mycounterstyle", function(n) {
         if (n == 1) return "one";
         else if (n == 2) return "two";

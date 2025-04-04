@@ -34,9 +34,32 @@
 </property>
 
 <property>
+	<name>accent-color</name>
+	<value>
+	  <choice>
+        <keyword>auto</keyword>
+        <type>color</type>
+	  </choice>
+	</value>
+	<initial>auto</initial>
+    <applyto>radio and checkbox form controls</applyto>
+	<inherit>yes</inherit>
+    <comments>
+    <p class="note">
+    Prince only applies the <code>accent-color</code> property to PDF radio and checkbox form controls.
+    </p>
+    </comments>
+    <spec><a href="https://www.w3.org/TR/css-ui-4/#widget-accent">CSS Basic User Interface Module Level 4</a></spec>
+</property>
+
+<property>
 	<name>align-content</name>
 	<value>
 	  <choice>
+        <keyword>normal</keyword>
+        <keyword>start</keyword>
+        <keyword>end</keyword>
+        <keyword>space-evenly</keyword>
 	    <keyword>flex-start</keyword>
 	    <keyword>flex-end</keyword>
 	    <keyword>center</keyword>
@@ -45,27 +68,34 @@
 	    <keyword>stretch</keyword>
 	  </choice>
 	</value>
-	<initial>stretch</initial>
+	<initial>normal</initial>
     <applyto>multi-line flex containers</applyto>
 	<inherit>no</inherit>
-    <spec><a href="https://www.w3.org/TR/css-flexbox-1/#align-content-property">CSS Flexible Box Layout Module Level 1</a></spec>
+    <see><a href="/doc/styling/#flex-layout">Flex Layout</a></see>
+    <spec><a href="https://www.w3.org/TR/css-align-3/#align-justify-content">CSS Box Alignment Module Level 3</a></spec>
 </property>
 
 <property>
 	<name>align-items</name>
 	<value>
 	  <choice>
+	    <keyword>normal</keyword>
+	    <keyword>stretch</keyword>
+	    <keyword>start</keyword>
+	    <keyword>end</keyword>
+	    <keyword>self-start</keyword>
+	    <keyword>self-end</keyword>
 	    <keyword>flex-start</keyword>
 	    <keyword>flex-end</keyword>
 	    <keyword>center</keyword>
 	    <keyword>baseline</keyword>
-	    <keyword>stretch</keyword>
 	  </choice>
 	</value>
-	<initial>stretch</initial>
+	<initial>normal</initial>
     <applyto>flex containers</applyto>
 	<inherit>no</inherit>
-    <spec><a href="https://www.w3.org/TR/css-flexbox-1/#align-items-property">CSS Flexible Box Layout Module Level 1</a></spec>
+    <see><a href="/doc/styling/#flex-layout">Flex Layout</a></see>
+    <spec><a href="https://www.w3.org/TR/css-align-3/#align-items-property">CSS Box Alignment Module Level 3</a></spec>
 </property>
 
 <property>
@@ -73,17 +103,23 @@
 	<value>
 	  <choice>
 	    <keyword>auto</keyword>
+	    <keyword>normal</keyword>
+	    <keyword>stretch</keyword>
+	    <keyword>start</keyword>
+	    <keyword>end</keyword>
+	    <keyword>self-start</keyword>
+	    <keyword>self-end</keyword>
 	    <keyword>flex-start</keyword>
 	    <keyword>flex-end</keyword>
 	    <keyword>center</keyword>
 	    <keyword>baseline</keyword>
-	    <keyword>stretch</keyword>
 	  </choice>
 	</value>
 	<initial>auto</initial>
     <applyto>flex items</applyto>
 	<inherit>no</inherit>
-    <spec><a href="https://www.w3.org/TR/css-flexbox-1/#align-items-property">CSS Flexible Box Layout Module Level 1</a></spec>
+    <see><a href="/doc/styling/#flex-layout">Flex Layout</a></see>
+    <spec><a href="https://www.w3.org/TR/css-align-3/#align-self-property">CSS Box Alignment Module Level 3</a></spec>
 </property>
 
 <property>
@@ -95,13 +131,13 @@
 	<applyto>@prince-color at-rule</applyto>
 	<inherit>n/a</inherit>
 	<extension/>
-	<example>@prince-color  TestColor { alternate-color: cmyk(1, 0, 0, 0) }
+	<example>@prince-color  TestColor { alternate-color: cmyk(1 0 0 0) }
 	color: prince-color(TestColor)</example>
     <see><a href="/doc/graphics/#spot-colors">Spot colors</a></see>
     <comments>
-    <p>This descriptor takes an RGB or CMYK color in any of the valid notations for
-    RGB and CMYK colors, that will be used to display the color being defined, when
-    the named color is not available.  Please note that it cannot be RGBA or CMYKA.</p>
+    <p>This descriptor takes a color in any of the valid notations for RGB, HSL,
+    HWB, or CMYK colors, that will be used to display the color being defined, when
+    the named color is not available.  Please note that it cannot have opacity.</p>
 
     <p>A color value must be specified for the rule to be valid.</p>
 	</comments>
@@ -110,24 +146,8 @@
 <property>
     <name>background</name>
     <value>
-	<repeat sep="," min="1">
+    <repeat min="1" sep=",">
 	    <multiple>
-		<!-- This no longer tightly describes gramatically valid values
-		    now that these properties accept comma-separated lists:
-		    the children of <multiple/> need to be just the individual
-		    comma-separated items within the referenced property
-		    values.  The easiest way to fix this would be to use
-		    <type>bg-image</type> etc., referencing the css-backgrounds-3
-		    definitions of those types; except that our syntax
-		    for these items doesn't yet (as at 2015-05) match
-		    css-backgrounds-3.  So for now we'll use these property
-		    references, which at least are accurate in the sense of
-		    including all valid values, even if the result also
-		    includes invalid values.
-
-		    (Similarly, the below wrongly allows 'background-color'
-		    values before the last comma.)
-		-->
 		<group>
 		    <ref>background-image</ref>
 		</group>
@@ -167,7 +187,7 @@
 		    <ref>background-color</ref>
 		</group>
 	    </multiple>
-	</repeat>
+    </repeat>
     </value>
     <initial>transparent</initial>
     <applyto>all elements</applyto>
@@ -182,12 +202,32 @@
 	<prop>background-clip</prop>
 	<prop>background-color</prop>
     </shorthand>
+    <comments>
+    <p>
+    However, a few issues need to be noted:
+    </p>
+    <p>
+    Each comma-separated iteration of a background declaration defines one
+    background layer - but <code>background-color</code> is <em>only allowed
+    in the last layer</em>.
+    </p>
+    <p>
+    Several properties allow for comma-separated value lists - however, when
+    used in the <code>background</code> shorthand property, only <em>one
+    value for each layer is allowed</em>.
+    </p>
+    <p>
+    Also, Prince requires <code>background-origin</code> and
+    <code>background-clip</code> to be adjacent.
+    </p>
+    </comments>
     <spec><a href="https://www.w3.org/TR/css-backgrounds-3/#the-background">CSS Backgrounds and Borders Module Level 3</a></spec>
 </property>
 
 <property>
     <name>background-attachment</name>
     <value>
+    <repeat min="1" sep=",">
 	<choice>
 	    <keyword>scroll</keyword>
         <sequence>
@@ -197,6 +237,7 @@
             </optional>
         </sequence>
 	</choice>
+    </repeat>
     </value>
     <initial>scroll</initial>
     <applyto>all elements</applyto>
@@ -243,11 +284,13 @@
 <property>
     <name>background-clip</name>
     <value>
+    <repeat min="1" sep=",">
 	<choice>
 	    <keyword>content-box</keyword>
 	    <keyword>padding-box</keyword>
 	    <keyword>border-box</keyword>
 	</choice>
+    </repeat>
     </value>
     <initial>border-box</initial>
     <applyto>all elements</applyto>
@@ -258,6 +301,7 @@
 <property>
     <name>background-image</name>
     <value>
+    <repeat min="1" sep=",">
 	<choice>
 	    <keyword>none</keyword>
 	    <url>filename</url>
@@ -274,6 +318,7 @@
 		<text>...</text>
 	    </function>
 	</choice>
+    </repeat>
     </value>
     <initial>none</initial>
     <applyto>all elements</applyto>
@@ -289,11 +334,13 @@
 <property>
     <name>background-origin</name>
     <value>
+    <repeat min="1" sep=",">
 	<choice>
 	    <keyword>content-box</keyword>
 	    <keyword>padding-box</keyword>
 	    <keyword>border-box</keyword>
 	</choice>
+    </repeat>
     </value>
     <initial>padding-box</initial>
     <applyto>all elements</applyto>
@@ -304,6 +351,7 @@
 <property>
     <name>background-position</name>
     <value>
+    <repeat min="1" sep=",">
       <choice>
         <group>
         <choice>
@@ -378,6 +426,7 @@
         </reorderable>
         </group>
 	  </choice>
+    </repeat>
     </value>
     <initial>top left</initial>
     <applyto>all elements</applyto>
@@ -1077,13 +1126,22 @@
 	    <keyword>clone</keyword>
 	</choice>
     </value>
-    <initial>clone</initial>
+    <initial>slice</initial>
     <applyto>block elements and tables</applyto>
     <inherit>no</inherit>
     <comments>
 	<p>
-    This property is only supported on block elements and tables.  Also note that
-    Prince defaults to <code>clone</code>.
+    This property is only supported on block elements and tables.
+    </p>
+    <p class="note">
+    The Prince box-breaking behavior predates the introduction of the
+    <a href="css-props/#prop-box-decoration-break">box-decoration-break</a>
+    CSS property, defaulting to repeating borders when breaking a box, so
+    that each fragment had a top and bottom border. When the property was
+    introduced, Prince kept the default value as <code>clone</code>. Starting
+    with Prince 16, the default value was changed to <code>slice</code> to
+    reflect browser behavior and CSS specifications. To retain the old
+    behavior, it must now be explicitly declared.
     </p>
     </comments>
     <spec><a href="https://www.w3.org/TR/css-break-3/#break-decoration">CSS Fragmentation Module Level 3</a></spec>
@@ -1149,15 +1207,20 @@
     <value>
 	<choice>
         <keyword>auto</keyword>
-        <keyword>avoid</keyword>
-        <keyword>avoid-page</keyword>
-        <keyword>avoid-column</keyword>
+        <sequence>
+            <optional><keyword class="ext">-prince-prefer</keyword></optional>
+            <choice>
+                <keyword>avoid</keyword>
+                <keyword>avoid-page</keyword>
+                <keyword>avoid-column</keyword>
+            </choice>
+        </sequence>
+        <keyword>column</keyword>
         <keyword>page</keyword>
         <keyword>left</keyword>
         <keyword>right</keyword>
         <keyword>recto</keyword>
         <keyword>verso</keyword>
-        <keyword>column</keyword>
 	</choice>
     </value>
     <initial>auto</initial>
@@ -1173,6 +1236,27 @@
     as simply <code>avoid</code>: it is not possible to avoid page breaks without
     also avoiding column breaks.
     </p>
+
+    <p>
+    For <code>avoid*</code> values not preceded by <code>-prince-prefer</code>,
+    content before the avoided break will be pushed to the next column or page
+    if necessary to avoid breaking there.
+    </p>
+
+    <p>
+    The keyword <code>-prince-prefer</code> is only accepted by
+    <a href="/doc/prince-for-books/">Prince for Books</a>.
+    If an <code>avoid*</code> value is preceded by <code>-prince-prefer</code>,
+    then Prince for Books will try to avoid breaking there,
+    but not at the cost of introducing an obvious gap at the end of the
+    previous column or page:
+    it will only use whatever flexibility has been granted with
+    <code><property name="prince-change-line-breaks-for-pagination"/></code>,
+    <code><property name="prince-spread-length-options"/></code>
+    or
+    <code><property name="prince-resize-options"/></code>.
+    </p>
+
     <p>
     See the documentation for <a href="/doc/paged/#page-breaks">Page breaks</a> for more details.
     </p>
@@ -1185,9 +1269,14 @@
     <value>
 	<choice>
         <keyword>auto</keyword>
-        <keyword>avoid</keyword>
-        <keyword>avoid-page</keyword>
-        <keyword>avoid-column</keyword>
+        <sequence>
+            <optional><keyword class="ext">-prince-prefer</keyword></optional>
+            <choice>
+                <keyword>avoid</keyword>
+                <keyword>avoid-page</keyword>
+                <keyword>avoid-column</keyword>
+            </choice>
+        </sequence>
         <keyword>page</keyword>
         <keyword>left</keyword>
         <keyword>right</keyword>
@@ -1209,6 +1298,27 @@
     as simply <code>avoid</code>: it is not possible to avoid page breaks without
     also avoiding column breaks.
     </p>
+
+    <p>
+    For <code>avoid*</code> values not preceded by <code>-prince-prefer</code>,
+    content before the avoided break will be pushed to the next column or page
+    if necessary to avoid breaking there.
+    </p>
+
+    <p>
+    The keyword <code>-prince-prefer</code> is only accepted by
+    <a href="/doc/prince-for-books/">Prince for Books</a>.
+    If an <code>avoid*</code> value is preceded by <code>-prince-prefer</code>,
+    then Prince for Books will try to avoid breaking there,
+    but not at the cost of introducing an obvious gap at the end of the
+    previous column or page:
+    it will only use whatever flexibility has been granted with
+    <code><property name="prince-change-line-breaks-for-pagination"/></code>,
+    <code><property name="prince-spread-length-options"/></code>
+    or
+    <code><property name="prince-resize-options"/></code>.
+    </p>
+
     <p>
     See the documentation for <a href="/doc/paged/#page-breaks">Page breaks</a> for more details.
     </p>
@@ -1221,9 +1331,14 @@
     <value>
 	<choice>
 	    <keyword>auto</keyword>
-	    <keyword>avoid</keyword>
-        <keyword>avoid-page</keyword>
-        <keyword>avoid-column</keyword>
+            <sequence>
+                <optional><keyword class="ext">-prince-prefer</keyword></optional>
+                <choice>
+                    <keyword>avoid</keyword>
+                    <keyword>avoid-page</keyword>
+                    <keyword>avoid-column</keyword>
+                </choice>
+            </sequence>
 	</choice>
     </value>
     <initial>auto</initial>
@@ -1509,16 +1624,16 @@
     <name>column-gap</name>
     <value>
     <choice>
-        <type>length</type>
-        <percentage/>
         <keyword>normal</keyword>
+        <type>length-percentage</type>
     </choice>
     </value>
     <initial>normal</initial>
-    <applyto>multicol elements</applyto>
+    <applyto>multi-column elements, flex containers</applyto>
     <inherit>no</inherit>
     <see><a href="/doc/styling/#columns">Columns</a></see>
-    <spec><a href="https://www.w3.org/TR/css3-multicol/#column-gap">CSS Multi-column Layout Module</a></spec>
+    <see><a href="/doc/styling/#flex-layout">Flex Layout</a></see>
+    <spec><a href="https://www.w3.org/TR/css-align-3/#column-row-gap">CSS Box Alignment Module Level 3</a></spec>
 </property>
 
 <property>
@@ -1670,6 +1785,7 @@
                     <type>page-policy</type>
                 </optional>
             </function>
+            <sequence>
             <repeat min="1">
                 <choice>
                     <string>string</string>
@@ -1719,7 +1835,7 @@
                             <keyword>space</keyword>
                         </choice>
                         <optional>
-                            <type class="ext">length</type> <!-- [0,∞] -->
+                            <type class="ext">min-width</type> <!-- [0,∞] -->
                         </optional>
                     </function>
                     <function name="string">
@@ -1738,35 +1854,72 @@
                             Should that variant be documented?
                             -->
                         <repeat min="0">
-                            <type>content</type>
+                            <type>text-content</type>
                         </repeat>
                     </function>
                     <function name="prince-glyph-index" class="ext">
-                        <type>number</type>
+                        <type>integer</type>
                     </function>
                     <function name="prince-expansion-text" class="ext">
                         <string>expansion</string>
                         <!-- (Actually, the first argument can be any single
                             textual content item, but the most common case
                             is either a string literal or attr().) -->
-                        <type>content</type>
+                        <type>text-content</type>
                     </function>
-                    <sequence>
-                        <function name="prince-fallback" class="ext">
-                            <type>url</type>
-                        </function>
-                        <optional>
-                            <text>,</text>
-                            <repeat min="1">
-                                <type>content</type>
-                            </repeat>
-                        </optional>
-                    </sequence>
                     <function name="element">
                         <ident>name</ident>
+                        <optional>
+                            <type>page-policy</type>
+                        </optional>
                     </function>
                 </choice>
             </repeat>
+            <optional>
+                <text>/</text>
+                <repeat min="1">
+                  <choice>
+                    <string>string</string>
+                    <function name="string">
+                        <ident>ident</ident>
+                        <optional>
+                            <type>page-policy</type>
+                        </optional>
+                    </function>
+                    <function name="counter">
+                        <ident>name</ident>
+                        <optional>
+                            <type>counter-style</type>
+                        </optional>
+                        <optional>
+                            <type>page-policy</type>
+                        </optional>
+                    </function>
+                    <function name="counters">
+                        <ident>name</ident>
+                        <string>separator</string>
+                        <optional>
+                            <type>counter-style</type>
+                        </optional>
+                        <optional>
+                            <type>page-policy</type>
+                        </optional>
+                    </function>
+                  </choice>
+                </repeat>
+            </optional>
+            </sequence>
+            <sequence>
+                <function name="prince-fallback" class="ext">
+                    <type>url</type>
+                </function>
+                <optional>
+                    <text>,</text>
+                    <repeat min="1">
+                        <type>content</type>
+                    </repeat>
+                </optional>
+            </sequence>
         </choice>
     </value>
     <initial>normal</initial>
@@ -1843,6 +1996,29 @@
 </property>
 
 <property>
+    <name>counter-set</name>
+    <value>
+	<choice>
+	    <keyword>none</keyword>
+	    <repeat min="1">
+		  <ident>name</ident>
+		  <optional><integer>number</integer></optional>
+	    </repeat>
+	</choice>
+    </value>
+    <initial>none</initial>
+    <applyto>all elements, @page at-rule</applyto>
+    <inherit>no</inherit>
+    <comments>
+	<p>
+	For information about the use of the <code>counter-set</code>
+	property see the documentation for <a href="/doc/gen-content/#counters-and-numbering">Counters and Numbering</a>.
+	</p>
+    </comments>
+    <spec><a href="https://www.w3.org/TR/css-lists-3/#propdef-counter-set">CSS Lists and Counters Module Level 3</a></spec>
+</property>
+
+<property>
     <name>direction</name>
     <value>
 	<choice>
@@ -1864,6 +2040,8 @@
 	    <keyword>block</keyword>
 	    <keyword>flex</keyword>
 	    <keyword>inline-flex</keyword>
+	    <keyword>grid</keyword>
+	    <keyword>inline-grid</keyword>
 	    <keyword>none</keyword>
 	    <keyword>list-item</keyword>
 	    <keyword>run-in</keyword>
@@ -1886,6 +2064,7 @@
     <see><a href="/doc/styling/#display">Display</a></see>
     <spec><a href="https://www.w3.org/TR/CSS2/visuren.html#display-prop">CSS 2.1</a></spec>
     <spec><a href="https://www.w3.org/TR/css-flexbox-1/#flex-containers">CSS Flexible Box Layout Module Level 1</a></spec>
+    <spec><a href="https://www.w3.org/TR/css-grid-1/#grid-containers">CSS Grid Layout Module Level 1</a></spec>
 </property>
 
 <property>
@@ -2103,6 +2282,7 @@
 	<prop>flex-shrink</prop>
 	<prop>flex-basis</prop>
     </shorthand>
+    <see><a href="/doc/styling/#flex-layout">Flex Layout</a></see>
     <spec><a href="https://www.w3.org/TR/css-flexbox-1/#flex-property">CSS Flexible Box Layout Module Level 1</a></spec>
 </property>
 
@@ -2118,6 +2298,7 @@
 	<initial>auto</initial>
     <applyto>flex containers</applyto>
 	<inherit>no</inherit>
+    <see><a href="/doc/styling/#flex-layout">Flex Layout</a></see>
     <spec><a href="https://www.w3.org/TR/css-flexbox-1/#flex-basis-property">CSS Flexible Box Layout Module Level 1</a></spec>
 </property>
 
@@ -2134,6 +2315,7 @@
 	<initial>row</initial>
     <applyto>flex containers</applyto>
 	<inherit>no</inherit>
+    <see><a href="/doc/styling/#flex-layout">Flex Layout</a></see>
     <spec><a href="https://www.w3.org/TR/css-flexbox-1/#flex-direction-property">CSS Flexible Box Layout Module Level 1</a></spec>
 </property>
 
@@ -2145,6 +2327,7 @@
 	<initial>0</initial>
     <applyto>flex items</applyto>
 	<inherit>no</inherit>
+    <see><a href="/doc/styling/#flex-layout">Flex Layout</a></see>
     <spec><a href="https://www.w3.org/TR/css-flexbox-1/#flex-grow-property">CSS Flexible Box Layout Module Level 1</a></spec>
 </property>
 
@@ -2156,6 +2339,7 @@
 	<initial>1</initial>
     <applyto>flex items</applyto>
 	<inherit>no</inherit>
+    <see><a href="/doc/styling/#flex-layout">Flex Layout</a></see>
     <spec><a href="https://www.w3.org/TR/css-flexbox-1/#flex-shrink-property">CSS Flexible Box Layout Module Level 1</a></spec>
 </property>
 
@@ -2171,6 +2355,7 @@
 	<initial>nowrap</initial>
     <applyto>flex containers</applyto>
 	<inherit>no</inherit>
+    <see><a href="/doc/styling/#flex-layout">Flex Layout</a></see>
     <spec><a href="https://www.w3.org/TR/css-flexbox-1/#flex-wrap-property">CSS Flexible Box Layout Module Level 1</a></spec>
 </property>
 
@@ -2189,6 +2374,7 @@
 	<prop>flex-direction</prop>
 	<prop>flex-wrap</prop>
     </shorthand>
+    <see><a href="/doc/styling/#flex-layout">Flex Layout</a></see>
     <spec><a href="https://www.w3.org/TR/css-flexbox-1/#flex-flow-property">CSS Flexible Box Layout Module Level 1</a></spec>
 </property>
 
@@ -2208,9 +2394,6 @@
         <prop>prince-float-reference</prop>
         <prop>prince-float-placement</prop>
         <prop>prince-float-modifier</prop>
-        <!-- XXX: Add prefix to each property here, in <value> and in the <ul>
-            below once the aliasings have been added.
-        -->
     </shorthand>
     <extension/>
     <see><a href="/doc/styling/#floats">Floats</a></see>
@@ -2261,10 +2444,6 @@
     <spec><a href="https://drafts.csswg.org/css-page-floats/">CSS Page Floats</a></spec>
     <aliastarget>prince-float</aliastarget>
 </property>
-
-<!-- todo: Document prince-float, which is prefixed because it's a shorthand for
-	prince-float-reference prince-float-placement prince-float-modifier.
-	-->
 
 <property>
     <name>float-defer-column</name>
@@ -2739,33 +2918,44 @@
     <name>font-stretch</name>
     <value>
 	<choice>
+	    <keyword>normal</keyword>
+        <percentage/>
 	    <keyword>ultra-condensed</keyword>
 	    <keyword>extra-condensed</keyword>
 	    <keyword>condensed</keyword>
 	    <keyword>semi-condensed</keyword>
-	    <keyword>normal</keyword>
 	    <keyword>semi-expanded</keyword>
 	    <keyword>expanded</keyword>
 	    <keyword>extra-expanded</keyword>
 	    <keyword>ultra-expanded</keyword>
-	    <keyword>wider</keyword>
-	    <keyword>narrower</keyword>
-	    <!-- Once we expand this to include percentage, remember to change
+	    <!-- Now that we expanded this to include percentage, we should change
 	        the syntax of 'font' not to ref this property's syntax.
 	        -->
 	</choice>
     </value>
     <initial>normal</initial>
-    <applyto>all elements, @font-face at-rule</applyto>
+    <applyto>all elements</applyto>
     <inherit>yes</inherit>
     <see><a href="/doc/styling/#text-formatting">Text formatting</a></see>
+    <see><a href="/doc/styling/#variable-fonts">Variable fonts</a></see>
     <comments>
 	<p>
 	The <code>font-stretch</code> property is not supported for system
 	fonts on Windows.
 	</p>
     </comments>
-    <spec><a href="https://www.w3.org/TR/css-fonts-3/#font-stretch-prop">CSS Fonts Module Level 3</a></spec>
+    <spec><a href="https://www.w3.org/TR/css-fonts-4/#propdef-font-width">CSS Fonts Module Level 4</a></spec>
+    <value2>
+    <choice>
+        <keyword>auto</keyword>
+        <repeat min="1" max="2">
+            <type>font-stretch</type>
+        </repeat>
+    </choice>
+    </value2>
+    <initial2>auto</initial2>
+    <applyto2>@font-face at-rule</applyto2>
+        <spec2><a href="https://www.w3.org/TR/css-fonts-4/#descdef-font-face-font-width">CSS Fonts Module Level 4</a></spec2>
 </property>
 
 <property>
@@ -2774,14 +2964,39 @@
 	<choice>
 	    <keyword>normal</keyword>
 	    <keyword>italic</keyword>
-	    <keyword>oblique</keyword>
+        <sequence>
+            <keyword>oblique</keyword>
+            <optional>
+                <type>angle</type>
+            </optional>
+        </sequence>
 	</choice>
     </value>
     <initial>normal</initial>
-    <applyto>all elements, @font-face at-rule</applyto>
+    <applyto>all elements</applyto>
     <inherit>yes</inherit>
     <see><a href="/doc/styling/#text-formatting">Text formatting</a></see>
+    <see><a href="/doc/styling/#variable-fonts">Variable fonts</a></see>
     <spec><a href="https://www.w3.org/TR/CSS2/fonts.html#propdef-font-style">CSS 2.1</a></spec>
+    <spec><a href="https://www.w3.org/TR/css-fonts-4/#propdef-font-style">CSS Fonts Module Level 4</a></spec>
+    <value2>
+	<choice>
+        <keyword>auto</keyword>
+	    <keyword>normal</keyword>
+	    <keyword>italic</keyword>
+        <sequence>
+            <keyword>oblique</keyword>
+            <optional>
+                <repeat min="1" max="2">
+                    <type>angle</type>
+                </repeat>
+            </optional>
+        </sequence>
+	</choice>
+    </value2>
+    <initial2>auto</initial2>
+    <applyto2>@font-face at-rule</applyto2>
+    <spec2><a href="https://www.w3.org/TR/css-fonts-4/#propdef-font-style">CSS Fonts Module Level 4</a></spec2>
 </property>
 
 <property>
@@ -2999,6 +3214,24 @@
 </property>
 
 <property>
+    <name>font-variation-settings</name>
+    <value>
+	<choice>
+	    <keyword>normal</keyword>
+        <repeat min="1" sep=",">
+            <type>opentype-tag</type>
+            <type>number</type>
+        </repeat>
+	</choice>
+    </value>
+    <initial>normal</initial>
+    <applyto>all elements and text, @font-face at-rule</applyto>
+    <inherit>yes</inherit>
+    <see><a href="/doc/styling/#variable-fonts">Variable fonts</a></see>
+    <spec><a href="https://www.w3.org/TR/css-fonts-4/#propdef-font-variation-settings">CSS Fonts Module Level 4</a></spec>
+</property>
+
+<property>
     <name>font-weight</name>
     <value>
 	<choice>
@@ -3011,11 +3244,27 @@
 	</choice>
     </value>
     <initial>normal</initial>
-    <applyto>all elements, @font-face at-rule</applyto>
+    <applyto>all elements</applyto>
     <inherit>yes</inherit>
     <see><a href="/doc/styling/#text-formatting">Text formatting</a></see>
+    <see><a href="/doc/styling/#variable-fonts">Variable fonts</a></see>
     <spec><a href="https://www.w3.org/TR/CSS2/fonts.html#propdef-font-weight">CSS 2.1</a></spec>
-    <spec><a href="https://www.w3.org/TR/css-fonts-4/#propdef-font-weight">css-text-4</a></spec>
+    <spec><a href="https://www.w3.org/TR/css-fonts-4/#propdef-font-weight">CSS Fonts Module Level 4</a></spec>
+    <value2>
+    <choice>
+        <keyword>auto</keyword>
+        <repeat min="1" max="2">
+            <choice>
+                <keyword>normal</keyword>
+                <keyword>bold</keyword>
+                <type>number</type>
+            </choice>
+        </repeat>
+    </choice>
+    </value2>
+    <initial2>auto</initial2>
+    <applyto2>@font-face at-rule</applyto2>
+    <spec2><a href="https://www.w3.org/TR/css-fonts-4/#descdef-font-face-font-weight">CSS Fonts Module Level 4</a></spec2>
 </property>
 
 <property>
@@ -3062,6 +3311,336 @@
 	property see the documentation for <a href="/doc/styling/#footnotes">Footnotes</a>.
 	</p>
     </comments>
+</property>
+
+<property>
+    <name>gap</name>
+    <value>
+        <ref>row-gap</ref>
+        <optional>
+            <ref>column-gap</ref>
+        </optional>
+    </value>
+    <initial>normal</initial>
+    <applyto>multi-column elements, flex containers</applyto>
+    <inherit>no</inherit>
+    <shorthand>
+	<prop>row-gap</prop>
+	<prop>column-gap</prop>
+    </shorthand>
+    <see><a href="/doc/styling/#columns">Columns</a></see>
+    <see><a href="/doc/styling/#flex-layout">Flex Layout</a></see>
+    <spec><a href="https://drafts.csswg.org/css-align/#gap-shorthand">CSS Box Alignment Module Level 3</a></spec>
+</property>
+
+<property>
+    <name>grid</name>
+    <value>
+      <choice>
+        <ref>grid-template</ref>
+        <sequence>
+          <ref>grid-template-rows</ref>
+          <text>/</text>
+          <reorderable>
+            <keyword>auto-flow</keyword>
+            <optional>
+              <keyword>dense</keyword>
+            </optional>
+          </reorderable>
+          <optional>
+            <ref>grid-auto-columns</ref>
+          </optional>
+        </sequence>
+        <sequence>
+          <reorderable>
+            <keyword>auto-flow</keyword>
+            <optional>
+              <keyword>dense</keyword>
+            </optional>
+          </reorderable>
+          <optional>
+            <ref>grid-auto-rows</ref>
+          </optional>
+          <text>/</text>
+          <ref>grid-template-columns</ref>
+        </sequence>
+      </choice>
+    </value>
+    <initial>none</initial>
+    <applyto>grid containers</applyto>
+    <inherit>no</inherit>
+    <see><a href="/doc/styling/#grid-layout">Grid Layout</a></see>
+    <spec><a href="https://www.w3.org/TR/css-grid-1/#grid-shorthand">CSS Grid Layout Module Level 1</a></spec>
+</property>
+
+<property>
+    <name>grid-auto-columns</name>
+    <value>
+      <repeat min="1">
+        <type>track-size</type>
+      </repeat>
+    </value>
+    <initial>auto</initial>
+    <applyto>grid containers</applyto>
+    <inherit>no</inherit>
+    <see><a href="/doc/styling/#grid-layout">Grid Layout</a></see>
+    <spec><a href="https://www.w3.org/TR/css-grid-1/#auto-tracks">CSS Grid Layout Module Level 1</a></spec>
+</property>
+
+<property>
+    <name>grid-auto-flow</name>
+    <value>
+      <multiple>
+        <choice>
+          <keyword>row</keyword>
+          <keyword>column</keyword>
+        </choice>
+        <keyword>dense</keyword>
+      </multiple>
+    </value>
+    <initial>row</initial>
+    <applyto>grid containers</applyto>
+    <inherit>no</inherit>
+    <see><a href="/doc/styling/#grid-layout">Grid Layout</a></see>
+    <spec><a href="https://www.w3.org/TR/css-grid-1/#grid-auto-flow-property">CSS Grid Layout Module Level 1</a></spec>
+</property>
+
+<property>
+    <name>grid-auto-rows</name>
+    <value>
+      <repeat min="1">
+        <type>track-size</type>
+      </repeat>
+    </value>
+    <initial>auto</initial>
+    <applyto>grid containers</applyto>
+    <inherit>no</inherit>
+    <see><a href="/doc/styling/#grid-layout">Grid Layout</a></see>
+    <spec><a href="https://www.w3.org/TR/css-grid-1/#auto-tracks">CSS Grid Layout Module Level 1</a></spec>
+</property>
+
+<property>
+    <name>grid-area</name>
+    <value>
+      <type>grid-line</type>
+      <repeat min="0" max="3">
+        <text>/</text>
+        <type>grid-line</type>
+      </repeat>
+    </value>
+    <initial>auto</initial>
+    <applyto>grid containers</applyto>
+    <inherit>no</inherit>
+    <see><a href="/doc/styling/#grid-layout">Grid Layout</a></see>
+    <spec><a href="https://www.w3.org/TR/css-grid-1/#placement-shorthands">CSS Grid Layout Module Level 1</a></spec>
+</property>
+
+<property>
+    <name>grid-column</name>
+    <value>
+      <type>grid-line</type>
+      <optional>
+        <text>/</text>
+        <type>grid-line</type>
+      </optional>
+    </value>
+    <initial>auto</initial>
+    <applyto>grid containers</applyto>
+    <inherit>no</inherit>
+    <see><a href="/doc/styling/#grid-layout">Grid Layout</a></see>
+    <spec><a href="https://www.w3.org/TR/css-grid-1/#placement-shorthands">CSS Grid Layout Module Level 1</a></spec>
+</property>
+
+<property>
+    <name>grid-column-end</name>
+    <value>
+      <type>grid-line</type>
+    </value>
+    <initial>auto</initial>
+    <applyto>grid containers</applyto>
+    <inherit>no</inherit>
+    <see><a href="/doc/styling/#grid-layout">Grid Layout</a></see>
+    <spec><a href="https://www.w3.org/TR/css-grid-1/#line-placement">CSS Grid Layout Module Level 1</a></spec>
+</property>
+
+<property>
+    <name>grid-column-start</name>
+    <value>
+      <type>grid-line</type>
+    </value>
+    <initial>auto</initial>
+    <applyto>grid containers</applyto>
+    <inherit>no</inherit>
+    <see><a href="/doc/styling/#grid-layout">Grid Layout</a></see>
+    <spec><a href="https://www.w3.org/TR/css-grid-1/#line-placement">CSS Grid Layout Module Level 1</a></spec>
+</property>
+
+<property>
+    <name>grid-row</name>
+    <value>
+      <type>grid-line</type>
+      <optional>
+        <text>/</text>
+        <type>grid-line</type>
+      </optional>
+    </value>
+    <initial>auto</initial>
+    <applyto>grid containers</applyto>
+    <inherit>no</inherit>
+    <see><a href="/doc/styling/#grid-layout">Grid Layout</a></see>
+    <spec><a href="https://www.w3.org/TR/css-grid-1/#placement-shorthands">CSS Grid Layout Module Level 1</a></spec>
+</property>
+
+<property>
+    <name>grid-row-end</name>
+    <value>
+      <type>grid-line</type>
+    </value>
+    <initial>auto</initial>
+    <applyto>grid containers</applyto>
+    <inherit>no</inherit>
+    <see><a href="/doc/styling/#grid-layout">Grid Layout</a></see>
+    <spec><a href="https://www.w3.org/TR/css-grid-1/#line-placement">CSS Grid Layout Module Level 1</a></spec>
+</property>
+
+<property>
+    <name>grid-row-start</name>
+    <value>
+      <type>grid-line</type>
+    </value>
+    <initial>auto</initial>
+    <applyto>grid containers</applyto>
+    <inherit>no</inherit>
+    <see><a href="/doc/styling/#grid-layout">Grid Layout</a></see>
+    <spec><a href="https://www.w3.org/TR/css-grid-1/#line-placement">CSS Grid Layout Module Level 1</a></spec>
+</property>
+
+<property>
+    <name>grid-template</name>
+    <value>
+      <choice>
+        <keyword>none</keyword>
+        <sequence>
+          <ref>grid-template-rows</ref>
+          <text>/</text>
+          <ref>grid-template-columns</ref>
+        </sequence>
+        <repeat min="1">
+          <optional>
+            <ident>line-names</ident>
+          </optional>
+          <string>string</string>
+          <optional>
+            <type>track-size</type>
+          </optional>
+          <optional>
+            <ident>line-names</ident>
+          </optional>
+        </repeat>
+      </choice>
+      <optional>
+        <text>/</text>
+        <type>explicit-track-list</type>
+      </optional>
+    </value>
+    <initial>none</initial>
+    <applyto>grid containers</applyto>
+    <inherit>no</inherit>
+    <see><a href="/doc/styling/#grid-layout">Grid Layout</a></see>
+    <spec><a href="https://www.w3.org/TR/css-grid-1/#grid-template-areas-property">CSS Grid Layout Module Level 1</a></spec>
+</property>
+
+<property>
+    <name>grid-template-areas</name>
+    <value>
+      <choice>
+        <keyword>none</keyword>
+        <repeat min="1">
+          <string>string</string>
+        </repeat>
+      </choice>
+    </value>
+    <initial>none</initial>
+    <applyto>grid containers</applyto>
+    <inherit>no</inherit>
+    <see><a href="/doc/styling/#grid-layout">Grid Layout</a></see>
+    <spec><a href="https://www.w3.org/TR/css-grid-1/#grid-template-areas-property">CSS Grid Layout Module Level 1</a></spec>
+</property>
+
+<property>
+    <name>grid-template-columns</name>
+    <value>
+      <choice>
+        <keyword>none</keyword>
+        <type>track-list</type>
+      </choice>
+    </value>
+    <initial>none</initial>
+    <applyto>grid containers</applyto>
+    <inherit>no</inherit>
+    <see><a href="/doc/styling/#grid-layout">Grid Layout</a></see>
+    <comments>
+    <p>
+    The simple grammar given above should be read with the following definitions:
+    </p>
+    <p>
+    <code>   &lt;<i>track-list</i>&gt; = [ &lt;<i>line-names</i>&gt;? [ &lt;<i>track-size</i>&gt; | &lt;<i>track-repeat</i>&gt; ]]+ &lt;<i>line-names</i>&gt;?
+    &lt;<i>track-repeat</i>&gt; = repeat([ &lt;<i>integer</i>[1,∞]&gt; | auto-fill ], &lt;<i>track-list</i>&gt;)
+    &lt;<i>track-size</i>&gt; = &lt;<i>track-breadth</i>&gt; | minmax(&lt;<i>track-breadth</i>&gt;, &lt;<i>track-breadth</i>&gt;)
+    &lt;<i>track-breadth</i>&gt; = &lt;<i>length-percentage</i>&gt; | &lt;<i>flex</i>&gt; | min-content | max-content | auto</code>
+    </p>
+    <p>
+    The following restrictions apply:
+    </p>
+    <ul>
+    <li>the <code>repeat()</code> function can't be nested;</li>
+    <li>you can have at most one <code>auto-fill</code>;</li>
+    <li>if you use <code>auto-fill</code> then all track sizes have to be fixed, i.e. not intrinsic or flexible;</li>
+    <li>the left argument of the <code>minmax()</code> function cannott be a <code>&lt;<i>flex</i>&gt;</code>.</li>
+    </ul>
+    <p>
+    For further details, and a more formal grammar, please consult the <a href="https://www.w3.org/TR/css-grid-1/#track-sizing">CSS Grid Layout Module Level 1</a> specification.
+    </p>
+    </comments>
+    <spec><a href="https://www.w3.org/TR/css-grid-1/#track-sizing">CSS Grid Layout Module Level 1</a></spec>
+</property>
+
+<property>
+    <name>grid-template-rows</name>
+    <value>
+      <choice>
+        <keyword>none</keyword>
+        <type>track-list</type>
+      </choice>
+    </value>
+    <initial>none</initial>
+    <applyto>grid containers</applyto>
+    <inherit>no</inherit>
+    <see><a href="/doc/styling/#grid-layout">Grid Layout</a></see>
+    <comments>
+    <p>
+    The simple grammar given above should be read with the following definitions:
+    </p>
+    <p>
+    <code>   &lt;<i>track-list</i>&gt; = [ &lt;<i>line-names</i>&gt;? [ &lt;<i>track-size</i>&gt; | &lt;<i>track-repeat</i>&gt; ]]+ &lt;<i>line-names</i>&gt;?
+    &lt;<i>track-repeat</i>&gt; = repeat([ &lt;<i>integer</i>[1,∞]&gt; | auto-fill ], &lt;<i>track-list</i>&gt;)
+    &lt;<i>track-size</i>&gt; = &lt;<i>track-breadth</i>&gt; | minmax(&lt;<i>track-breadth</i>&gt;, &lt;<i>track-breadth</i>&gt;)
+    &lt;<i>track-breadth</i>&gt; = &lt;<i>length-percentage</i>&gt; | &lt;<i>flex</i>&gt; | min-content | max-content | auto</code>
+    </p>
+    <p>
+    The following restrictions apply:
+    </p>
+    <ul>
+    <li>the <code>repeat()</code> function can't be nested;</li>
+    <li>you can have at most one <code>auto-fill</code>;</li>
+    <li>if you use <code>auto-fill</code> then all track sizes have to be fixed, i.e. not intrinsic or flexible;</li>
+    <li>the left argument of the <code>minmax()</code> function cannott be a <code>&lt;<i>flex</i>&gt;</code>.</li>
+    </ul>
+    <p>
+    For further details, and a more formal grammar, please consult the <a href="https://www.w3.org/TR/css-grid-1/#track-sizing">CSS Grid Layout Module Level 1</a> specification.
+    </p>
+    </comments>
+    <spec><a href="https://www.w3.org/TR/css-grid-1/#track-sizing">CSS Grid Layout Module Level 1</a></spec>
 </property>
 
 <property>
@@ -3173,6 +3752,30 @@
 </property>
 
 <property>
+    <name>inset</name>
+    <value>
+	<repeat min="1" max="4">
+        <ref>top</ref>
+	</repeat>
+    </value>
+    <initial>auto</initial>
+    <applyto>positioned elements</applyto>
+    <inherit>no</inherit>
+    <shorthand>
+        <prop>top</prop>
+        <prop>right</prop>
+        <prop>bottom</prop>
+        <prop>left</prop>
+    </shorthand>
+    <comments>
+	<p>
+	This property has the same multi-value syntax of the <code><property name="margin"/></code> shorthand.
+	</p>
+    </comments>
+    <spec><a href="https://www.w3.org/TR/css-logical-1/#propdef-inset">CSS Logical Properties and Values Level 1</a></spec>
+</property>
+
+<property>
     <name>inset-inside</name>
     <value>
 	<choice>
@@ -3220,6 +3823,11 @@
 	<name>justify-content</name>
 	<value>
 	  <choice>
+	    <keyword>normal</keyword>
+	    <keyword>start</keyword>
+	    <keyword>end</keyword>
+	    <keyword>self-start</keyword>
+	    <keyword>self-end</keyword>
 	    <keyword>flex-start</keyword>
 	    <keyword>flex-end</keyword>
 	    <keyword>center</keyword>
@@ -3227,19 +3835,99 @@
 	    <keyword>space-around</keyword>
 	  </choice>
 	</value>
-	<initial>flex-start</initial>
+	<initial>normal</initial>
     <applyto>flex containers</applyto>
 	<inherit>no</inherit>
-    <spec><a href="https://www.w3.org/TR/css-flexbox-1/#justify-content-property">CSS Flexible Box Layout Module Level 1</a></spec>
+    <see><a href="/doc/styling/#flex-layout">Flex Layout</a></see>
+    <see><a href="/doc/styling/#grid-layout">Grid Layout</a></see>
+    <spec><a href="https://www.w3.org/TR/css-align-3/#align-justify-content">CSS Box Alignment Module Level 3</a></spec>
 </property>
 
-<!-- XXX: Consider documenting 'inset-inside' & 'inset-outside', which are like
-    'margin-inside/-outside' for 'left' & 'right': i.e. 'auto' means use 'left'
-    or 'right' as appropriate, or if length-percentage then behave as if 'left'
-    or 'right' had the given length-percentage.
+<property>
+	<name>justify-items</name>
+	<value>
+	  <choice>
+	    <keyword>normal</keyword>
+	    <keyword>stretch</keyword>
+	    <keyword>baseline</keyword>
+	    <keyword>first</keyword>
+	    <keyword>last</keyword>
+        <sequence>
+          <optional>
+            <choice>
+              <keyword>safe</keyword>
+              <keyword>unsafe</keyword>
+            </choice>
+          </optional>
+          <choice>
+            <keyword>center</keyword>
+            <keyword>end</keyword>
+            <keyword>flex-end</keyword>
+            <keyword>flex-start</keyword>
+            <keyword>self-end</keyword>
+            <keyword>self-start</keyword>
+            <keyword>start</keyword>
+            <keyword>left</keyword>
+            <keyword>right</keyword>
+          </choice>
+        </sequence>
+        <keyword>legacy</keyword>
+        <reorderable>
+          <keyword>legacy</keyword>
+          <choice>
+            <keyword>left</keyword>
+            <keyword>right</keyword>
+            <keyword>center</keyword>
+          </choice>
+        </reorderable>
+	  </choice>
+	</value>
+	<initial>legacy</initial>
+    <applyto>flex containers</applyto>
+	<inherit>no</inherit>
+    <see><a href="/doc/styling/#flex-layout">Flex Layout</a></see>
+    <see><a href="/doc/styling/#grid-layout">Grid Layout</a></see>
+    <spec><a href="https://www.w3.org/TR/css-align-3/#justify-items-property">CSS Box Alignment Module Level 3</a></spec>
+</property>
 
-    (The name "inset" matches the choice for the css-logical-props names.)
-    -->
+<property>
+	<name>justify-self</name>
+	<value>
+	  <choice>
+	    <keyword>auto</keyword>
+	    <keyword>normal</keyword>
+	    <keyword>stretch</keyword>
+	    <keyword>baseline</keyword>
+	    <keyword>first</keyword>
+	    <keyword>last</keyword>
+        <sequence>
+          <optional>
+            <choice>
+              <keyword>safe</keyword>
+              <keyword>unsafe</keyword>
+            </choice>
+          </optional>
+          <choice>
+            <keyword>center</keyword>
+            <keyword>end</keyword>
+            <keyword>flex-end</keyword>
+            <keyword>flex-start</keyword>
+            <keyword>self-end</keyword>
+            <keyword>self-start</keyword>
+            <keyword>start</keyword>
+            <keyword>left</keyword>
+            <keyword>right</keyword>
+          </choice>
+        </sequence>
+	  </choice>
+	</value>
+	<initial>normal</initial>
+    <applyto>flex containers</applyto>
+	<inherit>no</inherit>
+    <see><a href="/doc/styling/#flex-layout">Flex Layout</a></see>
+    <see><a href="/doc/styling/#grid-layout">Grid Layout</a></see>
+    <spec><a href="https://www.w3.org/TR/css-align-3/#justify-self-property">CSS Box Alignment Module Level 3</a></spec>
+</property>
 
 <property>
     <name>left</name>
@@ -3295,6 +3983,11 @@
 
 <property>
     <name>line-stacking-strategy</name>
+    <alias>prince-line-stacking-strategy</alias>
+</property>
+
+<property>
+    <name>prince-line-stacking-strategy</name>
     <value>
 	<choice>
 	    <keyword>inline-line-height</keyword>
@@ -3500,12 +4193,10 @@
     <applyto>all elements, except elements with table display types other than table-caption, table and inline-table</applyto>
     <inherit>no</inherit>
     <shorthand>
-	<prop>margin-bottom</prop>
-	<prop>margin-inside</prop>
-	<prop>margin-left</prop>
-	<prop>margin-outside</prop>
-	<prop>margin-right</prop>
 	<prop>margin-top</prop>
+	<prop>margin-right</prop>
+	<prop>margin-bottom</prop>
+	<prop>margin-left</prop>
     </shorthand>
     <see><a href="/doc/styling/#margin">Margin</a></see>
     <spec><a href="https://www.w3.org/TR/CSS2/box.html#margin-properties">CSS 2.1</a></spec>
@@ -3550,7 +4241,7 @@
     </p>
 
     <p>
-    Unlike the margin property, it does not take percentage values.
+    Unlike the <code>margin</code> property, it does not take percentage values.
     </p>
     </comments>
     <aliastarget>prince-margin-alt</aliastarget>
@@ -3986,18 +4677,33 @@
 	  <type>integer</type>
 	</value>
 	<initial>0</initial>
-    <applyto>flex items and absolutely-positioned children of flex containers</applyto>
+    <applyto>flex items and absolutely-positioned children of flex containers, grid items</applyto>
 	<inherit>no</inherit>
+    <see><a href="/doc/styling/#flex-layout">Flex Layout</a></see>
     <spec><a href="https://www.w3.org/TR/css-flexbox-1/#order-property">CSS Flexible Box Layout Module Level 1</a></spec>
+    <spec><a href="https://www.w3.org/TR/css-grid-1/#order-property">CSS Grid Layout Module Level 1</a></spec>
 </property>
 
 <property>
     <name>orphans</name>
     <value>
-	<type>integer</type>
+    <choice>
+        <sequence>
+            <type>integer</type>
+            <optional>
+                <text>,</text>
+                <keyword class="ext">-prince-prefer</keyword>
+                <type class="ext">integer</type>
+            </optional>
+        </sequence>
+        <sequence>
+            <keyword class="ext">-prince-prefer</keyword>
+            <type class="ext">integer</type>
+        </sequence>
+    </choice>
     </value>
     <initial>1</initial>
-    <applyto>block container elements</applyto>
+    <applyto>“paragraphs”: block container boxes that establish an inline formatting context</applyto>
     <inherit>yes</inherit>
     <see><a href="/doc/paged/#widows-and-orphans">Widows and orphans</a></see>
     <see><code><property name="widows"/></code></see>
@@ -4007,13 +4713,104 @@
 	determines the minimum number of lines that must be left at the bottom
 	of the first page or column.
 	</p>
-
+    <p class="note">
+    The initial value has been changed from <code>2</code> to <code>1</code>.
+    </p>
     <p>
-    Please note that the initial value has been changed from <code>2</code> to <code>1</code>.
+    In Prince for Books the property can take a second, optional, comma-separated
+    value expressed with the additional keyword <i>-prince-prefer</i>. It is
+    useful in case the <em>preference</em>, expressed with the additional
+    keyword, is a bigger amount than the hard <em>requirement</em> expressed
+    in the first value.
     </p>
     </comments>
     <spec><a href="https://www.w3.org/TR/CSS2/page.html#break-inside">CSS 2.1</a></spec>
     <spec><a href="https://www.w3.org/TR/css-break-3/#widows-orphans">CSS Fragmentation Module Level 3</a></spec>
+</property>
+
+<property>
+    <name>outline</name>
+    <value>
+    <multiple>
+      <ref>outline-color</ref>
+      <ref>outline-style</ref>
+      <ref>outline-width</ref>
+    </multiple>
+    </value>
+    <initial>see individual properties</initial>
+    <applyto>all elements</applyto>
+    <inherit>no</inherit>
+    <shorthand>
+      <prop>outline-color</prop>
+      <prop>outline-style</prop>
+      <prop>outline-width</prop>
+    </shorthand>
+    <spec><a href="https://www.w3.org/TR/css-ui-4/#outline">CSS Basic User Interface Module Level 4</a></spec>
+</property>
+
+<property>
+    <name>outline-color</name>
+    <value>
+    <choice>
+      <type>color</type>
+      <keyword>invert</keyword>
+    </choice>
+    </value>
+    <initial>invert</initial>
+    <applyto>all elements</applyto>
+    <inherit>no</inherit>
+    <spec><a href="https://www.w3.org/TR/css-ui-4/#outline-color">CSS Basic User Interface Module Level 4</a></spec>
+</property>
+
+<property>
+    <name>outline-offset</name>
+    <value>
+      <type>length</type>
+    </value>
+    <initial>0</initial>
+    <applyto>all elements</applyto>
+    <inherit>no</inherit>
+    <spec><a href="https://www.w3.org/TR/css-ui-4/#outline-offset">CSS Basic User Interface Module Level 4</a></spec>
+</property>
+
+<property>
+    <name>outline-style</name>
+    <value>
+    <choice>
+      <keyword>none</keyword>
+      <keyword>auto</keyword>
+      <keyword>dotted</keyword>
+      <keyword>dashed</keyword>
+      <keyword>solid</keyword>
+      <keyword>double</keyword>
+      <keyword>groove</keyword>
+      <keyword>ridge</keyword>
+      <keyword>inset</keyword>
+      <keyword>outset</keyword>
+    </choice>
+    </value>
+    <initial>none</initial>
+    <applyto>all elements</applyto>
+    <inherit>no</inherit>
+    <spec><a href="https://www.w3.org/TR/css-ui-4/#outline-style">CSS Basic User Interface Module Level 4</a></spec>
+</property>
+
+<property>
+    <name>outline-width</name>
+    <value>
+    <choice>
+      <repeat min="0">
+        <type>length</type>
+      </repeat>
+      <keyword>thin</keyword>
+      <keyword>medium</keyword>
+      <keyword>thick</keyword>
+    </choice>
+    </value>
+    <initial>medium</initial>
+    <applyto>all elements</applyto>
+    <inherit>no</inherit>
+    <spec><a href="https://www.w3.org/TR/css-ui-4/#outline-width">CSS Basic User Interface Module Level 4</a></spec>
 </property>
 
 <property>
@@ -4194,6 +4991,26 @@ supplier, item { overflow-wrap: normal; }
 	should be placed on. See the documentation for <a href="/doc/paged/#selecting-pages">Selecting pages</a>
 	for more details.
 	</p>
+
+        <p>
+        For an integer not preceded by <code>-prince-prefer</code>,
+        the paragraph will be pushed forward to the start of a new page or column
+        if necessary to ensure the given number of lines are together.
+        </p>
+
+        <p>
+        Values involving <code>-prince-prefer</code> are only accepted by
+        <a href="/doc/prince-for-books/">Prince for Books</a>.
+        An integer preceded by <code>-prince-prefer</code>
+        is a request that Prince for Books will try to satisfy,
+        but not at the cost of introducing an obvious gap at the end of the
+        previous column or page:
+        it will only use whatever flexibility has been granted with
+        <code><property name="prince-change-line-breaks-for-pagination"/></code>,
+        <code><property name="prince-spread-length-options"/></code>
+        or
+        <code><property name="prince-resize-options"/></code>.
+        </p>
     </comments>
     <spec><a href="https://www.w3.org/TR/css3-page/#using-named-pages">CSS Paged Media Module Level 3</a></spec>
 </property>
@@ -4219,11 +5036,16 @@ supplier, item { overflow-wrap: normal; }
     <comments>
     <p>
     This property can be used to force or suppress page breaks after an
-    element.  Prince expands the property with the values <code>verso</code> and
-    <code>recto</code>.
+    element.
     </p>
+    <!-- [More specifically, css-break-3 defines page-break-before/after/inside
+        to be "legacy shorthands".  Below I'm intentionally using css-cascade-4
+        language that *use* of the property is deprecated rather than saying
+        that the property itself is deprecated: i.e. with less implication that
+        the property is expected to be removed any time soon.]
+        -->
     <p class="note">
-    This property is deprecated.  Use the property <code><property name="break-after"/></code>
+    Use of this property is deprecated.  Use the property <code><property name="break-after"/></code>
     instead.  See the documentation for <a href="/doc/paged/#page-breaks">Page breaks</a> for more details.
     </p>
     </comments>
@@ -4255,7 +5077,7 @@ supplier, item { overflow-wrap: normal; }
     <code>recto</code>.
     </p>
     <p class="note">
-    This property is deprecated.  Use the property <code><property name="break-before"/></code>
+    Use of this property is deprecated.  Use the property <code><property name="break-before"/></code>
     instead.  See the documentation for <a href="/doc/paged/#page-breaks">Page breaks</a> for more details.
     </p>
     </comments>
@@ -4281,7 +5103,7 @@ supplier, item { overflow-wrap: normal; }
     element.
     </p>
     <p class="note">
-    This property is deprecated.  Use the property <code><property name="break-inside"/></code>
+    Use of this property is deprecated.  Use the property <code><property name="break-inside"/></code>
     instead.  See the documentation for <a href="/doc/paged/#page-breaks">Page breaks</a> for more details.
     </p>
     </comments>
@@ -4291,6 +5113,25 @@ supplier, item { overflow-wrap: normal; }
 <property>
     <name>page-group</name>
     <alias>prince-page-group</alias>
+</property>
+
+<property>
+    <name>place-content</name>
+    <value>
+        <ref>align-content</ref>
+        <optional>
+            <ref>justify-content</ref>
+        </optional>
+    </value>
+    <initial>normal</initial>
+    <applyto>flex containers</applyto>
+    <inherit>no</inherit>
+    <shorthand>
+	<prop>align-content</prop>
+	<prop>justify-content</prop>
+    </shorthand>
+    <see><a href="/doc/styling/#flex-layout">Flex Layout</a></see>
+    <spec><a href="https://www.w3.org/TR/css-align-3/#place-content">CSS Box Alignment Module Level 3</a></spec>
 </property>
 
 <property>
@@ -4384,6 +5225,43 @@ supplier, item { overflow-wrap: normal; }
     </p>
     </comments>
     <aliastarget>background-image-resolution</aliastarget>
+</property>
+
+<property>
+    <name>prince-baseline-grid</name>
+    <value>
+        <choice>
+            <keyword>auto</keyword>
+            <keyword>new</keyword>
+            <keyword>none</keyword>
+        </choice>
+    </value>
+    <initial>auto</initial>
+    <applyto>block-level boxes</applyto>
+    <inherit>no</inherit>
+    <extension/>
+    <comments>
+    <p>Prince does not yet support constraining an element’s baselines to lie on a grid.
+    In the meantime, this property suffices for common cases:
+    if its value is <code>none</code>
+    then space is added around the box to make its border box occupy
+    a whole number of grid lines.</p>
+
+    <p>The grid line spacing is established by the closest ancestor
+    whose <code>-prince-baseline-grid</code> is <code>new</code>.</p>
+
+    <p>Space is added at the place indicated by <code><property name="prince-resize-adjust"/></code>.</p>
+
+    <p>Note that the value <code>none</code> currently forces the box to
+    “establish a new formatting context”: i.e. its margins will not collapse with
+    the margins of its children, even if it has no borders and padding.</p>
+
+    <p>The usual way that this property would be used is
+    to set it to <code>new</code> on the root element,
+    and to set it to <code>none</code> on headings, blockquotes and tables.</p>
+
+    <p>This property only applies to <a href="/doc/prince-for-books/">Prince for Books</a>.</p>
+    </comments>
 </property>
 
 <property>
@@ -4528,6 +5406,40 @@ supplier, item { overflow-wrap: normal; }
 </property>
 
 <property>
+    <name>prince-change-line-breaks-for-pagination</name>
+    <value>
+        <choice>
+            <keyword>no</keyword>
+            <keyword>yes</keyword>
+        </choice>
+    </value>
+    <initial>no</initial>
+    <applyto>paragraphs: block containers that establish an inline formatting context</applyto>
+    <inherit>yes</inherit>
+    <extension/>
+    <example>:root {
+    -prince-change-line-breaks-for-pagination: yes;
+}</example>
+    <comments>
+        <p>
+        With the initial value of ‘<code>no</code>’, the paragraph’s line breaks
+        are the “galley layout”: chosen without concern for avoiding undesirable
+        page breaks.
+        </p>
+
+        <p>
+        If set to ‘<code>yes</code>’, the line breaks can be affected by pagination
+        considerations, such as avoiding hyphenating a word across a page turn,
+        or changing the number of lines occupied by the paragraph in order to
+        avoid a later undesirable page break without leaving an obvious gap
+        at the end of a page.
+        </p>
+
+        <p>This property only applies to <a href="/doc/prince-for-books/">Prince for Books</a>.</p>
+    </comments>
+</property>
+
+<property>
     <name>prince-expansion-text</name>
     <value>
 	<choice>
@@ -4598,13 +5510,14 @@ supplier, item { overflow-wrap: normal; }
     <see><a href="/doc/graphics/#filters">Filters</a></see>
     <comments>
     <p>
-    This property is used to specify the resolution used when
-    rasterizing to images for applying CSS and SVG filters.
+    As a property, <code>-prince-filter-resolution</code> can be
+    applied to all elements and is used to specify the resolution
+    used when rasterizing to images for applying CSS and SVG filters.
     </p>
 
-    <p>If ‘<code>auto</code>’ then the value is either that given by the
-    <code>--raster-dpi</code> command-line option or the
-    <code>prince-filter-resolution</code> descriptor of
+    <p>If the value <code>auto</code> is specified, then the value
+    is either that given by the <code>--raster-dpi</code> command-line
+    option, or the <code>-prince-filter-resolution</code> descriptor of
     <code>@prince-pdf</code> (see below).
     </p>
     </comments>
@@ -4616,10 +5529,11 @@ supplier, item { overflow-wrap: normal; }
     <inherit2>n/a</inherit2>
     <see2><a href="/doc/graphics/#filters">Filters</a></see2>
     <comments2>
-    <p>This descriptor provides a default resolution to be used for
-    rasterizing to images for applying CSS and SVG filters,
-    for elements whose <code><property name="prince-filter-resolution"/></code>
-    property has its initial ‘<code>auto</code>’ value.
+    <p>
+    As a descriptor in a <code>@prince-pdf</code> at-rule, <code>-prince-filter-resolution</code>
+    provides a default resolution to be used for rasterizing to images for applying CSS and SVG
+    filters, for elements whose <code><property name="prince-filter-resolution"/></code>
+    property has its initial <code>auto</code> value.
     </p>
     </comments2>
 </property>
@@ -4763,7 +5677,7 @@ supplier, item { overflow-wrap: normal; }
 	where lines ended by <code>-prince-forced-breaks:full</code> are subject to
 	justification like most other lines.</p>
 
-	<p>(Limitation: At the time of writing, this property only affects justified text.)</p>
+	<p class="note">At the time of writing, this property only affects justified text.</p>
 
     <p>This property only applies to <a href="/doc/prince-for-books/">Prince for Books</a>.</p>
     </comments>
@@ -4788,7 +5702,7 @@ supplier, item { overflow-wrap: normal; }
     selected automatically, based on the current language.
     </p>
     <p>
-    The <code>url()</code> argument can take local paths or remote HTTP URLs as argument.
+    The <code>url()</code> argument can take local paths, remote HTTP or HTTPS URLs, or <code>data:</code> URIs as argument.
     </p>
     </comments>
     <aliastarget>hyphenate-patterns</aliastarget>
@@ -4930,12 +5844,12 @@ supplier, item { overflow-wrap: normal; }
     embedded in the PDF file.
     </p>
     <p>
-    When <code>recompress-jpeg(quality%)</code> is specified for this property, Prince
+    When <code>recompress-jpeg( &lt;<i>quality%</i>&gt; )</code> is specified for this property, Prince
     will recompress JPEG images to the specified percentage to save space when
     embedding them in the PDF output.
     </p>
     <p>
-    The <code>convert-to-jpeg</code> keyword or the <code>convert-to-jpeg(quality%)</code>
+    The <code>convert-to-jpeg</code> keyword or the <code>convert-to-jpeg( &lt;<i>quality%</i>&gt; )</code>
     function convert non-JPEG images to JPEG, so that they take less space (but may look blurry).
     </p>
     <p class="note">
@@ -5005,6 +5919,9 @@ supplier, item { overflow-wrap: normal; }
     This property helps defining the language in cases where the attributes cannot
     be applied, such as in the case of CSS generated content.
 	</p>
+    <p>
+    The property also specifies an element's language for tagged PDF.
+    </p>
     <p>
     In case of conflict between the attributes and the property, the CSS property prevails.
     </p>
@@ -5141,7 +6058,17 @@ supplier, item { overflow-wrap: normal; }
 	<choice>
 	    <keyword>none</keyword>
 	    <url>target-url</url>
-	    <attr>target-attr</attr>
+        <function name="attr">
+          <sequence>
+            <ident>attr-name</ident>
+            <optional>
+              <type>attr-type</type>
+            </optional>
+          </sequence>
+          <optional>
+            <type>fallback</type>
+          </optional>
+        </function>
 	</choice>
     </value>
     <initial>none</initial>
@@ -5235,6 +6162,8 @@ supplier, item { overflow-wrap: normal; }
     </comments>
 </property>
 
+<!-- fixme: Add min-start-length & min-end-length once they've been included in a release. -->
+
 <property>
     <name>prince-n-lines</name>
     <value>
@@ -5324,7 +6253,7 @@ supplier, item { overflow-wrap: normal; }
 	    viewed with facing pages.
 	    -->
 
-	<p>‘<code>prefer-fill</code>’ means to ignore the length of the facing
+	<p>The value <code>prefer-fill</code> means to ignore the length of the facing
 	page.  Pages can still be under-full in order to satisfy pagination
 	constraints such as
 	<code><property name="widows"/></code>,
@@ -5335,7 +6264,7 @@ supplier, item { overflow-wrap: normal; }
 	possibly resulting in one page being longer than its facing page.
 	</p>
 
-	<p>With ‘<code>prefer-balance</code>’, Prince will sometimes end a page
+	<p>With <code>prefer-balance</code>, Prince will sometimes end a page
 	one line shorter than usual, if this is needed to make the two pages be
 	approximately balanced.
 	</p>
@@ -5360,7 +6289,7 @@ supplier, item { overflow-wrap: normal; }
     <comments>
 	<p>
 	This property determines whether the first page of this element
-	matches the :first page class selector.
+	matches the <code>:first-of-group</code> page class selector.
 	</p>
     </comments>
     <aliastarget>page-group</aliastarget>
@@ -5600,6 +6529,7 @@ supplier, item { overflow-wrap: normal; }
         <choice>
             <keyword>auto</keyword>
             <keyword>none</keyword>
+            <keyword>cmyk-grayscale</keyword>
         </choice>
     </value>
     <initial>auto</initial>
@@ -5614,6 +6544,11 @@ supplier, item { overflow-wrap: normal; }
     can be used to prevent color conversion for individual elements if the
     document itself is converted.
     </p>
+    <p>
+    The keyword <code>cmyk-grayscale</code> converts color to grayscale, but
+    leaves the resulting colors still in the CMYK colorpsace - just using
+    the "K" black channel.
+    </p>
     <p class="note">
     The same property, used as a descriptor in the <code>@prince-pdf</code>
     at-rule, has a different syntax - see <a href="#prop-prince-pdf-color-conversion-syntax2">below</a>.
@@ -5622,30 +6557,42 @@ supplier, item { overflow-wrap: normal; }
 
     <value2>
         <choice>
+          <group>
             <keyword>none</keyword>
+          </group>
+          <group>
             <sequence>
-                <choice>
-                    <keyword>output-intent</keyword>
-                    <keyword class="dep">full</keyword>
-                    <sequence>
-                        <url>color-profile</url>
-                        <optional>
-                            <keyword>no-embed</keyword>
-                        </optional>
-                    </sequence>
-                </choice>
-                <optional>
-                    <choice>
-                        <keyword>absolute-colorimetric</keyword>
-                        <keyword>relative-colorimetric</keyword>
-                        <keyword>relative-colorimetric-bpc</keyword>
-                        <keyword>perceptual</keyword>
-                        <keyword>perceptual-bpc</keyword>
-                        <keyword>saturation</keyword>
-                        <keyword>saturation-bpc</keyword>
-                    </choice>
-                </optional>
+              <keyword>output-intent</keyword>
+              <optional>
+                <multiple>
+                  <optional>
+                    <type>rendering-intent</type>
+                  </optional>
+                  <optional>
+                    <keyword>cmyk-grayscale</keyword>
+                  </optional>
+                </multiple>
+              </optional>
             </sequence>
+          </group>
+          <group>
+            <sequence>
+              <url>color-profile</url>
+              <optional>
+                <multiple>
+                  <optional>
+                    <type>rendering-intent</type>
+                  </optional>
+                  <optional>
+                    <keyword>cmyk-grayscale</keyword>
+                  </optional>
+                  <optional>
+                    <keyword>no-embed</keyword>
+                  </optional>
+                </multiple>
+              </optional>
+            </sequence>
+          </group>
         </choice>
     </value2>
     <initial2>output-intent</initial2>
@@ -5661,24 +6608,35 @@ supplier, item { overflow-wrap: normal; }
     color profile of choice.
     </p>
     <p>
+    The <code>rendering-intent</code> resolves to either one of:
+    </p>
+    <ul>
+      <li><code>absolute-colorimetric</code></li>
+      <li><code>relative-colorimetric</code></li>
+      <li><code>relative-colorimetric-bpc</code></li>
+      <li><code>perceptual</code></li>
+      <li><code>perceptual-bpc</code></li>
+      <li><code>saturation</code></li>
+      <li><code>saturation-bpc</code></li>
+    </ul>
+    <p>
     When used with the default value <code>output-intent</code>, it functions
     like the
     <a href="/doc/command-line/#cl-convert-colors"><code>--convert-colors</code></a>
     command-line option - the colors are converted to the output intent color profile.
     </p>
-    <p class="note">
-    The value <code>full</code> is a deprecated synonym for <code>output-intent</code>.
+    <p>
+    The keyword <code>cmyk-grayscale</code> converts color to grayscale, but
+    leaves the resulting colors still in the CMYK colorpsace - just using
+    the "K" black channel.
     </p>
     <p>
     The <code>url()</code> function allows for an ICC color profile to convert
-    to, different from the output-intent.
-    </p>
-    <p>
-    Prince allows for the additional <code>no-embed</code> keyword, which
-    causes the color conversion target ICC profile to not be embedded in the
-    output PDF, unless required by the PDF profile.  The converted colors will
-    be left device dependent or else implicitly mapped to the output intent color
-    space.
+    to, different from the output-intent.  Prince allows for the additional
+    <code>no-embed</code> keyword, which causes the color conversion target ICC
+    profile to not be embedded in the output PDF, unless required by the PDF
+    profile.  The converted colors will be left device dependent or else implicitly
+    mapped to the output intent color space.
     </p>
     <p>
     The optional second argument comprises the rendering intent: Black point compensation (“BPC”) will most commonly be used with a relative-colorimetric rendering intent.  Prince however also accepts black point compensation with perceptual and saturation rendering intents because “there are atypical profiles [...] in which BPC may actually be beneficial for Perceptual or Saturation processing” (quoted from the in-depth analysis <a href="https://www.color.org/WP40-Black_Point_Compensation_2010-07-27.pdf">Black-point compensation: theory and application</a>).
@@ -5709,9 +6667,9 @@ supplier, item { overflow-wrap: normal; }
     <see><a href="/doc/graphics/#rich-black-and-true-black">Rich black and true black</a></see>
 	<comments>
 		<p>This descriptor may be used to control the encoding of RGB blacks and grays:
-		when <code>use-true-black</code> is used, they are encoded in the /DeviceGray colorspace
-		in the PDF, instead of /DeviceRGB, whereas <code>use-rich-black</code> disables this behavior
-		and keeps all the colors in RGB. Currently, auto is equivalent to <code>use-true-black</code>.
+		when <code>use-true-black</code> is used, they are encoded in the <code>/DeviceGray</code> colorspace
+		in the PDF, instead of <code>/DeviceRGB</code>, whereas <code>use-rich-black</code> disables this behavior
+		and keeps all the colors in RGB. Currently, <code>auto</code> is equivalent to <code>use-true-black</code>.
 		</p>
     </comments>
 </property>
@@ -5855,6 +6813,26 @@ supplier, item { overflow-wrap: normal; }
     <p>
     The default value <code>auto</code> leaves behaviour up to the command-line option <a href="/doc/command-line/#cl-pdf-forms"><code>--pdf-forms</code></a>.
     </p>
+    </comments>
+</property>
+
+<property>
+    <name>prince-pdf-form-field-font-size</name>
+    <value>
+    <choice>
+            <keyword>normal</keyword>
+            <keyword>auto</keyword>
+    </choice>
+    </value>
+    <initial>normal</initial>
+    <applyto>all text input form elements</applyto>
+    <inherit>no</inherit>
+    <extension/>
+    <see><a href="/doc/prince-output/#pdf-forms">PDF Forms</a></see>
+    <comments>
+	<p>
+	This property allows text inputs in PDF forms to automatically size the text to fit the available space by using the <code>auto</code> keyword.
+	</p>
     </comments>
 </property>
 
@@ -6107,7 +7085,7 @@ supplier, item { overflow-wrap: normal; }
 	<see><a href="/doc/prince-output/#pdf-printing">PDF Printing</a></see>
     <comments>
 	<p>
-	This descriptor controls the PickTrayByPDFSize flag in generated PDF
+	This descriptor controls the <code>PickTrayByPDFSize</code> flag in generated PDF
 	files, which specifies whether the PDF page size is used to select
     the input paper tray. (See the checkbox in the Acrobat print dialog).
 	</p>
@@ -6163,6 +7141,86 @@ supplier, item { overflow-wrap: normal; }
 </property>
 
 <property>
+    <name>prince-pdf-role-map</name>
+    <value>
+    <repeat min="1" sep=",">
+    <sequence>
+        <ident>ident</ident>
+        <choice>
+            <keyword>Part</keyword>
+            <keyword>Art</keyword>
+            <keyword>Sect</keyword>
+            <keyword>Div</keyword>
+            <keyword>Index</keyword>
+            <keyword>BlockQuote</keyword>
+            <keyword>Caption</keyword>
+            <keyword>TOC</keyword>
+            <keyword>TOCI</keyword>
+            <keyword>NonStruct</keyword>
+            <keyword>P</keyword>
+            <keyword>H1</keyword>
+            <keyword>H2</keyword>
+            <keyword>H3</keyword>
+            <keyword>H4</keyword>
+            <keyword>H5</keyword>
+            <keyword>H6</keyword>
+            <keyword>OL</keyword>
+            <keyword>UL</keyword>
+            <keyword>LI</keyword>
+            <keyword>Lbl</keyword>
+            <keyword>DL</keyword>
+            <keyword>DL-Div</keyword>
+            <keyword>DT</keyword>
+            <keyword>DD</keyword>
+            <keyword>Span</keyword>
+            <keyword>Quote</keyword>
+            <keyword>Table</keyword>
+            <keyword>BibEntry</keyword>
+            <keyword>Code</keyword>
+            <keyword>Figure</keyword>
+            <keyword>Formula</keyword>
+            <keyword>Artifact</keyword>
+            <keyword>Note</keyword>
+            <keyword>Reference</keyword>
+            <string>custom-tag-type</string>
+        </choice>
+    </sequence>
+    </repeat>
+    </value>
+    <initial>""</initial>
+    <applyto>@prince-pdf at-rule</applyto>
+    <inherit>n/a</inherit>
+    <extension/>
+    <example>@prince-pdf {
+	-prince-pdf-role-map:
+	    "Chapter" Sect,
+	    "H7" P,
+	    "Italic" "I",
+	    "I" Span;
+    }</example>
+	<see><a href="/doc/prince-output/#pdf-tags">PDF Tags</a></see>
+    <comments>
+    <p>
+    This property declares a role map for any custom tag type, thus expanding the roles declared by the property <code><property name="prince-pdf-tag-type"/></code>.
+    </p>
+    <p>
+    Each <code><i>custom-tag-type</i></code> string in the role map represents a custom structure type name. The following strings cannot be used as custom structure type names:
+    </p>
+    <ul>
+      <li>an empty string;</li>
+      <li>any of the tag type names accepted by <code><property name="prince-pdf-tag-type"/></code>;</li>
+      <li>any standard PDF structure type names.</li>
+    </ul>
+    <p>
+    Custom structure types in the role map must directly or indirectly map to one of the structure types accepted by <code><property name="prince-pdf-tag-type"/></code>, otherwise it will be discarded.
+    </p>
+    <p>
+    The custom structure type declared in the <code>prince-pdf-role-map</code> property may be used in <code><property name="prince-pdf-tag-type"/></code>.
+    </p>
+    </comments>
+</property>
+
+<property>
     <name>prince-pdf-script</name>
     <value>
         <string>JavaScript</string>
@@ -6195,6 +7253,54 @@ supplier, item { overflow-wrap: normal; }
 </property>
 
 <property>
+    <name>prince-pdf-tagged</name>
+    <value>
+    <choice>
+        <keyword>auto</keyword>
+        <keyword>enable</keyword>
+    </choice>
+    </value>
+    <initial>auto</initial>
+    <applyto>@prince-pdf at-rule</applyto>
+    <inherit>n/a</inherit>
+    <extension/>
+    <example>@prince-pdf {
+    -prince-pdf-tagged: enable;
+}</example>
+    <see><a href="/doc/prince-output/#pdf-tags">PDF Tags</a></see>
+    <comments>
+    <p>
+    This property is used to enable tagged PDF.
+    </p>
+    </comments>
+</property>
+
+<property>
+    <name>prince-pdf-tag-title</name>
+    <value>
+    <choice>
+        <keyword>none</keyword>
+        <string>string</string>
+        <attr>target-attr</attr>
+    </choice>
+    </value>
+    <initial>none</initial>
+    <applyto>all elements</applyto>
+    <inherit>n/a</inherit>
+    <extension/>
+    <example>ul.toc {
+  -prince-pdf-tag-type: TOC;
+  -prince-pdf-tag-title: "Table of Contents";
+}</example>
+    <see><a href="/doc/prince-output/#pdf-tags">PDF Tags</a></see>
+    <comments>
+    <p>
+    This property is used to add a custom title to PDF tags.
+    </p>
+    </comments>
+</property>
+
+<property>
     <name>prince-pdf-tag-type</name>
     <value>
     <choice>
@@ -6215,10 +7321,10 @@ supplier, item { overflow-wrap: normal; }
         <keyword>H4</keyword>
         <keyword>H5</keyword>
         <keyword>H6</keyword>
-        <keyword>OL</keyword>
-        <keyword>UL</keyword>
+        <keyword>L</keyword>
         <keyword>LI</keyword>
         <keyword>Lbl</keyword>
+        <keyword>LBody</keyword>
         <keyword>DL</keyword>
         <keyword>DL-Div</keyword>
         <keyword>DT</keyword>
@@ -6234,6 +7340,7 @@ supplier, item { overflow-wrap: normal; }
         <keyword>Note</keyword>
         <keyword>Reference</keyword>
         <keyword>none</keyword>
+        <string>role-map-ident</string>
     </choice>
     </value>
     <initial>auto</initial>
@@ -6246,6 +7353,9 @@ supplier, item { overflow-wrap: normal; }
 .toc li {
   -prince-pdf-tag-type: TOCI;
 }</example>
+    <example>div.chapter {
+    -prince-pdf-tag-type: "Chapter";
+}</example>
     <see><a href="/doc/prince-output/#pdf-tags">PDF Tags</a></see>
     <comments>
     <p>
@@ -6254,6 +7364,9 @@ supplier, item { overflow-wrap: normal; }
     </p>
     <p>
     The special value <code>none</code> can be used to make specific elements (such as e.g. wrapper span or block elements) transparent in a tagged PDF structure tree.
+    </p>
+    <p>
+    The string value points to a role map identifier declared in the property <code><property name="prince-pdf-role-map"/></code>.
     </p>
     </comments>
 </property>
@@ -6275,7 +7388,7 @@ supplier, item { overflow-wrap: normal; }
     This descriptor can be used inside a <a href=
     "/doc/css-at-rules/#at-prince-pdf"><code>@prince-pdf</code></a>
     rule to add XMP metadata to a PDF file.  Currently it takes an XMP
-    file as input and includes data from the &lt;x:xmpmeta&gt; element
+    file as input and includes data from the <code>&lt;x:xmpmeta&gt;</code> element
     and its contents (the xpacket processing instructions are ignored, as
     Prince generates those itself when it produces the PDF file).
     </p>
@@ -6283,6 +7396,123 @@ supplier, item { overflow-wrap: normal; }
     This descriptor requires either a URL pointing to an XMP
     file, or an encoded <code>data:</code> URL.
     </p>
+    </comments>
+</property>
+
+<property>
+    <name>prince-resize-adjust</name>
+    <value>
+        <choice>
+            <keyword>margin</keyword>
+            <keyword>margin-start</keyword>
+            <keyword>margin-end</keyword>
+            <keyword>padding</keyword>
+            <keyword>padding-start</keyword>
+            <keyword>padding-end</keyword>
+        </choice>
+    </value>
+    <initial>margin</initial>
+    <applyto>block-level boxes</applyto>
+    <inherit>no</inherit>
+    <extension/>
+    <comments>
+    <p>
+    This property controls where space is added for either
+    <code><property name="prince-baseline-grid"/></code>
+    or
+    <code><property name="prince-resize-options"/></code>.
+    </p>
+
+    <p>The <code>*-start</code> values adjust space before the box’s content,
+    <code>*-end</code> values adjust space after the box’s content,
+    while the plain <code>margin</code> and <code>padding</code>
+    values add half of the space adjustment before and half after.</p>
+
+    <p class="note">
+    The initial value is <code>margin</code>, i.e. the requested adjustment
+    is devided equally between top and bottom margin. However, for
+    <code>@footnotes</code> region, Prince by default sets this property
+    to <code>margin-top</code>.
+    </p>
+
+    <p>In particular, if a box is split across more than one page,
+    then the adjustment is applied only before the first fragment of that box
+    and/or after the last fragment of that box.</p>
+
+    <p>The <code>padding*</code> values adjust space inside the border (if any),
+    while the <code>margin*</code> values adjust space outside of the border.</p>
+
+    <p>For the <code>margin*</code> values, there is a difference in behaviour between
+    whether the adjustment is for baseline grid or for pagination flexibility:
+    <code>-prince-resize-options</code> literally changes the used value of the
+    <code><property name="margin"/></code> properties, so is subject to
+    <a href="https://www.w3.org/TR/CSS2/#collapsing-margins">margin collapsing</a>
+    and
+    <a href="https://www.w3.org/TR/css-break-3/#break-margins">margin truncation</a>,
+    and consequently might not affect the resulting collapsed &amp; truncated margin
+    by the full amount.</p>
+
+    <p>Whereas baseline grid alignment must add space somewhere,
+    so it might best be described as adding space outside of the border rather
+    than exactly increasing the used value of <code>margin</code> properties:
+    this extra space is not truncated if it occurs immediately after a page break;
+    and if space needs to be added to the last fragment of a box split split across
+    more than one page, then space can be added at padding-end or margin-end
+    even if <code>-prince-resize-adjust</code> is <code>padding-start</code>
+    or <code>margin-start</code> respectively.</p>
+
+    <p>This property only applies to <a href="/doc/prince-for-books/">Prince for Books</a>.</p>
+    </comments>
+</property>
+
+<property>
+    <name>prince-resize-options</name>
+    <value>
+        <choice>
+            <keyword>none</keyword>
+            <repeat min="1">
+                <type>length</type>
+            </repeat>
+        </choice>
+    </value>
+    <initial>none</initial>
+    <applyto>block-level boxes</applyto>
+    <inherit>no</inherit>
+    <extension/>
+    <example>.chapter&gt;h2 { -prince-resize-options: 1rem; -prince-resize-adjust: padding; }
+blockquote { margin: 1rem; -prince-resize-options: -1rem; }
+@footnotes { -prince-resize-options: 1rem, 2rem; }</example>
+    <comments>
+        <p>
+        This property allows Prince for Books to add or remove space around a block-level box
+        in order to influence where unforced page breaks fall within the text,
+        or to avoid an obvious gap at the end of a page.
+        </p>
+
+        <p>
+        Where space is changed is specified by the
+        <code><property name="prince-resize-adjust"/></code> property.
+        </p>
+
+        <p>
+        Unlike the current implementation of baseline grid in Prince for Books,
+        the adjustment is made to the used value of the margin or padding:
+        for example, the adjustment is affected by
+        <a href="https://www.w3.org/TR/CSS2/#collapsing-margins">margin collapsing</a>
+        and
+        <a href="https://www.w3.org/TR/css-break-3/#break-margins">margin truncation</a>.
+        If you wish to avoid margin truncation then consider setting
+        <code><property name="prince-resize-adjust"/></code>
+        to change padding rather than margin.
+        </p>
+
+        <p>
+        If more than one length is given, then earlier lengths are preferred over
+        later lengths: e.g. ‘1rlh, -1rlh’ means that it is better to add space
+        than to remove space.
+        </p>
+
+        <p>This property only applies to <a href="/doc/prince-for-books/">Prince for Books</a>.</p>
     </comments>
 </property>
 
@@ -6366,6 +7596,58 @@ supplier, item { overflow-wrap: normal; }
 	down in size to fit the paper width.
 	</p>
     <p class="note">The scaling is calculated on the content's <em>width</em>, and not its height.</p>
+    </comments>
+</property>
+
+<property>
+    <name>prince-spread-length-options</name>
+    <value>
+        <choice>
+            <keyword>none</keyword>
+            <sequence>
+                <choice>
+                    <keyword>shorten</keyword>
+                    <keyword>lengthen</keyword>
+                </choice>
+                <optional><type>length</type></optional>
+            </sequence>
+        </choice>
+    </value>
+    <initial>none</initial>
+    <applyto>@page at-rule</applyto>
+    <inherit>n/a</inherit>
+    <extension/>
+    <example>@page { -prince-spread-length-options: shorten; }</example>
+    <comments>
+        <p>
+        This property allows Prince for Books to reduce (or increase)
+        the page content box height of a page and its facing page
+        by the same amount, in order to influence where within the
+        text unforced page breaks fall.
+        </p>
+
+        <p>
+        The page padding/border/margin does not change,
+        nor does the page footer move.
+        (Keep this in mind when styling page footers
+        if you set this property to allow lengthening the page content area.)
+        </p>
+
+        <p>
+        Aside: This pagination technique is fairly common in
+        novels written in English (about 50% of books not using feathering,
+        and a smaller percentage of books that do use feathering);
+        but is much rarer in novels in other languages.
+        It is of course more common in some other types of book,
+        such as those with space between paragraphs.
+        Of novels in English that do change spread length,
+        most only shorten, a few only lengthen,
+        and a few shorten some spreads while lengthening others
+        (so long as a shortened and a lengthened spread aren't directly
+        adjacent to each other).
+        </p>
+
+        <p>This property only applies to <a href="/doc/prince-for-books/">Prince for Books</a>.</p>
     </comments>
 </property>
 
@@ -6519,8 +7801,6 @@ supplier, item { overflow-wrap: normal; }
 	but <em>not</em> if either line would become <em>truly exceptionally</em> tightly
 	or loosely spaced.</p>
 
-	<p>(Limitation: At the time of writing, <code>-prince-wrap-inside</code> only affects justified text.)</p>
-
     <p>This property only applies to <a href="/doc/prince-for-books/">Prince for Books</a>.</p>
     </comments>
 </property>
@@ -6545,6 +7825,22 @@ supplier, item { overflow-wrap: normal; }
 	</p>
     </comments>
     <spec><a href="https://www.w3.org/TR/CSS2/visuren.html#propdef-right">CSS 2.1</a></spec>
+</property>
+
+<property>
+    <name>row-gap</name>
+    <value>
+    <choice>
+        <keyword>normal</keyword>
+        <type>length-percentage</type>
+    </choice>
+    </value>
+    <initial>normal</initial>
+    <applyto>flex containers</applyto>
+    <inherit>no</inherit>
+    <see><a href="/doc/styling/#flex-layout">Flex Layout</a></see>
+    <see><a href="/doc/styling/#grid-layout">Grid Layout</a></see>
+    <spec><a href="https://www.w3.org/TR/css-align-3/#column-row-gap">CSS Box Alignment Module Level 3</a></spec>
 </property>
 
 <property>
@@ -6578,8 +7874,12 @@ supplier, item { overflow-wrap: normal; }
 	<p>
     This CSS at-rule descriptor, used with the
     <a href="/doc/css-at-rules/#at-page"><code>@page</code></a> at-rule, defines
-    the size and orientation of the page.  Please see also the
-    <code><property name="prince-rotate-body"/></code> property to control the
+    the size and orientation of the page.  Please note that the <code>portrait</code>
+    keyword makes the height the largest dimension, while the <code>landscape</code>
+    keyword makes the width the largest dimension. This is a Prince-specific quirk.
+    </p>
+    <p>
+    See also the <code><property name="prince-rotate-body"/></code> property to control the
     orientation of selected pages.
     </p>
     </comments>
@@ -6597,6 +7897,13 @@ supplier, item { overflow-wrap: normal; }
         <function name="format">
             <repeat min="1">
                 <string>format</string>
+            </repeat>
+        </function>
+        </optional>
+        <optional>
+        <function name="tech">
+            <repeat min="1">
+                <string>font-tech</string>
             </repeat>
         </function>
         </optional>
@@ -6631,10 +7938,23 @@ supplier, item { overflow-wrap: normal; }
     rule to be valid.
     </p>
     <p>
-    Prince supports WOFF (Web Open Font Format), TrueType and OpenType font formats,
-    expressed respectively by the <code>woff</code>, <code>truetype</code> and
-    <code>opentype</code> format hints with the optional <code>format()</code>
+    Prince supports multiple font formats, including TrueType and OpenType font formats - with
+    TTF, CFF, or CFF2 outlines (such as the Adobe Source fonts), SVG, CBLC/CBDT, or sbix colour
+    bitmaps, and Font Variations, commonly known as Variable Fonts.
+    </p>
+    <p>
+    Prince supports also the Web Open Font format (WOFF/WOFF2), and TTC and WOFF2 font collections.
+    </p>
+    <p>
+    These are expressed by the <code>collection</code>, <code>embedded-opentype</code>,
+    <code>opentype</code>, <code>svg</code>, <code>truetype</code>, <code>woff</code>,
+    and <code>woff2</code> format hints with the optional <code>format()</code>
     function.
+    </p>
+    <p>
+    Font technologies are expressed with the <code>tech()</code> function, which takes the values
+    <code>features-opentype</code>, <code>color-svg</code>, <code>color-sbix</code>,
+    <code>color-cbdt</code>, or <code>variations</code>.
     </p>
     <p>
     The <code>local()</code> function searches for locally installed system
@@ -7182,6 +8502,25 @@ supplier, item { overflow-wrap: normal; }
     <spec><a href="https://www.w3.org/TR/css-text-decor-3/#text-decoration-style-property">CSS Text Decoration Module Level 3</a></spec>
 </property>
 
+<property>
+    <name>text-decoration-thickness</name>
+    <value>
+    <choice>
+      <keyword>auto</keyword>
+      <keyword>from-font</keyword>
+      <type>length-percentage</type>
+    </choice>
+    </value>
+    <initial>solid</initial>
+    <applyto>all elements</applyto>
+    <inherit>no</inherit>
+    <see><a href="/doc/styling/#text-formatting">Text formatting</a></see>
+    <comments>
+    <p></p>
+    </comments>
+    <spec><a href="https://drafts.csswg.org/css-text-decor-4/#text-decoration-width-property">CSS Text Decoration Module Level 4 Draft</a></spec>
+</property>
+
 <!--
 <property>
     <name>text-height</name>
@@ -7416,6 +8755,21 @@ supplier, item { overflow-wrap: normal; }
 </property>
 
 <property>
+    <name>text-underline-offset</name>
+    <value>
+    <choice>
+      <keyword>auto</keyword>
+      <type>length-percentage</type>
+    </choice>
+    </value>
+    <initial>auto</initial>
+    <applyto>all elements</applyto>
+    <inherit>yes</inherit>
+    <see><a href="/doc/styling/#text-formatting">Text formatting</a></see>
+    <spec><a href="https://www.w3.org/TR/css-text-decor-4/#underline-offset">CSS Text Decoration Module Level 4</a></spec>
+</property>
+
+<property>
     <name>text-underline-position</name>
     <value>
     <choice>
@@ -7513,7 +8867,7 @@ supplier, item { overflow-wrap: normal; }
 		    <function name="scaley">
 			<type>number</type>
 		    </function>
-		    <function name="skew">
+		    <function name="skew" class="dep">
 			<type>angle</type>
 			<optional>
 			    <type>angle</type>
@@ -7540,6 +8894,7 @@ supplier, item { overflow-wrap: normal; }
     <initial>none</initial>
     <applyto>transformable elements</applyto>
     <inherit>no</inherit>
+    <see><a href="/doc/styling/#transformations">Transformations</a></see>
     <comments>
     <p>
     Please note that the function <code>translate3d()</code> is supported if the
@@ -7549,51 +8904,74 @@ supplier, item { overflow-wrap: normal; }
     Also note that this property currently does not affect SVG elements - they
     need to use their own <code>transform</code> attribute instead.
     </p>
+    <p class="note">
+    The function <code>skew()</code> exists for compatibility reasons, and should not be used in new content.
+    </p>
     </comments>
     <spec><a href="https://www.w3.org/TR/css-transforms-1/#transform-property">CSS Transforms Module Level 1</a></spec>
 </property>
 
 <property>
     <name>transform-origin</name>
-    <!-- Here, we can either give an exact but long syntax,
-      or a short syntax that leaves the prose to express some
-      additional constraints on validity. -->
-
-    <!-- Begin version using short but over-permissive syntax. -->
     <value>
-	<repeat min="1" max="2">
-	    <choice>
-		<keyword>center</keyword>
-		<keyword>left</keyword>
-		<keyword>right</keyword>
-		<keyword>top</keyword>
-		<keyword>bottom</keyword>
-		<type>length-percentage</type>
-	    </choice>
-	</repeat>
+	<choice>
+      <group>
+        <choice>
+          <group>
+            <keyword>center</keyword>
+            <keyword>left</keyword>
+            <keyword>right</keyword>
+            <keyword>top</keyword>
+            <keyword>bottom</keyword>
+            <type>length-percentage</type>
+          </group>
+        </choice>
+      </group>
+      <group>
+	    <sequence>
+		<choice>
+		    <keyword>left</keyword>
+		    <keyword>center</keyword>
+		    <keyword>right</keyword>
+		    <type>length-percentage</type>
+		</choice>
+		<choice>
+		    <keyword>top</keyword>
+		    <keyword>center</keyword>
+		    <keyword>bottom</keyword>
+		    <type>length-percentage</type>
+		</choice>
+        <optional>
+            <type>length</type>
+        </optional>
+	    </sequence>
+      </group>
+      <group>
+        <sequence>
+	    <reorderable>
+		<choice>
+		    <keyword>center</keyword>
+		    <keyword>left</keyword>
+		    <keyword>right</keyword>
+		</choice>
+		<choice>
+		    <keyword>center</keyword>
+		    <keyword>top</keyword>
+		    <keyword>bottom</keyword>
+		</choice>
+	    </reorderable>
+        <optional>
+            <type>length</type>
+        </optional>
+        </sequence>
+      </group>
+	</choice>
     </value>
     <initial>50% 50%</initial>
     <applyto>transformable elements</applyto>
     <inherit>no</inherit>
+    <see><a href="/doc/styling/#transformations">Transformations</a></see>
     <comments>
-    <!-- Removing this slightly confusing comment, rather using the more
-    synthetic yet clearer comment from the long syntax.
-
-    <p>If two terms are given, then usually the first term must give the horizontal component,
-	and the second must give the vertical.</p>
-
-	<p>(The only exception is that if both terms are given as keywords,
-	then the order may be swapped:
-	so <code>center left</code>
-	and <code>left center</code>
-	and <code>0% center</code>
-	and <code>left 50%</code>
-	are all legal and equivalent to each other,
-	whereas <code>50% left</code> is not a legal value.)</p>
-
-	<p>If only one term is given, then the second component is assumed to be <code>center</code>.
-	(In particular, if only a percentage or length is given, then it is assumed to be the
-	horizontal coordinate.)</p>-->
     <p>If only one term is given, then the second is assumed to be <code>center</code>.
     In particular, if only a percentage or length is given, then it is assumed to be the
     horizontal coordinate.</p>
@@ -7603,67 +8981,13 @@ supplier, item { overflow-wrap: normal; }
     coordinate is a length or percentage, then the horizontal component must come
     first: so <code>top 50%</code> is not valid, but <code>top</code> and
     <code>top center</code> and <code>50% top</code> are all valid and equivalent.</p>
+
+    <p>
+    Please note that the optional third length value is only supported if the value is zero -
+    Prince thus effectively only supports offsets on the X and Y axes.
+    </p>
     </comments>
     <spec><a href="https://www.w3.org/TR/css-transforms-1/#transform-origin-property">CSS Transforms Module Level 1</a></spec>
-    <!-- End version using short but over-permissive syntax. -->
-
-    <!-- Begin version using exact but long syntax. -->
-    <!--
-    <value>
-	<choice>
-	    <keyword>center</keyword>
-	    <keyword>left</keyword>
-	    <keyword>right</keyword>
-	    <keyword>top</keyword>
-	    <keyword>bottom</keyword>
-	    <percentage/>
-	    <type>length</type>
-	    <sequence>
-		<choice>
-		    <keyword>left</keyword>
-		    <keyword>center</keyword>
-		    <keyword>right</keyword>
-		    <percentage/>
-		    <type>length</type>
-		</choice>
-		<choice>
-		    <keyword>top</keyword>
-		    <keyword>center</keyword>
-		    <keyword>bottom</keyword>
-		    <percentage/>
-		    <type>length</type>
-		</choice>
-	    </sequence>
-	    <reorderable>
-		<choice>
-		    <keyword>left</keyword>
-		    <keyword>center</keyword>
-		    <keyword>right</keyword>
-		</choice>
-		<choice>
-		    <keyword>top</keyword>
-		    <keyword>center</keyword>
-		    <keyword>bottom</keyword>
-		</choice>
-	    </reorderable>
-	</choice>
-    </value>
-    <initial>50% 50%</initial>
-    <inherit>no</inherit>
-    <comments>
-	<p>(The long syntax is just expressing that either one or two coordinates can be
-	given, and that if both values are given as keywords then order doesn't matter,
-	but if two coordinates are given and either coordinate is a length or
-	percentage, then the horizontal component must come first: so <code>top 50%</code> is
-	not valid, but <code>top</code> and <code>top center</code> and <code>50% top</code> are all valid and equivalent.)</p>
-
-	<p>If only one term is given, then the second is assumed to be <code>center</code>.
-	(In particular, if only a percentage or length is given, then it is assumed to be the
-	horizontal coordinate.)</p>
-    </comments>
-    -->
-    <!-- End version using exact but long syntax. -->
-
 </property>
 
 <property>
@@ -7672,13 +8996,17 @@ supplier, item { overflow-wrap: normal; }
 	<choice>
 	    <keyword>normal</keyword>
 	    <keyword>embed</keyword>
+	    <keyword>isolate</keyword>
 	    <keyword>bidi-override</keyword>
+	    <keyword>isolate-override</keyword>
+	    <keyword>plaintext</keyword>
 	</choice>
     </value>
     <initial>normal</initial>
     <applyto>all elements</applyto>
     <inherit>no</inherit>
     <spec><a href="https://www.w3.org/TR/CSS2/visuren.html#propdef-unicode-bidi">CSS 2.1</a></spec>
+    <spec><a href="https://www.w3.org/TR/css-writing-modes-3/#unicode-bidi">CSS Writing Modes Level 3</a></spec>
 </property>
 
 <property>
@@ -7700,13 +9028,13 @@ supplier, item { overflow-wrap: normal; }
     <a href="/doc/css-at-rules/#at-font-face"><code>@font-face</code></a> at-rule,
     defines the set of Unicode codepoints that may be supported by the font face
     for which it is declared.  The descriptor value is a comma-delimited list of
-    Unicode range (&lt;urange&gt;) values.  The union of these ranges defines the
+    Unicode range (<code>&lt;<i>urange</i>&gt;</code>) values.  The union of these ranges defines the
     set of codepoints that serves as a hint for user agents when deciding whether
     or not to download a font resource needed for the test content of a particular
     page.
     </p>
     </comments>
-    <spec><a href="https://drafts.csswg.org/css-fonts-3/#descdef-font-face-unicode-range">CSS Fonts Module Level 3</a></spec>
+    <spec><a href="https://www.w3.org/TR/css-fonts-3/#unicode-range-desc">CSS Fonts Module Level 3</a></spec>
 </property>
 
 <property>
@@ -7775,33 +9103,89 @@ supplier, item { overflow-wrap: normal; }
     <name>widows</name>
     <value>
     <choice>
-        <type>integer</type>
-        <percentage class="ext"/>
+        <sequence>
+            <choice>
+                <type>integer</type>
+                <sequence>
+                    <percentage class="ext"/>
+                    <keyword class="ext">-prince-full</keyword>
+                </sequence>
+            </choice>
+            <optional>
+                <text>,</text>
+                <keyword class="ext">-prince-prefer</keyword>
+                <choice>
+                    <type class="ext">integer</type>
+                    <sequence>
+                        <percentage class="ext"/>
+                        <keyword class="ext">-prince-full</keyword>
+                    </sequence>
+                </choice>
+            </optional>
+        </sequence>
+        <sequence>
+            <keyword class="ext">-prince-prefer</keyword>
+            <choice>
+                <type class="ext">integer</type>
+                <sequence>
+                    <percentage class="ext"/>
+                    <keyword class="ext">-prince-full</keyword>
+                </sequence>
+            </choice>
+        </sequence>
     </choice>
     </value>
     <initial>1</initial>
-    <applyto>block container elements</applyto>
+    <applyto>“paragraphs”: block container boxes that establish an inline formatting context</applyto>
     <inherit>yes</inherit>
     <see><a href="/doc/paged/#widows-and-orphans">Widows and orphans</a></see>
     <see><a href="/doc/prince-for-books/">Prince for Books</a></see>
-    <see><a href="/doc/prince-for-books/#fractional-widows">Fractional Widows</a></see>
+    <see><a href="/doc/prince-for-books/#pagination-goals">Pagination goals</a></see>
     <see><code><property name="orphans"/></code></see>
     <comments>
 	<p>
 	If a paragraph is split over two pages or columns, this property
 	determines the minimum number of lines that must be left at the top of
-	the second page or column.
+	the page or column at the end of the paragraph.
 	</p>
-    <p>
-    The percentage value only applies to <a href="/doc/prince-for-books/">Prince for Books</a>, and indicates
-    that one widow line is accepted, as long as the line width is at least the
-    given percentage value of the available page width, to avoid the worst case
-    of having a widow line that is only one or two words long.  For more details
-    see <a href="/doc/prince-for-books/#fractional-widows">Fractional Widows</a>.
+
+    <p class="note">
+    The initial value has been changed from <code>2</code> to <code>1</code>.
     </p>
 
     <p>
-    Please note that the initial value has been changed from <code>2</code> to <code>1</code>.
+    The following additional features only apply to Prince for Books.
+    </p>
+
+    <p>
+    Prince for Books also supports a percentage value followed by the keyword
+    <code>-prince-full</code>, which indicates that one widow line is accepted,
+    as long as the line width is at least the given percentage value of the
+    available page width, to avoid the worst case of having a widow line that
+    is only one or two words long.  For more details see
+    <a href="/doc/prince-for-books/#pagination-goals">Pagination goals</a>.
+    </p>
+
+    <p>
+    In Prince for Books a value can be preceded by the keyword <code>-prince-prefer</code>,
+    which turns the requirement into a <em>preference</em>.
+    An amount preceded by <code>-prince-prefer</code>
+    is a request that Prince for Books will try to satisfy,
+    but not at the cost of introducing an obvious gap at the end of the
+    previous column or page:
+    it will only use whatever flexibility has been granted with
+    <code><property name="prince-change-line-breaks-for-pagination"/></code>,
+    <code><property name="prince-spread-length-options"/></code>
+    or
+    <code><property name="prince-resize-options"/></code>.
+    </p>
+
+    <p>
+    The property additionally can take a second, optional, comma-separated
+    value expressed with the additional keyword <code>-prince-prefer</code>. It is
+    useful in case the <em>preference</em>, expressed with the additional
+    keyword, is a bigger amount than the hard <em>requirement</em> expressed
+    in the first value.
     </p>
     </comments>
     <spec><a href="https://www.w3.org/TR/CSS2/page.html#break-inside">CSS 2.1</a></spec>

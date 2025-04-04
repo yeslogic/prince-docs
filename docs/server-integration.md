@@ -2,6 +2,10 @@
 title: Server Integration
 ---
 
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,100..900;1,100..900&amp;display=swap" rel="stylesheet"/>
+
 Prince can be used server-side to produce PDFs, invoked by a wrapper script. Some care needs to be used in the configuration to make it reliable and secure.
 
 ## Prince Wrappers
@@ -410,7 +414,7 @@ The `pdf options` object includes these fields:
     "pdf-output-intent": <URL>,
     "fallback-cmyk-profile": <URL>,
     "color-conversion": "none" | "output-intent" | "full",
-    "pdf-script": <string> | {"url": <URL>},
+    "pdf-script": [ <list of pdf-script> ] | [ <string> | {"url": <URL>} ],
     "pdf-event-scripts": {
         "will-close": <string> | {"url": <URL>},
         "will-save": <string> | {"url": <URL>},
@@ -432,9 +436,42 @@ Each attachment is a &lt;URL&gt; (string) or an object:
 {
     "url": <URL>,
     "filename": <string>,
-    "description": <string>
+    "description": <string>,
+    "relationship": <string>,
+    "mime-type": <string>
 }
 ```
+
+The value of `relationship` must be one of the AFRelationship keys defined in PDF 2.0:
+
+    Source
+    Data
+    Alternative
+    Supplement
+    EncryptedPayload
+    FormData
+    Schema
+    Unspecified
+
+or a second-class name according to the following definition:
+"all names that begin with 4 characters including or followed
+by a LOW LINE (5fh) or COLON (3Ah) in either the key or value
+of a dictionary entry are second-class names."
+
+The MIME type for an attachment is generally autodetected, based on file extension as defined in the `mime.types` mapping file.  However, there can be cases when a manual override is desired - it can be set with the `mime-type` field.
+
+When in use, the attachment definition might look like the following example:
+
+```json
+{
+    "url": "/path/to/xmp1.xml",
+    "filename": "xmp1.xml",
+    "description": "Some XMP metadata",
+    "relationship": "Data",
+    "mime-type": "text/xml"
+}
+```
+
 The `metadata options` object includes these fields:
 
 ```json
@@ -491,7 +528,7 @@ The following is the full JSON job description - the mandatory `input` and `src`
         "pdf-output-intent": <URL>,
         "fallback-cmyk-profile": <URL>,
         "color-conversion": "none" | "output-intent" | "full",
-        "pdf-script": <string> | {"url": <URL>},
+        "pdf-script": [ <list of pdf-script> ] | [ <string> | {"url": <URL>} ],
         "pdf-event-scripts": {
             "will-close": <string> | {"url": <URL>},
             "will-save": <string> | {"url": <URL>},
@@ -507,7 +544,9 @@ The following is the full JSON job description - the mandatory `input` and `src`
         "attach": [ {
             "url": <URL>,
             "filename": <string>,
-            "description": <string>
+            "description": <string>,
+            "relationship": <string>,
+            "mime-type": <string>
         } ]
     },
     "metadata": {
@@ -708,13 +747,16 @@ By omitting log messages, or by delaying them until after the PDF is written, th
 
 ### Fail-Safe Options
 
-Prince offers eight Fail-Safe Options:
+Prince offers nine Fail-Safe Options:
 
 `--fail-dropped-content`  
 Fail if any content is dropped, e.g. due to a specified attachment which needs to be dropped because the chosen PDF profile does not support attachments, or due to a layout problem, where Prince cannot pack a block on the page for some reason and is forced to discard it.
 
 `--fail-missing-resources`  
 Fail if any resources cannot be loaded, e.g. due to network problems.
+
+`--fail-incorrect-references`  
+Fail if any cross-references might be incorrect, which might e.g. happen when a tight-fitting line pushes content to the next page, which in turn changes the original line and thus reverts the page breaks introduced, creating a loop.
 
 `--fail-stripped-transparency`  
 Fail if transparent images are used with a PDF profile that does not support opacity.
@@ -795,6 +837,10 @@ As a general rule, consider that, in order to function best, Prince will need to
 
 For ease of use, Prince offers its own, maintained [Docker Images](https://hub.docker.com/r/yeslogic/prince).  See also [Prince In Cloud Computing](#prince-in-cloud-computing) for more installation guides in cloud containers.
 
+
+### License Files in Distributed Products
+
+When creating a product for distribution, it might be that you do not want to ship a license file with the distribution - but nevertheless be able to run Prince with a license file when necessary.  In this case the command-line option [`--license-key`](command-line.md#cl-license-key) might come in handy.  The contents of the `<signature>` element must be deleted from your license file, and its value can then be passed as the value of this command-line option - but leave an empty `<signature>` element in place.
 
 
 

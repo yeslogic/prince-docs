@@ -2,81 +2,20 @@
 title: Prince Tips and Tricks
 ---
 
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,100..900;1,100..900&amp;display=swap" rel="stylesheet"/>
+
 …aka the Prince Cookbook, collects recipes to achieve certain common or complex tasks useful when preparing a document for printing. Each recipe shows the required features in a "You need" ingredients list and provides a step-by-step explanation to guide you to the required goal.
 
+The reipces are grouped in two main blocks, the first one containing recipes that only require CSS, the second one making use of JavaScript features to achieve the desired effect.
 
-## Table of Contents
+On a separate site we collect more [quick guides to making beautiful PDF documents from HTML and CSS](https://css4.pub/).
 
-<dl className="ingredients">
-  <dt>You need</dt>
-  <dd><a href="/doc/javascript#javascript-in-printed-media">JavaScript in Printed Media</a></dd>
-  <dd><a href="/doc/gen-content#generated-content-functions">Generated Content Functions</a>
-    <ul>
-      <li><code>content: target-counter()</code></li>
-      <li><code>content: leader()</code></li>
-    </ul>
-  </dd>
-</dl>
-
-Prince offers several properties and functions to facilitate the creation of a Table of Contents.
-
-Typically, a table of contents is generated for a document by collecting the headings of each chapter, each one provided with an `id` attribute, into a list or, if necessary, also into nested lists, by means of JavaScript or in some other way, in order to generate a navigation menu for the document.
-
-Each list item contains a hyperlink to the heading's `id`. This list functions as a navigation menu when the document is viewed in a browser.
-
-The transformation into a proper table of contents happens with CSS when Prince generates the PDF - the resulting document will be paged, and possibly be intended for printing. It means that the hyperlinks need to be integrated with an indication of the correct page on which the target is located.
-
-This is achieved automatically with the `target-counter()` function in the [`content`](css-props.md#prop-content) property, using the `page` counter. The URL is being automatically fetched from the `href` attribute of the hyperlink element `<a>`.
-
-```css
-    #toc a::after {
-      content: target-counter(attr(href), page);
-    }
-```
-The page numbers are best styled right-aligned, while the link texts are left-aligned. An easy way to achieve this is with the `leader()` function: it defines a literal string, which expands to fill the available space on the line like justified text, by repeating the string as many times as necessary. The complete CSS entry for a simple table of contents entry thus looks like this:
-
-```css
-    #toc a::after {
-      content: leader('.') target-counter(attr(href), page);
-    }
-```
-### Simple Table of Contents
-
-Our [example document](https://css4.pub/2018/toc/index.html) generates at Table of Contents (ToC) by way of JavaScript. You can easily test it by running Prince from the command line:
-
-```bash
-    $ prince --javascript https://css4.pub/2018/toc -o toc.pdf
-```
-A [second example document](https://css4.pub/2020/musick/musick.html) generates at ToC by way of JavaScript and, even more impressively, the script also generates an index which is added to the end of the document when Prince runs JavaScript a second time, after layout (see [The "Multi-Pass" Solution](#the-multi-pass-solution)). Notice how subsequent page numbers in the index are folded into a range. To produce this document, try running these commands from a Linux command-line:
-
-```bash
-    $ prince --javascript https://css4.pub/2020/musick/musick.html -o musick.pdf
-```
-You can view the resulting PDF [here](https://css4.pub/2020/musick/musick.pdf).
-
-### Multifile Table of Contents
-
-For longer books, it makes sense to split chapters into separate files. Generating a Table of Contents across all files is tricky in JavaScript since scripts only see one file at a time. In Prince, you can work around this limitation with a so-called "two-pass" approach, by running Prince twice - the first pass collects items for the ToC, and the second pass generates the PDF with the ToC.  When scripts need to communicate across multiple input documents, the built-in ["multi-pass" solution](#the-multi-pass-solution) is not an option.
-
-To try this for yourself, first fetch these five sample files into your own file system, e.g. by running:
-
-```bash
-    $ wget https://css4.pub/2018/multifile-toc/toc.js;
-    $ wget https://css4.pub/2018/multifile-toc/toc.html;
-    $ wget https://css4.pub/2018/multifile-toc/ch1.html;
-    $ wget https://css4.pub/2018/multifile-toc/ch2.html;
-    $ wget https://css4.pub/2018/multifile-toc/style.css;
-```
-Then, run Prince twice:
-
-```bash
-    $ prince --javascript --script=toc.js ch1.html ch2.html -o book.pdf >> toc.html;
-    $ prince toc.html ch1.html ch2.html -o book.pdf;
-```
-You can view the resulting PDF [here](https://css4.pub/2018/multifile-toc/book.pdf).
+## CSS
 
 
-## Thinking in Spreads
+### Thinking in Spreads
 
 <dl className="ingredients">
   <dt>You need</dt>
@@ -86,7 +25,6 @@ You can view the resulting PDF [here](https://css4.pub/2018/multifile-toc/book.p
       <li><a href="/doc/paged#controlling-pagination">Controlling pagination</a></li>
     </ul>
   </dd>
-  <dd><a href="/doc/styling#box-model">Box Model</a></dd>
   <dd><a href="/doc/styling#prince-extensions-to-floats">Prince extensions to floats</a></dd>
   <dd><a href="/doc/styling#paragraph-formatting">Paragraph formatting</a></dd>
 </dl>
@@ -95,7 +33,7 @@ Prince produces PDFs - which are a prominent example of paged media. The main di
 
 The basic unit for paged media in print is the page, organized in page spreads: the left page, called *verso* in a left-to-right script (see [Writing Mode](styling.md#writing-mode)), and the right page, called *recto*, are of the same size and typically are symmetrical to each other and are centered on the gutter. [Selected](paged.md#selecting-pages) and [Named pages](paged.md#named-pages) can be placed *recto* or *verso*, and Prince expands several properties and the [`@page`](css-at-rules.md#at-page) at-rule pseudo-classes with the values `verso` and `recto`, or `inside` and `outside`, referring to the layout on each page of the spread to facilitate the work with page spreads.
 
-### Pagination on a page spread
+#### Pagination on a page spread
 
 You have control on wether to place specific selected and named pages right or left, or *recto* or *verso* with the help of `break-before` and `break-after`, each of which takes the values `recto` and `verso` in addition to the traditional values.
 
@@ -108,7 +46,7 @@ This rule places an `h1` element always at the beginning of a *recto* page.
 
 Pages can also be specifically targeted and styled with the [`@page`](css-at-rules.md#at-page) at-rule pseudo-classes `:right` and `:left`, or `:recto` and `:verso`.
 
-### Layout on a page spread
+#### Layout on a page spread
 
 Using the values `right` and `left` when placing elements on pages symmetrically arranged around the central gutter is possible, but rather cumbersome, since their placement depends on the placement of the page on a spread. Prince offers the extensions `inside` and `outside` to ease the task.
 
@@ -163,88 +101,150 @@ On a paragraph level, the properties [`text-align`](css-props.md#prop-text-align
 This style snippet could be part of the stylesheet for a little booklet - it displays the page number in the upper outside corners, the book title in the upper inside of the left, or *verso* page, and the chapter title in the upper inside of the right, or *recto* page. Chapter headings are aligned to the outside of the page spreads, while any image in the book is floated close to the central gutter.
 
 
-## Long Tables
+### Page Regions
 
 <dl className="ingredients">
   <dt>You need</dt>
-  <dd>
-<a href="/doc/styling#tables">Tables</a>
-    <ul>
-      <li><a href="/doc/styling#running-table-headers-and-footers">Running table headers and footers</a></li>
-      <li><a href="/doc/styling#table-captions">Table captions</a></li>
-    </ul>
-  </dd>
+  <dd><a href="/doc/paged#page-regions">Page regions</a></dd>
+  <dd><a href="/doc/gen-content">Generated Content</a></dd>
 </dl>
 
-One of the main differences when designing for paged media is that you need to think about concrete pages, as opposed to a continuous flow of the page designed for the web and for web browsers. A problem may arise when elements such as tables are longer than the page they need to be displayed on.
+A basic concept in preparing a page is the organisation of the available space in main content, known as the _page area_, and additional content arranged in _page area regions_ and _page-margin boxes_ - for a full explanation, please refer to the [page regions](paged.md/#page-regions) chapter.  In that chapter you can see an image with all available regions and boxes depicted.
 
-The table itself is naturally split over several pages - but if you want table headers and footers repeated on each page, you need to code them in the HTML of the document by using the elements `thead` and/or `tfoot`. The content of these elements will be carried on to all the subsequent pages on which the table appears.
+That image is created by Prince only with the help of HTML and CSS.  Here is the code producing that image:
 
-Tables can also be provided with a table caption by using the `caption` HTML element, or by styling an arbitrary element with `display: table-caption` to be made to behave like `caption` elements. The caption is positioned above the table by default, but it can be moved to the bottom with the [`caption-side`](css-props.md#prop-caption-side) property.
-
-When a table spans across more than one page, the [`-prince-caption-page`](css-props.md#prop-prince-caption-page) property determines whether table captions will be displayed on the first page of a table, or only on the following pages, or repeated on every page that a table appears on. See also [Fancy Table Captions](#fancy-table-captions).
-
-```css
-    table + p {
-        display: table-caption;
-        caption-side: bottom;
-        -prince-caption-page: following;
-    }
+```html
+    <html>
+        <head>
+            <title>Page regions</title>
+            <style>
+            @page {
+                size: a4;
+                border: 8px black solid;
+                padding: 0cm;
+                margin: 4cm;
+                background-color: lightgrey;
+                font-size: 22pt;
+                font-family: sans-serif;
+                @top-center {
+                    content: "@top-center";
+                    background-color: lemonchiffon;
+                }
+                @bottom-center {
+                    content: "@bottom-center";
+                    background-color: lemonchiffon;
+                }
+                @left-middle {
+                    content: "@left-middle";
+                    background-color: lightcoral;
+                }
+                @right-middle {
+                    content: "@right-middle";
+                    background-color: lightcoral;
+                }
+                @top-left {
+                    content: "@top-left";
+                    background-color: lightgreen;
+                }
+                @left-top {
+                    content: "@left-top";
+                    background-color: lightgreen;
+                }
+                @top-right-corner {
+                    content: "@top-right-corner";
+                    font-size: 15pt;
+                    background-color: cornflowerblue;
+                }
+                @leftnote {
+                    width: 10vw;
+                    background-color: pink;
+                }
+                @rightnote {
+                    width: 10vw;
+                    background-color: thistle;
+                }
+                @footnote {
+                    background-color: aliceblue;
+                }
+                @prince-overlay {
+                    background: repeating-linear-gradient(
+                        -45deg,
+                        rgba(255,255,255, 0.1),
+                        rgba(255,255,255, 0.1) 20px,
+                        rgba(255,0,0, 0.2) 20px,
+                        rgba(255,0,0, 0.2) 40px
+                    );
+                    color: rgba(255,0,0, 0.6);
+                    content: "@prince-overlay";
+                }
+                @page-float-top {
+                    background-color: lightblue;
+                }
+                @page-float-bottom {
+                    background-color: gainsboro;
+                }
+            }
+            body {
+                background-color: white;
+                padding: 0.2cm;
+                font-size: 48pt;
+                text-align: center;
+                font-family: sans-serif;
+            }
+            p {
+                font-weight: bold;
+            }
+            #footnote {
+                float: footnote;
+                font-size: 22pt;
+                font-weight: normal;
+            }
+            #leftnote {
+                float: leftnote align-bottom;
+                font-size: 22pt;
+                transform: rotate(-90deg);
+                margin-bottom: -6em;
+                font-weight: normal;
+            }
+            #rightnote {
+                float: rightnote;
+                font-size: 22pt;
+                transform: rotate(90deg);
+                padding-left: 9vw;
+                font-weight: normal;
+            }
+            #pagefloattop {
+                float: top;
+                font-weight: normal;
+                font-size: 22pt;
+                font-style: italic;
+            }
+            #pagefloatbottom {
+                float: bottom;
+                font-weight: normal;
+                font-size: 22pt;
+                font-style: italic;
+            }
+            *::footnote-call, *::footnote-marker {
+                content: "";
+            }
+            </style>
+        </head>
+        <body>
+            <p>Page area
+                <span id="footnote">@footnote</span>
+                <span id="leftnote">@leftnote</span>
+                <span id="rightnote">@rightnote</span>
+            </p>
+            <p id="pagefloattop">@page-float-top</p>
+            <p id="pagefloatbottom">@page-float-bottom</p>
+        </body>
+    </html>
 ```
 
-## Fancy Table Captions
+Note that the page-margin boxes and `@prinec-overlay` take CSS generated content, while the page area regions only move elements from HTML into the designed region.
 
-<dl className="ingredients">
-  <dt>You need</dt>
-  <dd>
-<a href="/doc/styling#tables">Tables</a>
-    <ul>
-      <li><a href="/doc/styling#table-captions">Table captions</a></li>
-    </ul>
-  </dd>
-  <dd><a href="#long-tables">Long Tables</a></dd>
-</dl>
-
-HTML tables only have one caption per table. However, in printed form a table might span several pages (see [Long Tables](#long-tables)) and it might be desirable to have separate captions for the first and the following pages - you might want to add "cont." to the caption of the first one, or otherwise differentiate them. Prince offers an extension mechanism to do so.
-
-As mentioned in [Long Tables](#long-tables), when a table spans across more than one page, the [`-prince-caption-page`](css-props.md#prop-prince-caption-page) property determines whether table captions will be displayed on the first page of a table, or only on the following pages, or repeated on every page that a table appears on. This opens up the possibility to have a different caption on the first and on the following pages.
-
-You might define a caption in HTML for the main table caption - to be displayed on the first page. Additionally, you make another element into a table caption with the [`display`](css-props.md#prop-display) property - and display it only on the following pages!
-
-The paragraph functioning as a table caption can be hidden in browsers by using [CSS Media Queries](css-media-queries.md#media-queries).
-
-```html title="HTML"
-    <table>
-      <caption>Demo table</caption>
-      <tr>
-        <td>A</td>
-        <td>B</td>
-      </tr>
-      <tr>
-        <td>C</td>
-        <td>D</td>
-      </tr>
-      <tr>
-        <td>E</td>
-        <td>F</td>
-      </tr>
-    </table>
-    <p>Demo table (cont.)</p>
-```
-
-```css title="CSS"
-    caption {
-        caption-side: bottom;
-        -prince-caption-page: first;
-    }
-    table + p {
-        display: table-caption;
-        caption-side: bottom;
-        -prince-caption-page: following;
-    }
-```
-
-## Page Headers and Footers
+### Page Headers and Footers
 
 <dl className="ingredients">
   <dt>You need</dt>
@@ -283,7 +283,7 @@ The @page rule specifies that the top-center page region will contain the text c
 If some special formatting of the text in the margin box is required, copying the text will not suffice - you need to remove an element from the natural page flow to place it in the margin box. See [Taking elements from the document](paged.md#taking-elements-from-the-document) for details.
 
 
-## Dictionary Page Headers
+### Dictionary Page Headers
 
 <dl className="ingredients">
   <dt>You need</dt>
@@ -320,7 +320,7 @@ The dictionary sample is furthermore noticeable for its use of the optional page
     .chapter header { string-set: letter content() }
 ```
 
-## Page Numbering
+### Page Numbering
 
 <dl className="ingredients">
   <dt>You need</dt>
@@ -406,7 +406,87 @@ In some documents, particularly those that are unbound such as office documents,
 This rule will generate page footers such as "Page 1 of 89".
 
 
-## Multiple Footnotes
+### Long Tables
+
+<dl className="ingredients">
+  <dt>You need</dt>
+  <dd>
+<a href="/doc/styling#tables">Tables</a>
+    <ul>
+      <li><a href="/doc/styling#running-table-headers-and-footers">Running table headers and footers</a></li>
+      <li><a href="/doc/styling#table-captions">Table captions</a></li>
+    </ul>
+  </dd>
+</dl>
+
+One of the main differences when designing for paged media is that you need to think about concrete pages, as opposed to a continuous flow of the page designed for the web and for web browsers. A problem may arise when elements such as tables are longer than the page they need to be displayed on.
+
+The table itself is naturally split over several pages - but if you want table headers and footers repeated on each page, you need to code them in the HTML of the document by using the elements `thead` and/or `tfoot`. The content of these elements will be carried on to all the subsequent pages on which the table appears.
+
+Tables can also be provided with a table caption by using the `caption` HTML element, or by styling an arbitrary element with `display: table-caption` to be made to behave like `caption` elements. The caption is positioned above the table by default, but it can be moved to the bottom with the [`caption-side`](css-props.md#prop-caption-side) property.
+
+When a table spans across more than one page, the [`-prince-caption-page`](css-props.md#prop-prince-caption-page) property determines whether table captions will be displayed on the first page of a table, or only on the following pages, or repeated on every page that a table appears on. See also [Fancy Table Captions](#fancy-table-captions).
+
+```css
+    table + p {
+        display: table-caption;
+        caption-side: bottom;
+        -prince-caption-page: following;
+    }
+```
+
+### Fancy Table Captions
+
+<dl className="ingredients">
+  <dt>You need</dt>
+  <dd>
+<a href="/doc/styling#tables">Tables</a>
+    <ul>
+      <li><a href="/doc/styling#table-captions">Table captions</a></li>
+    </ul>
+  </dd>
+  <dd><a href="#long-tables">Long Tables</a></dd>
+</dl>
+
+HTML tables only have one caption per table. However, in printed form a table might span several pages (see [Long Tables](#long-tables)) and it might be desirable to have separate captions for the first and the following pages - you might want to add "cont." to the caption of the first one, or otherwise differentiate them. Prince offers an extension mechanism to do so.
+
+As mentioned in [Long Tables](#long-tables), when a table spans across more than one page, the [`-prince-caption-page`](css-props.md#prop-prince-caption-page) property determines whether table captions will be displayed on the first page of a table, or only on the following pages, or repeated on every page that a table appears on. This opens up the possibility to have a different caption on the first and on the following pages.
+
+You might define a caption in HTML for the main table caption - to be displayed on the first page. Additionally, you make another element into a table caption with the [`display`](css-props.md#prop-display) property - and display it only on the following pages!
+
+The paragraph functioning as a table caption can be hidden in browsers by using [CSS Media Queries](css-media-queries.md#media-queries).
+
+```html title="HTML"
+    <table>
+      <caption>Demo table</caption>
+      <tr>
+        <td>A</td>
+        <td>B</td>
+      </tr>
+      <tr>
+        <td>C</td>
+        <td>D</td>
+      </tr>
+      <tr>
+        <td>E</td>
+        <td>F</td>
+      </tr>
+    </table>
+    <p>Demo table (cont.)</p>
+```
+```css title="CSS"
+    caption {
+        caption-side: bottom;
+        -prince-caption-page: first;
+    }
+    table + p {
+        display: table-caption;
+        caption-side: bottom;
+        -prince-caption-page: following;
+    }
+```
+
+### Multiple Footnotes
 
 <dl className="ingredients">
   <dt>You need</dt>
@@ -427,19 +507,19 @@ First we create our regular footnotes - the only extra step we need to do, is to
 
 ```html
     <p>
-    This paragraph has a footnote.<span class="fn" id="fn1">First footnote.</span>
+    This paragraph has a footnote.<span className="fn" id="fn1">First footnote.</span>
     </p>
 ```
 When another foonote call needs to be pointing at this, already existing footnote, we have to create it manually by adding a link to this footnote's ID.
 
 ```html
     <p>
-    This paragraph refers to the first footnote.<a class="rfn" href="#fn1"></a>
+    This paragraph refers to the first footnote.<a className="rfn" href="#fn1"></a>
     </p>
 ```
 This footnote call will be created by using the generated content function `target-counter()` referencing the footnote counter.
 
-```css
+```
     content: target-counter(attr(href), footnote);
 ```
 When creating regular footnotes, Prince automatically takes care of the styling of the footnote calls, but the manually created ones need to be explicitly styled. The following are the default rules that style a footnote call - here shown with all the rules necessary for creating all the footnote calls:
@@ -459,7 +539,7 @@ When creating regular footnotes, Prince automatically takes care of the styling 
     }
 ```
 
-## Sidenotes
+### Sidenotes
 
 <p className="note">
     Prince offers also experimental native support for sidenotes as of Prince 14.3.
@@ -487,7 +567,7 @@ It gets slightly more complicated when you want to position the footnotes not un
 
 We shall see each approach separately.
 
-### Positioning the footnote area
+#### Positioning the footnote area
 
 A straightforward approach for sidenotes is to position the footnote area to the desired place, instead of leaving it in its default position.
 
@@ -506,7 +586,7 @@ The advantage of this approach is that footnote calls and markers are created au
 
 The biggest disadvantage is that the footnotes are not placed to the side of the location of the footnote calls, but are inserted into the footnote page area filling the space from the top of the page. Should this be of importance, use the second approach instead.
 
-### Floating the footnote left or right
+#### Floating the footnote left or right
 
 The footnote text is floated to the left (or right) and moved out of the way with negative margins.
 
@@ -532,34 +612,11 @@ A variant of this approach, useful when creating floating sidenotes in a multico
 
 To format the latter one, just run:
 ```bash
-    prince -j https://www.css4.pub/2020/christian-krohg/hg.html -o hg.pdf
+    $ prince -j https://www.css4.pub/2020/christian-krohg/hg.html -o hg.pdf
 ```
 
 
-## Endnotes
-
-<dl className="ingredients">
-  <dt>You need</dt>
-  <dd><a href="/doc/javascript">Scripting</a></dd>
-</dl>
-
-Endnotes are quite easy as their placement is not relative to the page. There are two ways of creating them.
-
-In their most simple form, an endnote is placed at the end of the document by the author, with a (hyperlinked) call in the text.
-
-However, it can be laborious to manually synchronize references in this manner. A more convenient alternative is to keep the notes inline and to move them to the end of the document at the time of formatting. This is a simple tree transformation which can be performed by a script. The following sample document features references which are kept inline and moved to the end by a script:
-
--   [HTML document](https://css4.pub/2015/usenix/example.html)
--   [PDF document](https://css4.pub/2015/usenix/example.pdf)
-
-No special CSS formatting is required to support endnotes.
-
-In a similar fashion table notes can be created. These are a variation of endnotes. However, instead of moving the notes to the end of the document, the notes are moved to the end of the table, or to the end of the table cell. Again, this is a simple tree transformation which doesn't require anything special from CSS.
-
-The table in the above document sample also has inline notes that are moved to the end of the table by a script.
-
-
-## Hyperlinks in Print
+### Hyperlinks in Print
 
 <dl className="ingredients">
   <dt>You need</dt>
@@ -619,7 +676,7 @@ The `attr()` function, used in the previous examples inside the other functions,
 This will add the URL after every link. For example: "\[Located at 'https://www.princexml.com/&#8203;'\]".
 
 
-## Image Magic
+### Image Magic
 
 <dl className="ingredients">
   <dt>You need</dt>
@@ -634,9 +691,9 @@ This will add the URL after every link. For example: "\[Located at 'https://www.
 
 The [`-prince-image-magic`](css-props.md#prop-prince-image-magic) property performs various image-related, Prince-specific tasks that do not fit into other existing CSS properties. It applies magic to images!
 
-To reduce the PDF file size, JPEG images can be recompressed at a lower quality level by using the function `recompress-jpeg(quality%)` with the required quality percentage as argument.
+To reduce the PDF file size, JPEG images can be recompressed at a lower quality level by using the function <code>recompress-jpeg( &lt;<i>quality%</i>&gt; )</code> with the required quality percentage as argument.
 
-PNG images can be converted to JPEG images with the keyword `convert-to-jpeg` (using the default compression rate), or they can also be converted to JPEG with the required compression rate as argument with the function `convert-to-jpeg(quality%)`.
+PNG images can be converted to JPEG images with the keyword `convert-to-jpeg` (using the default compression rate), or they can also be converted to JPEG with the required compression rate as argument with the function <code>convert-to-jpeg( &lt;<i>quality%</i>&gt; )</code>.
 
 Prince usually strips unnecessary metadata from JPEG images to help contain size. But it might happen that you need that extra data, possibly for further downstream processing. The keyword `jpeg-verbatim` inhibtis this stripping and includes the images without modification in the PDF file.
 
@@ -652,7 +709,7 @@ Several of the values can be combined, to perform more than one magic on images 
 This example recompresses all JPEG images to 50%, converts any non-JPEG images to JPEG with the same quality, and snaps them all to integer coordinates to avoid blurring in some PDF viewers.
 
 
-## Hyphenation
+### Hyphenation
 
 <dl className="ingredients">
   <dt>You need</dt>
@@ -682,12 +739,11 @@ Fine-tuning of hyphenation can be done with the `-prince-hyphenate-after` and `-
 
 The [`-prince-hyphenate-limit-lines`](css-props.md#prop-prince-hyphenate-limit-lines) property is used to determine the maximum number of consecutive lines that may end with a hyphenated word.
 
-Prince uses the hyphenation patterns from the CTAN archive - the full archive is accessible [here](http://tug.ctan.org/tex-archive/language/hyph-utf8/tex/generic/hyph-utf8/patterns/txt/). The default hyphenation patterns can be found in the installed `hyph.css` file, located in the default style sheets location (see [Installation Layout](installing.md#installation-layout)).
+Prince uses the hyphenation patterns from the CTAN archive - the full archive is accessible [here](https://ctan.org/tex-archive/language/hyph-utf8/tex/generic/hyph-utf8/patterns/txt). The default hyphenation patterns can be found in the installed `hyph.css` file, located in the default style sheets location (see [Installation Layout](installing.md#installation-layout)).
 
 Hyphenation patterns for the following languages are provided:
 
 <table className="grid">
-<tbody>
   <tr>
     <td>da</td>
     <td>Danish</td>
@@ -744,37 +800,36 @@ Hyphenation patterns for the following languages are provided:
     <td>sv</td>
     <td>Swedish</td>
   </tr>
-</tbody>
 </table>
 
 A special case is Thai hyphenation, supported thanks to the [LibThai](https://linux.thai.net/projects/libthai) package.
 
-To add hyphenation patterns for other languages, download them from the [CTAN archive](http://tug.ctan.org/tex-archive/language/hyph-utf8/tex/generic/hyph-utf8/patterns/txt/). Save the files for the chosen language without the `.txt` extension, and link to the pattern file (with the `.pat` extension) with the [`-prince-hyphenate-patterns`](css-props.md#prop-prince-hyphenate-patterns) CSS property.
+To add hyphenation patterns for other languages, download them from the [CTAN archive](https://ctan.org/tex-archive/language/hyph-utf8/tex/generic/hyph-utf8/patterns/txt). Save the files for the chosen language without the `.txt` extension, and link to the pattern file (with the `.pat` extension) with the [`-prince-hyphenate-patterns`](css-props.md#prop-prince-hyphenate-patterns) CSS property.
 
 The renaming of the file is not essential - the content, not the extension counts.
 
 Prince determines which language to use for hyphenation with the help of the `:lang()` CSS selector, which in turn checks the `lang` or `xml:lang` attributes of the document:
 
+```html title="HTML"
+    <span lang="en-GB">supercalifragilisticexpialidocious</span>
+```
 ```css title="CSS"
     :lang(en-GB) {
         -prince-hyphenate-patterns: url("hyph-en-gb.pat");
     }
 ```
-```html title="HTML"
-    <span lang="en-GB">supercalifragilisticexpialidocious</span>
-```
 Alternatively, link directly to the required remote hyphenation file:
 
-```css title="CSS"
-    :lang(en-GB) {
-        -prince-hyphenate-patterns: url("http://tug.ctan.org/tex-archive/language/hyph-utf8/tex/generic/hyph-utf8/patterns/txt/hyph-en-gb.pat.txt");
-    }
-```
 ```html title="HTML"
     <span lang="en-GB">supercalifragilisticexpialidocious</span>
 ```
+```css title="CSS"
+    :lang(en-GB) {
+        -prince-hyphenate-patterns: url("https://mirrors.ctan.org/language/hyph-utf8/tex/generic/hyph-utf8/patterns/txt/hyph-en-gb.pat.txt");
+    }
+```
 
-## Typographic Ligatures
+### Typographic Ligatures
 
 <dl className="ingredients">
   <dt>You need</dt>
@@ -789,6 +844,8 @@ Prince supports typographic ligatures found in OpenType fonts, i.e. Prince will 
 A prominent example of a typographic ligature is **ﬁ**, which replaces the two characters **<span>f</span><span>i</span>** with a single glyph.
 
 Prince automatically enables ligatures declared by the OpenType fonts with the `liga` feature (see [OpenType Features in Prince](styling.md#opentype-features-in-prince)). This feature covers the "standard ligatures" which the font manufacturer thinks should be used in normal conditions. Microsoft has a list of the OpenType feature names [here](https://www.microsoft.com/typography/otspec/featurelist.htm).
+
+Please note that ligatures are disabled when the CSS property `letter-spacing` specifies a non-zero value.
 
 Other special ligatures need to be explicitly enabled in Prince to take effect. This is achieved by using the [`font-variant-ligatures`](css-props.md#prop-font-variant-ligatures) CSS property.
 Note that the property [`font-variant`](css-props.md#prop-font-variant) can be used as a shorthand for enabling this, and possibly other font features.
@@ -812,7 +869,7 @@ Some scripts, most notably Arabic and Syriac scripts, require certain ligatures 
 Another mechanism for replacing specific characters is given with the [`-prince-text-replace`](css-props.md#prop-prince-text-replace) property. For an example use, please see the section on [Character Entities](characters.md).
 
 
-## Watermarks
+### Watermarks
 
 <dl className="ingredients">
   <dt>You need</dt>
@@ -833,7 +890,7 @@ In order to repeat it on all pages, the watermark needs to be placed in a [`@pag
 ```css
     @page {
        @prince-overlay {
-          color: rgba(0,0,0,0.8);
+          color: rgb(0 0 0 / 0.8);
           content: "Watermark";
           font-size: 20pt;
        }
@@ -854,14 +911,14 @@ Currently it is only possible to have one overlay, but you could flow an entire 
 The styled watermark can be saved into a `watermark.css` file, which will be called when generating the document:
 
 ```bash
-    prince --style=watermark.css myfile.md -o myfile_with_watermark.pdf
+    $ prince --style=watermark.css myfile.md -o myfile_with_watermark.pdf
 ```
 
-## Rotating content
+### Rotating content
 
 Sometimes it is necessary to rotate a block element so that it fits on the page. This is common with tables. Two approaches are possible: either the whole page is [printed sideways](#printing-wide-content-sideways), or only [the content in a table cell is rotated](#rotating-content-in-table-cells). We shall see each approach separately.
 
-### Printing wide content sideways
+#### Printing wide content sideways
 
 <dl className="ingredients">
   <dt>You need</dt>
@@ -892,7 +949,7 @@ If you download the full example ([HTML](assets/samples/rotate-body.html) or [PD
 
 Another way of rotating content is by changing the writing mode with the [`writing-mode`](css-props.md#prop-writing-mode) property, or by transforming an element with `transform: rotate()` - see [Rotating content in table cells](#rotating-content-in-table-cells).
 
-### Rotating content in table cells
+#### Rotating content in table cells
 
 <dl className="ingredients">
   <dt>You need</dt>
@@ -938,7 +995,7 @@ The rotation will happen with the following CSS code:
 ```
 A more basic means for rotation, allowing for less fine-tuning, is the use of the [`writing-mode`](css-props.md#prop-writing-mode) CSS property. This option only allows rotation by 90°. It can be very handy when only some table cells with too much content are rotated, so as not to use too much horizontal space. You cannot rotate the table cell directly, so you have to nest one `span` element inside - and then you style it:
 
-```css
+```css title="CSS"
     td.rotate > span {
       /* Rotate the content */
       writing-mode: vertical-rl;
@@ -949,7 +1006,103 @@ A more basic means for rotation, allowing for less fine-tuning, is the use of th
 For a different approach to rotating content, see the section on [Printing wide content sideways](#printing-wide-content-sideways).
 
 
-## How and Where is my Box?
+## JavaScript
+
+### Table of Contents
+
+<dl className="ingredients">
+  <dt>You need</dt>
+  <dd><a href="/doc/javascript#javascript-in-printed-media">JavaScript in Printed Media</a></dd>
+  <dd><a href="/doc/gen-content#generated-content-functions">Generated Content Functions</a>
+    <ul>
+      <li><code>content: target-counter()</code></li>
+      <li><code>content: leader()</code></li>
+    </ul>
+  </dd>
+</dl>
+
+Prince offers several properties and functions to facilitate the creation of a Table of Contents.
+
+Typically, a table of contents is generated for a document by collecting the headings of each chapter, each one provided with an `id` attribute, into a list or, if necessary, also into nested lists, by means of JavaScript or in some other way, in order to generate a navigation menu for the document.
+
+Each list item contains a hyperlink to the heading's `id`. This list functions as a navigation menu when the document is viewed in a browser.
+
+The transformation into a proper table of contents happens with CSS when Prince generates the PDF - the resulting document will be paged, and possibly be intended for printing. It means that the hyperlinks need to be integrated with an indication of the correct page on which the target is located.
+
+This is achieved automatically with the `target-counter()` function in the [`content`](css-props.md#prop-content) property, using the `page` counter. The URL is being automatically fetched from the `href` attribute of the hyperlink element `<a>`.
+
+```css
+    #toc a::after {
+      content: target-counter(attr(href), page);
+    }
+```
+The page numbers are best styled right-aligned, while the link texts are left-aligned. An easy way to achieve this is with the `leader()` function: it defines a literal string, which expands to fill the available space on the line like justified text, by repeating the string as many times as necessary. The complete CSS entry for a simple table of contents entry thus looks like this:
+
+```css
+    #toc a::after {
+      content: leader('.') target-counter(attr(href), page);
+    }
+```
+#### Simple Table of Contents
+
+Our [example document](https://css4.pub/2018/toc/index.html) generates at Table of Contents (ToC) by way of JavaScript. You can easily test it by running Prince from the command line:
+
+```bash
+    $ prince --javascript https://css4.pub/2018/toc -o toc.pdf
+```
+A [second example document](https://css4.pub/2020/musick/musick.html) generates at ToC by way of JavaScript and, even more impressively, the script also generates an index which is added to the end of the document when Prince runs JavaScript a second time, after layout (see [The "Multi-Pass" Solution](#the-multi-pass-solution)). Notice how subsequent page numbers in the index are folded into a range. To produce this document, try running these commands from a Linux command-line:
+
+```bash
+    $ prince --javascript https://css4.pub/2020/musick/musick.html -o musick.pdf
+```
+You can view the resulting PDF [here](https://css4.pub/2020/musick/musick.pdf).
+
+#### Multifile Table of Contents
+
+For longer books, it makes sense to split chapters into separate files. Generating a Table of Contents across all files is tricky in JavaScript since scripts only see one file at a time. In Prince, you can work around this limitation with a so-called "two-pass" approach, by running Prince twice - the first pass collects items for the ToC, and the second pass generates the PDF with the ToC.  When scripts need to communicate across multiple input documents, the built-in ["multi-pass" solution](#the-multi-pass-solution) is not an option.
+
+To try this for yourself, first fetch these five sample files into your own file system, e.g. by running:
+
+```bash
+    $ wget https://css4.pub/2018/multifile-toc/toc.js;
+    $ wget https://css4.pub/2018/multifile-toc/toc.html;
+    $ wget https://css4.pub/2018/multifile-toc/ch1.html;
+    $ wget https://css4.pub/2018/multifile-toc/ch2.html;
+    $ wget https://css4.pub/2018/multifile-toc/style.css;
+```
+Then, run Prince twice:
+
+```bash
+    $ prince --javascript --script=toc.js ch1.html ch2.html -o book.pdf >> toc.html;
+    $ prince toc.html ch1.html ch2.html -o book.pdf;
+```
+You can view the resulting PDF [here](https://css4.pub/2018/multifile-toc/book.pdf).
+
+
+### Endnotes
+
+<dl className="ingredients">
+  <dt>You need</dt>
+  <dd><a href="/doc/javascript">Scripting</a></dd>
+</dl>
+
+Endnotes are quite easy as their placement is not relative to the page. There are two ways of creating them.
+
+In their most simple form, an endnote is placed at the end of the document by the author, with a (hyperlinked) call in the text.
+
+However, it can be laborious to manually synchronize references in this manner. A more convenient alternative is to keep the notes inline and to move them to the end of the document at the time of formatting. This is a simple tree transformation which can be performed by a script. The following sample document features references which are kept inline and moved to the end by a script:
+
+-   [HTML document](https://css4.pub/2015/usenix/example.html)
+-   [PDF document](https://css4.pub/2015/usenix/example.pdf)
+
+No special CSS formatting is required to support endnotes.
+
+In a similar fashion table notes can be created. These are a variation of endnotes. However, instead of moving the notes to the end of the document, the notes are moved to the end of the table, or to the end of the table cell. Again, this is a simple tree transformation which doesn't require anything special from CSS.
+
+The table in the above document sample also has inline notes that are moved to the end of the table by a script.
+
+
+### How and Where is my Box?
 
 <dl className="ingredients">
   <dt>You need</dt>
@@ -963,7 +1116,7 @@ The following script adds some useful higher-level functionality, making the `ma
 
 The methods return a box object with properties `x`, `y`, `w` and `h`, giving the position and size of the box in the requested units.
 
-```javascript title="JavaScript"
+```javascript
     if (typeof Prince != "undefined") {
         addBoxInfoMethods();
     }
@@ -1051,7 +1204,7 @@ To use the features, the script just needs to be included in the HTML directly a
 ```
 
 
-## The "Multi-Pass" Solution
+### The "Multi-Pass" Solution
 
 <dl className="ingredients">
   <dt>You need</dt>
@@ -1114,7 +1267,7 @@ The `docusaurus-prince-pdf` package automatically generates a list of URLs, one 
 
 Interesting for us, is that we have a list with the URLs for all pages of the documentation - let us call it `list.txt`:
 
-```text
+```
 https://princexml.com/doc/
 https://princexml.com/doc/intro-userguide/
 https://princexml.com/doc/styling/

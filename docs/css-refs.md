@@ -2,30 +2,30 @@
 title: Supported CSS Specifications
 ---
 
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,100..900;1,100..900&amp;display=swap" rel="stylesheet"/>
+
 Prince supports, fully or partially, the following CSS specifications:
 
 <table className="grid">
-<tbody><tr>
+<tr>
 <th colSpan="2">CSS Level 2</th>
 </tr>
 <tr>
 <td><a href="https://www.w3.org/TR/CSS2/">CSS 2.1</a></td>
-<td>Prince supports the specification, with few exceptions: Prince does not support
-the <code>quotes</code> property or the <code>open-quote</code> and <code>close-quote</code>
-values. Prince does not support properties that apply only to interactive media. Note
-that this includes <code>outline</code> and its <code>outline-*</code> subproperties.
-For similar reasons, Prince does not support <code>visibility: collapse</code>. Prince
-does not support the <code>armenian</code> or <code>georgian</code> list styles. Prince
-treats <code>1ex</code> equivalently to <code>0.5em</code>, which might not be correct
-for some fonts.</td>
+<td>Prince supports the specification, with few exceptions: Prince does not support the <code>quotes</code> property or the <code>open-quote</code> and <code>close-quote</code> values. Prince does not support properties that apply only to interactive media. Prince does not support <code>visibility: collapse</code>, nor the <code>armenian</code> or <code>georgian</code> list styles. Prince treats <code>1ex</code> equivalently to <code>0.5em</code>, which might not be correct for some fonts.</td>
 </tr>
 <tr>
 <th colSpan="2">CSS Level 3</th>
 </tr>
 <tr>
+<td><a href="https://www.w3.org/TR/css-align-3/">CSS Box Alignment Module Level 3</a></td>
+<td>Prince supports the new properties and values relating to flex and grid layout.</td>
+</tr>
+<tr>
 <td><a href="https://www.w3.org/TR/css-backgrounds-3/">CSS Backgrounds and Borders Module Level 3</a></td>
-<td>Prince does not support <code>box-shadow</code> and the <code>border-image</code>
-properties.</td>
+<td>Prince does not support the <code>border-image</code> property.</td>
 </tr>
 <tr>
 <td><a href="https://www.w3.org/TR/css-break-3/">CSS Fragmentation Module Level 3</a></td>
@@ -36,9 +36,7 @@ properties.</td>
 <tr>
 <td><a href="https://www.w3.org/TR/css-color-3/">CSS Color Module Level 3</a></td>
 <td>Prince supports <code>opacity</code>. It supports some of the extensions of the
-<code>color</code> property. <code>rgba()</code> is supported in builds after
-Prince 11, <code>hsl()</code> and <code>hsla()</code> are supported as
-of Prince 12.1 .</td>
+<code>color</code> property.</td>
 </tr>
 <tr>
 <td><a href="https://www.w3.org/TR/css-content-3/">CSS Generated Content Module Level 3</a></td>
@@ -47,23 +45,15 @@ content types.</td>
 </tr>
 <tr>
 <td><a href="https://www.w3.org/TR/css-fonts-3/">CSS Fonts Module Level 3</a></td>
-<td>Beyond the definitions in CSS 2.1, Prince supports <code>font-stretch</code>,
-<code>font-kerning</code>, <code>font-variant-caps</code> and <code>font-variant-ligatures</code>.
-Prince also provides a different interface to the functionality of the
-<code>font-feature-settings</code> property through the
-<code><a href="/doc/css-props#prop-font-variant">font-variant: prince-opentype()</a></code>
-function.</td>
+<td>Beyond the definitions in CSS 2.1, Prince supports <code>font-stretch</code>, <code>font-kerning</code>, <code>font-variant-caps</code> and <code>font-variant-ligatures</code>. Prince also provides a different interface to the functionality of the <code>font-feature-settings</code> property through the <code><a href="/doc/css-props#prop-font-variant">font-variant: prince-opentype()</a></code> function.</td>
 </tr>
 <tr>
 <td><a href="https://www.w3.org/TR/css-lists-3/">CSS Lists and Counters Module Level 3</a></td>
-<td>Prince does not support the <code>marker-side</code> and <code>counter-set</code> properties.</td>
+<td>Prince does not support the <code>marker-side</code> property.</td>
 </tr>
 <tr>
 <td><a href="https://www.w3.org/TR/css-gcpm-3/">CSS Generated Content for Paged Media Module</a></td>
-<td>Prince recognizes <code>footnote-display</code> and <code>string-set</code> as
-well as the mechanism for running elements.  It does not recognize the
-<code>running</code> or <code>footnote-policy</code> properties, but Prince provides
-a different interface to the functionality of footnotes (see <a href="/doc/styling#footnotes">Footnotes</a>).</td>
+<td>Prince recognizes <code>footnote-display</code> and <code>string-set</code> as well as the mechanism for running elements.  It does not recognize the <code>running</code> or <code>footnote-policy</code> properties, but Prince provides a different interface to the functionality of footnotes (see <a href="/doc/styling#footnotes">Footnotes</a>).</td>
 </tr>
 <tr>
 <td><a href="https://drafts.csswg.org/css-page-floats/">CSS Page Floats - Editor's Draft</a></td>
@@ -71,8 +61,7 @@ a different interface to the functionality of footnotes (see <a href="/doc/styli
 </tr>
 <tr>
 <td><a href="https://www.w3.org/TR/css-images-3/">CSS Images Module Level 3</a></td>
-<td>Prince supports the mandatory values of <code>image-orientation</code>, as
-well as the properties <code>object-fit</code> and <code>object-position</code>.</td>
+<td>Prince supports the mandatory values of <code>image-orientation</code>, as well as the properties <code>object-fit</code> and <code>object-position</code>.</td>
 </tr>
 <tr>
 <td><a href="https://www.w3.org/TR/css-multicol-1/">CSS Multi-column Layout Module Level 1</a></td>
@@ -88,16 +77,11 @@ well as the properties <code>object-fit</code> and <code>object-position</code>.
 </tr>
 <tr>
 <td><a href="https://www.w3.org/TR/css-text-3/">CSS Text Module Level 3</a></td>
-<td>Prince does not recognize <code>line-break</code>, <code>text-align-all</code>
-and <code>hanging-punctuation</code>. It does not support the value
-<code>break-word</code> of the property <code>word-break</code>, nor the value
-<code>anywhere</code> of the property <code>overflow-wrap</code>, nor the value
-<code>break-spaces</code> of the property <code>white-space</code>.</td>
+<td>Prince does not recognize <code>line-break</code>, <code>text-align-all</code> and <code>hanging-punctuation</code>. It does not support the value <code>break-word</code> of the property <code>word-break</code>, nor the value <code>anywhere</code> of the property <code>overflow-wrap</code>, nor the value <code>break-spaces</code> of the property <code>white-space</code>.</td>
 </tr>
 <tr>
 <td><a href="https://www.w3.org/TR/css-transforms-1/">CSS Transforms Module Level 1</a></td>
-<td>Prince recognizes <code>transform</code> and <code>transform-origin</code>, but
-does not recognize <code>transform-box</code>. Prince does not allow perspective transforms.</td>
+<td>Prince recognizes <code>transform</code> and <code>transform-origin</code>, but does not recognize <code>transform-box</code>. Prince does not allow perspective transforms.</td>
 </tr>
 <tr>
 <td><a href="https://www.w3.org/TR/css-ui-3/">CSS Basic User Interface Module Level 3 (CSS3 UI)</a></td>
@@ -105,7 +89,7 @@ does not recognize <code>transform-box</code>. Prince does not allow perspective
 </tr>
 <tr>
 <td><a href="https://www.w3.org/TR/css-writing-modes-3/">CSS Writing Modes Level 3</a></td>
-<td>Prince partially implements <code>writing-mode</code>.</td>
+<td>Prince partially implements <code>writing-mode</code> and <code>unicode-bidi</code>.</td>
 </tr>
 <tr>
 <td><a href="https://www.w3.org/TR/css-namespaces-3/">CSS Namespaces Module Level 3</a></td>
@@ -113,8 +97,7 @@ does not recognize <code>transform-box</code>. Prince does not allow perspective
 </tr>
 <tr>
 <td><a href="https://www.w3.org/TR/css-conditional-3/">CSS Conditional Rules Module Level 3</a></td>
-<td>Prince supports the <a href="/doc/css-at-rules/#at-media"><code>@media</code></a>
-and <a href="/doc/css-at-rules/#at-supports"><code>@supports</code></a> at-rules.</td>
+<td>Prince supports the <a href="/doc/css-at-rules/#at-media"><code>@media</code></a> and <a href="/doc/css-at-rules/#at-supports"><code>@supports</code></a> at-rules.</td>
 </tr>
 <tr>
 <td><a href="https://drafts.fxtf.org/filter-effects/">Filter Effects Module Level 1 - Editor's Draft</a></td>
@@ -124,10 +107,20 @@ and <a href="/doc/css-at-rules/#at-supports"><code>@supports</code></a> at-rules
 <th colSpan="2">CSS Level 4</th>
 </tr>
 <tr>
+<td><a href="https://www.w3.org/TR/css-fonts-4/">CSS Fonts Module Level 4</a></td>
+<td>Beyond the definitions in CSS 2.1 and CSS Fonts Module Level 4, Prince supports Font Variations (Variable Fonts).</td>
+</tr>
+<tr>
+<td><a href="https://www.w3.org/TR/css-color-4/">CSS Color Module Level 4</a></td>
+<td>Prince supports the syntax for <code>rgb()</code> and <code>hsl()</code>, as well as the <code>hwb()</code> color function - except for the value <code>none</code>.</td>
+</tr>
+<tr>
 <td><a href="https://www.w3.org/TR/css-flexbox-1/">CSS Flexible Box Layout Module Level 1</a></td>
-<td>Prince supports this module as of Prince 12, with the exception of
-  page breaking/fragmentation, <code>break-before</code>/<code>-after</code>,
-  <code>visibility: collapse</code> and vertical writing.</td>
+<td>Prince supports this module as of Prince 12, with the exception of   page breaking/fragmentation, <code>visibility: collapse</code> and vertical writing.</td>
+</tr>
+<tr>
+<td><a href="https://www.w3.org/TR/css-grid-1/">CSS Grid Layout Module Level 1</a></td>
+<td>Prince supports this module, with the exception of   baseline alignment, collapsing auto-fit tracks, and fit-content sizing.</td>
 </tr>
 <tr>
 <td><a href="https://www.w3.org/TR/selectors-4/">Selectors Level 4</a></td>
@@ -142,6 +135,10 @@ and <a href="/doc/css-at-rules/#at-supports"><code>@supports</code></a> at-rules
 <td>Prince supports the new <code>supports()</code> condition for the <code>@import</code> rule.</td>
 </tr>
 <tr>
+<td><a href="https://www.w3.org/TR/css-ui-4/#widget-accent">CSS Basic User Interface Module Level 4</a></td>
+<td>Prince supports the <code>accent-color</code> property for PDF radio and checkbox form controls.</td>
+</tr>
+<tr>
 <td><a href="https://drafts.csswg.org/css-backgrounds-4/">CSS Backgrounds and Borders Module Level 4</a></td>
 <td>Prince recognizes the <code>border-clip</code> property, but takes a different syntax.</td>
 </tr>
@@ -154,12 +151,18 @@ and <a href="/doc/css-at-rules/#at-supports"><code>@supports</code></a> at-rules
 <td>Prince supports this module.</td>
 </tr>
 <tr>
+<th colSpan="2">CSS Level 5</th>
+</tr>
+<tr>
+<td><a href="https://www.w3.org/TR/css-color-5/">CSS Color Module Level 5</a></td>
+<td>Prince supports the <code>device-cmyk()</code> function from this module.</td>
+</tr>
+<tr>
 <th colSpan="2">Living Standards</th>
 </tr>
 <tr>
 <td><a href="https://books.idea.whatwg.org/">CSS Books</a></td>
-<td>Prince supports target counters, footnote floats, bookmarks labels, levels and
-states, the <code>flow</code> property and the <code>string-set</code> property.</td>
+<td>Prince supports target counters, footnote floats, bookmarks labels, levels and states, the <code>flow</code> property and the <code>string-set</code> property.</td>
 </tr>
 <tr>
 <td><a href="https://figures.idea.whatwg.org/">CSS Figures</a></td>
@@ -170,7 +173,6 @@ states, the <code>flow</code> property and the <code>string-set</code> property.
 </tr>
 <tr>
 <td><a href="https://www.w3.org/TR/SVG11/">SVG 1.1</a></td>
-<td>Prince supports the specification with some exceptions - please see
-<a href="/doc/graphics#scalable-vector-graphics-svg">Scalable Vector Graphics (SVG)</a> for a full list of currently not supported elements.</td>
+<td>Prince supports the specification with some exceptions - please see <a href="/doc/graphics#scalable-vector-graphics-svg">Scalable Vector Graphics (SVG)</a> for a full list of currently not supported elements.</td>
 </tr>
-</tbody></table>
+</table>

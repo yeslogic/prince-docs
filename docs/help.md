@@ -1,6 +1,11 @@
 ---
 title: Help
 ---
+
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,100..900;1,100..900&amp;display=swap" rel="stylesheet"/>
+
 <style>
 .navbar__item:first-child {"{"}
     background-color: #6e2577 !important;
@@ -50,7 +55,7 @@ When using the Prince GUI, the output log is printed to the log window on the bo
 
 Symptom  
 ```bash
-    prince: ./picture.bmp: warning: Unknown image format
+    $ prince: ./picture.bmp: warning: Unknown image format
 ```
 Explanation  
 Prince supports the JPEG, PNG, TIFF, GIF, WebP and AVIF image formats, as well as SVG (see [Images](graphics.md#images)). If you try to format a document that includes images in a format that is not supported by Prince, such as BMP, you may see the above error message from Prince.
@@ -191,7 +196,7 @@ This script is not available on Windows.
   see <a href="/doc/javascript#javascript-in-printed-media">JavaScript in Printed Media</a>.</p>
   <p>However, Prince offers the possibility to register the function <a href="/doc/js-support/#window.Prince.registerPostLayoutFunc"><code>Prince.registerPostLayoutFunc(func)</code></a> after layout has finished and before producing the PDF for possibly triggering a new layout - see <a href="/doc/javascript/#multi-pass-formatting">Multi-Pass formatting</a> for more details.</p></dd>
 
-  <dt><p id="faq-webfonts">Why are Web fonts not loaded? <a className="self-link" href="#faq-webfonts"></a></p></dt>
+  <dt><p id="faq-webfonts">Why are Web fonts not loaded? <a className="self-link" href="#faq-webfonts" /></p></dt>
   <dd><p>Prince supports and loads web fonts.  However, in some specific cases the web fonts served to Prince might
   differ from those served to browsers.  In such cases the command-line options <a href="/doc/command-line/#cl-user-agent"><code>--user-agent</code></a> may be used
   to spoof the user agent string sent to the servers, basically pretending to be a browser.</p>

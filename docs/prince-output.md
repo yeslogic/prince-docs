@@ -2,6 +2,10 @@
 title: Prince Output
 ---
 
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,100..900;1,100..900&amp;display=swap" rel="stylesheet"/>
+
 Prince produces PDF files that are compatible with Adobe Acrobat and other PDF viewers. The output can be controlled in several different ways, addressing different aspects of the resulting files.
 
 For the error and warning output log, please see [Output log](help.md#output-log).
@@ -38,11 +42,12 @@ Prince supports also the creation of files with the following combined profiles:
 |PDF/A-2a+PDF/UA-1|
 |PDF/A-3a+PDF/UA-1|
 
-Prince also uses:
+
+Unless some features are required by a specific PDF profile and version (such as tagged PDF required by PDF/A-1a with PDF version 1.4), Prince also uses:
 
 PDF 1.5  
 -   if object streams are enabled, or
--   if tagged PDF is enabled, or
+-   if tagged PDF is manually enabled, or
 -   if 16-bit images are included in the PDF;
 
 PDF 1.6  
@@ -53,7 +58,7 @@ PDF 1.7 (ISO 32000-1:2008)
 -   if the [`-prince-pdf-paper-tray`](css-props.md#prop-prince-pdf-paper-tray) property is set, or
 -   if the [`-prince-pdf-duplex`](css-props.md#prop-prince-pdf-duplex) property is set.
 
-To enable tagged PDF without using one of the profiles that already imply it, the command-line option [`--tagged-pdf`](command-line.md#cl-tagged-pdf) can be used.
+The PDF/A-[123]a profiles and the PDF/UA-1 profile require tagged PDF, and will automatically enable it.  To enable tagged PDF without using one of the profiles that already imply it, the command-line option [`--tagged-pdf`](command-line.md#cl-tagged-pdf) can be used.
 
 Prince supports PDF object streams to reduce the size of tagged PDFs. This can be disabled by the command-line argument [`--no-object-streams`](command-line.md#cl-no-object-streams) or from JavaScript via the [`PDF.objectStreams`](js-support.md#window.PDF.objectStreams) boolean property.
 
@@ -135,18 +140,22 @@ Prince supports a wide range of PDF features, including the following:
 
 ### PDF Links
 
-Prince supports PDF-internal and -external links. HTML hyperlinks are automatically converted. To make an element in XML, or any arbitrary element, a clickable link, the [`-prince-link`](css-props.md#prop-prince-link) CSS property is required.
+Prince supports PDF-internal and -external links. HTML hyperlinks are automatically converted.
+
+To make an element in XML, or any arbitrary element, a clickable link, the [`-prince-link`](css-props.md#prop-prince-link) CSS property is required.  If the element already offers an IDREF, i.e. a URL, in its attribute, the `url()` function indicates the target of the link.
 
 
 ```xml title="DocBook XML"
     <xref linkend="ch02"/>
 ```
-
 ```css title="CSS"
     xref {
-        -prince-link: attr( linkend )
+        -prince-link: attr(linkend idref)
     }
 ```
+
+If, as in this example, we have a value wich is not a URL (as is common in XML documents), the `idref` attribute type can be used as a second argument - a Prince-specific extension which treats the attribute value specified with the first argument to the `attr()` function as if it were an IDREF, essentially converting it to a URL by prepending a hash mark.
+
 The property [`-prince-pdf-link-type`](css-props.md#prop-prince-pdf-link-type) may be used to control the link type and target, i.e. whether relative links should be embedded in the PDF as web (URL) links or file links (by default they will be resolved against the base URL of the input document) and whether to open the links in the same or a new window. Note however that the optional link target keywords `same-window` and `new-window` only affect links to local PDF files.
 
 ```css
@@ -158,7 +167,7 @@ This example is equivalent to `-prince-pdf-link-type: auto new-window` and has o
 
 Prince also supports the PDF-specific `page` and `nameddest` fragment identifiers, supported by web browsers, and will use them when generating links to local PDF files.
 
-```html
+```html title="HTML"
     <a href="test.pdf#page=2">...</a>
     <a href="test.pdf#nameddest=section1">...</a>
 ```
@@ -215,6 +224,12 @@ Just as with the previous property, scripts need to be provided inline.
     }
 ```
 Please note that starting from Prince 15, these CSS properties will not longer allow for the `url()` function as an argument - to provide an external file, the command-line options [`--prince-pdf-script`](command-line.md#cl-prince-pdf-script) and [`--prince-pdf-event-script`](command-line.md#cl-prince-pdf-event-script) need to be used instead.
+
+The [`--prince-pdf-script`](command-line.md#cl-prince-pdf-script) command-line option can be set multiple times, and all scripts passed will be run.
+
+PDF scripts can also be passed to Prince by means of a [JSON job description](server-integration.md#prince-job-json), which also allows for multiple scripts being passed to Prince.
+
+<p className="note">The JavaScript method <a href="/doc/js-support/#window.PDF.script">PDF.script</a>, when used as a getter, returns a string if exactly one script string literal was provided (via the command line, the CSS property or the job description), but returns null when multiple scripts are specified. When used as a setter, it only allows to set a single script.</p>
 
 ### PDF Pages
 
@@ -307,11 +322,15 @@ The `--pdf-forms` command-line option is a shorthand for applying the CSS proper
 
 ```css
 form input, form select option {
-    -prince-pdf-form: enabled;
+    -prince-pdf-form: enable;
 }
 ```
 
 In case of conflict, the property has the final say: the command-line option only determines whether the default value `auto` will be treated as `enable` or `disable`.
+
+The property [-prince-pdf-form-field-font-size](css-props.md#prop-prince-pdf-form-field-font-size) allows text inputs in PDF forms to automatically size the text to fit the available space by using the `auto` keyword.
+
+Prince also supports <code>&lt;input type="prince-pdf-signature"&gt;</code> to create signature fields in PDF forms.
 
 
 ### PDF Printing
@@ -359,7 +378,46 @@ Font embedding can be disabled if necessary, for example if Prince is being used
 
 Prince supports adding files to PDF documents as attachments - but please note that not all PDF profiles allow for attachments (see [PDF Versions and Profiles](#pdf-versions-and-profiles) for details).
 
-The main mechanisms for doing so are the JavaScript function [`PDF.attachFile`](js-support.md#window.PDF.attachFile) and the command-line option [`--attach`](command-line.md#cl-attach). Additionally, the job description JSON format, used by the [Prince Control Protocol](server-integration.md#prince-control-protocol), can be used to provid an attachment "inline" through the Java/C\# APIs (see [Prince Wrappers](server-integration.md#prince-wrappers)) instead of as a separate file on the filesystem. See [Prince Control Protocol](server-integration.md#prince-control-protocol) for details on the job description JSON format.
+The main mechanisms for doing so are the JavaScript function [`PDF.attachFile`](js-support.md#window.PDF.attachFile) and the command-line option [`--attach`](command-line.md#cl-attach). Additionally, the [job description JSON format](server-integration.md#prince-job-json), used by the [Prince Control Protocol](server-integration.md#prince-control-protocol), can be used to provid an attachment "inline" through the Java/C\# APIs (see [Prince Wrappers](server-integration.md#prince-wrappers)) instead of as a separate file on the filesystem. See [Prince Control Protocol](server-integration.md#prince-control-protocol) for details on the job description JSON format.
+
+Attachments in the job description include a key to specify the AFRelationship key of the attachment in the PDF.  The value of `relationship` must be one of the names defined in PDF 2.0:
+
+    Source
+    Data
+    Alternative
+    Supplement
+    EncryptedPayload
+    FormData
+    Schema
+    Unspecified
+
+or a second-class name according to the following definition: "all names that begin with 4 characters including or followed by a LOW LINE (5fh) or COLON (3Ah) in either the key or value of a dictionary entry are second-class names."
+
+The MIME type for an attachment is generally autodetected, based on file extension as defined in the `mime.types` mapping file.  However, there can be cases when a manual override is desired - it can be set with the `mime-type` field.
+
+When in use, the attachment definition might look like the following example:
+
+```json
+{
+    "url": "/path/to/xmp1.xml",
+    "filename": "xmp1.xml",
+    "description": "Some XMP metadata",
+    "relationship": "Data",
+    "mime-type": "text/xml"
+}
+```
+
+The command-line options
+
+    --attach-data
+    --attach-source
+    --attach-alternative
+    --attach-supplement
+    --attach-unspecified
+
+give users a way to add file attachments on the command line, while specifying the AFRelationship value for those attachments.  These options are all equivalent to the command-line option [`--attach`](command-line.md#cl-attach), but will specify a different AFRelationship value for the attachment.
+
+These options are mostly needed for Factur-X/ZUGFeRD invoices, a new invoicing standard that is becoming mandatory in Europe and involves attaching an XMP metadata file to PDF documents.
 
 
 ### PDF Bookmarks
@@ -464,7 +522,9 @@ Please also consult [A quick guide to PDF comments in Prince](https://css4.pub/2
 
 ### PDF Tags
 
-Tagged PDF files have special handling mechanisms for specific tag types. When enabling tagged PDF files with the command line option [`--tagged-pdf`](command-line.md#cl-tagged-pdf) Prince automatically assigns default values to certain HTML elements, which can be seen in the default `html.css` style sheet (see [Installation Layout](installing.md#installation-layout)).
+Tagged PDF files have special handling mechanisms for specific tag types.
+
+Tagged PDF is automatically enabled when the PDF/A-[123]a profiles or the PDF/UA-1 profile are chosen. Alternatively, tagged PDF files can be manually enabled with the command line option [`--tagged-pdf`](command-line.md#cl-tagged-pdf), or the CSS property [`-prince-pdf-tagged`](css-props.md#prop-prince-pdf-tagged). Prince will then automatically assign default values to certain HTML elements, which can be seen in the default `html.css` style sheet (see [Installation Layout](installing.md#installation-layout)).
 
 However, in specific cases it is advisable to fine-tune the PDF tags with the [`-prince-pdf-tag-type`](css-props.md#prop-prince-pdf-tag-type) property. In Prince, it is possible to assign PDF tag types to elements in the document through the [`-prince-pdf-tag-type`](css-props.md#prop-prince-pdf-tag-type) property, in order to create XML vocabularies in the PDF.
 
@@ -493,6 +553,7 @@ The possible values are the following PDF tag types:
 -   `Caption`
 -   `TOC`
 -   `TOCI`
+-   `NonStruct`
 -   `P`
 -   `H1`
 -   `H2`
@@ -500,10 +561,10 @@ The possible values are the following PDF tag types:
 -   `H4`
 -   `H5`
 -   `H6`
--   `OL`
--   `UL`
+-   `L`
 -   `LI`
 -   `Lbl`
+-   `LBody`
 -   `DL`
 -   `DL-Div`
 -   `DT`
@@ -523,6 +584,32 @@ The default value `auto` leaves the tag assignment to Prince.
 
 The special value `none` can be used to make specific elements (such as e.g. wrapper span or block elements) transparent in a tagged PDF structure tree.
 
+Prince allows to expand the tag assignment by providing a mechanism for custom role map declarations with the CSS property [`-prince-pdf-role-map`](css-props.md#prop-prince-pdf-role-map). The custom tag types thus declared, can then be used by the [`-prince-pdf-tag-type`](css-props.md#prop-prince-pdf-tag-type) property.
+
+```css
+    @prince-pdf {
+      -prince-pdf-role-map:
+        "Chapter" Sect,
+        "H7" P,
+        "Italic" "I",
+        "I" Span;
+    }
+
+    div.chapter {
+      -prince-pdf-tag-type: "Chapter";
+    }
+```
+
+PDF tags can also be given a custom title with the [`-prince-pdf-tag-title`](css-props.md#prop-prince-pdf-tag-title) property.  We could expand on the previous example, specifying the following:
+
+```css
+    ul.toc {
+      -prince-pdf-tag-type: TOC;
+      -prince-pdf-tag-title: "Table of Contents";
+    }
+```
+
+
 <p className="note">
 Bruce Lawson has written an interesting introduction on how to make <a href="https://medium.com/@bruce_39084/making-accessible-tagged-pdfs-with-prince-ad7fd7a48711">accessible tagged PDFs with Prince</a> - all you need to know about PDF tags and Prince!
 </p>
@@ -532,7 +619,7 @@ Bruce Lawson has written an interesting introduction on how to make <a href="htt
 
 Prince creates PDF metadata from the content of the XHTML metadata elements. The content of the `<title>` element is used for the document title, while the `<meta>` element can be used to specify the document author, subject, keywords, date, and generator application:
 
-```xml
+```xml title="XHTML"
     <html>
     <head>
     <title>Cooking with Cabbage</title>

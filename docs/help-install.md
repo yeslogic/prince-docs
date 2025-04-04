@@ -2,6 +2,10 @@
 title: Installation Help
 ---
 
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,100..900;1,100..900&amp;display=swap" rel="stylesheet"/>
+
 The Prince Installation Guide tries to be exhaustive in explaining how to install the application. However, there might always be something not answered in the documentation, or something not working as expected. There are a couple of ways to get help to solve the problems:
 
 -   The [Troubleshooting](#troubleshooting) section addresses possible common issues after installing and starting to use Prince;
@@ -16,22 +20,18 @@ We work hard to make Prince work on multiple platforms (Windows, Linux, etc) and
 ### Missing glyphs or fonts
 
 Symptom  
-
 ```bash
-prince: page 1: warning: no font for
-      Aegean Numbers character U+10123,
-      fallback to '?'
+    prince: page 1: warning: no font for
+          Aegean Numbers character U+10123,
+          fallback to '?'
 ```
-
 Explanation  
 Prince tries to tell you which page the missing glyph appeared on, what type of character it was (eg. "Latin", "Greek", etc.) and what character it used as a fallback (usually '?').
 
 Symptom  
-
 ```bash
-prince: internal error: no available fonts
+    prince: internal error: no available fonts
 ```
-
 Explanation  
 However, if there are no available fonts on the system at all then it won't even be able to find the question mark glyph, and you get an internal error message.
 
@@ -47,18 +47,16 @@ This problem may be a symptom of the [Fontconfig](#fontconfig).
 ### Fontconfig
 
 Symptom  
-
 ```bash
-Fontconfig error: Cannot load default config file
+    Fontconfig error: Cannot load default config file
 ```
-
 Explanation  
 Prince uses the [Fontconfig](https://www.fontconfig.org) library on Linux systems to search for fonts. Fontconfig is installed as a standard component on most desktop Linux distributions such as Ubuntu and recent versions of Red Hat Linux.
 
 Some older Linux distributions do not come with fontconfig and this may cause the above error. This error will usually be followed by errors relating to [Missing glyphs or fonts](#missing-glyphs-or-fonts) that cannot be found due to the absence of Fontconfig.
 
 Solution 1  
-Install Fontconfig (see your operating system's documentation).
+install Fontconfig (see your operating system's documentation).
 
 Solution 2  
 Redefine the CSS generic font families to use TrueType fonts that are specified directly by their filenames, avoiding the need to use Fontconfig at all. In extreme cases it might be advisable to disable system fonts completely with the [`--no-system-fonts`](command-line.md#cl-no-system-fonts) command-line option. See [Fonts](styling.md#fonts) and [Redefining the generic font families](styling.md#redefining-the-generic-font-families).
@@ -66,21 +64,17 @@ Redefine the CSS generic font families to use TrueType fonts that are specified 
 ### Shared library trouble
 
 Symptom (Linux)  
-
 ```bash
-/usr/local/stow/prince-9/lib/prince/bin/prince: error while loading shared
-  libraries: libtiff.so.4: cannot open shared object file: No such file or
-  directory
+    /usr/local/stow/prince-9/lib/prince/bin/prince: error while loading shared
+    libraries: libtiff.so.4: cannot open shared object file: No such file or
+    directory
 ```
-
 Symptom (FreeBSD)  
-
 ```bash
-Shared object "libxml2.so.2" not found, required by "prince"
+    Shared object "libxml2.so.2" not found, required by "prince"
 ```
-
 Explanation  
-Prince uses some third-party shared libraries, these are used for things such as decoding TIFF, PNG or JPEG files and finding and loading fonts. If one or more of these shared libraries cannot be found on your system then Prince will not run. This can occur if Prince was installed from a tarball (see [Tarballs - Alpine Linux, FreeBSD and Generic Linux](installing.md#install-generic)).
+Prince uses some third-party shared libraries, these are used for things such as decoding TIFF, PNG or JPEG files and finding and loading fonts. If one or more of these shared libraries cannot be found on your system then Prince will not run. This can occur if Prince was installed from a tarball (see [Tarballs - Alpine Linux, FreeBSD and Generic Linux](installing.md#tarballs---alpine-linux-freebsd-and-generic-linux)).
 
 Solution 1  
 Install the missing library software. [Acknowledgments](acknowledgements.md#acknowledgments) provides a list of the libraries that Prince uses. It is recommended to install them through your operating system's package management tool, see your operating system's documentation for more information.
@@ -91,11 +85,9 @@ Prince is just using the system shared object loader for most libraries, so the 
 ### `PATH` issues
 
 Symptom  
-
 ```bash
--bash: prince: command not found
+    -bash: prince: command not found
 ```
-
 Explanation  
 The command interpreter (`bash`) does not know how to find the `prince` executable. It was not found in any of the locations specified by the `PATH` environment variable.
 
@@ -103,20 +95,17 @@ Solution
 Add Prince's `bin/` subdirectory to your `PATH` and ensure that these changes are saved for future shell sessions. If Prince is installed in `/opt/prince10`, then add `/opt/prince10/bin` to `PATH`. There are many different types of command interpreters (also called shells) and we cannot possibly document all of them. The appropriate command for borne-style shells (the most common type) is usually:
 
 ```bash
-export PATH=/opt/prince10/bin:$PATH
+    export PATH=/opt/prince10/bin:$PATH
 ```
-
 This should be added to your command interpreter's configuration. For more information see your operating system's documentation.
 
 ### Prince cannot run on MacOS Catalina.
 
 Symptom  
-
 ```bash
-> # "prince" cannot be opened because the developer cannot be verified.
-> macOS cannot verify that this app is free from malware.
+    > # "prince" cannot be opened because the developer cannot be verified.
+    > macOS cannot verify that this app is free from malware.
 ```
-
 Explanation  
 Gatekeeper triggers a system alert when trying to run the Prince executable.
 
@@ -128,8 +117,8 @@ Starting with Prince 13.6, the Prince binaries are signed and do not trigger war
 Alternatively, you can run the following commands from Terminal to first remove any quarantine attribute applied by Safari when downloading `prince`, and then manually add a SecAssessment system policy label to the executable:
 
 ```bash
-$ xattr -d -r com.apple.quarantine /usr/local/bin/prince
-$ spctl --add --label "Approved" /usr/local/bin/prince
+    $ xattr -d -r com.apple.quarantine /usr/local/bin/prince
+    $ spctl --add --label "Approved" /usr/local/bin/prince
 ```
 
 Doing this will change the system alert to a system prompt to confirm running the executable.  For more information and possible further workarounds see also [this forum thread](https://www.princexml.com/forum/topic/4255/macos-catalina-prince-cannot-be-opened-because-the-developer).
@@ -150,7 +139,7 @@ Doing this will change the system alert to a system prompt to confirm running th
   <pre><code className="hljs">    prince file.xml -o file.pdf</code></pre>
   <p>On Windows, you replace the name of the executable with
   <code>Prince\engine\bin\prince.exe</code> in the installation directory
-  (see <a href="/doc/installing/#windows-installation-layout">Windows installation layout</a>),
+  (see <a href="/doc/installing/#-on-windows-2">Windows installation layout</a>),
   which is the command-line program. See also <a href="/doc/command-line/">Command-line Reference</a>.</p>
   <pre><code className="hljs">    "C:\Program Files (x86)\Prince\engine\bin\prince.exe" file.xml -o file.pdf</code></pre></dd>
 

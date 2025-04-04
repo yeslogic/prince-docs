@@ -18,7 +18,7 @@ property =
 		element value { value+ },
 		element initial { text },
 		element applyto { text },
-		element inherit { "no" | "yes" | "n/a" },
+		element inherit { text },
 		element shorthand {
 		    element prop { text }+
 		} ?,
@@ -32,10 +32,11 @@ property =
 		element value2 { value+ }?,
 		element initial2 { text }?,
 		element applyto2 { text }?,
-		element inherit2 { "no" | "yes" | "n/a" }?,
+		element inherit2 { text }?,
 		element example2 { text }*,
 		element see2 { reference | html-link }*,
-		element comments2 { para+ } ?
+		element comments2 { para+ } ?,
+        element spec2 { html-link | "n/a" }*
 		)
 	|
 	    element alias { text }
@@ -115,6 +116,7 @@ type-value =
         class*,
         (
             "angle" |
+            "attr-type" |
             "border-style" |
             "border-width" |
             "color" |
@@ -122,13 +124,24 @@ type-value =
             "counter-style" |
             "declaration-value" |
             "dpi" |
+            "explicit-track-list" |
+            "fallback" |
+            "flex" |
+            "font-stretch" |
+            "grid-line" |
             "integer" |
             "language" |
             "length" |
             "length-percentage" |
+            "min-width" |
             "number" |
+            "opentype-tag" |
             "page-policy" |
             "paper-size" |
+            "rendering-intent" |
+            "text-content" |
+            "track-list" |
+            "track-size" |
             "urange" |
             "url"
         )
@@ -154,11 +167,12 @@ html-list-item =
     element li { html-inline* }
 
 html-phrase = element em { html-text } |
+    element i { html-text } |
     element strong { html-text } |
     element sup { attribute style { text }, html-text }
 
 html-text =
-    element code { html-text } |
+    element code { html-inline* } |
     text
 
 reference =
