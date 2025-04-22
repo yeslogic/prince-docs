@@ -59,7 +59,7 @@ Prince also supports the two special keywords <code>initial</code> and <code>inh
 </p>
 
 <p class="toggle">
-<a href="#" onclick="javascript:toggleAllDetails('css'); return false;" id="toggle-css">Toggle (open/close) all properties</a>
+<a href="#" onClick="javascript:toggleAllDetails('css'); return false;" id="toggle-css">Toggle (open/close) all properties</a>
 </p>
 
 <div id="prop-list">
@@ -70,21 +70,27 @@ Prince also supports the two special keywords <code>initial</code> and <code>inh
 <details>
   <xsl:choose>
   <xsl:when test="extension|alias">
-  <summary class="ext" title="Prince extension" id="prop-{$propid}">
-    <xsl:if test="starts-with(name, 'prince-')"><xsl:text>-</xsl:text></xsl:if>
-    <xsl:value-of select="name"/>*
+  <summary class="ext" title="Prince extension">
+    <h6 id="prop-{$propid}">
+      <xsl:if test="starts-with(name, 'prince-')"><xsl:text>-</xsl:text></xsl:if>
+      <xsl:value-of select="name"/>*
+    </h6>
   </summary>
   </xsl:when>
   <xsl:when test="deprecated">
-  <summary class="dep" id="prop-{$propid}">
-    <xsl:if test="starts-with(name, 'prince-')"><xsl:text>-</xsl:text></xsl:if>
-    <xsl:value-of select="name"/>
+  <summary class="dep">
+    <h6 id="prop-{$propid}">
+      <xsl:if test="starts-with(name, 'prince-')"><xsl:text>-</xsl:text></xsl:if>
+      <xsl:value-of select="name"/>
+    </h6>
   </summary>
   </xsl:when>
   <xsl:otherwise>
-  <summary id="prop-{$propid}">
-    <xsl:if test="starts-with(name, 'prince-')"><xsl:text>-</xsl:text></xsl:if>
-    <xsl:value-of select="name"/>
+  <summary>
+    <h6 id="prop-{$propid}">
+      <xsl:if test="starts-with(name, 'prince-')"><xsl:text>-</xsl:text></xsl:if>
+      <xsl:value-of select="name"/>
+    </h6>
   </summary>
   </xsl:otherwise>
   </xsl:choose>

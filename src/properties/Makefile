@@ -1,5 +1,5 @@
 .PHONY: all
-all: valid output properties selflink noroot htmltojsx
+all: valid output properties noroot htmltojsx
 	cp output/css-props.md ../../docs/
 
 valid:
@@ -14,10 +14,7 @@ properties: valid output table.xsl properties.xml
 process: properties
 	./docs-process.py output/css-props-out.xml output/css-props.xml
 
-selflink: process
-	./docs_selflink.py output/css-props-out.xml
-
-noroot: selflink
+noroot: process
 	xsltproc noroot.xsl output/css-props-out.xml > output/css-props.md
 
 htmltojsx: noroot
