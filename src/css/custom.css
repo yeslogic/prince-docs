@@ -215,11 +215,11 @@ table.property-table td {
   padding: 0.7em;
   display: block;
 }
-#prop-list summary .self-link, #js-support-table summary .self-link, .faq .self-link  {
+#prop-list summary .hash-link, #js-support-table summary .self-link, .faq .self-link, .hash-link  {
   opacity: 0;
   transition: opacity 0.3s;
 }
-p:hover .self-link, #prop-list summary:hover .self-link, #js-support-table summary:hover .self-link {
+p:hover .self-link, #prop-list summary:hover .hash-link, #js-support-table summary:hover .self-link, h1:hover .hash-link, h2:hover .hash-link::before, h3:hover .hash-link, h4:hover .hash-link, {
   opacity: 0.2 !important;
 }
 #prop-list details, #js-support-table details {
@@ -234,6 +234,13 @@ p:hover .self-link, #prop-list summary:hover .self-link, #js-support-table summa
     border-top: 0;
     padding-top: 0;
 }
+
+#prop-list h6 {
+    font: var(--ifm-font-size-base) / var(--ifm-line-height-base) var(--ifm-font-family-base);
+    font-weight: bold;
+    margin: 0;
+}
+
 #prop-list summary::before, #js-support-table summary::before {
     display: none;
 }
@@ -270,6 +277,9 @@ p:hover .self-link, #prop-list summary:hover .self-link, #js-support-table summa
 }
 #prop-list details .hash-link {
     margin-left: 0px;
+}
+#prop-list details .hash-link::before {
+    content: "\B6";
 }
 #prop-list .programlisting pre {
     white-space: normal;
