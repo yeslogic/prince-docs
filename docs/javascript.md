@@ -308,6 +308,13 @@ See also [our nifty script](cookbook.md#how-and-where-is-my-box) to return the p
 
 Two further sample applications of the box tracking API can be seen in the [Changebars](//www.princexml.com/forum/topic/3516/changebars) example, and in [Detecting Overflow](//www.princexml.com/forum/topic/3603/detecting-overflow).
 
+### Compatibility
+
+Unfortunately many JavaScript libraries are not developed with printed media in mind, and occasionally little adjustments need to be done to have them smoothly run in Prince.
+
+Prince maintains a useful library of [JavaScript helper scripts](https://github.com/yeslogic/prince-scripts) to ease the task of running libraries such as ABCjs, Highcharts, or MathJax.
+
+
 ### Unsupported DOM Methods
 
 The following DOM methods are not supported in Prince:
