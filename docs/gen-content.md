@@ -372,12 +372,12 @@ Two special functional expressions offer a more free approach to counters, by al
 
 <table>
 <tr>
-<td>symbols(*, †, ‡)</td>
-<td>*, †, ‡, 4, 5, 6, &#x2026;</td>
+<td>symbols(\*, †, ‡)</td>
+<td>\*, †, ‡, 4, 5, 6, &#x2026;</td>
 </tr>
 <tr>
-<td>repeat(*, †, ‡)</td>
-<td>*, †, ‡, **, ††, ‡‡, ***, †††, ‡‡‡, &#x2026;</td>
+<td>repeat(\*, †, ‡)</td>
+<td>\*, †, ‡, \*\*, ††, ‡‡, \*\*\*, †††, ‡‡‡, &#x2026;</td>
 </tr>
 </table>
 

@@ -19,12 +19,7 @@ On a separate site we collect more [quick guides to making beautiful PDF documen
 
 <dl className="ingredients">
   <dt>You need</dt>
-  <dd><a href="/doc/paged">Paged Media</a>
-    <ul>
-      <li><a href="/doc/paged#selecting-pages">Selecting pages</a></li>
-      <li><a href="/doc/paged#controlling-pagination">Controlling pagination</a></li>
-    </ul>
-  </dd>
+  <dd><a href="/doc/paged">Paged Media</a>     <ul>       <li><a href="/doc/paged#selecting-pages">Selecting pages</a></li>       <li><a href="/doc/paged#controlling-pagination">Controlling pagination</a></li>     </ul>   </dd>
   <dd><a href="/doc/styling#prince-extensions-to-floats">Prince extensions to floats</a></dd>
   <dd><a href="/doc/styling#paragraph-formatting">Paragraph formatting</a></dd>
 </dl>
@@ -1013,12 +1008,7 @@ For a different approach to rotating content, see the section on [Printing wide 
 <dl className="ingredients">
   <dt>You need</dt>
   <dd><a href="/doc/javascript#javascript-in-printed-media">JavaScript in Printed Media</a></dd>
-  <dd><a href="/doc/gen-content#generated-content-functions">Generated Content Functions</a>
-    <ul>
-      <li><code>content: target-counter()</code></li>
-      <li><code>content: leader()</code></li>
-    </ul>
-  </dd>
+  <dd><a href="/doc/gen-content#generated-content-functions">Generated Content Functions</a>     <ul>       <li><code>content: target-counter()</code></li>       <li><code>content: leader()</code></li>     </ul>   </dd>
 </dl>
 
 Prince offers several properties and functions to facilitate the creation of a Table of Contents.

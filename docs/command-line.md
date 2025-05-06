@@ -150,16 +150,13 @@ The command-line may include the options described below:
 
 <dl>
   <dt id="cl-input">
-    <code>-i <span className="replaceable">FORMAT</span></code>,
-    <code>--input=<span className="replaceable">FORMAT</span></code>
+    <code>-i <span className="replaceable">FORMAT</span></code>, <code>--input=<span className="replaceable">FORMAT</span></code>
   </dt>
   <dd>
-    Set input format [<code>auto</code> | <code>xml</code> |
-      <code>html</code>].
+    Set input format [<code>auto</code> | <code>xml</code> | <code>html</code>].
   </dd>
   <dt id="cl-input-list">
-    <code>-l</code>,
-    <code>--input-list=<span className="replaceable">FILE</span></code>
+    <code>-l</code>, <code>--input-list=<span className="replaceable">FILE</span></code>
   </dt>
   <dd>
     Read input file list from specified file.
@@ -175,21 +172,10 @@ The command-line may include the options described below:
   </dt>
   <dd>
   <p>
-    Rather than retrieving documents beginning with
-    <code className="replaceable">URL</code> get them from the local directory
-    <code className="replaceable">DIR</code>.
-    This option can be used multiple times to specify more than one remapping.
-    It cannot be used with <code>--fileroot</code>.
+    Rather than retrieving documents beginning with <code className="replaceable">URL</code> get them from the local directory <code className="replaceable">DIR</code>. This option can be used multiple times to specify more than one remapping. It cannot be used with <code>--fileroot</code>.
   </p>
   <p className="note">
-    Prince does not know which file to use when the path maps to a
-    directory (in other words, an index file).
-    If <code>http://www.example.com/</code> is requested, and mapped to
-    <code>example-com</code> it does not know whether to open
-    <code>example-com/index.html</code>,
-    <code>example-com/index.php</code> or any other file
-    as this is site dependent.  In this case Prince will report an error for
-    that resource.
+    Prince does not know which file to use when the path maps to a directory (in other words, an index file). If <code>http://www.example.com/</code> is requested, and mapped to <code>example-com</code> it does not know whether to open <code>example-com/index.html</code>, <code>example-com/index.php</code> or any other file as this is site dependent.  In this case Prince will report an error for that resource.
   </p>
   </dd>
   <dt id="cl-fileroot" className="dep">
@@ -208,10 +194,7 @@ The command-line may include the options described below:
     <code>--xinclude</code>
   </dt>
   <dd>
-    Enable XInclude and XML external entities (XXE).  Note that XInclude only
-    applies to XML files.  To apply it to HTML files, the input format needs
-    to be specified with the <a href="#cl-input"><code>--input</code></a>
-    command-line option.
+    Enable XInclude and XML external entities (XXE).  Note that XInclude only applies to XML files.  To apply it to HTML files, the input format needs to be specified with the <a href="#cl-input"><code>--input</code></a> command-line option.
   </dd>
   <dt id="cl-xxe">
     <code>--xxe</code>,
@@ -224,8 +207,7 @@ The command-line may include the options described below:
     <code>--xml-parse-huge</code>
   </dt>
   <dd>
-    Enable loading very large XML documents. This option is only for Linux with
-    libxml2 older than version 2.11.0.
+    Enable loading very large XML documents. This option is only for Linux with libxml2 older than version 2.11.0.
   </dd>
   <dt id="cl-no-local-files">
     <code>--no-local-files</code>
@@ -270,20 +252,11 @@ The command-line may include the options described below:
   </dd>
   <dt id="cl-auth-method"><code>--auth-method=<span className="replaceable">METHOD</span></code></dt>
   <dd>
-  Specify a comma separated list of HTTP authentication methods to enable.
-  Valid entries are:
-  <code>basic</code>, <code>digest</code>, <code>ntlm</code> and
-  <code>negotiate</code>.
-  The default is <code>basic</code>.
+  Specify a comma separated list of HTTP authentication methods to enable. Valid entries are: <code>basic</code>, <code>digest</code>, <code>ntlm</code> and <code>negotiate</code>. The default is <code>basic</code>.
   </dd>
   <dt id="cl-auth"><code>--auth=<span className="replaceable">URL</span></code></dt>
   <dd>
-  Specify a URL with credentials for HTTP
-  authentication:
-  <code>[<span className="replaceable">SCHEME</span>:]//<span className="replaceable">USER</span>:<span className="replaceable">PASS</span>@<span className="replaceable">HOST</span>[:<span className="replaceable">PORT</span>]</code>.
-  Unlike the preceding
-  options, <code>--auth</code> may be used multiple times.
-  The username and password must be percent-encoded.
+  Specify a URL with credentials for HTTP authentication: <code>[<span className="replaceable">SCHEME</span>:]//<span className="replaceable">USER</span>:<span className="replaceable">PASS</span>@<span className="replaceable">HOST</span>[:<span className="replaceable">PORT</span>]</code>. Unlike the preceding options, <code>--auth</code> may be used multiple times.   The username and password must be percent-encoded.
   </dd>
   <dt id="cl-no-auth-preemptive"><code>--no-auth-preemptive</code></dt>
   <dd>
@@ -344,11 +317,7 @@ The command-line may include the options described below:
   </dd>
   <dt id="cl-ssl-version"><code>--ssl-version=<span className="replaceable">VERSION</span></code></dt>
   <dd>
-  Set the minimum version of SSL to allow.
-  May be one of: <code>default</code> (let
-  <a href="/doc/acknowledgements/">libcurl</a>
-  choose), <code>tlsv1</code>,
-  <code>tlsv1.0</code>, <code>tlsv1.1</code>, <code>tlsv1.2</code> or <code>tlsv1.3</code>.
+  Set the minimum version of SSL to allow. May be one of: <code>default</code> (let <a href="/doc/acknowledgements/">libcurl</a> choose), <code>tlsv1</code>, <code>tlsv1.0</code>, <code>tlsv1.1</code>, <code>tlsv1.2</code> or <code>tlsv1.3</code>.
   </dd>
   <dt id="cl-ssl-no-revoke"><code>--ssl-no-revoke</code></dt>
   <dd>
@@ -421,11 +390,7 @@ The command-line may include the options described below:
     <code>--page-size=<span className="replaceable">SIZE</span></code>
   </dt>
   <dd>
-    Specify the page size (eg. A4, "155mm 190mm", etc).  The syntax is the same as
-    the <code><a href="/doc/css-props/#prop-size">size</a></code> property in <a href="/doc/css-at-rules/#at-page"><code>@page</code></a>
-    rules, which can take two values for horizontal and vertical dimensions. On the
-    command-line it needs to be written between quotes as a single argument.  See
-    also <a href="/doc/paged/#page-size">Page size</a> and <a href="/doc/page-size-keywords/">Page Size Keywords</a>.
+    Specify the page size (eg. A4, "155mm 190mm", etc).  The syntax is the same as the <code><a href="/doc/css-props/#prop-size">size</a></code> property in <a href="/doc/css-at-rules/#at-page"><code>@page</code></a> rules, which can take two values for horizontal and vertical dimensions. On the command-line it needs to be written between quotes as a single argument.  See also <a href="/doc/paged/#page-size">Page size</a> and <a href="/doc/page-size-keywords/">Page Size Keywords</a>.
   </dd>
   <dt id="cl-page-margin">
     <code>--page-margin=<span className="replaceable">MARGIN</span></code>
@@ -647,23 +612,10 @@ Rasterization is enabled with the `--raster-output` option below. When this is u
   </dt>
   <dd>
     <p>
-    Enable raster output.
-    The output files will be named based on the template.
-    Prince will replace every
-    <code>%[<span className="replaceable">WIDTH</span>]d</code>
-    with the current page number.
-    The optional <span className="replaceable">WIDTH</span> value gives the
-    number of characters the page number should take within the file name.
-    Smaller page numbers will be padded to the left with either spaces,
-    or if the width begins with a zero, with zeros.
+    Enable raster output. The output files will be named based on the template. Prince will replace every <code>%[<span className="replaceable">WIDTH</span>]d</code> with the current page number. The optional <span className="replaceable">WIDTH</span> value gives the number of characters the page number should take within the file name. Smaller page numbers will be padded to the left with either spaces, or if the width begins with a zero, with zeros.
     </p>
     <p>
-    For example <code>--raster-output=page_%02d.png</code> will cause
-    Prince to generate
-    <code className="filename">page_01.png</code>,
-    <code className="filename">page_02.png</code>, …,
-    <code className="filename">page_10.png</code>,
-    <code className="filename">page_11.png</code> etc.
+    For example <code>--raster-output=page_%02d.png</code> will cause Prince to generate <code className="filename">page_01.png</code>, <code className="filename">page_02.png</code>, …, <code className="filename">page_10.png</code>, <code className="filename">page_11.png</code> etc.
     </p>
     <p>
     Prince also accepts <code>-</code> meaning the standard output
@@ -674,12 +626,7 @@ Rasterization is enabled with the `--raster-output` option below. When this is u
     <code>--raster-format=<span className="replaceable">FORMAT</span></code>
   </dt>
   <dd>
-    Set the format for the raster output.  Valid formats are:
-    <code>auto</code> (guess based on file extension, the default),
-    <code>png</code> or <code>jpeg</code>.
-    If Prince does not recognize the file extension, or
-    <code>--raster-output</code> is <code>-</code>,
-    then it is necessary to provide this option.
+    Set the format for the raster output.  Valid formats are: <code>auto</code> (guess based on file extension, the default), <code>png</code> or <code>jpeg</code>. If Prince does not recognize the file extension, or <code>--raster-output</code> is <code>-</code>, then it is necessary to provide this option.
   </dd>
   <dt id="cl-raster-jpeg-quality">
     <code>--raster-jpeg-quality=<span className="replaceable">QUALITY</span></code>
@@ -716,11 +663,7 @@ Rasterization is enabled with the `--raster-output` option below. When this is u
     <code>--raster-background=<span className="replaceable">BACKGROUND</span></code>
   </dt>
   <dd>
-    Set the background - allowed values are <code>transparent</code> or
-    <code>white</code>.  It can be used when rasterizing to an
-    image format that supports transparency (PNG, not JPG) and have a
-    transparent background, so it can be composited with something else
-    later.
+    Set the background - allowed values are <code>transparent</code> or <code>white</code>.  It can be used when rasterizing to an image format that supports transparency (PNG, not JPG) and have a transparent background, so it can be composited with something else later.
   </dd>
 </dl>
 
@@ -743,7 +686,7 @@ Rasterization is enabled with the `--raster-output` option below. When this is u
   <dt id="cl-http-header"><code>--http-header=<span className="replaceable">HEADER</span></code></dt>
   <dt id="cl-user-agent"><code>--user-agent=<span className="replaceable">USER-AGENT</span></code></dt>
   <dd>
-    <p>Custom HTTP headers can be passed to Prince in the format <code>"<i>Header</i>: <i>value</i>"</code>.
+    <p>Custom HTTP headers can be passed to Prince in the format <code>&lt;<i>Header</i>&gt;: &lt;<i>value</i>&gt;</code>.
     To send multiple custom headers, use the option multiple times. The User-Agent header has its own
     command-line option. Please be aware that there can be unforseen side-effects
     when manipulating HTTP headers, including the User-Agent header.</p>
@@ -768,19 +711,12 @@ Rasterization is enabled with the `--raster-output` option below. When this is u
   </dd>
   <dt id="cl-job"><code>--job=<span className="replaceable">FILE</span></code></dt>
   <dd>
-    <p>The Job option allows to specify a Prince job in JSON format.
-    For more details, please check the detailed documentation in the
-    separate <a href="/doc/server-integration/#prince-job-json">Prince Job JSON</a>
-    chapter.</p>
+    <p>The Job option allows to specify a Prince job in JSON format. For more details, please check the detailed documentation in the separate <a href="/doc/server-integration/#prince-job-json">Prince Job JSON</a> chapter.</p>
   </dd>
   <dt id="cl-no-structured-log"><code>--no-structured-log</code></dt>
   <dt id="cl-structured-log"><code>--structured-log=<span className="replaceable">LEVEL</span></code></dt>
   <dd>
-    <p>The Structured Log option is a formatting option for Prince's output to stderr.
-    Allowed level values are <code>normal</code>, <code>quite</code>, <code>progress</code>
-    and <code>buffered</code>. For more details, please check the detailed documentation
-    in the separate <a href="/doc/server-integration/#structured-log">Structured Log</a>
-    chapter.</p>
+    <p>The Structured Log option is a formatting option for Prince's output to stderr. Allowed level values are <code>normal</code>, <code>quite</code>, <code>progress</code> and <code>buffered</code>. For more details, please check the detailed documentation in the separate <a href="/doc/server-integration/#structured-log">Structured Log</a> chapter.</p>
   </dd>
   <dt id="cl-fail-dropped-content"><code>--fail-dropped-content</code></dt>
   <dt id="cl-fail-missing-resources"><code>--fail-missing-resources</code></dt>

@@ -89,13 +89,7 @@ rgb( [&lt;<i>number</i>&gt;]{"{"}3{"}"} [/&#160;[&lt;<i>alpha-value</i>&gt;]? )<
 </tr>
 <tr className="ext">
 <td><code>prince-color( &lt;<i>colorname</i>&gt;  [,&#160;&lt;<i>number</i>&gt; |&#160;&lt;<i>percentage</i>&gt;]? , overprint? )*</code></td>
-<td>Using a spot color defined in the <code><a href="/doc/css-at-rules/#at-prince-color">@prince-color</a></code>
-at-rule. The number or percentage defines the tint. An optional <code>overprint</code>
-keyword instructs Prince whether to overprint the color.
-<pre>
-<code className="hljs"><span className="hljs-attribute">color</span>: <span className="hljs-built_in">prince-color</span>(MyColor, 50%, overprint)</code>
-</pre>
-</td>
+<td>Using a spot color defined in the <code><a href="/doc/css-at-rules/#at-prince-color">@prince-color</a></code> at-rule. The number or percentage defines the tint. An optional <code>overprint</code> keyword instructs Prince whether to overprint the color. <pre><code className="hljs"><span className="hljs-attribute">color</span>: <span className="hljs-built_in">prince-color</span>(MyColor, 50%, overprint)</code></pre> </td>
 </tr>
 <tr className="ext">
 <td><code>prince-overprint( &lt;<i>colorname</i>&gt; | rgb() | device-cmyk() | hsl() | hwb() | prince-color() [, [overprint-mode-nonzero | overprint-mode-zero]]? )*</code></td>
@@ -134,9 +128,7 @@ different properties.</td>
 </tr>
 <tr>
 <td><code>element( &lt;<i>name</i>&gt;, &lt;<i>page-policy</i>&gt;? )</code></td>
-<td>Places an element (which has been removed from the normal flow with the
-<code>running()</code> function) in a page region.  See
-<a href="/doc/paged#taking-elements-from-the-document">Taking elements from the document</a>.</td>
+<td>Places an element (which has been removed from the normal flow with the <code>running()</code> function) in a page region.  See <a href="/doc/paged#taking-elements-from-the-document">Taking elements from the document</a>.</td>
 </tr>
 <tr>
 <td><code>prince-expansion-text( &lt;<i>expansion</i>&gt;, &lt;<i>abbreviation</i>&gt; )*</code></td>
@@ -175,27 +167,11 @@ property.  See <a href="/doc/paged#copying-content-from-the-document">Copying co
 </tr>
 <tr>
 <td><code>repeat( &lt;<i>string</i>&gt;+ )</code></td>
-<td>Used in counters as a <code>counter-style</code>, it defines a sequentially
-repeated pattern for numbering the items.
-<pre>
-<code className="hljs"><span className="hljs-selector-tag">h4</span><span className="hljs-selector-pseudo">::before</span> {"{"} <span className="hljs-attribute">content</span>: <span className="hljs-built_in">counter</span>(h4, <span className="hljs-built_in">repeat</span>("x", "y", "z")) {"}"}</code>
-</pre>
-<p className="comment">
-This counter will yield the sequence "x, y, z, xx, yy, zz" etc.
-</p>
-</td>
+<td>Used in counters as a <code>counter-style</code>, it defines a sequentially repeated pattern for numbering the items. <pre><code className="hljs"><span className="hljs-selector-tag">h4</span><span className="hljs-selector-pseudo">::before</span> {"{"} <span className="hljs-attribute">content</span>: <span className="hljs-built_in">counter</span>(h4, <span className="hljs-built_in">repeat</span>("x", "y", "z")) {"}"}</code></pre><p className="comment"> This counter will yield the sequence "x, y, z, xx, yy, zz" etc. </p> </td>
 </tr>
 <tr>
 <td><code>symbols( &lt;<i>string</i>&gt;+ )</code></td>
-<td>Used in counters as a <code>counter-style</code>, it defines the symbols used
-for numbering the items.
-<pre>
-<code className="hljs"><span className="hljs-selector-tag">h4</span><span className="hljs-selector-pseudo">::before</span> {"{"} <span className="hljs-attribute">content</span>: <span className="hljs-built_in">counter</span>(h4, <span className="hljs-built_in">symbols</span>("x", "y", "z")) {"}"}</code>
-</pre>
-<p className="comment">
-This counter will yield the sequence "x, y, z, 4, 5, 6" etc.
-</p>
-</td>
+<td>Used in counters as a <code>counter-style</code>, it defines the symbols used for numbering the items. <pre><code className="hljs"><span className="hljs-selector-tag">h4</span><span className="hljs-selector-pseudo">::before</span> {"{"} <span className="hljs-attribute">content</span>: <span className="hljs-built_in">counter</span>(h4, <span className="hljs-built_in">symbols</span>("x", "y", "z")) {"}"}</code></pre> <p className="comment"> This counter will yield the sequence "x, y, z, 4, 5, 6" etc. </p> </td>
 </tr>
 <tr className="ext">
 <td><code>prince-base-url()*</code></td>
@@ -203,8 +179,7 @@ This counter will yield the sequence "x, y, z, 4, 5, 6" etc.
 </tr>
 <tr className="ext">
 <td><code>flow( &lt;<i>name</i>&gt;, &lt;<i>page-policy</i>&gt;? ) | prince-flow( &lt;<i>name</i>&gt;, &lt;<i>page-policy</i>&gt;? )*</code></td>
-<td>Inserts an element that has previously been removed with the <code>static()</code>
-function.  See <a href="/doc/paged#taking-elements-from-the-document">Taking elements from the document</a>.</td>
+<td>Inserts an element that has previously been removed with the <code>static()</code> function.  See <a href="/doc/paged#taking-elements-from-the-document">Taking elements from the document</a>.</td>
 </tr>
 <tr className="ext">
 <td><code>prince-script( &lt;<i>ident</i>&gt; [, &lt;<i>content</i>&gt;+]? )*</code></td>
@@ -212,25 +187,11 @@ function.  See <a href="/doc/paged#taking-elements-from-the-document">Taking ele
 </tr>
 <tr className="ext">
 <td><code>prince-fallback( &lt;<i>uri</i>&gt; )*[, &lt;<i>content</i>&gt;+]?</code></td>
-<td>Inserts content fetched from another resource (like the <code>url()</code> function),
-but also has the possibility of specifying a fallback content, in case the loading of the
-URL should fail.  If no comma and <i>content</i> items are provided, the fallback is as
-if <code>content: normal</code> were specified.
-<pre>
-<code className="hljs"><span className="hljs-selector-tag">img</span> {"{"} <span className="hljs-attribute">content</span>: <span className="hljs-built_in">prince-fallback</span>(<span className="hljs-built_in">attr</span>(src, url)), <span className="hljs-built_in">attr</span>(data-altsrc, url) {"}"}</code>
-</pre>
-</td>
+<td>Inserts content fetched from another resource (like the <code>url()</code> function), but also has the possibility of specifying a fallback content, in case the loading of the URL should fail.  If no comma and <i>content</i> items are provided, the fallback is as if <code>content: normal</code> were specified. <pre><code className="hljs"><span className="hljs-selector-tag">img</span> {"{"} <span className="hljs-attribute">content</span>: <span className="hljs-built_in">prince-fallback</span>(<span className="hljs-built_in">attr</span>(src, url)), <span className="hljs-built_in">attr</span>(data-altsrc, url) {"}"}</code></pre> </td>
 </tr>
 <tr className="ext">
 <td><code>prince-glyph-index( &lt;<i>int</i>&gt; )*</code></td>
-<td>Allows to choose a glyph from a font by the index of that glyph in the font.
-<p>Please note that this is very non-portable, as glyph indices are specific to individual
-font versions. But it is a possible escape hatch for people who need a specific
-glyph and don't have any other way of accessing it (by Unicode character or OpenType
-substitution).</p>
-<p>Usually, authors should prefer to use named OpenType features, using the
-<code>prince-opentype()</code> value of the <code><a href="/doc/css-props#prop-font-variant">font-variant</a></code>
-property, which is more likely to work when changing font.</p></td>
+<td>Allows to choose a glyph from a font by the index of that glyph in the font. <p>Please note that this is very non-portable, as glyph indices are specific to individual font versions. But it is a possible escape hatch for people who need a specific glyph and don't have any other way of accessing it (by Unicode character or OpenType substitution).</p> <p>Usually, authors should prefer to use named OpenType features, using the <code>prince-opentype()</code> value of the <code><a href="/doc/css-props#prop-font-variant">font-variant</a></code> property, which is more likely to work when changing font.</p></td>
 </tr>
 <tr>
 <td><code>grayscale( &lt;<i>number</i>&gt; | &lt;<i>percent</i>&gt; )</code></td>
@@ -314,13 +275,7 @@ does.</td>
 <tr>
 <td><code>format( &lt;<i>string</i>&gt; | collection | embedded-opentype | opentype | svg | truetype | woff | woff2 )</code></td>
 <td>Provides a hint on the font format.
-<pre>
-<code className="hljs"><span className="hljs-keyword">@font-face</span> {"{"}
-  <span className="hljs-attribute">font-family</span>: bodytext;
-  <span className="hljs-attribute">src</span>: <span className="hljs-built_in">url</span>(sans-serif-font.ttf) <span className="hljs-built_in">format</span>("opentype");
-{"}"}</code>
-</pre>
-</td>
+<pre><code className="hljs"><span className="hljs-keyword">@font-face</span> {"{"}   <span className="hljs-attribute">font-family</span>: bodytext;   <span className="hljs-attribute">src</span>: <span className="hljs-built_in">url</span>(sans-serif-font.ttf) <span className="hljs-built_in">format</span>("opentype"); {"}"}</code></pre></td>
 <td rowSpan="4"><code><a href="/doc/css-props#prop-src">src</a></code></td>
 </tr>
 <tr>
@@ -387,8 +342,7 @@ by other <code>@font-face</code> rules.  See <a href="/doc/styling#defining-a-fo
 </tr>
 <tr>
 <td><code>supports([ &lt;<i>supports-condition</i>&gt; | &lt;<i>declaration</i>&gt; ])</code></td>
-<td>Interpreted as a <code><a href="/doc/css-at-rules/#at-supports">@supports</a></code>
-condition.</td>
+<td>Interpreted as a <code><a href="/doc/css-at-rules/#at-supports">@supports</a></code> condition.</td>
 <td><code><a href="/doc/css-at-rules/#at-import">@import</a></code></td>
 </tr>
 </tbody>

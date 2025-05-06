@@ -36,12 +36,8 @@ Prince produces PDFs - which are a prominent example of paged media. There are a
   page of the spread.</p></dd>
 
   <dt>Non-interactive</dt>
-  <dd><p>Last but not least, paged media intended for print is non-interactive by nature:
-  all CSS properties referring to user interaction make no sense, scripting cannot
-  be interactive and scripts need to run before layout is finished.  But for these
-  details and scripting after layout please check the section on <a href="/doc/javascript#javascript-in-printed-media">JavaScript in Printed Media</a>.</p>
-  <p>Prince, however, also produces PDFs <a href="/doc/prince-output/#pdf-versions-and-profiles">not primarily intended for print</a> - <a href="/doc/prince-output/#pdf-forms">forms</a>, <a href="/doc/prince-output/#pdf-bookmarks">bookmarks</a>, <a href="/doc/prince-output/#pdf-links">links</a> and other <a href="/doc/prince-output/#pdf-features">features</a> can be used in this case.</p>
-  </dd>
+  <dd><p>Last but not least, paged media intended for print is non-interactive by nature:   all CSS properties referring to user interaction make no sense, scripting cannot   be interactive and scripts need to run before layout is finished.  But for these   details and scripting after layout please check the section on <a href="/doc/javascript#javascript-in-printed-media">JavaScript in Printed Media</a>.</p>
+  <p>Prince, however, also produces PDFs <a href="/doc/prince-output/#pdf-versions-and-profiles">not primarily intended for print</a> - <a href="/doc/prince-output/#pdf-forms">forms</a>, <a href="/doc/prince-output/#pdf-bookmarks">bookmarks</a>, <a href="/doc/prince-output/#pdf-links">links</a> and other <a href="/doc/prince-output/#pdf-features">features</a> can be used in this case.</p></dd>
 </dl>
 
 Prince allows you to control a number of options that affect how to format pages, from straight-forward options such as [page size](#page-size), to [page style](#page-style), [page regions](#page-regions) like headers and footers, [pagination control](#controlling-pagination) and [page numbering](gen-content.md#counters-and-numbering).

@@ -36,9 +36,7 @@ After the initial at-rules, the following at-rules can appear also in nested for
 
 <table className="grid">
 <tr>
-<th colSpan="2" id="at-page"><code>@page &lt;<i>page-selector-list</i>&gt; {"{"}
-    &lt;<i>declaration-list</i>&gt;
-{"}"}</code></th>
+<th colSpan="2" id="at-page" scope="col"><pre><code className="hljs"><span class="token-line">@page &lt;<i>page-selector-list</i>&gt; {"{"}<br/></span> <span class="token-line">    &lt;<i>declaration-list</i>&gt;<br/></span> <span class="token-line">{"}"}</span></code></pre></th>
 </tr>
 <tr>
 <td colSpan="2">Modifies margins, orphans, widows and page breaks of a document when printing it. The pages are identified either by a name, or by a page pseudo-class and page declarations can either be style declarations or page region at-rules. The initial values for <code>@page</code> styles are documented in the <a href="/doc/paged">Paged Media</a> chapter.</td>
@@ -95,16 +93,13 @@ After the initial at-rules, the following at-rules can appear also in nested for
 <td colSpan="2">The <code>@page</code> rule takes CSS properties to style the margins, borders, padding and background. It equally takes color, font and font-height properties that are inherited by the page-margin boxes - note that they are not. inherited by the page area content.  It also takes the following CSS properties: <code><a href="/doc/css-props#prop-bleed">bleed</a></code> | <code><a href="/doc/css-props#prop-marks">marks</a></code> | <code><a href="/doc/css-props#prop-prince-mark-length">-prince-mark-length</a></code> | <code><a href="/doc/css-props#prop-prince-mark-offset">-prince-mark-offset</a></code> | <code><a href="/doc/css-props#prop-prince-mark-width">-prince-mark-width</a></code> | <code><a href="/doc/css-props#prop-prince-pdf-page-colorspace">-prince-pdf-page-colorspace</a></code> | <code><a href="/doc/css-props#prop-prince-pdf-page-label">-prince-pdf-page-label</a></code> | <code><a href="/doc/css-props#prop-prince-rotate-body">-prince-rotate-body</a></code> | <code><a href="/doc/css-props#prop-prince-shrink-to-fit">-prince-shrink-to-fit</a></code> | <code><a href="/doc/css-props#prop-prince-trim">-prince-trim</a></code> | <code><a href="/doc/css-props#prop-size">size</a></code> </td>
 </tr>
 <tr>
-<td colSpan="2">Additionally, <a href="/doc/prince-for-books">Prince for Books</a> takes the following CSS property: <code><a href="/doc/css-props#prop-prince-page-fill">-prince-page-fill</a></code>
-</td>
+<td colSpan="2">Additionally, <a href="/doc/prince-for-books">Prince for Books</a> takes the following CSS property: <code><a href="/doc/css-props#prop-prince-page-fill">-prince-page-fill</a></code> </td>
 </tr>
 </table>
 
 <table className="grid">
 <tr>
-<th id="at-media"><code>@media &lt;<i>media-query-list</i>&gt; {"{"}
-    &lt;<i>stylesheet</i>&gt;
-{"}"}</code></th>
+<th id="at-media"><pre><code className="hljs"><span class="token-line">@media &lt;<i>media-query-list</i>&gt; {"{"}<br/></span> <span class="token-line">    &lt;<i>stylesheet</i>&gt;<br/></span> <span class="token-line">{"}"}</span></code></pre></th>
 </tr>
 <tr>
 <td>The rules will apply if the device meets the criteria of the condition defined in the media query. See <a href="/doc/css-media-queries">CSS Media Queries</a> for details.</td>
@@ -113,9 +108,7 @@ After the initial at-rules, the following at-rules can appear also in nested for
 
 <table className="grid">
 <tr>
-<th id="at-supports"><code>@supports &lt;<i>supports-condition</i>&gt; {"{"}
-    &lt;<i>stylesheet</i>&gt;
-{"}"}</code></th>
+<th id="at-supports"><pre><code className="hljs"><span class="token-line">@supports &lt;<i>supports-condition</i>&gt; {"{"}<br/></span> <span class="token-line">    &lt;<i>stylesheet</i>&gt;<br/></span> <span class="token-line">{"}"}</span></code></pre></th>
 </tr>
 <tr>
 <td>Checks whether particular <code>property:value</code> combinations are supported.
@@ -125,9 +118,7 @@ Unlike media queries, this uses the classical two-valued logic.</td>
 
 <table className="grid">
 <tr>
-<th colSpan="2" id="at-font-face"><code>@font-face {"{"}
-    &lt;<i>declaration-list</i>&gt;
-{"}"}</code></th>
+<th colSpan="2" id="at-font-face"><pre><code className="hljs"><span class="token-line">@font-face {"{"}<br/></span> <span class="token-line">    &lt;<i>declaration-list</i>&gt;<br/></span> <span class="token-line">{"}"}</span></code></pre></th>
 </tr>
 <tr>
 <td colSpan="2">Links a font family to an actual font.</td>
@@ -153,9 +144,7 @@ Unlike media queries, this uses the classical two-valued logic.</td>
 
 <table className="grid">
 <tr>
-<th colSpan="2" id="at-prince-color"><code>@prince-color &lt;<i>color-name</i>&gt; {"{"}
-    alternate-color: &lt;<i>color</i>&gt;
-{"}"}</code></th>
+<th colSpan="2" id="at-prince-color"><pre><code className="hljs"><span class="token-line">@prince-color &lt;<i>color-name</i>&gt; {"{"}<br/></span> <span class="token-line">    alternate-color: &lt;<i>color</i>&gt;<br/></span> <span class="token-line">{"}"}</span></code></pre></th>
 </tr>
 <tr>
 <td colSpan="2">Defines a new color name.</td>
@@ -167,9 +156,7 @@ Unlike media queries, this uses the classical two-valued logic.</td>
 
 <table className="grid">
 <tr>
-<th colSpan="2" id="at-prince-pdf"><code>@prince-pdf {"{"}
-    &lt;<i>declaration-list</i>&gt;
-{"}"}</code></th>
+<th colSpan="2" id="at-prince-pdf"><pre><code className="hljs"><span class="token-line">@prince-pdf {"{"}<br/></span> <span class="token-line">    &lt;<i>declaration-list</i>&gt;<br/></span> <span class="token-line">{"}"}</span></code></pre></th>
 </tr>
 <tr>
 <td colSpan="2">Defines properties relating to PDFs.</td>

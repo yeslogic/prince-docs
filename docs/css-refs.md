@@ -29,19 +29,15 @@ Prince supports, fully or partially, the following CSS specifications:
 </tr>
 <tr>
 <td><a href="https://www.w3.org/TR/css-break-3/">CSS Fragmentation Module Level 3</a></td>
-<td>Prince largely supports this module.  Please note that the initial value of
-<code>widows</code> and <code>orphans</code> has been changed from
-<code>2</code> to <code>1</code>.</td>
+<td>Prince largely supports this module.  Please note that the initial value of <code>widows</code> and <code>orphans</code> has been changed from <code>2</code> to <code>1</code>.</td>
 </tr>
 <tr>
 <td><a href="https://www.w3.org/TR/css-color-3/">CSS Color Module Level 3</a></td>
-<td>Prince supports <code>opacity</code>. It supports some of the extensions of the
-<code>color</code> property.</td>
+<td>Prince supports <code>opacity</code>. It supports some of the extensions of the <code>color</code> property.</td>
 </tr>
 <tr>
 <td><a href="https://www.w3.org/TR/css-content-3/">CSS Generated Content Module Level 3</a></td>
-<td>Prince does not recognize the <code>quotes</code> property and the quote-related
-content types.</td>
+<td>Prince does not recognize the <code>quotes</code> property and the quote-related content types.</td>
 </tr>
 <tr>
 <td><a href="https://www.w3.org/TR/css-fonts-3/">CSS Fonts Module Level 3</a></td>
