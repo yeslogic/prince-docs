@@ -40,8 +40,7 @@
           <xsl:if test="position() != last() and last() != 2">
             <xsl:text>, </xsl:text>
           </xsl:if>
-        </xsl:for-each>.
-      </p>
+        </xsl:for-each>.</p>
       <!-- (If we're already listing more than one shorthand for a property,
           then I'm inclined not to further complicate the note by listing
           indirect shorthands, even if there were any - though there aren't

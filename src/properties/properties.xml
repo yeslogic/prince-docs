@@ -26,8 +26,7 @@
     are solely for use by authors and users; CSS will never give them a
     meaning beyond what is presented in the specification.</p>
     <p>Please check <a href="https://www.w3.org/TR/css-variables-1/">the
-    specification</a> for details on the custom properties.
-    </p>
+    specification</a> for details on the custom properties.</p>
     <p class="note">Unlike other CSS properties, custom property names are case-sensitive.</p>
     </comments>
     <spec><a href="https://www.w3.org/TR/css-variables-1/#defining-variables">CSS Custom Properties for Cascading Variables Module Level 1</a></spec>
@@ -2252,8 +2251,7 @@
 	<comments>
 	<p>The <code>filter</code> property provides graphical effects like blurring,
 	saturating or color shifting an element.  For more details see the
-    <a href="/doc/graphics/#filters">Filters</a> section.
-	</p>
+    <a href="/doc/graphics/#filters">Filters</a> section.</p>
     </comments>
     <spec><a href="https://drafts.fxtf.org/filters/#FilterProperty">Filter Effects Module Level 1</a></spec>
 </property>
@@ -2466,8 +2464,7 @@
 }</example>
     <see><a href="/doc/styling/#floats">Floats</a></see>
     <comments>
-    <p>
-        The <code>float-defer-column</code> property defines the number of columns that the float should be deferred.</p>
+    <p>The <code>float-defer-column</code> property defines the number of columns that the float should be deferred.</p>
     </comments>
     <spec><a href="https://figures.spec.whatwg.org/#float-defer-column">CSS Figures</a></spec>
     <aliastarget>prince-float-defer-column</aliastarget>
@@ -2497,8 +2494,7 @@
 }</example>
     <see><a href="/doc/styling/#floats">Floats</a></see>
     <comments>
-    <p>
-        The <code>float-defer-page</code> property specifies whether the float is placed after previous page floats have been placed, or in another float reference container.</p>
+    <p>The <code>float-defer-page</code> property specifies whether the float is placed after previous page floats have been placed, or in another float reference container.</p>
     </comments>
     <spec><a href="https://figures.idea.whatwg.org/#float-defer-page">CSS Figures</a></spec>
     <spec><a href="https://drafts.csswg.org/css-page-floats/#float-defer-property">CSS Page Floats</a></spec>
@@ -2650,7 +2646,8 @@
         The <code>float-policy</code> property defines the policy adopted when
         floating an element.  The value <code>in-order</code> imposes that page
         floats must be shown in source order - <code>normal</code> adds no extra
-        constraints to the float.</p>
+        constraints to the float.
+    </p>
     </comments>
     <spec><a href="https://figures.spec.whatwg.org/#page-float-preferences:-float-policy">CSS Figures</a></spec>
     <aliastarget>prince-float-policy</aliastarget>
@@ -2693,31 +2690,32 @@
     <p>
         The <code>float-reference</code> property defines the reference context for
         the float, i.e. whether the element should be floated to the top or bottom of
-        the column, or of the page.</p>
-
+        the column, or of the page.
+    </p>
     <p>
         The <code>sidenote</code> value activates the sidenote area.  Sidenotes
         aren't attached to a column or a page, but are in their own region. Within
         that region they can be placed at the <code>top</code> or <code>bottom</code>,
         or be aligned in some way (see the <code>align-top</code> and
         <code>align-bottom</code> values for <code><property name="float-placement"/></code>.
-        </p>
+    </p>
     <p>
         The sidenote variants are required if sidenote regions are defined on both sides
         of the page - in this case we need to distinguish where to place them.
-        </p>
+    </p>
 
     <p>
         To allow an element to extend into the margin or sidenote area, the <code>wide</code>,
         <code>wide-left</code>, <code>wide-right</code>, <code>wide-inside</code> and
         <code>wide-outside</code> values can be used.  When a left, right, inside or
         outside direction is expressed, the element will extend only in the given direction.
-        </p>
+    </p>
 
     <p>
         Please note that the initial value is <code>column</code>: thus, the style rule
         <code>float: top</code> will create a column float in a multicol context,
-        rather than a page float.</p>
+        rather than a page float.
+    </p>
     </comments>
     <spec><a href="https://figures.spec.whatwg.org/#setting-the-page-float-reference:-float-reference">CSS Figures</a></spec>
     <spec><a href="https://drafts.csswg.org/css-page-floats/#float-reference-property">CSS Page Floats</a></spec>
@@ -2746,7 +2744,8 @@
         The <code>float-tail</code> property instructs Prince how to deal with page
         floats that end up past the end of normal content: with the value
         <code>fill-page</code>, Prince will try to fill the last page, but discard
-        any page floats that would create more pages.</p>
+        any page floats that would create more pages.
+    </p>
     </comments>
     <aliastarget>prince-float-tail</aliastarget>
 </property>
@@ -3687,7 +3686,8 @@
     This property defines if hyphenation is allowed to create more wrapping points
     in a line of text.
     </p>
-    <p>The value <code>prince-expand-all</code> shows where the wrap
+    <p>
+    The value <code>prince-expand-all</code> shows where the wrap
     opportunities are, to facilitate assessing whether any change to the
     hyphenation-related properties or hyphenation patterns is needed, or
     whether a manual hyphenation using soft hyphens is needed (perhaps
@@ -4489,7 +4489,8 @@
     <applyto>all elements</applyto>
     <inherit>no</inherit>
     <comments>
-	<p>The <code>mask</code> property is used to partially or fully hide an element
+	<p>
+    The <code>mask</code> property is used to partially or fully hide an element
 	by masking it with a provided image.
 	</p>
     </comments>
@@ -4866,7 +4867,8 @@ supplier, item { overflow-wrap: normal; }
     <see><code><property name="prince-wrap-inside"/></code></see>
     <see><code><property name="white-space"/></code></see>
     <comments>
-	<p>This property controls wrapping behavior of last resort:
+	<p>
+    This property controls wrapping behavior of last resort:
 	whether it is better for a word to overflow its container,
 	or to be broken at an arbitrary point
 	(subject to <code>white-space</code>, and not splitting within a grapheme cluster),
@@ -5486,7 +5488,8 @@ supplier, item { overflow-wrap: normal; }
     (untagged) CMYK colors or images, if it is not possible to use the output
     intent ICC profile (see <code><property name="prince-pdf-output-intent"/></code>).
     </p>
-    <p>CMYK colors are treated as uncalibrated in either of the following three cases:
+    <p>
+    CMYK colors are treated as uncalibrated in either of the following three cases:
     conversion of an untagged CMYK image to another color space, conversion
     of a device dependent CMYK color, or when a PDF Profile requires that only device
     independent color is present, in which case both untagged CMYK images and device
@@ -5515,7 +5518,8 @@ supplier, item { overflow-wrap: normal; }
     used when rasterizing to images for applying CSS and SVG filters.
     </p>
 
-    <p>If the value <code>auto</code> is specified, then the value
+    <p>
+    If the value <code>auto</code> is specified, then the value
     is either that given by the <code>--raster-dpi</code> command-line
     option, or the <code>-prince-filter-resolution</code> descriptor of
     <code>@prince-pdf</code> (see below).
@@ -6002,19 +6006,20 @@ supplier, item { overflow-wrap: normal; }
     paragraphs.
     </p>
 
-    <p>The <code>*-greedy</code> and <code>*-lookahead</code> variations
+    <p>
+    The <code>\*-greedy</code> and <code>\*-lookahead</code> variations
     allow control over whether the choice of where to end a line
     can be affected by consequences further down the paragraph:
     </p>
 
     <p>
-    The <code>*-greedy</code> keywords decide on line breaks solely based on the
+    The <code>\*-greedy</code> keywords decide on line breaks solely based on the
     current line and on the length of the next word, never going back to change a
     decision on a line in the light of line-breaking issues encountered later.
     </p>
 
     <p>
-    The <code>*-lookahead</code> keywords, on the other hand,
+    The <code>\*-lookahead</code> keywords, on the other hand,
     enable paragraph-at-a-time line-breaking for the paragraph in
     a non-justified paragraph:
     choosing where to end the line not just based on what seems best for
@@ -6253,7 +6258,8 @@ supplier, item { overflow-wrap: normal; }
 	    viewed with facing pages.
 	    -->
 
-	<p>The value <code>prefer-fill</code> means to ignore the length of the facing
+	<p>
+    The value <code>prefer-fill</code> means to ignore the length of the facing
 	page.  Pages can still be under-full in order to satisfy pagination
 	constraints such as
 	<code><property name="widows"/></code>,
@@ -6264,7 +6270,8 @@ supplier, item { overflow-wrap: normal; }
 	possibly resulting in one page being longer than its facing page.
 	</p>
 
-	<p>With <code>prefer-balance</code>, Prince will sometimes end a page
+	<p>
+    With <code>prefer-balance</code>, Prince will sometimes end a page
 	one line shorter than usual, if this is needed to make the two pages be
 	approximately balanced.
 	</p>
@@ -6310,8 +6317,7 @@ supplier, item { overflow-wrap: normal; }
 	<example>-prince-pdf-annotation-author: "John Doe";</example>
     <see><a href="/doc/prince-output/#pdf-annotations">PDF Annotations</a></see>
 	<comments>
-		<p>This property is used to specify the author of a PDF annotation.
-		</p>
+		<p>This property is used to specify the author of a PDF annotation.</p>
     </comments>
 </property>
 
@@ -6362,8 +6368,7 @@ supplier, item { overflow-wrap: normal; }
 	<example>-prince-pdf-annotation-contents: "This is a PDF annotation.";</example>
     <see><a href="/doc/prince-output/#pdf-annotations">PDF Annotations</a></see>
 	<comments>
-		<p>This property is used to define the PDF annotation content.
-		</p>
+		<p>This property is used to define the PDF annotation content.</p>
     </comments>
 </property>
 
@@ -6383,8 +6388,7 @@ supplier, item { overflow-wrap: normal; }
     <see><a href="/doc/prince-output/#pdf-annotations">PDF Annotations</a></see>
 	<comments>
 		<p>This property is used to define the PDF annotation date of creation.
-        Please note that the string needs to be a valid ISO 8601 date format.
-		</p>
+        Please note that the string needs to be a valid ISO 8601 date format.</p>
     </comments>
 </property>
 
@@ -6408,8 +6412,7 @@ supplier, item { overflow-wrap: normal; }
 	<example>-prince-pdf-annotation-icon: help</example>
     <see><a href="/doc/prince-output/#pdf-annotations">PDF Annotations</a></see>
 	<comments>
-		<p>This property is used to define which icon should be used for the PDF annotation.
-		</p>
+		<p>This property is used to define which icon should be used for the PDF annotation.</p>
     </comments>
 </property>
 
@@ -6429,8 +6432,7 @@ supplier, item { overflow-wrap: normal; }
     <see><a href="/doc/prince-output/#pdf-annotations">PDF Annotations</a></see>
 	<comments>
 		<p>This property is used to define the PDF annotation date of modification.
-        Please note that the string needs to be a valid ISO 8601 date format.
-		</p>
+        Please note that the string needs to be a valid ISO 8601 date format.</p>
     </comments>
 </property>
 
@@ -6469,8 +6471,7 @@ supplier, item { overflow-wrap: normal; }
 	<example>-prince-pdf-annotation-position: page-left 10% page-top 50%;</example>
     <see><a href="/doc/prince-output/#pdf-annotations">PDF Annotations</a></see>
 	<comments>
-		<p>This property is used to define the PDF annotation position.
-		</p>
+		<p>This property is used to define the PDF annotation position.</p>
         <p>The values <code>left</code>, <code>right</code>, <code>top</code>
         and <code>bottom</code> refer to the element box, while the equivalent
         keywords <code>page-left</code>, <code>page-right</code>, <code>page-top</code>
@@ -6493,8 +6494,7 @@ supplier, item { overflow-wrap: normal; }
 	<example>-prince-pdf-annotation-title: "PDF Annotation Title"</example>
     <see><a href="/doc/prince-output/#pdf-annotations">PDF Annotations</a></see>
 	<comments>
-		<p>This property is used to define the PDF annotation title.
-		</p>
+		<p>This property is used to define the PDF annotation title.</p>
     </comments>
 </property>
 
@@ -6666,7 +6666,8 @@ supplier, item { overflow-wrap: normal; }
 }</example>
     <see><a href="/doc/graphics/#rich-black-and-true-black">Rich black and true black</a></see>
 	<comments>
-		<p>This descriptor may be used to control the encoding of RGB blacks and grays:
+		<p>
+        This descriptor may be used to control the encoding of RGB blacks and grays:
 		when <code>use-true-black</code> is used, they are encoded in the <code>/DeviceGray</code> colorspace
 		in the PDF, instead of <code>/DeviceRGB</code>, whereas <code>use-rich-black</code> disables this behavior
 		and keeps all the colors in RGB. Currently, <code>auto</code> is equivalent to <code>use-true-black</code>.
@@ -7423,8 +7424,8 @@ supplier, item { overflow-wrap: normal; }
     <code><property name="prince-resize-options"/></code>.
     </p>
 
-    <p>The <code>*-start</code> values adjust space before the box’s content,
-    <code>*-end</code> values adjust space after the box’s content,
+    <p>The <code>\*-start</code> values adjust space before the box’s content,
+    <code>\*-end</code> values adjust space after the box’s content,
     while the plain <code>margin</code> and <code>padding</code>
     values add half of the space adjustment before and half after.</p>
 
@@ -8305,7 +8306,8 @@ blockquote { margin: 1rem; -prince-resize-options: -1rem; }
     <p>
     Please note that Prince replaces preserved tab characters with the specified
     number of spaces, but does not create actual "tab stops" aligned to the left
-    edge of the block.</p>
+    edge of the block.
+    </p>
     </comments>
     <spec><a href="https://www.w3.org/TR/css-text-3/#tab-size-property">CSS Text Module Level 3</a></spec>
 </property>
@@ -8449,7 +8451,7 @@ blockquote { margin: 1rem; -prince-resize-options: -1rem; }
     <inherit>no</inherit>
     <see><a href="/doc/styling/#text-formatting">Text formatting</a></see>
     <comments>
-    <p></p>
+    <p>This property defines the color of text decorations.</p>
     </comments>
     <spec><a href="https://www.w3.org/TR/css-text-decor-3/#text-decoration-color-property">CSS Text Decoration Module Level 3</a></spec>
 </property>
@@ -8497,7 +8499,7 @@ blockquote { margin: 1rem; -prince-resize-options: -1rem; }
     <inherit>no</inherit>
     <see><a href="/doc/styling/#text-formatting">Text formatting</a></see>
     <comments>
-    <p></p>
+    <p>This property defines the style of text decorations.</p>
     </comments>
     <spec><a href="https://www.w3.org/TR/css-text-decor-3/#text-decoration-style-property">CSS Text Decoration Module Level 3</a></spec>
 </property>
@@ -8516,7 +8518,7 @@ blockquote { margin: 1rem; -prince-resize-options: -1rem; }
     <inherit>no</inherit>
     <see><a href="/doc/styling/#text-formatting">Text formatting</a></see>
     <comments>
-    <p></p>
+    <p>This property defines the thickness of text decorations.</p>
     </comments>
     <spec><a href="https://drafts.csswg.org/css-text-decor-4/#text-decoration-width-property">CSS Text Decoration Module Level 4 Draft</a></spec>
 </property>

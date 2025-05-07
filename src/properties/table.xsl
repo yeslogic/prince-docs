@@ -73,8 +73,7 @@ Prince also supports the two special keywords <code>initial</code> and <code>inh
   <summary class="ext" title="Prince extension">
     <h6 id="prop-{$propid}">
       <xsl:if test="starts-with(name, 'prince-')"><xsl:text>-</xsl:text></xsl:if>
-      <xsl:value-of select="name"/>*
-    </h6>
+      <xsl:value-of select="name"/>*</h6>
   </summary>
   </xsl:when>
   <xsl:when test="deprecated">
