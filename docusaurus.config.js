@@ -1,3 +1,5 @@
+import {themes as prismThemes} from 'prism-react-renderer';
+
 module.exports = {
   title: 'Prince Documentation',
   tagline: 'User Guide and Reference Manual',
@@ -51,7 +53,7 @@ module.exports = {
     },
     prism: {
         defaultLanguage: 'css',
-        theme: require('prism-react-renderer/themes/duotoneLight'),
+        theme: prismThemes.palenight,
     },
   },
   presets: [
