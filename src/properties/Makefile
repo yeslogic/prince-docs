@@ -14,7 +14,10 @@ properties: valid output table.xsl properties.xml
 process: properties
 	./docs-process.py output/css-props-out.xml output/css-props.xml
 
-noroot: process
+selflink: process
+	./docs_selflink.py output/css-props-out.xml
+
+noroot: selflink
 	xsltproc noroot.xsl output/css-props-out.xml > output/css-props.md
 
 htmltojsx: noroot
