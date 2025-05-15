@@ -293,6 +293,9 @@ p:hover .self-link, #prop-list summary:hover .hash-link, #js-support-table summa
 #prop-list summary#prop---custom-property-name, #prop-list summary#prop---custom-property-name + div .example .syntax-block > code {
     font-style: italic;
 }
+p:has(> .hash-link) {
+    scroll-margin-top: calc(var(--ifm-navbar-height) + 0.5rem);
+}
 
 p.note, p.warning {
     border: 1px solid pink;
