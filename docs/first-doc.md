@@ -12,7 +12,7 @@ In this section we will process a very simple document. We've chosen a document 
 
 The report itself is very basic, the HTML source is shown below. You can save the HTML to a file named lab\_report.html or download it [here](/doc/assets/samples/lab_report.html).
 
-```html
+```markup
     <!DOCTYPE html>
     <html lang="en">
     <head>
@@ -169,7 +169,7 @@ Press the "Add CSS" button on the right of the Prince GUI and choose your CSS fi
 By creating a link from the HTML `link` tag.  
 Place the tag within the `head` tag of the document. For example:
 
-```html
+```markup
     <!DOCTYPE html>
     <html>
     <head>

@@ -86,7 +86,7 @@ This property would most commonly be used in headings, or perhaps in important p
 
 To make it more likely for Prince for Books to produce this effect, one might put `span` elements around phrases, styling each of these spans with `-prince-wrap-inside: phrase`.
 
-```html title="HTML"
+```markup title="HTML"
     <h1>The <span>fulfilment <span>of the law</span></span>
       <span>and <span>of the prophets</span></span></h1>
 ```
@@ -180,7 +180,7 @@ If multiple editions are to produced from a single source document, then a varia
 ```
 in the stylesheet for edition A (and similarly for the stylesheets of other editions), and
 
-```html title="HTML"
+```markup title="HTML"
     <lb ed="a c" />
 ```
 in the document where a line break should be forced only in editions A and C.

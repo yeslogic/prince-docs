@@ -52,6 +52,7 @@ module.exports = {
       disableSwitch: true,
     },
     prism: {
+        additionalLanguages: ['css', 'markup', 'json', 'bash', 'javascript'],
         defaultLanguage: 'css',
         theme: prismThemes.palenight,
     },

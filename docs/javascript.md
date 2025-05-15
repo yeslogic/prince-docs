@@ -156,7 +156,7 @@ Prince also offers the possibility to register the function [`Prince.registerPos
         add.appendChild(document.createTextNode(str));
     });
 ```
-```html title="HTML"
+```markup title="HTML"
     <style id='add'></style>
     <p style='color: prince-color(Color1)'>This was black, becomes cyan</p>
 ```

@@ -28,7 +28,7 @@ CSS generated content strings can also take special characters - but they need t
 
 A literal string can also be passed as an argument to the `leader()` function, which expands to fill the available space on the line like justified text, by repeating the string as many times as necessary. An optional second argument can be used to specify a minimum width.
 
-```html title="HTML"
+```markup title="HTML"
 <ul id="index">
   <li><a href="#chapter1">Chapter 1</a></li>
   <li><a href="#chapter2">Chapter 2</a></li>

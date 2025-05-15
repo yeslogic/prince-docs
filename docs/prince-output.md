@@ -167,14 +167,14 @@ This example is equivalent to `-prince-pdf-link-type: auto new-window` and has o
 
 Prince also supports the PDF-specific `page` and `nameddest` fragment identifiers, supported by web browsers, and will use them when generating links to local PDF files.
 
-```html title="HTML"
+```markup title="HTML"
     <a href="test.pdf#page=2">...</a>
     <a href="test.pdf#nameddest=section1">...</a>
 ```
 
 Named destinations (`nameddest`) in PDF files have a similar function to HTML IDs: they can be the target anchors for links from other documents. The property [`-prince-pdf-destination`](css-props.md#prop-prince-pdf-destination) is used for creating them.
 
-```html title="HTML"
+```markup title="HTML"
     <div className="section" data-sectionid="section1">
 ```
 ```css title="CSS"
@@ -184,14 +184,14 @@ Named destinations (`nameddest`) in PDF files have a similar function to HTML ID
 ```
 In order to link to this section, the following syntax is used:
 
-```html title="HTML"
+```markup title="HTML"
     <a href="test.pdf#nameddest=section1">...</a>
 ```
 ### PDF Actions
 
 Prince supports the `pdf-action:` URL scheme for PDF actions. Typical values are `Print`, `GoBack`, `GoForward`, `NextPage`, `PrevPage`, `FirstPage`, `LastPage`.
 
-```html
+```markup
     <a href="pdf-action:Print">Print Document</a>
 ```
 However, Prince passes the provided values verbatim to the PDF viewer, so the user can supply values that Prince doesn't know about, but the viewer does. Also, please note that these scripts will *always* be run, unlike JavaScript (see [Applying JavaScript in Prince](prince-input.md#applying-javascript-in-prince)).
@@ -481,7 +481,7 @@ Next, the annotation title and content are defined with respectively the [`-prin
 
 Based on the underlying principle of keeping content and style separated, it is good practice to keep the comments in the HTML file, rather than in CSS - therefore we recommend using data attributes, as we show in the following example:
 
-```html title="HTML"
+```markup title="HTML"
 <p>This is a sentence with an <span className="annotation" data-title="PDF Annotation Title" data-contents="This is a PDF annotation.">annotation</span>.
 ```
 ```css title="CSS"
@@ -536,7 +536,7 @@ However, in specific cases it is advisable to fine-tune the PDF tags with the [`
       -prince-pdf-tag-type: TOCI;
     }
 ```
-```html title="HTML"
+```markup title="HTML"
     <ul class="toc">
       <li>First Chapter</li>
       <li>Second Chapter</li>

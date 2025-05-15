@@ -111,7 +111,7 @@ Note that the [`font-variant`](css-props.md#prop-font-variant) CSS property can 
 
 Prince also supports language-specific OpenType shaping with the `locl` feature, which is automatically enabled with the use of the HTML or XML `lang` or `xml:lang` attributes.  As an example, the Arno Pro font has small-caps that are language sensitive, since Turkish has unique case rules for dotted and dotless letter "i".
 
-```html
+```markup
     <p><span xml:lang="en">IJK</span> (English)</p>
     <p><span xml:lang="tr">IJK</span> (Turkish)</p>
 ```
@@ -1001,7 +1001,7 @@ If you want to number table rows in a table, but there are just too many rows to
         display: table-cell
     }
 ```
-```html title="HTML"
+```markup title="HTML"
     <table>
     <tr><td>The First Table Row</td></tr>
     <tr><td>The Second Table Row</td></tr>
@@ -1026,7 +1026,7 @@ display and border properties, need to be explicitly set in the pseudo-elements.
 
 When a table spans across more than one page, it might be desirable to have a "running" table header and footer so that they can be carried on to all the subsequent pages on which the table appears.
 
-```html title="HTML"
+```markup title="HTML"
     <table>
       <thead>
         <tr> <td>Name</td> <td>Mark</td> <td>Grade</td> </tr>
@@ -1061,7 +1061,7 @@ Vertical alignment of these inline tables can be defined with the property [`tab
     .inline { display: inline-table; }
     td { vertical-align: baseline; }
 ```
-```html title="HTML"
+```markup title="HTML"
     <div>
       a line of text
       <table class="inline" style={{tableBaseline: "1"}}>
@@ -1268,7 +1268,7 @@ Floating elements can sometimes appear in a different order than the source orde
 
 The following example will float both figures to the bottom, and the figure with className `one` will float *above* the one with className `two`:
 
-```html title="HTML"
+```markup title="HTML"
     <figure class="one"></figure>
     <figure class="two"></figure>
 ```
@@ -1395,7 +1395,7 @@ Footnotes example
         float: footnote
     }
 ```
-```html title="HTML"
+```markup title="HTML"
     <p>
     Footnotes<span className="fn">A footnote is a note placed at
     the bottom of a page of a book or manuscript that comments on or

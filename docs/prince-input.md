@@ -162,7 +162,7 @@ Also note that XInclude only applies to XML files. To apply it to HTML files, th
 
 Here is an example of a book written in XHTML in which each chapter has been placed in a separate XML document for convenient editing and then included in the main document using XInclude:
 
-```html
+```markup
     <html xmlns:xi="https://www.w3.org/2001/XInclude">
     <head>
     <title>Book Title</title>

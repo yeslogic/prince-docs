@@ -108,7 +108,7 @@ A basic concept in preparing a page is the organisation of the available space i
 
 That image is created by Prince only with the help of HTML and CSS.  Here is the code producing that image:
 
-```html
+```markup
     <html>
         <head>
             <title>Page regions</title>
@@ -451,7 +451,7 @@ You might define a caption in HTML for the main table caption - to be displayed 
 
 The paragraph functioning as a table caption can be hidden in browsers by using [CSS Media Queries](css-media-queries.md#media-queries).
 
-```html title="HTML"
+```markup title="HTML"
     <table>
       <caption>Demo table</caption>
       <tr>
@@ -500,14 +500,14 @@ In some cases it might happen that you want to point several footnote calls at t
 
 First we create our regular footnotes - the only extra step we need to do, is to provide each footnote with a unique ID.
 
-```html
+```markup
     <p>
     This paragraph has a footnote.<span className="fn" id="fn1">First footnote.</span>
     </p>
 ```
 When another foonote call needs to be pointing at this, already existing footnote, we have to create it manually by adding a link to this footnote's ID.
 
-```html
+```markup
     <p>
     This paragraph refers to the first footnote.<a className="rfn" href="#fn1"></a>
     </p>
@@ -805,7 +805,7 @@ The renaming of the file is not essential - the content, not the extension count
 
 Prince determines which language to use for hyphenation with the help of the `:lang()` CSS selector, which in turn checks the `lang` or `xml:lang` attributes of the document:
 
-```html title="HTML"
+```markup title="HTML"
     <span lang="en-GB">supercalifragilisticexpialidocious</span>
 ```
 ```css title="CSS"
@@ -815,7 +815,7 @@ Prince determines which language to use for hyphenation with the help of the `:l
 ```
 Alternatively, link directly to the required remote hyphenation file:
 
-```html title="HTML"
+```markup title="HTML"
     <span lang="en-GB">supercalifragilisticexpialidocious</span>
 ```
 ```css title="CSS"
@@ -956,7 +956,7 @@ There are cases, when preparing a table with a large amount of content, that you
 
 The rotation is achieved with `transform: rotate()`. It could be applied directly to the `th` element, but it is impossible to configure the width of the column as we wish it. We shall thus nest a `div` and a `span` element:
 
-```html title="HTML"
+```markup title="HTML"
     <th className="rotate">
       <div>
         <span>Column header 1</span>

@@ -389,7 +389,7 @@ The `page` counter can be reset using the [`counter-reset`](css-props.md#prop-co
 
 <p id="fig-restart-page-numbers">Restarting page numbering</p>
 
-```html title="HTML"
+```markup title="HTML"
     <body>
         <div class="front"> cover page, etc, ... </div>
         <div class="contents">
@@ -617,14 +617,14 @@ In addition to the standard mechanism, the Prince specific one offers an extra f
 
 Many HTML documents designed for browsers have the following structure:
 
-```html
+```markup
     <header>
     main content
     <footer>
 ```
 Unfortunately, if you want to place the footer element in the page footer, it will only appear on the last page - because it is at the end of the document! To solve this, the document must be modified to look like this:
 
-```html
+```markup
     <header>
     <footer>
     main content
@@ -672,7 +672,7 @@ In a novel it is useful to print a page number at the bottom of every page, *exc
 ![Novel title page example image.](assets/samples/titlepage-1.bw.png)
 A title page example showing use of `@page:first`. Download the [PDF](assets/samples/titlepage.pdf) or the [HTML](assets/samples/titlepage.html).
 
-```html
+```markup
     <html>
     <head>
     <style>
@@ -953,7 +953,7 @@ It is necessary to force a page break when creating overhead slides. This can be
         break-before: page;
     }
 ```
-```html title="HTML"
+```markup title="HTML"
     <div class="slide">
       <h2>Slide Title</h2>
 
