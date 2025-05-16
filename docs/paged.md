@@ -171,8 +171,12 @@ The full list of page regions is shown in the following [Page regions](#tab-marg
 <tr>
 <th> </th>
 <th> </th>
-<th><code><a href="/doc/css-props#prop-text-align">text-align</a></code></th>
-<th><code><a href="/doc/css-props#prop-vertical-align">vertical-align</a></code></th>
+<th>
+<code><p><a href="/doc/css-props#prop-text-align">text-align</a></p></code>
+</th>
+<th>
+<code><p><a href="/doc/css-props#prop-vertical-align">vertical-align</a></p></code>
+</th>
 <th> </th>
 </tr>
 </thead>
@@ -188,97 +192,161 @@ The full list of page regions is shown in the following [Page regions](#tab-marg
 <tbody>
 <tr>
 <td rowSpan="16">Page-margin boxes</td>
-<td><code>@top-left</code></td>
+<td>
+    <code>
+    @top-left
+    </code>
+</td>
 <td>left</td>
 <td>middle</td>
 <td style={{backgroundColor: "lightgreen"}}>lightgreen</td>
 </tr>
 <tr>
-<td><code>@top-center</code></td>
+<td>
+    <code>
+    @top-center
+    </code>
+</td>
 <td>center</td>
 <td>middle</td>
 <td style={{backgroundColor: "lemonchiffon"}}>lemonchiffon</td>
 </tr>
 <tr>
-<td><code>@top-right</code></td>
+<td>
+    <code>
+    @top-right
+    </code>
+</td>
 <td>right</td>
 <td>middle</td>
 <td>not shown</td>
 </tr>
 <tr>
-<td><code>@bottom-left</code></td>
+<td>
+    <code>
+    @bottom-left
+    </code>
+</td>
 <td>left</td>
 <td>middle</td>
 <td>not shown</td>
 </tr>
 <tr>
-<td><code>@bottom-center</code></td>
+<td>
+    <code>
+    @bottom-center
+    </code>
+</td>
 <td>center</td>
 <td>middle</td>
 <td style={{backgroundColor: "lemonchiffon"}}>lemonchiffon</td>
 </tr>
 <tr>
-<td><code>@bottom-right</code></td>
+<td>
+    <code>
+    @bottom-right
+    </code>
+</td>
 <td>right</td>
 <td>middle</td>
 <td>not shown</td>
 </tr>
 <tr>
-<td><code>@left-top</code></td>
+<td>
+    <code>
+    @left-top
+    </code>
+</td>
 <td>center</td>
 <td>top</td>
 <td style={{backgroundColor: "lightgreen"}}>lightgreen</td>
 </tr>
 <tr>
-<td><code>@left-middle</code></td>
+<td>
+    <code>
+    @left-middle
+    </code>
+</td>
 <td>center</td>
 <td>middle</td>
 <td style={{backgroundColor: "lightcoral"}}>lightcoral</td>
 </tr>
 <tr>
-<td><code>@left-bottom</code></td>
+<td>
+    <code>
+    @left-bottom
+    </code>
+</td>
 <td>center</td>
 <td>bottom</td>
 <td>not shown</td>
 </tr>
 <tr>
-<td><code>@right-top</code></td>
+<td>
+    <code>
+    @right-top
+    </code>
+</td>
 <td>center</td>
 <td>top</td>
 <td>not shown</td>
 </tr>
 <tr>
-<td><code>@right-middle</code></td>
+<td>
+    <code>
+    @right-middle
+    </code>
+</td>
 <td>center</td>
 <td>middle</td>
 <td style={{backgroundColor: "lightcoral"}}>lightcoral</td>
 </tr>
 <tr>
-<td><code>@right-bottom</code></td>
+<td>
+    <code>
+    @right-bottom
+    </code>
+</td>
 <td>center</td>
 <td>bottom</td>
 <td>not shown</td>
 </tr>
 <tr>
-<td><code>@top-left-corner</code></td>
+<td>
+    <code>
+    @top-left-corner
+    </code>
+</td>
 <td>right</td>
 <td>middle</td>
 <td>not shown</td>
 </tr>
 <tr>
-<td><code>@top-right-corner</code></td>
+<td>
+    <code>
+    @top-right-corner
+    </code>
+</td>
 <td>left</td>
 <td>middle</td>
 <td style={{backgroundColor: "cornflowerblue"}}>cornflowerblue</td>
 </tr>
 <tr>
-<td><code>@bottom-left-corner</code></td>
+<td>
+    <code>
+    @bottom-left-corner
+    </code>
+</td>
 <td>right</td>
 <td>middle</td>
 <td>not shown</td>
 </tr>
 <tr>
-<td><code>@bottom-right-corner</code></td>
+<td>
+    <code>
+    @bottom-right-corner
+    </code>
+</td>
 <td>left</td>
 <td>middle</td>
 <td>not shown</td>
@@ -287,49 +355,81 @@ The full list of page regions is shown in the following [Page regions](#tab-marg
 <tbody>
 <tr>
 <td rowSpan="8">Page area regions</td>
-<td><code>@page-float-top</code></td>
+<td>
+    <code>
+    @page-float-top
+    </code>
+</td>
 <td>center</td>
 <td>top</td>
 <td style={{backgroundColor: "lightblue"}}>lightblue</td>
 </tr>
 <tr>
-<td><code>@page-float-bottom</code></td>
+<td>
+    <code>
+    @page-float-bottom
+    </code>
+</td>
 <td>center</td>
 <td>bottom</td>
 <td style={{backgroundColor: "gainsboro"}}>gainsboro</td>
 </tr>
 <tr>
-<td><code>@leftnote</code></td>
+<td>
+    <code>
+    @leftnote
+    </code>
+</td>
 <td>left</td>
 <td>middle</td>
 <td style={{backgroundColor: "pink"}}>pink</td>
 </tr>
 <tr>
-<td><code>@rightnote</code></td>
+<td>
+    <code>
+    @rightnote
+    </code>
+</td>
 <td>left</td>
 <td>middle</td>
 <td style={{backgroundColor: "thistle"}}>thistle</td>
 </tr>
 <tr>
-<td><code>@outsidenote</code></td>
+<td>
+    <code>
+    @outsidenote
+    </code>
+</td>
 <td>left</td>
 <td>middle</td>
 <td>not shown</td>
 </tr>
 <tr>
-<td><code>@insidenote</code></td>
+<td>
+    <code>
+    @insidenote
+    </code>
+</td>
 <td>left</td>
 <td>middle</td>
 <td>not shown</td>
 </tr>
 <tr>
-<td><code>@footnote</code></td>
+<td>
+    <code>
+    @footnote
+    </code>
+</td>
 <td>left</td>
 <td>middle</td>
 <td style={{backgroundColor: "aliceblue"}}>aliceblue</td>
 </tr>
 <tr>
-<td><code>@prince-overlay</code></td>
+<td>
+    <code>
+    @prince-overlay
+    </code>
+</td>
 <td>center</td>
 <td>middle</td>
 <td style={{background: "repeating-linear-gradient( -45deg, rgba(255,255,255, 0.1), rgba(255,255,255, 0.1) 10px, rgba(255,0,0, 0.2) 10px, rgba(255,0,0, 0.2) 20px )"}}>stripes</td>

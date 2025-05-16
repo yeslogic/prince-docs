@@ -17,27 +17,51 @@ The absolute length units correspond to exact distances in the PDF file.
 <th colSpan="2">Absolute length units</th>
 </tr>
 <tr>
-<td className="example"><code>cm</code></td>
+<td>
+<code>
+cm
+</code>
+</td>
 <td>centimeters</td>
 </tr>
 <tr>
-<td className="example"><code>mm</code></td>
+<td>
+<code>
+mm
+</code>
+</td>
 <td>millimeters</td>
 </tr>
 <tr>
-<td className="example"><code>q</code></td>
+<td>
+<code>
+q
+</code>
+</td>
 <td>quarter-millimeters</td>
 </tr>
 <tr>
-<td className="example"><code>in</code></td>
+<td>
+<code>
+in
+</code>
+</td>
 <td>inches</td>
 </tr>
 <tr>
-<td className="example"><code>pc</code></td>
+<td>
+<code>
+pc
+</code>
+</td>
 <td>picas</td>
 </tr>
 <tr>
-<td className="example"><code>pt</code></td>
+<td>
+<code>
+pt
+</code>
+</td>
 <td>points</td>
 </tr>
 </table>
@@ -51,15 +75,27 @@ The font length units are relative to the [`font-size`](css-props.md#prop-font-s
 <th colSpan="2">Font length units</th>
 </tr>
 <tr>
-<td className="example"><code>em</code></td>
+<td>
+<code>
+em
+</code>
+</td>
 <td>font size of the element</td>
 </tr>
 <tr>
-<td className="example"><code>rem</code></td>
+<td>
+<code>
+rem
+</code>
+</td>
 <td>font size of the root element</td>
 </tr>
 <tr>
-<td className="example"><code>ex</code></td>
+<td>
+<code>
+ex
+</code>
+</td>
 <td>x-height of the element's font</td>
 </tr>
 </table>
@@ -77,35 +113,67 @@ Please note that these values cannot be used with elements for which a viewport,
 <th colSpan="2">Viewport length Units</th>
 </tr>
 <tr>
-<td className="example"><code>vw</code></td>
+<td>
+<code>
+vw
+</code>
+</td>
 <td>content area width</td>
 </tr>
 <tr>
-<td className="example"><code>vh</code></td>
+<td>
+<code>
+vh
+</code>
+</td>
 <td>content area height</td>
 </tr>
 <tr>
-<td className="example"><code>vmin</code></td>
+<td>
+<code>
+vmin
+</code>
+</td>
 <td>the smaller length of <code>vw</code> or <code>vh</code></td>
 </tr>
 <tr>
-<td className="example"><code>vmax</code></td>
+<td>
+<code>
+vmax
+</code>
+</td>
 <td>the larger length of <code>vw</code> or <code>vh</code></td>
 </tr>
 <tr>
-<td className="example"><code>pvw</code></td>
+<td>
+<code>
+pvw
+</code>
+</td>
 <td>page width</td>
 </tr>
 <tr>
-<td className="example"><code>pvh</code></td>
+<td>
+<code>
+pvh
+</code>
+</td>
 <td>page height</td>
 </tr>
 <tr>
-<td className="example"><code>pvmin</code></td>
+<td>
+<code>
+pvmin
+</code>
+</td>
 <td>the smaller length of <code>pvw</code> or <code>pvh</code></td>
 </tr>
 <tr>
-<td className="example"><code>pvmax</code></td>
+<td>
+<code>
+pvmax
+</code>
+</td>
 <td>the larger length of <code>pvw</code> or <code>pvh</code></td>
 </tr>
 </table>
@@ -119,7 +187,11 @@ The pixel unit is relative to the de-facto standard of `96dpi` (or rather, 96 *p
 <th colSpan="2">Pixel unit</th>
 </tr>
 <tr>
-<td className="example"><code>px</code></td>
+<td>
+<code>
+px
+</code>
+</td>
 <td>pixel</td>
 </tr>
 </table>
@@ -134,7 +206,11 @@ CSS grids require a flexible length, expressed as a fraction of the leftover spa
 <th colSpan="2">Fractional length unit</th>
 </tr>
 <tr>
-<td className="example"><code>fr</code></td>
+<td>
+<code>
+fr
+</code>
+</td>
 <td>fraction of the leftover space in the grid container</td>
 </tr>
 </table>
@@ -165,11 +241,19 @@ use the approximation of <code>1.2</code> instead of using the exact font-metric
 <th colSpan="2">Line height units</th>
 </tr>
 <tr>
-<td className="example"><code>lh</code></td>
+<td>
+<code>
+lh
+</code>
+</td>
 <td>line height of the element</td>
 </tr>
 <tr>
-<td className="example"><code>rlh</code></td>
+<td>
+<code>
+rlh
+</code>
+</td>
 <td>line height of the root element</td>
 </tr>
 </table>
