@@ -25,14 +25,22 @@ Several media queries can be combined into a comma separated media query list.
 <th colSpan="2">Negating a media query</th>
 </tr>
 <tr>
-<td><code>not</code></td>
+<td>
+    <code>
+    not
+    </code>
+</td>
 <td>An individual media query can be negated by prefixing it with the keyword <code>not</code>.</td>
 </tr>
 <tr>
 <th colSpan="2">Hiding a media query from legacy user agents</th>
 </tr>
 <tr>
-<td><code>only</code></td>
+<td>
+    <code>
+    only
+    </code>
+</td>
 <td>Prefixing a media query with the keyword <code>only</code> will have no effect on the media query's result, but will be ignored by legacy user agents.</td>
 </tr>
 </table>
@@ -48,19 +56,35 @@ However, note that the command-line option `--media` can be used to set a media 
 <th colSpan="2">Media types</th>
 </tr>
 <tr>
-<td><code>all</code></td>
+<td>
+    <code>
+    all
+    </code>
+</td>
 <td>Matches all devices.</td>
 </tr>
 <tr>
-<td><code>print</code></td>
+<td>
+    <code>
+    print
+    </code>
+</td>
 <td>Matches printers and devices intended to reproduce or produce a printed display.</td>
 </tr>
 <tr>
-<td><code>screen</code></td>
+<td>
+    <code>
+    screen
+    </code>
+</td>
 <td>Matches all devices that are not matched by <code>print</code> or <code>speech</code>.</td>
 </tr>
 <tr>
-<td><code>speech</code></td>
+<td>
+    <code>
+    speech
+    </code>
+</td>
 <td>Matches screenreaders and other devices that "read out" a page.</td>
 </tr>
 </table>
@@ -109,7 +133,11 @@ Multiple media features may be combined into a media condition using full boolea
 
 <table className="grid">
 <tr>
-<th colSpan="2"><code>width</code></th>
+<th colSpan="2">
+    <code>
+    width
+    </code>
+</th>
 </tr>
 <tr>
 <td>Value: <code>&lt;<i>length</i>&gt;</code></td>
@@ -119,7 +147,11 @@ Multiple media features may be combined into a media condition using full boolea
 <td>Type: range</td>
 </tr>
 <tr>
-<th colSpan="2"><code>height</code></th>
+<th colSpan="2">
+    <code>
+    height
+    </code>
+</th>
 </tr>
 <tr>
 <td>Value: <code>&lt;<i>length</i>&gt;</code></td>
@@ -129,7 +161,11 @@ Multiple media features may be combined into a media condition using full boolea
 <td>Type: range</td>
 </tr>
 <tr>
-<th colSpan="2"><code>aspect-ratio</code></th>
+<th colSpan="2">
+    <code>
+    aspect-ratio
+    </code>
+</th>
 </tr>
 <tr>
 <td>Value: <code>&lt;<i>length</i>&gt;</code></td>
@@ -139,7 +175,11 @@ Multiple media features may be combined into a media condition using full boolea
 <td>Type: range</td>
 </tr>
 <tr>
-<th colSpan="2"><code>orientation</code></th>
+<th colSpan="2">
+    <code>
+    orientation
+    </code>
+</th>
 </tr>
 <tr>
 <td>Value: <code>portrait</code> | <code>landscape</code></td>
@@ -154,7 +194,11 @@ Multiple media features may be combined into a media condition using full boolea
 
 <table className="grid">
 <tr>
-<th colSpan="2"><code>resolution</code></th>
+<th colSpan="2">
+    <code>
+    resolution
+    </code>
+</th>
 </tr>
 <tr>
 <td>Value: <code>&lt;<i>resolution</i>&gt;</code> | <code>infinite</code></td>
@@ -164,7 +208,11 @@ Multiple media features may be combined into a media condition using full boolea
 <td>Type: range</td>
 </tr>
 <tr>
-<th colSpan="2"><code>scan</code></th>
+<th colSpan="2">
+    <code>
+    scan
+    </code>
+</th>
 </tr>
 <tr>
 <td>Value: <code>interlace</code> | <code>progressive</code></td>
@@ -174,7 +222,11 @@ Multiple media features may be combined into a media condition using full boolea
 <td>Type: discrete</td>
 </tr>
 <tr>
-<th colSpan="2"><code>grid</code></th>
+<th colSpan="2">
+    <code>
+    grid
+    </code>
+</th>
 </tr>
 <tr>
 <td>Value: <code>&lt;<i>boolean</i>&gt;</code></td>
@@ -184,7 +236,11 @@ Multiple media features may be combined into a media condition using full boolea
 <td>Type: discrete</td>
 </tr>
 <tr>
-<th colSpan="2"><code>update</code></th>
+<th colSpan="2">
+    <code>
+    update
+    </code>
+</th>
 </tr>
 <tr>
 <td>Value: <code>none</code> | <code>slow</code> | fast</td>
@@ -194,7 +250,11 @@ Multiple media features may be combined into a media condition using full boolea
 <td>Type: discrete</td>
 </tr>
 <tr>
-<th colSpan="2"><code>overflow-block</code></th>
+<th colSpan="2">
+    <code>
+    overflow-block
+    </code>
+</th>
 </tr>
 <tr>
 <td>Value: <code>none</code> | <code>scroll</code> | <code>optional-paged</code> | <code>paged</code></td>
@@ -204,7 +264,11 @@ Multiple media features may be combined into a media condition using full boolea
 <td>Type: discrete</td>
 </tr>
 <tr>
-<th colSpan="2"><code>overflow-inline</code></th>
+<th colSpan="2">
+    <code>
+    overflow-inline
+    </code>
+</th>
 </tr>
 <tr>
 <td>Value: <code>none</code> | <code>scroll</code></td>
@@ -220,7 +284,11 @@ Multiple media features may be combined into a media condition using full boolea
 
 <table className="grid">
 <tr>
-<th colSpan="2"><code>color</code></th>
+<th colSpan="2">
+    <code>
+    color
+    </code>
+</th>
 </tr>
 <tr>
 <td>Value: <code>&lt;<i>integer</i>&gt;</code></td>
@@ -230,7 +298,11 @@ Multiple media features may be combined into a media condition using full boolea
 <td>Type: range</td>
 </tr>
 <tr>
-<th colSpan="2"><code>color-index</code></th>
+<th colSpan="2">
+    <code>
+    color-index
+    </code>
+</th>
 </tr>
 <tr>
 <td>Value: <code>&lt;<i>integer</i>&gt;</code></td>
@@ -240,7 +312,11 @@ Multiple media features may be combined into a media condition using full boolea
 <td>Type: range</td>
 </tr>
 <tr>
-<th colSpan="2"><code>monochrome</code></th>
+<th colSpan="2">
+    <code>
+    monochrome
+    </code>
+</th>
 </tr>
 <tr>
 <td>Value: <code>&lt;<i>integer</i>&gt;</code></td>
@@ -250,7 +326,11 @@ Multiple media features may be combined into a media condition using full boolea
 <td>Type: range</td>
 </tr>
 <tr>
-<th colSpan="2"><code>color-gamut</code></th>
+<th colSpan="2">
+    <code>
+    color-gamut
+    </code>
+</th>
 </tr>
 <tr>
 <td>Value: <code>srgb</code> | <code>p3</code> | <code>rec2020</code></td>
@@ -266,7 +346,11 @@ Multiple media features may be combined into a media condition using full boolea
 
 <table className="grid">
 <tr>
-<th colSpan="2"><code>pointer</code>, <code>any-pointer</code></th>
+<th colSpan="2">
+    <code>
+    pointer, any-pointer
+    </code>
+</th>
 </tr>
 <tr>
 <td>Value: <code>none</code> | <code>coarse</code> | <code>fine</code></td>
@@ -276,7 +360,11 @@ Multiple media features may be combined into a media condition using full boolea
 <td>Type: discrete</td>
 </tr>
 <tr>
-<th colSpan="2"><code>hover</code>, <code>any-hover</code></th>
+<th colSpan="2">
+    <code>
+    hover, any-hover
+    </code>
+</th>
 </tr>
 <tr>
 <td>Value: <code>none</code> | <code>hover</code></td>
@@ -291,7 +379,11 @@ Multiple media features may be combined into a media condition using full boolea
 
 <table className="grid">
 <tr>
-<th colSpan="2"><code>scripting</code></th>
+<th colSpan="2">
+    <code>
+    scripting
+    </code>
+</th>
 </tr>
 <tr>
 <td>Value: <code>none</code> | <code>initial-only</code> | <code>enabled</code></td>

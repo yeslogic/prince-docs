@@ -146,6 +146,9 @@ code {
     border: 0;
     outline: 0.1rem solid rgba(0,0,0,0.1)
 }
+table.grid td code p, table.grid th code p {
+    margin: 0 !important;
+}
 
 pre code, code pre, .syntax-block code, .grid code {
     white-space: pre-wrap;
