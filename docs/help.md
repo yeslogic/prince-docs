@@ -103,9 +103,13 @@ This script is not available on Windows.
   <dd><p>Different PDF profiles have different requirements - you might be   generating a PDF with a version or profile which does not support transparency.   The only PDF profile to support transparency is the PDF/X-4 profile.  See also:   <a href="/doc/prince-output#pdf-versions-and-profiles">PDF Versions and Profiles</a>   and <a href="/doc/graphics#color-management-and-pdf-profiles">Color Management and   PDF Profiles</a>.</p></dd>
 
   <dt><p id="faq-tooltips">How can I create tooltips in the PDF file?   <a className="hash-link" href="#faq-tooltips" /></p></dt>
-  <dd><p>PDF tooltips can be enabled with the CSS property <code>-prince-tooltip</code> like this:</p>
-	  <pre><code className="hljs css language-css">    *<span className="hljs-selector-attr">[title]</span> {"{"} <span className="hljs-attribute">-prince-tooltip</span>: <span className="hljs-built_in">attr</span>(title) {"}"}</code></pre>
-  <p>However, please note that tooltips are not a standard PDF feature, and they   may only work in Adobe Reader and Adobe Acrobat and may not be visible in other   PDF viewers, such as web browsers.</p></dd>
+  <dd>
+  <p>PDF tooltips can be enabled with the CSS property <code>-prince-tooltip</code> like this:</p>
+```css
+    *[title] { -prince-tooltip: attr(title) }
+```
+  <p>However, please note that tooltips are not a standard PDF feature, and they   may only work in Adobe Reader and Adobe Acrobat and may not be visible in other   PDF viewers, such as web browsers.</p>
+  </dd>
 
   <dt><p id="faq-everypage">How can I make an element, such as an image or some   text, appear on each page of the PDF document?   <a className="hash-link" href="#faq-everypage" /></p></dt>
   <dd><p>For this purpose you can use the <a href="/doc/css-at-rules#at-page"><code>@page</code></a>   page regions.  See: <a href="/doc/paged#page-regions">Page regions</a> and <a href="/doc/cookbook#watermarks">Watermarks</a>.</p></dd>
@@ -114,11 +118,17 @@ This script is not available on Windows.
   <dd><p>You cannot add style to generated content in the page regions, except for   some inline style properties, such as <code>color</code> and   <code>font</code>.  A possibility for using more complex styling is to use   the <code>element()</code> or <code>flow()</code> CSS functions.  See   <a href="/doc/paged#generated-content-in-page-regions">Generated content in page regions</a>,   <a href="/doc/paged#copying-content-from-the-document">Copying content from the document</a> and   <a href="/doc/paged#taking-elements-from-the-document">Taking elements from the document</a> -   however, this latter approach will remove the element from the document itself.</p></dd>
 
   <dt><p id="faq-counting-pages">How can I start counting pages on a left page and display a right page   as second page? <a className="hash-link" href="#faq-counting-pages" /></p></dt>
-  <dd><p>You can specify <code>break-before:left | right</code> on the root element of the document.</p>
-  <p className="label">CSS</p>
-  <pre><code className="hljs"><span class="token-line">  <span className="hljs-selector-tag">body</span><span className="hljs-selector-attr">[start=even]</span> {"{"}<br/></span> <span class="token-line">    <span className="hljs-attribute">break-before</span>:left;<br/></span> <span class="token-line">  {"}"}</span></code></pre>
-    <p className="label">HTML</p>
-    <pre><code className="hljs css language-html">  <span className="hljs-tag">&lt;<span className="hljs-name">body</span> <span className="hljs-attr">start</span>=<span className="hljs-string">"even"</span> <span className="hljs-attr">startpage</span>=<span className="hljs-string">"28"</span>&gt;</span></code></pre></dd>
+  <dd>
+  <p>You can specify <code>break-before:left | right</code> on the root element of the document.</p>
+```css title="CSS"
+    body[start=even] {
+        break-before:left;
+   }
+```
+```markup title="HTML"
+    <body start="even" startpage="28">
+```
+</dd>
 
   <dt><p id="faq-js">Does Prince support JavaScript?   <a className="hash-link" href="#faq-js" /></p></dt>
   <dd><p>Yes, Prince supports JavaScript - remember to enable it with the   <a href="/doc/command-line#cl-javascript"><code>--javascript</code></a>   command-line option (see <a href="/doc/prince-input#applying-javascript-in-prince">Applying JavaScript in Prince</a>).  However,   there are some limitations: Prince produces printed documents, and interactive   events make no sense in this context.  Also, modifications of the document   after layout has finished are not possible.  See: <a href="/doc/javascript">Scripting</a>.</p></dd>
@@ -132,11 +142,27 @@ This script is not available on Windows.
   <p className="note">Please be aware that there can be unforseen side-effects when pretending to be somebody else on the web.</p></dd>
 
   <dt><p id="faq-xinclude">Can I include content of external files in my document?   <a className="hash-link" href="#faq-xinclude" /></p></dt>
-  <dd><p>Yes.  In XML, this is done by means of <a href="/doc/prince-input#xml-inclusions-xinclude">XML Inclusions (XInclude)</a>.  Note   that XInclude is disabled by default, and can be enabled with the   <a href="/doc/command-line#cl-xinclude"><code>--xinclude</code></a>   command-line option.  Also note that XInclude only applies to XML files.</p>
+  <dd>
+  <p>Yes.  In XML, this is done by means of <a href="/doc/prince-input#xml-inclusions-xinclude">XML Inclusions (XInclude)</a>.  Note   that XInclude is disabled by default, and can be enabled with the   <a href="/doc/command-line#cl-xinclude"><code>--xinclude</code></a>   command-line option.  Also note that XInclude only applies to XML files.</p>
   <p>To apply it to HTML files, the XML input format needs to be specified with   the <a href="/doc/command-line#cl-input"><code>--input</code></a>   command-line option.</p>
   <p>Another option in HTML is to use the <code>iframe</code> element:</p>
-  <pre><code className="hljs css language-html"><span class="token-line">    <span className="hljs-tag">&lt;<span className="hljs-name">style</span>&gt;</span><br/></span> <span class="token-line">    @page {"{"}<br/></span> <span class="token-line">      @bottom {"{"}<br/></span> <span class="token-line">        border: solid red thin;<br/></span> <span class="token-line">        content: flow(footer)<br/></span> <span class="token-line">      {"}"}<br/></span> <span class="token-line">    {"}"}<br/></span> <span class="token-line">    .footer {"{"}<br/></span> <span class="token-line">      flow: static(footer)<br/></span> <span class="token-line">    {"}"}<br/></span> <span class="token-line">    <span className="hljs-tag">&lt;/<span className="hljs-name">style</span>&gt;</span><br/></span> <span class="token-line">    <span className="hljs-tag">&lt;<span className="hljs-name">iframe</span> <span className="hljs-attr">class</span>=<span className="hljs-string">"footer"</span> <span className="hljs-attr">src</span>=<span className="hljs-string">"https://www.google.com"</span>&gt;</span><span className="hljs-tag">&lt;/<span className="hljs-name">iframe</span>&gt;</span><br/></span> <span class="token-line">    <span className="hljs-tag">&lt;<span className="hljs-name">p</span>&gt;</span>Normal content<span className="hljs-tag">&lt;/<span className="hljs-name">p</span>&gt;</span></span></code></pre>
+```markup title="HTML"
+    <style>
+     @page {
+       @bottom {
+         border: solid red thin;
+         content: flow(footer)
+       }
+     }
+     .footer {
+       flow: static(footer)
+     }
+     </style>
+     <iframe class="footer" src="https://www.google.com"></iframe>
+     <p>Normal content</p>
+```
   <p>However there may be some subtleties required to get the correct size and   styling of content within iframe elements.</p>
-  <p>Yet another option would be to use JavaScript to issue an XMLHttpRequest,   parse the text of the response with DOMParser, then extract the elements and   copy them into the main document. However, it will be tricky to support   nested styles this way.</p></dd>
+  <p>Yet another option would be to use JavaScript to issue an XMLHttpRequest,   parse the text of the response with DOMParser, then extract the elements and   copy them into the main document. However, it will be tricky to support   nested styles this way.</p>
+  </dd>
 </dl>
 

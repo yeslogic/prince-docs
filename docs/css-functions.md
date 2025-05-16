@@ -90,6 +90,12 @@ rgb( [&lt;<i>number</i>&gt;]{"{"}3{"}"} [/&#160;[&lt;<i>alpha-value</i>&gt;]? )<
 <tr className="ext">
 <td><code>prince-color( &lt;<i>colorname</i>&gt;  [,&#160;&lt;<i>number</i>&gt; |&#160;&lt;<i>percentage</i>&gt;]? , overprint? )*</code></td>
 <td>Using a spot color defined in the <code><a href="/doc/css-at-rules/#at-prince-color">@prince-color</a></code> at-rule. The number or percentage defines the tint. An optional <code>overprint</code> keyword instructs Prince whether to overprint the color. <pre><code className="hljs"><span className="hljs-attribute">color</span>: <span className="hljs-built_in">prince-color</span>(MyColor, 50%, overprint)</code></pre> </td>
+<td>
+Using a spot color defined in the <code><a href="/doc/css-at-rules/#at-prince-color">@prince-color</a></code> at-rule. The number or percentage defines the tint. An optional <code>overprint</code> keyword instructs Prince whether to overprint the color.
+```css
+    color: prince-color(MyColor, 50%, overprint)
+```
+</td>
 </tr>
 <tr className="ext">
 <td><code>prince-overprint( &lt;<i>colorname</i>&gt; | rgb() | device-cmyk() | hsl() | hwb() | prince-color() [, [overprint-mode-nonzero | overprint-mode-zero]]? )*</code></td>
@@ -168,10 +174,28 @@ property.  See <a href="/doc/paged#copying-content-from-the-document">Copying co
 <tr>
 <td><code>repeat( &lt;<i>string</i>&gt;+ )</code></td>
 <td>Used in counters as a <code>counter-style</code>, it defines a sequentially repeated pattern for numbering the items. <pre><code className="hljs"><span className="hljs-selector-tag">h4</span><span className="hljs-selector-pseudo">::before</span> {"{"} <span className="hljs-attribute">content</span>: <span className="hljs-built_in">counter</span>(h4, <span className="hljs-built_in">repeat</span>("x", "y", "z")) {"}"}</code></pre><p className="comment"> This counter will yield the sequence "x, y, z, xx, yy, zz" etc. </p> </td>
+<td>
+Used in counters as a <code>counter-style</code>, it defines a sequentially repeated pattern for numbering the items.
+```css
+    h4::before {
+        content: counter(h4, repeat("x", "y", "z"))
+    }
+```
+<p className="comment"> This counter will yield the sequence "x, y, z, xx, yy, zz" etc. </p>
+</td>
 </tr>
 <tr>
 <td><code>symbols( &lt;<i>string</i>&gt;+ )</code></td>
 <td>Used in counters as a <code>counter-style</code>, it defines the symbols used for numbering the items. <pre><code className="hljs"><span className="hljs-selector-tag">h4</span><span className="hljs-selector-pseudo">::before</span> {"{"} <span className="hljs-attribute">content</span>: <span className="hljs-built_in">counter</span>(h4, <span className="hljs-built_in">symbols</span>("x", "y", "z")) {"}"}</code></pre> <p className="comment"> This counter will yield the sequence "x, y, z, 4, 5, 6" etc. </p> </td>
+<td>
+Used in counters as a <code>counter-style</code>, it defines the symbols used for numbering the items.
+```css
+    h4::before {
+        content: counter(h4, symbols("x", "y", "z"))
+    }
+```
+<p className="comment"> This counter will yield the sequence "x, y, z, 4, 5, 6" etc. </p>
+</td>
 </tr>
 <tr className="ext">
 <td><code>prince-base-url()*</code></td>
@@ -188,6 +212,15 @@ property.  See <a href="/doc/paged#copying-content-from-the-document">Copying co
 <tr className="ext">
 <td><code>prince-fallback( &lt;<i>uri</i>&gt; )*[, &lt;<i>content</i>&gt;+]?</code></td>
 <td>Inserts content fetched from another resource (like the <code>url()</code> function), but also has the possibility of specifying a fallback content, in case the loading of the URL should fail.  If no comma and <i>content</i> items are provided, the fallback is as if <code>content: normal</code> were specified. <pre><code className="hljs"><span className="hljs-selector-tag">img</span> {"{"} <span className="hljs-attribute">content</span>: <span className="hljs-built_in">prince-fallback</span>(<span className="hljs-built_in">attr</span>(src, url)), <span className="hljs-built_in">attr</span>(data-altsrc, url) {"}"}</code></pre> </td>
+<td>
+Inserts content fetched from another resource (like the <code>url()</code> function), but also has the possibility of specifying a fallback content, in case the loading of the URL should fail.  If no comma and <i>content</i> items are provided, the fallback is as if <code>content: normal</code> were specified.
+```css
+    img {
+        content: prince-fallback(attr(src, url)),
+                 attr(data-altsrc, url);
+    }
+```
+</td>
 </tr>
 <tr className="ext">
 <td><code>prince-glyph-index( &lt;<i>int</i>&gt; )*</code></td>
@@ -277,6 +310,16 @@ does.</td>
 <td>Provides a hint on the font format.
 <pre><code className="hljs"><span className="hljs-keyword">@font-face</span> {"{"}   <span className="hljs-attribute">font-family</span>: bodytext;   <span className="hljs-attribute">src</span>: <span className="hljs-built_in">url</span>(sans-serif-font.ttf) <span className="hljs-built_in">format</span>("opentype"); {"}"}</code></pre></td>
 <td rowSpan="4"><code><a href="/doc/css-props#prop-src">src</a></code></td>
+<td>
+Provides a hint on the font format.
+```css
+    @font-face {
+        font-family: bodytext;
+        src: url(sans-serif-font.ttf)
+             format("opentype");
+    }
+```
+</td>
 </tr>
 <tr>
 <td><code>tech( features-opentype | color-svg | color-sbix | color-cbdt | variations )</code></td>
