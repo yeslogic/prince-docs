@@ -687,7 +687,7 @@ The [`transform`](css-props.md#prop-transform) property can be used to rotate, t
 
 The [`transform`](css-props.md#prop-transform) property currently does not affect SVG elements - they need to use their own `transform` attribute instead.
 
-The [`transform`](css-props.md#prop-transform) property function `rotate()` rotates the element clockwise from its current position. Negative values rotate conter-clockwise.
+The [`transform`](css-props.md#prop-transform) property function `rotate()` rotates the element clockwise from its current position. Negative values rotate counter-clockwise.
 
 The function `translate()` moves an element along a vertical and/or horizontal axis. The functions `translatex()` and `translatey()` move the element along one of those axis only. The function `translate3d()` is supported if the Z (third) coordinate is zero, thus making it equivalent to the 2D `translate()`.
 
