@@ -127,24 +127,30 @@ Doing this will change the system alert to a system prompt to confirm running th
 ## Frequently Asked Questions
 
 <dl className="faq">
-  <dt id="faq-win64"><p>Why does Prince on 64-bit Windows install into the 32-bit compatibility directory <code>%ProgramFiles(x86)%</code>? <a href="#faq-win64" className="self-link"></a></p></dt>
+  <dt id="faq-win64"><p>Why does Prince on 64-bit Windows install into the 32-bit compatibility directory <code>%ProgramFiles(x86)%</code>? <a href="#faq-win64" className="hash-link"></a></p></dt>
   <dd><p>The Prince GUI is still a 32-bit program, but the formatting engine
   is 64-bit.</p></dd>
 
-  <dt id="faq-win-no-ui"><p>How can I run Prince on Windows without showing the UI? <a href="#faq-win-no-ui" className="self-link"></a></p></dt>
-  <dd><p>On Linux, you typically run Prince with the following command:</p>
-  <pre><code className="hljs">    prince file.xml -o file.pdf</code></pre>
+  <dt id="faq-win-no-ui"><p>How can I run Prince on Windows without showing the UI? <a href="#faq-win-no-ui" className="hash-link"></a></p></dt>
+  <dd>
+  <p>On Linux, you typically run Prince with the following command:</p>
+```bash title="Bash"
+    prince file.xml -o file.pdf
+```
   <p>On Windows, you replace the name of the executable with <code>Prince\engine\bin\prince.exe</code> in the installation directory (see <a href="/doc/installing/#-on-windows-2">Windows installation layout</a>), which is the command-line program. See also <a href="/doc/command-line/">Command-line Reference</a>.</p>
-  <pre><code className="hljs">    "C:\Program Files (x86)\Prince\engine\bin\prince.exe" file.xml -o file.pdf</code></pre></dd>
+```powershell title="Powershell"
+    "C:\Program Files (x86)\Prince\engine\bin\prince.exe" file.xml -o file.pdf
+```
+  </dd>
 
-  <dt id="faq-install-cloud"><p>Can I install Prince on cloud services or   containers (Azure, AWS, Docker)? <a href="#faq-install-cloud" className="self-link"></a></p></dt>
+  <dt id="faq-install-cloud"><p>Can I install Prince on cloud services or   containers (Azure, AWS, Docker)? <a href="#faq-install-cloud" className="hash-link"></a></p></dt>
   <dd><p>Prince can be installed on the <a href="/doc/installing/#installing-prince">supported operating systems</a> -   also when they are running in cloud or container services. On Linux, some   environments might not provide for all dependencies - you can address this   by either trying to install the Generic Linux Prince package (see   <a href="/doc/installing/#tarballs---alpine-linux-freebsd-and-generic-linux">Tarballs - Alpine Linux, FreeBSD and Generic Linux</a>),   or by trying to install the missing dependencies.</p>
   <p>Our chapter on <a href="/doc/server-integration/#prince-in-cloud-computing">Prince In Cloud Computing</a>   details installation instructions for Prince on <a href="/doc/server-integration/#prince-docker-image">Docker</a>,   <a href="/doc/server-integration/#prince-on-microsoft-azure">Microsoft Azure</a>,   <a href="/doc/server-integration/#prince-on-aws-lambda">AWS Lambda</a> and   <a href="/doc/server-integration/#prince-on-ec2">AWS EC2</a>.</p>
   <p>See also <a href="https://www.princexml.com/forum/topic/2094/silent-installation-on-windows#20332">this forum post</a>   for a description of an installation on Azure.</p></dd>
 
-  <dt id="faq-install-books"><p>How do I install Prince for Books?   <a href="#faq-install-books" className="self-link"></a></p></dt>
+  <dt id="faq-install-books"><p>How do I install Prince for Books?   <a href="#faq-install-books" className="hash-link"></a></p></dt>
   <dd><p><a href="/doc/prince-for-books/">Prince for Books</a> is available   in package bundles only - to install it, the files need to be copied into   place (Windows), or an installation script needs to be run (on Linux and MacOS).   It can be installed without problem alongside a normal Prince installation -   the executable to run is called <code>prince-books</code>.</p></dd>
 
-  <dt id="faq-install-wrappers"><p>How do I install the Prince wrappers?   <a href="#faq-install-wrappers" className="self-link"></a></p></dt>
+  <dt id="faq-install-wrappers"><p>How do I install the Prince wrappers?   <a href="#faq-install-wrappers" className="hash-link"></a></p></dt>
   <dd><p>The <a href="/doc/server-integration/#prince-wrappers">Prince Wrappers</a> come in   different languages, and each one has a different installation procedure.   Mostly they are explained in the documentation for each of the   <a href="/doc/server-integration/#prince-wrappers">Prince Wrappers</a>. The short principle   is that the wrapper files need to be placed in a location from which they can   run - this may slightly vary depending on the hosting Operating System.</p></dd>
 </dl>
