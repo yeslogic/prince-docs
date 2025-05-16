@@ -356,18 +356,20 @@ The JSON job description ([here](#job-description-json) you can see the full des
 
 ```json
 {
-  * "input": { <input options> },
+    // highlight-next-line
+    "input": { <input options> },
     "pdf": { <pdf options> },
     "metadata": { <metadata options> },
 }
 ```
-The `input` field is mandatory (marked with an asterisk), the rest are optional and will default to the normal values.
+The `input` field (highlighted) is mandatory, the rest are optional and will default to the normal values.
 
 The `input options` object includes these fields:
 
 ```json
 {
-  * "src": <single URL or list of URLs>,
+    // highlight-next-line
+    "src": <single URL or list of URLs>,
     "type": <string>,
     "base": <string>,
     "media": <string>,
@@ -382,7 +384,7 @@ The `input options` object includes these fields:
     "xml-external-entities": <bool>
 }
 ```
-Only the `src` field is required (marked with an asterisk), the rest can be left as defaults.
+Only the `src` field (highlighted) is required, the rest can be left as defaults.
 
 <p className="note">
 URLs must be file names, or HTTP URLs - or, if the user wishes to embed the file inside the job itself, they also can be <code>data:</code> URLs!
@@ -486,12 +488,14 @@ The `metadata options` object includes these fields:
 
 #### Job description JSON
 
-The following is the full JSON job description - the mandatory `input` and `src` fields are marked with an asterisk:
+The following is the full JSON job description - the mandatory `input` and `src` fields are highlighted:
 
 ```json
 {
-  * "input": {
-      * "src": <single URL or list of URLs>,
+    // highlight-next-line
+    "input": {
+    // highlight-next-line
+        "src": <single URL or list of URLs>,
         "type": <string>,
         "base": <string>,
         "media": <string>,
