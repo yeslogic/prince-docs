@@ -84,25 +84,25 @@ This script is not available on Windows.
   <dt id="faq-garbled-chars"><p>Why do I see garbled characters on my page?   <a className="hash-link" href="#faq-garbled-chars" /></p></dt>
   <dd><p>This usually happens when Prince is not able to find a suitable font, or   might be using the wrong font.  Try installing a font that supports your script,   or try using a different font in your stylesheet.  See also: <a href="/doc/styling#fonts">Fonts</a>   and <a href="/doc/styling#redefining-the-generic-font-families">Redefining the generic font families</a>.</p></dd>
 
-  <dt><p id="faq-misspelled-words">Why do I get strangely misspelled words when I copy text from the PDF?   <a className="hash-link" href="#faq-misspelled-words" /></p></dt>
+  <dt id="faq-misspelled-words"><p>Why do I get strangely misspelled words when I copy text from the PDF?   <a className="hash-link" href="#faq-misspelled-words" /></p></dt>
   <dd><p>Prince creates artificial bold text by double printing with an offset   when it does not find a bold font.  To solve the issue, install the bold font,   or try running Prince with the command-line option   <a href="/doc/command-line#cl-no-artificial-fonts"><code>--no-artificial-fonts</code></a>.   See also <a href="/doc/styling#defining-a-font-family">Defining a font family</a>.</p></dd>
 
-  <dt><p id="faq-one-page">Why is all the content displayed on one page, while   I was expecting it to take several pages?   <a className="hash-link" href="#faq-one-page" /></p></dt>
+  <dt id="faq-one-page"><p>Why is all the content displayed on one page, while   I was expecting it to take several pages?   <a className="hash-link" href="#faq-one-page" /></p></dt>
   <dd><p>Typically content displays on only one page, even though it should be   much longer, because it is wrapped up:</p>
   <ul>     <li>in an absolutely positioned element, or</li>     <li>in a floated block element, or</li>     <li>in a single inline-block element, or</li>     <li>in an element with fixed height, or</li>     <li>in an element with <code>overflow: hidden</code>,</li>   </ul>
   <p>which Prince cannot split over several pages.  It can happen to the whole   content in a document, or to just a section of it.  This issue does not affect   browsers, because they don't paginate.  See also: <a href="/doc/paged">Paged Media</a>.</p></dd>
 
-  <dt><p id="faq-resize-page">How can I resize my web page to fit it on the printed page?   <a className="hash-link" href="#faq-resize-page" /></p></dt>
+  <dt id="faq-resize-page"><p>How can I resize my web page to fit it on the printed page?   <a className="hash-link" href="#faq-resize-page" /></p></dt>
   <dd><p>Prince usually takes care of reformatting a document to fit on a printed   page.  However, there are cases where it doesn't work as expected.</p>
   <p><em>Wide</em> content can be made to fit by <a href="/doc/cookbook#rotating-content">Rotating content</a>,   or by applying the CSS property <a href="/doc/css-props#prop-prince-shrink-to-fit"><code>-prince-shrink-to-fit</code></a>,   which scales down all content equally.  Alternatively, the command-line option   <a href="/doc/command-line#cl-css-dpi">--css-dpi</a> changes the DPI of   the "px" units in CSS, which defaults to 96dpi.</p>
   <p className="note">We do not recommend people making a habit of using this, and   instead advise to design a layout specifically appropriate for the paper being   used.  Or at least using relative size units.</p>
   <p>Note that this however does not affect <em>tall</em> content - if you need elements too tall to fit on a page   to be rescaled, there are other ways of achieving this: e.g. by limiting the <code>max-height</code>   of an element - Prince supports <a href="/doc/css-length-units#viewport-length-units">Viewport Length Units</a>,   and in a paged media context the viewport units refer to various aspects of the page and page area.</p>
   <p>Alternatively, <a href="/doc/styling#flex-layout">Flex Layout</a> can be used, or the content   can be custom resized with <a href="/doc/javascript#the-box-tracking-api">The Box Tracking API</a>.</p></dd>
 
-  <dt><p id="faq-no-trans">Why does my PDF file not show the transparent   background? <a className="hash-link" href="#faq-no-trans" /></p></dt>
+  <dt id="faq-no-trans"><p>Why does my PDF file not show the transparent   background? <a className="hash-link" href="#faq-no-trans" /></p></dt>
   <dd><p>Different PDF profiles have different requirements - you might be   generating a PDF with a version or profile which does not support transparency.   The only PDF profile to support transparency is the PDF/X-4 profile.  See also:   <a href="/doc/prince-output#pdf-versions-and-profiles">PDF Versions and Profiles</a>   and <a href="/doc/graphics#color-management-and-pdf-profiles">Color Management and   PDF Profiles</a>.</p></dd>
 
-  <dt><p id="faq-tooltips">How can I create tooltips in the PDF file?   <a className="hash-link" href="#faq-tooltips" /></p></dt>
+  <dt id="faq-tooltips"><p>How can I create tooltips in the PDF file?   <a className="hash-link" href="#faq-tooltips" /></p></dt>
   <dd>
   <p>PDF tooltips can be enabled with the CSS property <code>-prince-tooltip</code> like this:</p>
 ```css
@@ -111,13 +111,13 @@ This script is not available on Windows.
   <p>However, please note that tooltips are not a standard PDF feature, and they   may only work in Adobe Reader and Adobe Acrobat and may not be visible in other   PDF viewers, such as web browsers.</p>
   </dd>
 
-  <dt><p id="faq-everypage">How can I make an element, such as an image or some   text, appear on each page of the PDF document?   <a className="hash-link" href="#faq-everypage" /></p></dt>
+  <dt id="faq-everypage"><p>How can I make an element, such as an image or some   text, appear on each page of the PDF document?   <a className="hash-link" href="#faq-everypage" /></p></dt>
   <dd><p>For this purpose you can use the <a href="/doc/css-at-rules#at-page"><code>@page</code></a>   page regions.  See: <a href="/doc/paged#page-regions">Page regions</a> and <a href="/doc/cookbook#watermarks">Watermarks</a>.</p></dd>
 
-  <dt><p id="faq-page-regions">How can I apply CSS styles in page regions?   <a className="hash-link" href="#faq-page-regions" /></p></dt>
+  <dt id="faq-page-regions"><p>How can I apply CSS styles in page regions?   <a className="hash-link" href="#faq-page-regions" /></p></dt>
   <dd><p>You cannot add style to generated content in the page regions, except for   some inline style properties, such as <code>color</code> and   <code>font</code>.  A possibility for using more complex styling is to use   the <code>element()</code> or <code>flow()</code> CSS functions.  See   <a href="/doc/paged#generated-content-in-page-regions">Generated content in page regions</a>,   <a href="/doc/paged#copying-content-from-the-document">Copying content from the document</a> and   <a href="/doc/paged#taking-elements-from-the-document">Taking elements from the document</a> -   however, this latter approach will remove the element from the document itself.</p></dd>
 
-  <dt><p id="faq-counting-pages">How can I start counting pages on a left page and display a right page   as second page? <a className="hash-link" href="#faq-counting-pages" /></p></dt>
+  <dt id="faq-counting-pages"><p>How can I start counting pages on a left page and display a right page   as second page? <a className="hash-link" href="#faq-counting-pages" /></p></dt>
   <dd>
   <p>You can specify <code>break-before:left | right</code> on the root element of the document.</p>
 ```css title="CSS"
@@ -130,18 +130,18 @@ This script is not available on Windows.
 ```
 </dd>
 
-  <dt><p id="faq-js">Does Prince support JavaScript?   <a className="hash-link" href="#faq-js" /></p></dt>
+  <dt id="faq-js"><p>Does Prince support JavaScript?   <a className="hash-link" href="#faq-js" /></p></dt>
   <dd><p>Yes, Prince supports JavaScript - remember to enable it with the   <a href="/doc/command-line#cl-javascript"><code>--javascript</code></a>   command-line option (see <a href="/doc/prince-input#applying-javascript-in-prince">Applying JavaScript in Prince</a>).  However,   there are some limitations: Prince produces printed documents, and interactive   events make no sense in this context.  Also, modifications of the document   after layout has finished are not possible.  See: <a href="/doc/javascript">Scripting</a>.</p></dd>
 
-  <dt><p id="faq-jsafterlayout">Can I modify the document after layout has   finished? <a className="hash-link" href="#faq-jsafterlayout" /></p></dt>
+  <dt id="faq-jsafterlayout"><p>Can I modify the document after layout has   finished? <a className="hash-link" href="#faq-jsafterlayout" /></p></dt>
   <dd><p>Part of the inherent limitations of printed media is the impossibility to modify a document after it has been printed -   see <a href="/doc/javascript#javascript-in-printed-media">JavaScript in Printed Media</a>.</p>
   <p>However, Prince offers the possibility to register the function <a href="/doc/js-support/#window.Prince.registerPostLayoutFunc"><code>Prince.registerPostLayoutFunc(func)</code></a> after layout has finished and before producing the PDF for possibly triggering a new layout - see <a href="/doc/javascript/#multi-pass-formatting">Multi-Pass formatting</a> for more details.</p></dd>
 
-  <dt><p id="faq-webfonts">Why are Web fonts not loaded? <a className="hash-link" href="#faq-webfonts" /></p></dt>
+  <dt id="faq-webfonts"><p>Why are Web fonts not loaded? <a className="hash-link" href="#faq-webfonts" /></p></dt>
   <dd><p>Prince supports and loads web fonts.  However, in some specific cases the web fonts served to Prince might   differ from those served to browsers.  In such cases the command-line options <a href="/doc/command-line/#cl-user-agent"><code>--user-agent</code></a> may be used   to spoof the user agent string sent to the servers, basically pretending to be a browser.</p>
   <p className="note">Please be aware that there can be unforseen side-effects when pretending to be somebody else on the web.</p></dd>
 
-  <dt><p id="faq-xinclude">Can I include content of external files in my document?   <a className="hash-link" href="#faq-xinclude" /></p></dt>
+  <dt id="faq-xinclude"><p>Can I include content of external files in my document?   <a className="hash-link" href="#faq-xinclude" /></p></dt>
   <dd>
   <p>Yes.  In XML, this is done by means of <a href="/doc/prince-input#xml-inclusions-xinclude">XML Inclusions (XInclude)</a>.  Note   that XInclude is disabled by default, and can be enabled with the   <a href="/doc/command-line#cl-xinclude"><code>--xinclude</code></a>   command-line option.  Also note that XInclude only applies to XML files.</p>
   <p>To apply it to HTML files, the XML input format needs to be specified with   the <a href="/doc/command-line#cl-input"><code>--input</code></a>   command-line option.</p>

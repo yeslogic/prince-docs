@@ -283,7 +283,7 @@ table.property-table td {
 #prop-list summary#prop---custom-property-name, #prop-list summary#prop---custom-property-name + div .example .syntax-block > code {
     font-style: italic;
 }
-p:has(> .hash-link) {
+dt[id], h6[id], th[id] {
     scroll-margin-top: calc(var(--ifm-navbar-height) + 0.5rem);
 }
 
