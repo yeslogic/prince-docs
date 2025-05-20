@@ -17,18 +17,24 @@ module.exports = {
       },
       items: [
         {
-          to: '/doc/',
-          label: 'Documentation',
+          to: '/purchase/',
+          label: 'Buy Prince',
           position: 'right',
         },
         {
-          to: '/doc/help',
-          label: 'Help',
-          position: 'right'},
-        {
-          to: '/doc/releases',
-          label: 'Release Notes',
+          to: '/samples/',
+          label: 'Samples',
           position: 'right',
+        },
+        {
+          to: '/doc/',
+          label: 'Documentation',
+          position: 'right'
+        },
+        {
+          to: '/doc/help/',
+          label: 'Help',
+          position: 'right'
         },
       ],
     },
