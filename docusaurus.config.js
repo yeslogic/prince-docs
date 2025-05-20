@@ -40,8 +40,22 @@ module.exports = {
       algoliaOptions: { 'facetFilters': ["language:en"] }
     },
     footer: {
-      style: 'dark',
-      copyright: `Copyright © ${new Date().getFullYear()} YesLogic Pty. Ltd.`,
+      style: 'light',
+      copyright: `<img src="/img/Prince-logo-footer.png"/><br/>Copyright © ${new Date().getFullYear()} YesLogic Pty. Ltd.`,
+      links: [
+        {
+            label: 'About us',
+            to: '../company',
+        },
+        {
+            label: 'Privacy Policy',
+            to: '../privacy',
+        },
+        {
+            label: 'Contact us',
+            to: '../contact',
+        },
+      ],
     },
     colorMode: {
       // "light" | "dark"

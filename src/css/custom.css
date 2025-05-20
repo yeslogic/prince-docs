@@ -17,7 +17,7 @@
   --ifm-code-font-size: 95%;
 
   --ifm-navbar-link-color: white;
-  --ifm-navbar-link-hover-color: white;
+  --ifm-navbar-link-hover-color: #ffa046;
 }
 
 .docusaurus-highlight-code-line {
@@ -64,22 +64,28 @@ article p img {
     border: none;
     margin: 0;
 }
-.navbar, .navbar__items {
-    background-color: #6e2577;
-    color: white;
+.navbar {
+    background-image: linear-gradient(110deg,#640c5c,#141429 52.3411106%,#732269);
+    box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.3);
 }
 .navbar__item {
     font-size: 14px;
     font-weight: normal;
     height: 100%;
     padding-top: 0.9em;
-}
-.navbar__item:first-child {
-    background: white;
-    color: #333;
+    transition: 0.4s;
 }
 .navbar__item:hover {
-    color: #22b573;
+    color: #ffa046;
+}
+.navbar__item:first-child {
+    color: #ffa046 !important;
+}
+html.docs-doc-id-help .navbar__item:first-child {
+    color: var(--ifm-navbar-link-color) !important;
+}
+html.docs-doc-id-help .navbar__item:nth-child(2) {
+    color: #ffa046 !important;
 }
 .menu__list {
     font-size: 14px;
@@ -399,11 +405,29 @@ a[href*='//']:not([href*='princexml.com'])::after {
 footer a[href*='//']:not([href*='princexml.com'])::after {
     content: "";
 }
-footer a[href] {
-    color: rgba(255, 255, 255, 0.4);
-}
 footer a[href]:hover {
     text-decoration: underline;
+}
+footer {
+    border-top: 1px solid #ddd;
+}
+.footer__copyright {
+    float: left;
+    text-align: left;
+    img {
+        border: 0;
+        margin: 0;
+    }
+}
+.footer__links {
+    float: right;
+    .footer__link-separator {
+        display: none;
+    }
+    a {
+        padding: 0 7px;
+        font-size: 17px;
+    }
 }
 
 .menu__link--active {
