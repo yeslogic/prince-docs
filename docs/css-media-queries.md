@@ -2,10 +2,6 @@
 title: CSS Media Queries
 ---
 
-<link rel="preconnect" href="https://fonts.googleapis.com"/>
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-<link href="https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,100..900;1,100..900&amp;display=swap" rel="stylesheet"/>
-
 Below are all of the media queries supported by Prince. For their precise definition please refer to the [Media Queries Level 4](https://www.w3.org/TR/mediaqueries-4/) specification.
 
 Media queries test how Prince is configured, rather than how the document is styled. The configuration of Prince often depends on the command-line arguments passed to it.

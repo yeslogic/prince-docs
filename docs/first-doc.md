@@ -2,10 +2,6 @@
 title: Your First Document
 ---
 
-<link rel="preconnect" href="https://fonts.googleapis.com"/>
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-<link href="https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,100..900;1,100..900&amp;display=swap" rel="stylesheet"/>
-
 In this section we will process a very simple document. We've chosen a document that fits HTML's heading and paragraph structure naturally: a lab report. The lab report will have a title, an author and date, several headings (Aim, Hypothesis, Method, Results and Conclusion). It does not include a table of results, graphics or diagrams: it is a very simple lab report.
 
 ## The lab report

@@ -2,10 +2,6 @@
 title: Color Names
 ---
 
-<link rel="preconnect" href="https://fonts.googleapis.com"/>
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-<link href="https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,100..900;1,100..900&amp;display=swap" rel="stylesheet"/>
-
 CSS offers several ways of defining colors - either by keyword, or by numerical specification expressed as RGB(A), CMYK, HSL(A), or HWB colors. For more details, please see the chapter on [Color](graphics.md#color).
 
 

@@ -2,10 +2,6 @@
 title: Getting Started
 ---
 
-<link rel="preconnect" href="https://fonts.googleapis.com"/>
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-<link href="https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,100..900;1,100..900&amp;display=swap" rel="stylesheet"/>
-
 Let's get started with Prince. We will download and install the software and use it to generate a PDF from a very simple document with a very basic stylesheet. This chapter will get you up and running with Prince as quickly as possible.
 
 Readers should already be familiar with HTML and CSS - many good tutorials are available on the topic. Familiarity with your computer's command line interface is desirable but not essential. Because the chapter is aimed at getting started as quickly as possible we may skip some explanations, don't worry as these will be covered later in the manual.

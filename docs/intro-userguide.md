@@ -2,10 +2,6 @@
 title: Convert HTML to PDF
 ---
 
-<link rel="preconnect" href="https://fonts.googleapis.com"/>
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-<link href="https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,100..900;1,100..900&amp;display=swap" rel="stylesheet"/>
-
 Prince is an application for converting HTML and XML documents into PDF files by applying Cascading Style Sheets (CSS).
 HTML and XML are seamlessly transformed into documents you can print, download and archive.
 

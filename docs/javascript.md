@@ -2,10 +2,6 @@
 title: Scripting
 ---
 
-<link rel="preconnect" href="https://fonts.googleapis.com"/>
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-<link href="https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,100..900;1,100..900&amp;display=swap" rel="stylesheet"/>
-
 JavaScript can be used to transform documents by generating tables of contents and indices, sorting tables, rendering charts and graphs, and other tasks that go beyond the scope of CSS.
 
 Scripts can access and modify the input document using the W3C standard DOM (Document Object Model). Prince also supports some additional properties and methods described below.

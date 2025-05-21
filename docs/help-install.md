@@ -2,10 +2,6 @@
 title: Installation Help
 ---
 
-<link rel="preconnect" href="https://fonts.googleapis.com"/>
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-<link href="https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,100..900;1,100..900&amp;display=swap" rel="stylesheet"/>
-
 The Prince Installation Guide tries to be exhaustive in explaining how to install the application. However, there might always be something not answered in the documentation, or something not working as expected. There are a couple of ways to get help to solve the problems:
 
 -   The [Troubleshooting](#troubleshooting) section addresses possible common issues after installing and starting to use Prince;

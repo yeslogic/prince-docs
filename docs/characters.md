@@ -2,10 +2,6 @@
 title: Character Entities
 ---
 
-<link rel="preconnect" href="https://fonts.googleapis.com"/>
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-<link href="https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,100..900;1,100..900&amp;display=swap" rel="stylesheet"/>
-
 Character entities are a method of including arbitrary characters in XML documents by referencing their UNICODE number rather than writing them directly. CSS has a similar mechanism to include special characters.
 
 This can be convenient when you wish to include characters such as smart quotes, symbols or mathematical operators that do not exist in the character encoding that you are using for your XML documents (such as ASCII or ISO-8859-1 "Latin-1"), or when you want to insert some of these characters into the final layout by means of CSS.

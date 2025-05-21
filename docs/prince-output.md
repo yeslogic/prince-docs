@@ -2,10 +2,6 @@
 title: Prince Output
 ---
 
-<link rel="preconnect" href="https://fonts.googleapis.com"/>
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-<link href="https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,100..900;1,100..900&amp;display=swap" rel="stylesheet"/>
-
 Prince produces PDF files that are compatible with Adobe Acrobat and other PDF viewers. The output can be controlled in several different ways, addressing different aspects of the resulting files.
 
 For the error and warning output log, please see [Output log](help.md#output-log).

@@ -2,10 +2,6 @@
 title: Paged Media
 ---
 
-<link rel="preconnect" href="https://fonts.googleapis.com"/>
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-<link href="https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,100..900;1,100..900&amp;display=swap" rel="stylesheet"/>
-
 Prince produces PDFs - which are a prominent example of paged media. There are a few points that are crucial to keep in mind when preparing a document for paged media, specially if intended for print:
 
 <dl>

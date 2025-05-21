@@ -2,10 +2,6 @@
 title: Styling
 ---
 
-<link rel="preconnect" href="https://fonts.googleapis.com"/>
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-<link href="https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,100..900;1,100..900&amp;display=swap" rel="stylesheet"/>
-
 When preparing a document with HTML and CSS, you need to first create the content - but then you need to style it to make it visually appealing. You can choose which fonts to use, how to format your text and your paragraphs, choose the layout for your page, give your text, background and style some color, insert images - and much more!
 
 In the following sections you can find detailed information on how to achieve this with Prince.

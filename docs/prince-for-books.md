@@ -2,10 +2,6 @@
 title: Prince for Books
 ---
 
-<link rel="preconnect" href="https://fonts.googleapis.com"/>
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-<link href="https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,100..900;1,100..900&amp;display=swap" rel="stylesheet"/>
-
 Prince for Books is a project that allows us to spend more time on features particularly sought by publishers.
 
 The initial focus of work is on features common to all books: making the page-breaking and line-breaking choices expected of books, by featuring a few extensions to CSS and fine-tuned algorithms.

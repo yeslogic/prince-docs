@@ -9,6 +9,30 @@ module.exports = {
   favicon: 'img/favicon.ico',
   organizationName: 'yeslogic', // Usually your GitHub org/user name.
   projectName: 'prince-docs', // Usually your repo name.
+  headTags: [
+    {
+      tagName: 'link',
+      attributes: {
+          rel: 'preconnect',
+          href: 'https://fonts.googleapis.com',
+      },
+    },
+    {
+      tagName: 'link',
+      attributes: {
+          rel: 'preconnect',
+          href: 'https://fonts.gstatic.com',
+          crossorigin: 'true',
+      },
+    },
+    {
+      tagName: 'link',
+      attributes: {
+          rel: 'stylesheet',
+          href: 'https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,100..900;1,100..900&amp;display=swap',
+      },
+    },
+  ],
   themeConfig: {
     navbar: {
       logo: {

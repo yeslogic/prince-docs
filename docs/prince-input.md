@@ -2,10 +2,6 @@
 title: Prince Input
 ---
 
-<link rel="preconnect" href="https://fonts.googleapis.com"/>
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-<link href="https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,100..900;1,100..900&amp;display=swap" rel="stylesheet"/>
-
 Prince takes HTML or XML files as input, and converts them to PDF files. Additionally, CSS style sheets can be provided for styling the documents, and JavaScript files can be used for additional manipulation of the input.
 
 See the sections [Applying Style Sheets in Prince](#applying-style-sheets-in-prince), [Applying JavaScript in Prince](#applying-javascript-in-prince) and [XML Input](#xml-input) for details.

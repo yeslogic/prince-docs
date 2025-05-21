@@ -2,10 +2,6 @@
 title: Graphics
 ---
 
-<link rel="preconnect" href="https://fonts.googleapis.com"/>
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-<link href="https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,100..900;1,100..900&amp;display=swap" rel="stylesheet"/>
-
 Prince supports a wide range of graphic features, treated in more detail in the following sections. RGB(A), CMYK, HSL(A), HWB, and named spot colors are supported, and so is color management. Bitmap images and SVG are supported.
 
 Color
