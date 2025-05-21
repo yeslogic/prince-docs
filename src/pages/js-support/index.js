@@ -7,6 +7,7 @@ import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 import styles from '../index.module.css';
 
+import BrowserOnly from '@docusaurus/BrowserOnly';
 import JavascriptSupportItem from '../../components/JavascriptSupportItem';
 import std from '/js/std';
 import stdAnnotated from '/js/std-annotated';
@@ -38,16 +39,20 @@ function JsSupport() {
   </p>
 
   <div className="js-overview level" id="js-support-table">
-  <JavascriptSupportItem
-    path={['window']}
-    name="window"
-    uaObject={window}
-    desc="The global object"
-    ext={null}
-    dumpedPropertyList={std}
-    open={true}
-    annotations={stdAnnotated}
-  />
+    <BrowserOnly fallback={<div>Loading...</div>}>
+      {() => (
+        <JavascriptSupportItem
+          path={['window']}
+          name="window"
+          uaObject={window}
+          desc="The global object"
+          ext={null}
+          dumpedPropertyList={std}
+          open={true}
+          annotations={stdAnnotated}
+        />
+      )}
+    </BrowserOnly>
 
 
   </div>
