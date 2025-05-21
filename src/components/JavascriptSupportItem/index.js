@@ -64,7 +64,7 @@ function JavascriptSupportItem({
                 : null}
             </span>
           )}
-        <a href={`#${pathStr}`} className="self-link"></a>
+        <a href={`#${pathStr}`} className="hash-link"></a>
       </summary>
       <div>
         <span className="type">{type}</span>
