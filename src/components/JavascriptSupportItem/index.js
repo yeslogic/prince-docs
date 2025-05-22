@@ -56,7 +56,7 @@ function JavascriptSupportItem({
   return (
     <details className={clsx("level", { ext })} open={open}>
       <summary id={pathStr}>
-          <b className="name">{name}</b>
+          <code><b className="name">{name}</b></code>
           {(type === "function" || theAnnotation.arguments) && (
             <span className="argslist">
               {theAnnotation.arguments
