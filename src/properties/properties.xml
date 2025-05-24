@@ -7683,8 +7683,8 @@ blockquote { margin: 1rem; -prince-resize-options: -1rem; }
     <inherit>no</inherit>
     <extension/>
     <example>body {
-  -prince-text-replace: "s" "\017F"
-                        "\017F\20" "s\20";
+  -prince-text-replace: "s" "\\017F"
+                        "\\017F\\20" "s\\20";
 }</example>
     <see><a href="/doc/characters/">Character Entities</a></see>
     <comments>
