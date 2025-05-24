@@ -23,4 +23,3 @@ yarn-error.log*
 
 src/samples/*.png
 docs/assets/samples/marginboxes*
-docs/css-props.md

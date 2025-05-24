@@ -294,6 +294,7 @@ table.property-table td {
 #prop-list details[open] summary.ext + div, #prop-list details[open] summary.ext + div + div, #js-support-table details[open] summary.ext + div, #js-support-table details[open] summary.ext + div + div {
   border-radius: 0px 0px 10px 10px;
 }
+#ext-props span.ext,
 #prop-list span.ext {
   background-color: #eee;
 }
@@ -315,7 +316,7 @@ table.property-table td {
 #prop-list summary.dep, span.dep {
     text-decoration: line-through;
 }
-#prop-list summary.dep, #prop-list summary.dep + div, #prop-list summary.dep + div + div, #prop-list span.dep {
+#prop-list summary.dep, #prop-list summary.dep + div, #prop-list summary.dep + div + div, #prop-list span.dep, #dep-props .dep {
     opacity: 0.4;
 }
 #prop-list summary#prop---custom-property-name, #prop-list summary#prop---custom-property-name + div .example .syntax-block > code {
