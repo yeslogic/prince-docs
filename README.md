@@ -3,6 +3,8 @@
 This is the repository of the [Prince documentation](https://www.princexml.com/doc/),
 built with the [Docusaurus v3](https://docusaurus.io/) framework.
 
+## CSS Properties
+
 The CSS properties are however stored *outside* of the Docusaurus framework,
 in order to preserve the XML format for the properties' documentation, which is
 located in `./src/properties`.
@@ -16,11 +18,15 @@ There are some little requirements for this:
 * Python
 * the xsltproc XSLT processor
 
-(Hint: If *really* need be, you could do without Jing, just fix your Makefile.)
+(Hint: If *really* need be, you could do without Jing, just comment it out in your Makefile.)
+
+## Page Region samples
 
 Also the rasterized Page Region image is generated outside of the Docusaurus
 framework - you first need to run `make` in the `./src/samples` folder.
 Having Prince installed is a requirement.
+
+## Root makefile and dev server
 
 Both makefiles are called from the Makefile in the root folder. To start
 the fully set up documentation, instead of just `yarn run start`, you run
@@ -28,4 +34,10 @@ the following command from the root folder:
 
 ```
     $ make && yarn run start
+```
+
+Because of how [Docusaurus's dev server](https://docusaurus.io/docs/cli#docusaurus-start-sitedir) works, some functionality (for example, anchor links) will not work in development. Be sure to regularly test the production Docusaurus build locally:
+
+```
+make && yarn run build && yarn run serve
 ```
