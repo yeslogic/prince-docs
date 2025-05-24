@@ -6,7 +6,7 @@ valid:
 	jing -c schema.rnc properties.xml
 
 output:
-	mkdir output
+	mkdir -p output
 
 properties: valid output table.xsl properties.xml
 	xsltproc table.xsl properties.xml > output/css-props.xml
