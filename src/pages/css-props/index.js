@@ -1,4 +1,3 @@
-import styles from "../index.module.css";
 import cssPropsHtml from "./_cssPropsHtml";
 
 function CssProperties() {
