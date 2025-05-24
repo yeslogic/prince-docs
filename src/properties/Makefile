@@ -1,6 +1,6 @@
 .PHONY: all
-all: valid output properties noroot htmltojsx
-	cp output/css-props.md ../../docs/
+all: valid output properties noroot output/_cssPropsHtml.js
+	cp output/_cssPropsHtml.js ../../src/pages/css-props/_cssPropsHtml.js
 
 valid:
 	jing -c schema.rnc properties.xml
@@ -18,13 +18,10 @@ selflink: process
 	./docs_selflink.py output/css-props-out.xml
 
 noroot: selflink
-	xsltproc noroot.xsl output/css-props-out.xml > output/css-props.md
-
-htmltojsx: noroot
-	yarn run htmltojsx $(CURDIR)/output/css-props.md > output/css-props-out.md
-	sed -i "1,3d;/^Done\s/d" output/css-props-out.md
-	head -n -2 output/css-props-out.md > output/css-props.md
-	sed -i '1s;^;---\ntitle: CSS Properties\n---\n\n;' output/css-props.md
+	xsltproc noroot.xsl output/css-props-out.xml > output/css-props-partial.html
+	
+output/_cssPropsHtml.js: noroot
+	cat -s css-props-partial-header.txt output/css-props-partial.html css-props-partial-footer.txt > output/_cssPropsHtml.js
 
 .PHONY: clean
 clean:

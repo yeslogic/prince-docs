@@ -1,0 +1,3 @@
+// NOTE: The _cssPropsHtml.js file is an automatically generated file in the
+// properties/Makefile build process.
+const cssPropsHtml = `
