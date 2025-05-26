@@ -135,7 +135,6 @@ html.docs-doc-id-help .navbar__item:nth-child(4) {
     display: block;
 }
 #entry {
-    max-width: 450px;
     margin: 30px auto;
     text-align: center;
 }
