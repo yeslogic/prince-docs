@@ -2,10 +2,9 @@
 
 <!--
 
-NOTE: The current build process will cause this file's content to appear in a JavaScript template literal so we must backslash escape anything that would cause errors in a JavaScript template literal, such as string interpolated expressions starting with dollar curly brace and any escape sequences, including hexadecimal escape sequences, unicode escape sequences and unicode code point escapes. For example:
+NOTE: The current build process will cause this file's content to appear in a JavaScript template literal using String.raw so we must backslash string interpolated expressions starting with dollar curly brace. For example:
 
 - change `${}` to `\${}` or `$\{}`
-- change `\017F` to `\\017F`
 
 -->
 
@@ -6016,19 +6015,19 @@ supplier, item { overflow-wrap: normal; }
     </p>
 
     <p>
-    The <code>\*-greedy</code> and <code>\*-lookahead</code> variations
+    The <code>*-greedy</code> and <code>*-lookahead</code> variations
     allow control over whether the choice of where to end a line
     can be affected by consequences further down the paragraph:
     </p>
 
     <p>
-    The <code>\*-greedy</code> keywords decide on line breaks solely based on the
+    The <code>*-greedy</code> keywords decide on line breaks solely based on the
     current line and on the length of the next word, never going back to change a
     decision on a line in the light of line-breaking issues encountered later.
     </p>
 
     <p>
-    The <code>\*-lookahead</code> keywords, on the other hand,
+    The <code>*-lookahead</code> keywords, on the other hand,
     enable paragraph-at-a-time line-breaking for the paragraph in
     a non-justified paragraph:
     choosing where to end the line not just based on what seems best for
@@ -7433,8 +7432,8 @@ supplier, item { overflow-wrap: normal; }
     <code><property name="prince-resize-options"/></code>.
     </p>
 
-    <p>The <code>\*-start</code> values adjust space before the box’s content,
-    <code>\*-end</code> values adjust space after the box’s content,
+    <p>The <code>*-start</code> values adjust space before the box’s content,
+    <code>*-end</code> values adjust space after the box’s content,
     while the plain <code>margin</code> and <code>padding</code>
     values add half of the space adjustment before and half after.</p>
 
@@ -7692,8 +7691,8 @@ blockquote { margin: 1rem; -prince-resize-options: -1rem; }
     <inherit>no</inherit>
     <extension/>
     <example>body {
-  -prince-text-replace: "s" "\\017F"
-                        "\\017F\\20" "s\\20";
+  -prince-text-replace: "s" "\017F"
+                        "\017F\20" "s\20";
 }</example>
     <see><a href="/doc/characters/">Character Entities</a></see>
     <comments>
