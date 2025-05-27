@@ -19,16 +19,24 @@
 <details>
   <xsl:choose>
   <xsl:when test="extension|alias">
-  <summary class="ext" title="Prince extension">
+  <xsl:if test="deprecated">
+    <summary class="ext dep" title="Deprecated Prince extension">
     <h6 id="prop-{$propid}">
       <xsl:if test="starts-with(name, 'prince-')"><xsl:text>-</xsl:text></xsl:if>
       <xsl:value-of select="name"/>*</h6>
-  </summary>
-  </xsl:when>
-  <xsl:when test="deprecated">
-  <summary class="dep">
+    </summary>
+  </xsl:if>
+  <xsl:if test="not(deprecated)">
+    <summary class="ext" title="Prince extension">
     <h6 id="prop-{$propid}">
       <xsl:if test="starts-with(name, 'prince-')"><xsl:text>-</xsl:text></xsl:if>
+      <xsl:value-of select="name"/>*</h6>
+    </summary>
+  </xsl:if>
+  </xsl:when>
+  <xsl:when test="deprecated">
+  <summary class="dep" title="Deprecated property">
+    <h6 id="prop-{$propid}">
       <xsl:value-of select="name"/>
     </h6>
   </summary>
