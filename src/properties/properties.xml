@@ -279,16 +279,6 @@ NOTE: The current build process will cause this file's content to appear in a Ja
 </property>
 
 <property>
-    <name>background-color</name>
-    <value><type>color</type></value>
-    <initial>transparent</initial>
-    <applyto>all elements</applyto>
-    <inherit>no</inherit>
-    <see><a href="/doc/graphics/#color">Color</a></see>
-    <spec><a href="https://www.w3.org/TR/css-backgrounds-3/#the-background-color">CSS Backgrounds and Borders Module Level 3</a></spec>
-</property>
-
-<property>
     <name>background-clip</name>
     <value>
     <repeat min="1" sep=",">
@@ -303,6 +293,16 @@ NOTE: The current build process will cause this file's content to appear in a Ja
     <applyto>all elements</applyto>
     <inherit>no</inherit>
     <spec><a href="https://www.w3.org/TR/css-backgrounds-3/#the-background-clip">CSS Backgrounds and Borders Module Level 3</a></spec>
+</property>
+
+<property>
+    <name>background-color</name>
+    <value><type>color</type></value>
+    <initial>transparent</initial>
+    <applyto>all elements</applyto>
+    <inherit>no</inherit>
+    <see><a href="/doc/graphics/#color">Color</a></see>
+    <spec><a href="https://www.w3.org/TR/css-backgrounds-3/#the-background-color">CSS Backgrounds and Borders Module Level 3</a></spec>
 </property>
 
 <property>
@@ -2338,6 +2338,25 @@ NOTE: The current build process will cause this file's content to appear in a Ja
 </property>
 
 <property>
+    <name>flex-flow</name>
+    <value>
+      <multiple>
+	<ref>flex-direction</ref>
+	<ref>flex-wrap</ref>
+      </multiple>
+    </value>
+    <initial>row nowrap</initial>
+    <applyto>flex containers</applyto>
+    <inherit>no</inherit>
+    <shorthand>
+	<prop>flex-direction</prop>
+	<prop>flex-wrap</prop>
+    </shorthand>
+    <see><a href="/doc/styling/#flex-layout">Flex Layout</a></see>
+    <spec><a href="https://www.w3.org/TR/css-flexbox-1/#flex-flow-property">CSS Flexible Box Layout Module Level 1</a></spec>
+</property>
+
+<property>
 	<name>flex-shrink</name>
 	<value>
 	  <type>number</type>
@@ -2363,25 +2382,6 @@ NOTE: The current build process will cause this file's content to appear in a Ja
 	<inherit>no</inherit>
     <see><a href="/doc/styling/#flex-layout">Flex Layout</a></see>
     <spec><a href="https://www.w3.org/TR/css-flexbox-1/#flex-wrap-property">CSS Flexible Box Layout Module Level 1</a></spec>
-</property>
-
-<property>
-    <name>flex-flow</name>
-    <value>
-      <multiple>
-	<ref>flex-direction</ref>
-	<ref>flex-wrap</ref>
-      </multiple>
-    </value>
-    <initial>row nowrap</initial>
-    <applyto>flex containers</applyto>
-    <inherit>no</inherit>
-    <shorthand>
-	<prop>flex-direction</prop>
-	<prop>flex-wrap</prop>
-    </shorthand>
-    <see><a href="/doc/styling/#flex-layout">Flex Layout</a></see>
-    <spec><a href="https://www.w3.org/TR/css-flexbox-1/#flex-flow-property">CSS Flexible Box Layout Module Level 1</a></spec>
 </property>
 
 <property>
@@ -3381,6 +3381,22 @@ NOTE: The current build process will cause this file's content to appear in a Ja
 </property>
 
 <property>
+    <name>grid-area</name>
+    <value>
+      <type>grid-line</type>
+      <repeat min="0" max="3">
+        <text>/</text>
+        <type>grid-line</type>
+      </repeat>
+    </value>
+    <initial>auto</initial>
+    <applyto>grid containers</applyto>
+    <inherit>no</inherit>
+    <see><a href="/doc/styling/#grid-layout">Grid Layout</a></see>
+    <spec><a href="https://www.w3.org/TR/css-grid-1/#placement-shorthands">CSS Grid Layout Module Level 1</a></spec>
+</property>
+
+<property>
     <name>grid-auto-columns</name>
     <value>
       <repeat min="1">
@@ -3424,22 +3440,6 @@ NOTE: The current build process will cause this file's content to appear in a Ja
     <inherit>no</inherit>
     <see><a href="/doc/styling/#grid-layout">Grid Layout</a></see>
     <spec><a href="https://www.w3.org/TR/css-grid-1/#auto-tracks">CSS Grid Layout Module Level 1</a></spec>
-</property>
-
-<property>
-    <name>grid-area</name>
-    <value>
-      <type>grid-line</type>
-      <repeat min="0" max="3">
-        <text>/</text>
-        <type>grid-line</type>
-      </repeat>
-    </value>
-    <initial>auto</initial>
-    <applyto>grid containers</applyto>
-    <inherit>no</inherit>
-    <see><a href="/doc/styling/#grid-layout">Grid Layout</a></see>
-    <spec><a href="https://www.w3.org/TR/css-grid-1/#placement-shorthands">CSS Grid Layout Module Level 1</a></spec>
 </property>
 
 <property>
@@ -3706,11 +3706,6 @@ NOTE: The current build process will cause this file's content to appear in a Ja
 </property>
 
 <property>
-    <name>hyphenate-patterns</name>
-    <alias>prince-hyphenate-patterns</alias>
-</property>
-
-<property>
     <name>hyphenate-after</name>
     <alias>prince-hyphenate-after</alias>
 </property>
@@ -3731,8 +3726,8 @@ NOTE: The current build process will cause this file's content to appear in a Ja
 </property>
 
 <property>
-    <name>image-resolution</name>
-    <alias>prince-image-resolution</alias>
+    <name>hyphenate-patterns</name>
+    <alias>prince-hyphenate-patterns</alias>
 </property>
 
 <property>
@@ -3757,6 +3752,11 @@ NOTE: The current build process will cause this file's content to appear in a Ja
     </p>
     </comments>
     <spec><a href="https://drafts.csswg.org/css-images-3/#propdef-image-orientation">CSS Images Module Level 3 - Editor's Draft</a></spec>
+</property>
+
+<property>
+    <name>image-resolution</name>
+    <alias>prince-image-resolution</alias>
 </property>
 
 <property>
@@ -3990,56 +3990,6 @@ NOTE: The current build process will cause this file's content to appear in a Ja
 </property>
 
 <property>
-    <name>line-stacking-strategy</name>
-    <alias>prince-line-stacking-strategy</alias>
-</property>
-
-<property>
-    <name>prince-line-stacking-strategy</name>
-    <value>
-	<choice>
-	    <keyword>inline-line-height</keyword>
-	    <keyword>block-line-height</keyword>
-	    <keyword>max-height</keyword>
-	    <keyword>grid-height</keyword>
-	</choice>
-    </value>
-    <initial>inline-line-height</initial>
-    <applyto>block-level elements</applyto>
-    <inherit>yes</inherit>
-    <see><a href="/doc/styling/#paragraph-formatting">Paragraph formatting</a></see>
-    <see><code><property name="line-height"/></code></see>
-    <comments>
-    <p>
-    This property allows to choose whether individual lines should have their
-    height determined based on their content, or whether all lines in a paragraph
-    should have the same height, or a compromise where their heights are
-    determined by their content and then rounded up to a multiple of the paragraph
-    line height.
-    </p>
-    <p>
-    The behavior define by <code>inline-line-height</code> is the default.
-    </p>
-    <p>
-    The value <code>block-line-height</code> uses the line-height of the block
-    element and ignores the actual height of the content on those lines, so lines
-    will always have the same spacing regardless of whether they contain spans
-    with larger font size of superscripts/subscripts.
-    </p>
-    <p>
-    The value <code>grid-height</code> is like <code>inline-line-height</code>
-    but each line gets rounded up to an integer multiple of the block line-height.
-    </p>
-    <p>
-    Finally, the <code>max-height</code> value works like <code>inline-line-height</code>,
-    but it ignores the <code><property name="line-height"/></code> property value
-    for inline elements.
-    </p>
-    </comments>
-    <spec><a href="https://www.w3.org/TR/2002/WD-css3-linebox-20020515/#line-stacking-strategy">CSS3 module: line (WD 15 May 2002)</a></spec>
-</property>
-
-<property>
     <name>line-height</name>
     <value>
 	<choice>
@@ -4054,6 +4004,11 @@ NOTE: The current build process will cause this file's content to appear in a Ja
     <inherit>yes</inherit>
     <see><a href="/doc/styling/#paragraph-formatting">Paragraph formatting</a></see>
     <spec><a href="https://www.w3.org/TR/CSS2/visudet.html#propdef-line-height">CSS 2.1</a></spec>
+</property>
+
+<property>
+    <name>line-stacking-strategy</name>
+    <alias>prince-line-stacking-strategy</alias>
 </property>
 
 <property>
@@ -4394,7 +4349,7 @@ NOTE: The current build process will cause this file's content to appear in a Ja
 </property>
 
 <property>
-    <name>marker-start</name>
+    <name>marker-end</name>
     <value>
 	<choice>
 	    <keyword>none</keyword>
@@ -4406,10 +4361,10 @@ NOTE: The current build process will cause this file's content to appear in a Ja
     <inherit>yes</inherit>
     <comments>
     <p>
-    The <code>marker-start</code> property only applies to SVG elements.
+    The <code>marker-end</code> property only applies to SVG elements.
     </p>
     </comments>
-    <spec><a href="https://www.w3.org/TR/SVG11/painting.html#MarkerStartProperty">SVG 1.1</a></spec>
+    <spec><a href="https://www.w3.org/TR/SVG11/painting.html#MarkerEndProperty">SVG 1.1</a></spec>
 </property>
 
 <property>
@@ -4432,7 +4387,7 @@ NOTE: The current build process will cause this file's content to appear in a Ja
 </property>
 
 <property>
-    <name>marker-end</name>
+    <name>marker-start</name>
     <value>
 	<choice>
 	    <keyword>none</keyword>
@@ -4444,10 +4399,10 @@ NOTE: The current build process will cause this file's content to appear in a Ja
     <inherit>yes</inherit>
     <comments>
     <p>
-    The <code>marker-end</code> property only applies to SVG elements.
+    The <code>marker-start</code> property only applies to SVG elements.
     </p>
     </comments>
-    <spec><a href="https://www.w3.org/TR/SVG11/painting.html#MarkerEndProperty">SVG 1.1</a></spec>
+    <spec><a href="https://www.w3.org/TR/SVG11/painting.html#MarkerStartProperty">SVG 1.1</a></spec>
 </property>
 
 <property>
@@ -5696,31 +5651,6 @@ supplier, item { overflow-wrap: normal; }
 </property>
 
 <property>
-    <name>prince-hyphenate-patterns</name>
-    <value>
-	<choice>
-	    <keyword>none</keyword>
-	    <url>patterns-url</url>
-	</choice>
-    </value>
-    <initial>none</initial>
-    <applyto>all elements</applyto>
-    <inherit>yes</inherit>
-    <extension/>
-    <see><a href="/doc/cookbook/#hyphenation">Hyphenation</a></see>
-    <comments>
-    <p>
-    This property is used to point to a hyphenation dictionary.  Normally this is
-    selected automatically, based on the current language.
-    </p>
-    <p>
-    The <code>url()</code> argument can take local paths, remote HTTP or HTTPS URLs, or <code>data:</code> URIs as argument.
-    </p>
-    </comments>
-    <aliastarget>hyphenate-patterns</aliastarget>
-</property>
-
-<property>
     <name>prince-hyphenate-after</name>
     <value>
 	<type>integer</type>
@@ -5806,6 +5736,31 @@ supplier, item { overflow-wrap: normal; }
 <property>
     <name>prince-hyphenate-lines</name>
     <alias>prince-hyphenate-limit-lines</alias>
+</property>
+
+<property>
+    <name>prince-hyphenate-patterns</name>
+    <value>
+	<choice>
+	    <keyword>none</keyword>
+	    <url>patterns-url</url>
+	</choice>
+    </value>
+    <initial>none</initial>
+    <applyto>all elements</applyto>
+    <inherit>yes</inherit>
+    <extension/>
+    <see><a href="/doc/cookbook/#hyphenation">Hyphenation</a></see>
+    <comments>
+    <p>
+    This property is used to point to a hyphenation dictionary.  Normally this is
+    selected automatically, based on the current language.
+    </p>
+    <p>
+    The <code>url()</code> argument can take local paths, remote HTTP or HTTPS URLs, or <code>data:</code> URIs as argument.
+    </p>
+    </comments>
+    <aliastarget>hyphenate-patterns</aliastarget>
 </property>
 
 <property>
@@ -6063,6 +6018,51 @@ supplier, item { overflow-wrap: normal; }
     </p>
     </comments>
     <aliastarget>prince-text-wrap</aliastarget>
+</property>
+
+<property>
+    <name>prince-line-stacking-strategy</name>
+    <value>
+	<choice>
+	    <keyword>inline-line-height</keyword>
+	    <keyword>block-line-height</keyword>
+	    <keyword>max-height</keyword>
+	    <keyword>grid-height</keyword>
+	</choice>
+    </value>
+    <initial>inline-line-height</initial>
+    <applyto>block-level elements</applyto>
+    <inherit>yes</inherit>
+    <see><a href="/doc/styling/#paragraph-formatting">Paragraph formatting</a></see>
+    <see><code><property name="line-height"/></code></see>
+    <comments>
+    <p>
+    This property allows to choose whether individual lines should have their
+    height determined based on their content, or whether all lines in a paragraph
+    should have the same height, or a compromise where their heights are
+    determined by their content and then rounded up to a multiple of the paragraph
+    line height.
+    </p>
+    <p>
+    The behavior define by <code>inline-line-height</code> is the default.
+    </p>
+    <p>
+    The value <code>block-line-height</code> uses the line-height of the block
+    element and ignores the actual height of the content on those lines, so lines
+    will always have the same spacing regardless of whether they contain spans
+    with larger font size of superscripts/subscripts.
+    </p>
+    <p>
+    The value <code>grid-height</code> is like <code>inline-line-height</code>
+    but each line gets rounded up to an integer multiple of the block line-height.
+    </p>
+    <p>
+    Finally, the <code>max-height</code> value works like <code>inline-line-height</code>,
+    but it ignores the <code><property name="line-height"/></code> property value
+    for inline elements.
+    </p>
+    </comments>
+    <spec><a href="https://www.w3.org/TR/2002/WD-css3-linebox-20020515/#line-stacking-strategy">CSS3 module: line (WD 15 May 2002)</a></spec>
 </property>
 
 <property>
@@ -7287,29 +7287,6 @@ supplier, item { overflow-wrap: normal; }
 </property>
 
 <property>
-    <name>prince-pdf-tagged</name>
-    <value>
-    <choice>
-        <keyword>auto</keyword>
-        <keyword>enable</keyword>
-    </choice>
-    </value>
-    <initial>auto</initial>
-    <applyto>@prince-pdf at-rule</applyto>
-    <inherit>n/a</inherit>
-    <extension/>
-    <example>@prince-pdf {
-    -prince-pdf-tagged: enable;
-}</example>
-    <see><a href="/doc/prince-output/#pdf-tags">PDF Tags</a></see>
-    <comments>
-    <p>
-    This property is used to enable tagged PDF.
-    </p>
-    </comments>
-</property>
-
-<property>
     <name>prince-pdf-tag-title</name>
     <value>
     <choice>
@@ -7401,6 +7378,29 @@ supplier, item { overflow-wrap: normal; }
     </p>
     <p>
     The string value points to a role map identifier declared in the property <code><property name="prince-pdf-role-map"/></code>.
+    </p>
+    </comments>
+</property>
+
+<property>
+    <name>prince-pdf-tagged</name>
+    <value>
+    <choice>
+        <keyword>auto</keyword>
+        <keyword>enable</keyword>
+    </choice>
+    </value>
+    <initial>auto</initial>
+    <applyto>@prince-pdf at-rule</applyto>
+    <inherit>n/a</inherit>
+    <extension/>
+    <example>@prince-pdf {
+    -prince-pdf-tagged: enable;
+}</example>
+    <see><a href="/doc/prince-output/#pdf-tags">PDF Tags</a></see>
+    <comments>
+    <p>
+    This property is used to enable tagged PDF.
     </p>
     </comments>
 </property>
@@ -8236,6 +8236,33 @@ blockquote { margin: 1rem; -prince-resize-options: -1rem; }
 </property>
 
 <property>
+    <name>tab-size</name>
+    <value>
+	<choice>
+	    <integer>number</integer>
+	    <type>length</type>
+	</choice>
+    </value>
+    <initial>8</initial>
+    <applyto>block containers</applyto>
+    <inherit>yes</inherit>
+    <comments>
+	<p>
+	This property determines the tab-size for preserved tab characters (U+0009).
+    An integer defines number of spaces in a tab, a length represents the width
+    of a tab.
+	</p>
+
+    <p>
+    Please note that Prince replaces preserved tab characters with the specified
+    number of spaces, but does not create actual "tab stops" aligned to the left
+    edge of the block.
+    </p>
+    </comments>
+    <spec><a href="https://www.w3.org/TR/css-text-3/#tab-size-property">CSS Text Module Level 3</a></spec>
+</property>
+
+<property>
     <name>table-baseline</name>
     <value>
 	<integer>number</integer>
@@ -8316,33 +8343,6 @@ blockquote { margin: 1rem; -prince-resize-options: -1rem; }
 	</p>
     </comments>
     <aliastarget>prince-table-row-span</aliastarget>
-</property>
-
-<property>
-    <name>tab-size</name>
-    <value>
-	<choice>
-	    <integer>number</integer>
-	    <type>length</type>
-	</choice>
-    </value>
-    <initial>8</initial>
-    <applyto>block containers</applyto>
-    <inherit>yes</inherit>
-    <comments>
-	<p>
-	This property determines the tab-size for preserved tab characters (U+0009).
-    An integer defines number of spaces in a tab, a length represents the width
-    of a tab.
-	</p>
-
-    <p>
-    Please note that Prince replaces preserved tab characters with the specified
-    number of spaces, but does not create actual "tab stops" aligned to the left
-    edge of the block.
-    </p>
-    </comments>
-    <spec><a href="https://www.w3.org/TR/css-text-3/#tab-size-property">CSS Text Module Level 3</a></spec>
 </property>
 
 <property>

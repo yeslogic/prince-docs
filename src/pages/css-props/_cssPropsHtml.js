@@ -613,6 +613,60 @@ const cssPropsHtml = String.raw`
     </details>
     <details>
       <summary>
+        <h6 id="prop-background-clip">background-clip <a href="#prop-background-clip" class="hash-link"> </a></h6>
+      </summary>
+      <div>
+        <div>
+          <div id="prop-background-clip-syntax">Syntax</div>
+          <div class="example">
+            <div class="syntax-block">
+              <code>background-clip: [ content-box | padding-box | border-box ]#</code>
+            </div>
+          </div>
+        </div>
+        <div>
+          <div class="example">
+            <div class="syntax-block">
+              <table class="property-table">
+                <tr>
+                  <th scope="row">
+          Initial value
+        </th>
+                  <td>
+                    <code>border-box</code>
+                  </td>
+                </tr>
+                <tr>
+                  <th scope="row">
+          Applies to
+        </th>
+                  <td>all elements</td>
+                </tr>
+                <tr>
+                  <th scope="row">
+          Inherited
+        </th>
+                  <td>
+                  no
+                </td>
+                </tr>
+              </table>
+            </div>
+          </div>
+        </div>
+        <div/>
+        <div>
+          <div id="prop-background-clip-spec">Specification</div>
+          <ul>
+            <li>
+              <a href="https://www.w3.org/TR/css-backgrounds-3/#the-background-clip">CSS Backgrounds and Borders Module Level 3</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </details>
+    <details>
+      <summary>
         <h6 id="prop-background-color">background-color <a href="#prop-background-color" class="hash-link"> </a></h6>
       </summary>
       <div>
@@ -668,60 +722,6 @@ const cssPropsHtml = String.raw`
           <ul>
             <li>
               <a href="https://www.w3.org/TR/css-backgrounds-3/#the-background-color">CSS Backgrounds and Borders Module Level 3</a>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </details>
-    <details>
-      <summary>
-        <h6 id="prop-background-clip">background-clip <a href="#prop-background-clip" class="hash-link"> </a></h6>
-      </summary>
-      <div>
-        <div>
-          <div id="prop-background-clip-syntax">Syntax</div>
-          <div class="example">
-            <div class="syntax-block">
-              <code>background-clip: [ content-box | padding-box | border-box ]#</code>
-            </div>
-          </div>
-        </div>
-        <div>
-          <div class="example">
-            <div class="syntax-block">
-              <table class="property-table">
-                <tr>
-                  <th scope="row">
-          Initial value
-        </th>
-                  <td>
-                    <code>border-box</code>
-                  </td>
-                </tr>
-                <tr>
-                  <th scope="row">
-          Applies to
-        </th>
-                  <td>all elements</td>
-                </tr>
-                <tr>
-                  <th scope="row">
-          Inherited
-        </th>
-                  <td>
-                  no
-                </td>
-                </tr>
-              </table>
-            </div>
-          </div>
-        </div>
-        <div/>
-        <div>
-          <div id="prop-background-clip-spec">Specification</div>
-          <ul>
-            <li>
-              <a href="https://www.w3.org/TR/css-backgrounds-3/#the-background-clip">CSS Backgrounds and Borders Module Level 3</a>
             </li>
           </ul>
         </div>
@@ -6325,6 +6325,86 @@ const cssPropsHtml = String.raw`
     </details>
     <details>
       <summary>
+        <h6 id="prop-flex-flow">flex-flow <a href="#prop-flex-flow" class="hash-link"> </a></h6>
+      </summary>
+      <div>
+        <div>
+          <div id="prop-flex-flow-syntax">Syntax</div>
+          <div class="example">
+            <div class="syntax-block">
+              <code>flex-flow: <a href="#prop-flex-direction">&lt;'<i>flex-direction</i>'&gt;</a> || <a href="#prop-flex-wrap">&lt;'<i>flex-wrap</i>'&gt;</a></code>
+            </div>
+          </div>
+        </div>
+        <div>
+          <div class="example">
+            <div class="syntax-block">
+              <table class="property-table">
+                <tr>
+                  <th scope="row">
+          Initial value
+        </th>
+                  <td>
+                    <code>row nowrap</code>
+                  </td>
+                </tr>
+                <tr>
+                  <th scope="row">
+          Applies to
+        </th>
+                  <td>flex containers</td>
+                </tr>
+                <tr>
+                  <th scope="row">
+          Inherited
+        </th>
+                  <td>
+                  no
+                </td>
+                </tr>
+              </table>
+            </div>
+          </div>
+        </div>
+        <div>
+          <div id="prop-flex-flow-comments">Comments</div>
+          <p>
+        The <code>flex-flow</code> property is a shorthand for
+        setting the following CSS properties:
+    </p>
+          <ul>
+            <li>
+              <code>
+                <a href="#prop-flex-direction">flex-direction</a>
+              </code>
+            </li>
+            <li>
+              <code>
+                <a href="#prop-flex-wrap">flex-wrap</a>
+              </code>
+            </li>
+          </ul>
+        </div>
+        <div>
+          <div id="prop-flex-flow-seealso">See Also</div>
+          <ul>
+            <li>
+              <a href="/doc/styling/#flex-layout">Flex Layout</a>
+            </li>
+          </ul>
+        </div>
+        <div>
+          <div id="prop-flex-flow-spec">Specification</div>
+          <ul>
+            <li>
+              <a href="https://www.w3.org/TR/css-flexbox-1/#flex-flow-property">CSS Flexible Box Layout Module Level 1</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </details>
+    <details>
+      <summary>
         <h6 id="prop-flex-shrink">flex-shrink <a href="#prop-flex-shrink" class="hash-link"> </a></h6>
       </summary>
       <div>
@@ -6442,86 +6522,6 @@ const cssPropsHtml = String.raw`
           <ul>
             <li>
               <a href="https://www.w3.org/TR/css-flexbox-1/#flex-wrap-property">CSS Flexible Box Layout Module Level 1</a>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </details>
-    <details>
-      <summary>
-        <h6 id="prop-flex-flow">flex-flow <a href="#prop-flex-flow" class="hash-link"> </a></h6>
-      </summary>
-      <div>
-        <div>
-          <div id="prop-flex-flow-syntax">Syntax</div>
-          <div class="example">
-            <div class="syntax-block">
-              <code>flex-flow: <a href="#prop-flex-direction">&lt;'<i>flex-direction</i>'&gt;</a> || <a href="#prop-flex-wrap">&lt;'<i>flex-wrap</i>'&gt;</a></code>
-            </div>
-          </div>
-        </div>
-        <div>
-          <div class="example">
-            <div class="syntax-block">
-              <table class="property-table">
-                <tr>
-                  <th scope="row">
-          Initial value
-        </th>
-                  <td>
-                    <code>row nowrap</code>
-                  </td>
-                </tr>
-                <tr>
-                  <th scope="row">
-          Applies to
-        </th>
-                  <td>flex containers</td>
-                </tr>
-                <tr>
-                  <th scope="row">
-          Inherited
-        </th>
-                  <td>
-                  no
-                </td>
-                </tr>
-              </table>
-            </div>
-          </div>
-        </div>
-        <div>
-          <div id="prop-flex-flow-comments">Comments</div>
-          <p>
-        The <code>flex-flow</code> property is a shorthand for
-        setting the following CSS properties:
-    </p>
-          <ul>
-            <li>
-              <code>
-                <a href="#prop-flex-direction">flex-direction</a>
-              </code>
-            </li>
-            <li>
-              <code>
-                <a href="#prop-flex-wrap">flex-wrap</a>
-              </code>
-            </li>
-          </ul>
-        </div>
-        <div>
-          <div id="prop-flex-flow-seealso">See Also</div>
-          <ul>
-            <li>
-              <a href="/doc/styling/#flex-layout">Flex Layout</a>
-            </li>
-          </ul>
-        </div>
-        <div>
-          <div id="prop-flex-flow-spec">Specification</div>
-          <ul>
-            <li>
-              <a href="https://www.w3.org/TR/css-flexbox-1/#flex-flow-property">CSS Flexible Box Layout Module Level 1</a>
             </li>
           </ul>
         </div>
@@ -8893,6 +8893,68 @@ const cssPropsHtml = String.raw`
     </details>
     <details>
       <summary>
+        <h6 id="prop-grid-area">grid-area <a href="#prop-grid-area" class="hash-link"> </a></h6>
+      </summary>
+      <div>
+        <div>
+          <div id="prop-grid-area-syntax">Syntax</div>
+          <div class="example">
+            <div class="syntax-block">
+              <code>grid-area: <span>&lt;<i>grid-line</i>&gt;</span> [ / <span>&lt;<i>grid-line</i>&gt;</span> ]{0,3}</code>
+            </div>
+          </div>
+        </div>
+        <div>
+          <div class="example">
+            <div class="syntax-block">
+              <table class="property-table">
+                <tr>
+                  <th scope="row">
+          Initial value
+        </th>
+                  <td>
+                    <code>auto</code>
+                  </td>
+                </tr>
+                <tr>
+                  <th scope="row">
+          Applies to
+        </th>
+                  <td>grid containers</td>
+                </tr>
+                <tr>
+                  <th scope="row">
+          Inherited
+        </th>
+                  <td>
+                  no
+                </td>
+                </tr>
+              </table>
+            </div>
+          </div>
+        </div>
+        <div/>
+        <div>
+          <div id="prop-grid-area-seealso">See Also</div>
+          <ul>
+            <li>
+              <a href="/doc/styling/#grid-layout">Grid Layout</a>
+            </li>
+          </ul>
+        </div>
+        <div>
+          <div id="prop-grid-area-spec">Specification</div>
+          <ul>
+            <li>
+              <a href="https://www.w3.org/TR/css-grid-1/#placement-shorthands">CSS Grid Layout Module Level 1</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </details>
+    <details>
+      <summary>
         <h6 id="prop-grid-auto-columns">grid-auto-columns <a href="#prop-grid-auto-columns" class="hash-link"> </a></h6>
       </summary>
       <div>
@@ -9072,68 +9134,6 @@ const cssPropsHtml = String.raw`
           <ul>
             <li>
               <a href="https://www.w3.org/TR/css-grid-1/#auto-tracks">CSS Grid Layout Module Level 1</a>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </details>
-    <details>
-      <summary>
-        <h6 id="prop-grid-area">grid-area <a href="#prop-grid-area" class="hash-link"> </a></h6>
-      </summary>
-      <div>
-        <div>
-          <div id="prop-grid-area-syntax">Syntax</div>
-          <div class="example">
-            <div class="syntax-block">
-              <code>grid-area: <span>&lt;<i>grid-line</i>&gt;</span> [ / <span>&lt;<i>grid-line</i>&gt;</span> ]{0,3}</code>
-            </div>
-          </div>
-        </div>
-        <div>
-          <div class="example">
-            <div class="syntax-block">
-              <table class="property-table">
-                <tr>
-                  <th scope="row">
-          Initial value
-        </th>
-                  <td>
-                    <code>auto</code>
-                  </td>
-                </tr>
-                <tr>
-                  <th scope="row">
-          Applies to
-        </th>
-                  <td>grid containers</td>
-                </tr>
-                <tr>
-                  <th scope="row">
-          Inherited
-        </th>
-                  <td>
-                  no
-                </td>
-                </tr>
-              </table>
-            </div>
-          </div>
-        </div>
-        <div/>
-        <div>
-          <div id="prop-grid-area-seealso">See Also</div>
-          <ul>
-            <li>
-              <a href="/doc/styling/#grid-layout">Grid Layout</a>
-            </li>
-          </ul>
-        </div>
-        <div>
-          <div id="prop-grid-area-spec">Specification</div>
-          <ul>
-            <li>
-              <a href="https://www.w3.org/TR/css-grid-1/#placement-shorthands">CSS Grid Layout Module Level 1</a>
             </li>
           </ul>
         </div>
@@ -9945,72 +9945,6 @@ const cssPropsHtml = String.raw`
     </details>
     <details>
       <summary class="ext" title="Prince extension">
-        <h6 id="prop-hyphenate-patterns">hyphenate-patterns* <a href="#prop-hyphenate-patterns" class="hash-link"> </a></h6>
-      </summary>
-      <div>
-        <div>
-          <div id="prop-hyphenate-patterns-syntax">Syntax</div>
-          <div class="example">
-            <div class="syntax-block">
-              <code>hyphenate-patterns: none | url( <span>&lt;<i>patterns-url</i>&gt;</span> )</code>
-            </div>
-          </div>
-        </div>
-        <div>
-          <div class="example">
-            <div class="syntax-block">
-              <table class="property-table">
-                <tr>
-                  <th scope="row">
-          Initial value
-        </th>
-                  <td>
-                    <code>none</code>
-                  </td>
-                </tr>
-                <tr>
-                  <th scope="row">
-          Applies to
-        </th>
-                  <td>all elements</td>
-                </tr>
-                <tr>
-                  <th scope="row">
-          Inherited
-        </th>
-                  <td>
-                  yes
-                </td>
-                </tr>
-              </table>
-            </div>
-          </div>
-        </div>
-        <div>
-          <div id="prop-hyphenate-patterns-comments">Comments</div>
-          <p>
-    This property is used to point to a hyphenation dictionary.  Normally this is
-    selected automatically, based on the current language.
-    </p>
-          <p>
-    The <code>url()</code> argument can take local paths, remote HTTP or HTTPS URLs, or <code>data:</code> URIs as argument.
-    </p>
-          <p class="note">
-        The property <a href="#prop-prince-hyphenate-patterns"><code>-prince-hyphenate-patterns</code></a> can be used as an alias.
-        </p>
-        </div>
-        <div>
-          <div id="prop-hyphenate-patterns-seealso">See Also</div>
-          <ul>
-            <li>
-              <a href="/doc/cookbook/#hyphenation">Hyphenation</a>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </details>
-    <details>
-      <summary class="ext" title="Prince extension">
         <h6 id="prop-hyphenate-after">hyphenate-after* <a href="#prop-hyphenate-after" class="hash-link"> </a></h6>
       </summary>
       <div>
@@ -10271,14 +10205,14 @@ const cssPropsHtml = String.raw`
     </details>
     <details>
       <summary class="ext" title="Prince extension">
-        <h6 id="prop-image-resolution">image-resolution* <a href="#prop-image-resolution" class="hash-link"> </a></h6>
+        <h6 id="prop-hyphenate-patterns">hyphenate-patterns* <a href="#prop-hyphenate-patterns" class="hash-link"> </a></h6>
       </summary>
       <div>
         <div>
-          <div id="prop-image-resolution-syntax">Syntax</div>
+          <div id="prop-hyphenate-patterns-syntax">Syntax</div>
           <div class="example">
             <div class="syntax-block">
-              <code>image-resolution: <span>&lt;<i>dpi</i>&gt;</span> | normal | auto [ , normal | <span>&lt;<i>dpi</i>&gt;</span> ]?</code>
+              <code>hyphenate-patterns: none | url( <span>&lt;<i>patterns-url</i>&gt;</span> )</code>
             </div>
           </div>
         </div>
@@ -10291,14 +10225,14 @@ const cssPropsHtml = String.raw`
           Initial value
         </th>
                   <td>
-                    <code>normal</code>
+                    <code>none</code>
                   </td>
                 </tr>
                 <tr>
                   <th scope="row">
           Applies to
         </th>
-                  <td>image elements</td>
+                  <td>all elements</td>
                 </tr>
                 <tr>
                   <th scope="row">
@@ -10313,25 +10247,23 @@ const cssPropsHtml = String.raw`
           </div>
         </div>
         <div>
-          <div id="prop-image-resolution-comments">Comments</div>
+          <div id="prop-hyphenate-patterns-comments">Comments</div>
           <p>
-    This property determines the resolution of an image.  The value <code>normal</code>
-    means 96dpi, or else the current CSS DPI setting.  A custom DPI value can also
-    be specified.  The value <code>auto</code> means to check the original resolution
-    of the image.  One can specify a second value, as for example <code>auto, normal</code>
-    or <code>auto, 300dpi</code> in order to check the original resolution of the
-    image first, and to fall back on the second value if the image doesn't contain
-    resolution information.
+    This property is used to point to a hyphenation dictionary.  Normally this is
+    selected automatically, based on the current language.
+    </p>
+          <p>
+    The <code>url()</code> argument can take local paths, remote HTTP or HTTPS URLs, or <code>data:</code> URIs as argument.
     </p>
           <p class="note">
-        The property <a href="#prop-prince-image-resolution"><code>-prince-image-resolution</code></a> can be used as an alias.
+        The property <a href="#prop-prince-hyphenate-patterns"><code>-prince-hyphenate-patterns</code></a> can be used as an alias.
         </p>
         </div>
         <div>
-          <div id="prop-image-resolution-seealso">See Also</div>
+          <div id="prop-hyphenate-patterns-seealso">See Also</div>
           <ul>
             <li>
-              <a href="/doc/graphics/#image-size">Image Size</a>
+              <a href="/doc/cookbook/#hyphenation">Hyphenation</a>
             </li>
           </ul>
         </div>
@@ -10396,6 +10328,74 @@ const cssPropsHtml = String.raw`
           <ul>
             <li>
               <a href="https://drafts.csswg.org/css-images-3/#propdef-image-orientation">CSS Images Module Level 3 - Editor's Draft</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </details>
+    <details>
+      <summary class="ext" title="Prince extension">
+        <h6 id="prop-image-resolution">image-resolution* <a href="#prop-image-resolution" class="hash-link"> </a></h6>
+      </summary>
+      <div>
+        <div>
+          <div id="prop-image-resolution-syntax">Syntax</div>
+          <div class="example">
+            <div class="syntax-block">
+              <code>image-resolution: <span>&lt;<i>dpi</i>&gt;</span> | normal | auto [ , normal | <span>&lt;<i>dpi</i>&gt;</span> ]?</code>
+            </div>
+          </div>
+        </div>
+        <div>
+          <div class="example">
+            <div class="syntax-block">
+              <table class="property-table">
+                <tr>
+                  <th scope="row">
+          Initial value
+        </th>
+                  <td>
+                    <code>normal</code>
+                  </td>
+                </tr>
+                <tr>
+                  <th scope="row">
+          Applies to
+        </th>
+                  <td>image elements</td>
+                </tr>
+                <tr>
+                  <th scope="row">
+          Inherited
+        </th>
+                  <td>
+                  yes
+                </td>
+                </tr>
+              </table>
+            </div>
+          </div>
+        </div>
+        <div>
+          <div id="prop-image-resolution-comments">Comments</div>
+          <p>
+    This property determines the resolution of an image.  The value <code>normal</code>
+    means 96dpi, or else the current CSS DPI setting.  A custom DPI value can also
+    be specified.  The value <code>auto</code> means to check the original resolution
+    of the image.  One can specify a second value, as for example <code>auto, normal</code>
+    or <code>auto, 300dpi</code> in order to check the original resolution of the
+    image first, and to fall back on the second value if the image doesn't contain
+    resolution information.
+    </p>
+          <p class="note">
+        The property <a href="#prop-prince-image-resolution"><code>-prince-image-resolution</code></a> can be used as an alias.
+        </p>
+        </div>
+        <div>
+          <div id="prop-image-resolution-seealso">See Also</div>
+          <ul>
+            <li>
+              <a href="/doc/graphics/#image-size">Image Size</a>
             </li>
           </ul>
         </div>
@@ -10966,6 +10966,68 @@ const cssPropsHtml = String.raw`
       </div>
     </details>
     <details>
+      <summary>
+        <h6 id="prop-line-height">line-height <a href="#prop-line-height" class="hash-link"> </a></h6>
+      </summary>
+      <div>
+        <div>
+          <div id="prop-line-height-syntax">Syntax</div>
+          <div class="example">
+            <div class="syntax-block">
+              <code>line-height: normal | none | <span>&lt;<i>number</i>&gt;</span> | <span>&lt;<i>length-percentage</i>&gt;</span></code>
+            </div>
+          </div>
+        </div>
+        <div>
+          <div class="example">
+            <div class="syntax-block">
+              <table class="property-table">
+                <tr>
+                  <th scope="row">
+          Initial value
+        </th>
+                  <td>
+                    <code>normal</code>
+                  </td>
+                </tr>
+                <tr>
+                  <th scope="row">
+          Applies to
+        </th>
+                  <td>all elements</td>
+                </tr>
+                <tr>
+                  <th scope="row">
+          Inherited
+        </th>
+                  <td>
+                  yes
+                </td>
+                </tr>
+              </table>
+            </div>
+          </div>
+        </div>
+        <div/>
+        <div>
+          <div id="prop-line-height-seealso">See Also</div>
+          <ul>
+            <li>
+              <a href="/doc/styling/#paragraph-formatting">Paragraph formatting</a>
+            </li>
+          </ul>
+        </div>
+        <div>
+          <div id="prop-line-height-spec">Specification</div>
+          <ul>
+            <li>
+              <a href="https://www.w3.org/TR/CSS2/visudet.html#propdef-line-height">CSS 2.1</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </details>
+    <details>
       <summary class="ext" title="Prince extension">
         <h6 id="prop-line-stacking-strategy">line-stacking-strategy* <a href="#prop-line-stacking-strategy" class="hash-link"> </a></h6>
       </summary>
@@ -11057,162 +11119,6 @@ const cssPropsHtml = String.raw`
           <ul>
             <li>
               <a href="https://www.w3.org/TR/2002/WD-css3-linebox-20020515/#line-stacking-strategy">CSS3 module: line (WD 15 May 2002)</a>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </details>
-    <details>
-      <summary>
-        <h6 id="prop-prince-line-stacking-strategy">-prince-line-stacking-strategy <a href="#prop-prince-line-stacking-strategy" class="hash-link"> </a></h6>
-      </summary>
-      <div>
-        <div>
-          <div id="prop-prince-line-stacking-strategy-syntax">Syntax</div>
-          <div class="example">
-            <div class="syntax-block">
-              <code>-prince-line-stacking-strategy: inline-line-height | block-line-height | max-height | grid-height</code>
-            </div>
-          </div>
-        </div>
-        <div>
-          <div class="example">
-            <div class="syntax-block">
-              <table class="property-table">
-                <tr>
-                  <th scope="row">
-          Initial value
-        </th>
-                  <td>
-                    <code>inline-line-height</code>
-                  </td>
-                </tr>
-                <tr>
-                  <th scope="row">
-          Applies to
-        </th>
-                  <td>block-level elements</td>
-                </tr>
-                <tr>
-                  <th scope="row">
-          Inherited
-        </th>
-                  <td>
-                  yes
-                </td>
-                </tr>
-              </table>
-            </div>
-          </div>
-        </div>
-        <div>
-          <div id="prop-prince-line-stacking-strategy-comments">Comments</div>
-          <p>
-    This property allows to choose whether individual lines should have their
-    height determined based on their content, or whether all lines in a paragraph
-    should have the same height, or a compromise where their heights are
-    determined by their content and then rounded up to a multiple of the paragraph
-    line height.
-    </p>
-          <p>
-    The behavior define by <code>inline-line-height</code> is the default.
-    </p>
-          <p>
-    The value <code>block-line-height</code> uses the line-height of the block
-    element and ignores the actual height of the content on those lines, so lines
-    will always have the same spacing regardless of whether they contain spans
-    with larger font size of superscripts/subscripts.
-    </p>
-          <p>
-    The value <code>grid-height</code> is like <code>inline-line-height</code>
-    but each line gets rounded up to an integer multiple of the block line-height.
-    </p>
-          <p>
-    Finally, the <code>max-height</code> value works like <code>inline-line-height</code>,
-    but it ignores the <code><a href="#prop-line-height">line-height</a></code> property value
-    for inline elements.
-    </p>
-        </div>
-        <div>
-          <div id="prop-prince-line-stacking-strategy-seealso">See Also</div>
-          <ul>
-            <li>
-              <a href="/doc/styling/#paragraph-formatting">Paragraph formatting</a>
-            </li>
-            <li>
-              <code>
-                <a href="#prop-line-height">line-height</a>
-              </code>
-            </li>
-          </ul>
-        </div>
-        <div>
-          <div id="prop-prince-line-stacking-strategy-spec">Specification</div>
-          <ul>
-            <li>
-              <a href="https://www.w3.org/TR/2002/WD-css3-linebox-20020515/#line-stacking-strategy">CSS3 module: line (WD 15 May 2002)</a>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </details>
-    <details>
-      <summary>
-        <h6 id="prop-line-height">line-height <a href="#prop-line-height" class="hash-link"> </a></h6>
-      </summary>
-      <div>
-        <div>
-          <div id="prop-line-height-syntax">Syntax</div>
-          <div class="example">
-            <div class="syntax-block">
-              <code>line-height: normal | none | <span>&lt;<i>number</i>&gt;</span> | <span>&lt;<i>length-percentage</i>&gt;</span></code>
-            </div>
-          </div>
-        </div>
-        <div>
-          <div class="example">
-            <div class="syntax-block">
-              <table class="property-table">
-                <tr>
-                  <th scope="row">
-          Initial value
-        </th>
-                  <td>
-                    <code>normal</code>
-                  </td>
-                </tr>
-                <tr>
-                  <th scope="row">
-          Applies to
-        </th>
-                  <td>all elements</td>
-                </tr>
-                <tr>
-                  <th scope="row">
-          Inherited
-        </th>
-                  <td>
-                  yes
-                </td>
-                </tr>
-              </table>
-            </div>
-          </div>
-        </div>
-        <div/>
-        <div>
-          <div id="prop-line-height-seealso">See Also</div>
-          <ul>
-            <li>
-              <a href="/doc/styling/#paragraph-formatting">Paragraph formatting</a>
-            </li>
-          </ul>
-        </div>
-        <div>
-          <div id="prop-line-height-spec">Specification</div>
-          <ul>
-            <li>
-              <a href="https://www.w3.org/TR/CSS2/visudet.html#propdef-line-height">CSS 2.1</a>
             </li>
           </ul>
         </div>
@@ -12191,14 +12097,14 @@ const cssPropsHtml = String.raw`
     </details>
     <details>
       <summary>
-        <h6 id="prop-marker-start">marker-start <a href="#prop-marker-start" class="hash-link"> </a></h6>
+        <h6 id="prop-marker-end">marker-end <a href="#prop-marker-end" class="hash-link"> </a></h6>
       </summary>
       <div>
         <div>
-          <div id="prop-marker-start-syntax">Syntax</div>
+          <div id="prop-marker-end-syntax">Syntax</div>
           <div class="example">
             <div class="syntax-block">
-              <code>marker-start: none | url( <span>&lt;<i>marker-url</i>&gt;</span> )</code>
+              <code>marker-end: none | url( <span>&lt;<i>marker-url</i>&gt;</span> )</code>
             </div>
           </div>
         </div>
@@ -12233,17 +12139,17 @@ const cssPropsHtml = String.raw`
           </div>
         </div>
         <div>
-          <div id="prop-marker-start-comments">Comments</div>
+          <div id="prop-marker-end-comments">Comments</div>
           <p>
-    The <code>marker-start</code> property only applies to SVG elements.
+    The <code>marker-end</code> property only applies to SVG elements.
     </p>
           <p class="note">This property can also be set by the <code><a href="#prop-marker">marker</a></code> shorthand.</p>
         </div>
         <div>
-          <div id="prop-marker-start-spec">Specification</div>
+          <div id="prop-marker-end-spec">Specification</div>
           <ul>
             <li>
-              <a href="https://www.w3.org/TR/SVG11/painting.html#MarkerStartProperty">SVG 1.1</a>
+              <a href="https://www.w3.org/TR/SVG11/painting.html#MarkerEndProperty">SVG 1.1</a>
             </li>
           </ul>
         </div>
@@ -12311,14 +12217,14 @@ const cssPropsHtml = String.raw`
     </details>
     <details>
       <summary>
-        <h6 id="prop-marker-end">marker-end <a href="#prop-marker-end" class="hash-link"> </a></h6>
+        <h6 id="prop-marker-start">marker-start <a href="#prop-marker-start" class="hash-link"> </a></h6>
       </summary>
       <div>
         <div>
-          <div id="prop-marker-end-syntax">Syntax</div>
+          <div id="prop-marker-start-syntax">Syntax</div>
           <div class="example">
             <div class="syntax-block">
-              <code>marker-end: none | url( <span>&lt;<i>marker-url</i>&gt;</span> )</code>
+              <code>marker-start: none | url( <span>&lt;<i>marker-url</i>&gt;</span> )</code>
             </div>
           </div>
         </div>
@@ -12353,17 +12259,17 @@ const cssPropsHtml = String.raw`
           </div>
         </div>
         <div>
-          <div id="prop-marker-end-comments">Comments</div>
+          <div id="prop-marker-start-comments">Comments</div>
           <p>
-    The <code>marker-end</code> property only applies to SVG elements.
+    The <code>marker-start</code> property only applies to SVG elements.
     </p>
           <p class="note">This property can also be set by the <code><a href="#prop-marker">marker</a></code> shorthand.</p>
         </div>
         <div>
-          <div id="prop-marker-end-spec">Specification</div>
+          <div id="prop-marker-start-spec">Specification</div>
           <ul>
             <li>
-              <a href="https://www.w3.org/TR/SVG11/painting.html#MarkerEndProperty">SVG 1.1</a>
+              <a href="https://www.w3.org/TR/SVG11/painting.html#MarkerStartProperty">SVG 1.1</a>
             </li>
           </ul>
         </div>
@@ -16494,72 +16400,6 @@ supplier, item { overflow-wrap: normal; }
     </details>
     <details>
       <summary class="ext" title="Prince extension">
-        <h6 id="prop-prince-hyphenate-patterns">-prince-hyphenate-patterns* <a href="#prop-prince-hyphenate-patterns" class="hash-link"> </a></h6>
-      </summary>
-      <div>
-        <div>
-          <div id="prop-prince-hyphenate-patterns-syntax">Syntax</div>
-          <div class="example">
-            <div class="syntax-block">
-              <code>-prince-hyphenate-patterns: none | url( <span>&lt;<i>patterns-url</i>&gt;</span> )</code>
-            </div>
-          </div>
-        </div>
-        <div>
-          <div class="example">
-            <div class="syntax-block">
-              <table class="property-table">
-                <tr>
-                  <th scope="row">
-          Initial value
-        </th>
-                  <td>
-                    <code>none</code>
-                  </td>
-                </tr>
-                <tr>
-                  <th scope="row">
-          Applies to
-        </th>
-                  <td>all elements</td>
-                </tr>
-                <tr>
-                  <th scope="row">
-          Inherited
-        </th>
-                  <td>
-                  yes
-                </td>
-                </tr>
-              </table>
-            </div>
-          </div>
-        </div>
-        <div>
-          <div id="prop-prince-hyphenate-patterns-comments">Comments</div>
-          <p>
-    This property is used to point to a hyphenation dictionary.  Normally this is
-    selected automatically, based on the current language.
-    </p>
-          <p>
-    The <code>url()</code> argument can take local paths, remote HTTP or HTTPS URLs, or <code>data:</code> URIs as argument.
-    </p>
-          <p class="note">
-        The property <a href="#prop-hyphenate-patterns"><code>hyphenate-patterns</code></a> can be used as an alias.
-        </p>
-        </div>
-        <div>
-          <div id="prop-prince-hyphenate-patterns-seealso">See Also</div>
-          <ul>
-            <li>
-              <a href="/doc/cookbook/#hyphenation">Hyphenation</a>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </details>
-    <details>
-      <summary class="ext" title="Prince extension">
         <h6 id="prop-prince-hyphenate-after">-prince-hyphenate-after* <a href="#prop-prince-hyphenate-after" class="hash-link"> </a></h6>
       </summary>
       <div>
@@ -16884,6 +16724,72 @@ supplier, item { overflow-wrap: normal; }
           <ul>
             <li>
               <a href="https://www.w3.org/TR/css-text-4/#hyphenate-line-limits">CSS Text Module Level 4</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </details>
+    <details>
+      <summary class="ext" title="Prince extension">
+        <h6 id="prop-prince-hyphenate-patterns">-prince-hyphenate-patterns* <a href="#prop-prince-hyphenate-patterns" class="hash-link"> </a></h6>
+      </summary>
+      <div>
+        <div>
+          <div id="prop-prince-hyphenate-patterns-syntax">Syntax</div>
+          <div class="example">
+            <div class="syntax-block">
+              <code>-prince-hyphenate-patterns: none | url( <span>&lt;<i>patterns-url</i>&gt;</span> )</code>
+            </div>
+          </div>
+        </div>
+        <div>
+          <div class="example">
+            <div class="syntax-block">
+              <table class="property-table">
+                <tr>
+                  <th scope="row">
+          Initial value
+        </th>
+                  <td>
+                    <code>none</code>
+                  </td>
+                </tr>
+                <tr>
+                  <th scope="row">
+          Applies to
+        </th>
+                  <td>all elements</td>
+                </tr>
+                <tr>
+                  <th scope="row">
+          Inherited
+        </th>
+                  <td>
+                  yes
+                </td>
+                </tr>
+              </table>
+            </div>
+          </div>
+        </div>
+        <div>
+          <div id="prop-prince-hyphenate-patterns-comments">Comments</div>
+          <p>
+    This property is used to point to a hyphenation dictionary.  Normally this is
+    selected automatically, based on the current language.
+    </p>
+          <p>
+    The <code>url()</code> argument can take local paths, remote HTTP or HTTPS URLs, or <code>data:</code> URIs as argument.
+    </p>
+          <p class="note">
+        The property <a href="#prop-hyphenate-patterns"><code>hyphenate-patterns</code></a> can be used as an alias.
+        </p>
+        </div>
+        <div>
+          <div id="prop-prince-hyphenate-patterns-seealso">See Also</div>
+          <ul>
+            <li>
+              <a href="/doc/cookbook/#hyphenation">Hyphenation</a>
             </li>
           </ul>
         </div>
@@ -17301,6 +17207,100 @@ supplier, item { overflow-wrap: normal; }
             </li>
             <li>
               <a href="/doc/prince-for-books/#the-property--prince-line-break-choices">The property <code>-prince-line-break-choices</code></a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </details>
+    <details>
+      <summary>
+        <h6 id="prop-prince-line-stacking-strategy">-prince-line-stacking-strategy <a href="#prop-prince-line-stacking-strategy" class="hash-link"> </a></h6>
+      </summary>
+      <div>
+        <div>
+          <div id="prop-prince-line-stacking-strategy-syntax">Syntax</div>
+          <div class="example">
+            <div class="syntax-block">
+              <code>-prince-line-stacking-strategy: inline-line-height | block-line-height | max-height | grid-height</code>
+            </div>
+          </div>
+        </div>
+        <div>
+          <div class="example">
+            <div class="syntax-block">
+              <table class="property-table">
+                <tr>
+                  <th scope="row">
+          Initial value
+        </th>
+                  <td>
+                    <code>inline-line-height</code>
+                  </td>
+                </tr>
+                <tr>
+                  <th scope="row">
+          Applies to
+        </th>
+                  <td>block-level elements</td>
+                </tr>
+                <tr>
+                  <th scope="row">
+          Inherited
+        </th>
+                  <td>
+                  yes
+                </td>
+                </tr>
+              </table>
+            </div>
+          </div>
+        </div>
+        <div>
+          <div id="prop-prince-line-stacking-strategy-comments">Comments</div>
+          <p>
+    This property allows to choose whether individual lines should have their
+    height determined based on their content, or whether all lines in a paragraph
+    should have the same height, or a compromise where their heights are
+    determined by their content and then rounded up to a multiple of the paragraph
+    line height.
+    </p>
+          <p>
+    The behavior define by <code>inline-line-height</code> is the default.
+    </p>
+          <p>
+    The value <code>block-line-height</code> uses the line-height of the block
+    element and ignores the actual height of the content on those lines, so lines
+    will always have the same spacing regardless of whether they contain spans
+    with larger font size of superscripts/subscripts.
+    </p>
+          <p>
+    The value <code>grid-height</code> is like <code>inline-line-height</code>
+    but each line gets rounded up to an integer multiple of the block line-height.
+    </p>
+          <p>
+    Finally, the <code>max-height</code> value works like <code>inline-line-height</code>,
+    but it ignores the <code><a href="#prop-line-height">line-height</a></code> property value
+    for inline elements.
+    </p>
+        </div>
+        <div>
+          <div id="prop-prince-line-stacking-strategy-seealso">See Also</div>
+          <ul>
+            <li>
+              <a href="/doc/styling/#paragraph-formatting">Paragraph formatting</a>
+            </li>
+            <li>
+              <code>
+                <a href="#prop-line-height">line-height</a>
+              </code>
+            </li>
+          </ul>
+        </div>
+        <div>
+          <div id="prop-prince-line-stacking-strategy-spec">Specification</div>
+          <ul>
+            <li>
+              <a href="https://www.w3.org/TR/2002/WD-css3-linebox-20020515/#line-stacking-strategy">CSS3 module: line (WD 15 May 2002)</a>
             </li>
           </ul>
         </div>
@@ -20250,77 +20250,6 @@ supplier, item { overflow-wrap: normal; }
     </details>
     <details>
       <summary class="ext" title="Prince extension">
-        <h6 id="prop-prince-pdf-tagged">-prince-pdf-tagged* <a href="#prop-prince-pdf-tagged" class="hash-link"> </a></h6>
-      </summary>
-      <div>
-        <div>
-          <div id="prop-prince-pdf-tagged-syntax">Syntax</div>
-          <div class="example">
-            <div class="syntax-block">
-              <code>-prince-pdf-tagged: auto | enable</code>
-            </div>
-          </div>
-        </div>
-        <div>
-          <div class="example">
-            <div class="syntax-block">
-              <table class="property-table">
-                <tr>
-                  <th scope="row">
-          Initial value
-        </th>
-                  <td>
-                    <code>auto</code>
-                  </td>
-                </tr>
-                <tr>
-                  <th scope="row">
-          Applies to
-        </th>
-                  <td><code>@prince-pdf</code> at-rule</td>
-                </tr>
-                <tr>
-                  <th scope="row">
-          Inherited
-        </th>
-                  <td>
-                  n/a
-                </td>
-                </tr>
-              </table>
-            </div>
-          </div>
-        </div>
-        <div>
-          <div id="prop-prince-pdf-tagged-examples">Examples</div>
-          <div class="example">
-            <div class="programlisting">
-              <pre>
-                <code class="hljs">@prince-pdf {
-    -prince-pdf-tagged: enable;
-}</code>
-              </pre>
-            </div>
-          </div>
-        </div>
-        <div>
-          <div id="prop-prince-pdf-tagged-comments">Comments</div>
-          <p>
-    This property is used to enable tagged PDF.
-    </p>
-        </div>
-        <div>
-          <div id="prop-prince-pdf-tagged-seealso">See Also</div>
-          <ul>
-            <li>
-              <a href="/doc/prince-output/#pdf-tags">PDF Tags</a>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </details>
-    <details>
-      <summary class="ext" title="Prince extension">
         <h6 id="prop-prince-pdf-tag-title">-prince-pdf-tag-title* <a href="#prop-prince-pdf-tag-title" class="hash-link"> </a></h6>
       </summary>
       <div>
@@ -20471,6 +20400,77 @@ supplier, item { overflow-wrap: normal; }
         </div>
         <div>
           <div id="prop-prince-pdf-tag-type-seealso">See Also</div>
+          <ul>
+            <li>
+              <a href="/doc/prince-output/#pdf-tags">PDF Tags</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </details>
+    <details>
+      <summary class="ext" title="Prince extension">
+        <h6 id="prop-prince-pdf-tagged">-prince-pdf-tagged* <a href="#prop-prince-pdf-tagged" class="hash-link"> </a></h6>
+      </summary>
+      <div>
+        <div>
+          <div id="prop-prince-pdf-tagged-syntax">Syntax</div>
+          <div class="example">
+            <div class="syntax-block">
+              <code>-prince-pdf-tagged: auto | enable</code>
+            </div>
+          </div>
+        </div>
+        <div>
+          <div class="example">
+            <div class="syntax-block">
+              <table class="property-table">
+                <tr>
+                  <th scope="row">
+          Initial value
+        </th>
+                  <td>
+                    <code>auto</code>
+                  </td>
+                </tr>
+                <tr>
+                  <th scope="row">
+          Applies to
+        </th>
+                  <td><code>@prince-pdf</code> at-rule</td>
+                </tr>
+                <tr>
+                  <th scope="row">
+          Inherited
+        </th>
+                  <td>
+                  n/a
+                </td>
+                </tr>
+              </table>
+            </div>
+          </div>
+        </div>
+        <div>
+          <div id="prop-prince-pdf-tagged-examples">Examples</div>
+          <div class="example">
+            <div class="programlisting">
+              <pre>
+                <code class="hljs">@prince-pdf {
+    -prince-pdf-tagged: enable;
+}</code>
+              </pre>
+            </div>
+          </div>
+        </div>
+        <div>
+          <div id="prop-prince-pdf-tagged-comments">Comments</div>
+          <p>
+    This property is used to enable tagged PDF.
+    </p>
+        </div>
+        <div>
+          <div id="prop-prince-pdf-tagged-seealso">See Also</div>
           <ul>
             <li>
               <a href="/doc/prince-output/#pdf-tags">PDF Tags</a>
@@ -22639,6 +22639,72 @@ blockquote { margin: 1rem; -prince-resize-options: -1rem; }
       </div>
     </details>
     <details>
+      <summary>
+        <h6 id="prop-tab-size">tab-size <a href="#prop-tab-size" class="hash-link"> </a></h6>
+      </summary>
+      <div>
+        <div>
+          <div id="prop-tab-size-syntax">Syntax</div>
+          <div class="example">
+            <div class="syntax-block">
+              <code>tab-size: <span>&lt;<i>number</i>&gt;</span> | <span>&lt;<i>length</i>&gt;</span></code>
+            </div>
+          </div>
+        </div>
+        <div>
+          <div class="example">
+            <div class="syntax-block">
+              <table class="property-table">
+                <tr>
+                  <th scope="row">
+          Initial value
+        </th>
+                  <td>
+                    <code>8</code>
+                  </td>
+                </tr>
+                <tr>
+                  <th scope="row">
+          Applies to
+        </th>
+                  <td>block containers</td>
+                </tr>
+                <tr>
+                  <th scope="row">
+          Inherited
+        </th>
+                  <td>
+                  yes
+                </td>
+                </tr>
+              </table>
+            </div>
+          </div>
+        </div>
+        <div>
+          <div id="prop-tab-size-comments">Comments</div>
+          <p>
+	This property determines the tab-size for preserved tab characters (U+0009).
+    An integer defines number of spaces in a tab, a length represents the width
+    of a tab.
+	</p>
+          <p>
+    Please note that Prince replaces preserved tab characters with the specified
+    number of spaces, but does not create actual "tab stops" aligned to the left
+    edge of the block.
+    </p>
+        </div>
+        <div>
+          <div id="prop-tab-size-spec">Specification</div>
+          <ul>
+            <li>
+              <a href="https://www.w3.org/TR/css-text-3/#tab-size-property">CSS Text Module Level 3</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </details>
+    <details>
       <summary class="ext" title="Prince extension">
         <h6 id="prop-table-baseline">table-baseline* <a href="#prop-table-baseline" class="hash-link"> </a></h6>
       </summary>
@@ -22861,72 +22927,6 @@ blockquote { margin: 1rem; -prince-resize-options: -1rem; }
           <p class="note">
         The property <a href="#prop-prince-table-row-span"><code>-prince-table-row-span</code></a> can be used as an alias.
         </p>
-        </div>
-      </div>
-    </details>
-    <details>
-      <summary>
-        <h6 id="prop-tab-size">tab-size <a href="#prop-tab-size" class="hash-link"> </a></h6>
-      </summary>
-      <div>
-        <div>
-          <div id="prop-tab-size-syntax">Syntax</div>
-          <div class="example">
-            <div class="syntax-block">
-              <code>tab-size: <span>&lt;<i>number</i>&gt;</span> | <span>&lt;<i>length</i>&gt;</span></code>
-            </div>
-          </div>
-        </div>
-        <div>
-          <div class="example">
-            <div class="syntax-block">
-              <table class="property-table">
-                <tr>
-                  <th scope="row">
-          Initial value
-        </th>
-                  <td>
-                    <code>8</code>
-                  </td>
-                </tr>
-                <tr>
-                  <th scope="row">
-          Applies to
-        </th>
-                  <td>block containers</td>
-                </tr>
-                <tr>
-                  <th scope="row">
-          Inherited
-        </th>
-                  <td>
-                  yes
-                </td>
-                </tr>
-              </table>
-            </div>
-          </div>
-        </div>
-        <div>
-          <div id="prop-tab-size-comments">Comments</div>
-          <p>
-	This property determines the tab-size for preserved tab characters (U+0009).
-    An integer defines number of spaces in a tab, a length represents the width
-    of a tab.
-	</p>
-          <p>
-    Please note that Prince replaces preserved tab characters with the specified
-    number of spaces, but does not create actual "tab stops" aligned to the left
-    edge of the block.
-    </p>
-        </div>
-        <div>
-          <div id="prop-tab-size-spec">Specification</div>
-          <ul>
-            <li>
-              <a href="https://www.w3.org/TR/css-text-3/#tab-size-property">CSS Text Module Level 3</a>
-            </li>
-          </ul>
         </div>
       </div>
     </details>
