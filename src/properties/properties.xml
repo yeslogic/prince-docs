@@ -2,6 +2,15 @@
 
 <!--
 
+NOTE: The current build process will cause this file's content to appear in a JavaScript template literal so we must backslash escape anything that would cause errors in a JavaScript template literal, such as string interpolated expressions starting with dollar curly brace and any escape sequences, including hexadecimal escape sequences, unicode escape sequences and unicode code point escapes. For example:
+
+- change `${}` to `\${}` or `$\{}`
+- change `\017F` to `\\017F`
+
+-->
+
+<!--
+
  - "related properties"?
  - how percentage/relative values apply
  - how to properly display font-family value?
