@@ -321,7 +321,7 @@ table.property-table td {
 #prop-list summary#prop---custom-property-name, #prop-list summary#prop---custom-property-name + div .example .syntax-block > code {
     font-style: italic;
 }
-dt[id], h6[id], th[id], summary[id] {
+dt[id], h6[id], th[id], summary[id], #prop-list div[id] {
     scroll-margin-top: calc(var(--ifm-navbar-height) + 1rem);
 }
 

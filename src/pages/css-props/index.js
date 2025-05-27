@@ -15,6 +15,7 @@ function CssProperties() {
         }
         if (parentDetails) {
           parentDetails.setAttribute("open", "");
+          element.scrollIntoView(); // This is necessary to scroll to IDs inside collapsed `details` elements over a slow connection
         }
       }
     }
@@ -32,6 +33,7 @@ function CssProperties() {
           }
           if (parentDetails && !parentDetails.hasAttribute("open")) {
             parentDetails.setAttribute("open", "");
+            element.scrollIntoView(); // This is necessary to scroll to IDs inside collapsed `details` elements over a slow connection
           }
         }
       }
