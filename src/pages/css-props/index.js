@@ -1,8 +1,47 @@
+import { useEffect } from "react";
 import cssPropsHtml from "./_cssPropsHtml";
 
 function CssProperties() {
-  // TODO: on click of hash-link (i.e. on hashchange), open/close details
-  // TODO: on load, open details for URL hash item
+  useEffect(() => {
+    // On page load/after first render, if there's a hash in the URL, open that id's parent `details` element:
+    const hash = window.location.hash;
+    if (hash) {
+      const id = hash.substring(1); // Remove the '#' from the hash
+      const element = document.getElementById(id);
+      if (element) {
+        let parentDetails = element.parentNode;
+        while (parentDetails && parentDetails.tagName !== "DETAILS") {
+          parentDetails = parentDetails.parentNode;
+        }
+        if (parentDetails) {
+          parentDetails.setAttribute("open", "");
+        }
+      }
+    }
+
+    // On "hashchange"/click of hash-links, open the corresponding id's parent `details` element:
+    window.addEventListener("hashchange", () => {
+      const hash = window.location.hash;
+      if (hash) {
+        const id = hash.substring(1); // Remove the '#' from the hash
+        const element = document.getElementById(id);
+        if (element) {
+          let parentDetails = element.parentNode;
+          while (parentDetails && parentDetails.tagName !== "DETAILS") {
+            parentDetails = parentDetails.parentNode;
+          }
+          if (parentDetails && !parentDetails.hasAttribute("open")) {
+            parentDetails.setAttribute("open", "");
+          }
+        }
+      }
+    });
+
+    // When the css-props component unmounts, remove the hashchange event listener:
+    return () => {
+      window.removeEventListener("hashchange", () => {});
+    };
+  }, []);
 
   const toggleAllCSS = (event) => {
     const propListEl = document.getElementById("prop-list");
