@@ -1,6 +1,6 @@
 // NOTE: The _cssPropsHtml.js file is an automatically generated file in the
 // properties/Makefile build process.
-const cssPropsHtml = `
+const cssPropsHtml = String.raw`
   <div id="prop-list">
     <details>
       <summary>
@@ -17248,17 +17248,17 @@ supplier, item { overflow-wrap: normal; }
     paragraphs.
     </p>
           <p>
-    The <code>\*-greedy</code> and <code>\*-lookahead</code> variations
+    The <code>*-greedy</code> and <code>*-lookahead</code> variations
     allow control over whether the choice of where to end a line
     can be affected by consequences further down the paragraph:
     </p>
           <p>
-    The <code>\*-greedy</code> keywords decide on line breaks solely based on the
+    The <code>*-greedy</code> keywords decide on line breaks solely based on the
     current line and on the length of the next word, never going back to change a
     decision on a line in the light of line-breaking issues encountered later.
     </p>
           <p>
-    The <code>\*-lookahead</code> keywords, on the other hand,
+    The <code>*-lookahead</code> keywords, on the other hand,
     enable paragraph-at-a-time line-breaking for the paragraph in
     a non-justified paragraph:
     choosing where to end the line not just based on what seems best for
@@ -20542,8 +20542,8 @@ supplier, item { overflow-wrap: normal; }
     or
     <code>-<a href="#prop-prince-resize-options">prince-resize-options</a></code>.
     </p>
-          <p>The <code>\*-start</code> values adjust space before the box’s content,
-    <code>\*-end</code> values adjust space after the box’s content,
+          <p>The <code>*-start</code> values adjust space before the box’s content,
+    <code>*-end</code> values adjust space after the box’s content,
     while the plain <code>margin</code> and <code>padding</code>
     values add half of the space adjustment before and half after.</p>
           <p class="note">
@@ -21136,8 +21136,8 @@ blockquote { margin: 1rem; -prince-resize-options: -1rem; }
             <div class="programlisting">
               <pre>
                 <code class="hljs">body {
-  -prince-text-replace: "s" "\\017F"
-                        "\\017F\\20" "s\\20";
+  -prince-text-replace: "s" "\017F"
+                        "\017F\20" "s\20";
 }</code>
               </pre>
             </div>
@@ -21230,17 +21230,17 @@ blockquote { margin: 1rem; -prince-resize-options: -1rem; }
     paragraphs.
     </p>
           <p>
-    The <code>\*-greedy</code> and <code>\*-lookahead</code> variations
+    The <code>*-greedy</code> and <code>*-lookahead</code> variations
     allow control over whether the choice of where to end a line
     can be affected by consequences further down the paragraph:
     </p>
           <p>
-    The <code>\*-greedy</code> keywords decide on line breaks solely based on the
+    The <code>*-greedy</code> keywords decide on line breaks solely based on the
     current line and on the length of the next word, never going back to change a
     decision on a line in the light of line-breaking issues encountered later.
     </p>
           <p>
-    The <code>\*-lookahead</code> keywords, on the other hand,
+    The <code>*-lookahead</code> keywords, on the other hand,
     enable paragraph-at-a-time line-breaking for the paragraph in
     a non-justified paragraph:
     choosing where to end the line not just based on what seems best for
