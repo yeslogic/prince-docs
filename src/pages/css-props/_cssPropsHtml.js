@@ -4488,7 +4488,7 @@ const cssPropsHtml = String.raw`
       </div>
     </details>
     <details>
-      <summary class="dep">
+      <summary class="dep" title="Deprecated property">
         <h6 id="prop-column-break-after">column-break-after <a href="#prop-column-break-after" class="hash-link"> </a></h6>
       </summary>
       <div>
@@ -4550,7 +4550,7 @@ const cssPropsHtml = String.raw`
       </div>
     </details>
     <details>
-      <summary class="dep">
+      <summary class="dep" title="Deprecated property">
         <h6 id="prop-column-break-before">column-break-before <a href="#prop-column-break-before" class="hash-link"> </a></h6>
       </summary>
       <div>
@@ -14001,7 +14001,7 @@ supplier, item { overflow-wrap: normal; }
       </div>
     </details>
     <details>
-      <summary class="dep">
+      <summary class="dep" title="Deprecated property">
         <h6 id="prop-page-break-after">page-break-after <a href="#prop-page-break-after" class="hash-link"> </a></h6>
       </summary>
       <div>
@@ -14075,7 +14075,7 @@ supplier, item { overflow-wrap: normal; }
       </div>
     </details>
     <details>
-      <summary class="dep">
+      <summary class="dep" title="Deprecated property">
         <h6 id="prop-page-break-before">page-break-before <a href="#prop-page-break-before" class="hash-link"> </a></h6>
       </summary>
       <div>
@@ -14150,7 +14150,7 @@ supplier, item { overflow-wrap: normal; }
       </div>
     </details>
     <details>
-      <summary class="dep">
+      <summary class="dep" title="Deprecated property">
         <h6 id="prop-page-break-inside">page-break-inside <a href="#prop-page-break-inside" class="hash-link"> </a></h6>
       </summary>
       <div>
@@ -19214,7 +19214,7 @@ supplier, item { overflow-wrap: normal; }
       </div>
     </details>
     <details>
-      <summary class="ext" title="Prince extension">
+      <summary class="ext dep" title="Deprecated Prince extension">
         <h6 id="prop-prince-pdf-form-field-font-size">-prince-pdf-form-field-font-size* <a href="#prop-prince-pdf-form-field-font-size" class="hash-link"> </a></h6>
       </summary>
       <div>
@@ -19264,6 +19264,65 @@ supplier, item { overflow-wrap: normal; }
         </div>
         <div>
           <div id="prop-prince-pdf-form-field-font-size-seealso">See Also</div>
+          <ul>
+            <li>
+              <a href="/doc/prince-output/#pdf-forms">PDF Forms</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </details>
+    <details>
+      <summary class="ext" title="Prince extension">
+        <h6 id="prop-prince-pdf-form-field-settings">-prince-pdf-form-field-settings* <a href="#prop-prince-pdf-form-field-settings" class="hash-link"> </a></h6>
+      </summary>
+      <div>
+        <div>
+          <div id="prop-prince-pdf-form-field-settings-syntax">Syntax</div>
+          <div class="example">
+            <div class="syntax-block">
+              <code>-prince-pdf-form-field-settings: normal | [ auto-font-size || comb || do-not-scroll ]</code>
+            </div>
+          </div>
+        </div>
+        <div>
+          <div class="example">
+            <div class="syntax-block">
+              <table class="property-table">
+                <tr>
+                  <th scope="row">
+          Initial value
+        </th>
+                  <td>
+                    <code>normal</code>
+                  </td>
+                </tr>
+                <tr>
+                  <th scope="row">
+          Applies to
+        </th>
+                  <td>all text input form elements</td>
+                </tr>
+                <tr>
+                  <th scope="row">
+          Inherited
+        </th>
+                  <td>
+                  no
+                </td>
+                </tr>
+              </table>
+            </div>
+          </div>
+        </div>
+        <div>
+          <div id="prop-prince-pdf-form-field-settings-comments">Comments</div>
+          <p>
+	This property allows to fine-tune PDF forms by setting the equivalent flags in PDF.
+	</p>
+        </div>
+        <div>
+          <div id="prop-prince-pdf-form-field-settings-seealso">See Also</div>
           <ul>
             <li>
               <a href="/doc/prince-output/#pdf-forms">PDF Forms</a>
@@ -23637,7 +23696,7 @@ blockquote { margin: 1rem; -prince-resize-options: -1rem; }
       </div>
     </details>
     <details>
-      <summary class="dep">
+      <summary class="dep" title="Deprecated property">
         <h6 id="prop-text-line-through">text-line-through <a href="#prop-text-line-through" class="hash-link"> </a></h6>
       </summary>
       <div>
@@ -23701,7 +23760,7 @@ blockquote { margin: 1rem; -prince-resize-options: -1rem; }
       </div>
     </details>
     <details>
-      <summary class="dep">
+      <summary class="dep" title="Deprecated property">
         <h6 id="prop-text-line-through-color">text-line-through-color <a href="#prop-text-line-through-color" class="hash-link"> </a></h6>
       </summary>
       <div>
@@ -23755,7 +23814,7 @@ blockquote { margin: 1rem; -prince-resize-options: -1rem; }
       </div>
     </details>
     <details>
-      <summary class="dep">
+      <summary class="dep" title="Deprecated property">
         <h6 id="prop-text-line-through-style">text-line-through-style <a href="#prop-text-line-through-style" class="hash-link"> </a></h6>
       </summary>
       <div>
@@ -23855,7 +23914,7 @@ blockquote { margin: 1rem; -prince-resize-options: -1rem; }
       </div>
     </details>
     <details>
-      <summary class="dep">
+      <summary class="dep" title="Deprecated property">
         <h6 id="prop-text-overline">text-overline <a href="#prop-text-overline" class="hash-link"> </a></h6>
       </summary>
       <div>
@@ -23919,7 +23978,7 @@ blockquote { margin: 1rem; -prince-resize-options: -1rem; }
       </div>
     </details>
     <details>
-      <summary class="dep">
+      <summary class="dep" title="Deprecated property">
         <h6 id="prop-text-overline-color">text-overline-color <a href="#prop-text-overline-color" class="hash-link"> </a></h6>
       </summary>
       <div>
@@ -23973,7 +24032,7 @@ blockquote { margin: 1rem; -prince-resize-options: -1rem; }
       </div>
     </details>
     <details>
-      <summary class="dep">
+      <summary class="dep" title="Deprecated property">
         <h6 id="prop-text-overline-style">text-overline-style <a href="#prop-text-overline-style" class="hash-link"> </a></h6>
       </summary>
       <div>
@@ -24143,7 +24202,7 @@ blockquote { margin: 1rem; -prince-resize-options: -1rem; }
       </div>
     </details>
     <details>
-      <summary class="dep">
+      <summary class="dep" title="Deprecated property">
         <h6 id="prop-text-underline">text-underline <a href="#prop-text-underline" class="hash-link"> </a></h6>
       </summary>
       <div>
@@ -24207,7 +24266,7 @@ blockquote { margin: 1rem; -prince-resize-options: -1rem; }
       </div>
     </details>
     <details>
-      <summary class="dep">
+      <summary class="dep" title="Deprecated property">
         <h6 id="prop-text-underline-color">text-underline-color <a href="#prop-text-underline-color" class="hash-link"> </a></h6>
       </summary>
       <div>
@@ -24385,7 +24444,7 @@ blockquote { margin: 1rem; -prince-resize-options: -1rem; }
       </div>
     </details>
     <details>
-      <summary class="dep">
+      <summary class="dep" title="Deprecated property">
         <h6 id="prop-text-underline-style">text-underline-style <a href="#prop-text-underline-style" class="hash-link"> </a></h6>
       </summary>
       <div>
