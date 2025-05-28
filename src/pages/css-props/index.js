@@ -33,13 +33,11 @@ function CssProperties() {
     openDetails();
 
     // On "hashchange"/click of hash-links, open the corresponding id's parent `details` element:
-    window.addEventListener("hashchange", () => {
-      openDetails();
-    });
+    window.addEventListener("hashchange", openDetails);
 
     // When the css-props component unmounts, remove the hashchange event listener:
     return () => {
-      window.removeEventListener("hashchange", () => {});
+      window.removeEventListener("hashchange", openDetails);
     };
   }, []);
 
