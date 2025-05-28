@@ -1,6 +1,24 @@
 import { useEffect, useMemo } from "react";
 import cssPropsHtml from "./_cssPropsHtml";
 
+function openDetails() {
+  const hash = window.location.hash;
+  if (hash) {
+    const id = hash.substring(1); // Remove the '#' from the hash
+    const element = document.getElementById(id);
+    if (element) {
+      let parentDetails = element.parentNode;
+      while (parentDetails && parentDetails.tagName !== "DETAILS") {
+        parentDetails = parentDetails.parentNode;
+      }
+      if (parentDetails) {
+        parentDetails.setAttribute("open", "");
+        element.scrollIntoView(); // This is necessary to scroll to IDs inside collapsed `details` elements over a slow connection
+      }
+    }
+  }
+}
+
 function CssProperties() {
   // This prevents *other* sections closing when the URL hash changes on hash-link clicks and the page re-renders:
   const memoizedCssPropsHtml = useMemo(
@@ -12,39 +30,11 @@ function CssProperties() {
 
   useEffect(() => {
     // On page load/after first render, if there's a hash in the URL, open that id's parent `details` element:
-    const hash = window.location.hash;
-    if (hash) {
-      const id = hash.substring(1); // Remove the '#' from the hash
-      const element = document.getElementById(id);
-      if (element) {
-        let parentDetails = element.parentNode;
-        while (parentDetails && parentDetails.tagName !== "DETAILS") {
-          parentDetails = parentDetails.parentNode;
-        }
-        if (parentDetails) {
-          parentDetails.setAttribute("open", "");
-          element.scrollIntoView(); // This is necessary to scroll to IDs inside collapsed `details` elements over a slow connection
-        }
-      }
-    }
+    openDetails();
 
     // On "hashchange"/click of hash-links, open the corresponding id's parent `details` element:
     window.addEventListener("hashchange", () => {
-      const hash = window.location.hash;
-      if (hash) {
-        const id = hash.substring(1); // Remove the '#' from the hash
-        const element = document.getElementById(id);
-        if (element) {
-          let parentDetails = element.parentNode;
-          while (parentDetails && parentDetails.tagName !== "DETAILS") {
-            parentDetails = parentDetails.parentNode;
-          }
-          if (parentDetails && !parentDetails.hasAttribute("open")) {
-            parentDetails.setAttribute("open", "");
-            element.scrollIntoView(); // This is necessary to scroll to IDs inside collapsed `details` elements over a slow connection
-          }
-        }
-      }
+      openDetails();
     });
 
     // When the css-props component unmounts, remove the hashchange event listener:
