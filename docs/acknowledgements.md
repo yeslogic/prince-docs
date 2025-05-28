@@ -89,7 +89,7 @@ The <a href="https://libjpeg-turbo.org/">libjpeg<i>-turbo</i></a> library is use
 
 <dt id="libpng">libpng</dt>
 <dd>
-The <a href="http://www.libpng.org/pub/png/">libpng</a> library is used by Prince to load PNG image files.
+The <a href="https://www.libpng.org/pub/png/">libpng</a> library is used by Prince to load PNG image files.
 </dd>
 
 <dt id="libtiff">libtiff</dt>
