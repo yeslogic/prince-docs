@@ -442,6 +442,7 @@ Each attachment is a &lt;URL&gt; (string) or an object:
 
 The value of `relationship` must be one of the AFRelationship keys defined in PDF 2.0:
 
+```
     Source
     Data
     Alternative
@@ -450,6 +451,7 @@ The value of `relationship` must be one of the AFRelationship keys defined in PD
     FormData
     Schema
     Unspecified
+```
 
 or a second-class name according to the following definition:
 "all names that begin with 4 characters including or followed
