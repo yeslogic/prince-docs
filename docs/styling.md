@@ -26,9 +26,9 @@ Prince supports also the Web Open Font format (WOFF/WOFF2), and TTC and WOFF2 fo
 
 To define the font family to be used in a document, the [`font-family`](css-props.md#prop-font-family) property is used. Prince will try to use the specified font family, and should glyphs be missing, it will silently fall back to the next font in the cascade - typically a [generic font family](#generic-font-families).
 
-<p className="note">
+:::note
 If a paragraph or the entire document are mostly in a specific language, it might help to specify a font suitable for that language, in order to avoid most of the unexpected consequences of this font switching mechanism.
-</p>
+:::
 
 To prevent this font switching mechanism altogether, and force Prince to only use the defined font, the special keyword `prince-no-fallback` is available: it triggers a warning if any glyphs are not found in the specified font, instead of switching to another one.
 
@@ -83,9 +83,9 @@ Prince supports OpenType features, and enables certain ones by default in specif
 <tfoot>
 <tr>
 <td colSpan="2">
-<p className="note">
-* Kerning can be disabled with the <code><a href="/doc/css-props#prop-font-kerning">font-kerning</a></code> property.
-</p>
+:::note
+\* Kerning can be disabled with the <code><a href="/doc/css-props#prop-font-kerning">font-kerning</a></code> property.
+:::
 </td>
 </tr>
 </tfoot>
@@ -144,7 +144,9 @@ Prince also allows for low-level fine-tuning with the CSS property [`font-variat
 
 Prince maps the CSS generic font families to the Microsoft Core Fonts. The Microsoft Core Fonts are pre-installed on Windows and MacOS systems but not on Linux systems. To use them on Linux you must install the [msttcorefonts](http://corefonts.sourceforge.net) package, which is available for most Linux distributions.
 
-<p className="note">Instructions for installing fonts on Linux greatly depend on the distribution you are running - we recommend checking the documentation for your own distro.  Here are links to fonts documentation for <a href="https://wiki.ubuntu.com/Fonts">Ubuntu</a>, <a href="https://en.opensuse.org/Fonts">openSuse</a>, <a href="https://wiki.debian.org/Fonts">Debian</a>, and <a href="https://wiki.alpinelinux.org/wiki/Fonts">Alpine Linux</a>.</p>
+:::note
+Instructions for installing fonts on Linux greatly depend on the distribution you are running - we recommend checking the documentation for your own distro.  Here are links to fonts documentation for <a href="https://wiki.ubuntu.com/Fonts">Ubuntu</a>, <a href="https://en.opensuse.org/Fonts">openSuse</a>, <a href="https://wiki.debian.org/Fonts">Debian</a>, and <a href="https://wiki.alpinelinux.org/wiki/Fonts">Alpine Linux</a>.
+:::
 
 The following table shows the default fonts for the main supported languages on Windows, MacOS and Linux.
 
@@ -643,9 +645,9 @@ A `block` element always starts on a new line and takes up all the available wid
 
 An `inline` element, on the other hand, does not start on a new line, and only takes up as much space as necessary.
 
-<p className="note">
-<code>inline</code> elements are not allowed to have <code>block</code> elements inside it.
-</p>
+:::note
+`inline` elements are not allowed to have `block` elements inside it.
+:::
 
 A hybrid type, namely the `inline-block` element, is like `inline` elements, but it can have a width and a height - which can be very useful when you want to create a grid of CSS boxes that fills all the width and wraps nicely. The inside of an `inline-block` element is formatted like a block box.
 
@@ -706,9 +708,9 @@ A list item has two parts: `marker` and `content`.
 
 The `content` part is rendered inside the list item's border box, and is styled the same way as a normal block, such as `div` or `p` element.
 
-<p className="note">
+:::note
 Prince, up to version 15, indented lists by setting a non-zero <em>margin</em> on <code>ol</code> and <code>ul</code> elements. However, browsers indent lists by setting a non-zero <em>padding</em>.  Starting with version 16, Prince follows browser behavior for consistency. This may affect documents previously designed for Prince with this inconsistency in mind.
-</p>
+:::
 
 The `marker` positioning is determined by the [`list-style-position`](css-props.md#prop-list-style-position) property and is styled using the `::marker` pseudo-element.
 
@@ -1109,9 +1111,9 @@ The [`column-fill`](css-props.md#prop-column-fill) property determines how the c
 
 When content is laid out in multiple columns, Prince can determine where column breaks are placed in a similar way to breaking content into pages. Use the properties [`break-before`](css-props.md#prop-break-before) and [`break-after`](css-props.md#prop-break-after) with the value `column` to fine tune this behavior.
 
-<p className="note">
+:::note
 Prince also supports the properties <a href="/doc/css-props/#prop-column-break-before"><code>column-break-before</code></a> and <a href="/doc/css-props/#prop-column-break-after"><code>column-break-after</code></a>. However, you are encouraged to use the newer properties <a href="/doc/css-props/#prop-break-before"><code>break-before</code></a> and <a href="/doc/css-props/#prop-break-after"><code>break-after</code></a> with the keyword <code>column</code> from the CSS Fragmentation Module Level 3.
-</p>
+:::
 
 If an element is to break the flow and span several columns, the property [`column-span`](css-props.md#prop-column-span) helps to achieve this. For floated elements (see [Floats](#floats)) a numeric value tells Prince how many columns the element should span. A numeric value other than `1` will only affect floated elements.
 
@@ -1133,9 +1135,9 @@ Please note that starting with Prince 14, Prince treats a non-multi-column layou
 
 Tables, columns, or other block elements may be too large to fit on the page or in the column - in which case a page or column break occurs in the element.  The property [box-decoration-break](css-props.md#prop-box-decoration-break) determines how the decoration of the box, such as borders, padding, margin, and background, behave - that is, whether they are *cloned* after the break (each fragment is rendered independently, with the specified border, padding, and margin wrapping around each fragment), or whether the element is rendered as if it were not fragmented, and then *sliced* into pieces for each page or column.
 
-<p className="note">
+:::note
 The Prince box-breaking behavior predates the introduction of the <a href="css-props/#prop-box-decoration-break">box-decoration-break</a> CSS property, defaulting to repeating borders when breaking a box, so that each fragment had a top and bottom border. When the property was introduced, Prince kept the default value as <code>clone</code>. Starting with Prince 16, the default value was changed to <code>slice</code> to reflect browser behavior and CSS specifications. To retain the old behavior, it must now be explicitly declared.
-</p>
+:::
 
 ```css
     .info-box {
@@ -1494,9 +1496,9 @@ In some situations it might happen that footnotes do not fit on the page on whic
 ```
 Alternatively, the value `keep-with-block` moves the entire paragraph to the next page.
 
-<p className="note">
+:::note
 This property must be applied to the paragraph in which the footnote occurs, not to the footnote element itself.
-</p>
+:::
 
 Please also consult [A quick guide to creating footnotes in Prince](https://www.princexml.com/howcome/2022/guides/footnotes/) for more examples and complex applications of footnotes.
 
@@ -1598,7 +1600,9 @@ The properties [`align-content`](css-props.md#prop-align-content) and [`justify-
 
 The properties [`column-gap`](css-props.md#prop-column-gap) and [`row-gap`](css-props.md#prop-row-gap), and the shorthand property [`gap`](css-props.md#prop-gap), control the space between flex items - note that they apply only to the space *between items*, not between the items and the outer edge. Also, they sort of define a *minimum* gap between the items: they only apply in the case that the naturally occurring gap would end up *smaller* than the defined value, if it is bigger they have no effect.
 
-<p className="note">The <code>gap</code> and <code>column-gap</code> properties also work in a <a href="#columns">multi-column layout</a>.</p>
+:::note
+The `gap` and `column-gap` properties also work in a <a href="#columns">multi-column layout</a>.
+:::
 
 #### Flex Items
 
@@ -1626,9 +1630,9 @@ Finally, the property [`align-self`](css-props.md#prop-align-self) allows the de
 
 It is important to know that margins of flex items behave in a slightly special way: margins of adjacent flex items do not collapse, and using the keyword `auto` for the margins of a flex item will automatically distribute the available space equally around the item - and it will be centered in both axis!
 
-<p className="note">
+:::note
 Percentage values of margins and paddings of flex items are resolved by Prince against the inline axis, i.e. left/right/top/bottom percentages <em>all resolve against width</em>.
-</p>
+:::
 
 
 ### Grid Layout

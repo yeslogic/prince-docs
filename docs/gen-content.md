@@ -18,9 +18,9 @@ See also the section on [CSS Functional Expressions](css-functions.md) for addit
 
 The most simple use of generating content in these properties is to insert a literal string.
 
-<p className="note">
-CSS generated content strings can also take special characters - but they need to be escaped with a backslash character ("\"), and need to be hexadecimal encoded.  Hence the generated content string "one \a two" will insert a line break character between "one" and "two".  See also the chapter on <a href="/doc/characters/">Character Entities</a>.
-</p>
+:::note
+CSS generated content strings can also take special characters - but they need to be escaped with a backslash character ("\\"), and need to be hexadecimal encoded.  Hence the generated content string `one \a two` will insert a line break character between "one" and "two".  See also the chapter on <a href="/doc/characters/">Character Entities</a>.
+:::
 
 A literal string can also be passed as an argument to the `leader()` function, which expands to fill the available space on the line like justified text, by repeating the string as many times as necessary. An optional second argument can be used to specify a minimum width.
 
@@ -67,7 +67,9 @@ The function <code>prince-expansion-text(<i>expansion</i>, <i>abbreviation</i>)<
 
 This example might show the text "see p. 17" and the tagged PDF structure tree will treat the "p." as an abbreviation with the full expanded text being "see page 17".  The CSS property [-prince-expansion-text](css-props.md#prop-prince-expansion-text) works in a similar fashion.
 
-<p className="note">The <code>prince-expansion-text()</code> function <em>only</em> works in the <a href="/doc/css-props/#prop-content"><code>content</code></a> property, and not in the other properties for which generated content functions work.</p>
+:::note
+The <code>prince-expansion-text()</code> function <em>only</em> works in the <a href="/doc/css-props/#prop-content"><code>content</code></a> property, and not in the other properties for which generated content functions work.
+:::
 
 The following functions can also be used for different forms of counters:
 
@@ -377,9 +379,9 @@ Two special functional expressions offer a more free approach to counters, by al
 </tr>
 </table>
 
-<p className="note">
+:::note
 When using the <code>symbols()</code> function it is advisable to define all the smybols needed for your counters - the fallback to decimal-style counters is mainly thought for debugging reasons.
-</p>
+:::
 
 [User-defined counter styles](#user-defined-counter-styles) for custom counters can also be created with the help of [Script Functions](#script-functions).
 

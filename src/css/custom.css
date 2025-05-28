@@ -343,6 +343,21 @@ p.note:only-child {
     margin-bottom: 0;
 }
 
+.alert {
+    --ifm-alert-border-color: pink;
+    --ifm-alert-shadow: 0 1px 2px 0 rgba(255, 0, 0, 0.1);
+    a {
+        text-decoration: none;
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+}
+.alert--warning {
+    --ifm-alert-border-color: red;
+    --ifm-alert-background-color: rgba(255, 0, 0, 0.1);
+}
+
 #js-support-table details.object {
   background-color: #f2f2f2;
 }

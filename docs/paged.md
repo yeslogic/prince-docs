@@ -71,9 +71,9 @@ The initial values for CSS properties are defined internally - these are the ini
 
 Page size can be specified using the [`size`](css-props.md#prop-size) property in *length* units or by a page size keyword (see [Page Size Keywords](page-size-keywords.md) for a list), optionally combined with the `portrait` or `landscape` keyword.
 
-<p className="note">
+:::note
 The <code>portrait</code> keyword makes the height the largest dimension, while the <code>landscape</code> keyword makes the width the largest dimension. This is a Prince-specific quirk.
-</p>
+:::
 
 ```css
     /* Use A4 paper */
@@ -438,7 +438,9 @@ The full list of page regions is shown in the following [Page regions](#tab-marg
   <dd>
   <p>Prince will try to create <em>page-margin boxes</em> of the correct sizes. If you need to create boxes of specific sizes you may need to use only a single box (eg: <code>@top-center</code>) and use the <a href="/doc/css-props#prop-content"><code>content</code></a> property to place elements with specific sizes in it.</p>
   <p>In the above <a href="#page-regions">Page regions</a> figure, Prince leaves space for <code>@top-right</code> and <code>@left-bottom</code> boxes because their counterparts (<code>@top-left</code> and <code>@left-top</code> respectively) have been defined. This keeps the <code>@top-center</code> and <code>@left-middle</code> centered along the top and side of the page respectively.</p>
-  <p className="note">These page regions, however, only subdivide the space <em>within</em> the page body width, and height, none of them extend into the corners. To target a corner region, the areas ending in <code>-corner</code> need to be used.</p>
+  :::note
+  These page regions, however, only subdivide the space <em>within</em> the page body width, and height, none of them extend into the corners. To target a corner region, the areas ending in <code>-corner</code> need to be used.
+  :::
   <p>The page-margin boxes <code>@top-center</code>, <code>@top-left</code> or <code>@top-right</code> can be used to create running page headers, and the page-margin boxes <code>@bottom-center</code>, <code>@bottom-left</code> or <code>@bottom-right</code> are useful for page footers (see <a href="/doc/cookbook#page-headers-and-footers">Page Headers and Footers</a>).</p>
   </dd>
 
@@ -450,7 +452,9 @@ The full list of page regions is shown in the following [Page regions](#tab-marg
   <p>The page region <code>@footnote</code> is placed by default at the foot of the page area and contains the footnotes (see <a href="/doc/styling#footnotes">Footnotes</a>).</p>
   <p>If there are no footnotes on a page, or if the footnote elements are empty, the footnote area will not be displayed on that page at all.</p>
   <p>The regions <code>@page-float-top</code> and <code>@page-float-bottom</code> are also not displayed at all, if no elements exist for them, but, as opposed to the footnote area, they <em>are</em> displayed if an element exists, but is without content, i.e. an empty element.</p>
-  <p className="note">The <code>@footnote</code> area can be positioned other than its default position (see <a href="/doc/styling#styling-and-behavior-of-footnotes">Styling and behavior of footnotes</a>). All other page regions cannot be moved - their position is defined by the page margins, or their position in the page area.</p>
+  :::note
+  The <code>@footnote</code> area can be positioned other than its default position (see <a href="/doc/styling#styling-and-behavior-of-footnotes">Styling and behavior of footnotes</a>). All other page regions cannot be moved - their position is defined by the page margins, or their position in the page area.
+  :::
   <p>The <code>@leftnote</code> and <code>@rightnote</code> areas for sidenotes are placed left and right of the page area and contain the sidenotes (see <a href="/doc/styling#sidenotes">Sidenotes</a>).  For page spreads, there are also at-rules for <code>@outsidenote</code> and <code>@insidenote</code>, which are placed respectively on the outside or inside edges of each of the two page areas in a page spread.  The sidenote areas need a width to be defined.</p>
   </dd>
 </dl>
@@ -639,9 +643,9 @@ The main content area is 2.5cm from the page's edge on all sides. On the left an
 
 Content can also be *copied*, or *removed* from the normal document flow, to place it into the page regions, as described in the following sections.
 
-<p className="note">
+:::note
 Care must be taken with styling when content is copied or removed from the normal document flow - in the former case, it will receive new styling specific to the page region, while in the latter case it mostly <em>inherits the style of the original location</em>.
-</p>
+:::
 
 
 
@@ -749,9 +753,9 @@ To select not the first page of the whole document, but the first page of each c
     }
 ```
 
-<p className="note">
+:::note
 Up to Prince version 15, the <code>@page:first</code> and <code>@page:nth()</code> selectors, when used together with the CSS property <code>-prince-page-group: start</code> in a page group, would select the first, or the nth page <em>of the page group</em>, respectively. Starting with Prince 16, these selectors <em>always</em> select the first and nth page <em>of the whole document</em>.  To select the first or nth page of a page group, use the selectors <code>@page:first-of-group</code> and <code>@page:nth-of-group()</code>.
-</p>
+:::
 
 The `:left` and `:right` page selectors can be used to style left and right pages in a bound book differently. This is often used in text books to place the page number on the outside top corners of pages.
 
@@ -946,9 +950,9 @@ This example clears the generated content used on these pages. This works becaus
 ```
 If chapter 1 also resets page numbering, then the page numbers will be reset on the first *content page*, i.e. a non-blank page.
 
-<p className="note">
+:::note
 It is not always desirable to have no content on blank pages. Sometimes otherwise blank pages are required have some content, such as a notice saying "This page intentionally left blank". For example, in legal documents, this prevents people from mistaking a dangerous printing error for an intentionally blank page.
-</p>
+:::
 
 ### Page groups
 
@@ -1086,9 +1090,9 @@ Avoiding page breaks within an element is also important. For example, it is bes
 ```
 If the figure or table would have been split across two pages, it may be moved to the next page to keep it in one piece. An element longer than one page will still need to be split across multiple pages.
 
-<p className="note">
+:::note
 The <a href="/doc/css-props#prop-break-inside"><code>break-inside</code></a> property cannot be used to create forced page breaks; its only valid values are <code>auto</code>, and the inhibiting <code>avoid</code>, <code>avoid-page</code> and <code>avoid-column</code>.
-</p>
+:::
 
 These three properties can be applied to block-level elements, table rows and table row groups that occur within an in-flow element (ie. inside the normal flow of the document, not inside a float or an absolutely positioned block). Therefore the figure and table example only make sense when the figure or table is not floated.
 

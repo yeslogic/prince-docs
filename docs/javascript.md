@@ -41,9 +41,9 @@ The Prince log can be accessed from JavaScript via the [`Log`](js-support.md#win
     Log.error("message")
     Log.data("name", "value")
 ```
-<p className="note">
+:::note
 <code>Log.debug()</code> is only available when the <a href="/doc/command-line#cl-debug"><code>--debug</code></a> command-line option has been specified, while <code>Log.info()</code> is only available when the <a href="/doc/command-line#cl-verbose"><code>--verbose</code></a> command-line option has been specified.
-</p>
+:::
 
 ### Console Access
 
@@ -52,9 +52,9 @@ When running Prince from the command-line, the [`console`](js-support.md#window.
 ```javascript
     console.log("Hello, world!")
 ```
-<p className="note">
+:::note
 Console access is only supported when running Prince directly from the command-line, and should not be used when calling Prince through a server wrapper or graphical user interface.
-</p>
+:::
 
 ### Event Handling
 
@@ -68,9 +68,9 @@ When the [`readyState`](js-support.md#window.Document.prototype.readyState) attr
 
 Prince also offers the possibility to register the function [`Prince.registerPostLayoutFunc(func)`](js-support.md#window.Prince.registerPostLayoutFunc) after layout has finished for possibly triggering a new layout - see [Multi-Pass formatting](#multi-pass-formatting) for more details.
 
-<p className="note">
+:::note
 When multiple documents are processed into one PDF, the <code>complete</code> event will only fire once, on the <em>first</em> document.
-</p>
+:::
 
 User interface events such as `onclick` are not supported by Prince.
 
@@ -118,7 +118,9 @@ The [`Prince.convertToFile`](js-support.md#window.Prince.convertToFile) and [`Pr
 
 whereby `JSON` is a job description as specified in the [Job description JSON](server-integration.md#job-description-json), while the optional extra job resource arguments are ArrayBuffers or strings that can be referenced from the JSON using the `job-resource:` URLs. See [Prince Control Protocol](server-integration.md#prince-control-protocol).
 
-<p className="note">The Prince jobs methods are only accessible in <a href="/doc/command-line/#cl-shell">Prince shell mode</a>.</p>
+:::note
+The Prince jobs methods are only accessible in <a href="/doc/command-line/#cl-shell">Prince shell mode</a>.
+:::
 
 #### Failure status
 

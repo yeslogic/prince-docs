@@ -532,10 +532,10 @@ When creating regular footnotes, Prince automatically takes care of the styling 
 
 ### Sidenotes
 
-<p className="note">
+:::note
     Prince offers also experimental native support for sidenotes as of Prince 14.3.
     See <a href="/doc/styling#sidenotes">Sidenotes</a>.
-</p>
+:::
 
 <dl className="ingredients">
   <dt>You need</dt>

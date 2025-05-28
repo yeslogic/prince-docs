@@ -382,9 +382,9 @@ The `input options` object includes these fields:
 ```
 Only the `src` field (highlighted) is required, the rest can be left as defaults.
 
-<p className="note">
+:::note
 URLs must be file names, or HTTP URLs - or, if the user wishes to embed the file inside the job itself, they also can be <code>data:</code> URLs!
-</p>
+:::
 
 The `pdf options` object includes these fields:
 
@@ -568,7 +568,9 @@ A complicated Prince job can be described with the JSON format described above, 
 
 Some things described in such a JSON file also do not have equivalent command-line arguments, such as the ability to specify titles for file attachments, or different settings for different input documents, instead of the same settings for all input documents - in short, the JSON description is more flexible.
 
-<p className="note">If file locations in the JSON file are expressed as <em>relative paths</em>, please note that they are relative <b>to the present working directory</b>, not the path to the JSON file.</p>
+:::note
+If file locations in the JSON file are expressed as <em>relative paths</em>, please note that they are relative <b>to the present working directory</b>, not the path to the JSON file.
+:::
 
 This JSON description can then be passed to Prince with the Job Command-line option [`--job`](command-line.md#cl-job), in order to have Prince execute the described job.
 
@@ -639,9 +641,9 @@ Caller: end
 
 Instead of sending the final `end` chunk the caller may choose to submit another `job` chunk and continue converting documents. The protocol is synchronous so replies simply match requests in order.
 
-<p className="note">
+:::note
 Chunks always begin with a line containing a <b>three letter tag</b>, followed by a space and then <b><em>the number of bytes</em></b> in the chunk as a decimal number, followed by a newline, and then the chunk data.
-</p>
+:::
 
 The `job` chunk contains a description of the conversion job represented in JSON format, which can be followed by an optional sequence of `dat` chunks containing file data which is needed by the job, eg. HTML documents, style sheets, PDF attachments, or whatever.
 
@@ -820,9 +822,9 @@ Please also note that, even when enabled, external entities and XIncludes are ne
 
 However, XML external entities and XInclude are not the only way for accessing local files.  Any image, CSS or JavaScript file in an HTML file can point to a local resource!  This can potentially lead to exposing resources that need to be kept confidential: be aware that the URLs are accessed while Prince is running and the *content* is embedded in the PDFs, not just the URLs themselves!
 
-<p className="warning">
+:::warning
 It is important to know that by default, Prince <em>does</em> have access to local files.
-</p>
+:::
 
 It is good and safe practice to always run Prince with the command-line option [`--no-local-files`](command-line.md#cl-no-local-files) in order to exclude any unwanted access to the local file system when dealing with untrusted content.
 

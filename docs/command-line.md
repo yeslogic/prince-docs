@@ -226,9 +226,9 @@ The command-line may include the options described below:
   <p>
     Rather than retrieving documents beginning with <code className="replaceable">URL</code> get them from the local directory <code className="replaceable">DIR</code>. This option can be used multiple times to specify more than one remapping. It cannot be used with <code>--fileroot</code>.
   </p>
-  <p className="note">
+  :::note
     Prince does not know which file to use when the path maps to a directory (in other words, an index file). If <code>http://www.example.com/</code> is requested, and mapped to <code>example-com</code> it does not know whether to open <code>example-com/index.html</code>, <code>example-com/index.php</code> or any other file as this is site dependent.  In this case Prince will report an error for that resource.
-  </p>
+  :::
   </dd>
   <dt id="cl-fileroot" className="dep">
     <code>

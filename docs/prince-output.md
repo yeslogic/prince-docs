@@ -58,9 +58,9 @@ The PDF/A-[123]a profiles and the PDF/UA-1 profile require tagged PDF, and will 
 
 Prince supports PDF object streams to reduce the size of tagged PDFs. This can be disabled by the command-line argument [`--no-object-streams`](command-line.md#cl-no-object-streams) or from JavaScript via the [`PDF.objectStreams`](js-support.md#window.PDF.objectStreams) boolean property.
 
-<p className="note">
+:::note
 Object streams are enabled by default, therefore Prince produces files with PDF version 1.5 - unless a profile that requires older PDF versions will automatically disable object streams.
-</p>
+:::
 
 Choosing one profile over another can help producing a PDF file which has the right properties for its intended destination. Each PDF profile places restrictions on the features allowed in a PDF file in order to achieve its aims. Please also see the [Color Management](graphics.md#color-management) section for the impact the PDF profiles have on color management. Prince produces error messages when the restrictions are not respected.
 
@@ -123,9 +123,9 @@ The next step would be to specifically check compliance of the document's conten
 
 Prince helps in creating accessible documents. Note, however, that Prince does not create WCAG-compliant documents by itself - care has to be taken, and the HTML source has to be coded in specific ways to address all requirements in order to create WCAG-compliant PDF documents.
 
-<p className="note">
+:::note
 Bruce Lawson has written an interesting introduction on how to make <a href="https://medium.com/@bruce_39084/making-accessible-tagged-pdfs-with-prince-ad7fd7a48711">accessible tagged PDFs with Prince</a> - all you need to know about PDF tags and Prince! Last but not least, there is a nice <a href="https://taggedpdf.com/resources/">Resources</a> page on tagged and accessible PDFs.
-</p>
+:::
 
 Special care needs to be taken when restricting certain features on the created document - notably disallowing copying (with the [--disallow-copy](command-line.md#cl-disallow-copy) command-line option) creates a barrier for screen readers.  To prevent this inconvenience, Prince offers the option to enable text access only for screen reader devices for the visually impaired ([--allow-copy-for-accessibility](command-line.md#cl-allow-copy-for-accessibility)) - see also [PDF Encryption and Document Security](#pdf-encryption-and-document-security).
 
@@ -225,7 +225,9 @@ The [`--prince-pdf-script`](command-line.md#cl-prince-pdf-script) command-line o
 
 PDF scripts can also be passed to Prince by means of a [JSON job description](server-integration.md#prince-job-json), which also allows for multiple scripts being passed to Prince.
 
-<p className="note">The JavaScript method <a href="/doc/js-support/#window.PDF.script">PDF.script</a>, when used as a getter, returns a string if exactly one script string literal was provided (via the command line, the CSS property or the job description), but returns null when multiple scripts are specified. When used as a setter, it only allows to set a single script.</p>
+:::note
+The JavaScript method <a href="/doc/js-support/#window.PDF.script">PDF.script</a>, when used as a getter, returns a string if exactly one script string literal was provided (via the command line, the CSS property or the job description), but returns null when multiple scripts are specified. When used as a setter, it only allows to set a single script.
+:::
 
 ### PDF Pages
 
@@ -606,9 +608,9 @@ PDF tags can also be given a custom title with the [`-prince-pdf-tag-title`](css
 ```
 
 
-<p className="note">
+:::note
 Bruce Lawson has written an interesting introduction on how to make <a href="https://medium.com/@bruce_39084/making-accessible-tagged-pdfs-with-prince-ad7fd7a48711">accessible tagged PDFs with Prince</a> - all you need to know about PDF tags and Prince!
-</p>
+:::
 
 
 ### PDF Metadata

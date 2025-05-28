@@ -58,4 +58,6 @@ In extreme cases, a custom user-agent string can be passed to Prince with the [`
 
 Other custom HTTP headers can be sent to the server with the command-line option [`--http-header`](command-line.md#cl-http-header).  To send multiple custom headers, use the option multiple times.  Note that headers already sent by Prince can be overridden by this command-line option, but cannot be removed.
 
-<p className="note">Please be aware that there can be unforseen side-effects when manipulating HTTP headers, including the User-Agent header.</p>
+:::note
+Please be aware that there can be unforseen side-effects when manipulating HTTP headers, including the User-Agent header.
+:::

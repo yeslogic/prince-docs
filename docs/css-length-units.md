@@ -227,10 +227,10 @@ Furthermore, Prince supports the four angle units `deg`, `grad`, `rad` and `turn
 
 Only supported by [Prince for Books](prince-for-books.md) are line height units.
 
-<p className="note">
+:::note
 If <code>line-height</code> is set to <code>normal</code>, then these units currently
 use the approximation of <code>1.2</code> instead of using the exact font-metrics.
-</p>
+:::
 
 <table className="grid">
 <tr>

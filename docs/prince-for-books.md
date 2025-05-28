@@ -8,9 +8,9 @@ The initial focus of work is on features common to all books: making the page-br
 
 Prince for Books supports everything supported by the standard Prince version.  On top of that, it supports [Line Height Units](css-length-units.md#line-height-units), and also introduces a few new CSS properties in order to handle line breaks and page spreads in a more granular way.  It also tries harder to avoid ragged text (i.e. for left-aligned or centered text), and  tries to avoid a short last line, especially if it is shorter than the value of `text-indent`.
 
-<p className="note">
+:::note
 Prince for Books is updated to the <a href="/pre-release/">Pre-Release Builds</a> at irregular intervals, which may result in Prince for Books being <em>ahead</em> of the current Prince release. This documentation reflects the <a href="/books/">Prince for Books 20240704</a> release, which is based on the 20240704 Pre-Release Build.
-</p>
+:::
 
 For the time being, Prince for Books is only available as a a command-line application named `prince-books`. It is used like the standard Prince - see [Command-line Reference](command-line.md) for available options.
 
@@ -20,9 +20,9 @@ For the time being, Prince for Books is only available as a a command-line appli
 
 To download it, head over to the [Prince for Books download page](/books/). It is available in package bundles only - to install it, the files need to be copied into place (Windows), or an installation script needs to be run (on Linux and MacOS).  For details on the installation layout, please consult the [Installation Layout](installing.md#installation-layout) section.
 
-<p className="note">
+:::note
 Prince for Books can be installed without problem alongside a normal Prince installation - the executable to run is called <code>prince-books</code>, which is also the name of the location for all resource files.
-</p>
+:::
 
 ## Pagination goals
 
@@ -122,7 +122,9 @@ A disadvantage of lookahead is that any "mistakes" (that is, differences from wh
 
 This means that the non-lookahead versions might be a better choice in jobs where Prince's line breaks will be accepted without human oversight; whereas if a typesetter will look, for and correct any problems in the rag of the paragraph, then the lookahead versions will typically give a better starting point.
 
-<p id="note-typesetter" className="note">A typesetter's intervention currently involves modifying the HTML: it is not requireed to assign an <code>id</code> to each paragraph, but it is nevertheless common practice to do so for making other changes, such as changing the number of lines in a paragraph for pagination purposes (whether using <code>-prince-n-lines</code> or <code>word-spacing</code> or <code>letter-spacing</code>), or assigning a unique value to each chapter in order to change how many lines are on the last page of the chapter (say, by adding <code>1pt</code> to the inside margin). See also <a href="#spread-balancing">Spread Balancing</a>.</p>
+:::note
+<a id="note-typesetter"/>A typesetter's intervention currently involves modifying the HTML: it is not requireed to assign an <code>id</code> to each paragraph, but it is nevertheless common practice to do so for making other changes, such as changing the number of lines in a paragraph for pagination purposes (whether using <code>-prince-n-lines</code> or <code>word-spacing</code> or <code>letter-spacing</code>), or assigning a unique value to each chapter in order to change how many lines are on the last page of the chapter (say, by adding <code>1pt</code> to the inside margin). See also <a href="#spread-balancing">Spread Balancing</a>.
+:::
 
 To illustrate the difference, one could also say that non-lookahead versions give paragraph shapes reminiscent of those given by word processors and web browsers, while the lookahead versions come slightly closer to what one might find in books.
 
@@ -218,9 +220,9 @@ Another way to address page balancing is by using the property [`-prince-n-lines
 
 Typically, the best paragraph to apply this property to will be either already long and/or currently has either a very short or almost full last line, so that the paragraph doesn't need to change much in length compared to its existing "length" (as reckoned by its height). That is, the typesetter can choose a good candidate by looking at how much the last line would need to shrink or grow (including a word or two for the next line if growing), and how many times that length would fit in the height of the paragraph, with more being better.
 
-<p className="note">
+:::note
 As noted <a href="#note-typesetter">before</a>, a typesetter's intervention currently involves modifying the HTML.
-</p>
+:::
 
 Values other than the initial value of `auto` request that the paragraph occupy the given number of lines; where values other than a simple integer are relative to the number of lines that the paragraph would have occupied if this property still had its initial value (`auto`).
 
