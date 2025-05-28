@@ -454,9 +454,10 @@ The value of `relationship` must be one of the AFRelationship keys defined in PD
 ```
 
 or a second-class name according to the following definition:
-"all names that begin with 4 characters including or followed
-by a LOW LINE (5fh) or COLON (3Ah) in either the key or value
-of a dictionary entry are second-class names."
+
+> all names that begin with 4 characters including or followed
+> by a LOW LINE (5fh) or COLON (3Ah) in either the key or value
+> of a dictionary entry are second-class names.
 
 The MIME type for an attachment is generally autodetected, based on file extension as defined in the `mime.types` mapping file.  However, there can be cases when a manual override is desired - it can be set with the `mime-type` field.
 
