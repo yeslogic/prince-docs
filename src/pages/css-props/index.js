@@ -1,7 +1,15 @@
-import { useEffect } from "react";
+import { useEffect, useMemo } from "react";
 import cssPropsHtml from "./_cssPropsHtml";
 
 function CssProperties() {
+  // This prevents *other* sections closing when the URL hash changes on hash-link clicks and the page re-renders:
+  const memoizedCssPropsHtml = useMemo(
+    () => ({
+      __html: cssPropsHtml,
+    }),
+    [cssPropsHtml]
+  );
+
   useEffect(() => {
     // On page load/after first render, if there's a hash in the URL, open that id's parent `details` element:
     const hash = window.location.hash;
@@ -146,7 +154,7 @@ function CssProperties() {
             Toggle (open/close) all properties
           </a>
         </p>
-        <div dangerouslySetInnerHTML={{ __html: cssPropsHtml }}></div>
+        <div dangerouslySetInnerHTML={memoizedCssPropsHtml}></div>
       </div>
     </div>
   );
