@@ -59,7 +59,7 @@ The <a href="https://freetype.org/">FreeType</a> library is used by Prince to lo
 
 <dt id="ctan-hyph">CTAN hyphenation files</dt>
 <dd>
-Prince uses the hyphenation pattern files from the <a href="https://ctan.org/tex-archive/language/hyph-utf8/tex/generic/hyph-utf8/patterns/txt">CTAN archive</a>.
+Prince uses the hyphenation pattern files from the <a href="https://ctan.org/tex-archive/language/hyph-utf8/tex/patterns/txt">CTAN archive</a>.
 </dd>
 
 <dt id="libthai">libthai</dt>
