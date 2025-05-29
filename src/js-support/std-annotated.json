@@ -1,4 +1,5 @@
 {
+  "desc": "The global object",
   "NaN": {
     "desc": "The special value Not a Number."
   },

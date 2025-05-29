@@ -1,6 +1,5 @@
 {
   "type": "object",
-  "desc": "The global object",
   "NaN": { "type": "string" },
   "Infinity": { "type": "string" },
   "undefined": { "type": "string" },

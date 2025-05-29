@@ -1,6 +1,5 @@
 {
   "type": "object",
-  "desc": "The global object",
   "NaN": {
     "type": "string",
     "desc": "The special value Not a Number."
@@ -1698,5 +1697,6 @@
     "ext": "ext",
     "type": "object",
     "desc": "also available as <a href='#window.Prince.Log'><code>Prince.Log</code></a>."
-  }
+  },
+  "desc": "The global object"
 }
