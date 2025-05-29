@@ -1,0 +1,601 @@
+{
+  "NaN": {
+    "desc": "The special value Not a Number."
+  },
+  "Infinity": {
+    "desc": "The special value Infinity."
+  },
+  "undefined": {
+    "desc": "Represents the special value undefined."
+  },
+  "eval": {
+    "desc": "Evaluates text as JavaScript source code.",
+    "returns": "Result of evaluation",
+    "arguments": [
+      { "name": "source", "desc": "Code to evaluate", "type": "string" }
+    ]
+  },
+  "parseInt": {
+    "desc": "Turns input into an integer number.",
+    "arguments": [
+      { "type": "string", "name": "value" },
+      {
+        "type": "number",
+        "name": "radix",
+        "desc": "Indicates number base, for example 10 to parse input as a decimal value, 16 for hex values."
+      }
+    ],
+    "example": "parseInt('50')",
+    "exampleReturn": 50,
+    "returns": "number"
+  },
+  "parseFloat": {
+    "desc": "Turns input into a floating point number.",
+    "example": "parseFloat('1.5')",
+    "exampleReturn": 1.5,
+    "returns": "number"
+  },
+  "isNaN": {
+    "desc": "Checks if the argument's value is the special Not a Number value.",
+    "example": "isNaN(parseInt('hello'))",
+    "exampleReturn": true,
+    "returns": "boolean"
+  },
+  "isFinite": {
+    "desc": "Determines whether the passed value is a finite number.",
+    "returns": "boolean"
+  },
+  "escape": {
+    "desc": "Computes a new string by replacing certain characters with a hexadecimal escape sequence.",
+    "returns": "string",
+    "arguments": [
+      { "name": "string", "desc": "String to escape", "type": "string" }
+    ]
+  },
+  "unescape": {
+    "desc": "Computes a new string by replacing hexadecimal escape sequences with the characters they represent.",
+    "returns": "string",
+    "arguments": [
+      { "name": "string", "desc": "String to unescape", "type": "string" }
+    ]
+  },
+  "propertyIsEnumerable": {
+    "desc": "Returns a Boolean indicating whether the specified property is enumerable.",
+    "returns": "boolean"
+  },
+  "Object": {
+    "assign": {},
+    "create": {},
+    "defineProperty": {
+      "desc": "Adds a property to the object and defines certain traits like enumerability.",
+      "arguments": [
+        { "type": "object", "name": "base object" },
+        { "type": "string", "name": "property name" },
+        {
+          "type": "object",
+          "name": "descriptor",
+          "desc": "An object describing the property"
+        }
+      ],
+      "example": "Object.defineProperty(Array.prototype, 'myProp',\n  {enumerable: false})"
+    },
+    "defineProperties": {},
+    "freeze": {},
+    "is": {},
+    "isExtensible": {},
+    "isFrozen": {},
+    "isSealed": {},
+    "keys": {},
+    "getOwnPropertyDescriptor": {},
+    "getOwnPropertyNames": {},
+    "getOwnPropertySymbols": {},
+    "getPrototypeOf": {},
+    "preventExtensions": {},
+    "seal": {},
+    "setPrototypeOf": {},
+    "prototype": {
+      "constructor": {},
+      "toString": {},
+      "toLocaleString": {},
+      "valueOf": {},
+      "hasOwnProperty": {},
+      "isPrototypeOf": {},
+      "propertyIsEnumerable": {}
+    }
+  },
+  "CSSStyleDeclaration": {
+    "prototype": {
+      "alignContent": { "url": "property" },
+      "alignItems": { "url": "property" },
+      "alignSelf": { "url": "property" },
+      "background": { "url": "property" },
+      "backgroundAttachment": { "url": "property" },
+      "backgroundClip": { "url": "property" },
+      "backgroundColor": { "url": "property" },
+      "backgroundImage": { "url": "property" },
+      "backgroundImageResolution": { "ext": "ext", "url": "property" },
+      "backgroundOrigin": { "url": "property" },
+      "backgroundPosition": { "url": "property" },
+      "backgroundRepeat": { "url": "property" },
+      "backgroundSize": { "url": "property" },
+      "baselineShift": { "url": "property" },
+      "bookmarkLabel": { "ext": "ext", "url": "property" },
+      "bookmarkLevel": { "ext": "ext", "url": "property" },
+      "bookmarkState": { "ext": "ext", "url": "property" },
+      "bookmarkTarget": { "ext": "ext", "url": "property" },
+      "border": { "url": "property" },
+      "borderBottom": { "url": "property" },
+      "borderBottomColor": { "url": "property" },
+      "borderBottomLeftRadius": { "url": "property" },
+      "borderBottomRightRadius": { "url": "property" },
+      "borderBottomStyle": { "url": "property" },
+      "borderBottomWidth": { "url": "property" },
+      "borderClip": { "url": "property" },
+      "borderCollapse": { "url": "property" },
+      "borderColor": { "url": "property" },
+      "borderLeft": { "url": "property" },
+      "borderLeftColor": { "url": "property" },
+      "borderLeftStyle": { "url": "property" },
+      "borderLeftWidth": { "url": "property" },
+      "borderRadius": { "url": "property" },
+      "borderRight": { "url": "property" },
+      "borderRightColor": { "url": "property" },
+      "borderRightStyle": { "url": "property" },
+      "borderRightWidth": { "url": "property" },
+      "borderSpacing": { "url": "property" },
+      "borderStyle": { "url": "property" },
+      "borderTop": { "url": "property" },
+      "borderTopColor": { "url": "property" },
+      "borderTopLeftRadius": { "url": "property" },
+      "borderTopRightRadius": { "url": "property" },
+      "borderTopStyle": { "url": "property" },
+      "borderTopWidth": { "url": "property" },
+      "borderWidth": { "url": "property" },
+      "bottom": { "url": "property" },
+      "boxDecorationBreak": { "url": "property" },
+      "boxSizing": { "url": "property" },
+      "breakAfter": { "url": "property" },
+      "breakBefore": { "url": "property" },
+      "breakInside": { "url": "property" },
+      "captionPage": { "ext": "ext", "url": "property" },
+      "captionSide": { "url": "property" },
+      "clear": { "ext": "ext", "url": "property" },
+      "clip": { "url": "property" },
+      "clipPath": { "url": "property" },
+      "clipRule": { "url": "property" },
+      "color": { "url": "property" },
+      "colorInterpolation": { "url": "property" },
+      "colorInterpolationFilters": { "url": "property" },
+      "columnBreakAfter": { "url": "property", "dep": "dep" },
+      "columnBreakBefore": { "url": "property", "dep": "dep" },
+      "columnCount": { "url": "property" },
+      "columnFill": { "url": "property" },
+      "columnGap": { "url": "property" },
+      "columnRule": { "url": "property" },
+      "columnRuleColor": { "url": "property" },
+      "columnRuleStyle": { "url": "property" },
+      "columnRuleWidth": { "url": "property" },
+      "columns": { "url": "property" },
+      "columnSpan": { "url": "property" },
+      "columnWidth": { "url": "property" },
+      "content": { "url": "property" },
+      "counterIncrement": { "url": "property" },
+      "counterReset": { "url": "property" },
+      "direction": { "url": "property" },
+      "display": { "url": "property" },
+      "dominantBaseline": { "url": "property" },
+      "emptyCells": { "url": "property" },
+      "fill": { "url": "property" },
+      "fillOpacity": { "url": "property" },
+      "fillRule": { "url": "property" },
+      "filter": { "url": "property" },
+      "flex": { "url": "property" },
+      "flexBasis": { "url": "property" },
+      "flexDirection": { "url": "property" },
+      "flexFlow": { "url": "property" },
+      "flexGrow": { "url": "property" },
+      "flexShrink": { "url": "property" },
+      "flexWrap": { "url": "property" },
+      "floodColor": { "url": "property" },
+      "floodOpacity": { "url": "property" },
+      "cssFloat": { "ext": "ext", "url": "property" },
+      "floatDeferColumn": { "ext": "ext", "url": "property" },
+      "floatDeferPage": { "ext": "ext", "url": "property" },
+      "floatModifier": { "ext": "ext", "url": "property" },
+      "floatPlacement": { "ext": "ext", "url": "property" },
+      "floatReference": { "ext": "ext", "url": "property" },
+      "floatTail": { "ext": "ext", "url": "property" },
+      "floatPolicy": { "ext": "ext", "url": "property" },
+      "flow": { "ext": "ext", "url": "property" },
+      "font": { "url": "property" },
+      "fontFamily": { "url": "property" },
+      "fontSize": { "url": "property" },
+      "fontStretch": { "url": "property" },
+      "fontStyle": { "url": "property" },
+      "fontVariant": { "url": "property" },
+      "fontWeight": { "url": "property" },
+      "footnoteDisplay": { "url": "property" },
+      "footnoteStylePosition": { "url": "property" },
+      "gap": { "url": "property" },
+      "height": { "url": "property" },
+      "hyphenateAfter": { "ext": "ext", "url": "property" },
+      "hyphenateBefore": { "ext": "ext", "url": "property" },
+      "hyphenateLines": { "ext": "ext", "url": "property" },
+      "hyphenatePatterns": { "ext": "ext", "url": "property" },
+      "hyphens": { "url": "property" },
+      "imageOrientation": { "url": "property" },
+      "imageResolution": { "ext": "ext", "url": "property" },
+      "insetInside": { "url": "property" },
+      "insetOutside": { "url": "property" },
+      "justifyContent": { "url": "property" },
+      "left": { "url": "property" },
+      "letterSpacing": { "url": "property" },
+      "lightingColor": { "url": "property" },
+      "lineHeight": { "url": "property" },
+      "lineStackingStrategy": { "url": "property" },
+      "link": { "ext": "ext", "url": "property" },
+      "listStyle": { "url": "property" },
+      "listStyleImage": { "url": "property" },
+      "listStylePosition": { "url": "property" },
+      "listStyleType": { "url": "property" },
+      "margin": { "url": "property" },
+      "marginAlt": { "ext": "ext", "url": "property" },
+      "marginBottom": { "url": "property" },
+      "marginInside": { "ext": "ext", "url": "property" },
+      "marginLeft": { "url": "property" },
+      "marginOutside": { "ext": "ext", "url": "property" },
+      "marginRight": { "url": "property" },
+      "marginTop": { "url": "property" },
+      "marker": { "url": "property" },
+      "markerEnd": { "url": "property" },
+      "markerMid": { "url": "property" },
+      "markerStart": { "url": "property" },
+      "mask": { "url": "property" },
+      "maxHeight": { "url": "property" },
+      "maxWidth": { "url": "property" },
+      "minHeight": { "url": "property" },
+      "minWidth": { "url": "property" },
+      "opacity": { "url": "property" },
+      "order": { "url": "property" },
+      "orphans": { "url": "property" },
+      "overflow": { "url": "property" },
+      "overflowWrap": { "url": "property" },
+      "padding": { "url": "property" },
+      "paddingBottom": { "url": "property" },
+      "paddingLeft": { "url": "property" },
+      "paddingRight": { "url": "property" },
+      "paddingTop": { "url": "property" },
+      "page": { "url": "property" },
+      "pageBreakAfter": { "url": "property", "dep": "dep" },
+      "pageBreakBefore": { "url": "property", "dep": "dep" },
+      "pageBreakInside": { "url": "property", "dep": "dep" },
+      "pageGroup": { "ext": "ext", "url": "property" },
+      "position": { "url": "property" },
+      "princeBackgroundImageResolution": { "ext": "ext", "url": "property" },
+      "princeBookmarkLabel": { "ext": "ext", "url": "property" },
+      "princeBookmarkLevel": { "ext": "ext", "url": "property" },
+      "princeBookmarkState": { "ext": "ext", "url": "property" },
+      "princeBookmarkTarget": { "ext": "ext", "url": "property" },
+      "princeCaptionPage": { "ext": "ext", "url": "property" },
+      "princeClear": { "ext": "ext", "url": "property" },
+      "princeFilterResolution": { "ext": "ext", "url": "property" },
+      "princeFloatDeferColumn": { "ext": "ext", "url": "property" },
+      "princeFloatDeferPage": { "ext": "ext", "url": "property" },
+      "princeFloatModifier": { "ext": "ext", "url": "property" },
+      "princeFloatPlacement": { "ext": "ext", "url": "property" },
+      "princeFloatReference": { "ext": "ext", "url": "property" },
+      "princeFloatTail": { "ext": "ext", "url": "property" },
+      "princeFloatPolicy": { "ext": "ext", "url": "property" },
+      "princeFlow": { "ext": "ext", "url": "property" },
+      "princeFootnotePolicy": { "ext": "ext", "url": "property" },
+      "princeHyphenateAfter": { "ext": "ext", "url": "property" },
+      "princeHyphenateBefore": { "ext": "ext", "url": "property" },
+      "princeHyphenateCharacter": { "ext": "ext", "url": "property" },
+      "princeHyphenateLines": { "ext": "ext", "url": "property" },
+      "princeHyphenatePatterns": { "ext": "ext", "url": "property" },
+      "princeImageMagic": { "ext": "ext", "url": "property" },
+      "princeImageResolution": { "ext": "ext", "url": "property" },
+      "princeLang": { "ext": "ext", "url": "property" },
+      "princeLinebreakMagic": { "ext": "ext", "url": "property" },
+      "princeLink": { "ext": "ext", "url": "property" },
+      "princeMarginAlt": { "ext": "ext", "url": "property" },
+      "princePageGroup": { "ext": "ext", "url": "property" },
+      "princePdfAnnotationAuthor": { "ext": "ext", "url": "property" },
+      "princePdfAnnotationColor": { "ext": "ext", "url": "property" },
+      "princePdfAnnotationContents": { "ext": "ext", "url": "property" },
+      "princePdfAnnotationCreatedate": { "ext": "ext", "url": "property" },
+      "princePdfAnnotationModifydate": { "ext": "ext", "url": "property" },
+      "princePdfAnnotationPosition": { "ext": "ext", "url": "property" },
+      "princePdfAnnotationTitle": { "ext": "ext", "url": "property" },
+      "princePdfAnnotationType": { "ext": "ext", "url": "property" },
+      "princePdfColorConversion": { "ext": "ext", "url": "property" },
+      "princePdfColorOptions": { "ext": "ext", "url": "property" },
+      "princePdfDestination": { "ext": "ext", "url": "property" },
+      "princePdfLinkType": { "ext": "ext", "url": "property" },
+      "princePdfTagType": { "ext": "ext", "url": "property" },
+      "princeTableColumnSpan": { "ext": "ext", "url": "property" },
+      "princeTableRowSpan": { "ext": "ext", "url": "property" },
+      "princeTextJustify": { "ext": "ext", "url": "property" },
+      "princeTextReplace": { "ext": "ext", "url": "property" },
+      "princeTooltip": { "ext": "ext", "url": "property" },
+      "right": { "url": "property" },
+      "rowGap": { "url": "property" },
+      "stopColor": { "url": "property" },
+      "stopOpacity": { "url": "property" },
+      "stringSet": { "url": "property" },
+      "stroke": { "url": "property" },
+      "strokeDasharray": { "url": "property" },
+      "strokeDashoffset": { "url": "property" },
+      "strokeLinecap": { "url": "property" },
+      "strokeLinejoin": { "url": "property" },
+      "strokeMiterlimit": { "url": "property" },
+      "strokeOpacity": { "url": "property" },
+      "strokeWidth": { "url": "property" },
+      "tableBaseline": { "ext": "ext", "url": "property" },
+      "tableColumnSpan": { "ext": "ext", "url": "property" },
+      "tableLayout": { "url": "property" },
+      "tableRowSpan": { "ext": "ext", "url": "property" },
+      "tabSize": { "url": "property" },
+      "textAlign": { "url": "property" },
+      "textAlignAll": { "url": "property" },
+      "textAlignLast": { "url": "property" },
+      "textAnchor": { "url": "property" },
+      "textDecoration": { "url": "property" },
+      "textIndent": { "url": "property" },
+      "textJustify": { "ext": "ext", "url": "property" },
+      "textLineThrough": { "url": "property", "dep": "dep" },
+      "textLineThroughColor": { "url": "property", "dep": "dep" },
+      "textLineThroughStyle": { "url": "property", "dep": "dep" },
+      "textOverflow": { "url": "property" },
+      "textOverline": { "url": "property", "dep": "dep" },
+      "textOverlineColor": { "url": "property", "dep": "dep" },
+      "textOverlineStyle": { "url": "property", "dep": "dep" },
+      "textTransform": { "url": "property" },
+      "textUnderline": { "url": "property", "dep": "dep" },
+      "textUnderlineColor": { "url": "property", "dep": "dep" },
+      "textUnderlinePosition": { "url": "property" },
+      "textUnderlineStyle": { "url": "property", "dep": "dep" },
+      "top": { "url": "property" },
+      "transform": { "url": "property" },
+      "transformOrigin": { "url": "property" },
+      "unicodeBidi": { "url": "property" },
+      "verticalAlign": { "url": "property" },
+      "visibility": { "url": "property" },
+      "whiteSpace": { "url": "property" },
+      "widows": { "url": "property" },
+      "width": { "url": "property" },
+      "wordBreak": { "url": "property" },
+      "wordSpacing": { "url": "property" },
+      "writingMode": { "url": "property" },
+      "zIndex": { "url": "property" },
+      "setProperty": {},
+      "removeProperty": {},
+      "setPropertyValue": {},
+      "getPropertyValue": {}
+    }
+  },
+  "HTMLInputElement": {
+    "prototype": {
+      "checked": {},
+      "disabled": {},
+      "name": {},
+      "type": {},
+      "value": {}
+    }
+  },
+  "BoxInfo": {
+    "ext": "ext",
+    "returns": "The properties of a box, can be accessed after document conversion has finished - see <a href='/doc/javascript#the-box-tracking-api'>The Box Tracking API</a>.",
+    "prototype": {
+      "type": {
+        "returns": "\"BODY\" | \"COLUMN\" | \"FLEXLINE\" | \"FOOTNOTES\" | \"FLOATS\" | \"BOX\" | \"LINE\" | \"SPAN\" | \"TEXT\" | \"SVG\" | \"IMAGE\""
+      },
+      "pageNum": {},
+      "x": {
+        "returns": "x-coordinate, in pt"
+      },
+      "y": {
+        "returns": "y-coordinate, in pt"
+      },
+      "w": {
+        "returns": "width, in pt"
+      },
+      "h": {
+        "returns": "height, in pt"
+      },
+      "marginBottom": {
+        "returns": "the used value for the bottom margin"
+      },
+      "marginLeft": {
+        "returns": "the used value for the left margin"
+      },
+      "marginRight": {
+        "returns": "the used value for the right margin"
+      },
+      "marginTop": {
+        "returns": "the used value for the top margin"
+      },
+      "floatPosition": {
+        "returns": "\"TOP\" | \"BOTTOM\""
+      },
+      "children": {
+        "returns": "array of child boxes"
+      },
+      "parent": {
+        "returns": "parent box"
+      },
+      "element": {
+        "returns": "DOM element for box (may be null)"
+      },
+      "pseudo": {
+        "returns": "pseudo-element name or null"
+      },
+      "text": {
+      },
+      "style": {
+        "returns": "CSS style object for box"
+      }
+    }
+  },
+  "BoxInfoChildren": {
+    "ext": "ext",
+    "prototype": {
+      "item": {},
+      "length": {}
+    }
+  },
+  "Prince": {
+    "type": "object",
+    "ext": "ext",
+    "desc": "See <a href='/doc/javascript#the-prince-object'>The Prince Object</a>.",
+    "addEventListener": {
+      "desc": "can be called to listen to the <code>complete</code> event on the Prince object. See <a href='/doc/javascript#event-handling'>Event Handling</a>.",
+      "arguments": [
+        { "name": "type", "type": "string" },
+        { "name": "callback", "type": "string" },
+        { "name": "optional extra options", "type": "string" }
+      ]
+    },
+    "oncomplete": {
+      "desc": "The <code>complete</code> event is fired when all layout is finished (and after the last repeated layout, if this was requested), just before the PDF is output, so that it can cancel the PDF output by triggering a fail-safe if necessary, or log information about the PDF like the page count."
+    },
+    "addScriptFunc": {
+      "arguments": [
+        { "name": "name", "type": "string" },
+        { "name": "function", "type": "string" }
+      ],
+      "desc": "exposes an arbitrary JavaScript function to CSS. See <a href='/doc/gen-content#script-functions'>Script Functions</a>."
+    },
+    "trackBoxes": {
+      "type": "function",
+      "desc": "See <a href='/doc/javascript#the-box-tracking-api'>The Box Tracking API</a>.",
+      "arguments": [{ "type": "boolean" }]
+    },
+    "convertToFile": {
+      "type": "function",
+      "arguments": [
+        {
+          "name": "JSON",
+          "type": "string",
+          "desc": "as specified in the <a href='/doc/server-integration#job-description-json'>Job description JSON</a>;"
+        },
+        { "name": "OutputFileName", "type": "string" },
+        {
+          "name": "...optional extra job resources",
+          "type": "ArrayBuffers or strings"
+        }
+      ],
+      "returns": "boolean, indicating success"
+    },
+    "convertToBuffer": {
+      "arguments": [
+        { "name": "JSON", "type": "string" },
+        {
+          "name": "...optional extra job resources",
+          "type": "ArrayBuffers or strings"
+        }
+      ],
+      "returns": "ArrayBuffer if successful, null if not"
+    },
+    "failStatus": {
+      "returns": "boolean"
+    },
+    "pageCount": {
+      "returns": "Total number of document pages, can be accessed after document conversion has finished."
+    },
+    "registerPostLayoutFunc": {
+      "arguments": [{ "name": "function", "type": "string" }],
+      "desc": "See <a href='/doc/javascript#multi-pass-formatting'>Multi-Pass formatting</a>."
+    },
+    "Log": {
+      "type": "object",
+      "desc": "also available as <a href='#window.Log'><code>Log</code></a>.",
+      "debug": {
+        "desc": "only available when the <code>--debug</code> command-line option is specified.",
+        "arguments": [{ "name": "message", "type": "string" }]
+      },
+      "info": {
+        "desc": "only available when the <code>--verbose</code> command-line option is specified.",
+        "arguments": [{ "name": "message", "type": "string" }]
+      },
+      "warning": {
+        "arguments": [{ "name": "message", "type": "string" }]
+      },
+      "error": {
+        "arguments": [{ "name": "message", "type": "string" }]
+      },
+      "data": {
+        "arguments": [
+          { "name": "name", "type": "string" },
+          { "name": "value", "type": "string" }
+        ]
+      }
+    }
+  },
+  "PDF": {
+    "type": "object",
+    "ext": "ext",
+    "desc": "See <a href='/doc/javascript#the-pdf-object'>The PDF Object</a>.",
+    "attachFile": {
+      "type": "function",
+      "arguments": [
+        { "name": "URL", "type": "string" },
+        {
+          "name": "description",
+          "type": "string",
+          "desc": "Optional second argument to describe the attachment."
+        },
+        {
+          "name": "filename",
+          "type": "string",
+          "desc": "Optional third argument to specify the filename to be displayed for the attachment in the PDF."
+        },
+        {
+          "name": "relationship",
+          "type": "string",
+          "desc": "Optional fourth argument to specify the AFRelationship value of the attachment."
+        }
+      ],
+      "example": "PDF.attachFile('data.xls', 'Latest sales figures.', 'SalesFigures', 'Data')"
+    },
+    "colorOptions": {
+      "type": "function",
+      "arguments": [
+        {
+          "type": "string",
+          "desc": "\"auto\" | \"use-true-black\" | \"use-rich-black\""
+        }
+      ]
+    }
+  },
+  "Log": {
+    "ext": "ext",
+    "type": "object",
+    "desc": "also available as <a href='#window.Prince.Log'><code>Prince.Log</code></a>.",
+    "debug": {
+      "desc": "only available when the <code>--debug</code> command-line option is specified.",
+      "type": "function",
+      "arguments": [{ "name": "message", "type": "string" }]
+    },
+    "info": {
+      "desc": "only available when the <code>--verbose</code> command-line option is specified.",
+      "type": "function",
+      "arguments": [{ "name": "message", "type": "string" }]
+    },
+    "warning": {
+      "type": "function",
+      "arguments": [{ "name": "message", "type": "string" }]
+    },
+    "error": {
+      "type": "function",
+      "arguments": [{ "name": "message", "type": "string" }]
+    },
+    "data": {
+      "type": "function",
+      "arguments": [
+        { "name": "name", "type": "string" },
+        { "name": "value", "type": "string" }
+      ]
+    }
+  }
+}

@@ -1,0 +1,1702 @@
+{
+  "type": "object",
+  "desc": "The global object",
+  "NaN": {
+    "type": "string",
+    "desc": "The special value Not a Number."
+  },
+  "Infinity": {
+    "type": "string",
+    "desc": "The special value Infinity."
+  },
+  "undefined": {
+    "type": "string",
+    "desc": "Represents the special value undefined."
+  },
+  "eval": {
+    "type": "function",
+    "desc": "Evaluates text as JavaScript source code.",
+    "returns": "Result of evaluation",
+    "arguments": [
+      {
+        "name": "source",
+        "desc": "Code to evaluate",
+        "type": "string"
+      }
+    ]
+  },
+  "parseInt": {
+    "type": "function",
+    "desc": "Turns input into an integer number.",
+    "arguments": [
+      {
+        "type": "string",
+        "name": "value"
+      },
+      {
+        "type": "number",
+        "name": "radix",
+        "desc": "Indicates number base, for example 10 to parse input as a decimal value, 16 for hex values."
+      }
+    ],
+    "example": "parseInt('50')",
+    "exampleReturn": 50,
+    "returns": "number"
+  },
+  "parseFloat": {
+    "type": "function",
+    "desc": "Turns input into a floating point number.",
+    "example": "parseFloat('1.5')",
+    "exampleReturn": 1.5,
+    "returns": "number"
+  },
+  "isNaN": {
+    "type": "string",
+    "desc": "Checks if the argument's value is the special Not a Number value.",
+    "example": "isNaN(parseInt('hello'))",
+    "exampleReturn": true,
+    "returns": "boolean"
+  },
+  "isFinite": {
+    "type": "string",
+    "desc": "Determines whether the passed value is a finite number.",
+    "returns": "boolean"
+  },
+  "escape": {
+    "type": "string",
+    "desc": "Computes a new string by replacing certain characters with a hexadecimal escape sequence.",
+    "returns": "string",
+    "arguments": [
+      {
+        "name": "string",
+        "desc": "String to escape",
+        "type": "string"
+      }
+    ]
+  },
+  "unescape": {
+    "type": "string",
+    "desc": "Computes a new string by replacing hexadecimal escape sequences with the characters they represent.",
+    "returns": "string",
+    "arguments": [
+      {
+        "name": "string",
+        "desc": "String to unescape",
+        "type": "string"
+      }
+    ]
+  },
+  "propertyIsEnumerable": {
+    "type": "string",
+    "desc": "Returns a Boolean indicating whether the specified property is enumerable.",
+    "returns": "boolean"
+  },
+  "Object": {
+    "type": "function",
+    "assign": {
+      "type": "string"
+    },
+    "create": {
+      "type": "string"
+    },
+    "defineProperty": {
+      "type": "function",
+      "desc": "Adds a property to the object and defines certain traits like enumerability.",
+      "arguments": [
+        {
+          "type": "object",
+          "name": "base object"
+        },
+        {
+          "type": "string",
+          "name": "property name"
+        },
+        {
+          "type": "object",
+          "name": "descriptor",
+          "desc": "An object describing the property"
+        }
+      ],
+      "example": "Object.defineProperty(Array.prototype, 'myProp',\n  {enumerable: false})"
+    },
+    "defineProperties": {
+      "type": "string"
+    },
+    "freeze": {
+      "type": "string"
+    },
+    "is": {
+      "type": "string"
+    },
+    "isExtensible": {
+      "type": "string"
+    },
+    "isFrozen": {
+      "type": "string"
+    },
+    "isSealed": {
+      "type": "string"
+    },
+    "keys": {
+      "type": "string"
+    },
+    "getOwnPropertyDescriptor": {
+      "type": "string"
+    },
+    "getOwnPropertyNames": {
+      "type": "string"
+    },
+    "getOwnPropertySymbols": {
+      "type": "string"
+    },
+    "getPrototypeOf": {
+      "type": "string"
+    },
+    "preventExtensions": {
+      "type": "string"
+    },
+    "seal": {
+      "type": "string"
+    },
+    "setPrototypeOf": {
+      "type": "string"
+    },
+    "prototype": {
+      "constructor": {
+        "type": "string"
+      },
+      "toString": {
+        "type": "string"
+      },
+      "toLocaleString": {
+        "type": "string"
+      },
+      "valueOf": {
+        "type": "string"
+      },
+      "hasOwnProperty": {
+        "type": "string"
+      },
+      "isPrototypeOf": {
+        "type": "string"
+      },
+      "propertyIsEnumerable": {
+        "type": "string"
+      }
+    }
+  },
+  "CSSStyleDeclaration": {
+    "type": "function",
+    "prototype": {
+      "alignContent": {
+        "type": "string",
+        "url": "property"
+      },
+      "alignItems": {
+        "type": "string",
+        "url": "property"
+      },
+      "alignSelf": {
+        "type": "string",
+        "url": "property"
+      },
+      "background": {
+        "type": "string",
+        "url": "property"
+      },
+      "backgroundAttachment": {
+        "type": "string",
+        "url": "property"
+      },
+      "backgroundClip": {
+        "type": "string",
+        "url": "property"
+      },
+      "backgroundColor": {
+        "type": "string",
+        "url": "property"
+      },
+      "backgroundImage": {
+        "type": "string",
+        "url": "property"
+      },
+      "backgroundImageResolution": {
+        "type": "string",
+        "ext": "ext",
+        "url": "property"
+      },
+      "backgroundOrigin": {
+        "type": "string",
+        "url": "property"
+      },
+      "backgroundPosition": {
+        "type": "string",
+        "url": "property"
+      },
+      "backgroundRepeat": {
+        "type": "string",
+        "url": "property"
+      },
+      "backgroundSize": {
+        "type": "string",
+        "url": "property"
+      },
+      "baselineShift": {
+        "type": "string",
+        "url": "property"
+      },
+      "bookmarkLabel": {
+        "type": "string",
+        "ext": "ext",
+        "url": "property"
+      },
+      "bookmarkLevel": {
+        "type": "string",
+        "ext": "ext",
+        "url": "property"
+      },
+      "bookmarkState": {
+        "type": "string",
+        "ext": "ext",
+        "url": "property"
+      },
+      "bookmarkTarget": {
+        "type": "string",
+        "ext": "ext",
+        "url": "property"
+      },
+      "border": {
+        "type": "string",
+        "url": "property"
+      },
+      "borderBottom": {
+        "type": "string",
+        "url": "property"
+      },
+      "borderBottomColor": {
+        "type": "string",
+        "url": "property"
+      },
+      "borderBottomLeftRadius": {
+        "type": "string",
+        "url": "property"
+      },
+      "borderBottomRightRadius": {
+        "type": "string",
+        "url": "property"
+      },
+      "borderBottomStyle": {
+        "type": "string",
+        "url": "property"
+      },
+      "borderBottomWidth": {
+        "type": "string",
+        "url": "property"
+      },
+      "borderClip": {
+        "type": "string",
+        "url": "property"
+      },
+      "borderCollapse": {
+        "type": "string",
+        "url": "property"
+      },
+      "borderColor": {
+        "type": "string",
+        "url": "property"
+      },
+      "borderLeft": {
+        "type": "string",
+        "url": "property"
+      },
+      "borderLeftColor": {
+        "type": "string",
+        "url": "property"
+      },
+      "borderLeftStyle": {
+        "type": "string",
+        "url": "property"
+      },
+      "borderLeftWidth": {
+        "type": "string",
+        "url": "property"
+      },
+      "borderRadius": {
+        "type": "string",
+        "url": "property"
+      },
+      "borderRight": {
+        "type": "string",
+        "url": "property"
+      },
+      "borderRightColor": {
+        "type": "string",
+        "url": "property"
+      },
+      "borderRightStyle": {
+        "type": "string",
+        "url": "property"
+      },
+      "borderRightWidth": {
+        "type": "string",
+        "url": "property"
+      },
+      "borderSpacing": {
+        "type": "string",
+        "url": "property"
+      },
+      "borderStyle": {
+        "type": "string",
+        "url": "property"
+      },
+      "borderTop": {
+        "type": "string",
+        "url": "property"
+      },
+      "borderTopColor": {
+        "type": "string",
+        "url": "property"
+      },
+      "borderTopLeftRadius": {
+        "type": "string",
+        "url": "property"
+      },
+      "borderTopRightRadius": {
+        "type": "string",
+        "url": "property"
+      },
+      "borderTopStyle": {
+        "type": "string",
+        "url": "property"
+      },
+      "borderTopWidth": {
+        "type": "string",
+        "url": "property"
+      },
+      "borderWidth": {
+        "type": "string",
+        "url": "property"
+      },
+      "bottom": {
+        "type": "string",
+        "url": "property"
+      },
+      "boxDecorationBreak": {
+        "type": "string",
+        "url": "property"
+      },
+      "boxSizing": {
+        "type": "string",
+        "url": "property"
+      },
+      "breakAfter": {
+        "type": "string",
+        "url": "property"
+      },
+      "breakBefore": {
+        "type": "string",
+        "url": "property"
+      },
+      "breakInside": {
+        "type": "string",
+        "url": "property"
+      },
+      "captionPage": {
+        "type": "string",
+        "ext": "ext",
+        "url": "property"
+      },
+      "captionSide": {
+        "type": "string",
+        "url": "property"
+      },
+      "clear": {
+        "type": "string",
+        "ext": "ext",
+        "url": "property"
+      },
+      "clip": {
+        "type": "string",
+        "url": "property"
+      },
+      "clipPath": {
+        "type": "string",
+        "url": "property"
+      },
+      "clipRule": {
+        "type": "string",
+        "url": "property"
+      },
+      "color": {
+        "type": "string",
+        "url": "property"
+      },
+      "colorInterpolation": {
+        "type": "string",
+        "url": "property"
+      },
+      "colorInterpolationFilters": {
+        "type": "string",
+        "url": "property"
+      },
+      "columnBreakAfter": {
+        "type": "string",
+        "url": "property",
+        "dep": "dep"
+      },
+      "columnBreakBefore": {
+        "type": "string",
+        "url": "property",
+        "dep": "dep"
+      },
+      "columnCount": {
+        "type": "string",
+        "url": "property"
+      },
+      "columnFill": {
+        "type": "string",
+        "url": "property"
+      },
+      "columnGap": {
+        "type": "string",
+        "url": "property"
+      },
+      "columnRule": {
+        "type": "string",
+        "url": "property"
+      },
+      "columnRuleColor": {
+        "type": "string",
+        "url": "property"
+      },
+      "columnRuleStyle": {
+        "type": "string",
+        "url": "property"
+      },
+      "columnRuleWidth": {
+        "type": "string",
+        "url": "property"
+      },
+      "columns": {
+        "type": "string",
+        "url": "property"
+      },
+      "columnSpan": {
+        "type": "string",
+        "url": "property"
+      },
+      "columnWidth": {
+        "type": "string",
+        "url": "property"
+      },
+      "content": {
+        "type": "string",
+        "url": "property"
+      },
+      "counterIncrement": {
+        "type": "string",
+        "url": "property"
+      },
+      "counterReset": {
+        "type": "string",
+        "url": "property"
+      },
+      "direction": {
+        "type": "string",
+        "url": "property"
+      },
+      "display": {
+        "type": "string",
+        "url": "property"
+      },
+      "dominantBaseline": {
+        "type": "string",
+        "url": "property"
+      },
+      "emptyCells": {
+        "type": "string",
+        "url": "property"
+      },
+      "fill": {
+        "type": "string",
+        "url": "property"
+      },
+      "fillOpacity": {
+        "type": "string",
+        "url": "property"
+      },
+      "fillRule": {
+        "type": "string",
+        "url": "property"
+      },
+      "filter": {
+        "type": "string",
+        "url": "property"
+      },
+      "flex": {
+        "type": "string",
+        "url": "property"
+      },
+      "flexBasis": {
+        "type": "string",
+        "url": "property"
+      },
+      "flexDirection": {
+        "type": "string",
+        "url": "property"
+      },
+      "flexFlow": {
+        "type": "string",
+        "url": "property"
+      },
+      "flexGrow": {
+        "type": "string",
+        "url": "property"
+      },
+      "flexShrink": {
+        "type": "string",
+        "url": "property"
+      },
+      "flexWrap": {
+        "type": "string",
+        "url": "property"
+      },
+      "floodColor": {
+        "type": "string",
+        "url": "property"
+      },
+      "floodOpacity": {
+        "type": "string",
+        "url": "property"
+      },
+      "cssFloat": {
+        "type": "string",
+        "ext": "ext",
+        "url": "property"
+      },
+      "floatDeferColumn": {
+        "type": "string",
+        "ext": "ext",
+        "url": "property"
+      },
+      "floatDeferPage": {
+        "type": "string",
+        "ext": "ext",
+        "url": "property"
+      },
+      "floatModifier": {
+        "type": "string",
+        "ext": "ext",
+        "url": "property"
+      },
+      "floatPlacement": {
+        "type": "string",
+        "ext": "ext",
+        "url": "property"
+      },
+      "floatReference": {
+        "type": "string",
+        "ext": "ext",
+        "url": "property"
+      },
+      "floatTail": {
+        "type": "string",
+        "ext": "ext",
+        "url": "property"
+      },
+      "floatPolicy": {
+        "type": "string",
+        "ext": "ext",
+        "url": "property"
+      },
+      "flow": {
+        "type": "string",
+        "ext": "ext",
+        "url": "property"
+      },
+      "font": {
+        "type": "string",
+        "url": "property"
+      },
+      "fontFamily": {
+        "type": "string",
+        "url": "property"
+      },
+      "fontSize": {
+        "type": "string",
+        "url": "property"
+      },
+      "fontStretch": {
+        "type": "string",
+        "url": "property"
+      },
+      "fontStyle": {
+        "type": "string",
+        "url": "property"
+      },
+      "fontVariant": {
+        "type": "string",
+        "url": "property"
+      },
+      "fontWeight": {
+        "type": "string",
+        "url": "property"
+      },
+      "footnoteDisplay": {
+        "type": "string",
+        "url": "property"
+      },
+      "footnoteStylePosition": {
+        "type": "string",
+        "url": "property"
+      },
+      "gap": {
+        "type": "string",
+        "url": "property"
+      },
+      "height": {
+        "type": "string",
+        "url": "property"
+      },
+      "hyphenateAfter": {
+        "type": "string",
+        "ext": "ext",
+        "url": "property"
+      },
+      "hyphenateBefore": {
+        "type": "string",
+        "ext": "ext",
+        "url": "property"
+      },
+      "hyphenateLines": {
+        "type": "string",
+        "ext": "ext",
+        "url": "property"
+      },
+      "hyphenatePatterns": {
+        "type": "string",
+        "ext": "ext",
+        "url": "property"
+      },
+      "hyphens": {
+        "type": "string",
+        "url": "property"
+      },
+      "imageOrientation": {
+        "type": "string",
+        "url": "property"
+      },
+      "imageResolution": {
+        "type": "string",
+        "ext": "ext",
+        "url": "property"
+      },
+      "insetInside": {
+        "type": "string",
+        "url": "property"
+      },
+      "insetOutside": {
+        "type": "string",
+        "url": "property"
+      },
+      "justifyContent": {
+        "type": "string",
+        "url": "property"
+      },
+      "left": {
+        "type": "string",
+        "url": "property"
+      },
+      "letterSpacing": {
+        "type": "string",
+        "url": "property"
+      },
+      "lightingColor": {
+        "type": "string",
+        "url": "property"
+      },
+      "lineHeight": {
+        "type": "string",
+        "url": "property"
+      },
+      "lineStackingStrategy": {
+        "type": "string",
+        "url": "property"
+      },
+      "link": {
+        "type": "string",
+        "ext": "ext",
+        "url": "property"
+      },
+      "listStyle": {
+        "type": "string",
+        "url": "property"
+      },
+      "listStyleImage": {
+        "type": "string",
+        "url": "property"
+      },
+      "listStylePosition": {
+        "type": "string",
+        "url": "property"
+      },
+      "listStyleType": {
+        "type": "string",
+        "url": "property"
+      },
+      "margin": {
+        "type": "string",
+        "url": "property"
+      },
+      "marginAlt": {
+        "type": "string",
+        "ext": "ext",
+        "url": "property"
+      },
+      "marginBottom": {
+        "type": "string",
+        "url": "property"
+      },
+      "marginInside": {
+        "type": "string",
+        "ext": "ext",
+        "url": "property"
+      },
+      "marginLeft": {
+        "type": "string",
+        "url": "property"
+      },
+      "marginOutside": {
+        "type": "string",
+        "ext": "ext",
+        "url": "property"
+      },
+      "marginRight": {
+        "type": "string",
+        "url": "property"
+      },
+      "marginTop": {
+        "type": "string",
+        "url": "property"
+      },
+      "marker": {
+        "type": "string",
+        "url": "property"
+      },
+      "markerEnd": {
+        "type": "string",
+        "url": "property"
+      },
+      "markerMid": {
+        "type": "string",
+        "url": "property"
+      },
+      "markerStart": {
+        "type": "string",
+        "url": "property"
+      },
+      "mask": {
+        "type": "string",
+        "url": "property"
+      },
+      "maxHeight": {
+        "type": "string",
+        "url": "property"
+      },
+      "maxWidth": {
+        "type": "string",
+        "url": "property"
+      },
+      "minHeight": {
+        "type": "string",
+        "url": "property"
+      },
+      "minWidth": {
+        "type": "string",
+        "url": "property"
+      },
+      "opacity": {
+        "type": "string",
+        "url": "property"
+      },
+      "order": {
+        "type": "string",
+        "url": "property"
+      },
+      "orphans": {
+        "type": "string",
+        "url": "property"
+      },
+      "overflow": {
+        "type": "string",
+        "url": "property"
+      },
+      "overflowWrap": {
+        "type": "string",
+        "url": "property"
+      },
+      "padding": {
+        "type": "string",
+        "url": "property"
+      },
+      "paddingBottom": {
+        "type": "string",
+        "url": "property"
+      },
+      "paddingLeft": {
+        "type": "string",
+        "url": "property"
+      },
+      "paddingRight": {
+        "type": "string",
+        "url": "property"
+      },
+      "paddingTop": {
+        "type": "string",
+        "url": "property"
+      },
+      "page": {
+        "type": "string",
+        "url": "property"
+      },
+      "pageBreakAfter": {
+        "type": "string",
+        "url": "property",
+        "dep": "dep"
+      },
+      "pageBreakBefore": {
+        "type": "string",
+        "url": "property",
+        "dep": "dep"
+      },
+      "pageBreakInside": {
+        "type": "string",
+        "url": "property",
+        "dep": "dep"
+      },
+      "pageGroup": {
+        "type": "string",
+        "ext": "ext",
+        "url": "property"
+      },
+      "position": {
+        "type": "string",
+        "url": "property"
+      },
+      "princeBackgroundImageResolution": {
+        "type": "string",
+        "ext": "ext",
+        "url": "property"
+      },
+      "princeBookmarkLabel": {
+        "type": "string",
+        "ext": "ext",
+        "url": "property"
+      },
+      "princeBookmarkLevel": {
+        "type": "string",
+        "ext": "ext",
+        "url": "property"
+      },
+      "princeBookmarkState": {
+        "type": "string",
+        "ext": "ext",
+        "url": "property"
+      },
+      "princeBookmarkTarget": {
+        "type": "string",
+        "ext": "ext",
+        "url": "property"
+      },
+      "princeCaptionPage": {
+        "type": "string",
+        "ext": "ext",
+        "url": "property"
+      },
+      "princeClear": {
+        "type": "string",
+        "ext": "ext",
+        "url": "property"
+      },
+      "princeFilterResolution": {
+        "type": "string",
+        "ext": "ext",
+        "url": "property"
+      },
+      "princeFloatDeferColumn": {
+        "type": "string",
+        "ext": "ext",
+        "url": "property"
+      },
+      "princeFloatDeferPage": {
+        "type": "string",
+        "ext": "ext",
+        "url": "property"
+      },
+      "princeFloatModifier": {
+        "type": "string",
+        "ext": "ext",
+        "url": "property"
+      },
+      "princeFloatPlacement": {
+        "type": "string",
+        "ext": "ext",
+        "url": "property"
+      },
+      "princeFloatReference": {
+        "type": "string",
+        "ext": "ext",
+        "url": "property"
+      },
+      "princeFloatTail": {
+        "type": "string",
+        "ext": "ext",
+        "url": "property"
+      },
+      "princeFloatPolicy": {
+        "type": "string",
+        "ext": "ext",
+        "url": "property"
+      },
+      "princeFlow": {
+        "type": "string",
+        "ext": "ext",
+        "url": "property"
+      },
+      "princeFootnotePolicy": {
+        "type": "string",
+        "ext": "ext",
+        "url": "property"
+      },
+      "princeHyphenateAfter": {
+        "type": "string",
+        "ext": "ext",
+        "url": "property"
+      },
+      "princeHyphenateBefore": {
+        "type": "string",
+        "ext": "ext",
+        "url": "property"
+      },
+      "princeHyphenateCharacter": {
+        "type": "string",
+        "ext": "ext",
+        "url": "property"
+      },
+      "princeHyphenateLines": {
+        "type": "string",
+        "ext": "ext",
+        "url": "property"
+      },
+      "princeHyphenatePatterns": {
+        "type": "string",
+        "ext": "ext",
+        "url": "property"
+      },
+      "princeImageMagic": {
+        "type": "string",
+        "ext": "ext",
+        "url": "property"
+      },
+      "princeImageResolution": {
+        "type": "string",
+        "ext": "ext",
+        "url": "property"
+      },
+      "princeLang": {
+        "type": "string",
+        "ext": "ext",
+        "url": "property"
+      },
+      "princeLinebreakMagic": {
+        "type": "string",
+        "ext": "ext",
+        "url": "property"
+      },
+      "princeLink": {
+        "type": "string",
+        "ext": "ext",
+        "url": "property"
+      },
+      "princeMarginAlt": {
+        "type": "string",
+        "ext": "ext",
+        "url": "property"
+      },
+      "princePageGroup": {
+        "type": "string",
+        "ext": "ext",
+        "url": "property"
+      },
+      "princePdfAnnotationAuthor": {
+        "type": "string",
+        "ext": "ext",
+        "url": "property"
+      },
+      "princePdfAnnotationColor": {
+        "type": "string",
+        "ext": "ext",
+        "url": "property"
+      },
+      "princePdfAnnotationContents": {
+        "type": "string",
+        "ext": "ext",
+        "url": "property"
+      },
+      "princePdfAnnotationCreatedate": {
+        "type": "string",
+        "ext": "ext",
+        "url": "property"
+      },
+      "princePdfAnnotationModifydate": {
+        "type": "string",
+        "ext": "ext",
+        "url": "property"
+      },
+      "princePdfAnnotationPosition": {
+        "type": "string",
+        "ext": "ext",
+        "url": "property"
+      },
+      "princePdfAnnotationTitle": {
+        "type": "string",
+        "ext": "ext",
+        "url": "property"
+      },
+      "princePdfAnnotationType": {
+        "type": "string",
+        "ext": "ext",
+        "url": "property"
+      },
+      "princePdfColorConversion": {
+        "type": "string",
+        "ext": "ext",
+        "url": "property"
+      },
+      "princePdfColorOptions": {
+        "type": "string",
+        "ext": "ext",
+        "url": "property"
+      },
+      "princePdfDestination": {
+        "type": "string",
+        "ext": "ext",
+        "url": "property"
+      },
+      "princePdfLinkType": {
+        "type": "string",
+        "ext": "ext",
+        "url": "property"
+      },
+      "princePdfTagType": {
+        "type": "string",
+        "ext": "ext",
+        "url": "property"
+      },
+      "princeTableColumnSpan": {
+        "type": "string",
+        "ext": "ext",
+        "url": "property"
+      },
+      "princeTableRowSpan": {
+        "type": "string",
+        "ext": "ext",
+        "url": "property"
+      },
+      "princeTextJustify": {
+        "type": "string",
+        "ext": "ext",
+        "url": "property"
+      },
+      "princeTextReplace": {
+        "type": "string",
+        "ext": "ext",
+        "url": "property"
+      },
+      "princeTooltip": {
+        "type": "string",
+        "ext": "ext",
+        "url": "property"
+      },
+      "right": {
+        "type": "string",
+        "url": "property"
+      },
+      "rowGap": {
+        "type": "string",
+        "url": "property"
+      },
+      "stopColor": {
+        "type": "string",
+        "url": "property"
+      },
+      "stopOpacity": {
+        "type": "string",
+        "url": "property"
+      },
+      "stringSet": {
+        "type": "string",
+        "url": "property"
+      },
+      "stroke": {
+        "type": "string",
+        "url": "property"
+      },
+      "strokeDasharray": {
+        "type": "string",
+        "url": "property"
+      },
+      "strokeDashoffset": {
+        "type": "string",
+        "url": "property"
+      },
+      "strokeLinecap": {
+        "type": "string",
+        "url": "property"
+      },
+      "strokeLinejoin": {
+        "type": "string",
+        "url": "property"
+      },
+      "strokeMiterlimit": {
+        "type": "string",
+        "url": "property"
+      },
+      "strokeOpacity": {
+        "type": "string",
+        "url": "property"
+      },
+      "strokeWidth": {
+        "type": "string",
+        "url": "property"
+      },
+      "tableBaseline": {
+        "type": "string",
+        "ext": "ext",
+        "url": "property"
+      },
+      "tableColumnSpan": {
+        "type": "string",
+        "ext": "ext",
+        "url": "property"
+      },
+      "tableLayout": {
+        "type": "string",
+        "url": "property"
+      },
+      "tableRowSpan": {
+        "type": "string",
+        "ext": "ext",
+        "url": "property"
+      },
+      "tabSize": {
+        "type": "string",
+        "url": "property"
+      },
+      "textAlign": {
+        "type": "string",
+        "url": "property"
+      },
+      "textAlignAll": {
+        "type": "string",
+        "url": "property"
+      },
+      "textAlignLast": {
+        "type": "string",
+        "url": "property"
+      },
+      "textAnchor": {
+        "type": "string",
+        "url": "property"
+      },
+      "textDecoration": {
+        "type": "string",
+        "url": "property"
+      },
+      "textIndent": {
+        "type": "string",
+        "url": "property"
+      },
+      "textJustify": {
+        "type": "string",
+        "ext": "ext",
+        "url": "property"
+      },
+      "textLineThrough": {
+        "type": "string",
+        "url": "property",
+        "dep": "dep"
+      },
+      "textLineThroughColor": {
+        "type": "string",
+        "url": "property",
+        "dep": "dep"
+      },
+      "textLineThroughStyle": {
+        "type": "string",
+        "url": "property",
+        "dep": "dep"
+      },
+      "textOverflow": {
+        "type": "string",
+        "url": "property"
+      },
+      "textOverline": {
+        "type": "string",
+        "url": "property",
+        "dep": "dep"
+      },
+      "textOverlineColor": {
+        "type": "string",
+        "url": "property",
+        "dep": "dep"
+      },
+      "textOverlineStyle": {
+        "type": "string",
+        "url": "property",
+        "dep": "dep"
+      },
+      "textTransform": {
+        "type": "string",
+        "url": "property"
+      },
+      "textUnderline": {
+        "type": "string",
+        "url": "property",
+        "dep": "dep"
+      },
+      "textUnderlineColor": {
+        "type": "string",
+        "url": "property",
+        "dep": "dep"
+      },
+      "textUnderlinePosition": {
+        "type": "string",
+        "url": "property"
+      },
+      "textUnderlineStyle": {
+        "type": "string",
+        "url": "property",
+        "dep": "dep"
+      },
+      "top": {
+        "type": "string",
+        "url": "property"
+      },
+      "transform": {
+        "type": "string",
+        "url": "property"
+      },
+      "transformOrigin": {
+        "type": "string",
+        "url": "property"
+      },
+      "unicodeBidi": {
+        "type": "string",
+        "url": "property"
+      },
+      "verticalAlign": {
+        "type": "string",
+        "url": "property"
+      },
+      "visibility": {
+        "type": "string",
+        "url": "property"
+      },
+      "whiteSpace": {
+        "type": "string",
+        "url": "property"
+      },
+      "widows": {
+        "type": "string",
+        "url": "property"
+      },
+      "width": {
+        "type": "string",
+        "url": "property"
+      },
+      "wordBreak": {
+        "type": "string",
+        "url": "property"
+      },
+      "wordSpacing": {
+        "type": "string",
+        "url": "property"
+      },
+      "writingMode": {
+        "type": "string",
+        "url": "property"
+      },
+      "zIndex": {
+        "type": "string",
+        "url": "property"
+      },
+      "setProperty": {
+        "type": "string"
+      },
+      "removeProperty": {
+        "type": "string"
+      },
+      "setPropertyValue": {
+        "type": "string"
+      },
+      "getPropertyValue": {
+        "type": "string"
+      }
+    }
+  },
+  "HTMLInputElement": {
+    "type": "function",
+    "prototype": {
+      "checked": {
+        "type": "string"
+      },
+      "disabled": {
+        "type": "string"
+      },
+      "name": {
+        "type": "string"
+      },
+      "type": {
+        "type": "string"
+      },
+      "value": {
+        "type": "string"
+      }
+    }
+  },
+  "BoxInfo": {
+    "type": "function",
+    "prototype": {
+      "type": {
+        "type": "function",
+        "returns": "\"BODY\" | \"COLUMN\" | \"FLEXLINE\" | \"FOOTNOTES\" | \"FLOATS\" | \"BOX\" | \"LINE\" | \"SPAN\" | \"TEXT\" | \"SVG\" | \"IMAGE\""
+      },
+      "pageNum": {},
+      "x": {
+        "type": "function",
+        "returns": "x-coordinate, in pt"
+      },
+      "y": {
+        "type": "function",
+        "returns": "y-coordinate, in pt"
+      },
+      "w": {
+        "type": "function",
+        "returns": "width, in pt"
+      },
+      "h": {
+        "type": "function",
+        "returns": "height, in pt"
+      },
+      "marginBottom": {
+        "type": "function",
+        "returns": "the used value for the bottom margin"
+      },
+      "marginLeft": {
+        "type": "function",
+        "returns": "the used value for the left margin"
+      },
+      "marginRight": {
+        "type": "function",
+        "returns": "the used value for the right margin"
+      },
+      "marginTop": {
+        "type": "function",
+        "returns": "the used value for the top margin"
+      },
+      "floatPosition": {
+        "type": "function",
+        "returns": "\"TOP\" | \"BOTTOM\""
+      },
+      "children": {
+        "type": "function",
+        "returns": "array of child boxes"
+      },
+      "parent": {
+        "type": "function",
+        "returns": "parent box"
+      },
+      "element": {
+        "type": "function",
+        "returns": "DOM element for box (may be null)"
+      },
+      "pseudo": {
+        "type": "function",
+        "returns": "pseudo-element name or null"
+      },
+      "text": {
+        "type": "string"
+      },
+      "style": {
+        "type": "function",
+        "returns": "CSS style object for box"
+      }
+    },
+    "ext": "ext",
+    "returns": "The properties of a box, can be accessed after document conversion has finished - see <a href='/doc/javascript#the-box-tracking-api'>The Box Tracking API</a>."
+  },
+  "BoxInfoChildren": {
+    "type": "function",
+    "prototype": {
+      "item": {
+        "type": "string"
+      },
+      "length": {
+        "type": "string"
+      }
+    },
+    "ext": "ext"
+  },
+  "Prince": {
+    "type": "object",
+    "addEventListener": {
+      "type": "function",
+      "desc": "can be called to listen to the <code>complete</code> event on the Prince object. See <a href='/doc/javascript#event-handling'>Event Handling</a>.",
+      "arguments": [
+        {
+          "name": "type",
+          "type": "string"
+        },
+        {
+          "name": "callback",
+          "type": "string"
+        },
+        {
+          "name": "optional extra options",
+          "type": "string"
+        }
+      ]
+    },
+    "oncomplete": {
+      "type": "function",
+      "desc": "The <code>complete</code> event is fired when all layout is finished (and after the last repeated layout, if this was requested), just before the PDF is output, so that it can cancel the PDF output by triggering a fail-safe if necessary, or log information about the PDF like the page count."
+    },
+    "addScriptFunc": {
+      "type": "function",
+      "arguments": [
+        {
+          "name": "name",
+          "type": "string"
+        },
+        {
+          "name": "function",
+          "type": "string"
+        }
+      ],
+      "desc": "exposes an arbitrary JavaScript function to CSS. See <a href='/doc/gen-content#script-functions'>Script Functions</a>."
+    },
+    "trackBoxes": {
+      "type": "function",
+      "desc": "See <a href='/doc/javascript#the-box-tracking-api'>The Box Tracking API</a>.",
+      "arguments": [
+        {
+          "type": "boolean"
+        }
+      ]
+    },
+    "convertToFile": {
+      "type": "function",
+      "arguments": [
+        {
+          "name": "JSON",
+          "type": "string",
+          "desc": "as specified in the <a href='/doc/server-integration#job-description-json'>Job description JSON</a>;"
+        },
+        {
+          "name": "OutputFileName",
+          "type": "string"
+        },
+        {
+          "name": "...optional extra job resources",
+          "type": "ArrayBuffers or strings"
+        }
+      ],
+      "returns": "boolean, indicating success"
+    },
+    "convertToBuffer": {
+      "type": "function",
+      "arguments": [
+        {
+          "name": "JSON",
+          "type": "string"
+        },
+        {
+          "name": "...optional extra job resources",
+          "type": "ArrayBuffers or strings"
+        }
+      ],
+      "returns": "ArrayBuffer if successful, null if not"
+    },
+    "failStatus": {
+      "type": "string",
+      "returns": "boolean"
+    },
+    "pageCount": {
+      "type": "function",
+      "returns": "Total number of document pages, can be accessed after document conversion has finished."
+    },
+    "registerPostLayoutFunc": {
+      "type": "function",
+      "arguments": [
+        {
+          "name": "function",
+          "type": "string"
+        }
+      ],
+      "desc": "See <a href='/doc/javascript#multi-pass-formatting'>Multi-Pass formatting</a>."
+    },
+    "Log": {
+      "type": "object",
+      "debug": {
+        "type": "function",
+        "desc": "only available when the <code>--debug</code> command-line option is specified.",
+        "arguments": [
+          {
+            "name": "message",
+            "type": "string"
+          }
+        ]
+      },
+      "info": {
+        "type": "function",
+        "desc": "only available when the <code>--verbose</code> command-line option is specified.",
+        "arguments": [
+          {
+            "name": "message",
+            "type": "string"
+          }
+        ]
+      },
+      "warning": {
+        "type": "function",
+        "arguments": [
+          {
+            "name": "message",
+            "type": "string"
+          }
+        ]
+      },
+      "error": {
+        "type": "function",
+        "arguments": [
+          {
+            "name": "message",
+            "type": "string"
+          }
+        ]
+      },
+      "data": {
+        "type": "function",
+        "arguments": [
+          {
+            "name": "name",
+            "type": "string"
+          },
+          {
+            "name": "value",
+            "type": "string"
+          }
+        ]
+      },
+      "desc": "also available as <a href='#window.Log'><code>Log</code></a>."
+    },
+    "ext": "ext",
+    "desc": "See <a href='/doc/javascript#the-prince-object'>The Prince Object</a>."
+  },
+  "PDF": {
+    "type": "object",
+    "colorOptions": {
+      "type": "function",
+      "arguments": [
+        {
+          "type": "string",
+          "desc": "\"auto\" | \"use-true-black\" | \"use-rich-black\""
+        }
+      ]
+    },
+    "attachFile": {
+      "type": "function",
+      "arguments": [
+        {
+          "name": "URL",
+          "type": "string"
+        },
+        {
+          "name": "description",
+          "type": "string",
+          "desc": "Optional second argument to describe the attachment."
+        },
+        {
+          "name": "filename",
+          "type": "string",
+          "desc": "Optional third argument to specify the filename to be displayed for the attachment in the PDF."
+        },
+        {
+          "name": "relationship",
+          "type": "string",
+          "desc": "Optional fourth argument to specify the AFRelationship value of the attachment."
+        }
+      ],
+      "example": "PDF.attachFile('data.xls', 'Latest sales figures.', 'SalesFigures', 'Data')"
+    },
+    "ext": "ext",
+    "desc": "See <a href='/doc/javascript#the-pdf-object'>The PDF Object</a>."
+  },
+  "Log": {
+    "debug": {
+      "desc": "only available when the <code>--debug</code> command-line option is specified.",
+      "type": "function",
+      "arguments": [
+        {
+          "name": "message",
+          "type": "string"
+        }
+      ]
+    },
+    "info": {
+      "desc": "only available when the <code>--verbose</code> command-line option is specified.",
+      "type": "function",
+      "arguments": [
+        {
+          "name": "message",
+          "type": "string"
+        }
+      ]
+    },
+    "warning": {
+      "type": "function",
+      "arguments": [
+        {
+          "name": "message",
+          "type": "string"
+        }
+      ]
+    },
+    "error": {
+      "type": "function",
+      "arguments": [
+        {
+          "name": "message",
+          "type": "string"
+        }
+      ]
+    },
+    "data": {
+      "type": "function",
+      "arguments": [
+        {
+          "name": "name",
+          "type": "string"
+        },
+        {
+          "name": "value",
+          "type": "string"
+        }
+      ]
+    },
+    "ext": "ext",
+    "type": "object",
+    "desc": "also available as <a href='#window.Prince.Log'><code>Prince.Log</code></a>."
+  }
+}

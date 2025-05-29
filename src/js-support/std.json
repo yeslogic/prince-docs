@@ -1,0 +1,453 @@
+{
+  "type": "object",
+  "desc": "The global object",
+  "NaN": { "type": "string" },
+  "Infinity": { "type": "string" },
+  "undefined": { "type": "string" },
+  "eval": { "type": "function" },
+  "parseInt": { "type": "function" },
+  "parseFloat": { "type": "function" },
+  "isNaN": { "type": "string" },
+  "isFinite": { "type": "string" },
+  "escape": { "type": "string" },
+  "unescape": { "type": "string" },
+  "propertyIsEnumerable": { "type": "string" },
+  "Object": {
+    "type": "function",
+    "assign": { "type": "string" },
+    "create": { "type": "string" },
+    "defineProperty": {
+      "type": "function"
+    },
+    "defineProperties": { "type": "string" },
+    "freeze": { "type": "string" },
+    "is": { "type": "string" },
+    "isExtensible": { "type": "string" },
+    "isFrozen": { "type": "string" },
+    "isSealed": { "type": "string" },
+    "keys": { "type": "string" },
+    "getOwnPropertyDescriptor": { "type": "string" },
+    "getOwnPropertyNames": { "type": "string" },
+    "getOwnPropertySymbols": { "type": "string" },
+    "getPrototypeOf": { "type": "string" },
+    "preventExtensions": { "type": "string" },
+    "seal": { "type": "string" },
+    "setPrototypeOf": { "type": "string" },
+    "prototype": {
+      "constructor": { "type": "string" },
+      "toString": { "type": "string" },
+      "toLocaleString": { "type": "string" },
+      "valueOf": { "type": "string" },
+      "hasOwnProperty": { "type": "string" },
+      "isPrototypeOf": { "type": "string" },
+      "propertyIsEnumerable": { "type": "string" }
+    }
+  },
+  "CSSStyleDeclaration": {
+    "type": "function",
+    "prototype": {
+      "alignContent": { "type": "string" },
+      "alignItems": { "type": "string" },
+      "alignSelf": { "type": "string" },
+      "background": { "type": "string" },
+      "backgroundAttachment": { "type": "string" },
+      "backgroundClip": { "type": "string" },
+      "backgroundColor": { "type": "string" },
+      "backgroundImage": { "type": "string" },
+      "backgroundImageResolution": { "type": "string" },
+      "backgroundOrigin": { "type": "string" },
+      "backgroundPosition": { "type": "string" },
+      "backgroundRepeat": { "type": "string" },
+      "backgroundSize": { "type": "string" },
+      "baselineShift": { "type": "string" },
+      "bookmarkLabel": { "type": "string" },
+      "bookmarkLevel": { "type": "string" },
+      "bookmarkState": { "type": "string" },
+      "bookmarkTarget": { "type": "string" },
+      "border": { "type": "string" },
+      "borderBottom": { "type": "string" },
+      "borderBottomColor": { "type": "string" },
+      "borderBottomLeftRadius": { "type": "string" },
+      "borderBottomRightRadius": { "type": "string" },
+      "borderBottomStyle": { "type": "string" },
+      "borderBottomWidth": { "type": "string" },
+      "borderClip": { "type": "string" },
+      "borderCollapse": { "type": "string" },
+      "borderColor": { "type": "string" },
+      "borderLeft": { "type": "string" },
+      "borderLeftColor": { "type": "string" },
+      "borderLeftStyle": { "type": "string" },
+      "borderLeftWidth": { "type": "string" },
+      "borderRadius": { "type": "string" },
+      "borderRight": { "type": "string" },
+      "borderRightColor": { "type": "string" },
+      "borderRightStyle": { "type": "string" },
+      "borderRightWidth": { "type": "string" },
+      "borderSpacing": { "type": "string" },
+      "borderStyle": { "type": "string" },
+      "borderTop": { "type": "string" },
+      "borderTopColor": { "type": "string" },
+      "borderTopLeftRadius": { "type": "string" },
+      "borderTopRightRadius": { "type": "string" },
+      "borderTopStyle": { "type": "string" },
+      "borderTopWidth": { "type": "string" },
+      "borderWidth": { "type": "string" },
+      "bottom": { "type": "string" },
+      "boxDecorationBreak": { "type": "string" },
+      "boxSizing": { "type": "string" },
+      "breakAfter": { "type": "string" },
+      "breakBefore": { "type": "string" },
+      "breakInside": { "type": "string" },
+      "captionPage": { "type": "string" },
+      "captionSide": { "type": "string" },
+      "clear": { "type": "string" },
+      "clip": { "type": "string" },
+      "clipPath": { "type": "string" },
+      "clipRule": { "type": "string" },
+      "color": { "type": "string" },
+      "colorInterpolation": { "type": "string" },
+      "colorInterpolationFilters": { "type": "string" },
+      "columnBreakAfter": { "type": "string" },
+      "columnBreakBefore": { "type": "string" },
+      "columnCount": { "type": "string" },
+      "columnFill": { "type": "string" },
+      "columnGap": { "type": "string" },
+      "columnRule": { "type": "string" },
+      "columnRuleColor": { "type": "string" },
+      "columnRuleStyle": { "type": "string" },
+      "columnRuleWidth": { "type": "string" },
+      "columns": { "type": "string" },
+      "columnSpan": { "type": "string" },
+      "columnWidth": { "type": "string" },
+      "content": { "type": "string" },
+      "counterIncrement": { "type": "string" },
+      "counterReset": { "type": "string" },
+      "direction": { "type": "string" },
+      "display": { "type": "string" },
+      "dominantBaseline": { "type": "string" },
+      "emptyCells": { "type": "string" },
+      "fill": { "type": "string" },
+      "fillOpacity": { "type": "string" },
+      "fillRule": { "type": "string" },
+      "filter": { "type": "string" },
+      "flex": { "type": "string" },
+      "flexBasis": { "type": "string" },
+      "flexDirection": { "type": "string" },
+      "flexFlow": { "type": "string" },
+      "flexGrow": { "type": "string" },
+      "flexShrink": { "type": "string" },
+      "flexWrap": { "type": "string" },
+      "floodColor": { "type": "string" },
+      "floodOpacity": { "type": "string" },
+      "cssFloat": { "type": "string" },
+      "floatDeferColumn": { "type": "string" },
+      "floatDeferPage": { "type": "string" },
+      "floatModifier": { "type": "string" },
+      "floatPlacement": { "type": "string" },
+      "floatReference": { "type": "string" },
+      "floatTail": { "type": "string" },
+      "floatPolicy": { "type": "string" },
+      "flow": { "type": "string" },
+      "font": { "type": "string" },
+      "fontFamily": { "type": "string" },
+      "fontSize": { "type": "string" },
+      "fontStretch": { "type": "string" },
+      "fontStyle": { "type": "string" },
+      "fontVariant": { "type": "string" },
+      "fontWeight": { "type": "string" },
+      "footnoteDisplay": { "type": "string" },
+      "footnoteStylePosition": { "type": "string" },
+      "gap": { "type": "string" },
+      "height": { "type": "string" },
+      "hyphenateAfter": { "type": "string" },
+      "hyphenateBefore": { "type": "string" },
+      "hyphenateLines": { "type": "string" },
+      "hyphenatePatterns": { "type": "string" },
+      "hyphens": { "type": "string" },
+      "imageOrientation": { "type": "string" },
+      "imageResolution": { "type": "string" },
+      "insetInside": { "type": "string" },
+      "insetOutside": { "type": "string" },
+      "justifyContent": { "type": "string" },
+      "left": { "type": "string" },
+      "letterSpacing": { "type": "string" },
+      "lightingColor": { "type": "string" },
+      "lineHeight": { "type": "string" },
+      "lineStackingStrategy": { "type": "string" },
+      "link": { "type": "string" },
+      "listStyle": { "type": "string" },
+      "listStyleImage": { "type": "string" },
+      "listStylePosition": { "type": "string" },
+      "listStyleType": { "type": "string" },
+      "margin": { "type": "string" },
+      "marginAlt": { "type": "string" },
+      "marginBottom": { "type": "string" },
+      "marginInside": { "type": "string" },
+      "marginLeft": { "type": "string" },
+      "marginOutside": { "type": "string" },
+      "marginRight": { "type": "string" },
+      "marginTop": { "type": "string" },
+      "marker": { "type": "string" },
+      "markerEnd": { "type": "string" },
+      "markerMid": { "type": "string" },
+      "markerStart": { "type": "string" },
+      "mask": { "type": "string" },
+      "maxHeight": { "type": "string" },
+      "maxWidth": { "type": "string" },
+      "minHeight": { "type": "string" },
+      "minWidth": { "type": "string" },
+      "opacity": { "type": "string" },
+      "order": { "type": "string" },
+      "orphans": { "type": "string" },
+      "overflow": { "type": "string" },
+      "overflowWrap": { "type": "string" },
+      "padding": { "type": "string" },
+      "paddingBottom": { "type": "string" },
+      "paddingLeft": { "type": "string" },
+      "paddingRight": { "type": "string" },
+      "paddingTop": { "type": "string" },
+      "page": { "type": "string" },
+      "pageBreakAfter": { "type": "string" },
+      "pageBreakBefore": { "type": "string" },
+      "pageBreakInside": { "type": "string" },
+      "pageGroup": { "type": "string" },
+      "position": { "type": "string" },
+      "princeBackgroundImageResolution": { "type": "string" },
+      "princeBookmarkLabel": { "type": "string" },
+      "princeBookmarkLevel": { "type": "string" },
+      "princeBookmarkState": { "type": "string" },
+      "princeBookmarkTarget": { "type": "string" },
+      "princeCaptionPage": { "type": "string" },
+      "princeClear": { "type": "string" },
+      "princeFilterResolution": { "type": "string" },
+      "princeFloatDeferColumn": { "type": "string" },
+      "princeFloatDeferPage": { "type": "string" },
+      "princeFloatModifier": { "type": "string" },
+      "princeFloatPlacement": { "type": "string" },
+      "princeFloatReference": { "type": "string" },
+      "princeFloatTail": { "type": "string" },
+      "princeFloatPolicy": { "type": "string" },
+      "princeFlow": { "type": "string" },
+      "princeFootnotePolicy": { "type": "string" },
+      "princeHyphenateAfter": { "type": "string" },
+      "princeHyphenateBefore": { "type": "string" },
+      "princeHyphenateCharacter": { "type": "string" },
+      "princeHyphenateLines": { "type": "string" },
+      "princeHyphenatePatterns": { "type": "string" },
+      "princeImageMagic": { "type": "string" },
+      "princeImageResolution": { "type": "string" },
+      "princeLang": { "type": "string" },
+      "princeLinebreakMagic": { "type": "string" },
+      "princeLink": { "type": "string" },
+      "princeMarginAlt": { "type": "string" },
+      "princePageGroup": { "type": "string" },
+      "princePdfAnnotationAuthor": { "type": "string" },
+      "princePdfAnnotationColor": { "type": "string" },
+      "princePdfAnnotationContents": { "type": "string" },
+      "princePdfAnnotationCreatedate": { "type": "string" },
+      "princePdfAnnotationModifydate": { "type": "string" },
+      "princePdfAnnotationPosition": { "type": "string" },
+      "princePdfAnnotationTitle": { "type": "string" },
+      "princePdfAnnotationType": { "type": "string" },
+      "princePdfColorConversion": { "type": "string" },
+      "princePdfColorOptions": { "type": "string" },
+      "princePdfDestination": { "type": "string" },
+      "princePdfLinkType": { "type": "string" },
+      "princePdfTagType": { "type": "string" },
+      "princeTableColumnSpan": { "type": "string" },
+      "princeTableRowSpan": { "type": "string" },
+      "princeTextJustify": { "type": "string" },
+      "princeTextReplace": { "type": "string" },
+      "princeTooltip": { "type": "string" },
+      "right": { "type": "string" },
+      "rowGap": { "type": "string" },
+      "stopColor": { "type": "string" },
+      "stopOpacity": { "type": "string" },
+      "stringSet": { "type": "string" },
+      "stroke": { "type": "string" },
+      "strokeDasharray": { "type": "string" },
+      "strokeDashoffset": { "type": "string" },
+      "strokeLinecap": { "type": "string" },
+      "strokeLinejoin": { "type": "string" },
+      "strokeMiterlimit": { "type": "string" },
+      "strokeOpacity": { "type": "string" },
+      "strokeWidth": { "type": "string" },
+      "tableBaseline": { "type": "string" },
+      "tableColumnSpan": { "type": "string" },
+      "tableLayout": { "type": "string" },
+      "tableRowSpan": { "type": "string" },
+      "tabSize": { "type": "string" },
+      "textAlign": { "type": "string" },
+      "textAlignAll": { "type": "string" },
+      "textAlignLast": { "type": "string" },
+      "textAnchor": { "type": "string" },
+      "textDecoration": { "type": "string" },
+      "textIndent": { "type": "string" },
+      "textJustify": { "type": "string" },
+      "textLineThrough": { "type": "string" },
+      "textLineThroughColor": { "type": "string" },
+      "textLineThroughStyle": { "type": "string" },
+      "textOverflow": { "type": "string" },
+      "textOverline": { "type": "string" },
+      "textOverlineColor": { "type": "string" },
+      "textOverlineStyle": { "type": "string" },
+      "textTransform": { "type": "string" },
+      "textUnderline": { "type": "string" },
+      "textUnderlineColor": { "type": "string" },
+      "textUnderlinePosition": { "type": "string" },
+      "textUnderlineStyle": { "type": "string" },
+      "top": { "type": "string" },
+      "transform": { "type": "string" },
+      "transformOrigin": { "type": "string" },
+      "unicodeBidi": { "type": "string" },
+      "verticalAlign": { "type": "string" },
+      "visibility": { "type": "string" },
+      "whiteSpace": { "type": "string" },
+      "widows": { "type": "string" },
+      "width": { "type": "string" },
+      "wordBreak": { "type": "string" },
+      "wordSpacing": { "type": "string" },
+      "writingMode": { "type": "string" },
+      "zIndex": { "type": "string" },
+      "setProperty": { "type": "string" },
+      "removeProperty": { "type": "string" },
+      "setPropertyValue": { "type": "string" },
+      "getPropertyValue": { "type": "string" }
+    }
+  },
+  "HTMLInputElement": {
+    "type": "function",
+    "prototype": {
+      "checked": {
+        "type": "string"
+      },
+      "disabled": {
+        "type": "string"
+      },
+      "name": {
+        "type": "string"
+      },
+      "type": {
+        "type": "string"
+      },
+      "value": {
+        "type": "string"
+      }
+    }
+  },
+  "BoxInfo": {
+    "type": "function",
+    "prototype": {
+      "type": {
+        "type": "function"
+      },
+      "pageNum": {},
+      "x": {
+        "type": "function"
+      },
+      "y": {
+        "type": "function"
+      },
+      "w": {
+        "type": "function"
+      },
+      "h": {
+        "type": "function"
+      },
+      "marginBottom": {
+        "type": "function"
+      },
+      "marginLeft": {
+        "type": "function"
+      },
+      "marginRight": {
+        "type": "function"
+      },
+      "marginTop": {
+        "type": "function"
+      },
+      "floatPosition": {
+        "type": "function"
+      },
+      "children": {
+        "type": "function"
+      },
+      "parent": {
+        "type": "function"
+      },
+      "element": {
+        "type": "function"
+      },
+      "pseudo": {
+        "type": "function"
+      },
+      "text": {
+        "type": "string"
+      },
+      "style": {
+        "type": "function"
+      }
+    }
+  },
+  "BoxInfoChildren": {
+    "type": "function",
+    "prototype": {
+      "item": { "type": "string" },
+      "length": { "type": "string" }
+    }
+  },
+  "Prince": {
+    "type": "object",
+    "addEventListener": {
+      "type": "function"
+    },
+    "oncomplete": {
+      "type": "function"
+    },
+    "addScriptFunc": {
+      "type": "function"
+    },
+    "trackBoxes": {
+      "type": "function"
+    },
+    "convertToFile": {
+      "type": "function"
+    },
+    "convertToBuffer": {
+      "type": "function"
+    },
+    "failStatus": {
+      "type": "string"
+    },
+    "pageCount": {
+      "type": "function"
+    },
+    "registerPostLayoutFunc": {
+      "type": "function"
+    },
+    "Log": {
+      "type": "object",
+      "debug": { "type": "function" },
+      "info": { "type": "function" },
+      "warning": { "type": "function" },
+      "error": { "type": "function" },
+      "data": { "type": "function" }
+    }
+  },
+  "PDF": {
+    "type": "object",
+    "colorOptions": {
+      "type": "function"
+    },
+    "attachFile": {
+      "type": "function"
+    }
+  },
+  "Log": {
+    "debug": {},
+    "info": {},
+    "warning": {},
+    "error": {},
+    "data": {}
+  }
+}
