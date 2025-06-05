@@ -828,6 +828,10 @@ It is important to know that by default, Prince <em>does</em> have access to loc
 
 It is good and safe practice to always run Prince with the command-line option [`--no-local-files`](command-line.md#cl-no-local-files) in order to exclude any unwanted access to the local file system when dealing with untrusted content.
 
+:::note
+Disabling access to local files does not prevent the loading of local resources manually supplied through a command-line option - such as e.g. style sheets or scripts passed with the `--style` or `--script` options, respectively.
+:::
+
 ### Network Resources
 
 Similarly, it might be desirable to prevent a document fed to Prince to access other external resources over the network, which might possibly circumvent the filtering and escaping mechanisms you might have put in place.
