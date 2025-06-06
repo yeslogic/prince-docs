@@ -98,7 +98,7 @@ module.exports = {
     prism: {
         additionalLanguages: ['css', 'markup', 'json', 'bash', 'javascript'],
         defaultLanguage: 'css',
-        theme: prismThemes.vsDark,
+        theme: prismThemes.oneLight,
     },
   },
   presets: [
