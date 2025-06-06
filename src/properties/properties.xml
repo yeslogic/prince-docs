@@ -6855,6 +6855,7 @@ supplier, item { overflow-wrap: normal; }
                 <keyword>auto-font-size</keyword>
                 <keyword>comb</keyword>
                 <keyword>do-not-scroll</keyword>
+                <keyword>rich-text</keyword>
             </multiple>
     </choice>
     </value>

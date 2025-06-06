@@ -19281,7 +19281,7 @@ supplier, item { overflow-wrap: normal; }
           <div id="prop-prince-pdf-form-field-settings-syntax">Syntax</div>
           <div class="example">
             <div class="syntax-block">
-              <code>-prince-pdf-form-field-settings: normal | [ auto-font-size || comb || do-not-scroll ]</code>
+              <code>-prince-pdf-form-field-settings: normal | [ auto-font-size || comb || do-not-scroll || rich-text ]</code>
             </div>
           </div>
         </div>
