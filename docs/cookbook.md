@@ -269,7 +269,11 @@ The title of the book, or the current chapter, can be copyied into the page regi
 
     h1 { string-set: doctitle content() }
 ```
-The @page rule specifies that the top-center page region will contain the text content of the document title copied from the text content of the `h1` element in the document.
+The `@page` rule specifies that the top-center page region will contain the text content of the document title copied from the text content of the `h1` element in the document.
+
+:::note
+Please note that running headers are [tagged as `Artifact`](prince-output.md#pdf-tags) and thus will be ignored by screen readers.
+:::
 
 If some special formatting of the text in the margin box is required, copying the text will not suffice - you need to remove an element from the natural page flow to place it in the margin box. See [Taking elements from the document](paged.md#taking-elements-from-the-document) for details.
 
