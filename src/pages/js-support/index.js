@@ -19,24 +19,6 @@ function JsSupport() {
 <div>
 <ScriptTag type="text/javascript" src="/js/shiftWindow.js" />
 <div className="markdown">
-  <p>
-    Prince supports most of ECMAScript 5th edition, but not
-    strict mode. Later editions of ECMAScript are not
-    supported.
-  </p>
-  <p>
-    The following table shows supported JavaScript objects,
-    methods and properties. For more details, see also{" "}
-    <a href="/doc/javascript#js-prince">
-      JavaScript in Prince
-    </a>
-    .
-  </p>
-  <p>
-    * objects, methods and properties marked with an asterisk
-    are Prince extensions.
-  </p>
-
   <div className="js-overview level" id="js-support-table">
     <BrowserOnly fallback={<div>Loading...</div>}>
       {() => (
