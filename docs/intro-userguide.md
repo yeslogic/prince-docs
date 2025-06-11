@@ -1,6 +1,9 @@
 ---
-title: Convert HTML to PDF
+title: User Guide
 ---
+
+import DocCardList from '@theme/DocCardList';
+
 
 Prince is an application for converting HTML and XML documents into PDF files by applying Cascading Style Sheets (CSS).
 HTML and XML are seamlessly transformed into documents you can print, download and archive.
@@ -34,3 +37,5 @@ options for its [networking](prince-networking.md) and
 
 Last but not least, we document the extensions that are most requested
 by publishers and offered by [Prince for Books](prince-for-books.md).
+
+<DocCardList />

@@ -1,18 +1,12 @@
 ---
-title: Getting Started
+title: Installing Prince
 ---
-
-Let's get started with Prince. We will download and install the software and use it to generate a PDF from a very simple document with a very basic stylesheet. This chapter will get you up and running with Prince as quickly as possible.
-
-Readers should already be familiar with HTML and CSS - many good tutorials are available on the topic. Familiarity with your computer's command line interface is desirable but not essential. Because the chapter is aimed at getting started as quickly as possible we may skip some explanations, don't worry as these will be covered later in the manual.
-
-If Prince is already installed, you can directly skip to the [User Guide](intro-userguide.md).
-
-## Installing Prince
 
 Prince is available for Windows, MacOS, Linux (multiple distributions) and FreeBSD. You can download the relevant file from our [downloads page](/download/). For Linux and FreeBSD you may need to choose based on your distribution type, version and processor type (32/64 bits).
 
 Prince is provided under the terms of the [Prince End-User License Agreement](/license/).
+
+## Installing
 
 ### ... on Windows
 
