@@ -1019,7 +1019,7 @@ const std = {
             shadowColor: {},
             shadowOffsetX: {},
             shadowOffsetY: {},
-            shadowBlue: {}
+            shadowBlur: {}
         }
     },
     ImageData: {

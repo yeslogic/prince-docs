@@ -1153,7 +1153,7 @@ const stdAnnotated = {
             shadowColor: {},
             shadowOffsetX: {},
             shadowOffsetY: {},
-            shadowBlue: {}
+            shadowBlur: {}
         }
     },
     ImageData: {
