@@ -1145,6 +1145,7 @@ const stdAnnotated = {
             lineCap: {},
             lineJoin: {},
             lineDashOffset: {},
+            measureText: {},
             miterLimit: {},
             font: {},
             textAlign: {},

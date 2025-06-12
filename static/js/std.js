@@ -1011,6 +1011,7 @@ const std = {
             lineCap: {},
             lineJoin: {},
             lineDashOffset: {},
+            measureText: {},
             miterLimit: {},
             font: {},
             textAlign: {},
