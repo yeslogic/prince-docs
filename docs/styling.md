@@ -17,7 +17,7 @@ Prince applies default styles to all (X)HTML documents - these style rules can b
 
 Fonts are at the basis of displaying text.  Fonts are grouped in Font Families, or typefaces, which are employed to style the text in a specific way.
 
-Prince supports multiple font formats, including TrueType and OpenType font formats - with TTF, CFF, or CFF2 outlines (such as the Adobe Source fonts), SVG, CBLC/CBDT, or sbix colour bitmaps, and Font Variations, commonly known as Variable Fonts.
+Prince supports multiple font formats, including TrueType and OpenType font formats - with TTF, CFF, or CFF2 outlines (such as the Adobe Source fonts), SVG, CBLC, CBDT, COLR, or sbix colour bitmaps, and Font Variations, commonly known as Variable Fonts.
 
 Prince supports also the Web Open Font format (WOFF/WOFF2), and TTC and WOFF2 font collections.
 
