@@ -28,7 +28,8 @@ The available profiles, and the PDF version they are based on, are:
 | PDF/X-1a:2003 | ISO 15930-4:2003 | PDF 1.4                       |
 | PDF/X-3:2002  |                  | PDF 1.3                       |
 | PDF/X-3:2003  | ISO 15930-6:2003 | PDF 1.4                       |
-| PDF/X-4       | ISO 15930-7:2008 | PDF 1.6                       |
+| PDF/X-4       | ISO 15930-7:2010 | PDF 1.6                       |
+| PDF/X-4p      | ISO 15930-7:2010 | PDF 1.6                       |
 
 Prince supports also the creation of files with the following combined profiles:
 
@@ -105,7 +106,7 @@ The PDF/UA-1 profile supports attachments.
 -   See the [Color Management and PDF Profiles](graphics.md#color-management-and-pdf-profiles) section for the color profiles available in each PDF/X version. Transparency is not allowed, with the exception of PDF/X-4
 -   Encryption is forbidden
 
-The PDF/X-4 profile supports attachments, but doesn't allow links.
+The PDF/X-4 profile supports attachments, but doesn't allow links. The PDF/X-4p profile allows ICC color profiles to be specified via reference to external URLs instead of directly included in the PDF file itself.
 
 ## PDF Accessibility
 
