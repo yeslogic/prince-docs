@@ -139,6 +139,10 @@ PDF/X-4
 -   Allows other color spaces but colors must be device-independent, or else characterized by the output intent;
 -   PDF transparency is supported.
 
+The PDF/X-4 profile offers a mechanism to uniquely identify the printing condition with the `OutputConditionIdentifier` key, set with the `output-condition-identifier` keyword, in the [`-prince-pdf-output-intent`](css-props.md/#prop-prince-pdf-output-intent) CSS property.  If the printing condition is defined by the [ICC characterization registry](http://www.color.org/), the value of the `RegistryName` key (`registry-name`) should be `http://www.color.org`.  The `OutputCondition` key (`output-condition`) identifies the characterized printing condition in a way that is meaningful to a human operator.
+
+Additionally, the PDF/X-4p profile allows for a publicly accessible ICC profile to be used when generating the PDF, without however including it in the file, thus reducing the final file size.
+
 PDF/A requires that all colors to be device-independent, or else characterized by the output intent (thus making them device-independent). Transparency is not allowed.
 
 ### Color Management in Prince

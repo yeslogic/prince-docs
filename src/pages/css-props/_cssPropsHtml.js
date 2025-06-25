@@ -19485,7 +19485,7 @@ supplier, item { overflow-wrap: normal; }
           <div id="prop-prince-pdf-output-intent-syntax">Syntax</div>
           <div class="example">
             <div class="syntax-block">
-              <code>-prince-pdf-output-intent: auto | url( <span>&lt;<i>filename</i>&gt;</span> )</code>
+              <code>-prince-pdf-output-intent: auto | url( <span>&lt;<i>filename</i>&gt;</span> ) [ [ output-condition <span>&lt;<i>string</i>&gt;</span> ] | [ output-condition-identifier <span>&lt;<i>string</i>&gt;</span> ] | [ registry-name <span>&lt;<i>string</i>&gt;</span> ] | info <span>&lt;<i>string</i>&gt;</span> | [ external-url <span>&lt;<i>string</i>&gt;</span> ]+ ]</code>
             </div>
           </div>
         </div>
@@ -19536,6 +19536,15 @@ supplier, item { overflow-wrap: normal; }
           <p>
     This descriptor is used inside a <a href="/doc/css-at-rules/#at-prince-pdf"><code>@prince-pdf</code></a>
     at-rule to select the intended output color space of the generated PDF file.
+    </p>
+          <p>
+    The <code>output-condition</code> keyword sets the <code>OutputCondition</code> key. Its value should be a concise text string that identifies the characterized printing condition in a way that is meaningful to a human operator.
+    </p>
+          <p>
+    The <code>output-condition-identifier</code> keyword sets the <code>OutputConditionIdentifier</code> key, a mechanism provided by the PDF/X-4 profile to uniquely identify the printing condition by means of the <a href="http://www.color.org/">ICC characterization registry</a>.
+    </p>
+          <p>
+    The <code>registry-name</code> keyword sets the <code>RegistryName</code> key. This should only be used if the printing condition is defined in a registry. If it is defined in the ICC characterization registry, the value should be <code>http://www.color.org</code>.
     </p>
         </div>
         <div>
