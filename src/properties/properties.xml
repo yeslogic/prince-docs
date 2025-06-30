@@ -6964,7 +6964,7 @@ supplier, item { overflow-wrap: normal; }
 	    <keyword>auto</keyword>
         <sequence>
             <url>filename</url>
-            <choice>
+            <multiple>
                 <sequence>
                     <keyword>output-condition</keyword>
                     <string>string</string>
@@ -6984,10 +6984,10 @@ supplier, item { overflow-wrap: normal; }
                 <repeat min="1">
                     <sequence>
                         <keyword>external-url</keyword>
-                        <string>string</string>
+                        <url>URL</url>
                     </sequence>
                 </repeat>
-            </choice>
+            </multiple>
         </sequence>
 	</choice>
     </value>
