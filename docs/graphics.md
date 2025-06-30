@@ -139,9 +139,15 @@ PDF/X-4
 -   Allows other color spaces but colors must be device-independent, or else characterized by the output intent;
 -   PDF transparency is supported.
 
-The PDF/X-4 profile offers a mechanism to uniquely identify the printing condition with the `OutputConditionIdentifier` key, set with the `output-condition-identifier` keyword, in the [`-prince-pdf-output-intent`](css-props.md/#prop-prince-pdf-output-intent) CSS property.  If the printing condition is defined by the [ICC characterization registry](http://www.color.org/), the value of the `RegistryName` key (`registry-name`) should be `http://www.color.org`.  The `OutputCondition` key (`output-condition`) identifies the characterized printing condition in a way that is meaningful to a human operator.
+The PDF/X-4 profile offers a mechanism to uniquely identify the printing condition with the `OutputConditionIdentifier` key, set with the `output-condition-identifier` keyword, in the [`-prince-pdf-output-intent`](css-props.md#prop-prince-pdf-output-intent) CSS property.  If the printing condition is defined by the [ICC characterization registry](http://www.color.org/), the value of the `RegistryName` key (`registry-name`) should be `http://www.color.org`.  The `OutputCondition` key (`output-condition`) identifies the characterized printing condition in a way that is meaningful to a human operator.
 
-Additionally, the PDF/X-4p profile allows for a publicly accessible ICC profile to be used when generating the PDF, without however including it in the file, thus reducing the final file size.
+Additionally, the PDF/X-4p profile allows for a publicly accessible ICC profile to be used when generating the PDF, without however including it in the file, thus reducing the final file size. This is achieved with the `external-url` keyword.
+
+```css
+    @prince-pdf {
+     -prince-pdf-output-intent: url("APTEC_PC10_CardBoard_2023_v1.icc") output-condition-identifier "APTEC_PC10_CardBoard_2023_v1.icc" registry- name "http://www.color.org" output-condition "ISO 12647-2 Printing Substrate 10 'One-side Coated Paper board'" external-url url("http://www.color.org/registry/profiles/APTEC_PC10_CardBoard_2023_v1.icc")
+}
+```
 
 PDF/A requires that all colors to be device-independent, or else characterized by the output intent (thus making them device-independent). Transparency is not allowed.
 

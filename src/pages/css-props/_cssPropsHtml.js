@@ -19485,7 +19485,7 @@ supplier, item { overflow-wrap: normal; }
           <div id="prop-prince-pdf-output-intent-syntax">Syntax</div>
           <div class="example">
             <div class="syntax-block">
-              <code>-prince-pdf-output-intent: auto | url( <span>&lt;<i>filename</i>&gt;</span> ) [ [ output-condition <span>&lt;<i>string</i>&gt;</span> ] | [ output-condition-identifier <span>&lt;<i>string</i>&gt;</span> ] | [ registry-name <span>&lt;<i>string</i>&gt;</span> ] | info <span>&lt;<i>string</i>&gt;</span> | [ external-url <span>&lt;<i>string</i>&gt;</span> ]+ ]</code>
+              <code>-prince-pdf-output-intent: auto | url( <span>&lt;<i>filename</i>&gt;</span> ) [ output-condition <span>&lt;<i>string</i>&gt;</span> || output-condition-identifier <span>&lt;<i>string</i>&gt;</span> || registry-name <span>&lt;<i>string</i>&gt;</span> || info <span>&lt;<i>string</i>&gt;</span> || [ external-url url( <span>&lt;<i>URL</i>&gt;</span> ) ]+ ]</code>
             </div>
           </div>
         </div>
@@ -19545,6 +19545,15 @@ supplier, item { overflow-wrap: normal; }
     </p>
           <p>
     The <code>registry-name</code> keyword sets the <code>RegistryName</code> key. This should only be used if the printing condition is defined in a registry. If it is defined in the ICC characterization registry, the value should be <code>http://www.color.org</code>.
+    </p>
+          <p>
+    The <code>info</code> keyword sets the <code>Info</code> key, which should be present if <code>OutputConditionIdentifier</code> does not refer to a characterization in the ICC Registry. The use of the <code>Info</code> key rather than the <code>OutputCondition</code> key is reccomended.
+    </p>
+          <p>
+    The <code>external-url</code> keyword allows for pointing to a publicly available printing profile, without however including it when generating the PDF. This keyword can be used multiple times.
+    </p>
+          <p class="note">
+    If the <code>url()</code> function points to a publicly available printing profile, and the PDF file is generated with a PDF/X-4p profile, the resource is used for the generation of the file, but is not included in the file itself. The <code>external-url</code> is needed when the <code>url()</code> resource is not available publicly.
     </p>
         </div>
         <div>
