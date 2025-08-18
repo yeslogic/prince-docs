@@ -544,6 +544,19 @@ does.</td>
     </code>
 </td>
 </tr>
+<tr className="ext">
+<td>
+    <code>
+    key( &lt;<i>string</i>&gt; )*
+    </code>
+</td>
+<td>Specifies a string to match PDF annotations within a PDF page that will be "merged" into a single annotation on that page.</td>
+<td>
+    <code>
+    <a href="/doc/css-props#prop-prince-pdf-annotation-merge">-prince-pdf-annotation-merge</a>
+    </code>
+</td>
+</tr>
 <tr>
 <td>
     <code>

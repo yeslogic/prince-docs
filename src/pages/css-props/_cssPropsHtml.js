@@ -18387,6 +18387,76 @@ supplier, item { overflow-wrap: normal; }
     </details>
     <details>
       <summary class="ext" title="Prince extension">
+        <h6 id="prop-prince-pdf-annotation-merge">-prince-pdf-annotation-merge* <a href="#prop-prince-pdf-annotation-merge" class="hash-link"> </a></h6>
+      </summary>
+      <div>
+        <div>
+          <div id="prop-prince-pdf-annotation-merge-syntax">Syntax</div>
+          <div class="example">
+            <div class="syntax-block">
+              <code>-prince-pdf-annotation-merge: none | duplicates | key( <span>&lt;<i>string</i>&gt;</span> )</code>
+            </div>
+          </div>
+        </div>
+        <div>
+          <div class="example">
+            <div class="syntax-block">
+              <table class="property-table">
+                <tr>
+                  <th scope="row">
+          Initial value
+        </th>
+                  <td>
+                    <code>none</code>
+                  </td>
+                </tr>
+                <tr>
+                  <th scope="row">
+          Applies to
+        </th>
+                  <td><code>@prince-pdf</code> at-rule</td>
+                </tr>
+                <tr>
+                  <th scope="row">
+          Inherited
+        </th>
+                  <td>
+                  no
+                </td>
+                </tr>
+              </table>
+            </div>
+          </div>
+        </div>
+        <div>
+          <div id="prop-prince-pdf-annotation-merge-examples">Examples</div>
+          <div class="example">
+            <div class="programlisting">
+              <pre>
+                <code class="hljs">@prince-pdf { -prince-pdf-annotation-merge: duplicates; }</code>
+              </pre>
+            </div>
+          </div>
+        </div>
+        <div>
+          <div id="prop-prince-pdf-annotation-merge-comments">Comments</div>
+          <p>This property affects the creation of user annotations on a PDF page.</p>
+          <p>With the default value <code>none</code>, each user annotation is considered a distinct annotation.</p>
+          <p>With the value <code>duplicates</code>, user annotations with the same type, author, title, contents, creation/modification date, color, and icon, will be "merged", resulting in only one annotation per page. Please note that the icon position is ignored.</p>
+          <p>With the function value <code>key( &lt;<i>string</i>&gt; )</code>, user annotations that share the same key will be "merged", resulting in only one annotation per page.</p>
+        </div>
+        <div>
+          <div id="prop-prince-pdf-annotation-merge-seealso">See Also</div>
+          <ul>
+            <li>
+              <a href="/doc/prince-output/#pdf-annotations">PDF Annotations</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </details>
+    <details>
+      <summary class="ext" title="Prince extension">
         <h6 id="prop-prince-pdf-annotation-modifydate">-prince-pdf-annotation-modifydate* <a href="#prop-prince-pdf-annotation-modifydate" class="hash-link"> </a></h6>
       </summary>
       <div>
@@ -19553,7 +19623,7 @@ supplier, item { overflow-wrap: normal; }
     The <code>external-url</code> keyword allows for pointing to a publicly available printing profile, without however including it when generating the PDF. This keyword can be used multiple times.
     </p>
           <p class="note">
-    If the <code>url()</code> function points to a publicly available printing profile, and the PDF file is generated with a PDF/X-4p profile, the resource is used for the generation of the file, but is not included in the file itself. The <code>external-url</code> is needed when the <code>url()</code> resource is not available publicly.
+    If the <code>url()</code> function points to a publicly available printing profile, and the PDF file is generated with a PDF/X-4p profile, the resource is used for the generation of the file, but is not included in the file itself. The <code>external-url</code> is needed when the simple <code>url()</code> resource is not available publicly.
     </p>
         </div>
         <div>

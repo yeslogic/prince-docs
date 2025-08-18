@@ -6425,6 +6425,31 @@ supplier, item { overflow-wrap: normal; }
 </property>
 
 <property>
+    <name>prince-pdf-annotation-merge</name>
+    <value>
+    <choice>
+        <keyword>none</keyword>
+        <keyword>duplicates</keyword>
+        <function name="key">
+            <ident>string</ident>
+        </function>
+    </choice>
+    </value>
+    <initial>none</initial>
+    <applyto>@prince-pdf at-rule</applyto>
+    <inherit>no</inherit>
+    <extension/>
+    <example>@prince-pdf { -prince-pdf-annotation-merge: duplicates; }</example>
+    <see><a href="/doc/prince-output/#pdf-annotations">PDF Annotations</a></see>
+    <comments>
+        <p>This property affects the creation of user annotations on a PDF page.</p>
+        <p>With the default value <code>none</code>, each user annotation is considered a distinct annotation.</p>
+        <p>With the value <code>duplicates</code>, user annotations with the same type, author, title, contents, creation/modification date, color, and icon, will be "merged", resulting in only one annotation per page. Please note that the icon position is ignored.</p>
+        <p>With the function value <code>key( &lt;<i>string</i>&gt; )</code>, user annotations that share the same key will be "merged", resulting in only one annotation per page.</p>
+    </comments>
+</property>
+
+<property>
 	<name>prince-pdf-annotation-modifydate</name>
 	<value>
 	<choice>

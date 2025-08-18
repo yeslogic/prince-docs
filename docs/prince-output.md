@@ -516,6 +516,16 @@ PDF annotations can also be provided with an icon, to help seeing at a glance wh
 
 The author of the annotation can be specified through the [`-prince-pdf-annotation-author`](css-props.md#prop-prince-pdf-annotation-author) property.  Prince also offers the possibility of specifying the annotation creation and modification dates, with the properties [`-prince-pdf-annotation-createdate`](css-props.md#prop-prince-pdf-annotation-createdate) and [`-prince-pdf-annotation-modifydate`](css-props.md#prop-prince-pdf-annotation-modifydate).
 
+PDF annotations on one page can be "merged", resulting in only one annotation linked to multiple elements. This is achieved with the CSS property [`-prince-pdf-annotation-merge`](css-props.md#prop-prince-pdf-annotation-merge).
+
+With the default value `none`, each user annotation is considered a distinct annotation. With the value `duplicates`, user annotations with the same type, author, title, contents, creation/modification date, color, and icon, will be "merged", resulting in only one annotation per page; and with the function value <code>key( &lt;<i>string</i>&gt; )</code>, user annotations that share the same key will be "merged", resulting in only one annotation per page.
+
+```css
+    @prince-pdf {
+        -prince-pdf-annotation-merge: duplicates
+    }
+```
+
 Please also consult [A quick guide to PDF comments in Prince](https://css4.pub/2022/comments/) for more examples.
 
 
