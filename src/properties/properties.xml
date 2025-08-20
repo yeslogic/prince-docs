@@ -130,6 +130,22 @@ NOTE: The current build process will cause this file's content to appear in a Ja
 </property>
 
 <property>
+	<name>all</name>
+	<value>
+	  <choice>
+	    <keyword>initial</keyword>
+	    <keyword>inherit</keyword>
+	    <keyword>unset</keyword>
+	    <keyword>revert</keyword>
+	  </choice>
+	</value>
+	<initial>see individual properties</initial>
+    <applyto>see individual properties</applyto>
+	<inherit>see initial properties</inherit>
+    <spec><a href="https://www.w3.org/TR/css-cascade-4/#all-shorthand">CSS Cascading and Inheritance Level 4</a></spec>
+</property>
+
+<property>
 	<name>alternate-color</name>
 	<value>
 	<type>color</type>

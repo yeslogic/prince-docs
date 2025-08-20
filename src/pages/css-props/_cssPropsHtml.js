@@ -320,6 +320,58 @@ const cssPropsHtml = String.raw`
       </div>
     </details>
     <details>
+      <summary>
+        <h6 id="prop-all">all <a href="#prop-all" class="hash-link"> </a></h6>
+      </summary>
+      <div>
+        <div>
+          <div id="prop-all-syntax">Syntax</div>
+          <div class="example">
+            <div class="syntax-block">
+              <code>all: initial | inherit | unset | revert</code>
+            </div>
+          </div>
+        </div>
+        <div>
+          <div class="example">
+            <div class="syntax-block">
+              <table class="property-table">
+                <tr>
+                  <th scope="row">
+          Initial value
+        </th>
+                  <td>
+                    <code>see individual properties</code>
+                  </td>
+                </tr>
+                <tr>
+                  <th scope="row">
+          Applies to
+        </th>
+                  <td>see individual properties</td>
+                </tr>
+                <tr>
+                  <th scope="row">
+          Inherited
+        </th>
+                  <td/>
+                </tr>
+              </table>
+            </div>
+          </div>
+        </div>
+        <div/>
+        <div>
+          <div id="prop-all-spec">Specification</div>
+          <ul>
+            <li>
+              <a href="https://www.w3.org/TR/css-cascade-4/#all-shorthand">CSS Cascading and Inheritance Level 4</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </details>
+    <details>
       <summary class="ext" title="Prince extension">
         <h6 id="prop-alternate-color">alternate-color* <a href="#prop-alternate-color" class="hash-link"> </a></h6>
       </summary>
