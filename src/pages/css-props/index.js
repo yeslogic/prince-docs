@@ -134,8 +134,8 @@ function CssProperties() {
           </li>
         </ul>
         <p>
-          Prince also supports the two special keywords <code>initial</code> and{" "}
-          <code>inherit</code> on all properties.
+          Prince also supports the two special keywords <code>initial</code>,{" "}
+          <code>inherit</code>, and <code>unset</code> on all properties.
         </p>
         <p className="toggle">
           <a href="#" onClick={toggleAllCSS} id="toggle-css">
