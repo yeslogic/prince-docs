@@ -1194,6 +1194,22 @@ To use the features, the script just needs to be included in the HTML directly a
 ```
 
 
+### MathML
+
+<dl class="ingredients">
+  <dt>You need</dt>
+    <dd><a href="/doc/javascript">JavaScript</a></dd>
+    <dd><a href="https://github.com/yeslogic/prince-scripts/tree/master/compatibility/MathJax">MathJax compatibility script</a></dd>
+</dl>
+
+MathML is a pair of mathematical markup languages to express the content, and the presentation of mathematical content.  Prince converts MathML Content markup to MathML Presentation markup, and Presentation Markup gets converted in turn to SVG.
+
+MathML content can seemlessly be integrated in HTML5 documents, without even the need for namespaces.
+
+MathML can be expanded beyond the build-in support by using [MathJax](https://www.mathjax.org/), a JavaScript engine for mathematical expressions.  Note, however, that the [MathJax compatibility script](https://github.com/yeslogic/prince-scripts/tree/master/compatibility/MathJax) needs to be provided, too.  This script works with MathJax 3.1.4 and 3.2.0.  The command-line option `--javascript` must be supplied when running Prince.
+
+
+
 ### The "Multi-Pass" Solution
 
 <dl className="ingredients">
