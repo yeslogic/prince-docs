@@ -21,7 +21,7 @@ function Home() {
       <main id="entry">
         <p>In the documentation section you can find:</p>
         <ul>
-          <li>the <a href="/doc/installation-guide/">Installation Guide</a>,</li>
+          <li>the <a href="/doc/category/installation-guide/">Installation Guide</a>,</li>
           <li>the <a href="/doc/intro-userguide/">User Guide</a> for the latest version, and</li>
           <li>the <a href="/doc/category/reference-guide/">Reference Guide</a>.</li>
         </ul>
