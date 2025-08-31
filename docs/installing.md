@@ -2,7 +2,7 @@
 title: Installing Prince
 ---
 
-Prince is available for Windows, MacOS, Linux (multiple distributions) and FreeBSD. You can download the relevant file from our [downloads page](/download/). For Linux and FreeBSD you may need to choose based on your distribution type, version and processor type (32/64 bits).
+Prince is available for Windows (x86/ARM), MacOS, Linux (multiple distributions) and FreeBSD. You can download the relevant file from our [downloads page](/download/) - you may need to choose the download based on your processor type (x86/ARM, 32/64 bits), as well as distribution type and version.
 
 Prince is provided under the terms of the [Prince End-User License Agreement](/license/).
 
