@@ -1,5 +1,4 @@
-
-const stdAnnotated = {
+{
     "NaN": {
         "desc": "The special value Not a Number."
     },
@@ -2670,7 +2669,5 @@ const stdAnnotated = {
                 }
             ]
         }
-    },
-};
-
-export default stdAnnotated;
+    }
+}
