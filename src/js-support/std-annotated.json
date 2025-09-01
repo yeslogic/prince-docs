@@ -9,7 +9,6 @@
         "desc": "Represents the special value undefined."
     },
     "eval": {
-        "type": "function",
         "desc": "Evaluates text as JavaScript source code.",
         "returns": "Result of evaluation",
         "arguments": [
@@ -21,7 +20,6 @@
         ]
     },
     "parseInt": {
-        "type": "function",
         "desc": "Turns input into an integer number.",
         "arguments": [
             {
@@ -39,7 +37,6 @@
         "returns": "number"
     },
     "parseFloat": {
-        "type": "function",
         "desc": "Turns input into a floating point number.",
         "example": "parseFloat('1.5')",
         "exampleReturn": 1.5,
@@ -157,7 +154,6 @@
         "create": {},
         "defineProperty": {
             "desc": "Adds a property to the object and defines certain traits like enumerability.",
-            "type": "function",
             "arguments": [
                 {
                     "type": "object",
@@ -2050,7 +2046,6 @@
     },
     "BoxInfo": {
         "ext": "ext",
-        "type": "function",
         "returns": "The properties of a box, can be accessed after document conversion has finished - see <a href='/doc/javascript#the-box-tracking-api'>The Box Tracking API</a>.",
         "prototype": {
             "type": {
@@ -2127,7 +2122,6 @@
         }
     },
     "Prince": {
-        "type": "object",
         "ext": "ext",
         "desc": "See <a href='/doc/javascript#the-prince-object'>The Prince Object</a>.",
         "addEventListener": {
@@ -2152,7 +2146,6 @@
             "desc": "The <code>complete</code> event is fired when all layout is finished (and after the last repeated layout, if this was requested), just before the PDF is output, so that it can cancel the PDF output by triggering a fail-safe if necessary, or log information about the PDF like the page count."
         },
         "addScriptFunc": {
-            "type": "function",
             "arguments": [
                 {
                     "name": "name",
@@ -2166,7 +2159,6 @@
             "desc": "exposes an arbitrary JavaScript function to CSS. See <a href='/doc/gen-content#script-functions'>Script Functions</a>."
         },
         "trackBoxes": {
-            "type": "function",
             "desc": "See <a href='/doc/javascript#the-box-tracking-api'>The Box Tracking API</a>.",
             "arguments": [
                 {
@@ -2175,7 +2167,6 @@
             ]
         },
         "convertToFile": {
-            "type": "function",
             "arguments": [
                 {
                     "name": "JSON",
@@ -2194,7 +2185,6 @@
             "returns": "boolean, indicating success"
         },
         "convertToBuffer": {
-            "type": "function",
             "arguments": [
                 {
                     "name": "JSON",
@@ -2215,7 +2205,6 @@
             "returns": "Total number of document pages, can be accessed after document conversion has finished."
         },
         "registerPostLayoutFunc": {
-            "type": "function",
             "arguments": [
                 {
                     "name": "function",
@@ -2225,7 +2214,6 @@
             "desc": "See <a href='/doc/javascript#multi-pass-formatting'>Multi-Pass formatting</a>."
         },
         "Log": {
-            "type": "object",
             "desc": "also available as <a href='#window.Log'><code>Log</code></a>.",
             "debug": {
                 "type": "function",
@@ -2281,11 +2269,9 @@
         }
     },
     "PDF": {
-        "type": "object",
         "ext": "ext",
         "desc": "See <a href='/doc/javascript#the-pdf-object'>The PDF Object</a>.",
         "attachFile": {
-            "type": "function",
             "arguments": [
                 {
                     "name": "URL",
@@ -2310,7 +2296,6 @@
             "example": "PDF.attachFile('data.xls', 'Latest sales figures.', 'SalesFigures', 'Data')"
         },
         "colorOptions": {
-            "type": "function",
             "arguments": [
                 {
                     "type": "string",
@@ -2319,7 +2304,6 @@
             ]
         },
         "embedFonts": {
-            "type": "function",
             "arguments": [
                 {
                     "type": "boolean"
@@ -2327,7 +2311,6 @@
             ]
         },
         "subsetFonts": {
-            "type": "function",
             "arguments": [
                 {
                     "type": "boolean"
@@ -2335,7 +2318,6 @@
             ]
         },
         "artificialFonts": {
-            "type": "function",
             "arguments": [
                 {
                     "type": "boolean"
@@ -2343,7 +2325,6 @@
             ]
         },
         "forceIdentityEncoding": {
-            "type": "function",
             "arguments": [
                 {
                     "type": "boolean"
@@ -2351,7 +2332,6 @@
             ]
         },
         "compress": {
-            "type": "function",
             "arguments": [
                 {
                     "type": "boolean"
@@ -2359,7 +2339,6 @@
             ]
         },
         "encrypt": {
-            "type": "function",
             "arguments": [
                 {
                     "type": "boolean"
@@ -2367,7 +2346,6 @@
             ]
         },
         "userPassword": {
-            "type": "function",
             "arguments": [
                 {
                     "type": "string"
@@ -2375,7 +2353,6 @@
             ]
         },
         "ownerPassword": {
-            "type": "function",
             "arguments": [
                 {
                     "type": "string"
@@ -2383,7 +2360,6 @@
             ]
         },
         "allowPrint": {
-            "type": "function",
             "arguments": [
                 {
                     "type": "boolean"
@@ -2391,7 +2367,6 @@
             ]
         },
         "allowModify": {
-            "type": "function",
             "arguments": [
                 {
                     "type": "boolean"
@@ -2399,7 +2374,6 @@
             ]
         },
         "allowCopy": {
-            "type": "function",
             "arguments": [
                 {
                     "type": "boolean"
@@ -2407,7 +2381,6 @@
             ]
         },
         "allowAnnotate": {
-            "type": "function",
             "arguments": [
                 {
                     "type": "boolean"
@@ -2415,7 +2388,6 @@
             ]
         },
         "keyBits": {
-            "type": "function",
             "arguments": [
                 {
                     "name": "key bits",
@@ -2425,7 +2397,6 @@
             ]
         },
         "script": {
-            "type": "function",
             "arguments": [
                 {
                     "type": "string"
@@ -2433,7 +2404,6 @@
             ]
         },
         "openAction": {
-            "type": "function",
             "arguments": [
                 {
                     "type": "string",
@@ -2443,7 +2413,6 @@
             "example": "PDF.openAction('print')"
         },
         "pageLayout": {
-            "type": "function",
             "arguments": [
                 {
                     "type": "string",
@@ -2452,7 +2421,6 @@
             ]
         },
         "pageMode": {
-            "type": "function",
             "arguments": [
                 {
                     "type": "string",
@@ -2461,7 +2429,6 @@
             ]
         },
         "printScaling": {
-            "type": "function",
             "arguments": [
                 {
                     "type": "string",
@@ -2470,7 +2437,6 @@
             ]
         },
         "duplex": {
-            "type": "function",
             "arguments": [
                 {
                     "type": "string",
@@ -2479,7 +2445,6 @@
             ]
         },
         "profile": {
-            "type": "function",
             "arguments": [
                 {
                     "type": "string",
@@ -2489,7 +2454,6 @@
             "example": "PDF.profile(\"PDF/X-3:2003\")"
         },
         "outputIntent": {
-            "type": "function",
             "arguments": [
                 {
                     "type": "string",
@@ -2498,7 +2462,6 @@
             ]
         },
         "objectStreams": {
-            "type": "function",
             "desc": "Can be used to disable PDF object streams.  Object streams are enabled by default.",
             "arguments": [
                 {
@@ -2507,7 +2470,6 @@
             ]
         },
         "fallbackCMYKProfile": {
-            "type": "function",
             "arguments": [
                 {
                     "type": "string",
@@ -2516,7 +2478,6 @@
             ]
         },
         "colorConversion": {
-            "type": "function",
             "arguments": [
                 {
                     "type": "string",
@@ -2525,7 +2486,6 @@
             ]
         },
         "paperTray": {
-            "type": "function",
             "arguments": [
                 {
                     "type": "string",
@@ -2534,7 +2494,6 @@
             ]
         },
         "filterResolution": {
-            "type": "function",
             "arguments": [
                 {
                     "type": "string",
@@ -2544,7 +2503,6 @@
             "example": "PDF.filterResolution('128dpi')"
         },
         "xmp": {
-            "type": "function",
             "arguments": [
                 {
                     "type": "string",
@@ -2554,7 +2512,6 @@
             "example": "PDF.xmp('xmp-data.xmp')"
         },
         "xmpMetadata": {
-            "type": "function",
             "arguments": [
                 {
                     "type": "boolean"
@@ -2562,7 +2519,6 @@
             ]
         },
         "title": {
-            "type": "function",
             "arguments": [
                 {
                     "type": "string"
@@ -2570,7 +2526,6 @@
             ]
         },
         "subject": {
-            "type": "function",
             "arguments": [
                 {
                     "type": "string"
@@ -2578,7 +2533,6 @@
             ]
         },
         "author": {
-            "type": "function",
             "arguments": [
                 {
                     "type": "string"
@@ -2586,7 +2540,6 @@
             ]
         },
         "keywords": {
-            "type": "function",
             "arguments": [
                 {
                     "type": "string"
@@ -2594,7 +2547,6 @@
             ]
         },
         "creator": {
-            "type": "function",
             "arguments": [
                 {
                     "type": "string"
@@ -2602,7 +2554,6 @@
             ]
         },
         "lang": {
-            "type": "function",
             "arguments": [
                 {
                     "type": "string"
@@ -2610,17 +2561,14 @@
             ]
         },
         "pages": {
-            "type": "array",
             "returns": "A list of page boxes, can be accessed after document conversion has finished."
         }
     },
     "Log": {
         "ext": "ext",
-        "type": "object",
         "desc": "also available as <a href='#window.Prince.Log'><code>Prince.Log</code></a>.",
         "debug": {
             "desc": "only available when the <code>--debug</code> command-line option is specified.",
-            "type": "function",
             "arguments": [
                 {
                     "name": "message",
@@ -2630,7 +2578,6 @@
         },
         "info": {
             "desc": "only available when the <code>--verbose</code> command-line option is specified.",
-            "type": "function",
             "arguments": [
                 {
                     "name": "message",
@@ -2639,7 +2586,6 @@
             ]
         },
         "warning": {
-            "type": "function",
             "arguments": [
                 {
                     "name": "message",
@@ -2648,7 +2594,6 @@
             ]
         },
         "error": {
-            "type": "function",
             "arguments": [
                 {
                     "name": "message",
@@ -2657,7 +2602,6 @@
             ]
         },
         "data": {
-            "type": "function",
             "arguments": [
                 {
                     "name": "name",
