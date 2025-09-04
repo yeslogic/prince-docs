@@ -904,7 +904,8 @@ This example only works when a page name is used only once within a document, su
         }
     }
 ```
-The property `-prince-page-group: start` instructs Prince to start a new page group. This is necessary for the `div.chapter:first-of-group` selector to match the first page of each chapter, instead of only the first page in the first chapter. See [Page groups](#page-groups).
+The property `-prince-page-group: start` instructs Prince to start a new page group. This is necessary for the `chapter:first-of-group` selector to match the first page of each chapter, instead of only the first page in the first chapter. See [Page groups](#page-groups).
+
 
 ### Blank pages
 
