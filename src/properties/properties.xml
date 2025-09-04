@@ -4703,6 +4703,22 @@ NOTE: The current build process will cause this file's content to appear in a Ja
     keyword, is a bigger amount than the hard <em>requirement</em> expressed
     in the first value.
     </p>
+    <p>
+    For an integer not preceded by <code>-prince-prefer</code>,
+    the paragraph will be pushed forward to the start of a new page or column
+    if necessary to ensure the given number of lines are together.
+    </p>
+    <p>
+    An integer preceded by <code>-prince-prefer</code>
+    is a request that Prince for Books will try to satisfy,
+    but not at the cost of introducing an obvious gap at the end of the
+    previous column or page:
+    it will only use whatever flexibility has been granted with
+    <code><property name="prince-change-line-breaks-for-pagination"/></code>,
+    <code><property name="prince-spread-length-options"/></code>
+    or
+    <code><property name="prince-resize-options"/></code>.
+    </p>
     </comments>
     <spec><a href="https://www.w3.org/TR/CSS2/page.html#break-inside">CSS 2.1</a></spec>
     <spec><a href="https://www.w3.org/TR/css-break-3/#widows-orphans">CSS Fragmentation Module Level 3</a></spec>
@@ -4972,26 +4988,6 @@ supplier, item { overflow-wrap: normal; }
 	should be placed on. See the documentation for <a href="/doc/paged/#selecting-pages">Selecting pages</a>
 	for more details.
 	</p>
-
-        <p>
-        For an integer not preceded by <code>-prince-prefer</code>,
-        the paragraph will be pushed forward to the start of a new page or column
-        if necessary to ensure the given number of lines are together.
-        </p>
-
-        <p>
-        Values involving <code>-prince-prefer</code> are only accepted by
-        <a href="/doc/prince-for-books/">Prince for Books</a>.
-        An integer preceded by <code>-prince-prefer</code>
-        is a request that Prince for Books will try to satisfy,
-        but not at the cost of introducing an obvious gap at the end of the
-        previous column or page:
-        it will only use whatever flexibility has been granted with
-        <code><property name="prince-change-line-breaks-for-pagination"/></code>,
-        <code><property name="prince-spread-length-options"/></code>
-        or
-        <code><property name="prince-resize-options"/></code>.
-        </p>
     </comments>
     <spec><a href="https://www.w3.org/TR/css3-page/#using-named-pages">CSS Paged Media Module Level 3</a></spec>
 </property>
