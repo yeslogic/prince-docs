@@ -253,7 +253,7 @@ A typical case is page numbering, which can easily be obtained with [Generated C
 
 ```css
     @page {
-        @bottom {
+        @bottom-center {
             content: counter(page)
         }
     }
@@ -264,7 +264,7 @@ The title of the book, or the current chapter, can be copyied into the page regi
 
 ```css
     @page {
-        @top { content: string(doctitle) }
+        @top-center { content: string(doctitle) }
     }
 
     h1 { string-set: doctitle content() }
@@ -392,7 +392,7 @@ Page counters work a bit more simple and usually don't need to be explicitly ini
 
 ```css
     @page {
-      @bottom {
+      @bottom-center {
         content: counter(page);
       }
     }
@@ -405,7 +405,7 @@ However, if you want to restart the numbering after the Preface of your book, yo
       counter-reset: page 1;
     }
     @page preface {
-      @bottom {
+      @bottom-center {
         content: counter(page, lower-roman);
       }
     }
@@ -414,7 +414,7 @@ However, if you want to restart the numbering after the Preface of your book, yo
       counter-reset: page 1;
     }
     @page main {
-      @bottom {
+      @bottom-center {
         content: counter(page);
       }
     }
@@ -439,7 +439,7 @@ In some documents, particularly those that are unbound such as office documents,
 
 ```css
     @page {
-      @bottom {
+      @bottom-center {
         content: "Page " counter(page) " of " counter(pages);
       }
     }
