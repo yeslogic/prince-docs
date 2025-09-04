@@ -278,6 +278,52 @@ Please note that running headers are [tagged as `Artifact`](prince-output.md#pdf
 If some special formatting of the text in the margin box is required, copying the text will not suffice - you need to remove an element from the natural page flow to place it in the margin box. See [Taking elements from the document](paged.md#taking-elements-from-the-document) for details.
 
 
+#### ...on the first page
+
+<dl className="ingredients">
+  <dt>You need</dt>
+  <dd><a href="/doc/css-selectors#page-selectors">Page selectors</a></dd>
+  <dd><a href="/doc/paged/#named-pages">Named pages</a></dd>
+</dl>
+
+A common scenario is to want to style the headers, and possibly footers, of the first page of a document, or of a chapter, differently.  To achieve this, you need to target the page you want to be styled differently.
+
+If you just want the first page of a document without headers, you can simply target it with the page selector `:first`.
+
+```css
+    @page:first {
+        @top-center { content: normal; }
+    }
+```
+
+You can also create named pages with the property `page`, and redefine the headers on the first page of the named pages different than all other headers.
+
+```css
+    .contents {
+        display: block;
+        page: table-of-contents;
+    }
+    @page table-of-contents {
+        @top-center { content: "Table of Contents" }
+    }
+```
+
+This, however, only works if a page name is used only once within a document, such as for the table of contents.  If you wish to apply a style to the first page of every chapter then you must use the `-prince-page-group` property to create *page groups*.  The property `-prince-page-group: start` instructs Prince to start a new page group. This is necessary for the `chapter:first-of-group` selector to match the first page *of each chapter*, instead of only the first page in the first chapter!
+
+```css
+    div.chapter {
+        page: chapter;
+        break-before: right;
+        -prince-page-group: start;
+    }
+    @page chapter:first-of-group {
+        @top-center {
+            content: normal;
+        }
+    }
+```
+
+
 ### Dictionary Page Headers
 
 <dl className="ingredients">
