@@ -296,7 +296,7 @@ If you just want the first page of a document without headers, you can simply ta
     }
 ```
 
-You can also create named pages with the property `page`, and redefine the headers on the first page of the named pages different than all other headers.
+You can also create named pages with the property [`page`](css-props.md#prop-page), and redefine the headers on the first page of the named pages different than all other headers.
 
 ```css
     .contents {
@@ -308,7 +308,7 @@ You can also create named pages with the property `page`, and redefine the heade
     }
 ```
 
-This, however, only works if a page name is used only once within a document, such as for the table of contents.  If you wish to apply a style to the first page of every chapter then you must use the `-prince-page-group` property to create *page groups*.  The property `-prince-page-group: start` instructs Prince to start a new page group. This is necessary for the `chapter:first-of-group` selector to match the first page *of each chapter*, instead of only the first page in the first chapter!
+This, however, only works if a page name is used only once within a document, such as for the table of contents.  If you wish to apply a style to the first page of every chapter then you must use the [`-prince-page-group`](css-props.md#prop-prince-page-group) property to create *page groups*.  The property `-prince-page-group: start` instructs Prince to start a new page group. This is necessary for the `chapter:first-of-group` selector to match the first page *of each chapter*, instead of only the first page in the first chapter!
 
 ```css
     div.chapter {
@@ -322,6 +322,8 @@ This, however, only works if a page name is used only once within a document, su
         }
     }
 ```
+
+Any other page of the document, or of a chapter, can be targeted with the selectors <code>:nth(<i>N</i>)</code>, or <code>:nth-of-group(<i>N</i>)</code>.
 
 
 ### Dictionary Page Headers
