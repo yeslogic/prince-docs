@@ -13023,6 +13023,22 @@ const cssPropsHtml = String.raw`
     keyword, is a bigger amount than the hard <em>requirement</em> expressed
     in the first value.
     </p>
+          <p>
+    For an integer not preceded by <code>-prince-prefer</code>,
+    the paragraph will be pushed forward to the start of a new page or column
+    if necessary to ensure the given number of lines are together.
+    </p>
+          <p>
+    An integer preceded by <code>-prince-prefer</code>
+    is a request that Prince for Books will try to satisfy,
+    but not at the cost of introducing an obvious gap at the end of the
+    previous column or page:
+    it will only use whatever flexibility has been granted with
+    <code>-<a href="#prop-prince-change-line-breaks-for-pagination">prince-change-line-breaks-for-pagination</a></code>,
+    <code>-<a href="#prop-prince-spread-length-options">prince-spread-length-options</a></code>
+    or
+    <code>-<a href="#prop-prince-resize-options">prince-resize-options</a></code>.
+    </p>
         </div>
         <div>
           <div id="prop-orphans-seealso">See Also</div>
@@ -13929,24 +13945,6 @@ supplier, item { overflow-wrap: normal; }
 	should be placed on. See the documentation for <a href="/doc/paged/#selecting-pages">Selecting pages</a>
 	for more details.
 	</p>
-          <p>
-        For an integer not preceded by <code>-prince-prefer</code>,
-        the paragraph will be pushed forward to the start of a new page or column
-        if necessary to ensure the given number of lines are together.
-        </p>
-          <p>
-        Values involving <code>-prince-prefer</code> are only accepted by
-        <a href="/doc/prince-for-books/">Prince for Books</a>.
-        An integer preceded by <code>-prince-prefer</code>
-        is a request that Prince for Books will try to satisfy,
-        but not at the cost of introducing an obvious gap at the end of the
-        previous column or page:
-        it will only use whatever flexibility has been granted with
-        <code>-<a href="#prop-prince-change-line-breaks-for-pagination">prince-change-line-breaks-for-pagination</a></code>,
-        <code>-<a href="#prop-prince-spread-length-options">prince-spread-length-options</a></code>
-        or
-        <code>-<a href="#prop-prince-resize-options">prince-resize-options</a></code>.
-        </p>
         </div>
         <div>
           <div id="prop-page-spec">Specification</div>
