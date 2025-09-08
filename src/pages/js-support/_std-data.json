@@ -2644,8 +2644,7 @@
       },
       "write": {
         "__princetype__": "function"
-      },
-      "innerHTML": {}
+      }
     }
   },
   "HTMLElement": {
