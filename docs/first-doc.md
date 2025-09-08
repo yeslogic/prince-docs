@@ -150,7 +150,7 @@ Finally we will make the "Hello World!" paragraph stand out. This paragraph is i
         font-family: serif;
     }
 ```
-Okay, that's getting unnecessary, however we can see just how easy it is to apply styles to our document. You can download the complete CSS file here: [`lab_report.css`](samples/lab_report.css).
+Okay, that's getting unnecessary, however we can see just how easy it is to apply styles to our document. You can download the complete CSS file here: [`lab_report.css`](assets/samples/lab_report.css).
 
 There are many ways to apply a stylesheet to a document, for this tutorial we will show only three. For information about the ways that styles can be applied and style precedence see [Applying Style Sheets in Prince](prince-input.md#applying-style-sheets-in-prince).
 

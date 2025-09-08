@@ -100,7 +100,7 @@ This style snippet could be part of the stylesheet for a little booklet - it dis
   <dd><a href="/doc/gen-content">Generated Content</a></dd>
 </dl>
 
-A basic concept in preparing a page is the organisation of the available space in main content, known as the _page area_, and additional content arranged in _page area regions_ and _page-margin boxes_ - for a full explanation, please refer to the [page regions](paged.md/#page-regions) chapter.  In that chapter you can see an image with all available regions and boxes depicted.
+A basic concept in preparing a page is the organisation of the available space in main content, known as the _page area_, and additional content arranged in _page area regions_ and _page-margin boxes_ - for a full explanation, please refer to the [page regions](paged.md#page-regions) chapter.  In that chapter you can see an image with all available regions and boxes depicted.
 
 That image is created by Prince only with the help of HTML and CSS.  Here is the code producing that image:
 

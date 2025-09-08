@@ -73,7 +73,7 @@ Explanation
 Prince uses some third-party shared libraries, these are used for things such as decoding TIFF, PNG or JPEG files and finding and loading fonts. If one or more of these shared libraries cannot be found on your system then Prince will not run. This can occur if Prince was installed from a tarball (see [Tarballs - Alpine Linux, FreeBSD and Generic Linux](installing.md#tarballs---alpine-linux-freebsd-and-generic-linux)).
 
 Solution 1  
-Install the missing library software. [Acknowledgments](acknowledgements.md#acknowledgments) provides a list of the libraries that Prince uses. It is recommended to install them through your operating system's package management tool, see your operating system's documentation for more information.
+Install the missing library software. [Acknowledgments](acknowledgements.md) provides a list of the libraries that Prince uses. It is recommended to install them through your operating system's package management tool, see your operating system's documentation for more information.
 
 Solution 2  
 Prince is just using the system shared object loader for most libraries, so the `LD_LIBRARY_PATH` environment variable might need to be edited, if you have installed these libraries in non-standard or different locations.
