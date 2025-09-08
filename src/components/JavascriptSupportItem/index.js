@@ -219,7 +219,11 @@ function JavascriptSupportItem({
 
   return (
     <details
-      className={clsx("level", { ext: extClass, dep: depClass })}
+      className={clsx("level", {
+        ext: extClass,
+        dep: depClass,
+        globalWindow: isGlobalWindow
+      })}
       open={openAttribute}
     >
       <summary id={pathStr}>
