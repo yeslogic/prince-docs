@@ -1,28 +1,17 @@
-import { useEffect, useMemo } from "react";
+import { useMemo } from "react";
 import cssPropsHtml from "./_cssPropsHtml";
-import { openDetails } from "../../components/openDetails";
+import useHashDetails from "../../components/useHashDetails";
 
 function CssProperties() {
   // This prevents *other* sections closing when the URL hash changes on hash-link clicks and the page re-renders:
   const memoizedCssPropsHtml = useMemo(
     () => ({
-      __html: cssPropsHtml,
+      __html: cssPropsHtml
     }),
     [cssPropsHtml]
   );
 
-  useEffect(() => {
-    // On page load/after first render, if there's a hash in the URL, open that id's parent `details` element:
-    openDetails();
-
-    // On "hashchange"/click of hash-links, open the corresponding id's parent `details` element:
-    window.addEventListener("hashchange", openDetails);
-
-    // When the css-props component unmounts, remove the hashchange event listener:
-    return () => {
-      window.removeEventListener("hashchange", openDetails);
-    };
-  }, []);
+  useHashDetails();
 
   const toggleAllCSS = (event) => {
     const propListEl = document.getElementById("prop-list");
