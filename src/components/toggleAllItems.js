@@ -1,4 +1,5 @@
 export const toggleAllItems = (event, listId, toggleId) => {
+  event.preventDefault();
   const propListEl = document.getElementById(listId);
   const allDetails = propListEl.getElementsByTagName("details");
   const toggleLink = document.getElementById(toggleId);
@@ -13,7 +14,12 @@ export const toggleAllItems = (event, listId, toggleId) => {
       toggleLink.removeAttribute("open");
     }
   }
-  event.preventDefault();
+
+  // Always open `#.window` on js-support page:
+  const windowItemElement = document.getElementById(".window");
+  if (windowItemElement) {
+    windowItemElement.parentElement.setAttribute("open", "");
+  }
 
   return false;
 };
