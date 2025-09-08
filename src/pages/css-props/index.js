@@ -13,10 +13,9 @@ function CssProperties() {
 
   useHashDetails();
 
-  const toggleAllCSS = (event) => {
-    const propListEl = document.getElementById("prop-list");
+  const toggleAllItems = (event, listId, toggleId) => {
+    const propListEl = document.getElementById(listId);
     const allDetails = propListEl.getElementsByTagName("details");
-    const toggleId = "toggle-css";
     const toggleLink = document.getElementById(toggleId);
     if (toggleLink.hasAttribute("open") == false) {
       for (let i = 0; i < allDetails.length; i++) {
@@ -33,6 +32,9 @@ function CssProperties() {
 
     return false;
   };
+
+  const toggleAllCSS = (event) =>
+    toggleAllItems(event, "prop-list", "toggle-css");
 
   return (
     <div>
