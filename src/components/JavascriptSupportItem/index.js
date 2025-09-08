@@ -1,6 +1,5 @@
 import React from "react";
 import clsx from "clsx";
-import styles from "./JavascriptSupportItem.module.css";
 
 // some things we ignore..
 const BLOCKLIST = ["constructor", "write", "writeln"];
