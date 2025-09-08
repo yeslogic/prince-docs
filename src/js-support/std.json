@@ -163,85 +163,85 @@
         "prototype": {
             "__princetype__": "object",
             "baseline": {
-                "__princetype__": null
+                "__princetype__": "number"
             },
             "borderBottom": {
-                "__princetype__": null
+                "__princetype__": "number"
             },
             "borderLeft": {
-                "__princetype__": null
+                "__princetype__": "number"
             },
             "borderRight": {
-                "__princetype__": null
+                "__princetype__": "number"
             },
             "borderTop": {
-                "__princetype__": null
+                "__princetype__": "number"
             },
             "children": {
-                "__princetype__": null
+                "__princetype__": "object"
             },
             "element": {
-                "__princetype__": null
+                "__princetype__": "object"
             },
             "floatPosition": {
-                "__princetype__": null
+                "__princetype__": "string"
             },
             "h": {
-                "__princetype__": null
+                "__princetype__": "number"
             },
             "marginBottom": {
-                "__princetype__": null
+                "__princetype__": "number"
             },
             "marginLeft": {
-                "__princetype__": null
+                "__princetype__": "number"
             },
             "marginRight": {
-                "__princetype__": null
+                "__princetype__": "number"
             },
             "marginTop": {
-                "__princetype__": null
+                "__princetype__": "number"
             },
             "paddingBottom": {
-                "__princetype__": null
+                "__princetype__": "number"
             },
             "paddingLeft": {
-                "__princetype__": null
+                "__princetype__": "number"
             },
             "paddingRight": {
-                "__princetype__": null
+                "__princetype__": "number"
             },
             "paddingTop": {
-                "__princetype__": null
+                "__princetype__": "number"
             },
             "pageNum": {
-                "__princetype__": null
+                "__princetype__": "number"
             },
             "parent": {
-                "__princetype__": null
+                "__princetype__": "object"
             },
             "pseudo": {
-                "__princetype__": null
+                "__princetype__": "string"
             },
             "src": {
-                "__princetype__": null
+                "__princetype__": "string"
             },
             "style": {
-                "__princetype__": null
+                "__princetype__": "object"
             },
             "text": {
-                "__princetype__": null
+                "__princetype__": "string"
             },
             "type": {
-                "__princetype__": null
+                "__princetype__": "string"
             },
             "w": {
-                "__princetype__": null
+                "__princetype__": "number"
             },
             "x": {
-                "__princetype__": null
+                "__princetype__": "number"
             },
             "y": {
-                "__princetype__": null
+                "__princetype__": "number"
             }
         }
     },
@@ -3163,9 +3163,27 @@
     },
     "Prince": {
         "Log": {
-            "__princetype__": "object"
+            "__princetype__": "object",
+            "data": {
+                "__princetype__": "function"
+            },
+            "debug": {
+                "__princetype__": "function"
+            },
+            "error": {
+                "__princetype__": "function"
+            },
+            "info": {
+                "__princetype__": "function"
+            },
+            "warning": {
+                "__princetype__": "function"
+            }
         },
         "__princetype__": "object",
+        "addEventListener": {
+            "__princetype__": "function"
+        },
         "addScriptFunc": {
             "__princetype__": "function"
         },
@@ -3175,10 +3193,19 @@
         "convertToFile": {
             "__princetype__": "function"
         },
+        "dispatchEvent": {
+            "__princetype__": "function"
+        },
         "failStatus": {
             "__princetype__": "boolean"
         },
+        "pageCount": {
+            "__princetype__": "number"
+        },
         "registerPostLayoutFunc": {
+            "__princetype__": "function"
+        },
+        "removeEventListener": {
             "__princetype__": "function"
         },
         "trackBoxes": {
