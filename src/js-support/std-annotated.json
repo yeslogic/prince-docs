@@ -310,7 +310,6 @@
     "String": {
         "fromCharCode": {},
         "fromCodePoint": {},
-        "CodePointAt": {},
         "raw": {},
         "prototype": {
             "constructor": {},
