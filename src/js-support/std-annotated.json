@@ -120,7 +120,7 @@
         ]
     },
     "toString": {
-        "descr": "Converts an object to a string.",
+        "desc": "Converts an object to a string.",
         "returns": "string"
     },
     "toLocaleString": {
