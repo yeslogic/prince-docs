@@ -2050,68 +2050,51 @@
         "returns": "The properties of a box, can be accessed after document conversion has finished - see <a href='/doc/javascript#the-box-tracking-api'>The Box Tracking API</a>.",
         "prototype": {
             "type": {
-                "type": "function",
-                "returns": "\"BODY\" | \"COLUMN\" | \"FLEXLINE\" | \"FOOTNOTES\" | \"FLOATS\" | \"BOX\" | \"LINE\" | \"SPAN\" | \"TEXT\" | \"SVG\" | \"IMAGE\""
+                "desc": "\"BODY\" | \"COLUMN\" | \"FLEXLINE\" | \"FOOTNOTES\" | \"FLOATS\" | \"BOX\" | \"LINE\" | \"SPAN\" | \"TEXT\" | \"SVG\" | \"IMAGE\""
             },
             "pageNum": {},
             "x": {
-                "type": "function",
-                "returns": "x-coordinate, in pt"
+                "desc": "x-coordinate, in pt"
             },
             "y": {
-                "type": "function",
-                "returns": "y-coordinate, in pt"
+                "desc": "y-coordinate, in pt"
             },
             "w": {
-                "type": "function",
-                "returns": "width, in pt"
+                "desc": "width, in pt"
             },
             "h": {
-                "type": "function",
-                "returns": "height, in pt"
+                "desc": "height, in pt"
             },
             "marginBottom": {
-                "type": "function",
-                "returns": "the used value for the bottom margin"
+                "desc": "the used value for the bottom margin"
             },
             "marginLeft": {
-                "type": "function",
-                "returns": "the used value for the left margin"
+                "desc": "the used value for the left margin"
             },
             "marginRight": {
-                "type": "function",
-                "returns": "the used value for the right margin"
+                "desc": "the used value for the right margin"
             },
             "marginTop": {
-                "type": "function",
-                "returns": "the used value for the top margin"
+                "desc": "the used value for the top margin"
             },
             "floatPosition": {
-                "type": "function",
-                "returns": "\"TOP\" | \"BOTTOM\""
+                "desc": "\"TOP\" | \"BOTTOM\""
             },
             "children": {
-                "type": "function",
-                "returns": "array of child boxes"
+                "desc": "array of child boxes"
             },
             "parent": {
-                "type": "function",
-                "returns": "parent box"
+                "desc": "parent box"
             },
             "element": {
-                "type": "function",
-                "returns": "DOM element for box (may be null)"
+                "desc": "DOM element for box (may be null)"
             },
             "pseudo": {
-                "type": "function",
-                "returns": "pseudo-element name or null"
+                "desc": "pseudo-element name or null"
             },
-            "text": {
-                "type": "string"
-            },
+            "text": {},
             "style": {
-                "type": "function",
-                "returns": "CSS style object for box"
+                "desc": "CSS style object for box"
             }
         }
     },
@@ -2126,7 +2109,6 @@
         "ext": "ext",
         "desc": "See <a href='/doc/javascript#the-prince-object'>The Prince Object</a>.",
         "addEventListener": {
-            "type": "function",
             "desc": "can be called to listen to the <code>complete</code> event on the Prince object. See <a href='/doc/javascript#event-handling'>Event Handling</a>.",
             "arguments": [
                 {
@@ -2202,7 +2184,6 @@
             "returns": "boolean"
         },
         "pageCount": {
-            "type": "function",
             "returns": "Total number of document pages, can be accessed after document conversion has finished."
         },
         "registerPostLayoutFunc": {
@@ -2217,7 +2198,6 @@
         "Log": {
             "desc": "also available as <a href='#window.Log'><code>Log</code></a>.",
             "debug": {
-                "type": "function",
                 "desc": "only available when the <code>--debug</code> command-line option is specified.",
                 "arguments": [
                     {
@@ -2227,7 +2207,6 @@
                 ]
             },
             "info": {
-                "type": "function",
                 "desc": "only available when the <code>--verbose</code> command-line option is specified.",
                 "arguments": [
                     {
@@ -2237,7 +2216,6 @@
                 ]
             },
             "warning": {
-                "type": "function",
                 "arguments": [
                     {
                         "name": "message",
@@ -2246,7 +2224,6 @@
                 ]
             },
             "error": {
-                "type": "function",
                 "arguments": [
                     {
                         "name": "message",
@@ -2255,7 +2232,6 @@
                 ]
             },
             "data": {
-                "type": "function",
                 "arguments": [
                     {
                         "name": "name",
@@ -2297,270 +2273,74 @@
             "example": "PDF.attachFile('data.xls', 'Latest sales figures.', 'SalesFigures', 'Data')"
         },
         "colorOptions": {
-            "arguments": [
-                {
-                    "type": "string",
-                    "desc": "\"auto\" | \"use-true-black\" | \"use-rich-black\""
-                }
-            ]
+            "desc": "<code>\"auto\" | \"use-true-black\" | \"use-rich-black\"</code>. See <a href='/doc/css-props/#prop-prince-pdf-color-options'><code>-prince-pdf-color-options</code></a>"
         },
-        "embedFonts": {
-            "arguments": [
-                {
-                    "type": "boolean"
-                }
-            ]
-        },
-        "subsetFonts": {
-            "arguments": [
-                {
-                    "type": "boolean"
-                }
-            ]
-        },
-        "artificialFonts": {
-            "arguments": [
-                {
-                    "type": "boolean"
-                }
-            ]
-        },
-        "forceIdentityEncoding": {
-            "arguments": [
-                {
-                    "type": "boolean"
-                }
-            ]
-        },
-        "compress": {
-            "arguments": [
-                {
-                    "type": "boolean"
-                }
-            ]
-        },
-        "encrypt": {
-            "arguments": [
-                {
-                    "type": "boolean"
-                }
-            ]
-        },
-        "userPassword": {
-            "arguments": [
-                {
-                    "type": "string"
-                }
-            ]
-        },
-        "ownerPassword": {
-            "arguments": [
-                {
-                    "type": "string"
-                }
-            ]
-        },
-        "allowPrint": {
-            "arguments": [
-                {
-                    "type": "boolean"
-                }
-            ]
-        },
-        "allowModify": {
-            "arguments": [
-                {
-                    "type": "boolean"
-                }
-            ]
-        },
-        "allowCopy": {
-            "arguments": [
-                {
-                    "type": "boolean"
-                }
-            ]
-        },
-        "allowAnnotate": {
-            "arguments": [
-                {
-                    "type": "boolean"
-                }
-            ]
-        },
+        "embedFonts": {},
+        "subsetFonts": {},
+        "artificialFonts": {},
+        "forceIdentityEncoding": {},
+        "compress": {},
+        "encrypt": {},
+        "userPassword": {},
+        "ownerPassword": {},
+        "allowPrint": {},
+        "allowModify": {},
+        "allowCopy": {},
+        "allowAnnotate": {},
         "keyBits": {
-            "arguments": [
-                {
-                    "name": "key bits",
-                    "type": "string",
-                    "desc": "\"40\" | \"128\""
-                }
-            ]
+            "desc": "<code>\"40\" | \"128\"</code>. See <a href='/doc/prince-output/#pdf-encryption-and-document-security'>PDF Encryption and Document Security</a>"
         },
-        "script": {
-            "arguments": [
-                {
-                    "type": "string"
-                }
-            ]
-        },
+        "script": {},
         "openAction": {
-            "arguments": [
-                {
-                    "type": "string",
-                    "desc": "Note that Prince passes the provided values verbatim to the PDF viewer, so the user can supply values that Prince doesn't know about, but the viewer does."
-                }
-            ],
+            "desc": "Note that Prince passes the provided values verbatim to the PDF viewer, so the user can supply values that Prince doesn't know about, but the viewer does.",
             "example": "PDF.openAction('print')"
         },
         "pageLayout": {
-            "arguments": [
-                {
-                    "type": "string",
-                    "desc": "\"single-page\" | \"one-column\" | \"two-column[-left/right]\""
-                }
-            ]
+            "desc": "\"single-page\" | \"one-column\" | \"two-column[-left/right]\""
         },
         "pageMode": {
-            "arguments": [
-                {
-                    "type": "string",
-                    "desc": "\"auto\" | \"show-bookmarks\" | \"fullscreen\" | \"show-attachments\""
-                }
-            ]
+            "desc": "\"auto\" | \"show-bookmarks\" | \"fullscreen\" | \"show-attachments\""
         },
         "printScaling": {
-            "arguments": [
-                {
-                    "type": "string",
-                    "desc": "\"auto\" | \"none\""
-                }
-            ]
+            "desc": "\"auto\" | \"none\""
         },
         "duplex": {
-            "arguments": [
-                {
-                    "type": "string",
-                    "desc": "\"auto\" | \"simplex\" | \"duplex-flip-short-edge\" | \"duplex-flip-long-edge\""
-                }
-            ]
+            "desc": "\"auto\" | \"simplex\" | \"duplex-flip-short-edge\" | \"duplex-flip-long-edge\""
         },
         "profile": {
-            "arguments": [
-                {
-                    "type": "string",
-                    "desc": "One of the supported PDF profiles."
-                }
-            ],
+            "desc": "One of the supported PDF profiles.",
             "example": "PDF.profile(\"PDF/X-3:2003\")"
         },
         "outputIntent": {
-            "arguments": [
-                {
-                    "type": "string",
-                    "name": "URL"
-                }
-            ]
+            "desc": "URL"
         },
         "objectStreams": {
-            "desc": "Can be used to disable PDF object streams.  Object streams are enabled by default.",
-            "arguments": [
-                {
-                    "type": "boolean"
-                }
-            ]
+            "desc": "Can be used to disable PDF object streams.  Object streams are enabled by default."
         },
         "fallbackCMYKProfile": {
-            "arguments": [
-                {
-                    "type": "string",
-                    "name": "URL"
-                }
-            ]
+            "desc": "URL"
         },
         "colorConversion": {
-            "arguments": [
-                {
-                    "type": "string",
-                    "desc": "\"none\" | \"full\""
-                }
-            ]
+            "desc": "\"none\" | \"full\""
         },
         "paperTray": {
-            "arguments": [
-                {
-                    "type": "string",
-                    "desc": "\"auto \" | \"pick-tray-by-pdf-size\""
-                }
-            ]
+            "desc": "\"auto \" | \"pick-tray-by-pdf-size\""
         },
         "filterResolution": {
-            "arguments": [
-                {
-                    "type": "string",
-                    "name": "dpi"
-                }
-            ],
+            "desc": "DPI",
             "example": "PDF.filterResolution('128dpi')"
         },
         "xmp": {
-            "arguments": [
-                {
-                    "type": "string",
-                    "name": "URL"
-                }
-            ],
+            "desc": "URL",
             "example": "PDF.xmp('xmp-data.xmp')"
         },
-        "xmpMetadata": {
-            "arguments": [
-                {
-                    "type": "boolean"
-                }
-            ]
-        },
-        "title": {
-            "arguments": [
-                {
-                    "type": "string"
-                }
-            ]
-        },
-        "subject": {
-            "arguments": [
-                {
-                    "type": "string"
-                }
-            ]
-        },
-        "author": {
-            "arguments": [
-                {
-                    "type": "string"
-                }
-            ]
-        },
-        "keywords": {
-            "arguments": [
-                {
-                    "type": "string"
-                }
-            ]
-        },
-        "creator": {
-            "arguments": [
-                {
-                    "type": "string"
-                }
-            ]
-        },
-        "lang": {
-            "arguments": [
-                {
-                    "type": "string"
-                }
-            ]
-        },
+        "xmpMetadata": {},
+        "title": {},
+        "subject": {},
+        "author": {},
+        "keywords": {},
+        "creator": {},
+        "lang": {},
         "pages": {
             "returns": "A list of page boxes, can be accessed after document conversion has finished."
         }

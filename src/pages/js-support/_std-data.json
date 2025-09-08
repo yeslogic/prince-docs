@@ -182,43 +182,35 @@
       },
       "children": {
         "__princetype__": "object",
-        "type": "function",
-        "returns": "array of child boxes"
+        "desc": "array of child boxes"
       },
       "element": {
         "__princetype__": "object",
-        "type": "function",
-        "returns": "DOM element for box (may be null)"
+        "desc": "DOM element for box (may be null)"
       },
       "floatPosition": {
         "__princetype__": "string",
-        "type": "function",
-        "returns": "\"TOP\" | \"BOTTOM\""
+        "desc": "\"TOP\" | \"BOTTOM\""
       },
       "h": {
         "__princetype__": "number",
-        "type": "function",
-        "returns": "height, in pt"
+        "desc": "height, in pt"
       },
       "marginBottom": {
         "__princetype__": "number",
-        "type": "function",
-        "returns": "the used value for the bottom margin"
+        "desc": "the used value for the bottom margin"
       },
       "marginLeft": {
         "__princetype__": "number",
-        "type": "function",
-        "returns": "the used value for the left margin"
+        "desc": "the used value for the left margin"
       },
       "marginRight": {
         "__princetype__": "number",
-        "type": "function",
-        "returns": "the used value for the right margin"
+        "desc": "the used value for the right margin"
       },
       "marginTop": {
         "__princetype__": "number",
-        "type": "function",
-        "returns": "the used value for the top margin"
+        "desc": "the used value for the top margin"
       },
       "paddingBottom": {
         "__princetype__": "number"
@@ -237,45 +229,37 @@
       },
       "parent": {
         "__princetype__": "object",
-        "type": "function",
-        "returns": "parent box"
+        "desc": "parent box"
       },
       "pseudo": {
         "__princetype__": "string",
-        "type": "function",
-        "returns": "pseudo-element name or null"
+        "desc": "pseudo-element name or null"
       },
       "src": {
         "__princetype__": "string"
       },
       "style": {
         "__princetype__": "object",
-        "type": "function",
-        "returns": "CSS style object for box"
+        "desc": "CSS style object for box"
       },
       "text": {
-        "__princetype__": "string",
-        "type": "string"
+        "__princetype__": "string"
       },
       "type": {
         "__princetype__": "string",
-        "type": "function",
-        "returns": "\"BODY\" | \"COLUMN\" | \"FLEXLINE\" | \"FOOTNOTES\" | \"FLOATS\" | \"BOX\" | \"LINE\" | \"SPAN\" | \"TEXT\" | \"SVG\" | \"IMAGE\""
+        "desc": "\"BODY\" | \"COLUMN\" | \"FLEXLINE\" | \"FOOTNOTES\" | \"FLOATS\" | \"BOX\" | \"LINE\" | \"SPAN\" | \"TEXT\" | \"SVG\" | \"IMAGE\""
       },
       "w": {
         "__princetype__": "number",
-        "type": "function",
-        "returns": "width, in pt"
+        "desc": "width, in pt"
       },
       "x": {
         "__princetype__": "number",
-        "type": "function",
-        "returns": "x-coordinate, in pt"
+        "desc": "x-coordinate, in pt"
       },
       "y": {
         "__princetype__": "number",
-        "type": "function",
-        "returns": "y-coordinate, in pt"
+        "desc": "y-coordinate, in pt"
       }
     },
     "ext": "ext",
@@ -3556,50 +3540,25 @@
       "__princetype__": "function"
     },
     "allowAnnotate": {
-      "__princetype__": "boolean",
-      "arguments": [
-        {
-          "type": "boolean"
-        }
-      ]
+      "__princetype__": "boolean"
     },
     "allowAssembly": {
       "__princetype__": "boolean"
     },
     "allowCopy": {
-      "__princetype__": "boolean",
-      "arguments": [
-        {
-          "type": "boolean"
-        }
-      ]
+      "__princetype__": "boolean"
     },
     "allowCopyForAccessibility": {
       "__princetype__": "boolean"
     },
     "allowModify": {
-      "__princetype__": "boolean",
-      "arguments": [
-        {
-          "type": "boolean"
-        }
-      ]
+      "__princetype__": "boolean"
     },
     "allowPrint": {
-      "__princetype__": "boolean",
-      "arguments": [
-        {
-          "type": "boolean"
-        }
-      ]
+      "__princetype__": "boolean"
     },
     "artificialFonts": {
-      "__princetype__": "boolean",
-      "arguments": [
-        {
-          "type": "boolean"
-        }
-      ]
+      "__princetype__": "boolean"
     },
     "attachFile": {
       "__princetype__": "function",
@@ -3627,181 +3586,80 @@
       "example": "PDF.attachFile('data.xls', 'Latest sales figures.', 'SalesFigures', 'Data')"
     },
     "author": {
-      "__princetype__": "object",
-      "arguments": [
-        {
-          "type": "string"
-        }
-      ]
+      "__princetype__": "object"
     },
     "colorConversion": {
       "__princetype__": "string",
-      "arguments": [
-        {
-          "type": "string",
-          "desc": "\"none\" | \"full\""
-        }
-      ]
+      "desc": "\"none\" | \"full\""
     },
     "colorOptions": {
       "__princetype__": "string",
-      "arguments": [
-        {
-          "type": "string",
-          "desc": "\"auto\" | \"use-true-black\" | \"use-rich-black\""
-        }
-      ]
+      "desc": "<code>\"auto\" | \"use-true-black\" | \"use-rich-black\"</code>. See <a href='/doc/css-props/#prop-prince-pdf-color-options'><code>-prince-pdf-color-options</code></a>"
     },
     "compress": {
-      "__princetype__": "boolean",
-      "arguments": [
-        {
-          "type": "boolean"
-        }
-      ]
+      "__princetype__": "boolean"
     },
     "creator": {
-      "__princetype__": "object",
-      "arguments": [
-        {
-          "type": "string"
-        }
-      ]
+      "__princetype__": "object"
     },
     "displayDocTitle": {
       "__princetype__": "boolean"
     },
     "duplex": {
       "__princetype__": "string",
-      "arguments": [
-        {
-          "type": "string",
-          "desc": "\"auto\" | \"simplex\" | \"duplex-flip-short-edge\" | \"duplex-flip-long-edge\""
-        }
-      ]
+      "desc": "\"auto\" | \"simplex\" | \"duplex-flip-short-edge\" | \"duplex-flip-long-edge\""
     },
     "embedFonts": {
-      "__princetype__": "boolean",
-      "arguments": [
-        {
-          "type": "boolean"
-        }
-      ]
+      "__princetype__": "boolean"
     },
     "encrypt": {
-      "__princetype__": "boolean",
-      "arguments": [
-        {
-          "type": "boolean"
-        }
-      ]
+      "__princetype__": "boolean"
     },
     "fallbackCMYKProfile": {
       "__princetype__": "object",
-      "arguments": [
-        {
-          "type": "string",
-          "name": "URL"
-        }
-      ]
+      "desc": "URL"
     },
     "filterResolution": {
       "__princetype__": "string",
-      "arguments": [
-        {
-          "type": "string",
-          "name": "dpi"
-        }
-      ],
+      "desc": "DPI",
       "example": "PDF.filterResolution('128dpi')"
     },
     "forceIdentityEncoding": {
-      "__princetype__": "boolean",
-      "arguments": [
-        {
-          "type": "boolean"
-        }
-      ]
+      "__princetype__": "boolean"
     },
     "keyBits": {
       "__princetype__": "number",
-      "arguments": [
-        {
-          "name": "key bits",
-          "type": "string",
-          "desc": "\"40\" | \"128\""
-        }
-      ]
+      "desc": "<code>\"40\" | \"128\"</code>. See <a href='/doc/prince-output/#pdf-encryption-and-document-security'>PDF Encryption and Document Security</a>"
     },
     "keywords": {
-      "__princetype__": "object",
-      "arguments": [
-        {
-          "type": "string"
-        }
-      ]
+      "__princetype__": "object"
     },
     "lang": {
-      "__princetype__": "object",
-      "arguments": [
-        {
-          "type": "string"
-        }
-      ]
+      "__princetype__": "object"
     },
     "objectStreams": {
       "__princetype__": "boolean",
-      "desc": "Can be used to disable PDF object streams.  Object streams are enabled by default.",
-      "arguments": [
-        {
-          "type": "boolean"
-        }
-      ]
+      "desc": "Can be used to disable PDF object streams.  Object streams are enabled by default."
     },
     "openAction": {
       "__princetype__": "object",
-      "arguments": [
-        {
-          "type": "string",
-          "desc": "Note that Prince passes the provided values verbatim to the PDF viewer, so the user can supply values that Prince doesn't know about, but the viewer does."
-        }
-      ],
+      "desc": "Note that Prince passes the provided values verbatim to the PDF viewer, so the user can supply values that Prince doesn't know about, but the viewer does.",
       "example": "PDF.openAction('print')"
     },
     "outputIntent": {
       "__princetype__": "object",
-      "arguments": [
-        {
-          "type": "string",
-          "name": "URL"
-        }
-      ]
+      "desc": "URL"
     },
     "ownerPassword": {
-      "__princetype__": "object",
-      "arguments": [
-        {
-          "type": "string"
-        }
-      ]
+      "__princetype__": "object"
     },
     "pageLayout": {
       "__princetype__": "string",
-      "arguments": [
-        {
-          "type": "string",
-          "desc": "\"single-page\" | \"one-column\" | \"two-column[-left/right]\""
-        }
-      ]
+      "desc": "\"single-page\" | \"one-column\" | \"two-column[-left/right]\""
     },
     "pageMode": {
       "__princetype__": "string",
-      "arguments": [
-        {
-          "type": "string",
-          "desc": "\"auto\" | \"show-bookmarks\" | \"fullscreen\" | \"show-attachments\""
-        }
-      ]
+      "desc": "\"auto\" | \"show-bookmarks\" | \"fullscreen\" | \"show-attachments\""
     },
     "pages": {
       "__princetype__": "object",
@@ -3809,89 +3667,39 @@
     },
     "paperTray": {
       "__princetype__": "string",
-      "arguments": [
-        {
-          "type": "string",
-          "desc": "\"auto \" | \"pick-tray-by-pdf-size\""
-        }
-      ]
+      "desc": "\"auto \" | \"pick-tray-by-pdf-size\""
     },
     "printScaling": {
       "__princetype__": "string",
-      "arguments": [
-        {
-          "type": "string",
-          "desc": "\"auto\" | \"none\""
-        }
-      ]
+      "desc": "\"auto\" | \"none\""
     },
     "profile": {
       "__princetype__": "object",
-      "arguments": [
-        {
-          "type": "string",
-          "desc": "One of the supported PDF profiles."
-        }
-      ],
+      "desc": "One of the supported PDF profiles.",
       "example": "PDF.profile(\"PDF/X-3:2003\")"
     },
     "script": {
-      "__princetype__": "object",
-      "arguments": [
-        {
-          "type": "string"
-        }
-      ]
+      "__princetype__": "object"
     },
     "subject": {
-      "__princetype__": "object",
-      "arguments": [
-        {
-          "type": "string"
-        }
-      ]
+      "__princetype__": "object"
     },
     "subsetFonts": {
-      "__princetype__": "boolean",
-      "arguments": [
-        {
-          "type": "boolean"
-        }
-      ]
+      "__princetype__": "boolean"
     },
     "title": {
-      "__princetype__": "object",
-      "arguments": [
-        {
-          "type": "string"
-        }
-      ]
+      "__princetype__": "object"
     },
     "userPassword": {
-      "__princetype__": "object",
-      "arguments": [
-        {
-          "type": "string"
-        }
-      ]
+      "__princetype__": "object"
     },
     "xmp": {
       "__princetype__": "object",
-      "arguments": [
-        {
-          "type": "string",
-          "name": "URL"
-        }
-      ],
+      "desc": "URL",
       "example": "PDF.xmp('xmp-data.xmp')"
     },
     "xmpMetadata": {
-      "__princetype__": "boolean",
-      "arguments": [
-        {
-          "type": "boolean"
-        }
-      ]
+      "__princetype__": "boolean"
     },
     "ext": "ext",
     "desc": "See <a href='/doc/javascript#the-pdf-object'>The PDF Object</a>."
@@ -3901,7 +3709,6 @@
       "__princetype__": "object",
       "data": {
         "__princetype__": "function",
-        "type": "function",
         "arguments": [
           {
             "name": "name",
@@ -3915,7 +3722,6 @@
       },
       "debug": {
         "__princetype__": "function",
-        "type": "function",
         "desc": "only available when the <code>--debug</code> command-line option is specified.",
         "arguments": [
           {
@@ -3926,7 +3732,6 @@
       },
       "error": {
         "__princetype__": "function",
-        "type": "function",
         "arguments": [
           {
             "name": "message",
@@ -3936,7 +3741,6 @@
       },
       "info": {
         "__princetype__": "function",
-        "type": "function",
         "desc": "only available when the <code>--verbose</code> command-line option is specified.",
         "arguments": [
           {
@@ -3947,7 +3751,6 @@
       },
       "warning": {
         "__princetype__": "function",
-        "type": "function",
         "arguments": [
           {
             "name": "message",
@@ -3960,7 +3763,6 @@
     "__princetype__": "object",
     "addEventListener": {
       "__princetype__": "function",
-      "type": "function",
       "desc": "can be called to listen to the <code>complete</code> event on the Prince object. See <a href='/doc/javascript#event-handling'>Event Handling</a>.",
       "arguments": [
         {
@@ -4033,7 +3835,6 @@
     },
     "pageCount": {
       "__princetype__": "number",
-      "type": "function",
       "returns": "Total number of document pages, can be accessed after document conversion has finished."
     },
     "registerPostLayoutFunc": {
