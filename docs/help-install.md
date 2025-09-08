@@ -32,7 +32,7 @@ Explanation
 However, if there are no available fonts on the system at all then it won't even be able to find the question mark glyph, and you get an internal error message.
 
 Solution 1  
-Install the [msttcorefonts](http://corefonts.sourceforge.net) package (see your operating system's documentation).
+Install the [Microsoft TrueType core fonts](http://corefonts.sourceforge.net) package (see your operating system's documentation).
 
 Solution 2  
 Redefine the CSS generic font families to use different TrueType fonts by editing the `fonts.css` file in the Prince installation - see [Installation Layout](installing.md#installation-layout), [Fonts](styling.md#fonts) and [Redefining the generic font families](styling.md#redefining-the-generic-font-families).
