@@ -1,5 +1,4 @@
 import { useLocation } from "@docusaurus/router";
-import ScriptTag from "react-script-tag";
 import useHashDetails from "../../components/useHashDetails";
 import { toggleAllItems } from "../../components/toggleAllItems";
 
