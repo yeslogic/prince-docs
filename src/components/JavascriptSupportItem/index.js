@@ -32,6 +32,11 @@ const ignoreFields = [
 //
 // Finally, the script also infers some details from item names, and can infer more
 
+/**
+ *
+ * @param {string} name - e.g. "marginBottom", "prototype", "NaN", "undefined", "eval", "Prince", "PDF"
+ * @param {React.ReactNode} children - React children including the `<ArgsList />`
+ */
 function NameDetails({ name, children }) {
   return (
     <code>
@@ -43,7 +48,9 @@ function NameDetails({ name, children }) {
   );
 }
 
-// { princetype : null | "string" }
+/**
+ * @param {null | string} princetype - `null` if we don't have a type generated from Prince, otherwise the type as a string e.g. `"boolean"`, `"function"`
+ */
 function TypeDetails({ princetype }) {
   return princetype === null ? (
     // Instead of `-`, we could possibly return `null` here so it does not render this span at all:
@@ -53,6 +60,9 @@ function TypeDetails({ princetype }) {
   );
 }
 
+/**
+ * @param {string} property - e.g. `"alignContent"`, `"cssFloat"`, `"princeBackgroundImageResolution"`
+ */
 function UrlDetails({ property }) {
   const cssProperty =
     property === "cssFloat"
@@ -69,7 +79,10 @@ function UrlDetails({ property }) {
   );
 }
 
-// { desc: undefined | string, name: string } - if desc is a string, it may contain HTML tags or just a string
+/**
+ * @param {undefined | string} desc - an optional description of the documented item that may contain HTML tags or just a string
+ * @param {string} name - e.g. `"getPrinceBoxes"`, `"Function"`, `"HTMLInputElement"`
+ */
 function DescDetails({ desc, name }) {
   const showDesc = desc || /^HTML/.test(name);
   if (!showDesc) return null;
@@ -93,7 +106,9 @@ function DescDetails({ desc, name }) {
   );
 }
 
-// undefined | { type: string, name: string, desc?: string }[]
+/**
+ * @param {undefined | { type: string, name?: string, desc?: string }[]} args - the list of arguments the documented item takes
+ */
 function ArgsList({ args }) {
   // Note: if args is undefined (e.g. for parseFloat()), then we just add the span to make "()" appear
   return (
@@ -103,7 +118,9 @@ function ArgsList({ args }) {
   );
 }
 
-// undefined | { type: string, name?: string, desc?: string }[]
+/**
+ * @param {undefined | { type: string, name?: string, desc?: string }[]} args - the list of arguments the documented item takes
+ */
 function ArgsDetails({ args }) {
   return args ? (
     <ul className="arguments">
@@ -119,7 +136,9 @@ function ArgsDetails({ args }) {
   ) : null;
 }
 
-// { returns: string } - may contain HTML tags or just string
+/**
+ * @param {string} returns - may contain HTML tags or just string
+ */
 function ReturnsDetails({ returns }) {
   return (
     <div
@@ -129,7 +148,10 @@ function ReturnsDetails({ returns }) {
   );
 }
 
-// { example: string, exampleReturn: undefined | string | number | boolean } - example is a string that may contain new lines (\n) and exampleReturn is either undefined or JSON data that currently only contains number or boolean but could contain a string
+/**
+ * @param { string } example - an example that may contain new lines (\n)
+ * @param { undefined | string | number | boolean } exampleReturn - an example of a returned value; either undefined or JSON data that currently only contains number or boolean but could contain a string
+ */
 function ExampleDetails({ example, exampleReturn }) {
   return (
     <div className="example">
@@ -147,34 +169,40 @@ function ExampleDetails({ example, exampleReturn }) {
   );
 }
 
+/**
+ * @param {Object} props - the props for the component
+ * @param {string[]} props.path - e.g. `[ "window", "BoxInfo", "prototype", "marginTop" ]`
+ * @param {string} props.name - e.g. "marginBottom", "prototype", "NaN", "undefined", "eval", "Prince", "PDF"
+ * @param {null | string} props.princetype - `null` or a type as a string e.g. `"undefined"`, `"function"`, `"object"`
+ * @param {undefined | string} props.desc - e.g. `"The global object"`, `"See <a href='/doc/javascript#the-prince-object'>The Prince Object</a>."`
+ * @param {(null|Array)} props.properties - An optional array containing properties.
+ * @param {string} props.properties[0] - The item name e.g. `"JSON"`, `"stringify"`
+ * @param {Object} props.properties[1] - An object with string keys and values that can be either string or `null`.
+ * @param {string|null} props.properties[1].key - a generated field, an annotation, or an actual property of the JavaScript feature e.g. `"name"`, `"__princetype__"`, `"exampleReturn"`, `"skewX"`, `"forEach"`
+ * @param {undefined | { type: string, name: string, desc?: string }[]} props.args - e.g. `[{ type: "boolean" }]`, `[{ name: "string", desc: "String to unescape", type: "string" }]`
+ * @param {undefined | string} props.returns - e.g. `"boolean"`, `"number"`, `"function"`, `"string"`, `"array of child boxes"`, `"A list of JavaScript objects called <a href='/doc/javascript#the-box-tracking-api'>boxes</a>."`
+ * @param {undefined | string} props.example - e.g. `"isNaN(parseInt('hello'))"`
+ * @param {undefined | string | boolean | number} props.exampleReturn - e.g. `1.5`, `50`, `true`
+ * @param {undefined | string} props.url - e.g. `"property"` where there is a matching CSS property
+ * @param {undefined | string} props.ext - e.g. `"ext"` for Prince extensions
+ * @param {undefined | string} props.dep - e.g. `"dep"` for deprecated objects, methods and properties
+ * @param {undefined | string} props.hash - just the URL hash without "#" e.g. `"window.Object.defineProperty"`
+ * @param {undefined | boolean} props.open - set `true` to open the section by default
+ */
 function JavascriptSupportItem({
-  // {string[]} - e.g. [ "window", "BoxInfo", "prototype", "marginTop" ]
   path,
-  // {string} - e.g. "marginBottom", "prototype", "NaN", "undefined", "eval", "Prince", "PDF"
   name,
-  // {null | undefined | string | Object} - e.g. undefined, "function", "object", { type: "string"}, { type: "function", returns: '"BODY" | "COLUMN" | "FLEXLINE" | "FOOTNOTES" | "FLOATS" | "BOX" | "LINE" | "SPAN" | "TEXT" | "SVG" | "IMAGE"' }
   princetype,
-  // {undefined | string} - e.g. "The global object", "See <a href='/doc/javascript#the-prince-object'>The Prince Object</a>."
   desc,
-  // {null | [itemName, {<property>: string}}[]} - each property might be a generated field, an annotation, or an actual property of the JavaScript feature
   properties,
-  // {undefined | { type: string, name: string, desc?: string }[]} - e.g. [{ type: "boolean" }], [{ name: "string", desc: "String to unescape", type: "string" }]
   args,
-  // {undefined | string} - e.g. "boolean", "number", "function", "string", "array of child boxes", "A list of JavaScript objects called <a href='/doc/javascript#the-box-tracking-api'>boxes</a>."
   returns,
-  // {undefined | string} - e.g. "isNaN(parseInt('hello'))"
   example,
-  // {undefined | string | boolean | number} - e.g. `1.5`, `50`, `true`
   exampleReturn,
-  // {undefined | string} - e.g. "property" where there is a matching CSS property
   url,
-  // {undefined | string} - e.g. "ext" for Prince extensions
   ext,
-  // {undefined | string} - e.g. "dep" for deprecated objects, methods and properties
   dep,
-  // {undefined | string} - just the URL hash without "#" e.g. "window.Object.defineProperty"
   hash,
-  // {undefined | boolean} - set `true` to open the section by default
   open
 }) {
   if (BLOCKLIST.includes(name)) {
