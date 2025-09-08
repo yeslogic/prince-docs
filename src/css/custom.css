@@ -167,6 +167,8 @@ h2 {
 }
 h3 {
     font-size: 20px;
+    margin-top: revert-layer;
+    margin-bottom: revert-layer;
 }
 h4 {
     font-size: 16px;
@@ -182,6 +184,9 @@ code {
     vertical-align: baseline;
     border: 0;
     outline: 0.1rem solid rgba(0,0,0,0.1)
+}
+.codeBlockContainer_Ckt0 .codeBlockLines_e6Vv {
+    padding: revert-layer;
 }
 table.grid td code p, table.grid th code p {
     margin: 0 !important;

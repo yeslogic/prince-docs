@@ -122,4 +122,9 @@ module.exports = {
     //load the script for JS Support and CSS props
     //'./static/js/shiftWindow.js',
   ],
+  future: {
+      v4: {
+          useCssCascadeLayers: true,
+      }
+  }
 };
