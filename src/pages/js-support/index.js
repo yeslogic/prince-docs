@@ -1,11 +1,5 @@
-import React from "react";
 import { useLocation } from "@docusaurus/router";
-import clsx from "clsx";
 import ScriptTag from "react-script-tag";
-import Layout from "@theme/Layout";
-import Link from "@docusaurus/Link";
-import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
-import useBaseUrl from "@docusaurus/useBaseUrl";
 import useHashDetails from "../../components/useHashDetails";
 import { toggleAllItems } from "../../components/toggleAllItems";
 

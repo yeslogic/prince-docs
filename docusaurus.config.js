@@ -118,8 +118,4 @@ module.exports = {
       },
     ],
   ],
-  scripts: [
-    //load the script for JS Support and CSS props
-    //'./static/js/shiftWindow.js',
-  ],
 };
