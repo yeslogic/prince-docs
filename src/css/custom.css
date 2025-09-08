@@ -312,10 +312,10 @@ table.property-table td {
 #prop-list .programlisting pre {
     white-space: normal;
 }
-#prop-list summary.dep, span.dep {
+#prop-list summary.dep, span.dep, #js-support-table .dep summary, span.dep {
     text-decoration: line-through;
 }
-#prop-list summary.dep, #prop-list summary.dep + div, #prop-list summary.dep + div + div, #prop-list span.dep, #dep-props .dep {
+#prop-list summary.dep, #prop-list summary.dep + div, #prop-list summary.dep + div + div, #prop-list span.dep, #dep-props .dep, #js-support-table .dep, span.dep {
     opacity: 0.4;
 }
 #prop-list summary#prop---custom-property-name, #prop-list summary#prop---custom-property-name + div .example .syntax-block > code {
@@ -439,9 +439,6 @@ p.note:only-child {
 #js-support-table .ext .ext {
   padding-top: 0px;
   padding-right: 0px;
-}
-#js-support-table .url-property::before {
-  content: "See the property ";
 }
 dl.faq dt p {
     font-weight: bold;
