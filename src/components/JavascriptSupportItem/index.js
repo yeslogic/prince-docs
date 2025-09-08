@@ -209,7 +209,9 @@ function JavascriptSupportItem({
     return null;
   }
 
-  const pathStr = path.join(".");
+  // The "#.window" exception is just to match historical behaviour and preserve existing links on the Internet to this hash:
+  const isGlobalWindow = name === "window" && path.length === 1;
+  const pathStr = isGlobalWindow ? ".window" : path.join(".");
   const openAttribute = open || (hash && hash.indexOf(pathStr) > -1);
   const extClass = ext || /prince/i.test(name) ? "ext" : null;
   const depClass = dep ? "dep" : null;
