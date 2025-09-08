@@ -1,5 +1,13 @@
 import React from "react";
 import clsx from "clsx";
+import { ExampleDetails } from "./ExampleDetails";
+import { ArgsDetails } from "./ArgsDetails";
+import { ReturnsDetails } from "./ReturnsDetails";
+import { ArgsList } from "./ArgsList";
+import { DescDetails } from "./DescDetails";
+import { UrlDetails } from "./UrlDetails";
+import { TypeDetails } from "./TypeDetails";
+import { NameDetails } from "./NameDetails";
 
 // some things we ignore..
 const BLOCKLIST = ["constructor", "writeln"];
@@ -31,143 +39,6 @@ const ignoreFields = [
 //   particular are described)
 //
 // Finally, the script also infers some details from item names, and can infer more
-
-/**
- *
- * @param {string} name - e.g. "marginBottom", "prototype", "NaN", "undefined", "eval", "Prince", "PDF"
- * @param {React.ReactNode} children - React children including the `<ArgsList />`
- */
-function NameDetails({ name, children }) {
-  return (
-    <code>
-      <b className="name">
-        {name}
-        {children}
-      </b>
-    </code>
-  );
-}
-
-/**
- * @param {null | string} princetype - `null` if we don't have a type generated from Prince, otherwise the type as a string e.g. `"boolean"`, `"function"`
- */
-function TypeDetails({ princetype }) {
-  return princetype === null ? (
-    // Instead of `-`, we could possibly return `null` here so it does not render this span at all:
-    <span className="type"></span>
-  ) : (
-    <span className="type">{princetype}</span>
-  );
-}
-
-/**
- * @param {string} property - e.g. `"alignContent"`, `"cssFloat"`, `"princeBackgroundImageResolution"`
- */
-function UrlDetails({ property }) {
-  const cssProperty =
-    property === "cssFloat"
-      ? "float"
-      : property.replace(/([A-Z])/g, "-$1").toLowerCase();
-  const cssPropertyLabel =
-    property.indexOf("prince") > -1 ? `-${cssProperty}` : cssProperty;
-
-  return (
-    <div className="url-property">
-      See the property{" "}
-      <a href={`/doc/css-props#prop-${cssProperty}`}>{cssPropertyLabel}</a>.
-    </div>
-  );
-}
-
-/**
- * @param {undefined | string} desc - an optional description of the documented item that may contain HTML tags or just a string
- * @param {string} name - e.g. `"getPrinceBoxes"`, `"Function"`, `"HTMLInputElement"`
- */
-function DescDetails({ desc, name }) {
-  const showDesc = desc || /^HTML/.test(name);
-  if (!showDesc) return null;
-
-  return desc ? (
-    <div className="desc" dangerouslySetInnerHTML={{ __html: desc }}></div>
-  ) : (
-    <div className="desc">
-      Represents an HTML{" "}
-      <em>
-        {name
-          .replace(/^HTML/, "")
-          .replace(/Element$/, "")
-          .replace(/([A-Z][a-z])/g, function (match) {
-            return " " + match;
-          })
-          .toLowerCase()}
-      </em>{" "}
-      element
-    </div>
-  );
-}
-
-/**
- * @param {undefined | { type: string, name?: string, desc?: string }[]} args - the list of arguments the documented item takes
- */
-function ArgsList({ args }) {
-  // Note: if args is undefined (e.g. for parseFloat()), then we just add the span to make "()" appear
-  return (
-    <span className="argslist">
-      {args ? args.map((item) => item.name).join(", ") : null}
-    </span>
-  );
-}
-
-/**
- * @param {undefined | { type: string, name?: string, desc?: string }[]} args - the list of arguments the documented item takes
- */
-function ArgsDetails({ args }) {
-  return args ? (
-    <ul className="arguments">
-      {args.map((item, i) => (
-        <li className="argument" key={`${item.name}-${i}`}>
-          <div></div>
-          {item.name && <div className="name level">{item.name}</div>}
-          <div className="type">{item.type}</div>
-          {item.desc && <div className="desc">{item.desc}</div>}
-        </li>
-      ))}
-    </ul>
-  ) : null;
-}
-
-/**
- * @param {string} returns - may contain HTML tags or just string
- */
-function ReturnsDetails({ returns }) {
-  return (
-    <div
-      className="returns level"
-      dangerouslySetInnerHTML={{ __html: returns }}
-    ></div>
-  );
-}
-
-/**
- * @param { string } example - an example that may contain new lines (\n)
- * @param { undefined | string | number | boolean } exampleReturn - an example of a returned value; either undefined or JSON data that currently only contains number or boolean but could contain a string
- */
-function ExampleDetails({ example, exampleReturn }) {
-  return (
-    <div className="example">
-      <div className="programlisting">
-        <pre className="example level">
-          {example}
-          {exampleReturn && (
-            <div className="example-return">
-              {JSON.stringify(exampleReturn)}
-            </div>
-          )}
-        </pre>
-      </div>
-    </div>
-  );
-}
 
 /**
  * @param {Object} props - the props for the component
