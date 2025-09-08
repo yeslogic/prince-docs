@@ -2,7 +2,7 @@ import React from "react";
 import clsx from "clsx";
 
 // some things we ignore..
-const BLOCKLIST = ["constructor", "write", "writeln"];
+const BLOCKLIST = ["constructor", "writeln"];
 
 const generatedFields = ["name", "__princetype__"];
 const handWrittenAnnotations = [
