@@ -283,7 +283,8 @@
     "prototype": {
       "__princetype__": "object",
       "accentColor": {
-        "__princetype__": null
+        "__princetype__": null,
+        "url": "property"
       },
       "alignContent": {
         "__princetype__": null,
@@ -298,7 +299,8 @@
         "url": "property"
       },
       "all": {
-        "__princetype__": null
+        "__princetype__": null,
+        "url": "property"
       },
       "background": {
         "__princetype__": null,
@@ -486,7 +488,8 @@
         "url": "property"
       },
       "boxShadow": {
-        "__princetype__": null
+        "__princetype__": null,
+        "url": "property"
       },
       "boxSizing": {
         "__princetype__": null,
@@ -605,7 +608,8 @@
         "url": "property"
       },
       "counterSet": {
-        "__princetype__": null
+        "__princetype__": null,
+        "url": "property"
       },
       "cssFloat": {
         "__princetype__": null,
@@ -729,7 +733,8 @@
         "url": "property"
       },
       "fontKerning": {
-        "__princetype__": null
+        "__princetype__": null,
+        "url": "property"
       },
       "fontSize": {
         "__princetype__": null,
@@ -748,19 +753,24 @@
         "url": "property"
       },
       "fontVariantCaps": {
-        "__princetype__": null
+        "__princetype__": null,
+        "url": "property"
       },
       "fontVariantLigatures": {
-        "__princetype__": null
+        "__princetype__": null,
+        "url": "property"
       },
       "fontVariantNumeric": {
-        "__princetype__": null
+        "__princetype__": null,
+        "url": "property"
       },
       "fontVariantOpentype": {
-        "__princetype__": null
+        "__princetype__": null,
+        "url": "property"
       },
       "fontVariationSettings": {
-        "__princetype__": null
+        "__princetype__": null,
+        "url": "property"
       },
       "fontWeight": {
         "__princetype__": null,
@@ -782,49 +792,64 @@
         "__princetype__": "function"
       },
       "grid": {
-        "__princetype__": null
+        "__princetype__": null,
+        "url": "property"
       },
       "gridArea": {
-        "__princetype__": null
+        "__princetype__": null,
+        "url": "property"
       },
       "gridAutoColumns": {
-        "__princetype__": null
+        "__princetype__": null,
+        "url": "property"
       },
       "gridAutoFlow": {
-        "__princetype__": null
+        "__princetype__": null,
+        "url": "property"
       },
       "gridAutoRows": {
-        "__princetype__": null
+        "__princetype__": null,
+        "url": "property"
       },
       "gridColumn": {
-        "__princetype__": null
+        "__princetype__": null,
+        "url": "property"
       },
       "gridColumnEnd": {
-        "__princetype__": null
+        "__princetype__": null,
+        "url": "property"
       },
       "gridColumnStart": {
-        "__princetype__": null
+        "__princetype__": null,
+        "url": "property"
       },
       "gridRow": {
-        "__princetype__": null
+        "__princetype__": null,
+        "url": "property"
       },
       "gridRowEnd": {
-        "__princetype__": null
+        "__princetype__": null,
+        "url": "property"
       },
       "gridRowStart": {
-        "__princetype__": null
+        "__princetype__": null,
+        "url": "property"
       },
       "gridTemplate": {
-        "__princetype__": null
+        "__princetype__": null,
+        "url": "property"
       },
       "gridTemplateAreas": {
-        "__princetype__": null
+        "__princetype__": null,
+        "url": "property"
       },
       "gridTemplateColumns": {
-        "__princetype__": null
+        "__princetype__": null,
+        "url": "property"
       },
       "gridTemplateRows": {
-        "__princetype__": null
+        "__princetype__": null,
+        "url": "property"
       },
       "height": {
         "__princetype__": null,
@@ -864,14 +889,17 @@
         "url": "property"
       },
       "inset": {
-        "__princetype__": null
+        "__princetype__": null,
+        "url": "property"
       },
       "insetInside": {
         "__princetype__": null,
+        "ext": "ext",
         "url": "property"
       },
       "insetOutside": {
         "__princetype__": null,
+        "ext": "ext",
         "url": "property"
       },
       "justifyContent": {
@@ -879,10 +907,12 @@
         "url": "property"
       },
       "justifyItems": {
-        "__princetype__": null
+        "__princetype__": null,
+        "url": "property"
       },
       "justifySelf": {
-        "__princetype__": null
+        "__princetype__": null,
+        "url": "property"
       },
       "left": {
         "__princetype__": null,
@@ -997,10 +1027,12 @@
         "url": "property"
       },
       "objectFit": {
-        "__princetype__": null
+        "__princetype__": null,
+        "url": "property"
       },
       "objectPosition": {
-        "__princetype__": null
+        "__princetype__": null,
+        "url": "property"
       },
       "opacity": {
         "__princetype__": null,
@@ -1015,19 +1047,24 @@
         "url": "property"
       },
       "outline": {
-        "__princetype__": null
+        "__princetype__": null,
+        "url": "property"
       },
       "outlineColor": {
-        "__princetype__": null
+        "__princetype__": null,
+        "url": "property"
       },
       "outlineOffset": {
-        "__princetype__": null
+        "__princetype__": null,
+        "url": "property"
       },
       "outlineStyle": {
-        "__princetype__": null
+        "__princetype__": null,
+        "url": "property"
       },
       "outlineWidth": {
-        "__princetype__": null
+        "__princetype__": null,
+        "url": "property"
       },
       "overflow": {
         "__princetype__": null,
@@ -1082,20 +1119,25 @@
         "url": "property"
       },
       "placeContent": {
-        "__princetype__": null
+        "__princetype__": null,
+        "url": "property"
       },
       "placeItems": {
-        "__princetype__": null
+        "__princetype__": null,
+        "url": "property"
       },
       "placeSelf": {
-        "__princetype__": null
+        "__princetype__": null,
+        "url": "property"
       },
       "position": {
         "__princetype__": null,
         "url": "property"
       },
       "princeAltText": {
-        "__princetype__": null
+        "__princetype__": null,
+        "ext": "ext",
+        "url": "property"
       },
       "princeBackgroundImageResolution": {
         "__princetype__": null,
@@ -1123,7 +1165,9 @@
         "url": "property"
       },
       "princeBorderClip": {
-        "__princetype__": null
+        "__princetype__": null,
+        "ext": "ext",
+        "url": "property"
       },
       "princeCaptionPage": {
         "__princetype__": null,
@@ -1136,7 +1180,9 @@
         "url": "property"
       },
       "princeExpansionText": {
-        "__princetype__": null
+        "__princetype__": null,
+        "ext": "ext",
+        "url": "property"
       },
       "princeFilterResolution": {
         "__princetype__": null,
@@ -1184,10 +1230,14 @@
         "url": "property"
       },
       "princeFontVariantOpentype": {
-        "__princetype__": null
+        "__princetype__": null,
+        "ext": "ext",
+        "url": "property"
       },
       "princeFootnoteDisplay": {
-        "__princetype__": null
+        "__princetype__": null,
+        "ext": "ext",
+        "url": "property"
       },
       "princeFootnotePolicy": {
         "__princetype__": null,
@@ -1220,7 +1270,9 @@
         "url": "property"
       },
       "princeHyphens": {
-        "__princetype__": null
+        "__princetype__": null,
+        "ext": "ext",
+        "url": "property"
       },
       "princeImageMagic": {
         "__princetype__": null,
@@ -1238,7 +1290,9 @@
         "url": "property"
       },
       "princeLineStackingStrategy": {
-        "__princetype__": null
+        "__princetype__": null,
+        "ext": "ext",
+        "url": "property"
       },
       "princeLinebreakMagic": {
         "__princetype__": null,
@@ -1256,10 +1310,14 @@
         "url": "property"
       },
       "princeMarginInside": {
-        "__princetype__": null
+        "__princetype__": null,
+        "ext": "ext",
+        "url": "property"
       },
       "princeMarginOutside": {
-        "__princetype__": null
+        "__princetype__": null,
+        "ext": "ext",
+        "url": "property"
       },
       "princePageGroup": {
         "__princetype__": null,
@@ -1287,10 +1345,14 @@
         "url": "property"
       },
       "princePdfAnnotationIcon": {
-        "__princetype__": null
+        "__princetype__": null,
+        "ext": "ext",
+        "url": "property"
       },
       "princePdfAnnotationMerge": {
-        "__princetype__": null
+        "__princetype__": null,
+        "ext": "ext",
+        "url": "property"
       },
       "princePdfAnnotationModifydate": {
         "__princetype__": null,
@@ -1323,13 +1385,19 @@
         "url": "property"
       },
       "princePdfForm": {
-        "__princetype__": null
+        "__princetype__": null,
+        "ext": "ext",
+        "url": "property"
       },
       "princePdfFormFieldFontSize": {
-        "__princetype__": null
+        "__princetype__": null,
+        "ext": "ext",
+        "url": "property"
       },
       "princePdfFormFieldSettings": {
-        "__princetype__": null
+        "__princetype__": null,
+        "ext": "ext",
+        "url": "property"
       },
       "princePdfLinkType": {
         "__princetype__": null,
@@ -1337,7 +1405,9 @@
         "url": "property"
       },
       "princePdfTagTitle": {
-        "__princetype__": null
+        "__princetype__": null,
+        "ext": "ext",
+        "url": "property"
       },
       "princePdfTagType": {
         "__princetype__": null,
@@ -1345,10 +1415,14 @@
         "url": "property"
       },
       "princeTabSize": {
-        "__princetype__": null
+        "__princetype__": null,
+        "ext": "ext",
+        "url": "property"
       },
       "princeTableBaseline": {
-        "__princetype__": null
+        "__princetype__": null,
+        "ext": "ext",
+        "url": "property"
       },
       "princeTableColumnSpan": {
         "__princetype__": null,
@@ -1361,7 +1435,9 @@
         "url": "property"
       },
       "princeTextAlignAll": {
-        "__princetype__": null
+        "__princetype__": null,
+        "ext": "ext",
+        "url": "property"
       },
       "princeTextJustify": {
         "__princetype__": null,
@@ -1483,16 +1559,20 @@
         "url": "property"
       },
       "textDecorationColor": {
-        "__princetype__": null
+        "__princetype__": null,
+        "url": "property"
       },
       "textDecorationLine": {
-        "__princetype__": null
+        "__princetype__": null,
+        "url": "property"
       },
       "textDecorationStyle": {
-        "__princetype__": null
+        "__princetype__": null,
+        "url": "property"
       },
       "textDecorationThickness": {
-        "__princetype__": null
+        "__princetype__": null,
+        "url": "property"
       },
       "textIndent": {
         "__princetype__": null,
@@ -1538,7 +1618,8 @@
         "dep": "dep"
       },
       "textShadow": {
-        "__princetype__": null
+        "__princetype__": null,
+        "url": "property"
       },
       "textTransform": {
         "__princetype__": null,
@@ -1555,7 +1636,8 @@
         "dep": "dep"
       },
       "textUnderlineOffset": {
-        "__princetype__": null
+        "__princetype__": null,
+        "url": "property"
       },
       "textUnderlinePosition": {
         "__princetype__": null,

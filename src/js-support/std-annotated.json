@@ -829,6 +829,9 @@
     },
     "CSSStyleDeclaration": {
         "prototype": {
+            "accentColor": {
+                "url": "property"
+            },
             "alignContent": {
                 "url": "property"
             },
@@ -836,6 +839,9 @@
                 "url": "property"
             },
             "alignSelf": {
+                "url": "property"
+            },
+            "all": {
                 "url": "property"
             },
             "background": {
@@ -978,6 +984,9 @@
             "boxDecorationBreak": {
                 "url": "property"
             },
+            "boxShadow": {
+                "url": "property"
+            },
             "boxSizing": {
                 "url": "property"
             },
@@ -1064,6 +1073,9 @@
                 "url": "property"
             },
             "counterReset": {
+                "url": "property"
+            },
+            "counterSet": {
                 "url": "property"
             },
             "direction": {
@@ -1159,6 +1171,9 @@
             "fontFamily": {
                 "url": "property"
             },
+            "fontKerning": {
+                "url": "property"
+            },
             "fontSize": {
                 "url": "property"
             },
@@ -1171,6 +1186,21 @@
             "fontVariant": {
                 "url": "property"
             },
+            "fontVariantCaps": {
+                "url": "property"
+            },
+            "fontVariantLigatures": {
+                "url": "property"
+            },
+            "fontVariantNumeric": {
+                "url": "property"
+            },
+            "fontVariantOpentype": {
+                "url": "property"
+            },
+            "fontVariationSettings": {
+                "url": "property"
+            },
             "fontWeight": {
                 "url": "property"
             },
@@ -1181,6 +1211,51 @@
                 "url": "property"
             },
             "gap": {
+                "url": "property"
+            },
+            "grid": {
+                "url": "property"
+            },
+            "gridArea": {
+                "url": "property"
+            },
+            "gridAutoColumns": {
+                "url": "property"
+            },
+            "gridAutoFlow": {
+                "url": "property"
+            },
+            "gridAutoRows": {
+                "url": "property"
+            },
+            "gridColumn": {
+                "url": "property"
+            },
+            "gridColumnEnd": {
+                "url": "property"
+            },
+            "gridColumnStart": {
+                "url": "property"
+            },
+            "gridRow": {
+                "url": "property"
+            },
+            "gridRowEnd": {
+                "url": "property"
+            },
+            "gridRowStart": {
+                "url": "property"
+            },
+            "gridTemplate": {
+                "url": "property"
+            },
+            "gridTemplateAreas": {
+                "url": "property"
+            },
+            "gridTemplateColumns": {
+                "url": "property"
+            },
+            "gridTemplateRows": {
                 "url": "property"
             },
             "height": {
@@ -1212,13 +1287,24 @@
                 "ext": "ext",
                 "url": "property"
             },
+            "inset": {
+                "url": "property"
+            },
             "insetInside": {
+                "ext": "ext",
                 "url": "property"
             },
             "insetOutside": {
+                "ext": "ext",
                 "url": "property"
             },
             "justifyContent": {
+                "url": "property"
+            },
+            "justifyItems": {
+                "url": "property"
+            },
+            "justifySelf": {
                 "url": "property"
             },
             "left": {
@@ -1306,6 +1392,12 @@
             "minWidth": {
                 "url": "property"
             },
+            "objectFit": {
+                "url": "property"
+            },
+            "objectPosition": {
+                "url": "property"
+            },
             "opacity": {
                 "url": "property"
             },
@@ -1313,6 +1405,21 @@
                 "url": "property"
             },
             "orphans": {
+                "url": "property"
+            },
+            "outline": {
+                "url": "property"
+            },
+            "outlineColor": {
+                "url": "property"
+            },
+            "outlineOffset": {
+                "url": "property"
+            },
+            "outlineStyle": {
+                "url": "property"
+            },
+            "outlineWidth": {
                 "url": "property"
             },
             "overflow": {
@@ -1355,7 +1462,20 @@
                 "ext": "ext",
                 "url": "property"
             },
+            "placeContent": {
+                "url": "property"
+            },
+            "placeItems": {
+                "url": "property"
+            },
+            "placeSelf": {
+                "url": "property"
+            },
             "position": {
+                "url": "property"
+            },
+            "princeAltText": {
+                "ext": "ext",
                 "url": "property"
             },
             "princeBackgroundImageResolution": {
@@ -1378,11 +1498,19 @@
                 "ext": "ext",
                 "url": "property"
             },
+            "princeBorderClip": {
+                "ext": "ext",
+                "url": "property"
+            },
             "princeCaptionPage": {
                 "ext": "ext",
                 "url": "property"
             },
             "princeClear": {
+                "ext": "ext",
+                "url": "property"
+            },
+            "princeExpansionText": {
                 "ext": "ext",
                 "url": "property"
             },
@@ -1422,6 +1550,14 @@
                 "ext": "ext",
                 "url": "property"
             },
+            "princeFontVariantOpentype": {
+                "ext": "ext",
+                "url": "property"
+            },
+            "princeFootnoteDisplay": {
+                "ext": "ext",
+                "url": "property"
+            },
             "princeFootnotePolicy": {
                 "ext": "ext",
                 "url": "property"
@@ -1446,6 +1582,10 @@
                 "ext": "ext",
                 "url": "property"
             },
+            "princeHyphens": {
+                "ext": "ext",
+                "url": "property"
+            },
             "princeImageMagic": {
                 "ext": "ext",
                 "url": "property"
@@ -1458,6 +1598,10 @@
                 "ext": "ext",
                 "url": "property"
             },
+            "princeLineStackingStrategy": {
+                "ext": "ext",
+                "url": "property"
+            },
             "princeLinebreakMagic": {
                 "ext": "ext",
                 "url": "property"
@@ -1467,6 +1611,14 @@
                 "url": "property"
             },
             "princeMarginAlt": {
+                "ext": "ext",
+                "url": "property"
+            },
+            "princeMarginInside": {
+                "ext": "ext",
+                "url": "property"
+            },
+            "princeMarginOutside": {
                 "ext": "ext",
                 "url": "property"
             },
@@ -1487,6 +1639,14 @@
                 "url": "property"
             },
             "princePdfAnnotationCreatedate": {
+                "ext": "ext",
+                "url": "property"
+            },
+            "princePdfAnnotationIcon": {
+                "ext": "ext",
+                "url": "property"
+            },
+            "princePdfAnnotationMerge": {
                 "ext": "ext",
                 "url": "property"
             },
@@ -1514,11 +1674,35 @@
                 "ext": "ext",
                 "url": "property"
             },
+            "princePdfForm": {
+                "ext": "ext",
+                "url": "property"
+            },
+            "princePdfFormFieldFontSize": {
+                "ext": "ext",
+                "url": "property"
+            },
+            "princePdfFormFieldSettings": {
+                "ext": "ext",
+                "url": "property"
+            },
             "princePdfLinkType": {
                 "ext": "ext",
                 "url": "property"
             },
+            "princePdfTagTitle": {
+                "ext": "ext",
+                "url": "property"
+            },
             "princePdfTagType": {
+                "ext": "ext",
+                "url": "property"
+            },
+            "princeTabSize": {
+                "ext": "ext",
+                "url": "property"
+            },
+            "princeTableBaseline": {
                 "ext": "ext",
                 "url": "property"
             },
@@ -1527,6 +1711,10 @@
                 "url": "property"
             },
             "princeTableRowSpan": {
+                "ext": "ext",
+                "url": "property"
+            },
+            "princeTextAlignAll": {
                 "ext": "ext",
                 "url": "property"
             },
@@ -1614,6 +1802,18 @@
             "textDecoration": {
                 "url": "property"
             },
+            "textDecorationColor": {
+                "url": "property"
+            },
+            "textDecorationLine": {
+                "url": "property"
+            },
+            "textDecorationStyle": {
+                "url": "property"
+            },
+            "textDecorationThickness": {
+                "url": "property"
+            },
             "textIndent": {
                 "url": "property"
             },
@@ -1648,6 +1848,9 @@
                 "url": "property",
                 "dep": "dep"
             },
+            "textShadow": {
+                "url": "property"
+            },
             "textTransform": {
                 "url": "property"
             },
@@ -1658,6 +1861,9 @@
             "textUnderlineColor": {
                 "url": "property",
                 "dep": "dep"
+            },
+            "textUnderlineOffset": {
+                "url": "property"
             },
             "textUnderlinePosition": {
                 "url": "property"
