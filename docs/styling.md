@@ -1188,7 +1188,9 @@ Thus, the following two examples achieve exactly the same when used in a multi-c
     }
 ```
 
+:::note
 Please keep in mind that starting with Prince 14, Prince treats a non-multi-column layout as a *single column layout*.  The default reference context for a float is `column`.  In most cases this should be of no concern for users.  However, in some corner cases this might lead to unexpected consequences.
+:::
 
 All float-related properties have our vendor prefix `-prince-`, since they differ from the standard.  When using standard values in our documentation, we use the form without prefix:
 
@@ -1260,6 +1262,41 @@ A similar result can be achieved by specifying the page as a float reference:
 
 However, there is an important difference: an image with `column-span: all` will stay *within* its parent element, but an image with the page defined as a float reference will *escape* its parent and align itself with the page area, as can easily be seen in [this example](https://www.princexml.com/howcome/2021/guides/float/#escaping-columns).
 
+##### Spread Floats
+
+In print one typically has to deal with left facing and right facing pages, together forming a spread. To take this into account when placing an element, Prince extends the [`float`](css-props.md#prop-float) property with the values `inside` and `outside`, moving the element respectively to the inside or outside of a spread.
+
+If the `inside` and `outside` values are used in a multi-column layout, by default the element is floated to the inside or outside of the column it appears in its natural flow.  To change this behaviour, the page float reference needs to be specified:
+
+```css
+    img {
+        -prince-float: page inside;
+    }
+```
+
+##### Conditional Modifiers
+
+The property [`-prince-float-modifier`](css-props.md#prop-prince-float-modifier) is to be used in combination with other float instructions.  When used with the value `unless-fit` it expresses a conditional: the element is only floated if it would otherwise cause a page or column break. For example, If you have a large image that happens to occur at the end of the page, it could force a page break and leave a gap at the end of the previous page. So you could float the image with the modifier value `unless-fit`, which would move it to the top of the next page *unless it fits on the current page without causing a break and leaving a gap*:
+
+```css
+    img {
+        -prince-float-placement: top;
+        -prince-float-modifier: unless-fit;
+    }
+```
+
+Or, in shorthand notation:
+
+```css
+    img {
+        -prince-float: top unless-fit;
+    }
+```
+
+##### Deferring Floats
+
+Floats can be deferred, to be laid out at a later position.  The properties [`-prince-float-defer-column`](css-props.md#prop-prince-float-defer-column) and [`-prince-float-defer-page`](css-props.md#prop-prince-float-defer-page) are used to defer the float to, respectively, some other column or page.
+
 ##### Page and Column Float Order
 
 Floating elements can sometimes appear in a different order than the source order - to exactly control the order, Prince provides the property [`-prince-float-policy`](css-props.md#prop-prince-float-policy).  The value `in-order` tells Prince to always show the floated elements in the order in which they were defined in the source, while the value `normal` makes them appear in the processing order.
@@ -1306,22 +1343,6 @@ When elements snap to the nearest edge, it is impossible to predict whether they
     }
 ```
 
-##### Spread Floats
-
-In print one typically has to deal with left facing and right facing pages, together forming a spread. To take this into account when placing an element, Prince extends the [`float`](css-props.md#prop-float) property with the values `inside` and `outside`, moving the element respectively to the inside or outside of a spread.
-
-If the `inside` and `outside` values are used in a multi-column layout, by default the element is floated to the inside or outside of the column it appears in its natural flow.  To change this behaviour, the page float reference needs to be specified:
-
-```css
-    img {
-        -prince-float: page inside;
-    }
-```
-
-##### Deferring Floats
-
-Floats can be deferred, to be laid out at a later position.  The properties [`-prince-float-defer-column`](css-props.md#prop-prince-float-defer-column) and [`-prince-float-defer-page`](css-props.md#prop-prince-float-defer-page) are used to defer the float to, respectively, some other column or page.
-
 ##### Page and Column Footnotes
 
 The value `footnote` transforms the element into a footnote: it creates a footnote call in the place where it appears in its natural flow, and moves the element to the bottom of the column - please note that a normal page is considered to be a single column layout. The footnote marker is placed outside of the block of the footnote. With the value `inline-footnote`, the footnote marker is placed inside of the block of the footnote. To move the footnote to the bottom of a page in a multi-column layout, instead of to the bottom of its column, the correct float reference needs to be defined with the [`-prince-float-reference`](css-props.md#prop-prince-float-reference) property.  See also [Footnotes](#footnotes).
@@ -1338,26 +1359,6 @@ Wide floats allow elements to *extend* into sidenote areas.  This is achieved wi
 Please note that wide floats are being laid out *before* other sidenotes, thus "reserving" the space taken in for themselves.  Further sidenote floats at the same natural anchoring point will then be stacked in the content order, as happens for regular [sidenotes](#sidenotes).
 
 Please also consult [A quick guide to creating sidenotes in Prince](https://www.princexml.com/howcome/2022/guides/sidenotes/) for more examples and complex applications of sidenotes.
-
-
-##### Conditional Modifiers
-
-The property [`-prince-float-modifier`](css-props.md#prop-prince-float-modifier) is to be used in combination with other float instructions.  When used with the value `unless-fit` it expresses a conditional: the element is only floated if it would otherwise cause a page or column break. For example, If you have a large image that happens to occur at the end of the page, it could force a page break and leave a gap at the end of the previous page. So you could float the image with the modifier value `unless-fit`, which would move it to the top of the next page *unless it fits on the current page without causing a break and leaving a gap*:
-
-```css
-    img {
-        -prince-float-placement: top;
-        -prince-float-modifier: unless-fit;
-    }
-```
-
-Or, in shorthand notation:
-
-```css
-    img {
-        -prince-float: top unless-fit;
-    }
-```
 
 
 
@@ -1485,7 +1486,9 @@ Making a footnote into an inline element moves the footnote marker into the foot
 
 The [`-prince-float`](css-props.md#prop-prince-float) property offers also the value `inline-footnote`, which is another mechanism to transform the footnote into an inline element.
 
+:::note
 Please note that from Prince 14 onwards, the footnote will by default be floated to the top or bottom of the *column* it appears in!  In a multi-column layout, footnotes are thus rendered by default at the bottom of each column!  To float them to the bottom of the page, as was previous behaviour, the correct float context needs to be defined with the [`-prince-float-reference`](css-props.md#prop-prince-float-reference) property.  See also [Page and Column Floats](#page-and-column-floats).
+:::
 
 In some situations it might happen that footnotes do not fit on the page on which the footnote call was placed. It might be desirable to tie the footnote to the same page as the call - the property [`-prince-footnote-policy`](css-props.md#prop-prince-footnote-policy) can be of help. The following example instructs Prince to move the line with the footnote call to the next page, in order to keep it on the same page as the footnote itself:
 
