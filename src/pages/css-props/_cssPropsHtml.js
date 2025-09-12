@@ -7044,6 +7044,11 @@ const cssPropsHtml = String.raw`
         <code>outside</code> moves the element to the left when used on a left-facing
         page, and to the right on a right-facing page.
         </p>
+          <p class="note">
+        The property <code>-<a href="#prop-prince-float-modifier">prince-float-modifier</a></code> can be used as a
+        conditional modifier when you want to float an element only in case it would otherwise
+        cause a page or column break.
+        </p>
           <p>
         The <code>align-top</code> and <code>align-bottom</code> values affect sidenotes -
         the former one aligns the top of the sidenote with the top of the box where it
@@ -15877,6 +15882,11 @@ supplier, item { overflow-wrap: normal; }
         the right when used on a left-facing page, and to the left on a right-facing page;
         <code>outside</code> moves the element to the left when used on a left-facing
         page, and to the right on a right-facing page.
+        </p>
+          <p class="note">
+        The property <code>-<a href="#prop-prince-float-modifier">prince-float-modifier</a></code> can be used as a
+        conditional modifier when you want to float an element only in case it would otherwise
+        cause a page or column break.
         </p>
           <p>
         The <code>align-top</code> and <code>align-bottom</code> values affect sidenotes -
