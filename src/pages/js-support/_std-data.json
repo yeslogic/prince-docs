@@ -3635,7 +3635,7 @@
       "desc": "Can be used to disable PDF object streams.  Object streams are enabled by default."
     },
     "openAction": {
-      "__princetype__": "object",
+      "__princetype__": "string",
       "desc": "Note that Prince passes the provided values verbatim to the PDF viewer, so the user can supply values that Prince doesn't know about, but the viewer does.",
       "example": "PDF.openAction = 'print'"
     },
@@ -3667,7 +3667,7 @@
       "desc": "\"auto\" | \"none\""
     },
     "profile": {
-      "__princetype__": "object",
+      "__princetype__": "string",
       "desc": "One of the supported PDF profiles.",
       "example": "PDF.profile = \"PDF/X-3:2003\""
     },

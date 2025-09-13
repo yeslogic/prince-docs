@@ -2284,6 +2284,7 @@
         },
         "script": {},
         "openAction": {
+            "__princetype__": "string",
             "desc": "Note that Prince passes the provided values verbatim to the PDF viewer, so the user can supply values that Prince doesn't know about, but the viewer does.",
             "example": "PDF.openAction = 'print'"
         },
@@ -2300,6 +2301,7 @@
             "desc": "\"auto\" | \"simplex\" | \"duplex-flip-short-edge\" | \"duplex-flip-long-edge\""
         },
         "profile": {
+            "__princetype__": "string",
             "desc": "One of the supported PDF profiles.",
             "example": "PDF.profile = \"PDF/X-3:2003\""
         },
