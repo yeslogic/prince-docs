@@ -1510,10 +1510,6 @@
                 "ext": "ext",
                 "url": "property"
             },
-            "princePdfColorOptions": {
-                "ext": "ext",
-                "url": "property"
-            },
             "princePdfDestination": {
                 "ext": "ext",
                 "url": "property"

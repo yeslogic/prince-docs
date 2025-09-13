@@ -1617,10 +1617,6 @@
       "zIndex": {
         "__princetype__": null,
         "url": "property"
-      },
-      "princePdfColorOptions": {
-        "ext": "ext",
-        "url": "property"
       }
     }
   },
