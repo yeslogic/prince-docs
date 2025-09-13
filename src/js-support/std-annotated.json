@@ -2285,7 +2285,7 @@
         "script": {},
         "openAction": {
             "desc": "Note that Prince passes the provided values verbatim to the PDF viewer, so the user can supply values that Prince doesn't know about, but the viewer does.",
-            "example": "PDF.openAction('print')"
+            "example": "PDF.openAction = 'print'"
         },
         "pageLayout": {
             "desc": "\"single-page\" | \"one-column\" | \"two-column[-left/right]\""
@@ -2301,7 +2301,7 @@
         },
         "profile": {
             "desc": "One of the supported PDF profiles.",
-            "example": "PDF.profile(\"PDF/X-3:2003\")"
+            "example": "PDF.profile = \"PDF/X-3:2003\""
         },
         "outputIntent": {
             "desc": "URL"
