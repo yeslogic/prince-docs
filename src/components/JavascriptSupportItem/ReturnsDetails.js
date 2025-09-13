@@ -1,7 +1,8 @@
 import React from "react";
 
 /**
- * @param {string} returns - may contain HTML tags or just string
+ * @param {Object} props - the props for the component
+ * @param {string} props.returns - may contain HTML tags or just string
  */
 export function ReturnsDetails({ returns }) {
   return (

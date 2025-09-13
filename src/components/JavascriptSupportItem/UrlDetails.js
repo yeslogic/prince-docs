@@ -1,7 +1,8 @@
 import React from "react";
 
 /**
- * @param {string} property - e.g. `"alignContent"`, `"cssFloat"`, `"princeBackgroundImageResolution"`
+ * @param {Object} props - the props for the component
+ * @param {string} props.property - e.g. `"alignContent"`, `"cssFloat"`, `"princeBackgroundImageResolution"`
  */
 export function UrlDetails({ property }) {
   const cssProperty =

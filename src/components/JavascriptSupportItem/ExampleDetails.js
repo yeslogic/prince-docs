@@ -1,8 +1,9 @@
 import React from "react";
 
 /**
- * @param { string } example - an example that may contain new lines (\n)
- * @param { undefined | string | number | boolean } exampleReturn - an example of a returned value; either undefined or JSON data that currently only contains number or boolean but could contain a string
+ * @param {Object} props - the props for the component
+ * @param { string } props.example - an example that may contain new lines (\n)
+ * @param { undefined | string | number | boolean } props.exampleReturn - an example of a returned value; either undefined or JSON data that currently only contains number or boolean but could contain a string
  */
 export function ExampleDetails({ example, exampleReturn }) {
   return (

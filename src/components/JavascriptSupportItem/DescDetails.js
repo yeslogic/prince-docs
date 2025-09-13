@@ -1,8 +1,9 @@
 import React from "react";
 
 /**
- * @param {undefined | string} desc - an optional description of the documented item that may contain HTML tags or just a string
- * @param {string} name - e.g. `"getPrinceBoxes"`, `"Function"`, `"HTMLInputElement"`
+ * @param {Object} props - the props for the component
+ * @param {undefined | string} props.desc - an optional description of the documented item that may contain HTML tags or just a string
+ * @param {string} props.name - e.g. `"getPrinceBoxes"`, `"Function"`, `"HTMLInputElement"`
  */
 export function DescDetails({ desc, name }) {
   const showDesc = desc || /^HTML/.test(name);
