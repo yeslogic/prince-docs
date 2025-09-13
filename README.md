@@ -26,7 +26,7 @@ The JavaScript Support page uses a build process to combine some files:
 
 - `std.json`: this is a generated file using Prince's information by Prince developers
 - `std-annotated.json`: this is a hand-annotated file containing documentation
-- `_std-data.json`: this is the combined file resulting from the 2 above.
+- `_std-data.json`: this is the merged file resulting from the 2 above, where fields in `std-annotated.json` can override fields in `std.json`
 
 To create the `_std-data.json` file that the `js-support` page needs, you can run `make` in the `./src/js-support/` folder. This process requires:
 
