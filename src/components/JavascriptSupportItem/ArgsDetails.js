@@ -1,7 +1,8 @@
 import React from "react";
 
 /**
- * @param {undefined | { type: string, name?: string, desc?: string }[]} args - the list of arguments the documented item takes
+ * @param {Object} props - the props for the component
+ * @param {undefined | { type: string, name?: string, desc?: string }[]} props.args - the list of arguments the documented item takes where desc may be a string or HTML
  */
 export function ArgsDetails({ args }) {
   return args ? (
@@ -11,7 +12,12 @@ export function ArgsDetails({ args }) {
           <div></div>
           {item.name && <div className="name level">{item.name}</div>}
           <div className="type">{item.type}</div>
-          {item.desc && <div className="desc">{item.desc}</div>}
+          {item.desc && (
+            <div
+              className="desc"
+              dangerouslySetInnerHTML={{ __html: item.desc }}
+            ></div>
+          )}
         </li>
       ))}
     </ul>

@@ -50,7 +50,7 @@ const ignoreFields = [
  * @param {string} props.properties[0] - The item name e.g. `"JSON"`, `"stringify"`
  * @param {Object} props.properties[1] - An object with string keys and values that can be either string or `null`.
  * @param {string|null} props.properties[1].key - a generated field, an annotation, or an actual property of the JavaScript feature e.g. `"name"`, `"__princetype__"`, `"exampleReturn"`, `"skewX"`, `"forEach"`
- * @param {undefined | { type: string, name: string, desc?: string }[]} props.args - e.g. `[{ type: "boolean" }]`, `[{ name: "string", desc: "String to unescape", type: "string" }]`
+ * @param {undefined | { type: string, name: string, desc?: string }[]} props.args - the "arguments" where `desc` may be HTML or string e.g. `[{ type: "boolean" }]`, `[{ name: "string", desc: "String to unescape", type: "string" }]`
  * @param {undefined | string} props.returns - e.g. `"boolean"`, `"number"`, `"function"`, `"string"`, `"array of child boxes"`, `"A list of JavaScript objects called <a href='/doc/javascript#the-box-tracking-api'>boxes</a>."`
  * @param {undefined | string} props.example - e.g. `"isNaN(parseInt('hello'))"`
  * @param {undefined | string | boolean | number} props.exampleReturn - e.g. `1.5`, `50`, `true`
