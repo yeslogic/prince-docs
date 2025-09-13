@@ -2,8 +2,9 @@ import React from "react";
 
 /**
  *
- * @param {string} name - e.g. "marginBottom", "prototype", "NaN", "undefined", "eval", "Prince", "PDF"
- * @param {React.ReactNode} children - React children including the `<ArgsList />`
+ * @param {Object} props - the props for the component
+ * @param {string} props.name - e.g. "marginBottom", "prototype", "NaN", "undefined", "eval", "Prince", "PDF"
+ * @param {React.ReactNode} props.children - React children including the `<ArgsList />`
  */
 export function NameDetails({ name, children }) {
   return (
