@@ -3637,7 +3637,7 @@
     "openAction": {
       "__princetype__": "object",
       "desc": "Note that Prince passes the provided values verbatim to the PDF viewer, so the user can supply values that Prince doesn't know about, but the viewer does.",
-      "example": "PDF.openAction('print')"
+      "example": "PDF.openAction = 'print'"
     },
     "outputIntent": {
       "__princetype__": "object",
@@ -3669,7 +3669,7 @@
     "profile": {
       "__princetype__": "object",
       "desc": "One of the supported PDF profiles.",
-      "example": "PDF.profile(\"PDF/X-3:2003\")"
+      "example": "PDF.profile = \"PDF/X-3:2003\""
     },
     "script": {
       "__princetype__": "object"
