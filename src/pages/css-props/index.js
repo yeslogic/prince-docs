@@ -1,66 +1,21 @@
-import { useEffect, useMemo } from "react";
+import { useMemo } from "react";
 import cssPropsHtml from "./_cssPropsHtml";
-
-function openDetails() {
-  const hash = window.location.hash;
-  if (hash) {
-    const id = hash.substring(1); // Remove the '#' from the hash
-    const element = document.getElementById(id);
-    if (element) {
-      let parentDetails = element.parentNode;
-      while (parentDetails && parentDetails.tagName !== "DETAILS") {
-        parentDetails = parentDetails.parentNode;
-      }
-      if (parentDetails) {
-        parentDetails.setAttribute("open", "");
-        element.scrollIntoView(); // This is necessary to scroll to IDs inside collapsed `details` elements over a slow connection
-      }
-    }
-  }
-}
+import useHashDetails from "../../components/useHashDetails";
+import { toggleAllItems } from "../../components/toggleAllItems";
 
 function CssProperties() {
   // This prevents *other* sections closing when the URL hash changes on hash-link clicks and the page re-renders:
   const memoizedCssPropsHtml = useMemo(
     () => ({
-      __html: cssPropsHtml,
+      __html: cssPropsHtml
     }),
     [cssPropsHtml]
   );
 
-  useEffect(() => {
-    // On page load/after first render, if there's a hash in the URL, open that id's parent `details` element:
-    openDetails();
+  useHashDetails();
 
-    // On "hashchange"/click of hash-links, open the corresponding id's parent `details` element:
-    window.addEventListener("hashchange", openDetails);
-
-    // When the css-props component unmounts, remove the hashchange event listener:
-    return () => {
-      window.removeEventListener("hashchange", openDetails);
-    };
-  }, []);
-
-  const toggleAllCSS = (event) => {
-    const propListEl = document.getElementById("prop-list");
-    const allDetails = propListEl.getElementsByTagName("details");
-    const toggleId = "toggle-css";
-    const toggleLink = document.getElementById(toggleId);
-    if (toggleLink.hasAttribute("open") == false) {
-      for (let i = 0; i < allDetails.length; i++) {
-        allDetails[i].setAttribute("open", "");
-        toggleLink.setAttribute("open", "");
-      }
-    } else if (toggleLink.hasAttribute("open") == true) {
-      for (let i = 0; i < allDetails.length; i++) {
-        allDetails[i].removeAttribute("open");
-        toggleLink.removeAttribute("open");
-      }
-    }
-    event.preventDefault();
-
-    return false;
-  };
+  const toggleAllCSS = (event) =>
+    toggleAllItems(event, "prop-list", "toggle-css");
 
   return (
     <div>

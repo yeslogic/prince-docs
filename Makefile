@@ -2,6 +2,7 @@
 all :
 	$(MAKE) -C src/properties
 	$(MAKE) -C src/samples
+	$(MAKE) -C src/js-support
 
 .PHONY : clean
 clean :
