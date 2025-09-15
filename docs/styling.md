@@ -1128,7 +1128,8 @@ The following example instructs Prince to make the `h1` heading element span all
     }
 ```
 
-Please note that starting with Prince 14, Prince treats a non-multi-column layout as a *single column layout*.
+Please note that elements that span several columns are taken out of flow - which means that the usual margin-collapsing rules do not apply.
+
 
 
 ### Fragmentation
