@@ -1,4 +1,6 @@
 import React from "react";
+import CodeBlock from "@theme/CodeBlock";
+import BrowserOnly from "@docusaurus/BrowserOnly";
 
 /**
  * @param {Object} props - the props for the component
@@ -9,14 +11,30 @@ export function ExampleDetails({ example, exampleReturn }) {
   return (
     <div className="example">
       <div className="programlisting">
-        <pre className="example level">
-          {example}
-          {exampleReturn && (
-            <div className="example-return">
-              {JSON.stringify(exampleReturn)}
-            </div>
-          )}
-        </pre>
+        <BrowserOnly
+          fallback={
+            <pre className="example level">
+              {example}
+              {exampleReturn && (
+                <div className="example-return">
+                  {JSON.stringify(exampleReturn)}
+                </div>
+              )}
+            </pre>
+          }
+        >
+          {() => {
+            return (
+              <CodeBlock language="javascript">
+                {example}
+                {exampleReturn
+                  ? `
+                  // returns: ${JSON.stringify(exampleReturn)}`
+                  : ""}
+              </CodeBlock>
+            );
+          }}
+        </BrowserOnly>
       </div>
     </div>
   );
