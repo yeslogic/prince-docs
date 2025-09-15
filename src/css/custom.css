@@ -24,6 +24,8 @@
 
   --ifm-code-background: rgba(27,31,35,.05);
   --ifm-pre-background: white;
+
+  --docusaurus-highlighted-code-line-bg: lavenderblush;
 }
 
 /* your custom css */
