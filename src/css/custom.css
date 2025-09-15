@@ -26,13 +26,6 @@
   --ifm-pre-background: white;
 }
 
-.docusaurus-highlight-code-line {
-  background-color: rgb(72, 77, 91);
-  display: block;
-  margin: 0 calc(-1 * var(--ifm-pre-padding));
-  padding: 0 var(--ifm-pre-padding);
-}
-
 /* your custom css */
 
 html, body {
@@ -212,9 +205,6 @@ img {
     margin-top: 1em;
     margin-bottom: 1em;
 }
-img.logo {
-    border: none;
-}
 
 table thead tr th:empty {
     display: none;
@@ -331,24 +321,6 @@ table.property-table td {
 }
 dt[id], h6[id], th[id], summary[id], #prop-list div[id] {
     scroll-margin-top: calc(var(--ifm-navbar-height) + 1rem);
-}
-
-p.note, p.warning {
-    border: 1px solid pink;
-    border-radius: 10px;
-    padding: 10px;
-}
-p.note::before {
-    content: "Note: ";
-    font-weight: bold;
-}
-p.warning::before {
-    content: "Warning: ";
-    color: red;
-    font-weight: bold;
-}
-p.note:only-child {
-    margin-bottom: 0;
 }
 
 .alert {
