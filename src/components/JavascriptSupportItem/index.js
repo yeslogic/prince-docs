@@ -1,143 +1,169 @@
 import React from "react";
 import clsx from "clsx";
-import styles from "./JavascriptSupportItem.module.css";
+import { ExampleDetails } from "./ExampleDetails";
+import { ArgsDetails } from "./ArgsDetails";
+import { ReturnsDetails } from "./ReturnsDetails";
+import { ArgsList } from "./ArgsList";
+import { DescDetails } from "./DescDetails";
+import { UrlDetails } from "./UrlDetails";
+import { TypeDetails } from "./TypeDetails";
+import { NameDetails } from "./NameDetails";
+
 // some things we ignore..
-const BLOCKLIST = ["constructor", "write", "writeln", "prototype"];
+const BLOCKLIST = ["constructor", "writeln"];
+
+const generatedFields = ["name", "__princetype__"];
+const handWrittenAnnotations = [
+  "desc",
+  "arguments",
+  "name", // Hand-written on arguments objects
+  "desc", // Hand-written on arguments objects
+  "type", // Hand-written on arguments objects
+  "returns",
+  "example",
+  "exampleReturn",
+  "url",
+  "ext",
+  "dep"
+];
+const ignoreFields = [
+  ...new Set([...generatedFields, ...handWrittenAnnotations])
+];
 
 // We use three sources of information:
-// - a data structure dumped from the engine listing what properties/objects/methods are supported
-// - a data structure similar to the above but annotated with human comments and even short examples
-//   (we should aim to make sure the Prince-specific parts in particular are described)
-// - the engine this script runs in is queried directly for type info
+// - a data structure dumped from Prince listing what properties/objects/
+//   methods are supported and their types (`__princetype__`)
+// - a data structure similar to the above but with type information for
+//   arguments and properties annotated with human comments and even short
+//   examples and (we should aim to make sure the Prince-specific parts in
+//   particular are described)
 //
 // Finally, the script also infers some details from item names, and can infer more
 
+/**
+ * @param {Object} props - the props for the component
+ * @param {string[]} props.path - e.g. `[ "window", "BoxInfo", "prototype", "marginTop" ]`
+ * @param {string} props.name - e.g. "marginBottom", "prototype", "NaN", "undefined", "eval", "Prince", "PDF"
+ * @param {null | string} props.princetype - `null` or a type as a string e.g. `"undefined"`, `"function"`, `"object"`
+ * @param {undefined | string} props.desc - e.g. `"The global object"`, `"See <a href='/doc/javascript#the-prince-object'>The Prince Object</a>."`
+ * @param {(null|Array)} props.properties - An optional array containing properties.
+ * @param {string} props.properties[0] - The item name e.g. `"JSON"`, `"stringify"`
+ * @param {Object} props.properties[1] - An object with string keys and values that can be either string or `null`.
+ * @param {string|null} props.properties[1].key - a generated field, an annotation, or an actual property of the JavaScript feature e.g. `"name"`, `"__princetype__"`, `"exampleReturn"`, `"skewX"`, `"forEach"`
+ * @param {undefined | { type: string, name: string, desc?: string }[]} props.args - the "arguments" where `desc` may be HTML or string e.g. `[{ type: "boolean" }]`, `[{ name: "string", desc: "String to unescape", type: "string" }]`
+ * @param {undefined | string} props.returns - e.g. `"boolean"`, `"number"`, `"function"`, `"string"`, `"array of child boxes"`, `"A list of JavaScript objects called <a href='/doc/javascript#the-box-tracking-api'>boxes</a>."`
+ * @param {undefined | string} props.example - e.g. `"isNaN(parseInt('hello'))"`
+ * @param {undefined | string | boolean | number} props.exampleReturn - e.g. `1.5`, `50`, `true`
+ * @param {undefined | string} props.url - e.g. `"property"` where there is a matching CSS property
+ * @param {undefined | string} props.ext - e.g. `"ext"` for Prince extensions
+ * @param {undefined | string} props.dep - e.g. `"dep"` for deprecated objects, methods and properties
+ * @param {undefined | string} props.hash - just the URL hash without "#" e.g. `"window.Object.defineProperty"`
+ * @param {undefined | boolean} props.open - set `true` to open the section by default
+ */
 function JavascriptSupportItem({
-  name,
   path,
+  name,
+  princetype,
   desc,
+  properties,
+  args,
+  returns,
+  example,
+  exampleReturn,
+  url,
   ext,
-  open,
-  dumpedPropertyList,
-  uaObject,
-  annotations,
+  dep,
+  hash,
+  open
 }) {
   if (BLOCKLIST.includes(name)) {
     return null;
   }
-  let pathStr = path.join(".");
-  open = open || location.hash.indexOf(pathStr) > -1;
-  let theAnnotation = findAnnotation(annotations, path) || {};
-  desc = desc || theAnnotation.desc;
 
-  if (!desc && /^HTML/.test(name)) {
-    desc =
-      "Represents an HTML <em>" +
-      name
-        .replace(/^HTML/, "")
-        .replace(/Element$/, "")
-        .replace(/([A-Z][a-z])/g, function (match) {
-          return " " + match;
-        })
-        .toLowerCase() +
-      "</em> element";
-  }
-
-  ext = ext || theAnnotation.ext || /prince/i.test(name) ? "ext" : null;
-  let type = theAnnotation.type;
-  if (uaObject) {
-    try {
-      if (!type) {
-        type = typeof uaObject;
-      }
-    } catch (e) {}
-  }
+  // The "#.window" exception is just to match historical behaviour and preserve existing links on the Internet to this hash:
+  const isGlobalWindow = name === "window" && path.length === 1;
+  const pathStr = isGlobalWindow ? ".window" : path.join(".");
+  const openAttribute = open || (hash && hash.indexOf(pathStr) > -1);
+  const extClass = ext || /prince/i.test(name) ? "ext" : null;
+  const depClass = dep ? "dep" : null;
+  const isFunctionProperty = princetype === "function" || args;
 
   return (
-    <details className={clsx("level", { ext })} open={open}>
+    <details
+      className={clsx("level", {
+        ext: extClass,
+        dep: depClass,
+        globalWindow: isGlobalWindow
+      })}
+      open={openAttribute}
+    >
       <summary id={pathStr}>
-          <code><b className="name">{name}</b></code>
-          {(type === "function" || theAnnotation.arguments) && (
-            <span className="argslist">
-              {theAnnotation.arguments
-                ? theAnnotation.arguments.map((item) => item.name).join(", ")
-                : null}
-            </span>
-          )}
+        <NameDetails name={name}>
+          {isFunctionProperty && <ArgsList args={args} />}
+        </NameDetails>
         <a href={`#${pathStr}`} className="hash-link"></a>
       </summary>
       <div>
-        <span className="type">{type}</span>
-        {desc && (
-          <div
-            className="desc"
-            dangerouslySetInnerHTML={{ __html: desc }}
-          ></div>
-        )}
-        {theAnnotation.arguments && (
-          <ul className="arguments">
-            {theAnnotation.arguments.map((item) => (
-              <li className="argument">
-                <div></div>
-                <div className="name level">{item.name}</div>
-                <div className="type">{item.type}</div>
-                <div className="desc">{item.desc}</div>
-              </li>
-            ))}
-          </ul>
-        )}
-        {theAnnotation.returns && (
-          <div className="returns level" dangerouslySetInnerHTML={{__html:theAnnotation.returns}}></div>
-        )}
-
-        {theAnnotation.example && (
-          <div className="example">
-            <div className="programlisting">
-              <pre className="example level">
-                {theAnnotation.example}
-                {theAnnotation.exampleReturn && (
-                  <div className="example-return">
-                    {JSON.stringify(theAnnotation.exampleReturn)}
-                  </div>
-                )}
-              </pre>
-            </div>
-          </div>
+        <TypeDetails princetype={princetype} />
+        {url && <UrlDetails property={name} />}
+        <DescDetails desc={desc} name={name} />
+        <ArgsDetails args={args} />
+        {returns && <ReturnsDetails returns={returns} />}
+        {example && (
+          <ExampleDetails example={example} exampleReturn={exampleReturn} />
         )}
       </div>
-      {dumpedPropertyList &&
-        Object.keys(dumpedPropertyList).map((itemName) => {
-          let subPropertyList = dumpedPropertyList[itemName];
+      {!!properties &&
+        properties.map(([itemName, subProperties]) => {
+          let subPropertyList = Object.entries(subProperties).filter(
+            (subProperty) => {
+              if (
+                subProperty[0] === "type" &&
+                typeof subProperty[1] !== "string"
+              ) {
+                // For example, HTMLInputElement's `type` property:
+                return true;
+              }
+              if (
+                subProperty[0] === "name" &&
+                typeof subProperty[1] !== "string"
+              ) {
+                // For example, HTMLInputElement's `name` property:
+                return true;
+              }
+
+              const isIgnoredField = ignoreFields.includes(subProperty[0]);
+              return !isIgnoredField;
+            }
+          );
           let subPath = path.concat(itemName);
-          let theSubObject = null;
-          try {
-            theSubObject = uaObject[itemName];
-          } catch (e) {}
+
+          // Skip args if subProperties.arguments is the Function.prototype.arguments object:
+          const subPropertiesArgs = Array.isArray(subProperties.arguments)
+            ? subProperties.arguments
+            : undefined;
 
           return (
             <JavascriptSupportItem
               key={subPath.join(".")}
               path={subPath}
               name={itemName}
-              dumpedPropertyList={subPropertyList}
-              uaObject={theSubObject}
-              annotations={annotations}
+              princetype={subProperties.__princetype__}
+              desc={subProperties.desc}
+              args={subPropertiesArgs}
+              returns={subProperties.returns}
+              example={subProperties.example}
+              exampleReturn={subProperties.exampleReturn}
+              url={subProperties.url}
+              ext={subProperties.ext}
+              dep={subProperties.dep}
+              properties={subPropertyList.length < 1 ? null : subPropertyList}
+              hash={hash}
             />
           );
         })}
     </details>
   );
-}
-
-function findAnnotation(annotations, path) {
-  let item = annotations;
-  let i = path[0] === "window" ? 1 : 0;
-  for (; i < path.length; i++) {
-    if (path[i] && item && item[path[i]]) {
-      item = item[path[i]];
-    }
-  }
-  return item === annotations ? null : item;
 }
 
 export default JavascriptSupportItem;

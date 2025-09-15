@@ -1,0 +1,4649 @@
+{
+  "Array": {
+    "__princetype__": "function",
+    "from": {
+      "__princetype__": "function"
+    },
+    "isArray": {
+      "__princetype__": "function"
+    },
+    "of": {
+      "__princetype__": "function"
+    },
+    "prototype": {
+      "__princetype__": "object",
+      "concat": {
+        "__princetype__": "function"
+      },
+      "entries": {
+        "__princetype__": "function"
+      },
+      "every": {
+        "__princetype__": "function"
+      },
+      "fill": {
+        "__princetype__": "function"
+      },
+      "filter": {
+        "__princetype__": "function"
+      },
+      "find": {
+        "__princetype__": "function"
+      },
+      "findIndex": {
+        "__princetype__": "function"
+      },
+      "forEach": {
+        "__princetype__": "function"
+      },
+      "includes": {
+        "__princetype__": "function"
+      },
+      "indexOf": {
+        "__princetype__": "function"
+      },
+      "join": {
+        "__princetype__": "function"
+      },
+      "keys": {
+        "__princetype__": "function"
+      },
+      "lastIndexOf": {
+        "__princetype__": "function"
+      },
+      "map": {
+        "__princetype__": "function"
+      },
+      "pop": {
+        "__princetype__": "function"
+      },
+      "push": {
+        "__princetype__": "function"
+      },
+      "reduce": {
+        "__princetype__": "function"
+      },
+      "reduceRight": {
+        "__princetype__": "function"
+      },
+      "reverse": {
+        "__princetype__": "function"
+      },
+      "shift": {
+        "__princetype__": "function"
+      },
+      "slice": {
+        "__princetype__": "function"
+      },
+      "some": {
+        "__princetype__": "function"
+      },
+      "sort": {
+        "__princetype__": "function"
+      },
+      "splice": {
+        "__princetype__": "function"
+      },
+      "toLocaleString": {
+        "__princetype__": "function"
+      },
+      "toString": {
+        "__princetype__": "function"
+      },
+      "unshift": {
+        "__princetype__": "function"
+      },
+      "values": {
+        "__princetype__": "function"
+      },
+      "constructor": {},
+      "length": {}
+    }
+  },
+  "ArrayBuffer": {
+    "__princetype__": "function",
+    "prototype": {
+      "__princetype__": "object",
+      "byteLength": {
+        "__princetype__": null
+      },
+      "slice": {
+        "__princetype__": "function"
+      }
+    }
+  },
+  "Attribute": {
+    "__princetype__": "function",
+    "prototype": {
+      "__princetype__": "object",
+      "attributes": {
+        "__princetype__": "object"
+      },
+      "childNodes": {
+        "__princetype__": "object"
+      },
+      "localName": {
+        "__princetype__": null
+      },
+      "name": {
+        "__princetype__": null
+      },
+      "namespaceURI": {
+        "__princetype__": null
+      },
+      "nodeName": {
+        "__princetype__": null
+      },
+      "nodeType": {
+        "__princetype__": "number"
+      },
+      "nodeValue": {
+        "__princetype__": null
+      },
+      "ownerElement": {
+        "__princetype__": null
+      },
+      "value": {
+        "__princetype__": null
+      }
+    }
+  },
+  "Boolean": {
+    "__princetype__": "function",
+    "prototype": {
+      "__princetype__": "object",
+      "toString": {
+        "__princetype__": "function"
+      },
+      "valueOf": {
+        "__princetype__": "function"
+      },
+      "constructor": {}
+    }
+  },
+  "BoxInfo": {
+    "__princetype__": "function",
+    "prototype": {
+      "__princetype__": "object",
+      "baseline": {
+        "__princetype__": "number"
+      },
+      "borderBottom": {
+        "__princetype__": "number"
+      },
+      "borderLeft": {
+        "__princetype__": "number"
+      },
+      "borderRight": {
+        "__princetype__": "number"
+      },
+      "borderTop": {
+        "__princetype__": "number"
+      },
+      "children": {
+        "__princetype__": "object",
+        "desc": "array of child boxes"
+      },
+      "element": {
+        "__princetype__": "object",
+        "desc": "DOM element for box (may be null)"
+      },
+      "floatPosition": {
+        "__princetype__": "string",
+        "desc": "\"TOP\" | \"BOTTOM\""
+      },
+      "h": {
+        "__princetype__": "number",
+        "desc": "height, in pt"
+      },
+      "marginBottom": {
+        "__princetype__": "number",
+        "desc": "the used value for the bottom margin"
+      },
+      "marginLeft": {
+        "__princetype__": "number",
+        "desc": "the used value for the left margin"
+      },
+      "marginRight": {
+        "__princetype__": "number",
+        "desc": "the used value for the right margin"
+      },
+      "marginTop": {
+        "__princetype__": "number",
+        "desc": "the used value for the top margin"
+      },
+      "paddingBottom": {
+        "__princetype__": "number"
+      },
+      "paddingLeft": {
+        "__princetype__": "number"
+      },
+      "paddingRight": {
+        "__princetype__": "number"
+      },
+      "paddingTop": {
+        "__princetype__": "number"
+      },
+      "pageNum": {
+        "__princetype__": "number"
+      },
+      "parent": {
+        "__princetype__": "object",
+        "desc": "parent box"
+      },
+      "pseudo": {
+        "__princetype__": "string",
+        "desc": "pseudo-element name or null"
+      },
+      "src": {
+        "__princetype__": "string"
+      },
+      "style": {
+        "__princetype__": "object",
+        "desc": "CSS style object for box"
+      },
+      "text": {
+        "__princetype__": "string"
+      },
+      "type": {
+        "__princetype__": "string",
+        "desc": "\"BODY\" | \"COLUMN\" | \"FLEXLINE\" | \"FOOTNOTES\" | \"FLOATS\" | \"BOX\" | \"LINE\" | \"SPAN\" | \"TEXT\" | \"SVG\" | \"IMAGE\""
+      },
+      "w": {
+        "__princetype__": "number",
+        "desc": "width, in pt"
+      },
+      "x": {
+        "__princetype__": "number",
+        "desc": "x-coordinate, in pt"
+      },
+      "y": {
+        "__princetype__": "number",
+        "desc": "y-coordinate, in pt"
+      }
+    },
+    "ext": "ext",
+    "returns": "The properties of a box, can be accessed after document conversion has finished - see <a href='/doc/javascript#the-box-tracking-api'>The Box Tracking API</a>."
+  },
+  "BoxInfoChildren": {
+    "__princetype__": "function",
+    "prototype": {
+      "__princetype__": "object",
+      "item": {
+        "__princetype__": "function"
+      },
+      "length": {
+        "__princetype__": null
+      }
+    },
+    "ext": "ext"
+  },
+  "CSSStyleDeclaration": {
+    "__princetype__": "function",
+    "prototype": {
+      "__princetype__": "object",
+      "accentColor": {
+        "__princetype__": null
+      },
+      "alignContent": {
+        "__princetype__": null,
+        "url": "property"
+      },
+      "alignItems": {
+        "__princetype__": null,
+        "url": "property"
+      },
+      "alignSelf": {
+        "__princetype__": null,
+        "url": "property"
+      },
+      "all": {
+        "__princetype__": null
+      },
+      "background": {
+        "__princetype__": null,
+        "url": "property"
+      },
+      "backgroundAttachment": {
+        "__princetype__": null,
+        "url": "property"
+      },
+      "backgroundClip": {
+        "__princetype__": null,
+        "url": "property"
+      },
+      "backgroundColor": {
+        "__princetype__": null,
+        "url": "property"
+      },
+      "backgroundImage": {
+        "__princetype__": null,
+        "url": "property"
+      },
+      "backgroundImageResolution": {
+        "__princetype__": null,
+        "ext": "ext",
+        "url": "property"
+      },
+      "backgroundOrigin": {
+        "__princetype__": null,
+        "url": "property"
+      },
+      "backgroundPosition": {
+        "__princetype__": null,
+        "url": "property"
+      },
+      "backgroundRepeat": {
+        "__princetype__": null,
+        "url": "property"
+      },
+      "backgroundSize": {
+        "__princetype__": null,
+        "url": "property"
+      },
+      "baselineShift": {
+        "__princetype__": null,
+        "url": "property"
+      },
+      "bookmarkLabel": {
+        "__princetype__": null,
+        "ext": "ext",
+        "url": "property"
+      },
+      "bookmarkLevel": {
+        "__princetype__": null,
+        "ext": "ext",
+        "url": "property"
+      },
+      "bookmarkState": {
+        "__princetype__": null,
+        "ext": "ext",
+        "url": "property"
+      },
+      "bookmarkTarget": {
+        "__princetype__": null,
+        "ext": "ext",
+        "url": "property"
+      },
+      "border": {
+        "__princetype__": null,
+        "url": "property"
+      },
+      "borderBottom": {
+        "__princetype__": null,
+        "url": "property"
+      },
+      "borderBottomColor": {
+        "__princetype__": null,
+        "url": "property"
+      },
+      "borderBottomLeftRadius": {
+        "__princetype__": null,
+        "url": "property"
+      },
+      "borderBottomRightRadius": {
+        "__princetype__": null,
+        "url": "property"
+      },
+      "borderBottomStyle": {
+        "__princetype__": null,
+        "url": "property"
+      },
+      "borderBottomWidth": {
+        "__princetype__": null,
+        "url": "property"
+      },
+      "borderClip": {
+        "__princetype__": null,
+        "url": "property"
+      },
+      "borderCollapse": {
+        "__princetype__": null,
+        "url": "property"
+      },
+      "borderColor": {
+        "__princetype__": null,
+        "url": "property"
+      },
+      "borderLeft": {
+        "__princetype__": null,
+        "url": "property"
+      },
+      "borderLeftColor": {
+        "__princetype__": null,
+        "url": "property"
+      },
+      "borderLeftStyle": {
+        "__princetype__": null,
+        "url": "property"
+      },
+      "borderLeftWidth": {
+        "__princetype__": null,
+        "url": "property"
+      },
+      "borderRadius": {
+        "__princetype__": null,
+        "url": "property"
+      },
+      "borderRight": {
+        "__princetype__": null,
+        "url": "property"
+      },
+      "borderRightColor": {
+        "__princetype__": null,
+        "url": "property"
+      },
+      "borderRightStyle": {
+        "__princetype__": null,
+        "url": "property"
+      },
+      "borderRightWidth": {
+        "__princetype__": null,
+        "url": "property"
+      },
+      "borderSpacing": {
+        "__princetype__": null,
+        "url": "property"
+      },
+      "borderStyle": {
+        "__princetype__": null,
+        "url": "property"
+      },
+      "borderTop": {
+        "__princetype__": null,
+        "url": "property"
+      },
+      "borderTopColor": {
+        "__princetype__": null,
+        "url": "property"
+      },
+      "borderTopLeftRadius": {
+        "__princetype__": null,
+        "url": "property"
+      },
+      "borderTopRightRadius": {
+        "__princetype__": null,
+        "url": "property"
+      },
+      "borderTopStyle": {
+        "__princetype__": null,
+        "url": "property"
+      },
+      "borderTopWidth": {
+        "__princetype__": null,
+        "url": "property"
+      },
+      "borderWidth": {
+        "__princetype__": null,
+        "url": "property"
+      },
+      "bottom": {
+        "__princetype__": null,
+        "url": "property"
+      },
+      "boxDecorationBreak": {
+        "__princetype__": null,
+        "url": "property"
+      },
+      "boxShadow": {
+        "__princetype__": null
+      },
+      "boxSizing": {
+        "__princetype__": null,
+        "url": "property"
+      },
+      "breakAfter": {
+        "__princetype__": null,
+        "url": "property"
+      },
+      "breakBefore": {
+        "__princetype__": null,
+        "url": "property"
+      },
+      "breakInside": {
+        "__princetype__": null,
+        "url": "property"
+      },
+      "captionPage": {
+        "__princetype__": null,
+        "ext": "ext",
+        "url": "property"
+      },
+      "captionSide": {
+        "__princetype__": null,
+        "url": "property"
+      },
+      "clear": {
+        "__princetype__": null,
+        "ext": "ext",
+        "url": "property"
+      },
+      "clip": {
+        "__princetype__": null,
+        "url": "property"
+      },
+      "clipPath": {
+        "__princetype__": null,
+        "url": "property"
+      },
+      "clipRule": {
+        "__princetype__": null,
+        "url": "property"
+      },
+      "color": {
+        "__princetype__": null,
+        "url": "property"
+      },
+      "colorInterpolation": {
+        "__princetype__": null,
+        "url": "property"
+      },
+      "colorInterpolationFilters": {
+        "__princetype__": null,
+        "url": "property"
+      },
+      "columnBreakAfter": {
+        "__princetype__": null,
+        "url": "property",
+        "dep": "dep"
+      },
+      "columnBreakBefore": {
+        "__princetype__": null,
+        "url": "property",
+        "dep": "dep"
+      },
+      "columnCount": {
+        "__princetype__": null,
+        "url": "property"
+      },
+      "columnFill": {
+        "__princetype__": null,
+        "url": "property"
+      },
+      "columnGap": {
+        "__princetype__": null,
+        "url": "property"
+      },
+      "columnRule": {
+        "__princetype__": null,
+        "url": "property"
+      },
+      "columnRuleColor": {
+        "__princetype__": null,
+        "url": "property"
+      },
+      "columnRuleStyle": {
+        "__princetype__": null,
+        "url": "property"
+      },
+      "columnRuleWidth": {
+        "__princetype__": null,
+        "url": "property"
+      },
+      "columnSpan": {
+        "__princetype__": null,
+        "url": "property"
+      },
+      "columnWidth": {
+        "__princetype__": null,
+        "url": "property"
+      },
+      "columns": {
+        "__princetype__": null,
+        "url": "property"
+      },
+      "content": {
+        "__princetype__": null,
+        "url": "property"
+      },
+      "counterIncrement": {
+        "__princetype__": null,
+        "url": "property"
+      },
+      "counterReset": {
+        "__princetype__": null,
+        "url": "property"
+      },
+      "counterSet": {
+        "__princetype__": null
+      },
+      "cssFloat": {
+        "__princetype__": null,
+        "ext": "ext",
+        "url": "property"
+      },
+      "direction": {
+        "__princetype__": null,
+        "url": "property"
+      },
+      "display": {
+        "__princetype__": null,
+        "url": "property"
+      },
+      "dominantBaseline": {
+        "__princetype__": null,
+        "url": "property"
+      },
+      "emptyCells": {
+        "__princetype__": null,
+        "url": "property"
+      },
+      "fill": {
+        "__princetype__": null,
+        "url": "property"
+      },
+      "fillOpacity": {
+        "__princetype__": null,
+        "url": "property"
+      },
+      "fillRule": {
+        "__princetype__": null,
+        "url": "property"
+      },
+      "filter": {
+        "__princetype__": null,
+        "url": "property"
+      },
+      "flex": {
+        "__princetype__": null,
+        "url": "property"
+      },
+      "flexBasis": {
+        "__princetype__": null,
+        "url": "property"
+      },
+      "flexDirection": {
+        "__princetype__": null,
+        "url": "property"
+      },
+      "flexFlow": {
+        "__princetype__": null,
+        "url": "property"
+      },
+      "flexGrow": {
+        "__princetype__": null,
+        "url": "property"
+      },
+      "flexShrink": {
+        "__princetype__": null,
+        "url": "property"
+      },
+      "flexWrap": {
+        "__princetype__": null,
+        "url": "property"
+      },
+      "floatDeferColumn": {
+        "__princetype__": null,
+        "ext": "ext",
+        "url": "property"
+      },
+      "floatDeferPage": {
+        "__princetype__": null,
+        "ext": "ext",
+        "url": "property"
+      },
+      "floatModifier": {
+        "__princetype__": null,
+        "ext": "ext",
+        "url": "property"
+      },
+      "floatPlacement": {
+        "__princetype__": null,
+        "ext": "ext",
+        "url": "property"
+      },
+      "floatPolicy": {
+        "__princetype__": null,
+        "ext": "ext",
+        "url": "property"
+      },
+      "floatReference": {
+        "__princetype__": null,
+        "ext": "ext",
+        "url": "property"
+      },
+      "floatTail": {
+        "__princetype__": null,
+        "ext": "ext",
+        "url": "property"
+      },
+      "floodColor": {
+        "__princetype__": null,
+        "url": "property"
+      },
+      "floodOpacity": {
+        "__princetype__": null,
+        "url": "property"
+      },
+      "flow": {
+        "__princetype__": null,
+        "ext": "ext",
+        "url": "property"
+      },
+      "font": {
+        "__princetype__": null,
+        "url": "property"
+      },
+      "fontFamily": {
+        "__princetype__": null,
+        "url": "property"
+      },
+      "fontKerning": {
+        "__princetype__": null
+      },
+      "fontSize": {
+        "__princetype__": null,
+        "url": "property"
+      },
+      "fontStretch": {
+        "__princetype__": null,
+        "url": "property"
+      },
+      "fontStyle": {
+        "__princetype__": null,
+        "url": "property"
+      },
+      "fontVariant": {
+        "__princetype__": null,
+        "url": "property"
+      },
+      "fontVariantCaps": {
+        "__princetype__": null
+      },
+      "fontVariantLigatures": {
+        "__princetype__": null
+      },
+      "fontVariantNumeric": {
+        "__princetype__": null
+      },
+      "fontVariantOpentype": {
+        "__princetype__": null
+      },
+      "fontVariationSettings": {
+        "__princetype__": null
+      },
+      "fontWeight": {
+        "__princetype__": null,
+        "url": "property"
+      },
+      "footnoteDisplay": {
+        "__princetype__": null,
+        "url": "property"
+      },
+      "footnoteStylePosition": {
+        "__princetype__": null,
+        "url": "property"
+      },
+      "gap": {
+        "__princetype__": null,
+        "url": "property"
+      },
+      "getPropertyValue": {
+        "__princetype__": "function"
+      },
+      "grid": {
+        "__princetype__": null
+      },
+      "gridArea": {
+        "__princetype__": null
+      },
+      "gridAutoColumns": {
+        "__princetype__": null
+      },
+      "gridAutoFlow": {
+        "__princetype__": null
+      },
+      "gridAutoRows": {
+        "__princetype__": null
+      },
+      "gridColumn": {
+        "__princetype__": null
+      },
+      "gridColumnEnd": {
+        "__princetype__": null
+      },
+      "gridColumnStart": {
+        "__princetype__": null
+      },
+      "gridRow": {
+        "__princetype__": null
+      },
+      "gridRowEnd": {
+        "__princetype__": null
+      },
+      "gridRowStart": {
+        "__princetype__": null
+      },
+      "gridTemplate": {
+        "__princetype__": null
+      },
+      "gridTemplateAreas": {
+        "__princetype__": null
+      },
+      "gridTemplateColumns": {
+        "__princetype__": null
+      },
+      "gridTemplateRows": {
+        "__princetype__": null
+      },
+      "height": {
+        "__princetype__": null,
+        "url": "property"
+      },
+      "hyphenateAfter": {
+        "__princetype__": null,
+        "ext": "ext",
+        "url": "property"
+      },
+      "hyphenateBefore": {
+        "__princetype__": null,
+        "ext": "ext",
+        "url": "property"
+      },
+      "hyphenateLines": {
+        "__princetype__": null,
+        "ext": "ext",
+        "url": "property"
+      },
+      "hyphenatePatterns": {
+        "__princetype__": null,
+        "ext": "ext",
+        "url": "property"
+      },
+      "hyphens": {
+        "__princetype__": null,
+        "url": "property"
+      },
+      "imageOrientation": {
+        "__princetype__": null,
+        "url": "property"
+      },
+      "imageResolution": {
+        "__princetype__": null,
+        "ext": "ext",
+        "url": "property"
+      },
+      "inset": {
+        "__princetype__": null
+      },
+      "insetInside": {
+        "__princetype__": null,
+        "url": "property"
+      },
+      "insetOutside": {
+        "__princetype__": null,
+        "url": "property"
+      },
+      "justifyContent": {
+        "__princetype__": null,
+        "url": "property"
+      },
+      "justifyItems": {
+        "__princetype__": null
+      },
+      "justifySelf": {
+        "__princetype__": null
+      },
+      "left": {
+        "__princetype__": null,
+        "url": "property"
+      },
+      "letterSpacing": {
+        "__princetype__": null,
+        "url": "property"
+      },
+      "lightingColor": {
+        "__princetype__": null,
+        "url": "property"
+      },
+      "lineHeight": {
+        "__princetype__": null,
+        "url": "property"
+      },
+      "lineStackingStrategy": {
+        "__princetype__": null,
+        "url": "property"
+      },
+      "link": {
+        "__princetype__": null,
+        "ext": "ext",
+        "url": "property"
+      },
+      "listStyle": {
+        "__princetype__": null,
+        "url": "property"
+      },
+      "listStyleImage": {
+        "__princetype__": null,
+        "url": "property"
+      },
+      "listStylePosition": {
+        "__princetype__": null,
+        "url": "property"
+      },
+      "listStyleType": {
+        "__princetype__": null,
+        "url": "property"
+      },
+      "margin": {
+        "__princetype__": null,
+        "url": "property"
+      },
+      "marginAlt": {
+        "__princetype__": null,
+        "ext": "ext",
+        "url": "property"
+      },
+      "marginBottom": {
+        "__princetype__": null,
+        "url": "property"
+      },
+      "marginInside": {
+        "__princetype__": null,
+        "ext": "ext",
+        "url": "property"
+      },
+      "marginLeft": {
+        "__princetype__": null,
+        "url": "property"
+      },
+      "marginOutside": {
+        "__princetype__": null,
+        "ext": "ext",
+        "url": "property"
+      },
+      "marginRight": {
+        "__princetype__": null,
+        "url": "property"
+      },
+      "marginTop": {
+        "__princetype__": null,
+        "url": "property"
+      },
+      "marker": {
+        "__princetype__": null,
+        "url": "property"
+      },
+      "markerEnd": {
+        "__princetype__": null,
+        "url": "property"
+      },
+      "markerMid": {
+        "__princetype__": null,
+        "url": "property"
+      },
+      "markerStart": {
+        "__princetype__": null,
+        "url": "property"
+      },
+      "mask": {
+        "__princetype__": null,
+        "url": "property"
+      },
+      "maxHeight": {
+        "__princetype__": null,
+        "url": "property"
+      },
+      "maxWidth": {
+        "__princetype__": null,
+        "url": "property"
+      },
+      "minHeight": {
+        "__princetype__": null,
+        "url": "property"
+      },
+      "minWidth": {
+        "__princetype__": null,
+        "url": "property"
+      },
+      "objectFit": {
+        "__princetype__": null
+      },
+      "objectPosition": {
+        "__princetype__": null
+      },
+      "opacity": {
+        "__princetype__": null,
+        "url": "property"
+      },
+      "order": {
+        "__princetype__": null,
+        "url": "property"
+      },
+      "orphans": {
+        "__princetype__": null,
+        "url": "property"
+      },
+      "outline": {
+        "__princetype__": null
+      },
+      "outlineColor": {
+        "__princetype__": null
+      },
+      "outlineOffset": {
+        "__princetype__": null
+      },
+      "outlineStyle": {
+        "__princetype__": null
+      },
+      "outlineWidth": {
+        "__princetype__": null
+      },
+      "overflow": {
+        "__princetype__": null,
+        "url": "property"
+      },
+      "overflowWrap": {
+        "__princetype__": null,
+        "url": "property"
+      },
+      "padding": {
+        "__princetype__": null,
+        "url": "property"
+      },
+      "paddingBottom": {
+        "__princetype__": null,
+        "url": "property"
+      },
+      "paddingLeft": {
+        "__princetype__": null,
+        "url": "property"
+      },
+      "paddingRight": {
+        "__princetype__": null,
+        "url": "property"
+      },
+      "paddingTop": {
+        "__princetype__": null,
+        "url": "property"
+      },
+      "page": {
+        "__princetype__": null,
+        "url": "property"
+      },
+      "pageBreakAfter": {
+        "__princetype__": null,
+        "url": "property",
+        "dep": "dep"
+      },
+      "pageBreakBefore": {
+        "__princetype__": null,
+        "url": "property",
+        "dep": "dep"
+      },
+      "pageBreakInside": {
+        "__princetype__": null,
+        "url": "property",
+        "dep": "dep"
+      },
+      "pageGroup": {
+        "__princetype__": null,
+        "ext": "ext",
+        "url": "property"
+      },
+      "placeContent": {
+        "__princetype__": null
+      },
+      "placeItems": {
+        "__princetype__": null
+      },
+      "placeSelf": {
+        "__princetype__": null
+      },
+      "position": {
+        "__princetype__": null,
+        "url": "property"
+      },
+      "princeAltText": {
+        "__princetype__": null
+      },
+      "princeBackgroundImageResolution": {
+        "__princetype__": null,
+        "ext": "ext",
+        "url": "property"
+      },
+      "princeBookmarkLabel": {
+        "__princetype__": null,
+        "ext": "ext",
+        "url": "property"
+      },
+      "princeBookmarkLevel": {
+        "__princetype__": null,
+        "ext": "ext",
+        "url": "property"
+      },
+      "princeBookmarkState": {
+        "__princetype__": null,
+        "ext": "ext",
+        "url": "property"
+      },
+      "princeBookmarkTarget": {
+        "__princetype__": null,
+        "ext": "ext",
+        "url": "property"
+      },
+      "princeBorderClip": {
+        "__princetype__": null
+      },
+      "princeCaptionPage": {
+        "__princetype__": null,
+        "ext": "ext",
+        "url": "property"
+      },
+      "princeClear": {
+        "__princetype__": null,
+        "ext": "ext",
+        "url": "property"
+      },
+      "princeExpansionText": {
+        "__princetype__": null
+      },
+      "princeFilterResolution": {
+        "__princetype__": null,
+        "ext": "ext",
+        "url": "property"
+      },
+      "princeFloatDeferColumn": {
+        "__princetype__": null,
+        "ext": "ext",
+        "url": "property"
+      },
+      "princeFloatDeferPage": {
+        "__princetype__": null,
+        "ext": "ext",
+        "url": "property"
+      },
+      "princeFloatModifier": {
+        "__princetype__": null,
+        "ext": "ext",
+        "url": "property"
+      },
+      "princeFloatPlacement": {
+        "__princetype__": null,
+        "ext": "ext",
+        "url": "property"
+      },
+      "princeFloatPolicy": {
+        "__princetype__": null,
+        "ext": "ext",
+        "url": "property"
+      },
+      "princeFloatReference": {
+        "__princetype__": null,
+        "ext": "ext",
+        "url": "property"
+      },
+      "princeFloatTail": {
+        "__princetype__": null,
+        "ext": "ext",
+        "url": "property"
+      },
+      "princeFlow": {
+        "__princetype__": null,
+        "ext": "ext",
+        "url": "property"
+      },
+      "princeFontVariantOpentype": {
+        "__princetype__": null
+      },
+      "princeFootnoteDisplay": {
+        "__princetype__": null
+      },
+      "princeFootnotePolicy": {
+        "__princetype__": null,
+        "ext": "ext",
+        "url": "property"
+      },
+      "princeHyphenateAfter": {
+        "__princetype__": null,
+        "ext": "ext",
+        "url": "property"
+      },
+      "princeHyphenateBefore": {
+        "__princetype__": null,
+        "ext": "ext",
+        "url": "property"
+      },
+      "princeHyphenateCharacter": {
+        "__princetype__": null,
+        "ext": "ext",
+        "url": "property"
+      },
+      "princeHyphenateLines": {
+        "__princetype__": null,
+        "ext": "ext",
+        "url": "property"
+      },
+      "princeHyphenatePatterns": {
+        "__princetype__": null,
+        "ext": "ext",
+        "url": "property"
+      },
+      "princeHyphens": {
+        "__princetype__": null
+      },
+      "princeImageMagic": {
+        "__princetype__": null,
+        "ext": "ext",
+        "url": "property"
+      },
+      "princeImageResolution": {
+        "__princetype__": null,
+        "ext": "ext",
+        "url": "property"
+      },
+      "princeLang": {
+        "__princetype__": null,
+        "ext": "ext",
+        "url": "property"
+      },
+      "princeLineStackingStrategy": {
+        "__princetype__": null
+      },
+      "princeLinebreakMagic": {
+        "__princetype__": null,
+        "ext": "ext",
+        "url": "property"
+      },
+      "princeLink": {
+        "__princetype__": null,
+        "ext": "ext",
+        "url": "property"
+      },
+      "princeMarginAlt": {
+        "__princetype__": null,
+        "ext": "ext",
+        "url": "property"
+      },
+      "princeMarginInside": {
+        "__princetype__": null
+      },
+      "princeMarginOutside": {
+        "__princetype__": null
+      },
+      "princePageGroup": {
+        "__princetype__": null,
+        "ext": "ext",
+        "url": "property"
+      },
+      "princePdfAnnotationAuthor": {
+        "__princetype__": null,
+        "ext": "ext",
+        "url": "property"
+      },
+      "princePdfAnnotationColor": {
+        "__princetype__": null,
+        "ext": "ext",
+        "url": "property"
+      },
+      "princePdfAnnotationContents": {
+        "__princetype__": null,
+        "ext": "ext",
+        "url": "property"
+      },
+      "princePdfAnnotationCreatedate": {
+        "__princetype__": null,
+        "ext": "ext",
+        "url": "property"
+      },
+      "princePdfAnnotationIcon": {
+        "__princetype__": null
+      },
+      "princePdfAnnotationMerge": {
+        "__princetype__": null
+      },
+      "princePdfAnnotationModifydate": {
+        "__princetype__": null,
+        "ext": "ext",
+        "url": "property"
+      },
+      "princePdfAnnotationPosition": {
+        "__princetype__": null,
+        "ext": "ext",
+        "url": "property"
+      },
+      "princePdfAnnotationTitle": {
+        "__princetype__": null,
+        "ext": "ext",
+        "url": "property"
+      },
+      "princePdfAnnotationType": {
+        "__princetype__": null,
+        "ext": "ext",
+        "url": "property"
+      },
+      "princePdfColorConversion": {
+        "__princetype__": null,
+        "ext": "ext",
+        "url": "property"
+      },
+      "princePdfDestination": {
+        "__princetype__": null,
+        "ext": "ext",
+        "url": "property"
+      },
+      "princePdfForm": {
+        "__princetype__": null
+      },
+      "princePdfFormFieldFontSize": {
+        "__princetype__": null
+      },
+      "princePdfFormFieldSettings": {
+        "__princetype__": null
+      },
+      "princePdfLinkType": {
+        "__princetype__": null,
+        "ext": "ext",
+        "url": "property"
+      },
+      "princePdfTagTitle": {
+        "__princetype__": null
+      },
+      "princePdfTagType": {
+        "__princetype__": null,
+        "ext": "ext",
+        "url": "property"
+      },
+      "princeTabSize": {
+        "__princetype__": null
+      },
+      "princeTableBaseline": {
+        "__princetype__": null
+      },
+      "princeTableColumnSpan": {
+        "__princetype__": null,
+        "ext": "ext",
+        "url": "property"
+      },
+      "princeTableRowSpan": {
+        "__princetype__": null,
+        "ext": "ext",
+        "url": "property"
+      },
+      "princeTextAlignAll": {
+        "__princetype__": null
+      },
+      "princeTextJustify": {
+        "__princetype__": null,
+        "ext": "ext",
+        "url": "property"
+      },
+      "princeTextReplace": {
+        "__princetype__": null,
+        "ext": "ext",
+        "url": "property"
+      },
+      "princeTooltip": {
+        "__princetype__": null,
+        "ext": "ext",
+        "url": "property"
+      },
+      "removeProperty": {
+        "__princetype__": "function"
+      },
+      "right": {
+        "__princetype__": null,
+        "url": "property"
+      },
+      "rowGap": {
+        "__princetype__": null,
+        "url": "property"
+      },
+      "setProperty": {
+        "__princetype__": "function"
+      },
+      "setPropertyValue": {
+        "__princetype__": "function"
+      },
+      "stopColor": {
+        "__princetype__": null,
+        "url": "property"
+      },
+      "stopOpacity": {
+        "__princetype__": null,
+        "url": "property"
+      },
+      "stringSet": {
+        "__princetype__": null,
+        "url": "property"
+      },
+      "stroke": {
+        "__princetype__": null,
+        "url": "property"
+      },
+      "strokeDasharray": {
+        "__princetype__": null,
+        "url": "property"
+      },
+      "strokeDashoffset": {
+        "__princetype__": null,
+        "url": "property"
+      },
+      "strokeLinecap": {
+        "__princetype__": null,
+        "url": "property"
+      },
+      "strokeLinejoin": {
+        "__princetype__": null,
+        "url": "property"
+      },
+      "strokeMiterlimit": {
+        "__princetype__": null,
+        "url": "property"
+      },
+      "strokeOpacity": {
+        "__princetype__": null,
+        "url": "property"
+      },
+      "strokeWidth": {
+        "__princetype__": null,
+        "url": "property"
+      },
+      "tabSize": {
+        "__princetype__": null,
+        "url": "property"
+      },
+      "tableBaseline": {
+        "__princetype__": null,
+        "ext": "ext",
+        "url": "property"
+      },
+      "tableColumnSpan": {
+        "__princetype__": null,
+        "ext": "ext",
+        "url": "property"
+      },
+      "tableLayout": {
+        "__princetype__": null,
+        "url": "property"
+      },
+      "tableRowSpan": {
+        "__princetype__": null,
+        "ext": "ext",
+        "url": "property"
+      },
+      "textAlign": {
+        "__princetype__": null,
+        "url": "property"
+      },
+      "textAlignAll": {
+        "__princetype__": null,
+        "url": "property"
+      },
+      "textAlignLast": {
+        "__princetype__": null,
+        "url": "property"
+      },
+      "textAnchor": {
+        "__princetype__": null,
+        "url": "property"
+      },
+      "textDecoration": {
+        "__princetype__": null,
+        "url": "property"
+      },
+      "textDecorationColor": {
+        "__princetype__": null
+      },
+      "textDecorationLine": {
+        "__princetype__": null
+      },
+      "textDecorationStyle": {
+        "__princetype__": null
+      },
+      "textDecorationThickness": {
+        "__princetype__": null
+      },
+      "textIndent": {
+        "__princetype__": null,
+        "url": "property"
+      },
+      "textJustify": {
+        "__princetype__": null,
+        "ext": "ext",
+        "url": "property"
+      },
+      "textLineThrough": {
+        "__princetype__": null,
+        "url": "property",
+        "dep": "dep"
+      },
+      "textLineThroughColor": {
+        "__princetype__": null,
+        "url": "property",
+        "dep": "dep"
+      },
+      "textLineThroughStyle": {
+        "__princetype__": null,
+        "url": "property",
+        "dep": "dep"
+      },
+      "textOverflow": {
+        "__princetype__": null,
+        "url": "property"
+      },
+      "textOverline": {
+        "__princetype__": null,
+        "url": "property",
+        "dep": "dep"
+      },
+      "textOverlineColor": {
+        "__princetype__": null,
+        "url": "property",
+        "dep": "dep"
+      },
+      "textOverlineStyle": {
+        "__princetype__": null,
+        "url": "property",
+        "dep": "dep"
+      },
+      "textShadow": {
+        "__princetype__": null
+      },
+      "textTransform": {
+        "__princetype__": null,
+        "url": "property"
+      },
+      "textUnderline": {
+        "__princetype__": null,
+        "url": "property",
+        "dep": "dep"
+      },
+      "textUnderlineColor": {
+        "__princetype__": null,
+        "url": "property",
+        "dep": "dep"
+      },
+      "textUnderlineOffset": {
+        "__princetype__": null
+      },
+      "textUnderlinePosition": {
+        "__princetype__": null,
+        "url": "property"
+      },
+      "textUnderlineStyle": {
+        "__princetype__": null,
+        "url": "property",
+        "dep": "dep"
+      },
+      "top": {
+        "__princetype__": null,
+        "url": "property"
+      },
+      "transform": {
+        "__princetype__": null,
+        "url": "property"
+      },
+      "transformOrigin": {
+        "__princetype__": null,
+        "url": "property"
+      },
+      "unicodeBidi": {
+        "__princetype__": null,
+        "url": "property"
+      },
+      "verticalAlign": {
+        "__princetype__": null,
+        "url": "property"
+      },
+      "visibility": {
+        "__princetype__": null,
+        "url": "property"
+      },
+      "whiteSpace": {
+        "__princetype__": null,
+        "url": "property"
+      },
+      "widows": {
+        "__princetype__": null,
+        "url": "property"
+      },
+      "width": {
+        "__princetype__": null,
+        "url": "property"
+      },
+      "wordBreak": {
+        "__princetype__": null,
+        "url": "property"
+      },
+      "wordSpacing": {
+        "__princetype__": null,
+        "url": "property"
+      },
+      "writingMode": {
+        "__princetype__": null,
+        "url": "property"
+      },
+      "zIndex": {
+        "__princetype__": null,
+        "url": "property"
+      }
+    }
+  },
+  "CanvasRenderingContext2D": {
+    "__princetype__": "function",
+    "prototype": {
+      "__princetype__": "object",
+      "arc": {
+        "__princetype__": "function"
+      },
+      "arcTo": {
+        "__princetype__": "function"
+      },
+      "beginPath": {
+        "__princetype__": "function"
+      },
+      "bezierCurveTo": {
+        "__princetype__": "function"
+      },
+      "clearRect": {
+        "__princetype__": "function"
+      },
+      "clip": {
+        "__princetype__": "function"
+      },
+      "closePath": {
+        "__princetype__": "function"
+      },
+      "createImageData": {
+        "__princetype__": "function"
+      },
+      "createLinearGradient": {
+        "__princetype__": "function"
+      },
+      "createPattern": {
+        "__princetype__": "function"
+      },
+      "createRadialGradient": {
+        "__princetype__": "function"
+      },
+      "customFocusRing": {
+        "__princetype__": "function"
+      },
+      "drawImage": {
+        "__princetype__": "function"
+      },
+      "ellipse": {
+        "__princetype__": "function"
+      },
+      "fill": {
+        "__princetype__": "function"
+      },
+      "fillRect": {
+        "__princetype__": "function"
+      },
+      "fillStyle": {
+        "__princetype__": null
+      },
+      "fillText": {
+        "__princetype__": "function"
+      },
+      "font": {
+        "__princetype__": null
+      },
+      "getImageData": {
+        "__princetype__": "function"
+      },
+      "getLineDash": {
+        "__princetype__": "function"
+      },
+      "globalAlpha": {
+        "__princetype__": null
+      },
+      "globalCompositeOperation": {
+        "__princetype__": "string"
+      },
+      "isPointInPath": {
+        "__princetype__": "function"
+      },
+      "lineCap": {
+        "__princetype__": null
+      },
+      "lineDashOffset": {
+        "__princetype__": null
+      },
+      "lineJoin": {
+        "__princetype__": null
+      },
+      "lineTo": {
+        "__princetype__": "function"
+      },
+      "lineWidth": {
+        "__princetype__": null
+      },
+      "measureText": {
+        "__princetype__": "function"
+      },
+      "miterLimit": {
+        "__princetype__": null
+      },
+      "moveTo": {
+        "__princetype__": "function"
+      },
+      "putImageData": {
+        "__princetype__": "function"
+      },
+      "quadraticCurveTo": {
+        "__princetype__": "function"
+      },
+      "rect": {
+        "__princetype__": "function"
+      },
+      "resetClip": {
+        "__princetype__": "function"
+      },
+      "resetTransform": {
+        "__princetype__": "function"
+      },
+      "restore": {
+        "__princetype__": "function"
+      },
+      "rotate": {
+        "__princetype__": "function"
+      },
+      "save": {
+        "__princetype__": "function"
+      },
+      "scale": {
+        "__princetype__": "function"
+      },
+      "scrollPathIntoView": {
+        "__princetype__": "function"
+      },
+      "setLineDash": {
+        "__princetype__": "function"
+      },
+      "setTransform": {
+        "__princetype__": "function"
+      },
+      "shadowBlur": {
+        "__princetype__": "undefined"
+      },
+      "shadowColor": {
+        "__princetype__": "undefined"
+      },
+      "shadowOffsetX": {
+        "__princetype__": "undefined"
+      },
+      "shadowOffsetY": {
+        "__princetype__": "undefined"
+      },
+      "stroke": {
+        "__princetype__": "function"
+      },
+      "strokeRect": {
+        "__princetype__": "function"
+      },
+      "strokeStyle": {
+        "__princetype__": null
+      },
+      "strokeText": {
+        "__princetype__": "function"
+      },
+      "systemFocusRing": {
+        "__princetype__": "function"
+      },
+      "textAlign": {
+        "__princetype__": null
+      },
+      "textBaseline": {
+        "__princetype__": null
+      },
+      "transform": {
+        "__princetype__": "function"
+      },
+      "translate": {
+        "__princetype__": "function"
+      }
+    }
+  },
+  "Comment": {
+    "__princetype__": "function",
+    "prototype": {
+      "__princetype__": "object",
+      "after": {
+        "__princetype__": "function",
+        "prototype": {
+          "__princetype__": "object"
+        }
+      },
+      "attributes": {
+        "__princetype__": "object"
+      },
+      "before": {
+        "__princetype__": "function",
+        "prototype": {
+          "__princetype__": "object"
+        }
+      },
+      "childNodes": {
+        "__princetype__": "object"
+      },
+      "data": {
+        "__princetype__": null
+      },
+      "length": {
+        "__princetype__": null
+      },
+      "nextElementSibling": {
+        "__princetype__": null
+      },
+      "nodeName": {
+        "__princetype__": "string"
+      },
+      "nodeType": {
+        "__princetype__": "number"
+      },
+      "nodeValue": {
+        "__princetype__": null
+      },
+      "previousElementSibling": {
+        "__princetype__": null
+      },
+      "remove": {
+        "__princetype__": "function",
+        "prototype": {
+          "__princetype__": "object"
+        }
+      },
+      "replaceWith": {
+        "__princetype__": "function",
+        "prototype": {
+          "__princetype__": "object"
+        }
+      }
+    }
+  },
+  "CustomEvent": {
+    "__princetype__": "function",
+    "prototype": {
+      "__princetype__": "object"
+    }
+  },
+  "DOMException": {
+    "__princetype__": "function",
+    "prototype": {
+      "HIERARCHY_REQUEST_ERR": {
+        "__princetype__": "number"
+      },
+      "INDEX_SIZE_ERR": {
+        "__princetype__": "number"
+      },
+      "INUSE_ATTRIBUTE_ERR": {
+        "__princetype__": "number"
+      },
+      "INVALID_CHARACTER_ERR": {
+        "__princetype__": "number"
+      },
+      "INVALID_STATE_ERR": {
+        "__princetype__": "number"
+      },
+      "NAMESPACE_ERR": {
+        "__princetype__": "number"
+      },
+      "NOT_FOUND_ERR": {
+        "__princetype__": "number"
+      },
+      "NOT_SUPPORTED_ERR": {
+        "__princetype__": "number"
+      },
+      "NO_MODIFICATION_ALLOWED_ERR": {
+        "__princetype__": "number"
+      },
+      "SYNTAX_ERR": {
+        "__princetype__": "number"
+      },
+      "TYPE_MISMATCH_ERR": {
+        "__princetype__": "number"
+      },
+      "__princetype__": "object"
+    }
+  },
+  "DOMImplementation": {
+    "__princetype__": "function",
+    "prototype": {
+      "__princetype__": "object",
+      "createDocument": {
+        "__princetype__": "function"
+      },
+      "createHTMLDocument": {
+        "__princetype__": "function"
+      },
+      "hasFeature": {
+        "__princetype__": "function"
+      }
+    }
+  },
+  "DOMParser": {
+    "__princetype__": "function",
+    "prototype": {
+      "__princetype__": "object",
+      "parseFromString": {
+        "__princetype__": "function"
+      }
+    }
+  },
+  "DOMTokenList": {
+    "__princetype__": "function",
+    "prototype": {
+      "__princetype__": "object",
+      "add": {
+        "__princetype__": "function"
+      },
+      "contains": {
+        "__princetype__": "function"
+      },
+      "item": {
+        "__princetype__": "function"
+      },
+      "length": {
+        "__princetype__": null
+      },
+      "remove": {
+        "__princetype__": "function"
+      },
+      "replace": {
+        "__princetype__": "function"
+      },
+      "toggle": {
+        "__princetype__": "function"
+      }
+    }
+  },
+  "DataView": {
+    "__princetype__": "function",
+    "prototype": {
+      "__princetype__": "object",
+      "getFloat32": {
+        "__princetype__": "function"
+      },
+      "getFloat64": {
+        "__princetype__": "function"
+      },
+      "getInt16": {
+        "__princetype__": "function"
+      },
+      "getInt32": {
+        "__princetype__": "function"
+      },
+      "getInt8": {
+        "__princetype__": "function"
+      },
+      "getUint16": {
+        "__princetype__": "function"
+      },
+      "getUint32": {
+        "__princetype__": "function"
+      },
+      "getUint8": {
+        "__princetype__": "function"
+      },
+      "setFloat32": {
+        "__princetype__": "function"
+      },
+      "setFloat64": {
+        "__princetype__": "function"
+      },
+      "setInt16": {
+        "__princetype__": "function"
+      },
+      "setInt32": {
+        "__princetype__": "function"
+      },
+      "setInt8": {
+        "__princetype__": "function"
+      },
+      "setUint16": {
+        "__princetype__": "function"
+      },
+      "setUint32": {
+        "__princetype__": "function"
+      },
+      "setUint8": {
+        "__princetype__": "function"
+      }
+    }
+  },
+  "Date": {
+    "UTC": {
+      "__princetype__": "function"
+    },
+    "__princetype__": "function",
+    "now": {
+      "__princetype__": "function"
+    },
+    "parse": {
+      "__princetype__": "function"
+    },
+    "prototype": {
+      "__princetype__": "object",
+      "getDate": {
+        "__princetype__": "function"
+      },
+      "getDay": {
+        "__princetype__": "function"
+      },
+      "getFullYear": {
+        "__princetype__": "function"
+      },
+      "getHours": {
+        "__princetype__": "function"
+      },
+      "getMilliseconds": {
+        "__princetype__": "function"
+      },
+      "getMinutes": {
+        "__princetype__": "function"
+      },
+      "getMonth": {
+        "__princetype__": "function"
+      },
+      "getSeconds": {
+        "__princetype__": "function"
+      },
+      "getTime": {
+        "__princetype__": "function"
+      },
+      "getUTCDate": {
+        "__princetype__": "function"
+      },
+      "getUTCDay": {
+        "__princetype__": "function"
+      },
+      "getUTCFullYear": {
+        "__princetype__": "function"
+      },
+      "getUTCHours": {
+        "__princetype__": "function"
+      },
+      "getUTCMilliseconds": {
+        "__princetype__": "function"
+      },
+      "getUTCMinutes": {
+        "__princetype__": "function"
+      },
+      "getUTCMonth": {
+        "__princetype__": "function"
+      },
+      "getUTCSeconds": {
+        "__princetype__": "function"
+      },
+      "setDate": {
+        "__princetype__": "function"
+      },
+      "setFullYear": {
+        "__princetype__": "function"
+      },
+      "setHours": {
+        "__princetype__": "function"
+      },
+      "setMilliseconds": {
+        "__princetype__": "function"
+      },
+      "setMinutes": {
+        "__princetype__": "function"
+      },
+      "setMonth": {
+        "__princetype__": "function"
+      },
+      "setSeconds": {
+        "__princetype__": "function"
+      },
+      "setTime": {
+        "__princetype__": "function"
+      },
+      "setUTCDate": {
+        "__princetype__": "function"
+      },
+      "setUTCFullYear": {
+        "__princetype__": "function"
+      },
+      "setUTCHours": {
+        "__princetype__": "function"
+      },
+      "setUTCMilliseconds": {
+        "__princetype__": "function"
+      },
+      "setUTCMinutes": {
+        "__princetype__": "function"
+      },
+      "setUTCMonth": {
+        "__princetype__": "function"
+      },
+      "setUTCSeconds": {
+        "__princetype__": "function"
+      },
+      "toDateString": {
+        "__princetype__": "function"
+      },
+      "toISOString": {
+        "__princetype__": "function"
+      },
+      "toString": {
+        "__princetype__": "function"
+      },
+      "toTimeString": {
+        "__princetype__": "function"
+      },
+      "toUTCString": {
+        "__princetype__": "function"
+      },
+      "valueOf": {
+        "__princetype__": "function"
+      },
+      "constructor": {}
+    }
+  },
+  "Document": {
+    "__princetype__": "function",
+    "prototype": {
+      "__princetype__": "object",
+      "attributes": {
+        "__princetype__": "object"
+      },
+      "childElementCount": {
+        "__princetype__": null
+      },
+      "compatMode": {
+        "__princetype__": "string"
+      },
+      "createAttribute": {
+        "__princetype__": "function"
+      },
+      "createAttributeNS": {
+        "__princetype__": "function"
+      },
+      "createComment": {
+        "__princetype__": "function"
+      },
+      "createDocumentFragment": {
+        "__princetype__": "function"
+      },
+      "createElement": {
+        "__princetype__": "function"
+      },
+      "createElementNS": {
+        "__princetype__": "function"
+      },
+      "createTextNode": {
+        "__princetype__": "function"
+      },
+      "documentElement": {
+        "__princetype__": null
+      },
+      "firstElementChild": {
+        "__princetype__": null
+      },
+      "getElementById": {
+        "__princetype__": "function"
+      },
+      "getElementsByClassName": {
+        "__princetype__": "function"
+      },
+      "getElementsByTagName": {
+        "__princetype__": "function"
+      },
+      "getElementsByTagNameNS": {
+        "__princetype__": "function"
+      },
+      "implementation": {
+        "__princetype__": "object"
+      },
+      "lastElementChild": {
+        "__princetype__": null
+      },
+      "localName": {
+        "__princetype__": "object"
+      },
+      "namespaceURI": {
+        "__princetype__": "object"
+      },
+      "nodeName": {
+        "__princetype__": "string"
+      },
+      "nodeType": {
+        "__princetype__": "number"
+      },
+      "querySelector": {
+        "__princetype__": "function"
+      },
+      "querySelectorAll": {
+        "__princetype__": "function"
+      },
+      "readyState": {}
+    }
+  },
+  "DocumentFragment": {
+    "__princetype__": "function",
+    "prototype": {
+      "__princetype__": "object",
+      "attributes": {
+        "__princetype__": "object"
+      },
+      "childElementCount": {
+        "__princetype__": null
+      },
+      "firstElementChild": {
+        "__princetype__": null
+      },
+      "lastElementChild": {
+        "__princetype__": null
+      },
+      "localName": {
+        "__princetype__": "object"
+      },
+      "namespaceURI": {
+        "__princetype__": "object"
+      },
+      "nodeName": {
+        "__princetype__": "string"
+      },
+      "nodeType": {
+        "__princetype__": "number"
+      },
+      "querySelector": {
+        "__princetype__": "function"
+      },
+      "querySelectorAll": {
+        "__princetype__": "function"
+      }
+    }
+  },
+  "Element": {
+    "__princetype__": "function",
+    "prototype": {
+      "__princetype__": "object",
+      "after": {
+        "__princetype__": "function"
+      },
+      "append": {
+        "__princetype__": "function",
+        "prototype": {
+          "__princetype__": "object"
+        }
+      },
+      "before": {
+        "__princetype__": "function"
+      },
+      "childElementCount": {
+        "__princetype__": null
+      },
+      "classList": {
+        "__princetype__": null
+      },
+      "className": {
+        "__princetype__": null
+      },
+      "closest": {
+        "__princetype__": "function",
+        "prototype": {
+          "__princetype__": "object"
+        }
+      },
+      "firstElementChild": {
+        "__princetype__": null
+      },
+      "getAttribute": {
+        "__princetype__": "function"
+      },
+      "getAttributeNS": {
+        "__princetype__": "function"
+      },
+      "getAttributeNode": {
+        "__princetype__": "function"
+      },
+      "getAttributeNodeNS": {
+        "__princetype__": "function"
+      },
+      "getElementsByClassName": {
+        "__princetype__": "function"
+      },
+      "getElementsByTagName": {
+        "__princetype__": "function"
+      },
+      "getElementsByTagNameNS": {
+        "__princetype__": "function"
+      },
+      "getPrinceBoxes": {
+        "__princetype__": "function",
+        "returns": "A list of JavaScript objects called <a href='/doc/javascript#the-box-tracking-api'>boxes</a>.",
+        "ext": "ext"
+      },
+      "hasAttribute": {
+        "__princetype__": "function"
+      },
+      "hasAttributeNS": {
+        "__princetype__": "function"
+      },
+      "id": {
+        "__princetype__": null
+      },
+      "innerHTML": {
+        "__princetype__": null
+      },
+      "lastElementChild": {
+        "__princetype__": null
+      },
+      "localName": {
+        "__princetype__": null
+      },
+      "matches": {
+        "__princetype__": "function"
+      },
+      "namespaceURI": {
+        "__princetype__": null
+      },
+      "nextElementSibling": {
+        "__princetype__": null
+      },
+      "nodeName": {
+        "__princetype__": null
+      },
+      "nodeType": {
+        "__princetype__": "number"
+      },
+      "previousElementSibling": {
+        "__princetype__": null
+      },
+      "querySelector": {
+        "__princetype__": "function"
+      },
+      "querySelectorAll": {
+        "__princetype__": "function"
+      },
+      "remove": {
+        "__princetype__": "function"
+      },
+      "removeAttribute": {
+        "__princetype__": "function"
+      },
+      "removeAttributeNS": {
+        "__princetype__": "function"
+      },
+      "removeAttributeNode": {
+        "__princetype__": "function"
+      },
+      "replaceWith": {
+        "__princetype__": "function"
+      },
+      "setAttribute": {
+        "__princetype__": "function"
+      },
+      "setAttributeNS": {
+        "__princetype__": "function"
+      },
+      "setAttributeNode": {
+        "__princetype__": "function"
+      },
+      "setAttributeNodeNS": {
+        "__princetype__": "function"
+      },
+      "tagName": {
+        "__princetype__": null
+      }
+    }
+  },
+  "Error": {
+    "__princetype__": "function",
+    "prototype": {
+      "__princetype__": "object",
+      "message": {
+        "__princetype__": "string"
+      },
+      "name": {
+        "__princetype__": "string"
+      },
+      "toString": {
+        "__princetype__": "function"
+      },
+      "constructor": {},
+      "stack": {}
+    }
+  },
+  "Event": {
+    "__princetype__": "function",
+    "prototype": {
+      "__princetype__": "object"
+    }
+  },
+  "EventTarget": {
+    "__princetype__": "function",
+    "prototype": {
+      "__princetype__": "object",
+      "addEventListener": {
+        "__princetype__": "function"
+      },
+      "dispatchEvent": {
+        "__princetype__": "function"
+      },
+      "removeEventListener": {
+        "__princetype__": "function"
+      }
+    }
+  },
+  "Function": {
+    "__princetype__": "function",
+    "prototype": {
+      "__princetype__": "function",
+      "apply": {
+        "__princetype__": "function"
+      },
+      "arguments": {
+        "__princetype__": "object"
+      },
+      "bind": {
+        "__princetype__": "function",
+        "desc": "Defines a value for the this object, returns a new function.",
+        "returns": "function",
+        "arguments": [
+          {
+            "name": "new this object",
+            "type": "object"
+          }
+        ],
+        "example": "var myObj = {};\nfunction myFunc(){return this===myObj;};\nvar boundFunc = myFunc.bind(myObj);\nboundFunc();",
+        "exampleReturn": true
+      },
+      "call": {
+        "__princetype__": "function"
+      },
+      "caller": {
+        "__princetype__": "object"
+      },
+      "toString": {
+        "__princetype__": "function"
+      },
+      "constructor": {}
+    }
+  },
+  "HTMLAnchorElement": {
+    "__princetype__": "function",
+    "prototype": {
+      "__princetype__": "object",
+      "hash": {
+        "__princetype__": null
+      },
+      "host": {
+        "__princetype__": null
+      },
+      "hostname": {
+        "__princetype__": null
+      },
+      "href": {
+        "__princetype__": null
+      },
+      "name": {
+        "__princetype__": null
+      },
+      "password": {
+        "__princetype__": null
+      },
+      "pathname": {
+        "__princetype__": null
+      },
+      "port": {
+        "__princetype__": null
+      },
+      "protocol": {
+        "__princetype__": null
+      },
+      "search": {
+        "__princetype__": null
+      },
+      "target": {
+        "__princetype__": null
+      },
+      "username": {
+        "__princetype__": null
+      }
+    }
+  },
+  "HTMLAreaElement": {
+    "__princetype__": "function",
+    "prototype": {
+      "__princetype__": "object",
+      "alt": {
+        "__princetype__": null
+      },
+      "coords": {
+        "__princetype__": null
+      },
+      "download": {
+        "__princetype__": null
+      },
+      "hash": {
+        "__princetype__": null
+      },
+      "host": {
+        "__princetype__": null
+      },
+      "hostname": {
+        "__princetype__": null
+      },
+      "href": {
+        "__princetype__": null
+      },
+      "password": {
+        "__princetype__": null
+      },
+      "pathname": {
+        "__princetype__": null
+      },
+      "port": {
+        "__princetype__": null
+      },
+      "protocol": {
+        "__princetype__": null
+      },
+      "rel": {
+        "__princetype__": null
+      },
+      "search": {
+        "__princetype__": null
+      },
+      "shape": {
+        "__princetype__": null
+      },
+      "target": {
+        "__princetype__": null
+      },
+      "username": {
+        "__princetype__": null
+      },
+      "name": {}
+    }
+  },
+  "HTMLBRElement": {
+    "__princetype__": "function",
+    "prototype": {
+      "__princetype__": "object"
+    }
+  },
+  "HTMLBaseElement": {
+    "__princetype__": "function",
+    "prototype": {
+      "__princetype__": "object",
+      "href": {
+        "__princetype__": null
+      },
+      "target": {
+        "__princetype__": null
+      }
+    }
+  },
+  "HTMLBodyElement": {
+    "__princetype__": "function",
+    "prototype": {
+      "__princetype__": "object"
+    }
+  },
+  "HTMLCanvasElement": {
+    "__princetype__": "function",
+    "prototype": {
+      "__princetype__": "object",
+      "getContext": {
+        "__princetype__": "function"
+      },
+      "height": {
+        "__princetype__": null
+      },
+      "width": {
+        "__princetype__": null
+      }
+    }
+  },
+  "HTMLCollection": {
+    "__princetype__": "function",
+    "prototype": {
+      "__princetype__": "object",
+      "item": {
+        "__princetype__": "function"
+      },
+      "length": {
+        "__princetype__": null
+      },
+      "namedItem": {
+        "__princetype__": "function"
+      }
+    }
+  },
+  "HTMLDListElement": {
+    "__princetype__": "function",
+    "prototype": {
+      "__princetype__": "object"
+    }
+  },
+  "HTMLDivElement": {
+    "__princetype__": "function",
+    "prototype": {
+      "__princetype__": "object"
+    }
+  },
+  "HTMLDocument": {
+    "__princetype__": "function",
+    "prototype": {
+      "__princetype__": "object",
+      "body": {
+        "__princetype__": null
+      },
+      "head": {
+        "__princetype__": null
+      },
+      "title": {
+        "__princetype__": null
+      },
+      "write": {
+        "__princetype__": "function"
+      }
+    }
+  },
+  "HTMLElement": {
+    "__princetype__": "function",
+    "prototype": {
+      "__princetype__": "object",
+      "dir": {
+        "__princetype__": null
+      },
+      "lang": {
+        "__princetype__": null
+      },
+      "title": {
+        "__princetype__": null
+      }
+    }
+  },
+  "HTMLHRElement": {
+    "__princetype__": "function",
+    "prototype": {
+      "__princetype__": "object"
+    }
+  },
+  "HTMLHeadElement": {
+    "__princetype__": "function",
+    "prototype": {
+      "__princetype__": "object"
+    }
+  },
+  "HTMLHeadingElement": {
+    "__princetype__": "function",
+    "prototype": {
+      "__princetype__": "object"
+    }
+  },
+  "HTMLHtmlElement": {
+    "__princetype__": "function",
+    "prototype": {
+      "__princetype__": "object"
+    }
+  },
+  "HTMLImageElement": {
+    "__princetype__": "function",
+    "prototype": {
+      "__princetype__": "object",
+      "alt": {
+        "__princetype__": null
+      },
+      "height": {
+        "__princetype__": null
+      },
+      "src": {
+        "__princetype__": null
+      },
+      "width": {
+        "__princetype__": null
+      }
+    }
+  },
+  "HTMLInputElement": {
+    "__princetype__": "function",
+    "prototype": {
+      "__princetype__": "object",
+      "checked": {
+        "__princetype__": null
+      },
+      "disabled": {
+        "__princetype__": null
+      },
+      "name": {
+        "__princetype__": null
+      },
+      "type": {
+        "__princetype__": null
+      },
+      "value": {
+        "__princetype__": null
+      }
+    }
+  },
+  "HTMLLIElement": {
+    "__princetype__": "function",
+    "prototype": {
+      "__princetype__": "object",
+      "value": {
+        "__princetype__": null
+      }
+    }
+  },
+  "HTMLLinkElement": {
+    "__princetype__": "function",
+    "prototype": {
+      "__princetype__": "object",
+      "href": {
+        "__princetype__": null
+      },
+      "hreflang": {
+        "__princetype__": null
+      },
+      "media": {
+        "__princetype__": null
+      },
+      "rel": {
+        "__princetype__": null
+      },
+      "type": {
+        "__princetype__": null
+      }
+    }
+  },
+  "HTMLMetaElement": {
+    "__princetype__": "function",
+    "prototype": {
+      "__princetype__": "object",
+      "content": {
+        "__princetype__": null
+      },
+      "name": {
+        "__princetype__": null
+      }
+    }
+  },
+  "HTMLModElement": {
+    "__princetype__": "function",
+    "prototype": {
+      "__princetype__": "object",
+      "cite": {
+        "__princetype__": null
+      }
+    }
+  },
+  "HTMLOListElement": {
+    "__princetype__": "function",
+    "prototype": {
+      "__princetype__": "object",
+      "start": {
+        "__princetype__": null
+      },
+      "type": {
+        "__princetype__": null
+      }
+    }
+  },
+  "HTMLOptionElement": {
+    "__princetype__": "function",
+    "prototype": {
+      "__princetype__": "object",
+      "disabled": {
+        "__princetype__": null
+      },
+      "selected": {
+        "__princetype__": null
+      },
+      "value": {
+        "__princetype__": null
+      }
+    }
+  },
+  "HTMLParagraphElement": {
+    "__princetype__": "function",
+    "prototype": {
+      "__princetype__": "object"
+    }
+  },
+  "HTMLPreElement": {
+    "__princetype__": "function",
+    "prototype": {
+      "__princetype__": "object"
+    }
+  },
+  "HTMLQuoteElement": {
+    "__princetype__": "function",
+    "prototype": {
+      "__princetype__": "object",
+      "cite": {
+        "__princetype__": null
+      }
+    }
+  },
+  "HTMLScriptElement": {
+    "__princetype__": "function",
+    "prototype": {
+      "__princetype__": "object",
+      "src": {
+        "__princetype__": null
+      },
+      "type": {
+        "__princetype__": null
+      }
+    }
+  },
+  "HTMLSpanElement": {
+    "__princetype__": "function",
+    "prototype": {
+      "__princetype__": "object"
+    }
+  },
+  "HTMLStyleElement": {
+    "__princetype__": "function",
+    "prototype": {
+      "__princetype__": "object",
+      "media": {
+        "__princetype__": null
+      },
+      "type": {
+        "__princetype__": null
+      }
+    }
+  },
+  "HTMLTableCaptionElement": {
+    "__princetype__": "function",
+    "prototype": {
+      "__princetype__": "object"
+    }
+  },
+  "HTMLTableColElement": {
+    "__princetype__": "function",
+    "prototype": {
+      "__princetype__": "object",
+      "span": {
+        "__princetype__": null
+      }
+    }
+  },
+  "HTMLTableDataCellElement": {
+    "__princetype__": "function",
+    "prototype": {
+      "__princetype__": "object"
+    }
+  },
+  "HTMLTableElement": {
+    "__princetype__": "function",
+    "prototype": {
+      "__princetype__": "object"
+    }
+  },
+  "HTMLTableHeaderCellElement": {
+    "__princetype__": "function",
+    "prototype": {
+      "__princetype__": "object"
+    }
+  },
+  "HTMLTableRowElement": {
+    "__princetype__": "function",
+    "prototype": {
+      "__princetype__": "object"
+    }
+  },
+  "HTMLTableSectionElement": {
+    "__princetype__": "function",
+    "prototype": {
+      "__princetype__": "object"
+    }
+  },
+  "HTMLTextAreaElement": {
+    "__princetype__": "function",
+    "prototype": {
+      "__princetype__": "object"
+    }
+  },
+  "HTMLTitleElement": {
+    "__princetype__": "function",
+    "prototype": {
+      "__princetype__": "object"
+    }
+  },
+  "HTMLUListElement": {
+    "__princetype__": "function",
+    "prototype": {
+      "__princetype__": "object"
+    }
+  },
+  "Image": {
+    "__princetype__": "function",
+    "prototype": {
+      "__princetype__": "object"
+    }
+  },
+  "ImageData": {
+    "__princetype__": "function",
+    "prototype": {
+      "__princetype__": "object"
+    }
+  },
+  "Infinity": {
+    "__princetype__": "number",
+    "desc": "The special value Infinity."
+  },
+  "Int16Array": {
+    "BYTES_PER_ELEMENT": {
+      "__princetype__": "number"
+    },
+    "__princetype__": "function",
+    "from": {
+      "__princetype__": "function"
+    },
+    "prototype": {
+      "BYTES_PER_ELEMENT": {
+        "__princetype__": "number"
+      },
+      "__princetype__": "object",
+      "length": {
+        "__princetype__": null
+      },
+      "set": {
+        "__princetype__": "function"
+      },
+      "subarray": {
+        "__princetype__": "function"
+      }
+    }
+  },
+  "Int32Array": {
+    "BYTES_PER_ELEMENT": {
+      "__princetype__": "number"
+    },
+    "__princetype__": "function",
+    "from": {
+      "__princetype__": "function"
+    },
+    "prototype": {
+      "BYTES_PER_ELEMENT": {
+        "__princetype__": "number"
+      },
+      "__princetype__": "object",
+      "length": {
+        "__princetype__": null
+      },
+      "set": {
+        "__princetype__": "function"
+      },
+      "subarray": {
+        "__princetype__": "function"
+      }
+    }
+  },
+  "Int8Array": {
+    "BYTES_PER_ELEMENT": {
+      "__princetype__": "number"
+    },
+    "__princetype__": "function",
+    "from": {
+      "__princetype__": "function"
+    },
+    "prototype": {
+      "BYTES_PER_ELEMENT": {
+        "__princetype__": "number"
+      },
+      "__princetype__": "object",
+      "length": {
+        "__princetype__": null
+      },
+      "set": {
+        "__princetype__": "function"
+      },
+      "subarray": {
+        "__princetype__": "function"
+      }
+    }
+  },
+  "JSON": {
+    "__princetype__": "object",
+    "parse": {
+      "__princetype__": "function"
+    },
+    "stringify": {
+      "__princetype__": "function"
+    }
+  },
+  "Log": {
+    "__princetype__": "object",
+    "data": {
+      "__princetype__": "function",
+      "arguments": [
+        {
+          "name": "name",
+          "type": "string"
+        },
+        {
+          "name": "value",
+          "type": "string"
+        }
+      ]
+    },
+    "debug": {
+      "__princetype__": "function",
+      "desc": "only available when the <code>--debug</code> command-line option is specified.",
+      "arguments": [
+        {
+          "name": "message",
+          "type": "string"
+        }
+      ]
+    },
+    "error": {
+      "__princetype__": "function",
+      "arguments": [
+        {
+          "name": "message",
+          "type": "string"
+        }
+      ]
+    },
+    "info": {
+      "__princetype__": "function",
+      "desc": "only available when the <code>--verbose</code> command-line option is specified.",
+      "arguments": [
+        {
+          "name": "message",
+          "type": "string"
+        }
+      ]
+    },
+    "warning": {
+      "__princetype__": "function",
+      "arguments": [
+        {
+          "name": "message",
+          "type": "string"
+        }
+      ]
+    },
+    "ext": "ext",
+    "desc": "also available as <a href='#window.Prince.Log'><code>Prince.Log</code></a>."
+  },
+  "Map": {
+    "__princetype__": "function",
+    "prototype": {
+      "__princetype__": "object",
+      "clear": {
+        "__princetype__": "function"
+      },
+      "delete": {
+        "__princetype__": "function",
+        "arguments": [
+          {
+            "name": "key",
+            "type": "string"
+          }
+        ]
+      },
+      "entries": {
+        "__princetype__": "function"
+      },
+      "forEach": {
+        "__princetype__": "function",
+        "arguments": [
+          {
+            "name": "callbackFn",
+            "type": "function"
+          },
+          {
+            "name": "thisArg",
+            "type": "argument"
+          }
+        ]
+      },
+      "get": {
+        "__princetype__": "function",
+        "arguments": [
+          {
+            "name": "key",
+            "type": "string"
+          }
+        ]
+      },
+      "has": {
+        "__princetype__": "function",
+        "arguments": [
+          {
+            "name": "key",
+            "type": "string"
+          }
+        ]
+      },
+      "keys": {
+        "__princetype__": "function"
+      },
+      "set": {
+        "__princetype__": "function",
+        "arguments": [
+          {
+            "name": "key",
+            "type": "string"
+          },
+          {
+            "name": "value",
+            "type": "string"
+          }
+        ]
+      },
+      "size": {
+        "__princetype__": null
+      },
+      "values": {
+        "__princetype__": "function"
+      }
+    }
+  },
+  "Math": {
+    "E": {
+      "__princetype__": "number"
+    },
+    "LN10": {
+      "__princetype__": "number"
+    },
+    "LN2": {
+      "__princetype__": "number"
+    },
+    "LOG10E": {
+      "__princetype__": "number"
+    },
+    "LOG2E": {
+      "__princetype__": "number"
+    },
+    "PI": {
+      "__princetype__": "number"
+    },
+    "SQRT1_2": {
+      "__princetype__": "number"
+    },
+    "SQRT2": {
+      "__princetype__": "number"
+    },
+    "__princetype__": "object",
+    "abs": {
+      "__princetype__": "function"
+    },
+    "acos": {
+      "__princetype__": "function"
+    },
+    "asin": {
+      "__princetype__": "function"
+    },
+    "atan": {
+      "__princetype__": "function"
+    },
+    "atan2": {
+      "__princetype__": "function"
+    },
+    "ceil": {
+      "__princetype__": "function"
+    },
+    "cos": {
+      "__princetype__": "function"
+    },
+    "exp": {
+      "__princetype__": "function"
+    },
+    "floor": {
+      "__princetype__": "function"
+    },
+    "log": {
+      "__princetype__": "function"
+    },
+    "max": {
+      "__princetype__": "function"
+    },
+    "min": {
+      "__princetype__": "function"
+    },
+    "pow": {
+      "__princetype__": "function"
+    },
+    "random": {
+      "__princetype__": "function"
+    },
+    "round": {
+      "__princetype__": "function"
+    },
+    "seedRandom": {
+      "__princetype__": "function"
+    },
+    "sin": {
+      "__princetype__": "function"
+    },
+    "sqrt": {
+      "__princetype__": "function"
+    },
+    "tan": {
+      "__princetype__": "function"
+    }
+  },
+  "NaN": {
+    "__princetype__": "number",
+    "desc": "The special value Not a Number."
+  },
+  "NamedNodeMap": {
+    "__princetype__": "function",
+    "prototype": {
+      "__princetype__": "object",
+      "getNamedItem": {
+        "__princetype__": "function"
+      },
+      "getNamedItemNS": {
+        "__princetype__": "function"
+      },
+      "item": {
+        "__princetype__": "function"
+      },
+      "length": {
+        "__princetype__": null
+      },
+      "removeNamedItem": {
+        "__princetype__": "function"
+      },
+      "removeNamedItemNS": {
+        "__princetype__": "function"
+      },
+      "setNamedItem": {
+        "__princetype__": "function"
+      },
+      "setNamedItemNS": {
+        "__princetype__": "function"
+      }
+    }
+  },
+  "Node": {
+    "ATTRIBUTE_NODE": {
+      "__princetype__": "number"
+    },
+    "COMMENT_NODE": {
+      "__princetype__": "number"
+    },
+    "DOCUMENT_FRAGMENT_NODE": {
+      "__princetype__": "number"
+    },
+    "DOCUMENT_NODE": {
+      "__princetype__": "number"
+    },
+    "DOCUMENT_POSITION_CONTAINED_BY": {
+      "__princetype__": "number"
+    },
+    "DOCUMENT_POSITION_CONTAINS": {
+      "__princetype__": "number"
+    },
+    "DOCUMENT_POSITION_DISCONNECTED": {
+      "__princetype__": "number"
+    },
+    "DOCUMENT_POSITION_FOLLOWING": {
+      "__princetype__": "number"
+    },
+    "DOCUMENT_POSITION_PRECEDING": {
+      "__princetype__": "number"
+    },
+    "ELEMENT_NODE": {
+      "__princetype__": "number"
+    },
+    "TEXT_NODE": {
+      "__princetype__": "number"
+    },
+    "__princetype__": "function",
+    "prototype": {
+      "ATTRIBUTE_NODE": {
+        "__princetype__": "number"
+      },
+      "COMMENT_NODE": {
+        "__princetype__": "number"
+      },
+      "DOCUMENT_FRAGMENT_NODE": {
+        "__princetype__": "number"
+      },
+      "DOCUMENT_NODE": {
+        "__princetype__": "number"
+      },
+      "DOCUMENT_POSITION_CONTAINED_BY": {
+        "__princetype__": "number"
+      },
+      "DOCUMENT_POSITION_CONTAINS": {
+        "__princetype__": "number"
+      },
+      "DOCUMENT_POSITION_DISCONNECTED": {
+        "__princetype__": "number"
+      },
+      "DOCUMENT_POSITION_FOLLOWING": {
+        "__princetype__": "number"
+      },
+      "DOCUMENT_POSITION_PRECEDING": {
+        "__princetype__": "number"
+      },
+      "ELEMENT_NODE": {
+        "__princetype__": "number"
+      },
+      "TEXT_NODE": {
+        "__princetype__": "number"
+      },
+      "__princetype__": "object",
+      "appendChild": {
+        "__princetype__": "function"
+      },
+      "cloneNode": {
+        "__princetype__": "function"
+      },
+      "compareDocumentPosition": {
+        "__princetype__": "function"
+      },
+      "contains": {
+        "__princetype__": "function"
+      },
+      "firstChild": {
+        "__princetype__": "object"
+      },
+      "hasAttributes": {
+        "__princetype__": "function"
+      },
+      "hasChildNodes": {
+        "__princetype__": "function"
+      },
+      "insertBefore": {
+        "__princetype__": "function"
+      },
+      "lastChild": {
+        "__princetype__": "object"
+      },
+      "nextSibling": {
+        "__princetype__": null
+      },
+      "ownerDocument": {
+        "__princetype__": null
+      },
+      "parentElement": {
+        "__princetype__": null
+      },
+      "parentNode": {
+        "__princetype__": null
+      },
+      "previousSibling": {
+        "__princetype__": null
+      },
+      "removeChild": {
+        "__princetype__": "function"
+      },
+      "replaceChild": {
+        "__princetype__": "function"
+      },
+      "textContent": {
+        "__princetype__": "object"
+      }
+    }
+  },
+  "NodeList": {
+    "__princetype__": "function",
+    "prototype": {
+      "__princetype__": "object",
+      "item": {
+        "__princetype__": "function"
+      },
+      "length": {
+        "__princetype__": null
+      }
+    }
+  },
+  "Number": {
+    "MAX_SAFE_INTEGER": {
+      "__princetype__": "number"
+    },
+    "MAX_VALUE": {
+      "__princetype__": "number"
+    },
+    "MIN_SAFE_INTEGER": {
+      "__princetype__": "number"
+    },
+    "MIN_VALUE": {
+      "__princetype__": "number"
+    },
+    "NEGATIVE_INFINITY": {
+      "__princetype__": "number"
+    },
+    "NaN": {
+      "__princetype__": "number"
+    },
+    "POSITIVE_INFINITY": {
+      "__princetype__": "number"
+    },
+    "__princetype__": "function",
+    "prototype": {
+      "__princetype__": "object",
+      "toExponential": {
+        "__princetype__": "function"
+      },
+      "toFixed": {
+        "__princetype__": "function"
+      },
+      "toPrecision": {
+        "__princetype__": "function"
+      },
+      "toString": {
+        "__princetype__": "function"
+      },
+      "valueOf": {
+        "__princetype__": "function"
+      },
+      "constructor": {}
+    }
+  },
+  "Object": {
+    "__princetype__": "function",
+    "assign": {
+      "__princetype__": "function"
+    },
+    "create": {
+      "__princetype__": "function"
+    },
+    "defineProperties": {
+      "__princetype__": "function"
+    },
+    "defineProperty": {
+      "__princetype__": "function",
+      "desc": "Adds a property to the object and defines certain traits like enumerability.",
+      "arguments": [
+        {
+          "type": "object",
+          "name": "base object"
+        },
+        {
+          "type": "string",
+          "name": "property name"
+        },
+        {
+          "type": "object",
+          "name": "descriptor",
+          "desc": "An object describing the property"
+        }
+      ],
+      "example": "Object.defineProperty(Array.prototype, 'myProp',\n  {enumerable: false})"
+    },
+    "freeze": {
+      "__princetype__": "function"
+    },
+    "getOwnPropertyDescriptor": {
+      "__princetype__": "function"
+    },
+    "getOwnPropertyNames": {
+      "__princetype__": "function"
+    },
+    "getOwnPropertySymbols": {
+      "__princetype__": "function"
+    },
+    "getPrototypeOf": {
+      "__princetype__": "function"
+    },
+    "is": {
+      "__princetype__": "function"
+    },
+    "isExtensible": {
+      "__princetype__": "function"
+    },
+    "isFrozen": {
+      "__princetype__": "function"
+    },
+    "isSealed": {
+      "__princetype__": "function"
+    },
+    "keys": {
+      "__princetype__": "function"
+    },
+    "preventExtensions": {
+      "__princetype__": "function"
+    },
+    "prototype": {
+      "__princetype__": "object",
+      "hasOwnProperty": {
+        "__princetype__": "function"
+      },
+      "isPrototypeOf": {
+        "__princetype__": "function"
+      },
+      "propertyIsEnumerable": {
+        "__princetype__": "function"
+      },
+      "toLocaleString": {
+        "__princetype__": "function"
+      },
+      "toString": {
+        "__princetype__": "function"
+      },
+      "valueOf": {
+        "__princetype__": "function"
+      },
+      "constructor": {}
+    },
+    "seal": {
+      "__princetype__": "function"
+    },
+    "setPrototypeOf": {
+      "__princetype__": "function"
+    }
+  },
+  "PDF": {
+    "__princetype__": "object",
+    "addAttachment": {
+      "__princetype__": "function"
+    },
+    "allowAnnotate": {
+      "__princetype__": "boolean"
+    },
+    "allowAssembly": {
+      "__princetype__": "boolean"
+    },
+    "allowCopy": {
+      "__princetype__": "boolean"
+    },
+    "allowCopyForAccessibility": {
+      "__princetype__": "boolean"
+    },
+    "allowModify": {
+      "__princetype__": "boolean"
+    },
+    "allowPrint": {
+      "__princetype__": "boolean"
+    },
+    "artificialFonts": {
+      "__princetype__": "boolean"
+    },
+    "attachFile": {
+      "__princetype__": "function",
+      "arguments": [
+        {
+          "name": "URL",
+          "type": "string"
+        },
+        {
+          "name": "description",
+          "type": "string",
+          "desc": "Optional second argument to describe the attachment."
+        },
+        {
+          "name": "filename",
+          "type": "string",
+          "desc": "Optional third argument to specify the filename to be displayed for the attachment in the PDF."
+        },
+        {
+          "name": "relationship",
+          "type": "string",
+          "desc": "Optional fourth argument to specify the AFRelationship value of the attachment."
+        }
+      ],
+      "example": "PDF.attachFile('data.xls', 'Latest sales figures.', 'SalesFigures', 'Data')"
+    },
+    "author": {
+      "__princetype__": "object"
+    },
+    "colorConversion": {
+      "__princetype__": "string",
+      "desc": "\"none\" | \"full\""
+    },
+    "colorOptions": {
+      "__princetype__": "string",
+      "desc": "<code>\"auto\" | \"use-true-black\" | \"use-rich-black\"</code>. See <a href='/doc/css-props/#prop-prince-pdf-color-options'><code>-prince-pdf-color-options</code></a>"
+    },
+    "compress": {
+      "__princetype__": "boolean"
+    },
+    "creator": {
+      "__princetype__": "object"
+    },
+    "displayDocTitle": {
+      "__princetype__": "boolean"
+    },
+    "duplex": {
+      "__princetype__": "string",
+      "desc": "\"auto\" | \"simplex\" | \"duplex-flip-short-edge\" | \"duplex-flip-long-edge\""
+    },
+    "embedFonts": {
+      "__princetype__": "boolean"
+    },
+    "encrypt": {
+      "__princetype__": "boolean"
+    },
+    "fallbackCMYKProfile": {
+      "__princetype__": "object",
+      "desc": "URL"
+    },
+    "filterResolution": {
+      "__princetype__": "string",
+      "desc": "DPI",
+      "example": "PDF.filterResolution('128dpi')"
+    },
+    "forceIdentityEncoding": {
+      "__princetype__": "boolean"
+    },
+    "keyBits": {
+      "__princetype__": "number",
+      "desc": "<code>\"40\" | \"128\"</code>. See <a href='/doc/prince-output/#pdf-encryption-and-document-security'>PDF Encryption and Document Security</a>"
+    },
+    "keywords": {
+      "__princetype__": "object"
+    },
+    "lang": {
+      "__princetype__": "object"
+    },
+    "objectStreams": {
+      "__princetype__": "boolean",
+      "desc": "Can be used to disable PDF object streams.  Object streams are enabled by default."
+    },
+    "openAction": {
+      "__princetype__": "string",
+      "desc": "Note that Prince passes the provided values verbatim to the PDF viewer, so the user can supply values that Prince doesn't know about, but the viewer does.",
+      "example": "PDF.openAction = 'print'"
+    },
+    "outputIntent": {
+      "__princetype__": "object",
+      "desc": "URL"
+    },
+    "ownerPassword": {
+      "__princetype__": "object"
+    },
+    "pageLayout": {
+      "__princetype__": "string",
+      "desc": "\"single-page\" | \"one-column\" | \"two-column[-left/right]\""
+    },
+    "pageMode": {
+      "__princetype__": "string",
+      "desc": "\"auto\" | \"show-bookmarks\" | \"fullscreen\" | \"show-attachments\""
+    },
+    "pages": {
+      "__princetype__": "object",
+      "returns": "A list of page boxes, can be accessed after document conversion has finished."
+    },
+    "paperTray": {
+      "__princetype__": "string",
+      "desc": "\"auto \" | \"pick-tray-by-pdf-size\""
+    },
+    "printScaling": {
+      "__princetype__": "string",
+      "desc": "\"auto\" | \"none\""
+    },
+    "profile": {
+      "__princetype__": "string",
+      "desc": "One of the supported PDF profiles.",
+      "example": "PDF.profile = \"PDF/X-3:2003\""
+    },
+    "script": {
+      "__princetype__": "object"
+    },
+    "subject": {
+      "__princetype__": "object"
+    },
+    "subsetFonts": {
+      "__princetype__": "boolean"
+    },
+    "title": {
+      "__princetype__": "object"
+    },
+    "userPassword": {
+      "__princetype__": "object"
+    },
+    "xmp": {
+      "__princetype__": "object",
+      "desc": "URL",
+      "example": "PDF.xmp('xmp-data.xmp')"
+    },
+    "xmpMetadata": {
+      "__princetype__": "boolean"
+    },
+    "ext": "ext",
+    "desc": "See <a href='/doc/javascript#the-pdf-object'>The PDF Object</a>."
+  },
+  "Prince": {
+    "Log": {
+      "__princetype__": "object",
+      "data": {
+        "__princetype__": "function",
+        "arguments": [
+          {
+            "name": "name",
+            "type": "string"
+          },
+          {
+            "name": "value",
+            "type": "string"
+          }
+        ]
+      },
+      "debug": {
+        "__princetype__": "function",
+        "desc": "only available when the <code>--debug</code> command-line option is specified.",
+        "arguments": [
+          {
+            "name": "message",
+            "type": "string"
+          }
+        ]
+      },
+      "error": {
+        "__princetype__": "function",
+        "arguments": [
+          {
+            "name": "message",
+            "type": "string"
+          }
+        ]
+      },
+      "info": {
+        "__princetype__": "function",
+        "desc": "only available when the <code>--verbose</code> command-line option is specified.",
+        "arguments": [
+          {
+            "name": "message",
+            "type": "string"
+          }
+        ]
+      },
+      "warning": {
+        "__princetype__": "function",
+        "arguments": [
+          {
+            "name": "message",
+            "type": "string"
+          }
+        ]
+      },
+      "desc": "also available as <a href='#window.Log'><code>Log</code></a>."
+    },
+    "__princetype__": "object",
+    "addEventListener": {
+      "__princetype__": "function",
+      "desc": "can be called to listen to the <code>complete</code> event on the Prince object. See <a href='/doc/javascript#event-handling'>Event Handling</a>.",
+      "arguments": [
+        {
+          "name": "type",
+          "type": "string"
+        },
+        {
+          "name": "callback",
+          "type": "string"
+        },
+        {
+          "name": "optional extra options",
+          "type": "string"
+        }
+      ]
+    },
+    "addScriptFunc": {
+      "__princetype__": "function",
+      "arguments": [
+        {
+          "name": "name",
+          "type": "string"
+        },
+        {
+          "name": "function",
+          "type": "string"
+        }
+      ],
+      "desc": "exposes an arbitrary JavaScript function to CSS. See <a href='/doc/gen-content#script-functions'>Script Functions</a>."
+    },
+    "convertToBuffer": {
+      "__princetype__": "function",
+      "arguments": [
+        {
+          "name": "JSON",
+          "type": "string"
+        },
+        {
+          "name": "...optional extra job resources",
+          "type": "ArrayBuffers or strings"
+        }
+      ],
+      "returns": "ArrayBuffer if successful, null if not"
+    },
+    "convertToFile": {
+      "__princetype__": "function",
+      "arguments": [
+        {
+          "name": "JSON",
+          "type": "string",
+          "desc": "as specified in the <a href='/doc/server-integration#job-description-json'>Job description JSON</a>;"
+        },
+        {
+          "name": "OutputFileName",
+          "type": "string"
+        },
+        {
+          "name": "...optional extra job resources",
+          "type": "ArrayBuffers or strings"
+        }
+      ],
+      "returns": "boolean, indicating success"
+    },
+    "dispatchEvent": {
+      "__princetype__": "function"
+    },
+    "failStatus": {
+      "__princetype__": "boolean",
+      "returns": "boolean"
+    },
+    "pageCount": {
+      "__princetype__": "number",
+      "returns": "Total number of document pages, can be accessed after document conversion has finished."
+    },
+    "registerPostLayoutFunc": {
+      "__princetype__": "function",
+      "arguments": [
+        {
+          "name": "function",
+          "type": "string"
+        }
+      ],
+      "desc": "See <a href='/doc/javascript#multi-pass-formatting'>Multi-Pass formatting</a>."
+    },
+    "removeEventListener": {
+      "__princetype__": "function"
+    },
+    "trackBoxes": {
+      "__princetype__": "boolean",
+      "desc": "See <a href='/doc/javascript#the-box-tracking-api'>The Box Tracking API</a>.",
+      "arguments": [
+        {
+          "type": "boolean"
+        }
+      ]
+    },
+    "ext": "ext",
+    "desc": "See <a href='/doc/javascript#the-prince-object'>The Prince Object</a>.",
+    "oncomplete": {
+      "desc": "The <code>complete</code> event is fired when all layout is finished (and after the last repeated layout, if this was requested), just before the PDF is output, so that it can cancel the PDF output by triggering a fail-safe if necessary, or log information about the PDF like the page count."
+    }
+  },
+  "ProgressEvent": {
+    "__princetype__": "function",
+    "prototype": {
+      "__princetype__": "object"
+    }
+  },
+  "RangeError": {
+    "__princetype__": "function",
+    "prototype": {
+      "__princetype__": "object",
+      "message": {
+        "__princetype__": "string"
+      },
+      "name": {
+        "__princetype__": "string"
+      },
+      "constructor": {}
+    }
+  },
+  "ReferenceError": {
+    "__princetype__": "function",
+    "prototype": {
+      "__princetype__": "object",
+      "message": {
+        "__princetype__": "string"
+      },
+      "name": {
+        "__princetype__": "string"
+      },
+      "constructor": {}
+    }
+  },
+  "RegExp": {
+    "__princetype__": "function",
+    "prototype": {
+      "__princetype__": "object",
+      "exec": {
+        "__princetype__": "function"
+      },
+      "test": {
+        "__princetype__": "function"
+      },
+      "toString": {
+        "__princetype__": "function"
+      },
+      "constructor": {}
+    }
+  },
+  "SVGException": {
+    "__princetype__": "function",
+    "prototype": {
+      "SVG_INVALID_VALUE_ERR": {
+        "__princetype__": "number"
+      },
+      "SVG_MATRIX_NOT_INVERTABLE": {
+        "__princetype__": "number"
+      },
+      "__princetype__": "object"
+    }
+  },
+  "SVGMatrix": {
+    "__princetype__": "function",
+    "prototype": {
+      "__princetype__": "object",
+      "a": {
+        "__princetype__": null
+      },
+      "b": {
+        "__princetype__": null
+      },
+      "c": {
+        "__princetype__": null
+      },
+      "d": {
+        "__princetype__": null
+      },
+      "e": {
+        "__princetype__": null
+      },
+      "f": {
+        "__princetype__": null
+      },
+      "flipX": {
+        "__princetype__": "function"
+      },
+      "flipY": {
+        "__princetype__": "function"
+      },
+      "inverse": {
+        "__princetype__": "function"
+      },
+      "multiply": {
+        "__princetype__": "function"
+      },
+      "rotate": {
+        "__princetype__": "function"
+      },
+      "rotateFromVector": {
+        "__princetype__": "function"
+      },
+      "scale": {
+        "__princetype__": "function"
+      },
+      "scaleNonUniform": {
+        "__princetype__": "function"
+      },
+      "skewX": {
+        "__princetype__": "function"
+      },
+      "skewY": {
+        "__princetype__": "function"
+      },
+      "translate": {
+        "__princetype__": "function"
+      }
+    }
+  },
+  "Set": {
+    "__princetype__": "function",
+    "prototype": {
+      "__princetype__": "object",
+      "add": {
+        "__princetype__": "function"
+      },
+      "clear": {
+        "__princetype__": "function"
+      },
+      "delete": {
+        "__princetype__": "function"
+      },
+      "entries": {
+        "__princetype__": "function"
+      },
+      "forEach": {
+        "__princetype__": "function"
+      },
+      "has": {
+        "__princetype__": "function"
+      },
+      "keys": {
+        "__princetype__": "function"
+      },
+      "size": {
+        "__princetype__": null
+      },
+      "values": {
+        "__princetype__": "function"
+      }
+    }
+  },
+  "String": {
+    "__princetype__": "function",
+    "fromCharCode": {
+      "__princetype__": "function"
+    },
+    "fromCodePoint": {
+      "__princetype__": "function"
+    },
+    "prototype": {
+      "__princetype__": "object",
+      "charAt": {
+        "__princetype__": "function"
+      },
+      "charCodeAt": {
+        "__princetype__": "function"
+      },
+      "codePointAt": {
+        "__princetype__": "function"
+      },
+      "concat": {
+        "__princetype__": "function"
+      },
+      "endsWith": {
+        "__princetype__": "function"
+      },
+      "includes": {
+        "__princetype__": "function"
+      },
+      "indexOf": {
+        "__princetype__": "function"
+      },
+      "lastIndexOf": {
+        "__princetype__": "function"
+      },
+      "localeCompare": {
+        "__princetype__": "function"
+      },
+      "match": {
+        "__princetype__": "function"
+      },
+      "repeat": {
+        "__princetype__": "function"
+      },
+      "replace": {
+        "__princetype__": "function"
+      },
+      "search": {
+        "__princetype__": "function"
+      },
+      "slice": {
+        "__princetype__": "function"
+      },
+      "split": {
+        "__princetype__": "function"
+      },
+      "startsWith": {
+        "__princetype__": "function"
+      },
+      "substr": {
+        "__princetype__": "function",
+        "dep": "dep"
+      },
+      "substring": {
+        "__princetype__": "function"
+      },
+      "toLocaleLowerCase": {
+        "__princetype__": "function"
+      },
+      "toLocaleUpperCase": {
+        "__princetype__": "function"
+      },
+      "toLowerCase": {
+        "__princetype__": "function"
+      },
+      "toString": {
+        "__princetype__": "function"
+      },
+      "toUpperCase": {
+        "__princetype__": "function"
+      },
+      "trim": {
+        "__princetype__": "function"
+      },
+      "valueOf": {
+        "__princetype__": "function"
+      },
+      "constructor": {},
+      "length": {}
+    },
+    "raw": {
+      "__princetype__": "function"
+    }
+  },
+  "Symbol": {
+    "__princetype__": "function",
+    "for": {
+      "__princetype__": "function"
+    },
+    "hasInstance": {
+      "__princetype__": "symbol"
+    },
+    "isConcatSpreadable": {
+      "__princetype__": "symbol"
+    },
+    "iterator": {
+      "__princetype__": "symbol"
+    },
+    "keyFor": {
+      "__princetype__": "function"
+    },
+    "match": {
+      "__princetype__": "symbol"
+    },
+    "prototype": {
+      "__princetype__": "object",
+      "toString": {
+        "__princetype__": "function"
+      },
+      "valueOf": {
+        "__princetype__": "function"
+      }
+    },
+    "replace": {
+      "__princetype__": "symbol"
+    },
+    "search": {
+      "__princetype__": "symbol"
+    },
+    "species": {
+      "__princetype__": "symbol"
+    },
+    "split": {
+      "__princetype__": "symbol"
+    },
+    "toPrimitive": {
+      "__princetype__": "symbol"
+    },
+    "toStringTag": {
+      "__princetype__": "symbol"
+    },
+    "unscopables": {
+      "__princetype__": "symbol"
+    }
+  },
+  "SyntaxError": {
+    "__princetype__": "function",
+    "prototype": {
+      "__princetype__": "object",
+      "message": {
+        "__princetype__": "string"
+      },
+      "name": {
+        "__princetype__": "string"
+      },
+      "constructor": {}
+    }
+  },
+  "Text": {
+    "__princetype__": "function",
+    "prototype": {
+      "__princetype__": "object",
+      "after": {
+        "__princetype__": "function"
+      },
+      "attributes": {
+        "__princetype__": "object"
+      },
+      "before": {
+        "__princetype__": "function"
+      },
+      "childNodes": {
+        "__princetype__": "object"
+      },
+      "data": {
+        "__princetype__": null
+      },
+      "length": {
+        "__princetype__": null
+      },
+      "nextElementSibling": {
+        "__princetype__": null
+      },
+      "nodeName": {
+        "__princetype__": "string"
+      },
+      "nodeType": {
+        "__princetype__": "number"
+      },
+      "nodeValue": {
+        "__princetype__": null
+      },
+      "previousElementSibling": {
+        "__princetype__": null
+      },
+      "remove": {
+        "__princetype__": "function"
+      },
+      "replaceWith": {
+        "__princetype__": "function"
+      },
+      "splitText": {
+        "__princetype__": "function"
+      }
+    }
+  },
+  "TextMetrics": {
+    "__princetype__": "function",
+    "prototype": {
+      "__princetype__": "object"
+    }
+  },
+  "TypeError": {
+    "__princetype__": "function",
+    "prototype": {
+      "__princetype__": "object",
+      "message": {
+        "__princetype__": "string"
+      },
+      "name": {
+        "__princetype__": "string"
+      },
+      "constructor": {}
+    }
+  },
+  "URIError": {
+    "__princetype__": "function",
+    "prototype": {
+      "__princetype__": "object",
+      "message": {
+        "__princetype__": "string"
+      },
+      "name": {
+        "__princetype__": "string"
+      },
+      "constructor": {}
+    }
+  },
+  "Uint16Array": {
+    "BYTES_PER_ELEMENT": {
+      "__princetype__": "number"
+    },
+    "__princetype__": "function",
+    "from": {
+      "__princetype__": "function"
+    },
+    "prototype": {
+      "BYTES_PER_ELEMENT": {
+        "__princetype__": "number"
+      },
+      "__princetype__": "object",
+      "length": {
+        "__princetype__": null
+      },
+      "set": {
+        "__princetype__": "function"
+      },
+      "subarray": {
+        "__princetype__": "function"
+      }
+    }
+  },
+  "Uint32Array": {
+    "BYTES_PER_ELEMENT": {
+      "__princetype__": "number"
+    },
+    "__princetype__": "function",
+    "from": {
+      "__princetype__": "function"
+    },
+    "prototype": {
+      "BYTES_PER_ELEMENT": {
+        "__princetype__": "number"
+      },
+      "__princetype__": "object",
+      "length": {
+        "__princetype__": null
+      },
+      "set": {
+        "__princetype__": "function"
+      },
+      "subarray": {
+        "__princetype__": "function"
+      }
+    }
+  },
+  "Uint8Array": {
+    "BYTES_PER_ELEMENT": {
+      "__princetype__": "number"
+    },
+    "__princetype__": "function",
+    "from": {
+      "__princetype__": "function"
+    },
+    "prototype": {
+      "BYTES_PER_ELEMENT": {
+        "__princetype__": "number"
+      },
+      "__princetype__": "object",
+      "length": {
+        "__princetype__": null
+      },
+      "set": {
+        "__princetype__": "function"
+      },
+      "subarray": {
+        "__princetype__": "function"
+      }
+    }
+  },
+  "Uint8ClampedArray": {
+    "BYTES_PER_ELEMENT": {
+      "__princetype__": "number"
+    },
+    "__princetype__": "function",
+    "from": {
+      "__princetype__": "function"
+    },
+    "prototype": {
+      "BYTES_PER_ELEMENT": {
+        "__princetype__": "number"
+      },
+      "__princetype__": "object",
+      "length": {
+        "__princetype__": null
+      },
+      "set": {
+        "__princetype__": "function"
+      },
+      "subarray": {
+        "__princetype__": "function"
+      }
+    }
+  },
+  "XMLHttpRequest": {
+    "DONE": {
+      "__princetype__": "number"
+    },
+    "HEADERS_RECEIVED": {
+      "__princetype__": "number"
+    },
+    "LOADING": {
+      "__princetype__": "number"
+    },
+    "OPENED": {
+      "__princetype__": "number"
+    },
+    "UNSENT": {
+      "__princetype__": "number"
+    },
+    "__princetype__": "function",
+    "prototype": {
+      "DONE": {
+        "__princetype__": "number"
+      },
+      "HEADERS_RECEIVED": {
+        "__princetype__": "number"
+      },
+      "LOADING": {
+        "__princetype__": "number"
+      },
+      "OPENED": {
+        "__princetype__": "number"
+      },
+      "UNSENT": {
+        "__princetype__": "number"
+      },
+      "__princetype__": "object",
+      "getAllResponseHeaders": {
+        "__princetype__": "function"
+      },
+      "getResponseHeader": {
+        "__princetype__": "function"
+      },
+      "open": {
+        "__princetype__": "function"
+      },
+      "readyState": {
+        "__princetype__": null
+      },
+      "response": {
+        "__princetype__": null
+      },
+      "responseText": {
+        "__princetype__": null
+      },
+      "responseType": {
+        "__princetype__": null
+      },
+      "send": {
+        "__princetype__": "function"
+      },
+      "setRequestHeader": {
+        "__princetype__": "function"
+      },
+      "status": {
+        "__princetype__": null
+      }
+    }
+  },
+  "__princetype__": "object",
+  "addEventListener": {
+    "__princetype__": "function"
+  },
+  "alert": {
+    "__princetype__": "function"
+  },
+  "clearTimeout": {
+    "__princetype__": "function"
+  },
+  "console": {
+    "__princetype__": "object",
+    "error": {
+      "__princetype__": "function"
+    },
+    "info": {
+      "__princetype__": "function"
+    },
+    "log": {
+      "__princetype__": "function"
+    },
+    "warn": {
+      "__princetype__": "function"
+    }
+  },
+  "decodeURI": {
+    "__princetype__": "function",
+    "desc": "Decodes a Uniform Resource Identifier (URI).",
+    "returns": "string",
+    "arguments": [
+      {
+        "name": "URI",
+        "desc": "A complete URI",
+        "type": "string"
+      }
+    ]
+  },
+  "decodeURIComponent": {
+    "__princetype__": "function",
+    "desc": "Decodes a Uniform Resource Identifier (URI) component.",
+    "returns": "string",
+    "arguments": [
+      {
+        "name": "URI",
+        "desc": "A component of a URI",
+        "type": "string"
+      }
+    ]
+  },
+  "dispatchEvent": {
+    "__princetype__": "function"
+  },
+  "encodeURI": {
+    "__princetype__": "function",
+    "desc": "Encodes a Uniform Resource Identifier (URI).",
+    "returns": "string",
+    "arguments": [
+      {
+        "name": "URI",
+        "desc": "A complete URI",
+        "type": "string"
+      }
+    ]
+  },
+  "encodeURIComponent": {
+    "__princetype__": "function",
+    "desc": "Encodes a Uniform Resource Identifier (URI) component.",
+    "returns": "string",
+    "arguments": [
+      {
+        "name": "URI",
+        "desc": "A component of a URI",
+        "type": "string"
+      }
+    ]
+  },
+  "escape": {
+    "__princetype__": "function",
+    "desc": "Computes a new string by replacing certain characters with a hexadecimal escape sequence.",
+    "returns": "string",
+    "arguments": [
+      {
+        "name": "string",
+        "desc": "String to escape",
+        "type": "string"
+      }
+    ]
+  },
+  "eval": {
+    "__princetype__": "function",
+    "desc": "Evaluates text as JavaScript source code.",
+    "returns": "Result of evaluation",
+    "arguments": [
+      {
+        "name": "source",
+        "desc": "Code to evaluate",
+        "type": "string"
+      }
+    ]
+  },
+  "frames": {
+    "__princetype__": "object"
+  },
+  "getComputedStyle": {
+    "__princetype__": "function"
+  },
+  "hasOwnProperty": {
+    "__princetype__": "function",
+    "desc": "Returns a boolean indicating whether the object has the specified property.",
+    "returns": "boolean",
+    "arguments": [
+      {
+        "name": "property",
+        "desc": "The property to test",
+        "type": "string"
+      }
+    ]
+  },
+  "isFinite": {
+    "__princetype__": "function",
+    "desc": "Determines whether the passed value is a finite number.",
+    "returns": "boolean"
+  },
+  "isNaN": {
+    "__princetype__": "function",
+    "desc": "Checks if the argument's value is the special Not a Number value.",
+    "example": "isNaN(parseInt('hello'))",
+    "exampleReturn": true,
+    "returns": "boolean"
+  },
+  "isPrototypeOf": {
+    "__princetype__": "function",
+    "desc": "Checks if an object exists in another object's prototype chain.",
+    "returns": "boolean"
+  },
+  "length": {
+    "__princetype__": "number"
+  },
+  "location": {
+    "__princetype__": "object"
+  },
+  "navigator": {
+    "__princetype__": "object",
+    "appName": {
+      "__princetype__": "string"
+    },
+    "appVersion": {
+      "__princetype__": "string"
+    },
+    "onLine": {
+      "__princetype__": "boolean"
+    },
+    "platform": {
+      "__princetype__": "string"
+    },
+    "userAgent": {
+      "__princetype__": "string"
+    }
+  },
+  "parent": {
+    "__princetype__": "object",
+    "_is_root": true
+  },
+  "parseFloat": {
+    "__princetype__": "function",
+    "desc": "Turns input into a floating point number.",
+    "example": "parseFloat('1.5')",
+    "exampleReturn": 1.5,
+    "returns": "number"
+  },
+  "parseInt": {
+    "__princetype__": "function",
+    "desc": "Turns input into an integer number.",
+    "arguments": [
+      {
+        "type": "string",
+        "name": "value"
+      },
+      {
+        "type": "number",
+        "name": "radix",
+        "desc": "Indicates number base, for example 10 to parse input as a decimal value, 16 for hex values."
+      }
+    ],
+    "example": "parseInt('50')",
+    "exampleReturn": 50,
+    "returns": "number"
+  },
+  "propertyIsEnumerable": {
+    "__princetype__": "function",
+    "desc": "Returns a Boolean indicating whether the specified property is enumerable.",
+    "returns": "boolean"
+  },
+  "removeEventListener": {
+    "__princetype__": "function"
+  },
+  "self": {
+    "__princetype__": "object",
+    "_is_root": true
+  },
+  "setTimeout": {
+    "__princetype__": "function"
+  },
+  "toLocaleString": {
+    "__princetype__": "function",
+    "desc": "Converts an object to a string with a language sensitive representation of said string.",
+    "returns": "string"
+  },
+  "toString": {
+    "__princetype__": "function",
+    "desc": "Converts an object to a string.",
+    "returns": "string"
+  },
+  "top": {
+    "__princetype__": "object",
+    "_is_root": true
+  },
+  "undefined": {
+    "__princetype__": "undefined",
+    "desc": "Represents the special value undefined."
+  },
+  "unescape": {
+    "__princetype__": "function",
+    "desc": "Computes a new string by replacing hexadecimal escape sequences with the characters they represent.",
+    "returns": "string",
+    "arguments": [
+      {
+        "name": "string",
+        "desc": "String to unescape",
+        "type": "string"
+      }
+    ]
+  },
+  "valueOf": {
+    "__princetype__": "function",
+    "desc": "Returns the primitive value an object.",
+    "returns": "primitive value"
+  },
+  "window": {
+    "__princetype__": "object",
+    "_is_root": true
+  },
+  "desc": "The global object"
+}
