@@ -8,3 +8,4 @@ all :
 clean :
 	(cd src/properties; make clean)
 	(cd src/samples; make clean)
+	(cd src/js-support; make clean)
