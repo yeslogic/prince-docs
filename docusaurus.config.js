@@ -123,8 +123,7 @@ module.exports = {
     //'./static/js/shiftWindow.js',
   ],
   future: {
-      v4: {
-          useCssCascadeLayers: true,
-      }
+      v4: true,
+      experimental_faster: true,
   }
 };
