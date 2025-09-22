@@ -1294,6 +1294,7 @@ Another use of the "multi-pass" solution is to create changebars - see the descr
 When however scripts need to communicate across multiple input documents, the built-in "multi-pass" solution is not an option - see e.g. the [Multifile Table of Contents](#multifile-table-of-contents), which makes use of a "two-pass" approach by running Prince twice.
 
 
+{/*
 ## Build Your Own Docu-PDF
 
 <dl className="ingredients">
@@ -1370,3 +1371,4 @@ Enabling JavaScript is also useful for fixing little glitches in the generated P
 ```
 
 And that's it!  You now have a PDF of the Prince documentation.
+*/}
