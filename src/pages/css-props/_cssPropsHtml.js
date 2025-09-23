@@ -12422,6 +12422,11 @@ const cssPropsHtml = String.raw`
                 -<a href="#prop-prince-mark-width">prince-mark-width</a>
               </code>
             </li>
+            <li>
+              <code>
+                -<a href="#prop-prince-mark-color">prince-mark-color</a>
+              </code>
+            </li>
           </ul>
         </div>
         <div>
@@ -17639,6 +17644,77 @@ supplier, item { overflow-wrap: normal; }
           <ul>
             <li>
               <a href="/doc/styling/#margin">Margin</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </details>
+    <details>
+      <summary class="ext" title="Prince extension">
+        <h6 id="prop-prince-mark-color">-prince-mark-color* <a href="#prop-prince-mark-color" class="hash-link"> </a></h6>
+      </summary>
+      <div>
+        <div>
+          <div id="prop-prince-mark-color-syntax">Syntax</div>
+          <div class="example">
+            <div class="syntax-block">
+              <code>-prince-mark-color: <span>&lt;<i>color</i>&gt;</span></code>
+            </div>
+          </div>
+        </div>
+        <div>
+          <div class="example">
+            <div class="syntax-block">
+              <table class="property-table">
+                <tr>
+                  <th scope="row">
+          Initial value
+        </th>
+                  <td>
+                    <code>black</code>
+                  </td>
+                </tr>
+                <tr>
+                  <th scope="row">
+          Applies to
+        </th>
+                  <td><code>@page</code> at-rule</td>
+                </tr>
+                <tr>
+                  <th scope="row">
+          Inherited
+        </th>
+                  <td>
+                  n/a
+                </td>
+                </tr>
+              </table>
+            </div>
+          </div>
+        </div>
+        <div>
+          <div id="prop-prince-mark-color-examples">Examples</div>
+          <div class="example">
+            <div class="programlisting">
+              <pre>
+                <code class="hljs">@page { -prince-mark-color: red }</code>
+              </pre>
+            </div>
+          </div>
+        </div>
+        <div>
+          <div id="prop-prince-mark-color-comments">Comments</div>
+          <p>
+	This CSS at-rule descriptor can be used to specify the color of crop marks.
+	</p>
+        </div>
+        <div>
+          <div id="prop-prince-mark-color-seealso">See Also</div>
+          <ul>
+            <li>
+              <code>
+                <a href="#prop-marks">marks</a>
+              </code>
             </li>
           </ul>
         </div>

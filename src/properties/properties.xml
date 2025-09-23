@@ -4445,6 +4445,7 @@ NOTE: The current build process will cause this file's content to appear in a Ja
     <see><code><property name="prince-mark-length"/></code></see>
     <see><code><property name="prince-mark-offset"/></code></see>
     <see><code><property name="prince-mark-width"/></code></see>
+    <see><code><property name="prince-mark-color"/></code></see>
     <comments>
     <p>
     This CSS at-rule descriptor, used with the
@@ -6127,6 +6128,24 @@ supplier, item { overflow-wrap: normal; }
 <property>
     <name>prince-margin-outside</name>
     <alias>margin-outside</alias>
+</property>
+
+<property>
+    <name>prince-mark-color</name>
+    <value>
+	<type>color</type>
+    </value>
+    <initial>black</initial>
+    <applyto>@page at-rule</applyto>
+    <inherit>n/a</inherit>
+    <extension/>
+    <example>@page { -prince-mark-color: red }</example>
+    <see><code><property name="marks"/></code></see>
+    <comments>
+	<p>
+	This CSS at-rule descriptor can be used to specify the color of crop marks.
+	</p>
+    </comments>
 </property>
 
 <property>
