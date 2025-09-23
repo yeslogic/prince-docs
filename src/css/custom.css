@@ -425,6 +425,11 @@ dt[id], h6[id], th[id], summary[id], #prop-list div[id] {
 dl.faq dt p {
     font-weight: bold;
 }
+
+section.row {
+    justify-content: center;
+}
+
 a[href*='//']:not([href*='princexml.com'])::after {
   content: " \21D7";
   color: lightgrey; }
