@@ -4446,6 +4446,7 @@ NOTE: The current build process will cause this file's content to appear in a Ja
     <see><code><property name="prince-mark-offset"/></code></see>
     <see><code><property name="prince-mark-width"/></code></see>
     <see><code><property name="prince-mark-color"/></code></see>
+    <see><a href="/doc/paged/#trimming-marks">Trimming marks</a></see>
     <comments>
     <p>
     This CSS at-rule descriptor, used with the
@@ -6141,6 +6142,7 @@ supplier, item { overflow-wrap: normal; }
     <extension/>
     <example>@page { -prince-mark-color: red }</example>
     <see><code><property name="marks"/></code></see>
+    <see><a href="/doc/paged/#trimming-marks">Trimming marks</a></see>
     <comments>
 	<p>
 	This CSS at-rule descriptor can be used to specify the color of crop marks.
@@ -6159,6 +6161,7 @@ supplier, item { overflow-wrap: normal; }
     <extension/>
     <example>@page { -prince-mark-length: 2cm }</example>
     <see><code><property name="marks"/></code></see>
+    <see><a href="/doc/paged/#trimming-marks">Trimming marks</a></see>
     <comments>
 	<p>
 	This CSS at-rule descriptor can be used to specify the length of crop marks,
@@ -6184,6 +6187,7 @@ supplier, item { overflow-wrap: normal; }
     <extension/>
     <example>@page { -prince-mark-offset: 6pt }</example>
     <see><code><property name="marks"/></code></see>
+    <see><a href="/doc/paged/#trimming-marks">Trimming marks</a></see>
     <comments>
 	<p>
 	This CSS at-rule descriptor can be used to specify the offset between crop and
@@ -6203,6 +6207,7 @@ supplier, item { overflow-wrap: normal; }
     <extension/>
     <example>@page { -prince-mark-width: 1pt }</example>
     <see><code><property name="marks"/></code></see>
+    <see><a href="/doc/paged/#trimming-marks">Trimming marks</a></see>
     <comments>
 	<p>
 	This CSS at-rule descriptor can be used to specify the line width of the crop and

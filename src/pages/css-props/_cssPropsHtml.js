@@ -12427,6 +12427,9 @@ const cssPropsHtml = String.raw`
                 -<a href="#prop-prince-mark-color">prince-mark-color</a>
               </code>
             </li>
+            <li>
+              <a href="/doc/paged/#trimming-marks">Trimming marks</a>
+            </li>
           </ul>
         </div>
         <div>
@@ -17716,6 +17719,9 @@ supplier, item { overflow-wrap: normal; }
                 <a href="#prop-marks">marks</a>
               </code>
             </li>
+            <li>
+              <a href="/doc/paged/#trimming-marks">Trimming marks</a>
+            </li>
           </ul>
         </div>
       </div>
@@ -17789,6 +17795,9 @@ supplier, item { overflow-wrap: normal; }
                 <a href="#prop-marks">marks</a>
               </code>
             </li>
+            <li>
+              <a href="/doc/paged/#trimming-marks">Trimming marks</a>
+            </li>
           </ul>
         </div>
       </div>
@@ -17861,6 +17870,9 @@ supplier, item { overflow-wrap: normal; }
                 <a href="#prop-marks">marks</a>
               </code>
             </li>
+            <li>
+              <a href="/doc/paged/#trimming-marks">Trimming marks</a>
+            </li>
           </ul>
         </div>
       </div>
@@ -17932,6 +17944,9 @@ supplier, item { overflow-wrap: normal; }
               <code>
                 <a href="#prop-marks">marks</a>
               </code>
+            </li>
+            <li>
+              <a href="/doc/paged/#trimming-marks">Trimming marks</a>
             </li>
           </ul>
         </div>
