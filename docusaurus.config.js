@@ -75,15 +75,15 @@ module.exports = {
       links: [
         {
             label: 'About us',
-            to: '../company',
+            to: '/company/',
         },
         {
             label: 'Privacy Policy',
-            to: '../privacy',
+            to: '/privacy/',
         },
         {
             label: 'Contact us',
-            to: '../contact',
+            to: '/contact/',
         },
       ],
     },
