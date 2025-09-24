@@ -1,6 +1,6 @@
 import {themes as prismThemes} from 'prism-react-renderer';
 
-module.exports = {
+export default {
   title: 'Prince Documentation',
   tagline: 'User Guide and Reference Manual',
   url: 'https://www.princexml.com',
