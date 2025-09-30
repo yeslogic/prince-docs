@@ -157,7 +157,7 @@ rcap
 <tr>
 <td>
 <code>
-cap
+ic
 </code>
 </td>
 <td>width of the "水" glyph (CJK water ideograph, U+6C34) in the current font</td>
@@ -165,7 +165,7 @@ cap
 <tr>
 <td>
 <code>
-rcap
+ric
 </code>
 </td>
 <td>of the "水" glyph (CJK water ideograph, U+6C34) in the font of the root element</td>
