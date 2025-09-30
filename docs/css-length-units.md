@@ -277,7 +277,6 @@ rch
 <tr>
 <th colSpan="2">CapHeight units</th>
 </tr>
-</tr>
 <tr>
 <td>
 <code>
@@ -296,5 +295,28 @@ rcap
 </tr>
 </table>
 
+## Ideographic Units
+
+<table className="grid">
+<tr>
+<th colSpan="2">Ideographic units</th>
+</tr>
+<tr>
+<td>
+<code>
+cap
+</code>
+</td>
+<td>width of the "水" glyph (CJK water ideograph, U+6C34) in the current font</td>
+</tr>
+<tr>
+<td>
+<code>
+rcap
+</code>
+</td>
+<td>of the "水" glyph (CJK water ideograph, U+6C34) in the font of the root element</td>
+</tr>
+</table>
 
 
