@@ -94,7 +94,86 @@ ex
 </td>
 <td>x-height of the element's font</td>
 </tr>
+<tr>
+<th colSpan="2">Line height units</th>
+</tr>
+<tr>
+<td>
+<code>
+lh
+</code>
+</td>
+<td>line height of the element</td>
+</tr>
+<tr>
+<td>
+<code>
+rlh
+</code>
+</td>
+<td>line height of the root element</td>
+</tr>
+<tr>
+<th colSpan="2">Character units</th>
+</tr>
+<tr>
+<td>
+<code>
+ch
+</code>
+</td>
+<td>width of the "0" (zero) glyph in the current font</td>
+</tr>
+<tr>
+<td>
+<code>
+rch
+</code>
+</td>
+<td>width of the "0" (zero) glyph in the font of the root element</td>
+</tr>
+<tr>
+<th colSpan="2">CapHeight units</th>
+</tr>
+<tr>
+<td>
+<code>
+cap
+</code>
+</td>
+<td>nominal height of capital letters in the current font</td>
+</tr>
+<tr>
+<td>
+<code>
+rcap
+</code>
+</td>
+<td>nominal height of capital letters in the font of the root element</td>
+</tr>
+<tr>
+<th colSpan="2">Ideographic units</th>
+</tr>
+<tr>
+<td>
+<code>
+cap
+</code>
+</td>
+<td>width of the "水" glyph (CJK water ideograph, U+6C34) in the current font</td>
+</tr>
+<tr>
+<td>
+<code>
+rcap
+</code>
+</td>
+<td>of the "水" glyph (CJK water ideograph, U+6C34) in the font of the root element</td>
+</tr>
 </table>
+
+
+
 
 ## Viewport Length Units
 
@@ -221,102 +300,4 @@ Furthermore, Prince supports the four angle units `deg`, `grad`, `rad` and `turn
 * [HSL colors](graphics.md#hsla) have a hue angle;
 * the [`hue-rotate` filter](css-props.md#prop-filter) takes an angle;
 * the `@page` [`-prince-rotate-body`](css-props.md#prop-prince-rotate-body) descriptor takes multiples of `90deg`.
-
-
-## Line Height Units
-
-<table className="grid">
-<tr>
-<th colSpan="2">Line height units</th>
-</tr>
-<tr>
-<td>
-<code>
-lh
-</code>
-</td>
-<td>line height of the element</td>
-</tr>
-<tr>
-<td>
-<code>
-rlh
-</code>
-</td>
-<td>line height of the root element</td>
-</tr>
-</table>
-
-## Character Units
-
-<table className="grid">
-<tr>
-<th colSpan="2">Character units</th>
-</tr>
-<tr>
-<td>
-<code>
-ch
-</code>
-</td>
-<td>width of the "0" (zero) glyph in the current font</td>
-</tr>
-<tr>
-<td>
-<code>
-rch
-</code>
-</td>
-<td>width of the "0" (zero) glyph in the font of the root element</td>
-</tr>
-</table>
-
-## CapHeight Units
-
-<table className="grid">
-<tr>
-<th colSpan="2">CapHeight units</th>
-</tr>
-<tr>
-<td>
-<code>
-cap
-</code>
-</td>
-<td>nominal height of capital letters in the current font</td>
-</tr>
-<tr>
-<td>
-<code>
-rcap
-</code>
-</td>
-<td>nominal height of capital letters in the font of the root element</td>
-</tr>
-</table>
-
-## Ideographic Units
-
-<table className="grid">
-<tr>
-<th colSpan="2">Ideographic units</th>
-</tr>
-<tr>
-<td>
-<code>
-cap
-</code>
-</td>
-<td>width of the "水" glyph (CJK water ideograph, U+6C34) in the current font</td>
-</tr>
-<tr>
-<td>
-<code>
-rcap
-</code>
-</td>
-<td>of the "水" glyph (CJK water ideograph, U+6C34) in the font of the root element</td>
-</tr>
-</table>
-
 
