@@ -271,4 +271,30 @@ rch
 </tr>
 </table>
 
+## CapHeight Units
+
+<table className="grid">
+<tr>
+<th colSpan="2">CapHeight units</th>
+</tr>
+</tr>
+<tr>
+<td>
+<code>
+cap
+</code>
+</td>
+<td>nominal height of capital letters in the current font</td>
+</tr>
+<tr>
+<td>
+<code>
+rcap
+</code>
+</td>
+<td>nominal height of capital letters in the font of the root element</td>
+</tr>
+</table>
+
+
 
