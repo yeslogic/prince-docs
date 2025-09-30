@@ -246,3 +246,29 @@ rlh
 <td>line height of the root element</td>
 </tr>
 </table>
+
+## Character Units
+
+<table className="grid">
+<tr>
+<th colSpan="2">Character units</th>
+</tr>
+<tr>
+<td>
+<code>
+ch
+</code>
+</td>
+<td>width of the "0" (zero) glyph in the current font</td>
+</tr>
+<tr>
+<td>
+<code>
+rch
+</code>
+</td>
+<td>width of the "0" (zero) glyph in the font of the root element</td>
+</tr>
+</table>
+
+
