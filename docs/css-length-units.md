@@ -225,11 +225,6 @@ Furthermore, Prince supports the four angle units `deg`, `grad`, `rad` and `turn
 
 ## Line Height Units
 
-:::note
-If <code>line-height</code> is set to <code>normal</code>, then these units currently
-use the approximation of <code>1.2</code> instead of using the exact font-metrics.
-:::
-
 <table className="grid">
 <tr>
 <th colSpan="2">Line height units</th>
