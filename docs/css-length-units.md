@@ -92,7 +92,15 @@ rem
 ex
 </code>
 </td>
-<td>x-height of the element's font</td>
+<td>x-height in the current font</td>
+</tr>
+<tr>
+<td>
+<code>
+rex
+</code>
+</td>
+<td>x-height in the font of the root element</td>
 </tr>
 <tr>
 <th colSpan="2">Line height units</th>
