@@ -108,12 +108,24 @@ html.docs-doc-id-help .navbar__item:nth-child(3) {
 html.docs-doc-id-help .navbar__item:nth-child(4) {
     color: #ffa046 !important;
 }
+
 .DocSearch-Button-Keys {
     display: none !important;
 }
 .navbarSearchContainer_Bca1 {
     width: 140px !important;
 }
+.DocSearch-Button-Placeholder, .DocSearch-Search-Icon {
+    color: var(--ifm-navbar-link-color);
+}
+.DocSearch-Button {
+    background-color: rgba(0, 0, 0, .2);
+    &:hover .DocSearch-Button-Placeholder, &:hover .DocSearch-Search-Icon {
+        color: var(--ifm-navbar-link-hover-color);
+        transition: 0.4s;
+    }
+}
+
 .clean-btn {
     color: white;
 }
