@@ -19,7 +19,7 @@ Prince is written in the <a href="https://mercurylang.org">Mercury</a> programmi
 
 <dt id="boehmgc">Boehm-Demers-Weiser Garbage Collector</dt>
 <dd>
-The <a href="https://www.hboehm.info/gc/">Boehm-Demers-Weiser Garbage Collector</a> library is used by the Mercury runtime for garbage collection, and uses the <a href="https://github.com/ivmai/libatomic_ops/">libatomic_ops</a> library for memory management.
+The <a href="https://www.hboehm.info/gc/">Boehm-Demers-Weiser Garbage Collector</a> library is used by the Mercury runtime for garbage collection, and uses the <a href="https://github.com/bdwgc/libatomic_ops">libatomic_ops</a> library for memory management.
 </dd>
 
 <dt id="mimalloc">mimalloc</dt>
