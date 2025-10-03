@@ -28,7 +28,7 @@ function Home() {
             Alternatively, you can <b>choose</b> the User Guide by Prince version.
           </summary>
           <div id="section-nav"><ul>
-            <li class="curr"><a href="/doc/intro-userguide">User Guide for Prince 16 (current)</a></li>
+            <li className="curr"><a href="/doc/intro-userguide">User Guide for Prince 16 (current)</a></li>
             <li><a href="/doc/15/intro-userguide">User Guide for Prince 15</a></li>
             <li><a href="/doc/14/intro-userguide">User Guide for Prince 14</a></li>
             <li><a href="/doc/13/intro-userguide">User Guide for Prince 13</a></li>
