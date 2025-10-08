@@ -458,6 +458,7 @@ footer.footer {
 .footer__copyright {
     float: left;
     text-align: left;
+    color: var(--ifm-footer-link-color);
     img {
         border: 0;
         margin: 0;
