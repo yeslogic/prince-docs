@@ -1,6 +1,9 @@
 import React from 'react';
 import clsx from 'clsx';
 import {ThemeClassNames} from '@docusaurus/theme-common';
+
+// Swizzle-ejected component to invert placement of logo and links
+
 export default function FooterLayout({style, links, logo, copyright}) {
   return (
     <footer
