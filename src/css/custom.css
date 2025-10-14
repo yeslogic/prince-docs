@@ -508,7 +508,7 @@ ul.table-of-contents li ul li a.table-of-contents__link--active {
     padding-left: 28px;
 }
 
-@media only screen and (min-device-width: 340px) and (max-device-width: 912px) {
+@media only screen and (max-width: 996px) {
     nav.navbar {
         padding-left: 20px;
         padding-right: 20px;
