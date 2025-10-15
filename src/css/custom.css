@@ -340,6 +340,7 @@ dt[id], h6[id], th[id], summary[id], #prop-list div[id] {
 .alert {
     --ifm-alert-border-color: pink;
     --ifm-alert-shadow: 0 1px 2px 0 rgba(255, 0, 0, 0.1);
+    --ifm-alert-background-color: rgba(255, 0, 0, 0.01);
     a {
         text-decoration: none;
         &:hover {
@@ -350,6 +351,11 @@ dt[id], h6[id], th[id], summary[id], #prop-list div[id] {
 .alert--warning {
     --ifm-alert-border-color: red;
     --ifm-alert-background-color: rgba(255, 0, 0, 0.1);
+}
+.theme-admonition-tip {
+    --ifm-alert-border-color: darkgreen;
+    --ifm-alert-shadow: 0 1px 2px 0 rgba(0, 100, 0, 0.1);
+    --ifm-alert-background-color: rgba(0, 100, 0, 0.01);
 }
 
 #js-support-table details.globalWindow {
