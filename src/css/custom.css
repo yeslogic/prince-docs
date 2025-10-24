@@ -5,7 +5,7 @@
  * work well for content-centric websites.
  */
 
-/* You can override the default Infima variables here. */
+/* Default Infima variables. */
 :root {
   --ifm-color-primary: #6e2577;
   --ifm-color-primary-dark: #63216b;
@@ -28,26 +28,11 @@
   --docusaurus-highlighted-code-line-bg: lavenderblush;
 }
 
-/* your custom css */
 
+/* Custom CSS */
+/* global styles */
 html, body {
     font-family: Public Sans, Arial, sans-serif !important;
-}
-
-.alert code {
-  --ifm-code-background: rgba(27,31,35,.05) !important;
-}
-table {
-    display: table;
-    width: auto;
-}
-
-table#pregions td[rowspan] {
-    writing-mode: vertical-rl;
-    text-align: center;
-    transform: rotate(180deg);
-    vertical-align: middle;
-    padding: 10px;
 }
 
 article p img {
@@ -61,6 +46,166 @@ aside {
     border-right-width: 0 !important;
 }
 
+h1, h2, h3, h4, h5, h6 {
+    color: inherit;
+    font-weight: 600;
+    line-height: 1.25;
+    margin-bottom: 16px;
+    margin-top: 1.5em;
+}
+h1 {
+    font-size: 32px;
+}
+h2 {
+    font-size: 24px;
+}
+h3 {
+    font-size: 20px;
+    margin-top: revert-layer;
+    margin-bottom: revert-layer;
+}
+h4 {
+    font-size: 16px;
+}
+
+dl { padding-bottom: 1em; }
+dd { padding-left: 2em; }
+dl ul { margin-bottom: 0em; }
+dl.faq dt p {
+    font-weight: bold;
+}
+
+code {
+    white-space: pre;
+    padding: 0;
+    vertical-align: baseline;
+    border: 0;
+    outline: 0.1rem solid rgba(0,0,0,0.1)
+}
+.codeBlockContainer_Ckt0 .codeBlockLines_e6Vv {
+    padding: revert-layer;
+}
+pre code, code pre, .syntax-block code, .grid code {
+    white-space: pre-wrap;
+}
+.mdxCodeBlock_node_modules-\@docusaurus-theme-classic-lib-theme-MDXComponents- code {
+    padding: var(--ifm-table-cell-padding);
+    display: block;
+}
+.syntax-block {
+  margin-bottom: 1em;
+  padding: 0.2em 1em;
+}
+
+img {
+    border: 1px solid lightgrey;
+    margin-top: 1em;
+    margin-bottom: 1em;
+}
+
+.fixedHeaderContainer header img {
+    margin-right: 30px;
+}
+
+#entry {
+    margin: 30px auto;
+    text-align: center;
+}
+#entry ul {
+    list-style-type: none;
+}
+
+#idx, #idx + p {
+    margin: 30px auto;
+    max-width: 400px;
+    text-align: center;
+    font-size: 1.5rem;
+}
+#idx {
+    margin-top: 3em;
+}
+
+.clean-btn {
+    color: white;
+}
+
+.menu__list {
+    font-size: 14px;
+    font-weight: normal;
+}
+
+section.row {
+    justify-content: center;
+}
+
+
+/* links */
+a[href*='//']:not([href*='princexml.com'])::after {
+  content: " \21D7";
+  color: lightgrey; }
+.menu__link--active {
+    font-weight: bold;
+}
+.menu__link:hover {
+    padding-left: 13px;
+}
+.menu__link--sublist {
+    font-weight: bold;
+}
+
+
+/* documentation entry page */
+#version-nav {
+    cursor: pointer;
+}
+#version-nav > summary {
+    list-style: none;
+    outline: none;
+    padding-bottom: 20px;
+    margin-top: 50px;
+}
+#version-nav > summary::-webkit-details-marker {
+    display: none;
+}
+
+
+/* tables */
+table {
+    display: table;
+    width: auto;
+}
+table#pregions td[rowspan] {
+    writing-mode: vertical-rl;
+    text-align: center;
+    transform: rotate(180deg);
+    vertical-align: middle;
+    padding: 10px;
+}
+table.grid td code p, table.grid th code p {
+    margin: 0 !important;
+}
+table thead tr th:empty {
+    display: none;
+}
+table.property-table, .syntax-block, .example code {
+  border: none;
+  background-color: white;
+}
+table.property-table tr {
+  border: none;
+}
+table.property-table th, table.property-table td {
+  border: none;
+}
+table.property-table th {
+  white-space: nowrap;
+}
+table.property-table td {
+  padding-left: 2.5em;
+}
+
+
+/* navbar */
 .navbar, .navbar--fixed-top {
     padding: 0px 25px;
     line-height: 1.5em;
@@ -108,7 +253,6 @@ html.docs-doc-id-help .navbar__item:nth-child(3) {
 html.docs-doc-id-help .navbar__item:nth-child(4) {
     color: #ffa046 !important;
 }
-
 .DocSearch-Button-Keys {
     display: none !important;
 }
@@ -126,134 +270,13 @@ html.docs-doc-id-help .navbar__item:nth-child(4) {
     }
 }
 
-.clean-btn {
-    color: white;
-}
-.menu__list {
-    font-size: 14px;
-    font-weight: normal;
-}
-.menu__link--sublist {
-    font-weight: bold;
-}
 
-.fixedHeaderContainer header img {
-    margin-right: 30px;
-}
-.mdxCodeBlock_node_modules-\@docusaurus-theme-classic-lib-theme-MDXComponents- code {
-    padding: var(--ifm-table-cell-padding);
-    display: block;
-}
-#entry {
-    margin: 30px auto;
-    text-align: center;
-}
-#entry ul {
-    list-style-type: none;
-}
-
-#idx, #idx + p {
-    margin: 30px auto;
-    max-width: 400px;
-    text-align: center;
-    font-size: 1.5rem;
-}
-#idx {
-    margin-top: 3em;
-}
-
-h1, h2, h3, h4, h5, h6 {
-    color: inherit;
-    font-weight: 600;
-    line-height: 1.25;
-    margin-bottom: 16px;
-    margin-top: 1.5em;
-}
-h1 {
-    font-size: 32px;
-}
-h2 {
-    font-size: 24px;
-}
-h3 {
-    font-size: 20px;
-    margin-top: revert-layer;
-    margin-bottom: revert-layer;
-}
-h4 {
-    font-size: 16px;
-}
-
-dl { padding-bottom: 1em; }
-dd { padding-left: 2em; }
-dl ul { margin-bottom: 0em; }
-
-code {
-    white-space: pre;
-    padding: 0;
-    vertical-align: baseline;
-    border: 0;
-    outline: 0.1rem solid rgba(0,0,0,0.1)
-}
-.codeBlockContainer_Ckt0 .codeBlockLines_e6Vv {
-    padding: revert-layer;
-}
-table.grid td code p, table.grid th code p {
-    margin: 0 !important;
-}
-
-pre code, code pre, .syntax-block code, .grid code {
-    white-space: pre-wrap;
-}
-
+/* Property list */
 #prop-list code, #js-support-table code {
     outline: none;
 }
-
 #prop-list ul li code {
     white-space: normal;
-}
-
-img {
-    border: 1px solid lightgrey;
-    margin-top: 1em;
-    margin-bottom: 1em;
-}
-
-table thead tr th:empty {
-    display: none;
-}
-table.property-table, .syntax-block, .example code {
-  border: none;
-  background-color: white;
-}
-table.property-table tr {
-  border: none;
-}
-table.property-table th, table.property-table td {
-  border: none;
-}
-table.property-table th {
-  white-space: nowrap;
-}
-table.property-table td {
-  padding-left: 2.5em;
-}
-.syntax-block {
-  margin-bottom: 1em;
-  padding: 0.2em 1em;
-}
-#version-nav {
-    cursor: pointer;
-}
-#version-nav > summary {
-    list-style: none;
-    outline: none;
-    padding-bottom: 20px;
-    margin-top: 50px;
-}
-#version-nav > summary::-webkit-details-marker {
-    display: none;
 }
 #prop-list a, #prop-list a:hover {
     color: #6e2577 !important;
@@ -276,13 +299,11 @@ table.property-table td {
     border-top: 0;
     padding-top: 0;
 }
-
 #prop-list h6 {
     font: var(--ifm-font-size-base) / var(--ifm-line-height-base) var(--ifm-font-family-base);
     font-weight: bold;
     margin: 0;
 }
-
 #prop-list summary::before, #js-support-table summary::before {
     display: none;
 }
@@ -333,31 +354,9 @@ table.property-table td {
 #prop-list summary#prop---custom-property-name, #prop-list summary#prop---custom-property-name + div .example .syntax-block > code {
     font-style: italic;
 }
-dt[id], h6[id], th[id], summary[id], #prop-list div[id] {
-    scroll-margin-top: calc(var(--ifm-navbar-height) + 1rem);
-}
 
-.alert {
-    --ifm-alert-border-color: pink;
-    --ifm-alert-shadow: 0 1px 2px 0 rgba(255, 0, 0, 0.1);
-    --ifm-alert-background-color: rgba(255, 0, 0, 0.01);
-    a {
-        text-decoration: none;
-        &:hover {
-            text-decoration: underline;
-        }
-    }
-}
-.alert--warning {
-    --ifm-alert-border-color: red;
-    --ifm-alert-background-color: rgba(255, 0, 0, 0.1);
-}
-.theme-admonition-tip {
-    --ifm-alert-border-color: darkgreen;
-    --ifm-alert-shadow: 0 1px 2px 0 rgba(0, 100, 0, 0.1);
-    --ifm-alert-background-color: rgba(0, 100, 0, 0.01);
-}
 
+/* JS support list */
 #js-support-table details.globalWindow {
   background-color: #f2f2f2;
 }
@@ -440,17 +439,40 @@ dt[id], h6[id], th[id], summary[id], #prop-list div[id] {
   padding-top: 0px;
   padding-right: 0px;
 }
-dl.faq dt p {
-    font-weight: bold;
+
+
+/* Scroll margin top */
+dt[id], h6[id], th[id], summary[id], #prop-list div[id] {
+    scroll-margin-top: calc(var(--ifm-navbar-height) + 1rem);
 }
 
-section.row {
-    justify-content: center;
+/* Admonitions*/
+.alert {
+    --ifm-alert-border-color: pink;
+    --ifm-alert-shadow: 0 1px 2px 0 rgba(255, 0, 0, 0.1);
+    --ifm-alert-background-color: rgba(255, 0, 0, 0.01);
+    a {
+        text-decoration: none;
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+}
+.alert--warning {
+    --ifm-alert-border-color: red;
+    --ifm-alert-background-color: rgba(255, 0, 0, 0.1);
+}
+.theme-admonition-tip {
+    --ifm-alert-border-color: darkgreen;
+    --ifm-alert-shadow: 0 1px 2px 0 rgba(0, 100, 0, 0.1);
+    --ifm-alert-background-color: rgba(0, 100, 0, 0.01);
+}
+.alert code {
+  --ifm-code-background: rgba(27,31,35,.05) !important;
 }
 
-a[href*='//']:not([href*='princexml.com'])::after {
-  content: " \21D7";
-  color: lightgrey; }
+
+/* Page footer */
 footer a[href*='//']:not([href*='princexml.com'])::after {
     content: "";
 }
@@ -481,13 +503,8 @@ footer.footer {
     }
 }
 
-.menu__link--active {
-    font-weight: bold;
-}
-.menu__link:hover {
-    padding-left: 13px;
-}
 
+/* Table of contents */
 ul.table-of-contents {
     padding-left: 0px !important;
     font-size: 0.73rem;
@@ -513,6 +530,7 @@ ul.table-of-contents li ul li a.table-of-contents__link--active {
     border-left: 2px solid #e0e0e0;
     padding-left: 28px;
 }
+
 
 @media only screen and (max-width: 996px) {
     nav.navbar {
