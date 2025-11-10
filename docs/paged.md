@@ -51,17 +51,21 @@ The initial values for CSS properties are defined internally - these are the ini
 
 ```css
     @page {
+        size: Letter;
         margin: 54pt;
-        -prince-bleed: auto /* '6pt' if marks present */ ;
+
+        bleed: auto /* '6pt' if marks present */ ;
         -prince-trim: auto /* '57pt 48pt' if marks present */ ;
+
         marks: none;
         -prince-mark-length: 24pt;
         -prince-mark-width: 0.1pt;
         -prince-mark-offset: auto /* equal to -prince-bleed */ ;
         -prince-mark-color: black;
-        size: Letter;
+
         -prince-pdf-page-colorspace: auto;
         -prince-pdf-page-label: auto;
+
         -prince-rotate-body: 0deg;
         -prince-shrink-to-fit: none;
     }
