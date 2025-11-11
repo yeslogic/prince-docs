@@ -105,7 +105,9 @@ Sometimes it can be useful to specify the page dimensions in pixels, for example
 
 Pages, like other block level elements, follow the CSS box model introduced in [Box Model](styling.md#box-model). Their `margin`, `border`, `padding` and `background` can be styled within [`@page`](css-at-rules.md#at-page) rules.
 
+:::note
 The [`@page`](css-at-rules.md#at-page) rules can only style the page and its margin boxes - it cannot contain style rules to target specific elements, and its style rules are not inherited by the page area content, but it can contain at-rules to target the page regions (for a complete list of possible at-rules, see [Page regions](#page-regions)).
+:::
 
 ```css
     @page {
