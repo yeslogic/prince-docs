@@ -114,12 +114,12 @@ The [`@page`](css-at-rules.md#at-page) rules can only style the page and its mar
         margin: 2cm;
     }
 ```
-Prince also supports the `margin-outside` and `margin-inside` properties. These allow you to specify different margins for the inside and outside edges of paper as it is bound into a book. For example it may be necessary to have a larger inside margin (called a *gutter*) so that after some of the margin is used by the binding, the remaining margins are even.
+Prince also supports the `-prince-margin-outside` and `-prince-margin-inside` properties. These allow you to specify different margins for the inside and outside edges of paper as it is bound into a book. For example it may be necessary to have a larger inside margin (called a *gutter*) so that after some of the margin is used by the binding, the remaining margins are even.
 
 ```css
     @page {
         margin: 2cm;
-        margin-inside: 3cm;
+        -prince-margin-inside: 3cm;
     }
 ```
 This is used in [Fancy headers](#fig-fancyheader).
