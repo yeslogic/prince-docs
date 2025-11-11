@@ -191,14 +191,14 @@ That image is created by Prince only with the help of HTML and CSS.  Here is the
                 font-weight: normal;
             }
             #leftnote {
-                float: leftnote align-bottom;
+                -prince-float: leftnote align-bottom;
                 font-size: 22pt;
                 transform: rotate(-90deg);
                 margin-bottom: -6em;
                 font-weight: normal;
             }
             #rightnote {
-                float: rightnote;
+                -prince-float: rightnote;
                 font-size: 22pt;
                 transform: rotate(90deg);
                 padding-left: 9vw;
