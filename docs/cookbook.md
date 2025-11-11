@@ -233,7 +233,7 @@ That image is created by Prince only with the help of HTML and CSS.  Here is the
     </html>
 ```
 
-Note that the page-margin boxes and `@prinec-overlay` take CSS generated content, while the page area regions only move elements from HTML into the designed region.
+Note that the page-margin boxes and `@prince-overlay` take CSS generated content, while the page area regions only move elements from HTML into the designed region.
 
 ### Page Headers and Footers
 
