@@ -1163,13 +1163,13 @@ When printed texts contain images, the text is usually laid out to wrap around t
 ```
 The property [`clear`](css-props.md#prop-clear) can be considered the float's sister property: an element that has the [`clear`](css-props.md#prop-clear) property set on it will not move up, next to the floated element, like the float is asking for. Instead, it will move down after the float.
 
-Prince extends the traditional behavior of floats with a few features that have been ubiquitous in printing for a long time.  In addition to the following documentation, the [quick guide to page and column floats in Prince 14](https://www.princexml.com/howcome/2021/guides/float/) provides many more examples for float, clear and defer properties.
-
-#### Prince Extensions to Floats
-
-Traditionally, floats move in the inline direction, left or right. Prince extends this behavior with page and column floats that move in the block direction, specifying that an element should be floated to the top, to the bottom, or to the nearest edge of a page or of a column.
+Traditionally, floats move in the inline direction, left or right. Prince supports also page and column floats that move in the block direction, specifying that an element should be floated to the top, to the bottom, or even to the nearest edge of a page or of a column.
 
 This allows for more flexible layout options that meet the needs of formatting documents for print.
+
+In addition to the following documentation, the [quick guide to page and column floats in Prince 14](https://www.princexml.com/howcome/2021/guides/float/) provides many more examples for float, clear and defer properties.
+
+#### Prince Extensions to Floats
 
 Prince's implementation of `float` differs from the standard implementation under the hood: it really is a shorthand for the following properties:
 
@@ -1210,17 +1210,17 @@ However, when using a non-standard value, we use the form with prefix:
 
 ```css
     img {
-        -prince-float: top;
+        -prince-float: inside;
     }
 ```
 
 ##### Page and Column Floats
 
-When giving the [`-prince-float`](css-props.md#prop-prince-float) property the value `top` or `bottom`, the element will be floated to, respectively, the top or the bottom of the column or page - the correct reference context for the float is defined through the [`-prince-float-reference`](css-props.md#prop-prince-float-reference) property.
+When giving the [`float`](css-props.md#prop-float) property the value `top` or `bottom`, the element will be floated to, respectively, the top or the bottom of the column or page - the correct reference context for the float is defined through the [`-prince-float-reference`](css-props.md#prop-prince-float-reference) property.
 
 ```css
     img {
-        -prince-float: top;
+        float: top;
         -prince-float-reference: page;
     }
 ```
@@ -1253,7 +1253,7 @@ A floated element in a multi-column context can span several columns with the he
 
 ```css
     img {
-        -prince-float: top;
+        float: top;
         column-span: 2;
     }
 ```
@@ -1315,7 +1315,7 @@ The following example will float both figures to the bottom, and the figure with
 ```
 ```css title="CSS"
     figure { 
-        -prince-float: bottom;
+        float: bottom;
         -prince-float-policy: in-order;
     }
 ```
@@ -1332,7 +1332,7 @@ Margins in vertical flows are a powerful styling tool.  Setting a vertical margi
 
 ```css
     img {
-        -prince-float: top;
+        float: top;
         margin: auto 0;
     }
 ```

@@ -2564,8 +2564,8 @@ NOTE: The current build process will cause this file's content to appear in a Ja
             <keyword class="ext">outside</keyword>
             </group>
             <group>
-            <keyword class="ext">top</keyword>
-            <keyword class="ext">bottom</keyword>
+            <keyword>top</keyword>
+            <keyword>bottom</keyword>
             <keyword class="ext">top-bottom</keyword>
             <keyword class="ext">snap</keyword>
             </group>

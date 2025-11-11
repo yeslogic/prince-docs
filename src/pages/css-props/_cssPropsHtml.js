@@ -6964,7 +6964,7 @@ const cssPropsHtml = String.raw`
           <div class="example">
             <div class="syntax-block">
               <code>float-placement: <br/>   none | left | right | <span class="ext">inside</span> | <span class="ext">outside</span>
-   | <span class="ext">top</span> | <span class="ext">bottom</span> | <span class="ext">top-bottom</span> | <span class="ext">snap</span>
+   | top | bottom | <span class="ext">top-bottom</span> | <span class="ext">snap</span>
    | <span class="ext">align-top</span> | <span class="ext">align-bottom</span>
    | footnote | <span class="ext">inline-footnote</span></code>
             </div>
@@ -15811,7 +15811,7 @@ supplier, item { overflow-wrap: normal; }
           <div class="example">
             <div class="syntax-block">
               <code>-prince-float-placement: <br/>   none | left | right | <span class="ext">inside</span> | <span class="ext">outside</span>
-   | <span class="ext">top</span> | <span class="ext">bottom</span> | <span class="ext">top-bottom</span> | <span class="ext">snap</span>
+   | top | bottom | <span class="ext">top-bottom</span> | <span class="ext">snap</span>
    | <span class="ext">align-top</span> | <span class="ext">align-bottom</span>
    | footnote | <span class="ext">inline-footnote</span></code>
             </div>
