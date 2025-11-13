@@ -51,7 +51,7 @@ After the initial at-rules, the following at-rules can appear also in nested for
 </th>
 </tr>
 <tr>
-<td colSpan="2">Modifies margins, orphans, widows and page breaks of a document when printing it. The pages are identified either by a name, or by a page pseudo-class and page declarations can either be style declarations or page region at-rules. The initial values for <code>@page</code> styles are documented in the <a href="/doc/paged">Paged Media</a> chapter.</td>
+<td colSpan="2">Defines the size of a page, and <code>margin</code>, <code>border</code>, <code>padding</code> and <code>background</code> of a document. The pages can be identified by a name, or by a page pseudo-class, and page declarations can either be style declarations or nested page region at-rules. The initial values for <code>@page</code> styles are documented in the <a href="/doc/paged">Paged Media</a> chapter.</td>
 </tr>
 <tr>
 <td>
@@ -59,7 +59,7 @@ After the initial at-rules, the following at-rules can appear also in nested for
     :left
     </code>
 </td>
-<td rowSpan="7">Page pseudo-classes</td>
+<td rowSpan="9">Page pseudo-classes</td>
 </tr>
 <tr>
 <td>
@@ -85,13 +85,6 @@ After the initial at-rules, the following at-rules can appear also in nested for
 <tr>
 <td>
     <code>
-    :first
-    </code>
-</td>
-</tr>
-<tr>
-<td>
-    <code>
     :blank
     </code>
 </td>
@@ -99,7 +92,28 @@ After the initial at-rules, the following at-rules can appear also in nested for
 <tr>
 <td>
     <code>
-    :nth( <i>N</i> )
+    :first
+    </code>
+</td>
+</tr>
+<tr>
+<td>
+    <code>
+    :nth(<i>N</i>)
+    </code>
+</td>
+</tr>
+<tr>
+<td>
+    <code>
+    :first-of-group
+    </code>
+</td>
+</tr>
+<tr>
+<td>
+    <code>
+    :nth-of-group(<i>N</i>)
     </code>
 </td>
 </tr>
@@ -161,7 +175,7 @@ After the initial at-rules, the following at-rules can appear also in nested for
 </td>
 </tr>
 <tr>
-<td colSpan="2">The <code>@page</code> rule takes CSS properties to style the margins, borders, padding and background. It equally takes color, font and font-height properties that are inherited by the page-margin boxes - note that they are not. inherited by the page area content.  It also takes the following CSS properties: <code><a href="/doc/css-props#prop-bleed">bleed</a></code> | <code><a href="/doc/css-props#prop-marks">marks</a></code> | <code><a href="/doc/css-props#prop-prince-mark-length">-prince-mark-length</a></code> | <code><a href="/doc/css-props#prop-prince-mark-offset">-prince-mark-offset</a></code> | <code><a href="/doc/css-props#prop-prince-mark-width">-prince-mark-width</a></code> | <code><a href="/doc/css-props#prop-prince-pdf-page-colorspace">-prince-pdf-page-colorspace</a></code> | <code><a href="/doc/css-props#prop-prince-pdf-page-label">-prince-pdf-page-label</a></code> | <code><a href="/doc/css-props#prop-prince-rotate-body">-prince-rotate-body</a></code> | <code><a href="/doc/css-props#prop-prince-shrink-to-fit">-prince-shrink-to-fit</a></code> | <code><a href="/doc/css-props#prop-prince-trim">-prince-trim</a></code> | <code><a href="/doc/css-props#prop-size">size</a></code> </td>
+<td colSpan="2">The <code>@page</code> rule takes CSS properties to style the margins, borders, padding and background. It equally takes color, font and font-height properties that are inherited by the page-margin boxes - note that they are not inherited by the page area content.  It also takes the following CSS properties: <code><a href="/doc/css-props#prop-bleed">bleed</a></code> | <code><a href="/doc/css-props#prop-marks">marks</a></code> | <code><a href="/doc/css-props#prop-prince-mark-length">-prince-mark-length</a></code> | <code><a href="/doc/css-props#prop-prince-mark-offset">-prince-mark-offset</a></code> | <code><a href="/doc/css-props#prop-prince-mark-width">-prince-mark-width</a></code> | <code><a href="/doc/css-props#prop-prince-pdf-page-colorspace">-prince-pdf-page-colorspace</a></code> | <code><a href="/doc/css-props#prop-prince-pdf-page-label">-prince-pdf-page-label</a></code> | <code><a href="/doc/css-props#prop-prince-rotate-body">-prince-rotate-body</a></code> | <code><a href="/doc/css-props#prop-prince-shrink-to-fit">-prince-shrink-to-fit</a></code> | <code><a href="/doc/css-props#prop-prince-trim">-prince-trim</a></code> | <code><a href="/doc/css-props#prop-size">size</a></code> </td>
 </tr>
 <tr>
 <td colSpan="2">Additionally, <a href="/doc/prince-for-books">Prince for Books</a> takes the following CSS property: <code><a href="/doc/css-props#prop-prince-page-fill">-prince-page-fill</a></code> </td>
