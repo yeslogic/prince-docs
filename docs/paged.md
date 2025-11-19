@@ -761,7 +761,7 @@ To select not the first page of the whole document, but the first page of each c
 ```
 
 :::note
-Up to Prince version 15, the `@page:first` and `@page:nth()` selectors, when used together with the CSS property `-prince-page-group: start` in a page group, would select the first, or the nth page *of the page group*, respectively. Starting with Prince 16, these selectors *always* select the first and nth page *of the whole document*.  To select the first or nth page of a page group, use the selectors `@page:first-of-group` and `@page:nth-of-group()`.
+Up to Prince version 15, the `@page:first` and `@page:nth()` selectors, when used together with the CSS property `-prince-page-group: start` in a page group (see [Page groups](#page-groups)), would select the first, or the nth page *of the page group*, respectively. Starting with Prince 16, these selectors *always* select the first and nth page *of the whole document*.  To select the first or nth page of a page group, use the selectors `@page:first-of-group` and `@page:nth-of-group()`.
 :::
 
 The `:left` and `:right` page selectors can be used to style left and right pages in a bound book differently. This is often used in text books to place the page number on the outside top corners of pages.
