@@ -303,7 +303,7 @@ In the subfolder `engine` are all resource files:
 | `contrib` | Licenses for open source libraries used by Prince                                           |
 | `dict`    | LibThai dictionary, used by Prince to handle word breaking in the Thai language             |
 | `dtd`     | Document Type Definitions (DTDs) for XML languages understood by Prince                     |
-| `etc`     | CA certificate bundle, used for HTTPS; and MIME type mapping file, used for PDF attachments |
+| `etc`     | CA certificate bundle, used for HTTPS; MIME type mapping file, used for PDF attachments; and a machine-readable SBOM file in CycloneDX format |
 | `hyph`    | The hyphenation dictionaries for common languages                                           |
 | `icc`     | ICC color profiles                                                                          |
 | `lib`     | Shared libraries required by Prince                                                         |
@@ -325,7 +325,7 @@ In the resource directory are all resource files:
 | `bin`     | The Prince core (the `prince` binary executable) and (as of Prince 11.3) the `princedebug` script |
 | `dict`    | LibThai dictionary, used by Prince to handle word breaking in the Thai language                   |
 | `dtd`     | Document Type Definitions (DTDs) for XML languages understood by Prince                           |
-| `etc`     | CA certificate bundle, used for HTTPS; and MIME type mapping file, used for PDF attachments       |
+| `etc`     | CA certificate bundle, used for HTTPS; MIME type mapping file, used for PDF attachments; and a machine-readable SBOM file in CycloneDX format       |
 | `hyph`    | The hyphenation dictionaries for common languages                                                 |
 | `icc`     | ICC color profiles                                                                                |
 | `lib`     | Shared libraries required by Prince                                                               |
@@ -347,7 +347,7 @@ In the resource directory are all resource files:
 | `bin`     | The Prince core (the `prince` binary executable) and (as of Prince 11.3) the `princedebug` script |
 | `dict`    | LibThai dictionary, used by Prince to handle word breaking in the Thai language                   |
 | `dtd`     | Document Type Definitions (DTDs) for XML languages understood by Prince                           |
-| `etc`     | CA certificate bundle, used for HTTPS; and MIME type mapping file, used for PDF attachments       |
+| `etc`     | CA certificate bundle, used for HTTPS; MIME type mapping file, used for PDF attachments; and a machine-readable SBOM file in CycloneDX format       |
 | `hyph`    | The hyphenation dictionaries for common languages                                                 |
 | `icc`     | ICC color profiles                                                                                |
 | `lib`     | Shared libraries required by Prince                                                               |
