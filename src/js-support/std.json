@@ -2974,6 +2974,9 @@
         "defineProperty": {
             "__princetype__": "function"
         },
+        "entries": {
+            "__princetype__": "function"
+        },
         "freeze": {
             "__princetype__": "function"
         },
@@ -3032,6 +3035,9 @@
             "__princetype__": "function"
         },
         "setPrototypeOf": {
+            "__princetype__": "function"
+        },
+        "values": {
             "__princetype__": "function"
         }
     },
