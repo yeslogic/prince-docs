@@ -392,7 +392,6 @@ Prince supports SVG 1.1, with some exceptions - vertical text is not supported, 
 -   `text-rendering`
 -   `tref` (removed)
 -   `view`
--   `foreignObject`
 -   `svgz`
 -   `visibility:collapse`
 -   `switch` (`requiredFeatures`, `requiredExtensions`, `systemLanguage`)
