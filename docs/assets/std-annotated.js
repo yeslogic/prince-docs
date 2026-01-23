@@ -127,6 +127,7 @@ var stdAnnotated = {
             example: "Object.defineProperty(Array.prototype, 'myProp',\n  {enumerable: false})"
         },
         defineProperties: {},
+        entries: {},
         freeze: {},
         is: {},
         isExtensible: {},
@@ -140,6 +141,7 @@ var stdAnnotated = {
         preventExtensions: {},
         seal: {},
         setPrototypeOf: {},
+        values: {},
         prototype: {
             constructor: {},
             toString: {},

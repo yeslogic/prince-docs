@@ -25,6 +25,7 @@ var std = {
         create: {},
         defineProperty: {},
         defineProperties: {},
+        entries: {},
         freeze: {},
         is: {},
         isExtensible: {},
@@ -38,6 +39,7 @@ var std = {
         preventExtensions: {},
         seal: {},
         setPrototypeOf: {},
+        values: {},
         prototype: {
             constructor: {},
             toString: {},
