@@ -311,6 +311,8 @@ In the subfolder `engine` are all resource files:
 | `math`    | MathML resource files                                                                       |
 | `style`   | The default CSS style sheets                                                                |
 
+The file `etc/prince.cdx.json` is a machine-readable SBOM file.
+
 ### ... on MacOS
 
 Prince installs its files by default to `/usr/local` on MacOS:
@@ -332,6 +334,8 @@ In the resource directory are all resource files:
 | `license` | The Prince license file                                                                           |
 | `math`    | MathML resource files                                                                             |
 | `style`   | The default CSS style sheets                                                                      |
+
+The file `etc/prince.cdx.json` is a machine-readable SBOM file.
 
 ### ... on Linux and FreeBSD
 
@@ -355,3 +359,4 @@ In the resource directory are all resource files:
 | `math`    | MathML resource files                                                                             |
 | `style`   | The default CSS style sheets                                                                      |
 
+The file `etc/prince.cdx.json` is a machine-readable SBOM file.

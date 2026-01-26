@@ -12,6 +12,9 @@ Prince uses several open source libraries - for a complete list also showing the
     $ prince --credits
 ```
 
+The `etc/prince.cdx.json` machine-readable SBOM file in the [Prince resource directory](installing.md#installation-layout) contains many more details.
+
+
 ## Open Source Libraries
 
 <dl>
