@@ -634,7 +634,9 @@ Various standard properties are available to position the background, to clip it
 
 Outline is a line outside of the `border` of an element. Unlike the other areas of a box, it does not take up any space, and thus does not affect the layout in any way.
 
-It is possible to change its color, style, and width with, respectively, the properties [`outline-color`](css-props.md#prop-outline-color), [`outline-style`](css-props.md#prop-outline-style), and [`outline-width`](css-props.md#prop-outline-width), or with the shorthand property [`outline`](css-props.md#prop-outline).  The distance from the border can be defined with the property [`outline-offset`](css-props.md#prop-outline-offset).  Just as for borders, rounded corners can be styled with the [`border-radius`](css-props.md#prop-border-radius) property.
+It is possible to change its color, style, and width with, respectively, the properties [`outline-color`](css-props.md#prop-outline-color), [`outline-style`](css-props.md#prop-outline-style), and [`outline-width`](css-props.md#prop-outline-width), or with the shorthand property [`outline`](css-props.md#prop-outline).  The value `auto` for `outline-style` is treated as synonym for `solid`.
+
+The distance from the border can be defined with the property [`outline-offset`](css-props.md#prop-outline-offset).  Just as for borders, rounded corners can be styled with the [`border-radius`](css-props.md#prop-border-radius) property.
 
 
 ### Display
