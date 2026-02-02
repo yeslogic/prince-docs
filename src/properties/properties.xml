@@ -4795,6 +4795,11 @@ NOTE: The current build process will cause this file's content to appear in a Ja
     <initial>none</initial>
     <applyto>all elements</applyto>
     <inherit>no</inherit>
+    <comments>
+    <p>
+    Prince treats the value <code>auto</code> as a synonym for <code>solid</code>.
+    </p>
+    </comments>
     <spec><a href="https://www.w3.org/TR/css-ui-4/#outline-style">CSS Basic User Interface Module Level 4</a></spec>
 </property>
 
