@@ -176,7 +176,10 @@ const cssPropsHtml = String.raw`
             </div>
           </div>
         </div>
-        <div/>
+        <div>
+          <div id="prop-align-content-comments">Comments</div>
+          <p class="note">This property can also be set by the <code><a href="#prop-place-content">place-content</a></code> shorthand.</p>
+        </div>
         <div>
           <div id="prop-align-content-seealso">See Also</div>
           <ul>
@@ -706,7 +709,10 @@ const cssPropsHtml = String.raw`
             </div>
           </div>
         </div>
-        <div/>
+        <div>
+          <div id="prop-background-clip-comments">Comments</div>
+          <p class="note">This property can also be set by the <code><a href="#prop-background">background</a></code> shorthand.</p>
+        </div>
         <div>
           <div id="prop-background-clip-spec">Specification</div>
           <ul>
@@ -760,7 +766,10 @@ const cssPropsHtml = String.raw`
             </div>
           </div>
         </div>
-        <div/>
+        <div>
+          <div id="prop-background-color-comments">Comments</div>
+          <p class="note">This property can also be set by the <code><a href="#prop-background">background</a></code> shorthand.</p>
+        </div>
         <div>
           <div id="prop-background-color-seealso">See Also</div>
           <ul>
@@ -822,7 +831,10 @@ const cssPropsHtml = String.raw`
             </div>
           </div>
         </div>
-        <div/>
+        <div>
+          <div id="prop-background-image-comments">Comments</div>
+          <p class="note">This property can also be set by the <code><a href="#prop-background">background</a></code> shorthand.</p>
+        </div>
         <div>
           <div id="prop-background-image-spec">Specification</div>
           <ul>
@@ -944,7 +956,10 @@ const cssPropsHtml = String.raw`
             </div>
           </div>
         </div>
-        <div/>
+        <div>
+          <div id="prop-background-origin-comments">Comments</div>
+          <p class="note">This property can also be set by the <code><a href="#prop-background">background</a></code> shorthand.</p>
+        </div>
         <div>
           <div id="prop-background-origin-spec">Specification</div>
           <ul>
@@ -1132,7 +1147,10 @@ const cssPropsHtml = String.raw`
             </div>
           </div>
         </div>
-        <div/>
+        <div>
+          <div id="prop-background-size-comments">Comments</div>
+          <p class="note">This property can also be set by the <code><a href="#prop-background">background</a></code> shorthand.</p>
+        </div>
         <div>
           <div id="prop-background-size-spec">Specification</div>
           <ul>
@@ -1829,7 +1847,10 @@ const cssPropsHtml = String.raw`
             </div>
           </div>
         </div>
-        <div/>
+        <div>
+          <div id="prop-border-bottom-color-comments">Comments</div>
+          <p class="note">This property can also be set by the shorthands <code><a href="#prop-border">border</a></code>, <code><a href="#prop-border-bottom">border-bottom</a></code>,  and <code><a href="#prop-border-color">border-color</a></code>.</p>
+        </div>
         <div>
           <div id="prop-border-bottom-color-seealso">See Also</div>
           <ul>
@@ -1891,7 +1912,10 @@ const cssPropsHtml = String.raw`
             </div>
           </div>
         </div>
-        <div/>
+        <div>
+          <div id="prop-border-bottom-style-comments">Comments</div>
+          <p class="note">This property can also be set by the shorthands <code><a href="#prop-border">border</a></code>, <code><a href="#prop-border-bottom">border-bottom</a></code>,  and <code><a href="#prop-border-style">border-style</a></code>.</p>
+        </div>
         <div>
           <div id="prop-border-bottom-style-spec">Specification</div>
           <ul>
@@ -2290,7 +2314,10 @@ const cssPropsHtml = String.raw`
             </div>
           </div>
         </div>
-        <div/>
+        <div>
+          <div id="prop-border-left-color-comments">Comments</div>
+          <p class="note">This property can also be set by the shorthands <code><a href="#prop-border">border</a></code>, <code><a href="#prop-border-color">border-color</a></code>,  and <code><a href="#prop-border-left">border-left</a></code>.</p>
+        </div>
         <div>
           <div id="prop-border-left-color-seealso">See Also</div>
           <ul>
@@ -2352,7 +2379,10 @@ const cssPropsHtml = String.raw`
             </div>
           </div>
         </div>
-        <div/>
+        <div>
+          <div id="prop-border-left-style-comments">Comments</div>
+          <p class="note">This property can also be set by the shorthands <code><a href="#prop-border">border</a></code>, <code><a href="#prop-border-left">border-left</a></code>,  and <code><a href="#prop-border-style">border-style</a></code>.</p>
+        </div>
         <div>
           <div id="prop-border-left-style-spec">Specification</div>
           <ul>
@@ -2551,7 +2581,10 @@ const cssPropsHtml = String.raw`
             </div>
           </div>
         </div>
-        <div/>
+        <div>
+          <div id="prop-border-bottom-left-radius-comments">Comments</div>
+          <p class="note">This property can also be set by the <code><a href="#prop-border-radius">border-radius</a></code> shorthand.</p>
+        </div>
         <div>
           <div id="prop-border-bottom-left-radius-spec">Specification</div>
           <ul>
@@ -2605,7 +2638,10 @@ const cssPropsHtml = String.raw`
             </div>
           </div>
         </div>
-        <div/>
+        <div>
+          <div id="prop-border-bottom-right-radius-comments">Comments</div>
+          <p class="note">This property can also be set by the <code><a href="#prop-border-radius">border-radius</a></code> shorthand.</p>
+        </div>
         <div>
           <div id="prop-border-bottom-right-radius-spec">Specification</div>
           <ul>
@@ -2659,7 +2695,10 @@ const cssPropsHtml = String.raw`
             </div>
           </div>
         </div>
-        <div/>
+        <div>
+          <div id="prop-border-top-left-radius-comments">Comments</div>
+          <p class="note">This property can also be set by the <code><a href="#prop-border-radius">border-radius</a></code> shorthand.</p>
+        </div>
         <div>
           <div id="prop-border-top-left-radius-spec">Specification</div>
           <ul>
@@ -2713,7 +2752,10 @@ const cssPropsHtml = String.raw`
             </div>
           </div>
         </div>
-        <div/>
+        <div>
+          <div id="prop-border-top-right-radius-comments">Comments</div>
+          <p class="note">This property can also be set by the <code><a href="#prop-border-radius">border-radius</a></code> shorthand.</p>
+        </div>
         <div>
           <div id="prop-border-top-right-radius-spec">Specification</div>
           <ul>
@@ -2844,7 +2886,10 @@ const cssPropsHtml = String.raw`
             </div>
           </div>
         </div>
-        <div/>
+        <div>
+          <div id="prop-border-right-color-comments">Comments</div>
+          <p class="note">This property can also be set by the shorthands <code><a href="#prop-border">border</a></code>, <code><a href="#prop-border-color">border-color</a></code>,  and <code><a href="#prop-border-right">border-right</a></code>.</p>
+        </div>
         <div>
           <div id="prop-border-right-color-seealso">See Also</div>
           <ul>
@@ -2906,7 +2951,10 @@ const cssPropsHtml = String.raw`
             </div>
           </div>
         </div>
-        <div/>
+        <div>
+          <div id="prop-border-right-style-comments">Comments</div>
+          <p class="note">This property can also be set by the shorthands <code><a href="#prop-border">border</a></code>, <code><a href="#prop-border-right">border-right</a></code>,  and <code><a href="#prop-border-style">border-style</a></code>.</p>
+        </div>
         <div>
           <div id="prop-border-right-style-spec">Specification</div>
           <ul>
@@ -3243,7 +3291,10 @@ const cssPropsHtml = String.raw`
             </div>
           </div>
         </div>
-        <div/>
+        <div>
+          <div id="prop-border-top-color-comments">Comments</div>
+          <p class="note">This property can also be set by the shorthands <code><a href="#prop-border">border</a></code>, <code><a href="#prop-border-color">border-color</a></code>,  and <code><a href="#prop-border-top">border-top</a></code>.</p>
+        </div>
         <div>
           <div id="prop-border-top-color-seealso">See Also</div>
           <ul>
@@ -3305,7 +3356,10 @@ const cssPropsHtml = String.raw`
             </div>
           </div>
         </div>
-        <div/>
+        <div>
+          <div id="prop-border-top-style-comments">Comments</div>
+          <p class="note">This property can also be set by the shorthands <code><a href="#prop-border">border</a></code>, <code><a href="#prop-border-style">border-style</a></code>,  and <code><a href="#prop-border-top">border-top</a></code>.</p>
+        </div>
         <div>
           <div id="prop-border-top-style-spec">Specification</div>
           <ul>
@@ -4706,7 +4760,10 @@ const cssPropsHtml = String.raw`
             </div>
           </div>
         </div>
-        <div/>
+        <div>
+          <div id="prop-column-count-comments">Comments</div>
+          <p class="note">This property can also be set by the <code><a href="#prop-columns">columns</a></code> shorthand.</p>
+        </div>
         <div>
           <div id="prop-column-count-seealso">See Also</div>
           <ul>
@@ -4830,7 +4887,10 @@ const cssPropsHtml = String.raw`
             </div>
           </div>
         </div>
-        <div/>
+        <div>
+          <div id="prop-column-gap-comments">Comments</div>
+          <p class="note">This property can also be set by the <code><a href="#prop-gap">gap</a></code> shorthand.</p>
+        </div>
         <div>
           <div id="prop-column-gap-seealso">See Also</div>
           <ul>
@@ -4980,7 +5040,10 @@ const cssPropsHtml = String.raw`
             </div>
           </div>
         </div>
-        <div/>
+        <div>
+          <div id="prop-column-rule-color-comments">Comments</div>
+          <p class="note">This property can also be set by the <code><a href="#prop-column-rule">column-rule</a></code> shorthand.</p>
+        </div>
         <div>
           <div id="prop-column-rule-color-seealso">See Also</div>
           <ul>
@@ -5045,7 +5108,10 @@ const cssPropsHtml = String.raw`
             </div>
           </div>
         </div>
-        <div/>
+        <div>
+          <div id="prop-column-rule-style-comments">Comments</div>
+          <p class="note">This property can also be set by the <code><a href="#prop-column-rule">column-rule</a></code> shorthand.</p>
+        </div>
         <div>
           <div id="prop-column-rule-style-seealso">See Also</div>
           <ul>
@@ -5248,7 +5314,10 @@ const cssPropsHtml = String.raw`
             </div>
           </div>
         </div>
-        <div/>
+        <div>
+          <div id="prop-column-width-comments">Comments</div>
+          <p class="note">This property can also be set by the <code><a href="#prop-columns">columns</a></code> shorthand.</p>
+        </div>
         <div>
           <div id="prop-column-width-seealso">See Also</div>
           <ul>
@@ -6232,7 +6301,10 @@ const cssPropsHtml = String.raw`
             </div>
           </div>
         </div>
-        <div/>
+        <div>
+          <div id="prop-flex-basis-comments">Comments</div>
+          <p class="note">This property can also be set by the <code><a href="#prop-flex">flex</a></code> shorthand.</p>
+        </div>
         <div>
           <div id="prop-flex-basis-seealso">See Also</div>
           <ul>
@@ -6294,7 +6366,10 @@ const cssPropsHtml = String.raw`
             </div>
           </div>
         </div>
-        <div/>
+        <div>
+          <div id="prop-flex-direction-comments">Comments</div>
+          <p class="note">This property can also be set by the <code><a href="#prop-flex-flow">flex-flow</a></code> shorthand.</p>
+        </div>
         <div>
           <div id="prop-flex-direction-seealso">See Also</div>
           <ul>
@@ -6356,7 +6431,10 @@ const cssPropsHtml = String.raw`
             </div>
           </div>
         </div>
-        <div/>
+        <div>
+          <div id="prop-flex-grow-comments">Comments</div>
+          <p class="note">This property can also be set by the <code><a href="#prop-flex">flex</a></code> shorthand.</p>
+        </div>
         <div>
           <div id="prop-flex-grow-seealso">See Also</div>
           <ul>
@@ -6498,7 +6576,10 @@ const cssPropsHtml = String.raw`
             </div>
           </div>
         </div>
-        <div/>
+        <div>
+          <div id="prop-flex-shrink-comments">Comments</div>
+          <p class="note">This property can also be set by the <code><a href="#prop-flex">flex</a></code> shorthand.</p>
+        </div>
         <div>
           <div id="prop-flex-shrink-seealso">See Also</div>
           <ul>
@@ -6560,7 +6641,10 @@ const cssPropsHtml = String.raw`
             </div>
           </div>
         </div>
-        <div/>
+        <div>
+          <div id="prop-flex-wrap-comments">Comments</div>
+          <p class="note">This property can also be set by the <code><a href="#prop-flex-flow">flex-flow</a></code> shorthand.</p>
+        </div>
         <div>
           <div id="prop-flex-wrap-seealso">See Also</div>
           <ul>
@@ -7917,7 +8001,10 @@ const cssPropsHtml = String.raw`
             </div>
           </div>
         </div>
-        <div/>
+        <div>
+          <div id="prop-font-size-comments">Comments</div>
+          <p class="note">This property can also be set by the <code><a href="#prop-font">font</a></code> shorthand.</p>
+        </div>
         <div>
           <div id="prop-font-size-seealso">See Also</div>
           <ul>
@@ -8098,7 +8185,10 @@ const cssPropsHtml = String.raw`
             </div>
           </div>
         </div>
-        <div/>
+        <div>
+          <div id="prop-font-style-comments">Comments</div>
+          <p class="note">This property can also be set by the <code><a href="#prop-font">font</a></code> shorthand.</p>
+        </div>
         <div>
           <div id="prop-font-style-seealso">See Also</div>
           <ul>
@@ -8614,7 +8704,10 @@ const cssPropsHtml = String.raw`
             </div>
           </div>
         </div>
-        <div/>
+        <div>
+          <div id="prop-font-weight-comments">Comments</div>
+          <p class="note">This property can also be set by the <code><a href="#prop-font">font</a></code> shorthand.</p>
+        </div>
         <div>
           <div id="prop-font-weight-seealso">See Also</div>
           <ul>
@@ -10694,7 +10787,10 @@ const cssPropsHtml = String.raw`
             </div>
           </div>
         </div>
-        <div/>
+        <div>
+          <div id="prop-justify-content-comments">Comments</div>
+          <p class="note">This property can also be set by the <code><a href="#prop-place-content">place-content</a></code> shorthand.</p>
+        </div>
         <div>
           <div id="prop-justify-content-seealso">See Also</div>
           <ul>
@@ -11065,7 +11161,10 @@ const cssPropsHtml = String.raw`
             </div>
           </div>
         </div>
-        <div/>
+        <div>
+          <div id="prop-line-height-comments">Comments</div>
+          <p class="note">This property can also be set by the <code><a href="#prop-font">font</a></code> shorthand.</p>
+        </div>
         <div>
           <div id="prop-line-height-seealso">See Also</div>
           <ul>
@@ -11371,7 +11470,10 @@ const cssPropsHtml = String.raw`
             </div>
           </div>
         </div>
-        <div/>
+        <div>
+          <div id="prop-list-style-image-comments">Comments</div>
+          <p class="note">This property can also be set by the <code><a href="#prop-list-style">list-style</a></code> shorthand.</p>
+        </div>
         <div>
           <div id="prop-list-style-image-seealso">See Also</div>
           <ul>
@@ -11433,7 +11535,10 @@ const cssPropsHtml = String.raw`
             </div>
           </div>
         </div>
-        <div/>
+        <div>
+          <div id="prop-list-style-position-comments">Comments</div>
+          <p class="note">This property can also be set by the <code><a href="#prop-list-style">list-style</a></code> shorthand.</p>
+        </div>
         <div>
           <div id="prop-list-style-position-seealso">See Also</div>
           <ul>
@@ -11495,7 +11600,10 @@ const cssPropsHtml = String.raw`
             </div>
           </div>
         </div>
-        <div/>
+        <div>
+          <div id="prop-list-style-type-comments">Comments</div>
+          <p class="note">This property can also be set by the <code><a href="#prop-list-style">list-style</a></code> shorthand.</p>
+        </div>
         <div>
           <div id="prop-list-style-type-seealso">See Also</div>
           <ul>
@@ -11738,7 +11846,10 @@ const cssPropsHtml = String.raw`
             </div>
           </div>
         </div>
-        <div/>
+        <div>
+          <div id="prop-margin-bottom-comments">Comments</div>
+          <p class="note">This property can also be set by the <code><a href="#prop-margin">margin</a></code> shorthand.</p>
+        </div>
         <div>
           <div id="prop-margin-bottom-seealso">See Also</div>
           <ul>
@@ -11867,7 +11978,10 @@ const cssPropsHtml = String.raw`
             </div>
           </div>
         </div>
-        <div/>
+        <div>
+          <div id="prop-margin-left-comments">Comments</div>
+          <p class="note">This property can also be set by the <code><a href="#prop-margin">margin</a></code> shorthand.</p>
+        </div>
         <div>
           <div id="prop-margin-left-seealso">See Also</div>
           <ul>
@@ -11996,7 +12110,10 @@ const cssPropsHtml = String.raw`
             </div>
           </div>
         </div>
-        <div/>
+        <div>
+          <div id="prop-margin-right-comments">Comments</div>
+          <p class="note">This property can also be set by the <code><a href="#prop-margin">margin</a></code> shorthand.</p>
+        </div>
         <div>
           <div id="prop-margin-right-seealso">See Also</div>
           <ul>
@@ -12058,7 +12175,10 @@ const cssPropsHtml = String.raw`
             </div>
           </div>
         </div>
-        <div/>
+        <div>
+          <div id="prop-margin-top-comments">Comments</div>
+          <p class="note">This property can also be set by the <code><a href="#prop-margin">margin</a></code> shorthand.</p>
+        </div>
         <div>
           <div id="prop-margin-top-seealso">See Also</div>
           <ul>
@@ -13199,7 +13319,10 @@ const cssPropsHtml = String.raw`
             </div>
           </div>
         </div>
-        <div/>
+        <div>
+          <div id="prop-outline-color-comments">Comments</div>
+          <p class="note">This property can also be set by the <code><a href="#prop-outline">outline</a></code> shorthand.</p>
+        </div>
         <div>
           <div id="prop-outline-color-spec">Specification</div>
           <ul>
@@ -13307,7 +13430,13 @@ const cssPropsHtml = String.raw`
             </div>
           </div>
         </div>
-        <div/>
+        <div>
+          <div id="prop-outline-style-comments">Comments</div>
+          <p>
+    Prince treats the value <code>auto</code> as a synonym for <code>solid</code>.
+    </p>
+          <p class="note">This property can also be set by the <code><a href="#prop-outline">outline</a></code> shorthand.</p>
+        </div>
         <div>
           <div id="prop-outline-style-spec">Specification</div>
           <ul>
@@ -13361,7 +13490,10 @@ const cssPropsHtml = String.raw`
             </div>
           </div>
         </div>
-        <div/>
+        <div>
+          <div id="prop-outline-width-comments">Comments</div>
+          <p class="note">This property can also be set by the <code><a href="#prop-outline">outline</a></code> shorthand.</p>
+        </div>
         <div>
           <div id="prop-outline-width-spec">Specification</div>
           <ul>
@@ -13703,7 +13835,10 @@ supplier, item { overflow-wrap: normal; }
             </div>
           </div>
         </div>
-        <div/>
+        <div>
+          <div id="prop-padding-bottom-comments">Comments</div>
+          <p class="note">This property can also be set by the <code><a href="#prop-padding">padding</a></code> shorthand.</p>
+        </div>
         <div>
           <div id="prop-padding-bottom-seealso">See Also</div>
           <ul>
@@ -13765,7 +13900,10 @@ supplier, item { overflow-wrap: normal; }
             </div>
           </div>
         </div>
-        <div/>
+        <div>
+          <div id="prop-padding-left-comments">Comments</div>
+          <p class="note">This property can also be set by the <code><a href="#prop-padding">padding</a></code> shorthand.</p>
+        </div>
         <div>
           <div id="prop-padding-left-seealso">See Also</div>
           <ul>
@@ -13827,7 +13965,10 @@ supplier, item { overflow-wrap: normal; }
             </div>
           </div>
         </div>
-        <div/>
+        <div>
+          <div id="prop-padding-right-comments">Comments</div>
+          <p class="note">This property can also be set by the <code><a href="#prop-padding">padding</a></code> shorthand.</p>
+        </div>
         <div>
           <div id="prop-padding-right-seealso">See Also</div>
           <ul>
@@ -13889,7 +14030,10 @@ supplier, item { overflow-wrap: normal; }
             </div>
           </div>
         </div>
-        <div/>
+        <div>
+          <div id="prop-padding-top-comments">Comments</div>
+          <p class="note">This property can also be set by the <code><a href="#prop-padding">padding</a></code> shorthand.</p>
+        </div>
         <div>
           <div id="prop-padding-top-seealso">See Also</div>
           <ul>
@@ -21944,7 +22088,10 @@ blockquote { margin: 1rem; -prince-resize-options: -1rem; }
             </div>
           </div>
         </div>
-        <div/>
+        <div>
+          <div id="prop-row-gap-comments">Comments</div>
+          <p class="note">This property can also be set by the <code><a href="#prop-gap">gap</a></code> shorthand.</p>
+        </div>
         <div>
           <div id="prop-row-gap-seealso">See Also</div>
           <ul>
@@ -24041,7 +24188,10 @@ blockquote { margin: 1rem; -prince-resize-options: -1rem; }
             </div>
           </div>
         </div>
-        <div/>
+        <div>
+          <div id="prop-text-line-through-color-comments">Comments</div>
+          <p class="note">This property can also be set by the <code><a href="#prop-text-line-through">text-line-through</a></code> shorthand.</p>
+        </div>
         <div>
           <div id="prop-text-line-through-color-seealso">See Also</div>
           <ul>
@@ -24095,7 +24245,10 @@ blockquote { margin: 1rem; -prince-resize-options: -1rem; }
             </div>
           </div>
         </div>
-        <div/>
+        <div>
+          <div id="prop-text-line-through-style-comments">Comments</div>
+          <p class="note">This property can also be set by the <code><a href="#prop-text-line-through">text-line-through</a></code> shorthand.</p>
+        </div>
       </div>
     </details>
     <details>
@@ -24259,7 +24412,10 @@ blockquote { margin: 1rem; -prince-resize-options: -1rem; }
             </div>
           </div>
         </div>
-        <div/>
+        <div>
+          <div id="prop-text-overline-color-comments">Comments</div>
+          <p class="note">This property can also be set by the <code><a href="#prop-text-overline">text-overline</a></code> shorthand.</p>
+        </div>
         <div>
           <div id="prop-text-overline-color-seealso">See Also</div>
           <ul>
@@ -24313,7 +24469,10 @@ blockquote { margin: 1rem; -prince-resize-options: -1rem; }
             </div>
           </div>
         </div>
-        <div/>
+        <div>
+          <div id="prop-text-overline-style-comments">Comments</div>
+          <p class="note">This property can also be set by the <code><a href="#prop-text-overline">text-overline</a></code> shorthand.</p>
+        </div>
       </div>
     </details>
     <details>
@@ -24547,7 +24706,10 @@ blockquote { margin: 1rem; -prince-resize-options: -1rem; }
             </div>
           </div>
         </div>
-        <div/>
+        <div>
+          <div id="prop-text-underline-color-comments">Comments</div>
+          <p class="note">This property can also be set by the <code><a href="#prop-text-underline">text-underline</a></code> shorthand.</p>
+        </div>
         <div>
           <div id="prop-text-underline-color-seealso">See Also</div>
           <ul>
@@ -24725,7 +24887,10 @@ blockquote { margin: 1rem; -prince-resize-options: -1rem; }
             </div>
           </div>
         </div>
-        <div/>
+        <div>
+          <div id="prop-text-underline-style-comments">Comments</div>
+          <p class="note">This property can also be set by the <code><a href="#prop-text-underline">text-underline</a></code> shorthand.</p>
+        </div>
       </div>
     </details>
     <details>

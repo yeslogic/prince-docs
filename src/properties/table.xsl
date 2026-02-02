@@ -178,7 +178,18 @@
     </xsl:if>
 
     <div>
-    <xsl:if test="shorthand|comments|/properties/property[name=$alias]/shorthand|/properties/property[name=$alias]/comments">
+    <xsl:variable name="propIdVal">
+        <xsl:choose>
+            <xsl:when test="/properties/property[name=$alias]"><xsl:copy-of select="$alias" /></xsl:when>
+            <xsl:otherwise><xsl:copy-of select="$propid" /></xsl:otherwise>
+        </xsl:choose>
+    </xsl:variable>
+    <xsl:variable name="withShorthands">
+        <xsl:call-template name="show-shorthands">
+            <xsl:with-param name="propid" select="$propIdVal"/>
+        </xsl:call-template>
+    </xsl:variable>
+    <xsl:if test="(shorthand|comments|/properties/property[name=$alias]/shorthand|/properties/property[name=$alias]/comments) or normalize-space($withShorthands)">
     <div id="prop-{$propid}-comments">Comments</div>
     </xsl:if>
     <xsl:if test="shorthand|/properties/property[name=$alias]/shorthand">
@@ -211,7 +222,7 @@
     </xsl:choose>
     </ul>
     </xsl:if>
-    <xsl:if test="comments|/properties/property[name=$alias]/comments">
+    <xsl:if test="(comments|/properties/property[name=$alias]/comments) or normalize-space($withShorthands)">
     <xsl:choose>
       <xsl:when test="alias">
         <xsl:apply-templates select="/properties/property[name=$alias]/comments/*" mode="copy"/>
