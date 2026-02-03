@@ -76,7 +76,13 @@ HWB (Hue-Whiteness-Blackness) color values are expressed in a similar way to HSL
 
 ### Spot colors
 
-Prince also supports named spot colors that can be defined with the [`@prince-color`](css-at-rules.md#at-prince-color) rule. An alternate color must also be specified with the [`alternate-color`](css-props.md#prop-alternate-color) descriptor, using any of the valid notations for RGB, HSL, HWB, or CMYK colors. This will be used in situations where the named color is not available, such as when viewing the generated PDF file on a display. Please note that [`alternate-color`](css-props.md#prop-alternate-color) cannot have opacity.
+Prince also supports named spot colors that can be defined with the [`@prince-color`](css-at-rules.md#at-prince-color) rule.
+
+An alternate color must be specified with the [`alternate-color`](css-props.md#prop-alternate-color) descriptor, using any of the valid notations for RGB, HSL, HWB, or CMYK colors: it will be used in situations where the named color is not available, such as when viewing the generated PDF file on a display.
+
+:::note
+The property [`alternate-color`](css-props.md#prop-alternate-color) does not accept opacity.
+:::
 
 ```css
     @prince-color MyColor {
