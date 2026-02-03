@@ -7027,6 +7027,7 @@ const cssPropsHtml = String.raw`
           <p class="note">
         The property <a href="#prop-prince-float-modifier"><code>-prince-float-modifier</code></a> can be used as an alias.
         </p>
+          <p class="note">This property can also be set by the <code><a href="#prop-float">float</a></code> shorthand.</p>
         </div>
         <div>
           <div id="prop-float-modifier-seealso">See Also</div>
@@ -7149,6 +7150,7 @@ const cssPropsHtml = String.raw`
           <p class="note">
         The property <a href="#prop-prince-float-placement"><code>-prince-float-placement</code></a> can be used as an alias.
         </p>
+          <p class="note">This property can also be set by the <code><a href="#prop-float">float</a></code> shorthand.</p>
         </div>
         <div>
           <div id="prop-float-placement-seealso">See Also</div>
@@ -7364,6 +7366,7 @@ const cssPropsHtml = String.raw`
           <p class="note">
         The property <a href="#prop-prince-float-reference"><code>-prince-float-reference</code></a> can be used as an alias.
         </p>
+          <p class="note">This property can also be set by the <code><a href="#prop-float">float</a></code> shorthand.</p>
         </div>
         <div>
           <div id="prop-float-reference-seealso">See Also</div>
@@ -15934,6 +15937,7 @@ supplier, item { overflow-wrap: normal; }
           <p class="note">
         The property <a href="#prop-float-modifier"><code>float-modifier</code></a> can be used as an alias.
         </p>
+          <p class="note">This property can also be set by the <code><a href="#prop-float">float</a></code> shorthand.</p>
         </div>
         <div>
           <div id="prop-prince-float-modifier-seealso">See Also</div>
@@ -16056,6 +16060,7 @@ supplier, item { overflow-wrap: normal; }
           <p class="note">
         The property <a href="#prop-float-placement"><code>float-placement</code></a> can be used as an alias.
         </p>
+          <p class="note">This property can also be set by the <code><a href="#prop-float">float</a></code> shorthand.</p>
         </div>
         <div>
           <div id="prop-prince-float-placement-seealso">See Also</div>
@@ -16271,6 +16276,7 @@ supplier, item { overflow-wrap: normal; }
           <p class="note">
         The property <a href="#prop-float-reference"><code>float-reference</code></a> can be used as an alias.
         </p>
+          <p class="note">This property can also be set by the <code><a href="#prop-float">float</a></code> shorthand.</p>
         </div>
         <div>
           <div id="prop-prince-float-reference-seealso">See Also</div>

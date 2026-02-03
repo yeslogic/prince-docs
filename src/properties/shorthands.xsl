@@ -3,10 +3,22 @@
 
 <xsl:template name="show-shorthands">
   <xsl:param name="propid"/>
-  <xsl:variable name="nshorthands" select="count(/properties/property[shorthand/prop=$propid])"/>
+  <xsl:variable name="finalPropid">
+    <xsl:choose>
+      <!-- If any property in the XML has the 'prince-' prefix version, use that -->
+      <xsl:when test="/properties/property[shorthand/prop=concat('prince-', $propid)]">
+        <xsl:value-of select="concat('prince-', $propid)"/>
+      </xsl:when>
+      <!-- Otherwise, fall back to the original $propid -->
+      <xsl:otherwise>
+        <xsl:value-of select="$propid"/>
+      </xsl:otherwise>
+    </xsl:choose>
+  </xsl:variable>
+  <xsl:variable name="nshorthands" select="count(/properties/property[shorthand/prop=$finalPropid])"/>
   <xsl:choose>
     <xsl:when test="$nshorthands = 1">
-      <xsl:variable name="shorthand" select="/properties/property[shorthand/prop=$propid]/name"/>
+      <xsl:variable name="shorthand" select="/properties/property[shorthand/prop=$finalPropid]/name"/>
       <p class="note"><xsl:text>This property can also be set by the </xsl:text>
         <code><property name="{$shorthand}"/></code>
         <xsl:text> shorthand</xsl:text>
@@ -31,7 +43,7 @@
     </xsl:when>
     <xsl:when test="$nshorthands > 1">
       <p class="note"><xsl:text>This property can also be set by the shorthands </xsl:text>
-        <xsl:for-each select="/properties/property[shorthand/prop=$propid]/name">
+        <xsl:for-each select="/properties/property[shorthand/prop=$finalPropid]/name">
           <xsl:if test="position() = last()">
             <xsl:text> and </xsl:text>
           </xsl:if>
