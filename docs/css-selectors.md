@@ -790,3 +790,21 @@ E ~ F
 <td>Represents <a href="/doc/paged/#blank-pages">blank pages</a> in the document.</td>
 </tr>
 </table>
+
+## Nesting selectors
+
+<table className="grid">
+<tr>
+<th colSpan="2">Nesting selector</th>
+</tr>
+<tr>
+<td>
+<code>
+&amp;
+</code>
+</td>
+<td>When used inside a nested style rule, it represents the elements matched by the parent rule; otherwise it represents the same elements as <code>:scope</code>.</td>
+</tr>
+</table>
+
+

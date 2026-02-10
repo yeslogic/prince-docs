@@ -143,6 +143,10 @@ Prince supports, fully or partially, the following CSS specifications:
 <td>Prince supports this module.</td>
 </tr>
 <tr>
+<td><a href="https://www.w3.org/TR/css-nesting-1/">CSS Nesting Module Level 1</a></td>
+<td>Prince supports this module.</td>
+</tr>
+<tr>
 <th colSpan="2">CSS Level 5</th>
 </tr>
 <tr>

@@ -1689,3 +1689,21 @@ When a fallback value needs to be provided, this can be indicated in the `var()`
       color: var(--main-text-color, brown);
     }
 ```
+
+### CSS Nesting
+
+To improve readability, modularity, size and maintainability of CSS stylesheets, Prince supports CSS nesting, whereby the selector of a child rule is relative to that of the parent rule.
+
+CSS Nesting introduces a nesting selector, `&`, which explicitly makes the nested child rule selectors *relative to the parent element*.
+
+```css
+    p {
+      color: black;
+      a {
+        color: green;
+        &:hover {
+          color: red;
+        }
+      }
+    }
+```
