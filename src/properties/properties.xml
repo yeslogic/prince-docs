@@ -4137,6 +4137,7 @@ NOTE: The current build process will cause this file's content to appear in a Ja
             <keyword>simp-chinese-formal</keyword>
             <keyword>trad-chinese-informal</keyword>
             <keyword>trad-chinese-formal</keyword>
+            <string>string</string>
             <!-- XXX: I'm not sure that the following are part of current
                 css-lists or css-counter-styles.  Should they be documented?
 
