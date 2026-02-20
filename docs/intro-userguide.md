@@ -5,12 +5,12 @@ title: User Guide
 import DocCardList from '@theme/DocCardList';
 
 
-Prince is an application for converting HTML and XML documents into PDF files by applying Cascading Style Sheets (CSS).
-HTML and XML are seamlessly transformed into documents you can print, download and archive.
+Prince is an application for converting HTML/Markdown and XML documents into PDF files by applying Cascading Style Sheets (CSS).
+HTML/Markdown and XML are seamlessly transformed into documents you can print, download and archive.
 
 Prince supports all the main Web Standards:
 
--   HTML, XHTML, XML, SVG
+-   HTML/Markdown, XHTML, XML, SVG
 -   Cascading Style Sheets (CSS)
 -   JavaScript / ECMAScript
 -   JPEG, PNG, GIF, TIFF, WebP, AVIF

@@ -96,7 +96,7 @@ export default {
       disableSwitch: true,
     },
     prism: {
-        additionalLanguages: ['css', 'markup', 'json', 'bash', 'javascript'],
+        additionalLanguages: ['css', 'markup', 'markdown', 'toml', 'yaml', 'json', 'bash', 'javascript'],
         defaultLanguage: 'css',
         theme: prismThemes.oneLight,
     },

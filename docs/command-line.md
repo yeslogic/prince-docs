@@ -199,7 +199,7 @@ The command-line may include the options described below:
     </code>
   </dt>
   <dd>
-    Set input format [<code>auto</code> | <code>xml</code> | <code>html</code>].
+    Set input format [<code>auto</code> | <code>xml</code> | <code>html</code> | <code>markdown</code>].
   </dd>
   <dt id="cl-input-list">
     <code>
@@ -245,6 +245,38 @@ The command-line may include the options described below:
   </dt>
   <dd>
     Enable HTML iframes.
+  </dd>
+  <dt id="cl-markdown-superscript">
+    <code>
+    --markdown-superscript
+    </code>
+  </dt>
+  <dd>
+    Enable superscript syntax in Markdown input.  When enabled, carets (<code>^text^</code>) produce superscript (<code>&lt;sup&gt;</code>).
+  </dd>
+  <dt id="cl-markdown-subscript">
+    <code>
+    --markdown-subscript
+    </code>
+  </dt>
+  <dd>
+    Enable subscript syntax in Markdown input.  When enabled, single tildes (<code>&#126;text&#126;</code>) produce subscript (<code>&lt;sub&gt;</code>) instead of strikethrough.  Double tildes (<code>&#126;&#126;text&#126;&#126;</code>) still produce strikethrough.
+  </dd>
+  <dt id="cl-no-markdown-smart-typography">
+    <code>
+    --no-markdown-smart-typography
+    </code>
+  </dt>
+  <dd>
+    Disable smart typography in Markdown input.  By default, Prince converts straight quotes to curly quotes, <code>--</code> to an en-dash (<code>–</code>), <code>---</code> to an em-dash (<code>—</code>), and <code>...</code>  to an ellipsis (<code>…</code>).  This option disables that behavior.
+  </dd>
+  <dt id="cl-no-markdown-math">
+    <code>
+    --no-markdown-math
+    </code>
+  </dt>
+  <dd>
+    Disable automatic math rendering in Markdown input.  By default, Prince renders math notation written with dollar signs (<code>$...$</code> for inline, <code>$$...$$</code> for display) using KaTeX.  This option disables that behavior.
   </dd>
   <dt id="cl-xinclude">
     <code>

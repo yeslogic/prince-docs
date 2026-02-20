@@ -2,7 +2,7 @@
 title: Prince Input
 ---
 
-Prince takes HTML or XML files as input, and converts them to PDF files. Additionally, CSS style sheets can be provided for styling the documents, and JavaScript files can be used for additional manipulation of the input.
+Prince takes HTML/Markdown or XML files as input, and converts them to PDF files. Additionally, CSS style sheets can be provided for styling the documents, and JavaScript files can be used for additional manipulation of the input.
 
 See the sections [Applying Style Sheets in Prince](#applying-style-sheets-in-prince), [Applying JavaScript in Prince](#applying-javascript-in-prince) and [XML Input](#xml-input) for details.
 
@@ -101,7 +101,44 @@ JavaScript functions can also be called from CSS generated content, by using the
 Prince also supports PDF scripts, known as "Document Action" scripts - see [PDF Actions](prince-output.md#pdf-actions). They get included in documents through CSS, too, but will always be run. Note, however, that these scripts are dependent on the PDF viewer, and in many cases might only work in Adobe Acrobat products.
 
 
-## XML Input
+## Markdown Support
+
+Prince processes files ending in `.md` as Markdown. Alternatively, Markdown parsing is enabled with the command line `--input=markdown`.  Markdown files can include HTML snippets, or entire sections of HTML, which allows it to be easily extended.
+
+Markdown is internally converted to HTML, and thus the default CSS Stylesheet `html.css` is applied. Also the dedicated Stylesheet `markdown.css` is applied for borders in tables, as they are expected in Markdown. The command-line option `--no-default-style` disables both.
+
+Some special Markdown features can be enabled or disabled with dedicated command-line options:
+- Superscript and subscript can be enabled with the options [`--markdown-superscript`](command-line.md#cl-markdown-superscript) and [`--markdown-subscript`](command-line.md#cl-markdown-subscript) respectively. When enabled, carets (`^text^`) produce superscript (`<sup>`), and single tildes (`~text~`) produce subscript (`<sub>`) instead of strikethrough.  Double tildes (`~~text~~`) still produce strikethrough.
+- Smart typography can be disabled in Markdown with the command-line option [`--no-markdown-smart-typography`](command-line.md#cl-no-markdown-smart-typography). By default, Prince converts straight quotes to curly quotes, `--` to an en-dash (<code>&#x2013;</code>), `---` to an em-dash (<code>&#x2014;</code>), and `...`  to an ellipsis (<code>&hellip;</code>).
+- Automatic rendering of math expressions in Markdown input can be disabled with [`--no-markdown-math`](command-line.md#cl-no-markdown-math). By default, Prince renders math notation written with dollar signs (`$...$` for inline, and `$$...$$` for code blocks) using KaTeX.
+
+The Markdown file can begin with YAML frontmatter (separated by `---` lines similar to Pandoc) or TOML frontmatter (separated by `+++` lines similar to Hugo and Zola) which allow specifying document metadata:
+
+```yaml title="YAML frontmatter"
+---
+title: Front Matter Test Document
+author: Jane Smith
+lang: en
+subject: Testing YAML front matter metadata
+keywords: markdown, front matter, metadata, prince
+date: 2026-01-15
+---
+```
+
+```toml title="TOML frontmatter"
++++
+title = "TOML Front Matter Test"
+date = 2026-01-26T11:36:15+10:00
+ 
+[extra]
+updated = 2026-01-27T09:25:58+10:00
++++
+```
+
+Unrecognised sections/fields in the metadata, such as the `[extra]` field in the above example, will silently be ignored.
+
+
+## XML Support
 
 ### XML Input
 
