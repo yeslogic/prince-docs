@@ -92,9 +92,14 @@ If the declarations are from different style sheets, the declaration that occurs
 
 ## Applying JavaScript in Prince
 
-Prince is not running JavaScript by default - document scripts can be enabled by specifying the [`--javascript`](command-line.md#cl-javascript) option on the command-line. Prince will then execute all JavaScript found in the HTML `script` elements in the input document.
+Prince is not running JavaScript by default - author scripts in the documents need to be enabled by specifying the [`--javascript`](command-line.md#cl-javascript) option on the command-line. Prince will then execute all JavaScript found in the HTML `script` elements in the input document.
 
-External scripts can be run by specifying one or more [`--script=FILE`](command-line.md#cl-script) options on the command-line. These scripts will always be executed, regardless of whether document scripts have been enabled or not.
+External user scripts can be run by specifying one or more [`--script=FILE`](command-line.md#cl-script) options on the command-line. These scripts will always be executed, regardless of whether document author scripts have been enabled or not.
+
+:::note
+- Author scripts in HTML documents need to be explictly enabled.
+- User scripts passed on command line are always exectuted.
+:::
 
 JavaScript functions can also be called from CSS generated content, by using the `prince-script()` syntax for referencing [Script Functions](gen-content.md#script-functions). Please note that scripts contained in the `prince-script()` function are treated as document scripts, and hence need to be explicitly enabled.
 
