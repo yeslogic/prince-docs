@@ -117,6 +117,10 @@ Some special Markdown features can be enabled or disabled with dedicated command
 - Smart typography can be disabled in Markdown with the command-line option [`--no-markdown-smart-typography`](command-line.md#cl-no-markdown-smart-typography). By default, Prince converts straight quotes to curly quotes, `--` to an en-dash (<code>&#x2013;</code>), `---` to an em-dash (<code>&#x2014;</code>), and `...`  to an ellipsis (<code>&hellip;</code>).
 - Automatic rendering of math expressions in Markdown input can be disabled with [`--no-markdown-math`](command-line.md#cl-no-markdown-math). By default, Prince renders math notation written with dollar signs (`$...$` for inline, and `$$...$$` for code blocks) using KaTeX.
 
+:::note
+KaTeX is automatically being applied as a user script and will therefore run even if author scripts have not been explicitly enabled.
+:::
+
 The Markdown file can begin with YAML frontmatter (separated by `---` lines similar to Pandoc) or TOML frontmatter (separated by `+++` lines similar to Hugo and Zola) which allow specifying document metadata:
 
 ```yaml title="YAML frontmatter"
