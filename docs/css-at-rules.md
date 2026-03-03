@@ -254,6 +254,97 @@ Unlike media queries, this uses the classical two-valued logic.</td>
 
 <table className="grid">
 <tr>
+<th colSpan="2" id="at-counter-style">
+    <code>
+    @counter-style &lt;<i>counter-style-name</i>&gt; {"{"} &lt;<i>declaration-list</i>&gt; {"}"}
+    </code>
+</th>
+</tr>
+<tr>
+<td colSpan="2">Extends predefined list styles with custom counter styles.</td>
+</tr>
+<tr>
+<td colSpan="2">The <code>@counter-styles</code> rule takes the following CSS descriptors:</td>
+</tr>
+<tr>
+<td>
+    <code>
+    <a href="/doc/css-props#prop-system">system</a>: cyclic | numeric | alphabetic | symbolic | additive | [ fixed &lt;<i>integer</i>&gt;? ] | [ extends &lt;<i>counter-style-name</i>&gt; ]
+    </code>
+</td>
+<td>This descriptor specifies how to represent a counter value.</td>
+</tr>
+<tr>
+<td>
+    <code>
+    <a href="/doc/css-props#prop-symbols">symbols</a>: [ &lt;<i>string</i>&gt; | &lt;<i>custom-ident</i>&gt; ]+
+    </code>
+</td>
+<td>This descriptor specifies the symbols used to represent a counter value.</td>
+</tr>
+<tr>
+<td>
+    <code>
+    <a href="/doc/css-props#prop-additive-symbols">additive-symbols</a>: [ &lt;<i>integer</i>[0,∞]&gt; && [ &lt;<i>string</i>&gt; | &lt;<i>custom-ident</i>&gt; ] ]#
+    </code>
+</td>
+<td>This descriptor specifies the symbols used to represent a counter value when the <code>system</code> descriptor is set to <code>additive</code>.</td>
+</tr>
+<tr>
+<td>
+    <code>
+    <a href="/doc/css-props#prop-negative">negative</a>: [ &lt;<i>string</i>&gt; | &lt;<i>custom-ident</i>&gt; ] [ &lt;<i>string</i>&gt; | &lt;<i>custom-ident</i>&gt; ]?
+    </code>
+</td>
+<td>This descriptor specifies how negative counter values are represented.</td>
+</tr>
+<tr>
+<td>
+    <code>
+    <a href="/doc/css-props#prop-prefix">prefix</a>: &lt;<i>string</i>&gt; | &lt;<i>custom-ident</i>&gt;
+    </code>
+</td>
+<td>This descriptor specifies content added to the beginning of a custom counter representation.</td>
+</tr>
+<tr>
+<td>
+    <code>
+    <a href="/doc/css-props#prop-suffix">suffix</a>: &lt;<i>string</i>&gt; | &lt;<i>custom-ident</i>&gt;
+    </code>
+</td>
+<td>This descriptor specifies content added to the end of a custom counter representation.</td>
+</tr>
+<tr>
+<td>
+    <code>
+    <a href="/doc/css-props#prop-range">range</a>: [ [ &lt;<i>integer</i>&gt; | infinite ]{"{"}2{"}"} ]# | auto
+    </code>
+</td>
+<td>This descriptor specifies one or more ranges of counter values for which the style is applied.</td>
+</tr>
+<tr>
+<td>
+    <code>
+    <a href="/doc/css-props#prop-pad">pad</a>: &lt;<i>integer</i>[0,∞]&gt; && [ &lt;<i>string</i>&gt; | &lt;<i>custom-ident</i>&gt; ]
+    </code>
+</td>
+<td>This descriptor specifies the minimum length for marker representations.</td>
+</tr>
+<tr>
+<td>
+    <code>
+    <a href="/doc/css-props#prop-fallback">fallback</a>: &lt;<i>counter-style-name</i>&gt;
+    </code>
+</td>
+<td>This descriptor specifies a counter style to fall back to if the defined style cannot be created.</td>
+</tr>
+<tr>
+<td colSpan="2">Additionally, <code>@counter-style</code> takes the CSS descriptors <code><a href="/doc/css-props#prop-prince-pdf-page-numbering">prince-pdf-page-numbering</a></code> and <code><a href="/doc/css-props#prop-prince-pdf-list-numbering">prince-pdf-list-numbering</a></code>.</td>
+</tr>
+</table>
+
+<table className="grid">
+<tr>
 <th colSpan="2" id="at-prince-color">
     <code>
     @prince-color &lt;<i>color-name</i>&gt; {"{"} alternate-color: &lt;<i>color</i>&gt; {"}"}

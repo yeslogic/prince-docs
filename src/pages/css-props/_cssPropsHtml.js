@@ -135,6 +135,65 @@ const cssPropsHtml = String.raw`
     </details>
     <details>
       <summary>
+        <h6 id="prop-additive-symbols">additive-symbols <a href="#prop-additive-symbols" class="hash-link"> </a></h6>
+      </summary>
+      <div>
+        <div>
+          <div id="prop-additive-symbols-syntax">Syntax</div>
+          <div class="example">
+            <div class="syntax-block">
+              <code>additive-symbols: [ <span>&lt;<i>integer</i>&gt;</span> &amp;&amp; [ <span>&lt;<i>string</i>&gt;</span> | <span>&lt;<i>custom-ident</i>&gt;</span> ] ]#</code>
+            </div>
+          </div>
+        </div>
+        <div>
+          <div class="example">
+            <div class="syntax-block">
+              <table class="property-table">
+                <tr>
+                  <th scope="row">
+          Initial value
+        </th>
+                  <td>
+                    <code>n/a</code>
+                  </td>
+                </tr>
+                <tr>
+                  <th scope="row">
+          Applies to
+        </th>
+                  <td><code>@counter-style</code> at-rule</td>
+                </tr>
+                <tr>
+                  <th scope="row">
+          Inherited
+        </th>
+                  <td>
+                  n/a
+                </td>
+                </tr>
+              </table>
+            </div>
+          </div>
+        </div>
+        <div>
+          <div id="prop-additive-symbols-comments">Comments</div>
+          <p>
+    The descriptor <code>additive-symbols</code> specifies the symbols used to represent a counter value when the <code><a href="#prop-system">system</a></code> descriptor is set to <code>additive</code>.
+    </p>
+        </div>
+        <div>
+          <div id="prop-additive-symbols-spec">Specification</div>
+          <ul>
+            <li>
+              <a href="https://www.w3.org/TR/css-ui-4/#widget-accent">CSS Basic User Interface Module Level 4</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </details>
+    <details>
+      <summary>
         <h6 id="prop-align-content">align-content <a href="#prop-align-content" class="hash-link"> </a></h6>
       </summary>
       <div>
@@ -5924,6 +5983,65 @@ const cssPropsHtml = String.raw`
           <ul>
             <li>
               <a href="https://www.w3.org/TR/CSS2/tables.html#empty-cells">CSS 2.1</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </details>
+    <details>
+      <summary>
+        <h6 id="prop-fallback">fallback <a href="#prop-fallback" class="hash-link"> </a></h6>
+      </summary>
+      <div>
+        <div>
+          <div id="prop-fallback-syntax">Syntax</div>
+          <div class="example">
+            <div class="syntax-block">
+              <code>fallback: <span>&lt;<i>counter-style-name</i>&gt;</span></code>
+            </div>
+          </div>
+        </div>
+        <div>
+          <div class="example">
+            <div class="syntax-block">
+              <table class="property-table">
+                <tr>
+                  <th scope="row">
+          Initial value
+        </th>
+                  <td>
+                    <code>decimal</code>
+                  </td>
+                </tr>
+                <tr>
+                  <th scope="row">
+          Applies to
+        </th>
+                  <td><code>@counter-style</code> at-rule</td>
+                </tr>
+                <tr>
+                  <th scope="row">
+          Inherited
+        </th>
+                  <td>
+                  n/a
+                </td>
+                </tr>
+              </table>
+            </div>
+          </div>
+        </div>
+        <div>
+          <div id="prop-fallback-comments">Comments</div>
+          <p>
+	The <code>fallback</code> descriptor specifies a counter style to fall back to if the defined style cannot be created.
+	</p>
+        </div>
+        <div>
+          <div id="prop-fallback-spec">Specification</div>
+          <ul>
+            <li>
+              <a href="https://www.w3.org/TR/css-counter-styles-3/#counter-style-fallback">CSS Counter Styles Level 3</a>
             </li>
           </ul>
         </div>
@@ -12855,6 +12973,65 @@ const cssPropsHtml = String.raw`
     </details>
     <details>
       <summary>
+        <h6 id="prop-negative">negative <a href="#prop-negative" class="hash-link"> </a></h6>
+      </summary>
+      <div>
+        <div>
+          <div id="prop-negative-syntax">Syntax</div>
+          <div class="example">
+            <div class="syntax-block">
+              <code>negative: [ <span>&lt;<i>string</i>&gt;</span> | <span>&lt;<i>custom-ident</i>&gt;</span> ] [ <span>&lt;<i>string</i>&gt;</span> | <span>&lt;<i>custom-ident</i>&gt;</span> ]?</code>
+            </div>
+          </div>
+        </div>
+        <div>
+          <div class="example">
+            <div class="syntax-block">
+              <table class="property-table">
+                <tr>
+                  <th scope="row">
+          Initial value
+        </th>
+                  <td>
+                    <code>"\2D" ("-" hyphen-minus)</code>
+                  </td>
+                </tr>
+                <tr>
+                  <th scope="row">
+          Applies to
+        </th>
+                  <td><code>@counter-style</code> at-rule</td>
+                </tr>
+                <tr>
+                  <th scope="row">
+          Inherited
+        </th>
+                  <td>
+                  n/a
+                </td>
+                </tr>
+              </table>
+            </div>
+          </div>
+        </div>
+        <div>
+          <div id="prop-negative-comments">Comments</div>
+          <p>
+	This descriptor specifies how negative counter values are represented. When the counter value is negative, the first value is prepended to the counter, the second one is appended.
+	</p>
+        </div>
+        <div>
+          <div id="prop-negative-spec">Specification</div>
+          <ul>
+            <li>
+              <a href="https://www.w3.org/TR/css-counter-styles-3/#counter-style-negative">CSS Counter Styles Level 3</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </details>
+    <details>
+      <summary>
         <h6 id="prop-object-fit">object-fit <a href="#prop-object-fit" class="hash-link"> </a></h6>
       </summary>
       <div>
@@ -13700,6 +13877,65 @@ supplier, item { overflow-wrap: normal; }
           <ul>
             <li>
               <a href="https://www.w3.org/TR/css-text-3/#overflow-wrap-property">CSS Text Module Level 3</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </details>
+    <details>
+      <summary>
+        <h6 id="prop-pad">pad <a href="#prop-pad" class="hash-link"> </a></h6>
+      </summary>
+      <div>
+        <div>
+          <div id="prop-pad-syntax">Syntax</div>
+          <div class="example">
+            <div class="syntax-block">
+              <code>pad: <span>&lt;<i>integer</i>&gt;</span> &amp;&amp; [ <span>&lt;<i>string</i>&gt;</span> | <span>&lt;<i>custom-ident</i>&gt;</span> ]</code>
+            </div>
+          </div>
+        </div>
+        <div>
+          <div class="example">
+            <div class="syntax-block">
+              <table class="property-table">
+                <tr>
+                  <th scope="row">
+          Initial value
+        </th>
+                  <td>
+                    <code>0 ""</code>
+                  </td>
+                </tr>
+                <tr>
+                  <th scope="row">
+          Applies to
+        </th>
+                  <td><code>@custom-counter</code> at-rule</td>
+                </tr>
+                <tr>
+                  <th scope="row">
+          Inherited
+        </th>
+                  <td>
+                  n/a
+                </td>
+                </tr>
+              </table>
+            </div>
+          </div>
+        </div>
+        <div>
+          <div id="prop-pad-comments">Comments</div>
+          <p>
+	The descriptor <code>pad</code> specifies the minimum length for marker representations.
+	</p>
+        </div>
+        <div>
+          <div id="prop-pad-spec">Specification</div>
+          <ul>
+            <li>
+              <a href="https://www.w3.org/TR/css-counter-styles-3/#counter-style-pad">CSS Counter Styles Level 3</a>
             </li>
           </ul>
         </div>
@@ -14561,6 +14797,65 @@ supplier, item { overflow-wrap: normal; }
             </li>
             <li>
               <a href="https://www.w3.org/TR/css-gcpm-3/#running-syntax">CSS Generated Content for Paged Media Module</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </details>
+    <details>
+      <summary>
+        <h6 id="prop-prefix">prefix <a href="#prop-prefix" class="hash-link"> </a></h6>
+      </summary>
+      <div>
+        <div>
+          <div id="prop-prefix-syntax">Syntax</div>
+          <div class="example">
+            <div class="syntax-block">
+              <code>prefix: <span>&lt;<i>string</i>&gt;</span> | <span>&lt;<i>custom-ident</i>&gt;</span></code>
+            </div>
+          </div>
+        </div>
+        <div>
+          <div class="example">
+            <div class="syntax-block">
+              <table class="property-table">
+                <tr>
+                  <th scope="row">
+          Initial value
+        </th>
+                  <td>
+                    <code>"" (the empty string)</code>
+                  </td>
+                </tr>
+                <tr>
+                  <th scope="row">
+          Applies to
+        </th>
+                  <td><code>@counter-style</code> at-rule</td>
+                </tr>
+                <tr>
+                  <th scope="row">
+          Inherited
+        </th>
+                  <td>
+                  n/a
+                </td>
+                </tr>
+              </table>
+            </div>
+          </div>
+        </div>
+        <div>
+          <div id="prop-prefix-comments">Comments</div>
+          <p>
+	The <code>prefix</code> descriptor specifies content added to the beginning of a custom counter representation.
+	</p>
+        </div>
+        <div>
+          <div id="prop-prefix-spec">Specification</div>
+          <ul>
+            <li>
+              <a href="https://www.w3.org/TR/css-counter-styles-3/#counter-style-prefix">CSS Counter Styles Level 3</a>
             </li>
           </ul>
         </div>
@@ -21990,6 +22285,65 @@ blockquote { margin: 1rem; -prince-resize-options: -1rem; }
     </details>
     <details>
       <summary>
+        <h6 id="prop-range">range <a href="#prop-range" class="hash-link"> </a></h6>
+      </summary>
+      <div>
+        <div>
+          <div id="prop-range-syntax">Syntax</div>
+          <div class="example">
+            <div class="syntax-block">
+              <code>range: [ [ <span>&lt;<i>integer</i>&gt;</span> | infinite ]{2} ]# | auto</code>
+            </div>
+          </div>
+        </div>
+        <div>
+          <div class="example">
+            <div class="syntax-block">
+              <table class="property-table">
+                <tr>
+                  <th scope="row">
+          Initial value
+        </th>
+                  <td>
+                    <code>auto</code>
+                  </td>
+                </tr>
+                <tr>
+                  <th scope="row">
+          Applies to
+        </th>
+                  <td><code>@custom-counter</code> at-rule</td>
+                </tr>
+                <tr>
+                  <th scope="row">
+          Inherited
+        </th>
+                  <td>
+                  n/a
+                </td>
+                </tr>
+              </table>
+            </div>
+          </div>
+        </div>
+        <div>
+          <div id="prop-range-comments">Comments</div>
+          <p>
+	The descriptor <code>range</code> specifies one or more ranges of counter values for which the style is applied.
+	</p>
+        </div>
+        <div>
+          <div id="prop-range-spec">Specification</div>
+          <ul>
+            <li>
+              <a href="https://www.w3.org/TR/css-counter-styles-3/#counter-style-range">CSS Counter Styles Level 3</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </details>
+    <details>
+      <summary>
         <h6 id="prop-right">right <a href="#prop-right" class="hash-link"> </a></h6>
       </summary>
       <div>
@@ -23025,6 +23379,183 @@ blockquote { margin: 1rem; -prince-resize-options: -1rem; }
           <ul>
             <li>
               <a href="https://www.w3.org/TR/SVG11/painting.html#StrokeWidthProperty">SVG 1.1</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </details>
+    <details>
+      <summary>
+        <h6 id="prop-suffix">suffix <a href="#prop-suffix" class="hash-link"> </a></h6>
+      </summary>
+      <div>
+        <div>
+          <div id="prop-suffix-syntax">Syntax</div>
+          <div class="example">
+            <div class="syntax-block">
+              <code>suffix: <span>&lt;<i>string</i>&gt;</span> | <span>&lt;<i>custom-ident</i>&gt;</span></code>
+            </div>
+          </div>
+        </div>
+        <div>
+          <div class="example">
+            <div class="syntax-block">
+              <table class="property-table">
+                <tr>
+                  <th scope="row">
+          Initial value
+        </th>
+                  <td>
+                    <code>"" (the empty string)</code>
+                  </td>
+                </tr>
+                <tr>
+                  <th scope="row">
+          Applies to
+        </th>
+                  <td><code>@counter-style</code> at-rule</td>
+                </tr>
+                <tr>
+                  <th scope="row">
+          Inherited
+        </th>
+                  <td>
+                  n/a
+                </td>
+                </tr>
+              </table>
+            </div>
+          </div>
+        </div>
+        <div>
+          <div id="prop-suffix-comments">Comments</div>
+          <p>
+	The <code>suffix</code> descriptor specifies content added to the end of a custom counter representation.
+	</p>
+        </div>
+        <div>
+          <div id="prop-suffix-spec">Specification</div>
+          <ul>
+            <li>
+              <a href="https://www.w3.org/TR/css-counter-styles-3/#counter-style-suffix">CSS Counter Styles Level 3</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </details>
+    <details>
+      <summary>
+        <h6 id="prop-symbols">symbols <a href="#prop-symbols" class="hash-link"> </a></h6>
+      </summary>
+      <div>
+        <div>
+          <div id="prop-symbols-syntax">Syntax</div>
+          <div class="example">
+            <div class="syntax-block">
+              <code>symbols: [ <span>&lt;<i>string</i>&gt;</span> | <span>&lt;<i>custom-ident</i>&gt;</span> ]+</code>
+            </div>
+          </div>
+        </div>
+        <div>
+          <div class="example">
+            <div class="syntax-block">
+              <table class="property-table">
+                <tr>
+                  <th scope="row">
+          Initial value
+        </th>
+                  <td>
+                    <code>n/a</code>
+                  </td>
+                </tr>
+                <tr>
+                  <th scope="row">
+          Applies to
+        </th>
+                  <td><code>@counter-style</code> at-rule</td>
+                </tr>
+                <tr>
+                  <th scope="row">
+          Inherited
+        </th>
+                  <td>
+                  n/a
+                </td>
+                </tr>
+              </table>
+            </div>
+          </div>
+        </div>
+        <div>
+          <div id="prop-symbols-comments">Comments</div>
+          <p>
+	The <code>symbols</code> descriptor specifies the symbols used to represent a counter value.
+	</p>
+        </div>
+        <div>
+          <div id="prop-symbols-spec">Specification</div>
+          <ul>
+            <li>
+              <a href="https://www.w3.org/TR/css-counter-styles-3/#counter-style-symbols">CSS Counter Styles Level 3</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </details>
+    <details>
+      <summary>
+        <h6 id="prop-system">system <a href="#prop-system" class="hash-link"> </a></h6>
+      </summary>
+      <div>
+        <div>
+          <div id="prop-system-syntax">Syntax</div>
+          <div class="example">
+            <div class="syntax-block">
+              <code>system: cyclic | numeric | alphabetic | symbolic | additive | [ fixed <span>&lt;<i>integer</i>&gt;</span>? ] | extends <span>&lt;<i>counter-style-name</i>&gt;</span></code>
+            </div>
+          </div>
+        </div>
+        <div>
+          <div class="example">
+            <div class="syntax-block">
+              <table class="property-table">
+                <tr>
+                  <th scope="row">
+          Initial value
+        </th>
+                  <td>
+                    <code>symbolic</code>
+                  </td>
+                </tr>
+                <tr>
+                  <th scope="row">
+          Applies to
+        </th>
+                  <td><code>@counter-style</code> at-rule</td>
+                </tr>
+                <tr>
+                  <th scope="row">
+          Inherited
+        </th>
+                  <td>
+                  n/a
+                </td>
+                </tr>
+              </table>
+            </div>
+          </div>
+        </div>
+        <div>
+          <div id="prop-system-comments">Comments</div>
+          <p>
+	The <code>system</code> descriptor specifies how to represent a counter value.
+	</p>
+        </div>
+        <div>
+          <div id="prop-system-spec">Specification</div>
+          <ul>
+            <li>
+              <a href="https://www.w3.org/TR/css-counter-styles-3/#counter-style-system">CSS Counter Styles Level 3</a>
             </li>
           </ul>
         </div>

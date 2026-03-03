@@ -122,6 +122,7 @@ type-value =
             "color" |
             "content" |
             "counter-style" |
+            "counter-style-name" |
             "declaration-value" |
             "dpi" |
             "explicit-track-list" |

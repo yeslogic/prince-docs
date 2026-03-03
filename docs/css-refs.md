@@ -44,6 +44,10 @@ Prince supports, fully or partially, the following CSS specifications:
 <td>Prince does not support the <code>marker-side</code> property.</td>
 </tr>
 <tr>
+<td><a href="https://www.w3.org/TR/css-counter-styles-3/">CSS Counter Styles Level&nbsp;3</a></td>
+<td>Prince does not support the <code>speak-as</code> descriptor, <code>&lt;<i>image</i>&gt;</code> in symbols, nor <code>ethiopic-numeric</code>.</td>
+</tr>
+<tr>
 <td><a href="https://www.w3.org/TR/css-gcpm-3/">CSS Generated Content for Paged Media Module</a></td>
 <td>Prince recognizes <code>footnote-display</code> and <code>string-set</code> as well as the mechanism for running elements.  It does not recognize the <code>running</code> or <code>footnote-policy</code> properties, but Prince provides a different interface to the functionality of footnotes (see <a href="/doc/styling#footnotes">Footnotes</a>).</td>
 </tr>

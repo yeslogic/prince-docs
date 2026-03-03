@@ -60,6 +60,30 @@ NOTE: The current build process will cause this file's content to appear in a Ja
 </property>
 
 <property>
+	<name>additive-symbols</name>
+	<value>
+      <repeat min="1" sep=",">
+        <reorderable>
+          <type>integer</type>
+          <choice>
+            <string>string</string>
+            <ident>custom-ident</ident>
+          </choice>
+        </reorderable>
+      </repeat>
+	</value>
+	<initial>n/a</initial>
+    <applyto>@counter-style at-rule</applyto>
+	<inherit>n/a</inherit>
+    <comments>
+    <p>
+    The descriptor <code>additive-symbols</code> specifies the symbols used to represent a counter value when the <code><property name="system"/></code> descriptor is set to <code>additive</code>.
+    </p>
+    </comments>
+    <spec><a href="https://www.w3.org/TR/css-ui-4/#widget-accent">CSS Basic User Interface Module Level 4</a></spec>
+</property>
+
+<property>
 	<name>align-content</name>
 	<value>
 	  <choice>
@@ -2131,6 +2155,22 @@ NOTE: The current build process will cause this file's content to appear in a Ja
     <applyto>table-cell elements</applyto>
     <inherit>yes</inherit>
     <spec><a href="https://www.w3.org/TR/CSS2/tables.html#empty-cells">CSS 2.1</a></spec>
+</property>
+
+<property>
+	<name>fallback</name>
+	<value>
+      <type>counter-style-name</type>
+	</value>
+	<initial>decimal</initial>
+    <applyto>@counter-style at-rule</applyto>
+	<inherit>n/a</inherit>
+	<comments>
+	<p>
+	The <code>fallback</code> descriptor specifies a counter style to fall back to if the defined style cannot be created.
+	</p>
+    </comments>
+    <spec><a href="https://www.w3.org/TR/css-counter-styles-3/#counter-style-fallback">CSS Counter Styles Level 3</a></spec>
 </property>
 
 <property>
@@ -4553,6 +4593,33 @@ NOTE: The current build process will cause this file's content to appear in a Ja
 </property>
 
 <property>
+    <name>negative</name>
+    <value>
+	<sequence>
+      <choice>
+        <string>string</string>
+        <ident>custom-ident</ident>
+      </choice>
+      <optional>
+        <choice>
+          <string>string</string>
+          <ident>custom-ident</ident>
+        </choice>
+      </optional>
+    </sequence>
+    </value>
+    <initial>"\2D" ("-" hyphen-minus)</initial>
+    <applyto>@counter-style at-rule</applyto>
+    <inherit>n/a</inherit>
+    <comments>
+	<p>
+	This descriptor specifies how negative counter values are represented. When the counter value is negative, the first value is prepended to the counter, the second one is appended.
+	</p>
+    </comments>
+    <spec><a href="https://www.w3.org/TR/css-counter-styles-3/#counter-style-negative">CSS Counter Styles Level 3</a></spec>
+</property>
+
+<property>
     <name>object-fit</name>
     <value>
 	<choice>
@@ -4917,6 +4984,28 @@ supplier, item { overflow-wrap: normal; }
 </property>
 
 <property>
+    <name>pad</name>
+    <value>
+    <reorderable>
+      <integer>integer</integer>
+      <choice>
+        <string>string</string>
+        <ident>custom-ident</ident>
+      </choice>
+    </reorderable>
+    </value>
+    <initial>0 ""</initial>
+    <applyto>@custom-counter at-rule</applyto>
+    <inherit>n/a</inherit>
+    <comments>
+	<p>
+	The descriptor <code>pad</code> specifies the minimum length for marker representations.
+	</p>
+    </comments>
+    <spec><a href="https://www.w3.org/TR/css-counter-styles-3/#counter-style-pad">CSS Counter Styles Level 3</a></spec>
+</property>
+
+<property>
     <name>padding</name>
     <value>
 	<repeat min="1" max="4">
@@ -5154,6 +5243,25 @@ supplier, item { overflow-wrap: normal; }
     </comments>
     <spec><a href="https://www.w3.org/TR/CSS2/visuren.html#propdef-position">CSS 2.1</a></spec>
     <spec><a href="https://www.w3.org/TR/css-gcpm-3/#running-syntax">CSS Generated Content for Paged Media Module</a></spec>
+</property>
+
+<property>
+    <name>prefix</name>
+    <value>
+      <choice>
+        <string>string</string>
+        <ident>custom-ident</ident>
+      </choice>
+    </value>
+    <initial>"" (the empty string)</initial>
+    <applyto>@counter-style at-rule</applyto>
+    <inherit>n/a</inherit>
+    <comments>
+	<p>
+	The <code>prefix</code> descriptor specifies content added to the beginning of a custom counter representation.
+	</p>
+    </comments>
+    <spec><a href="https://www.w3.org/TR/css-counter-styles-3/#counter-style-prefix">CSS Counter Styles Level 3</a></spec>
 </property>
 
 <property>
@@ -7957,6 +8065,32 @@ blockquote { margin: 1rem; -prince-resize-options: -1rem; }
 </property>
 
 <property>
+    <name>range</name>
+    <value>
+    <choice>
+      <repeat min="1" sep=",">
+        <repeat min="2" max="2">
+          <choice>
+            <integer>integer</integer>
+            <keyword>infinite</keyword>
+          </choice>
+        </repeat>
+      </repeat>
+      <keyword>auto</keyword>
+    </choice>
+    </value>
+    <initial>auto</initial>
+    <applyto>@custom-counter at-rule</applyto>
+    <inherit>n/a</inherit>
+    <comments>
+	<p>
+	The descriptor <code>range</code> specifies one or more ranges of counter values for which the style is applied.
+	</p>
+    </comments>
+    <spec><a href="https://www.w3.org/TR/css-counter-styles-3/#counter-style-range">CSS Counter Styles Level 3</a></spec>
+</property>
+
+<property>
     <name>right</name>
     <value>
 	<choice>
@@ -8350,6 +8484,78 @@ blockquote { margin: 1rem; -prince-resize-options: -1rem; }
 	</p>
     </comments>
     <spec><a href="https://www.w3.org/TR/SVG11/painting.html#StrokeWidthProperty">SVG 1.1</a></spec>
+</property>
+
+<property>
+    <name>suffix</name>
+    <value>
+      <choice>
+        <string>string</string>
+        <ident>custom-ident</ident>
+      </choice>
+    </value>
+    <initial>"" (the empty string)</initial>
+    <applyto>@counter-style at-rule</applyto>
+    <inherit>n/a</inherit>
+    <comments>
+	<p>
+	The <code>suffix</code> descriptor specifies content added to the end of a custom counter representation.
+	</p>
+    </comments>
+    <spec><a href="https://www.w3.org/TR/css-counter-styles-3/#counter-style-suffix">CSS Counter Styles Level 3</a></spec>
+</property>
+
+<property>
+	<name>symbols</name>
+	<value>
+	<repeat min="1">
+        <choice>
+            <string>string</string>
+            <ident>custom-ident</ident>
+        </choice>
+	</repeat>
+	</value>
+	<initial>n/a</initial>
+    <applyto>@counter-style at-rule</applyto>
+	<inherit>n/a</inherit>
+	<comments>
+	<p>
+	The <code>symbols</code> descriptor specifies the symbols used to represent a counter value.
+	</p>
+    </comments>
+    <spec><a href="https://www.w3.org/TR/css-counter-styles-3/#counter-style-symbols">CSS Counter Styles Level 3</a></spec>
+</property>
+
+<property>
+	<name>system</name>
+	<value>
+	<choice>
+		<keyword>cyclic</keyword>
+		<keyword>numeric</keyword>
+		<keyword>alphabetic</keyword>
+		<keyword>symbolic</keyword>
+		<keyword>additive</keyword>
+        <sequence>
+            <keyword>fixed</keyword>
+            <optional>
+                <type>integer</type>
+            </optional>
+        </sequence>
+        <sequence>
+            <keyword>extends</keyword>
+            <type>counter-style-name</type>
+        </sequence>
+	</choice>
+	</value>
+	<initial>symbolic</initial>
+    <applyto>@counter-style at-rule</applyto>
+	<inherit>n/a</inherit>
+	<comments>
+	<p>
+	The <code>system</code> descriptor specifies how to represent a counter value.
+	</p>
+    </comments>
+    <spec><a href="https://www.w3.org/TR/css-counter-styles-3/#counter-style-system">CSS Counter Styles Level 3</a></spec>
 </property>
 
 <property>
