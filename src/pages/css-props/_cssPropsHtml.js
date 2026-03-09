@@ -20069,6 +20069,94 @@ supplier, item { overflow-wrap: normal; }
     </details>
     <details>
       <summary class="ext" title="Prince extension">
+        <h6 id="prop-prince-pdf-list-numbering">-prince-pdf-list-numbering* <a href="#prop-prince-pdf-list-numbering" class="hash-link"> </a></h6>
+      </summary>
+      <div>
+        <div>
+          <div id="prop-prince-pdf-list-numbering-syntax">Syntax</div>
+          <div class="example">
+            <div class="syntax-block">
+              <code>-prince-pdf-list-numbering: none | <span>&lt;<i>string</i>&gt;</span></code>
+            </div>
+          </div>
+        </div>
+        <div>
+          <div class="example">
+            <div class="syntax-block">
+              <table class="property-table">
+                <tr>
+                  <th scope="row">
+          Initial value
+        </th>
+                  <td>
+                    <code>none</code>
+                  </td>
+                </tr>
+                <tr>
+                  <th scope="row">
+          Applies to
+        </th>
+                  <td>@counter-style</td>
+                </tr>
+                <tr>
+                  <th scope="row">
+          Inherited
+        </th>
+                  <td>
+                  n/a
+                </td>
+                </tr>
+              </table>
+            </div>
+          </div>
+        </div>
+        <div>
+          <div id="prop-prince-pdf-list-numbering-examples">Examples</div>
+          <div class="example">
+            <div class="programlisting">
+              <pre>
+                <code class="hljs">@counter-style {
+    -prince-pdf-list-numbering: "Decimal"
+}</code>
+              </pre>
+            </div>
+          </div>
+        </div>
+        <div>
+          <div id="prop-prince-pdf-list-numbering-comments">Comments</div>
+          <p>
+	This descriptor can be used to specify how list numbering should be generated. The valid values for the string are:
+	</p>
+          <ul>
+      <li><code>"None"</code> No autonumbering; Lbl elements (if present) contain arbitrary text not subject to any numbering scheme</li>
+      <li><code>"Disc"</code> Solid circular bullet</li>
+      <li><code>"Circle"</code> Open circular bullet</li>
+      <li><code>"Square"</code> Solid square bullet</li>
+      <li><code>"Decimal"</code> Decimal arabic numerals (1–9, 10–99, … )</li>
+      <li><code>"UpperRoman"</code> Uppercase roman numerals (I, II, III, IV, … )</li>
+      <li><code>"LowerRoman"</code> Lowercase roman numerals (i, ii, iii, iv, … )</li>
+      <li><code>"UpperAlpha"</code> Uppercase letters (A, B, C, … )</li>
+      <li><code>"LowerAlpha"</code> Lowercase letters (a, b, c, … )</li>
+    </ul>
+          <p>
+    The uppercase and lowercase letters use respectively A to Z and a to z for the first 26 pages, AA to ZZ and aa to zz for the next 26, and so on.
+    </p>
+        </div>
+        <div>
+          <div id="prop-prince-pdf-list-numbering-seealso">See Also</div>
+          <ul>
+            <li>
+              <a href="/doc/styling/#lists">Lists</a>
+            </li>
+            <li>
+              <a href="/doc/gen-content/#counter-styles">Counter styles</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </details>
+    <details>
+      <summary class="ext" title="Prince extension">
         <h6 id="prop-prince-pdf-open-action">-prince-pdf-open-action* <a href="#prop-prince-pdf-open-action" class="hash-link"> </a></h6>
       </summary>
       <div>
@@ -20535,6 +20623,87 @@ supplier, item { overflow-wrap: normal; }
         </div>
         <div>
           <div id="prop-prince-pdf-page-mode-seealso">See Also</div>
+          <ul>
+            <li>
+              <a href="/doc/prince-output/#pdf-pages">PDF Pages</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </details>
+    <details>
+      <summary class="ext" title="Prince extension">
+        <h6 id="prop-prince-pdf-page-numbering">-prince-pdf-page-numbering* <a href="#prop-prince-pdf-page-numbering" class="hash-link"> </a></h6>
+      </summary>
+      <div>
+        <div>
+          <div id="prop-prince-pdf-page-numbering-syntax">Syntax</div>
+          <div class="example">
+            <div class="syntax-block">
+              <code>-prince-pdf-page-numbering: none | <span>&lt;<i>string</i>&gt;</span></code>
+            </div>
+          </div>
+        </div>
+        <div>
+          <div class="example">
+            <div class="syntax-block">
+              <table class="property-table">
+                <tr>
+                  <th scope="row">
+          Initial value
+        </th>
+                  <td>
+                    <code>none</code>
+                  </td>
+                </tr>
+                <tr>
+                  <th scope="row">
+          Applies to
+        </th>
+                  <td>@counter-style</td>
+                </tr>
+                <tr>
+                  <th scope="row">
+          Inherited
+        </th>
+                  <td>
+                  n/a
+                </td>
+                </tr>
+              </table>
+            </div>
+          </div>
+        </div>
+        <div>
+          <div id="prop-prince-pdf-page-numbering-examples">Examples</div>
+          <div class="example">
+            <div class="programlisting">
+              <pre>
+                <code class="hljs">@counter-style {
+    -prince-pdf-page-numbering: "D"
+}</code>
+              </pre>
+            </div>
+          </div>
+        </div>
+        <div>
+          <div id="prop-prince-pdf-page-numbering-comments">Comments</div>
+          <p>
+	This descriptor can be used to specify how page numbering should be generated. The valid values for the string are:
+	</p>
+          <ul>
+      <li><code>"D"</code> Decimal arabic numerals</li>
+      <li><code>"R"</code> Uppercase roman numerals</li>
+      <li><code>"r"</code> Lowercase roman numerals</li>
+      <li><code>"A"</code> Uppercase letters</li>
+      <li><code>"a"</code> Lowercase letters</li>
+    </ul>
+          <p>
+    The uppercase and lowercase letters use respectively A to Z and a to z for the first 26 pages, AA to ZZ and aa to zz for the next 26, and so on.
+    </p>
+        </div>
+        <div>
+          <div id="prop-prince-pdf-page-numbering-seealso">See Also</div>
           <ul>
             <li>
               <a href="/doc/prince-output/#pdf-pages">PDF Pages</a>

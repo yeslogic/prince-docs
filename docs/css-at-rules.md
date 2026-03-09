@@ -339,7 +339,7 @@ Unlike media queries, this uses the classical two-valued logic.</td>
 <td>This descriptor specifies a counter style to fall back to if the defined style cannot be created.</td>
 </tr>
 <tr>
-<td colSpan="2">Additionally, <code>@counter-style</code> takes the CSS descriptors <code><a href="/doc/css-props#prop-prince-pdf-page-numbering">prince-pdf-page-numbering</a></code> and <code><a href="/doc/css-props#prop-prince-pdf-list-numbering">prince-pdf-list-numbering</a></code>.</td>
+<td colSpan="2">Additionally, <code>@counter-style</code> takes the CSS descriptors <code><a href="/doc/css-props#prop-prince-pdf-page-numbering">-prince-pdf-page-numbering</a></code> and <code><a href="/doc/css-props#prop-prince-pdf-list-numbering">-prince-pdf-list-numbering</a></code>.</td>
 </tr>
 </table>
 

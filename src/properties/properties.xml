@@ -7096,6 +7096,44 @@ supplier, item { overflow-wrap: normal; }
 </property>
 
 <property>
+    <name>prince-pdf-list-numbering</name>
+    <value>
+	<choice>
+	    <keyword>none</keyword>
+	    <string>string</string>
+	</choice>
+    </value>
+    <initial>none</initial>
+    <applyto>@counter-style</applyto>
+    <inherit>n/a</inherit>
+    <extension/>
+    <example>@counter-style {
+    -prince-pdf-list-numbering: "Decimal"
+}</example>
+    <see><a href="/doc/styling/#lists">Lists</a></see>
+    <see><a href="/doc/gen-content/#counter-styles">Counter styles</a></see>
+    <comments>
+	<p>
+	This descriptor can be used to specify how list numbering should be generated. The valid values for the string are:
+	</p>
+    <ul>
+      <li><code>"None"</code> No autonumbering; Lbl elements (if present) contain arbitrary text not subject to any numbering scheme</li>
+      <li><code>"Disc"</code> Solid circular bullet</li>
+      <li><code>"Circle"</code> Open circular bullet</li>
+      <li><code>"Square"</code> Solid square bullet</li>
+      <li><code>"Decimal"</code> Decimal arabic numerals (1–9, 10–99, … )</li>
+      <li><code>"UpperRoman"</code> Uppercase roman numerals (I, II, III, IV, … )</li>
+      <li><code>"LowerRoman"</code> Lowercase roman numerals (i, ii, iii, iv, … )</li>
+      <li><code>"UpperAlpha"</code> Uppercase letters (A, B, C, … )</li>
+      <li><code>"LowerAlpha"</code> Lowercase letters (a, b, c, … )</li>
+    </ul>
+    <p>
+    The uppercase and lowercase letters use respectively A to Z and a to z for the first 26 pages, AA to ZZ and aa to zz for the next 26, and so on.
+    </p>
+    </comments>
+</property>
+
+<property>
     <name>prince-pdf-open-action</name>
     <value>
     <choice>
@@ -7323,6 +7361,39 @@ supplier, item { overflow-wrap: normal; }
 	file when it is opened. For example, whether the bookmarks panel should
 	be displayed, and whether the viewer should be fullscreen.
 	</p>
+    </comments>
+</property>
+
+<property>
+    <name>prince-pdf-page-numbering</name>
+    <value>
+	<choice>
+	    <keyword>none</keyword>
+	    <string>string</string>
+	</choice>
+    </value>
+    <initial>none</initial>
+    <applyto>@counter-style</applyto>
+    <inherit>n/a</inherit>
+    <extension/>
+    <example>@counter-style {
+    -prince-pdf-page-numbering: "D"
+}</example>
+    <see><a href="/doc/prince-output/#pdf-pages">PDF Pages</a></see>
+    <comments>
+	<p>
+	This descriptor can be used to specify how page numbering should be generated. The valid values for the string are:
+	</p>
+    <ul>
+      <li><code>"D"</code> Decimal arabic numerals</li>
+      <li><code>"R"</code> Uppercase roman numerals</li>
+      <li><code>"r"</code> Lowercase roman numerals</li>
+      <li><code>"A"</code> Uppercase letters</li>
+      <li><code>"a"</code> Lowercase letters</li>
+    </ul>
+    <p>
+    The uppercase and lowercase letters use respectively A to Z and a to z for the first 26 pages, AA to ZZ and aa to zz for the next 26, and so on.
+    </p>
     </comments>
 </property>
 
