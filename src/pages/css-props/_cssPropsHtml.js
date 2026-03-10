@@ -4301,7 +4301,7 @@ const cssPropsHtml = String.raw`
           <div id="prop-clip-syntax">Syntax</div>
           <div class="example">
             <div class="syntax-block">
-              <code>clip: auto | rect( [ auto | <span>&lt;<i>length</i>&gt;</span> ]{4} )</code>
+              <code>clip: auto | rect( auto | <span>&lt;<i>length</i>&gt;</span>{4} )</code>
             </div>
           </div>
         </div>
@@ -8395,8 +8395,9 @@ const cssPropsHtml = String.raw`
             <div class="syntax-block">
               <code>font-variant: <br/>   normal
    | [ [ small-caps | all-small-caps ] || [ common-ligatures | no-common-ligatures ] || [ discretionary-ligatures | no-discretionary-ligatures ] || [ historical-ligatures | no-historical-ligatures ] || [ contextual | no-contextual ]
+       || stylistic( <span>&lt;<i>feature-value-name</i>&gt;</span> ) || historical-forms || styleset( <span>&lt;<i>feature-value-name</i>&gt;</span># ) || character-variant( <span>&lt;<i>feature-value-name</i>&gt;</span># ) || swash( <span>&lt;<i>feature-value-name</i>&gt;</span> ) || ornaments( <span>&lt;<i>feature-value-name</i>&gt;</span> ) || annotation( <span>&lt;<i>feature-value-name</i>&gt;</span> )
        || [ lining-nums | oldstyle-nums ] || [ proportional-nums | tabular-nums ] || [ diagonal-fractions | stacked-fractions ] || ordinal || slashed-zero
-       || <span class="ext">prince-no-kerning</span> || <span class="ext">prince-opentype( [ <span>&lt;<i>feature</i>&gt;</span> ]+ )</span> ]</code>
+       || <span class="ext">prince-no-kerning</span> || <span class="ext">prince-opentype( <span>&lt;<i>feature</i>&gt;</span>+ )</span> ]</code>
             </div>
           </div>
         </div>
@@ -8459,6 +8460,11 @@ const cssPropsHtml = String.raw`
           <ul>
             <li>
               <code>
+                <a href="#prop-font-variant-alternates">font-variant-alternates</a>
+              </code>
+            </li>
+            <li>
+              <code>
                 <a href="#prop-font-variant-caps">font-variant-caps</a>
               </code>
             </li>
@@ -8503,6 +8509,72 @@ const cssPropsHtml = String.raw`
           <ul>
             <li>
               <a href="https://www.w3.org/TR/CSS2/fonts.html#propdef-font-variant">CSS 2.1</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </details>
+    <details>
+      <summary>
+        <h6 id="prop-font-variant-alternates">font-variant-alternates <a href="#prop-font-variant-alternates" class="hash-link"> </a></h6>
+      </summary>
+      <div>
+        <div>
+          <div id="prop-font-variant-alternates-syntax">Syntax</div>
+          <div class="example">
+            <div class="syntax-block">
+              <code>font-variant-alternates: normal | [ stylistic( <span>&lt;<i>feature-value-name</i>&gt;</span> ) || historical-forms || styleset( <span>&lt;<i>feature-value-name</i>&gt;</span># ) || character-variant( <span>&lt;<i>feature-value-name</i>&gt;</span># ) || swash( <span>&lt;<i>feature-value-name</i>&gt;</span> ) || ornaments( <span>&lt;<i>feature-value-name</i>&gt;</span> ) || annotation( <span>&lt;<i>feature-value-name</i>&gt;</span> ) ]</code>
+            </div>
+          </div>
+        </div>
+        <div>
+          <div class="example">
+            <div class="syntax-block">
+              <table class="property-table">
+                <tr>
+                  <th scope="row">
+          Initial value
+        </th>
+                  <td>
+                    <code>normal</code>
+                  </td>
+                </tr>
+                <tr>
+                  <th scope="row">
+          Applies to
+        </th>
+                  <td>all elements</td>
+                </tr>
+                <tr>
+                  <th scope="row">
+          Inherited
+        </th>
+                  <td>
+                  yes
+                </td>
+                </tr>
+              </table>
+            </div>
+          </div>
+        </div>
+        <div>
+          <div id="prop-font-variant-alternates-comments">Comments</div>
+          <p/>
+          <p class="note">This property can also be set by the <code><a href="#prop-font-variant">font-variant</a></code> shorthand (and hence also by <code><a href="#prop-font">font</a></code>).</p>
+        </div>
+        <div>
+          <div id="prop-font-variant-alternates-seealso">See Also</div>
+          <ul>
+            <li>
+              <a href="/doc/styling/#opentype-features-in-prince">OpenType Features in Prince</a>
+            </li>
+          </ul>
+        </div>
+        <div>
+          <div id="prop-font-variant-alternates-spec">Specification</div>
+          <ul>
+            <li>
+              <a href="https://www.w3.org/TR/css-fonts-4/#font-variant-alternates-prop">CSS Fonts Module Level 4</a>
             </li>
           </ul>
         </div>
@@ -22762,7 +22834,7 @@ blockquote { margin: 1rem; -prince-resize-options: -1rem; }
           <div id="prop-src-syntax">Syntax</div>
           <div class="example">
             <div class="syntax-block">
-              <code>src: [ url( <span>&lt;<i>filename</i>&gt;</span> ) [ format( [ <span>&lt;<i>format</i>&gt;</span> ]+ ) ]? [ tech( [ <span>&lt;<i>font-tech</i>&gt;</span> ]+ ) ]? | local( <span>&lt;<i>name</i>&gt;</span> ) | <span class="ext">prince-lookup( <span>&lt;<i>name</i>&gt;</span> )</span> ]+</code>
+              <code>src: [ url( <span>&lt;<i>filename</i>&gt;</span> ) [ format( <span>&lt;<i>format</i>&gt;</span>+ ) ]? [ tech( <span>&lt;<i>font-tech</i>&gt;</span>+ ) ]? | local( <span>&lt;<i>name</i>&gt;</span> ) | <span class="ext">prince-lookup( <span>&lt;<i>name</i>&gt;</span> )</span> ]+</code>
             </div>
           </div>
         </div>

@@ -95,6 +95,7 @@ Microsoft has a list of the OpenType feature names [here](https://learn.microsof
 
 In order to enable specific OpenType features, or specific font variants, the following properties can be used:
 
+* The property [`font-variant-alternates`](css-props.md#prop-font-variant-alternates) controls the usage of alternate glyphs, as eventually defined in the [`@font-feature-values`](css-at-rules.md#at-font-feature-values) at-rule.
 * The property [`font-variant-caps`](css-props.md#prop-font-variant-caps) enables the display of small capitals (the OpenType features `smcp` and `c2pc`).
 * The property [`font-variant-ligatures`](css-props.md#prop-font-variant-ligatures) allows for fine-tuning of various ligature types.  (See also [Typographic Ligatures](cookbook.md#typographic-ligatures)).
 * The property [`font-variant-numeric`](css-props.md#prop-font-variant-numeric) specifies control over numeric forms.
@@ -102,7 +103,7 @@ In order to enable specific OpenType features, or specific font variants, the fo
 Note that the [`font-variant`](css-props.md#prop-font-variant) CSS property can be used as a shorthand for these properties.
 
 ```css
-    font-variant: historical-ligatures all-small-caps oldstyle-nums;
+    font-variant: historical-forms historical-ligatures all-small-caps oldstyle-nums;
 ```
 
 Prince also supports language-specific OpenType shaping with the `locl` feature, which is automatically enabled with the use of the HTML or XML `lang` or `xml:lang` attributes.  As an example, the Arno Pro font has small-caps that are language sensitive, since Turkish has unique case rules for dotted and dotless letter "i".

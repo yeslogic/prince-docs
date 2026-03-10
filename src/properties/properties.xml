@@ -3101,6 +3101,33 @@ NOTE: The current build process will cause this file's content to appear in a Ja
                 </choice>
                 </group>
                 <group>
+                <multiple>
+                    <function name="stylistic">
+                        <ident>feature-value-name</ident>
+                    </function>
+                    <keyword>historical-forms</keyword>
+                    <function name="styleset">
+                        <repeat min="1" sep=",">
+                            <ident>feature-value-name</ident>
+                        </repeat>
+                    </function>
+                    <function name="character-variant">
+                        <repeat min="1" sep=",">
+                            <ident>feature-value-name</ident>
+                        </repeat>
+                    </function>
+                    <function name="swash">
+                        <ident>feature-value-name</ident>
+                    </function>
+                    <function name="ornaments">
+                        <ident>feature-value-name</ident>
+                    </function>
+                    <function name="annotation">
+                        <ident>feature-value-name</ident>
+                    </function>
+                </multiple>
+                </group>
+                <group>
                 <choice>
                     <keyword>lining-nums</keyword>
                     <keyword>oldstyle-nums</keyword>
@@ -3137,6 +3164,7 @@ NOTE: The current build process will cause this file's content to appear in a Ja
     <applyto>all elements, @font-face at-rule</applyto>
     <inherit>yes</inherit>
     <shorthand>
+        <prop>font-variant-alternates</prop>
         <prop>font-variant-caps</prop>
         <prop>font-variant-ligatures</prop>
         <prop>font-variant-numeric</prop>
@@ -3164,6 +3192,48 @@ NOTE: The current build process will cause this file's content to appear in a Ja
     OpenType feature, which defines font kerning.  The property <code><property name="font-kerning"/></code> is the better way of achieving the same.</p>
     </comments>
     <spec><a href="https://www.w3.org/TR/CSS2/fonts.html#propdef-font-variant">CSS 2.1</a></spec>
+</property>
+
+<property>
+    <name>font-variant-alternates</name>
+    <value>
+        <choice>
+            <keyword>normal</keyword>
+            <multiple>
+                <function name="stylistic">
+                    <ident>feature-value-name</ident>
+                </function>
+                <keyword>historical-forms</keyword>
+                <function name="styleset">
+                    <repeat min="1" sep=",">
+                        <ident>feature-value-name</ident>
+                    </repeat>
+                </function>
+                <function name="character-variant">
+                    <repeat min="1" sep=",">
+                        <ident>feature-value-name</ident>
+                    </repeat>
+                </function>
+                <function name="swash">
+                    <ident>feature-value-name</ident>
+                </function>
+                <function name="ornaments">
+                    <ident>feature-value-name</ident>
+                </function>
+                <function name="annotation">
+                    <ident>feature-value-name</ident>
+                </function>
+            </multiple>
+        </choice>
+    </value>
+    <initial>normal</initial>
+    <applyto>all elements</applyto>
+    <inherit>yes</inherit>
+    <see><a href="/doc/styling/#opentype-features-in-prince">OpenType Features in Prince</a></see>
+    <comments>
+    <p></p>
+    </comments>
+    <spec><a href="https://www.w3.org/TR/css-fonts-4/#font-variant-alternates-prop">CSS Fonts Module Level 4</a></spec>
 </property>
 
 <property>
