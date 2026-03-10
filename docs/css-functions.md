@@ -6,6 +6,9 @@ In this section you find the documentation for the supported CSS functional expr
 
 \* functions marked with an asterisk are Prince extensions.
 
+The <span className="dep">functions with a line-through</span> are deprecated properties, support might be removed in a future Prince version.
+
+
 <table className="grid">
 <thead>
 <tr>
@@ -299,7 +302,7 @@ URL.</td>
 </td>
 <td>Retrieves the value defined with the <code><a href="/doc/css-props#prop-string-set">string-set</a></code> property.  See <a href="/doc/paged#copying-content-from-the-document">Copying content from the document</a>.</td>
 </tr>
-<tr>
+<tr className="dep">
 <td>
     <code>
     repeat( &lt;<i>string</i>&gt;+ )

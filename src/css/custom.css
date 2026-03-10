@@ -345,10 +345,10 @@ html.docs-doc-id-help .navbar__item:nth-child(4) {
 #prop-list .programlisting pre {
     white-space: normal;
 }
-#prop-list summary.dep, span.dep, #js-support-table .dep summary, span.dep {
+#prop-list summary.dep, span.dep, #js-support-table .dep summary, span.dep, .dep {
     text-decoration: line-through;
 }
-#prop-list summary.dep, #prop-list summary.dep + div, #prop-list summary.dep + div + div, #prop-list span.dep, #dep-props .dep, #js-support-table .dep, span.dep {
+#prop-list summary.dep, #prop-list summary.dep + div, #prop-list summary.dep + div + div, #prop-list span.dep, #dep-props .dep, #js-support-table .dep, span.dep, .dep {
     opacity: 0.4;
 }
 #prop-list summary#prop---custom-property-name, #prop-list summary#prop---custom-property-name + div .example .syntax-block > code {
