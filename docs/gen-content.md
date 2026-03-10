@@ -366,24 +366,12 @@ The following table shows examples of the various counter styles:
 </tr>
 </table>
 
-Two special functional expressions offer a more free approach to counters, by allowing for a custom sequence to be defined: `symbols()` and `repeat()`.  Once all defined symbols are used, the former continues its counting with decimal style, while the latter increases the counters by duplicating, triplicating, etc., the symbols.
+More complex styling of counters can be achieved with the [`@counter-style`](css-at-rules.md#at-counter-style) at-rule, which provides several descriptors to fine-tune their styling.
 
-<table>
-<tr>
-<td>symbols(\*, †, ‡)</td>
-<td>\*, †, ‡, 4, 5, 6, &#x2026;</td>
-</tr>
-<tr>
-<td>repeat(\*, †, ‡)</td>
-<td>\*, †, ‡, \*\*, ††, ‡‡, \*\*\*, †††, ‡‡‡, &#x2026;</td>
-</tr>
-</table>
+In addition to the descriptors from the spec, Prince allows two low-level custom properties to fine-tune list and page numbering, namely [`-prince-pdf-list-numbering`](css-props.md#prop-prince-pdf-list-numbering) and [`-prince-pdf-page-numbering`](css-props.md#prop-prince-pdf-page-numbering). These make use of the PDF numbering values.
 
-:::note
-When using the <code>symbols()</code> function it is advisable to define all the smybols needed for your counters - the fallback to decimal-style counters is mainly thought for debugging reasons.
-:::
 
-[User-defined counter styles](#user-defined-counter-styles) for custom counters can also be created with the help of [Script Functions](#script-functions).
+Even more complex [user-defined counter styles](#user-defined-counter-styles), which might not be covered by all other options, could be created with the help of [Script Functions](#script-functions).
 
 
 ## Cross-references

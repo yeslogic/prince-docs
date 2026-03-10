@@ -240,6 +240,14 @@ Prince allows for some degree of control on the pages and the page layout in a P
     }
 ```
 
+The numbering of pages itself can be fine-tuned with the CSS descriptor [`-prince-pdf-page-numbering`](css-props.md#prop-prince-pdf-page-numbering) in the [`@counter-style`](css-at-rules.md#at-counter-style) CSS at-rule. In the following example, the value `"r"` stands for lowercase roman PDF page numbering.
+
+```css
+    @page {
+        -prince-pdf-page-numbering: "r";
+    }
+```
+
 The property [`-prince-pdf-page-mode`](css-props.md#prop-prince-pdf-page-mode) can be used to set the default page mode for the PDF file when it is opened. For example, whether the bookmarks panel should be displayed, and whether the viewer should be fullscreen.
 
 ```css
