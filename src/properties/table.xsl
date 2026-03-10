@@ -593,11 +593,15 @@
         </xsl:apply-templates>
     </xsl:when>
     <xsl:otherwise>
-        <xsl:text>[ </xsl:text>
+        <xsl:if test="not(parent::function)">
+            <xsl:text>[ </xsl:text>
+        </xsl:if>
         <xsl:call-template name="sequence">
         <xsl:with-param name="indent" select="concat($indent, ' &#xa0;')"/>
         </xsl:call-template>
-        <xsl:text> ]</xsl:text>
+        <xsl:if test="not(parent::function)">
+            <xsl:text> ]</xsl:text>
+        </xsl:if>
     </xsl:otherwise>
     </xsl:choose>
     <xsl:if test="@sep and not(@min=@max)">
