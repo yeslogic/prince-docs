@@ -5816,7 +5816,7 @@ const cssPropsHtml = String.raw`
           <div id="prop-display-syntax">Syntax</div>
           <div class="example">
             <div class="syntax-block">
-              <code>display: inline | block | flex | inline-flex | grid | inline-grid | none | list-item | run-in | table | table-header-group | table-footer-group | table-row-group | table-row | table-cell | table-caption | table-column | table-column-group | inline-block | inline-table</code>
+              <code>display: inline | block | flex | inline-flex | grid | inline-grid | contents | none | list-item | run-in | table | table-header-group | table-footer-group | table-row-group | table-row | table-cell | table-caption | table-column | table-column-group | inline-block | inline-table</code>
             </div>
           </div>
         </div>
@@ -5864,6 +5864,9 @@ const cssPropsHtml = String.raw`
           <ul>
             <li>
               <a href="https://www.w3.org/TR/CSS2/visuren.html#display-prop">CSS 2.1</a>
+            </li>
+            <li>
+              <a href="https://www.w3.org/TR/css-display-3/">CSS Display Module Level 3</a>
             </li>
             <li>
               <a href="https://www.w3.org/TR/css-flexbox-1/#flex-containers">CSS Flexible Box Layout Module Level 1</a>

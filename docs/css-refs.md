@@ -32,6 +32,10 @@ Prince supports, fully or partially, the following CSS specifications:
 <td>Prince supports <code>opacity</code>. It supports some of the extensions of the <code>color</code> property.</td>
 </tr>
 <tr>
+<td><a href="https://www.w3.org/TR/css-display-3/">CSS Display Module Level&nbsp;3</a></td>
+<td>Prince supports <code>opacity</code>. It supports some of the extensions of the <code>color</code> property.</td>
+</tr>
+<tr>
 <td><a href="https://www.w3.org/TR/css-content-3/">CSS Generated Content Module Level&nbsp;3</a></td>
 <td>Prince does not recognize the <code>quotes</code> property and the quote-related content types.</td>
 </tr>
