@@ -318,7 +318,7 @@ Used in counters as a <code>counter-style</code>, it defines a sequentially repe
 <tr>
 <td>
     <code>
-    symbols( &lt;<i>string</i>&gt;+ )
+    symbols( [ cyclic | numeric | alphabetic | symbolic | fixed ]? &lt;<i>string</i>&gt;+ )
     </code>
 </td>
 <td>
