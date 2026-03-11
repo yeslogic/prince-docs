@@ -261,18 +261,7 @@ Unlike media queries, this uses the classical two-valued logic.</td>
 </th>
 </tr>
 <tr>
-<td colSpan="2">Allows for a user-friendly name in the <code><a href="/doc/css-props#prop-font-variant-alternates">font-variant-alternates</a></code> property for OpenType features.</td>
-</tr>
-<tr>
-<td>
-    <code>
-    <a href="/doc/css-props#prop-font-display">font-display</a>: auto | block | swap | fallback | optional
-    </code>
-</td>
-<td>This descriptor defines the default value of how a font face is displayed.</td>
-</tr>
-<tr>
-<td colSpan="2">Each of the following font feature values has the same meaning as the corresponding value of the <code><a href="/doc/css-props#prop-font-variant-alternates">font-variant-alternates</a></code> property.</td>
+<td colSpan="2">Allows for a user-friendly name in the <code><a href="/doc/css-props#prop-font-variant-alternates">font-variant-alternates</a></code> property for OpenType features. Each of the following font feature values has the same meaning as the corresponding value of the CSS property.</td>
 </tr>
 <tr>
 <td>

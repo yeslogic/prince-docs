@@ -2902,23 +2902,6 @@ NOTE: The current build process will cause this file's content to appear in a Ja
 </property>
 
 <property>
-    <name>font-display</name>
-    <value>
-        <choice>
-            <keyword>auto</keyword>
-            <keyword>block</keyword>
-            <keyword>swap</keyword>
-            <keyword>fallback</keyword>
-            <keyword>optional</keyword>
-        </choice>
-    </value>
-    <initial>auto</initial>
-    <applyto>@font-feature-values at-rule</applyto>
-    <inherit>n/a</inherit>
-    <spec><a href="https://www.w3.org/TR/css-fonts-4/#descdef-font-feature-values-font-display">CSS Fonts Module Level 4</a></spec>
-</property>
-
-<property>
     <name>font-family</name>
     <value>
 	<repeat min="1" sep=",">
