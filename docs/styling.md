@@ -95,7 +95,7 @@ Microsoft has a list of the OpenType feature names [here](https://learn.microsof
 
 In order to enable specific OpenType features, or specific font variants, the following properties can be used:
 
-* The property [`font-variant-alternates`](css-props.md#prop-font-variant-alternates) controls the usage of alternate glyphs, as eventually defined in the [`@font-feature-values`](css-at-rules.md#at-font-feature-values) at-rule.
+* The property [`font-variant-alternates`](css-props.md#prop-font-variant-alternates) controls the usage of alternate glyphs, which may be referenced by alternative names defined in the [`@font-feature-values`](css-at-rules.md#at-font-feature-values) at-rule.
 * The property [`font-variant-caps`](css-props.md#prop-font-variant-caps) enables the display of small capitals (the OpenType features `smcp` and `c2pc`).
 * The property [`font-variant-ligatures`](css-props.md#prop-font-variant-ligatures) allows for fine-tuning of various ligature types.  (See also [Typographic Ligatures](cookbook.md#typographic-ligatures)).
 * The property [`font-variant-numeric`](css-props.md#prop-font-variant-numeric) specifies control over numeric forms.

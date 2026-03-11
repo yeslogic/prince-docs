@@ -7920,6 +7920,60 @@ const cssPropsHtml = String.raw`
     </details>
     <details>
       <summary>
+        <h6 id="prop-font-display">font-display <a href="#prop-font-display" class="hash-link"> </a></h6>
+      </summary>
+      <div>
+        <div>
+          <div id="prop-font-display-syntax">Syntax</div>
+          <div class="example">
+            <div class="syntax-block">
+              <code>font-display: auto | block | swap | fallback | optional</code>
+            </div>
+          </div>
+        </div>
+        <div>
+          <div class="example">
+            <div class="syntax-block">
+              <table class="property-table">
+                <tr>
+                  <th scope="row">
+          Initial value
+        </th>
+                  <td>
+                    <code>auto</code>
+                  </td>
+                </tr>
+                <tr>
+                  <th scope="row">
+          Applies to
+        </th>
+                  <td><code>@font-feature-values</code> at-rule</td>
+                </tr>
+                <tr>
+                  <th scope="row">
+          Inherited
+        </th>
+                  <td>
+                  n/a
+                </td>
+                </tr>
+              </table>
+            </div>
+          </div>
+        </div>
+        <div/>
+        <div>
+          <div id="prop-font-display-spec">Specification</div>
+          <ul>
+            <li>
+              <a href="https://www.w3.org/TR/css-fonts-4/#descdef-font-feature-values-font-display">CSS Fonts Module Level 4</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </details>
+    <details>
+      <summary>
         <h6 id="prop-font-family">font-family <a href="#prop-font-family" class="hash-link"> </a></h6>
       </summary>
       <div>
@@ -8559,7 +8613,7 @@ const cssPropsHtml = String.raw`
         </div>
         <div>
           <div id="prop-font-variant-alternates-comments">Comments</div>
-          <p/>
+          <p>This property controls the usage of alternate glyphs, which may be referenced by alternative names defined in the <a href="/doc/css-at-rules/#at-font-feature-values">@font-feature-values</a> at-rule.</p>
           <p class="note">This property can also be set by the <code><a href="#prop-font-variant">font-variant</a></code> shorthand (and hence also by <code><a href="#prop-font">font</a></code>).</p>
         </div>
         <div>

@@ -254,6 +254,80 @@ Unlike media queries, this uses the classical two-valued logic.</td>
 
 <table className="grid">
 <tr>
+<th colSpan="2" id="at-font-feature-values">
+    <code>
+    @font-feature-values &lt;<i>font-family-name</i>&gt;# {"{"} &lt;<i>declaration-list</i>&gt; {"}"}
+    </code>
+</th>
+</tr>
+<tr>
+<td colSpan="2">Allows for a user-friendly name in the <code><a href="/doc/css-props#prop-font-variant-alternates">font-variant-alternates</a></code> property for OpenType features.</td>
+</tr>
+<tr>
+<td>
+    <code>
+    <a href="/doc/css-props#prop-font-display">font-display</a>: auto | block | swap | fallback | optional
+    </code>
+</td>
+<td>This descriptor defines the default value of how a font face is displayed.</td>
+</tr>
+<tr>
+<td colSpan="2">Each of the following font feature values has the same meaning as the corresponding value of the <code><a href="/doc/css-props#prop-font-variant-alternates">font-variant-alternates</a></code> property.</td>
+</tr>
+<tr>
+<td>
+    <code>
+    @stylistic {"{"} &lt;<i>declaration-list</i>&gt; {"}"}
+    </code>
+</td>
+<td rowSpan="7">Font feature values</td>
+</tr>
+<tr>
+<td>
+    <code>
+    @historical-forms {"{"} &lt;<i>declaration-list</i>&gt; {"}"}
+    </code>
+</td>
+</tr>
+<tr>
+<td>
+    <code>
+    @styleset {"{"} &lt;<i>declaration-list</i>&gt; {"}"}
+    </code>
+</td>
+</tr>
+<tr>
+<td>
+    <code>
+    @character-variant {"{"} &lt;<i>declaration-list</i>&gt; {"}"}
+    </code>
+</td>
+</tr>
+<tr>
+<td>
+    <code>
+    @swash {"{"} &lt;<i>declaration-list</i>&gt; {"}"}
+    </code>
+</td>
+</tr>
+<tr>
+<td>
+    <code>
+    @ornaments {"{"} &lt;<i>declaration-list</i>&gt; {"}"}
+    </code>
+</td>
+</tr>
+<tr>
+<td>
+    <code>
+    @annotation {"{"} &lt;<i>declaration-list</i>&gt; {"}"}
+    </code>
+</td>
+</tr>
+</table>
+
+<table className="grid">
+<tr>
 <th colSpan="2" id="at-counter-style">
     <code>
     @counter-style &lt;<i>counter-style-name</i>&gt; {"{"} &lt;<i>declaration-list</i>&gt; {"}"}
