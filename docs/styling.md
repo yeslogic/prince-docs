@@ -117,13 +117,28 @@ If this example is rendered with small-caps in the Arno Pro font, the two lines 
 
 ![Language-specific OpenType shaping](assets/images/opentype-shaping.png)
 
-The CSS property [`-prince-smart-typography`](css-props.md#prop-prince-smart-typography) applies the OpenType features `case` and `cpsp` if they are present in the font, in order to improve the typesetting of all-caps text.
-
 In cases where the XML or HTML attributes cannot be applied, such as in CSS generated content in [Before and After pseudo-elements](gen-content.md#before-and-after-pseudo-elements), or in [page margin boxes](paged.md#page-regions), the CSS property [`-prince-lang`](css-props.md#prop-prince-lang) can be used.
 
-It is possible to also enable other OpenType features, not covered by the previous properties, by using the [`font-variant`](css-props.md#prop-font-variant) CSS property with the `prince-opentype()` function (see [CSS Functional Expressions](css-functions.md)).
+Low-level OpenType features can be enabled selectively with the CSS property [`font-feature-settings`](css-props.md#prop-font-feature-settings). Web authors are however encouraged to always use higher-level alternatives, when available, such as the [`font-variant`](css-props.md#prop-font-variant) property, or all its longhand `font-variant-*` versions.
 
-It is a very powerful tool, but care must be taken in which order the features are enabled!  All required features need to be explicitly enabled: please note that enabling one feature will disable all the default features.
+:::note
+The entire `font-feature-settings` property value is set all at once, and unlike the `font-variant` properties, it is not possible to modify the inherited value by adding or removing individual features.
+:::
+
+Thus, instead of using
+
+```css
+    font-feature-settings: 'hlig', 'hist';
+```
+
+we are encouraged to use
+
+```css
+    font-variant-ligatures: historical-ligatures;
+    font-variant-alternates: historical-forms;
+```
+
+In order to improve the typesetting of all-caps text, Prince automatically enables the OpenType features `case` and `cpsp` for `text-transform: uppercase`, if these features are present in the font.  To disable this feature, Prince offers the CSS property [`-prince-smart-typography`](css-props.md#prop-prince-smart-typography).
 
 
 ### Variable fonts

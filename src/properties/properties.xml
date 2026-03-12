@@ -2943,6 +2943,38 @@ NOTE: The current build process will cause this file's content to appear in a Ja
 </property>
 
 <property>
+    <name>font-feature-settings</name>
+    <value>
+    <choice>
+        <keyword>normal</keyword>
+        <repeat min="1" sep=",">
+            <string>opentype-tag</string>
+            <optional>
+                <choice>
+                    <integer>integer</integer>
+                    <keyword>on</keyword>
+                    <keyword>off</keyword>
+                </choice>
+            </optional>
+        </repeat>
+    </choice>
+    </value>
+    <initial>normal</initial>
+    <applyto>all elements and text</applyto>
+    <inherit>yes</inherit>
+    <example>font-feature-settings: "case"</example>
+    <example>font-feature-settings: "case" 1</example>
+    <example>font-feature-settings: "case" on</example>
+    <see><a href="/doc/styling/#opentype-features-in-prince">OpenType Features in Prince</a></see>
+    <comments>
+	<p>
+	This property provides low-level control over OpenType font features. The specification however explicitly invites authors to always use other available mechanisms, where available: higher-level properties are more flexible and cascade much better.
+    </p>
+    </comments>
+    <spec><a href="https://www.w3.org/TR/css-fonts-4/#font-feature-settings-prop">CSS Fonts Module Level 4</a></spec>
+</property>
+
+<property>
     <name>font-kerning</name>
     <value>
         <choice>

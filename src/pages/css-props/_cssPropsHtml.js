@@ -8018,6 +8018,93 @@ const cssPropsHtml = String.raw`
     </details>
     <details>
       <summary>
+        <h6 id="prop-font-feature-settings">font-feature-settings <a href="#prop-font-feature-settings" class="hash-link"> </a></h6>
+      </summary>
+      <div>
+        <div>
+          <div id="prop-font-feature-settings-syntax">Syntax</div>
+          <div class="example">
+            <div class="syntax-block">
+              <code>font-feature-settings: normal | [ <span>&lt;<i>opentype-tag</i>&gt;</span> [ <span>&lt;<i>integer</i>&gt;</span> | on | off ]? ]#</code>
+            </div>
+          </div>
+        </div>
+        <div>
+          <div class="example">
+            <div class="syntax-block">
+              <table class="property-table">
+                <tr>
+                  <th scope="row">
+          Initial value
+        </th>
+                  <td>
+                    <code>normal</code>
+                  </td>
+                </tr>
+                <tr>
+                  <th scope="row">
+          Applies to
+        </th>
+                  <td>all elements and text</td>
+                </tr>
+                <tr>
+                  <th scope="row">
+          Inherited
+        </th>
+                  <td>
+                  yes
+                </td>
+                </tr>
+              </table>
+            </div>
+          </div>
+        </div>
+        <div>
+          <div id="prop-font-feature-settings-examples">Examples</div>
+          <div class="example">
+            <div class="programlisting">
+              <pre>
+                <code class="hljs">font-feature-settings: "case"</code>
+              </pre>
+            </div>
+            <div class="programlisting">
+              <pre>
+                <code class="hljs">font-feature-settings: "case" 1</code>
+              </pre>
+            </div>
+            <div class="programlisting">
+              <pre>
+                <code class="hljs">font-feature-settings: "case" on</code>
+              </pre>
+            </div>
+          </div>
+        </div>
+        <div>
+          <div id="prop-font-feature-settings-comments">Comments</div>
+          <p>
+	This property provides low-level control over OpenType font features. The specification however explicitly invites authors to always use other available mechanisms, where available: higher-level properties are more flexible and cascade much better.
+    </p>
+        </div>
+        <div>
+          <div id="prop-font-feature-settings-seealso">See Also</div>
+          <ul>
+            <li>
+              <a href="/doc/styling/#opentype-features-in-prince">OpenType Features in Prince</a>
+            </li>
+          </ul>
+        </div>
+        <div>
+          <div id="prop-font-feature-settings-spec">Specification</div>
+          <ul>
+            <li>
+              <a href="https://www.w3.org/TR/css-fonts-4/#font-feature-settings-prop">CSS Fonts Module Level 4</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </details>
+    <details>
+      <summary>
         <h6 id="prop-font-kerning">font-kerning <a href="#prop-font-kerning" class="hash-link"> </a></h6>
       </summary>
       <div>
@@ -8397,7 +8484,7 @@ const cssPropsHtml = String.raw`
    | [ [ small-caps | all-small-caps ] || [ common-ligatures | no-common-ligatures ] || [ discretionary-ligatures | no-discretionary-ligatures ] || [ historical-ligatures | no-historical-ligatures ] || [ contextual | no-contextual ]
        || stylistic( <span>&lt;<i>feature-value-name</i>&gt;</span> ) || historical-forms || styleset( <span>&lt;<i>feature-value-name</i>&gt;</span># ) || character-variant( <span>&lt;<i>feature-value-name</i>&gt;</span># ) || swash( <span>&lt;<i>feature-value-name</i>&gt;</span> ) || ornaments( <span>&lt;<i>feature-value-name</i>&gt;</span> ) || annotation( <span>&lt;<i>feature-value-name</i>&gt;</span> )
        || [ lining-nums | oldstyle-nums ] || [ proportional-nums | tabular-nums ] || [ diagonal-fractions | stacked-fractions ] || ordinal || slashed-zero
-       || <span class="ext">prince-no-kerning</span> || <span class="ext">prince-opentype( <span>&lt;<i>feature</i>&gt;</span>+ )</span> ]</code>
+       || <span class="ext"><span class="dep">prince-no-kerning</span></span> || <span class="ext"><span class="dep">prince-opentype( <span>&lt;<i>feature</i>&gt;</span>+ )</span></span> ]</code>
             </div>
           </div>
         </div>
@@ -8436,16 +8523,6 @@ const cssPropsHtml = String.raw`
           <div class="example">
             <div class="programlisting">
               <pre>
-                <code class="hljs">&lt;span style="font-family: SpecialFont; font-variant: prince-opentype(aalt(2))"&gt;&amp;amp;&lt;/span&gt;</code>
-              </pre>
-            </div>
-            <div class="programlisting">
-              <pre>
-                <code class="hljs">font-variant: prince-opentype(onum, ccmp, liga)</code>
-              </pre>
-            </div>
-            <div class="programlisting">
-              <pre>
                 <code class="hljs">font-variant: historical-ligatures all-small-caps;</code>
               </pre>
             </div>
@@ -8479,18 +8556,8 @@ const cssPropsHtml = String.raw`
               </code>
             </li>
           </ul>
-          <p>The <code>prince-opentype()</code> function takes a comma-separated list of
-    OpenType features. Microsoft has a list of the OpenType feature names
-    <a href="https://www.microsoft.com/typography/otspec/featurelist.htm">here</a>.</p>
-          <p>Some OpenType features like <code>aalt</code> (access all alternates) can be
-    used to select one of many optional glyphs, e.g. a font might provide three different
-    ampersand glyphs and allow the author to choose which one. An optional integer
-    parameter is how you do this, however it requires intimate details of exactly
-    which font is being used and what glyphs it provides.</p>
-          <p>The OpenType <code>feature</code> can be written either in function form (<code>feature(N)</code>)
-    or in concatenated form (<code>featureN</code>).</p>
-          <p>The keyword <code>prince-no-kerning</code> disables the <code>kern</code>
-    OpenType feature, which defines font kerning.  The property <code><a href="#prop-font-kerning">font-kerning</a></code> is the better way of achieving the same.</p>
+          <p>The deprecated keyword <code>prince-no-kerning</code> should be replaced by the property <code><a href="#prop-font-kerning">font-kerning</a></code>,
+    and the deprecated function <code>prince-opentype()</code> should be replaced by the property <code><a href="#prop-font-feature-settings">font-feature-settings</a></code>.</p>
           <p class="note">This property can also be set by the <code><a href="#prop-font">font</a></code> shorthand.</p>
         </div>
         <div>
@@ -25821,7 +25888,7 @@ blockquote { margin: 1rem; -prince-resize-options: -1rem; }
           <div id="prop-transform-syntax">Syntax</div>
           <div class="example">
             <div class="syntax-block">
-              <code>transform: none | [ rotate( <span>&lt;<i>angle</i>&gt;</span> ) | translate( <span>&lt;<i>length-percentage</i>&gt;</span>, <span>&lt;<i>length-percentage</i>&gt;</span>? ) | translatex( <span>&lt;<i>length-percentage</i>&gt;</span> ) | translatey( <span>&lt;<i>length-percentage</i>&gt;</span> ) | translate3d( <span>&lt;<i>length-percentage</i>&gt;</span>, <span>&lt;<i>length-percentage</i>&gt;</span>, <span>&lt;<i>length-percentage</i>&gt;</span> ) | scale( <span>&lt;<i>number</i>&gt;</span>, <span>&lt;<i>number</i>&gt;</span>? ) | scalex( <span>&lt;<i>number</i>&gt;</span> ) | scaley( <span>&lt;<i>number</i>&gt;</span> ) |  | skewx( <span>&lt;<i>angle</i>&gt;</span> ) | skewy( <span>&lt;<i>angle</i>&gt;</span> ) | matrix( <span>&lt;<i>number</i>&gt;</span>, <span>&lt;<i>number</i>&gt;</span>, <span>&lt;<i>number</i>&gt;</span>, <span>&lt;<i>number</i>&gt;</span>, <span>&lt;<i>number</i>&gt;</span>, <span>&lt;<i>number</i>&gt;</span> ) ]+</code>
+              <code>transform: none | [ rotate( <span>&lt;<i>angle</i>&gt;</span> ) | translate( <span>&lt;<i>length-percentage</i>&gt;</span>, <span>&lt;<i>length-percentage</i>&gt;</span>? ) | translatex( <span>&lt;<i>length-percentage</i>&gt;</span> ) | translatey( <span>&lt;<i>length-percentage</i>&gt;</span> ) | translate3d( <span>&lt;<i>length-percentage</i>&gt;</span>, <span>&lt;<i>length-percentage</i>&gt;</span>, <span>&lt;<i>length-percentage</i>&gt;</span> ) | scale( <span>&lt;<i>number</i>&gt;</span>, <span>&lt;<i>number</i>&gt;</span>? ) | scalex( <span>&lt;<i>number</i>&gt;</span> ) | scaley( <span>&lt;<i>number</i>&gt;</span> ) | <span class="dep">skew( <span>&lt;<i>angle</i>&gt;</span>, <span>&lt;<i>angle</i>&gt;</span>? )</span> | skewx( <span>&lt;<i>angle</i>&gt;</span> ) | skewy( <span>&lt;<i>angle</i>&gt;</span> ) | matrix( <span>&lt;<i>number</i>&gt;</span>, <span>&lt;<i>number</i>&gt;</span>, <span>&lt;<i>number</i>&gt;</span>, <span>&lt;<i>number</i>&gt;</span>, <span>&lt;<i>number</i>&gt;</span>, <span>&lt;<i>number</i>&gt;</span> ) ]+</code>
             </div>
           </div>
         </div>
