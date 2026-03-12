@@ -3144,8 +3144,8 @@ NOTE: The current build process will cause this file's content to appear in a Ja
                 <keyword>slashed-zero</keyword>
                 </group>
                 <group>
-                <keyword class="ext">prince-no-kerning</keyword>
-                <function name="prince-opentype" class="ext">
+                <keyword class="ext dep">prince-no-kerning</keyword>
+                <function name="prince-opentype" class="ext dep">
                     <repeat min="1">
                         <ident>feature</ident>
                     </repeat>
@@ -3154,12 +3154,7 @@ NOTE: The current build process will cause this file's content to appear in a Ja
             </multiple>
             </group>
         </choice>
-        <!-- XXX: Update to mention a one-or-more-any-order of
-            {font-variant-caps, -ligatures, -numeric, -opentype};
-            and accordingly to mention that prince-opentype()
-            should be dispreferred.
-            -->
-    </value>
+   </value>
     <initial>normal</initial>
     <applyto>all elements, @font-face at-rule</applyto>
     <inherit>yes</inherit>
@@ -3169,27 +3164,12 @@ NOTE: The current build process will cause this file's content to appear in a Ja
         <prop>font-variant-ligatures</prop>
         <prop>font-variant-numeric</prop>
     </shorthand>
-    <example>&lt;span style="font-family: SpecialFont; font-variant: prince-opentype(aalt(2))"&gt;&amp;amp;&lt;/span&gt;</example>
-    <example>font-variant: prince-opentype(onum, ccmp, liga)</example>
     <example>font-variant: historical-ligatures all-small-caps;</example>
     <see><a href="/doc/cookbook/#typographic-ligatures">Typographic Ligatures</a></see>
     <see><a href="/doc/styling/#opentype-features-in-prince">OpenType Features in Prince</a></see>
     <comments>
-    <p>The <code>prince-opentype()</code> function takes a comma-separated list of
-    OpenType features. Microsoft has a list of the OpenType feature names
-    <a href="https://www.microsoft.com/typography/otspec/featurelist.htm">here</a>.</p>
-
-    <p>Some OpenType features like <code>aalt</code> (access all alternates) can be
-    used to select one of many optional glyphs, e.g. a font might provide three different
-    ampersand glyphs and allow the author to choose which one. An optional integer
-    parameter is how you do this, however it requires intimate details of exactly
-    which font is being used and what glyphs it provides.</p>
-
-    <p>The OpenType <code>feature</code> can be written either in function form (<code>feature(N)</code>)
-    or in concatenated form (<code>featureN</code>).</p>
-
-    <p>The keyword <code>prince-no-kerning</code> disables the <code>kern</code>
-    OpenType feature, which defines font kerning.  The property <code><property name="font-kerning"/></code> is the better way of achieving the same.</p>
+    <p>The deprecated keyword <code>prince-no-kerning</code> should be replaced by the property <code><property name="font-kerning"/></code>,
+    and the deprecated function <code>prince-opentype()</code> should be replaced by the property <code><property name="font-feature-settings"/></code>.</p>
     </comments>
     <spec><a href="https://www.w3.org/TR/CSS2/fonts.html#propdef-font-variant">CSS 2.1</a></spec>
 </property>

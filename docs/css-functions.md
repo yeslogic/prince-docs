@@ -380,7 +380,7 @@ Inserts content fetched from another resource (like the <code>url()</code> funct
     prince-glyph-index( &lt;<i>int</i>&gt; )*
     </code>
 </td>
-<td>Allows to choose a glyph from a font by the index of that glyph in the font. <p>Please note that this is very non-portable, as glyph indices are specific to individual font versions. But it is a possible escape hatch for people who need a specific glyph and don't have any other way of accessing it (by Unicode character or OpenType substitution).</p> <p>Usually, authors should prefer to use named OpenType features, using the <code>prince-opentype()</code> value of the <code><a href="/doc/css-props#prop-font-variant">font-variant</a></code> property, which is more likely to work when changing font.</p></td>
+<td>Allows to choose a glyph from a font by the index of that glyph in the font. <p>Please note that this is very non-portable, as glyph indices are specific to individual font versions. But it is a possible escape hatch for people who need a specific glyph and don't have any other way of accessing it (by Unicode character or OpenType substitution).</p> <p>Usually, authors should prefer to use named <a href="/doc/styling/#opentype-features-in-prince">OpenType features</a> by using standard CSS properties.</p></td>
 </tr>
 <tr>
 <td>
@@ -469,7 +469,7 @@ bright.</td>
 <td>Applies a drop shadow effect to the input image.</td>
 </tr>
 
-<tr className="ext">
+<tr className="ext dep">
 <td>
     <code>
     prince-opentype( [ &lt;<i>feature</i>&gt; ]+ )*
