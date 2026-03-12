@@ -188,4 +188,4 @@ reference =
     }
 
 class =
-    attribute class { "ext" | "dep" }
+    attribute class { list { ("ext" | "dep" | ("ext", "dep") | ("dep", "ext")) } }
