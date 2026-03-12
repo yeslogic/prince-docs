@@ -21806,6 +21806,81 @@ blockquote { margin: 1rem; -prince-resize-options: -1rem; }
     </details>
     <details>
       <summary class="ext" title="Prince extension">
+        <h6 id="prop-prince-smart-typography">-prince-smart-typography* <a href="#prop-prince-smart-typography" class="hash-link"> </a></h6>
+      </summary>
+      <div>
+        <div>
+          <div id="prop-prince-smart-typography-syntax">Syntax</div>
+          <div class="example">
+            <div class="syntax-block">
+              <code>-prince-smart-typography: auto | none | all-caps</code>
+            </div>
+          </div>
+        </div>
+        <div>
+          <div class="example">
+            <div class="syntax-block">
+              <table class="property-table">
+                <tr>
+                  <th scope="row">
+          Initial value
+        </th>
+                  <td>
+                    <code>auto</code>
+                  </td>
+                </tr>
+                <tr>
+                  <th scope="row">
+          Applies to
+        </th>
+                  <td>all elements</td>
+                </tr>
+                <tr>
+                  <th scope="row">
+          Inherited
+        </th>
+                  <td>
+                  yes
+                </td>
+                </tr>
+              </table>
+            </div>
+          </div>
+        </div>
+        <div>
+          <div id="prop-prince-smart-typography-examples">Examples</div>
+          <div class="example">
+            <div class="programlisting">
+              <pre>
+                <code class="hljs">h1 {
+    text-transform: uppercase;
+    -prince-smart-typography: all-caps;
+}</code>
+              </pre>
+            </div>
+          </div>
+        </div>
+        <div>
+          <div id="prop-prince-smart-typography-comments">Comments</div>
+          <p>
+    The value <code>all-caps</code> applies the OpenType features <code>case</code> and <code>cpsp</code> if they are present in the font, in order to improve the typesetting of all-caps text.
+    </p>
+          <p>
+	Specifying a value of <code>auto</code> will automatically treat an element that has <code>text-transform: uppercase</code> with the value <code>all-caps</code>.
+	</p>
+        </div>
+        <div>
+          <div id="prop-prince-smart-typography-seealso">See Also</div>
+          <ul>
+            <li>
+              <a href="/doc/styling/#opentype-features-in-prince">OpenType Features in Prince</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </details>
+    <details>
+      <summary class="ext" title="Prince extension">
         <h6 id="prop-prince-spread-length-options">-prince-spread-length-options* <a href="#prop-prince-spread-length-options" class="hash-link"> </a></h6>
       </summary>
       <div>

@@ -8002,6 +8002,34 @@ blockquote { margin: 1rem; -prince-resize-options: -1rem; }
 </property>
 
 <property>
+    <name>prince-smart-typography</name>
+    <value>
+	<choice>
+	    <keyword>auto</keyword>
+	    <keyword>none</keyword>
+	    <keyword>all-caps</keyword>
+	</choice>
+    </value>
+    <initial>auto</initial>
+    <applyto>all elements</applyto>
+    <inherit>yes</inherit>
+    <extension/>
+    <example>h1 {
+    text-transform: uppercase;
+    -prince-smart-typography: all-caps;
+}</example>
+    <see><a href="/doc/styling/#opentype-features-in-prince">OpenType Features in Prince</a></see>
+    <comments>
+    <p>
+    The value <code>all-caps</code> applies the OpenType features <code>case</code> and <code>cpsp</code> if they are present in the font, in order to improve the typesetting of all-caps text.
+    </p>
+	<p>
+	Specifying a value of <code>auto</code> will automatically treat an element that has <code>text-transform: uppercase</code> with the value <code>all-caps</code>.
+	</p>
+    </comments>
+</property>
+
+<property>
     <name>prince-spread-length-options</name>
     <value>
         <choice>

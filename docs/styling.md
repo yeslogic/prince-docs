@@ -117,6 +117,8 @@ If this example is rendered with small-caps in the Arno Pro font, the two lines 
 
 ![Language-specific OpenType shaping](assets/images/opentype-shaping.png)
 
+The CSS property [`-prince-smart-typography`](css-props.md#prop-prince-smart-typography) applies the OpenType features `case` and `cpsp` if they are present in the font, in order to improve the typesetting of all-caps text.
+
 In cases where the XML or HTML attributes cannot be applied, such as in CSS generated content in [Before and After pseudo-elements](gen-content.md#before-and-after-pseudo-elements), or in [page margin boxes](paged.md#page-regions), the CSS property [`-prince-lang`](css-props.md#prop-prince-lang) can be used.
 
 It is possible to also enable other OpenType features, not covered by the previous properties, by using the [`font-variant`](css-props.md#prop-font-variant) CSS property with the `prince-opentype()` function (see [CSS Functional Expressions](css-functions.md)).
