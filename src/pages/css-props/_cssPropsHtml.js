@@ -20218,7 +20218,7 @@ supplier, item { overflow-wrap: normal; }
           <div id="prop-prince-pdf-list-numbering-syntax">Syntax</div>
           <div class="example">
             <div class="syntax-block">
-              <code>-prince-pdf-list-numbering: none | <span>&lt;<i>string</i>&gt;</span></code>
+              <code>-prince-pdf-list-numbering: <span>&lt;<i>string</i>&gt;</span></code>
             </div>
           </div>
         </div>
@@ -20231,7 +20231,7 @@ supplier, item { overflow-wrap: normal; }
           Initial value
         </th>
                   <td>
-                    <code>none</code>
+                    <code>"None"</code>
                   </td>
                 </tr>
                 <tr>

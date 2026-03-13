@@ -7182,12 +7182,9 @@ supplier, item { overflow-wrap: normal; }
 <property>
     <name>prince-pdf-list-numbering</name>
     <value>
-	<choice>
-	    <keyword>none</keyword>
 	    <string>string</string>
-	</choice>
     </value>
-    <initial>none</initial>
+    <initial>"None"</initial>
     <applyto>@counter-style</applyto>
     <inherit>n/a</inherit>
     <extension/>
