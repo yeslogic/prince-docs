@@ -615,9 +615,6 @@
             "fontVariantNumeric": {
                 "__princetype__": null
             },
-            "fontVariantOpentype": {
-                "__princetype__": null
-            },
             "fontVariationSettings": {
                 "__princetype__": null
             },
@@ -937,9 +934,6 @@
                 "__princetype__": null
             },
             "princeFlow": {
-                "__princetype__": null
-            },
-            "princeFontVariantOpentype": {
                 "__princetype__": null
             },
             "princeFootnoteDisplay": {

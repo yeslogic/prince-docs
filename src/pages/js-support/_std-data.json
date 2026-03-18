@@ -772,10 +772,6 @@
         "__princetype__": null,
         "url": "property"
       },
-      "fontVariantOpentype": {
-        "__princetype__": null,
-        "url": "property"
-      },
       "fontVariationSettings": {
         "__princetype__": null,
         "url": "property"
@@ -1233,11 +1229,6 @@
         "url": "property"
       },
       "princeFlow": {
-        "__princetype__": null,
-        "ext": "ext",
-        "url": "property"
-      },
-      "princeFontVariantOpentype": {
         "__princetype__": null,
         "ext": "ext",
         "url": "property"

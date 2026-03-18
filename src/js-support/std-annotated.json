@@ -1203,9 +1203,6 @@
             "fontVariantNumeric": {
                 "url": "property"
             },
-            "fontVariantOpentype": {
-                "url": "property"
-            },
             "fontVariationSettings": {
                 "url": "property"
             },
@@ -1555,10 +1552,6 @@
                 "url": "property"
             },
             "princeFlow": {
-                "ext": "ext",
-                "url": "property"
-            },
-            "princeFontVariantOpentype": {
                 "ext": "ext",
                 "url": "property"
             },
