@@ -1173,6 +1173,9 @@
             "fontFamily": {
                 "url": "property"
             },
+            "fontFeatureSettings": {
+                "url": "property"
+            },
             "fontKerning": {
                 "url": "property"
             },
@@ -1186,6 +1189,9 @@
                 "url": "property"
             },
             "fontVariant": {
+                "url": "property"
+            },
+            "fontVariantAlternates": {
                 "url": "property"
             },
             "fontVariantCaps": {
@@ -1689,6 +1695,18 @@
                 "url": "property"
             },
             "princePdfLinkType": {
+                "ext": "ext",
+                "url": "property"
+            },
+            "princePdfListNumbering": {
+                "ext": "ext",
+                "url": "property"
+            },
+            "princePdfPageNumbering": {
+                "ext": "ext",
+                "url": "property"
+            },
+            "princePdfSmartTypography": {
                 "ext": "ext",
                 "url": "property"
             },

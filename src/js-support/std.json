@@ -585,6 +585,9 @@
             "fontFamily": {
                 "__princetype__": null
             },
+            "fontFeatureSettings": {
+                "__princetype__": null
+            },
             "fontKerning": {
                 "__princetype__": null
             },
@@ -598,6 +601,9 @@
                 "__princetype__": null
             },
             "fontVariant": {
+                "__princetype__": null
+            },
+            "fontVariantAlternates": {
                 "__princetype__": null
             },
             "fontVariantCaps": {
@@ -1036,6 +1042,15 @@
                 "__princetype__": null
             },
             "princePdfLinkType": {
+                "__princetype__": null
+            },
+            "princePdfListNumbering": {
+                "__princetype__": null
+            },
+            "princePdfPageNumbering": {
+                "__princetype__": null
+            },
+            "princePdfSmartTypography": {
                 "__princetype__": null
             },
             "princePdfTagTitle": {

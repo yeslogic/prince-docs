@@ -732,6 +732,10 @@
         "__princetype__": null,
         "url": "property"
       },
+      "fontFeatureSettings": {
+        "__princetype__": null,
+        "url": "property"
+      },
       "fontKerning": {
         "__princetype__": null,
         "url": "property"
@@ -749,6 +753,10 @@
         "url": "property"
       },
       "fontVariant": {
+        "__princetype__": null,
+        "url": "property"
+      },
+      "fontVariantAlternates": {
         "__princetype__": null,
         "url": "property"
       },
@@ -1400,6 +1408,21 @@
         "url": "property"
       },
       "princePdfLinkType": {
+        "__princetype__": null,
+        "ext": "ext",
+        "url": "property"
+      },
+      "princePdfListNumbering": {
+        "__princetype__": null,
+        "ext": "ext",
+        "url": "property"
+      },
+      "princePdfPageNumbering": {
+        "__princetype__": null,
+        "ext": "ext",
+        "url": "property"
+      },
+      "princePdfSmartTypography": {
         "__princetype__": null,
         "ext": "ext",
         "url": "property"
