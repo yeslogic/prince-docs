@@ -91,7 +91,7 @@ Prince supports OpenType features, and enables certain ones by default in specif
 </tfoot>
 </table>
 
-Microsoft has a list of the OpenType feature names [here](https://learn.microsoft.com/en-gb/typography/opentype/spec/featurelist).
+A comprehensive list of all registered [OpenType features](https://learn.microsoft.com/en-gb/typography/opentype/spec/featurelist) is a starting point for understanding this rather low-level fine-tuning that can be accomplished.
 
 In order to enable specific OpenType features, or specific font variants, the following properties can be used:
 
@@ -100,7 +100,18 @@ In order to enable specific OpenType features, or specific font variants, the fo
 * The property [`font-variant-ligatures`](css-props.md#prop-font-variant-ligatures) allows for fine-tuning of various ligature types.  (See also [Typographic Ligatures](cookbook.md#typographic-ligatures)).
 * The property [`font-variant-numeric`](css-props.md#prop-font-variant-numeric) specifies control over numeric forms.
 
-Note that the [`font-variant`](css-props.md#prop-font-variant) CSS property can be used as a shorthand for these properties.
+The [`font-variant`](css-props.md#prop-font-variant) CSS property can be used as a shorthand for these properties.
+
+Instead of writing
+
+```css
+    font-variant-alternates: historical-forms;
+    font-variant-ligatures: historical-ligatures;
+    font-variant-caps: all-small-caps;
+    font-variant-numeric: oldstyle-nums;
+```
+
+the following shortened syntax can be used:
 
 ```css
     font-variant: historical-forms historical-ligatures all-small-caps oldstyle-nums;
@@ -128,14 +139,20 @@ The entire `font-feature-settings` property value is set all at once, and unlike
 Thus, instead of using
 
 ```css
-    font-feature-settings: 'hlig', 'hist';
+    font-feature-settings: 'hist', 'hlig';
 ```
 
-we are encouraged to use
+you are encouraged to use
 
 ```css
-    font-variant-ligatures: historical-ligatures;
     font-variant-alternates: historical-forms;
+    font-variant-ligatures: historical-ligatures;
+```
+
+or
+
+```css
+    font-variant: historical-forms historical-ligatures;
 ```
 
 In order to improve the typesetting of all-caps text, Prince automatically enables the OpenType features `case` and `cpsp` for `text-transform: uppercase`, if these features are present in the font.  To disable this feature, Prince offers the CSS property [`-prince-smart-typography`](css-props.md#prop-prince-smart-typography).
