@@ -22557,10 +22557,12 @@ blockquote { margin: 1rem; -prince-resize-options: -1rem; }
           <div id="prop-prince-rotate-body-comments">Comments</div>
           <p>
 	This CSS at-rule descriptor can be used to rotate the page body, e.g. to fit
-	landscape content on a portrait page, while leaving the headers and
-	footers where they are.
+	landscape content on a portrait page.
 	</p>
           <p class="note">
+    Please note that this property rotates the <em>page area</em>, but not the <em>page-margin boxes</em>.
+    </p>
+          <p>
     The angle value takes multiples of <code>90deg</code>.
     </p>
           <p>
@@ -22573,6 +22575,9 @@ blockquote { margin: 1rem; -prince-resize-options: -1rem; }
           <ul>
             <li>
               <a href="/doc/cookbook/#printing-wide-content-sideways">Printing wide content sideways</a>
+            </li>
+            <li>
+              <a href="/doc/paged/#page-regions">Page regions</a>
             </li>
           </ul>
         </div>
