@@ -4,7 +4,7 @@ title: Prince Tips and Tricks
 
 …aka the Prince Cookbook, collects recipes to achieve certain common or complex tasks useful when preparing a document for printing. Each recipe shows the required features in a "You need" ingredients list and provides a step-by-step explanation to guide you to the required goal.
 
-The reipces are grouped in two main blocks, the first one containing recipes that only require CSS, the second one making use of JavaScript features to achieve the desired effect.
+The recipes are grouped in two main blocks, the first one containing recipes that only require CSS, the second one making use of JavaScript features to achieve the desired effect.
 
 On a separate site we collect more [quick guides to making beautiful PDF documents from HTML and CSS](https://css4.pub/).
 
