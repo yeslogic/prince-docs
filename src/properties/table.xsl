@@ -354,9 +354,9 @@
 
     <xsl:if test="example2">
       <div>
-      <div id="prop-{$propid}-examples2">Examples</div>
+      <div id="prop-{$propid}-example2">Examples</div>
       <div class="example">
-      <xsl:for-each select="example">
+      <xsl:for-each select="example2">
         <div class="programlisting"><pre>
           <code class="hljs"><xsl:value-of select="."/></code>
         </pre></div>
