@@ -28,6 +28,33 @@
   --docusaurus-highlighted-code-line-bg: lavenderblush;
 }
 
+/* Dark theme overrides */
+[data-theme='dark'] {
+  --ifm-color-primary: plum;
+  --ifm-pre-background: #333;
+  --ifm-menu-color-active: #ffa046;
+
+  #prop-list details, #js-support-table details, #js-support-table details.globalWindow {
+    background-color: var(--ifm-menu-color-background-active);
+
+    a {
+      color: plum !important;
+    }
+  }
+
+  #prop-list summary.ext, #prop-list summary.ext + div, #prop-list summary.ext + div + div, #js-support-table .ext, #js-support-table .ext + div, #js-support-table .ext + div + div {
+    background-color: darkslategrey !important;
+  }
+  #ext-props span.ext,
+  #prop-list span.ext {
+    background-color: darkslategrey;
+  }
+
+  table.property-table, .syntax-block, .example code {
+    background-color: #333;
+  }
+
+}
 
 /* Custom CSS */
 /* global styles */
