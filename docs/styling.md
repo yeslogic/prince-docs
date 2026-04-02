@@ -986,10 +986,10 @@ The rules used by Prince for choosing the "winner" border are as follows:
 
 #### Cells that span columns
 
-Prince table cells that span multiple columns using the [`table-column-span`](css-props.md#prop-table-column-span) CSS property, which takes an integer value and is set to 1 by default.
+Prince table cells that span multiple columns using the [`-prince-table-column-span`](css-props.md#prop-prince-table-column-span) CSS property, which takes an integer value and is set to 1 by default.
 
 ```css title="CSS"
-    td.colspan2 { table-column-span: 2 }
+    td.colspan2 { -prince-table-column-span: 2 }
 ```
 ```xml title="XML"
     <td class="colspan2"> B </td>
@@ -1008,10 +1008,10 @@ Output
 
 #### Cells that span rows
 
-Prince supports table cells that span multiple rows using the [`table-row-span`](css-props.md#prop-table-row-span) CSS property, which takes an integer value and is set to 1 by default.
+Prince supports table cells that span multiple rows using the [`-prince-table-row-span`](css-props.md#prop-prince-table-row-span) CSS property, which takes an integer value and is set to 1 by default.
 
 ```css title="CSS"
-    td.rowSpan2 { table-row-span: 2 }
+    td.rowSpan2 { -prince-table-row-span: 2 }
 ```
 ```xml title="XML"
     <td className="rowSpan2"> A </td>
