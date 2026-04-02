@@ -356,6 +356,7 @@ The JSON job description ([here](#job-description-json) you can see the full des
     "input": { <input options> },
     "pdf": { <pdf options> },
     "metadata": { <metadata options> },
+    "engine": { <engine options> },
 }
 ```
 The `input` field (highlighted) is mandatory, the rest are optional and will default to the normal values.
@@ -485,6 +486,14 @@ The `metadata options` object includes these fields:
 }
 ```
 
+The `engine options` object currently includes just one field:
+
+```json
+{
+    "css-dpi": <integer>
+}
+```
+
 #### Job description JSON
 
 The following is the full JSON job description - the mandatory `input` and `src` fields are highlighted:
@@ -558,6 +567,9 @@ The following is the full JSON job description - the mandatory `input` and `src`
         "author": <string>,
         "keywords": <string>,
         "creator": <string>,
+    },
+    "engine": {
+        "css-dpi": <integer>,
     }
 }
 ```
