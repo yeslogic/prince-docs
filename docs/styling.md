@@ -1103,19 +1103,19 @@ Vertical alignment of these inline tables can be defined with the property [`tab
 ```markup title="HTML"
     <div>
       a line of text
-      <table class="inline" style={{tableBaseline: "1"}}>
+      <table class="inline" style="table-baseline: 1;">
         <tr><td>1</td></tr>
         <tr><td>2</td></tr>
         <tr><td>3</td></tr>
       </table>
       with some
-      <table class="inline" style={{tableBaseline: "2"}}>
+      <table class="inline" style="table-baseline: 2;">
         <tr><td>1</td></tr>
         <tr><td>2</td></tr>
         <tr><td>3</td></tr>
       </table>
       inline
-      <table class="inline" style={{tableBaseline: "3"}}>
+      <table class="inline" style="table-baseline: 3;">
         <tr><td>1</td></tr>
         <tr><td>2</td></tr>
         <tr><td>3</td></tr>
