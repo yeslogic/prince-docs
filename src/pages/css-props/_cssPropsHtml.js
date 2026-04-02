@@ -948,6 +948,18 @@ const cssPropsHtml = String.raw`
           </div>
         </div>
         <div>
+          <div id="prop-background-image-resolution-examples">Examples</div>
+          <div class="example">
+            <div class="programlisting">
+              <pre>
+                <code class="hljs">.bg-image {
+    -prince-background-image-resolution: auto, 300dpi;
+}</code>
+              </pre>
+            </div>
+          </div>
+        </div>
+        <div>
           <div id="prop-background-image-resolution-comments">Comments</div>
           <p>
     This property determines the resolution of a background image.  The value <code>normal</code>
@@ -1406,6 +1418,20 @@ const cssPropsHtml = String.raw`
           </div>
         </div>
         <div>
+          <div id="prop-bookmark-label-examples">Examples</div>
+          <div class="example">
+            <div class="programlisting">
+              <pre>
+                <code class="hljs">chapter {
+    -prince-bookmark-level: 1;
+    -prince-bookmark-label: attr(title);
+}
+</code>
+              </pre>
+            </div>
+          </div>
+        </div>
+        <div>
           <div id="prop-bookmark-label-comments">Comments</div>
           <p>
 	This property is used to determine the text content of the PDF
@@ -1499,6 +1525,20 @@ const cssPropsHtml = String.raw`
           </div>
         </div>
         <div>
+          <div id="prop-bookmark-level-examples">Examples</div>
+          <div class="example">
+            <div class="programlisting">
+              <pre>
+                <code class="hljs">chapter {
+    -prince-bookmark-level: 1;
+    -prince-bookmark-label: attr(title);
+}
+</code>
+              </pre>
+            </div>
+          </div>
+        </div>
+        <div>
           <div id="prop-bookmark-level-comments">Comments</div>
           <p>
 	This property is used to determine the numeric level in the bookmark
@@ -1567,6 +1607,20 @@ const cssPropsHtml = String.raw`
                 </td>
                 </tr>
               </table>
+            </div>
+          </div>
+        </div>
+        <div>
+          <div id="prop-bookmark-state-examples">Examples</div>
+          <div class="example">
+            <div class="programlisting">
+              <pre>
+                <code class="hljs">.subchapter {
+    -prince-bookmark-level: 3;
+    -prince-bookmark-state: closed;
+}
+</code>
+              </pre>
             </div>
           </div>
         </div>
@@ -1640,6 +1694,18 @@ const cssPropsHtml = String.raw`
                 </td>
                 </tr>
               </table>
+            </div>
+          </div>
+        </div>
+        <div>
+          <div id="prop-bookmark-target-examples">Examples</div>
+          <div class="example">
+            <div class="programlisting">
+              <pre>
+                <code class="hljs">bookmark {
+    -prince-bookmark-target: attr(href);
+}</code>
+              </pre>
             </div>
           </div>
         </div>
@@ -4105,6 +4171,20 @@ const cssPropsHtml = String.raw`
           </div>
         </div>
         <div>
+          <div id="prop-caption-page-examples">Examples</div>
+          <div class="example">
+            <div class="programlisting">
+              <pre>
+                <code class="hljs">table + p {
+    display: table-caption;
+    caption-side: bottom;
+    -prince-caption-page: following;
+}</code>
+              </pre>
+            </div>
+          </div>
+        </div>
+        <div>
           <div id="prop-caption-page-comments">Comments</div>
           <p>
 	This property determines whether table captions will be displayed on
@@ -4120,6 +4200,9 @@ const cssPropsHtml = String.raw`
           <ul>
             <li>
               <a href="/doc/styling/#table-captions">Table captions</a>
+            </li>
+            <li>
+              <a href="/doc/cookbook/#fancy-table-captions">Fancy table captions</a>
             </li>
           </ul>
         </div>
@@ -7754,6 +7837,23 @@ const cssPropsHtml = String.raw`
           </div>
         </div>
         <div>
+          <div id="prop-flow-examples">Examples</div>
+          <div class="example">
+            <div class="programlisting">
+              <pre>
+                <code class="hljs">@page {
+    @bottom-center {
+        content: flow(footer);
+    }
+}
+    footer {
+    -prince-flow: static(footer, start);
+}</code>
+              </pre>
+            </div>
+          </div>
+        </div>
+        <div>
           <div id="prop-flow-comments">Comments</div>
           <p>
     This property is used to remove elements from the normal flow of the
@@ -9151,6 +9251,18 @@ const cssPropsHtml = String.raw`
           </div>
         </div>
         <div>
+          <div id="prop-footnote-style-position-examples">Examples</div>
+          <div class="example">
+            <div class="programlisting">
+              <pre>
+                <code class="hljs">.footnote {
+    footnote-style-position: inside;
+}</code>
+              </pre>
+            </div>
+          </div>
+        </div>
+        <div>
           <div id="prop-footnote-style-position-comments">Comments</div>
           <p>
 	For information about the use of the <code>footnote-style-position</code>
@@ -10400,6 +10512,20 @@ const cssPropsHtml = String.raw`
           </div>
         </div>
         <div>
+          <div id="prop-hyphenate-after-examples">Examples</div>
+          <div class="example">
+            <div class="programlisting">
+              <pre>
+                <code class="hljs">:lang(en-GB) {
+    -prince-hyphenate-patterns: url("hyph-en-gb.pat");
+    -prince-hyphenate-after: 3;
+    -prince-hyphenate-before: 3;
+}</code>
+              </pre>
+            </div>
+          </div>
+        </div>
+        <div>
           <div id="prop-hyphenate-after-comments">Comments</div>
           <p>
 	This property specifies the minimum number of letters in a word that
@@ -10459,6 +10585,20 @@ const cssPropsHtml = String.raw`
                 </td>
                 </tr>
               </table>
+            </div>
+          </div>
+        </div>
+        <div>
+          <div id="prop-hyphenate-before-examples">Examples</div>
+          <div class="example">
+            <div class="programlisting">
+              <pre>
+                <code class="hljs">:lang(en-GB) {
+    -prince-hyphenate-patterns: url("hyph-en-gb.pat");
+    -prince-hyphenate-after: 3;
+    -prince-hyphenate-before: 3;
+}</code>
+              </pre>
             </div>
           </div>
         </div>
@@ -10526,6 +10666,18 @@ const cssPropsHtml = String.raw`
           </div>
         </div>
         <div>
+          <div id="prop-hyphenate-character-examples">Examples</div>
+          <div class="example">
+            <div class="programlisting">
+              <pre>
+                <code class="hljs">:lang(en-GB) {
+    hyphenate-character: "=";
+}</code>
+              </pre>
+            </div>
+          </div>
+        </div>
+        <div>
           <div id="prop-hyphenate-character-comments">Comments</div>
           <p>
 	This property specifies the character that is shown at the end of a line
@@ -10585,6 +10737,18 @@ const cssPropsHtml = String.raw`
                 </td>
                 </tr>
               </table>
+            </div>
+          </div>
+        </div>
+        <div>
+          <div id="prop-hyphenate-lines-examples">Examples</div>
+          <div class="example">
+            <div class="programlisting">
+              <pre>
+                <code class="hljs">p {
+    -prince-hyphenate-limit-lines: 2;
+}</code>
+              </pre>
             </div>
           </div>
         </div>
@@ -10656,6 +10820,18 @@ const cssPropsHtml = String.raw`
                 </td>
                 </tr>
               </table>
+            </div>
+          </div>
+        </div>
+        <div>
+          <div id="prop-hyphenate-patterns-examples">Examples</div>
+          <div class="example">
+            <div class="programlisting">
+              <pre>
+                <code class="hljs">:lang(el) {
+    -prince-hyphenate-patterns: url("https://mirrors.ctan.org/language/hyph-utf8/tex/patterns/txt/hyph-el-polyton.pat.txt");
+}</code>
+              </pre>
             </div>
           </div>
         </div>
@@ -10786,6 +10962,18 @@ const cssPropsHtml = String.raw`
                 </td>
                 </tr>
               </table>
+            </div>
+          </div>
+        </div>
+        <div>
+          <div id="prop-image-resolution-examples">Examples</div>
+          <div class="example">
+            <div class="programlisting">
+              <pre>
+                <code class="hljs">img {
+    -prince-image-resolution: auto, 96dpi;
+}</code>
+              </pre>
             </div>
           </div>
         </div>
@@ -10943,6 +11131,19 @@ const cssPropsHtml = String.raw`
           </div>
         </div>
         <div>
+          <div id="prop-inset-inside-examples">Examples</div>
+          <div class="example">
+            <div class="programlisting">
+              <pre>
+                <code class="hljs">p {
+    inset-inside: 5%;
+    inset-outside: 2%;
+}</code>
+              </pre>
+            </div>
+          </div>
+        </div>
+        <div>
           <div id="prop-inset-inside-comments">Comments</div>
           <p>
 	This property determines the inside offset for positioned elements
@@ -10993,6 +11194,19 @@ const cssPropsHtml = String.raw`
                 </td>
                 </tr>
               </table>
+            </div>
+          </div>
+        </div>
+        <div>
+          <div id="prop-inset-outside-examples">Examples</div>
+          <div class="example">
+            <div class="programlisting">
+              <pre>
+                <code class="hljs">p {
+    inset-inside: 5%;
+    inset-outside: 2%;
+}</code>
+              </pre>
             </div>
           </div>
         </div>
@@ -11490,6 +11704,18 @@ const cssPropsHtml = String.raw`
           </div>
         </div>
         <div>
+          <div id="prop-line-stacking-strategy-examples">Examples</div>
+          <div class="example">
+            <div class="programlisting">
+              <pre>
+                <code class="hljs">p {
+    -prince-line-stacking-strategy: block-line-height;
+}</code>
+              </pre>
+            </div>
+          </div>
+        </div>
+        <div>
           <div id="prop-line-stacking-strategy-comments">Comments</div>
           <p>
     This property allows to choose whether individual lines should have their
@@ -11587,9 +11813,24 @@ const cssPropsHtml = String.raw`
           </div>
         </div>
         <div>
+          <div id="prop-link-examples">Examples</div>
+          <div class="example">
+            <div class="programlisting">
+              <pre>
+                <code class="hljs">xref {
+    -prince-link: attr(linkend idref);
+}</code>
+              </pre>
+            </div>
+          </div>
+        </div>
+        <div>
           <div id="prop-link-comments">Comments</div>
           <p>
     This property makes an element into a link to the specified URL.
+    </p>
+          <p>
+    Please note that for the optional second argument also the Prince-specific attribute type <code>idref</code> is supported, which treats the attribute value of the first argument as if it were an IDREF - essentially converting it to a URL by prepending a hash mark.
     </p>
           <p class="note">
         The property <a href="#prop-prince-link"><code>-prince-link</code></a> can be used as an alias.
@@ -12028,6 +12269,20 @@ const cssPropsHtml = String.raw`
           </div>
         </div>
         <div>
+          <div id="prop-margin-alt-examples">Examples</div>
+          <div class="example">
+            <div class="programlisting">
+              <pre>
+                <code class="hljs">img { 
+    -prince-float: snap;
+    margin: 1em 0;
+    -prince-margin-alt: 0; 
+}</code>
+              </pre>
+            </div>
+          </div>
+        </div>
+        <div>
           <div id="prop-margin-alt-comments">Comments</div>
           <p>
         The <code>margin-alt</code> property defines a top and/or bottom margin
@@ -12175,6 +12430,20 @@ const cssPropsHtml = String.raw`
           </div>
         </div>
         <div>
+          <div id="prop-margin-inside-examples">Examples</div>
+          <div class="example">
+            <div class="programlisting">
+              <pre>
+                <code class="hljs">.content {
+    margin: 2em;
+    -prince-margin-inside: 3em;
+    -prince-margin-outside: 1em;
+}</code>
+              </pre>
+            </div>
+          </div>
+        </div>
+        <div>
           <div id="prop-margin-inside-comments">Comments</div>
           <p>
 	The <code>margin-inside</code> property overrides the value of the
@@ -12303,6 +12572,20 @@ const cssPropsHtml = String.raw`
                 </td>
                 </tr>
               </table>
+            </div>
+          </div>
+        </div>
+        <div>
+          <div id="prop-margin-outside-examples">Examples</div>
+          <div class="example">
+            <div class="programlisting">
+              <pre>
+                <code class="hljs">.content {
+    margin: 2em;
+    -prince-margin-inside: 3em;
+    -prince-margin-outside: 1em;
+}</code>
+              </pre>
             </div>
           </div>
         </div>
@@ -14761,11 +15044,27 @@ supplier, item { overflow-wrap: normal; }
           </div>
         </div>
         <div>
+          <div id="prop-page-group-examples">Examples</div>
+          <div class="example">
+            <div class="programlisting">
+              <pre>
+                <code class="hljs">chapter h1 {
+    break-before: right;
+    -prince-page-group: start;
+}</code>
+              </pre>
+            </div>
+          </div>
+        </div>
+        <div>
           <div id="prop-page-group-comments">Comments</div>
           <p>
 	This property determines whether the first page of this element
 	matches the <code>:first-of-group</code> page class selector.
 	</p>
+          <p>
+    It also forces a page break, overriding any properties that attempt to avoid page breaks. However, the more specific <code>left</code> and <code>right</code> page break instructions take precedence over <code>-prince-page-group</code>.
+    </p>
           <p class="note">
         The property <a href="#prop-prince-page-group"><code>-prince-page-group</code></a> can be used as an alias.
         </p>
@@ -15111,6 +15410,18 @@ supplier, item { overflow-wrap: normal; }
           </div>
         </div>
         <div>
+          <div id="prop-prince-background-image-resolution-examples">Examples</div>
+          <div class="example">
+            <div class="programlisting">
+              <pre>
+                <code class="hljs">.bg-image {
+    -prince-background-image-resolution: auto, 300dpi;
+}</code>
+              </pre>
+            </div>
+          </div>
+        </div>
+        <div>
           <div id="prop-prince-background-image-resolution-comments">Comments</div>
           <p>
     This property determines the resolution of a background image.  The value <code>normal</code>
@@ -15242,6 +15553,20 @@ supplier, item { overflow-wrap: normal; }
           </div>
         </div>
         <div>
+          <div id="prop-prince-bookmark-label-examples">Examples</div>
+          <div class="example">
+            <div class="programlisting">
+              <pre>
+                <code class="hljs">chapter {
+    -prince-bookmark-level: 1;
+    -prince-bookmark-label: attr(title);
+}
+</code>
+              </pre>
+            </div>
+          </div>
+        </div>
+        <div>
           <div id="prop-prince-bookmark-label-comments">Comments</div>
           <p>
 	This property is used to determine the text content of the PDF
@@ -15335,6 +15660,20 @@ supplier, item { overflow-wrap: normal; }
           </div>
         </div>
         <div>
+          <div id="prop-prince-bookmark-level-examples">Examples</div>
+          <div class="example">
+            <div class="programlisting">
+              <pre>
+                <code class="hljs">chapter {
+    -prince-bookmark-level: 1;
+    -prince-bookmark-label: attr(title);
+}
+</code>
+              </pre>
+            </div>
+          </div>
+        </div>
+        <div>
           <div id="prop-prince-bookmark-level-comments">Comments</div>
           <p>
 	This property is used to determine the numeric level in the bookmark
@@ -15403,6 +15742,20 @@ supplier, item { overflow-wrap: normal; }
                 </td>
                 </tr>
               </table>
+            </div>
+          </div>
+        </div>
+        <div>
+          <div id="prop-prince-bookmark-state-examples">Examples</div>
+          <div class="example">
+            <div class="programlisting">
+              <pre>
+                <code class="hljs">.subchapter {
+    -prince-bookmark-level: 3;
+    -prince-bookmark-state: closed;
+}
+</code>
+              </pre>
             </div>
           </div>
         </div>
@@ -15480,6 +15833,18 @@ supplier, item { overflow-wrap: normal; }
           </div>
         </div>
         <div>
+          <div id="prop-prince-bookmark-target-examples">Examples</div>
+          <div class="example">
+            <div class="programlisting">
+              <pre>
+                <code class="hljs">bookmark {
+    -prince-bookmark-target: attr(href);
+}</code>
+              </pre>
+            </div>
+          </div>
+        </div>
+        <div>
           <div id="prop-prince-bookmark-target-comments">Comments</div>
           <p>
 	This property is used to determine the link target for the
@@ -15544,6 +15909,20 @@ supplier, item { overflow-wrap: normal; }
           </div>
         </div>
         <div>
+          <div id="prop-prince-caption-page-examples">Examples</div>
+          <div class="example">
+            <div class="programlisting">
+              <pre>
+                <code class="hljs">table + p {
+    display: table-caption;
+    caption-side: bottom;
+    -prince-caption-page: following;
+}</code>
+              </pre>
+            </div>
+          </div>
+        </div>
+        <div>
           <div id="prop-prince-caption-page-comments">Comments</div>
           <p>
 	This property determines whether table captions will be displayed on
@@ -15559,6 +15938,9 @@ supplier, item { overflow-wrap: normal; }
           <ul>
             <li>
               <a href="/doc/styling/#table-captions">Table captions</a>
+            </li>
+            <li>
+              <a href="/doc/cookbook/#fancy-table-captions">Fancy table captions</a>
             </li>
           </ul>
         </div>
@@ -15932,6 +16314,19 @@ supplier, item { overflow-wrap: normal; }
           </div>
         </div>
         <div>
+          <div id="prop-prince-filter-resolution-examples">Examples</div>
+          <div class="example">
+            <div class="programlisting">
+              <pre>
+                <code class="hljs">h1 {
+    filter: blur(20px);
+    -prince-filter-resolution: 300dpi;
+}</code>
+              </pre>
+            </div>
+          </div>
+        </div>
+        <div>
           <div id="prop-prince-filter-resolution-comments">Comments</div>
           <p>
     As a property, <code>-prince-filter-resolution</code> can be
@@ -15988,6 +16383,18 @@ supplier, item { overflow-wrap: normal; }
                   <td/>
                 </tr>
               </table>
+            </div>
+          </div>
+        </div>
+        <div>
+          <div id="prop-prince-filter-resolution-example2">Examples</div>
+          <div class="example">
+            <div class="programlisting">
+              <pre>
+                <code class="hljs">@prince-pdf {
+    -prince-filter-resolution: 300dpi;
+}</code>
+              </pre>
             </div>
           </div>
         </div>
@@ -16858,6 +17265,23 @@ supplier, item { overflow-wrap: normal; }
           </div>
         </div>
         <div>
+          <div id="prop-prince-flow-examples">Examples</div>
+          <div class="example">
+            <div class="programlisting">
+              <pre>
+                <code class="hljs">@page {
+    @bottom-center {
+        content: flow(footer);
+    }
+}
+    footer {
+    -prince-flow: static(footer, start);
+}</code>
+              </pre>
+            </div>
+          </div>
+        </div>
+        <div>
           <div id="prop-prince-flow-comments">Comments</div>
           <p>
     This property is used to remove elements from the normal flow of the
@@ -16942,6 +17366,18 @@ supplier, item { overflow-wrap: normal; }
                 </td>
                 </tr>
               </table>
+            </div>
+          </div>
+        </div>
+        <div>
+          <div id="prop-prince-footnote-policy-examples">Examples</div>
+          <div class="example">
+            <div class="programlisting">
+              <pre>
+                <code class="hljs">p {
+    -prince-footnote-policy: keep-with-line;
+}</code>
+              </pre>
             </div>
           </div>
         </div>
@@ -17097,6 +17533,20 @@ supplier, item { overflow-wrap: normal; }
           </div>
         </div>
         <div>
+          <div id="prop-prince-hyphenate-after-examples">Examples</div>
+          <div class="example">
+            <div class="programlisting">
+              <pre>
+                <code class="hljs">:lang(en-GB) {
+    -prince-hyphenate-patterns: url("hyph-en-gb.pat");
+    -prince-hyphenate-after: 3;
+    -prince-hyphenate-before: 3;
+}</code>
+              </pre>
+            </div>
+          </div>
+        </div>
+        <div>
           <div id="prop-prince-hyphenate-after-comments">Comments</div>
           <p>
 	This property specifies the minimum number of letters in a word that
@@ -17156,6 +17606,20 @@ supplier, item { overflow-wrap: normal; }
                 </td>
                 </tr>
               </table>
+            </div>
+          </div>
+        </div>
+        <div>
+          <div id="prop-prince-hyphenate-before-examples">Examples</div>
+          <div class="example">
+            <div class="programlisting">
+              <pre>
+                <code class="hljs">:lang(en-GB) {
+    -prince-hyphenate-patterns: url("hyph-en-gb.pat");
+    -prince-hyphenate-after: 3;
+    -prince-hyphenate-before: 3;
+}</code>
+              </pre>
             </div>
           </div>
         </div>
@@ -17223,6 +17687,18 @@ supplier, item { overflow-wrap: normal; }
           </div>
         </div>
         <div>
+          <div id="prop-prince-hyphenate-character-examples">Examples</div>
+          <div class="example">
+            <div class="programlisting">
+              <pre>
+                <code class="hljs">:lang(en-GB) {
+    hyphenate-character: "=";
+}</code>
+              </pre>
+            </div>
+          </div>
+        </div>
+        <div>
           <div id="prop-prince-hyphenate-character-comments">Comments</div>
           <p>
 	This property specifies the character that is shown at the end of a line
@@ -17282,6 +17758,18 @@ supplier, item { overflow-wrap: normal; }
                 </td>
                 </tr>
               </table>
+            </div>
+          </div>
+        </div>
+        <div>
+          <div id="prop-prince-hyphenate-limit-lines-examples">Examples</div>
+          <div class="example">
+            <div class="programlisting">
+              <pre>
+                <code class="hljs">p {
+    -prince-hyphenate-limit-lines: 2;
+}</code>
+              </pre>
             </div>
           </div>
         </div>
@@ -17357,6 +17845,18 @@ supplier, item { overflow-wrap: normal; }
           </div>
         </div>
         <div>
+          <div id="prop-prince-hyphenate-lines-examples">Examples</div>
+          <div class="example">
+            <div class="programlisting">
+              <pre>
+                <code class="hljs">p {
+    -prince-hyphenate-limit-lines: 2;
+}</code>
+              </pre>
+            </div>
+          </div>
+        </div>
+        <div>
           <div id="prop-prince-hyphenate-lines-comments">Comments</div>
           <p>
 	This property specifies the maximum number of consecutive lines that
@@ -17428,6 +17928,18 @@ supplier, item { overflow-wrap: normal; }
           </div>
         </div>
         <div>
+          <div id="prop-prince-hyphenate-patterns-examples">Examples</div>
+          <div class="example">
+            <div class="programlisting">
+              <pre>
+                <code class="hljs">:lang(el) {
+    -prince-hyphenate-patterns: url("https://mirrors.ctan.org/language/hyph-utf8/tex/patterns/txt/hyph-el-polyton.pat.txt");
+}</code>
+              </pre>
+            </div>
+          </div>
+        </div>
+        <div>
           <div id="prop-prince-hyphenate-patterns-comments">Comments</div>
           <p>
     This property is used to point to a hyphenation dictionary.  Normally this is
@@ -17490,6 +18002,18 @@ supplier, item { overflow-wrap: normal; }
                 </td>
                 </tr>
               </table>
+            </div>
+          </div>
+        </div>
+        <div>
+          <div id="prop-prince-image-magic-examples">Examples</div>
+          <div class="example">
+            <div class="programlisting">
+              <pre>
+                <code class="hljs">img {
+    -prince-image-magic: recompress-jpeg(50%) convert-to-jpeg(50%) snap-to-integer-coords;
+}</code>
+              </pre>
             </div>
           </div>
         </div>
@@ -17583,6 +18107,18 @@ supplier, item { overflow-wrap: normal; }
           </div>
         </div>
         <div>
+          <div id="prop-prince-image-resolution-examples">Examples</div>
+          <div class="example">
+            <div class="programlisting">
+              <pre>
+                <code class="hljs">img {
+    -prince-image-resolution: auto, 96dpi;
+}</code>
+              </pre>
+            </div>
+          </div>
+        </div>
+        <div>
           <div id="prop-prince-image-resolution-comments">Comments</div>
           <p>
     This property determines the resolution of an image.  The value <code>normal</code>
@@ -17647,6 +18183,19 @@ supplier, item { overflow-wrap: normal; }
                 </td>
                 </tr>
               </table>
+            </div>
+          </div>
+        </div>
+        <div>
+          <div id="prop-prince-lang-examples">Examples</div>
+          <div class="example">
+            <div class="programlisting">
+              <pre>
+                <code class="hljs">img::after {
+    content: attr(alt, "An image");
+    -prince-lang(en-GB);
+}</code>
+              </pre>
             </div>
           </div>
         </div>
@@ -17718,6 +18267,18 @@ supplier, item { overflow-wrap: normal; }
                 </td>
                 </tr>
               </table>
+            </div>
+          </div>
+        </div>
+        <div>
+          <div id="prop-prince-linebreak-magic-examples">Examples</div>
+          <div class="example">
+            <div class="programlisting">
+              <pre>
+                <code class="hljs">h1 {
+    -prince-linebreak-magic: none;
+}</code>
+              </pre>
             </div>
           </div>
         </div>
@@ -17911,6 +18472,18 @@ supplier, item { overflow-wrap: normal; }
           </div>
         </div>
         <div>
+          <div id="prop-prince-line-stacking-strategy-examples">Examples</div>
+          <div class="example">
+            <div class="programlisting">
+              <pre>
+                <code class="hljs">p {
+    -prince-line-stacking-strategy: block-line-height;
+}</code>
+              </pre>
+            </div>
+          </div>
+        </div>
+        <div>
           <div id="prop-prince-line-stacking-strategy-comments">Comments</div>
           <p>
     This property allows to choose whether individual lines should have their
@@ -18005,9 +18578,24 @@ supplier, item { overflow-wrap: normal; }
           </div>
         </div>
         <div>
+          <div id="prop-prince-link-examples">Examples</div>
+          <div class="example">
+            <div class="programlisting">
+              <pre>
+                <code class="hljs">xref {
+    -prince-link: attr(linkend idref);
+}</code>
+              </pre>
+            </div>
+          </div>
+        </div>
+        <div>
           <div id="prop-prince-link-comments">Comments</div>
           <p>
     This property makes an element into a link to the specified URL.
+    </p>
+          <p>
+    Please note that for the optional second argument also the Prince-specific attribute type <code>idref</code> is supported, which treats the attribute value of the first argument as if it were an IDREF - essentially converting it to a URL by prepending a hash mark.
     </p>
           <p class="note">
         The property <a href="#prop-link"><code>link</code></a> can be used as an alias.
@@ -18063,6 +18651,20 @@ supplier, item { overflow-wrap: normal; }
                 </td>
                 </tr>
               </table>
+            </div>
+          </div>
+        </div>
+        <div>
+          <div id="prop-prince-margin-alt-examples">Examples</div>
+          <div class="example">
+            <div class="programlisting">
+              <pre>
+                <code class="hljs">img { 
+    -prince-float: snap;
+    margin: 1em 0;
+    -prince-margin-alt: 0; 
+}</code>
+              </pre>
             </div>
           </div>
         </div>
@@ -18149,6 +18751,20 @@ supplier, item { overflow-wrap: normal; }
           </div>
         </div>
         <div>
+          <div id="prop-prince-margin-inside-examples">Examples</div>
+          <div class="example">
+            <div class="programlisting">
+              <pre>
+                <code class="hljs">.content {
+    margin: 2em;
+    -prince-margin-inside: 3em;
+    -prince-margin-outside: 1em;
+}</code>
+              </pre>
+            </div>
+          </div>
+        </div>
+        <div>
           <div id="prop-prince-margin-inside-comments">Comments</div>
           <p>
 	The <code>margin-inside</code> property overrides the value of the
@@ -18212,6 +18828,20 @@ supplier, item { overflow-wrap: normal; }
                 </td>
                 </tr>
               </table>
+            </div>
+          </div>
+        </div>
+        <div>
+          <div id="prop-prince-margin-outside-examples">Examples</div>
+          <div class="example">
+            <div class="programlisting">
+              <pre>
+                <code class="hljs">.content {
+    margin: 2em;
+    -prince-margin-inside: 3em;
+    -prince-margin-outside: 1em;
+}</code>
+              </pre>
             </div>
           </div>
         </div>
@@ -18756,11 +19386,27 @@ supplier, item { overflow-wrap: normal; }
           </div>
         </div>
         <div>
+          <div id="prop-prince-page-group-examples">Examples</div>
+          <div class="example">
+            <div class="programlisting">
+              <pre>
+                <code class="hljs">chapter h1 {
+    break-before: right;
+    -prince-page-group: start;
+}</code>
+              </pre>
+            </div>
+          </div>
+        </div>
+        <div>
           <div id="prop-prince-page-group-comments">Comments</div>
           <p>
 	This property determines whether the first page of this element
 	matches the <code>:first-of-group</code> page class selector.
 	</p>
+          <p>
+    It also forces a page break, overriding any properties that attempt to avoid page breaks. However, the more specific <code>left</code> and <code>right</code> page break instructions take precedence over <code>-prince-page-group</code>.
+    </p>
           <p class="note">
         The property <a href="#prop-page-group"><code>page-group</code></a> can be used as an alias.
         </p>
@@ -18823,7 +19469,9 @@ supplier, item { overflow-wrap: normal; }
           <div class="example">
             <div class="programlisting">
               <pre>
-                <code class="hljs">-prince-pdf-annotation-author: "John Doe";</code>
+                <code class="hljs">p.annotation {
+    -prince-pdf-annotation-author: "John Doe";
+}</code>
               </pre>
             </div>
           </div>
@@ -18890,7 +19538,9 @@ supplier, item { overflow-wrap: normal; }
           <div class="example">
             <div class="programlisting">
               <pre>
-                <code class="hljs">-prince-pdf-annotation-color: pink;</code>
+                <code class="hljs">p.annotation {
+    -prince-pdf-annotation-color: pink;
+}</code>
               </pre>
             </div>
           </div>
@@ -18969,7 +19619,9 @@ supplier, item { overflow-wrap: normal; }
           <div class="example">
             <div class="programlisting">
               <pre>
-                <code class="hljs">-prince-pdf-annotation-contents: "This is a PDF annotation.";</code>
+                <code class="hljs">p#annotation1{
+    -prince-pdf-annotation-contents: "This is a PDF annotation.";
+}</code>
               </pre>
             </div>
           </div>
@@ -19036,7 +19688,9 @@ supplier, item { overflow-wrap: normal; }
           <div class="example">
             <div class="programlisting">
               <pre>
-                <code class="hljs">-prince-pdf-annotation-createdate: "2022-04-28"</code>
+                <code class="hljs">p#annotation1 {
+    -prince-pdf-annotation-createdate: "2022-04-28";
+}</code>
               </pre>
             </div>
           </div>
@@ -19104,7 +19758,9 @@ supplier, item { overflow-wrap: normal; }
           <div class="example">
             <div class="programlisting">
               <pre>
-                <code class="hljs">-prince-pdf-annotation-icon: help</code>
+                <code class="hljs">p.annotation {
+    -prince-pdf-annotation-icon: comment;
+}</code>
               </pre>
             </div>
           </div>
@@ -19171,7 +19827,9 @@ supplier, item { overflow-wrap: normal; }
           <div class="example">
             <div class="programlisting">
               <pre>
-                <code class="hljs">@prince-pdf { -prince-pdf-annotation-merge: duplicates; }</code>
+                <code class="hljs">@prince-pdf {
+    -prince-pdf-annotation-merge: duplicates;
+}</code>
               </pre>
             </div>
           </div>
@@ -19241,7 +19899,9 @@ supplier, item { overflow-wrap: normal; }
           <div class="example">
             <div class="programlisting">
               <pre>
-                <code class="hljs">-prince-pdf-annotation-modifydate: "2022-04-28"</code>
+                <code class="hljs">p#annotation1 {
+    -prince-pdf-annotation-modifydate: "2022-04-28";
+}</code>
               </pre>
             </div>
           </div>
@@ -19309,7 +19969,9 @@ supplier, item { overflow-wrap: normal; }
           <div class="example">
             <div class="programlisting">
               <pre>
-                <code class="hljs">-prince-pdf-annotation-position: page-left 10% page-top 50%;</code>
+                <code class="hljs">p#annotation1 {
+    -prince-pdf-annotation-position: page-left 10% page-top 50%;
+}</code>
               </pre>
             </div>
           </div>
@@ -19380,7 +20042,9 @@ supplier, item { overflow-wrap: normal; }
           <div class="example">
             <div class="programlisting">
               <pre>
-                <code class="hljs">-prince-pdf-annotation-title: "PDF Annotation Title"</code>
+                <code class="hljs">p#annotation1 {
+    -prince-pdf-annotation-title: "PDF Annotation Title";
+}</code>
               </pre>
             </div>
           </div>
@@ -19447,7 +20111,9 @@ supplier, item { overflow-wrap: normal; }
           <div class="example">
             <div class="programlisting">
               <pre>
-                <code class="hljs">-prince-pdf-annotation-type: text;</code>
+                <code class="hljs">p.annotation {
+    -prince-pdf-annotation-type: text;
+}</code>
               </pre>
             </div>
           </div>
@@ -19512,6 +20178,18 @@ supplier, item { overflow-wrap: normal; }
           </div>
         </div>
         <div>
+          <div id="prop-prince-pdf-color-conversion-examples">Examples</div>
+          <div class="example">
+            <div class="programlisting">
+              <pre>
+                <code class="hljs">img.jpeg {
+    -prince-pdf-color-conversion: none;
+}</code>
+              </pre>
+            </div>
+          </div>
+        </div>
+        <div>
           <div id="prop-prince-pdf-color-conversion-comments">Comments</div>
           <p>
     As a property, <code>-prince-pdf-color-conversion</code>
@@ -19569,6 +20247,19 @@ supplier, item { overflow-wrap: normal; }
             </td>
                 </tr>
               </table>
+            </div>
+          </div>
+        </div>
+        <div>
+          <div id="prop-prince-pdf-color-conversion-example2">Examples</div>
+          <div class="example">
+            <div class="programlisting">
+              <pre>
+                <code class="hljs">@prince-pdf {
+    -prince-pdf-output-intent: url(SomeProfile.icc);
+    -prince-pdf-color-conversion: output-intent cmyk-grayscale;
+}</code>
+              </pre>
             </div>
           </div>
         </div>
@@ -19748,6 +20439,18 @@ supplier, item { overflow-wrap: normal; }
           </div>
         </div>
         <div>
+          <div id="prop-prince-pdf-destination-examples">Examples</div>
+          <div class="example">
+            <div class="programlisting">
+              <pre>
+                <code class="hljs">div.section {
+    -prince-pdf-destination: attr( data-sectionid );
+}</code>
+              </pre>
+            </div>
+          </div>
+        </div>
+        <div>
           <div id="prop-prince-pdf-destination-comments">Comments</div>
           <p>
     This property may be used to create "named destinations" (<code>nameddest</code>)
@@ -19808,6 +20511,18 @@ supplier, item { overflow-wrap: normal; }
           </div>
         </div>
         <div>
+          <div id="prop-prince-pdf-display-doc-title-examples">Examples</div>
+          <div class="example">
+            <div class="programlisting">
+              <pre>
+                <code class="hljs">@prince-pdf {
+    -prince-pdf-display-doc-title: true;
+}</code>
+              </pre>
+            </div>
+          </div>
+        </div>
+        <div>
           <div id="prop-prince-pdf-display-doc-title-comments">Comments</div>
           <p>
     This descriptor may be used to control whether the document file name or the
@@ -19819,6 +20534,14 @@ supplier, item { overflow-wrap: normal; }
     users may still expect it - or they will see a warning if they run the
     Adobe accessibility checker on their PDFs.
     </p>
+        </div>
+        <div>
+          <div id="prop-prince-pdf-display-doc-title-seealso">See Also</div>
+          <ul>
+            <li>
+              <a href="/doc/prince-output/#pdf-pages">PDF Pages</a>
+            </li>
+          </ul>
         </div>
       </div>
     </details>
@@ -19866,6 +20589,18 @@ supplier, item { overflow-wrap: normal; }
           </div>
         </div>
         <div>
+          <div id="prop-prince-pdf-duplex-examples">Examples</div>
+          <div class="example">
+            <div class="programlisting">
+              <pre>
+                <code class="hljs">@prince-pdf {
+    -prince-pdf-duplex: duplex-flip-long-edge;
+}</code>
+              </pre>
+            </div>
+          </div>
+        </div>
+        <div>
           <div id="prop-prince-pdf-duplex-comments">Comments</div>
           <p>
 	This descriptor may be used inside the
@@ -19873,6 +20608,14 @@ supplier, item { overflow-wrap: normal; }
     at-rule to set the <code>Duplex</code> property in the
     <code>PDFViewerPreferences</code> dictionary.
 	</p>
+        </div>
+        <div>
+          <div id="prop-prince-pdf-duplex-seealso">See Also</div>
+          <ul>
+            <li>
+              <a href="/doc/prince-output/#pdf-printing">PDF Printing</a>
+            </li>
+          </ul>
         </div>
       </div>
     </details>
@@ -20003,6 +20746,18 @@ supplier, item { overflow-wrap: normal; }
           </div>
         </div>
         <div>
+          <div id="prop-prince-pdf-form-examples">Examples</div>
+          <div class="example">
+            <div class="programlisting">
+              <pre>
+                <code class="hljs">form input, form select option {
+    -prince-pdf-form: enable;
+}</code>
+              </pre>
+            </div>
+          </div>
+        </div>
+        <div>
           <div id="prop-prince-pdf-form-comments">Comments</div>
           <p>
 	This property selectively enables or disables PDF form elements. It must be applied to each form element and is not inherited.
@@ -20124,6 +20879,19 @@ supplier, item { overflow-wrap: normal; }
           </div>
         </div>
         <div>
+          <div id="prop-prince-pdf-form-field-settings-examples">Examples</div>
+          <div class="example">
+            <div class="programlisting">
+              <pre>
+                <code class="hljs">form input, form select option {
+    -prince-pdf-form: enable;
+    -prince-pdf-form-field-settings: rich-text;
+}</code>
+              </pre>
+            </div>
+          </div>
+        </div>
+        <div>
           <div id="prop-prince-pdf-form-field-settings-comments">Comments</div>
           <p>
 	This property allows to fine-tune PDF forms by setting the equivalent flags in PDF.
@@ -20179,6 +20947,18 @@ supplier, item { overflow-wrap: normal; }
                 </td>
                 </tr>
               </table>
+            </div>
+          </div>
+        </div>
+        <div>
+          <div id="prop-prince-pdf-link-type-examples">Examples</div>
+          <div class="example">
+            <div class="programlisting">
+              <pre>
+                <code class="hljs">a[href] {
+    -prince-pdf-link-type: new-window;
+}</code>
+              </pre>
             </div>
           </div>
         </div>
@@ -20421,7 +21201,7 @@ supplier, item { overflow-wrap: normal; }
             <div class="programlisting">
               <pre>
                 <code class="hljs">@prince-pdf {
-    -prince-pdf-output-intent: url("ISOcoated_v2_eci.icc")
+    -prince-pdf-output-intent: url("ISOcoated_v2_eci.icc");
 }</code>
               </pre>
             </div>
@@ -20676,7 +21456,7 @@ supplier, item { overflow-wrap: normal; }
             <div class="programlisting">
               <pre>
                 <code class="hljs">@prince-pdf {
-    -prince-pdf-page-layout: two-column
+    -prince-pdf-page-layout: two-column;
 }</code>
               </pre>
             </div>
@@ -20749,7 +21529,7 @@ supplier, item { overflow-wrap: normal; }
             <div class="programlisting">
               <pre>
                 <code class="hljs">@prince-pdf {
-    -prince-pdf-page-mode: show-bookmarks
+    -prince-pdf-page-mode: show-bookmarks;
 }</code>
               </pre>
             </div>
@@ -20822,7 +21602,7 @@ supplier, item { overflow-wrap: normal; }
             <div class="programlisting">
               <pre>
                 <code class="hljs">@counter-style {
-    -prince-pdf-page-numbering: "D"
+    -prince-pdf-page-numbering: "D";
 }</code>
               </pre>
             </div>
@@ -20903,7 +21683,7 @@ supplier, item { overflow-wrap: normal; }
             <div class="programlisting">
               <pre>
                 <code class="hljs">@prince-pdf {
-    -prince-pdf-paper-tray: pick-tray-by-pdf-size
+    -prince-pdf-paper-tray: pick-tray-by-pdf-size;
 }</code>
               </pre>
             </div>
@@ -20976,7 +21756,7 @@ supplier, item { overflow-wrap: normal; }
             <div class="programlisting">
               <pre>
                 <code class="hljs">@prince-pdf {
-    -prince-pdf-print-scaling: none
+    -prince-pdf-print-scaling: none;
 }</code>
               </pre>
             </div>
@@ -21048,7 +21828,7 @@ supplier, item { overflow-wrap: normal; }
             <div class="programlisting">
               <pre>
                 <code class="hljs">@prince-pdf {
-    -prince-pdf-profile: "PDF/X-3:2003"
+    -prince-pdf-profile: "PDF/X-3:2003";
 }</code>
               </pre>
             </div>
@@ -21209,7 +21989,7 @@ supplier, item { overflow-wrap: normal; }
             <div class="programlisting">
               <pre>
                 <code class="hljs">@prince-pdf {
-    -prince-pdf-script: "this.print();"
+    -prince-pdf-script: "this.print();";
 }</code>
               </pre>
             </div>
@@ -21767,7 +22547,7 @@ blockquote { margin: 1rem; -prince-resize-options: -1rem; }
             <div class="programlisting">
               <pre>
                 <code class="hljs">@page {
-    -prince-rotate-body: landscape
+    -prince-rotate-body: landscape;
 }</code>
               </pre>
             </div>
@@ -21847,7 +22627,7 @@ blockquote { margin: 1rem; -prince-resize-options: -1rem; }
             <div class="programlisting">
               <pre>
                 <code class="hljs">@page {
-	-prince-shrink-to-fit: auto
+	-prince-shrink-to-fit: auto;
 }</code>
               </pre>
             </div>
@@ -21994,7 +22774,9 @@ blockquote { margin: 1rem; -prince-resize-options: -1rem; }
           <div class="example">
             <div class="programlisting">
               <pre>
-                <code class="hljs">@page { -prince-spread-length-options: shorten; }</code>
+                <code class="hljs">@page {
+    -prince-spread-length-options: shorten;
+}</code>
               </pre>
             </div>
           </div>
@@ -22074,6 +22856,18 @@ blockquote { margin: 1rem; -prince-resize-options: -1rem; }
           </div>
         </div>
         <div>
+          <div id="prop-prince-table-column-span-examples">Examples</div>
+          <div class="example">
+            <div class="programlisting">
+              <pre>
+                <code class="hljs">td.colspan2 {
+    -prince-table-column-span: 2;
+}</code>
+              </pre>
+            </div>
+          </div>
+        </div>
+        <div>
           <div id="prop-prince-table-column-span-comments">Comments</div>
           <p>
 	This property applies to table cells and determines the number of
@@ -22083,6 +22877,14 @@ blockquote { margin: 1rem; -prince-resize-options: -1rem; }
           <p class="note">
         The property <a href="#prop-table-column-span"><code>table-column-span</code></a> can be used as an alias.
         </p>
+        </div>
+        <div>
+          <div id="prop-prince-table-column-span-seealso">See Also</div>
+          <ul>
+            <li>
+              <a href="/doc/styling/#cells-that-span-columns">Table cells that span columns</a>
+            </li>
+          </ul>
         </div>
       </div>
     </details>
@@ -22130,6 +22932,18 @@ blockquote { margin: 1rem; -prince-resize-options: -1rem; }
           </div>
         </div>
         <div>
+          <div id="prop-prince-table-row-span-examples">Examples</div>
+          <div class="example">
+            <div class="programlisting">
+              <pre>
+                <code class="hljs">td.rowSpan2 {
+    -prince-table-row-span: 2;
+}</code>
+              </pre>
+            </div>
+          </div>
+        </div>
+        <div>
           <div id="prop-prince-table-row-span-comments">Comments</div>
           <p>
 	This property applies to table cells and determines the number of
@@ -22139,6 +22953,14 @@ blockquote { margin: 1rem; -prince-resize-options: -1rem; }
           <p class="note">
         The property <a href="#prop-table-row-span"><code>table-row-span</code></a> can be used as an alias.
         </p>
+        </div>
+        <div>
+          <div id="prop-prince-table-row-span-seealso">See Also</div>
+          <ul>
+            <li>
+              <a href="/doc/styling/#cells-that-span-rows">Table cells that span rows</a>
+            </li>
+          </ul>
         </div>
       </div>
     </details>
@@ -22182,6 +23004,18 @@ blockquote { margin: 1rem; -prince-resize-options: -1rem; }
                 </td>
                 </tr>
               </table>
+            </div>
+          </div>
+        </div>
+        <div>
+          <div id="prop-prince-text-justify-examples">Examples</div>
+          <div class="example">
+            <div class="programlisting">
+              <pre>
+                <code class="hljs">:lang("zh") {
+    -prince-text-justify: prince-cjk;
+}</code>
+              </pre>
             </div>
           </div>
         </div>
@@ -22265,8 +23099,8 @@ blockquote { margin: 1rem; -prince-resize-options: -1rem; }
             <div class="programlisting">
               <pre>
                 <code class="hljs">body {
-  -prince-text-replace: "s" "\017F"
-                        "\017F\20" "s\20";
+    -prince-text-replace: "s" "\017F"
+                          "\017F\20" "s\20";
 }</code>
               </pre>
             </div>
@@ -22466,7 +23300,7 @@ blockquote { margin: 1rem; -prince-resize-options: -1rem; }
             <div class="programlisting">
               <pre>
                 <code class="hljs">*[title] {
-  -prince-tooltip: attr(title)
+    -prince-tooltip: attr(title);
 }</code>
               </pre>
             </div>
@@ -22560,7 +23394,7 @@ blockquote { margin: 1rem; -prince-resize-options: -1rem; }
             <div class="programlisting">
               <pre>
                 <code class="hljs">@page {
-	-prince-trim: 60mm
+	-prince-trim: 60mm;
 }</code>
               </pre>
             </div>
@@ -24057,12 +24891,33 @@ blockquote { margin: 1rem; -prince-resize-options: -1rem; }
           </div>
         </div>
         <div>
+          <div id="prop-table-baseline-examples">Examples</div>
+          <div class="example">
+            <div class="programlisting">
+              <pre>
+                <code class="hljs">table.inline {
+    display: inline-table;
+    table-baseline: 2;
+}</code>
+              </pre>
+            </div>
+          </div>
+        </div>
+        <div>
           <div id="prop-table-baseline-comments">Comments</div>
           <p>
     This property only applies to inline tables, and it determines which row is treated as the
     baseline for the purposes of vertical alignment. See the <a href="/doc/styling/#inline-tables">Inline tables</a>
     documentation for more details.
     </p>
+        </div>
+        <div>
+          <div id="prop-table-baseline-seealso">See Also</div>
+          <ul>
+            <li>
+              <a href="/doc/styling/#inline-tables">Inline tables</a>
+            </li>
+          </ul>
         </div>
       </div>
     </details>
@@ -24110,6 +24965,18 @@ blockquote { margin: 1rem; -prince-resize-options: -1rem; }
           </div>
         </div>
         <div>
+          <div id="prop-table-column-span-examples">Examples</div>
+          <div class="example">
+            <div class="programlisting">
+              <pre>
+                <code class="hljs">td.colspan2 {
+    -prince-table-column-span: 2;
+}</code>
+              </pre>
+            </div>
+          </div>
+        </div>
+        <div>
           <div id="prop-table-column-span-comments">Comments</div>
           <p>
 	This property applies to table cells and determines the number of
@@ -24119,6 +24986,14 @@ blockquote { margin: 1rem; -prince-resize-options: -1rem; }
           <p class="note">
         The property <a href="#prop-prince-table-column-span"><code>-prince-table-column-span</code></a> can be used as an alias.
         </p>
+        </div>
+        <div>
+          <div id="prop-table-column-span-seealso">See Also</div>
+          <ul>
+            <li>
+              <a href="/doc/styling/#cells-that-span-columns">Table cells that span columns</a>
+            </li>
+          </ul>
         </div>
       </div>
     </details>
@@ -24227,6 +25102,18 @@ blockquote { margin: 1rem; -prince-resize-options: -1rem; }
           </div>
         </div>
         <div>
+          <div id="prop-table-row-span-examples">Examples</div>
+          <div class="example">
+            <div class="programlisting">
+              <pre>
+                <code class="hljs">td.rowSpan2 {
+    -prince-table-row-span: 2;
+}</code>
+              </pre>
+            </div>
+          </div>
+        </div>
+        <div>
           <div id="prop-table-row-span-comments">Comments</div>
           <p>
 	This property applies to table cells and determines the number of
@@ -24236,6 +25123,14 @@ blockquote { margin: 1rem; -prince-resize-options: -1rem; }
           <p class="note">
         The property <a href="#prop-prince-table-row-span"><code>-prince-table-row-span</code></a> can be used as an alias.
         </p>
+        </div>
+        <div>
+          <div id="prop-table-row-span-seealso">See Also</div>
+          <ul>
+            <li>
+              <a href="/doc/styling/#cells-that-span-rows">Table cells that span rows</a>
+            </li>
+          </ul>
         </div>
       </div>
     </details>
@@ -24970,6 +25865,18 @@ blockquote { margin: 1rem; -prince-resize-options: -1rem; }
                 </td>
                 </tr>
               </table>
+            </div>
+          </div>
+        </div>
+        <div>
+          <div id="prop-text-justify-examples">Examples</div>
+          <div class="example">
+            <div class="programlisting">
+              <pre>
+                <code class="hljs">:lang("zh") {
+    -prince-text-justify: prince-cjk;
+}</code>
+              </pre>
             </div>
           </div>
         </div>

@@ -3457,6 +3457,9 @@ NOTE: The current build process will cause this file's content to appear in a Ja
     <applyto>footnote elements</applyto>
     <inherit>yes</inherit>
     <extension/>
+    <example>.footnote {
+    footnote-style-position: inside;
+}</example>
     <comments>
 	<p>
 	For information about the use of the <code>footnote-style-position</code>
@@ -3940,6 +3943,10 @@ NOTE: The current build process will cause this file's content to appear in a Ja
     <applyto>positioned elements</applyto>
     <inherit>no</inherit>
     <extension/>
+    <example>p {
+    inset-inside: 5%;
+    inset-outside: 2%;
+}</example>
     <comments>
 	<p>
 	This property determines the inside offset for positioned elements
@@ -3962,6 +3969,10 @@ NOTE: The current build process will cause this file's content to appear in a Ja
     <applyto>positioned elements</applyto>
     <inherit>no</inherit>
     <extension/>
+    <example>p {
+    inset-inside: 5%;
+    inset-outside: 2%;
+}</example>
     <comments>
 	<p>
 	This property determines the outisde offset for positioned elements
@@ -4328,6 +4339,11 @@ NOTE: The current build process will cause this file's content to appear in a Ja
     <applyto>all top- or bottom-floated elements</applyto>
     <inherit>no</inherit>
     <extension/>
+    <example>img { 
+    -prince-float: snap;
+    margin: 1em 0;
+    -prince-margin-alt: 0; 
+}</example>
     <see><a href="/doc/styling/#margins-of-page-and-column-floats">Margins of Page and Column Floats</a></see>
     <see><a href="#prop-margin"><code>margin</code></a></see>
     <comments>
@@ -4383,6 +4399,11 @@ NOTE: The current build process will cause this file's content to appear in a Ja
     <applyto>all elements, except elements with table display types other than table-caption, table and inline-table</applyto>
     <inherit>no</inherit>
     <extension/>
+    <example>.content {
+    margin: 2em;
+    -prince-margin-inside: 3em;
+    -prince-margin-outside: 1em;
+}</example>
     <see><a href="/doc/styling/#margin">Margin</a></see>
     <comments>
 	<p>
@@ -4424,6 +4445,11 @@ NOTE: The current build process will cause this file's content to appear in a Ja
     <applyto>all elements, except elements with table display types other than table-caption, table and inline-table</applyto>
     <inherit>no</inherit>
     <extension/>
+    <example>.content {
+    margin: 2em;
+    -prince-margin-inside: 3em;
+    -prince-margin-outside: 1em;
+}</example>
     <see><a href="/doc/styling/#margin">Margin</a></see>
     <comments>
 	<p>
@@ -5394,6 +5420,9 @@ supplier, item { overflow-wrap: normal; }
     <applyto>background image elements</applyto>
     <inherit>yes</inherit>
     <extension/>
+    <example>.bg-image {
+    -prince-background-image-resolution: auto, 300dpi;
+}</example>
     <see><a href="/doc/graphics/#image-size">Image Size</a></see>
     <comments>
 	<p>
@@ -5458,6 +5487,11 @@ supplier, item { overflow-wrap: normal; }
     <applyto>all elements</applyto>
     <inherit>no</inherit>
     <extension/>
+    <example>chapter {
+    -prince-bookmark-level: 1;
+    -prince-bookmark-label: attr(title);
+}
+</example>
     <see><a href="/doc/gen-content/#generated-content-functions">Generated Content Functions</a></see>
     <see><a href="/doc/prince-output/#bookmark-labels">Bookmark labels</a></see>
     <see><code><property name="content"/></code></see>
@@ -5497,6 +5531,11 @@ supplier, item { overflow-wrap: normal; }
     <applyto>all elements</applyto>
     <inherit>no</inherit>
     <extension/>
+    <example>chapter {
+    -prince-bookmark-level: 1;
+    -prince-bookmark-label: attr(title);
+}
+</example>
     <see><a href="/doc/prince-output/#bookmark-levels">Bookmark levels</a></see>
     <comments>
 	<p>
@@ -5521,6 +5560,11 @@ supplier, item { overflow-wrap: normal; }
     <applyto>all elements</applyto>
     <inherit>no</inherit>
     <extension/>
+    <example>.subchapter {
+    -prince-bookmark-level: 3;
+    -prince-bookmark-state: closed;
+}
+</example>
     <see><a href="/doc/prince-output/#bookmark-levels">Bookmark levels</a></see>
     <comments>
     <p>
@@ -5547,6 +5591,9 @@ supplier, item { overflow-wrap: normal; }
     <applyto>all elements</applyto>
     <inherit>no</inherit>
     <extension/>
+    <example>bookmark {
+    -prince-bookmark-target: attr(href);
+}</example>
     <see><a href="/doc/prince-output/#bookmark-targets">Bookmark targets</a></see>
     <comments>
 	<p>
@@ -5571,7 +5618,13 @@ supplier, item { overflow-wrap: normal; }
     <applyto>table elements</applyto>
     <inherit>yes</inherit>
     <extension/>
+    <example>table + p {
+    display: table-caption;
+    caption-side: bottom;
+    -prince-caption-page: following;
+}</example>
     <see><a href="/doc/styling/#table-captions">Table captions</a></see>
+    <see><a href="/doc/cookbook/#fancy-table-captions">Fancy table captions</a></see>
     <comments>
 	<p>
 	This property determines whether table captions will be displayed on
@@ -5690,6 +5743,10 @@ supplier, item { overflow-wrap: normal; }
     <applyto>all elements</applyto>
     <inherit>yes</inherit>
     <extension/>
+    <example>h1 {
+    filter: blur(20px);
+    -prince-filter-resolution: 300dpi;
+}</example>
     <see><a href="/doc/graphics/#filters">Filters</a></see>
     <comments>
     <p>
@@ -5711,6 +5768,9 @@ supplier, item { overflow-wrap: normal; }
     <initial2>96dpi</initial2>
     <applyto2>@prince-pdf at-rule</applyto2>
     <inherit2>n/a</inherit2>
+    <example2>@prince-pdf {
+    -prince-filter-resolution: 300dpi;
+}</example2>
     <see2><a href="/doc/graphics/#filters">Filters</a></see2>
     <comments2>
     <p>
@@ -5782,6 +5842,14 @@ supplier, item { overflow-wrap: normal; }
     <applyto>all elements</applyto>
     <inherit>no</inherit>
     <extension/>
+    <example>@page {
+    @bottom-center {
+        content: flow(footer);
+    }
+}
+    footer {
+    -prince-flow: static(footer, start);
+}</example>
     <see><a href="/doc/paged/#page-regions">Page regions</a></see>
     <see><a href="/doc/paged/#taking-elements-from-the-document">Taking elements from the document</a></see>
     <see><code><property name="content"/></code></see>
@@ -5817,6 +5885,9 @@ supplier, item { overflow-wrap: normal; }
     <applyto>footnote elements</applyto>
     <inherit>yes</inherit>
     <extension/>
+    <example>p {
+    -prince-footnote-policy: keep-with-line;
+}</example>
     <see><a href="/doc/styling/#footnotes">Footnotes</a></see>
     <comments>
 	<p>
@@ -5876,6 +5947,11 @@ supplier, item { overflow-wrap: normal; }
     <applyto>all elements</applyto>
     <inherit>yes</inherit>
     <extension/>
+    <example>:lang(en-GB) {
+    -prince-hyphenate-patterns: url("hyph-en-gb.pat");
+    -prince-hyphenate-after: 3;
+    -prince-hyphenate-before: 3;
+}</example>
     <see><a href="/doc/cookbook/#hyphenation">Hyphenation</a></see>
     <comments>
 	<p>
@@ -5895,6 +5971,11 @@ supplier, item { overflow-wrap: normal; }
     <applyto>all elements</applyto>
     <inherit>yes</inherit>
     <extension/>
+    <example>:lang(en-GB) {
+    -prince-hyphenate-patterns: url("hyph-en-gb.pat");
+    -prince-hyphenate-after: 3;
+    -prince-hyphenate-before: 3;
+}</example>
     <see><a href="/doc/cookbook/#hyphenation">Hyphenation</a></see>
     <comments>
 	<p>
@@ -5917,6 +5998,9 @@ supplier, item { overflow-wrap: normal; }
     <applyto>all elements</applyto>
     <inherit>yes</inherit>
     <extension/>
+    <example>:lang(en-GB) {
+    hyphenate-character: "=";
+}</example>
     <see><a href="/doc/cookbook/#hyphenation">Hyphenation</a></see>
     <comments>
 	<p>
@@ -5939,6 +6023,9 @@ supplier, item { overflow-wrap: normal; }
     <applyto>all elements</applyto>
     <inherit>yes</inherit>
     <extension/>
+    <example>p {
+    -prince-hyphenate-limit-lines: 2;
+}</example>
     <see><a href="/doc/cookbook/#hyphenation">Hyphenation</a></see>
     <comments>
 	<p>
@@ -5967,6 +6054,9 @@ supplier, item { overflow-wrap: normal; }
     <applyto>all elements</applyto>
     <inherit>yes</inherit>
     <extension/>
+    <example>:lang(el) {
+    -prince-hyphenate-patterns: url("https://mirrors.ctan.org/language/hyph-utf8/tex/patterns/txt/hyph-el-polyton.pat.txt");
+}</example>
     <see><a href="/doc/cookbook/#hyphenation">Hyphenation</a></see>
     <comments>
     <p>
@@ -6007,6 +6097,9 @@ supplier, item { overflow-wrap: normal; }
     <applyto>image elements</applyto>
     <inherit>yes</inherit>
     <extension/>
+    <example>img {
+    -prince-image-magic: recompress-jpeg(50%) convert-to-jpeg(50%) snap-to-integer-coords;
+}</example>
     <see><a href="/doc/graphics/#image-size">Image Size</a></see>
     <see><a href="/doc/cookbook/#image-magic">Image Magic</a></see>
     <comments>
@@ -6065,6 +6158,9 @@ supplier, item { overflow-wrap: normal; }
     <applyto>image elements</applyto>
     <inherit>yes</inherit>
     <extension/>
+    <example>img {
+    -prince-image-resolution: auto, 96dpi;
+}</example>
     <see><a href="/doc/graphics/#image-size">Image Size</a></see>
     <comments>
     <p>
@@ -6092,6 +6188,10 @@ supplier, item { overflow-wrap: normal; }
     <applyto>all elements</applyto>
     <inherit>yes</inherit>
     <extension/>
+    <example>img::after {
+    content: attr(alt, "An image");
+    -prince-lang(en-GB);
+}</example>
     <see><a href="/doc/styling/#opentype-features-in-prince">OpenType Features in Prince</a></see>
     <comments>
 	<p>
@@ -6124,6 +6224,9 @@ supplier, item { overflow-wrap: normal; }
     <applyto>all elements</applyto>
     <inherit>yes</inherit>
     <extension/>
+    <example>h1 {
+    -prince-linebreak-magic: none;
+}</example>
     <see><a href="/doc/styling/#paragraph-formatting">Paragraph formatting</a></see>
     <comments>
 	<p>
@@ -6250,6 +6353,9 @@ supplier, item { overflow-wrap: normal; }
     <initial>inline-line-height</initial>
     <applyto>block-level elements</applyto>
     <inherit>yes</inherit>
+    <example>p {
+    -prince-line-stacking-strategy: block-line-height;
+}</example>
     <see><a href="/doc/styling/#paragraph-formatting">Paragraph formatting</a></see>
     <see><code><property name="line-height"/></code></see>
     <comments>
@@ -6305,10 +6411,16 @@ supplier, item { overflow-wrap: normal; }
     <applyto>all elements</applyto>
     <inherit>no</inherit>
     <extension/>
+    <example>xref {
+    -prince-link: attr(linkend idref);
+}</example>
     <see><a href="/doc/prince-output/#pdf-links">PDF Links</a></see>
     <comments>
     <p>
     This property makes an element into a link to the specified URL.
+    </p>
+    <p>
+    Please note that for the optional second argument also the Prince-specific attribute type <code>idref</code> is supported, which treats the attribute value of the first argument as if it were an IDREF - essentially converting it to a URL by prepending a hash mark.
     </p>
     </comments>
     <aliastarget>link</aliastarget>
@@ -6539,12 +6651,19 @@ supplier, item { overflow-wrap: normal; }
     <applyto>all elements</applyto>
     <inherit>no</inherit>
     <extension/>
+    <example>chapter h1 {
+    break-before: right;
+    -prince-page-group: start;
+}</example>
     <see><a href="/doc/paged/#page-groups">Page groups</a></see>
     <comments>
 	<p>
 	This property determines whether the first page of this element
 	matches the <code>:first-of-group</code> page class selector.
 	</p>
+    <p>
+    It also forces a page break, overriding any properties that attempt to avoid page breaks. However, the more specific <code>left</code> and <code>right</code> page break instructions take precedence over <code>-prince-page-group</code>.
+    </p>
     </comments>
     <aliastarget>page-group</aliastarget>
 </property>
@@ -6561,7 +6680,9 @@ supplier, item { overflow-wrap: normal; }
     <applyto>all elements</applyto>
 	<inherit>no</inherit>
 	<extension/>
-	<example>-prince-pdf-annotation-author: "John Doe";</example>
+	<example>p.annotation {
+    -prince-pdf-annotation-author: "John Doe";
+}</example>
     <see><a href="/doc/prince-output/#pdf-annotations">PDF Annotations</a></see>
 	<comments>
 		<p>This property is used to specify the author of a PDF annotation.</p>
@@ -6580,7 +6701,9 @@ supplier, item { overflow-wrap: normal; }
     <applyto>all elements</applyto>
 	<inherit>no</inherit>
 	<extension/>
-	<example>-prince-pdf-annotation-color: pink;</example>
+	<example>p.annotation {
+    -prince-pdf-annotation-color: pink;
+}</example>
     <see><a href="/doc/prince-output/#pdf-annotations">PDF Annotations</a></see>
     <see><code><property name="prince-pdf-annotation-type"/></code></see>
 	<comments>
@@ -6612,7 +6735,9 @@ supplier, item { overflow-wrap: normal; }
     <applyto>all elements</applyto>
 	<inherit>no</inherit>
 	<extension/>
-	<example>-prince-pdf-annotation-contents: "This is a PDF annotation.";</example>
+	<example>p#annotation1{
+    -prince-pdf-annotation-contents: "This is a PDF annotation.";
+}</example>
     <see><a href="/doc/prince-output/#pdf-annotations">PDF Annotations</a></see>
 	<comments>
 		<p>This property is used to define the PDF annotation content.</p>
@@ -6631,7 +6756,9 @@ supplier, item { overflow-wrap: normal; }
     <applyto>all elements</applyto>
 	<inherit>no</inherit>
 	<extension/>
-	<example>-prince-pdf-annotation-createdate: "2022-04-28"</example>
+	<example>p#annotation1 {
+    -prince-pdf-annotation-createdate: "2022-04-28";
+}</example>
     <see><a href="/doc/prince-output/#pdf-annotations">PDF Annotations</a></see>
 	<comments>
 		<p>This property is used to define the PDF annotation date of creation.
@@ -6656,7 +6783,9 @@ supplier, item { overflow-wrap: normal; }
     <applyto>all elements</applyto>
 	<inherit>no</inherit>
 	<extension/>
-	<example>-prince-pdf-annotation-icon: help</example>
+	<example>p.annotation {
+    -prince-pdf-annotation-icon: comment;
+}</example>
     <see><a href="/doc/prince-output/#pdf-annotations">PDF Annotations</a></see>
 	<comments>
 		<p>This property is used to define which icon should be used for the PDF annotation.</p>
@@ -6678,7 +6807,9 @@ supplier, item { overflow-wrap: normal; }
     <applyto>@prince-pdf at-rule</applyto>
     <inherit>no</inherit>
     <extension/>
-    <example>@prince-pdf { -prince-pdf-annotation-merge: duplicates; }</example>
+    <example>@prince-pdf {
+    -prince-pdf-annotation-merge: duplicates;
+}</example>
     <see><a href="/doc/prince-output/#pdf-annotations">PDF Annotations</a></see>
     <comments>
         <p>This property affects the creation of user annotations on a PDF page.</p>
@@ -6700,7 +6831,9 @@ supplier, item { overflow-wrap: normal; }
     <applyto>all elements</applyto>
 	<inherit>no</inherit>
 	<extension/>
-	<example>-prince-pdf-annotation-modifydate: "2022-04-28"</example>
+	<example>p#annotation1 {
+    -prince-pdf-annotation-modifydate: "2022-04-28";
+}</example>
     <see><a href="/doc/prince-output/#pdf-annotations">PDF Annotations</a></see>
 	<comments>
 		<p>This property is used to define the PDF annotation date of modification.
@@ -6740,7 +6873,9 @@ supplier, item { overflow-wrap: normal; }
     <applyto>all elements</applyto>
 	<inherit>no</inherit>
 	<extension/>
-	<example>-prince-pdf-annotation-position: page-left 10% page-top 50%;</example>
+	<example>p#annotation1 {
+    -prince-pdf-annotation-position: page-left 10% page-top 50%;
+}</example>
     <see><a href="/doc/prince-output/#pdf-annotations">PDF Annotations</a></see>
 	<comments>
 		<p>This property is used to define the PDF annotation position.</p>
@@ -6763,7 +6898,9 @@ supplier, item { overflow-wrap: normal; }
     <applyto>all elements</applyto>
 	<inherit>no</inherit>
 	<extension/>
-	<example>-prince-pdf-annotation-title: "PDF Annotation Title"</example>
+	<example>p#annotation1 {
+    -prince-pdf-annotation-title: "PDF Annotation Title";
+}</example>
     <see><a href="/doc/prince-output/#pdf-annotations">PDF Annotations</a></see>
 	<comments>
 		<p>This property is used to define the PDF annotation title.</p>
@@ -6786,7 +6923,9 @@ supplier, item { overflow-wrap: normal; }
     <applyto>all elements</applyto>
 	<inherit>no</inherit>
 	<extension/>
-	<example>-prince-pdf-annotation-type: text;</example>
+	<example>p.annotation {
+    -prince-pdf-annotation-type: text;
+}</example>
     <see><a href="/doc/prince-output/#pdf-annotations">PDF Annotations</a></see>
 	<comments>
 		<p>This property is used to define the PDF annotation type.</p>
@@ -6808,6 +6947,9 @@ supplier, item { overflow-wrap: normal; }
     <applyto>all elements</applyto>
     <inherit>yes</inherit>
     <extension/>
+    <example>img.jpeg {
+    -prince-pdf-color-conversion: none;
+}</example>
     <comments>
     <p>
     As a property, <code>-prince-pdf-color-conversion</code>
@@ -6870,6 +7012,10 @@ supplier, item { overflow-wrap: normal; }
     <initial2>output-intent</initial2>
     <applyto2>@prince-pdf at-rule</applyto2>
     <inherit2>no</inherit2>
+    <example2>@prince-pdf {
+    -prince-pdf-output-intent: url(SomeProfile.icc);
+    -prince-pdf-color-conversion: output-intent cmyk-grayscale;
+}</example2>
     <see2><a href="/doc/graphics/#color-conversion">Color conversion</a></see2>
     <comments2>
     <p>
@@ -6960,6 +7106,9 @@ supplier, item { overflow-wrap: normal; }
     <applyto>all elements</applyto>
     <inherit>no</inherit>
     <extension/>
+    <example>div.section {
+    -prince-pdf-destination: attr( data-sectionid );
+}</example>
     <see><a href="/doc/prince-output/#pdf-links">PDF Links</a></see>
     <comments>
     <p>
@@ -6981,6 +7130,10 @@ supplier, item { overflow-wrap: normal; }
     <applyto>@prince-pdf at-rule</applyto>
     <inherit>no</inherit>
     <extension/>
+    <example>@prince-pdf {
+    -prince-pdf-display-doc-title: true;
+}</example>
+    <see><a href="/doc/prince-output/#pdf-pages">PDF Pages</a></see>
     <comments>
     <p>
     This descriptor may be used to control whether the document file name or the
@@ -7009,6 +7162,10 @@ supplier, item { overflow-wrap: normal; }
     <applyto>@prince-pdf at-rule</applyto>
     <inherit>no</inherit>
     <extension/>
+    <example>@prince-pdf {
+    -prince-pdf-duplex: duplex-flip-long-edge;
+}</example>
+    <see><a href="/doc/prince-output/#pdf-printing">PDF Printing</a></see>
     <comments>
 	<p>
 	This descriptor may be used inside the
@@ -7078,6 +7235,9 @@ supplier, item { overflow-wrap: normal; }
     <applyto>all form elements</applyto>
     <inherit>no</inherit>
     <extension/>
+    <example>form input, form select option {
+    -prince-pdf-form: enable;
+}</example>
     <see><a href="/doc/prince-output/#pdf-forms">PDF Forms</a></see>
     <comments>
 	<p>
@@ -7127,6 +7287,10 @@ supplier, item { overflow-wrap: normal; }
     <applyto>all text input form elements</applyto>
     <inherit>no</inherit>
     <extension/>
+    <example>form input, form select option {
+    -prince-pdf-form: enable;
+    -prince-pdf-form-field-settings: rich-text;
+}</example>
     <see><a href="/doc/prince-output/#pdf-forms">PDF Forms</a></see>
     <comments>
 	<p>
@@ -7160,6 +7324,9 @@ supplier, item { overflow-wrap: normal; }
     <applyto>hyperlink elements</applyto>
     <inherit>no</inherit>
     <extension/>
+    <example>a[href] {
+    -prince-pdf-link-type: new-window;
+}</example>
     <see><a href="/doc/prince-output/#pdf-links">PDF Links</a></see>
     <comments>
 	<p>
@@ -7295,7 +7462,7 @@ supplier, item { overflow-wrap: normal; }
     <inherit>n/a</inherit>
     <extension/>
     <example>@prince-pdf {
-    -prince-pdf-output-intent: url("ISOcoated_v2_eci.icc")
+    -prince-pdf-output-intent: url("ISOcoated_v2_eci.icc");
 }</example>
     <see><code><property name="prince-fallback-cmyk-profile"/></code></see>
     <see><a href="/doc/graphics/#color-management">Color Management</a></see>
@@ -7406,7 +7573,7 @@ supplier, item { overflow-wrap: normal; }
     <inherit>n/a</inherit>
     <extension/>
     <example>@prince-pdf {
-    -prince-pdf-page-layout: two-column
+    -prince-pdf-page-layout: two-column;
 }</example>
     <see><a href="/doc/prince-output/#pdf-pages">PDF Pages</a></see>
     <comments>
@@ -7433,7 +7600,7 @@ supplier, item { overflow-wrap: normal; }
     <inherit>n/a</inherit>
     <extension/>
     <example>@prince-pdf {
-    -prince-pdf-page-mode: show-bookmarks
+    -prince-pdf-page-mode: show-bookmarks;
 }</example>
     <see><a href="/doc/prince-output/#pdf-pages">PDF Pages</a></see>
     <comments>
@@ -7458,7 +7625,7 @@ supplier, item { overflow-wrap: normal; }
     <inherit>n/a</inherit>
     <extension/>
     <example>@counter-style {
-    -prince-pdf-page-numbering: "D"
+    -prince-pdf-page-numbering: "D";
 }</example>
     <see><a href="/doc/prince-output/#pdf-pages">PDF Pages</a></see>
     <comments>
@@ -7491,7 +7658,7 @@ supplier, item { overflow-wrap: normal; }
     <inherit>n/a</inherit>
     <extension/>
     <example>@prince-pdf {
-    -prince-pdf-paper-tray: pick-tray-by-pdf-size
+    -prince-pdf-paper-tray: pick-tray-by-pdf-size;
 }</example>
 	<see><a href="/doc/prince-output/#pdf-printing">PDF Printing</a></see>
     <comments>
@@ -7516,7 +7683,7 @@ supplier, item { overflow-wrap: normal; }
     <inherit>n/a</inherit>
     <extension/>
     <example>@prince-pdf {
-    -prince-pdf-print-scaling: none
+    -prince-pdf-print-scaling: none;
 }</example>
 	<see><a href="/doc/prince-output/#pdf-printing">PDF Printing</a></see>
     <comments>
@@ -7540,7 +7707,7 @@ supplier, item { overflow-wrap: normal; }
     <inherit>n/a</inherit>
     <extension/>
     <example>@prince-pdf {
-    -prince-pdf-profile: "PDF/X-3:2003"
+    -prince-pdf-profile: "PDF/X-3:2003";
 }</example>
 	<see><a href="/doc/prince-output/#pdf-versions-and-profiles">PDF Versions and Profiles</a></see>
     <comments>
@@ -7641,7 +7808,7 @@ supplier, item { overflow-wrap: normal; }
     <inherit>n/a</inherit>
     <extension/>
     <example>@prince-pdf {
-    -prince-pdf-script: "this.print();"
+    -prince-pdf-script: "this.print();";
 }</example>
     <see><a href="/doc/prince-output/#pdf-scripts">PDF Scripts</a></see>
     <comments>
@@ -7941,7 +8108,7 @@ blockquote { margin: 1rem; -prince-resize-options: -1rem; }
     <inherit>n/a</inherit>
     <extension/>
     <example>@page {
-    -prince-rotate-body: landscape
+    -prince-rotate-body: landscape;
 }</example>
     <see><a href="/doc/cookbook/#printing-wide-content-sideways">Printing wide content sideways</a></see>
     <comments>
@@ -7998,7 +8165,7 @@ blockquote { margin: 1rem; -prince-resize-options: -1rem; }
     <inherit>n/a</inherit>
     <extension/>
     <example>@page {
-	-prince-shrink-to-fit: auto
+	-prince-shrink-to-fit: auto;
 }</example>
     <see><a href="/doc/cookbook/#printing-wide-content-sideways">Printing wide content sideways</a></see>
     <comments>
@@ -8056,7 +8223,9 @@ blockquote { margin: 1rem; -prince-resize-options: -1rem; }
     <applyto>@page at-rule</applyto>
     <inherit>n/a</inherit>
     <extension/>
-    <example>@page { -prince-spread-length-options: shorten; }</example>
+    <example>@page {
+    -prince-spread-length-options: shorten;
+}</example>
     <comments>
         <p>
         This property allows Prince for Books to reduce (or increase)
@@ -8121,8 +8290,8 @@ blockquote { margin: 1rem; -prince-resize-options: -1rem; }
     <inherit>no</inherit>
     <extension/>
     <example>body {
-  -prince-text-replace: "s" "\017F"
-                        "\017F\20" "s\20";
+    -prince-text-replace: "s" "\017F"
+                          "\017F\20" "s\20";
 }</example>
     <see><a href="/doc/characters/">Character Entities</a></see>
     <comments>
@@ -8154,7 +8323,7 @@ blockquote { margin: 1rem; -prince-resize-options: -1rem; }
     <inherit>no</inherit>
     <extension/>
 	<example>*[title] {
-  -prince-tooltip: attr(title)
+    -prince-tooltip: attr(title);
 }</example>
     <see><a href="/doc/gen-content/#generated-content-functions">Generated Content Functions</a></see>
     <see><a href="/doc/gen-content/">Generated Content</a></see>
@@ -8196,7 +8365,7 @@ blockquote { margin: 1rem; -prince-resize-options: -1rem; }
     <inherit>n/a</inherit>
     <extension/>
     <example>@page {
-	-prince-trim: 60mm
+	-prince-trim: 60mm;
 }</example>
     <see><a href="/doc/paged/#page-style">Page style</a></see>
     <see><code><property name="bleed"/></code></see>
@@ -8774,6 +8943,11 @@ blockquote { margin: 1rem; -prince-resize-options: -1rem; }
     <applyto>inline-table elements</applyto>
     <inherit>no</inherit>
     <extension/>
+    <example>table.inline {
+    display: inline-table;
+    table-baseline: 2;
+}</example>
+    <see><a href="/doc/styling/#inline-tables">Inline tables</a></see>
     <comments>
     <p>
     This property only applies to inline tables, and it determines which row is treated as the
@@ -8795,6 +8969,10 @@ blockquote { margin: 1rem; -prince-resize-options: -1rem; }
     <applyto>table cells</applyto>
     <inherit>no</inherit>
     <extension/>
+    <example>td.colspan2 {
+    -prince-table-column-span: 2;
+}</example>
+    <see><a href="/doc/styling/#cells-that-span-columns">Table cells that span columns</a></see>
     <comments>
 	<p>
 	This property applies to table cells and determines the number of
@@ -8838,6 +9016,10 @@ blockquote { margin: 1rem; -prince-resize-options: -1rem; }
     <applyto>table cells</applyto>
     <inherit>no</inherit>
     <extension/>
+    <example>td.rowSpan2 {
+    -prince-table-row-span: 2;
+}</example>
+    <see><a href="/doc/styling/#cells-that-span-rows">Table cells that span rows</a></see>
     <comments>
 	<p>
 	This property applies to table cells and determines the number of
@@ -9107,6 +9289,9 @@ blockquote { margin: 1rem; -prince-resize-options: -1rem; }
     <applyto>text elements</applyto>
     <inherit>yes</inherit>
     <extension/>
+    <example>:lang("zh") {
+    -prince-text-justify: prince-cjk;
+}</example>
     <see><a href="/doc/styling/#paragraph-formatting">Paragraph formatting</a></see>
     <comments>
 	<p>
