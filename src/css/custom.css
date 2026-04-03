@@ -54,6 +54,13 @@
     background-color: #333;
   }
 
+  table#pregions td[style|='background'] {
+    color: black;
+  }
+  table#pregions td[style~='border:'] {
+    outline: 1px solid ivory;
+    outline-offset: -10px;
+  }
 }
 
 /* Custom CSS */
