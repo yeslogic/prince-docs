@@ -99,6 +99,7 @@ export default {
         additionalLanguages: ['css', 'markup', 'markdown', 'toml', 'yaml', 'json', 'bash', 'javascript'],
         defaultLanguage: 'css',
         theme: prismThemes.oneLight,
+        darkTheme: prismThemes.oneDark,
     },
   },
   presets: [
