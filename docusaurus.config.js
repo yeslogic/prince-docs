@@ -90,7 +90,7 @@ export default {
     colorMode: {
       // "light" | "dark"
       defaultMode: 'light',
-
+      respectPrefersColorScheme: true,
       // Hides the switch in the navbar
       // Useful if you want to support a single color mode
       disableSwitch: false,
