@@ -34,6 +34,8 @@
   --ifm-pre-background: #333;
   --ifm-menu-color-active: #ffa046;
 
+  --docusaurus-highlighted-code-line-bg: rgb(60, 64, 72);
+
   #prop-list details, #js-support-table details, #js-support-table details.globalWindow {
     background-color: var(--ifm-menu-color-background-active);
 
