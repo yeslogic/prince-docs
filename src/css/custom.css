@@ -489,6 +489,7 @@ dt[id], h6[id], th[id], summary[id], #prop-list div[id] {
     --ifm-alert-background-color: rgba(255, 0, 0, 0.01);
     a {
         text-decoration: none;
+        font-style: italic;
         &:hover {
             text-decoration: underline;
         }
