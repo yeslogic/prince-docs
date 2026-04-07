@@ -16,13 +16,15 @@ function Home() {
           <p>{siteConfig.tagline}</p>
         </div>
       </header>
-      <main id="entry">
+      <main id="entry" style={{maxWidth: "500px"}}>
         <p>In the documentation section you can find:</p>
         <ul>
           <li>the <a href="/doc/category/installation-guide/">Installation Guide</a>,</li>
           <li>the <a href="/doc/intro-userguide/" className="pagination-nav__link--next">User Guide</a> for the latest version, and</li>
           <li>the <a href="/doc/category/reference-guide/">Reference Guide</a>.</li>
         </ul>
+        <p>This is the documentation for the latest release.</p>
+        <p><a href="https://github.com/yeslogic/prince-docs">Source code</a> for the documentation is maintained in a public repository on Github. On the relevant <a href="https://github.com/yeslogic/prince-docs/releases">Github releases page</a> you can find all recent releases, and a link to full changelogs.</p>
         <details id="version-nav">
           <summary>
             Alternatively, you can <b>choose</b> the User Guide by Prince version.
