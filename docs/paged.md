@@ -132,7 +132,9 @@ Most content appears inside the *page area* of one or more pages - in the above 
 
 The figure above shows the position of some *page-margin boxes*, which can be used for creating running page headers and footers, as well as some common regions in the main *page area*.
 
-The HTML and CSS that create the above image can be found in the [Prince Tips and Tricks](cookbook.md#page-regions) cookbook.
+:::tip
+The [Prince Cookbook](cookbook.md) shows the [HTML and CSS](cookbook.md#page-regions) that create the above image.
+:::
 
 The [`@page`](css-at-rules.md#at-page) background is lightgrey and the `body`'s, i.e. the *page area*'s background, is white.
 
@@ -767,6 +769,10 @@ Up to Prince version 15, the `@page:first` and `@page:nth()` selectors, when use
 The `:left` and `:right` page selectors can be used to style left and right pages in a bound book differently. This is often used in text books to place the page number on the outside top corners of pages.
 
 Alternatively, the `:recto` and `:verso` selectors can be used, with the advantage of being independent of directionality of the script: in a left-to-right script, `:recto` is the right-hand side of a spread, and `:verso` is the left-hand side, while in a right-to-left script these values are inverted: `:recto` defines the left-hand side of a spread, and `:verso` defines the right-hand side. See also [Writing Mode](styling.md#writing-mode).
+
+:::tip
+The [Prince Cookbook](cookbook.md) offers an in-depth chapter on [Thinking in Spreads](cookbook.md#thinking-in-spreads).
+:::
 
 Finally, the `:blank` selector can be used to style blank pages.
 

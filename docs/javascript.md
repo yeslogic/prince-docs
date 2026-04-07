@@ -14,7 +14,13 @@ Prince is a user agent producing primarily documents meant to be printed, and as
 
 The most notable difference is the fact that a printed page cannot be interactive, being static in nature: in principle a document cannot be modified after it is deemed to be ready for print. JavaScript can basically be run twice: the first time it is run before layout, where it interacts with and modifies the layout (and the DOM structure). Once layout is finished, JavaScript can be run a second time from the `complete` event handler (see [Event Handling](javascript.md#event-handling)) to inspect the layout, without modifying the DOM.
 
-However, Prince also offers to register the function [`Prince.registerPostLayoutFunc(func)`](js-support.md#window.Prince.registerPostLayoutFunc), which is called after layout finished, similar to the current `oncomplete` event. If this function modifies the DOM, Prince will perform layout again on the updated document. For more details see [Multi-Pass formatting](#multi-pass-formatting) and [The "Multi-Pass" Solution](cookbook.md#the-multi-pass-solution).
+However, Prince also offers to register the function [`Prince.registerPostLayoutFunc(func)`](js-support.md#window.Prince.registerPostLayoutFunc), which is called after layout finished, similar to the current `oncomplete` event. If this function modifies the DOM, Prince will perform layout again on the updated document.
+
+See also the chapter on [Multi-Pass formatting](#multi-pass-formatting).
+
+:::tip
+The [Prince Cookbook](cookbook.md) offers an in-depth chapter on [The "Multi-Pass" Solution](cookbook.md#the-multi-pass-solution).
+:::
 
 Please also note that a consequence of the non-interactive nature of printed media is that any interactive events, such as e.g. `onClick`, do not make sense, and will never fire.
 
@@ -159,7 +165,11 @@ Prince also offers the possibility to register the function [`Prince.registerPos
     <p style='color: prince-color(Color1)'>This was black, becomes cyan</p>
 ```
 
-A post layout function may register itself, or another post layout function, in order to repeat this process multiple times! By default the number of passes is not limited, but in order to prevent endless layout loops you can set a limit by using the [`--max-passes=N`](command-line.md#cl-max-passes) command-line option. For more details see [The "Multi-Pass" Solution](cookbook.md#the-multi-pass-solution).
+A post layout function may register itself, or another post layout function, in order to repeat this process multiple times! By default the number of passes is not limited, but in order to prevent endless layout loops you can set a limit by using the [`--max-passes=N`](command-line.md#cl-max-passes) command-line option.
+
+:::tip
+The [Prince Cookbook](cookbook.md) offers an in-depth chapter on [The "Multi-Pass" Solution](cookbook.md#the-multi-pass-solution).
+:::
 
 
 ### The PDF Object
@@ -306,7 +316,9 @@ The `marginTop`, `marginRight`, `marginBottom` and `marginLeft` properties retur
 
 When elements are snapped to the nearest column or page end (see [Page and Column Floats](styling.md#page-and-column-floats)), the `floatPosition` property tells us whether the element snapped to the top, or to the bottom - please note that it needs to be checked not on the element itself, but on the anonymous (non-element) *parent* box that gets created to contain all the floats at the top or bottom of a page or column (in just the same fashion as the footnotes area contains all the footnotes).
 
-See also [our nifty script](cookbook.md#how-and-where-is-my-box) to return the position and dimension of the margin box, the border box, the padding box and the content box of an element.
+:::tip
+The [Prince Cookbook](cookbook.md) offers [a nifty script](cookbook.md#how-and-where-is-my-box) to return the position and dimension of the margin box, the border box, the padding box and the content box of an element.
+:::
 
 Two further sample applications of the box tracking API can be seen in the [Changebars](//www.princexml.com/forum/topic/3516/changebars) example, and in [Detecting Overflow](//www.princexml.com/forum/topic/3603/detecting-overflow).
 

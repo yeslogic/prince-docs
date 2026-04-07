@@ -117,6 +117,11 @@ the following shortened syntax can be used:
     font-variant: historical-forms historical-ligatures all-small-caps oldstyle-nums;
 ```
 
+:::tip
+The [Prince Cookbook](cookbook.md) offers an in-depth chapter on [Typographic Ligatures](cookbook.md#typographic-ligatures).
+:::
+
+
 Prince also supports language-specific OpenType shaping with the `locl` feature, which is automatically enabled with the use of the HTML or XML `lang` or `xml:lang` attributes.  As an example, the Arno Pro font has small-caps that are language sensitive, since Turkish has unique case rules for dotted and dotless letter "i".
 
 ```markup
@@ -542,9 +547,11 @@ Changing the writing mode of a document, that is, the inline or block direction,
 
 The page selector pseudo-classes `:recto` and `:verso` (see [Selecting pages](paged.md#selecting-pages)) are relative to the direction of the script. In a left-to-right script, `:recto` is the right-hand side of a spread, and `:verso` is the left-hand side, while in a right-to-left script these values are inverted: `:recto` defines the left-hand side of a spread, and `:verso` defines the right-hand side. See also [Selecting pages](paged.md#selecting-pages).
 
-Columns (see the chapter on [Columns](#columns)) change their orientation when the writing mode is changed - the [`writing-mode`](css-props.md#prop-writing-mode) value `vertical-rl` arranges the columns *horizontally*, top-to-bottom.
+Columns (see the chapter on [Columns](#columns)) change their orientation when the writing mode is changed - the [`writing-mode`](css-props.md#prop-writing-mode) value `vertical-rl` arranges the columns *horizontally*, top-to-bottom.  This can be used to rotate content!
 
-This can be used to rotate content - see [Printing wide content sideways](cookbook.md#printing-wide-content-sideways) and [Rotating content in table cells](cookbook.md#rotating-content-in-table-cells).
+:::tip
+The [Prince Cookbook](cookbook.md) offers an in-depth chapter on [Printing wide content sideways](cookbook.md#printing-wide-content-sideways) and [Rotating content in table cells](cookbook.md#rotating-content-in-table-cells).
+:::
 
 Prince also supports the `:dir()` CSS pseudo-class (see [Linguistic Pseudo-classes](css-selectors.md#linguistic-pseudo-classes)) to style elements based on the *directionality*, as determined by the document language, using a combination of the `dir` attribute, the surrounding text, and other factors - it does not select based on stylistic states, such as those defined with the `direction` CSS property, but uses the rather complex [user agent's knowledge of the document's semantics](https://html.spec.whatwg.org/multipage/dom.html#the-directionality).
 
@@ -604,7 +611,11 @@ Another important aspect when formatting a paragraph is how compact the text lin
 
 The property [`line-stacking-strategy`](css-props.md#prop-line-stacking-strategy) allows to choose whether individual lines should have their height determined based on their content, or whether all lines in a paragraph should have the same height, or a compromise where their heights are determined by their content and then rounded up to a multiple of the paragraph line height.
 
-In order to lay out text in a well-balanced way, it might at times be necessary to hyphenate some words - to enable hyphenation, the [`hyphens`](css-props.md#prop-hyphens) property is used. For details please refer to the section on [Hyphenation](cookbook.md#hyphenation).
+In order to lay out text in a well-balanced way, it might at times be necessary to hyphenate some words - to enable hyphenation, the [`hyphens`](css-props.md#prop-hyphens) property is used.
+
+:::tip
+The [Prince Cookbook](cookbook.md) offers an in-depth chapter on [Hyphenation](cookbook.md#hyphenation).
+:::
 
 Prince also allows for line-breaking in certain situations even in the absence of whitespace - for example, after slashes in long URLs. This behavior can be disabled with the [`-prince-linebreak-magic`](css-props.md#prop-prince-linebreak-magic) property for situations in which more precise control over line-breaking is preferred.
 
@@ -1080,14 +1091,20 @@ When a table spans across more than one page, it might be desirable to have a "r
 Rows inside the <code>thead</code> element are used as a running table header.
 Rows inside the <code>tfoot</code> element are used as a running table footer.
 
+:::tip
+The [Prince Cookbook](cookbook.md) offers an in-depth chapter on [Long Tables](cookbook.md#long-tables).
+:::
 
-See also [Long Tables](cookbook.md#long-tables).
 
 #### Table captions
 
 Tables can also be provided with a table caption by using the `caption` HTML element, or by styling an arbitrary element with `display: table-caption` to be made to behave like `caption` elements. The caption is positioned above the table by default, but it can be moved to the bottom with the [`caption-side`](css-props.md#prop-caption-side) property.
 
-When a table spans across more than one page, the [`-prince-caption-page`](css-props.md#prop-prince-caption-page) property determines whether table captions will be displayed on the first page of a table, or only on the following pages, or repeated on every page that a table appears on. See also [Fancy Table Captions](cookbook.md#fancy-table-captions).
+When a table spans across more than one page, the [`-prince-caption-page`](css-props.md#prop-prince-caption-page) property determines whether table captions will be displayed on the first page of a table, or only on the following pages, or repeated on every page that a table appears on.
+
+:::tip
+The [Prince Cookbook](cookbook.md) offers an in-depth chapter on [Fancy Table Captions](cookbook.md#fancy-table-captions).
+:::
 
 
 #### Inline tables
