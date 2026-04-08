@@ -14,20 +14,6 @@ The Prince User Guide tries to be exhaustive in explaining how to use the applic
 
 We work hard to make Prince work on multiple platforms (Windows, Linux, etc) and with multiple configurations. However things don't always work correctly the first time. You're very welcome to [contact us](//www.princexml.com/contact/) for support or visit our [forum](//www.princexml.com/forum/). However if you are facing a common problem, you may be able to find an explanation and solution below.
 
-### Output log
-
-When running into trouble with Prince, the first thing you should do is to check for any errors. These can be found in the Prince output log.
-
-When launching Prince from the command line, Prince will print any error or warning messages directly to the console, prefixed with `error:` or `warning:` messages. The level of verbosity, or a log file where to print all output, can be controlled with a few command-line [Logging Options](command-line.md#logging-options):
-
--   when running Prince with the `--verbose` command-line option, it prints out informative messages on the progress of creating the PDF;
--   when running Prince with the `--debug` command-line option, it provides details about what it is doing that help to make sense of failed HTTP requests or font errors by giving insight into what is being loaded;
--   the `--log=FILE` command-line option allows to log all output to the specified file.
-
-A more advanced control of the output is given by the [Structured Log](server-integration.md#structured-log).
-
-When using the Prince GUI, the output log is printed to the log window on the bottom left of the main GUI window.
-
 ### Image formats
 
 Symptom  
@@ -39,6 +25,10 @@ Prince supports the JPEG, PNG, TIFF, GIF, WebP and AVIF image formats, as well a
 
 Solution  
 The solution is to convert the image file into a format that is supported by Prince. We suggest PNG, which is a well-supported general purpose image format with lossless compression.
+
+### Output log
+
+When running into trouble with Prince, the first thing you should do is to check for any errors. These can be found in the [Prince Output Log](prince-output.md#prince-output-log).
 
 ### The capture/replay system
 

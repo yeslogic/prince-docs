@@ -4,7 +4,7 @@ title: Prince Output
 
 Prince produces PDF files that are compatible with Adobe Acrobat and other PDF viewers. The output can be controlled in several different ways, addressing different aspects of the resulting files.
 
-For the error and warning output log, please see [Output log](help.md#output-log).
+For the error and warning output log, please see [Prince Output Log](#prince-output-log).
 
 
 ## PDF Versions and Profiles
@@ -656,3 +656,247 @@ The [`PDF.xmp()`](js-support.md#window.PDF.xmp) JavaScript function, the [-princ
 Prince includes data from the `<x:xmpmeta>` element and its contents. The `xpacket` processing instructions are ignored, as Prince generates those itself when it produces the PDF file.
 
 Should it be necessary, the XMP representation of HTML metadata can be manually enabled, even when the chosen PDF profile does not require it, with the [`--pdf-xmp-metadata`](command-line.md#cl-pdf-xmp-metadata) command-line option or the [`PDF.xmpMetadata()`](js-support.md#window.PDF.xmpMetadata) JavaScript function.
+
+
+## Prince Output Log
+
+Not always things work as smoothly as one would wish - Prince can assist with debugging output.
+
+When launching Prince from the command line, Prince will print any error or warning messages directly to the console, prefixed with `error:` or `warning:` messages.
+
+```bash
+    $ prince example.html
+    prince: style.css: warning: can't open input file: No such file or directory
+```
+
+The level of verbosity, or a log file where to print all output, can be controlled with a few command-line [Logging Options](command-line.md#logging-options):
+
+-   when running Prince with the [`--verbose`](command-line#cl-verbose) command-line option, it prints out informative messages on the progress of creating the PDF;
+
+```bash
+    $ prince example.html --verbose
+    prince: loading document: /usr/lib/prince/license/license.dat
+    prince: Loading document...
+    prince: loading HTML input: example.html
+    prince: loading document: example.html
+    prince: Applying style sheets...
+    prince: loading style sheet: style.css
+    prince: style.css: warning: can't open input file: No such file or directory
+    prince: Preparing document...
+    prince: Converting document...
+    prince: loading font: /usr/share/fonts/truetype/dejavu/DejaVuSerif-Bold.ttf
+    prince: used font: DejaVu Serif, Bold
+    prince: writing PDF to file: example.pdf
+    prince: Finished: success
+```
+
+-   when running Prince with the [`--debug`](command-line#cl-debug) command-line option, it provides details about what it is doing that help to make sense of failed HTTP requests or font errors by giving insight into what is being loaded;
+
+```bash
+    $ prince example.html --debug
+    prince: debug: init locking for OpenSSL
+    prince: debug: loading license: /usr/lib/prince/license/license.dat
+    prince: debug: loading /usr/lib/prince/license/license.dat because it is the main resource
+    prince: loading document: /usr/lib/prince/license/license.dat
+    prince: debug: loaded resource: /usr/lib/prince/license/license.dat
+    prince: debug: loaded resource: type: no
+    prince: loading style sheet: /usr/lib/prince/style/fonts.css
+    prince: debug: loaded resource: /usr/lib/prince/style/fonts.css
+    prince: debug: loaded resource: type: no
+    prince: debug: enabling parallel downloads
+    prince: Loading document...
+    prince: loading HTML input: example.html
+    prince: loading document: example.html
+    prince: debug: loaded resource: example.html
+    prince: debug: loaded resource: type: no
+    prince: debug: loaded document: example.html
+    prince: debug: sniffed doctype: XHTML
+    prince: Applying style sheets...
+    prince: loading style sheet: /usr/lib/prince/style/common.css
+    prince: debug: loaded resource: /usr/lib/prince/style/common.css
+    prince: debug: loaded resource: type: no
+    prince: loading style sheet: /usr/lib/prince/style/html.css
+    prince: debug: loaded resource: /usr/lib/prince/style/html.css
+    prince: debug: loaded resource: type: no
+    prince: loading style sheet: /usr/lib/prince/style/hyph.css
+    prince: debug: loaded resource: /usr/lib/prince/style/hyph.css
+    prince: debug: loaded resource: type: no
+    prince: loading style sheet: /usr/lib/prince/style/mathml.css
+    prince: debug: loaded resource: /usr/lib/prince/style/mathml.css
+    prince: debug: loaded resource: type: no
+    prince: loading style sheet: /usr/lib/prince/style/svg.css
+    prince: debug: loaded resource: /usr/lib/prince/style/svg.css
+    prince: debug: loaded resource: type: no
+    prince: loading style sheet: /usr/lib/prince/style/counter-style.css
+    prince: debug: loaded resource: /usr/lib/prince/style/counter-style.css
+    prince: debug: loaded resource: type: no
+    prince: loading style sheet: style.css
+    prince: debug: error loading resource: can't open input file: No such file or directory
+    prince: style.css: warning: can't open input file: No such file or directory
+    prince: Preparing document...
+    prince: Converting document...
+    prince: debug: pack
+    prince: debug: font request: bold serif
+    prince: debug: font scan: times new roman
+    prince: debug: font scan: times new roman, 0 matches
+    prince: debug: font scan: dejavu serif
+    prince: debug: found font: dejavu serif Italic
+    prince: debug: found font: dejavu serif Regular
+    prince: debug: found font: dejavu serif Italic
+    prince: debug: found font: dejavu serif Regular
+    prince: debug: found font: dejavu serif Regular
+    prince: debug: found font: dejavu serif Regular
+    prince: debug: found font: dejavu serif Italic
+    prince: debug: found font: dejavu serif Italic
+    prince: debug: font scan: dejavu serif, 8 matches
+    prince: debug: font scan: dejavu lgc serif
+    prince: debug: font scan: dejavu lgc serif, 0 matches
+    prince: debug: font scan: liberation serif
+    prince: debug: font scan: liberation serif, 0 matches
+    prince: debug: font scan: noto serif
+    prince: debug: font scan: noto serif, 0 matches
+    prince: debug: font scan: opensymbol
+    prince: debug: font scan: opensymbol, 0 matches
+    prince: debug: font scan: dejavu sans
+    prince: debug: found font: dejavu sans Regular
+    prince: debug: found font: dejavu sans Regular
+    prince: debug: found font: dejavu sans Italic
+    prince: debug: found font: dejavu sans Italic
+    prince: debug: found font: dejavu sans Italic
+    prince: debug: found font: dejavu sans Regular
+    prince: debug: found font: dejavu sans Regular
+    prince: debug: found font: dejavu sans Italic
+    prince: debug: found font: dejavu sans Regular
+    prince: debug: font scan: dejavu sans, 9 matches
+    prince: debug: font scan: ar pl uming cn
+    prince: debug: font scan: ar pl uming cn, 0 matches
+    prince: debug: font scan: ar pl sungtil gb
+    prince: debug: font scan: ar pl sungtil gb, 0 matches
+    prince: debug: font scan: noto serif sc
+    prince: debug: font scan: noto serif sc, 0 matches
+    prince: debug: font scan: noto serif cjk sc
+    prince: debug: font scan: noto serif cjk sc, 0 matches
+    prince: debug: font scan: kochi mincho
+    prince: debug: font scan: kochi mincho, 0 matches
+    prince: debug: font scan: ipamincho
+    prince: debug: font scan: ipamincho, 0 matches
+    prince: debug: font scan: takaomincho
+    prince: debug: font scan: takaomincho, 0 matches
+    prince: debug: font scan: noto serif jp
+    prince: debug: font scan: noto serif jp, 0 matches
+    prince: debug: font scan: noto serif cjk jp
+    prince: debug: font scan: noto serif cjk jp, 0 matches
+    prince: debug: font scan: unbatang
+    prince: debug: font scan: unbatang, 0 matches
+    prince: debug: font scan: baekmuk batang
+    prince: debug: font scan: baekmuk batang, 0 matches
+    prince: debug: font scan: noto serif kr
+    prince: debug: font scan: noto serif kr, 0 matches
+    prince: debug: font scan: noto serif cjk kr
+    prince: debug: font scan: noto serif cjk kr, 0 matches
+    prince: debug: font scan: khmer os
+    prince: debug: font scan: khmer os, 0 matches
+    prince: debug: font scan: noto serif khmer
+    prince: debug: font scan: noto serif khmer, 0 matches
+    prince: debug: font scan: noto serif myanmar
+    prince: debug: font scan: noto serif myanmar, 0 matches
+    prince: debug: font scan: padauk
+    prince: debug: font scan: padauk, 0 matches
+    prince: debug: font scan: myanmar sagar
+    prince: debug: font scan: myanmar sagar, 0 matches
+    prince: debug: font scan: noto sans myanmar
+    prince: debug: font scan: noto sans myanmar, 0 matches
+    prince: debug: font scan: lohit devanagari
+    prince: debug: font scan: lohit devanagari, 0 matches
+    prince: debug: font scan: noto serif devanagari
+    prince: debug: font scan: noto serif devanagari, 0 matches
+    prince: debug: font scan: lohit bengali
+    prince: debug: font scan: lohit bengali, 0 matches
+    prince: debug: font scan: ani
+    prince: debug: font scan: ani, 0 matches
+    prince: debug: font scan: mukti narrow
+    prince: debug: font scan: mukti narrow, 0 matches
+    prince: debug: font scan: noto serif bengali
+    prince: debug: font scan: noto serif bengali, 0 matches
+    prince: debug: font scan: lohit punjabi
+    prince: debug: font scan: lohit punjabi, 0 matches
+    prince: debug: font scan: noto serif gurmukhi
+    prince: debug: font scan: noto serif gurmukhi, 0 matches
+    prince: debug: font scan: lohit gujarati
+    prince: debug: font scan: lohit gujarati, 0 matches
+    prince: debug: font scan: noto serif gujarati
+    prince: debug: font scan: noto serif gujarati, 0 matches
+    prince: debug: font scan: lohit tamil
+    prince: debug: font scan: lohit tamil, 0 matches
+    prince: debug: font scan: noto serif tamil
+    prince: debug: font scan: noto serif tamil, 0 matches
+    prince: debug: font scan: lohit telugu
+    prince: debug: font scan: lohit telugu, 0 matches
+    prince: debug: font scan: noto serif telugu
+    prince: debug: font scan: noto serif telugu, 0 matches
+    prince: debug: font scan: lohit kannada
+    prince: debug: font scan: lohit kannada, 0 matches
+    prince: debug: font scan: noto serif kannada
+    prince: debug: font scan: noto serif kannada, 0 matches
+    prince: debug: font scan: lohit malayalam
+    prince: debug: font scan: lohit malayalam, 0 matches
+    prince: debug: font scan: noto serif malayalam
+    prince: debug: font scan: noto serif malayalam, 0 matches
+    prince: debug: font scan: lohit oriya
+    prince: debug: font scan: lohit oriya, 0 matches
+    prince: debug: font scan: noto serif oriya
+    prince: debug: font scan: noto serif oriya, 0 matches
+    prince: debug: font scan: lklug
+    prince: debug: font scan: lklug, 0 matches
+    prince: debug: font scan: noto serif sinhala
+    prince: debug: font scan: noto serif sinhala, 0 matches
+    prince: debug: font scan: noto serif lao
+    prince: debug: font scan: noto serif lao, 0 matches
+    prince: debug: font scan: garuda
+    prince: debug: font scan: garuda, 0 matches
+    prince: debug: font scan: noto serif thai
+    prince: debug: font scan: noto serif thai, 0 matches
+    prince: debug: font scan: noto naskh arabic
+    prince: debug: font scan: noto naskh arabic, 0 matches
+    prince: debug: font scan: noto serif hebrew
+    prince: debug: font scan: noto serif hebrew, 0 matches
+    prince: debug: font scan: joypixels
+    prince: debug: font scan: joypixels, 0 matches
+    prince: debug: font scan: noto color emoji
+    prince: debug: font scan: noto color emoji, 0 matches
+    prince: loading font: /usr/share/fonts/truetype/dejavu/DejaVuSerif-Bold.ttf
+    prince: debug: loaded resource: /usr/share/fonts/truetype/dejavu/DejaVuSerif-Bold.ttf
+    prince: debug: loaded resource: type: no
+    prince: used font: DejaVu Serif, Bold
+    prince: writing PDF to file: example.pdf
+    prince: debug: subset font: DejaVu Serif, Bold
+    prince: Finished: success
+```
+
+-   the `--log=FILE` command-line option allows to save all output to the specified file, for later inspection.
+
+Some warnings can be suppressed from the output log: the command-line options [`--no-warn-css-unknown`](command-line#cl-no-warn-css-unknown) and [`--no-warn-css-unsupported`](command-line#cl-no-warn-css-unsupported) suppress unknown or unsupported CSS features, while [`--no-warn-css`](command-line#cl-no-warn-css) suppresses all CSS-related warnings.
+
+```bash
+    $ prince example.html
+    prince: style.css: warning: can't open input file: No such file or directory
+    prince: example.html:10: warning: unknown property 'foobar'
+    prince: example.html: warning: unsupported properties: hanging-punctuation, initial-letter, quotes
+```
+
+```bash
+    $ prince example.html --no-warn-css
+    prince: style.css: warning: can't open input file: No such file or directory
+```
+
+A more advanced control of the output log, designed to make it easier to integrate other software with Prince, is given by the [Structured Log](server-integration.md#structured-log).
+
+:::tip
+When using the Prince GUI, the output log is printed to the log window on the bottom left of the main GUI window.
+:::
+
+Prince offers also advanced debugging options that might help the developers to understand issues that prove difficult to replicate:
+-   the [capture/replay system](help.md#the-capturereplay-system) allows to faithfully replay a previously captured Prince run; and
+-   the [Prince debug script](help#running-the-debug-script) dumps a considerable amount of debug information to two files in the `/tmp` directory, namely `prince.debug` and `prince.strace`.
+
+However, these two options are usually not needed in normal debugging.
