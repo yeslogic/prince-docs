@@ -177,7 +177,7 @@ section.row {
 
 /* links */
 a[href*='//']:not([href*='princexml.com'])::after {
-  content: " \21D7";
+  content: "\a0\21D7";
   color: lightgrey; }
 .menu__link--active {
     font-weight: bold;
