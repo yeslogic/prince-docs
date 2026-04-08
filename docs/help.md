@@ -18,7 +18,13 @@ We work hard to make Prince work on multiple platforms (Windows, Linux, etc) and
 
 When running into trouble with Prince, the first thing you should do is to check for any errors. These can be found in the Prince output log.
 
-When launching Prince from the command line, Prince will print any error or warning messages directly to the console, prefixed with `error:` or `warning:` messages. The level of verbosity, or a log file where to print all output, can be controlled with a few command-line [Logging Options](command-line.md#logging-options). A more advanced control of the output is given by the [Structured Log](server-integration.md#structured-log).
+When launching Prince from the command line, Prince will print any error or warning messages directly to the console, prefixed with `error:` or `warning:` messages. The level of verbosity, or a log file where to print all output, can be controlled with a few command-line [Logging Options](command-line.md#logging-options):
+
+-   when running Prince with the `--verbose` command-line option, it prints out informative messages on the progress of creating the PDF;
+-   when running Prince with the `--debug` command-line option, it provides details about what it is doing that help to make sense of failed HTTP requests or font errors by giving insight into what is being loaded;
+-   the `--log=FILE` command-line option allows to log all output to the specified file.
+
+A more advanced control of the output is given by the [Structured Log](server-integration.md#structured-log).
 
 When using the Prince GUI, the output log is printed to the log window on the bottom left of the main GUI window.
 
@@ -36,7 +42,16 @@ The solution is to convert the image file into a format that is supported by Pri
 
 ### The capture/replay system
 
-Prince offers a convenient capture/replay system with the two command-line options [--capture](command-line.md#cl-capture) and [--replay](command-line.md#cl-replay) - the former saving a copy of all the information in a job to a specified directory, including the input document(s) and all of the resources referenced by them and on the command line (including remote HTTP resources), such as style sheets, images, JavaScript files, fonts, etc., conveniently allowing it to be replayed later for debugging purposes with the latter command-line option. The directory might contain sensitive information (as far as included in the PDF job), so we recommend only submitting them by email when requested to do so, instead of posting them on the forum.
+Prince offers a convenient capture/replay system with the two command-line options [--capture](command-line.md#cl-capture) and [--replay](command-line.md#cl-replay) - the former saving a copy of all the information in a job to a specified directory, including the input document(s) and all of the resources referenced by them and on the command line (including remote HTTP resources), such as style sheets, images, JavaScript files, fonts, etc., conveniently allowing it to be replayed later for debugging purposes with the latter command-line option.
+
+:::warning
+The directory might contain sensitive information (as far as included in the PDF job), so we recommend only submitting them by email when requested to do so, instead of posting them on the forum.
+:::
+
+```bash
+    $ prince ./test.html --capture ./prince-capture/
+    $ prince --replay ./prince-capture/
+```
 
 ### Running the debug script
 
