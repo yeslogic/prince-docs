@@ -293,14 +293,27 @@ Please note that Prince tries to preserve the ICC color profile embedded in imag
 
 The `img` element is used to include images in XHTML documents.
 
-```xml title="XML"
+```html title="XHTML"
     <img src="picture.jpg" alt="A Nice Picture"/>
 ```
+
+A more flexible, responsive approach is achieved by adding the `srcset` and `sizes` HTML attributes to serve different image sizes depending on viewport widths:
+
+```html title="XHTML"
+    <img
+        srcset="picture-480w.jpg 480w, picture-800w.jpg 800w"
+        sizes="(width <= 600px) 480px,
+                800px"
+        src="picture-800w.jpg"
+        alt="A Nice Picture"
+    />
+```
+
 ### Images in DocBook
 
 The `imagedata` element is used to include images in DocBook documents.
 
-```xml title="XML"
+```xml title="DocBook"
     <mediaobject>
         <imageobject>
           <imagedata fileref="picture.jpg"/>
