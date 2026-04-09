@@ -11491,7 +11491,7 @@ const cssPropsHtml = String.raw`
           <div id="prop-letter-spacing-syntax">Syntax</div>
           <div class="example">
             <div class="syntax-block">
-              <code>letter-spacing: normal | <span>&lt;<i>length</i>&gt;</span></code>
+              <code>letter-spacing: normal | <span>&lt;<i>length-percentage</i>&gt;</span></code>
             </div>
           </div>
         </div>

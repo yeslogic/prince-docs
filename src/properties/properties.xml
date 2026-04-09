@@ -4119,8 +4119,8 @@ NOTE: The current build process will cause this file's content to appear in a Ja
     <name>letter-spacing</name>
     <value>
 	<choice>
-	    <keyword>normal</keyword>
-	    <type>length</type>
+        <keyword>normal</keyword>
+        <type>length-percentage</type>
 	</choice>
     </value>
     <initial>normal</initial>
