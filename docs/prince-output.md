@@ -116,6 +116,10 @@ The relevant criteria for producing accessible PDF can also be found in a separa
 
 A first step would be to produce files with one of the PDF profiles addressing accessibility, namely the PDF/UA-1 profile or the combined PDF/A-1a+PDF/UA-1 or PDF/A-3a+PDF/UA-1 profiles, by specifying the [`--pdf-profile`](command-line.md#cl-pdf-profile) command line option. See [PDF Versions and Profiles](#pdf-versions-and-profiles) for details.
 
+```bash
+    $ prince example.html --pdf-profile=PDF/UA-1
+```
+
 The next step would be to specifically check compliance of the document's content with the requirements. A number of resoures or tools can be helpful in this step:
 
 -   [Free PDF Accessibility Checker](https://www.access-for-all.ch/en/pdf-accessibility-checker.html)
@@ -124,12 +128,15 @@ The next step would be to specifically check compliance of the document's conten
 
 Prince helps in creating accessible documents. Note, however, that Prince does not create WCAG-compliant documents by itself - care has to be taken, and the HTML source has to be coded in specific ways to address all requirements in order to create WCAG-compliant PDF documents.
 
-:::note
+:::tip
 Bruce Lawson has written an interesting introduction on how to make <a href="https://medium.com/@bruce_39084/making-accessible-tagged-pdfs-with-prince-ad7fd7a48711">accessible tagged PDFs with Prince</a> - all you need to know about PDF tags and Prince! Last but not least, there is a nice <a href="https://taggedpdf.com/resources/">Resources</a> page on tagged and accessible PDFs.
 :::
 
 Special care needs to be taken when restricting certain features on the created document - notably disallowing copying (with the [--disallow-copy](command-line.md#cl-disallow-copy) command-line option) creates a barrier for screen readers.  To prevent this inconvenience, Prince offers the option to enable text access only for screen reader devices for the visually impaired ([--allow-copy-for-accessibility](command-line.md#cl-allow-copy-for-accessibility)) - see also [PDF Encryption and Document Security](#pdf-encryption-and-document-security).
 
+```bash
+    $ prince example.html --pdf-profile=PDF/UA-1 --disallow-copy --allow-copy-for-accessibility
+```
 
 ## PDF Features
 
