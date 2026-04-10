@@ -1759,6 +1759,9 @@
       "drawImage": {
         "__princetype__": "function"
       },
+      "direction": {
+        "__princetype__": null
+      },
       "ellipse": {
         "__princetype__": "function"
       },
@@ -1791,6 +1794,9 @@
       },
       "isPointInPath": {
         "__princetype__": "function"
+      },
+      "letterSpacing": {
+        "__princetype__": null
       },
       "lineCap": {
         "__princetype__": null
@@ -1890,6 +1896,9 @@
       },
       "translate": {
         "__princetype__": "function"
+      },
+      "wordSpacing": {
+        "__princetype__": null
       }
     }
   },
