@@ -385,6 +385,37 @@ The [Prince Cookbook](cookbook.md) offers an in-depth chapter on [Image Magic](c
 :::
 
 
+Canvas
+------
+
+The HTML `<canvas>` element creates a drawable region with `height` and `width` attributes. However, unlike semantic HTML, canvas content is not exposed to accessibility tools. Therefore, you should generally avoid using Canvas when [accessibility](prince-output.md#pdf-accessibility) is a main concern.
+
+`<canvas>` is an HTML element in which you can draw graphics via scripting - JavaScript needs to be enabled in order to make use of canvas. This element looks a bit like the `<img>` element, but it only has two attributes, `height` and `width`. They are optional arguments, and can also be set with DOM properties.
+
+:::note
+You can style the canvas element like any other image with CSS - but if styling `height` and `width` via CSS, care needs to be taken to respect the ratio of the initial size, or else it will appear distorted.
+:::
+
+The `<canvas>` element creates a rendering context on which to draw that needs to be accessed by the script to initialize the drawing.
+
+```javascript
+    const canvas = document.getElementById("canvas");
+    const context = canvas.getContext("2d");
+```
+
+At this point you can draw on the canvas by using all methods and functions offered by [`CanvasRenderingContext2D()`](js-support.md#window.CanvasRenderingContext2D).
+
+Unlike SVG, a canvas only supports two primitive shapes: rectangles and paths.  But you can also render images in all the supported formats on the canvas with the [`drawImage()`](js-support.md#window.CanvasRenderingContext2D.prototype.drawImage) function.
+
+```javascript
+    const img = new Image();
+    img.onload = () => {
+        context.drawImage(img, 0, 0); 
+    };
+    img.src = 'image.jpg';
+```
+
+
 Scalable Vector Graphics (SVG)
 ------------------------------
 
