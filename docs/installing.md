@@ -2,13 +2,18 @@
 title: Installing Prince
 ---
 
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+
 Prince is available for Windows (x86/ARM), MacOS, Linux (multiple distributions) and FreeBSD. You can download the relevant file from our [downloads page](/download/) - you may need to choose the download based on your processor type (x86/ARM, 32/64 bits), as well as distribution type and version.
 
 Prince is provided under the terms of the [Prince End-User License Agreement](/license/).
 
 ## Installing
 
-### ... on Windows
+<Tabs groupId="operating-systems">
+<TabItem value="win" label="... on Windows">
 
 1.  Download your installation package from the [Download Page](/download/).
 2.  After downloading and attempting to run the installer you might see a confirmation screen like this. Click "run". Note that the filename for the installer may be different than the one shown in the picture.
@@ -44,8 +49,9 @@ Prince is provided under the terms of the [Prince End-User License Agreement](/l
     ![The installer's completion screen](assets/images/install_05.png)
 
 For the layout of a Prince installation on Windows, see the [Windows installation layout](#windows-installation-layout) section.
+</TabItem>
 
-### ... on MacOS
+<TabItem value="mac" label="... on MacOS">
 
 To install Prince on MacOS, please run the `install.sh` shell script contained in the package downloaded to your computer from the [download page](/download/). This will involve the following procedure:
 
@@ -76,8 +82,9 @@ If you chose a non-standard location you may need to add the `bin/` subdirectory
 You will need to add the appropriate command to your shell's configuration or startup file. See your distribution or shell's documentation for how to do this.
 
 For the layout of a Prince installation on MacOS, see the [MacOS installation layout](#macos-installation-layout) section.
+</TabItem>
 
-### ... on Linux/FreeBSD
+<TabItem value="lin" label="... on Linux/FreeBSD">
 
 Prince is installed using the terminal. The installation package can be downloaded from the [Download Page](/download/). Then open a terminal window and change to the directory that you downloaded or copied the installation package to. The `$` symbol represents the command prompt and the text that follows is the command, you should not type in the `$` symbol.
 
@@ -212,7 +219,8 @@ If you chose a non-standard location you may need to add the `bin/` subdirectory
 You will need to add the appropriate command to your shell's configuration or startup file. See your operating system's or shell's documentation for how to do this.
 
 For the default layout of a Prince installation on Linux and FreeBSD, see the [Linux and FreeBSD installation layout](#linux-and-freebsd-installation-layout) section.
-
+</TabItem>
+</Tabs>
 
 ## Running Prince
 
@@ -233,7 +241,8 @@ For information about using Prince from PHP, Java, .NET, and other server framew
 
 If you've purchased Prince you can install your license file (which you will receive via e-mail) to remove the watermark on generated documents. This section will explain how to install the license file. If instead you're using the free version of Prince then you don't need to install a license file.
 
-### ... on Windows
+<Tabs groupId="operating-systems">
+<TabItem value="win" label="... on Windows">
 
 On Windows you can install a license by following these steps:
 
@@ -254,10 +263,10 @@ On Windows you can install a license by following these steps:
     License window with license
 
     ![Image showing the license window with a license selected but not yet installed.](assets/images/gui_05.png)
+</TabItem>
+<TabItem value="mac" label="... on MacOS">
 
-### ... on other systems
-
-On other systems copy the `license.dat` file into the `lib/prince/license` directory of the Prince installation (see [Installation Layout](#installation-layout)). For example, if Prince was installed into the default `/usr/local` directory, the license file should be copied to `/usr/local/lib/prince/license/license.dat`
+On MacOS copy the `license.dat` file into the `lib/prince/license` directory of the Prince installation (see [Installation Layout](#installation-layout)). For example, if Prince was installed into the default `/usr/local` directory, the license file should be copied to `/usr/local/lib/prince/license/license.dat`
 
 ```bash
     $ cp license.dat /usr/local/lib/prince/license/license.dat
@@ -267,12 +276,28 @@ On other systems copy the `license.dat` file into the `lib/prince/license` direc
     Test License
 ```
 Remember to backup your license file in case you want to reinstall Prince in the future.
+</TabItem>
+<TabItem value="lin" label="... on Linux/FreeBSD">
+
+On Linux/FreeBSD copy the `license.dat` file into the `lib/prince/license` directory of the Prince installation (see [Installation Layout](#installation-layout)). For example, if Prince was installed into the default `/usr/local` directory, the license file should be copied to `/usr/local/lib/prince/license/license.dat`
+
+```bash
+    $ cp license.dat /usr/local/lib/prince/license/license.dat
+    $ prince --version
+    Prince 10 rev 3
+    Copyright 2002-2015 YesLogic Pty. Ltd.
+    Test License
+```
+Remember to backup your license file in case you want to reinstall Prince in the future.
+</TabItem>
+</Tabs>
 
 ## Installation Layout
 
 This section details where Prince installs its files in the various supported operating systems.
 
-### ... on Windows
+<Tabs groupId="operating-systems">
+<TabItem value="win" label="... on Windows">
 
 Prince installs its files to `%ProgramFiles%` on 32-bit Windows, and to `%ProgramFiles(x86)%` on 64-bit Windows.
 
@@ -298,8 +323,8 @@ In the subfolder `engine` are all resource files:
 | `style`   | The default CSS style sheets                                                                |
 
 The file `etc/prince.cdx.json` is a machine-readable SBOM file.
-
-### ... on MacOS
+</TabItem>
+<TabItem value="mac" label="... on MacOS">
 
 Prince installs its files by default to `/usr/local` on MacOS:
 
@@ -322,8 +347,8 @@ In the resource directory are all resource files:
 | `style`   | The default CSS style sheets                                                                      |
 
 The file `etc/prince.cdx.json` is a machine-readable SBOM file.
-
-### ... on Linux and FreeBSD
+</TabItem>
+<TabItem value="lin" label="... on Linux/FreeBSD">
 
 Prince installs its files by default to `/usr` on Linux and FreeBSD:
 
@@ -346,3 +371,5 @@ In the resource directory are all resource files:
 | `style`   | The default CSS style sheets                                                                      |
 
 The file `etc/prince.cdx.json` is a machine-readable SBOM file.
+</TabItem>
+</Tabs>
