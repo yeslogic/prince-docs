@@ -440,8 +440,6 @@ The following table shows the default fonts for the main supported languages on 
 
 The complete list of defaults, including details like e.g. the exact Unicode ranges Prince is using, can be found in the `fonts.css` file located in the installation directory of Prince resources. (See [Installation Layout](installing.md#installation-layout)).
 
-In order to redefine these defaults, see [Redefining the generic font families](#redefining-the-generic-font-families).
-
 
 ### Redefining the generic font families
 
