@@ -880,7 +880,7 @@ The level of verbosity, or a log file where to print all output, can be controll
     prince: Finished: success
 ```
 
--   the `--log=FILE` command-line option allows to save all output to the specified file, for later inspection.
+-   the [`--log=FILE`](command-line#cl-log) command-line option allows to save all output to the specified file, for later inspection.
 
 Some warnings can be suppressed from the output log: the command-line options [`--no-warn-css-unknown`](command-line#cl-no-warn-css-unknown) and [`--no-warn-css-unsupported`](command-line#cl-no-warn-css-unsupported) suppress unknown or unsupported CSS features, while [`--no-warn-css`](command-line#cl-no-warn-css) suppresses all CSS-related warnings.
 
