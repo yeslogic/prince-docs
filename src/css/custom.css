@@ -203,6 +203,9 @@ a[href*='//']:not([href*='princexml.com'])::after {
 #version-nav > summary::-webkit-details-marker {
     display: none;
 }
+#entry p+ul a {
+    font-weight: bold;
+}
 
 
 /* tables */
