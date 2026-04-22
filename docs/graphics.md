@@ -309,6 +309,26 @@ A more flexible, responsive approach is achieved by adding the `srcset` and `siz
     />
 ```
 
+Even more flexibility is offered by presenting the `img` element inside a `picture` element - not only can different sizes be served, but, depending on the user agent, also different image formats, or different images.  This allows to create only one HTML file that can be served for interactive use on the web in a browser, or that can be printed to a non-interactive PDF intended for printing.
+
+```html title="XHTML"
+    <picture>
+        <source
+            srcset="picture-print-large.jpg"
+            media="print and (min-resolution: 300dpi)"
+        />
+        <source
+            srcset="picture-print-small.jpg"
+            media="print"
+        />
+        <img src="picture-animated.webp" alt="An animated dancing picture"/>
+    </picture>
+```
+
+:::tip
+The resolution of images can either be determined in the image itself, or can be overridden with the CSS property [`-prince-image-resolution`](css-props.md#prop-prince-image-resolution). See [Image Size](#image-size).
+:::
+
 ### Images in DocBook
 
 The `imagedata` element is used to include images in DocBook documents.
