@@ -1759,3 +1759,53 @@ CSS Nesting introduces a nesting selector, `&`, which explicitly makes the neste
       }
     }
 ```
+
+### Cascade Layers
+
+When working with complex stylesheets, a more fine-grained control on specificity is sometimes necessary. Cascade Layers provide a structured way to organize style declarations into layers that cascade together, without interleaving with style declarations outside the layer.
+
+```css
+    @layer black {
+        p { color: black; }
+    }
+
+    /* styles not in a layer have the highest priority */
+    p { color: pink; }
+```
+
+Style declarations can be combined into logical layers, and the cascade of layers can be re-ordered without altering selectors or the specificity within each layer.  To make the previous example into a fully layered approach, we would give the `black` layer a higher priority by mentioning it last:
+
+```css
+    @layer pink, black;
+
+    @layer black {
+        p { color: black; }
+    }
+
+    @layer pink {
+        p { color: pink; }
+    }
+```
+
+CSS Layer can be nested, just like CSS declarations.
+
+```css
+    @layer pink, default.blue, default.green, black;
+
+    @layer default {
+        @layer green {
+            p { color: green; }
+        }
+        @layer blue {
+            p { color: blue; }
+        }
+    }
+
+    @layer black {
+        p { color: black; }
+    }
+
+    @layer pink {
+        p { color: pink; }
+    }
+```

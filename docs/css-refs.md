@@ -119,8 +119,8 @@ Prince supports, fully or partially, the following CSS specifications:
 <td>Prince supports this module as of Prince 11.1.</td>
 </tr>
 <tr>
-<td><a href="https://www.w3.org/TR/css-cascade-4/">CSS Cascading and Inheritance Level&nbsp;4</a></td>
-<td>Prince supports the new <code>supports()</code> condition for the <code>@import</code> rule.</td>
+<td><a href="https://www.w3.org/TR/css-cascade-5/">CSS Cascading and Inheritance Level&nbsp;5</a></td>
+<td>Prince supports the <code>supports()</code> condition for the <code>@import</code> rule and Cascade Layers.</td>
 </tr>
 <tr>
 <td><a href="https://www.w3.org/TR/css-ui-4/#widget-accent">CSS Basic User Interface Module Level&nbsp;4</a></td>

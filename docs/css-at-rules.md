@@ -21,9 +21,18 @@ The following at-rules have to appear at the beginning of the CSS document, and 
 in <code>UTF-8</code>, <code>UTF-16</code>, <code>Latin1</code> and <code>Windows-1252</code>.</td>
 </tr>
 <tr>
+<td id="at-layer">
+    <code>
+    @layer &lt;<i>layer-name</i>&gt;? {"{"} &lt;<i>rule-list</i>&gt; {"}"} |
+    @layer &lt;<i>layer-name</i>&gt;#
+    </code>
+</td>
+<td>Allows authors to declare a cascade layer, or to define the order of precedence of cascade layers.</td>
+</tr>
+<tr>
 <td id="at-import">
     <code>
-    @import [ &lt;url(<i>URL</i>)&gt; | &lt;<i>string</i>&gt; ] supports([ &lt;<i>supports-condition</i>&gt; | &lt;<i>declaration</i>&gt; ])? &lt;<i>media-query-list</i>&gt;?
+    @import [ &lt;url(<i>URL</i>)&gt; | &lt;<i>string</i>&gt; ] [ [ layer | layer( &lt;<i>layer-name</i>&gt; ) ] || supports( [ &lt;<i>supports-condition</i>&gt; | &lt;<i>declaration</i>&gt; ] ) ]? &lt;<i>media-query-list</i>&gt;
     </code>
 </td>
 <td>Allows authors to import style rules from other style sheets. The <code>url(<i>URL</i>)</code> or <code>&lt;<i>string</i>&gt;</code> give the URL of the style sheet to be imported, while the optional <code>supports(...)</code> expression and <code>&lt;<i>media-query-list</i>&gt;</code> state the import conditions.</td>
