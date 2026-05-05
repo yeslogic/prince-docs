@@ -1777,6 +1777,7 @@ Style declarations can be combined into logical layers, and the cascade of layer
 
 ```css
     @layer pink, black;
+    /* black has a higher priority, coming last */
 
     @layer black {
         p { color: black; }
@@ -1787,7 +1788,7 @@ Style declarations can be combined into logical layers, and the cascade of layer
     }
 ```
 
-CSS Layer can be nested, just like CSS declarations.
+Cascade Layers can be nested, just like CSS declarations.
 
 ```css
     @layer pink, default.blue, default.green, black;
