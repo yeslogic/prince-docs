@@ -2928,11 +2928,23 @@
         "__princetype__": "function",
         "prototype": {
             "__princetype__": "object",
+            "entries": {
+                "__princetype__": "function"
+            },
+            "forEach": {
+                "__princetype__": "function"
+            },
             "item": {
+                "__princetype__": "function"
+            },
+            "keys": {
                 "__princetype__": "function"
             },
             "length": {
                 "__princetype__": null
+            },
+            "values": {
+                "__princetype__": "function"
             }
         }
     },

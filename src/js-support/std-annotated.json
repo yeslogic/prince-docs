@@ -806,9 +806,13 @@
     },
     "HTMLCollection": {
         "prototype": {
+            "entries": {},
+            "forEach": {},
             "item": {},
             "namedItem": {},
-            "length": {}
+            "keys": {},
+            "length": {},
+            "values": {}
         }
     },
     "NodeList": {
