@@ -711,15 +711,23 @@ by other <code>@font-face</code> rules.  See <a href="/doc/styling#defining-a-fo
 <tr>
 <td>
     <code>
-    supports([ &lt;<i>supports-condition</i>&gt; | &lt;<i>declaration</i>&gt; ])
+    layer( &lt;<i>layer-name</i>&gt; )
     </code>
 </td>
-<td>Interpreted as a <code><a href="/doc/css-at-rules/#at-supports">@supports</a></code> condition.</td>
-<td>
+<td>Places the imported CSS resource in a separate named cascade layer, or adds it to an existing named layer.</td>
+<td rowSpan="2">
     <code>
     <a href="/doc/css-at-rules/#at-import">@import</a>
     </code>
 </td>
+</tr>
+<tr>
+<td>
+    <code>
+    supports([ &lt;<i>supports-condition</i>&gt; | &lt;<i>declaration</i>&gt; ])
+    </code>
+</td>
+<td>Interpreted as a <code><a href="/doc/css-at-rules/#at-supports">@supports</a></code> condition.</td>
 </tr>
 </tbody>
 </table>
