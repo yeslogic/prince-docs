@@ -119,13 +119,19 @@ NOTE: The current build process will cause this file's content to appear in a Ja
 	    <keyword>flex-start</keyword>
 	    <keyword>flex-end</keyword>
 	    <keyword>center</keyword>
-	    <keyword>baseline</keyword>
+        <reorderable>
+            <optional>
+                <keyword>first</keyword>
+            </optional>
+            <keyword>baseline</keyword>
+        </reorderable>
 	  </choice>
 	</value>
 	<initial>normal</initial>
-    <applyto>flex containers</applyto>
+    <applyto>all elements</applyto>
 	<inherit>no</inherit>
     <see><a href="/doc/styling/#flex-layout">Flex Layout</a></see>
+    <see><a href="/doc/styling/#grid-layout">Grid Layout</a></see>
     <spec><a href="https://www.w3.org/TR/css-align-3/#align-items-property">CSS Box Alignment Module Level 3</a></spec>
 </property>
 
@@ -143,13 +149,19 @@ NOTE: The current build process will cause this file's content to appear in a Ja
 	    <keyword>flex-start</keyword>
 	    <keyword>flex-end</keyword>
 	    <keyword>center</keyword>
-	    <keyword>baseline</keyword>
+        <reorderable>
+            <optional>
+                <keyword>first</keyword>
+            </optional>
+            <keyword>baseline</keyword>
+        </reorderable>
 	  </choice>
 	</value>
 	<initial>auto</initial>
-    <applyto>flex items</applyto>
+    <applyto>all elements</applyto>
 	<inherit>no</inherit>
     <see><a href="/doc/styling/#flex-layout">Flex Layout</a></see>
+    <see><a href="/doc/styling/#grid-layout">Grid Layout</a></see>
     <spec><a href="https://www.w3.org/TR/css-align-3/#align-self-property">CSS Box Alignment Module Level 3</a></spec>
 </property>
 

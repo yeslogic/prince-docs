@@ -266,7 +266,7 @@ const cssPropsHtml = String.raw`
           <div id="prop-align-items-syntax">Syntax</div>
           <div class="example">
             <div class="syntax-block">
-              <code>align-items: normal | stretch | start | end | self-start | self-end | flex-start | flex-end | center | baseline</code>
+              <code>align-items: normal | stretch | start | end | self-start | self-end | flex-start | flex-end | center | [ first? &amp;&amp; baseline ]</code>
             </div>
           </div>
         </div>
@@ -286,7 +286,7 @@ const cssPropsHtml = String.raw`
                   <th scope="row">
           Applies to
         </th>
-                  <td>flex containers</td>
+                  <td>all elements</td>
                 </tr>
                 <tr>
                   <th scope="row">
@@ -306,6 +306,9 @@ const cssPropsHtml = String.raw`
           <ul>
             <li>
               <a href="/doc/styling/#flex-layout">Flex Layout</a>
+            </li>
+            <li>
+              <a href="/doc/styling/#grid-layout">Grid Layout</a>
             </li>
           </ul>
         </div>
@@ -328,7 +331,7 @@ const cssPropsHtml = String.raw`
           <div id="prop-align-self-syntax">Syntax</div>
           <div class="example">
             <div class="syntax-block">
-              <code>align-self: auto | normal | stretch | start | end | self-start | self-end | flex-start | flex-end | center | baseline</code>
+              <code>align-self: auto | normal | stretch | start | end | self-start | self-end | flex-start | flex-end | center | [ first? &amp;&amp; baseline ]</code>
             </div>
           </div>
         </div>
@@ -348,7 +351,7 @@ const cssPropsHtml = String.raw`
                   <th scope="row">
           Applies to
         </th>
-                  <td>flex items</td>
+                  <td>all elements</td>
                 </tr>
                 <tr>
                   <th scope="row">
@@ -368,6 +371,9 @@ const cssPropsHtml = String.raw`
           <ul>
             <li>
               <a href="/doc/styling/#flex-layout">Flex Layout</a>
+            </li>
+            <li>
+              <a href="/doc/styling/#grid-layout">Grid Layout</a>
             </li>
           </ul>
         </div>
