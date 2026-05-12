@@ -2750,6 +2750,9 @@
     "__princetype__": "function",
     "prototype": {
       "__princetype__": "object",
+      "dataset": {
+        "__princetype__": null
+      },
       "dir": {
         "__princetype__": null
       },
