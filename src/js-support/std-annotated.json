@@ -1967,13 +1967,16 @@
     },
     "DOMTokenList": {
         "prototype": {
+            "entries": {},
+            "keys": {},
             "length": {},
             "item": {},
             "contains": {},
             "add": {},
             "remove": {},
             "replace": {},
-            "toggle": {}
+            "toggle": {},
+            "values": {}
         }
     },
     "SVGMatrix": {

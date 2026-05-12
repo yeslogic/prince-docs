@@ -2041,6 +2041,12 @@
       "item": {
         "__princetype__": "function"
       },
+      "entries": {
+        "__princetype__": "function"
+      },
+      "keys": {
+        "__princetype__": "function"
+      },
       "length": {
         "__princetype__": null
       },
@@ -2051,6 +2057,9 @@
         "__princetype__": "function"
       },
       "toggle": {
+        "__princetype__": "function"
+      },
+      "values": {
         "__princetype__": "function"
       }
     }
