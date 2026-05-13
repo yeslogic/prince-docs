@@ -156,6 +156,11 @@ You can place content in a page-margin box with the [`content`](css-props.md#pro
         }
     }
 ```
+
+:::note
+The page region at-rules must always be declared within an `@page` at-rule.
+:::
+
 Two examples in [the next chapter](#selecting-pages) show examples of page headers and footers:
 
 -   the [Novel title page example](#fig-titlepage) creates a footer to display the page number, but suppresses it for the title page; and
