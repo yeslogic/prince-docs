@@ -3632,6 +3632,9 @@
     },
     "prototype": {
       "__princetype__": "object",
+      "hasOwn": {
+        "__princetype__": "function"
+      },
       "hasOwnProperty": {
         "__princetype__": "function"
       },

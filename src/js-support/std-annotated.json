@@ -193,6 +193,7 @@
             "toString": {},
             "toLocaleString": {},
             "valueOf": {},
+            "hasOwn": {},
             "hasOwnProperty": {},
             "isPrototypeOf": {},
             "propertyIsEnumerable": {}
