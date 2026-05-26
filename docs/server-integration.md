@@ -422,6 +422,7 @@ The `pdf options` object includes these fields:
         "did-print": <string> | {"url": <URL>}
     },
     "pdf-id": <string>,
+    "pdf-dpi": <string>,
     "pdf-lang": <string>,
     "pdf-xmp": <URL>,
     "pdf-xmp-metadata": <bool>,
@@ -543,6 +544,7 @@ The following is the full JSON job description - the mandatory `input` and `src`
             "did-print": <string> | {"url": <URL>}
         },
         "pdf-id": <string>,
+        "pdf-dpi": <string>,
         "pdf-lang": <string>,
         "pdf-xmp": <URL>,
         "pdf-xmp-metadata": <bool>,

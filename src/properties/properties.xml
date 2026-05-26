@@ -5769,7 +5769,7 @@ supplier, item { overflow-wrap: normal; }
 
     <p>
     If the value <code>auto</code> is specified, then the value
-    is either that given by the <code>--raster-dpi</code> command-line
+    is either that given by the <code>--pdf-dpi</code> command-line
     option, or the <code>-prince-filter-resolution</code> descriptor of
     <code>@prince-pdf</code> (see below).
     </p>

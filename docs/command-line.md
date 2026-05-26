@@ -822,6 +822,16 @@ The command-line may include the options described below:
     useful if you have a layout designed in pixels and you need to scale it down
     for print.
   </dd>
+  <dt id="cl-pdf-dpi">
+      <code>
+      --pdf-dpi
+      </code>
+  </dt>
+  <dd>
+    Defines the resolution the PDF will be printed and viewed with. The default is 96dpi.
+    The value might affect media queries or image `srcset` alternatives that depend on resolution.
+    It also affects the `-prince-filter-resolution` CSS property, when set to `auto`.
+  </dd>
 </dl>
 
 ### PDF Metadata Options
