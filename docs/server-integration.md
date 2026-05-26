@@ -356,7 +356,6 @@ The JSON job description ([here](#job-description-json) you can see the full des
     "input": { <input options> },
     "pdf": { <pdf options> },
     "metadata": { <metadata options> },
-    "engine": { <engine options> },
 }
 ```
 The `input` field (highlighted) is mandatory, the rest are optional and will default to the normal values.
@@ -367,6 +366,7 @@ The `input options` object includes these fields:
 {
     // highlight-next-line
     "src": <single URL or list of URLs>,
+    "css-dpi": <integer>,
     "type": <string>,
     "base": <string>,
     "media": <string>,
@@ -486,13 +486,6 @@ The `metadata options` object includes these fields:
 }
 ```
 
-The `engine options` object currently includes just one field:
-
-```json
-{
-    "css-dpi": <integer>
-}
-```
 
 #### Job description JSON
 
@@ -504,6 +497,7 @@ The following is the full JSON job description - the mandatory `input` and `src`
     "input": {
     // highlight-next-line
         "src": <single URL or list of URLs>,
+        "css-dpi": <integer>,
         "type": <string>,
         "base": <string>,
         "media": <string>,
@@ -567,9 +561,6 @@ The following is the full JSON job description - the mandatory `input` and `src`
         "author": <string>,
         "keywords": <string>,
         "creator": <string>,
-    },
-    "engine": {
-        "css-dpi": <integer>,
     }
 }
 ```
