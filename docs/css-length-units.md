@@ -279,6 +279,10 @@ px
 </tr>
 </table>
 
+:::tip
+This can be changed with the command-line option [`--css-dpi`](command-line#cl-css-dpi).
+:::
+
 
 ## Fractional Length Unit
 
