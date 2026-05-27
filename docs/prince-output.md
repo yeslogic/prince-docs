@@ -4,6 +4,8 @@ title: Prince Output
 
 Prince produces PDF files that are compatible with Adobe Acrobat and other PDF viewers. The output can be controlled in several different ways, addressing different aspects of the resulting files.
 
+For compatibility reasons, the PDFs are produced with a resolution of 96dpi. To change the resolution the PDF will be viewed or printed with, the command-line option [`--pdf-dpi`](command-line.md#cl-pdf-dpi) can be used. The value might affect media queries or image `srcset` alternatives that depend on resolution. It also affects the `-prince-filter-resolution` CSS property, when set to `auto`.
+
 For the error and warning output log, please see [Prince Output Log](#prince-output-log).
 
 
