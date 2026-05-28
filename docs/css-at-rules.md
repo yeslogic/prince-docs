@@ -45,6 +45,14 @@ in <code>UTF-8</code>, <code>UTF-16</code>, <code>Latin1</code> and <code>Window
 </td>
 <td>Defines a namespace prefix or default namespace to be used in the stylesheet.</td>
 </tr>
+<tr>
+<td id="at-property">
+    <code>
+    @property &lt;<i>custom-property-name</i>&gt; {"{"} syntax: &lt;<i>string</i>&gt;; inherits: [ true | false ]; initial-vale: &lt;<i>declaration-value</i>&gt;?; {"}"}
+    </code>
+</td>
+<td>Explicitly defines CSS custom properties. The `syntax` and `inherits` descriptors are required; as is the `initial-value` descriptor, unless the value of `syntax` is the universal syntax definition (`syntax : "*"`).</td>
+</tr>
 </table>
 
 ## Nested At-Rules

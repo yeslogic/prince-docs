@@ -155,6 +155,10 @@ Prince supports, fully or partially, the following CSS specifications:
 <td>Prince supports this module.</td>
 </tr>
 <tr>
+<td><a href="https://www.w3.org/TR/css-properties-values-api-1/">CSS Properties and Values API Level&nbsp;1</a></td>
+<td>Prince supports the `@property` rule.</td>
+</tr>
+<tr>
 <td><a href="https://www.w3.org/TR/css-color-5/">CSS Color Module Level&nbsp;5</a></td>
 <td>Prince supports the <code>device-cmyk()</code> function from this module.</td>
 </tr>

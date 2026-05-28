@@ -1742,6 +1742,16 @@ When a fallback value needs to be provided, this can be indicated in the `var()`
     }
 ```
 
+Custom properties can be explicitly defined using the `@property` at-rule, which allows for property type checking and constraining, setting default values, and defining whether a custom property can inherit values.
+
+```css
+    @property --defaultSizeProperty {
+        syntax: "<length> | <percentage>";
+        inherits: true;
+        initial-value: 200px;
+    }
+```
+
 ### Nesting
 
 To improve readability, modularity, size and maintainability of CSS stylesheets, Prince supports CSS nesting, whereby the selector of a child rule is relative to that of the parent rule.
