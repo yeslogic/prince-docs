@@ -199,6 +199,34 @@
             "propertyIsEnumerable": {}
         }
     },
+    "Proxy": {
+        "revocable": {},
+        "arguments": [
+            {
+                "type": "object",
+                "name": "target"
+            },
+            {
+                "type": "object",
+                "name": "handler"
+            }
+        ]
+    },
+    "Reflect": {
+        "apply": {},
+        "construct": {},
+        "defineProperty": {},
+        "deleteProperty": {},
+        "get": {},
+        "getOwnPropertyDescriptor": {},
+        "getPrototypeOf": {},
+        "has": {},
+        "isExtensible": {},
+        "ownKeys": {},
+        "preventExtensions": {},
+        "set": {},
+        "setPrototypeOf": {}
+    },
     "Function": {
         "prototype": {
             "constructor": {},

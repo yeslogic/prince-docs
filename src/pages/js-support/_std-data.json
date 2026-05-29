@@ -4002,6 +4002,22 @@
       "__princetype__": "object"
     }
   },
+  "Proxy": {
+    "__princetype__": "function",
+    "revocable": {
+      "__princetype__": "function"
+    },
+    "arguments": [
+      {
+        "type": "object",
+        "name": "target"
+      },
+      {
+        "type": "object",
+        "name": "handler"
+      }
+    ]
+  },
   "RangeError": {
     "__princetype__": "function",
     "prototype": {
@@ -4026,6 +4042,48 @@
         "__princetype__": "string"
       },
       "constructor": {}
+    }
+  },
+  "Reflect": {
+    "__princetype__": "object",
+    "apply": {
+      "__princetype__": "function"
+    },
+    "construct": {
+      "__princetype__": "function"
+    },
+    "defineProperty": {
+      "__princetype__": "function"
+    },
+    "deleteProperty": {
+      "__princetype__": "function"
+    },
+    "get": {
+      "__princetype__": "function"
+    },
+    "getOwnPropertyDescriptor": {
+      "__princetype__": "function"
+    },
+    "getPrototypeOf": {
+      "__princetype__": "function"
+    },
+    "has": {
+      "__princetype__": "function"
+    },
+    "isExtensible": {
+      "__princetype__": "function"
+    },
+    "ownKeys": {
+      "__princetype__": "function"
+    },
+    "preventExtensions": {
+      "__princetype__": "function"
+    },
+    "set": {
+      "__princetype__": "function"
+    },
+    "setPrototypeOf": {
+      "__princetype__": "function"
     }
   },
   "RegExp": {
