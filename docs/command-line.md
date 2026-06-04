@@ -558,17 +558,17 @@ The command-line may include the options described below:
   <dd>
     Defines the maximal number of consequent layout passes - see <a href="/doc/cookbook/#the-multi-pass-solution">The "Multi-Pass" Solution</a>.  The default is unlimited passes.
   </dd>
-  <dt id="cl-prince-pdf-script">
+  <dt id="cl-pdf-script">
       <code>
-      --prince-pdf-script=<span className="replaceable">FILE</span>
+      --pdf-script=<span className="replaceable">FILE</span>
       </code>
   </dt>
   <dd>
     Include a PDF script file to run when the PDF is opened.  This is an accumulating option, and can be set multiple times.
   </dd>
-  <dt id="cl-prince-pdf-event-script">
+  <dt id="cl-pdf-event-script">
       <code>
-      --prince-pdf-event-script=<span className="replaceable">EVENT</span>:<span className="replaceable">FILE</span>
+      --pdf-event-script=<span className="replaceable">EVENT</span>:<span className="replaceable">FILE</span>
       </code>
   </dt>
   <dd>
