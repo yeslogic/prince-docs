@@ -16373,7 +16373,7 @@ supplier, item { overflow-wrap: normal; }
           Initial value
         </th>
                   <td>
-                    <code>96dpi</code>
+                    <code>96dpi unless otherwise specified by --pdf-dpi</code>
                   </td>
                 </tr>
                 <tr>
@@ -16411,6 +16411,10 @@ supplier, item { overflow-wrap: normal; }
     provides a default resolution to be used for rasterizing to images for applying CSS and SVG
     filters, for elements whose <code>-<a href="#prop-prince-filter-resolution">prince-filter-resolution</a></code>
     property has its initial <code>auto</code> value.
+    </p>
+          <p>
+    When not specified, the default is <code>96dpi</code>, unless a PDF dpi value is specified
+    with the <code>--pdf-dpi</code> comman-line option, in which case it inherits its value.
     </p>
         </div>
         <div>

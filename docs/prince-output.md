@@ -4,7 +4,19 @@ title: Prince Output
 
 Prince produces PDF files that are compatible with Adobe Acrobat and other PDF viewers. The output can be controlled in several different ways, addressing different aspects of the resulting files.
 
-For compatibility reasons, the PDFs are produced with a resolution of 96dpi. To change the resolution the PDF will be viewed or printed with, the command-line option [`--pdf-dpi`](command-line.md#cl-pdf-dpi) can be used. The value might affect media queries or image `srcset` alternatives that depend on resolution. It also affects the `-prince-filter-resolution` CSS property, when set to `auto`.
+By default, PDFs are generated with the highest resolution possible. To change the resolution the PDF will be viewed or printed with, the command-line option [`--pdf-dpi`](command-line.md#cl-pdf-dpi) can be used. This affects media queries or image `srcset` alternatives that depend on resolution, as well as the [`-prince-filter-resolution`](css-props.md#prop-prince-filter-resolution) CSS property:
+
+* `--pdf-dpi=auto`
+    - `@media` resolution treated as "infinite";
+    - highest resolution option chosen from the imgage `srcset` attribute;
+    - `-prince-filter-resolution` defaults to `96dpi` for compatibility reasons.
+ 
+* `--pdf-dpi=300dpi`, or some other value
+    - `@media` resolution treated as `300dpi`;
+    - appropriate option chosen from the imgage `srcset` attribute;
+    - `-prince-filter-resolution` defaults to `300dpi`.
+
+If the author specifies a fixed dpi for the PDF, Prince will attempt to respect that; otherwise it will treat it as "infinite resolution" (or "resolution independent"), while defaulting filters to `96dpi` for reasons of compatibility with browsers. If necessary, filter resolution [can be changed independently](graphics.md#filters).
 
 For the error and warning output log, please see [Prince Output Log](#prince-output-log).
 

@@ -814,7 +814,7 @@ The command-line may include the options described below:
   </dd>
   <dt id="cl-css-dpi">
       <code>
-      --css-dpi
+      --css-dpi=<span className="replaceable">DPI</span>
       </code>
   </dt>
   <dd>
@@ -824,13 +824,14 @@ The command-line may include the options described below:
   </dd>
   <dt id="cl-pdf-dpi">
       <code>
-      --pdf-dpi
+      --pdf-dpi=auto | <span className="replaceable">DPI</span>
       </code>
   </dt>
   <dd>
-    Defines the resolution the PDF will be printed and viewed with. The default is 96dpi.
-    The value might affect media queries or image `srcset` alternatives that depend on resolution.
-    It also affects the `-prince-filter-resolution` CSS property, when set to `auto`.
+    Defines the resolution the PDF will be printed and viewed with. The default is the value `auto`,
+    which is equivalent to unspecified or infinite resolution.
+    The value affects media queries or image `srcset` alternatives that depend on resolution,
+    as well as the `-prince-filter-resolution` CSS property.
   </dd>
 </dl>
 
