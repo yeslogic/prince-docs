@@ -762,6 +762,7 @@ This example recompresses all JPEG images to 50%, converts any non-JPEG images t
         <li><code><a href="/doc/css-props#prop-prince-hyphenate-character">-prince-hyphenate-character</a></code></li>
         <li><code><a href="/doc/css-props#prop-prince-hyphenate-before">-prince-hyphenate-before</a></code></li>
         <li><code><a href="/doc/css-props#prop-prince-hyphenate-after">-prince-hyphenate-after</a></code></li>
+        <li><code><a href="/doc/css-props#prop-prince-hyphenate-limit-last">-prince-hyphenate-limit-last</a></code></li>
         <li><code><a href="/doc/css-props#prop-prince-hyphenate-limit-lines">-prince-hyphenate-limit-lines</a></code></li>
         <li><code><a href="/doc/css-props#prop-prince-hyphenate-patterns">-prince-hyphenate-patterns</a></code></li>
       </ul>
@@ -780,7 +781,7 @@ The character shown at the end of a line when the word is hyphenated can be spec
 
 Fine-tuning of hyphenation can be done with the `-prince-hyphenate-after` and `-prince-hyphenate-before` properties to determine the minimum number of letters in a word that may be moved to the next line or that may be left at the end of a line when the word is hyphenated.
 
-The [`-prince-hyphenate-limit-lines`](css-props.md#prop-prince-hyphenate-limit-lines) property is used to determine the maximum number of consecutive lines that may end with a hyphenated word.
+Hyphenation can be limited for certain lines: the [`-prince-hyphenate-limit-lines`](css-props.md#prop-prince-hyphenate-limit-lines) property is used to determine the maximum number of consecutive lines that may end with a hyphenated word, and the [`-prince-hyphenate-limit-last`](css-props.md#prop-prince-hyphenate-limit-last) property determines how it should be handled at the end of columns, pages, or spreads.
 
 Prince uses the hyphenation patterns from the CTAN archive - the full archive is accessible [here](https://ctan.org/tex-archive/language/hyph-utf8/tex/patterns/txt). The default hyphenation patterns can be found in the installed `hyph.css` file, located in the default style sheets location (see [Installation Layout](installing.md#installation-layout)).
 

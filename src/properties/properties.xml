@@ -6028,6 +6028,33 @@ supplier, item { overflow-wrap: normal; }
 </property>
 
 <property>
+    <name>prince-hyphenate-limit-last</name>
+    <value>
+	<choice>
+	    <keyword>none</keyword>
+	    <keyword>always</keyword>
+	    <keyword>column</keyword>
+	    <keyword>page</keyword>
+	    <keyword>spread</keyword>
+	</choice>
+    </value>
+    <initial>none</initial>
+    <applyto>block elements</applyto>
+    <inherit>yes</inherit>
+    <extension/>
+    <example>.chapter {
+    -prince-hyphenate-limit-last: spread;
+}</example>
+    <see><a href="/doc/cookbook/#hyphenation">Hyphenation</a></see>
+    <comments>
+	<p>
+	This property specifies hyphenation behavior at the end of elements, columns, pages, and spreads.
+	</p>
+    </comments>
+    <spec><a href="https://www.w3.org/TR/css-text-4/#hyphenate-line-limits">CSS Text Module Level 4</a></spec>
+</property>
+
+<property>
     <name>prince-hyphenate-limit-lines</name>
     <value>
 	<choice>

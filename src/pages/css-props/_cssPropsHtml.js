@@ -17730,6 +17730,85 @@ supplier, item { overflow-wrap: normal; }
     </details>
     <details>
       <summary class="ext" title="Prince extension">
+        <h6 id="prop-prince-hyphenate-limit-last">-prince-hyphenate-limit-last* <a href="#prop-prince-hyphenate-limit-last" class="hash-link"> </a></h6>
+      </summary>
+      <div>
+        <div>
+          <div id="prop-prince-hyphenate-limit-last-syntax">Syntax</div>
+          <div class="example">
+            <div class="syntax-block">
+              <code>-prince-hyphenate-limit-last: none | always | column | page | spread</code>
+            </div>
+          </div>
+        </div>
+        <div>
+          <div class="example">
+            <div class="syntax-block">
+              <table class="property-table">
+                <tr>
+                  <th scope="row">
+          Initial value
+        </th>
+                  <td>
+                    <code>none</code>
+                  </td>
+                </tr>
+                <tr>
+                  <th scope="row">
+          Applies to
+        </th>
+                  <td>block elements</td>
+                </tr>
+                <tr>
+                  <th scope="row">
+          Inherited
+        </th>
+                  <td>
+                  yes
+                </td>
+                </tr>
+              </table>
+            </div>
+          </div>
+        </div>
+        <div>
+          <div id="prop-prince-hyphenate-limit-last-examples">Examples</div>
+          <div class="example">
+            <div class="programlisting">
+              <pre>
+                <code class="hljs">.chapter {
+    -prince-hyphenate-limit-last: spread;
+}</code>
+              </pre>
+            </div>
+          </div>
+        </div>
+        <div>
+          <div id="prop-prince-hyphenate-limit-last-comments">Comments</div>
+          <p>
+	This property specifies hyphenation behavior at the end of elements, columns, pages, and spreads.
+	</p>
+        </div>
+        <div>
+          <div id="prop-prince-hyphenate-limit-last-seealso">See Also</div>
+          <ul>
+            <li>
+              <a href="/doc/cookbook/#hyphenation">Hyphenation</a>
+            </li>
+          </ul>
+        </div>
+        <div>
+          <div id="prop-prince-hyphenate-limit-last-spec">Specification</div>
+          <ul>
+            <li>
+              <a href="https://www.w3.org/TR/css-text-4/#hyphenate-line-limits">CSS Text Module Level 4</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </details>
+    <details>
+      <summary class="ext" title="Prince extension">
         <h6 id="prop-prince-hyphenate-limit-lines">-prince-hyphenate-limit-lines* <a href="#prop-prince-hyphenate-limit-lines" class="hash-link"> </a></h6>
       </summary>
       <div>
