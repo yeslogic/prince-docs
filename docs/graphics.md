@@ -423,9 +423,9 @@ The `<canvas>` element creates a rendering context on which to draw that needs t
     const context = canvas.getContext("2d");
 ```
 
-At this point you can draw on the canvas by using all methods and functions offered by [`CanvasRenderingContext2D()`](js-support.md#window.CanvasRenderingContext2D).
+Prince currently only supports the `"2d"` canvas context.
 
-Unlike SVG, a canvas only supports two primitive shapes: rectangles and paths.  But you can also render images in all the supported formats on the canvas with the [`drawImage()`](js-support.md#window.CanvasRenderingContext2D.prototype.drawImage) function.
+Unlike SVG, a canvas only supports two primitive shapes: rectangles and paths.  But you can also render [images in all the supported formats](#images) on the canvas with the [`drawImage()`](js-support.md#window.CanvasRenderingContext2D.prototype.drawImage) function.
 
 ```javascript
     const img = new Image();
@@ -434,6 +434,73 @@ Unlike SVG, a canvas only supports two primitive shapes: rectangles and paths.  
     };
     img.src = 'image.jpg';
 ```
+
+The following methods are [fully supported](js-support.md#window.CanvasRenderingContext2D):
+
+* State:
+    - `save`
+    - `restore`
+* Transforms:
+    - `scale`
+    - `rotate`
+    - `translate`
+    - `transform`
+    - `setTransform`
+    - `resetTransform`
+* Path building:
+    - `beginPath`
+    - `closePath`
+    - `moveTo`
+    - `lineTo`
+    - `rect`
+    - `arc`
+    - `arcTo`
+    - `ellipse`
+    - `bezierCurveTo`
+    - `quadraticCurveTo`
+* Rect drawing:
+    - `clearRect`
+    - `fillRect`
+    - `strokeRect`
+* Path painting:
+    - `fill`
+    - `stroke`
+* Clipping:
+    - `clip`
+    - `resetClip` (note: `resetClip` is non-standard; the spec uses `save`/`restore`)
+* Line dash:
+    - `setLineDash`
+    - `getLineDash`
+* Text:
+    - `fillText`
+    - `strokeText`
+    - `measureText`
+* Gradients and patterns:
+    - `createLinearGradient`
+    - `createRadialGradient`
+    - `createPattern`
+    - `gradient.addColorStop`
+    - `pattern.setTransform`
+* Images:
+    - `drawImage`
+    - `createImageData`
+    - `putImageData`
+* Style properties:
+    - `globalAlpha`
+    - `strokeStyle`
+    - `fillStyle`
+    - `lineWidth`
+    - `lineCap`
+    - `lineJoin`
+    - `lineDashOffset`
+    - `miterLimit`
+* Text properties:
+    - `font`
+    - `textAlign`
+    - `textBaseline`
+    - `letterSpacing`
+    - `wordSpacing`
+    - `direction`
 
 
 Scalable Vector Graphics (SVG)
