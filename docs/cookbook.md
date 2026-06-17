@@ -1285,9 +1285,9 @@ A problematic situation arises when you want to modify your document after layou
 
 (Please note that this recipe only addresses the creation of an index - a simple table of contents or a reference to a place on another page can easily be achieved with [target-counter links](gen-content.md#using-target-counter).)
 
-To address this problem, Prince offers the possibility to delay the generation of a PDF and to register the function [`Prince.registerPostLayoutFunc(func)`](js-support.md#window.Prince.registerPostLayoutFunc), which is called after layout finished, similar to the current `oncomplete` event. If this function modifies the DOM, Prince will perform layout again on the updated document once the function returns, and before generating the PDF.
+To address this problem, Prince offers the possibility to delay the generation of a PDF: you can register the JavaScript function [`Prince.registerPostLayoutFunc(func)`](js-support.md#window.Prince.registerPostLayoutFunc), which is called after layout finished, similar to the current `oncomplete` event. If this function modifies the DOM, Prince will, once the function returns, perform layout again on the updated document, before generating the PDF.
 
-The post layout function can register itself, or another post layout function, in order to repeat this process multiple times! By default the number of passes is not limited, but in order to prevent endless layout loops you can set a limit by using the [`--max-passes=N`](command-line.md#cl-max-passes) command-line option.
+You can have the post layout function register itself, or another post layout function, in order to *repeat* this process multiple times! By default the number of passes is not limited, but in order to prevent endless layout loops you can set a limit by using the [`--max-passes=N`](command-line.md#cl-max-passes) command-line option.
 
 Here is a minimalistic "multi-pass" solution where the document is adorned with a ToC and index:
 
