@@ -47,7 +47,7 @@ The <a href="https://curl.se/">libcurl</a> library is used by Prince to load res
 
 <dt id="openssl-nss">OpenSSL and NSS</dt>
 <dd>
-The <a href="https://www.openssl.org/">OpenSSL</a> and <a href="https://firefox-source-docs.mozilla.org/security/nss/index.html">NSS</a> libraries are used by Prince to load resources from secure HTTPS URLs.
+The <a href="https://openssl-library.org/">OpenSSL</a> and <a href="https://firefox-source-docs.mozilla.org/security/nss/index.html">NSS</a> libraries are used by Prince to load resources from secure HTTPS URLs.
 </dd>
 
 <dt id="fontconfig">Fontconfig</dt>
