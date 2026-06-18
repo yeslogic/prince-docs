@@ -843,45 +843,59 @@ The command-line may include the options described below:
       --pdf-title=<span className="replaceable">TITLE</span>
       </code>
   </dt>
-  <dd>Set PDF document title.</dd>
+  <dd>
+    Set PDF document title.
+  </dd>
   <dt id="cl-pdf-subject">
       <code>
       --pdf-subject=<span className="replaceable">SUBJECT</span>
       </code>
   </dt>
-  <dd>Set PDF document subject.</dd>
+  <dd>
+    Set PDF document subject.
+  </dd>
   <dt id="cl-pdf-author">
       <code>
       --pdf-author=<span className="replaceable">AUTHOR</span>
       </code>
   </dt>
-  <dd>Set PDF document author.</dd>
+  <dd>
+    Set PDF document author.
+  </dd>
   <dt id="cl-pdf-keywords">
     <code>
     --pdf-keywords=<span className="replaceable">KEYWORDS</span>
     </code>
   </dt>
-  <dd>Set PDF document keywords.</dd>
+  <dd>
+    Set PDF document keywords.
+  </dd>
   <dt id="cl-pdf-creator">
       <code>
       --pdf-creator=<span className="replaceable">CREATOR</span>
       </code>
   </dt>
-  <dd>Set PDF document creator.</dd>
+  <dd>
+    Set PDF document creator.
+  </dd>
   <dt id="cl-pdf-xmp">
       <code>
       --pdf-xmp=<span className="replaceable">XMP</span>
       </code>
   </dt>
-  <dd>Include additional XMP metadata in the PDF.  The argument is an XMP file,
-  from which the data is taken.</dd>
+  <dd>
+    Include additional XMP metadata in the PDF.  The argument is an XMP file,
+    from which the data is taken.
+  </dd>
   <dt id="cl-pdf-xmp-metadata">
       <code>
       --pdf-xmp-metadata
       </code>
   </dt>
-  <dd>Enable the XMP representation of HTML metadata even when the PDF profile
-  does not require it.</dd>
+  <dd>
+    Enable the XMP representation of HTML metadata even when the PDF profile
+    does not require it.
+  </dd>
 </dl>
 
 ### PDF Encryption Options
