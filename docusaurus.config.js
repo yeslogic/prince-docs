@@ -6,6 +6,7 @@ export default {
   url: 'https://www.princexml.com',
   baseUrl: '/',
   onBrokenLinks: 'ignore',
+  trailingSlash: 'true',
   favicon: 'img/favicon.ico',
   organizationName: 'yeslogic', // Usually your GitHub org/user name.
   projectName: 'prince-docs', // Usually your repo name.
