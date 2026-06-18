@@ -34,7 +34,7 @@ Default style sheets
 
 Prince also offers a mechanism to disable some of the style sheets: the command-line option [`--no-author-style`](command-line.md#cl-no-author-style) disables author style sheets, while [`--no-default-style`](command-line.md#cl-no-default-style) disables default style sheets.
 
-For compatibility reasons, Prince computes the pixel unit relative to the de-facto standard of 96dpi (or rather, 96 *pixel* per inch) for compatibility with browsers. The command-line option [`--css-dpi`](command-line#cl-css-dpi) can be used to change this.
+For compatibility reasons, Prince computes the pixel unit relative to the de-facto standard of 96dpi (or rather, 96 *pixel* per inch) for compatibility with browsers. The command-line option [`--css-dpi`](command-line.md#cl-css-dpi) can be used to change this.
 
 ### Importing Style Sheets
 

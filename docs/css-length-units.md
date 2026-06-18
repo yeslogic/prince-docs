@@ -280,7 +280,7 @@ px
 </table>
 
 :::tip
-This can be changed with the command-line option [`--css-dpi`](command-line#cl-css-dpi).
+This can be changed with the command-line option [`--css-dpi`](command-line.md#cl-css-dpi).
 :::
 
 

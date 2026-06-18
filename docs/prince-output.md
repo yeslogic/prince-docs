@@ -733,7 +733,7 @@ When launching Prince from the command line, Prince will print any error or warn
 
 The level of verbosity, or a log file where to print all output, can be controlled with a few command-line [Logging Options](command-line.md#logging-options):
 
--   when running Prince with the [`--verbose`](command-line#cl-verbose) command-line option, it prints out informative messages on the progress of creating the PDF;
+-   when running Prince with the [`--verbose`](command-line.md#cl-verbose) command-line option, it prints out informative messages on the progress of creating the PDF;
 
 ```bash
     $ prince example.html --verbose
@@ -752,7 +752,7 @@ The level of verbosity, or a log file where to print all output, can be controll
     prince: Finished: success
 ```
 
--   when running Prince with the [`--debug`](command-line#cl-debug) command-line option, it provides details about what it is doing that help to make sense of failed HTTP requests or font errors by giving insight into what is being loaded;
+-   when running Prince with the [`--debug`](command-line.md#cl-debug) command-line option, it provides details about what it is doing that help to make sense of failed HTTP requests or font errors by giving insight into what is being loaded;
 
 ```bash
     $ prince example.html --debug
@@ -935,9 +935,9 @@ The level of verbosity, or a log file where to print all output, can be controll
     prince: Finished: success
 ```
 
--   the [`--log=FILE`](command-line#cl-log) command-line option allows to save all output to the specified file, for later inspection.
+-   the [`--log=FILE`](command-line.md#cl-log) command-line option allows to save all output to the specified file, for later inspection.
 
-Some warnings can be suppressed from the output log: the command-line options [`--no-warn-css-unknown`](command-line#cl-no-warn-css-unknown) and [`--no-warn-css-unsupported`](command-line#cl-no-warn-css-unsupported) suppress unknown or unsupported CSS features, while [`--no-warn-css`](command-line#cl-no-warn-css) suppresses all CSS-related warnings.
+Some warnings can be suppressed from the output log: the command-line options [`--no-warn-css-unknown`](command-line.md#cl-no-warn-css-unknown) and [`--no-warn-css-unsupported`](command-line.md#cl-no-warn-css-unsupported) suppress unknown or unsupported CSS features, while [`--no-warn-css`](command-line.md#cl-no-warn-css) suppresses all CSS-related warnings.
 
 ```bash
     $ prince example.html
@@ -959,6 +959,6 @@ When using the Prince GUI, the output log is printed to the log window on the bo
 
 Prince offers also advanced debugging options that might help the developers to understand issues that prove difficult to replicate:
 -   the [capture/replay system](help.md#the-capturereplay-system) allows to faithfully replay a previously captured Prince run; and
--   the [Prince debug script](help#running-the-debug-script) dumps a considerable amount of debug information to two files in the `/tmp` directory, namely `prince.debug` and `prince.strace`.
+-   the [Prince debug script](help.md#running-the-debug-script) dumps a considerable amount of debug information to two files in the `/tmp` directory, namely `prince.debug` and `prince.strace`.
 
 However, these two options are usually not needed in normal debugging.
