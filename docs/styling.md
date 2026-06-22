@@ -1389,7 +1389,7 @@ Would the `in-order` directive have been omitted, the figure with className `two
 
 ##### Dropping Excess Floats
 
-The property [`-prince-float-tail`](css-props.md#prop-prince-float-tail) instructs Prince how to deal with page floats that end up past the end of normal content: with the value `fill-page`, Prince will try to fill the last page, but discard any page floats that would create more pages.  The value `keep` will keep all images and create enough new pages to accomodate them all.
+The property [`-prince-float-tail`](css-props.md#prop-prince-float-tail) instructs Prince how to deal with page floats that end up past the end of normal content: with the value `fill-page`, Prince will try to fill the last page, but discard any page floats that would create more pages.  The value `keep` will keep all page floats and create enough new pages to accomodate them all.
 
 ##### Margins of Page and Column Floats
 
