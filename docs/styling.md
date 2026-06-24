@@ -1769,6 +1769,22 @@ To improve readability, modularity, size and maintainability of CSS stylesheets,
 
 CSS Nesting introduces a nesting selector, `&`, which explicitly makes the nested child rule selectors *relative to the parent element*.
 
+Thus the following CSS snippet
+
+```css
+    p {
+      color: black;
+    }
+    p a {
+      color: green;
+    }
+    p a:hover {
+      color: red;
+    }
+```
+
+could be rewritten with nesting syntax in a more concise and readable (and thus maintainable) form:
+
 ```css
     p {
       color: black;
