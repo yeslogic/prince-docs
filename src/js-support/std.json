@@ -2728,28 +2728,67 @@
         "acos": {
             "__princetype__": "function"
         },
+        "acosh": {
+            "__princetype__": "function"
+        },
         "asin": {
+            "__princetype__": "function"
+        },
+        "asinh": {
             "__princetype__": "function"
         },
         "atan": {
             "__princetype__": "function"
         },
+        "atanh": {
+            "__princetype__": "function"
+        },
         "atan2": {
+            "__princetype__": "function"
+        },
+        "cbrt": {
             "__princetype__": "function"
         },
         "ceil": {
             "__princetype__": "function"
         },
+        "clz32": {
+            "__princetype__": "function"
+        },
         "cos": {
+            "__princetype__": "function"
+        },
+        "cosh": {
             "__princetype__": "function"
         },
         "exp": {
             "__princetype__": "function"
         },
+        "expm1": {
+            "__princetype__": "function"
+        },
         "floor": {
             "__princetype__": "function"
         },
+        "fround": {
+            "__princetype__": "function"
+        },
+        "hypot": {
+            "__princetype__": "function"
+        },
+        "imul": {
+            "__princetype__": "function"
+        },
         "log": {
+            "__princetype__": "function"
+        },
+        "log1p": {
+            "__princetype__": "function"
+        },
+        "log10": {
+            "__princetype__": "function"
+        },
+        "log2": {
             "__princetype__": "function"
         },
         "max": {
@@ -2770,13 +2809,25 @@
         "seedRandom": {
             "__princetype__": "function"
         },
+        "sign": {
+            "__princetype__": "function"
+        },
         "sin": {
+            "__princetype__": "function"
+        },
+        "sinh": {
             "__princetype__": "function"
         },
         "sqrt": {
             "__princetype__": "function"
         },
         "tan": {
+            "__princetype__": "function"
+        },
+        "tanh": {
+            "__princetype__": "function"
+        },
+        "trunc": {
             "__princetype__": "function"
         }
     },
