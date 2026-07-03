@@ -3686,6 +3686,21 @@
       "hasOwn": {
         "__princetype__": "function"
       },
+      "__defineGetter__": {
+        "__princetype__": "function"
+      },
+      "__defineSetter__": {
+        "__princetype__": "function"
+      },
+      "__lookupGetter__": {
+        "__princetype__": "function"
+      },
+      "__lookupSetter__": {
+        "__princetype__": "function"
+      },
+      "__proto__": {
+        "__princetype__": "object"
+      },
       "hasOwnProperty": {
         "__princetype__": "function"
       },

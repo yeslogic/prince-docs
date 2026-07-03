@@ -189,6 +189,11 @@
         "setPrototypeOf": {},
         "values": {},
         "prototype": {
+            "__defineGetter__": {},
+            "__defineSetter__": {},
+            "__lookupGetter__": {},
+            "__lookupSetter__": {},
+            "__proto__": {},
             "constructor": {},
             "toString": {},
             "toLocaleString": {},
