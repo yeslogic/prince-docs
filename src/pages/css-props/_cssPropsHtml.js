@@ -4291,7 +4291,7 @@ const cssPropsHtml = String.raw`
           <div id="prop-clear-syntax">Syntax</div>
           <div class="example">
             <div class="syntax-block">
-              <code>clear: none | left | right | <span class="ext">inside</span> | <span class="ext">outside</span> | both | <span class="ext">page</span> | <span class="ext">column</span> | <span class="ext">end</span></code>
+              <code>clear: none | left | right | inline-start | inline-end | <span class="ext">inside</span> | <span class="ext">outside</span> | both | <span class="ext">page</span> | <span class="ext">column</span> | <span class="ext">end</span></code>
             </div>
           </div>
         </div>
@@ -7258,7 +7258,7 @@ const cssPropsHtml = String.raw`
           <div id="prop-float-placement-syntax">Syntax</div>
           <div class="example">
             <div class="syntax-block">
-              <code>float-placement: <br/>   none | left | right | <span class="ext">inside</span> | <span class="ext">outside</span>
+              <code>float-placement: <br/>   none | left | right | inline-start | inline-end | <span class="ext">inside</span> | <span class="ext">outside</span>
    | top | bottom | <span class="ext">top-bottom</span> | <span class="ext">snap</span>
    | <span class="ext">align-top</span> | <span class="ext">align-bottom</span>
    | footnote | <span class="ext">inline-footnote</span></code>
@@ -15961,7 +15961,7 @@ supplier, item { overflow-wrap: normal; }
           <div id="prop-prince-clear-syntax">Syntax</div>
           <div class="example">
             <div class="syntax-block">
-              <code>-prince-clear: none | left | right | <span class="ext">inside</span> | <span class="ext">outside</span> | both | <span class="ext">page</span> | <span class="ext">column</span> | <span class="ext">end</span></code>
+              <code>-prince-clear: none | left | right | inline-start | inline-end | <span class="ext">inside</span> | <span class="ext">outside</span> | both | <span class="ext">page</span> | <span class="ext">column</span> | <span class="ext">end</span></code>
             </div>
           </div>
         </div>
@@ -16812,7 +16812,7 @@ supplier, item { overflow-wrap: normal; }
           <div id="prop-prince-float-placement-syntax">Syntax</div>
           <div class="example">
             <div class="syntax-block">
-              <code>-prince-float-placement: <br/>   none | left | right | <span class="ext">inside</span> | <span class="ext">outside</span>
+              <code>-prince-float-placement: <br/>   none | left | right | inline-start | inline-end | <span class="ext">inside</span> | <span class="ext">outside</span>
    | top | bottom | <span class="ext">top-bottom</span> | <span class="ext">snap</span>
    | <span class="ext">align-top</span> | <span class="ext">align-bottom</span>
    | footnote | <span class="ext">inline-footnote</span></code>

@@ -1446,6 +1446,8 @@ NOTE: The current build process will cause this file's content to appear in a Ja
             <keyword>none</keyword>
             <keyword>left</keyword>
             <keyword>right</keyword>
+            <keyword>inline-start</keyword>
+            <keyword>inline-end</keyword>
             <keyword class="ext">inside</keyword>
             <keyword class="ext">outside</keyword>
             <keyword>both</keyword>
@@ -2614,6 +2616,8 @@ NOTE: The current build process will cause this file's content to appear in a Ja
             <keyword>none</keyword>
             <keyword>left</keyword>
             <keyword>right</keyword>
+            <keyword>inline-start</keyword>
+            <keyword>inline-end</keyword>
             <keyword class="ext">inside</keyword>
             <keyword class="ext">outside</keyword>
             </group>
