@@ -12329,6 +12329,192 @@ const cssPropsHtml = String.raw`
     </details>
     <details>
       <summary>
+        <h6 id="prop-margin-block">margin-block <a href="#prop-margin-block" class="hash-link"> </a></h6>
+      </summary>
+      <div>
+        <div>
+          <div id="prop-margin-block-syntax">Syntax</div>
+          <div class="example">
+            <div class="syntax-block">
+              <code>margin-block: [ auto | <span>&lt;<i>length-percentage</i>&gt;</span> ]{1,2}</code>
+            </div>
+          </div>
+        </div>
+        <div>
+          <div class="example">
+            <div class="syntax-block">
+              <table class="property-table">
+                <tr>
+                  <th scope="row">
+          Initial value
+        </th>
+                  <td>
+                    <code>0</code>
+                  </td>
+                </tr>
+                <tr>
+                  <th scope="row">
+          Applies to
+        </th>
+                  <td>all elements, except elements with table display types other than table-caption, table and inline-table</td>
+                </tr>
+                <tr>
+                  <th scope="row">
+          Inherited
+        </th>
+                  <td>
+                  no
+                </td>
+                </tr>
+              </table>
+            </div>
+          </div>
+        </div>
+        <div/>
+        <div>
+          <div id="prop-margin-block-seealso">See Also</div>
+          <ul>
+            <li>
+              <a href="/doc/styling/#margin">Margin</a>
+            </li>
+          </ul>
+        </div>
+        <div>
+          <div id="prop-margin-block-spec">Specification</div>
+          <ul>
+            <li>
+              <a href="https://www.w3.org/TR/css-logical-1/#margin-properties">CSS Logical Properties and Values Module Level 1</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </details>
+    <details>
+      <summary>
+        <h6 id="prop-margin-block-end">margin-block-end <a href="#prop-margin-block-end" class="hash-link"> </a></h6>
+      </summary>
+      <div>
+        <div>
+          <div id="prop-margin-block-end-syntax">Syntax</div>
+          <div class="example">
+            <div class="syntax-block">
+              <code>margin-block-end: auto | <span>&lt;<i>length-percentage</i>&gt;</span></code>
+            </div>
+          </div>
+        </div>
+        <div>
+          <div class="example">
+            <div class="syntax-block">
+              <table class="property-table">
+                <tr>
+                  <th scope="row">
+          Initial value
+        </th>
+                  <td>
+                    <code>0</code>
+                  </td>
+                </tr>
+                <tr>
+                  <th scope="row">
+          Applies to
+        </th>
+                  <td>all elements, except elements with table display types other than table-caption, table and inline-table</td>
+                </tr>
+                <tr>
+                  <th scope="row">
+          Inherited
+        </th>
+                  <td>
+                  no
+                </td>
+                </tr>
+              </table>
+            </div>
+          </div>
+        </div>
+        <div/>
+        <div>
+          <div id="prop-margin-block-end-seealso">See Also</div>
+          <ul>
+            <li>
+              <a href="/doc/styling/#margin">Margin</a>
+            </li>
+          </ul>
+        </div>
+        <div>
+          <div id="prop-margin-block-end-spec">Specification</div>
+          <ul>
+            <li>
+              <a href="https://www.w3.org/TR/css-logical-1/#margin-properties">CSS Logical Properties and Values Module Level 1</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </details>
+    <details>
+      <summary>
+        <h6 id="prop-margin-block-start">margin-block-start <a href="#prop-margin-block-start" class="hash-link"> </a></h6>
+      </summary>
+      <div>
+        <div>
+          <div id="prop-margin-block-start-syntax">Syntax</div>
+          <div class="example">
+            <div class="syntax-block">
+              <code>margin-block-start: auto | <span>&lt;<i>length-percentage</i>&gt;</span></code>
+            </div>
+          </div>
+        </div>
+        <div>
+          <div class="example">
+            <div class="syntax-block">
+              <table class="property-table">
+                <tr>
+                  <th scope="row">
+          Initial value
+        </th>
+                  <td>
+                    <code>0</code>
+                  </td>
+                </tr>
+                <tr>
+                  <th scope="row">
+          Applies to
+        </th>
+                  <td>all elements, except elements with table display types other than table-caption, table and inline-table</td>
+                </tr>
+                <tr>
+                  <th scope="row">
+          Inherited
+        </th>
+                  <td>
+                  no
+                </td>
+                </tr>
+              </table>
+            </div>
+          </div>
+        </div>
+        <div/>
+        <div>
+          <div id="prop-margin-block-start-seealso">See Also</div>
+          <ul>
+            <li>
+              <a href="/doc/styling/#margin">Margin</a>
+            </li>
+          </ul>
+        </div>
+        <div>
+          <div id="prop-margin-block-start-spec">Specification</div>
+          <ul>
+            <li>
+              <a href="https://www.w3.org/TR/css-logical-1/#margin-properties">CSS Logical Properties and Values Module Level 1</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </details>
+    <details>
+      <summary>
         <h6 id="prop-margin-bottom">margin-bottom <a href="#prop-margin-bottom" class="hash-link"> </a></h6>
       </summary>
       <div>
@@ -12387,6 +12573,192 @@ const cssPropsHtml = String.raw`
           <ul>
             <li>
               <a href="https://www.w3.org/TR/CSS2/box.html#margin-properties">CSS 2.1</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </details>
+    <details>
+      <summary>
+        <h6 id="prop-margin-inline">margin-inline <a href="#prop-margin-inline" class="hash-link"> </a></h6>
+      </summary>
+      <div>
+        <div>
+          <div id="prop-margin-inline-syntax">Syntax</div>
+          <div class="example">
+            <div class="syntax-block">
+              <code>margin-inline: [ auto | <span>&lt;<i>length-percentage</i>&gt;</span> ]{1,2}</code>
+            </div>
+          </div>
+        </div>
+        <div>
+          <div class="example">
+            <div class="syntax-block">
+              <table class="property-table">
+                <tr>
+                  <th scope="row">
+          Initial value
+        </th>
+                  <td>
+                    <code>0</code>
+                  </td>
+                </tr>
+                <tr>
+                  <th scope="row">
+          Applies to
+        </th>
+                  <td>all elements, except elements with table display types other than table-caption, table and inline-table</td>
+                </tr>
+                <tr>
+                  <th scope="row">
+          Inherited
+        </th>
+                  <td>
+                  no
+                </td>
+                </tr>
+              </table>
+            </div>
+          </div>
+        </div>
+        <div/>
+        <div>
+          <div id="prop-margin-inline-seealso">See Also</div>
+          <ul>
+            <li>
+              <a href="/doc/styling/#margin">Margin</a>
+            </li>
+          </ul>
+        </div>
+        <div>
+          <div id="prop-margin-inline-spec">Specification</div>
+          <ul>
+            <li>
+              <a href="https://www.w3.org/TR/css-logical-1/#margin-properties">CSS Logical Properties and Values Module Level 1</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </details>
+    <details>
+      <summary>
+        <h6 id="prop-margin-inline-end">margin-inline-end <a href="#prop-margin-inline-end" class="hash-link"> </a></h6>
+      </summary>
+      <div>
+        <div>
+          <div id="prop-margin-inline-end-syntax">Syntax</div>
+          <div class="example">
+            <div class="syntax-block">
+              <code>margin-inline-end: auto | <span>&lt;<i>length-percentage</i>&gt;</span></code>
+            </div>
+          </div>
+        </div>
+        <div>
+          <div class="example">
+            <div class="syntax-block">
+              <table class="property-table">
+                <tr>
+                  <th scope="row">
+          Initial value
+        </th>
+                  <td>
+                    <code>0</code>
+                  </td>
+                </tr>
+                <tr>
+                  <th scope="row">
+          Applies to
+        </th>
+                  <td>all elements, except elements with table display types other than table-caption, table and inline-table</td>
+                </tr>
+                <tr>
+                  <th scope="row">
+          Inherited
+        </th>
+                  <td>
+                  no
+                </td>
+                </tr>
+              </table>
+            </div>
+          </div>
+        </div>
+        <div/>
+        <div>
+          <div id="prop-margin-inline-end-seealso">See Also</div>
+          <ul>
+            <li>
+              <a href="/doc/styling/#margin">Margin</a>
+            </li>
+          </ul>
+        </div>
+        <div>
+          <div id="prop-margin-inline-end-spec">Specification</div>
+          <ul>
+            <li>
+              <a href="https://www.w3.org/TR/css-logical-1/#margin-properties">CSS Logical Properties and Values Module Level 1</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </details>
+    <details>
+      <summary>
+        <h6 id="prop-margin-inline-start">margin-inline-start <a href="#prop-margin-inline-start" class="hash-link"> </a></h6>
+      </summary>
+      <div>
+        <div>
+          <div id="prop-margin-inline-start-syntax">Syntax</div>
+          <div class="example">
+            <div class="syntax-block">
+              <code>margin-inline-start: auto | <span>&lt;<i>length-percentage</i>&gt;</span></code>
+            </div>
+          </div>
+        </div>
+        <div>
+          <div class="example">
+            <div class="syntax-block">
+              <table class="property-table">
+                <tr>
+                  <th scope="row">
+          Initial value
+        </th>
+                  <td>
+                    <code>0</code>
+                  </td>
+                </tr>
+                <tr>
+                  <th scope="row">
+          Applies to
+        </th>
+                  <td>all elements, except elements with table display types other than table-caption, table and inline-table</td>
+                </tr>
+                <tr>
+                  <th scope="row">
+          Inherited
+        </th>
+                  <td>
+                  no
+                </td>
+                </tr>
+              </table>
+            </div>
+          </div>
+        </div>
+        <div/>
+        <div>
+          <div id="prop-margin-inline-start-seealso">See Also</div>
+          <ul>
+            <li>
+              <a href="/doc/styling/#margin">Margin</a>
+            </li>
+          </ul>
+        </div>
+        <div>
+          <div id="prop-margin-inline-start-spec">Specification</div>
+          <ul>
+            <li>
+              <a href="https://www.w3.org/TR/css-logical-1/#margin-properties">CSS Logical Properties and Values Module Level 1</a>
             </li>
           </ul>
         </div>
@@ -14464,6 +14836,192 @@ supplier, item { overflow-wrap: normal; }
     </details>
     <details>
       <summary>
+        <h6 id="prop-padding-block">padding-block <a href="#prop-padding-block" class="hash-link"> </a></h6>
+      </summary>
+      <div>
+        <div>
+          <div id="prop-padding-block-syntax">Syntax</div>
+          <div class="example">
+            <div class="syntax-block">
+              <code>padding-block: <span>&lt;<i>length-percentage</i>&gt;</span>{1,2}</code>
+            </div>
+          </div>
+        </div>
+        <div>
+          <div class="example">
+            <div class="syntax-block">
+              <table class="property-table">
+                <tr>
+                  <th scope="row">
+          Initial value
+        </th>
+                  <td>
+                    <code>0</code>
+                  </td>
+                </tr>
+                <tr>
+                  <th scope="row">
+          Applies to
+        </th>
+                  <td>all elements, except table-row-group, table-header-group, table-footer-group, table-row, table-column-group and table-column</td>
+                </tr>
+                <tr>
+                  <th scope="row">
+          Inherited
+        </th>
+                  <td>
+                  no
+                </td>
+                </tr>
+              </table>
+            </div>
+          </div>
+        </div>
+        <div/>
+        <div>
+          <div id="prop-padding-block-seealso">See Also</div>
+          <ul>
+            <li>
+              <a href="/doc/styling/#padding">Padding</a>
+            </li>
+          </ul>
+        </div>
+        <div>
+          <div id="prop-padding-block-spec">Specification</div>
+          <ul>
+            <li>
+              <a href="https://www.w3.org/TR/css-logical-1/#padding-properties">CSS Logical Properties and Values Module Level 1</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </details>
+    <details>
+      <summary>
+        <h6 id="prop-padding-block-end">padding-block-end <a href="#prop-padding-block-end" class="hash-link"> </a></h6>
+      </summary>
+      <div>
+        <div>
+          <div id="prop-padding-block-end-syntax">Syntax</div>
+          <div class="example">
+            <div class="syntax-block">
+              <code>padding-block-end: <span>&lt;<i>length-percentage</i>&gt;</span></code>
+            </div>
+          </div>
+        </div>
+        <div>
+          <div class="example">
+            <div class="syntax-block">
+              <table class="property-table">
+                <tr>
+                  <th scope="row">
+          Initial value
+        </th>
+                  <td>
+                    <code>0</code>
+                  </td>
+                </tr>
+                <tr>
+                  <th scope="row">
+          Applies to
+        </th>
+                  <td>all elements, except table-row-group, table-header-group, table-footer-group, table-row, table-column-group and table-column</td>
+                </tr>
+                <tr>
+                  <th scope="row">
+          Inherited
+        </th>
+                  <td>
+                  no
+                </td>
+                </tr>
+              </table>
+            </div>
+          </div>
+        </div>
+        <div/>
+        <div>
+          <div id="prop-padding-block-end-seealso">See Also</div>
+          <ul>
+            <li>
+              <a href="/doc/styling/#padding">Padding</a>
+            </li>
+          </ul>
+        </div>
+        <div>
+          <div id="prop-padding-block-end-spec">Specification</div>
+          <ul>
+            <li>
+              <a href="https://www.w3.org/TR/css-logical-1/#padding-properties">CSS Logical Properties and Values Module Level 1</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </details>
+    <details>
+      <summary>
+        <h6 id="prop-padding-block-start">padding-block-start <a href="#prop-padding-block-start" class="hash-link"> </a></h6>
+      </summary>
+      <div>
+        <div>
+          <div id="prop-padding-block-start-syntax">Syntax</div>
+          <div class="example">
+            <div class="syntax-block">
+              <code>padding-block-start: <span>&lt;<i>length-percentage</i>&gt;</span></code>
+            </div>
+          </div>
+        </div>
+        <div>
+          <div class="example">
+            <div class="syntax-block">
+              <table class="property-table">
+                <tr>
+                  <th scope="row">
+          Initial value
+        </th>
+                  <td>
+                    <code>0</code>
+                  </td>
+                </tr>
+                <tr>
+                  <th scope="row">
+          Applies to
+        </th>
+                  <td>all elements, except table-row-group, table-header-group, table-footer-group, table-row, table-column-group and table-column</td>
+                </tr>
+                <tr>
+                  <th scope="row">
+          Inherited
+        </th>
+                  <td>
+                  no
+                </td>
+                </tr>
+              </table>
+            </div>
+          </div>
+        </div>
+        <div/>
+        <div>
+          <div id="prop-padding-block-start-seealso">See Also</div>
+          <ul>
+            <li>
+              <a href="/doc/styling/#padding">Padding</a>
+            </li>
+          </ul>
+        </div>
+        <div>
+          <div id="prop-padding-block-start-spec">Specification</div>
+          <ul>
+            <li>
+              <a href="https://www.w3.org/TR/css-logical-1/#padding-properties">CSS Logical Properties and Values Module Level 1</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </details>
+    <details>
+      <summary>
         <h6 id="prop-padding-bottom">padding-bottom <a href="#prop-padding-bottom" class="hash-link"> </a></h6>
       </summary>
       <div>
@@ -14522,6 +15080,192 @@ supplier, item { overflow-wrap: normal; }
           <ul>
             <li>
               <a href="https://www.w3.org/TR/CSS2/box.html#padding-properties">CSS 2.1</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </details>
+    <details>
+      <summary>
+        <h6 id="prop-padding-inline">padding-inline <a href="#prop-padding-inline" class="hash-link"> </a></h6>
+      </summary>
+      <div>
+        <div>
+          <div id="prop-padding-inline-syntax">Syntax</div>
+          <div class="example">
+            <div class="syntax-block">
+              <code>padding-inline: <span>&lt;<i>length-percentage</i>&gt;</span>{1,2}</code>
+            </div>
+          </div>
+        </div>
+        <div>
+          <div class="example">
+            <div class="syntax-block">
+              <table class="property-table">
+                <tr>
+                  <th scope="row">
+          Initial value
+        </th>
+                  <td>
+                    <code>0</code>
+                  </td>
+                </tr>
+                <tr>
+                  <th scope="row">
+          Applies to
+        </th>
+                  <td>all elements, except table-row-group, table-header-group, table-footer-group, table-row, table-column-group and table-column</td>
+                </tr>
+                <tr>
+                  <th scope="row">
+          Inherited
+        </th>
+                  <td>
+                  no
+                </td>
+                </tr>
+              </table>
+            </div>
+          </div>
+        </div>
+        <div/>
+        <div>
+          <div id="prop-padding-inline-seealso">See Also</div>
+          <ul>
+            <li>
+              <a href="/doc/styling/#padding">Padding</a>
+            </li>
+          </ul>
+        </div>
+        <div>
+          <div id="prop-padding-inline-spec">Specification</div>
+          <ul>
+            <li>
+              <a href="https://www.w3.org/TR/css-logical-1/#padding-properties">CSS Logical Properties and Values Module Level 1</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </details>
+    <details>
+      <summary>
+        <h6 id="prop-padding-inline-end">padding-inline-end <a href="#prop-padding-inline-end" class="hash-link"> </a></h6>
+      </summary>
+      <div>
+        <div>
+          <div id="prop-padding-inline-end-syntax">Syntax</div>
+          <div class="example">
+            <div class="syntax-block">
+              <code>padding-inline-end: <span>&lt;<i>length-percentage</i>&gt;</span></code>
+            </div>
+          </div>
+        </div>
+        <div>
+          <div class="example">
+            <div class="syntax-block">
+              <table class="property-table">
+                <tr>
+                  <th scope="row">
+          Initial value
+        </th>
+                  <td>
+                    <code>0</code>
+                  </td>
+                </tr>
+                <tr>
+                  <th scope="row">
+          Applies to
+        </th>
+                  <td>all elements, except table-row-group, table-header-group, table-footer-group, table-row, table-column-group and table-column</td>
+                </tr>
+                <tr>
+                  <th scope="row">
+          Inherited
+        </th>
+                  <td>
+                  no
+                </td>
+                </tr>
+              </table>
+            </div>
+          </div>
+        </div>
+        <div/>
+        <div>
+          <div id="prop-padding-inline-end-seealso">See Also</div>
+          <ul>
+            <li>
+              <a href="/doc/styling/#padding">Padding</a>
+            </li>
+          </ul>
+        </div>
+        <div>
+          <div id="prop-padding-inline-end-spec">Specification</div>
+          <ul>
+            <li>
+              <a href="https://www.w3.org/TR/css-logical-1/#padding-properties">CSS Logical Properties and Values Module Level 1</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </details>
+    <details>
+      <summary>
+        <h6 id="prop-padding-inline-start">padding-inline-start <a href="#prop-padding-inline-start" class="hash-link"> </a></h6>
+      </summary>
+      <div>
+        <div>
+          <div id="prop-padding-inline-start-syntax">Syntax</div>
+          <div class="example">
+            <div class="syntax-block">
+              <code>padding-inline-start: <span>&lt;<i>length-percentage</i>&gt;</span></code>
+            </div>
+          </div>
+        </div>
+        <div>
+          <div class="example">
+            <div class="syntax-block">
+              <table class="property-table">
+                <tr>
+                  <th scope="row">
+          Initial value
+        </th>
+                  <td>
+                    <code>0</code>
+                  </td>
+                </tr>
+                <tr>
+                  <th scope="row">
+          Applies to
+        </th>
+                  <td>all elements, except table-row-group, table-header-group, table-footer-group, table-row, table-column-group and table-column</td>
+                </tr>
+                <tr>
+                  <th scope="row">
+          Inherited
+        </th>
+                  <td>
+                  no
+                </td>
+                </tr>
+              </table>
+            </div>
+          </div>
+        </div>
+        <div/>
+        <div>
+          <div id="prop-padding-inline-start-seealso">See Also</div>
+          <ul>
+            <li>
+              <a href="/doc/styling/#padding">Padding</a>
+            </li>
+          </ul>
+        </div>
+        <div>
+          <div id="prop-padding-inline-start-spec">Specification</div>
+          <ul>
+            <li>
+              <a href="https://www.w3.org/TR/css-logical-1/#padding-properties">CSS Logical Properties and Values Module Level 1</a>
             </li>
           </ul>
         </div>

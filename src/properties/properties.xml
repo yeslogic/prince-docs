@@ -4389,6 +4389,53 @@ NOTE: The current build process will cause this file's content to appear in a Ja
 </property>
 
 <property>
+    <name>margin-block</name>
+    <value>
+    <repeat min="1" max="2">
+        <choice>
+            <keyword>auto</keyword>
+            <type>length-percentage</type>
+        </choice>
+    </repeat>
+    </value>
+    <initial>0</initial>
+    <applyto>all elements, except elements with table display types other than table-caption, table and inline-table</applyto>
+    <inherit>no</inherit>
+    <see><a href="/doc/styling/#margin">Margin</a></see>
+    <spec><a href="https://www.w3.org/TR/css-logical-1/#margin-properties">CSS Logical Properties and Values Module Level 1</a></spec>
+</property>
+
+<property>
+    <name>margin-block-end</name>
+    <value>
+	<choice>
+	    <keyword>auto</keyword>
+	    <type>length-percentage</type>
+	</choice>
+    </value>
+    <initial>0</initial>
+    <applyto>all elements, except elements with table display types other than table-caption, table and inline-table</applyto>
+    <inherit>no</inherit>
+    <see><a href="/doc/styling/#margin">Margin</a></see>
+    <spec><a href="https://www.w3.org/TR/css-logical-1/#margin-properties">CSS Logical Properties and Values Module Level 1</a></spec>
+</property>
+
+<property>
+    <name>margin-block-start</name>
+    <value>
+	<choice>
+	    <keyword>auto</keyword>
+	    <type>length-percentage</type>
+	</choice>
+    </value>
+    <initial>0</initial>
+    <applyto>all elements, except elements with table display types other than table-caption, table and inline-table</applyto>
+    <inherit>no</inherit>
+    <see><a href="/doc/styling/#margin">Margin</a></see>
+    <spec><a href="https://www.w3.org/TR/css-logical-1/#margin-properties">CSS Logical Properties and Values Module Level 1</a></spec>
+</property>
+
+<property>
     <name>margin-bottom</name>
     <value>
 	<choice>
@@ -4401,6 +4448,53 @@ NOTE: The current build process will cause this file's content to appear in a Ja
     <inherit>no</inherit>
     <see><a href="/doc/styling/#margin">Margin</a></see>
     <spec><a href="https://www.w3.org/TR/CSS2/box.html#margin-properties">CSS 2.1</a></spec>
+</property>
+
+<property>
+    <name>margin-inline</name>
+    <value>
+    <repeat min="1" max="2">
+        <choice>
+            <keyword>auto</keyword>
+            <type>length-percentage</type>
+        </choice>
+    </repeat>
+    </value>
+    <initial>0</initial>
+    <applyto>all elements, except elements with table display types other than table-caption, table and inline-table</applyto>
+    <inherit>no</inherit>
+    <see><a href="/doc/styling/#margin">Margin</a></see>
+    <spec><a href="https://www.w3.org/TR/css-logical-1/#margin-properties">CSS Logical Properties and Values Module Level 1</a></spec>
+</property>
+
+<property>
+    <name>margin-inline-end</name>
+    <value>
+	<choice>
+	    <keyword>auto</keyword>
+	    <type>length-percentage</type>
+	</choice>
+    </value>
+    <initial>0</initial>
+    <applyto>all elements, except elements with table display types other than table-caption, table and inline-table</applyto>
+    <inherit>no</inherit>
+    <see><a href="/doc/styling/#margin">Margin</a></see>
+    <spec><a href="https://www.w3.org/TR/css-logical-1/#margin-properties">CSS Logical Properties and Values Module Level 1</a></spec>
+</property>
+
+<property>
+    <name>margin-inline-start</name>
+    <value>
+	<choice>
+	    <keyword>auto</keyword>
+	    <type>length-percentage</type>
+	</choice>
+    </value>
+    <initial>0</initial>
+    <applyto>all elements, except elements with table display types other than table-caption, table and inline-table</applyto>
+    <inherit>no</inherit>
+    <see><a href="/doc/styling/#margin">Margin</a></see>
+    <spec><a href="https://www.w3.org/TR/css-logical-1/#margin-properties">CSS Logical Properties and Values Module Level 1</a></spec>
 </property>
 
 <property>
@@ -5152,6 +5246,44 @@ supplier, item { overflow-wrap: normal; }
 </property>
 
 <property>
+    <name>padding-block</name>
+    <value>
+	<repeat min="1" max="2">
+	    <type>length-percentage</type> <!-- [0,∞] -->
+	</repeat>
+    </value>
+    <initial>0</initial>
+    <applyto>all elements, except table-row-group, table-header-group, table-footer-group, table-row, table-column-group and table-column</applyto>
+    <inherit>no</inherit>
+    <see><a href="/doc/styling/#padding">Padding</a></see>
+    <spec><a href="https://www.w3.org/TR/css-logical-1/#padding-properties">CSS Logical Properties and Values Module Level 1</a></spec>
+</property>
+
+<property>
+    <name>padding-block-end</name>
+    <value>
+        <type>length-percentage</type> <!-- [0,∞] -->
+    </value>
+    <initial>0</initial>
+    <applyto>all elements, except table-row-group, table-header-group, table-footer-group, table-row, table-column-group and table-column</applyto>
+    <inherit>no</inherit>
+    <see><a href="/doc/styling/#padding">Padding</a></see>
+    <spec><a href="https://www.w3.org/TR/css-logical-1/#padding-properties">CSS Logical Properties and Values Module Level 1</a></spec>
+</property>
+
+<property>
+    <name>padding-block-start</name>
+    <value>
+        <type>length-percentage</type> <!-- [0,∞] -->
+    </value>
+    <initial>0</initial>
+    <applyto>all elements, except table-row-group, table-header-group, table-footer-group, table-row, table-column-group and table-column</applyto>
+    <inherit>no</inherit>
+    <see><a href="/doc/styling/#padding">Padding</a></see>
+    <spec><a href="https://www.w3.org/TR/css-logical-1/#padding-properties">CSS Logical Properties and Values Module Level 1</a></spec>
+</property>
+
+<property>
     <name>padding-bottom</name>
     <value>
 	<type>length-percentage</type> <!-- [0,∞] -->
@@ -5161,6 +5293,44 @@ supplier, item { overflow-wrap: normal; }
     <inherit>no</inherit>
     <see><a href="/doc/styling/#padding">Padding</a></see>
     <spec><a href="https://www.w3.org/TR/CSS2/box.html#padding-properties">CSS 2.1</a></spec>
+</property>
+
+<property>
+    <name>padding-inline</name>
+    <value>
+	<repeat min="1" max="2">
+	    <type>length-percentage</type> <!-- [0,∞] -->
+	</repeat>
+    </value>
+    <initial>0</initial>
+    <applyto>all elements, except table-row-group, table-header-group, table-footer-group, table-row, table-column-group and table-column</applyto>
+    <inherit>no</inherit>
+    <see><a href="/doc/styling/#padding">Padding</a></see>
+    <spec><a href="https://www.w3.org/TR/css-logical-1/#padding-properties">CSS Logical Properties and Values Module Level 1</a></spec>
+</property>
+
+<property>
+    <name>padding-inline-end</name>
+    <value>
+        <type>length-percentage</type> <!-- [0,∞] -->
+    </value>
+    <initial>0</initial>
+    <applyto>all elements, except table-row-group, table-header-group, table-footer-group, table-row, table-column-group and table-column</applyto>
+    <inherit>no</inherit>
+    <see><a href="/doc/styling/#padding">Padding</a></see>
+    <spec><a href="https://www.w3.org/TR/css-logical-1/#padding-properties">CSS Logical Properties and Values Module Level 1</a></spec>
+</property>
+
+<property>
+    <name>padding-inline-start</name>
+    <value>
+        <type>length-percentage</type> <!-- [0,∞] -->
+    </value>
+    <initial>0</initial>
+    <applyto>all elements, except table-row-group, table-header-group, table-footer-group, table-row, table-column-group and table-column</applyto>
+    <inherit>no</inherit>
+    <see><a href="/doc/styling/#padding">Padding</a></see>
+    <spec><a href="https://www.w3.org/TR/css-logical-1/#padding-properties">CSS Logical Properties and Values Module Level 1</a></spec>
 </property>
 
 <property>
