@@ -144,6 +144,38 @@ The <span className="dep">functions with a line-through</span> are deprecated pr
 </td>
 <td>Defines hue, whiteness and blackness values of a color. The final argument specifies the alpha channel of the color - if omitted, it defaults to 100%. This function is new, thus <code>hwb()</code> does <em>not</em> support a legacy color syntax that separates all of its arguments with commas - using commas inside <code>hwb()</code> is an error.</td>
 </tr>
+<tr>
+<td>
+    <code>
+    lab( [from &lt;<i>color</i>&gt;]? [&lt;<i>percentage</i>&gt; | &lt;<i>number</i>&gt; | none] [&lt;<i>percentage</i>&gt; | &lt;<i>number</i>&gt; | none] [&lt;<i>percentage</i>&gt; | &lt;<i>number</i>&gt; | none] [ / [&lt;<i>alpha-value</i>&gt; | none] ]? )
+    </code>
+</td>
+<td>Defines a given color in the CIE L*a*b* color space.</td>
+</tr>
+<tr>
+<td>
+    <code>
+    oklab( [from &lt;<i>color</i>&gt;]? [&lt;<i>percentage</i>&gt; | &lt;<i>number</i>&gt; | none] [&lt;<i>percentage</i>&gt; | &lt;<i>number</i>&gt; | none] [&lt;<i>percentage</i>&gt; | &lt;<i>number</i>&gt; | none] [ / [&lt;<i>alpha-value</i>&gt; | none] ]? )
+    </code>
+</td>
+<td>Defines a given color in the Oklab color space.</td>
+</tr>
+<tr>
+<td>
+    <code>
+    lch( [from &lt;<i>color</i>&gt;]? [&lt;<i>percentage</i>&gt; | &lt;<i>number</i>&gt; | none] [&lt;<i>percentage</i>&gt; | &lt;<i>number</i>&gt; | none] [&lt;<i>hue</i>&gt; | none] [ / [&lt;<i>alpha-value</i>&gt; | none] ]? )
+    </code>
+</td>
+<td>Defines a given color in the LCH color space.</td>
+</tr>
+<tr>
+<td>
+    <code>
+    oklch( [from &lt;<i>color</i>&gt;]? [&lt;<i>percentage</i>&gt; | &lt;<i>number</i>&gt; | none] [&lt;<i>percentage</i>&gt; | &lt;<i>number</i>&gt; | none] [&lt;<i>hue</i>&gt; | none] [ / [&lt;<i>alpha-value</i>&gt; | none] ]? )
+    </code>
+</td>
+<td>Defines a given color in the Oklab color space, representing the cylindrical form of the `oklab()` function.</td>
+</tr>
 <tr className="ext">
 <td>
     <code>

@@ -7,7 +7,7 @@ Prince supports a wide range of graphic features, treated in more detail in the 
 Color
 -----
 
-Prince supports RGB(A), CMYK, HSL(A), HWB, and named spot colors. For Prince's color management, please see the [Color Management](#color-management) section.
+Prince supports RGB(A), CMYK, HSL(A), HWB, CIE L*a*b*, LCH, Oklab, and named spot colors. For Prince's color management, please see the [Color Management](#color-management) section.
 
 Prince understands CSS [basic color keywords](css-color-names.md#basic-color-keywords) as well as the list of [extended color keywords](css-color-names.md#extended-color-keywords) from the [CSS Color Module Level 4](https://www.w3.org/TR/css-color-4/#named-colors). It also supports the keywords `transparent` and `currentColor`.
 
@@ -72,6 +72,45 @@ HWB (Hue-Whiteness-Blackness) color values are expressed in a similar way to HSL
     color: hwb(120 0% 0%)  // green
     color: hwb(240 0% 0%)  // blue
 ```
+
+
+### CIE L\*a\*b\*
+
+LAB color values can be specified with the `lab()` function, which takes three values, and optional color reference and alpha values:
+
+-   `l` specifies the color's lightness with a number or a percentage between 0 and 100 (the keyword `none` stands for 0);
+-   `a` specifies the color's distance along the `a` axis, which defines how green (moving towards the value `-125` or `-100%`) or red (moving towards `+125` or `+100%`) the color is; and
+-   `b` specifies the color's distance along the `b` axis, which defines how blue (moving towards `-125` or `-100%`) or yellow (moving towards `+125` or `+100%`) the color is.
+
+
+```css
+    .red { background-color: red; }
+    .desaturated { background-color: lab(from red l a b / 0.5); }
+```
+
+
+### CIE LCH
+
+LCH color values can be specified with the `lch()` function, which takes three values similar to the [LAB values](#cie-lab):
+
+-   `l` is the same lightness axis;
+-   `c` is a chroma value; and
+-   `h` is a hue value,
+
+thus making it a polar, cylindrical coordinate system.
+
+To create a complementary color to `red` we can simply add a 180° rotation to the LCH value for red:
+
+```css
+    .red { color: red; }
+    .complementary { color: lch( from red l c calc(h + 180))
+```
+
+
+### Oklab and OkLCh
+
+Oklab and OkLCh are improved versions of the LAB and LCH color values, and are specified with the `oklab()` and `oklch()` functions respectively. The syntax is the same as the `lab()` and `lch()` functions.
+
 
 
 ### Spot colors
