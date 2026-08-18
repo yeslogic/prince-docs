@@ -607,6 +607,24 @@ NOTE: The current build process will cause this file's content to appear in a Ja
 </property>
 
 <property>
+    <name>block-size</name>
+    <value>
+	<choice>
+	    <keyword>auto</keyword>
+	    <keyword>min-content</keyword>
+	    <keyword>max-content</keyword>
+	    <type>length-percentage</type>
+	    <keyword>min-content</keyword>
+	    <keyword>max-content</keyword>
+	</choice>
+    </value>
+    <initial>auto</initial>
+    <applyto>all elements but non-replaced inline elements, table rows, and row groups</applyto>
+    <inherit>no</inherit>
+    <spec><a href="https://www.w3.org/TR/css-logical-1/#dimension-properties">CSS Logical Properties and Values Module Level 1</a></spec>
+</property>
+
+<property>
     <name>bookmark-label</name>
     <alias>prince-bookmark-label</alias>
 </property>
@@ -3924,6 +3942,24 @@ NOTE: The current build process will cause this file's content to appear in a Ja
 </property>
 
 <property>
+    <name>inline-size</name>
+    <value>
+	<choice>
+	    <keyword>auto</keyword>
+	    <keyword>min-content</keyword>
+	    <keyword>max-content</keyword>
+	    <type>length-percentage</type>
+	    <keyword>min-content</keyword>
+	    <keyword>max-content</keyword>
+	</choice>
+    </value>
+    <initial>auto</initial>
+    <applyto>all elements but non-replaced inline elements, table rows, and row groups</applyto>
+    <inherit>no</inherit>
+    <spec><a href="https://www.w3.org/TR/css-logical-1/#dimension-properties">CSS Logical Properties and Values Module Level 1</a></spec>
+</property>
+
+<property>
     <name>inset</name>
     <value>
 	<repeat min="1" max="4">
@@ -4745,6 +4781,22 @@ NOTE: The current build process will cause this file's content to appear in a Ja
 </property>
 
 <property>
+    <name>max-block-size</name>
+    <value>
+	<choice>
+	    <keyword>auto</keyword>
+	    <keyword>min-content</keyword>
+	    <keyword>max-content</keyword>
+	    <type>length-percentage</type>
+	</choice>
+    </value>
+    <initial>auto</initial>
+    <applyto>all elements but non-replaced inline elements, table columns, and column groups</applyto>
+    <inherit>no</inherit>
+    <spec><a href="https://www.w3.org/TR/css-logical-1/#dimension-properties">CSS Logical Properties and Values Module Level 1</a></spec>
+</property>
+
+<property>
     <name>max-height</name>
     <value>
 	<choice>
@@ -4759,6 +4811,22 @@ NOTE: The current build process will cause this file's content to appear in a Ja
     <inherit>no</inherit>
     <spec><a href="https://www.w3.org/TR/CSS2/visudet.html#min-max-heights">CSS 2.1</a></spec>
     <spec><a href="https://www.w3.org/TR/css-sizing-3/#max-size-properties">CSS Box Sizing Module Level 3</a></spec>
+</property>
+
+<property>
+    <name>max-inline-size</name>
+    <value>
+	<choice>
+	    <keyword>auto</keyword>
+	    <keyword>min-content</keyword>
+	    <keyword>max-content</keyword>
+	    <type>length-percentage</type>
+	</choice>
+    </value>
+    <initial>auto</initial>
+    <applyto>all elements but non-replaced inline elements, table columns, and column groups</applyto>
+    <inherit>no</inherit>
+    <spec><a href="https://www.w3.org/TR/css-logical-1/#dimension-properties">CSS Logical Properties and Values Module Level 1</a></spec>
 </property>
 
 <property>
@@ -4779,6 +4847,22 @@ NOTE: The current build process will cause this file's content to appear in a Ja
 </property>
 
 <property>
+    <name>min-block-size</name>
+    <value>
+	<choice>
+	    <keyword>auto</keyword>
+	    <keyword>min-content</keyword>
+	    <keyword>max-content</keyword>
+	    <type>length-percentage</type>
+	</choice>
+    </value>
+    <initial>auto</initial>
+    <applyto>all elements but non-replaced inline elements, table columns, and column groups</applyto>
+    <inherit>no</inherit>
+    <spec><a href="https://www.w3.org/TR/css-logical-1/#dimension-properties">CSS Logical Properties and Values Module Level 1</a></spec>
+</property>
+
+<property>
     <name>min-height</name>
     <value>
 	<choice>
@@ -4793,6 +4877,22 @@ NOTE: The current build process will cause this file's content to appear in a Ja
     <inherit>no</inherit>
     <spec><a href="https://www.w3.org/TR/CSS2/visudet.html#min-max-heights">CSS 2.1</a></spec>
     <spec><a href="https://www.w3.org/TR/css-sizing-3/#min-size-properties">CSS Box Sizing Module Level 3</a></spec>
+</property>
+
+<property>
+    <name>min-inline-size</name>
+    <value>
+	<choice>
+	    <keyword>auto</keyword>
+	    <keyword>min-content</keyword>
+	    <keyword>max-content</keyword>
+	    <type>length-percentage</type>
+	</choice>
+    </value>
+    <initial>auto</initial>
+    <applyto>all elements but non-replaced inline elements, table columns, and column groups</applyto>
+    <inherit>no</inherit>
+    <spec><a href="https://www.w3.org/TR/css-logical-1/#dimension-properties">CSS Logical Properties and Values Module Level 1</a></spec>
 </property>
 
 <property>

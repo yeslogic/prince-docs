@@ -1381,6 +1381,60 @@ const cssPropsHtml = String.raw`
       </div>
     </details>
     <details>
+      <summary>
+        <h6 id="prop-block-size">block-size <a href="#prop-block-size" class="hash-link"> </a></h6>
+      </summary>
+      <div>
+        <div>
+          <div id="prop-block-size-syntax">Syntax</div>
+          <div class="example">
+            <div class="syntax-block">
+              <code>block-size: auto | min-content | max-content | <span>&lt;<i>length-percentage</i>&gt;</span> | min-content | max-content</code>
+            </div>
+          </div>
+        </div>
+        <div>
+          <div class="example">
+            <div class="syntax-block">
+              <table class="property-table">
+                <tr>
+                  <th scope="row">
+          Initial value
+        </th>
+                  <td>
+                    <code>auto</code>
+                  </td>
+                </tr>
+                <tr>
+                  <th scope="row">
+          Applies to
+        </th>
+                  <td>all elements but non-replaced inline elements, table rows, and row groups</td>
+                </tr>
+                <tr>
+                  <th scope="row">
+          Inherited
+        </th>
+                  <td>
+                  no
+                </td>
+                </tr>
+              </table>
+            </div>
+          </div>
+        </div>
+        <div/>
+        <div>
+          <div id="prop-block-size-spec">Specification</div>
+          <ul>
+            <li>
+              <a href="https://www.w3.org/TR/css-logical-1/#dimension-properties">CSS Logical Properties and Values Module Level 1</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </details>
+    <details>
       <summary class="ext" title="Prince extension">
         <h6 id="prop-bookmark-label">bookmark-label* <a href="#prop-bookmark-label" class="hash-link"> </a></h6>
       </summary>
@@ -11010,6 +11064,60 @@ const cssPropsHtml = String.raw`
     </details>
     <details>
       <summary>
+        <h6 id="prop-inline-size">inline-size <a href="#prop-inline-size" class="hash-link"> </a></h6>
+      </summary>
+      <div>
+        <div>
+          <div id="prop-inline-size-syntax">Syntax</div>
+          <div class="example">
+            <div class="syntax-block">
+              <code>inline-size: auto | min-content | max-content | <span>&lt;<i>length-percentage</i>&gt;</span> | min-content | max-content</code>
+            </div>
+          </div>
+        </div>
+        <div>
+          <div class="example">
+            <div class="syntax-block">
+              <table class="property-table">
+                <tr>
+                  <th scope="row">
+          Initial value
+        </th>
+                  <td>
+                    <code>auto</code>
+                  </td>
+                </tr>
+                <tr>
+                  <th scope="row">
+          Applies to
+        </th>
+                  <td>all elements but non-replaced inline elements, table rows, and row groups</td>
+                </tr>
+                <tr>
+                  <th scope="row">
+          Inherited
+        </th>
+                  <td>
+                  no
+                </td>
+                </tr>
+              </table>
+            </div>
+          </div>
+        </div>
+        <div/>
+        <div>
+          <div id="prop-inline-size-spec">Specification</div>
+          <ul>
+            <li>
+              <a href="https://www.w3.org/TR/css-logical-1/#dimension-properties">CSS Logical Properties and Values Module Level 1</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </details>
+    <details>
+      <summary>
         <h6 id="prop-inset">inset <a href="#prop-inset" class="hash-link"> </a></h6>
       </summary>
       <div>
@@ -13548,6 +13656,60 @@ const cssPropsHtml = String.raw`
     </details>
     <details>
       <summary>
+        <h6 id="prop-max-block-size">max-block-size <a href="#prop-max-block-size" class="hash-link"> </a></h6>
+      </summary>
+      <div>
+        <div>
+          <div id="prop-max-block-size-syntax">Syntax</div>
+          <div class="example">
+            <div class="syntax-block">
+              <code>max-block-size: auto | min-content | max-content | <span>&lt;<i>length-percentage</i>&gt;</span></code>
+            </div>
+          </div>
+        </div>
+        <div>
+          <div class="example">
+            <div class="syntax-block">
+              <table class="property-table">
+                <tr>
+                  <th scope="row">
+          Initial value
+        </th>
+                  <td>
+                    <code>auto</code>
+                  </td>
+                </tr>
+                <tr>
+                  <th scope="row">
+          Applies to
+        </th>
+                  <td>all elements but non-replaced inline elements, table columns, and column groups</td>
+                </tr>
+                <tr>
+                  <th scope="row">
+          Inherited
+        </th>
+                  <td>
+                  no
+                </td>
+                </tr>
+              </table>
+            </div>
+          </div>
+        </div>
+        <div/>
+        <div>
+          <div id="prop-max-block-size-spec">Specification</div>
+          <ul>
+            <li>
+              <a href="https://www.w3.org/TR/css-logical-1/#dimension-properties">CSS Logical Properties and Values Module Level 1</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </details>
+    <details>
+      <summary>
         <h6 id="prop-max-height">max-height <a href="#prop-max-height" class="hash-link"> </a></h6>
       </summary>
       <div>
@@ -13598,6 +13760,60 @@ const cssPropsHtml = String.raw`
             </li>
             <li>
               <a href="https://www.w3.org/TR/css-sizing-3/#max-size-properties">CSS Box Sizing Module Level 3</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </details>
+    <details>
+      <summary>
+        <h6 id="prop-max-inline-size">max-inline-size <a href="#prop-max-inline-size" class="hash-link"> </a></h6>
+      </summary>
+      <div>
+        <div>
+          <div id="prop-max-inline-size-syntax">Syntax</div>
+          <div class="example">
+            <div class="syntax-block">
+              <code>max-inline-size: auto | min-content | max-content | <span>&lt;<i>length-percentage</i>&gt;</span></code>
+            </div>
+          </div>
+        </div>
+        <div>
+          <div class="example">
+            <div class="syntax-block">
+              <table class="property-table">
+                <tr>
+                  <th scope="row">
+          Initial value
+        </th>
+                  <td>
+                    <code>auto</code>
+                  </td>
+                </tr>
+                <tr>
+                  <th scope="row">
+          Applies to
+        </th>
+                  <td>all elements but non-replaced inline elements, table columns, and column groups</td>
+                </tr>
+                <tr>
+                  <th scope="row">
+          Inherited
+        </th>
+                  <td>
+                  no
+                </td>
+                </tr>
+              </table>
+            </div>
+          </div>
+        </div>
+        <div/>
+        <div>
+          <div id="prop-max-inline-size-spec">Specification</div>
+          <ul>
+            <li>
+              <a href="https://www.w3.org/TR/css-logical-1/#dimension-properties">CSS Logical Properties and Values Module Level 1</a>
             </li>
           </ul>
         </div>
@@ -13662,6 +13878,60 @@ const cssPropsHtml = String.raw`
     </details>
     <details>
       <summary>
+        <h6 id="prop-min-block-size">min-block-size <a href="#prop-min-block-size" class="hash-link"> </a></h6>
+      </summary>
+      <div>
+        <div>
+          <div id="prop-min-block-size-syntax">Syntax</div>
+          <div class="example">
+            <div class="syntax-block">
+              <code>min-block-size: auto | min-content | max-content | <span>&lt;<i>length-percentage</i>&gt;</span></code>
+            </div>
+          </div>
+        </div>
+        <div>
+          <div class="example">
+            <div class="syntax-block">
+              <table class="property-table">
+                <tr>
+                  <th scope="row">
+          Initial value
+        </th>
+                  <td>
+                    <code>auto</code>
+                  </td>
+                </tr>
+                <tr>
+                  <th scope="row">
+          Applies to
+        </th>
+                  <td>all elements but non-replaced inline elements, table columns, and column groups</td>
+                </tr>
+                <tr>
+                  <th scope="row">
+          Inherited
+        </th>
+                  <td>
+                  no
+                </td>
+                </tr>
+              </table>
+            </div>
+          </div>
+        </div>
+        <div/>
+        <div>
+          <div id="prop-min-block-size-spec">Specification</div>
+          <ul>
+            <li>
+              <a href="https://www.w3.org/TR/css-logical-1/#dimension-properties">CSS Logical Properties and Values Module Level 1</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </details>
+    <details>
+      <summary>
         <h6 id="prop-min-height">min-height <a href="#prop-min-height" class="hash-link"> </a></h6>
       </summary>
       <div>
@@ -13712,6 +13982,60 @@ const cssPropsHtml = String.raw`
             </li>
             <li>
               <a href="https://www.w3.org/TR/css-sizing-3/#min-size-properties">CSS Box Sizing Module Level 3</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </details>
+    <details>
+      <summary>
+        <h6 id="prop-min-inline-size">min-inline-size <a href="#prop-min-inline-size" class="hash-link"> </a></h6>
+      </summary>
+      <div>
+        <div>
+          <div id="prop-min-inline-size-syntax">Syntax</div>
+          <div class="example">
+            <div class="syntax-block">
+              <code>min-inline-size: auto | min-content | max-content | <span>&lt;<i>length-percentage</i>&gt;</span></code>
+            </div>
+          </div>
+        </div>
+        <div>
+          <div class="example">
+            <div class="syntax-block">
+              <table class="property-table">
+                <tr>
+                  <th scope="row">
+          Initial value
+        </th>
+                  <td>
+                    <code>auto</code>
+                  </td>
+                </tr>
+                <tr>
+                  <th scope="row">
+          Applies to
+        </th>
+                  <td>all elements but non-replaced inline elements, table columns, and column groups</td>
+                </tr>
+                <tr>
+                  <th scope="row">
+          Inherited
+        </th>
+                  <td>
+                  no
+                </td>
+                </tr>
+              </table>
+            </div>
+          </div>
+        </div>
+        <div/>
+        <div>
+          <div id="prop-min-inline-size-spec">Specification</div>
+          <ul>
+            <li>
+              <a href="https://www.w3.org/TR/css-logical-1/#dimension-properties">CSS Logical Properties and Values Module Level 1</a>
             </li>
           </ul>
         </div>
