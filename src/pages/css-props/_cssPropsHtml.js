@@ -11202,6 +11202,330 @@ const cssPropsHtml = String.raw`
       </div>
     </details>
     <details>
+      <summary>
+        <h6 id="prop-inset-block">inset-block <a href="#prop-inset-block" class="hash-link"> </a></h6>
+      </summary>
+      <div>
+        <div>
+          <div id="prop-inset-block-syntax">Syntax</div>
+          <div class="example">
+            <div class="syntax-block">
+              <code>inset-block: [ <a href="#prop-top">&lt;'<i>top</i>'&gt;</a> ]{1,2}</code>
+            </div>
+          </div>
+        </div>
+        <div>
+          <div class="example">
+            <div class="syntax-block">
+              <table class="property-table">
+                <tr>
+                  <th scope="row">
+          Initial value
+        </th>
+                  <td>
+                    <code>auto</code>
+                  </td>
+                </tr>
+                <tr>
+                  <th scope="row">
+          Applies to
+        </th>
+                  <td>positioned elements</td>
+                </tr>
+                <tr>
+                  <th scope="row">
+          Inherited
+        </th>
+                  <td>
+                  no
+                </td>
+                </tr>
+              </table>
+            </div>
+          </div>
+        </div>
+        <div/>
+        <div>
+          <div id="prop-inset-block-spec">Specification</div>
+          <ul>
+            <li>
+              <a href="https://www.w3.org/TR/css-logical-1/#position-properties">CSS Logical Properties and Values Level 1</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </details>
+    <details>
+      <summary>
+        <h6 id="prop-inset-block-end">inset-block-end <a href="#prop-inset-block-end" class="hash-link"> </a></h6>
+      </summary>
+      <div>
+        <div>
+          <div id="prop-inset-block-end-syntax">Syntax</div>
+          <div class="example">
+            <div class="syntax-block">
+              <code>inset-block-end: <a href="#prop-top">&lt;'<i>top</i>'&gt;</a></code>
+            </div>
+          </div>
+        </div>
+        <div>
+          <div class="example">
+            <div class="syntax-block">
+              <table class="property-table">
+                <tr>
+                  <th scope="row">
+          Initial value
+        </th>
+                  <td>
+                    <code>auto</code>
+                  </td>
+                </tr>
+                <tr>
+                  <th scope="row">
+          Applies to
+        </th>
+                  <td>positioned elements</td>
+                </tr>
+                <tr>
+                  <th scope="row">
+          Inherited
+        </th>
+                  <td>
+                  no
+                </td>
+                </tr>
+              </table>
+            </div>
+          </div>
+        </div>
+        <div/>
+        <div>
+          <div id="prop-inset-block-end-spec">Specification</div>
+          <ul>
+            <li>
+              <a href="https://www.w3.org/TR/css-logical-1/#position-properties">CSS Logical Properties and Values Level 1</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </details>
+    <details>
+      <summary>
+        <h6 id="prop-inset-block-start">inset-block-start <a href="#prop-inset-block-start" class="hash-link"> </a></h6>
+      </summary>
+      <div>
+        <div>
+          <div id="prop-inset-block-start-syntax">Syntax</div>
+          <div class="example">
+            <div class="syntax-block">
+              <code>inset-block-start: <a href="#prop-top">&lt;'<i>top</i>'&gt;</a></code>
+            </div>
+          </div>
+        </div>
+        <div>
+          <div class="example">
+            <div class="syntax-block">
+              <table class="property-table">
+                <tr>
+                  <th scope="row">
+          Initial value
+        </th>
+                  <td>
+                    <code>auto</code>
+                  </td>
+                </tr>
+                <tr>
+                  <th scope="row">
+          Applies to
+        </th>
+                  <td>positioned elements</td>
+                </tr>
+                <tr>
+                  <th scope="row">
+          Inherited
+        </th>
+                  <td>
+                  no
+                </td>
+                </tr>
+              </table>
+            </div>
+          </div>
+        </div>
+        <div/>
+        <div>
+          <div id="prop-inset-block-start-spec">Specification</div>
+          <ul>
+            <li>
+              <a href="https://www.w3.org/TR/css-logical-1/#position-properties">CSS Logical Properties and Values Level 1</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </details>
+    <details>
+      <summary>
+        <h6 id="prop-inset-inline">inset-inline <a href="#prop-inset-inline" class="hash-link"> </a></h6>
+      </summary>
+      <div>
+        <div>
+          <div id="prop-inset-inline-syntax">Syntax</div>
+          <div class="example">
+            <div class="syntax-block">
+              <code>inset-inline: [ <a href="#prop-top">&lt;'<i>top</i>'&gt;</a> ]{1,2}</code>
+            </div>
+          </div>
+        </div>
+        <div>
+          <div class="example">
+            <div class="syntax-block">
+              <table class="property-table">
+                <tr>
+                  <th scope="row">
+          Initial value
+        </th>
+                  <td>
+                    <code>auto</code>
+                  </td>
+                </tr>
+                <tr>
+                  <th scope="row">
+          Applies to
+        </th>
+                  <td>positioned elements</td>
+                </tr>
+                <tr>
+                  <th scope="row">
+          Inherited
+        </th>
+                  <td>
+                  no
+                </td>
+                </tr>
+              </table>
+            </div>
+          </div>
+        </div>
+        <div/>
+        <div>
+          <div id="prop-inset-inline-spec">Specification</div>
+          <ul>
+            <li>
+              <a href="https://www.w3.org/TR/css-logical-1/#position-properties">CSS Logical Properties and Values Level 1</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </details>
+    <details>
+      <summary>
+        <h6 id="prop-inset-inline-end">inset-inline-end <a href="#prop-inset-inline-end" class="hash-link"> </a></h6>
+      </summary>
+      <div>
+        <div>
+          <div id="prop-inset-inline-end-syntax">Syntax</div>
+          <div class="example">
+            <div class="syntax-block">
+              <code>inset-inline-end: <a href="#prop-top">&lt;'<i>top</i>'&gt;</a></code>
+            </div>
+          </div>
+        </div>
+        <div>
+          <div class="example">
+            <div class="syntax-block">
+              <table class="property-table">
+                <tr>
+                  <th scope="row">
+          Initial value
+        </th>
+                  <td>
+                    <code>auto</code>
+                  </td>
+                </tr>
+                <tr>
+                  <th scope="row">
+          Applies to
+        </th>
+                  <td>positioned elements</td>
+                </tr>
+                <tr>
+                  <th scope="row">
+          Inherited
+        </th>
+                  <td>
+                  no
+                </td>
+                </tr>
+              </table>
+            </div>
+          </div>
+        </div>
+        <div/>
+        <div>
+          <div id="prop-inset-inline-end-spec">Specification</div>
+          <ul>
+            <li>
+              <a href="https://www.w3.org/TR/css-logical-1/#position-properties">CSS Logical Properties and Values Level 1</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </details>
+    <details>
+      <summary>
+        <h6 id="prop-inset-inline-start">inset-inline-start <a href="#prop-inset-inline-start" class="hash-link"> </a></h6>
+      </summary>
+      <div>
+        <div>
+          <div id="prop-inset-inline-start-syntax">Syntax</div>
+          <div class="example">
+            <div class="syntax-block">
+              <code>inset-inline-start: <a href="#prop-top">&lt;'<i>top</i>'&gt;</a></code>
+            </div>
+          </div>
+        </div>
+        <div>
+          <div class="example">
+            <div class="syntax-block">
+              <table class="property-table">
+                <tr>
+                  <th scope="row">
+          Initial value
+        </th>
+                  <td>
+                    <code>auto</code>
+                  </td>
+                </tr>
+                <tr>
+                  <th scope="row">
+          Applies to
+        </th>
+                  <td>positioned elements</td>
+                </tr>
+                <tr>
+                  <th scope="row">
+          Inherited
+        </th>
+                  <td>
+                  no
+                </td>
+                </tr>
+              </table>
+            </div>
+          </div>
+        </div>
+        <div/>
+        <div>
+          <div id="prop-inset-inline-start-spec">Specification</div>
+          <ul>
+            <li>
+              <a href="https://www.w3.org/TR/css-logical-1/#position-properties">CSS Logical Properties and Values Level 1</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </details>
+    <details>
       <summary class="ext" title="Prince extension">
         <h6 id="prop-inset-inside">inset-inside* <a href="#prop-inset-inside" class="hash-link"> </a></h6>
       </summary>

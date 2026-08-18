@@ -3984,6 +3984,76 @@ NOTE: The current build process will cause this file's content to appear in a Ja
 </property>
 
 <property>
+    <name>inset-block</name>
+    <value>
+        <repeat min="1" max="2">
+            <ref>top</ref>
+        </repeat>
+    </value>
+    <initial>auto</initial>
+    <applyto>positioned elements</applyto>
+    <inherit>no</inherit>
+    <spec><a href="https://www.w3.org/TR/css-logical-1/#position-properties">CSS Logical Properties and Values Level 1</a></spec>
+</property>
+
+<property>
+    <name>inset-block-end</name>
+    <value>
+        <ref>top</ref>
+    </value>
+    <initial>auto</initial>
+    <applyto>positioned elements</applyto>
+    <inherit>no</inherit>
+    <spec><a href="https://www.w3.org/TR/css-logical-1/#position-properties">CSS Logical Properties and Values Level 1</a></spec>
+</property>
+
+<property>
+    <name>inset-block-start</name>
+    <value>
+        <ref>top</ref>
+    </value>
+    <initial>auto</initial>
+    <applyto>positioned elements</applyto>
+    <inherit>no</inherit>
+    <spec><a href="https://www.w3.org/TR/css-logical-1/#position-properties">CSS Logical Properties and Values Level 1</a></spec>
+</property>
+
+<property>
+    <name>inset-inline</name>
+    <value>
+        <repeat min="1" max="2">
+            <ref>top</ref>
+        </repeat>
+    </value>
+    <initial>auto</initial>
+    <applyto>positioned elements</applyto>
+    <inherit>no</inherit>
+    <spec><a href="https://www.w3.org/TR/css-logical-1/#position-properties">CSS Logical Properties and Values Level 1</a></spec>
+</property>
+
+<property>
+    <name>inset-inline-end</name>
+    <value>
+        <ref>top</ref>
+    </value>
+    <initial>auto</initial>
+    <applyto>positioned elements</applyto>
+    <inherit>no</inherit>
+    <spec><a href="https://www.w3.org/TR/css-logical-1/#position-properties">CSS Logical Properties and Values Level 1</a></spec>
+</property>
+
+<property>
+    <name>inset-inline-start</name>
+    <value>
+        <ref>top</ref>
+    </value>
+    <initial>auto</initial>
+    <applyto>positioned elements</applyto>
+    <inherit>no</inherit>
+    <spec><a href="https://www.w3.org/TR/css-logical-1/#position-properties">CSS Logical Properties and Values Level 1</a></spec>
+</property>
+
+<property>
     <name>inset-inside</name>
     <value>
 	<choice>
