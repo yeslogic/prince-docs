@@ -1914,6 +1914,654 @@ const cssPropsHtml = String.raw`
     </details>
     <details>
       <summary>
+        <h6 id="prop-border-block">border-block <a href="#prop-border-block" class="hash-link"> </a></h6>
+      </summary>
+      <div>
+        <div>
+          <div id="prop-border-block-syntax">Syntax</div>
+          <div class="example">
+            <div class="syntax-block">
+              <code>border-block: <a href="#prop-border-block-start">&lt;'<i>border-block-start</i>'&gt;</a></code>
+            </div>
+          </div>
+        </div>
+        <div>
+          <div class="example">
+            <div class="syntax-block">
+              <table class="property-table">
+                <tr>
+                  <th scope="row">
+          Initial value
+        </th>
+                  <td>
+                    <code>medium</code>
+                  </td>
+                </tr>
+                <tr>
+                  <th scope="row">
+          Applies to
+        </th>
+                  <td>all elements</td>
+                </tr>
+                <tr>
+                  <th scope="row">
+          Inherited
+        </th>
+                  <td>
+                  no
+                </td>
+                </tr>
+              </table>
+            </div>
+          </div>
+        </div>
+        <div/>
+        <div>
+          <div id="prop-border-block-spec">Specification</div>
+          <ul>
+            <li>
+              <a href="https://www.w3.org/TR/css-logical-1/#border-shorthands">CSS Logical Properties and Values Module Level 1</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </details>
+    <details>
+      <summary>
+        <h6 id="prop-border-block-color">border-block-color <a href="#prop-border-block-color" class="hash-link"> </a></h6>
+      </summary>
+      <div>
+        <div>
+          <div id="prop-border-block-color-syntax">Syntax</div>
+          <div class="example">
+            <div class="syntax-block">
+              <code>border-block-color: [ <a href="#prop-border-top-color">&lt;'<i>border-top-color</i>'&gt;</a> ]{1,2}</code>
+            </div>
+          </div>
+        </div>
+        <div>
+          <div class="example">
+            <div class="syntax-block">
+              <table class="property-table">
+                <tr>
+                  <th scope="row">
+          Initial value
+        </th>
+                  <td>
+                    <code>medium</code>
+                  </td>
+                </tr>
+                <tr>
+                  <th scope="row">
+          Applies to
+        </th>
+                  <td>all elements</td>
+                </tr>
+                <tr>
+                  <th scope="row">
+          Inherited
+        </th>
+                  <td>
+                  no
+                </td>
+                </tr>
+              </table>
+            </div>
+          </div>
+        </div>
+        <div/>
+        <div>
+          <div id="prop-border-block-color-spec">Specification</div>
+          <ul>
+            <li>
+              <a href="https://www.w3.org/TR/css-logical-1/#border-color">CSS Logical Properties and Values Module Level 1</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </details>
+    <details>
+      <summary>
+        <h6 id="prop-border-block-end">border-block-end <a href="#prop-border-block-end" class="hash-link"> </a></h6>
+      </summary>
+      <div>
+        <div>
+          <div id="prop-border-block-end-syntax">Syntax</div>
+          <div class="example">
+            <div class="syntax-block">
+              <code>border-block-end: <a href="#prop-border-top-width">&lt;'<i>border-top-width</i>'&gt;</a> || <a href="#prop-border-top-style">&lt;'<i>border-top-style</i>'&gt;</a> || <a href="#prop-color">&lt;'<i>color</i>'&gt;</a></code>
+            </div>
+          </div>
+        </div>
+        <div>
+          <div class="example">
+            <div class="syntax-block">
+              <table class="property-table">
+                <tr>
+                  <th scope="row">
+          Initial value
+        </th>
+                  <td>
+                    <code>medium</code>
+                  </td>
+                </tr>
+                <tr>
+                  <th scope="row">
+          Applies to
+        </th>
+                  <td>all elements</td>
+                </tr>
+                <tr>
+                  <th scope="row">
+          Inherited
+        </th>
+                  <td>
+                  no
+                </td>
+                </tr>
+              </table>
+            </div>
+          </div>
+        </div>
+        <div/>
+        <div>
+          <div id="prop-border-block-end-spec">Specification</div>
+          <ul>
+            <li>
+              <a href="https://www.w3.org/TR/css-logical-1/#border-shorthands">CSS Logical Properties and Values Module Level 1</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </details>
+    <details>
+      <summary>
+        <h6 id="prop-border-block-end-color">border-block-end-color <a href="#prop-border-block-end-color" class="hash-link"> </a></h6>
+      </summary>
+      <div>
+        <div>
+          <div id="prop-border-block-end-color-syntax">Syntax</div>
+          <div class="example">
+            <div class="syntax-block">
+              <code>border-block-end-color: <a href="#prop-border-top-color">&lt;'<i>border-top-color</i>'&gt;</a></code>
+            </div>
+          </div>
+        </div>
+        <div>
+          <div class="example">
+            <div class="syntax-block">
+              <table class="property-table">
+                <tr>
+                  <th scope="row">
+          Initial value
+        </th>
+                  <td>
+                    <code>medium</code>
+                  </td>
+                </tr>
+                <tr>
+                  <th scope="row">
+          Applies to
+        </th>
+                  <td>all elements</td>
+                </tr>
+                <tr>
+                  <th scope="row">
+          Inherited
+        </th>
+                  <td>
+                  no
+                </td>
+                </tr>
+              </table>
+            </div>
+          </div>
+        </div>
+        <div/>
+        <div>
+          <div id="prop-border-block-end-color-spec">Specification</div>
+          <ul>
+            <li>
+              <a href="https://www.w3.org/TR/css-logical-1/#border-color">CSS Logical Properties and Values Module Level 1</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </details>
+    <details>
+      <summary>
+        <h6 id="prop-border-block-end-style">border-block-end-style <a href="#prop-border-block-end-style" class="hash-link"> </a></h6>
+      </summary>
+      <div>
+        <div>
+          <div id="prop-border-block-end-style-syntax">Syntax</div>
+          <div class="example">
+            <div class="syntax-block">
+              <code>border-block-end-style: <a href="#prop-border-top-style">&lt;'<i>border-top-style</i>'&gt;</a></code>
+            </div>
+          </div>
+        </div>
+        <div>
+          <div class="example">
+            <div class="syntax-block">
+              <table class="property-table">
+                <tr>
+                  <th scope="row">
+          Initial value
+        </th>
+                  <td>
+                    <code>medium</code>
+                  </td>
+                </tr>
+                <tr>
+                  <th scope="row">
+          Applies to
+        </th>
+                  <td>all elements</td>
+                </tr>
+                <tr>
+                  <th scope="row">
+          Inherited
+        </th>
+                  <td>
+                  no
+                </td>
+                </tr>
+              </table>
+            </div>
+          </div>
+        </div>
+        <div/>
+        <div>
+          <div id="prop-border-block-end-style-spec">Specification</div>
+          <ul>
+            <li>
+              <a href="https://www.w3.org/TR/css-logical-1/#border-style">CSS Logical Properties and Values Module Level 1</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </details>
+    <details>
+      <summary>
+        <h6 id="prop-border-block-end-width">border-block-end-width <a href="#prop-border-block-end-width" class="hash-link"> </a></h6>
+      </summary>
+      <div>
+        <div>
+          <div id="prop-border-block-end-width-syntax">Syntax</div>
+          <div class="example">
+            <div class="syntax-block">
+              <code>border-block-end-width: <a href="#prop-border-top-width">&lt;'<i>border-top-width</i>'&gt;</a></code>
+            </div>
+          </div>
+        </div>
+        <div>
+          <div class="example">
+            <div class="syntax-block">
+              <table class="property-table">
+                <tr>
+                  <th scope="row">
+          Initial value
+        </th>
+                  <td>
+                    <code>medium</code>
+                  </td>
+                </tr>
+                <tr>
+                  <th scope="row">
+          Applies to
+        </th>
+                  <td>all elements</td>
+                </tr>
+                <tr>
+                  <th scope="row">
+          Inherited
+        </th>
+                  <td>
+                  no
+                </td>
+                </tr>
+              </table>
+            </div>
+          </div>
+        </div>
+        <div/>
+        <div>
+          <div id="prop-border-block-end-width-spec">Specification</div>
+          <ul>
+            <li>
+              <a href="https://www.w3.org/TR/css-logical-1/#border-width">CSS Logical Properties and Values Module Level 1</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </details>
+    <details>
+      <summary>
+        <h6 id="prop-border-block-start">border-block-start <a href="#prop-border-block-start" class="hash-link"> </a></h6>
+      </summary>
+      <div>
+        <div>
+          <div id="prop-border-block-start-syntax">Syntax</div>
+          <div class="example">
+            <div class="syntax-block">
+              <code>border-block-start: <a href="#prop-border-top-width">&lt;'<i>border-top-width</i>'&gt;</a> || <a href="#prop-border-top-style">&lt;'<i>border-top-style</i>'&gt;</a> || <a href="#prop-color">&lt;'<i>color</i>'&gt;</a></code>
+            </div>
+          </div>
+        </div>
+        <div>
+          <div class="example">
+            <div class="syntax-block">
+              <table class="property-table">
+                <tr>
+                  <th scope="row">
+          Initial value
+        </th>
+                  <td>
+                    <code>medium</code>
+                  </td>
+                </tr>
+                <tr>
+                  <th scope="row">
+          Applies to
+        </th>
+                  <td>all elements</td>
+                </tr>
+                <tr>
+                  <th scope="row">
+          Inherited
+        </th>
+                  <td>
+                  no
+                </td>
+                </tr>
+              </table>
+            </div>
+          </div>
+        </div>
+        <div/>
+        <div>
+          <div id="prop-border-block-start-spec">Specification</div>
+          <ul>
+            <li>
+              <a href="https://www.w3.org/TR/css-logical-1/#border-shorthands">CSS Logical Properties and Values Module Level 1</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </details>
+    <details>
+      <summary>
+        <h6 id="prop-border-block-start-color">border-block-start-color <a href="#prop-border-block-start-color" class="hash-link"> </a></h6>
+      </summary>
+      <div>
+        <div>
+          <div id="prop-border-block-start-color-syntax">Syntax</div>
+          <div class="example">
+            <div class="syntax-block">
+              <code>border-block-start-color: <a href="#prop-border-top-color">&lt;'<i>border-top-color</i>'&gt;</a></code>
+            </div>
+          </div>
+        </div>
+        <div>
+          <div class="example">
+            <div class="syntax-block">
+              <table class="property-table">
+                <tr>
+                  <th scope="row">
+          Initial value
+        </th>
+                  <td>
+                    <code>medium</code>
+                  </td>
+                </tr>
+                <tr>
+                  <th scope="row">
+          Applies to
+        </th>
+                  <td>all elements</td>
+                </tr>
+                <tr>
+                  <th scope="row">
+          Inherited
+        </th>
+                  <td>
+                  no
+                </td>
+                </tr>
+              </table>
+            </div>
+          </div>
+        </div>
+        <div/>
+        <div>
+          <div id="prop-border-block-start-color-spec">Specification</div>
+          <ul>
+            <li>
+              <a href="https://www.w3.org/TR/css-logical-1/#border-color">CSS Logical Properties and Values Module Level 1</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </details>
+    <details>
+      <summary>
+        <h6 id="prop-border-block-start-style">border-block-start-style <a href="#prop-border-block-start-style" class="hash-link"> </a></h6>
+      </summary>
+      <div>
+        <div>
+          <div id="prop-border-block-start-style-syntax">Syntax</div>
+          <div class="example">
+            <div class="syntax-block">
+              <code>border-block-start-style: <a href="#prop-border-top-style">&lt;'<i>border-top-style</i>'&gt;</a></code>
+            </div>
+          </div>
+        </div>
+        <div>
+          <div class="example">
+            <div class="syntax-block">
+              <table class="property-table">
+                <tr>
+                  <th scope="row">
+          Initial value
+        </th>
+                  <td>
+                    <code>medium</code>
+                  </td>
+                </tr>
+                <tr>
+                  <th scope="row">
+          Applies to
+        </th>
+                  <td>all elements</td>
+                </tr>
+                <tr>
+                  <th scope="row">
+          Inherited
+        </th>
+                  <td>
+                  no
+                </td>
+                </tr>
+              </table>
+            </div>
+          </div>
+        </div>
+        <div/>
+        <div>
+          <div id="prop-border-block-start-style-spec">Specification</div>
+          <ul>
+            <li>
+              <a href="https://www.w3.org/TR/css-logical-1/#border-style">CSS Logical Properties and Values Module Level 1</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </details>
+    <details>
+      <summary>
+        <h6 id="prop-border-block-start-width">border-block-start-width <a href="#prop-border-block-start-width" class="hash-link"> </a></h6>
+      </summary>
+      <div>
+        <div>
+          <div id="prop-border-block-start-width-syntax">Syntax</div>
+          <div class="example">
+            <div class="syntax-block">
+              <code>border-block-start-width: <a href="#prop-border-top-width">&lt;'<i>border-top-width</i>'&gt;</a></code>
+            </div>
+          </div>
+        </div>
+        <div>
+          <div class="example">
+            <div class="syntax-block">
+              <table class="property-table">
+                <tr>
+                  <th scope="row">
+          Initial value
+        </th>
+                  <td>
+                    <code>medium</code>
+                  </td>
+                </tr>
+                <tr>
+                  <th scope="row">
+          Applies to
+        </th>
+                  <td>all elements</td>
+                </tr>
+                <tr>
+                  <th scope="row">
+          Inherited
+        </th>
+                  <td>
+                  no
+                </td>
+                </tr>
+              </table>
+            </div>
+          </div>
+        </div>
+        <div/>
+        <div>
+          <div id="prop-border-block-start-width-spec">Specification</div>
+          <ul>
+            <li>
+              <a href="https://www.w3.org/TR/css-logical-1/#border-width">CSS Logical Properties and Values Module Level 1</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </details>
+    <details>
+      <summary>
+        <h6 id="prop-border-block-style">border-block-style <a href="#prop-border-block-style" class="hash-link"> </a></h6>
+      </summary>
+      <div>
+        <div>
+          <div id="prop-border-block-style-syntax">Syntax</div>
+          <div class="example">
+            <div class="syntax-block">
+              <code>border-block-style: [ <a href="#prop-border-top-style">&lt;'<i>border-top-style</i>'&gt;</a> ]{1,2}</code>
+            </div>
+          </div>
+        </div>
+        <div>
+          <div class="example">
+            <div class="syntax-block">
+              <table class="property-table">
+                <tr>
+                  <th scope="row">
+          Initial value
+        </th>
+                  <td>
+                    <code>medium</code>
+                  </td>
+                </tr>
+                <tr>
+                  <th scope="row">
+          Applies to
+        </th>
+                  <td>all elements</td>
+                </tr>
+                <tr>
+                  <th scope="row">
+          Inherited
+        </th>
+                  <td>
+                  no
+                </td>
+                </tr>
+              </table>
+            </div>
+          </div>
+        </div>
+        <div/>
+        <div>
+          <div id="prop-border-block-style-spec">Specification</div>
+          <ul>
+            <li>
+              <a href="https://www.w3.org/TR/css-logical-1/#border-style">CSS Logical Properties and Values Module Level 1</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </details>
+    <details>
+      <summary>
+        <h6 id="prop-border-block-width">border-block-width <a href="#prop-border-block-width" class="hash-link"> </a></h6>
+      </summary>
+      <div>
+        <div>
+          <div id="prop-border-block-width-syntax">Syntax</div>
+          <div class="example">
+            <div class="syntax-block">
+              <code>border-block-width: [ <a href="#prop-border-top-width">&lt;'<i>border-top-width</i>'&gt;</a> ]{1,2}</code>
+            </div>
+          </div>
+        </div>
+        <div>
+          <div class="example">
+            <div class="syntax-block">
+              <table class="property-table">
+                <tr>
+                  <th scope="row">
+          Initial value
+        </th>
+                  <td>
+                    <code>medium</code>
+                  </td>
+                </tr>
+                <tr>
+                  <th scope="row">
+          Applies to
+        </th>
+                  <td>all elements</td>
+                </tr>
+                <tr>
+                  <th scope="row">
+          Inherited
+        </th>
+                  <td>
+                  no
+                </td>
+                </tr>
+              </table>
+            </div>
+          </div>
+        </div>
+        <div/>
+        <div>
+          <div id="prop-border-block-width-spec">Specification</div>
+          <ul>
+            <li>
+              <a href="https://www.w3.org/TR/css-logical-1/#border-width">CSS Logical Properties and Values Module Level 1</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </details>
+    <details>
+      <summary>
         <h6 id="prop-border-bottom">border-bottom <a href="#prop-border-bottom" class="hash-link"> </a></h6>
       </summary>
       <div>
@@ -2374,6 +3022,762 @@ const cssPropsHtml = String.raw`
           <ul>
             <li>
               <a href="https://www.w3.org/TR/css-backgrounds-3/#the-border-color">CSS Backgrounds and Borders Module Level 3</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </details>
+    <details>
+      <summary>
+        <h6 id="prop-border-end-end-radius">border-end-end-radius <a href="#prop-border-end-end-radius" class="hash-link"> </a></h6>
+      </summary>
+      <div>
+        <div>
+          <div id="prop-border-end-end-radius-syntax">Syntax</div>
+          <div class="example">
+            <div class="syntax-block">
+              <code>border-end-end-radius: <a href="#prop-border-top-left-radius">&lt;'<i>border-top-left-radius</i>'&gt;</a></code>
+            </div>
+          </div>
+        </div>
+        <div>
+          <div class="example">
+            <div class="syntax-block">
+              <table class="property-table">
+                <tr>
+                  <th scope="row">
+          Initial value
+        </th>
+                  <td>
+                    <code>0</code>
+                  </td>
+                </tr>
+                <tr>
+                  <th scope="row">
+          Applies to
+        </th>
+                  <td>all elements</td>
+                </tr>
+                <tr>
+                  <th scope="row">
+          Inherited
+        </th>
+                  <td>
+                  no
+                </td>
+                </tr>
+              </table>
+            </div>
+          </div>
+        </div>
+        <div/>
+        <div>
+          <div id="prop-border-end-end-radius-spec">Specification</div>
+          <ul>
+            <li>
+              <a href="https://www.w3.org/TR/css-logical-1/#border-radius-properties">CSS Logical Properties and Values Module Level 1</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </details>
+    <details>
+      <summary>
+        <h6 id="prop-border-end-start-radius">border-end-start-radius <a href="#prop-border-end-start-radius" class="hash-link"> </a></h6>
+      </summary>
+      <div>
+        <div>
+          <div id="prop-border-end-start-radius-syntax">Syntax</div>
+          <div class="example">
+            <div class="syntax-block">
+              <code>border-end-start-radius: <a href="#prop-border-top-left-radius">&lt;'<i>border-top-left-radius</i>'&gt;</a></code>
+            </div>
+          </div>
+        </div>
+        <div>
+          <div class="example">
+            <div class="syntax-block">
+              <table class="property-table">
+                <tr>
+                  <th scope="row">
+          Initial value
+        </th>
+                  <td>
+                    <code>0</code>
+                  </td>
+                </tr>
+                <tr>
+                  <th scope="row">
+          Applies to
+        </th>
+                  <td>all elements</td>
+                </tr>
+                <tr>
+                  <th scope="row">
+          Inherited
+        </th>
+                  <td>
+                  no
+                </td>
+                </tr>
+              </table>
+            </div>
+          </div>
+        </div>
+        <div/>
+        <div>
+          <div id="prop-border-end-start-radius-spec">Specification</div>
+          <ul>
+            <li>
+              <a href="https://www.w3.org/TR/css-logical-1/#border-radius-properties">CSS Logical Properties and Values Module Level 1</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </details>
+    <details>
+      <summary>
+        <h6 id="prop-border-inline">border-inline <a href="#prop-border-inline" class="hash-link"> </a></h6>
+      </summary>
+      <div>
+        <div>
+          <div id="prop-border-inline-syntax">Syntax</div>
+          <div class="example">
+            <div class="syntax-block">
+              <code>border-inline: <a href="#prop-border-block-start">&lt;'<i>border-block-start</i>'&gt;</a></code>
+            </div>
+          </div>
+        </div>
+        <div>
+          <div class="example">
+            <div class="syntax-block">
+              <table class="property-table">
+                <tr>
+                  <th scope="row">
+          Initial value
+        </th>
+                  <td>
+                    <code>medium</code>
+                  </td>
+                </tr>
+                <tr>
+                  <th scope="row">
+          Applies to
+        </th>
+                  <td>all elements</td>
+                </tr>
+                <tr>
+                  <th scope="row">
+          Inherited
+        </th>
+                  <td>
+                  no
+                </td>
+                </tr>
+              </table>
+            </div>
+          </div>
+        </div>
+        <div/>
+        <div>
+          <div id="prop-border-inline-spec">Specification</div>
+          <ul>
+            <li>
+              <a href="https://www.w3.org/TR/css-logical-1/#border-shorthands">CSS Logical Properties and Values Module Level 1</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </details>
+    <details>
+      <summary>
+        <h6 id="prop-border-inline-color">border-inline-color <a href="#prop-border-inline-color" class="hash-link"> </a></h6>
+      </summary>
+      <div>
+        <div>
+          <div id="prop-border-inline-color-syntax">Syntax</div>
+          <div class="example">
+            <div class="syntax-block">
+              <code>border-inline-color: [ <a href="#prop-border-top-color">&lt;'<i>border-top-color</i>'&gt;</a> ]{1,2}</code>
+            </div>
+          </div>
+        </div>
+        <div>
+          <div class="example">
+            <div class="syntax-block">
+              <table class="property-table">
+                <tr>
+                  <th scope="row">
+          Initial value
+        </th>
+                  <td>
+                    <code>medium</code>
+                  </td>
+                </tr>
+                <tr>
+                  <th scope="row">
+          Applies to
+        </th>
+                  <td>all elements</td>
+                </tr>
+                <tr>
+                  <th scope="row">
+          Inherited
+        </th>
+                  <td>
+                  no
+                </td>
+                </tr>
+              </table>
+            </div>
+          </div>
+        </div>
+        <div/>
+        <div>
+          <div id="prop-border-inline-color-spec">Specification</div>
+          <ul>
+            <li>
+              <a href="https://www.w3.org/TR/css-logical-1/#border-color">CSS Logical Properties and Values Module Level 1</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </details>
+    <details>
+      <summary>
+        <h6 id="prop-border-inline-end">border-inline-end <a href="#prop-border-inline-end" class="hash-link"> </a></h6>
+      </summary>
+      <div>
+        <div>
+          <div id="prop-border-inline-end-syntax">Syntax</div>
+          <div class="example">
+            <div class="syntax-block">
+              <code>border-inline-end: <a href="#prop-border-top-width">&lt;'<i>border-top-width</i>'&gt;</a> || <a href="#prop-border-top-style">&lt;'<i>border-top-style</i>'&gt;</a> || <a href="#prop-color">&lt;'<i>color</i>'&gt;</a></code>
+            </div>
+          </div>
+        </div>
+        <div>
+          <div class="example">
+            <div class="syntax-block">
+              <table class="property-table">
+                <tr>
+                  <th scope="row">
+          Initial value
+        </th>
+                  <td>
+                    <code>medium</code>
+                  </td>
+                </tr>
+                <tr>
+                  <th scope="row">
+          Applies to
+        </th>
+                  <td>all elements</td>
+                </tr>
+                <tr>
+                  <th scope="row">
+          Inherited
+        </th>
+                  <td>
+                  no
+                </td>
+                </tr>
+              </table>
+            </div>
+          </div>
+        </div>
+        <div/>
+        <div>
+          <div id="prop-border-inline-end-spec">Specification</div>
+          <ul>
+            <li>
+              <a href="https://www.w3.org/TR/css-logical-1/#border-shorthands">CSS Logical Properties and Values Module Level 1</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </details>
+    <details>
+      <summary>
+        <h6 id="prop-border-inline-end-color">border-inline-end-color <a href="#prop-border-inline-end-color" class="hash-link"> </a></h6>
+      </summary>
+      <div>
+        <div>
+          <div id="prop-border-inline-end-color-syntax">Syntax</div>
+          <div class="example">
+            <div class="syntax-block">
+              <code>border-inline-end-color: <a href="#prop-border-top-color">&lt;'<i>border-top-color</i>'&gt;</a></code>
+            </div>
+          </div>
+        </div>
+        <div>
+          <div class="example">
+            <div class="syntax-block">
+              <table class="property-table">
+                <tr>
+                  <th scope="row">
+          Initial value
+        </th>
+                  <td>
+                    <code>medium</code>
+                  </td>
+                </tr>
+                <tr>
+                  <th scope="row">
+          Applies to
+        </th>
+                  <td>all elements</td>
+                </tr>
+                <tr>
+                  <th scope="row">
+          Inherited
+        </th>
+                  <td>
+                  no
+                </td>
+                </tr>
+              </table>
+            </div>
+          </div>
+        </div>
+        <div/>
+        <div>
+          <div id="prop-border-inline-end-color-spec">Specification</div>
+          <ul>
+            <li>
+              <a href="https://www.w3.org/TR/css-logical-1/#border-color">CSS Logical Properties and Values Module Level 1</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </details>
+    <details>
+      <summary>
+        <h6 id="prop-border-inline-end-style">border-inline-end-style <a href="#prop-border-inline-end-style" class="hash-link"> </a></h6>
+      </summary>
+      <div>
+        <div>
+          <div id="prop-border-inline-end-style-syntax">Syntax</div>
+          <div class="example">
+            <div class="syntax-block">
+              <code>border-inline-end-style: <a href="#prop-border-top-style">&lt;'<i>border-top-style</i>'&gt;</a></code>
+            </div>
+          </div>
+        </div>
+        <div>
+          <div class="example">
+            <div class="syntax-block">
+              <table class="property-table">
+                <tr>
+                  <th scope="row">
+          Initial value
+        </th>
+                  <td>
+                    <code>medium</code>
+                  </td>
+                </tr>
+                <tr>
+                  <th scope="row">
+          Applies to
+        </th>
+                  <td>all elements</td>
+                </tr>
+                <tr>
+                  <th scope="row">
+          Inherited
+        </th>
+                  <td>
+                  no
+                </td>
+                </tr>
+              </table>
+            </div>
+          </div>
+        </div>
+        <div/>
+        <div>
+          <div id="prop-border-inline-end-style-spec">Specification</div>
+          <ul>
+            <li>
+              <a href="https://www.w3.org/TR/css-logical-1/#border-style">CSS Logical Properties and Values Module Level 1</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </details>
+    <details>
+      <summary>
+        <h6 id="prop-border-inline-end-width">border-inline-end-width <a href="#prop-border-inline-end-width" class="hash-link"> </a></h6>
+      </summary>
+      <div>
+        <div>
+          <div id="prop-border-inline-end-width-syntax">Syntax</div>
+          <div class="example">
+            <div class="syntax-block">
+              <code>border-inline-end-width: <a href="#prop-border-top-width">&lt;'<i>border-top-width</i>'&gt;</a></code>
+            </div>
+          </div>
+        </div>
+        <div>
+          <div class="example">
+            <div class="syntax-block">
+              <table class="property-table">
+                <tr>
+                  <th scope="row">
+          Initial value
+        </th>
+                  <td>
+                    <code>medium</code>
+                  </td>
+                </tr>
+                <tr>
+                  <th scope="row">
+          Applies to
+        </th>
+                  <td>all elements</td>
+                </tr>
+                <tr>
+                  <th scope="row">
+          Inherited
+        </th>
+                  <td>
+                  no
+                </td>
+                </tr>
+              </table>
+            </div>
+          </div>
+        </div>
+        <div/>
+        <div>
+          <div id="prop-border-inline-end-width-spec">Specification</div>
+          <ul>
+            <li>
+              <a href="https://www.w3.org/TR/css-logical-1/#border-width">CSS Logical Properties and Values Module Level 1</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </details>
+    <details>
+      <summary>
+        <h6 id="prop-border-inline-start">border-inline-start <a href="#prop-border-inline-start" class="hash-link"> </a></h6>
+      </summary>
+      <div>
+        <div>
+          <div id="prop-border-inline-start-syntax">Syntax</div>
+          <div class="example">
+            <div class="syntax-block">
+              <code>border-inline-start: <a href="#prop-border-top-width">&lt;'<i>border-top-width</i>'&gt;</a> || <a href="#prop-border-top-style">&lt;'<i>border-top-style</i>'&gt;</a> || <a href="#prop-color">&lt;'<i>color</i>'&gt;</a></code>
+            </div>
+          </div>
+        </div>
+        <div>
+          <div class="example">
+            <div class="syntax-block">
+              <table class="property-table">
+                <tr>
+                  <th scope="row">
+          Initial value
+        </th>
+                  <td>
+                    <code>medium</code>
+                  </td>
+                </tr>
+                <tr>
+                  <th scope="row">
+          Applies to
+        </th>
+                  <td>all elements</td>
+                </tr>
+                <tr>
+                  <th scope="row">
+          Inherited
+        </th>
+                  <td>
+                  no
+                </td>
+                </tr>
+              </table>
+            </div>
+          </div>
+        </div>
+        <div/>
+        <div>
+          <div id="prop-border-inline-start-spec">Specification</div>
+          <ul>
+            <li>
+              <a href="https://www.w3.org/TR/css-logical-1/#border-shorthands">CSS Logical Properties and Values Module Level 1</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </details>
+    <details>
+      <summary>
+        <h6 id="prop-border-inline-start-color">border-inline-start-color <a href="#prop-border-inline-start-color" class="hash-link"> </a></h6>
+      </summary>
+      <div>
+        <div>
+          <div id="prop-border-inline-start-color-syntax">Syntax</div>
+          <div class="example">
+            <div class="syntax-block">
+              <code>border-inline-start-color: <a href="#prop-border-top-color">&lt;'<i>border-top-color</i>'&gt;</a></code>
+            </div>
+          </div>
+        </div>
+        <div>
+          <div class="example">
+            <div class="syntax-block">
+              <table class="property-table">
+                <tr>
+                  <th scope="row">
+          Initial value
+        </th>
+                  <td>
+                    <code>medium</code>
+                  </td>
+                </tr>
+                <tr>
+                  <th scope="row">
+          Applies to
+        </th>
+                  <td>all elements</td>
+                </tr>
+                <tr>
+                  <th scope="row">
+          Inherited
+        </th>
+                  <td>
+                  no
+                </td>
+                </tr>
+              </table>
+            </div>
+          </div>
+        </div>
+        <div/>
+        <div>
+          <div id="prop-border-inline-start-color-spec">Specification</div>
+          <ul>
+            <li>
+              <a href="https://www.w3.org/TR/css-logical-1/#border-color">CSS Logical Properties and Values Module Level 1</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </details>
+    <details>
+      <summary>
+        <h6 id="prop-border-inline-start-style">border-inline-start-style <a href="#prop-border-inline-start-style" class="hash-link"> </a></h6>
+      </summary>
+      <div>
+        <div>
+          <div id="prop-border-inline-start-style-syntax">Syntax</div>
+          <div class="example">
+            <div class="syntax-block">
+              <code>border-inline-start-style: <a href="#prop-border-top-style">&lt;'<i>border-top-style</i>'&gt;</a></code>
+            </div>
+          </div>
+        </div>
+        <div>
+          <div class="example">
+            <div class="syntax-block">
+              <table class="property-table">
+                <tr>
+                  <th scope="row">
+          Initial value
+        </th>
+                  <td>
+                    <code>medium</code>
+                  </td>
+                </tr>
+                <tr>
+                  <th scope="row">
+          Applies to
+        </th>
+                  <td>all elements</td>
+                </tr>
+                <tr>
+                  <th scope="row">
+          Inherited
+        </th>
+                  <td>
+                  no
+                </td>
+                </tr>
+              </table>
+            </div>
+          </div>
+        </div>
+        <div/>
+        <div>
+          <div id="prop-border-inline-start-style-spec">Specification</div>
+          <ul>
+            <li>
+              <a href="https://www.w3.org/TR/css-logical-1/#border-style">CSS Logical Properties and Values Module Level 1</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </details>
+    <details>
+      <summary>
+        <h6 id="prop-border-inline-start-width">border-inline-start-width <a href="#prop-border-inline-start-width" class="hash-link"> </a></h6>
+      </summary>
+      <div>
+        <div>
+          <div id="prop-border-inline-start-width-syntax">Syntax</div>
+          <div class="example">
+            <div class="syntax-block">
+              <code>border-inline-start-width: <a href="#prop-border-top-width">&lt;'<i>border-top-width</i>'&gt;</a></code>
+            </div>
+          </div>
+        </div>
+        <div>
+          <div class="example">
+            <div class="syntax-block">
+              <table class="property-table">
+                <tr>
+                  <th scope="row">
+          Initial value
+        </th>
+                  <td>
+                    <code>medium</code>
+                  </td>
+                </tr>
+                <tr>
+                  <th scope="row">
+          Applies to
+        </th>
+                  <td>all elements</td>
+                </tr>
+                <tr>
+                  <th scope="row">
+          Inherited
+        </th>
+                  <td>
+                  no
+                </td>
+                </tr>
+              </table>
+            </div>
+          </div>
+        </div>
+        <div/>
+        <div>
+          <div id="prop-border-inline-start-width-spec">Specification</div>
+          <ul>
+            <li>
+              <a href="https://www.w3.org/TR/css-logical-1/#border-width">CSS Logical Properties and Values Module Level 1</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </details>
+    <details>
+      <summary>
+        <h6 id="prop-border-inline-style">border-inline-style <a href="#prop-border-inline-style" class="hash-link"> </a></h6>
+      </summary>
+      <div>
+        <div>
+          <div id="prop-border-inline-style-syntax">Syntax</div>
+          <div class="example">
+            <div class="syntax-block">
+              <code>border-inline-style: [ <a href="#prop-border-top-style">&lt;'<i>border-top-style</i>'&gt;</a> ]{1,2}</code>
+            </div>
+          </div>
+        </div>
+        <div>
+          <div class="example">
+            <div class="syntax-block">
+              <table class="property-table">
+                <tr>
+                  <th scope="row">
+          Initial value
+        </th>
+                  <td>
+                    <code>medium</code>
+                  </td>
+                </tr>
+                <tr>
+                  <th scope="row">
+          Applies to
+        </th>
+                  <td>all elements</td>
+                </tr>
+                <tr>
+                  <th scope="row">
+          Inherited
+        </th>
+                  <td>
+                  no
+                </td>
+                </tr>
+              </table>
+            </div>
+          </div>
+        </div>
+        <div/>
+        <div>
+          <div id="prop-border-inline-style-spec">Specification</div>
+          <ul>
+            <li>
+              <a href="https://www.w3.org/TR/css-logical-1/#border-style">CSS Logical Properties and Values Module Level 1</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </details>
+    <details>
+      <summary>
+        <h6 id="prop-border-inline-width">border-inline-width <a href="#prop-border-inline-width" class="hash-link"> </a></h6>
+      </summary>
+      <div>
+        <div>
+          <div id="prop-border-inline-width-syntax">Syntax</div>
+          <div class="example">
+            <div class="syntax-block">
+              <code>border-inline-width: [ <a href="#prop-border-top-width">&lt;'<i>border-top-width</i>'&gt;</a> ]{1,2}</code>
+            </div>
+          </div>
+        </div>
+        <div>
+          <div class="example">
+            <div class="syntax-block">
+              <table class="property-table">
+                <tr>
+                  <th scope="row">
+          Initial value
+        </th>
+                  <td>
+                    <code>medium</code>
+                  </td>
+                </tr>
+                <tr>
+                  <th scope="row">
+          Applies to
+        </th>
+                  <td>all elements</td>
+                </tr>
+                <tr>
+                  <th scope="row">
+          Inherited
+        </th>
+                  <td>
+                  no
+                </td>
+                </tr>
+              </table>
+            </div>
+          </div>
+        </div>
+        <div/>
+        <div>
+          <div id="prop-border-inline-width-spec">Specification</div>
+          <ul>
+            <li>
+              <a href="https://www.w3.org/TR/css-logical-1/#border-width">CSS Logical Properties and Values Module Level 1</a>
             </li>
           </ul>
         </div>
@@ -3269,6 +4673,114 @@ const cssPropsHtml = String.raw`
           <ul>
             <li>
               <a href="https://www.w3.org/TR/CSS2/tables.html#separated-borders">CSS 2.1</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </details>
+    <details>
+      <summary>
+        <h6 id="prop-border-start-end-radius">border-start-end-radius <a href="#prop-border-start-end-radius" class="hash-link"> </a></h6>
+      </summary>
+      <div>
+        <div>
+          <div id="prop-border-start-end-radius-syntax">Syntax</div>
+          <div class="example">
+            <div class="syntax-block">
+              <code>border-start-end-radius: <a href="#prop-border-top-left-radius">&lt;'<i>border-top-left-radius</i>'&gt;</a></code>
+            </div>
+          </div>
+        </div>
+        <div>
+          <div class="example">
+            <div class="syntax-block">
+              <table class="property-table">
+                <tr>
+                  <th scope="row">
+          Initial value
+        </th>
+                  <td>
+                    <code>0</code>
+                  </td>
+                </tr>
+                <tr>
+                  <th scope="row">
+          Applies to
+        </th>
+                  <td>all elements</td>
+                </tr>
+                <tr>
+                  <th scope="row">
+          Inherited
+        </th>
+                  <td>
+                  no
+                </td>
+                </tr>
+              </table>
+            </div>
+          </div>
+        </div>
+        <div/>
+        <div>
+          <div id="prop-border-start-end-radius-spec">Specification</div>
+          <ul>
+            <li>
+              <a href="https://www.w3.org/TR/css-logical-1/#border-radius-properties">CSS Logical Properties and Values Module Level 1</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </details>
+    <details>
+      <summary>
+        <h6 id="prop-border-start-start-radius">border-start-start-radius <a href="#prop-border-start-start-radius" class="hash-link"> </a></h6>
+      </summary>
+      <div>
+        <div>
+          <div id="prop-border-start-start-radius-syntax">Syntax</div>
+          <div class="example">
+            <div class="syntax-block">
+              <code>border-start-start-radius: <a href="#prop-border-top-left-radius">&lt;'<i>border-top-left-radius</i>'&gt;</a></code>
+            </div>
+          </div>
+        </div>
+        <div>
+          <div class="example">
+            <div class="syntax-block">
+              <table class="property-table">
+                <tr>
+                  <th scope="row">
+          Initial value
+        </th>
+                  <td>
+                    <code>0</code>
+                  </td>
+                </tr>
+                <tr>
+                  <th scope="row">
+          Applies to
+        </th>
+                  <td>all elements</td>
+                </tr>
+                <tr>
+                  <th scope="row">
+          Inherited
+        </th>
+                  <td>
+                  no
+                </td>
+                </tr>
+              </table>
+            </div>
+          </div>
+        </div>
+        <div/>
+        <div>
+          <div id="prop-border-start-start-radius-spec">Specification</div>
+          <ul>
+            <li>
+              <a href="https://www.w3.org/TR/css-logical-1/#border-radius-properties">CSS Logical Properties and Values Module Level 1</a>
             </li>
           </ul>
         </div>
