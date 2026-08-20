@@ -389,3 +389,36 @@ Multiple media features may be combined into a media condition using full boolea
 <td>Type: discrete</td>
 </tr>
 </table>
+
+### User Preference Media Features
+
+<table className="grid">
+<tr>
+<th colSpan="2">
+    <code>
+    forced-colors
+    </code>
+</th>
+</tr>
+<tr>
+<td>Value: <code>none</code> | <code>active</code></td>
+<td rowSpan="2">Describes whether the forced-color accessibility feature, intended to increase the readability of text through color contrast, is enabled. Prince assumes <code>none</code>.</td>
+</tr>
+<tr>
+<td>Type: discrete</td>
+</tr>
+<tr>
+<th colSpan="2">
+    <code>
+    prefers-color-scheme
+    </code>
+</th>
+</tr>
+<tr>
+<td>Value: <code>light</code> | <code>dark</code></td>
+<td rowSpan="2">Describes the user’s desire to view a page using a light or dark color theme. Prince assumes <code>light</code>.</td>
+</tr>
+<tr>
+<td>Type: discrete</td>
+</tr>
+</table>
