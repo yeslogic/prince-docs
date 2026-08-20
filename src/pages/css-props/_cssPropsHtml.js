@@ -5938,6 +5938,9 @@ const cssPropsHtml = String.raw`
               <a href="https://www.w3.org/TR/CSS2/visuren.html#flow-control">CSS 2.1</a>
             </li>
             <li>
+              <a href="https://www.w3.org/TR/css-logical-1/">CSS Logical Properties and Values Module Level 1</a>
+            </li>
+            <li>
               <a href="https://figures.spec.whatwg.org/#floating-inside-and-outside-pages">CSS Figures - Floating Inside and Outside Pages</a>
             </li>
             <li>
@@ -8560,6 +8563,9 @@ const cssPropsHtml = String.raw`
               <a href="https://www.w3.org/TR/css-gcpm-3/#footnotes">CSS Generated Content for Paged Media Module</a>
             </li>
             <li>
+              <a href="https://www.w3.org/TR/css-logical-1/">CSS Logical Properties and Values Module Level 1</a>
+            </li>
+            <li>
               <a href="https://figures.spec.whatwg.org/">CSS Figures</a>
             </li>
             <li>
@@ -8952,6 +8958,9 @@ const cssPropsHtml = String.raw`
             </li>
             <li>
               <a href="https://www.w3.org/TR/css-gcpm-3/#footnotes">CSS Generated Content for Paged Media Module</a>
+            </li>
+            <li>
+              <a href="https://www.w3.org/TR/css-logical-1/">CSS Logical Properties and Values Module Level 1</a>
             </li>
             <li>
               <a href="https://figures.spec.whatwg.org/">CSS Figures</a>
@@ -18946,6 +18955,9 @@ supplier, item { overflow-wrap: normal; }
               <a href="https://www.w3.org/TR/CSS2/visuren.html#flow-control">CSS 2.1</a>
             </li>
             <li>
+              <a href="https://www.w3.org/TR/css-logical-1/">CSS Logical Properties and Values Module Level 1</a>
+            </li>
+            <li>
               <a href="https://figures.spec.whatwg.org/#floating-inside-and-outside-pages">CSS Figures - Floating Inside and Outside Pages</a>
             </li>
             <li>
@@ -19452,6 +19464,9 @@ supplier, item { overflow-wrap: normal; }
               <a href="https://www.w3.org/TR/css-gcpm-3/#footnotes">CSS Generated Content for Paged Media Module</a>
             </li>
             <li>
+              <a href="https://www.w3.org/TR/css-logical-1/">CSS Logical Properties and Values Module Level 1</a>
+            </li>
+            <li>
               <a href="https://figures.spec.whatwg.org/">CSS Figures</a>
             </li>
             <li>
@@ -19844,6 +19859,9 @@ supplier, item { overflow-wrap: normal; }
             </li>
             <li>
               <a href="https://www.w3.org/TR/css-gcpm-3/#footnotes">CSS Generated Content for Paged Media Module</a>
+            </li>
+            <li>
+              <a href="https://www.w3.org/TR/css-logical-1/">CSS Logical Properties and Values Module Level 1</a>
             </li>
             <li>
               <a href="https://figures.spec.whatwg.org/">CSS Figures</a>

@@ -1841,6 +1841,7 @@ NOTE: The current build process will cause this file's content to appear in a Ja
     </p>
     </comments>
     <spec><a href="https://www.w3.org/TR/CSS2/visuren.html#flow-control">CSS 2.1</a></spec>
+    <spec><a href="https://www.w3.org/TR/css-logical-1/">CSS Logical Properties and Values Module Level 1</a></spec>
     <spec><a href="https://figures.spec.whatwg.org/#floating-inside-and-outside-pages">CSS Figures - Floating Inside and Outside Pages</a></spec>
     <spec><a href="https://figures.idea.whatwg.org/#page-floats">CSS Figures - Page Floats</a></spec>
     <aliastarget>prince-clear</aliastarget>
@@ -2871,6 +2872,7 @@ NOTE: The current build process will cause this file's content to appear in a Ja
     </comments>
     <spec><a href="https://www.w3.org/TR/CSS2/visuren.html#float-position">CSS 2.1</a></spec>
     <spec><a href="https://www.w3.org/TR/css-gcpm-3/#footnotes">CSS Generated Content for Paged Media Module</a></spec>
+    <spec><a href="https://www.w3.org/TR/css-logical-1/">CSS Logical Properties and Values Module Level 1</a></spec>
     <spec><a href="https://figures.spec.whatwg.org/">CSS Figures</a></spec>
     <spec><a href="https://books.spec.whatwg.org/#footnotes">CSS Books</a></spec>
     <spec><a href="https://drafts.csswg.org/css-page-floats/">CSS Page Floats</a></spec>
@@ -3059,6 +3061,7 @@ NOTE: The current build process will cause this file's content to appear in a Ja
     </comments>
     <spec><a href="https://www.w3.org/TR/CSS2/visuren.html#float-position">CSS 2.1</a></spec>
     <spec><a href="https://www.w3.org/TR/css-gcpm-3/#footnotes">CSS Generated Content for Paged Media Module</a></spec>
+    <spec><a href="https://www.w3.org/TR/css-logical-1/">CSS Logical Properties and Values Module Level 1</a></spec>
     <spec><a href="https://figures.spec.whatwg.org/">CSS Figures</a></spec>
     <spec><a href="https://books.spec.whatwg.org/#footnotes">CSS Books</a></spec>
     <spec><a href="https://drafts.csswg.org/css-page-floats/">CSS Page Floats</a></spec>
