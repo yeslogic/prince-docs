@@ -209,6 +209,9 @@ Other PDF properties, which are set by assignment, include:
 
     PDF.objectStreams = (boolean)
 
+    PDF.xmp = (URL string)
+    PDF.xmpMetadata = (boolean)
+
     PDF.title
     PDF.subject
     PDF.author

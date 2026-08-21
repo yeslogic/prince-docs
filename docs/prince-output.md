@@ -670,14 +670,55 @@ Prince creates PDF metadata from the content of the XHTML metadata elements. The
 ```
 #### XMP Metadata
 
-Additionally, XMP metadata can be added to a PDF file from an XMP file. This file needs to be passed to Prince either via the [`--pdf-xmp`](command-line.md#cl-pdf-xmp) command-line option, the [-prince-pdf-xmp](css-props.md#prop-prince-pdf-xmp) CSS property, or it can be specified in JavaScript with the [`PDF.xmp()`](js-support.md#window.PDF.xmp) function.
+Additionally, XMP metadata can be added to a PDF file from an XMP file. This file needs to be passed to Prince either via the [`--pdf-xmp`](command-line.md#cl-pdf-xmp) command-line option, the [`-prince-pdf-xmp`](css-props.md#prop-prince-pdf-xmp) CSS property, or it can be specified in JavaScript with the [`PDF.xmp`](js-support.md#window.PDF.xmp) property.  The properties and options require either a URL pointing to an XMP file, or an encoded `data:` URL.
 
-The [`PDF.xmp()`](js-support.md#window.PDF.xmp) JavaScript function, the [-prince-pdf-xmp](css-props.md#prop-prince-pdf-xmp) CSS property and the [`--pdf-xmp`](command-line.md#cl-pdf-xmp) command-line option require either a URL pointing to an XMP file, or an encoded `data:` URL.
+The content of the following example metadata file
 
+```xml title="xmp1.xml XMP Metadata"
+<x:xmpmeta xmlns:x="adobe:ns:meta/">
+ <rdf:RDF xmlns:rdf="http://w3.org">
+  <rdf:Description rdf:about=""
+    xmlns:dc="http://purl.org"
+    xmlns:pdfaid="http://aiim.org">
+   <dc:title>
+    <rdf:Alt>
+     <rdf:li xml:lang="x-default">My PDF document</rdf:li>
+    </rdf:Alt>
+   </dc:title>
+   <dc:creator>
+    <rdf:Seq>
+     <rdf:li>Prince XML</rdf:li>
+    </rdf:Seq>
+   </dc:creator>
+   <pdfaid:part>2</pdfaid:part>
+   <pdfaid:conformance>B</pdfaid:conformance>
+  </rdf:Description>
+ </rdf:RDF>
+</x:xmpmeta>
+```
+
+can thus either be included by pointing to the file:
+
+```javascript
+    PDF.xmp = 'xmp1.xml';
+```
+
+or by including it directly as a `data:` URL:
+
+```javascript
+    PDF.xmp = 'data:application/rdf+xml;base64,PHg6eG1wbWV0YSB4bWxuczp4PSJhZG9iZTpuczptZXRhLyI+CiA8cmRmOlJERiB4bWxuczpyZGY9Imh0dHA6Ly93My5vcmciPgogIDxyZGY6RGVzY3JpcHRpb24gcmRmOmFib3V0PSIiCiAgICB4bWxuczpkYz0iaHR0cDovL3B1cmwub3JnIgogICAgeG1sbnM6cGRmYWlkPSJodHRwOi8vYWlpbS5vcmciPgogICA8ZGM6dGl0bGU+CiAgICA8cmRmOkFsdD4KICAgICA8cmRmOmxpIHhtbDpsYW5nPSJ4LWRlZmF1bHQiPk15IFBERiBkb2N1bWVudDwvcmRmOmxpPgogICAgPC9yZGY6QWx0PgogICA8L2RjOnRpdGxlPgogICA8ZGM6Y3JlYXRvcj4KICAgIDxyZGY6U2VxPgogICAgIDxyZGY6bGk+UHJpbmNlIFhNTDwvcmRmOmxpPgogICAgPC9yZGY6U2VxPgogICA8L2RjOmNyZWF0b3I+CiAgIDxwZGZhaWQ6cGFydD4yPC9wZGZhaWQ6cGFydD4KICAgPHBkZmFpZDpjb25mb3JtYW5jZT5CPC9wZGZhaWQ6Y29uZm9ybWFuY2U+CiAgPC9yZGY6RGVzY3JpcHRpb24+CiA8L3JkZjpSRkY+CjwveDp4bXBtZXRhPg==';
+```
+
+:::note
 Prince includes data from the `<x:xmpmeta>` element and its contents. The `xpacket` processing instructions are ignored, as Prince generates those itself when it produces the PDF file.
+:::
 
-Should it be necessary, the XMP representation of HTML metadata can be manually enabled, even when the chosen PDF profile does not require it, with the [`--pdf-xmp-metadata`](command-line.md#cl-pdf-xmp-metadata) command-line option or the [`PDF.xmpMetadata()`](js-support.md#window.PDF.xmpMetadata) JavaScript function.
+Should it be necessary, the XMP representation of HTML metadata can be manually enabled, even when the chosen PDF profile does not require it, with the [`--pdf-xmp-metadata`](command-line.md#cl-pdf-xmp-metadata) command-line option or the [`PDF.xmpMetadata`](js-support.md#window.PDF.xmpMetadata) JavaScript property.
 
+```javascript
+    PDF.xmpMetadata = true;
+    PDF.xmp = 'xmp1.xml';
+```
 
 ## Prince Output Log
 

@@ -3893,10 +3893,11 @@
     "xmp": {
       "__princetype__": "object",
       "desc": "URL",
-      "example": "PDF.xmp('xmp-data.xmp')"
+      "example": "PDF.xmp = 'xmp-data.xmp';"
     },
     "xmpMetadata": {
-      "__princetype__": "boolean"
+      "__princetype__": "boolean",
+      "example": "PDF.xmpMetadata = true;"
     },
     "ext": "ext",
     "desc": "See <a href='/doc/javascript#the-pdf-object'>The PDF Object</a>."
