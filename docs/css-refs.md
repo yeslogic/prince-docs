@@ -135,6 +135,10 @@ Prince supports, fully or partially, the following CSS specifications:
 <td>Prince recognizes <code>image-resolution</code>, but takes a different syntax.</td>
 </tr>
 <tr>
+<td><a href="https://www.w3.org/TR/css-logical-1/">CSS Logical Properties and Values Module Level&nbsp;1</a></td>
+<td>Prince largely supports this module.</td>
+</tr>
+<tr>
 <td><a href="https://www.w3.org/TR/css-multicol-1/">CSS Multi-column Layout Module Level&nbsp;1</a></td>
 <td>Prince largely supports this module.</td>
 </tr>
