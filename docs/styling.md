@@ -626,6 +626,16 @@ Prince does not support [`word-break: break-word`](css-props.md#prop-word-break)
 
 All HTML elements follow the CSS box model. Their `margin`, `border`, `padding` and `background` can all be styled - and they can even cast a shadow with the property [`box-shadow`](css-props.md#prop-box-shadow).
 
+The CSS box model was originally designed with physical coordinates: `top`, `right`, `bottom` and `left`.  With time, *logical* coordinates were introduced, using the abstract terms *block* and *inline* to describe the direction in which they flow - *block* representing the perpendicular dimension to the flow of text within a line, and *inline* representing the dimension parallel to the flow of text within a line.
+
+The physical meaning of these values is determined by the [Writing Mode](#writing-mode): the values `block-start` and `block-end` respectively represent, in a horizontal writing mode, `top` and `bottom`.
+
+In a left-to-right direction, `inline-start` and `inline-end` represent respectively `left` and `right`.
+
+:::note
+The syntax for logical values in the `margin`, `border-*`, `padding`, etc. shorthands is still under discussion - for the time being these logical values can only be described with the longhand syntax.
+:::
+
 #### Margin
 
 At the very outside of the box are the margins. Each margin's size can be set individualy with the properties [margin-top](css-props.md#prop-margin-top), [margin-bottom](css-props.md#prop-margin-bottom), [margin-left](css-props.md#prop-margin-left) and [margin-right](css-props.md#prop-margin-right), or you can use the *shorthand property* [margin](css-props.md#prop-margin) to specify all four margins together. The syntax of the shorthand property is:
@@ -633,6 +643,7 @@ At the very outside of the box are the margins. Each margin's size can be set in
 ```css
     margin: top right bottom left
 ```
+
 If there are only:
 
 -   three values: the left margin is set equal to the right margin;
@@ -641,13 +652,13 @@ If there are only:
 
 Prince expands the margin properties with [`-prince-margin-inside`](css-props.md#prop-prince-margin-inside) and [`-prince-margin-outside`](css-props.md#prop-prince-margin-outside), defining the margin respectively on the inside or outside of a spread: inside is on the right when used on a left-facing page, and on left on a right-facing page; outside is on the left when used on a left-facing page, and on the right on a right-facing page.
 
-Always keep in mind that `margin-top` and `margin-bottom` of blocks are combined (i.e. "collapsed") into a single margin according to a possibly rather complex behavior known as *margin collapsing*. The notable exception is the behavior of margins in [Flex Layout](#flex-layout).
+Always keep in mind that `margin-top` and `margin-bottom`, or `margin-block-start` and `margin-block-end` of blocks are combined (i.e. "collapsed") into a single margin according to a possibly rather complex behavior known as *margin collapsing*. The notable exception is the behavior of margins in [Flex Layout](#flex-layout).
 
 Prince also supports [page and column floats](#page-and-column-floats) - in some cases, the `margin-top` and `margin-bottom` values of these floats are overwritten by alternative margin value specified with the [`-prince-margin-alt`](css-props.md#prop-prince-margin-alt) property.  For details, please see [Margins of Page and Column Floats](#margins-of-page-and-column-floats).
 
 #### Border
 
-The border of a box can be styled with several border properties. The borders can either be individually styled with [`border-top`](css-props.md#prop-border-top), [`border-right`](css-props.md#prop-border-right), [`border-bottom`](css-props.md#prop-border-bottom) and [`border-left`](css-props.md#prop-border-left), or the shorthand property [`border`](css-props.md#prop-border) can be used to style all four borders of the box in the same way.
+The border of a box can be styled with several border properties: either individually, with [`border-top`](css-props.md#prop-border-top), [`border-right`](css-props.md#prop-border-right), [`border-bottom`](css-props.md#prop-border-bottom) and [`border-left`](css-props.md#prop-border-left) - or [`border-block-start`](css-props.md#prop-border-block-start), [`border-inline-end`](css-props.md#prop-border-inline-end), [`border-block-end`](css-props.md#prop-border-block-end) and [`border-inline-start`](css-props.md#prop-border-inline-start) -, or with the shorthand property [`border`](css-props.md#prop-border), to style all four borders of the box in the same way.
 
 To style the borders, the [`border-color`](css-props.md#prop-border-color), [`border-style`](css-props.md#prop-border-style) and [`border-width`](css-props.md#prop-border-width) properties can be used. For each of them, also `top`, `right`, `bottom` and `left` variants are available to style each border separately.
 
