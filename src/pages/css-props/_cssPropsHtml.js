@@ -2130,6 +2130,60 @@ const cssPropsHtml = String.raw`
     </details>
     <details>
       <summary>
+        <h6 id="prop-border-block-end-radius">border-block-end-radius <a href="#prop-border-block-end-radius" class="hash-link"> </a></h6>
+      </summary>
+      <div>
+        <div>
+          <div id="prop-border-block-end-radius-syntax">Syntax</div>
+          <div class="example">
+            <div class="syntax-block">
+              <code>border-block-end-radius: <span>&lt;<i>length-percentage</i>&gt;</span>{1,2} [ / <span>&lt;<i>length-percentage</i>&gt;</span>{1,2} ]?</code>
+            </div>
+          </div>
+        </div>
+        <div>
+          <div class="example">
+            <div class="syntax-block">
+              <table class="property-table">
+                <tr>
+                  <th scope="row">
+          Initial value
+        </th>
+                  <td>
+                    <code>0</code>
+                  </td>
+                </tr>
+                <tr>
+                  <th scope="row">
+          Applies to
+        </th>
+                  <td>all elements</td>
+                </tr>
+                <tr>
+                  <th scope="row">
+          Inherited
+        </th>
+                  <td>
+                  no
+                </td>
+                </tr>
+              </table>
+            </div>
+          </div>
+        </div>
+        <div/>
+        <div>
+          <div id="prop-border-block-end-radius-spec">Specification</div>
+          <ul>
+            <li>
+              <a href="https://www.w3.org/TR/css-borders-4/#corner-sizing-side-shorthands">CSS Borders and Box Decorations Module Level 4</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </details>
+    <details>
+      <summary>
         <h6 id="prop-border-block-end-style">border-block-end-style <a href="#prop-border-block-end-style" class="hash-link"> </a></h6>
       </summary>
       <div>
@@ -2339,6 +2393,60 @@ const cssPropsHtml = String.raw`
           <ul>
             <li>
               <a href="https://www.w3.org/TR/css-logical-1/#border-color">CSS Logical Properties and Values Module Level 1</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </details>
+    <details>
+      <summary>
+        <h6 id="prop-border-block-start-radius">border-block-start-radius <a href="#prop-border-block-start-radius" class="hash-link"> </a></h6>
+      </summary>
+      <div>
+        <div>
+          <div id="prop-border-block-start-radius-syntax">Syntax</div>
+          <div class="example">
+            <div class="syntax-block">
+              <code>border-block-start-radius: <span>&lt;<i>length-percentage</i>&gt;</span>{1,2} [ / <span>&lt;<i>length-percentage</i>&gt;</span>{1,2} ]?</code>
+            </div>
+          </div>
+        </div>
+        <div>
+          <div class="example">
+            <div class="syntax-block">
+              <table class="property-table">
+                <tr>
+                  <th scope="row">
+          Initial value
+        </th>
+                  <td>
+                    <code>0</code>
+                  </td>
+                </tr>
+                <tr>
+                  <th scope="row">
+          Applies to
+        </th>
+                  <td>all elements</td>
+                </tr>
+                <tr>
+                  <th scope="row">
+          Inherited
+        </th>
+                  <td>
+                  no
+                </td>
+                </tr>
+              </table>
+            </div>
+          </div>
+        </div>
+        <div/>
+        <div>
+          <div id="prop-border-block-start-radius-spec">Specification</div>
+          <ul>
+            <li>
+              <a href="https://www.w3.org/TR/css-borders-4/#corner-sizing-side-shorthands">CSS Borders and Box Decorations Module Level 4</a>
             </li>
           </ul>
         </div>
@@ -3353,6 +3461,60 @@ const cssPropsHtml = String.raw`
     </details>
     <details>
       <summary>
+        <h6 id="prop-border-inline-end-radius">border-inline-end-radius <a href="#prop-border-inline-end-radius" class="hash-link"> </a></h6>
+      </summary>
+      <div>
+        <div>
+          <div id="prop-border-inline-end-radius-syntax">Syntax</div>
+          <div class="example">
+            <div class="syntax-block">
+              <code>border-inline-end-radius: <span>&lt;<i>length-percentage</i>&gt;</span>{1,2} [ / <span>&lt;<i>length-percentage</i>&gt;</span>{1,2} ]?</code>
+            </div>
+          </div>
+        </div>
+        <div>
+          <div class="example">
+            <div class="syntax-block">
+              <table class="property-table">
+                <tr>
+                  <th scope="row">
+          Initial value
+        </th>
+                  <td>
+                    <code>0</code>
+                  </td>
+                </tr>
+                <tr>
+                  <th scope="row">
+          Applies to
+        </th>
+                  <td>all elements</td>
+                </tr>
+                <tr>
+                  <th scope="row">
+          Inherited
+        </th>
+                  <td>
+                  no
+                </td>
+                </tr>
+              </table>
+            </div>
+          </div>
+        </div>
+        <div/>
+        <div>
+          <div id="prop-border-inline-end-radius-spec">Specification</div>
+          <ul>
+            <li>
+              <a href="https://www.w3.org/TR/css-borders-4/#corner-sizing-side-shorthands">CSS Borders and Box Decorations Module Level 4</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </details>
+    <details>
+      <summary>
         <h6 id="prop-border-inline-end-style">border-inline-end-style <a href="#prop-border-inline-end-style" class="hash-link"> </a></h6>
       </summary>
       <div>
@@ -3562,6 +3724,60 @@ const cssPropsHtml = String.raw`
           <ul>
             <li>
               <a href="https://www.w3.org/TR/css-logical-1/#border-color">CSS Logical Properties and Values Module Level 1</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </details>
+    <details>
+      <summary>
+        <h6 id="prop-border-inline-start-radius">border-inline-start-radius <a href="#prop-border-inline-start-radius" class="hash-link"> </a></h6>
+      </summary>
+      <div>
+        <div>
+          <div id="prop-border-inline-start-radius-syntax">Syntax</div>
+          <div class="example">
+            <div class="syntax-block">
+              <code>border-inline-start-radius: <span>&lt;<i>length-percentage</i>&gt;</span>{1,2} [ / <span>&lt;<i>length-percentage</i>&gt;</span>{1,2} ]?</code>
+            </div>
+          </div>
+        </div>
+        <div>
+          <div class="example">
+            <div class="syntax-block">
+              <table class="property-table">
+                <tr>
+                  <th scope="row">
+          Initial value
+        </th>
+                  <td>
+                    <code>0</code>
+                  </td>
+                </tr>
+                <tr>
+                  <th scope="row">
+          Applies to
+        </th>
+                  <td>all elements</td>
+                </tr>
+                <tr>
+                  <th scope="row">
+          Inherited
+        </th>
+                  <td>
+                  no
+                </td>
+                </tr>
+              </table>
+            </div>
+          </div>
+        </div>
+        <div/>
+        <div>
+          <div id="prop-border-inline-start-radius-spec">Specification</div>
+          <ul>
+            <li>
+              <a href="https://www.w3.org/TR/css-borders-4/#corner-sizing-side-shorthands">CSS Borders and Box Decorations Module Level 4</a>
             </li>
           </ul>
         </div>

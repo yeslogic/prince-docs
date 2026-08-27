@@ -724,6 +724,25 @@ NOTE: The current build process will cause this file's content to appear in a Ja
 </property>
 
 <property>
+    <name>border-block-end-radius</name>
+    <value>
+	<repeat min="1" max="2">
+	    <type>length-percentage</type> <!-- [0,∞] -->
+	</repeat>
+	<optional>
+	    <text>/</text>
+	    <repeat min="1" max="2">
+	        <type>length-percentage</type> <!-- [0,∞] -->
+	    </repeat>
+	</optional>
+    </value>
+    <initial>0</initial>
+    <applyto>all elements</applyto>
+    <inherit>no</inherit>
+    <spec><a href="https://www.w3.org/TR/css-borders-4/#corner-sizing-side-shorthands">CSS Borders and Box Decorations Module Level 4</a></spec>
+</property>
+
+<property>
     <name>border-block-end-style</name>
     <value>
         <ref>border-top-style</ref>
@@ -769,6 +788,25 @@ NOTE: The current build process will cause this file's content to appear in a Ja
     <applyto>all elements</applyto>
     <inherit>no</inherit>
     <spec><a href="https://www.w3.org/TR/css-logical-1/#border-color">CSS Logical Properties and Values Module Level 1</a></spec>
+</property>
+
+<property>
+    <name>border-block-start-radius</name>
+    <value>
+	<repeat min="1" max="2">
+	    <type>length-percentage</type> <!-- [0,∞] -->
+	</repeat>
+	<optional>
+	    <text>/</text>
+	    <repeat min="1" max="2">
+	        <type>length-percentage</type> <!-- [0,∞] -->
+	    </repeat>
+	</optional>
+    </value>
+    <initial>0</initial>
+    <applyto>all elements</applyto>
+    <inherit>no</inherit>
+    <spec><a href="https://www.w3.org/TR/css-borders-4/#corner-sizing-side-shorthands">CSS Borders and Box Decorations Module Level 4</a></spec>
 </property>
 
 <property>
@@ -1024,6 +1062,25 @@ NOTE: The current build process will cause this file's content to appear in a Ja
 </property>
 
 <property>
+    <name>border-inline-end-radius</name>
+    <value>
+	<repeat min="1" max="2">
+	    <type>length-percentage</type> <!-- [0,∞] -->
+	</repeat>
+	<optional>
+	    <text>/</text>
+	    <repeat min="1" max="2">
+	        <type>length-percentage</type> <!-- [0,∞] -->
+	    </repeat>
+	</optional>
+    </value>
+    <initial>0</initial>
+    <applyto>all elements</applyto>
+    <inherit>no</inherit>
+    <spec><a href="https://www.w3.org/TR/css-borders-4/#corner-sizing-side-shorthands">CSS Borders and Box Decorations Module Level 4</a></spec>
+</property>
+
+<property>
     <name>border-inline-end-style</name>
     <value>
         <ref>border-top-style</ref>
@@ -1069,6 +1126,25 @@ NOTE: The current build process will cause this file's content to appear in a Ja
     <applyto>all elements</applyto>
     <inherit>no</inherit>
     <spec><a href="https://www.w3.org/TR/css-logical-1/#border-color">CSS Logical Properties and Values Module Level 1</a></spec>
+</property>
+
+<property>
+    <name>border-inline-start-radius</name>
+    <value>
+	<repeat min="1" max="2">
+	    <type>length-percentage</type> <!-- [0,∞] -->
+	</repeat>
+	<optional>
+	    <text>/</text>
+	    <repeat min="1" max="2">
+	        <type>length-percentage</type> <!-- [0,∞] -->
+	    </repeat>
+	</optional>
+    </value>
+    <initial>0</initial>
+    <applyto>all elements</applyto>
+    <inherit>no</inherit>
+    <spec><a href="https://www.w3.org/TR/css-borders-4/#corner-sizing-side-shorthands">CSS Borders and Box Decorations Module Level 4</a></spec>
 </property>
 
 <property>
