@@ -127,6 +127,10 @@ Prince supports, fully or partially, the following CSS specifications:
 <td>Prince supports the <code>accent-color</code> property for PDF radio and checkbox form controls.</td>
 </tr>
 <tr>
+<td><a href="https://www.w3.org/TR/css-borders-4/">CSS Borders and Box Decorations Module Level&nbsp;4</a></td>
+<td>Prince recognizes the <code>border-block/inline-*-radius</code> properties.</td>
+</tr>
+<tr>
 <td><a href="https://drafts.csswg.org/css-backgrounds-4/">CSS Backgrounds and Borders Module Level&nbsp;4</a></td>
 <td>Prince recognizes the <code>border-clip</code> property, but takes a different syntax.</td>
 </tr>
