@@ -314,6 +314,9 @@ This filter takes the URL of an SVG filter. An anchor can be used to reference a
 
 The resolution used when rasterizing to images for applying CSS and SVG filters is controlled through the [`-prince-filter-resolution`](css-props.md#prop-prince-filter-resolution) property. The default value is `96dpi` for compatibility with web browsers.
 
+:::tip
+Please note that `-prince-filter-resolution` applies to all filter rasterization, including the CSS properties `filter` or `box-shadow`.
+:::
 
 Images
 ------
