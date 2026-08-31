@@ -4,15 +4,28 @@ title: CSS Media Queries
 
 Below are all of the media queries supported by Prince. For their precise definition please refer to the [Media Queries Level 4](https://www.w3.org/TR/mediaqueries-4/) specification.
 
-Media queries test how Prince is configured, rather than how the document is styled. The configuration of Prince often depends on the command-line arguments passed to it.
+Media queries test how Prince is configured, rather than how the document is styled.
+
+:::note
+The configuration of Prince often depends on the command-line arguments passed to it.
+:::
 
 ## Media Queries
 
-A Media Query is a method of testing certain aspects of the user agent or device that the document is being displayed in.
+A Media Query is a method of testing certain aspects of the user agent or device that the document is being displayed in.  It is used in the CSS [`@media` at-rule](css-at-rules.md#at-media).
 
 The syntax consists of an optional media query modifier, an optional media type, and zero or more media features.
 
 Several media queries can be combined into a comma separated media query list.
+
+```css
+    @media print and (orientation: portrait) {
+        ...
+    }
+    @media screen, print and not(pointer: none) {
+        ...
+    }
+```
 
 ## Media Query Modifiers
 
