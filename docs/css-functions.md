@@ -150,7 +150,7 @@ The <span className="dep">functions with a line-through</span> are deprecated pr
     lab( [from &lt;<i>color</i>&gt;]? [&lt;<i>percentage</i>&gt; | &lt;<i>number</i>&gt; | none] [&lt;<i>percentage</i>&gt; | &lt;<i>number</i>&gt; | none] [&lt;<i>percentage</i>&gt; | &lt;<i>number</i>&gt; | none] [ / [&lt;<i>alpha-value</i>&gt; | none] ]? )
     </code>
 </td>
-<td>Defines a given color in the CIE L*a*b* color space.</td>
+<td>Defines a given color in the CIE L\*a\*b\* color space.</td>
 </tr>
 <tr>
 <td>
