@@ -410,6 +410,7 @@ The main mechanisms for doing so are the JavaScript function [`PDF.attachFile`](
 
 Attachments in the job description include a key to specify the AFRelationship key of the attachment in the PDF.  The value of `relationship` must be one of the names defined in PDF 2.0:
 
+```
     Source
     Data
     Alternative
@@ -418,6 +419,7 @@ Attachments in the job description include a key to specify the AFRelationship k
     FormData
     Schema
     Unspecified
+```
 
 or a second-class name according to the following definition: "all names that begin with 4 characters including or followed by a LOW LINE (5fh) or COLON (3Ah) in either the key or value of a dictionary entry are second-class names."
 
@@ -437,11 +439,13 @@ When in use, the attachment definition might look like the following example:
 
 The command-line options
 
+```
     --attach-data
     --attach-source
     --attach-alternative
     --attach-supplement
     --attach-unspecified
+```
 
 give users a way to add file attachments on the command line, while specifying the AFRelationship value for those attachments.  These options are all equivalent to the command-line option [`--attach`](command-line.md#cl-attach), but will specify a different AFRelationship value for the attachment.
 
