@@ -179,6 +179,9 @@ The OpenType font specification also includes so-called variable fonts including
 
 Prince also allows for low-level fine-tuning with the CSS property [`font-variation-settings`](css-props.md#prop-font-variation-settings). Whenever possible, authors should use this property only for special cases where its use is the only way to access a specific font variation not accessible through other CSS properties.
 
+:::tip
+See also [A quick guide to using variable fonts in Prince](https://css4.pub/2025/variable-fonts/) for more examples and details.
+:::
 
 ### Generic font families
 
@@ -1727,7 +1730,9 @@ Grid items can be aligned inside a grid cell with [`justify-self`](css-props.md#
 
 The size of automatically generated columns or rows can be fine-tuned with the properties [`grid-auto-columns`](css-props.md#prop-grid-auto-columns) and [`grid-auto-rows`](css-props.md#prop-grid-auto-rows), and in a similar fashion the way grid items are automatically placed on a grid can be controlled with [`grid-auto-flow`](css-props.md#prop-grid-auto-flow).
 
-
+:::tip
+See also [A quick guide to CSS grids in Prince](https://css4.pub/2025/grids/) for more examples and details.
+:::
 
 ### Custom properties (CSS variables)
 

@@ -148,6 +148,9 @@ updated = 2026-01-27T09:25:58+10:00
 
 Unrecognised sections/fields in the metadata, such as the `[extra]` field in the above example, will silently be ignored.
 
+:::tip
+See also [A quick guide to using MarkDown in Prince](https://css4.pub/2026/markdown/) for more examples and details.
+:::
 
 ## XML Support
 

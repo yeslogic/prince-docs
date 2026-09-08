@@ -277,6 +277,9 @@ Please note that running headers are [tagged as `Artifact`](prince-output.md#pdf
 
 If some special formatting of the text in the margin box is required, copying the text will not suffice - you need to remove an element from the natural page flow to place it in the margin box. See [Taking elements from the document](paged.md#taking-elements-from-the-document) for details.
 
+:::tip
+See also [A quick guide to running headers and footers in Prince](https://css4.pub/2024/running-headers/) for more examples and details.
+:::
 
 #### ...on the first page
 
@@ -873,6 +876,10 @@ Alternatively, link directly to the required remote hyphenation file:
     }
 ```
 
+:::tip
+See also [A quick guide to hyphenation in Prince](https://css4.pub/2025/hyphenation/) for more examples and details.
+:::
+
 ### Typographic Ligatures
 
 <dl className="ingredients">
@@ -1086,6 +1093,11 @@ The page numbers are best styled right-aligned, while the link texts are left-al
       content: leader('.') target-counter(attr(href), page);
     }
 ```
+
+:::tip
+See also [A quick guide to creating Table of Contents in Prince](https://css4.pub/2026/toc/) for more examples and details.
+:::
+
 #### Simple Table of Contents
 
 Our [example document](https://css4.pub/2018/toc/index.html) generates at Table of Contents (ToC) by way of JavaScript. You can easily test it by running Prince from the command line:
@@ -1246,6 +1258,9 @@ To use the features, the script just needs to be included in the HTML directly a
     console.log("Content width is " + b.contentBox("cm").w + "cm");
 ```
 
+:::tip
+See also [A quick guide to the boxtracking API in Prince](https://css4.pub/2024/boxtracking/) for more examples and details.
+:::
 
 ### MathML
 
