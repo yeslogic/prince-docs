@@ -1068,7 +1068,10 @@ Rasterization is enabled with the `--raster-output` option below. When this is u
       </code>
   </dt>
   <dd>
-    Scan font files and create a CSS file.
+    Scan font files and create an `@font-face` at-rule for the selected fonts, which can be saved as a CSS file to use when defining a font family.
+    :::tip
+    When scanning [variable fonts](styling.md#variable-fonts), Prince also illustrates all the variation axes of the font!
+    :::
   </dd>
   <dt id="cl-font-specimen">
       <code>

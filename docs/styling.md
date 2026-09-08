@@ -180,6 +180,10 @@ The OpenType font specification also includes so-called variable fonts including
 Prince also allows for low-level fine-tuning with the CSS property [`font-variation-settings`](css-props.md#prop-font-variation-settings). Whenever possible, authors should use this property only for special cases where its use is the only way to access a specific font variation not accessible through other CSS properties.
 
 :::tip
+When scanning a variable font with the [`--scanfonts` utility command-line option](command-line.md#cl-scanfonts), Prince also illustrates all the variation axes of the font!
+:::
+
+:::tip
 See also [A quick guide to using variable fonts in Prince](https://css4.pub/2025/variable-fonts/) for more examples and details.
 :::
 
