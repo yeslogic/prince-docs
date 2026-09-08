@@ -1232,7 +1232,7 @@ Traditionally, floats move in the inline direction, left or right. Prince suppor
 
 This allows for more flexible layout options that meet the needs of formatting documents for print.
 
-In addition to the following documentation, the [quick guide to page and column floats in Prince 14](https://www.princexml.com/howcome/2021/guides/float/) provides many more examples for float, clear and defer properties.
+In addition to the following documentation, the [quick guide to page and column floats in Prince 14](https://css4.pub/2022/float/) provides many more examples for float, clear and defer properties.
 
 #### Prince Extensions to Floats
 
@@ -1331,7 +1331,7 @@ A similar result can be achieved by specifying the page as a float reference:
     }
 ```
 
-However, there is an important difference: an image with `column-span: all` will stay *within* its parent element, but an image with the page defined as a float reference will *escape* its parent and align itself with the page area, as can easily be seen in [this example](https://www.princexml.com/howcome/2021/guides/float/#escaping-columns).
+However, there is an important difference: an image with `column-span: all` will stay *within* its parent element, but an image with the page defined as a float reference will *escape* its parent and align itself with the page area, as can easily be seen in [this example](https://css4.pub/2022/float/#escaping-columns).
 
 ##### Spread Floats
 
@@ -1402,7 +1402,7 @@ Margins in vertical flows are a powerful styling tool.  Setting a vertical margi
     }
 ```
 
-See also [this example](https://www.princexml.com/howcome/2021/guides/float/#repelling-other-content) for repelling other content from column floats.
+See also [this example](https://css4.pub/2022/float/#repelling-other-content) for repelling other content from column floats.
 
 When elements snap to the nearest edge, it is impossible to predict whether they end up at the top or at the bottom.  Therefore Prince offers a way to specify an alternative margin value for the vertical margins with the property [`-prince-margin-alt`](css-props.md#prop-prince-margin-alt).
 
@@ -1418,7 +1418,7 @@ When elements snap to the nearest edge, it is impossible to predict whether they
 
 The value `footnote` transforms the element into a footnote: it creates a footnote call in the place where it appears in its natural flow, and moves the element to the bottom of the column - please note that a normal page is considered to be a single column layout. The footnote marker is placed outside of the block of the footnote. With the value `inline-footnote`, the footnote marker is placed inside of the block of the footnote. To move the footnote to the bottom of a page in a multi-column layout, instead of to the bottom of its column, the correct float reference needs to be defined with the [`-prince-float-reference`](css-props.md#prop-prince-float-reference) property.  See also [Footnotes](#footnotes).
 
-Please also consult [A quick guide to creating footnotes in Prince](https://www.princexml.com/howcome/2022/guides/footnotes/) for more examples and complex applications of footnotes.
+Please also consult [A quick guide to creating footnotes in Prince](https://css4.pub/2023/footnotes/) for more examples and complex applications of footnotes.
 
 
 ##### Sidenotes and wide floats
@@ -1429,7 +1429,7 @@ Wide floats allow elements to *extend* into sidenote areas.  This is achieved wi
 
 Please note that wide floats are being laid out *before* other sidenotes, thus "reserving" the space taken in for themselves.  Further sidenote floats at the same natural anchoring point will then be stacked in the content order, as happens for regular [sidenotes](#sidenotes).
 
-Please also consult [A quick guide to creating sidenotes in Prince](https://www.princexml.com/howcome/2022/guides/sidenotes/) for more examples and complex applications of sidenotes.
+Please also consult [A quick guide to creating sidenotes in Prince](https://css4.pub/2023/sidenotes/) for more examples and complex applications of sidenotes.
 
 
 
@@ -1447,7 +1447,7 @@ The clear values for page and column floats are very powerful in multi-column la
 
 For page floats, the clear values `column` and `page` behave the same way, since Prince treats the page as a single column.
 
-Please also see the examples for [clearing page floats](https://www.princexml.com/howcome/2021/guides/float/#clearing-page-floats) and [clearing column floats](https://www.princexml.com/howcome/2021/guides/float/#clearing-column-floats).
+Please also see the examples for [clearing page floats](https://css4.pub/2022/float/#clearing-page-floats) and [clearing column floats](https://css4.pub/2022/float/#clearing-column-floats).
 
 ### Footnotes
 
@@ -1574,7 +1574,7 @@ Alternatively, the value `keep-with-block` moves the entire paragraph to the nex
 This property must be applied to the paragraph in which the footnote occurs, not to the footnote element itself.
 :::
 
-Please also consult [A quick guide to creating footnotes in Prince](https://www.princexml.com/howcome/2022/guides/footnotes/) for more examples and complex applications of footnotes.
+Please also consult [A quick guide to creating footnotes in Prince](https://css4.pub/2023/footnotes/) for more examples and complex applications of footnotes.
 
 
 ### Sidenotes
@@ -1640,7 +1640,7 @@ The property `-prince-float` can be used as a shorthand:
 
 Elements can also not be entirely moved into a sidenote area, but just *extend* into a sidenote area - for details see [Sidenotes and wide floats](#sidenotes-and-wide-floats).
 
-Please also consult [A quick guide to creating sidenotes in Prince](https://www.princexml.com/howcome/2022/guides/sidenotes/) for more examples and complex applications of sidenotes.
+Please also consult [A quick guide to creating sidenotes in Prince](https://css4.pub/2023/sidenotes/) for more examples and complex applications of sidenotes.
 
 
 ### Flex Layout
