@@ -26,6 +26,9 @@
     "react-dom": "^19.1.0",
     "react-script-tag": "^1.1.2"
   },
+  "resolutions": {
+    "baseline-browser-mapping": "^2.11.21"
+  },
   "browserslist": {
     "production": [
       ">0.5%",
