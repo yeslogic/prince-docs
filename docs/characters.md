@@ -2,40 +2,32 @@
 title: Character Entities
 ---
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,100..900;1,100..900&amp;display=swap" rel="stylesheet"/>
-
 Character entities are a method of including arbitrary characters in XML documents by referencing their UNICODE number rather than writing them directly. CSS has a similar mechanism to include special characters.
 
 This can be convenient when you wish to include characters such as smart quotes, symbols or mathematical operators that do not exist in the character encoding that you are using for your XML documents (such as ASCII or ISO-8859-1 "Latin-1"), or when you want to insert some of these characters into the final layout by means of CSS.
 
 Here is an example of including smart quotes in an XML document using character entities:
 
-XML
-
-```xml
+```xml title="XML"
     <p>
     These are &#x201C;smart quotes&#x201D; to be precise.
     </p>
 ```
-Output
 
+```text  title="Output"
     These are “smart quotes” to be precise.
+```
 
 A typical usecase for character entities in CSS is the [`-prince-text-replace`](css-props.md#prop-prince-text-replace) property, which replaces a certain character string with another one. In the sample ["Reconstructed Essay"](/samples/#essay) ([HTML](https://www.princexml.com/howcome/2016/samples/malthus/essay.html) - [PDF](https://www.princexml.com/howcome/2016/samples//malthus/essay.pdf)), the property is used to replace occurrences of "s" with the "long s" to recreate the original printed book.
 
-CSS
-
-```
+```css
     body {
       -prince-text-replace: "s" "\017F";
     }
 ```
 The tables below are a quick reference for some commonly requested UNICODE characters, expressed in XML and CSS notation; for everything else please consult the [UNICODE code charts](https://www.unicode.org/charts/).
 
-Accented Letters
-----------------
+## Accented Letters
 
 | XML       | CSS    | Character | Name         |
 |-----------|--------|-----------|--------------|
@@ -95,8 +87,7 @@ Accented Letters
 | &\#xFC;   | \\FC   | ü         | u dieresis   |
 | &\#xFF;   | \\FF   | ÿ         | y dieresis   |
 
-Symbols
--------
+## Symbols
 
 | XML       | CSS    | Character | Name                 |
 |-----------|--------|-----------|----------------------|
@@ -126,8 +117,7 @@ Symbols
 | &\#x2122; | \\2122 | ™         | trademark            |
 | &\#xA5;   | \\A5   | ¥         | yen                  |
 
-Quotes
-------
+## Quotes
 
 | XML       | CSS    | Character | Name                   |
 |-----------|--------|-----------|------------------------|
@@ -142,8 +132,7 @@ Quotes
 | &\#x201A; | \\201A | ‚         | base single quote      |
 | &\#x201E; | \\201E | „         | base double quote      |
 
-Accents
--------
+## Accents
 
 | XML       | CSS     | Character | Name         |
 |-----------|---------|-----------|--------------|
@@ -161,8 +150,7 @@ Accents
 | &\#x02DA; | \\02DA | ˚         | ring         |
 | &\#x02DC; | \\02DC | ˜         | tilde        |
 
-Special Space Characters
-------------------------
+## Special Space Characters
 
 | XML       | CSS     | Character                          | Name                      |
 |-----------|---------|------------------------------------|---------------------------|
@@ -182,8 +170,7 @@ Special Space Characters
 | &\#x2003; | \\2003 | <span>foo</span> <span>bar</span>  | em space                  |
 | &\#x3000; | \\3000 | <span>foo</span>　<span>bar</span> | ideographic space         |
 
-Miscellaneous
--------------
+## Miscellaneous
 
 | XML       | CSS     | Character | Name        |
 |-----------|---------|-----------|-------------|
@@ -197,4 +184,3 @@ Miscellaneous
 | &\#x0152; | \\0152 | Œ         | OE          |
 | &\#x0153; | \\0153 | œ         | oe          |
 | &\#xDF;   | \\DF   | ß         | sharp s     |
-

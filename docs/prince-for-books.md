@@ -2,40 +2,33 @@
 title: Prince for Books
 ---
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,100..900;1,100..900&amp;display=swap" rel="stylesheet"/>
-
 Prince for Books is a project that allows us to spend more time on features particularly sought by publishers.
 
 The initial focus of work is on features common to all books: making the page-breaking and line-breaking choices expected of books, by featuring a few extensions to CSS and fine-tuned algorithms.
 
 Prince for Books supports everything supported by the standard Prince version.  On top of that, it supports [Line Height Units](css-length-units.md#line-height-units), and also introduces a few new CSS properties in order to handle line breaks and page spreads in a more granular way.  It also tries harder to avoid ragged text (i.e. for left-aligned or centered text), and  tries to avoid a short last line, especially if it is shorter than the value of `text-indent`.
 
-<p class="note">
-Prince for Books is updated to the <a href="/pre-release/">Pre-Release Builds</a> at irregular intervals, which may result in Prince for Books being <em>ahead</em> of the current Prince release. This documentation reflects the <a href="/books/">Prince for Books 20240704</a> release, which is based on the 20240704 Pre-Release Build.
-</p>
+:::note
+Prince for Books is updated to the <a href="/pre-release/">Pre-Release Builds</a> at irregular intervals, which may result in Prince for Books being <em>ahead</em> of the current Prince release. This documentation reflects the <a href="/books/">Prince for Books 20260805</a> release, which is based on the 20260805 Pre-Release Build.
+:::
 
 For the time being, Prince for Books is only available as a a command-line application named `prince-books`. It is used like the standard Prince - see [Command-line Reference](command-line.md) for available options.
 
-```
-prince-books OPTIONS FILES [-o PDF]
+```bash
+    $ prince-books OPTIONS FILES [-o PDF]
 ```
 
 To download it, head over to the [Prince for Books download page](/books/). It is available in package bundles only - to install it, the files need to be copied into place (Windows), or an installation script needs to be run (on Linux and MacOS).  For details on the installation layout, please consult the [Installation Layout](installing.md#installation-layout) section.
 
-<p class="note">
+:::note
 Prince for Books can be installed without problem alongside a normal Prince installation - the executable to run is called <code>prince-books</code>, which is also the name of the location for all resource files.
-</p>
+:::
 
-Pagination goals
-----------------
+## Pagination goals
 
 Pagination goals are important to clearly define the range within which fine-tuning is applied.  The pagination goals are given by specifying where page breaks should be avoided, with the CSS properties `widows`, `orphans` or `break-before`/`-after`/`-inside`.
 
 Prince for Books allows a value of a CSS property used to define pagination goals to be optionally preceded by the keyword `-prince-prefer`, which turns the requirement into a mere _preference_.  This means that Prince for Books will generally honor the property value, but it will never add an obvious gap at the end of a page to satisfy that request.
-
-CSS
 
 ```css
     p {
@@ -51,8 +44,6 @@ Pagination flexibility is used to achieve the following page-breaking goals:
 
 The properties `widows` and `orphans` additionally take a second, optional, comma-separated value expressed with the additional keyword `-prince-prefer`. This is useful in case the _preference_, expressed with the additional keyword, is a bigger amount than the hard _requirement_ expressed in the first value.
 
-CSS
-
 ```css
     p {
       widows: 2, -prince-prefer 3;
@@ -63,16 +54,12 @@ The first value is a requirement strong enough that lines can be push from the p
 
 Another feature in Prince for Books are the so-called "fractional widows": the [`widows`](css-props.md#prop-widows) property is allowed a value expressed as percentage, followed by the keyword `-prince-full`.
 
-CSS
-
 ```css
     p {
       widows: 50% -prince-full;
     }
 ```
 This indicates that one widow line is accepted, as long as the line width is at least the given percentage value of the available page width, to avoid the worst case of having a widow line that is only one or two words long.
-
-CSS
 
 ```css
     p {
@@ -81,8 +68,7 @@ CSS
 ```
 
 
-Line breaking
--------------
+## Line breaking
 
 Prince for Books introduces a few new CSS properties to try handling line breaks in a more granular way.
 
@@ -96,27 +82,23 @@ This property would most commonly be used in headings, or perhaps in important p
 
 To make it more likely for Prince for Books to produce this effect, one might put `span` elements around phrases, styling each of these spans with `-prince-wrap-inside: phrase`.
 
-HTML
-
-```html
+```markup title="HTML"
     <h1>The <span>fulfilment <span>of the law</span></span>
       <span>and <span>of the prophets</span></span></h1>
 ```
-CSS
-
-```css
+```css title="CSS"
     span {
       -prince-wrap-inside: phrase;
     }
 ```
 The example would produce a title line like this:
 
-<p style="text-align: center">The fulfilment of the law<br/>
+<p style={{textAlign: "center"}}>The fulfilment of the law<br/>
 and of the prophets</p>
 
 If however the final available space were narrower than the required space, Prince might instead format as:
 
-<p style="text-align: center">The fulfilment<br/>
+<p style={{textAlign: "center"}}>The fulfilment<br/>
 of the law and<br/>
 of the prophets</p>
 
@@ -140,7 +122,9 @@ A disadvantage of lookahead is that any "mistakes" (that is, differences from wh
 
 This means that the non-lookahead versions might be a better choice in jobs where Prince's line breaks will be accepted without human oversight; whereas if a typesetter will look, for and correct any problems in the rag of the paragraph, then the lookahead versions will typically give a better starting point.
 
-<p id="note-typesetter" class="note">A typesetter's intervention currently involves modifying the HTML: it is not requireed to assign an <code>id</code> to each paragraph, but it is nevertheless common practice to do so for making other changes, such as changing the number of lines in a paragraph for pagination purposes (whether using <code>-prince-n-lines</code> or <code>word-spacing</code> or <code>letter-spacing</code>), or assigning a unique value to each chapter in order to change how many lines are on the last page of the chapter (say, by adding <code>1pt</code> to the inside margin). See also <a href="#spread-balancing">Spread Balancing</a>.</p>
+:::note
+<a id="note-typesetter"/>A typesetter's intervention currently involves modifying the HTML: it is not requireed to assign an <code>id</code> to each paragraph, but it is nevertheless common practice to do so for making other changes, such as changing the number of lines in a paragraph for pagination purposes (whether using <code>-prince-n-lines</code> or <code>word-spacing</code> or <code>letter-spacing</code>), or assigning a unique value to each chapter in order to change how many lines are on the last page of the chapter (say, by adding <code>1pt</code> to the inside margin). See also <a href="#spread-balancing">Spread Balancing</a>.
+:::
 
 To illustrate the difference, one could also say that non-lookahead versions give paragraph shapes reminiscent of those given by word processors and web browsers, while the lookahead versions come slightly closer to what one might find in books.
 
@@ -148,7 +132,7 @@ The keyword `fast` can be used for quick web-browers–style line breaking, usef
 
 The base stylesheet that Prince for Books applies to all HTML documents (i.e. the "user-agent style sheet", in CSS terminology) includes the ruleset
 
-```
+```css
     h1, h2, h3, h4, h5, h6 {
         -prince-line-break-choices: heading;
     }
@@ -157,9 +141,7 @@ but HTML semantics alone do not distinguish content where the more extreme `-pri
 
 The below example applies `title-lookahead` line-breaking to the book title, chapter titles and part titles, while applying `heading-lookahead` line-breaking to subtitles.
 
-CSS
-
-```
+```css
     body[data-type="book"] > h1,
     body[data-type="book"] > heading > h1,
     section[data-type="chapter"] > h1,
@@ -181,9 +163,7 @@ The property [`-prince-forced-breaks`](css-props.md#prop-prince-forced-breaks) c
 
 The `br` element would usually create a visually forced break, treating that line much as if it were the last line of a paragraph. For example, it would continue to do so in any UA not supporting the property [`-prince-forced-breaks`](css-props.md#prop-prince-forced-breaks) (thus getting in the way of reading the content in some other UA, or using the same source document for web/epub deployment), or if the stylesheet doesn't load. Tweaking line breaks using `-prince-forced-breaks: full` is not intended to be consciously noticeable by readers, so `br` would not be the best approximation in HTML.
 
-CSS
-
-```
+```css
     lb { white-space: pre; }
     lb::before { content: "\A"; -prince-forced-breaks: full; }
 ```
@@ -193,16 +173,12 @@ Literally using the element name `lb` in the html namespace would make the docum
 
 If multiple editions are to produced from a single source document, then a variation would be
 
-CSS
-
-```
+```css title="CSS"
     lb[ed ~= "a"]::before { ... }
 ```
 in the stylesheet for edition A (and similarly for the stylesheets of other editions), and
 
-HTML
-
-```html
+```markup title="HTML"
     <lb ed="a c" />
 ```
 in the document where a line break should be forced only in editions A and C.
@@ -222,8 +198,7 @@ Note that each element is considered more or less independently of the others: P
 Finally, the property [`-prince-spread-length-options`](css-props.md#prop-prince-spread-length-options) allows Prince to "run a spread short", or long - i.e. to leave less, or more, space for content on a page and its facing page.
 
 
-Spread balancing
-----------------
+## Spread balancing
 
 A prominent new feature is the concept of "spread balancing": Prince for Books can try to ensure that the content on two-page spreads is the same height. Due to the `widows` and `orphans` properties (see [Widows and orphans](paged.md#widows-and-orphans)) it is possible for one page to have fewer lines than the other, and this unevenness looks upsetting.
 
@@ -245,9 +220,9 @@ Another way to address page balancing is by using the property [`-prince-n-lines
 
 Typically, the best paragraph to apply this property to will be either already long and/or currently has either a very short or almost full last line, so that the paragraph doesn't need to change much in length compared to its existing "length" (as reckoned by its height). That is, the typesetter can choose a good candidate by looking at how much the last line would need to shrink or grow (including a word or two for the next line if growing), and how many times that length would fit in the height of the paragraph, with more being better.
 
-<p class="note">
+:::note
 As noted <a href="#note-typesetter">before</a>, a typesetter's intervention currently involves modifying the HTML.
-</p>
+:::
 
 Values other than the initial value of `auto` request that the paragraph occupy the given number of lines; where values other than a simple integer are relative to the number of lines that the paragraph would have occupied if this property still had its initial value (`auto`).
 

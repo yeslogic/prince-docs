@@ -2,18 +2,13 @@
 title: Prince Networking
 ---
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,100..900;1,100..900&amp;display=swap" rel="stylesheet"/>
-
 Prince can process local files or fetch them from remote locations. To do this, a full URL needs to be provided, including the protocol.
 
 ```bash
     $ prince http://example.com/path/file.html -o out.pdf
 ```
 
-Authentication
---------------
+## Authentication
 
 If authentication is required for the URL, the credentials can be passed by means of the [`--auth-user`](command-line.md#cl-auth-user) and [`--auth-password`](command-line.md#cl-auth-password) command-line options. A more cautious way is to add the [`--auth-server`](command-line.md#cl-auth-server) option, which sends username and password credentials to the specified server only - the default is to send them to any server which challenges for authentication. The option [`--auth-scheme`](command-line.md#cl-auth-scheme) sends username and password credentials only for requests with the given scheme, either HTTP or HTTPS, while [`--auth-method`](command-line.md#cl-auth-method) specifies a comma separated list of HTTP authentication methods to enable. Valid entries are: `basic`, `digest`, `ntlm` and `negotiate`.
 
@@ -21,13 +16,11 @@ A shorthand command-line option for authentication is [`--auth`](command-line.md
 
 The advanced command-line option [`--no-auth-preemptive`](command-line.md#cl-no-auth-preemptive) instructs Prince not to send credentials to named servers until an authentication challenge is received. When multiple authentication methods are enabled, an initial request may be required to discover the methods supported by the remote site.
 
-Cookies
--------
+## Cookies
 
 If cookies are required, the [`--cookie`](command-line.md#cl-cookie) command-line option can be used to set a value for the Set-Cookie HTTP header value. If you do not specify a domain for the cookie, it may not be sent.  The exact behaviour depends on the underlying libcurl version.  The option may be used multiple times. Alternatively, the option [`--cookie-file`](command-line.md#cl-cookie-file) specifies a file containing HTTP cookies.
 
-SSL
----
+## SSL
 
 The command-line option [`--ssl-cacert`](command-line.md#cl-ssl-cacert) specifies an SSL certificate file, while the option [`--ssl-capath`](command-line.md#cl-ssl-capath) is used to specify an SSL certificate directory.
 
@@ -45,12 +38,11 @@ Prince makes use of the libcurl library to process network locations - see [Ackn
 
 Client certificates are supported on Linux with several command-line options. The [`--ssl-cert`](command-line.md#cl-ssl-cert) option specifies an SSL client certificate file, while the [`--ssl-cert-type`](command-line.md#cl-ssl-cert-type) option defines the SSL client certificate file type (PEM, DER) - the default is PEM. The option [`--ssl-key`](command-line.md#cl-ssl-key) specifies an SSL private key file and [`--ssl-key-type`](command-line.md#cl-ssl-key-type) is used to define the SSL private key file type (PEM, DER) - the default is PEM. Last but not least, [`--ssl-key-password`](command-line.md#cl-ssl-key-password) indicates the passphrase for the private key.
 
-On MacOS, the command-line option [`--ssl-cert`](command-line.md#cl-ssl-cert) specifies a PKCS\#12 file containing a client certificate and private key. The options [`--ssl-cert-type`](command-line.md#cl-ssl-cert-type), [`--ssl-key`](command-line.md#cl-ssl-key) and [`--ssl-key-password`](command-line.md#cl-ssl-key-password) are not available.
+On MacOS, the command-line option [`--ssl-cert`](command-line.md#cl-ssl-cert) specifies a PKCS#12 file containing a client certificate and private key. The options [`--ssl-cert-type`](command-line.md#cl-ssl-cert-type), [`--ssl-key`](command-line.md#cl-ssl-key) and [`--ssl-key-password`](command-line.md#cl-ssl-key-password) are not available.
 
 Client certificates are not supported on Windows.
 
-Miscellaneous
--------------
+## Miscellaneous
 
 If an HTTP proxy server is required, it can be specified with the [`--http-proxy`](command-line.md#cl-http-proxy) command-line option.
 
@@ -66,4 +58,6 @@ In extreme cases, a custom user-agent string can be passed to Prince with the [`
 
 Other custom HTTP headers can be sent to the server with the command-line option [`--http-header`](command-line.md#cl-http-header).  To send multiple custom headers, use the option multiple times.  Note that headers already sent by Prince can be overridden by this command-line option, but cannot be removed.
 
-<p class="note">Please be aware that there can be unforseen side-effects when manipulating HTTP headers, including the User-Agent header.</p>
+:::note
+Please be aware that there can be unforseen side-effects when manipulating HTTP headers, including the User-Agent header.
+:::

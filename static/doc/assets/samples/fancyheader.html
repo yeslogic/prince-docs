@@ -1,0 +1,421 @@
+<html>
+<head>
+<title>Automatic Parallelisation for Mercury</title>
+<meta name="author" value="Paul Bone">
+<style>
+@page {
+  font-family: Times, Serif;
+  font-size: 11pt;
+  text-align: justify;
+  margin-top: 2cm;
+  margin-bottom: 2cm;
+  margin-inside: 3.5cm;
+  margin-outside: 2.5cm;
+}
+@page body:left {
+  @top-left {
+    content: counter(page);
+    vertical-align: bottom; }
+  @top-right {
+    content: "Chapter " counter(chapter) ": " string(chapter);
+    vertical-align: bottom; } }
+@page body:right {
+  @top-right {
+    content: counter(page);
+    vertical-align: bottom; }
+  @top-left {
+    content: counter(chapter) "." counter(section) " " string(section);
+    vertical-align: bottom; } }
+@page body {
+  border-top: thin black solid; }
+@page body:first {
+  margin-top: 25%;
+  @top-left {
+    content: normal; }
+  @top-right {
+    content: normal; }
+  border: none; }
+@page body:blank {
+  @top-left {
+    content: normal; }
+  @top-right {
+    content: normal; }
+  border: none; }
+body {
+  padding: 0.5cm 0cm;
+  font-family: Times, Serif;
+  font-size: 11pt;
+  text-align: justify; }
+
+ul {
+  margin-left: 20pt;
+  margin-right: 20pt; }
+
+h1 {
+  break-before: right; }
+
+.body {
+  counter-reset: page 1;
+  prince-page-group: start;
+  page: body; }
+  .body h1 {
+    margin-bottom: 1em;
+    break-before: right;
+    prince-page-group: start;
+    string-set: chapter content();
+    counter-increment: chapter;
+    counter-reset: section; }
+  .body h1::before {
+    content: "Chapter " counter(chapter) ": "; }
+  .body h2 {
+    string-set: section content();
+    counter-increment: section; }
+  .body h2::before {
+    content: counter(chapter) "." counter(section) " "; }
+  .body a.citep {
+    content: target-content(attr(href));
+    text-decoration: none; }
+  .body a.citep::before {
+    content: "[";
+    text-decoration: none; }
+  .body a.citep::after {
+    content: "]";
+    text-decoration: none; }
+  .body a.xref {
+    content: "section " target-counter(attr(href), chapter) "." target-counter(attr(href), section); }
+  .body a.xref_chap {
+    content: "chapter " target-counter(attr(href), chapter); }
+
+div.bibliography {
+  columns: 2;
+  text-align: left; }
+  div.bibliography dt {
+    float: left; }
+  div.bibliography dd {
+    display: block;
+    margin-left: 30pt;
+    margin-bottom: 0.5em;
+    break-inside: avoid; }
+</style>
+</head>
+<body>
+
+<div class="body">
+<h1 id="chap_intro">Introduction</h1>
+
+<p>
+In 1965 Moore <a class="citep" href="#moore"></a> predicted that the
+transistor density on processors would grow exponentially with time,
+and the manufacturing cost would fall.
+The smaller transistors are, the faster they can switch
+(given adequate power),
+and therefore manufacturers can ship faster processors.
+The industry celebrated this trend,
+calling it Moore's Law.
+However as faster processors require more power,
+they create more heat which must be dissipated.
+Without novel power saving techniques
+(such as Bohr at al <a class="citep" href="#intel-high-k"></a>),
+this limits increases of processors' clock speeds.
+</p>
+<p>
+Around 2005 it became clear that significant improvements in performance
+would not come from increased clock speeds but from multicore parallelism
+<a class="citep" href="#free_lunch"></a>.
+Manufacturers now build processors with multiple processing cores,
+which can be placed in the same package,
+and usually on the same die.
+Individual cores work separately, communicating through the memory
+hierarchy.
+</p>
+<p>
+Other methods of improving performance without increasing clock speed have
+also been tried.
+</p>
+<ul>
+<li>
+Modern processors perform super-scalar execution:
+processor instructions form a pipeline,
+with several instructions at different stages of execution at once,
+and by adding extra circuitry, several instructions may be at the same stage
+of execution.
+However, we have just about reached the limits of what super-scalar
+execution can offer.
+</li>
+<li>
+Manufacturers have also added Single Instruction Multiple Data (SIMD)
+instructions to their processors;
+this allows programmers to perform the same operation on multiple pieces of
+data.
+In practice however, SIMD is useful only in some specific circumstances.
+</li>
+<li>
+Multicore computing has the potential to be useful in many circumstances,
+and does not appear to have limitations that cannot be overcome.
+Cache coherency could be a limitation for processors with many cores.
+However there are solutions to this such as directory based memory
+coherency;
+there are also research opportunities such as making compilers responsible
+for cache management.
+</li>
+</ul>
+
+<p>
+Multicore computing is a special case of multiprocessing.
+Most multiprocessing systems are symmetric multiprocessing (SMP) systems.
+An SMP system consists of several homogeneous processors and some memory
+connected together.
+Usually all processors are equally-distant from all memory location.
+Most multicore systems are SMP systems;
+they may have more than one CPU each with any number of cores.
+Some multiprocessing systems use a non-uniform memory architecture (NUMA).
+Usually this means that each processor has fast access to some local memory
+and slower access to the other processors' memories.
+A new type of architecture uses graphics programming units (GPUs) to
+perform general purpose computing,
+they are called GPGPU architectures.
+However they are not as general purpose as their name suggests:
+they work well for large regular data-parallel and compute-intensive
+workloads,
+but do not work well for more general symbolic processing.
+GPGPUs give programs access to small amounts of different types of memory
+of fixed sizes,
+however most symbolic programs rely on dynamic allocation of unpredictable
+amounts of memory.
+Additionally, symbolic programs often include code with many conditional
+branches;
+this type of code does not perform well on GPGPUs.
+GPGPU architectures are not as general purpose as SMP systems and
+SMP systems are vastly more common than NUMA systems.
+Therefore, in this dissertation we are only concerned with SMP systems as
+they are both more general and more common,
+making them more desirable targets for most programmers.
+Our approach will work with NUMA systems, but not optimally.
+</p>
+<p>
+To use a multicore system, or multiprocessing in general,
+programmers must parallelise their software.
+This is normally done by dividing the software into multiple threads of
+execution
+which execute in parallel with one another.
+This is very difficult in imperative languages as the programmer is
+responsible for coordinating the threads
+<a class="citep" href="#sutter:2005:concurrency"></a>.
+Few programmers have the skills necessary to accomplish this,
+and those that do, still make expensive mistakes as
+threaded programming is inherently error prone.
+Bugs such as data corruption, deadlocks and race conditions
+can be extremely tedious to find and fix.
+These bugs increase the costs of software development.
+Software companies who want their software to out-perform their competitors
+will usually take on the costs of multicore programming.
+We will explain the problems with parallelism in imperative languages in
+<a class="xref" href="#intro_concurrency"></a>.
+</p>
+<p>
+In contrast to imperative languages,
+it is trivial to express parallelism in pure declarative languages.
+Expressing this parallelism creates two strongly-related problems.
+First,
+one must overcome the costs of parallel execution.
+For example,
+it may take hundreds of instructions to make a task available for execution on
+another processor.
+However, if that task only takes a few instructions to execute,
+then there is no benefit to executing it in parallel.
+Even if the task creates hundreds of instructions to execute,
+parallel execution is probably not worthwhile.
+Most easy-to-exploit parallelism is <i>fine grained</i> such as this.
+Second,
+an abundance of coarse grained parallelism can also be a problem.
+Whilst the amount of parallelism the machine can exploit
+cannot increase beyond the number of processors,
+the more parallel tasks a program creates,
+the more the overheads of parallel execution will have an effect on
+performance.
+In these situations,
+there is no benefit in parallelising many of the tasks,
+and yet the overheads of their parallel executions will still have an
+effect.
+This often cripples the performance of such programs.
+This is known as an <i>embarrassingly parallel</i>workload.
+Programs with either of these problems almost always perform more
+<i>slowly</i> than their sequential equivalents.
+Programmers must therefore find the parts of their program where parallel
+execution
+is profitable and parallelise those parts of their program <i>only</i>,
+whilst being careful to avoid embarrassing parallelism.
+This means that a programmer must have a strong understanding of their
+program's  computations' costs,
+how much parallelism they are making available,
+and how many processors may be available at any point in the program's
+execution.
+Programmers are not good at identifying the hotspots in their programs
+or in many cases understanding the costs of computations,
+consequently programmers are not good at manually parallelising programs.
+Programmers are encouraged to use profilers to help them identify the
+hotspots in their programs and speed them up;
+this also applies to parallelisation.
+</p>
+<p>
+Automatic parallelism aims to make it easy to introduce parallelism.
+Software companies will not need to spend as much effort on parallelising
+their software.
+Better yet,
+it will be easier for programmers to take advantage of the extra cores on
+newer processors.
+Furthermore,
+as a parallel program is modified its performance characteristics will
+change,
+and some changes may affect the benefit of the parallelism that has already
+been exploited.
+In these cases automatic parallelism will make it easy to
+<i>re-parallelise</i> the program,
+saving programmers a lot of time.
+</p>
+
+<h2 id="sec_intro_general_approach">General approach</h2>
+
+<p>
+Unfortunately automatic parallelisation technology is yet to be developed to the
+point where it is generally useable.
+Our aim is that automatic parallelisation will be easy to use and
+will parallelise programs more effectively that most programmers can by
+hand.
+Most significantly,
+automatic parallelism will be very simple to use compared with the
+difficulty of manual parallelisation.
+Furthermore as programs change,
+costs of computations within them will change,
+and this may make manual parallelisations (using explicit parallelism) less
+effective.
+An automatic parallelisation system will therefore make it easier to
+maintain programs as the automatic parallelisation analysis can simply be
+redone to re-parallelise the programs.
+We are looking forward to a future where programmers think about
+parallelism no more than they currently think about traditional compiler
+optimisations.
+</p>
+<p>
+In this dissertation we have solved several of the critical issues with
+automatic parallelism.
+Our work is targeted towards Mercury.
+We choose to use Mercury because
+it already supports explicit parallelism of dependent conjunctions,
+and it provides the most powerful profiling tool of any declarative language,
+which generates data for our profile feedback analyses.
+In some ways our work can be used with other programming languages,
+but most other languages have significant barriers.
+In particular automatic parallelism can only work reliably with declaratively
+pure languages,
+the language should also use a strict evaluation strategy to make it easy to
+reason about parallel performance,
+and in the case of a logic language, a strict and precise mode system is
+required to determine when variables are assigned their values.
+Mercury's support for parallel execution and the previous
+auto-parallelisation system
+<a class="citep" href="#bone:2008:hons"></a> is described in
+<a class="xref_chap" href="#chap:backgnd"></a>.
+In this dissertation we make a number of improvements to Mercury's runtime
+system that improve the performance of parallel Mercury programs
+(<a class="xref_chap" href="#chap:rts"></a>).
+In <a class="xref_chap" href="#chap:overlap"></a> we describe our
+automatic parallelism analysis tool and its algorithms,
+and show how it can speedup several programs.
+In <a class="xref_chap" href="#chap:loop_control"></a> we introduce a new
+transformation that improves the performance of
+some types of recursive code and achieve almost perfect linear speedups on
+several benchmarks.
+The transformation also allows recursive code within parallel conjunctions
+to take advantage of tail recursion optimisation.
+Chapter <a class="xref_chap" href="#chap:tscope"></a> describes a proposal
+to add support for Mercury to the ThreadScope parallel profile visualisation
+tool.
+We expect that the proposed features will very useful for programmers and
+researchers alike.
+Finally in <a class="xref_chap" href="#chap:conc"></a> we conclude the
+dissertation, tieing together the various contributions.
+We believe that our work could also be adapted for other systems;
+this will be easier in similar languages and more difficult in less similar
+languages.
+</p>
+
+<h2 id="intro_concurrency">Concurrency</h2>
+
+<h1 id="chap:backgnd">Background</h1>
+<h1 id="chap:rts">Runtime system</h1>
+<h1 id="chap:overlap">Overlap</h1>
+<h1 id="chap:loop_control">Loop control</h1>
+<h1 id="chap:tscope">ThreadScope</h1>
+<h1 id="chap:conc">Conclusion</h1>
+
+</div><!-- body -->
+
+<h1>References</h1>
+<div class="bibliography">
+
+<dl>
+
+<dt>
+[<a name="intel-high-k">1</a>]
+</dt>
+<dd>
+Mark&nbsp;T. Bohr, Robert&nbsp;S. Chau, Tahir Chani, and Kaizad Mistry.
+ The high-k solution.
+ <em>IEEE Spectrum</em>, 44(10):29--35, October 2007.
+
+</dd>
+
+
+<dt>
+[<a name="bone:2008:hons">2</a>]
+</dt>
+<dd>
+Paul Bone.
+ Calculating likely parallelism within dependant conjunctions for
+  logic programs.
+ Honours thesis, University of Melbourne, Melbourne, Australia,
+  October 2008.
+
+</dd>
+
+
+<dt>
+[<a name="moore">3</a>]
+</dt>
+<dd>
+Gordon&nbsp;E. Moore.
+ Cramming more components onto integrated circuits.
+ <em>Electronics</em>, 38(8), April 1965.
+
+</dd>
+
+
+<dt>
+[<a name="free_lunch">4</a>]
+</dt>
+<dd>
+Herb Sutter.
+ The free lunch is over: A fundamental turn toward concurrency in
+  software.
+ <em>Dr Dobb's Journel</em>, 30(3), March 2005.
+
+</dd>
+
+
+<dt>
+[<a name="sutter:2005:concurrency">5</a>]
+</dt>
+<dd>
+Herb Sutter and James Larus.
+ Software and the concurrency revolution.
+ <em>Queue</em>, 3(7):54--62, September 2005.
+
+</dd>
+</div>
+
+</div><!-- body -->
+
+</body>
+</html>
+

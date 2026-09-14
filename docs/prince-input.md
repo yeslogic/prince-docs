@@ -2,11 +2,7 @@
 title: Prince Input
 ---
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,100..900;1,100..900&amp;display=swap" rel="stylesheet"/>
-
-Prince takes HTML or XML files as input, and converts them to PDF files. Additionally, CSS style sheets can be provided for styling the documents, and JavaScript files can be used for additional manipulation of the input.
+Prince takes HTML/Markdown or XML files as input, and converts them to PDF files. Additionally, CSS style sheets can be provided for styling the documents, and JavaScript files can be used for additional manipulation of the input.
 
 See the sections [Applying Style Sheets in Prince](#applying-style-sheets-in-prince), [Applying JavaScript in Prince](#applying-javascript-in-prince) and [XML Input](#xml-input) for details.
 
@@ -21,8 +17,7 @@ Input files can either be local files, or remote files that will be fetched over
 Last but not least, it is good practice familiarizing yourself with the security implications of HTML, XML, CSS or JavaScript files provided by users we do not have total control over - please see the chapter on [Security](server-integration.md#security).
 
 
-Applying Style Sheets in Prince
--------------------------------
+## Applying Style Sheets in Prince
 
 Prince can apply style sheets from three different sources:
 
@@ -39,11 +34,13 @@ Default style sheets
 
 Prince also offers a mechanism to disable some of the style sheets: the command-line option [`--no-author-style`](command-line.md#cl-no-author-style) disables author style sheets, while [`--no-default-style`](command-line.md#cl-no-default-style) disables default style sheets.
 
+For compatibility reasons, Prince computes the pixel unit relative to the de-facto standard of 96dpi (or rather, 96 *pixel* per inch) for compatibility with browsers. The command-line option [`--css-dpi`](command-line.md#cl-css-dpi) can be used to change this.
+
 ### Importing Style Sheets
 
 Style sheets may import other style sheets using [`@import`](css-at-rules.md#at-import) rules. These rules must occur before any other rules or declarations in the style sheet, and have the effect of importing all the rules and declarations from the specified style sheet. See [CSS At-rules](css-at-rules.md).
 
-```
+```css
     @import "base.css";
     @import "custom.css";
 
@@ -55,7 +52,7 @@ Multiple style sheets can be applied and in some cases declarations from differe
 
 First style sheet:
 
-```
+```css
     h1 {
         font-family: "Times New Roman";
         font-size: 24pt;
@@ -63,7 +60,7 @@ First style sheet:
 ```
 Second style sheet:
 
-```
+```css
     h1 {
         font-family: "Arial";
         color: red
@@ -95,20 +92,67 @@ If the conflicting declarations have the same specificity, the declaration that 
 If the declarations are from different style sheets, the declaration that occurs in the *last* style sheet to be specified has the *highest* priority. This is based on the order that style sheets are specified on the command line and also on the order that `xml-stylesheet` processing instructions occur in the document.
 
 
-Applying JavaScript in Prince
------------------------------
+## Applying JavaScript in Prince
 
-Prince is not running JavaScript by default - document scripts can be enabled by specifying the [`--javascript`](command-line.md#cl-javascript) option on the command-line. Prince will then execute all JavaScript found in the HTML `script` elements in the input document.
+Prince is not running JavaScript by default - author scripts in the documents need to be enabled by specifying the [`--javascript`](command-line.md#cl-javascript) option on the command-line. Prince will then execute all JavaScript found in the HTML `script` elements in the input document.
 
-External scripts can be run by specifying one or more [`--script=FILE`](command-line.md#cl-script) options on the command-line. These scripts will always be executed, regardless of whether document scripts have been enabled or not.
+External user scripts can be run by specifying one or more [`--script=FILE`](command-line.md#cl-script) options on the command-line. These scripts will always be executed, regardless of whether document author scripts have been enabled or not.
+
+:::note
+- Author scripts in HTML documents need to be explictly enabled.
+- User scripts passed on command line are always exectuted.
+:::
 
 JavaScript functions can also be called from CSS generated content, by using the `prince-script()` syntax for referencing [Script Functions](gen-content.md#script-functions). Please note that scripts contained in the `prince-script()` function are treated as document scripts, and hence need to be explicitly enabled.
 
 Prince also supports PDF scripts, known as "Document Action" scripts - see [PDF Actions](prince-output.md#pdf-actions). They get included in documents through CSS, too, but will always be run. Note, however, that these scripts are dependent on the PDF viewer, and in many cases might only work in Adobe Acrobat products.
 
 
-XML Input
----------
+## Markdown Support
+
+Prince processes files ending in `.md` as Markdown. Alternatively, Markdown parsing is enabled with the command line `--input=markdown`.  Markdown files can include HTML snippets, or entire sections of HTML, which allows it to be easily extended.
+
+Markdown is internally converted to HTML, and thus the default CSS Stylesheet `html.css` is applied. Also the dedicated Stylesheet `markdown.css` is applied for borders in tables, as they are expected in Markdown. The command-line option `--no-default-style` disables both.
+
+Some special Markdown features can be enabled or disabled with dedicated command-line options:
+- Superscript and subscript can be enabled with the options [`--markdown-superscript`](command-line.md#cl-markdown-superscript) and [`--markdown-subscript`](command-line.md#cl-markdown-subscript) respectively. When enabled, carets (`^text^`) produce superscript (`<sup>`), and single tildes (`~text~`) produce subscript (`<sub>`) instead of strikethrough.  Double tildes (`~~text~~`) still produce strikethrough.
+- Smart typography can be disabled in Markdown with the command-line option [`--no-markdown-smart-typography`](command-line.md#cl-no-markdown-smart-typography). By default, Prince converts straight quotes to curly quotes, `--` to an en-dash (<code>&#x2013;</code>), `---` to an em-dash (<code>&#x2014;</code>), and `...`  to an ellipsis (<code>&hellip;</code>).
+- Automatic rendering of math expressions in Markdown input can be disabled with [`--no-markdown-math`](command-line.md#cl-no-markdown-math). By default, Prince renders math notation written with dollar signs (`$...$` for inline, and `$$...$$` for code blocks) using KaTeX.
+
+:::note
+KaTeX is automatically being applied as a user script and will therefore run even if author scripts have not been explicitly enabled.
+:::
+
+The Markdown file can begin with YAML frontmatter (separated by `---` lines similar to Pandoc) or TOML frontmatter (separated by `+++` lines similar to Hugo and Zola) which allow specifying document metadata:
+
+```yaml title="YAML frontmatter"
+---
+title: Front Matter Test Document
+author: Jane Smith
+lang: en
+subject: Testing YAML front matter metadata
+keywords: markdown, front matter, metadata, prince
+date: 2026-01-15
+---
+```
+
+```toml title="TOML frontmatter"
++++
+title = "TOML Front Matter Test"
+date = 2026-01-26T11:36:15+10:00
+ 
+[extra]
+updated = 2026-01-27T09:25:58+10:00
++++
+```
+
+Unrecognised sections/fields in the metadata, such as the `[extra]` field in the above example, will silently be ignored.
+
+:::tip
+See also [A quick guide to using MarkDown in Prince](https://css4.pub/2026/markdown/) for more examples and details.
+:::
+
+## XML Support
 
 ### XML Input
 
@@ -126,9 +170,9 @@ Prince supports the `xml:lang` attribute, which is used to indicate the language
 
 Prince supports the `xml:id` attribute, which is used to give elements a unique identifier. This identifier can be used when creating links and cross-references; it also allows elements to be selected using the CSS ID selector.
 
-<p class="note">
+:::note
 Prince does not support the <code>xml:base</code> attribute, therefore hyperlinks must be absolute URLs or relative to the document path.
-</p>
+:::
 
 
 ### XML Styling
@@ -147,9 +191,9 @@ Prince supports a rich subset of SVG 1.1, including basic shapes, paths, text an
 Any other XML  
 No default style sheets will be used, so style sheets will need to be specified by the user or referenced from the document in order for Prince to apply style to the document - see [Applying Style Sheets in Prince](#applying-style-sheets-in-prince).
 
-<p class="note">
+:::note
 Prince does not support XSLT. External XSLT processors can be used and the resulting document can be passed to Prince.
-</p>
+:::
 
 ### XML Inclusions (XInclude)
 
@@ -165,7 +209,7 @@ Also note that XInclude only applies to XML files. To apply it to HTML files, th
 
 Here is an example of a book written in XHTML in which each chapter has been placed in a separate XML document for convenient editing and then included in the main document using XInclude:
 
-```html
+```markup
     <html xmlns:xi="https://www.w3.org/2001/XInclude">
     <head>
     <title>Book Title</title>
@@ -200,4 +244,3 @@ It is possible to specify fallback content that should be used if an included fi
     </xi:include>
 ```
 If the `report.md` file cannot be loaded then the paragraph saying "No report is available" will be included in the document instead.
-

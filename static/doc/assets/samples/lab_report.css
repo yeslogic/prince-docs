@@ -1,0 +1,19 @@
+body {
+    font-family: sans-serif;
+}
+
+h1, h2.subtitle {
+    text-align: center;
+}
+
+h2.subtitle {
+    font-size: 14pt;
+}
+
+#hello {
+    color: red;
+    text-align: center;
+    font-size: large;
+    font-style: italic;
+    font-family: serif;
+}

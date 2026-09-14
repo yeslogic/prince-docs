@@ -2,16 +2,12 @@
 title: Graphics
 ---
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,100..900;1,100..900&amp;display=swap" rel="stylesheet"/>
-
 Prince supports a wide range of graphic features, treated in more detail in the following sections. RGB(A), CMYK, HSL(A), HWB, and named spot colors are supported, and so is color management. Bitmap images and SVG are supported.
 
 Color
 -----
 
-Prince supports RGB(A), CMYK, HSL(A), HWB, and named spot colors. For Prince's color management, please see the [Color Management](#color-management) section.
+Prince supports RGB(A), CMYK, HSL(A), HWB, CIE L*a*b*, LCH, Oklab, and named spot colors. For Prince's color management, please see the [Color Management](#color-management) section.
 
 Prince understands CSS [basic color keywords](css-color-names.md#basic-color-keywords) as well as the list of [extended color keywords](css-color-names.md#extended-color-keywords) from the [CSS Color Module Level 4](https://www.w3.org/TR/css-color-4/#named-colors). It also supports the keywords `transparent` and `currentColor`.
 
@@ -39,7 +35,7 @@ A fourth, optional value for the `rgb()` function is for opacity (or alpha), and
 
 CMYK colors can be specified using the `device-cmyk()` function syntax. An optional fifth value is for the alpha channel, i.e. for opacity, and functions just as the alpha channel for the `rgb()` function. If the fifth value is omitted, it is assumed to be 100%, or fully opaque.
 
-```
+```css
     color: device-cmyk(1 0 0 0)        // cyan
     color: device-cmyk(0 1 1 0)        // red
     color: device-cmyk(0 0 0 1)        // black
@@ -78,9 +74,54 @@ HWB (Hue-Whiteness-Blackness) color values are expressed in a similar way to HSL
 ```
 
 
+### CIE L\*a\*b\*
+
+LAB color values can be specified with the `lab()` function, which takes three values, and optional color reference and alpha values:
+
+-   `l` specifies the color's lightness with a number or a percentage between 0 and 100 (the keyword `none` stands for 0);
+-   `a` specifies the color's distance along the `a` axis, which defines how green (moving towards the value `-125` or `-100%`) or red (moving towards `+125` or `+100%`) the color is; and
+-   `b` specifies the color's distance along the `b` axis, which defines how blue (moving towards `-125` or `-100%`) or yellow (moving towards `+125` or `+100%`) the color is.
+
+
+```css
+    .red { background-color: red; }
+    .desaturated { background-color: lab(from red l a b / 0.5); }
+```
+
+
+### CIE LCH
+
+LCH color values can be specified with the `lch()` function, which takes three values similar to the [LAB values](#cie-lab):
+
+-   `l` is the same lightness axis;
+-   `c` is a chroma value; and
+-   `h` is a hue value,
+
+thus making it a polar, cylindrical coordinate system.
+
+To create a complementary color to `red` we can simply add a 180° rotation to the LCH value for red:
+
+```css
+    .red { color: red; }
+    .complementary { color: lch( from red l c calc(h + 180))
+```
+
+
+### Oklab and OkLCh
+
+Oklab and OkLCh are improved versions of the LAB and LCH color values, and are specified with the `oklab()` and `oklch()` functions respectively. The syntax is the same as the `lab()` and `lch()` functions.
+
+
+
 ### Spot colors
 
-Prince also supports named spot colors that can be defined with the [`@prince-color`](css-at-rules.md#at-prince-color) rule. An alternate color must also be specified with the [`alternate-color`](css-props.md#prop-alternate-color) descriptor, using any of the valid notations for RGB, HSL, HWB, or CMYK colors. This will be used in situations where the named color is not available, such as when viewing the generated PDF file on a display. Please note that [`alternate-color`](css-props.md#prop-alternate-color) cannot have opacity.
+Prince also supports named spot colors that can be defined with the [`@prince-color`](css-at-rules.md#at-prince-color) rule.
+
+An alternate color must be specified with the [`alternate-color`](css-props.md#prop-alternate-color) descriptor, using any of the valid notations for RGB, HSL, HWB, or CMYK colors: it will be used in situations where the named color is not available, such as when viewing the generated PDF file on a display.
+
+:::note
+The property [`alternate-color`](css-props.md#prop-alternate-color) does not accept opacity.
+:::
 
 ```css
     @prince-color MyColor {
@@ -89,7 +130,7 @@ Prince also supports named spot colors that can be defined with the [`@prince-co
 ```
 Spot colors can be used with the `prince-color()` function with a specified tint value between 0 and 1, which defaults to 1, or alternatively expressed in percentage. They can also enable overprint:
 
-```
+```css
     color: prince-color(MyColor)                  // tint 1.0
     color: prince-color(MyColor, 0.5)             // tint 0.5
     color: prince-color(MyColor, overprint)       // tint 1.0, overprint
@@ -121,7 +162,7 @@ PDF/A and PDF/X files have an output intent that defines the intended output col
 
 The URL specified with the [`--pdf-output-intent`](command-line.md#cl-pdf-output-intent) command-line option or the [`-prince-pdf-output-intent`](css-props.md#prop-prince-pdf-output-intent) property will be resolved relative to the base URL of the style sheet or document in which the rule is, and needs to point to an existing color profile file.
 
-```
+```css
     @prince-pdf {
         -prince-pdf-output-intent: url("ISOcoated_v2_eci.icc")
     }
@@ -143,6 +184,16 @@ PDF/X-4
 -   Allows other color spaces but colors must be device-independent, or else characterized by the output intent;
 -   PDF transparency is supported.
 
+The PDF/X-4 profile offers a mechanism to uniquely identify the printing condition with the `OutputConditionIdentifier` key, set with the `output-condition-identifier` keyword, in the [`-prince-pdf-output-intent`](css-props.md#prop-prince-pdf-output-intent) CSS property.  If the printing condition is defined by the [ICC characterization registry](http://www.color.org/), the value of the `RegistryName` key (`registry-name`) should be `http://www.color.org`.  The `OutputCondition` key (`output-condition`) identifies the characterized printing condition in a way that is meaningful to a human operator.
+
+Additionally, the PDF/X-4p profile allows for a publicly accessible ICC profile to be used when generating the PDF, without however including it in the file, thus reducing the final file size. This is achieved with the `external-url` keyword.
+
+```css
+    @prince-pdf {
+     -prince-pdf-output-intent: url("APTEC_PC10_CardBoard_2023_v1.icc") output-condition-identifier "APTEC_PC10_CardBoard_2023_v1.icc" registry- name "http://www.color.org" output-condition "ISO 12647-2 Printing Substrate 10 'One-side Coated Paper board'" external-url url("http://www.color.org/registry/profiles/APTEC_PC10_CardBoard_2023_v1.icc")
+}
+```
+
 PDF/A requires that all colors to be device-independent, or else characterized by the output intent (thus making them device-independent). Transparency is not allowed.
 
 ### Color Management in Prince
@@ -152,13 +203,13 @@ Prince supports RGB(A), CMYK, HSL(A), HWB, and named spot colors. For Prince's c
 As CSS defines RGB colors in the sRGB color space, Prince tags those colors with an sRGB ICC profile in the PDF output. See also the section on [Rich black and true black](#rich-black-and-true-black) below.
 
 CMYK colors specified using the `device-cmyk()` function syntax represent device-dependent colors, so they will be left as such in the PDF when possible. Device-dependent color is not allowed in PDF/A or PDF/X, so those CMYK colors will be assumed to be either in the output intent color space (if it is CMYK), or else the color space of the fallback CMYK profile. See the command-line option [`--fallback-cmyk-profile`](command-line.md#cl-fallback-cmyk-profile) in the [PDF Output Options](command-line.md#pdf-output-options) section, or the [`-prince-fallback-cmyk-profile`](css-props.md#prop-prince-fallback-cmyk-profile) property.
-```bash
+```bash title="Bash"
     prince input.html
            --pdf-profile=PDF/A-1b
            --pdf-output-intent=sRGB.icc
            --fallback-cmyk-profile=ISOcoated_v2_eci.icc
 ```
-```css
+```css title="CSS"
     @prince-pdf {
         -prince-pdf-output-intent: url("sRGB.icc");
         -prince-fallback-cmyk-profile: url("ISOcoated_v2_eci.icc");
@@ -205,7 +256,7 @@ When the value `use-true-black` is used, such an RGB value will be encoded in th
 
 On the other hand, the `use-rich-black` value instructs Prince to keep all RGB colors as RGB in the PDF. A CMYK printer should print RGB colors using a mixture of all four CMYK inks.
 
-```
+```css
     @prince-pdf {
         -prince-pdf-color-options: use-rich-black;
     }
@@ -263,6 +314,9 @@ This filter takes the URL of an SVG filter. An anchor can be used to reference a
 
 The resolution used when rasterizing to images for applying CSS and SVG filters is controlled through the [`-prince-filter-resolution`](css-props.md#prop-prince-filter-resolution) property. The default value is `96dpi` for compatibility with web browsers.
 
+:::tip
+Please note that `-prince-filter-resolution` applies to all filter rasterization, including the CSS properties `filter` or `box-shadow`.
+:::
 
 Images
 ------
@@ -281,18 +335,47 @@ Please note that Prince tries to preserve the ICC color profile embedded in imag
 
 The `img` element is used to include images in XHTML documents.
 
-XML
-
-```xml
+```html title="XHTML"
     <img src="picture.jpg" alt="A Nice Picture"/>
 ```
+
+A more flexible, responsive approach is achieved by adding the `srcset` and `sizes` HTML attributes to serve different image sizes depending on viewport widths:
+
+```html title="XHTML"
+    <img
+        srcset="picture-480w.jpg 480w, picture-800w.jpg 800w"
+        sizes="(width <= 600px) 480px,
+                800px"
+        src="picture-800w.jpg"
+        alt="A Nice Picture"
+    />
+```
+
+Even more flexibility is offered by presenting the `img` element inside a `picture` element - not only can different sizes be served, but, depending on the user agent, also different image formats, or different images.  This allows to create only one HTML file that can be served for interactive use on the web in a browser, or that can be printed to a non-interactive PDF intended for printing.
+
+```html title="XHTML"
+    <picture>
+        <source
+            srcset="picture-print-large.jpg"
+            media="print and (min-resolution: 300dpi)"
+        />
+        <source
+            srcset="picture-print-small.jpg"
+            media="print"
+        />
+        <img src="picture-animated.webp" alt="An animated dancing picture"/>
+    </picture>
+```
+
+:::tip
+The resolution of images can either be determined in the image itself, or can be overridden with the CSS property [`-prince-image-resolution`](css-props.md#prop-prince-image-resolution). See [Image Size](#image-size).
+:::
+
 ### Images in DocBook
 
 The `imagedata` element is used to include images in DocBook documents.
 
-XML
-
-```xml
+```xml title="DocBook"
     <mediaobject>
         <imageobject>
           <imagedata fileref="picture.jpg"/>
@@ -305,26 +388,18 @@ Images can be included in arbitrary XML documents by using the CSS [`content`](c
 
 The [`content`](css-props.md#prop-content) property can specify the image filename directly, or it can take the filename from an attribute of the element to which it has been applied.
 
-CSS
-
-```
+```css title="CSS"
     picture { content: url("picture.png") }
 ```
-XML
-
-```xml
+```xml title="XML"
     <para> A nice <picture /> here. </para>
 ```
 The [`content`](css-props.md#prop-content) property directly specifies the filename of the image that will be used as the content of the `picture` element.
 
-CSS
-
-```
+```css title="CSS"
     picture { content: attr("src", url) }
 ```
-XML
-
-```xml
+```xml title="XML"
     <para> A nice <picture src="picture.tiff" /> here. </para>
 ```
 The [`content`](css-props.md#prop-content) property specifies that the content of the `picture` element will be an image loaded from the filename specified by the `src` attribute of the element.
@@ -349,7 +424,7 @@ This property applies only to content images (e.g. replaced elements and generat
 
 CSS properties also control the size of images in print. Unless an explicit size for an image is specified by using the `width` and `height` properties, Prince will determine the intrinsic size from the image resolution (DPI), which can be overridden using the [`-prince-image-resolution`](css-props.md#prop-prince-image-resolution) property:
 
-```
+```css
     -prince-image-resolution: 300dpi;        /* set an explicit DPI */
     -prince-image-resolution: normal;        /* 1 image pixel maps to 1px unit */
     -prince-image-resolution: auto, normal;  /* auto-detect, fallback to normal */
@@ -365,7 +440,109 @@ The [`object-fit`](css-props.md#prop-object-fit) and [`object-position`](css-pro
 
 Please note that specifying [`-prince-image-resolution`](css-props.md#prop-prince-image-resolution) and [`-prince-background-image-resolution`](css-props.md#prop-prince-background-image-resolution), or [`object-fit`](css-props.md#prop-object-fit), only affects the default DPI of images, ie. it makes them physically bigger or smaller on the page, and - it does not affect the number of pixels in the image, and thus the PDF file size will be the same.
 
-To reduce the PDF file size, JPEG images can be recompressed at a lower quality level, or PNG images be converted to JPEG, with the [`-prince-image-magic`](css-props.md#prop-prince-image-magic) property. See also [Image Magic](cookbook.md#image-magic).
+To reduce the PDF file size, JPEG images can be recompressed at a lower quality level, or PNG images be converted to JPEG, with the [`-prince-image-magic`](css-props.md#prop-prince-image-magic) property.
+
+:::tip
+The [Prince Cookbook](cookbook.md) offers an in-depth chapter on [Image Magic](cookbook.md#image-magic).
+:::
+
+
+Canvas
+------
+
+The HTML `<canvas>` element creates a drawable region with `height` and `width` attributes. However, unlike semantic HTML, canvas content is not exposed to accessibility tools. Therefore, you should generally avoid using Canvas when [accessibility](prince-output.md#pdf-accessibility) is a main concern.
+
+`<canvas>` is an HTML element in which you can draw graphics via scripting - JavaScript needs to be enabled in order to make use of canvas. This element looks a bit like the `<img>` element, but it only has two attributes, `height` and `width`. They are optional arguments, and can also be set with DOM properties.
+
+:::note
+You can style the canvas element like any other image with CSS - but if styling `height` and `width` via CSS, care needs to be taken to respect the ratio of the initial size, or else it will appear distorted.
+:::
+
+The `<canvas>` element creates a rendering context on which to draw that needs to be accessed by the script to initialize the drawing.
+
+```javascript
+    const canvas = document.getElementById("canvas");
+    const context = canvas.getContext("2d");
+```
+
+Prince currently only supports the `"2d"` canvas context.
+
+Unlike SVG, a canvas only supports two primitive shapes: rectangles and paths.  But you can also render [images in all the supported formats](#images) on the canvas with the [`drawImage()`](js-support.md#window.CanvasRenderingContext2D.prototype.drawImage) function.
+
+```javascript
+    const img = new Image();
+    img.onload = () => {
+        context.drawImage(img, 0, 0); 
+    };
+    img.src = 'image.jpg';
+```
+
+The following methods are [fully supported](js-support.md#window.CanvasRenderingContext2D):
+
+* State:
+    - `save`
+    - `restore`
+* Transforms:
+    - `scale`
+    - `rotate`
+    - `translate`
+    - `transform`
+    - `setTransform`
+    - `resetTransform`
+* Path building:
+    - `beginPath`
+    - `closePath`
+    - `moveTo`
+    - `lineTo`
+    - `rect`
+    - `arc`
+    - `arcTo`
+    - `ellipse`
+    - `bezierCurveTo`
+    - `quadraticCurveTo`
+* Rect drawing:
+    - `clearRect`
+    - `fillRect`
+    - `strokeRect`
+* Path painting:
+    - `fill`
+    - `stroke`
+* Clipping:
+    - `clip`
+    - `resetClip` (note: `resetClip` is non-standard; the spec uses `save`/`restore`)
+* Line dash:
+    - `setLineDash`
+    - `getLineDash`
+* Text:
+    - `fillText`
+    - `strokeText`
+    - `measureText`
+* Gradients and patterns:
+    - `createLinearGradient`
+    - `createRadialGradient`
+    - `createPattern`
+    - `gradient.addColorStop`
+    - `pattern.setTransform`
+* Images:
+    - `drawImage`
+    - `createImageData`
+    - `putImageData`
+* Style properties:
+    - `globalAlpha`
+    - `strokeStyle`
+    - `fillStyle`
+    - `lineWidth`
+    - `lineCap`
+    - `lineJoin`
+    - `lineDashOffset`
+    - `miterLimit`
+* Text properties:
+    - `font`
+    - `textAlign`
+    - `textBaseline`
+    - `letterSpacing`
+    - `wordSpacing`
+    - `direction`
 
 
 Scalable Vector Graphics (SVG)
@@ -398,7 +575,6 @@ Prince supports SVG 1.1, with some exceptions - vertical text is not supported, 
 -   `text-rendering`
 -   `tref` (removed)
 -   `view`
--   `foreignObject`
 -   `svgz`
 -   `visibility:collapse`
 -   `switch` (`requiredFeatures`, `requiredExtensions`, `systemLanguage`)
@@ -455,29 +631,25 @@ The following style properties are supported on SVG elements:
 
 Style properties can be applied using SVG presentation attributes:
 
-```xml
+```xml title="SVG"
     <rect fill="yellow" stroke="blue" stroke-width="20"
             width="200" height="100"/>
 ```
 Or by using CSS properties inside the `style` attribute or element:
 
-```xml
+```xml title="SVG"
     <rect style="fill:yellow; stroke:blue; stroke-width:20"
             width="200" height="100"/>
 ```
 Alternatively, style properties can be applied by linking a stylesheet, or an XML stylesheet:
 
-SVG
-
-```xml
+```xml title="SVG"
     ...
     <?xml-stylesheet type="text/css" href="style.css"?>
     ...
     <rect width="200" height="100"/>
 ```
-CSS
-
-```
+```css title="CSS"
     svg rect {
         fill: yellow;
         stroke: blue;

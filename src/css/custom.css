@@ -1,0 +1,696 @@
+/* stylelint-disable docusaurus/copyright-header */
+/**
+ * Any CSS included here will be global. The classic template
+ * bundles Infima by default. Infima is a CSS framework designed to
+ * work well for content-centric websites.
+ */
+
+/* Default Infima variables. */
+:root {
+  --ifm-color-primary: #6e2577;
+  --ifm-color-primary-dark: #63216b;
+  --ifm-color-primary-darker: #5e1f65;
+  --ifm-color-primary-darkest: #4d1a53;
+  --ifm-color-primary-light: #792983;
+  --ifm-color-primary-lighter: #7f2b89;
+  --ifm-color-primary-lightest: #8f309b;
+  --ifm-code-font-size: 95%;
+
+  --ifm-navbar-height: 70px !important;
+  --ifm-navbar-item-padding-horizontal: 20px;
+
+  --ifm-navbar-link-color: white;
+  --ifm-navbar-link-hover-color: #ffa046;
+
+  --ifm-code-background: rgba(27,31,35,.05);
+  --ifm-pre-background: white;
+
+  --docusaurus-highlighted-code-line-bg: lavenderblush;
+}
+
+/* Dark theme overrides */
+[data-theme='dark'] {
+  --ifm-color-primary: plum;
+  --ifm-pre-background: #333;
+  --ifm-menu-color-active: #ffa046;
+
+  --docusaurus-highlighted-code-line-bg: rgb(60, 64, 72);
+
+  #prop-list details, #js-support-table details, #js-support-table details.globalWindow {
+    background-color: var(--ifm-menu-color-background-active);
+
+    a {
+      color: plum !important;
+    }
+  }
+
+  #prop-list summary.ext, #prop-list summary.ext + div, #prop-list summary.ext + div + div, #js-support-table .ext, #js-support-table .ext + div, #js-support-table .ext + div + div {
+    background-color: darkslategrey !important;
+  }
+  #ext-props span.ext,
+  #prop-list span.ext {
+    background-color: darkslategrey;
+  }
+
+  table.property-table, .syntax-block, .example code {
+    background-color: #333;
+  }
+
+  table#pregions td[style|='background'] {
+    color: black;
+  }
+  table#pregions td[style~='border:'] {
+    outline: 1px solid ivory;
+    outline-offset: -10px;
+  }
+}
+
+/* Custom CSS */
+/* global styles */
+html, body {
+    font-family: Public Sans, Arial, sans-serif !important;
+}
+
+article p img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 100%;
+}
+
+aside {
+    border-right-width: 0 !important;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    color: inherit;
+    font-weight: 600;
+    line-height: 1.25;
+    margin-bottom: 16px;
+    margin-top: 1.5em;
+}
+h1 {
+    font-size: 32px;
+}
+h2 {
+    font-size: 24px;
+}
+h3 {
+    font-size: 20px;
+    margin-top: revert-layer;
+    margin-bottom: revert-layer;
+}
+h4 {
+    font-size: 16px;
+}
+
+dl { padding-bottom: 1em; }
+dd { padding-left: 2em; }
+dl ul { margin-bottom: 0em; }
+dl.faq dt p {
+    font-weight: bold;
+}
+
+code {
+    white-space: pre;
+    padding: 0;
+    vertical-align: baseline;
+    border: 0;
+    outline: 0.1rem solid rgba(0,0,0,0.1)
+}
+.codeBlockContainer_Ckt0 .codeBlockLines_e6Vv {
+    padding: revert-layer;
+}
+pre code, code pre, .syntax-block code, .grid code {
+    white-space: pre-wrap;
+}
+.mdxCodeBlock_node_modules-\@docusaurus-theme-classic-lib-theme-MDXComponents- code {
+    padding: var(--ifm-table-cell-padding);
+    display: block;
+}
+.syntax-block {
+  margin-bottom: 1em;
+  padding: 0.2em 1em;
+}
+
+img {
+    border: 1px solid lightgrey;
+    margin-top: 1em;
+    margin-bottom: 1em;
+}
+
+.fixedHeaderContainer header img {
+    margin-right: 30px;
+}
+
+#entry {
+    margin: 30px auto;
+    text-align: center;
+}
+#entry ul {
+    list-style-type: none;
+}
+
+#idx, #idx + p {
+    margin: 30px auto;
+    max-width: 400px;
+    text-align: center;
+    font-size: 1.5rem;
+}
+#idx {
+    margin-top: 3em;
+}
+
+.clean-btn {
+    color: white;
+}
+
+.menu__list {
+    font-size: 14px;
+    font-weight: normal;
+}
+
+section.row {
+    justify-content: center;
+}
+
+
+/* links */
+a[href*='//']:not([href*='princexml.com'])::after {
+  content: "\a0\21D7";
+  color: lightgrey; }
+.menu__link--active {
+    font-weight: bold;
+}
+.menu__link:hover {
+    padding-left: 13px;
+}
+.menu__link--sublist {
+    font-weight: bold;
+}
+
+
+/* documentation entry page */
+#version-nav {
+    cursor: pointer;
+}
+#version-nav > summary {
+    list-style: none;
+    outline: none;
+    padding-bottom: 20px;
+    margin-top: 50px;
+}
+#version-nav > summary::-webkit-details-marker {
+    display: none;
+}
+#entry p+ul a {
+    font-weight: bold;
+}
+
+
+/* tables */
+table {
+    display: table;
+    width: auto;
+}
+table#pregions td[rowspan] {
+    writing-mode: vertical-rl;
+    text-align: center;
+    transform: rotate(180deg);
+    vertical-align: middle;
+    padding: 10px;
+}
+table.grid td code p, table.grid th code p {
+    margin: 0 !important;
+}
+table thead tr th:empty {
+    display: none;
+}
+table.property-table, .syntax-block, .example code {
+  border: none;
+  background-color: white;
+}
+table.property-table tr {
+  border: none;
+}
+table.property-table th, table.property-table td {
+  border: none;
+}
+table.property-table th {
+  white-space: nowrap;
+}
+table.property-table td {
+  padding-left: 2.5em;
+}
+
+
+/* navbar */
+.navbar, .navbar--fixed-top {
+    padding: 0px 25px;
+    line-height: 1.5em;
+}
+.navbar__brand {
+    height: 100%;
+}
+.navbar__logo {
+    height: initial;
+}
+.navbar__logo img {
+    border: none;
+    margin: 0;
+    max-width: 120px;
+    vertical-align: bottom;
+}
+.navbar {
+    background-image: linear-gradient(110deg,#640c5c,#141429 52.3411106%,#732269);
+    box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.3);
+    padding: 0 100px;
+    justify-content: center;
+    line-height: 1.2em;
+}
+.navbar__inner {
+    max-width: 1100px;
+}
+.navbar__items {
+    align-items: center;
+    max-height: 100%;
+}
+.navbar__item {
+    font-size: 16px;
+    font-weight: normal;
+    transition: 0.4s;
+}
+.navbar__item:hover {
+    color: #ffa046;
+}
+.navbar__item:nth-child(3) {
+    color: #ffa046 !important;
+}
+html.docs-doc-id-help .navbar__item:nth-child(3) {
+    color: var(--ifm-navbar-link-color) !important;
+}
+html.docs-doc-id-help .navbar__item:nth-child(4) {
+    color: #ffa046 !important;
+}
+.DocSearch-Button-Keys {
+    display: none !important;
+}
+.navbarSearchContainer_Bca1 {
+    width: 140px !important;
+}
+.DocSearch-Button-Placeholder, .DocSearch-Search-Icon {
+    color: var(--ifm-navbar-link-color);
+}
+.DocSearch-Button {
+    background-color: rgba(0, 0, 0, .2);
+    &:hover .DocSearch-Button-Placeholder, &:hover .DocSearch-Search-Icon {
+        color: var(--ifm-navbar-link-hover-color);
+        transition: 0.4s;
+    }
+}
+
+
+/* Property list */
+#prop-list code, #js-support-table code {
+    outline: none;
+}
+#prop-list ul li code {
+    white-space: normal;
+}
+#prop-list a, #prop-list a:hover {
+    color: #6e2577 !important;
+    text-decoration: none !important;
+}
+#prop-list summary, #js-support-table summary {
+  font-weight: bold;
+  padding: 0.7em;
+  display: block;
+}
+#prop-list details, #js-support-table details {
+  border: 1px solid lightgrey;
+  border-radius: 10px;
+  background-color: #e5f6ee;
+  display: block;
+  padding: 0;
+}
+#prop-list > details > div > div {
+    margin-top: 0;
+    border-top: 0;
+    padding-top: 0;
+}
+#prop-list h6 {
+    font: var(--ifm-font-size-base) / var(--ifm-line-height-base) var(--ifm-font-family-base);
+    font-weight: bold;
+    margin: 0;
+}
+#prop-list summary::before, #js-support-table summary::before {
+    display: none;
+}
+#prop-list summary:focus, #js-support-table summary:focus {
+  outline: none;
+}
+#prop-list summary + div, #prop-list summary + div + div, #js-support-table summary + div, #js-support-table summary + div + div {
+  margin-top: 0em;
+  margin-left: 0em;
+  padding: 0.7em 2em;
+}
+#prop-list summary.ext, #prop-list summary.ext + div, #prop-list summary.ext + div + div, #js-support-table summary.ext, #js-support-table summary.ext + div, #js-support-table summary.ext + div + div {
+  background-color: #dcede6 !important;
+  border-color: #22b573;
+  border-radius: 10px;
+}
+#prop-list details[open] summary.ext, #js-support-table details[open] summary.ext {
+  border-radius: 10px 10px 0px 0px;
+}
+#prop-list details[open] summary.ext + div, #prop-list details[open] summary.ext + div + div, #js-support-table details[open] summary.ext + div, #js-support-table details[open] summary.ext + div + div {
+  border-radius: 0px 0px 10px 10px;
+}
+#ext-props span.ext,
+#prop-list span.ext {
+  background-color: #eee;
+}
+#prop-list details, #js-support-table details {
+  margin: 1em 0em;
+}
+#prop-list details details, #js-support-table details details {
+  margin: 1em;
+}
+#prop-list details:hover, #js-support-table details:hover {
+  border-color: grey !important;
+}
+#prop-list details .hash-link {
+    margin-left: 0px;
+}
+#prop-list .programlisting pre {
+    white-space: normal;
+}
+#prop-list summary.dep, span.dep, #js-support-table .dep summary, span.dep, .dep {
+    text-decoration: line-through;
+}
+#prop-list summary.dep, #prop-list summary.dep + div, #prop-list summary.dep + div + div, #prop-list span.dep, #dep-props .dep, #js-support-table .dep, span.dep, .dep {
+    opacity: 0.4;
+}
+#prop-list summary#prop---custom-property-name, #prop-list summary#prop---custom-property-name + div .example .syntax-block > code {
+    font-style: italic;
+}
+
+
+/* JS support list */
+#js-support-table details.globalWindow {
+  background-color: #f2f2f2;
+}
+#js-support-table {
+  padding: 0px;
+  margin-bottom: 1em;
+}
+#js-support-table .type {
+  font-style: italic;
+  display: inline;
+}
+#js-support-table .type::after {
+  content: " – ";
+}
+#js-support-table .returns {
+  font-style: italic;
+}
+#js-support-table .returns::before {
+  content: "Returns: ";
+}
+#js-support-table .desc {
+  display: inline;
+  min-width: 40%;
+}
+#js-support-table li.argument {
+  display: block;
+}
+#js-support-table ul, #js-support-table li {
+  margin: 0;
+  padding: 0;
+}
+#js-support-table .name {
+  font-weight: bold;
+  display: inline;
+}
+#js-support-table .name.level {
+  margin-right: 0.5em;
+  font-weight: 500;
+}
+#js-support-table pre {
+  background-color: #fff;
+}
+#js-support-table .example {
+  padding: 5px;
+}
+#js-support-table .example pre {
+  white-space: pre-wrap;
+}
+#js-support-table .example-return {
+  display: block;
+}
+#js-support-table .example-return::before {
+  content: " // returns: ";
+}
+#js-support-table .argslist::before {
+  content: "(";
+  font-style: normal;
+}
+#js-support-table .argslist::after {
+  content: ")";
+  font-style: normal;
+}
+#js-support-table .argslist {
+  font-style: italic;
+}
+#js-support-table .ext {
+  background-color: #dcede6 !important;
+  border-color: #22b573;
+}
+#js-support-table .ext .level {
+  background-color: inherit;
+}
+#js-support-table .ext .example pre {
+  background-color: #f2f2f2;
+}
+#js-support-table .ext summary code b::after {
+  content: "*";
+}
+#js-support-table .ext .ext {
+  padding-top: 0px;
+  padding-right: 0px;
+}
+
+
+/* Scroll margin top */
+dt[id], h6[id], th[id], summary[id], #prop-list div[id] {
+    scroll-margin-top: calc(var(--ifm-navbar-height) + 1rem);
+}
+
+/* Admonitions*/
+.alert {
+    --ifm-alert-border-color: pink;
+    --ifm-alert-shadow: 0 1px 2px 0 rgba(255, 0, 0, 0.1);
+    --ifm-alert-background-color: rgba(255, 0, 0, 0.01);
+    a {
+        text-decoration: none;
+        font-style: italic;
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+}
+.alert--warning {
+    --ifm-alert-border-color: red;
+    --ifm-alert-background-color: rgba(255, 0, 0, 0.1);
+}
+.theme-admonition-tip {
+    --ifm-alert-border-color: darkgreen;
+    --ifm-alert-shadow: 0 1px 2px 0 rgba(0, 100, 0, 0.1);
+    --ifm-alert-background-color: rgba(0, 100, 0, 0.01);
+}
+.alert code {
+  --ifm-code-background: rgba(27,31,35,.05) !important;
+}
+
+
+/* Page footer */
+footer a[href*='//']:not([href*='princexml.com'])::after {
+    content: "";
+}
+footer a[href]:hover {
+    text-decoration: underline;
+}
+footer.footer {
+    border-top: 1px solid #ddd;
+    padding: 40px var(--ifm-footer-padding-horizontal) 80px;
+}
+.footer__copyright {
+    float: left;
+    text-align: left;
+    color: var(--ifm-footer-link-color);
+    img {
+        border: 0;
+        margin: 0;
+    }
+}
+.footer__links {
+    float: right;
+    .footer__link-separator {
+        display: none;
+    }
+    a {
+        padding: 0 7px;
+        font-size: 17px;
+    }
+}
+
+
+/* Table of contents */
+ul.table-of-contents {
+    padding-left: 0px !important;
+    font-size: 0.73rem;
+}
+ul.table-of-contents li {
+    margin-left: 0px !important;
+}
+ul.table-of-contents li a {
+    padding-left: 15px;
+}
+ul.table-of-contents li a.table-of-contents__link--active {
+    border-left: 2px solid var(--ifm-toc-border-color);
+    padding-left: 13px;
+    font-weight: bold;
+}
+ul.table-of-contents li ul {
+    padding-left: 0px !important;
+}
+ul.table-of-contents li ul li a {
+    padding-left: 30px;
+}
+ul.table-of-contents li ul li a.table-of-contents__link--active {
+    border-left: 2px solid #e0e0e0;
+    padding-left: 28px;
+}
+
+
+@media only screen and (max-width: 996px) {
+    nav.navbar {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+    .DocSearch {
+        margin-left: 1.5rem;
+    }
+    .DocSearch-Button-Keys, .DocSearch-Button-Placeholder {
+        display: block;
+    }
+    button.clean-btn {
+        color: var(--ifm-toc-link-color);
+        svg {
+            color: white;
+        }
+    }
+    .footer__copyright, .footer__links {
+        float: none;
+        text-align: center;
+    }
+    .footer__links {
+        margin-top: 15px;
+        .footer__link-separator {
+            display: inline;
+            margin: 0;
+        }
+    }
+    .footer__copyright {
+        font-size: 12px;
+        img {
+            padding-bottom: 5px;
+        }
+    }
+    a.footer__link-item {
+        display: inline;
+        font-size: 13px;
+        line-height: 1.5em;
+    }
+}
+
+@media only screen and (min-width: 1024px) {
+}
+
+@media only screen and (max-width: 1023px) {
+}
+
+@media only screen and (min-width: 1400px) {
+}
+
+@media only screen and (min-width: 1500px) {
+}
+
+@media print {
+    @page {
+        size: A4;
+        margin: 0em 2em 2em;
+        margin-inside: 4em;
+        @bottom-center {
+            content: counter(page);
+        }
+    }
+    @prince-pdf {
+        -prince-pdf-display-doc-title: true;
+    }
+    h1, h2, h3, h4, h5 {
+        break-after: avoid;
+    }
+    h3 + h4 {
+        break-before: avoid !important;
+    }
+    #version-nav, .fixedHeaderContainer, footer, #docsNav, .navBreadcrumb, .arrow, .docs-prevnext, .toggle, #toggle-js, #idx-contens + p, #idx-contens + p + ul {
+        display: none;
+    }
+    #idx {
+        padding-top: 50%;
+    }
+    p, pre {
+        orphans: 2;
+        widows: 2;
+    }
+    p:contains('CSS') + pre, p:contains('HTML') + pre, p:contains('XML') + pre, p:contains('SVG') + pre, p:contains('JavaScript') + pre, p:contains('fonts.css') + pre, p:contains('Output') + ol, p:contains('Output') + table, p:contains('Novel title') + p, p:contains('Textbook page') + p, p:contains('Box decoration') + p, p:contains('Furniture catalogue') + p, p:contains('Printing a big table') + p  {
+        break-before: avoid !important;
+    }
+    pre, p:contains('Output') {
+        break-inside: avoid;
+    }
+    details, p.note, p.warning {
+        box-decoration-break: slice;
+    }
+    a[href]::after {
+        content: " [see page " target-counter(attr(href), page) "]";
+        color: black;
+    }
+    a[href*='//']:not([href*='princexml.com'])::after {
+        content: " [at the URL " attr(href) "]" !important;
+        color: black;
+    }
+    a[href*='first']::after, a[href*='install']::after, a[href*='samples']::after, a[href*='forum']::after, a[href*='contact']::after, a[href*='download']::after, a[href='/books/']::after, a[href*='/howcome/']::after  {
+        content: " [available only online]" !important;
+        color: black;
+    }
+    a[href].hash-link::after, #prop-list details a[href]::after, a[href='https://www.princexml.com/']::after  {
+        content: "" !important;
+    }
+    #docsNav {
+        break-after: page;
+    }
+    #docsNav .navGroup.subNavGroup {
+        break-inside: avoid !important;
+    }
+    #docsNav a[href]::after {
+        content: leader('.') "p. " target-counter(attr(href), page);
+    }
+    #docsNav .toc .toggleNav ul ul {
+        padding-right: 0px;
+    }
+    #docsNav .toc .toggleNav ul li.navListItemActive a {
+        font-weight: normal;
+        color: #717171;
+    }
+}

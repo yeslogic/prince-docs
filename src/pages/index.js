@@ -1,0 +1,52 @@
+import React from 'react';
+import Layout from '@theme/Layout';
+import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
+function Home() {
+  const context = useDocusaurusContext();
+  const {siteConfig = {}} = context;
+  return (
+    <Layout
+      title={`Prince Documentation`}
+      description="Prince Documentation">
+      <header>
+        <div className="container">
+          <h1 id="idx">{siteConfig.title}</h1>
+          <p>{siteConfig.tagline}</p>
+        </div>
+      </header>
+      <main id="entry" style={{maxWidth: "500px"}}>
+        <p>In the documentation section you can find:</p>
+        <ul>
+          <li>the <a href="/doc/category/installation-guide/">Installation Guide</a>,</li>
+          <li>the <a href="/doc/intro-userguide/" className="pagination-nav__link--next">User Guide</a>, and</li>
+          <li>the <a href="/doc/category/reference-guide/">Reference Guide</a>.</li>
+        </ul>
+        <p>This is the documentation for the latest release.</p>
+        <p><a href="https://github.com/yeslogic/prince-docs">Source code</a> for the documentation is maintained in a public repository on Github. On the relevant <a href="https://github.com/yeslogic/prince-docs/releases">Github releases page</a> you can find all recent releases, and a link to full changelogs.</p>
+        <details id="version-nav">
+          <summary>
+            Alternatively, you can <b>choose</b> the User Guide by Prince version.
+          </summary>
+          <div id="section-nav"><ul>
+            <li className="curr"><a href="/doc/intro-userguide">User Guide for Prince 16 (current)</a></li>
+            <li><a href="/doc/15/intro-userguide">User Guide for Prince 15</a></li>
+            <li><a href="/doc/14/intro-userguide">User Guide for Prince 14</a></li>
+            <li><a href="/doc/13/intro-userguide">User Guide for Prince 13</a></li>
+            <li><a href="/doc/12/doc-prince/">User Guide for Prince 12</a></li>
+            <li><a href="/doc/11/">User Guide for Prince 11</a></li>
+            <li><a href="/doc/10/">User Guide for Prince 10</a></li>
+            <li><a href="/doc/9.0/">User Guide for Prince 9.0</a></li>
+            <li><a href="/doc/8.1/">User Guide for Prince 8.1</a></li>
+            <li><a href="/doc/7.1/">User Guide for Prince 7.1</a></li>
+            <li><a href="/doc/6.0/">User Guide for Prince 6.0</a></li>
+            <li><a href="/doc/5.1/">User Guide for Prince 5.1</a></li>
+          </ul></div>
+        </details>
+      </main>
+    </Layout>
+  );
+}
+
+export default Home;

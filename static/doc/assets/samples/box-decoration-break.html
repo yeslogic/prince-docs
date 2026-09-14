@@ -1,0 +1,64 @@
+<html>
+<head>
+<title>Box decoration break</title>
+<style>
+@page {
+    size: 18cm 10cm;
+    margin: 1cm 1cm;
+    padding: 0cm;
+}
+div.box1, div.box2 {
+    border: 1px solid black;
+    float: left;
+    width: 7.44cm;
+    margin: 0.25cm;
+}
+div.box1 {
+    box-decoration-break: clone;
+}
+div.box2 {
+    box-decoration-break: slice;
+}
+</style>
+</head>
+<body>
+<div class="box1">
+    <code>box-decoration-break: clone</code><br/>
+    <code>box-decoration-break: clone</code><br/>
+    <code>box-decoration-break: clone</code><br/>
+    <code>box-decoration-break: clone</code><br/>
+    <code>box-decoration-break: clone</code><br/>
+    <code>box-decoration-break: clone</code><br/>
+    <code>box-decoration-break: clone</code><br/>
+    <code>box-decoration-break: clone</code><br/>
+    <code>box-decoration-break: clone</code><br/>
+    <code>box-decoration-break: clone</code><br/>
+    <code>box-decoration-break: clone</code><br/>
+    <code>box-decoration-break: clone</code><br/>
+    <code>box-decoration-break: clone</code><br/>
+    <code>box-decoration-break: clone</code><br/>
+    <code>box-decoration-break: clone</code><br/>
+    <code>box-decoration-break: clone</code><br/>
+    <code>box-decoration-break: clone</code><br/>
+</div>
+<div class="box2">
+    <code>box-decoration-break: slice</code><br/>
+    <code>box-decoration-break: slice</code><br/>
+    <code>box-decoration-break: slice</code><br/>
+    <code>box-decoration-break: slice</code><br/>
+    <code>box-decoration-break: slice</code><br/>
+    <code>box-decoration-break: slice</code><br/>
+    <code>box-decoration-break: slice</code><br/>
+    <code>box-decoration-break: slice</code><br/>
+    <code>box-decoration-break: slice</code><br/>
+    <code>box-decoration-break: slice</code><br/>
+    <code>box-decoration-break: slice</code><br/>
+    <code>box-decoration-break: slice</code><br/>
+    <code>box-decoration-break: slice</code><br/>
+    <code>box-decoration-break: slice</code><br/>
+    <code>box-decoration-break: slice</code><br/>
+    <code>box-decoration-break: slice</code><br/>
+    <code>box-decoration-break: slice</code><br/>
+</div>
+</body>
+</html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Lab Report</title>
+</head>
+<body>
+
+<h1>Lab Report</h1>
+<h2 class="subtitle">John Doe</h2>
+
+<h2>Aim</h2>
+
+<p>
+This simple document aims to show just how easy it is to generate PDFs from
+HTML+CSS using Prince.  The document mostly uses Prince's built in styles
+for HTML, but it also applies some custom styles.  The custom styles: center
+the title and subtitle, choose fonts and specify the style for the hello
+world exclamation below.
+</p>
+
+<h2>Hypothesis</h2>
+
+<p>
+Our hypothesis is that generating PDFs using Prince is easy.
+By using a simple document containing only
+<code>h1</code>,
+<code>h2</code>,
+<code>h3</code>,
+<code>p</code>,
+<code>code</code>,
+<code>pre</code>,
+<code>ul</code> and
+<code>li</code>
+tags and a simple stylesheet we will generate a PDF that looks good.
+</p>
+
+<h2>Method</h2>
+<h3>Apparatus</h3>
+
+<ul>
+  <li>Prince</li>
+  <li>This document</li>
+  <li>A stylesheet</li>
+</ul>
+
+<h3>Steps</h3>
+
+Execute this on your computer's command line:
+
+<code><pre>
+$ prince style.css lab_report.html
+</pre></code>
+
+<h2>Results</h2>
+
+<p id="hello">Hello World!</p>
+
+<h2>Conclusions</h2>
+
+<p>
+If you're currently looking at a PDF file then this works.
+</p>
+
+<p>
+The resulting file includes a title and subtitle (centered), a list of the
+apparatus needed.  The resulting file uses a sensible-looking a sans-serif
+font except for the code tags which use a monospace font and the Hello World
+exclamation which has serifs.
+</p>
+
+</body>
+</html>

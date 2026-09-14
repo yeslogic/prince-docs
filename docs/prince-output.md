@@ -2,17 +2,26 @@
 title: Prince Output
 ---
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,100..900;1,100..900&amp;display=swap" rel="stylesheet"/>
-
 Prince produces PDF files that are compatible with Adobe Acrobat and other PDF viewers. The output can be controlled in several different ways, addressing different aspects of the resulting files.
 
-For the error and warning output log, please see [Output log](help.md#output-log).
+By default, PDFs are generated with the highest resolution possible. To change the resolution the PDF will be viewed or printed with, the command-line option [`--pdf-dpi`](command-line.md#cl-pdf-dpi) can be used. This affects media queries or image `srcset` alternatives that depend on resolution, as well as the [`-prince-filter-resolution`](css-props.md#prop-prince-filter-resolution) CSS property:
+
+* `--pdf-dpi=auto`
+    - `@media` resolution treated as "infinite";
+    - highest resolution option chosen from the imgage `srcset` attribute;
+    - `-prince-filter-resolution` defaults to `96dpi` for compatibility reasons.
+ 
+* `--pdf-dpi=300dpi`, or some other value
+    - `@media` resolution treated as `300dpi`;
+    - appropriate option chosen from the imgage `srcset` attribute;
+    - `-prince-filter-resolution` defaults to `300dpi`.
+
+If the author specifies a fixed dpi for the PDF, Prince will attempt to respect that; otherwise it will treat it as "infinite resolution" (or "resolution independent"), while defaulting filters to `96dpi` for reasons of compatibility with browsers. If necessary, filter resolution [can be changed independently](graphics.md#filters).
+
+For the error and warning output log, please see [Prince Output Log](#prince-output-log).
 
 
-PDF Versions and Profiles
--------------------------
+## PDF Versions and Profiles
 
 The PDF files produced by Prince conform to several different PDF versions, up to PDF 1.7 (ISO 32000-1:2008), depending on the chosen PDF Profile and the enabled PDF features.
 
@@ -33,7 +42,8 @@ The available profiles, and the PDF version they are based on, are:
 | PDF/X-1a:2003 | ISO 15930-4:2003 | PDF 1.4                       |
 | PDF/X-3:2002  |                  | PDF 1.3                       |
 | PDF/X-3:2003  | ISO 15930-6:2003 | PDF 1.4                       |
-| PDF/X-4       | ISO 15930-7:2008 | PDF 1.6                       |
+| PDF/X-4       | ISO 15930-7:2010 | PDF 1.6                       |
+| PDF/X-4p      | ISO 15930-7:2010 | PDF 1.6                       |
 
 Prince supports also the creation of files with the following combined profiles:
 
@@ -63,9 +73,9 @@ The PDF/A-[123]a profiles and the PDF/UA-1 profile require tagged PDF, and will 
 
 Prince supports PDF object streams to reduce the size of tagged PDFs. This can be disabled by the command-line argument [`--no-object-streams`](command-line.md#cl-no-object-streams) or from JavaScript via the [`PDF.objectStreams`](js-support.md#window.PDF.objectStreams) boolean property.
 
-<p class="note">
+:::note
 Object streams are enabled by default, therefore Prince produces files with PDF version 1.5 - unless a profile that requires older PDF versions will automatically disable object streams.
-</p>
+:::
 
 Choosing one profile over another can help producing a PDF file which has the right properties for its intended destination. Each PDF profile places restrictions on the features allowed in a PDF file in order to achieve its aims. Please also see the [Color Management](graphics.md#color-management) section for the impact the PDF profiles have on color management. Prince produces error messages when the restrictions are not respected.
 
@@ -110,16 +120,19 @@ The PDF/UA-1 profile supports attachments.
 -   See the [Color Management and PDF Profiles](graphics.md#color-management-and-pdf-profiles) section for the color profiles available in each PDF/X version. Transparency is not allowed, with the exception of PDF/X-4
 -   Encryption is forbidden
 
-The PDF/X-4 profile supports attachments, but doesn't allow links.
+The PDF/X-4 profile supports attachments, but doesn't allow links. The PDF/X-4p profile allows ICC color profiles to be specified via reference to external URLs instead of directly included in the PDF file itself.
 
-PDF Accessibility
------------------
+## PDF Accessibility
 
 Producing accessible documents is very important when documents are to be shared with a wider audience. There are several criteria that need to be addressed, summed up in the [Web Content Accessibility Guidelines](https://www.w3.org/WAI/standards-guidelines/wcag/), often abbreviated to WCAG, a set of guidelines for improving web accessibility.
 
 The relevant criteria for producing accessible PDF can also be found in a separate document, the [PDF Techniques for WCAG 2.0](https://www.w3.org/TR/WCAG20-TECHS/pdf.html).
 
 A first step would be to produce files with one of the PDF profiles addressing accessibility, namely the PDF/UA-1 profile or the combined PDF/A-1a+PDF/UA-1 or PDF/A-3a+PDF/UA-1 profiles, by specifying the [`--pdf-profile`](command-line.md#cl-pdf-profile) command line option. See [PDF Versions and Profiles](#pdf-versions-and-profiles) for details.
+
+```bash
+    $ prince example.html --pdf-profile=PDF/UA-1
+```
 
 The next step would be to specifically check compliance of the document's content with the requirements. A number of resoures or tools can be helpful in this step:
 
@@ -129,15 +142,17 @@ The next step would be to specifically check compliance of the document's conten
 
 Prince helps in creating accessible documents. Note, however, that Prince does not create WCAG-compliant documents by itself - care has to be taken, and the HTML source has to be coded in specific ways to address all requirements in order to create WCAG-compliant PDF documents.
 
-<p class="note">
+:::tip
 Bruce Lawson has written an interesting introduction on how to make <a href="https://medium.com/@bruce_39084/making-accessible-tagged-pdfs-with-prince-ad7fd7a48711">accessible tagged PDFs with Prince</a> - all you need to know about PDF tags and Prince! Last but not least, there is a nice <a href="https://taggedpdf.com/resources/">Resources</a> page on tagged and accessible PDFs.
-</p>
+:::
 
 Special care needs to be taken when restricting certain features on the created document - notably disallowing copying (with the [--disallow-copy](command-line.md#cl-disallow-copy) command-line option) creates a barrier for screen readers.  To prevent this inconvenience, Prince offers the option to enable text access only for screen reader devices for the visually impaired ([--allow-copy-for-accessibility](command-line.md#cl-allow-copy-for-accessibility)) - see also [PDF Encryption and Document Security](#pdf-encryption-and-document-security).
 
+```bash
+    $ prince example.html --pdf-profile=PDF/UA-1 --disallow-copy --allow-copy-for-accessibility
+```
 
-PDF Features
-------------
+## PDF Features
 
 Prince supports a wide range of PDF features, including the following:
 
@@ -148,15 +163,10 @@ Prince supports PDF-internal and -external links. HTML hyperlinks are automatica
 To make an element in XML, or any arbitrary element, a clickable link, the [`-prince-link`](css-props.md#prop-prince-link) CSS property is required.  If the element already offers an IDREF, i.e. a URL, in its attribute, the `url()` function indicates the target of the link.
 
 
-DocBook XML
-
-```xml
+```xml title="DocBook XML"
     <xref linkend="ch02"/>
 ```
-
-CSS
-
-```css
+```css title="CSS"
     xref {
         -prince-link: attr(linkend idref)
     }
@@ -166,7 +176,7 @@ If, as in this example, we have a value wich is not a URL (as is common in XML d
 
 The property [`-prince-pdf-link-type`](css-props.md#prop-prince-pdf-link-type) may be used to control the link type and target, i.e. whether relative links should be embedded in the PDF as web (URL) links or file links (by default they will be resolved against the base URL of the input document) and whether to open the links in the same or a new window. Note however that the optional link target keywords `same-window` and `new-window` only affect links to local PDF files.
 
-```
+```css
     a[href] {
         -prince-pdf-link-type: new-window;
     }
@@ -175,37 +185,31 @@ This example is equivalent to `-prince-pdf-link-type: auto new-window` and has o
 
 Prince also supports the PDF-specific `page` and `nameddest` fragment identifiers, supported by web browsers, and will use them when generating links to local PDF files.
 
-```html
+```markup title="HTML"
     <a href="test.pdf#page=2">...</a>
     <a href="test.pdf#nameddest=section1">...</a>
 ```
 
 Named destinations (`nameddest`) in PDF files have a similar function to HTML IDs: they can be the target anchors for links from other documents. The property [`-prince-pdf-destination`](css-props.md#prop-prince-pdf-destination) is used for creating them.
 
-HTML
-
-```html
-    <div class="section" data-sectionid="section1">
+```markup title="HTML"
+    <div className="section" data-sectionid="section1">
 ```
-CSS
-
-```css
+```css title="CSS"
     div.section {
         -prince-pdf-destination: attr( data-sectionid )
     }
 ```
 In order to link to this section, the following syntax is used:
 
-HTML
-
-```html
+```markup title="HTML"
     <a href="test.pdf#nameddest=section1">...</a>
 ```
 ### PDF Actions
 
 Prince supports the `pdf-action:` URL scheme for PDF actions. Typical values are `Print`, `GoBack`, `GoForward`, `NextPage`, `PrevPage`, `FirstPage`, `LastPage`.
 
-```html
+```markup
     <a href="pdf-action:Print">Print Document</a>
 ```
 However, Prince passes the provided values verbatim to the PDF viewer, so the user can supply values that Prince doesn't know about, but the viewer does. Also, please note that these scripts will *always* be run, unlike JavaScript (see [Applying JavaScript in Prince](prince-input.md#applying-javascript-in-prince)).
@@ -237,13 +241,15 @@ Just as with the previous property, scripts need to be provided inline.
         -prince-pdf-event-scripts: will-close "app.alert('This file is now closing!', 3)", will-print "app.alert('This file will be printed.', 1);";
     }
 ```
-Please note that starting from Prince 15, these CSS properties will not longer allow for the `url()` function as an argument - to provide an external file, the command-line options [`--prince-pdf-script`](command-line.md#cl-prince-pdf-script) and [`--prince-pdf-event-script`](command-line.md#cl-prince-pdf-event-script) need to be used instead.
+Please note that starting from Prince 15, these CSS properties will not longer allow for the `url()` function as an argument - to provide an external file, the command-line options [`--pdf-script`](command-line.md#cl-pdf-script) and [`--pdf-event-script`](command-line.md#cl-pdf-event-script) need to be used instead.
 
-The [`--prince-pdf-script`](command-line.md#cl-prince-pdf-script) command-line option can be set multiple times, and all scripts passed will be run.
+The [`--pdf-script`](command-line.md#cl-pdf-script) command-line option can be set multiple times, and all scripts passed will be run.
 
 PDF scripts can also be passed to Prince by means of a [JSON job description](server-integration.md#prince-job-json), which also allows for multiple scripts being passed to Prince.
 
-<p class="note">The JavaScript method <a href="/doc/js-support/#window.PDF.script">PDF.script</a>, when used as a getter, returns a string if exactly one script string literal was provided (via the command line, the CSS property or the job description), but returns null when multiple scripts are specified. When used as a setter, it only allows to set a single script.</p>
+:::note
+The JavaScript method <a href="/doc/js-support/#window.PDF.script">PDF.script</a>, when used as a getter, returns a string if exactly one script string literal was provided (via the command line, the CSS property or the job description), but returns null when multiple scripts are specified. When used as a setter, it only allows to set a single script.
+:::
 
 ### PDF Pages
 
@@ -252,6 +258,14 @@ Prince allows for some degree of control on the pages and the page layout in a P
 ```css
     @page {
         -prince-pdf-page-label: counter(page, lower-roman);
+    }
+```
+
+The numbering of pages itself can be fine-tuned with the CSS descriptor [`-prince-pdf-page-numbering`](css-props.md#prop-prince-pdf-page-numbering) in the [`@counter-style`](css-at-rules.md#at-counter-style) CSS at-rule. In the following example, the value `"r"` stands for lowercase roman PDF page numbering.
+
+```css
+    @page {
+        -prince-pdf-page-numbering: "r";
     }
 ```
 
@@ -271,7 +285,7 @@ Also the default page layout for the PDF file when it is opened can be determine
 ```
 The values of this property are mapped to PDF page layout options:
 
-<table class="grid">
+<table className="grid">
 <thead>
   <tr>
     <th>CSS Keyword</th>
@@ -396,6 +410,7 @@ The main mechanisms for doing so are the JavaScript function [`PDF.attachFile`](
 
 Attachments in the job description include a key to specify the AFRelationship key of the attachment in the PDF.  The value of `relationship` must be one of the names defined in PDF 2.0:
 
+```
     Source
     Data
     Alternative
@@ -404,6 +419,7 @@ Attachments in the job description include a key to specify the AFRelationship k
     FormData
     Schema
     Unspecified
+```
 
 or a second-class name according to the following definition: "all names that begin with 4 characters including or followed by a LOW LINE (5fh) or COLON (3Ah) in either the key or value of a dictionary entry are second-class names."
 
@@ -423,11 +439,13 @@ When in use, the attachment definition might look like the following example:
 
 The command-line options
 
+```
     --attach-data
     --attach-source
     --attach-alternative
     --attach-supplement
     --attach-unspecified
+```
 
 give users a way to add file attachments on the command line, while specifying the AFRelationship value for those attachments.  These options are all equivalent to the command-line option [`--attach`](command-line.md#cl-attach), but will specify a different AFRelationship value for the attachment.
 
@@ -442,7 +460,7 @@ Prince can create PDF bookmarks that link to document content.
 
 PDF bookmarks have numeric levels that place them in a bookmark hierarchy. For example, a bookmark at level 2 can contain nested bookmarks at level 3, or any higher level. The level of a bookmark is controlled using the [`-prince-bookmark-level`](css-props.md#prop-prince-bookmark-level) property, shown here being applied to the XHTML heading elements:
 
-```
+```css
     h1 { -prince-bookmark-level: 1 }
     h2 { -prince-bookmark-level: 2 }
     h3 { -prince-bookmark-level: 3 }
@@ -458,9 +476,7 @@ It is possible to control the state of the bookmark, i.e. whether the bookmark i
 
 PDF bookmarks have textual labels that by default are copied from the text content of the element that generated the bookmark. The text of this label may be controlled using the [`-prince-bookmark-label`](css-props.md#prop-prince-bookmark-label) property, shown here being applied to a chapter element that has a title attribute:
 
-CSS
-
-```
+```css
     chapter {
         -prince-bookmark-level: 1;
         -prince-bookmark-label: attr(title)
@@ -472,9 +488,7 @@ This property can take any content value, including literal text strings and cou
 
 PDF bookmarks are links that display a particular part of the document when activated. By default, a bookmark will link to the element that generated the bookmark, which is sensible behavior for bookmarks generated from headings or chapter elements. It is also possible to change the target of a bookmark using the [`-prince-bookmark-target`](css-props.md#prop-prince-bookmark-target) property, which takes a URL directly or an attribute containing a URL:
 
-CSS
-
-```
+```css
     bookmark { -prince-bookmark-target: url(#intro) }
     bookmark { -prince-bookmark-target: attr(href) }
 ```
@@ -499,13 +513,10 @@ Next, the annotation title and content are defined with respectively the [`-prin
 
 Based on the underlying principle of keeping content and style separated, it is good practice to keep the comments in the HTML file, rather than in CSS - therefore we recommend using data attributes, as we show in the following example:
 
-HTML
-```html
-<p>This is a sentence with an <span class="annotation" data-title="PDF Annotation Title" data-contents="This is a PDF annotation.">annotation</span>.
+```markup title="HTML"
+<p>This is a sentence with an <span className="annotation" data-title="PDF Annotation Title" data-contents="This is a PDF annotation.">annotation</span>.
 ```
-
-CSS
-```css
+```css title="CSS"
     p#annotation {
         -prince-pdf-annotation-type: text;
         -prince-pdf-annotation-title: attr(data-title);
@@ -538,6 +549,16 @@ PDF annotations can also be provided with an icon, to help seeing at a glance wh
 
 The author of the annotation can be specified through the [`-prince-pdf-annotation-author`](css-props.md#prop-prince-pdf-annotation-author) property.  Prince also offers the possibility of specifying the annotation creation and modification dates, with the properties [`-prince-pdf-annotation-createdate`](css-props.md#prop-prince-pdf-annotation-createdate) and [`-prince-pdf-annotation-modifydate`](css-props.md#prop-prince-pdf-annotation-modifydate).
 
+PDF annotations on one page can be "merged", resulting in only one annotation linked to multiple elements. This is achieved with the CSS property [`-prince-pdf-annotation-merge`](css-props.md#prop-prince-pdf-annotation-merge).
+
+With the default value `none`, each user annotation is considered a distinct annotation. With the value `duplicates`, user annotations with the same type, author, title, contents, creation/modification date, color, and icon, will be "merged", resulting in only one annotation per page; and with the function value <code>key( &lt;<i>string</i>&gt; )</code>, user annotations that share the same key will be "merged", resulting in only one annotation per page.
+
+```css
+    @prince-pdf {
+        -prince-pdf-annotation-merge: duplicates
+    }
+```
+
 Please also consult [A quick guide to PDF comments in Prince](https://css4.pub/2022/comments/) for more examples.
 
 
@@ -549,9 +570,7 @@ Tagged PDF is automatically enabled when the PDF/A-[123]a profiles or the PDF/UA
 
 However, in specific cases it is advisable to fine-tune the PDF tags with the [`-prince-pdf-tag-type`](css-props.md#prop-prince-pdf-tag-type) property. In Prince, it is possible to assign PDF tag types to elements in the document through the [`-prince-pdf-tag-type`](css-props.md#prop-prince-pdf-tag-type) property, in order to create XML vocabularies in the PDF.
 
-CSS
-
-```
+```css title="CSS"
     ul.toc {
       -prince-pdf-tag-type: TOC;
     }
@@ -559,9 +578,7 @@ CSS
       -prince-pdf-tag-type: TOCI;
     }
 ```
-HTML
-
-```html
+```markup title="HTML"
     <ul class="toc">
       <li>First Chapter</li>
       <li>Second Chapter</li>
@@ -611,9 +628,7 @@ The special value `none` can be used to make specific elements (such as e.g. wra
 
 Prince allows to expand the tag assignment by providing a mechanism for custom role map declarations with the CSS property [`-prince-pdf-role-map`](css-props.md#prop-prince-pdf-role-map). The custom tag types thus declared, can then be used by the [`-prince-pdf-tag-type`](css-props.md#prop-prince-pdf-tag-type) property.
 
-CSS
-
-```
+```css
     @prince-pdf {
       -prince-pdf-role-map:
         "Chapter" Sect,
@@ -629,9 +644,7 @@ CSS
 
 PDF tags can also be given a custom title with the [`-prince-pdf-tag-title`](css-props.md#prop-prince-pdf-tag-title) property.  We could expand on the previous example, specifying the following:
 
-CSS
-
-```
+```css
     ul.toc {
       -prince-pdf-tag-type: TOC;
       -prince-pdf-tag-title: "Table of Contents";
@@ -639,18 +652,16 @@ CSS
 ```
 
 
-<p class="note">
+:::note
 Bruce Lawson has written an interesting introduction on how to make <a href="https://medium.com/@bruce_39084/making-accessible-tagged-pdfs-with-prince-ad7fd7a48711">accessible tagged PDFs with Prince</a> - all you need to know about PDF tags and Prince!
-</p>
+:::
 
 
 ### PDF Metadata
 
 Prince creates PDF metadata from the content of the XHTML metadata elements. The content of the `<title>` element is used for the document title, while the `<meta>` element can be used to specify the document author, subject, keywords, date, and generator application:
 
-XML
-
-```xml
+```xml title="XHTML"
     <html>
     <head>
     <title>Cooking with Cabbage</title>
@@ -663,10 +674,295 @@ XML
 ```
 #### XMP Metadata
 
-Additionally, XMP metadata can be added to a PDF file from an XMP file. This file needs to be passed to Prince either via the [`--pdf-xmp`](command-line.md#cl-pdf-xmp) command-line option, the [-prince-pdf-xmp](css-props.md#prop-prince-pdf-xmp) CSS property, or it can be specified in JavaScript with the [`PDF.xmp()`](js-support.md#window.PDF.xmp) function.
+Additionally, XMP metadata can be added to a PDF file from an XMP file. This file needs to be passed to Prince either via the [`--pdf-xmp`](command-line.md#cl-pdf-xmp) command-line option, the [`-prince-pdf-xmp`](css-props.md#prop-prince-pdf-xmp) CSS property, or it can be specified in JavaScript with the [`PDF.xmp`](js-support.md#window.PDF.xmp) property.  The properties and options require either a URL pointing to an XMP file, or an encoded `data:` URL.
 
-The [`PDF.xmp()`](js-support.md#window.PDF.xmp) JavaScript function, the [-prince-pdf-xmp](css-props.md#prop-prince-pdf-xmp) CSS property and the [`--pdf-xmp`](command-line.md#cl-pdf-xmp) command-line option require either a URL pointing to an XMP file, or an encoded `data:` URL.
+The content of the following example metadata file
 
+```xml title="xmp1.xml XMP Metadata"
+<x:xmpmeta xmlns:x="adobe:ns:meta/">
+ <rdf:RDF xmlns:rdf="http://w3.org">
+  <rdf:Description rdf:about=""
+    xmlns:dc="http://purl.org"
+    xmlns:pdfaid="http://aiim.org">
+   <dc:title>
+    <rdf:Alt>
+     <rdf:li xml:lang="x-default">My PDF document</rdf:li>
+    </rdf:Alt>
+   </dc:title>
+   <dc:creator>
+    <rdf:Seq>
+     <rdf:li>Prince XML</rdf:li>
+    </rdf:Seq>
+   </dc:creator>
+   <pdfaid:part>2</pdfaid:part>
+   <pdfaid:conformance>B</pdfaid:conformance>
+  </rdf:Description>
+ </rdf:RDF>
+</x:xmpmeta>
+```
+
+can thus either be included by pointing to the file:
+
+```javascript
+    PDF.xmp = 'xmp1.xml';
+```
+
+or by including it directly as a `data:` URL:
+
+```javascript
+    PDF.xmp = 'data:application/rdf+xml;base64,PHg6eG1wbWV0YSB4bWxuczp4PSJhZG9iZTpuczptZXRhLyI+CiA8cmRmOlJERiB4bWxuczpyZGY9Imh0dHA6Ly93My5vcmciPgogIDxyZGY6RGVzY3JpcHRpb24gcmRmOmFib3V0PSIiCiAgICB4bWxuczpkYz0iaHR0cDovL3B1cmwub3JnIgogICAgeG1sbnM6cGRmYWlkPSJodHRwOi8vYWlpbS5vcmciPgogICA8ZGM6dGl0bGU+CiAgICA8cmRmOkFsdD4KICAgICA8cmRmOmxpIHhtbDpsYW5nPSJ4LWRlZmF1bHQiPk15IFBERiBkb2N1bWVudDwvcmRmOmxpPgogICAgPC9yZGY6QWx0PgogICA8L2RjOnRpdGxlPgogICA8ZGM6Y3JlYXRvcj4KICAgIDxyZGY6U2VxPgogICAgIDxyZGY6bGk+UHJpbmNlIFhNTDwvcmRmOmxpPgogICAgPC9yZGY6U2VxPgogICA8L2RjOmNyZWF0b3I+CiAgIDxwZGZhaWQ6cGFydD4yPC9wZGZhaWQ6cGFydD4KICAgPHBkZmFpZDpjb25mb3JtYW5jZT5CPC9wZGZhaWQ6Y29uZm9ybWFuY2U+CiAgPC9yZGY6RGVzY3JpcHRpb24+CiA8L3JkZjpSRkY+CjwveDp4bXBtZXRhPg==';
+```
+
+:::note
 Prince includes data from the `<x:xmpmeta>` element and its contents. The `xpacket` processing instructions are ignored, as Prince generates those itself when it produces the PDF file.
+:::
 
-Should it be necessary, the XMP representation of HTML metadata can be manually enabled, even when the chosen PDF profile does not require it, with the [`--pdf-xmp-metadata`](command-line.md#cl-pdf-xmp-metadata) command-line option or the [`PDF.xmpMetadata()`](js-support.md#window.PDF.xmpMetadata) JavaScript function.
+Should it be necessary, the XMP representation of HTML metadata can be manually enabled, even when the chosen PDF profile does not require it, with the [`--pdf-xmp-metadata`](command-line.md#cl-pdf-xmp-metadata) command-line option or the [`PDF.xmpMetadata`](js-support.md#window.PDF.xmpMetadata) JavaScript property.
+
+```javascript
+    PDF.xmpMetadata = true;
+    PDF.xmp = 'xmp1.xml';
+```
+
+## Prince Output Log
+
+Not always things work as smoothly as one would wish - Prince can assist with debugging output.
+
+When launching Prince from the command line, Prince will print any error or warning messages directly to the console, prefixed with `error:` or `warning:` messages.
+
+```bash
+    $ prince example.html
+    prince: style.css: warning: can't open input file: No such file or directory
+```
+
+The level of verbosity, or a log file where to print all output, can be controlled with a few command-line [Logging Options](command-line.md#logging-options):
+
+-   when running Prince with the [`--verbose`](command-line.md#cl-verbose) command-line option, it prints out informative messages on the progress of creating the PDF;
+
+```bash
+    $ prince example.html --verbose
+    prince: loading document: /usr/lib/prince/license/license.dat
+    prince: Loading document...
+    prince: loading HTML input: example.html
+    prince: loading document: example.html
+    prince: Applying style sheets...
+    prince: loading style sheet: style.css
+    prince: style.css: warning: can't open input file: No such file or directory
+    prince: Preparing document...
+    prince: Converting document...
+    prince: loading font: /usr/share/fonts/truetype/dejavu/DejaVuSerif-Bold.ttf
+    prince: used font: DejaVu Serif, Bold
+    prince: writing PDF to file: example.pdf
+    prince: Finished: success
+```
+
+-   when running Prince with the [`--debug`](command-line.md#cl-debug) command-line option, it provides details about what it is doing that help to make sense of failed HTTP requests or font errors by giving insight into what is being loaded;
+
+```bash
+    $ prince example.html --debug
+    prince: debug: init locking for OpenSSL
+    prince: debug: loading license: /usr/lib/prince/license/license.dat
+    prince: debug: loading /usr/lib/prince/license/license.dat because it is the main resource
+    prince: loading document: /usr/lib/prince/license/license.dat
+    prince: debug: loaded resource: /usr/lib/prince/license/license.dat
+    prince: debug: loaded resource: type: no
+    prince: loading style sheet: /usr/lib/prince/style/fonts.css
+    prince: debug: loaded resource: /usr/lib/prince/style/fonts.css
+    prince: debug: loaded resource: type: no
+    prince: debug: enabling parallel downloads
+    prince: Loading document...
+    prince: loading HTML input: example.html
+    prince: loading document: example.html
+    prince: debug: loaded resource: example.html
+    prince: debug: loaded resource: type: no
+    prince: debug: loaded document: example.html
+    prince: debug: sniffed doctype: XHTML
+    prince: Applying style sheets...
+    prince: loading style sheet: /usr/lib/prince/style/common.css
+    prince: debug: loaded resource: /usr/lib/prince/style/common.css
+    prince: debug: loaded resource: type: no
+    prince: loading style sheet: /usr/lib/prince/style/html.css
+    prince: debug: loaded resource: /usr/lib/prince/style/html.css
+    prince: debug: loaded resource: type: no
+    prince: loading style sheet: /usr/lib/prince/style/hyph.css
+    prince: debug: loaded resource: /usr/lib/prince/style/hyph.css
+    prince: debug: loaded resource: type: no
+    prince: loading style sheet: /usr/lib/prince/style/mathml.css
+    prince: debug: loaded resource: /usr/lib/prince/style/mathml.css
+    prince: debug: loaded resource: type: no
+    prince: loading style sheet: /usr/lib/prince/style/svg.css
+    prince: debug: loaded resource: /usr/lib/prince/style/svg.css
+    prince: debug: loaded resource: type: no
+    prince: loading style sheet: /usr/lib/prince/style/counter-style.css
+    prince: debug: loaded resource: /usr/lib/prince/style/counter-style.css
+    prince: debug: loaded resource: type: no
+    prince: loading style sheet: style.css
+    prince: debug: error loading resource: can't open input file: No such file or directory
+    prince: style.css: warning: can't open input file: No such file or directory
+    prince: Preparing document...
+    prince: Converting document...
+    prince: debug: pack
+    prince: debug: font request: bold serif
+    prince: debug: font scan: times new roman
+    prince: debug: font scan: times new roman, 0 matches
+    prince: debug: font scan: dejavu serif
+    prince: debug: found font: dejavu serif Italic
+    prince: debug: found font: dejavu serif Regular
+    prince: debug: found font: dejavu serif Italic
+    prince: debug: found font: dejavu serif Regular
+    prince: debug: found font: dejavu serif Regular
+    prince: debug: found font: dejavu serif Regular
+    prince: debug: found font: dejavu serif Italic
+    prince: debug: found font: dejavu serif Italic
+    prince: debug: font scan: dejavu serif, 8 matches
+    prince: debug: font scan: dejavu lgc serif
+    prince: debug: font scan: dejavu lgc serif, 0 matches
+    prince: debug: font scan: liberation serif
+    prince: debug: font scan: liberation serif, 0 matches
+    prince: debug: font scan: noto serif
+    prince: debug: font scan: noto serif, 0 matches
+    prince: debug: font scan: opensymbol
+    prince: debug: font scan: opensymbol, 0 matches
+    prince: debug: font scan: dejavu sans
+    prince: debug: found font: dejavu sans Regular
+    prince: debug: found font: dejavu sans Regular
+    prince: debug: found font: dejavu sans Italic
+    prince: debug: found font: dejavu sans Italic
+    prince: debug: found font: dejavu sans Italic
+    prince: debug: found font: dejavu sans Regular
+    prince: debug: found font: dejavu sans Regular
+    prince: debug: found font: dejavu sans Italic
+    prince: debug: found font: dejavu sans Regular
+    prince: debug: font scan: dejavu sans, 9 matches
+    prince: debug: font scan: ar pl uming cn
+    prince: debug: font scan: ar pl uming cn, 0 matches
+    prince: debug: font scan: ar pl sungtil gb
+    prince: debug: font scan: ar pl sungtil gb, 0 matches
+    prince: debug: font scan: noto serif sc
+    prince: debug: font scan: noto serif sc, 0 matches
+    prince: debug: font scan: noto serif cjk sc
+    prince: debug: font scan: noto serif cjk sc, 0 matches
+    prince: debug: font scan: kochi mincho
+    prince: debug: font scan: kochi mincho, 0 matches
+    prince: debug: font scan: ipamincho
+    prince: debug: font scan: ipamincho, 0 matches
+    prince: debug: font scan: takaomincho
+    prince: debug: font scan: takaomincho, 0 matches
+    prince: debug: font scan: noto serif jp
+    prince: debug: font scan: noto serif jp, 0 matches
+    prince: debug: font scan: noto serif cjk jp
+    prince: debug: font scan: noto serif cjk jp, 0 matches
+    prince: debug: font scan: unbatang
+    prince: debug: font scan: unbatang, 0 matches
+    prince: debug: font scan: baekmuk batang
+    prince: debug: font scan: baekmuk batang, 0 matches
+    prince: debug: font scan: noto serif kr
+    prince: debug: font scan: noto serif kr, 0 matches
+    prince: debug: font scan: noto serif cjk kr
+    prince: debug: font scan: noto serif cjk kr, 0 matches
+    prince: debug: font scan: khmer os
+    prince: debug: font scan: khmer os, 0 matches
+    prince: debug: font scan: noto serif khmer
+    prince: debug: font scan: noto serif khmer, 0 matches
+    prince: debug: font scan: noto serif myanmar
+    prince: debug: font scan: noto serif myanmar, 0 matches
+    prince: debug: font scan: padauk
+    prince: debug: font scan: padauk, 0 matches
+    prince: debug: font scan: myanmar sagar
+    prince: debug: font scan: myanmar sagar, 0 matches
+    prince: debug: font scan: noto sans myanmar
+    prince: debug: font scan: noto sans myanmar, 0 matches
+    prince: debug: font scan: lohit devanagari
+    prince: debug: font scan: lohit devanagari, 0 matches
+    prince: debug: font scan: noto serif devanagari
+    prince: debug: font scan: noto serif devanagari, 0 matches
+    prince: debug: font scan: lohit bengali
+    prince: debug: font scan: lohit bengali, 0 matches
+    prince: debug: font scan: ani
+    prince: debug: font scan: ani, 0 matches
+    prince: debug: font scan: mukti narrow
+    prince: debug: font scan: mukti narrow, 0 matches
+    prince: debug: font scan: noto serif bengali
+    prince: debug: font scan: noto serif bengali, 0 matches
+    prince: debug: font scan: lohit punjabi
+    prince: debug: font scan: lohit punjabi, 0 matches
+    prince: debug: font scan: noto serif gurmukhi
+    prince: debug: font scan: noto serif gurmukhi, 0 matches
+    prince: debug: font scan: lohit gujarati
+    prince: debug: font scan: lohit gujarati, 0 matches
+    prince: debug: font scan: noto serif gujarati
+    prince: debug: font scan: noto serif gujarati, 0 matches
+    prince: debug: font scan: lohit tamil
+    prince: debug: font scan: lohit tamil, 0 matches
+    prince: debug: font scan: noto serif tamil
+    prince: debug: font scan: noto serif tamil, 0 matches
+    prince: debug: font scan: lohit telugu
+    prince: debug: font scan: lohit telugu, 0 matches
+    prince: debug: font scan: noto serif telugu
+    prince: debug: font scan: noto serif telugu, 0 matches
+    prince: debug: font scan: lohit kannada
+    prince: debug: font scan: lohit kannada, 0 matches
+    prince: debug: font scan: noto serif kannada
+    prince: debug: font scan: noto serif kannada, 0 matches
+    prince: debug: font scan: lohit malayalam
+    prince: debug: font scan: lohit malayalam, 0 matches
+    prince: debug: font scan: noto serif malayalam
+    prince: debug: font scan: noto serif malayalam, 0 matches
+    prince: debug: font scan: lohit oriya
+    prince: debug: font scan: lohit oriya, 0 matches
+    prince: debug: font scan: noto serif oriya
+    prince: debug: font scan: noto serif oriya, 0 matches
+    prince: debug: font scan: lklug
+    prince: debug: font scan: lklug, 0 matches
+    prince: debug: font scan: noto serif sinhala
+    prince: debug: font scan: noto serif sinhala, 0 matches
+    prince: debug: font scan: noto serif lao
+    prince: debug: font scan: noto serif lao, 0 matches
+    prince: debug: font scan: garuda
+    prince: debug: font scan: garuda, 0 matches
+    prince: debug: font scan: noto serif thai
+    prince: debug: font scan: noto serif thai, 0 matches
+    prince: debug: font scan: noto naskh arabic
+    prince: debug: font scan: noto naskh arabic, 0 matches
+    prince: debug: font scan: noto serif hebrew
+    prince: debug: font scan: noto serif hebrew, 0 matches
+    prince: debug: font scan: joypixels
+    prince: debug: font scan: joypixels, 0 matches
+    prince: debug: font scan: noto color emoji
+    prince: debug: font scan: noto color emoji, 0 matches
+    prince: loading font: /usr/share/fonts/truetype/dejavu/DejaVuSerif-Bold.ttf
+    prince: debug: loaded resource: /usr/share/fonts/truetype/dejavu/DejaVuSerif-Bold.ttf
+    prince: debug: loaded resource: type: no
+    prince: used font: DejaVu Serif, Bold
+    prince: writing PDF to file: example.pdf
+    prince: debug: subset font: DejaVu Serif, Bold
+    prince: Finished: success
+```
+
+-   the [`--log=FILE`](command-line.md#cl-log) command-line option allows to save all output to the specified file, for later inspection.
+
+Some warnings can be suppressed from the output log: the command-line options [`--no-warn-css-unknown`](command-line.md#cl-no-warn-css-unknown) and [`--no-warn-css-unsupported`](command-line.md#cl-no-warn-css-unsupported) suppress unknown or unsupported CSS features, while [`--no-warn-css`](command-line.md#cl-no-warn-css) suppresses all CSS-related warnings.
+
+```bash
+    $ prince example.html
+    prince: style.css: warning: can't open input file: No such file or directory
+    prince: example.html:10: warning: unknown property 'foobar'
+    prince: example.html: warning: unsupported properties: hanging-punctuation, initial-letter, quotes
+```
+
+```bash
+    $ prince example.html --no-warn-css
+    prince: style.css: warning: can't open input file: No such file or directory
+```
+
+A more advanced control of the output log, designed to make it easier to integrate other software with Prince, is given by the [Structured Log](server-integration.md#structured-log).
+
+:::tip
+When using the Prince GUI, the output log is printed to the log window on the bottom left of the main GUI window.
+:::
+
+Prince offers also advanced debugging options that might help the developers to understand issues that prove difficult to replicate:
+-   the [capture/replay system](help.md#the-capturereplay-system) allows to faithfully replay a previously captured Prince run; and
+-   the [Prince debug script](help.md#running-the-debug-script) dumps a considerable amount of debug information to two files in the `/tmp` directory, namely `prince.debug` and `prince.strace`.
+
+However, these two options are usually not needed in normal debugging.

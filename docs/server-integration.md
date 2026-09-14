@@ -2,14 +2,9 @@
 title: Server Integration
 ---
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,100..900;1,100..900&amp;display=swap" rel="stylesheet"/>
-
 Prince can be used server-side to produce PDFs, invoked by a wrapper script. Some care needs to be used in the configuration to make it reliable and secure.
 
-Prince Wrappers
----------------
+## Prince Wrappers
 
 Since different server configurations make use of different scripting languages, wrappers in those languages are necessary to invoke Prince. Wrappers for several of the most widely used scripting languages are available for download on the [Wrappers Download Page](/download/wrappers/).
 
@@ -295,8 +290,7 @@ Node.js
 [Node API for executing XML/HTML to PDF renderer PrinceXML via `prince` CLI](https://www.npmjs.com/package/prince)
 
 
-Prince In Cloud Computing
---------------------------
+## Prince In Cloud Computing
 
 Prince can easily be deployed on many different cloud computing platforms and solutions.  As example deployments,
 we detail here installation procedures for Prince on Docker, Azure, AWS Lambda and AWS EC2.
@@ -341,8 +335,7 @@ Prince can easily be installed also on Amazon's EC2 platform - Bruce Lawson prov
 
 
 
-Advanced Command-Line Options
------------------------------
+## Advanced Command-Line Options
 
 Prince can also be called from the command-line with some special options for fine-tuning the creation of PDF files.
 
@@ -359,18 +352,21 @@ The JSON job description ([here](#job-description-json) you can see the full des
 
 ```json
 {
-  * "input": { <input options> },
+    // highlight-next-line
+    "input": { <input options> },
     "pdf": { <pdf options> },
     "metadata": { <metadata options> },
 }
 ```
-The `input` field is mandatory (marked with an asterisk), the rest are optional and will default to the normal values.
+The `input` field (highlighted) is mandatory, the rest are optional and will default to the normal values.
 
 The `input options` object includes these fields:
 
 ```json
 {
-  * "src": <single URL or list of URLs>,
+    // highlight-next-line
+    "src": <single URL or list of URLs>,
+    "css-dpi": <integer>,
     "type": <string>,
     "base": <string>,
     "media": <string>,
@@ -385,11 +381,11 @@ The `input options` object includes these fields:
     "xml-external-entities": <bool>
 }
 ```
-Only the `src` field is required (marked with an asterisk), the rest can be left as defaults.
+Only the `src` field (highlighted) is required, the rest can be left as defaults.
 
-<p class="note">
+:::note
 URLs must be file names, or HTTP URLs - or, if the user wishes to embed the file inside the job itself, they also can be <code>data:</code> URLs!
-</p>
+:::
 
 The `pdf options` object includes these fields:
 
@@ -426,6 +422,7 @@ The `pdf options` object includes these fields:
         "did-print": <string> | {"url": <URL>}
     },
     "pdf-id": <string>,
+    "pdf-dpi": <string>,
     "pdf-lang": <string>,
     "pdf-xmp": <URL>,
     "pdf-xmp-metadata": <bool>,
@@ -447,6 +444,7 @@ Each attachment is a &lt;URL&gt; (string) or an object:
 
 The value of `relationship` must be one of the AFRelationship keys defined in PDF 2.0:
 
+```
     Source
     Data
     Alternative
@@ -455,11 +453,13 @@ The value of `relationship` must be one of the AFRelationship keys defined in PD
     FormData
     Schema
     Unspecified
+```
 
 or a second-class name according to the following definition:
-"all names that begin with 4 characters including or followed
-by a LOW LINE (5fh) or COLON (3Ah) in either the key or value
-of a dictionary entry are second-class names."
+
+> all names that begin with 4 characters including or followed
+> by a LOW LINE (5fh) or COLON (3Ah) in either the key or value
+> of a dictionary entry are second-class names.
 
 The MIME type for an attachment is generally autodetected, based on file extension as defined in the `mime.types` mapping file.  However, there can be cases when a manual override is desired - it can be set with the `mime-type` field.
 
@@ -487,14 +487,18 @@ The `metadata options` object includes these fields:
 }
 ```
 
+
 #### Job description JSON
 
-The following is the full JSON job description - the mandatory `input` and `src` fields are marked with an asterisk:
+The following is the full JSON job description - the mandatory `input` and `src` fields are highlighted:
 
 ```json
 {
-  * "input": {
-      * "src": <single URL or list of URLs>,
+    // highlight-next-line
+    "input": {
+    // highlight-next-line
+        "src": <single URL or list of URLs>,
+        "css-dpi": <integer>,
         "type": <string>,
         "base": <string>,
         "media": <string>,
@@ -540,6 +544,7 @@ The following is the full JSON job description - the mandatory `input` and `src`
             "did-print": <string> | {"url": <URL>}
         },
         "pdf-id": <string>,
+        "pdf-dpi": <string>,
         "pdf-lang": <string>,
         "pdf-xmp": <URL>,
         "pdf-xmp-metadata": <bool>,
@@ -568,7 +573,9 @@ A complicated Prince job can be described with the JSON format described above, 
 
 Some things described in such a JSON file also do not have equivalent command-line arguments, such as the ability to specify titles for file attachments, or different settings for different input documents, instead of the same settings for all input documents - in short, the JSON description is more flexible.
 
-<p class="note">If file locations in the JSON file are expressed as <em>relative paths</em>, please note that they are relative <b>to the present working directory</b>, not the path to the JSON file.</p>
+:::note
+If file locations in the JSON file are expressed as <em>relative paths</em>, please note that they are relative <b>to the present working directory</b>, not the path to the JSON file.
+:::
 
 This JSON description can then be passed to Prince with the Job Command-line option [`--job`](command-line.md#cl-job), in order to have Prince execute the described job.
 
@@ -639,9 +646,9 @@ Caller: end
 
 Instead of sending the final `end` chunk the caller may choose to submit another `job` chunk and continue converting documents. The protocol is synchronous so replies simply match requests in order.
 
-<p class="note">
+:::note
 Chunks always begin with a line containing a <b>three letter tag</b>, followed by a space and then <b><em>the number of bytes</em></b> in the chunk as a decimal number, followed by a newline, and then the chunk data.
-</p>
+:::
 
 The `job` chunk contains a description of the conversion job represented in JSON format, which can be followed by an optional sequence of `dat` chunks containing file data which is needed by the job, eg. HTML documents, style sheets, PDF attachments, or whatever.
 
@@ -784,8 +791,7 @@ Usually Prince will try hard to solve any unexpected issues that arise, prioriti
 The JavaScript property [`Prince.failStatus`](js-support.md#window.Prince.failStatus) can also be used to trigger an explicit failure status based on custom criteria. See also under [Failure status](javascript.md#failure-status).
 
 
-Security
---------
+## Security
 
 When you control the input, Prince produces the expected output - you are dealing with trusted input with no (intentionally) malicious code.
 
@@ -821,11 +827,15 @@ Please also note that, even when enabled, external entities and XIncludes are ne
 
 However, XML external entities and XInclude are not the only way for accessing local files.  Any image, CSS or JavaScript file in an HTML file can point to a local resource!  This can potentially lead to exposing resources that need to be kept confidential: be aware that the URLs are accessed while Prince is running and the *content* is embedded in the PDFs, not just the URLs themselves!
 
-<p class="warning">
+:::warning
 It is important to know that by default, Prince <em>does</em> have access to local files.
-</p>
+:::
 
 It is good and safe practice to always run Prince with the command-line option [`--no-local-files`](command-line.md#cl-no-local-files) in order to exclude any unwanted access to the local file system when dealing with untrusted content.
+
+:::note
+Disabling access to local files does not prevent the loading of local resources manually supplied through a command-line option - such as e.g. style sheets or scripts passed with the `--style` or `--script` options, respectively.
+:::
 
 ### Network Resources
 
@@ -848,8 +858,7 @@ When creating a product for distribution, it might be that you do not want to sh
 
 
 
-Performance
------------
+## Performance
 
 When preparing PDFs for printing, high performance is at times not as important as proper balancing of content on a page spread.
 

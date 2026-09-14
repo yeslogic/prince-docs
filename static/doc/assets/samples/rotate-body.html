@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Scientific paper</title>
+<style>
+@page {
+    @top {
+        content: "Header";
+    }
+    @bottom {
+        content: "Page " counter(page);
+    }
+}
+@page big-table {
+    prince-rotate-body: landscape;
+    prince-shrink-to-fit: auto;
+}
+
+.big {
+    page: big-table;
+}
+
+table {
+    border-collapse: collapse;
+}
+td, th{
+    padding: 0.4em;
+    border: 1px solid black;
+}
+th {
+    white-space: nowrap;
+}
+td {
+    text-align: right;
+}
+
+table thead tr th {
+    border-top: 0;
+    border-bottom: 0;
+}
+
+table tr td:first-child,
+table tr th:first-child {
+      border-left: 0;
+}
+table tr td:last-child,
+table tr th:last-child {
+      border-right: 0;
+}
+.caption {
+    font-size: 120%;
+    font-weight: bold;
+}
+</style>
+</head>
+<body>
+
+<p>
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat
+non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+</p>
+
+<div class="big">
+<table>
+<thead>
+<tr>
+<th/>
+<th colspan="4">1 Mutator</th>
+<th colspan="4">2 Mutators</th>
+<th colspan="4">3 Mutators</th>
+<th colspan="4">4 Mutators</th>
+</tr>
+</tr>
+</tr>
+<tr>
+<th>GC Workers</th>
+<th>Elapsed</th><th>GC</th><th>Mutator</th><th># col.</th>
+<th>Elapsed</th><th>GC</th><th>Mutator</th><th># col.</th>
+<th>Elapsed</th><th>GC</th><th>Mutator</th><th># col.</th>
+<th>Elapsed</th><th>GC</th><th>Mutator</th><th># col.</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th>1
+<td>51.7 <td>11.0 <td>40.7 <td>742
+<td>34.0 <td>11.5 <td>22.6 <td>692
+<td>27.2 <td>11.5 <td>15.5 <td>634
+<td>24.0 <td>11.8 <td>12.2 <td>602
+</tr>
+<tr>
+<th>2
+<td>48.5 <td>6.4 <td>42.1 <td>744
+<td>29.3 <td>6.7 <td>22.6 <td>693
+<td>22.3 <td>6.6 <td>15.7 <td>633
+<td>19.1 <td>6.9 <td>12.2 <td>595
+</tr>
+<tr>
+<th>3
+<td>46.4 <td>5.0 <td>41.4 <td>737
+<td>28.0 <td>5.3 <td>22.8 <td>692
+<td>21.0 <td>5.3 <td>15.7 <td>629
+<td>17.1 <td>5.4 <td>12.3 <td>600
+</tr>
+<tr>
+<th>4
+<td>46.0 <td>4.5 <td>41.4 <td>740
+<td>27.6 <td>4.7 <td>22.9 <td>695
+<td>20.3 <td>4.6 <td>15.7 <td>626
+<td>16.9 <td>4.7 <td>12.3 <td>600
+</tr>
+</tbody>
+</table>
+<p class="caption">
+Table 1: Lorem ipsum
+</p>
+</div>
+
+<p>
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat
+non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+</p>
+
+<div class="big">
+<table>
+<thead>
+<tr>
+<th/>
+<th colspan="4">1 Mutator</th>
+<th colspan="4">2 Mutators</th>
+<th colspan="4">3 Mutators</th>
+<th colspan="4">4 Mutators</th>
+</tr>
+</tr>
+</tr>
+<tr>
+<th>GC Workers</th>
+<th>Elapsed</th><th>GC</th><th>Mutator</th><th># col.</th>
+<th>Elapsed</th><th>GC</th><th>Mutator</th><th># col.</th>
+<th>Elapsed</th><th>GC</th><th>Mutator</th><th># col.</th>
+<th>Elapsed</th><th>GC</th><th>Mutator</th><th># col.</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th>1
+<td>51.7 <td>11.0 <td>40.7 <td>742
+<td>34.0 <td>11.5 <td>22.6 <td>692
+<td>27.2 <td>11.5 <td>15.5 <td>634
+<td>24.0 <td>11.8 <td>12.2 <td>602
+</tr>
+<tr>
+<th>2
+<td>48.5 <td>6.4 <td>42.1 <td>744
+<td>29.3 <td>6.7 <td>22.6 <td>693
+<td>22.3 <td>6.6 <td>15.7 <td>633
+<td>19.1 <td>6.9 <td>12.2 <td>595
+</tr>
+<tr>
+<th>3
+<td>46.4 <td>5.0 <td>41.4 <td>737
+<td>28.0 <td>5.3 <td>22.8 <td>692
+<td>21.0 <td>5.3 <td>15.7 <td>629
+<td>17.1 <td>5.4 <td>12.3 <td>600
+</tr>
+<tr>
+<th>4
+<td>46.0 <td>4.5 <td>41.4 <td>740
+<td>27.6 <td>4.7 <td>22.9 <td>695
+<td>20.3 <td>4.6 <td>15.7 <td>626
+<td>16.9 <td>4.7 <td>12.3 <td>600
+</tr>
+</tbody>
+</table>
+<p class="caption">
+Table 2: Lorem ipsum
+</p>
+</div>
+
+<div class="big">
+<table>
+<thead>
+<tr>
+<th/>
+<th colspan="4">1 Mutator</th>
+<th colspan="4">2 Mutators</th>
+<th colspan="4">3 Mutators</th>
+<th colspan="4">4 Mutators</th>
+</tr>
+</tr>
+</tr>
+<tr>
+<th>GC Workers</th>
+<th>Elapsed</th><th>GC</th><th>Mutator</th><th># col.</th>
+<th>Elapsed</th><th>GC</th><th>Mutator</th><th># col.</th>
+<th>Elapsed</th><th>GC</th><th>Mutator</th><th># col.</th>
+<th>Elapsed</th><th>GC</th><th>Mutator</th><th># col.</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th>1
+<td>51.7 <td>11.0 <td>40.7 <td>742
+<td>34.0 <td>11.5 <td>22.6 <td>692
+<td>27.2 <td>11.5 <td>15.5 <td>634
+<td>24.0 <td>11.8 <td>12.2 <td>602
+</tr>
+<tr>
+<th>2
+<td>48.5 <td>6.4 <td>42.1 <td>744
+<td>29.3 <td>6.7 <td>22.6 <td>693
+<td>22.3 <td>6.6 <td>15.7 <td>633
+<td>19.1 <td>6.9 <td>12.2 <td>595
+</tr>
+<tr>
+<th>3
+<td>46.4 <td>5.0 <td>41.4 <td>737
+<td>28.0 <td>5.3 <td>22.8 <td>692
+<td>21.0 <td>5.3 <td>15.7 <td>629
+<td>17.1 <td>5.4 <td>12.3 <td>600
+</tr>
+<tr>
+<th>4
+<td>46.0 <td>4.5 <td>41.4 <td>740
+<td>27.6 <td>4.7 <td>22.9 <td>695
+<td>20.3 <td>4.6 <td>15.7 <td>626
+<td>16.9 <td>4.7 <td>12.3 <td>600
+</tr>
+</tbody>
+</table>
+<p class="caption">
+Table 3: Lorem ipsum
+</p>
+</div>
+
+</body>
+</html>

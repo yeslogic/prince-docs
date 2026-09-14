@@ -2,30 +2,20 @@
 title: Prince Tips and Tricks
 ---
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,100..900;1,100..900&amp;display=swap" rel="stylesheet"/>
-
 …aka the Prince Cookbook, collects recipes to achieve certain common or complex tasks useful when preparing a document for printing. Each recipe shows the required features in a "You need" ingredients list and provides a step-by-step explanation to guide you to the required goal.
 
-The reipces are grouped in two main blocks, the first one containing recipes that only require CSS, the second one making use of JavaScript features to achieve the desired effect.
+The recipes are grouped in two main blocks, the first one containing recipes that only require CSS, the second one making use of JavaScript features to achieve the desired effect.
 
 On a separate site we collect more [quick guides to making beautiful PDF documents from HTML and CSS](https://css4.pub/).
 
-CSS
-------
+## CSS
 
 
 ### Thinking in Spreads
 
-<dl class="ingredients">
+<dl className="ingredients">
   <dt>You need</dt>
-  <dd><a href="/doc/paged">Paged Media</a>
-    <ul>
-      <li><a href="/doc/paged#selecting-pages">Selecting pages</a></li>
-      <li><a href="/doc/paged#controlling-pagination">Controlling pagination</a></li>
-    </ul>
-  </dd>
+  <dd><a href="/doc/paged">Paged Media</a>     <ul>       <li><a href="/doc/paged#selecting-pages">Selecting pages</a></li>       <li><a href="/doc/paged#controlling-pagination">Controlling pagination</a></li>     </ul>   </dd>
   <dd><a href="/doc/styling#prince-extensions-to-floats">Prince extensions to floats</a></dd>
   <dd><a href="/doc/styling#paragraph-formatting">Paragraph formatting</a></dd>
 </dl>
@@ -38,7 +28,7 @@ The basic unit for paged media in print is the page, organized in page spreads: 
 
 You have control on wether to place specific selected and named pages right or left, or *recto* or *verso* with the help of `break-before` and `break-after`, each of which takes the values `recto` and `verso` in addition to the traditional values.
 
-```
+```css
     h1 {
         break-before: recto;
     }
@@ -51,7 +41,7 @@ Pages can also be specifically targeted and styled with the [`@page`](css-at-rul
 
 Using the values `right` and `left` when placing elements on pages symmetrically arranged around the central gutter is possible, but rather cumbersome, since their placement depends on the placement of the page on a spread. Prince offers the extensions `inside` and `outside` to ease the task.
 
-```
+```css
     p {
         margin: 2em;
     }
@@ -66,7 +56,7 @@ This example creates a bigger margin around the central gutter.
 
 So, when you start thinking about the layout box model, Prince offers the properties `margin-inside` and `margin-outside` to help styling.
 
-```
+```css
     p { 
         margin: 2em;
         margin-inside: 3em;
@@ -78,7 +68,7 @@ Floats are particularly sensitive to the placement on the page with regards to w
 
 On a paragraph level, the properties [`text-align`](css-props.md#prop-text-align) and [`text-align-last`](css-props.md#prop-text-align-last) similarly take the keywords `inside` and `outside` to help achieving a smooth layout.
 
-```
+```css
     @page:verso {
         @top-left { content: counter(page) }
         @top-right { content: string(book-title) }
@@ -104,17 +94,17 @@ This style snippet could be part of the stylesheet for a little booklet - it dis
 
 ### Page Regions
 
-<dl class="ingredients">
+<dl className="ingredients">
   <dt>You need</dt>
   <dd><a href="/doc/paged#page-regions">Page regions</a></dd>
   <dd><a href="/doc/gen-content">Generated Content</a></dd>
 </dl>
 
-A basic concept in preparing a page is the organisation of the available space in main content, known as the _page area_, and additional content arranged in _page area regions_ and _page-margin boxes_ - for a full explanation, please refer to the [page regions](paged.md/#page-regions) chapter.  In that chapter you can see an image with all available regions and boxes depicted.
+A basic concept in preparing a page is the organisation of the available space in main content, known as the _page area_, and additional content arranged in _page area regions_ and _page-margin boxes_ - for a full explanation, please refer to the [page regions](paged.md#page-regions) chapter.  In that chapter you can see an image with all available regions and boxes depicted.
 
 That image is created by Prince only with the help of HTML and CSS.  Here is the code producing that image:
 
-```html
+```markup
     <html>
         <head>
             <title>Page regions</title>
@@ -201,14 +191,14 @@ That image is created by Prince only with the help of HTML and CSS.  Here is the
                 font-weight: normal;
             }
             #leftnote {
-                float: leftnote align-bottom;
+                -prince-float: leftnote align-bottom;
                 font-size: 22pt;
                 transform: rotate(-90deg);
                 margin-bottom: -6em;
                 font-weight: normal;
             }
             #rightnote {
-                float: rightnote;
+                -prince-float: rightnote;
                 font-size: 22pt;
                 transform: rotate(90deg);
                 padding-left: 9vw;
@@ -243,11 +233,11 @@ That image is created by Prince only with the help of HTML and CSS.  Here is the
     </html>
 ```
 
-Note that the page-margin boxes and `@prinec-overlay` take CSS generated content, while the page area regions only move elements from HTML into the designed region.
+Note that the page-margin boxes and `@prince-overlay` take CSS generated content, while the page area regions only move elements from HTML into the designed region.
 
 ### Page Headers and Footers
 
-<dl class="ingredients">
+<dl className="ingredients">
   <dt>You need</dt>
   <dd><a href="/doc/paged#page-regions">Page regions</a></dd>
   <dd><a href="/doc/gen-content">Generated Content</a></dd>
@@ -261,9 +251,9 @@ Each page is structured in [Page regions](paged.md#page-regions) - most page con
 
 A typical case is page numbering, which can easily be obtained with [Generated Content](gen-content.md): the current page number can be printed in a page region with the [`content`](css-props.md#prop-content) property. (See also [Page Numbering](#page-numbering)).
 
-```
+```css
     @page {
-        @bottom {
+        @bottom-center {
             content: counter(page)
         }
     }
@@ -272,23 +262,76 @@ By using [Named pages](paged.md#named-pages), you can style the page numbering o
 
 The title of the book, or the current chapter, can be copyied into the page regions by using the [string-set](css-props.md#prop-string-set) property. For details, please see the [Copying content from the document](paged.md#copying-content-from-the-document) chapter.
 
-CSS
-
-```
+```css
     @page {
-        @top { content: string(doctitle) }
+        @top-center { content: string(doctitle) }
     }
 
     h1 { string-set: doctitle content() }
 ```
-The @page rule specifies that the top-center page region will contain the text content of the document title copied from the text content of the `h1` element in the document.
+The `@page` rule specifies that the top-center page region will contain the text content of the document title copied from the text content of the `h1` element in the document.
+
+:::note
+Please note that running headers are [tagged as `Artifact`](prince-output.md#pdf-tags) and thus will be ignored by screen readers.
+:::
 
 If some special formatting of the text in the margin box is required, copying the text will not suffice - you need to remove an element from the natural page flow to place it in the margin box. See [Taking elements from the document](paged.md#taking-elements-from-the-document) for details.
+
+:::tip
+See also [A quick guide to running headers and footers in Prince](https://css4.pub/2024/running-headers/) for more examples and details.
+:::
+
+#### ...on the first page
+
+<dl className="ingredients">
+  <dt>You need</dt>
+  <dd><a href="/doc/css-selectors#page-selectors">Page selectors</a></dd>
+  <dd><a href="/doc/paged/#named-pages">Named pages</a></dd>
+</dl>
+
+A common scenario is to want to style the headers, and possibly footers, of the first page of a document, or of a chapter, differently.  To achieve this, you need to target the page you want to be styled differently.
+
+If you just want the first page of a document without headers, you can simply target it with the page selector `:first`.
+
+```css
+    @page:first {
+        @top-center { content: normal; }
+    }
+```
+
+You can also create named pages with the property [`page`](css-props.md#prop-page), and redefine the headers on the first page of the named pages different than all other headers.
+
+```css
+    .contents {
+        display: block;
+        page: table-of-contents;
+    }
+    @page table-of-contents {
+        @top-center { content: "Table of Contents" }
+    }
+```
+
+This, however, only works if a page name is used only once within a document, such as for the table of contents.  If you wish to apply a style to the first page of every chapter then you must use the [`-prince-page-group`](css-props.md#prop-prince-page-group) property to create *page groups*.  The property `-prince-page-group: start` instructs Prince to start a new page group. This is necessary for the `chapter:first-of-group` selector to match the first page *of each chapter*, instead of only the first page in the first chapter!
+
+```css
+    div.chapter {
+        page: chapter;
+        break-before: right;
+        -prince-page-group: start;
+    }
+    @page chapter:first-of-group {
+        @top-center {
+            content: normal;
+        }
+    }
+```
+
+Any other page of the document, or of a chapter, can be targeted with the selectors <code>:nth(<i>N</i>)</code>, or <code>:nth-of-group(<i>N</i>)</code>.
 
 
 ### Dictionary Page Headers
 
-<dl class="ingredients">
+<dl className="ingredients">
   <dt>You need</dt>
   <dd><a href="/doc/paged#page-regions">Page regions</a></dd>
   <dd><a href="/doc/gen-content">Generated Content</a></dd>
@@ -305,7 +348,7 @@ A peculiar and interesting use of page headers happens in dictionaries: typicall
 
 The [`string-set`](css-props.md#prop-string-set) property is applied to each definition in the dictionary (the `b:first-child` from the following example), and then the `first` and `last` page policy values are use to select the relevant definition to display in the page header.
 
-```
+```css
     @page {
       @top-left { content: string(term, first);}
       @top-right { content: string(term, last);}
@@ -316,7 +359,7 @@ This is the crucial set of rules for the [Dictionary](/samples/#dictionary) samp
 
 The dictionary sample is furthermore noticeable for its use of the optional page policy keyword `first-except`: the current letter of the alphabet is displayed on each page heading, *except* for the page on which the letter appears in the body of the page, starting the new section.
 
-```
+```css
     @page {
       @top-center { content: string(letter, first-except);}
     }
@@ -325,7 +368,7 @@ The dictionary sample is furthermore noticeable for its use of the optional page
 
 ### Page Numbering
 
-<dl class="ingredients">
+<dl className="ingredients">
   <dt>You need</dt>
   <dd>
 <a href="/doc/paged">Paged Media</a>
@@ -352,9 +395,9 @@ To use a counter, it usually first needs to be initialized with the [`counter-re
 
 Page counters work a bit more simple and usually don't need to be explicitly initialized or incremented.
 
-```
+```css
     @page {
-      @bottom {
+      @bottom-center {
         content: counter(page);
       }
     }
@@ -367,7 +410,7 @@ However, if you want to restart the numbering after the Preface of your book, yo
       counter-reset: page 1;
     }
     @page preface {
-      @bottom {
+      @bottom-center {
         content: counter(page, lower-roman);
       }
     }
@@ -376,16 +419,14 @@ However, if you want to restart the numbering after the Preface of your book, yo
       counter-reset: page 1;
     }
     @page main {
-      @bottom {
+      @bottom-center {
         content: counter(page);
       }
     }
 ```
 The page numbers can be referenced with the `target-counter()` function. This provides a convenient mechanism when you want to print out a page reference that on an interactive medium, such as can be seen in a web browser, might be expressed with a hyperlink.
 
-CSS
-
-```
+```css
     a[href]::after {
         content: " [See page " target-counter(attr(href), page) "]";
     }
@@ -394,18 +435,16 @@ This will add a cross-reference after every link with the correct page number de
 
 If you are referencing the pages in the Preface, marked with lower roman-style numbers, you need to re-specify the counter style for the target counter - the style is not automatically taken over.
 
-CSS
-
-```
+```css
     a[href|="#preface"]::after {
         content: " [See page " target-counter(attr(href), page, lower-roman) "]";
     }
 ```
 In some documents, particularly those that are unbound such as office documents, it can be useful to show the total number of pages on each page. The total number of pages can be accessed by using the `pages` counter. This is a pre-defined counter that is fixed to the total number of pages in the document.
 
-```
+```css
     @page {
-      @bottom {
+      @bottom-center {
         content: "Page " counter(page) " of " counter(pages);
       }
     }
@@ -415,7 +454,7 @@ This rule will generate page footers such as "Page 1 of 89".
 
 ### Long Tables
 
-<dl class="ingredients">
+<dl className="ingredients">
   <dt>You need</dt>
   <dd>
 <a href="/doc/styling#tables">Tables</a>
@@ -434,7 +473,7 @@ Tables can also be provided with a table caption by using the `caption` HTML ele
 
 When a table spans across more than one page, the [`-prince-caption-page`](css-props.md#prop-prince-caption-page) property determines whether table captions will be displayed on the first page of a table, or only on the following pages, or repeated on every page that a table appears on. See also [Fancy Table Captions](#fancy-table-captions).
 
-```
+```css
     table + p {
         display: table-caption;
         caption-side: bottom;
@@ -444,7 +483,7 @@ When a table spans across more than one page, the [`-prince-caption-page`](css-p
 
 ### Fancy Table Captions
 
-<dl class="ingredients">
+<dl className="ingredients">
   <dt>You need</dt>
   <dd>
 <a href="/doc/styling#tables">Tables</a>
@@ -463,9 +502,7 @@ You might define a caption in HTML for the main table caption - to be displayed 
 
 The paragraph functioning as a table caption can be hidden in browsers by using [CSS Media Queries](css-media-queries.md#media-queries).
 
-HTML
-
-```html
+```markup title="HTML"
     <table>
       <caption>Demo table</caption>
       <tr>
@@ -483,9 +520,7 @@ HTML
     </table>
     <p>Demo table (cont.)</p>
 ```
-CSS
-
-```
+```css title="CSS"
     caption {
         caption-side: bottom;
         -prince-caption-page: first;
@@ -499,7 +534,7 @@ CSS
 
 ### Multiple Footnotes
 
-<dl class="ingredients">
+<dl className="ingredients">
   <dt>You need</dt>
   <dd><a href="/doc/styling#prince-extensions-to-floats">Prince extensions to floats</a></dd>
   <dd>
@@ -516,16 +551,16 @@ In some cases it might happen that you want to point several footnote calls at t
 
 First we create our regular footnotes - the only extra step we need to do, is to provide each footnote with a unique ID.
 
-```html
+```markup
     <p>
-    This paragraph has a footnote.<span class="fn" id="fn1">First footnote.</span>
+    This paragraph has a footnote.<span className="fn" id="fn1">First footnote.</span>
     </p>
 ```
 When another foonote call needs to be pointing at this, already existing footnote, we have to create it manually by adding a link to this footnote's ID.
 
-```html
+```markup
     <p>
-    This paragraph refers to the first footnote.<a class="rfn" href="#fn1"></a>
+    This paragraph refers to the first footnote.<a className="rfn" href="#fn1"></a>
     </p>
 ```
 This footnote call will be created by using the generated content function `target-counter()` referencing the footnote counter.
@@ -535,7 +570,7 @@ This footnote call will be created by using the generated content function `targ
 ```
 When creating regular footnotes, Prince automatically takes care of the styling of the footnote calls, but the manually created ones need to be explicitly styled. The following are the default rules that style a footnote call - here shown with all the rules necessary for creating all the footnote calls:
 
-```
+```css
     .fn {
         float: footnote;
     }
@@ -552,12 +587,12 @@ When creating regular footnotes, Prince automatically takes care of the styling 
 
 ### Sidenotes
 
-<p class="note">
+:::note
     Prince offers also experimental native support for sidenotes as of Prince 14.3.
     See <a href="/doc/styling#sidenotes">Sidenotes</a>.
-</p>
+:::
 
-<dl class="ingredients">
+<dl className="ingredients">
   <dt>You need</dt>
   <dd><a href="/doc/styling#prince-extensions-to-floats">Prince extensions to floats</a></dd>
   <dd>
@@ -582,7 +617,7 @@ We shall see each approach separately.
 
 A straightforward approach for sidenotes is to position the footnote area to the desired place, instead of leaving it in its default position.
 
-```
+```css
     @page {
         @footnote {
             position: absolute;
@@ -601,7 +636,7 @@ The biggest disadvantage is that the footnotes are not placed to the side of the
 
 The footnote text is floated to the left (or right) and moved out of the way with negative margins.
 
-```
+```css
     .footnote {
       float: left;
       max-width: 60px;
@@ -623,13 +658,13 @@ A variant of this approach, useful when creating floating sidenotes in a multico
 
 To format the latter one, just run:
 ```bash
-    prince -j https://www.css4.pub/2020/christian-krohg/hg.html -o hg.pdf
+    $ prince -j https://www.css4.pub/2020/christian-krohg/hg.html -o hg.pdf
 ```
 
 
 ### Hyperlinks in Print
 
-<dl class="ingredients">
+<dl className="ingredients">
   <dt>You need</dt>
   <dd><a href="/doc/gen-content">Generated Content</a></dd>
   <dd><a href="/doc/gen-content#generated-content-functions">Generated Content Functions</a></dd>
@@ -650,9 +685,7 @@ The `target-counter()` function can be used to reference the value of a counter 
 
 Used with generated content after a hyperlink, it will add a cross-reference with the correct page number determined automatically.
 
-CSS
-
-```
+```css
     a[href]::after {
         content: " [See page " target-counter(attr(href), page) "]"
     }
@@ -661,9 +694,7 @@ This adds something like "\[See page 17\]" after each link. Note the use of the 
 
 It can also take an optional counter style, similar to the normal `counter()` function.
 
-CSS
-
-```
+```css
     a[href]::after {
         content: " [See chapter "
                  target-counter(attr(href), chapter, upper-roman)
@@ -674,9 +705,7 @@ This will add a cross-reference after every link with the correct chapter number
 
 The `target-content()` function can be used to reference the text content of the linked element.
 
-CSS
-
-```
+```css
     a[href]::after {
         content: " [See '" target-content(attr(href)) "']"
     }
@@ -685,9 +714,7 @@ This will add a cross-reference after every link that includes the text of the e
 
 The `attr()` function, used in the previous examples inside the other functions, can also be used on its own to insert the URL of a remote resource.
 
-CSS
-
-```
+```css
     a[href]::after {
         content: " [Located at '" attr(href) "']";
     }
@@ -697,7 +724,7 @@ This will add the URL after every link. For example: "\[Located at 'https://www.
 
 ### Image Magic
 
-<dl class="ingredients">
+<dl className="ingredients">
   <dt>You need</dt>
   <dd><a href="/doc/graphics#images">Images</a></dd>
   <dd>
@@ -720,7 +747,7 @@ Two more keywords perform more obscure tasks that might be required in very spec
 
 Several of the values can be combined, to perform more than one magic on images - for details please check the grammar of the [`-prince-image-magic`](css-props.md#prop-prince-image-magic) property.
 
-```
+```css
     img {
         -prince-image-magic: recompress-jpeg(50%) convert-to-jpeg(50%) snap-to-integer-coords;
     }
@@ -730,7 +757,7 @@ This example recompresses all JPEG images to 50%, converts any non-JPEG images t
 
 ### Hyphenation
 
-<dl class="ingredients">
+<dl className="ingredients">
   <dt>You need</dt>
     <dd>
 <code><a href="/doc/css-props#prop-hyphens">hyphens</a></code>
@@ -738,6 +765,7 @@ This example recompresses all JPEG images to 50%, converts any non-JPEG images t
         <li><code><a href="/doc/css-props#prop-prince-hyphenate-character">-prince-hyphenate-character</a></code></li>
         <li><code><a href="/doc/css-props#prop-prince-hyphenate-before">-prince-hyphenate-before</a></code></li>
         <li><code><a href="/doc/css-props#prop-prince-hyphenate-after">-prince-hyphenate-after</a></code></li>
+        <li><code><a href="/doc/css-props#prop-prince-hyphenate-limit-last">-prince-hyphenate-limit-last</a></code></li>
         <li><code><a href="/doc/css-props#prop-prince-hyphenate-limit-lines">-prince-hyphenate-limit-lines</a></code></li>
         <li><code><a href="/doc/css-props#prop-prince-hyphenate-patterns">-prince-hyphenate-patterns</a></code></li>
       </ul>
@@ -756,13 +784,13 @@ The character shown at the end of a line when the word is hyphenated can be spec
 
 Fine-tuning of hyphenation can be done with the `-prince-hyphenate-after` and `-prince-hyphenate-before` properties to determine the minimum number of letters in a word that may be moved to the next line or that may be left at the end of a line when the word is hyphenated.
 
-The [`-prince-hyphenate-limit-lines`](css-props.md#prop-prince-hyphenate-limit-lines) property is used to determine the maximum number of consecutive lines that may end with a hyphenated word.
+Hyphenation can be limited for certain lines: the [`-prince-hyphenate-limit-lines`](css-props.md#prop-prince-hyphenate-limit-lines) property is used to determine the maximum number of consecutive lines that may end with a hyphenated word, and the [`-prince-hyphenate-limit-last`](css-props.md#prop-prince-hyphenate-limit-last) property determines how it should be handled at the end of columns, pages, or spreads.
 
-Prince uses the hyphenation patterns from the CTAN archive - the full archive is accessible [here](https://ctan.org/tex-archive/language/hyph-utf8/tex/generic/hyph-utf8/patterns/txt). The default hyphenation patterns can be found in the installed `hyph.css` file, located in the default style sheets location (see [Installation Layout](installing.md#installation-layout)).
+Prince uses the hyphenation patterns from the CTAN archive - the full archive is accessible [here](https://ctan.org/tex-archive/language/hyph-utf8/tex/patterns/txt). The default hyphenation patterns can be found in the installed `hyph.css` file, located in the default style sheets location (see [Installation Layout](installing.md#installation-layout)).
 
 Hyphenation patterns for the following languages are provided:
 
-<table class="grid">
+<table className="grid">
   <tr>
     <td>da</td>
     <td>Danish</td>
@@ -823,34 +851,38 @@ Hyphenation patterns for the following languages are provided:
 
 A special case is Thai hyphenation, supported thanks to the [LibThai](https://linux.thai.net/projects/libthai) package.
 
-To add hyphenation patterns for other languages, download them from the [CTAN archive](https://ctan.org/tex-archive/language/hyph-utf8/tex/generic/hyph-utf8/patterns/txt). Save the files for the chosen language without the `.txt` extension, and link to the pattern file (with the `.pat` extension) with the [`-prince-hyphenate-patterns`](css-props.md#prop-prince-hyphenate-patterns) CSS property.
+To add hyphenation patterns for other languages, download them from the [CTAN archive](https://ctan.org/tex-archive/language/hyph-utf8/tex/patterns/txt). Save the files for the chosen language without the `.txt` extension, and link to the pattern file (with the `.pat` extension) with the [`-prince-hyphenate-patterns`](css-props.md#prop-prince-hyphenate-patterns) CSS property.
 
 The renaming of the file is not essential - the content, not the extension counts.
 
 Prince determines which language to use for hyphenation with the help of the `:lang()` CSS selector, which in turn checks the `lang` or `xml:lang` attributes of the document:
 
+```markup title="HTML"
+    <span lang="en-GB">supercalifragilisticexpialidocious</span>
 ```
+```css title="CSS"
     :lang(en-GB) {
         -prince-hyphenate-patterns: url("hyph-en-gb.pat");
     }
 ```
-```html
-    <span lang="en-GB">supercalifragilisticexpialidocious</span>
-```
 Alternatively, link directly to the required remote hyphenation file:
 
-```
-    :lang(en-GB) {
-        -prince-hyphenate-patterns: url("https://mirrors.ctan.org/language/hyph-utf8/tex/generic/hyph-utf8/patterns/txt/hyph-en-gb.pat.txt");
-    }
-```
-```html
+```markup title="HTML"
     <span lang="en-GB">supercalifragilisticexpialidocious</span>
 ```
+```css title="CSS"
+    :lang(en-GB) {
+        -prince-hyphenate-patterns: url("https://mirrors.ctan.org/language/hyph-utf8/tex/patterns/txt/hyph-en-gb.pat.txt");
+    }
+```
+
+:::tip
+See also [A quick guide to hyphenation in Prince](https://css4.pub/2025/hyphenation/) for more examples and details.
+:::
 
 ### Typographic Ligatures
 
-<dl class="ingredients">
+<dl className="ingredients">
   <dt>You need</dt>
     <dd><a href="/doc/styling#opentype-features-in-prince">OpenType Features in Prince</a></dd>
     <dd><code><a href="/doc/css-props#prop-font-variant-ligatures">font-variant-ligatures</a></code></dd>
@@ -871,7 +903,7 @@ Note that the property [`font-variant`](css-props.md#prop-font-variant) can be u
 
 Another means to enable ligatures is through the [`font-variant`](css-props.md#prop-font-variant) CSS property with the `prince-opentype()` function (see [CSS Functional Expressions](css-functions.md)).  However, care must be taken in which order the features are enabled!  Also, enabling one feature will disable all the default features. To see which OpenType features are enabled by default, see the [OpenType Features in Prince](styling.md#opentype-features-in-prince) section.
 
-```
+```css
     body {
         font-variant-ligatures: historical-ligatures;
     }
@@ -890,7 +922,7 @@ Another mechanism for replacing specific characters is given with the [`-prince-
 
 ### Watermarks
 
-<dl class="ingredients">
+<dl className="ingredients">
   <dt>You need</dt>
     <dd>
 <a href="/doc/paged#page-regions">Page regions</a>
@@ -906,7 +938,7 @@ When producing a PDF, it might be desirable to include a watermark, visible on a
 
 In order to repeat it on all pages, the watermark needs to be placed in a [`@page`](css-at-rules.md#at-page) at-rule. We shall place it in the page region `@prince-overlay` (see [Page regions](paged.md#page-regions)) and create the watermark with generated content (see [Generated content in page regions](paged.md#generated-content-in-page-regions)):
 
-```
+```css
     @page {
        @prince-overlay {
           color: rgb(0 0 0 / 0.8);
@@ -917,7 +949,7 @@ In order to repeat it on all pages, the watermark needs to be placed in a [`@pag
 ```
 The overlay can be styled in all possible ways and it can be aligned in other places than middle center:
 
-```
+```css
     @page {
        @prince-overlay {
           content: "Watermark";
@@ -930,7 +962,7 @@ Currently it is only possible to have one overlay, but you could flow an entire 
 The styled watermark can be saved into a `watermark.css` file, which will be called when generating the document:
 
 ```bash
-    prince --style=watermark.css myfile.md -o myfile_with_watermark.pdf
+    $ prince --style=watermark.css myfile.md -o myfile_with_watermark.pdf
 ```
 
 ### Rotating content
@@ -939,7 +971,7 @@ Sometimes it is necessary to rotate a block element so that it fits on the page.
 
 #### Printing wide content sideways
 
-<dl class="ingredients">
+<dl className="ingredients">
   <dt>You need</dt>
     <dd><code><a href="/doc/css-props#prop-prince-rotate-body">-prince-rotate-body</a></code></dd>
     <dd><code><a href="/doc/css-props#prop-prince-shrink-to-fit">-prince-shrink-to-fit</a></code></dd>
@@ -950,9 +982,9 @@ Figure [Printing a big table sideways](#printing-wide-content-sideways) shows a 
 Printing a big table sideways
 
 ![Image of a large table printed sideways so that its width fits along the page's length.](assets/samples/rotate-body-2.bw.png)
-This table is too wide to fit on the paper, so we use `-prince-rotate-body` in a *named page* to print it sideways. Download the [PDF](assets/samples/rotate-body.pdf) or the [HTML](assets/samples/rotate-body.html).
+This table is too wide to fit on the paper, so we use `-prince-rotate-body` in a *named page* to print it sideways. Download the [PDF](/doc/assets/samples/rotate-body.pdf) or the [HTML](/doc/assets/samples/rotate-body.html).
 
-```
+```css
     @page big_table {
         -prince-rotate-body: landscape;
         -prince-shrink-to-fit: auto;
@@ -964,13 +996,17 @@ This table is too wide to fit on the paper, so we use `-prince-rotate-body` in a
 ```
 The [`-prince-rotate-body`](css-props.md#prop-prince-rotate-body) property works within [`@page`](css-at-rules.md#at-page) rules only, so this example uses a named page to place the table on a page of its own. Then the [`@page`](css-at-rules.md#at-page) rule for `big_table` pages uses the [`-prince-rotate-body`](css-props.md#prop-prince-rotate-body) property to tell prince that the body of the page, but not the headers and footers, should be rotated. The table in this example is still too wide so we also use the [`-prince-shrink-to-fit`](css-props.md#prop-prince-shrink-to-fit) property to make it a little smaller.
 
-If you download the full example ([HTML](assets/samples/rotate-body.html) or [PDF](assets/samples/rotate-body.pdf)) you will see that the paragraphs before and after the table are not placed on the same page. This is because they do not belong to the same named page (see [Named pages](paged.md#named-pages)). However on page four there are two tables, both tables belong to the same named page and therefore Prince will try to place them together on the same page.
+:::note
+The [`-prince-rotate-body`](css-props.md#prop-prince-rotate-body) property rotates the *page area*, but not the *page-margin boxes*.  See [Page regions](paged.md#page-regions).
+:::
+
+If you download the full example ([HTML](/doc/assets/samples/rotate-body.html) or [PDF](/doc/assets/samples/rotate-body.pdf)) you will see that the paragraphs before and after the table are not placed on the same page. This is because they do not belong to the same named page (see [Named pages](paged.md#named-pages)). However on page four there are two tables, both tables belong to the same named page and therefore Prince will try to place them together on the same page.
 
 Another way of rotating content is by changing the writing mode with the [`writing-mode`](css-props.md#prop-writing-mode) property, or by transforming an element with `transform: rotate()` - see [Rotating content in table cells](#rotating-content-in-table-cells).
 
 #### Rotating content in table cells
 
-<dl class="ingredients">
+<dl className="ingredients">
   <dt>You need</dt>
     <dd><code><a href="/doc/css-props#prop-transform">transform</a>: rotate()</code></dd>
     <dd><code><a href="/doc/css-props#prop-writing-mode">writing-mode</a></code></dd>
@@ -980,8 +1016,8 @@ There are cases, when preparing a table with a large amount of content, that you
 
 The rotation is achieved with `transform: rotate()`. It could be applied directly to the `th` element, but it is impossible to configure the width of the column as we wish it. We shall thus nest a `div` and a `span` element:
 
-```html
-    <th class="rotate">
+```markup title="HTML"
+    <th className="rotate">
       <div>
         <span>Column header 1</span>
       </div>
@@ -989,7 +1025,7 @@ The rotation is achieved with `transform: rotate()`. It could be applied directl
 ```
 The rotation will happen with the following CSS code:
 
-```
+```css title="CSS"
     th.rotate {
       /* Make sure the th is high enough, */
       height: 150px;
@@ -1014,7 +1050,7 @@ The rotation will happen with the following CSS code:
 ```
 A more basic means for rotation, allowing for less fine-tuning, is the use of the [`writing-mode`](css-props.md#prop-writing-mode) CSS property. This option only allows rotation by 90°. It can be very handy when only some table cells with too much content are rotated, so as not to use too much horizontal space. You cannot rotate the table cell directly, so you have to nest one `span` element inside - and then you style it:
 
-```
+```css title="CSS"
     td.rotate > span {
       /* Rotate the content */
       writing-mode: vertical-rl;
@@ -1025,20 +1061,14 @@ A more basic means for rotation, allowing for less fine-tuning, is the use of th
 For a different approach to rotating content, see the section on [Printing wide content sideways](#printing-wide-content-sideways).
 
 
-JavaScript
-----------
+## JavaScript
 
 ### Table of Contents
 
-<dl class="ingredients">
+<dl className="ingredients">
   <dt>You need</dt>
   <dd><a href="/doc/javascript#javascript-in-printed-media">JavaScript in Printed Media</a></dd>
-  <dd><a href="/doc/gen-content#generated-content-functions">Generated Content Functions</a>
-    <ul>
-      <li><code>content: target-counter()</code></li>
-      <li><code>content: leader()</code></li>
-    </ul>
-  </dd>
+  <dd><a href="/doc/gen-content#generated-content-functions">Generated Content Functions</a>     <ul>       <li><code>content: target-counter()</code></li>       <li><code>content: leader()</code></li>     </ul>   </dd>
 </dl>
 
 Prince offers several properties and functions to facilitate the creation of a Table of Contents.
@@ -1051,18 +1081,23 @@ The transformation into a proper table of contents happens with CSS when Prince 
 
 This is achieved automatically with the `target-counter()` function in the [`content`](css-props.md#prop-content) property, using the `page` counter. The URL is being automatically fetched from the `href` attribute of the hyperlink element `<a>`.
 
-```
+```css
     #toc a::after {
       content: target-counter(attr(href), page);
     }
 ```
 The page numbers are best styled right-aligned, while the link texts are left-aligned. An easy way to achieve this is with the `leader()` function: it defines a literal string, which expands to fill the available space on the line like justified text, by repeating the string as many times as necessary. The complete CSS entry for a simple table of contents entry thus looks like this:
 
-```
+```css
     #toc a::after {
       content: leader('.') target-counter(attr(href), page);
     }
 ```
+
+:::tip
+See also [A quick guide to creating Table of Contents in Prince](https://css4.pub/2026/toc/) for more examples and details.
+:::
+
 #### Simple Table of Contents
 
 Our [example document](https://css4.pub/2018/toc/index.html) generates at Table of Contents (ToC) by way of JavaScript. You can easily test it by running Prince from the command line:
@@ -1101,7 +1136,7 @@ You can view the resulting PDF [here](https://css4.pub/2018/multifile-toc/book.p
 
 ### Endnotes
 
-<dl class="ingredients">
+<dl className="ingredients">
   <dt>You need</dt>
   <dd><a href="/doc/javascript">Scripting</a></dd>
 </dl>
@@ -1124,7 +1159,7 @@ The table in the above document sample also has inline notes that are moved to t
 
 ### How and Where is my Box?
 
-<dl class="ingredients">
+<dl className="ingredients">
   <dt>You need</dt>
     <dd><a href="/doc/javascript#the-prince-object">The Prince Object</a></dd>
     <dd><a href="/doc/javascript#the-box-tracking-api">The Box Tracking API</a></dd>
@@ -1223,6 +1258,9 @@ To use the features, the script just needs to be included in the HTML directly a
     console.log("Content width is " + b.contentBox("cm").w + "cm");
 ```
 
+:::tip
+See also [A quick guide to the boxtracking API in Prince](https://css4.pub/2024/boxtracking/) for more examples and details.
+:::
 
 ### MathML
 
@@ -1242,7 +1280,7 @@ MathML can be expanded beyond the build-in support by using [MathJax](https://ww
 
 ### The "Multi-Pass" Solution
 
-<dl class="ingredients">
+<dl className="ingredients">
   <dt>You need</dt>
     <dd><a href="/doc/javascript#javascript-in-printed-media">JavaScript in Printed Media</a></dd>
     <dd><a href="/doc/javascript#event-handling">Event Handling</a></dd>
@@ -1262,9 +1300,9 @@ A problematic situation arises when you want to modify your document after layou
 
 (Please note that this recipe only addresses the creation of an index - a simple table of contents or a reference to a place on another page can easily be achieved with [target-counter links](gen-content.md#using-target-counter).)
 
-To address this problem, Prince offers the possibility to delay the generation of a PDF and to register the function [`Prince.registerPostLayoutFunc(func)`](js-support.md#window.Prince.registerPostLayoutFunc), which is called after layout finished, similar to the current `oncomplete` event. If this function modifies the DOM, Prince will perform layout again on the updated document once the function returns, and before generating the PDF.
+To address this problem, Prince offers the possibility to delay the generation of a PDF: you can register the JavaScript function [`Prince.registerPostLayoutFunc(func)`](js-support.md#window.Prince.registerPostLayoutFunc), which is called after layout finished, similar to the current `oncomplete` event. If this function modifies the DOM, Prince will, once the function returns, perform layout again on the updated document, before generating the PDF.
 
-The post layout function can register itself, or another post layout function, in order to repeat this process multiple times! By default the number of passes is not limited, but in order to prevent endless layout loops you can set a limit by using the [`--max-passes=N`](command-line.md#cl-max-passes) command-line option.
+You can have the post layout function register itself, or another post layout function, in order to *repeat* this process multiple times! By default the number of passes is not limited, but in order to prevent endless layout loops you can set a limit by using the [`--max-passes=N`](command-line.md#cl-max-passes) command-line option.
 
 Here is a minimalistic "multi-pass" solution where the document is adorned with a ToC and index:
 
@@ -1276,10 +1314,10 @@ Another use of the "multi-pass" solution is to create changebars - see the descr
 When however scripts need to communicate across multiple input documents, the built-in "multi-pass" solution is not an option - see e.g. the [Multifile Table of Contents](#multifile-table-of-contents), which makes use of a "two-pass" approach by running Prince twice.
 
 
-Build Your Own Docu-PDF
------------------------
+{/*
+## Build Your Own Docu-PDF
 
-<dl class="ingredients">
+<dl className="ingredients">
   <dt>You need</dt>
     <dd><a href="/doc/paged">Paged Media</a></dd>
     <dd><a href="/doc/javascript#javascript-in-printed-media">JavaScript in Printed Media</a></dd>
@@ -1353,3 +1391,4 @@ Enabling JavaScript is also useful for fixing little glitches in the generated P
 ```
 
 And that's it!  You now have a PDF of the Prince documentation.
+*/}
