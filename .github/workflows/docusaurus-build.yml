@@ -7,10 +7,10 @@ on:
 
 jobs:
   build-docs:
-    runs-on: ubuntu-24.04
+    runs-on: ubuntu-26.04
     steps:
       - name: Check out repository code
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7
       - name: Install xsltproc
         run: |
           sudo apt-get update
@@ -24,6 +24,9 @@ jobs:
           make clean
           cd ./../..
         shell: bash
+      - name: Install jq
+        run: |
+          sudo apt-get install jq
       - name: Make _std-data.json for js-support page
         run: |
           cd ./src/js-support
@@ -33,8 +36,8 @@ jobs:
         shell: bash
       - name: Install Prince
         run: |
-          curl https://www.princexml.com/download/prince_16.1-1_ubuntu24.04_amd64.deb -O
-          sudo apt install ./prince_16.1-1_ubuntu24.04_amd64.deb
+          curl https://www.princexml.com/download/prince_16.2-1_ubuntu26.04_amd64.deb -O
+          sudo apt install ./prince_16.2-1_ubuntu26.04_amd64.deb
       - name: Install ImageMagick
         run: |
           sudo apt install imagemagick
@@ -46,25 +49,23 @@ jobs:
           cp marginboxes-1.colour.png ../../docs/assets/samples/
           cd ./../..
       - name: Set up Node
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v7
         with:
-          node-version: '18'
+          node-version: '26'
       - name: Build Docusaurus Docs
         run: |
-          cd website
           npm install 
           npm run build
       - name: Prepare deployment
         run: |
-          cd ./website/build/prince-docs
-          rm sitemap.xml doc/*.html
+          cd ./build
+          rm -rf ./blog ./css-props ./js ./js-support
           mv ./index.html ./doc/
-          mv doc/doc-install doc/doc-prince doc/doc-refs ./
-          cd ./../../..
+          cd ./..
       - name: Deploy
         uses: nogsantos/ssh-scp-deploy@master
         with:
-          src: ./website/build/prince-docs/*
+          src: ./build/*
           host: ${{ secrets.SSH_HOST }}
           remote: ${{ secrets.WEB_ROOT }}
           port: ${{ secrets.SSH_PORT }}
