@@ -22,8 +22,7 @@
     "clsx": "^2.1.1",
     "prism-react-renderer": "^2.4.1",
     "react": "^19.1.0",
-    "react-dom": "^19.1.0",
-    "react-script-tag": "^1.1.2"
+    "react-dom": "^19.1.0"
   },
   "resolutions": {
     "baseline-browser-mapping": "^2.11.21"
