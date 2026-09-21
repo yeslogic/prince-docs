@@ -50,7 +50,13 @@ module.exports = {
             {
                 type: "category",
                 label: "CSS Support",
-                description: "CSS properties, selectors, media queries, functions, at-rules, and more.",
+                description: "CSS properties, selectors, media queries, functions, at-rules, and supported CSS specifications.",
+                link: {
+                    type: "generated-index",
+                    title: "CSS Support",
+                    description: "CSS properties, selectors, media queries, functions, at-rules, and supported CSS specifications.",
+                    slug: '/category/css-support',
+                },
                 collapsed: false,
                 items: [
                     "css-length-units",
@@ -69,6 +75,12 @@ module.exports = {
                 type: "category",
                 label: "Miscellaneous",
                 description: "Page-size keywords, and special characters",
+                link: {
+                    type: "generated-index",
+                    title: "Miscellaneous",
+                    description: "Page-size keywords, and special characters",
+                    slug: '/category/miscellaneous',
+                },
                 items: [
                     "page-size-keywords",
                     "characters"
