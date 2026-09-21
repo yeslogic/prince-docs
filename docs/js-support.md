@@ -6,7 +6,8 @@ sidebar_label: JavaScript Support
 
 import JsSupport from '../src/pages/js-support'
 
-Prince supports most of ECMAScript 5th edition, but not strict mode.
+Prince supports most of ECMAScript 5th edition, including strict mode,
+and ECMAScript 6th edition classes.
 Later editions of ECMAScript are not supported.
 
 The following table shows supported JavaScript objects, methods and
