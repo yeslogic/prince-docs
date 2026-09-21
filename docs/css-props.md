@@ -6,4 +6,48 @@ sidebar_label: CSS Properties
 
 import CSSProps from '../src/pages/css-props'
 
+Below are all of the CSS properties supported by Prince. For their
+precise definitions please refer to the CSS specifications.
+
+<p id="ext-props">
+The properties marked with an asterisk (<b>*</b>) and a darker
+background color shade are Prince extensions, while the extension
+values of a standard property are highlighted with a{" "}
+<span className="ext">light grey background</span>. Besides the
+standard <code>-prince-</code> prefix, Prince also accepts{" "}
+<code>prince-</code> as a vendor prefix for Prince-specific CSS
+properties.
+</p>
+<p id="dep-props">
+The <span className="dep">properties with a line-through</span> are
+deprecated properties, support might be removed in a future Prince
+version.
+</p>
+
+For the values, the grammar draws on the
+<a href="https://www.w3.org/TR/css3-values/">CSS Values and Units Module Level 3</a>
+specification. A short explanation of the signs:
+
+-           A bar (<b>|</b>) separates two or more <em>alternatives</em>:
+            exactly one of them must occur.
+-           A double bar (<b>||</b>) separates two or more <em>options</em>: one
+            or more of them must occur, in any order.
+-           A double ampersand (<b>&amp;&amp;</b>) separates two or more{" "}
+            <em>components</em>, all of which must occur, in any order.
+-           Square brackets (<b>[ ]</b>) are only used for grouping.
+-           An asterisk (<b>*</b>) indicates that the preceding item occurs zero
+            or more times.
+-           A plus (<b>+</b>) indicates that the preceding item occurs one or
+            more times.
+-           A question mark (<b>?</b>) indicates that the preceding item is
+            optional (occurs zero or one times).
+-           A hash mark (<b>#</b>) indicates that the preceding item occurs one
+            or more times, separated by comma tokens.
+-           A comma-separated pair of numbers in curly braces ( <b>{"{"}<i>A</i>,<i>B</i>{"}"}</b> )
+            indicates that the preceding item occurs at least <i>A</i> and at
+            most <i>B</i> times.
+
+          Prince also supports the two special keywords <code>initial</code>,{" "}
+          <code>inherit</code>, and <code>unset</code> on all properties.
+
 <CSSProps />

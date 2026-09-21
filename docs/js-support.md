@@ -6,4 +6,18 @@ sidebar_label: JavaScript Support
 
 import JsSupport from '../src/pages/js-support'
 
+Prince supports most of ECMAScript 5th edition, but not strict mode.
+Later editions of ECMAScript are not supported.
+
+The following table shows supported JavaScript objects, methods and
+properties. For more details, see also{" "}
+<a href="/doc/javascript#js-prince">JavaScript in Prince</a>.
+
+Objects, methods and properties marked with an asterisk (\*) are Prince
+extensions.
+
+Objects, methods and properties{" "}
+<span className="dep">with a line-through</span> are deprecated,
+support might be removed in a future Prince version.
+
 <JsSupport />

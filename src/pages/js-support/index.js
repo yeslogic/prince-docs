@@ -21,25 +21,6 @@ function JsSupport() {
   return (
     <div>
       <div className="markdown">
-        <p>
-          Prince supports most of ECMAScript 5th edition, but not strict mode.
-          Later editions of ECMAScript are not supported.
-        </p>
-        <p>
-          The following table shows supported JavaScript objects, methods and
-          properties. For more details, see also{" "}
-          <a href="/doc/javascript#js-prince">JavaScript in Prince</a>.
-        </p>
-        <p>
-          * objects, methods and properties marked with an asterisk are Prince
-          extensions.
-        </p>
-        <p>
-          Objects, methods and properties{" "}
-          <span className="dep">with a line-through</span> are deprecated,
-          support might be removed in a future Prince version.
-        </p>
-
         <p className="toggle">
           <a href="#" onClick={toggleAllJS} id="toggle-js">
             Toggle (open/close) all properties
