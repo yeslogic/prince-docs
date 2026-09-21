@@ -1,5 +1,5 @@
 .PHONY: all
-all: valid output properties noroot output/_cssPropsHtml.js
+all: output properties noroot output/_cssPropsHtml.js
 	cp output/_cssPropsHtml.js ../../src/pages/css-props/_cssPropsHtml.js
 
 valid:
@@ -8,7 +8,7 @@ valid:
 output:
 	mkdir -p output
 
-properties: valid output table.xsl properties.xml
+properties: output table.xsl properties.xml
 	xsltproc table.xsl properties.xml > output/css-props.xml
 
 process: properties
