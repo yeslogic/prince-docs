@@ -4,7 +4,7 @@ export default {
   title: 'Prince Documentation',
   tagline: 'User Guide and Reference Manual',
   url: 'https://www.princexml.com',
-  baseUrl: '/',
+  baseUrl: '/doc/',
   onBrokenLinks: 'ignore',
   trailingSlash: 'true',
   favicon: 'img/favicon.ico',
@@ -39,17 +39,21 @@ export default {
       logo: {
         alt: 'Prince Logo',
         src: 'img/Prince-logo.png',
+        href: '//www.princexml.com/',
+        target: '_self',
       },
       items: [
         {
-          to: '/purchase/',
+          to: '//www.princexml.com/purchase/',
           label: 'Buy Prince',
           position: 'right',
+          target: '_self',
         },
         {
-          to: '/samples/',
+          to: '//www.princexml.com/samples/',
           label: 'Samples',
           position: 'right',
+          target: '_self',
         },
         {
           to: '/doc/',
@@ -72,19 +76,22 @@ export default {
     },
     footer: {
       style: 'light',
-      copyright: `<img src="/img/Prince-logo-footer.png"/><br/>Copyright © ${new Date().getFullYear()} YesLogic Pty. Ltd.`,
+      copyright: `<img src="/doc/img/Prince-logo-footer.png"/><br/>Copyright © ${new Date().getFullYear()} YesLogic Pty. Ltd.`,
       links: [
         {
             label: 'About us',
-            to: '/company/',
+            to: '//www.princexml.com/company/',
+            target: '_self',
         },
         {
             label: 'Privacy Policy',
-            to: '/privacy/',
+            to: '//www.princexml.com/privacy/',
+            target: '_self',
         },
         {
             label: 'Contact us',
-            to: '/contact/',
+            to: '//www.princexml.com/contact/',
+            target: '_self',
         },
       ],
     },
@@ -104,7 +111,7 @@ export default {
       '@docusaurus/preset-classic',
       {
         docs: {
-          routeBasePath: 'doc',
+          routeBasePath: '',
           // It is recommended to set document id as docs home page (`docs/` path).
           //homePageId: 'intro-userguide',
           sidebarPath: require.resolve('./sidebars.js'),
