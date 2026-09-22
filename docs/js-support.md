@@ -4,7 +4,7 @@ title: JavaScript Support
 sidebar_label: JavaScript Support
 ---
 
-import JsSupport from '../src/pages/js-support'
+import JsSupport from '../src/components/js'
 
 Prince supports most of ECMAScript 5th edition, including strict mode,
 and ECMAScript 6th edition classes.

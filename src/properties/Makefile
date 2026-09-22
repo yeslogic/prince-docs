@@ -1,6 +1,6 @@
 .PHONY: all
 all: output properties noroot output/_cssPropsHtml.js
-	cp output/_cssPropsHtml.js ../../src/pages/css-props/_cssPropsHtml.js
+	cp output/_cssPropsHtml.js ../../src/components/css/_cssPropsHtml.js
 
 valid:
 	jing -c schema.rnc properties.xml

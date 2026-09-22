@@ -1,6 +1,6 @@
 .PHONY: all
 all: output output/_std-data.json
-	cp output/_std-data.json ../pages/js-support/_std-data.json
+	cp output/_std-data.json ../components/js/_std-data.json
 
 .PHONY: output
 output:

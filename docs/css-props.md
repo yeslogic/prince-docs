@@ -4,7 +4,7 @@ title: CSS Properties
 sidebar_label: CSS Properties
 ---
 
-import CSSProps from '../src/pages/css-props'
+import CSSProps from '../src/components/css'
 
 Below are all of the CSS properties supported by Prince. For their
 precise definitions please refer to the CSS specifications.
