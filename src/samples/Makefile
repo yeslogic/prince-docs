@@ -1,6 +1,6 @@
 .PHONY : all
 all : marginboxes-1.full.png marginboxes-1.colour.png
-	cp marginboxes-1.colour.png ../../docs/assets/samples/
+	cp marginboxes-1.colour.png ../../static/samples/
 
 marginboxes-1.full.png: marginboxes.html
 	prince $< --raster-output $@ --raster-dpi=150 --raster-pages=1 --raster-format=png
