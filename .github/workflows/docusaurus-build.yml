@@ -59,8 +59,7 @@ jobs:
       - name: Prepare deployment
         run: |
           cd ./build
-          rm -rf ./blog ./css-props ./js ./js-support
-          mv ./index.html ./doc/
+          rm -rf ./blog
           cd ./..
       - name: Deploy
         uses: nogsantos/ssh-scp-deploy@master
