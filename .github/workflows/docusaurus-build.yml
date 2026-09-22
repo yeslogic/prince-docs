@@ -20,7 +20,7 @@ jobs:
           cd ./src/properties
           chmod +x ./docs-process.py
           chmod +x ./docs_selflink.py
-          make all
+          make
           make clean
           cd ./../..
         shell: bash

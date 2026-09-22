@@ -14,11 +14,11 @@ the Docusaurus documentation - you first need to run `make` in the
 `./src/properties` folder.
 
 There are some little requirements for this:
-* The [Jing](https://relaxng.org/jclark/jing.html) RELAX NG validator
 * Python
 * the xsltproc XSLT processor
 
-(Hint: If *really* need be, you could do without Jing, just comment it out in your Makefile.)
+Optionally, you can validate the format of the properties XML file by running `make valid`.
+For this, you need the [Jing](https://relaxng.org/jclark/jing.html) RELAX NG validator.
 
 ## JavaScript Support
 
