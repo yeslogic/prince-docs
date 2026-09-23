@@ -131,7 +131,7 @@ Prince also supports language-specific OpenType shaping with the `locl` feature,
 
 If this example is rendered with small-caps in the Arno Pro font, the two lines will look like this:
 
-![Language-specific OpenType shaping](/images/opentype-shaping.png)
+![Language-specific OpenType shaping](images/opentype-shaping.png)
 
 In cases where the XML or HTML attributes cannot be applied, such as in CSS generated content in [Before and After pseudo-elements](gen-content.md#before-and-after-pseudo-elements), or in [page margin boxes](paged.md#page-regions), the CSS property [`-prince-lang`](css-props.md#prop-prince-lang) can be used.
 
@@ -881,7 +881,7 @@ Alternatively, the `::marker` pseudo-element can be used to style the list item 
     }
 ```
 Output
-![Marker example](/images/marker.png)
+![Marker example](images/marker.png)
 
 
 ### Tables
@@ -1157,7 +1157,7 @@ Vertical alignment of these inline tables can be defined with the property [`tab
     </div>
 ```
 Output
-![Table baseline](/images/table.png)
+![Table baseline](images/table.png)
 
 
 ### Columns
@@ -1464,7 +1464,7 @@ This example shows some simple footnotes, the `.fn` className is used to create 
 
 Footnotes example
 
-![Footnotes example.](/images/footnotes.png)
+![Footnotes example.](images/footnotes.png)
 
 
 ```css title="CSS"
