@@ -60,12 +60,26 @@ jobs:
           cd ./build
           rm -rf ./blog
           cd ./..
+          # Stage the legacy redirect pages (/doc-install, /doc-prince,
+          # /doc-refs) which are deployed to the web root, one level above
+          # the docs, so that pre-Docusaurus URLs keep redirecting.
+          mkdir rootpages
+          cp -r ./build/doc-install ./build/doc-prince ./build/doc-refs ./rootpages/
       - name: Deploy
         uses: nogsantos/ssh-scp-deploy@master
         with:
           src: ./build/*
           host: ${{ secrets.SSH_HOST }}
           remote: ${{ secrets.SSH_DIR }}
+          port: ${{ secrets.SSH_PORT }}
+          user: ${{ secrets.SSH_USER }}
+          key: ${{ secrets.SSH_KEY }}
+      - name: Deploy legacy redirect pages to the web root
+        uses: nogsantos/ssh-scp-deploy@master
+        with:
+          src: ./rootpages/*
+          host: ${{ secrets.SSH_HOST }}
+          remote: ${{ secrets.SSH_DIR }}/..
           port: ${{ secrets.SSH_PORT }}
           user: ${{ secrets.SSH_USER }}
           key: ${{ secrets.SSH_KEY }}
