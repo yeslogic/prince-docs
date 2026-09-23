@@ -126,7 +126,7 @@ Next, let's center the title and subtitle and decrease the font size of the subt
 <p id="fig.lab-report-styled">Styled lab report</p>
 
 ![The styled lab report](/samples/lab_report/lab_report-styled-1.colour.png)
-The styled lab report, download the [here](pathname:///samples/lab_report-styled.pdf).
+The styled lab report, download it [here](pathname:///samples/lab_report/lab_report-styled.pdf).
 
 ```css
     h1, h2.subtitle {
