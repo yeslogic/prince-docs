@@ -6,39 +6,39 @@ import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
 
-Prince is available for Windows (x86/ARM), MacOS, Linux (multiple distributions) and FreeBSD. You can download the relevant file from our [downloads page](/download/) - you may need to choose the download based on your processor type (x86/ARM, 32/64 bits), as well as distribution type and version.
+Prince is available for Windows (x86/ARM), MacOS, Linux (multiple distributions) and FreeBSD. You can download the relevant file from our [downloads page](/../download/) - you may need to choose the download based on your processor type (x86/ARM, 32/64 bits), as well as distribution type and version.
 
-Prince is provided under the terms of the [Prince End-User License Agreement](/license/).
+Prince is provided under the terms of the [Prince End-User License Agreement](/../license/).
 
 ## Installing
 
 <Tabs groupId="operating-systems">
 <TabItem value="win" label="... on Windows">
 
-1.  Download your installation package from the [Download Page](/download/).
+1.  Download your installation package from the [Download Page](/../download/).
 2.  After downloading and attempting to run the installer you might see a confirmation screen like this. Click "run". Note that the filename for the installer may be different than the one shown in the picture.
 
     Run installer confirmation
 
-    ![Confirmation dialog box asking if the user wishes to run the installer.](assets/images/install_01.png)
+    ![Confirmation dialog box asking if the user wishes to run the installer.](/images/install_01.png)
 
 3.  The installer will display a welcome screen like the one below. Click next.
 
     Installer welcome screen
 
-    ![The installer welcome screen](assets/images/install_02.png)
+    ![The installer welcome screen](/images/install_02.png)
 
-4.  Next you will need to accept the license agreement. The text of the license agreement is also available [here](/license/). Accept the agreement and click Next.
+4.  Next you will need to accept the license agreement. The text of the license agreement is also available [here](/../license/). Accept the agreement and click Next.
 
     Installer license agreement screen
 
-    ![The installer license agreement screen](assets/images/install_03.png)
+    ![The installer license agreement screen](/images/install_03.png)
 
 5.  Choose the installation directory for Prince. The default is recommended unless you have a specific reason to install Prince elsewhere. When using Prince from the command line we will use the executable in the `Engine\bin\` subdirectory. The installation requires only 16MB of disk space.
 
     Installation location screen
 
-    ![The installer's installation location screen](assets/images/install_04.png)
+    ![The installer's installation location screen](/images/install_04.png)
 
 6.  The installation will confirm the installation details with you before performing the installation. Click Next to continue.
 
@@ -46,14 +46,14 @@ Prince is provided under the terms of the [Prince End-User License Agreement](/l
 
     Installation complete
 
-    ![The installer's completion screen](assets/images/install_05.png)
+    ![The installer's completion screen](/images/install_05.png)
 
 For the layout of a Prince installation on Windows, see the [Windows installation layout](#windows-installation-layout) section.
 </TabItem>
 
 <TabItem value="mac" label="... on MacOS">
 
-To install Prince on MacOS, please run the `install.sh` shell script contained in the package downloaded to your computer from the [download page](/download/). This will involve the following procedure:
+To install Prince on MacOS, please run the `install.sh` shell script contained in the package downloaded to your computer from the [download page](/../download/). This will involve the following procedure:
 
 1.  Open the Terminal application.
 2.  Change to the download directory and unpack the downloaded file.
@@ -86,7 +86,7 @@ For the layout of a Prince installation on MacOS, see the [MacOS installation la
 
 <TabItem value="lin" label="... on Linux/FreeBSD">
 
-Prince is installed using the terminal. The installation package can be downloaded from the [Download Page](/download/). Then open a terminal window and change to the directory that you downloaded or copied the installation package to. The `$` symbol represents the command prompt and the text that follows is the command, you should not type in the `$` symbol.
+Prince is installed using the terminal. The installation package can be downloaded from the [Download Page](/../download/). Then open a terminal window and change to the directory that you downloaded or copied the installation package to. The `$` symbol represents the command prompt and the text that follows is the command, you should not type in the `$` symbol.
 
 ```bash
     $ cd download_directory
@@ -250,19 +250,19 @@ On Windows you can install a license by following these steps:
 
     Click the license button
 
-    ![Image showing the license button in the main Prince GUI.](assets/images/gui_03.png)
+    ![Image showing the license button in the main Prince GUI.](/images/gui_03.png)
 
 2.  Click the open button and choose your license file.
 
     License window
 
-    ![Image showing the license window with the open button.](assets/images/gui_04.png)
+    ![Image showing the license window with the open button.](/images/gui_04.png)
 
 3.  The license should be displayed in the lower part of the window, click the accept button to install it then click Ok.
 
     License window with license
 
-    ![Image showing the license window with a license selected but not yet installed.](assets/images/gui_05.png)
+    ![Image showing the license window with a license selected but not yet installed.](/images/gui_05.png)
 </TabItem>
 <TabItem value="mac" label="... on MacOS">
 

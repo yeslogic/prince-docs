@@ -126,7 +126,7 @@ This is used in [Fancy headers](#fig-fancyheader).
 
 ## Page regions
 
-![A page with content in some of its page regions.](assets/samples/marginboxes-1.colour.png)
+![A page with content in some of its page regions.](/samples/marginboxes-1.colour.png)
 
 Most content appears inside the *page area* of one or more pages - in the above figure the *page area* is marked with a solid black border.  Surrounding the page area is the margin area, defined by the [margins set with `@page` rules](#page-style), which contains the *page-margin boxes*.  Other special areas are overlaying the page area, or are placed at its left, or right side, or at its top, or bottom.  Collectively, they are known as the *page area regions*.
 
@@ -570,8 +570,8 @@ This rule will generate page footers such as "Page 1 of 89".
 
 <p id="fig-fancyheader">Fancy header example</p>
 
-![Image of a page of a textbook or thesis with a header.](assets/samples/fancyheader-2.bw.png)
-This example shows a header as might be found in a textbook. The [HTML](/doc/assets/samples/fancyheader.html) and [PDF](/doc/assets/samples/fancyheader.pdf) are both available. This is a small part of a [larger example](https://github.com/yeslogic/prince-samples/tree/master/thesis) in our [Prince samples repository](https://github.com/yeslogic/prince-samples).
+![Image of a page of a textbook or thesis with a header.](/samples/fancyheader/fancyheader-2.bw.png)
+This example shows a header as might be found in a textbook. The [HTML](pathname:///samples/fancyheader/fancyheader.html) and [PDF](pathname:///samples/fancyheader/fancyheader.pdf) are both available. This is a small part of a [larger example](https://github.com/yeslogic/prince-samples/tree/master/thesis) in our [Prince samples repository](https://github.com/yeslogic/prince-samples).
 
 Fancy headers
 
@@ -697,7 +697,7 @@ This can be very useful as a means to repeating the title of a chapter as a page
       @top-center { content: string(letter, first-except);}
     }
 ```
-You can see these examples in full action in the [Dictionary](/samples/#dictionary) sample ([HTML](https://css4.pub/2015/icelandic/dictionary.html) - [PDF](https://css4.pub/2015/icelandic/dictionary.pdf)).
+You can see these examples in full action in the [Dictionary](/../samples/#dictionary) sample ([HTML](https://css4.pub/2015/icelandic/dictionary.html) - [PDF](https://css4.pub/2015/icelandic/dictionary.pdf)).
 
 ### Taking elements from the document
 
@@ -787,8 +787,8 @@ In a novel it is useful to print a page number at the bottom of every page, *exc
 
 <p id="fig-titlepage">Novel title page example</p>
 
-![Novel title page example image.](assets/samples/titlepage-1.bw.png)
-A title page example showing use of `@page:first`. Download the [PDF](/doc/assets/samples/titlepage.pdf) or the [HTML](/doc/assets/samples/titlepage.html).
+![Novel title page example image.](/samples/titlepage/titlepage-1.bw.png)
+A title page example showing use of `@page:first`. Download the [PDF](pathname:///samples/titlepage/titlepage.pdf) or the [HTML](pathname:///samples/titlepage/titlepage.html).
 
 ```markup
     <html>
@@ -830,8 +830,8 @@ In order to choose the first page in each chapter (such as in [Fancy headers](#f
 
 <p id="fig-textbook">Textbook page numbers example</p>
 
-![Textbook page numbers example image.](assets/samples/textbook-1.bw.png)
-A text book example showing use of `@page:left` and `@page:right`. Download the [PDF](/doc/assets/samples/textbook.pdf) or the [HTML](/doc/assets/samples/textbook.html).
+![Textbook page numbers example image.](/samples/textbook/textbook-1.bw.png)
+A text book example showing use of `@page:left` and `@page:right`. Download the [PDF](pathname:///samples/textbook/textbook.pdf) or the [HTML](pathname:///samples/textbook/textbook.html).
 
 ```css
     @page:left {
@@ -1028,8 +1028,8 @@ The property [`break-after`](css-props.md#prop-break-after) may also be used to 
 
 <p id="fig-slides">Presentation slides example</p>
 
-![A title page slide for a presentation, with a title and subtitle.](assets/samples/slide-1.colour.png) ![An example of an overhead slide for a presentation. It has a title and a single paragraph.](assets/samples/slide-2.colour.png)
-Two overhead slides for a presentation. The slides use white on black for better contrast on most projectors, and a 4x3 aspect ratio. Download the [PDF](/doc/assets/samples/slide.pdf) or the [HTML](/doc/assets/samples/slide.html) and [CSS](/doc/assets/samples/slide.css).
+![A title page slide for a presentation, with a title and subtitle.](/samples/slide/slide-1.colour.png) ![An example of an overhead slide for a presentation. It has a title and a single paragraph.](/samples/slide/slide-2.colour.png)
+Two overhead slides for a presentation. The slides use white on black for better contrast on most projectors, and a 4x3 aspect ratio. Download the [PDF](pathname:///samples/slide/slide.pdf) or the [HTML](pathname:///samples/slide/slide.html) and [CSS](pathname:///samples/slide/slide.css).
 
 It is necessary to force a page break when creating overhead slides. This can be done by placing the content for each slide in a `<div className="slide">` and using `break-before: page` as shown below. This example shows other styling that may be required to create presentation slides.
 
@@ -1124,8 +1124,8 @@ When a page (or column) break occurs within a box (such as a div) its bottom and
 
 <p id="fig-boxdecorationbreak">Box decoration break sample</p>
 
-![The box on the left is completely enclosed by its border (clone); while the box on the right has no border at the bottom where it wraps onto the next page (slice).](assets/samples/box-decoration-break-1.bw.png)
-This figure shows the result of using the [`box-decoration-break`](css-props.md#prop-box-decoration-break) property. On the left the `clone` value is used while on the right `slice` is used. The [PDF](/doc/assets/samples/box-decoration-break.pdf) and [HTML](/doc/assets/samples/box-decoration-break.html) are available for download.
+![The box on the left is completely enclosed by its border (clone); while the box on the right has no border at the bottom where it wraps onto the next page (slice).](/samples/box-decoration-break/box-decoration-break-1.bw.png)
+This figure shows the result of using the [`box-decoration-break`](css-props.md#prop-box-decoration-break) property. On the left the `clone` value is used while on the right `slice` is used. The [PDF](pathname:///samples/box-decoration-break/box-decoration-break.pdf) and [HTML](pathname:///samples/box-decoration-break/box-decoration-break.html) are available for download.
 
 ```css
     div.box1 {
@@ -1163,8 +1163,8 @@ When typesetting a magazine or flier it can be useful to print right to the edge
 
 Furniture catalogue example
 
-![Furniture catalogue with bleed and trim areas for printing and cropping. The background image is larger than the page (but not the paper), by cutting where the crop marks indicate the background image extends right to the edge of the page.](assets/samples/croparea-1.colour.png)
-The furniture catalogue with bleed and trim areas for printing and cropping. Download the [PDF](/doc/assets/samples/croparea.pdf) or the [HTML](/doc/assets/samples/croparea.html) and [CSS](/doc/assets/samples/croparea.css).
+![Furniture catalogue with bleed and trim areas for printing and cropping. The background image is larger than the page (but not the paper), by cutting where the crop marks indicate the background image extends right to the edge of the page.](/samples/croparea/croparea-1.colour.png)
+The furniture catalogue with bleed and trim areas for printing and cropping. Download the [PDF](pathname:///samples/croparea/croparea.pdf) or the [HTML](pathname:///samples/croparea/croparea.html) and [CSS](pathname:///samples/croparea/croparea.css).
 
 ```css
     @page{

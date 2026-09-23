@@ -6,7 +6,7 @@ In this section we will process a very simple document. We've chosen a document 
 
 ## The lab report
 
-The report itself is very basic, the HTML source is shown below. You can save the HTML to a file named lab\_report.html or download it [here](/doc/assets/samples/lab_report.html).
+The report itself is very basic, the HTML source is shown below. You can save the HTML to a file named lab\_report.html or download it [here](pathname:///samples/lab_report/lab_report.html).
 
 ```markup
     <!DOCTYPE html>
@@ -92,8 +92,8 @@ Process the document using the command line `prince` command:
 
 <p id="fig.lab-report.unstyled">Unstyled lab report</p>
 
-![The unstyled lab report](assets/samples/lab_report-1.bw.png)
-The unstyled lab report. Download the PDF [here](/doc/assets/samples/lab_report.pdf).
+![The unstyled lab report](/samples/lab_report/lab_report-1.bw.png)
+The unstyled lab report. Download the PDF [here](pathname:///samples/lab_report/lab_report.pdf).
 
 ```bash
     $ prince lab_report.html
@@ -103,7 +103,7 @@ This will create a `lab_report.pdf` file in the current directory. If it did not
 
 <p id="fig.gui01">Prince GUI</p>
 
-![The Prince GUI](assets/images/gui_02.png)
+![The Prince GUI](/images/gui_02.png)
 The Prince GUI. Note that in this image both a HTML and a CSS file had been selected.
 
 Prince's command line interface supports many options (see [Command-line Reference](command-line.md)) and can be called from scripts and other software. However some users may not be comfortable with the command line interface. On Windows, Prince provides a more familiar GUI interface, which can be started by choosing Prince from the start menu. [Prince GUI](#fig.gui01) shows the Prince GUI, click "Add File(s)" to choose your HTML file (`lab_report.html`) then click the large "Convert" button to convert it. Prince will generate a PDF file and place it in the directory with your HTML file.
@@ -125,8 +125,8 @@ Next, let's center the title and subtitle and decrease the font size of the subt
 
 <p id="fig.lab-report-styled">Styled lab report</p>
 
-![The styled lab report](assets/samples/lab_report-styled-1.colour.png)
-The styled lab report, download the [here](/doc/assets/samples/lab_report-styled.pdf).
+![The styled lab report](/samples/lab_report/lab_report-styled-1.colour.png)
+The styled lab report, download the [here](pathname:///samples/lab_report-styled.pdf).
 
 ```css
     h1, h2.subtitle {
@@ -150,7 +150,7 @@ Finally we will make the "Hello World!" paragraph stand out. This paragraph is i
         font-family: serif;
     }
 ```
-Okay, that's getting unnecessary, however we can see just how easy it is to apply styles to our document. You can download the complete CSS file here: [`lab_report.css`](/doc/assets/samples/lab_report.css).
+Okay, that's getting unnecessary, however we can see just how easy it is to apply styles to our document. You can download the complete CSS file here: [`lab_report.css`](pathname:///samples/lab_report/lab_report.css).
 
 There are many ways to apply a stylesheet to a document, for this tutorial we will show only three. For information about the ways that styles can be applied and style precedence see [Applying Style Sheets in Prince](prince-input.md#applying-style-sheets-in-prince).
 
@@ -177,7 +177,7 @@ Place the tag within the `head` tag of the document. For example:
 ```
 You will need to re-run Prince for these changes to take effect.
 
-After applying the style as above, Prince should generate something similar to [Styled lab report](#fig.lab-report-styled). You can download the generated PDF file here: [`lab_report-styled.pdf`](/doc/assets/samples/lab_report-styled.pdf).
+After applying the style as above, Prince should generate something similar to [Styled lab report](#fig.lab-report-styled). You can download the generated PDF file here: [`lab_report-styled.pdf`](pathname:///samples/lab_report/lab_report-styled.pdf).
 
 This sample document and many others are available in our [samples repository](https://github.com/yeslogic/prince-samples). You are encouraged to use samples from the repository and contribute your own.
 

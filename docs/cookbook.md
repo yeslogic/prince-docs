@@ -355,7 +355,7 @@ The [`string-set`](css-props.md#prop-string-set) property is applied to each def
     }
     .chapter p b:first-child { string-set: term content() }  /* pick up term to be used in running header */
 ```
-This is the crucial set of rules for the [Dictionary](/samples/#dictionary) sample.
+This is the crucial set of rules for the [Dictionary](/../samples/#dictionary) sample.
 
 The dictionary sample is furthermore noticeable for its use of the optional page policy keyword `first-except`: the current letter of the alphabet is displayed on each page heading, *except* for the page on which the letter appears in the body of the page, starting the new section.
 
@@ -981,8 +981,8 @@ Figure [Printing a big table sideways](#printing-wide-content-sideways) shows a 
 
 Printing a big table sideways
 
-![Image of a large table printed sideways so that its width fits along the page's length.](assets/samples/rotate-body-2.bw.png)
-This table is too wide to fit on the paper, so we use `-prince-rotate-body` in a *named page* to print it sideways. Download the [PDF](/doc/assets/samples/rotate-body.pdf) or the [HTML](/doc/assets/samples/rotate-body.html).
+![Image of a large table printed sideways so that its width fits along the page's length.](/samples/rotate-body/rotate-body-2.bw.png)
+This table is too wide to fit on the paper, so we use `-prince-rotate-body` in a *named page* to print it sideways. Download the [PDF](pathname:///samples/rotate-body/rotate-body.pdf) or the [HTML](pathname:///samples/rotate-body/rotate-body.html).
 
 ```css
     @page big_table {
@@ -1000,7 +1000,7 @@ The [`-prince-rotate-body`](css-props.md#prop-prince-rotate-body) property works
 The [`-prince-rotate-body`](css-props.md#prop-prince-rotate-body) property rotates the *page area*, but not the *page-margin boxes*.  See [Page regions](paged.md#page-regions).
 :::
 
-If you download the full example ([HTML](/doc/assets/samples/rotate-body.html) or [PDF](/doc/assets/samples/rotate-body.pdf)) you will see that the paragraphs before and after the table are not placed on the same page. This is because they do not belong to the same named page (see [Named pages](paged.md#named-pages)). However on page four there are two tables, both tables belong to the same named page and therefore Prince will try to place them together on the same page.
+If you download the full example [HTML](pathname:///samples/rotate-body/rotate-body.html) or [PDF](pathname:///samples/rotate-body/rotate-body.pdf)) you will see that the paragraphs before and after the table are not placed on the same page. This is because they do not belong to the same named page (see [Named pages](paged.md#named-pages)). However on page four there are two tables, both tables belong to the same named page and therefore Prince will try to place them together on the same page.
 
 Another way of rotating content is by changing the writing mode with the [`writing-mode`](css-props.md#prop-writing-mode) property, or by transforming an element with `transform: rotate()` - see [Rotating content in table cells](#rotating-content-in-table-cells).
 

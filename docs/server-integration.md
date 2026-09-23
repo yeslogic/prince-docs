@@ -6,7 +6,7 @@ Prince can be used server-side to produce PDFs, invoked by a wrapper script. Som
 
 ## Prince Wrappers
 
-Since different server configurations make use of different scripting languages, wrappers in those languages are necessary to invoke Prince. Wrappers for several of the most widely used scripting languages are available for download on the [Wrappers Download Page](/download/wrappers/).
+Since different server configurations make use of different scripting languages, wrappers in those languages are necessary to invoke Prince. Wrappers for several of the most widely used scripting languages are available for download on the [Wrappers Download Page](/../download/wrappers/).
 
 A useful tool for writing custom wrappers in other languages are the [Advanced Command-Line Options](#advanced-command-line-options).
 
@@ -15,7 +15,7 @@ For details on the usage of each of the wrappers, please consult the following c
 
 ### The Java Wrapper
 
-Prince can be called from within a Java class for servlets by using the [Java wrapper](/download/wrappers/#wrapper-java).
+Prince can be called from within a Java class for servlets by using the [Java wrapper](/../download/wrappers/#wrapper-java).
 
 The Java wrapper is hosted on the [Maven Central Repository](https://search.maven.org/artifact/com.princexml/prince-java-wrapper).
 
@@ -42,7 +42,7 @@ try {
 
 ### The C\# / .NET Wrapper
 
-Prince can be called from .NET languages using the [Prince C\# / .NET wrapper](/download/wrappers/#wrapper-csharp).
+Prince can be called from .NET languages using the [Prince C\# / .NET wrapper](/../download/wrappers/#wrapper-csharp).
 
 The C\# wrapper is hosted on the [NuGet gallery](https://www.nuget.org/packages/PrinceXMLWrapper/).
 
@@ -111,7 +111,7 @@ prn.Convert("C:\docs\test1.html", "C:\docs\pdf\test1.pdf")
 
 ### The PHP Wrapper
 
-Prince can be called from PHP using the [PHP wrapper](/download/wrappers/#wrapper-php).
+Prince can be called from PHP using the [PHP wrapper](/../download/wrappers/#wrapper-php).
 
 The PHP wrapper is [hosted on Packagist](https://packagist.org/packages/yeslogic/prince-php-wrapper), so that it can be used from Composer.
 
