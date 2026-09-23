@@ -20,25 +20,25 @@ Prince is provided under the terms of the [Prince End-User License Agreement](/.
 
     Run installer confirmation
 
-    ![Confirmation dialog box asking if the user wishes to run the installer.](/images/install_01.png)
+    ![Confirmation dialog box asking if the user wishes to run the installer.](images/install_01.png)
 
 3.  The installer will display a welcome screen like the one below. Click next.
 
     Installer welcome screen
 
-    ![The installer welcome screen](/images/install_02.png)
+    ![The installer welcome screen](images/install_02.png)
 
 4.  Next you will need to accept the license agreement. The text of the license agreement is also available [here](/../license/). Accept the agreement and click Next.
 
     Installer license agreement screen
 
-    ![The installer license agreement screen](/images/install_03.png)
+    ![The installer license agreement screen](images/install_03.png)
 
 5.  Choose the installation directory for Prince. The default is recommended unless you have a specific reason to install Prince elsewhere. When using Prince from the command line we will use the executable in the `Engine\bin\` subdirectory. The installation requires only 16MB of disk space.
 
     Installation location screen
 
-    ![The installer's installation location screen](/images/install_04.png)
+    ![The installer's installation location screen](images/install_04.png)
 
 6.  The installation will confirm the installation details with you before performing the installation. Click Next to continue.
 
@@ -46,7 +46,7 @@ Prince is provided under the terms of the [Prince End-User License Agreement](/.
 
     Installation complete
 
-    ![The installer's completion screen](/images/install_05.png)
+    ![The installer's completion screen](images/install_05.png)
 
 For the layout of a Prince installation on Windows, see the [Windows installation layout](#windows-installation-layout) section.
 </TabItem>
@@ -250,19 +250,19 @@ On Windows you can install a license by following these steps:
 
     Click the license button
 
-    ![Image showing the license button in the main Prince GUI.](/images/gui_03.png)
+    ![Image showing the license button in the main Prince GUI.](images/gui_03.png)
 
 2.  Click the open button and choose your license file.
 
     License window
 
-    ![Image showing the license window with the open button.](/images/gui_04.png)
+    ![Image showing the license window with the open button.](images/gui_04.png)
 
 3.  The license should be displayed in the lower part of the window, click the accept button to install it then click Ok.
 
     License window with license
 
-    ![Image showing the license window with a license selected but not yet installed.](/images/gui_05.png)
+    ![Image showing the license window with a license selected but not yet installed.](images/gui_05.png)
 </TabItem>
 <TabItem value="mac" label="... on MacOS">
 
