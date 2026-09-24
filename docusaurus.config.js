@@ -117,6 +117,7 @@ export default {
           sidebarPath: require.resolve('./sidebars.js'),
           breadcrumbs: false,
         },
+        blog: false,
         theme: {
           customCss: require.resolve('./src/css/custom.css'),
         },

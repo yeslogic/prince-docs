@@ -719,7 +719,7 @@ The `attr()` function, used in the previous examples inside the other functions,
         content: " [Located at '" attr(href) "']";
     }
 ```
-This will add the URL after every link. For example: "\[Located at 'https://www.princexml.com/&#8203;'\]".
+This will add the URL after every link. For example: "[Located at 'https://www.princexml.com/']".
 
 
 ### Image Magic
