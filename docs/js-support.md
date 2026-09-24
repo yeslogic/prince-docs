@@ -12,7 +12,7 @@ Later editions of ECMAScript are not supported.
 
 The following table shows supported JavaScript objects, methods and
 properties. For more details, see also{" "}
-<a href="/doc/javascript#js-prince">JavaScript in Prince</a>.
+<a href="/doc/javascript/#js-prince">JavaScript in Prince</a>.
 
 Objects, methods and properties marked with an asterisk (\*) are Prince
 extensions.

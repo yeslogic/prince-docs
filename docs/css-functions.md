@@ -106,7 +106,7 @@ The <span className="dep">functions with a line-through</span> are deprecated pr
     </code>
 </td>
 <td>Retrieves the value of a custom property set elsewhere.</td>
-<td><a href="/doc/styling#custom-properties-css-variables">Custom properties (CSS variables)</a></td>
+<td><a href="/doc/styling/#custom-properties-css-variables">Custom properties (CSS variables)</a></td>
 </tr>
 <tr>
 <td>
@@ -118,7 +118,7 @@ The <span className="dep">functions with a line-through</span> are deprecated pr
     </code>
 </td>
 <td>Defines red, green and blue values of a color. The final argument specifies the alpha value of the color - if omitted, it defaults to 100%. For legacy reasons, <code>rgb()</code> also supports the legacy color syntax, in which the values are separated by commas. Also a legacy <code>rgba()</code> function exists, with an identical grammar and behavior to <code>rgb()</code>.</td>
-<td rowSpan="6">all <code><i><a href="/doc/graphics#color">color</a></i></code> values</td>
+<td rowSpan="6">all <code><i><a href="/doc/graphics/#color">color</a></i></code> values</td>
 </tr>
 <tr>
 <td>
@@ -208,7 +208,7 @@ is given, it defaults to <code>overprint-mode-nonzero</code>.</td>
 colors along a straight line.</td>
 <td rowSpan="4">
     <code>
-    <a href="/doc/css-props#prop-background-image">background-image</a>
+    <a href="/doc/css-props/#prop-background-image">background-image</a>
     </code>
 </td>
 </tr>
@@ -246,7 +246,7 @@ colors that radiate from an origin point</td>
 <td>Defines a region in the form of a rectangle.</td>
 <td>
     <code>
-    <a href="/doc/css-props#prop-clip">clip</a>
+    <a href="/doc/css-props/#prop-clip">clip</a>
     </code>
 </td>
 </tr>
@@ -258,7 +258,7 @@ colors that radiate from an origin point</td>
 </td>
 <td>Retrieves the text content of the selected element.  It can be used with several
 different properties.</td>
-<td rowSpan="17"><code><a href="/doc/css-props#prop-content">content</a></code> - see also <a href="/doc/gen-content#generated-content-functions">Generated Content Functions</a></td>
+<td rowSpan="17"><code><a href="/doc/css-props/#prop-content">content</a></code> - see also <a href="/doc/gen-content/#generated-content-functions">Generated Content Functions</a></td>
 </tr>
 <tr>
 <td>
@@ -266,7 +266,7 @@ different properties.</td>
     element( &lt;<i>name</i>&gt;, &lt;<i>page-policy</i>&gt;? )
     </code>
 </td>
-<td>Places an element (which has been removed from the normal flow with the <code>running()</code> function) in a page region.  See <a href="/doc/paged#taking-elements-from-the-document">Taking elements from the document</a>.</td>
+<td>Places an element (which has been removed from the normal flow with the <code>running()</code> function) in a page region.  See <a href="/doc/paged/#taking-elements-from-the-document">Taking elements from the document</a>.</td>
 </tr>
 <tr>
 <td>
@@ -299,7 +299,7 @@ different properties.</td>
     </code>
 </td>
 <td>Retrieves the value of the innermost counter with a given name at the given URL.
-See <a href="/doc/gen-content#using-target-counter">Using target-counter()</a>.</td>
+See <a href="/doc/gen-content/#using-target-counter">Using target-counter()</a>.</td>
 </tr>
 <tr>
 <td>
@@ -316,7 +316,7 @@ URL.</td>
     target-content( &lt;<i>url</i>&gt; )
     </code>
 </td>
-<td>References the text content of the linked element.  See <a href="/doc/gen-content#using-target-content">Using target-content()</a>.</td>
+<td>References the text content of the linked element.  See <a href="/doc/gen-content/#using-target-content">Using target-content()</a>.</td>
 </tr>
 <tr>
 <td>
@@ -332,7 +332,7 @@ URL.</td>
     string( &lt;<i>ident</i>&gt;, &lt;<i>page-policy</i>&gt;? )
     </code>
 </td>
-<td>Retrieves the value defined with the <code><a href="/doc/css-props#prop-string-set">string-set</a></code> property.  See <a href="/doc/paged#copying-content-from-the-document">Copying content from the document</a>.</td>
+<td>Retrieves the value defined with the <code><a href="/doc/css-props/#prop-string-set">string-set</a></code> property.  See <a href="/doc/paged/#copying-content-from-the-document">Copying content from the document</a>.</td>
 </tr>
 <tr className="dep">
 <td>
@@ -380,7 +380,7 @@ Used in counters as a <code>counter-style</code>, it defines the symbols used fo
     flow( &lt;<i>name</i>&gt;, &lt;<i>page-policy</i>&gt;? ) | prince-flow( &lt;<i>name</i>&gt;, &lt;<i>page-policy</i>&gt;? )*
     </code>
 </td>
-<td>Inserts an element that has previously been removed with the <code>static()</code> function.  See <a href="/doc/paged#taking-elements-from-the-document">Taking elements from the document</a>.</td>
+<td>Inserts an element that has previously been removed with the <code>static()</code> function.  See <a href="/doc/paged/#taking-elements-from-the-document">Taking elements from the document</a>.</td>
 </tr>
 <tr className="ext">
 <td>
@@ -423,7 +423,7 @@ Inserts content fetched from another resource (like the <code>url()</code> funct
 <td>Converts the input image to grayscale.</td>
 <td rowSpan="10">
     <code>
-    <a href="/doc/css-props#prop-filter">filter</a>
+    <a href="/doc/css-props/#prop-filter">filter</a>
     </code>
 </td>
 </tr>
@@ -507,10 +507,10 @@ bright.</td>
     prince-opentype( [ &lt;<i>feature</i>&gt; ]+ )*
     </code>
 </td>
-<td>Specifies a comma-separated list of OpenType features to be enabled.  For details please see the <code><a href="/doc/css-props#prop-font-variant">font-variant</a></code> property and <a href="/doc/styling#opentype-features-in-prince">OpenType Features in Prince</a>.</td>
+<td>Specifies a comma-separated list of OpenType features to be enabled.  For details please see the <code><a href="/doc/css-props/#prop-font-variant">font-variant</a></code> property and <a href="/doc/styling/#opentype-features-in-prince">OpenType Features in Prince</a>.</td>
 <td>
     <code>
-    <a href="/doc/css-props#prop-font-variant">font-variant</a>
+    <a href="/doc/css-props/#prop-font-variant">font-variant</a>
     </code>
 </td>
 </tr>
@@ -522,10 +522,10 @@ bright.</td>
 </td>
 <td>Removes an element from the normal document flow, to make it available for use
 in a page region with the <code>element()</code> function.  See
-<a href="/doc/paged#taking-elements-from-the-document">Taking elements from the document</a>.</td>
+<a href="/doc/paged/#taking-elements-from-the-document">Taking elements from the document</a>.</td>
 <td>
     <code>
-    <a href="/doc/css-props#prop-position">position</a>
+    <a href="/doc/css-props/#prop-position">position</a>
     </code>
 </td>
 </tr>
@@ -538,7 +538,7 @@ in a page region with the <code>element()</code> function.  See
 <td>Recompresses JPEG images by the indicated percentage to save space.</td>
 <td rowSpan="2">
     <code>
-    <a href="/doc/css-props#prop-prince-image-magic">-prince-image-magic</a>
+    <a href="/doc/css-props/#prop-prince-image-magic">-prince-image-magic</a>
     </code>
 </td>
 </tr>
@@ -557,10 +557,10 @@ in a page region with the <code>element()</code> function.  See
     </code>
 </td>
 <td>Removes an element from the normal document flow, to make it available for use
-with the <code>flow()</code> function.  See <a href="/doc/paged#taking-elements-from-the-document">Taking elements from the document</a>.</td>
+with the <code>flow()</code> function.  See <a href="/doc/paged/#taking-elements-from-the-document">Taking elements from the document</a>.</td>
 <td>
     <code>
-    <a href="/doc/css-props#prop-prince-flow">-prince-flow</a>
+    <a href="/doc/css-props/#prop-prince-flow">-prince-flow</a>
     </code>
 </td>
 </tr>
@@ -575,7 +575,7 @@ is opened.  The user can supply values that Prince doesn't know about, but the v
 does.</td>
 <td>
     <code>
-    <a href="/doc/css-props#prop-prince-pdf-open-action">-prince-pdf-open-action</a>
+    <a href="/doc/css-props/#prop-prince-pdf-open-action">-prince-pdf-open-action</a>
     </code>
 </td>
 </tr>
@@ -588,7 +588,7 @@ does.</td>
 <td>Specifies a string to match PDF annotations within a PDF page that will be "merged" into a single annotation on that page.</td>
 <td>
     <code>
-    <a href="/doc/css-props#prop-prince-pdf-annotation-merge">-prince-pdf-annotation-merge</a>
+    <a href="/doc/css-props/#prop-prince-pdf-annotation-merge">-prince-pdf-annotation-merge</a>
     </code>
 </td>
 </tr>
@@ -610,7 +610,7 @@ Provides a hint on the font format.
 </td>
 <td rowSpan="4">
     <code>
-    <a href="/doc/css-props#prop-src">src</a>
+    <a href="/doc/css-props/#prop-src">src</a>
     </code>
 </td>
 </tr>
@@ -637,7 +637,7 @@ Provides a hint on the font format.
     </code>
 </td>
 <td>Searches for locally installed system fonts, but will also find fonts defined
-by other <code>@font-face</code> rules.  See <a href="/doc/styling#defining-a-font-family">Defining a font family</a>.</td>
+by other <code>@font-face</code> rules.  See <a href="/doc/styling/#defining-a-font-family">Defining a font family</a>.</td>
 </tr>
 <tr>
 <td>
@@ -648,7 +648,7 @@ by other <code>@font-face</code> rules.  See <a href="/doc/styling#defining-a-fo
 <td>Rotates an element around a fixed point on the 2D plane.</td>
 <td rowSpan="12">
     <code>
-    <a href="/doc/css-props#prop-transform">transform</a>
+    <a href="/doc/css-props/#prop-transform">transform</a>
     </code>
 </td>
 </tr>

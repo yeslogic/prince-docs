@@ -50,7 +50,7 @@ The Prince log can be accessed from JavaScript via the [`Log`](js-support.md#win
     Log.data("name", "value")
 ```
 :::note
-<code>Log.debug()</code> is only available when the <a href="/doc/command-line#cl-debug"><code>--debug</code></a> command-line option has been specified, while <code>Log.info()</code> is only available when the <a href="/doc/command-line#cl-verbose"><code>--verbose</code></a> command-line option has been specified.
+<code>Log.debug()</code> is only available when the <a href="/doc/command-line/#cl-debug"><code>--debug</code></a> command-line option has been specified, while <code>Log.info()</code> is only available when the <a href="/doc/command-line/#cl-verbose"><code>--verbose</code></a> command-line option has been specified.
 :::
 
 ### Console Access

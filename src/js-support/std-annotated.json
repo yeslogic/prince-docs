@@ -814,7 +814,7 @@
             "hasAttribute": {},
             "hasAttributeNS": {},
             "getPrinceBoxes": {
-                "returns": "A list of JavaScript objects called <a href='/doc/javascript#the-box-tracking-api'>boxes</a>.",
+                "returns": "A list of JavaScript objects called <a href='/doc/javascript/#the-box-tracking-api'>boxes</a>.",
                 "ext": "ext"
             }
         }
@@ -2316,7 +2316,7 @@
     },
     "BoxInfo": {
         "ext": "ext",
-        "returns": "The properties of a box, can be accessed after document conversion has finished - see <a href='/doc/javascript#the-box-tracking-api'>The Box Tracking API</a>.",
+        "returns": "The properties of a box, can be accessed after document conversion has finished - see <a href='/doc/javascript/#the-box-tracking-api'>The Box Tracking API</a>.",
         "prototype": {
             "type": {
                 "desc": "\"BODY\" | \"COLUMN\" | \"FLEXLINE\" | \"FOOTNOTES\" | \"FLOATS\" | \"BOX\" | \"LINE\" | \"SPAN\" | \"TEXT\" | \"SVG\" | \"IMAGE\""
@@ -2376,9 +2376,9 @@
     },
     "Prince": {
         "ext": "ext",
-        "desc": "See <a href='/doc/javascript#the-prince-object'>The Prince Object</a>.",
+        "desc": "See <a href='/doc/javascript/#the-prince-object'>The Prince Object</a>.",
         "addEventListener": {
-            "desc": "can be called to listen to the <code>complete</code> event on the Prince object. See <a href='/doc/javascript#event-handling'>Event Handling</a>.",
+            "desc": "can be called to listen to the <code>complete</code> event on the Prince object. See <a href='/doc/javascript/#event-handling'>Event Handling</a>.",
             "arguments": [
                 {
                     "name": "type",
@@ -2408,10 +2408,10 @@
                     "type": "string"
                 }
             ],
-            "desc": "exposes an arbitrary JavaScript function to CSS. See <a href='/doc/gen-content#script-functions'>Script Functions</a>."
+            "desc": "exposes an arbitrary JavaScript function to CSS. See <a href='/doc/gen-content/#script-functions'>Script Functions</a>."
         },
         "trackBoxes": {
-            "desc": "See <a href='/doc/javascript#the-box-tracking-api'>The Box Tracking API</a>.",
+            "desc": "See <a href='/doc/javascript/#the-box-tracking-api'>The Box Tracking API</a>.",
             "arguments": [
                 {
                     "type": "boolean"
@@ -2423,7 +2423,7 @@
                 {
                     "name": "JSON",
                     "type": "string",
-                    "desc": "as specified in the <a href='/doc/server-integration#job-description-json'>Job description JSON</a>;"
+                    "desc": "as specified in the <a href='/doc/server-integration/#job-description-json'>Job description JSON</a>;"
                 },
                 {
                     "name": "OutputFileName",
@@ -2462,7 +2462,7 @@
                     "type": "string"
                 }
             ],
-            "desc": "See <a href='/doc/javascript#multi-pass-formatting'>Multi-Pass formatting</a>."
+            "desc": "See <a href='/doc/javascript/#multi-pass-formatting'>Multi-Pass formatting</a>."
         },
         "Log": {
             "desc": "also available as <a href='#window.Log'><code>Log</code></a>.",
@@ -2516,7 +2516,7 @@
     },
     "PDF": {
         "ext": "ext",
-        "desc": "See <a href='/doc/javascript#the-pdf-object'>The PDF Object</a>.",
+        "desc": "See <a href='/doc/javascript/#the-pdf-object'>The PDF Object</a>.",
         "attachFile": {
             "arguments": [
                 {

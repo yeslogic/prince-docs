@@ -15,9 +15,9 @@ On a separate site we collect more [quick guides to making beautiful PDF documen
 
 <dl className="ingredients">
   <dt>You need</dt>
-  <dd><a href="/doc/paged">Paged Media</a>     <ul>       <li><a href="/doc/paged#selecting-pages">Selecting pages</a></li>       <li><a href="/doc/paged#controlling-pagination">Controlling pagination</a></li>     </ul>   </dd>
-  <dd><a href="/doc/styling#prince-extensions-to-floats">Prince extensions to floats</a></dd>
-  <dd><a href="/doc/styling#paragraph-formatting">Paragraph formatting</a></dd>
+  <dd><a href="/doc/paged/">Paged Media</a>     <ul>       <li><a href="/doc/paged/#selecting-pages">Selecting pages</a></li>       <li><a href="/doc/paged/#controlling-pagination">Controlling pagination</a></li>     </ul>   </dd>
+  <dd><a href="/doc/styling/#prince-extensions-to-floats">Prince extensions to floats</a></dd>
+  <dd><a href="/doc/styling/#paragraph-formatting">Paragraph formatting</a></dd>
 </dl>
 
 Prince produces PDFs - which are a prominent example of paged media. The main difference with conventional CSS design for browsers is to always keep in mind that you are dealing with pagination, i.e. the content is placed on discrete pages.
@@ -96,8 +96,8 @@ This style snippet could be part of the stylesheet for a little booklet - it dis
 
 <dl className="ingredients">
   <dt>You need</dt>
-  <dd><a href="/doc/paged#page-regions">Page regions</a></dd>
-  <dd><a href="/doc/gen-content">Generated Content</a></dd>
+  <dd><a href="/doc/paged/#page-regions">Page regions</a></dd>
+  <dd><a href="/doc/gen-content/">Generated Content</a></dd>
 </dl>
 
 A basic concept in preparing a page is the organisation of the available space in main content, known as the _page area_, and additional content arranged in _page area regions_ and _page-margin boxes_ - for a full explanation, please refer to the [page regions](paged.md#page-regions) chapter.  In that chapter you can see an image with all available regions and boxes depicted.
@@ -239,8 +239,8 @@ Note that the page-margin boxes and `@prince-overlay` take CSS generated content
 
 <dl className="ingredients">
   <dt>You need</dt>
-  <dd><a href="/doc/paged#page-regions">Page regions</a></dd>
-  <dd><a href="/doc/gen-content">Generated Content</a></dd>
+  <dd><a href="/doc/paged/#page-regions">Page regions</a></dd>
+  <dd><a href="/doc/gen-content/">Generated Content</a></dd>
 </dl>
 
 When preparing a document for print, "running" headers and footers repeating on every page, such as page numbering and titles of the book and of the current chapter, are a common need.
@@ -285,7 +285,7 @@ See also [A quick guide to running headers and footers in Prince](https://css4.p
 
 <dl className="ingredients">
   <dt>You need</dt>
-  <dd><a href="/doc/css-selectors#page-selectors">Page selectors</a></dd>
+  <dd><a href="/doc/css-selectors/#page-selectors">Page selectors</a></dd>
   <dd><a href="/doc/paged/#named-pages">Named pages</a></dd>
 </dl>
 
@@ -333,10 +333,10 @@ Any other page of the document, or of a chapter, can be targeted with the select
 
 <dl className="ingredients">
   <dt>You need</dt>
-  <dd><a href="/doc/paged#page-regions">Page regions</a></dd>
-  <dd><a href="/doc/gen-content">Generated Content</a></dd>
+  <dd><a href="/doc/paged/#page-regions">Page regions</a></dd>
+  <dd><a href="/doc/gen-content/">Generated Content</a></dd>
   <dd>
-<a href="/doc/gen-content#the-optional-page-policy-value">The optional page-policy value</a>
+<a href="/doc/gen-content/#the-optional-page-policy-value">The optional page-policy value</a>
     <ul>
       <li><code>content: string(term, <b>first</b>)</code></li>
       <li><code>content: string(term, <b>last</b>)</code></li>
@@ -371,16 +371,16 @@ The dictionary sample is furthermore noticeable for its use of the optional page
 <dl className="ingredients">
   <dt>You need</dt>
   <dd>
-<a href="/doc/paged">Paged Media</a>
+<a href="/doc/paged/">Paged Media</a>
     <ul>
-      <li><a href="/doc/paged#selecting-pages">Selecting pages</a></li>
+      <li><a href="/doc/paged/#selecting-pages">Selecting pages</a></li>
     </ul>
   </dd>
   <dd>
-<a href="/doc/gen-content">Generated Content</a>
+<a href="/doc/gen-content/">Generated Content</a>
     <ul>
       <li>
-<a href="/doc/gen-content#counters-and-numbering">Counters and Numbering</a>
+<a href="/doc/gen-content/#counters-and-numbering">Counters and Numbering</a>
         <ul>
           <li><code>content: counter(page)</code></li>
         </ul>
@@ -457,10 +457,10 @@ This rule will generate page footers such as "Page 1 of 89".
 <dl className="ingredients">
   <dt>You need</dt>
   <dd>
-<a href="/doc/styling#tables">Tables</a>
+<a href="/doc/styling/#tables">Tables</a>
     <ul>
-      <li><a href="/doc/styling#running-table-headers-and-footers">Running table headers and footers</a></li>
-      <li><a href="/doc/styling#table-captions">Table captions</a></li>
+      <li><a href="/doc/styling/#running-table-headers-and-footers">Running table headers and footers</a></li>
+      <li><a href="/doc/styling/#table-captions">Table captions</a></li>
     </ul>
   </dd>
 </dl>
@@ -486,9 +486,9 @@ When a table spans across more than one page, the [`-prince-caption-page`](css-p
 <dl className="ingredients">
   <dt>You need</dt>
   <dd>
-<a href="/doc/styling#tables">Tables</a>
+<a href="/doc/styling/#tables">Tables</a>
     <ul>
-      <li><a href="/doc/styling#table-captions">Table captions</a></li>
+      <li><a href="/doc/styling/#table-captions">Table captions</a></li>
     </ul>
   </dd>
   <dd><a href="#long-tables">Long Tables</a></dd>
@@ -536,15 +536,15 @@ The paragraph functioning as a table caption can be hidden in browsers by using 
 
 <dl className="ingredients">
   <dt>You need</dt>
-  <dd><a href="/doc/styling#prince-extensions-to-floats">Prince extensions to floats</a></dd>
+  <dd><a href="/doc/styling/#prince-extensions-to-floats">Prince extensions to floats</a></dd>
   <dd>
-<a href="/doc/styling#footnotes">Footnotes</a>
+<a href="/doc/styling/#footnotes">Footnotes</a>
     <ul>
       <li><code>float: footnote</code></li>
     </ul>
   </dd>
-  <dd><a href="/doc/gen-content#generated-content-functions">Generated Content Functions</a></dd>
-  <dd><a href="/doc/gen-content#using-target-counter">Using <code>target-counter()</code></a></dd>
+  <dd><a href="/doc/gen-content/#generated-content-functions">Generated Content Functions</a></dd>
+  <dd><a href="/doc/gen-content/#using-target-counter">Using <code>target-counter()</code></a></dd>
 </dl>
 
 In some cases it might happen that you want to point several footnote calls at the same footnote. Prince offers a convenient mechanism to achieve this by combining regular footnotes with the generated content function `target-counter()`.
@@ -589,19 +589,19 @@ When creating regular footnotes, Prince automatically takes care of the styling 
 
 :::note
     Prince offers also experimental native support for sidenotes as of Prince 14.3.
-    See <a href="/doc/styling#sidenotes">Sidenotes</a>.
+    See <a href="/doc/styling/#sidenotes">Sidenotes</a>.
 :::
 
 <dl className="ingredients">
   <dt>You need</dt>
-  <dd><a href="/doc/styling#prince-extensions-to-floats">Prince extensions to floats</a></dd>
+  <dd><a href="/doc/styling/#prince-extensions-to-floats">Prince extensions to floats</a></dd>
   <dd>
-<a href="/doc/styling#footnotes">Footnotes</a>
+<a href="/doc/styling/#footnotes">Footnotes</a>
     <ul>
       <li><code>float: footnote</code></li>
     </ul>
   </dd>
-  <dd><a href="/doc/styling#styling-and-behavior-of-footnotes">Styling and behavior of footnotes</a></dd>
+  <dd><a href="/doc/styling/#styling-and-behavior-of-footnotes">Styling and behavior of footnotes</a></dd>
 </dl>
 
 Prince has a simple way of creating footnotes: the `@footnote` page area, where footnotes can be floated to with the [`float`](css-props.md#prop-float) property. For details see [Footnotes](styling.md#footnotes).
@@ -666,13 +666,13 @@ To format the latter one, just run:
 
 <dl className="ingredients">
   <dt>You need</dt>
-  <dd><a href="/doc/gen-content">Generated Content</a></dd>
-  <dd><a href="/doc/gen-content#generated-content-functions">Generated Content Functions</a></dd>
+  <dd><a href="/doc/gen-content/">Generated Content</a></dd>
+  <dd><a href="/doc/gen-content/#generated-content-functions">Generated Content Functions</a></dd>
   <dd>
-<a href="/doc/gen-content#cross-references">Cross-references</a>
+<a href="/doc/gen-content/#cross-references">Cross-references</a>
     <ul>
-      <li><a href="/doc/gen-content#using-target-counter">Using <code>target-counter()</code></a></li>
-      <li><a href="/doc/gen-content#using-target-content">Using <code>target-content()</code></a></li>
+      <li><a href="/doc/gen-content/#using-target-counter">Using <code>target-counter()</code></a></li>
+      <li><a href="/doc/gen-content/#using-target-content">Using <code>target-content()</code></a></li>
     </ul>
   </dd>
 </dl>
@@ -726,9 +726,9 @@ This will add the URL after every link. For example: "[Located at 'https://www.p
 
 <dl className="ingredients">
   <dt>You need</dt>
-  <dd><a href="/doc/graphics#images">Images</a></dd>
+  <dd><a href="/doc/graphics/#images">Images</a></dd>
   <dd>
-<a href="/doc/graphics#css-and-images">CSS and Images</a>
+<a href="/doc/graphics/#css-and-images">CSS and Images</a>
     <ul>
       <li><code>-prince-image-magic</code></li>
     </ul>
@@ -760,14 +760,14 @@ This example recompresses all JPEG images to 50%, converts any non-JPEG images t
 <dl className="ingredients">
   <dt>You need</dt>
     <dd>
-<code><a href="/doc/css-props#prop-hyphens">hyphens</a></code>
+<code><a href="/doc/css-props/#prop-hyphens">hyphens</a></code>
       <ul>
-        <li><code><a href="/doc/css-props#prop-prince-hyphenate-character">-prince-hyphenate-character</a></code></li>
-        <li><code><a href="/doc/css-props#prop-prince-hyphenate-before">-prince-hyphenate-before</a></code></li>
-        <li><code><a href="/doc/css-props#prop-prince-hyphenate-after">-prince-hyphenate-after</a></code></li>
-        <li><code><a href="/doc/css-props#prop-prince-hyphenate-limit-last">-prince-hyphenate-limit-last</a></code></li>
-        <li><code><a href="/doc/css-props#prop-prince-hyphenate-limit-lines">-prince-hyphenate-limit-lines</a></code></li>
-        <li><code><a href="/doc/css-props#prop-prince-hyphenate-patterns">-prince-hyphenate-patterns</a></code></li>
+        <li><code><a href="/doc/css-props/#prop-prince-hyphenate-character">-prince-hyphenate-character</a></code></li>
+        <li><code><a href="/doc/css-props/#prop-prince-hyphenate-before">-prince-hyphenate-before</a></code></li>
+        <li><code><a href="/doc/css-props/#prop-prince-hyphenate-after">-prince-hyphenate-after</a></code></li>
+        <li><code><a href="/doc/css-props/#prop-prince-hyphenate-limit-last">-prince-hyphenate-limit-last</a></code></li>
+        <li><code><a href="/doc/css-props/#prop-prince-hyphenate-limit-lines">-prince-hyphenate-limit-lines</a></code></li>
+        <li><code><a href="/doc/css-props/#prop-prince-hyphenate-patterns">-prince-hyphenate-patterns</a></code></li>
       </ul>
     </dd>
 </dl>
@@ -884,10 +884,10 @@ See also [A quick guide to hyphenation in Prince](https://css4.pub/2025/hyphenat
 
 <dl className="ingredients">
   <dt>You need</dt>
-    <dd><a href="/doc/styling#opentype-features-in-prince">OpenType Features in Prince</a></dd>
-    <dd><code><a href="/doc/css-props#prop-font-variant-ligatures">font-variant-ligatures</a></code></dd>
-    <dd><code><a href="/doc/css-props#prop-font-variant">font-variant</a>: prince-opentype()</code></dd>
-    <dd><code><a href="/doc/css-props#prop-prince-text-replace">-prince-text-replace</a></code></dd>
+    <dd><a href="/doc/styling/#opentype-features-in-prince">OpenType Features in Prince</a></dd>
+    <dd><code><a href="/doc/css-props/#prop-font-variant-ligatures">font-variant-ligatures</a></code></dd>
+    <dd><code><a href="/doc/css-props/#prop-font-variant">font-variant</a>: prince-opentype()</code></dd>
+    <dd><code><a href="/doc/css-props/#prop-prince-text-replace">-prince-text-replace</a></code></dd>
 </dl>
 
 Prince supports typographic ligatures found in OpenType fonts, i.e. Prince will replace certain characters that appear next to each other with other special glyphs that join those two characters together into one single glyph.
@@ -925,13 +925,13 @@ Another mechanism for replacing specific characters is given with the [`-prince-
 <dl className="ingredients">
   <dt>You need</dt>
     <dd>
-<a href="/doc/paged#page-regions">Page regions</a>
+<a href="/doc/paged/#page-regions">Page regions</a>
       <ul>
         <li><code>@prince-overlay</code></li>
       </ul>
     </dd>
-    <dd><a href="/doc/paged#generated-content-in-page-regions">Generated content in page regions</a></dd>
-    <dd><a href="/doc/paged#taking-elements-from-the-document">Taking elements from the document</a></dd>
+    <dd><a href="/doc/paged/#generated-content-in-page-regions">Generated content in page regions</a></dd>
+    <dd><a href="/doc/paged/#taking-elements-from-the-document">Taking elements from the document</a></dd>
 </dl>
 
 When producing a PDF, it might be desirable to include a watermark, visible on all pages. In Prince it is easy to do so with CSS.
@@ -973,8 +973,8 @@ Sometimes it is necessary to rotate a block element so that it fits on the page.
 
 <dl className="ingredients">
   <dt>You need</dt>
-    <dd><code><a href="/doc/css-props#prop-prince-rotate-body">-prince-rotate-body</a></code></dd>
-    <dd><code><a href="/doc/css-props#prop-prince-shrink-to-fit">-prince-shrink-to-fit</a></code></dd>
+    <dd><code><a href="/doc/css-props/#prop-prince-rotate-body">-prince-rotate-body</a></code></dd>
+    <dd><code><a href="/doc/css-props/#prop-prince-shrink-to-fit">-prince-shrink-to-fit</a></code></dd>
 </dl>
 
 Figure [Printing a big table sideways](#printing-wide-content-sideways) shows a table, rotated so that its width fits within the page's length. This can be achieved with the following rules:
@@ -1008,8 +1008,8 @@ Another way of rotating content is by changing the writing mode with the [`writi
 
 <dl className="ingredients">
   <dt>You need</dt>
-    <dd><code><a href="/doc/css-props#prop-transform">transform</a>: rotate()</code></dd>
-    <dd><code><a href="/doc/css-props#prop-writing-mode">writing-mode</a></code></dd>
+    <dd><code><a href="/doc/css-props/#prop-transform">transform</a>: rotate()</code></dd>
+    <dd><code><a href="/doc/css-props/#prop-writing-mode">writing-mode</a></code></dd>
 </dl>
 
 There are cases, when preparing a table with a large amount of content, that you would like to configure your layout to be most efficient - a useful trick is to rotate the content in some table cells, or in the table headers. Rotating by 90° might be a way to achieve this, but readability suffers. A reasonable compromise is to rotate 45° only - the space it needs is not more than with a 90° rotation, and your readers don't have to tilt their heads repeatedly. In the following example we shall rotate table headers by 45°.
@@ -1067,8 +1067,8 @@ For a different approach to rotating content, see the section on [Printing wide 
 
 <dl className="ingredients">
   <dt>You need</dt>
-  <dd><a href="/doc/javascript#javascript-in-printed-media">JavaScript in Printed Media</a></dd>
-  <dd><a href="/doc/gen-content#generated-content-functions">Generated Content Functions</a>     <ul>       <li><code>content: target-counter()</code></li>       <li><code>content: leader()</code></li>     </ul>   </dd>
+  <dd><a href="/doc/javascript/#javascript-in-printed-media">JavaScript in Printed Media</a></dd>
+  <dd><a href="/doc/gen-content/#generated-content-functions">Generated Content Functions</a>     <ul>       <li><code>content: target-counter()</code></li>       <li><code>content: leader()</code></li>     </ul>   </dd>
 </dl>
 
 Prince offers several properties and functions to facilitate the creation of a Table of Contents.
@@ -1138,7 +1138,7 @@ You can view the resulting PDF [here](https://css4.pub/2018/multifile-toc/book.p
 
 <dl className="ingredients">
   <dt>You need</dt>
-  <dd><a href="/doc/javascript">Scripting</a></dd>
+  <dd><a href="/doc/javascript/">Scripting</a></dd>
 </dl>
 
 Endnotes are quite easy as their placement is not relative to the page. There are two ways of creating them.
@@ -1161,8 +1161,8 @@ The table in the above document sample also has inline notes that are moved to t
 
 <dl className="ingredients">
   <dt>You need</dt>
-    <dd><a href="/doc/javascript#the-prince-object">The Prince Object</a></dd>
-    <dd><a href="/doc/javascript#the-box-tracking-api">The Box Tracking API</a></dd>
+    <dd><a href="/doc/javascript/#the-prince-object">The Prince Object</a></dd>
+    <dd><a href="/doc/javascript/#the-box-tracking-api">The Box Tracking API</a></dd>
 </dl>
 
 The `BoxInfo()` method returns a list of *boxes*, each of which has a series of properties defining them.
@@ -1266,7 +1266,7 @@ See also [A quick guide to the boxtracking API in Prince](https://css4.pub/2024/
 
 <dl class="ingredients">
   <dt>You need</dt>
-    <dd><a href="/doc/javascript">JavaScript</a></dd>
+    <dd><a href="/doc/javascript/">JavaScript</a></dd>
     <dd><a href="https://github.com/yeslogic/prince-scripts/tree/master/compatibility/MathJax">MathJax compatibility script</a></dd>
 </dl>
 
@@ -1282,12 +1282,12 @@ MathML can be expanded beyond the build-in support by using [MathJax](https://ww
 
 <dl className="ingredients">
   <dt>You need</dt>
-    <dd><a href="/doc/javascript#javascript-in-printed-media">JavaScript in Printed Media</a></dd>
-    <dd><a href="/doc/javascript#event-handling">Event Handling</a></dd>
+    <dd><a href="/doc/javascript/#javascript-in-printed-media">JavaScript in Printed Media</a></dd>
+    <dd><a href="/doc/javascript/#event-handling">Event Handling</a></dd>
     <dd>
-      <a href="/doc/javascript#the-prince-object">The Prince Object</a>
+      <a href="/doc/javascript/#the-prince-object">The Prince Object</a>
       <ul>
-        <li><a href="/doc/javascript#multi-pass-formatting">Multi-Pass formatting</a></li>
+        <li><a href="/doc/javascript/#multi-pass-formatting">Multi-Pass formatting</a></li>
       </ul>
     </dd>
 </dl>
@@ -1319,8 +1319,8 @@ When however scripts need to communicate across multiple input documents, the bu
 
 <dl className="ingredients">
   <dt>You need</dt>
-    <dd><a href="/doc/paged">Paged Media</a></dd>
-    <dd><a href="/doc/javascript#javascript-in-printed-media">JavaScript in Printed Media</a></dd>
+    <dd><a href="/doc/paged/">Paged Media</a></dd>
+    <dd><a href="/doc/javascript/#javascript-in-printed-media">JavaScript in Printed Media</a></dd>
     <dd><a href="#table-of-contents">Table of Contents</a></dd>
 </dl>
 

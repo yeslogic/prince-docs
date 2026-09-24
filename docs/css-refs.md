@@ -41,7 +41,7 @@ Prince supports, fully or partially, the following CSS specifications:
 </tr>
 <tr>
 <td><a href="https://www.w3.org/TR/css-fonts-3/">CSS Fonts Module Level&nbsp;3</a></td>
-<td>Beyond the definitions in CSS 2.1, Prince supports <code>font-stretch</code>, <code>font-kerning</code>, <code>font-variant-caps</code> and <code>font-variant-ligatures</code>. Prince also provides a different interface to the functionality of the <code>font-feature-settings</code> property through the <code><a href="/doc/css-props#prop-font-variant">font-variant: prince-opentype()</a></code> function.</td>
+<td>Beyond the definitions in CSS 2.1, Prince supports <code>font-stretch</code>, <code>font-kerning</code>, <code>font-variant-caps</code> and <code>font-variant-ligatures</code>. Prince also provides a different interface to the functionality of the <code>font-feature-settings</code> property through the <code><a href="/doc/css-props/#prop-font-variant">font-variant: prince-opentype()</a></code> function.</td>
 </tr>
 <tr>
 <td><a href="https://www.w3.org/TR/css-lists-3/">CSS Lists and Counters Module Level&nbsp;3</a></td>
@@ -53,7 +53,7 @@ Prince supports, fully or partially, the following CSS specifications:
 </tr>
 <tr>
 <td><a href="https://www.w3.org/TR/css-gcpm-3/">CSS Generated Content for Paged Media Module</a></td>
-<td>Prince recognizes <code>footnote-display</code> and <code>string-set</code> as well as the mechanism for running elements.  It does not recognize the <code>running</code> or <code>footnote-policy</code> properties, but Prince provides a different interface to the functionality of footnotes (see <a href="/doc/styling#footnotes">Footnotes</a>).</td>
+<td>Prince recognizes <code>footnote-display</code> and <code>string-set</code> as well as the mechanism for running elements.  It does not recognize the <code>running</code> or <code>footnote-policy</code> properties, but Prince provides a different interface to the functionality of footnotes (see <a href="/doc/styling/#footnotes">Footnotes</a>).</td>
 </tr>
 <tr>
 <td><a href="https://drafts.csswg.org/css-page-floats/">CSS Page Floats Module Level&nbsp;3 - Editor's Draft</a></td>
@@ -186,6 +186,6 @@ Prince supports, fully or partially, the following CSS specifications:
 </tr>
 <tr>
 <td><a href="https://www.w3.org/TR/SVG11/">SVG 1.1</a></td>
-<td>Prince supports the specification with some exceptions - please see <a href="/doc/graphics#scalable-vector-graphics-svg">Scalable Vector Graphics (SVG)</a> for a full list of currently not supported elements.</td>
+<td>Prince supports the specification with some exceptions - please see <a href="/doc/graphics/#scalable-vector-graphics-svg">Scalable Vector Graphics (SVG)</a> for a full list of currently not supported elements.</td>
 </tr>
 </table>
