@@ -5541,7 +5541,7 @@ const cssPropsHtml = String.raw`
     </p>
           <p class="note">
     The Prince box-breaking behavior predates the introduction of the
-    <a href="css-props/#prop-box-decoration-break">box-decoration-break</a>
+    <a href="#prop-box-decoration-break">box-decoration-break</a>
     CSS property, defaulting to repeating borders when breaking a box, so
     that each fragment had a top and bottom border. When the property was
     introduced, Prince kept the default value as <code>clone</code>. Starting
