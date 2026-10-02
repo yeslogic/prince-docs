@@ -10,6 +10,19 @@ Prince is available for Windows (x86/ARM), MacOS, Linux (multiple distributions)
 
 Prince is provided under the terms of the [Prince End-User License Agreement](/../license/).
 
+## Installing with pip or npm
+
+If you are using Prince from Python or Node.js, you can install it as a package instead, with the Prince engine included:
+
+```
+pip install prince-pdf      # Python
+npm install prince-pdf      # Node.js
+```
+
+No separate installation of Prince is required. Both packages also provide the `prince` command-line program (with npm, run it as `npx prince`). They are available for Windows (x64 and ARM64), MacOS, and Linux (x86-64 and ARM64, and Alpine Linux on ARM64). To use a license file with the packages, set the `PRINCE_LICENSE_FILE` environment variable to its location.
+
+See [Using Prince with Python](server-integration.md#using-prince-with-python) and [Using Prince with Node.js](server-integration.md#using-prince-with-nodejs) for how to use them.
+
 ## Installing
 
 <Tabs groupId="operating-systems">
@@ -91,7 +104,7 @@ Prince is installed using the terminal. The installation package can be download
 ```bash
     $ cd download_directory
 ```
-Depending on your distribution and the package that you downloaded you may be able to install Price using the tools provided by your distribution.
+Depending on your distribution and the package that you downloaded you may be able to install Prince using the tools provided by your distribution.
 
 #### Debian and Ubuntu
 

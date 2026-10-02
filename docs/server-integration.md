@@ -6,7 +6,7 @@ Prince can be used server-side to produce PDFs, invoked by a wrapper script. Som
 
 ## Prince Wrappers
 
-Since different server configurations make use of different scripting languages, wrappers in those languages are necessary to invoke Prince. Wrappers for several of the most widely used scripting languages are available for download on the [Wrappers Download Page](/../download/wrappers/).
+Since different server configurations make use of different scripting languages, wrappers in those languages are necessary to invoke Prince. Wrappers for several of the most widely used scripting languages are available for download on the [Wrappers Download Page](/../download/wrappers/). For [Python](#using-prince-with-python) and [Node.js](#using-prince-with-nodejs), the `prince-pdf` packages include the Prince engine itself, so no separate installation is required.
 
 A useful tool for writing custom wrappers in other languages are the [Advanced Command-Line Options](#advanced-command-line-options).
 
@@ -167,7 +167,25 @@ If on Linux, substitute the paths with the appropriate UNIX style paths.
 
 ### Using Prince with Python
 
-Prince can be called from Python using the command-line interface, like this:
+The easiest way to use Prince from Python is the `prince-pdf` package, which includes the Prince engine:
+
+```
+pip install prince-pdf
+```
+
+```python
+import prince_pdf
+
+prince_pdf.convert("document.html", "document.pdf")
+
+pdf_bytes = prince_pdf.html_to_pdf("<h1>Hello, world!</h1>")
+```
+
+If a conversion fails, `prince_pdf.PrinceError` is raised, with the Prince error and warning messages in its `messages` attribute. See the [package documentation](https://pypi.org/project/prince-pdf/) for the full API, including Markdown input and using a separately installed Prince.
+
+#### Using the command-line interface
+
+If Prince is installed separately, it can also be called from Python using the command-line interface, like this:
 
 ```python
 import subprocess
@@ -244,6 +262,24 @@ else:
     pdf = outs
     print("PDF is " + str(len(pdf)) + " bytes in size")
 ```
+
+### Using Prince with Node.js
+
+The `prince-pdf` package for Node.js includes the Prince engine:
+
+```
+npm install prince-pdf
+```
+
+```javascript
+const prince = require('prince-pdf');
+
+await prince.convert('document.html', 'document.pdf');
+
+const pdf = await prince.htmlToPdf('<h1>Hello, world!</h1>');
+```
+
+The functions return Promises. If a conversion fails, the Promise is rejected with a `PrinceError`, with the Prince error and warning messages in its `messages` property. See the [package documentation](https://www.npmjs.com/package/prince-pdf) for the full API, including Markdown input and using a separately installed Prince.
 
 ### Using Prince with Perl
 
