@@ -6,7 +6,7 @@ import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
 
-Prince is available for Windows (x86/ARM), MacOS, Linux (multiple distributions) and FreeBSD. You can download the relevant file from our [downloads page](/../download/) - you may need to choose the download based on your processor type (x86/ARM, 32/64 bits), as well as distribution type and version.
+Prince is available for Windows (x86/ARM), MacOS, Linux (multiple distributions) and FreeBSD. You can download the relevant file from our [downloads page](/../download/) - you may need to choose the download based on your processor type (x86-64 or ARM64), as well as distribution type and version.
 
 Prince is provided under the terms of the [Prince End-User License Agreement](/../license/).
 
@@ -72,7 +72,7 @@ To install Prince on MacOS, please run the `install.sh` shell script contained i
 2.  Change to the download directory and unpack the downloaded file.
 ```bash
     $ cd download_directory
-    $ tar xvf prince-package-macos.zip
+    $ unzip prince-package-macos.zip
 ```
 3.  Change to the extracted directory.
 ```bash
@@ -108,78 +108,17 @@ Depending on your distribution and the package that you downloaded you may be ab
 
 #### Debian and Ubuntu
 
-On Debian and Ubuntu Linux you can use `gdebi` to install Prince and its dependencies. `gdebi` will automatically download and install any package dependencies, therefore it is often easier to use `gdebi` than `dpkg` which will not automatically install dependencies. If you're not logged in as root (and you shouldn't be), then you can use `sudo` to run the `gdebi` command as root.
+On Debian and Ubuntu Linux, use `apt` to install Prince together with any package dependencies. Note the `./` before the filename: it tells `apt` to install the downloaded file rather than look for a package in a repository.
 
 ```bash
-    $ sudo gdebi prince_package_debian_amd64.deb
-    Reading package lists... Done
-    Building dependency tree
-    Reading state information... Done
-    Building data structures... Done
-    Building data structures... Done
-
-    formatter for converting XML and HTML into PDF
-     This program converts XML and HTML into PDF.
-    Do you want to install the software package? [y/N]:y
-    Selecting previously unselected package prince.
-    (Reading database ... 319168 files and directories currently installed.)
-    Preparing to unpack prince_package_debian_amd64.deb ...
-    Unpacking prince ...
-    Setting up prince ...
-    Processing triggers for man-db ...
+    $ sudo apt install ./prince_package_debian_amd64.deb
 ```
-If `gdebi` is not already installed then you can install it using `aptitude` as follows. `aptitude` cannot be used to install Prince itself as Prince is not available in a Debian repository.
+#### AlmaLinux, Rocky Linux and Red Hat Enterprise Linux
+
+On these RPM-based distributions, use `dnf` to install Prince together with any package dependencies:
 
 ```bash
-    $ sudo aptitude install gdebi
-```
-#### CentOS and Redhat
-
-On RPM based systems, such as CentOS or Redhat Enterprise Linux, you should use the `yum` tool to install Prince. If you're not logged in as root (and you shouldn't be), then you can use `sudo` to run the `yum` command as root.
-
-```bash
-    $ sudo yum install prince-package.centos.x86_64.rpm
-```
-We have not shown all of `yum`'s output here as there is a lot of it. The process should prompt you before installation, which will look similar to:
-
-```bash
-    ================================================================================
-     Package        Arch    Version            Repository                      Size
-    ================================================================================
-    Installing:
-     prince         x86_64  version            /prince-package.centos.x86_64   13 M
-    Installing for dependencies:
-     fontconfig     x86_64  2.8.0-5.el6        base                           186 k
-     giflib         x86_64  4.1.6-3.1.el6      base                            37 k
-     libSM          x86_64  1.2.1-2.el6        base                            37 k
-     libX11         x86_64  1.6.0-2.2.el6      base                           586 k
-     libX11-common  noarch  1.6.0-2.2.el6      base                           192 k
-     libjpeg-turbo  x86_64  1.2.1-3.el6_5      base                           174 k
-     libtiff        x86_64  3.9.4-10.el6_5     base                           343 k
-
-    Transaction Summary
-    ================================================================================
-    Install       8 Package(s)
-
-    Total size: 15 M
-    Total download size: 1.5 M
-    Installed size: 18 M
-    Is this ok [y/N]: y
-    Downloading Packages:
-```
-The process will then end with messages similar to:
-
-```bash
-    Installed:
-      prince.x86_64 0:version
-
-    Dependency Installed:
-      fontconfig.x86_64 0:2.8.0-5.el6        giflib.x86_64 0:4.1.6-3.1.el6
-      libSM.x86_64 0:1.2.1-2.el6             libX11.x86_64 0:1.6.0-2.2.el6
-      libX11-common.noarch 0:1.6.0-2.2.el6   libjpeg-turbo.x86_64 0:1.2.1-3.el6_5
-      libtiff.x86_64 0:3.9.4-10.el6_5
-
-    Complete!
+    $ sudo dnf install ./prince-package.almalinux9.x86_64.rpm
 ```
 For the layout of a Prince installation on Linux, see the [Linux installation layout](#linux-and-freebsd-installation-layout) section.
 
@@ -224,10 +163,10 @@ To install Prince from a tarball enter these commands.
 
 4.  The script will prompt you for the installation directory. You can press enter to accept the default (`/usr/local`) or type in your preferred directory. In this example the user has accepted the default by pressing `ENTER` without entering anything. If you're installing Prince for only one user (and not using `sudo` you will need to choose a directory that you have write access to.
 
-If you chose a non-standard location you may need to add the `bin/` subdirectory to your `PATH` environment variable. There are many different types of command interpreters (also called shells), we cannot possibly document all of them. However for borne-style shells (the most common type) the command might look like this:
+If you chose a non-standard location you may need to add the `bin/` subdirectory to your `PATH` environment variable. There are many different types of command interpreters (also called shells), we cannot possibly document all of them. However for Bourne-style shells (the most common type) the command might look like this:
 
 ```bash
-    export PATH=/usr/local/prince10/bin:$PATH
+    export PATH=/opt/prince/bin:$PATH
 ```
 You will need to add the appropriate command to your shell's configuration or startup file. See your operating system's or shell's documentation for how to do this.
 
@@ -237,7 +176,7 @@ For the default layout of a Prince installation on Linux and FreeBSD, see the [L
 
 ## Running Prince
 
-Once Prince is intalled, it can be run as a command-line application.
+Once Prince is installed, it can be run as a command-line application.
 ```bash
     $ prince file.html
 ```
@@ -284,8 +223,8 @@ On MacOS copy the `license.dat` file into the `lib/prince/license` directory of 
 ```bash
     $ cp license.dat /usr/local/lib/prince/license/license.dat
     $ prince --version
-    Prince 10 rev 3
-    Copyright 2002-2015 YesLogic Pty. Ltd.
+    Prince 17
+    Copyright 2002-2026 YesLogic Pty. Ltd.
     Test License
 ```
 Remember to backup your license file in case you want to reinstall Prince in the future.
@@ -297,8 +236,8 @@ On Linux/FreeBSD copy the `license.dat` file into the `lib/prince/license` direc
 ```bash
     $ cp license.dat /usr/local/lib/prince/license/license.dat
     $ prince --version
-    Prince 10 rev 3
-    Copyright 2002-2015 YesLogic Pty. Ltd.
+    Prince 17
+    Copyright 2002-2026 YesLogic Pty. Ltd.
     Test License
 ```
 Remember to backup your license file in case you want to reinstall Prince in the future.

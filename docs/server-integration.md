@@ -15,7 +15,7 @@ For details on the usage of each of the wrappers, please consult the following c
 
 ### The Java Wrapper
 
-Prince can be called from within a Java class for servlets by using the [Java wrapper](/../download/wrappers/#wrapper-java).
+Prince can be called from Java applications by using the [Java wrapper](/../download/wrappers/#wrapper-java).
 
 The Java wrapper is hosted on the [Maven Central Repository](https://search.maven.org/artifact/com.princexml/prince-java-wrapper).
 
@@ -354,7 +354,7 @@ docker run --rm -it -v /path/on/host/license.dat:/usr/lib/prince/license/license
 If, however, you want to run a specific Prince version, rather than the latest, you need to add the version tag to the command:
 
 ```
-docker run --rm -it yeslogic/prince:13.1
+docker run --rm -it yeslogic/prince:17
 ```
 
 ### Prince on Microsoft Azure
