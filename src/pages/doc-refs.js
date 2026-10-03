@@ -31,6 +31,9 @@ function Redirects() {
     else if (location.hash.indexOf('properties') == 1) {
         window.location.href = '/doc/css-props'
     }
+    else if (location.hash.indexOf('prop-') == 1) {
+        window.location.href = '/doc/css-props' + location.hash
+    }
     else if (location.hash.indexOf('js-support') == 1) {
         window.location.href = '/doc/js-support'
     }
