@@ -66,7 +66,13 @@ For the layout of a Prince installation on Windows, see the [Windows installatio
 
 <TabItem value="mac" label="... on MacOS">
 
-To install Prince on MacOS, please run the `install.sh` shell script contained in the package downloaded to your computer from the [download page](/../download/). This will involve the following procedure:
+The easiest way to install Prince on MacOS is with [Homebrew](https://formulae.brew.sh/cask/prince):
+
+```bash
+    $ brew install --cask prince
+```
+
+Alternatively, to install Prince manually, run the `install.sh` shell script contained in the package downloaded to your computer from the [download page](/../download/). This will involve the following procedure:
 
 1.  Open the Terminal application.
 2.  Change to the download directory and unpack the downloaded file.
